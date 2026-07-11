@@ -10,3 +10,5 @@
 | v0.3.2 | Внешняя robustness evaluation frozen baseline. | 12 runs, 156 windows, topology/background/temporal/combined shifts. | Идентичность метрик между runs требует осторожной интерпретации. |
 
 Связанные подтверждённые коммиты: `509b4f0` (passive capture), `e2a5dad` (campaign), `3ea23f9` (audits), `0428177` (baseline) и `9f40b58` (robustness evaluation).
+
+11 июля 2026 года история платформы была технически выделена в отдельный репозиторий. После фильтрации Git идентификаторы коммитов изменились; сведения о выделении и ограничениях приведены в [документе о миграции](repository-migration.md).

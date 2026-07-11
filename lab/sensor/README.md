@@ -21,7 +21,7 @@ Capture-sidecar пассивно наблюдает namespace `traffic-client`; 
 
 ## Запуск
 
-`python filin/lab/sensor/run_v0_3_sensor_stage.py --help`
+`python lab/sensor/run_v0_3_sensor_stage.py --help`
 
 ## Проверки
 

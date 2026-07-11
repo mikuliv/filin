@@ -2,7 +2,7 @@ from __future__ import annotations
 import argparse, json, sys
 from collections import Counter
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[3]; sys.path.insert(0,str(ROOT/'filin/ml/analysis'))
+ROOT=Path(__file__).resolve().parents[2]; sys.path.insert(0,str(ROOT/'ml/analysis'))
 from campaign_common import read_jsonl, write_result
 import yaml
 
@@ -25,5 +25,5 @@ def audit_campaign_executions(output_root: Path) -> dict:
    if len(selected)<minimum or len({row['seed'] for row in selected})<minimum or len({row['parameter_hash'] for row in selected})<minimum: errors.append(f'{role}/{label}: недостаточно независимых executions')
  return {'campaign_execution_valid':not errors,'execution_count':len(rows),'independent_executions':Counter(row['label'] for row in rows),'temporal_durations':[row for row in rows if row['label'] in {'low_rate_dos','beacon_simulation'}],'errors':errors}
 def main():
- p=argparse.ArgumentParser(description='Аудит независимых executions кампании.');p.add_argument('--output-root',default='filin/lab/output');p.add_argument('--json-report');a=p.parse_args();r=audit_campaign_executions(Path(a.output_root));write_result(Path(a.json_report) if a.json_report else None,r);print(json.dumps(r,ensure_ascii=False,default=dict));raise SystemExit(0 if r['campaign_execution_valid'] else 1)
+ p=argparse.ArgumentParser(description='Аудит независимых executions кампании.');p.add_argument('--output-root',default='lab/output');p.add_argument('--json-report');a=p.parse_args();r=audit_campaign_executions(Path(a.output_root));write_result(Path(a.json_report) if a.json_report else None,r);print(json.dumps(r,ensure_ascii=False,default=dict));raise SystemExit(0 if r['campaign_execution_valid'] else 1)
 if __name__=='__main__':main()

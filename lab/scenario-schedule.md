@@ -29,11 +29,11 @@
 Для проверки расписания без генерации сетевого трафика можно запустить все YAML-сценарии из папки:
 
 ```powershell
-cd H:\Anomalyzer
+cd <корень-репозитория>
 
-python filin/lab/tools/scenario_runner.py --scenarios filin/lab/scenarios --manifest filin/lab/output/scenario_manifest.yaml --dry-run --reset-manifest --base-time 2026-07-09T13:00:00Z
+python lab/tools/scenario_runner.py --scenarios lab/scenarios --manifest lab/output/scenario_manifest.yaml --dry-run --reset-manifest --base-time 2026-07-09T13:00:00Z
 
-Get-Content filin/lab/output/scenario_manifest.yaml -Encoding UTF8
+Get-Content lab/output/scenario_manifest.yaml -Encoding UTF8
 ```
 
 В этом режиме `scenario_runner.py` рекурсивно читает сценарии, сначала проверяет benign-сценарии, затем attack-сценарии, рассчитывает плановые временные окна и сохраняет manifest в UTF-8.
@@ -55,9 +55,9 @@ $OutputEncoding = [System.Text.UTF8Encoding]::new()
 Пример natural-запуска с паузой 30 секунд между окнами:
 
 ```powershell
-python filin/lab/tools/scenario_runner.py --scenarios filin/lab/scenarios --manifest filin/lab/output/scenario_manifest.yaml --dry-run --reset-manifest --base-time 2026-07-09T13:00:00Z --schedule-mode natural --gap-seconds 30 --repeat 1
+python lab/tools/scenario_runner.py --scenarios lab/scenarios --manifest lab/output/scenario_manifest.yaml --dry-run --reset-manifest --base-time 2026-07-09T13:00:00Z --schedule-mode natural --gap-seconds 30 --repeat 1
 
-Get-Content filin/lab/output/scenario_manifest.yaml -Encoding UTF8
+Get-Content lab/output/scenario_manifest.yaml -Encoding UTF8
 ```
 
 В manifest v0.3 сохраняются `schedule_mode`, `gap_seconds`, `repeat` и `run_sequence`. Повтор одного `scenario_id` допустим, если отличается `run_sequence`.
@@ -67,13 +67,13 @@ Get-Content filin/lab/output/scenario_manifest.yaml -Encoding UTF8
 После проверки расписания можно выполнить сценарии последовательно без ожидания планового времени:
 
 ```powershell
-python filin/lab/tools/scenario_runner.py --manifest filin/lab/output/scenario_manifest.yaml --execute --allow-dry-run-manifest --max-runtime-seconds 1800
+python lab/tools/scenario_runner.py --manifest lab/output/scenario_manifest.yaml --execute --allow-dry-run-manifest --max-runtime-seconds 1800
 ```
 
 Для проверки без Docker-сервисов используется mock-режим:
 
 ```powershell
-python filin/lab/tools/scenario_runner.py --manifest filin/lab/output/scenario_manifest.yaml --execute --allow-dry-run-manifest --mock --max-runtime-seconds 300
+python lab/tools/scenario_runner.py --manifest lab/output/scenario_manifest.yaml --execute --allow-dry-run-manifest --mock --max-runtime-seconds 300
 ```
 
 Если указан `--respect-schedule`, runner будет ждать наступления `planned_started_at`. По умолчанию сценарии выполняются последовательно без ожидания.

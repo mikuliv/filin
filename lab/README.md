@@ -20,7 +20,7 @@ Manifests и безопасные сценарии являются входом
 
 ## Запуск
 
-Перед использованием проверяйте реальный CLI: `python filin/lab/sensor/run_v0_3_sensor_stage.py --help`.
+Перед использованием проверяйте реальный CLI: `python lab/sensor/run_v0_3_sensor_stage.py --help`.
 
 ## Проверки
 

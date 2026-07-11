@@ -10,8 +10,8 @@ from typing import Any
 
 import yaml
 
-ROOT = Path(__file__).resolve().parents[3]
-for folder in (ROOT / "filin" / "lab" / "tools", ROOT / "filin" / "ml" / "features"):
+ROOT = Path(__file__).resolve().parents[2]
+for folder in (ROOT / "lab" / "tools", ROOT / "ml" / "features"):
     if str(folder) not in sys.path:
         sys.path.insert(0, str(folder))
 
@@ -78,7 +78,7 @@ def run_campaign(campaign_path: Path, output_root: Path, strict: bool = False, r
             break
         run_dir = output_root / "runs" / run_id
         variants = {index: build_execution_metadata(campaign, run, index, scenario_id) for index, scenario_id in enumerate(NATURAL_SCENARIO_ORDER, start=1)}
-        args = Namespace(run_dir=str(run_dir), scenarios="filin/lab/scenarios", base_time=f"2026-07-12T{10 + (position % 8):02d}:00:00Z", schedule_mode="natural", gap_seconds=15, repeat=1, mock=False, docker=True, compose_file="filin/lab/docker/docker-compose.lab.yml", compose_project_dir="filin/lab/docker", time_scale=0.05, random_seed=run["random_seed"], start_services=position == 0, rebuild_services=False, stop_services_after_run=False, max_runtime_seconds=240, window_seconds=60)
+        args = Namespace(run_dir=str(run_dir), scenarios=str(ROOT / "lab" / "scenarios"), base_time=f"2026-07-12T{10 + (position % 8):02d}:00:00Z", schedule_mode="natural", gap_seconds=15, repeat=1, mock=False, docker=True, compose_file=str(ROOT / "lab" / "docker" / "docker-compose.lab.yml"), compose_project_dir=str(ROOT / "lab" / "docker"), time_scale=0.05, random_seed=run["random_seed"], start_services=position == 0, rebuild_services=False, stop_services_after_run=False, max_runtime_seconds=240, window_seconds=60)
         try:
             result = run_pipeline(args, campaign_metadata=campaign_metadata(campaign, run), scenario_variants=variants, skip_legacy_dataset=True)
             core = datasets_dir / f"windows_client_core_v0_2_{run_id}.csv"
@@ -104,7 +104,7 @@ def run_campaign(campaign_path: Path, output_root: Path, strict: bool = False, r
 def main() -> None:
     parser = argparse.ArgumentParser(description="Запуск независимой Docker-кампании Филин v0.2.3.")
     parser.add_argument("--campaign", required=True)
-    parser.add_argument("--output-root", default="filin/lab/output")
+    parser.add_argument("--output-root", default="lab/output")
     parser.add_argument("--strict", action="store_true")
     parser.add_argument("--resume", action="store_true")
     parser.add_argument("--max-runs", type=int, default=None, help="Ограничить число новых runs одного вызова.")

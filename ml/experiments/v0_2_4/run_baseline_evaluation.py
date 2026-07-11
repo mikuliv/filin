@@ -14,8 +14,8 @@ from sklearn.metrics import accuracy_score, balanced_accuracy_score, confusion_m
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
-ROOT=Path(__file__).resolve().parents[4]
-sys.path.insert(0,str(ROOT/'filin/ml/training'));sys.path.insert(0,str(ROOT/'filin/ml/analysis'))
+ROOT=Path(__file__).resolve().parents[3]
+sys.path.insert(0,str(ROOT/'ml/training'));sys.path.insert(0,str(ROOT/'ml/analysis'))
 from campaign_dataset_loader import load_campaign_datasets
 from campaign_provenance import audit_campaign_provenance
 from campaign_execution_audit import audit_campaign_executions
@@ -58,7 +58,7 @@ def evaluate_profile(profile,index,output,artifacts,seed,policy):
  value={'profile':profile,'selected_model':selected['name'],'train_cv':results,'pooled_test':pooled,'dummy_test':dummy_metrics,'gains':gains,'useful_model_found':useful,'per_test_run':per,'stable_across_test_runs':all(x['attack_macro_recall']>0 for x in per.values()) and pstdev(x['macro_f1'] for x in per.values())<=.15,'train_sha256':train_hashes,'test_sha256':test_hashes,'features':features,'predictions':predictions};(output/f'{profile}_evaluation.json').write_text(json.dumps(value,ensure_ascii=False,indent=2),encoding='utf-8');return value
 
 def main():
- p=argparse.ArgumentParser(description='Оценка baseline-моделей независимой кампании.');p.add_argument('--config',required=True);p.add_argument('--policy',required=True);p.add_argument('--campaign-index',required=True);p.add_argument('--output-dir',required=True);p.add_argument('--strict',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args();config=yaml.safe_load(Path(a.config).read_text(encoding='utf-8'));policy=yaml.safe_load(Path(a.policy).read_text(encoding='utf-8'));out=Path(a.output_dir);out.mkdir(parents=True,exist_ok=True);art=ROOT/'filin/ml/artifacts/v0_2_4';art.mkdir(parents=True,exist_ok=True);root=ROOT/'filin/lab/output';integrity={'provenance':audit_campaign_provenance(root),'execution':audit_campaign_executions(root),'split':audit_campaign_split(root),'readiness':evaluate_readiness(root)}
+ p=argparse.ArgumentParser(description='Оценка baseline-моделей независимой кампании.');p.add_argument('--config',required=True);p.add_argument('--policy',required=True);p.add_argument('--campaign-index',required=True);p.add_argument('--output-dir',required=True);p.add_argument('--strict',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args();config=yaml.safe_load(Path(a.config).read_text(encoding='utf-8'));policy=yaml.safe_load(Path(a.policy).read_text(encoding='utf-8'));out=Path(a.output_dir);out.mkdir(parents=True,exist_ok=True);art=ROOT/'ml/artifacts/v0_2_4';art.mkdir(parents=True,exist_ok=True);root=ROOT/'lab/output';integrity={'provenance':audit_campaign_provenance(root),'execution':audit_campaign_executions(root),'split':audit_campaign_split(root),'readiness':evaluate_readiness(root)}
  if not all(not item.get('errors') for item in integrity.values()):raise ValueError('Integrity audit кампании не пройден.')
  campaign_dir=Path(a.campaign_index).parent; dataset_index={**json.loads((campaign_dir/'train_datasets.json').read_text(encoding='utf-8')) , **json.loads((campaign_dir/'test_datasets.json').read_text(encoding='utf-8'))}; combined_index=out/'dataset_index_runtime.json'; combined_index.write_text(json.dumps(dataset_index,ensure_ascii=False),encoding='utf-8')
  profiles=[evaluate_profile(profile,combined_index,out,art,config['random_state'],policy) for profile in config['feature_profiles']]

@@ -7,8 +7,8 @@ import time
 from pathlib import Path
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
-FEATURES_DIR = REPO_ROOT / "filin" / "ml" / "features"
+REPO_ROOT = Path(__file__).resolve().parents[2]
+FEATURES_DIR = REPO_ROOT / "ml" / "features"
 if str(FEATURES_DIR) not in sys.path:
     sys.path.insert(0, str(FEATURES_DIR))
 
@@ -25,7 +25,7 @@ LAB_SERVICES = ["target-web", "target-api", "control-api", "target-ssh-sim", "tr
 
 
 def dataset_output_paths(run_dir: Path) -> tuple[Path, Path]:
-    datasets_dir = REPO_ROOT / "filin" / "lab" / "output" / "datasets"
+    datasets_dir = REPO_ROOT / "lab" / "output" / "datasets"
     return datasets_dir / f"windows_v0_1_{run_dir.name}.csv", datasets_dir / f"flows_v0_1_{run_dir.name}.csv"
 
 
@@ -66,7 +66,7 @@ def preflight(compose_file: Path, project_dir: Path) -> None:
         details = "\n".join(value for value in [completed.stderr.strip(), completed.stdout.strip(), ssh_completed.stderr.strip()] if value)
         raise RuntimeError(
             "Не все обязательные сервисы Docker-стенда доступны. "
-            "Запустите стенд командой: cd H:\\Anomalyzer\\filin\\lab\\docker; "
+            "Запустите стенд командой: cd lab\\docker; "
             "docker compose -f docker-compose.lab.yml up -d --build. " + details
         )
     print("Предварительная проверка Docker-стенда пройдена.")
@@ -137,7 +137,7 @@ def run_pipeline(args: argparse.Namespace, campaign_metadata: dict[str, object] 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Полный запуск одного laboratory run Филин.")
     parser.add_argument("--run-dir", required=True)
-    parser.add_argument("--scenarios", default="filin/lab/scenarios")
+    parser.add_argument("--scenarios", default="lab/scenarios")
     parser.add_argument("--base-time", required=True)
     parser.add_argument("--schedule-mode", choices=("grouped", "natural"), default="natural")
     parser.add_argument("--gap-seconds", type=int, default=30)
@@ -145,8 +145,8 @@ def main() -> None:
     mode = parser.add_mutually_exclusive_group(required=True)
     mode.add_argument("--mock", action="store_true", help="Синтетические события без сетевой активности.")
     mode.add_argument("--docker", action="store_true", help="Реальные действия внутри изолированной Docker-сети.")
-    parser.add_argument("--compose-file", default="filin/lab/docker/docker-compose.lab.yml")
-    parser.add_argument("--compose-project-dir", default="filin/lab/docker")
+    parser.add_argument("--compose-file", default="lab/docker/docker-compose.lab.yml")
+    parser.add_argument("--compose-project-dir", default="lab/docker")
     parser.add_argument("--time-scale", type=float, default=1.0)
     parser.add_argument("--random-seed", type=int, default=42)
     parser.add_argument("--start-services", action="store_true")

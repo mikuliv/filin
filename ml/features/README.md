@@ -17,11 +17,11 @@
 
 ## Входные данные и выходные данные
 
-Input — normalized/correlated events и execution metadata. Output CSV — runtime artifact в `filin/lab/output/datasets/`.
+Input — normalized/correlated events и execution metadata. Output CSV — runtime artifact в `lab/output/datasets/`.
 
 ## Запуск
 
-`python filin/ml/features/validators.py --help`
+`python ml/features/validators.py --help`
 
 ## Проверки
 

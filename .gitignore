@@ -1,0 +1,62 @@
+﻿# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Виртуальные окружения
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Секреты и локальные настройки
+.env
+.env.*
+!.env.example
+
+# Временные файлы
+*.tmp
+*.temp
+*.bak
+
+# Модели и runtime-артефакты
+*.joblib
+*.pkl
+*.pickle
+*.onnx
+*.pt
+*.pth
+
+# Сетевые артефакты
+*.pcap
+*.pcapng
+
+# Сгенерированные datasets и отчёты
+lab/output/
+ml/reports/
+ml/artifacts/
+datasets/runtime/
+runtime/data/
+runtime/logs/
+
+# Zeek runtime
+conn.log
+http.log
+dns.log
+weird.log
+notice.log
+packet_filter.log
+reporter.log
+stats.log
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+desktop.ini

@@ -5,8 +5,8 @@ import json
 import sys
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[3]
-sys.path.insert(0, str(ROOT / "filin" / "ml" / "analysis"))
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT / "ml" / "analysis"))
 from campaign_common import ALLOWED_TARGETS, read_jsonl, sha256, write_result
 
 
@@ -33,6 +33,6 @@ def audit_campaign_provenance(output_root: Path) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Аудит происхождения campaign artifacts.")
-    parser.add_argument("--output-root", default="filin/lab/output"); parser.add_argument("--json-report")
+    parser.add_argument("--output-root", default="lab/output"); parser.add_argument("--json-report")
     args = parser.parse_args(); result = audit_campaign_provenance(Path(args.output_root)); write_result(Path(args.json_report) if args.json_report else None, result); print(json.dumps(result, ensure_ascii=False)); raise SystemExit(0 if result["campaign_provenance_valid"] else 1)
 if __name__ == "__main__": main()

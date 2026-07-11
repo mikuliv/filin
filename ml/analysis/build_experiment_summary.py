@@ -10,7 +10,7 @@ import pandas as pd
 import yaml
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def run_info(run_name: str) -> dict[str, Any]:

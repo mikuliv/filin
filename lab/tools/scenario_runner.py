@@ -369,8 +369,8 @@ def build_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--mock", action="store_true", help="Записать события выполнения без сетевой активности.")
     parser.add_argument("--docker", action="store_true", help="Выполнить сценарии в изолированной Docker-сети.")
-    parser.add_argument("--compose-file", default="filin/lab/docker/docker-compose.lab.yml", help="Путь к compose-файлу стенда.")
-    parser.add_argument("--compose-project-dir", default="filin/lab/docker", help="Рабочая папка Docker Compose.")
+    parser.add_argument("--compose-file", default="lab/docker/docker-compose.lab.yml", help="Путь к compose-файлу стенда.")
+    parser.add_argument("--compose-project-dir", default="lab/docker", help="Рабочая папка Docker Compose.")
     parser.add_argument("--time-scale", type=float, default=1.0, help="Масштаб длительности от 0 до 1.")
     parser.add_argument("--random-seed", type=int, default=42, help="Seed воспроизводимого порядка действий.")
     return parser

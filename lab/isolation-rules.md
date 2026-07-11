@@ -40,7 +40,7 @@
 
 ## Хранение логов и PCAP
 
-Сырые логи, PCAP, JSONL и CSV не хранятся в Git. Они сохраняются локально в `filin/lab/output/`, `filin/datasets/raw/` или `filin/datasets/processed/`.
+Сырые логи, PCAP, JSONL и CSV не хранятся в Git. Они сохраняются локально в `lab/output/`, `datasets/raw/` или `datasets/processed/`.
 
 Перед передачей датасета нужно проверить:
 

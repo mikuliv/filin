@@ -10,7 +10,7 @@ import pandas as pd
 import yaml
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 TRAINING_DIR = REPO_ROOT / "filin" / "ml" / "training"
 if str(TRAINING_DIR) not in sys.path:
     sys.path.insert(0, str(TRAINING_DIR))

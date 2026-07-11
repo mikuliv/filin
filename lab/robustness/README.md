@@ -18,7 +18,7 @@ v0.3.2 использует 12 completed runs: по три topology, background,
 
 ## Запуск
 
-`python filin/lab/robustness/run_v0_3_2_stage.py --help`
+`python lab/robustness/run_v0_3_2_stage.py --help`
 
 ## Проверки
 

@@ -10,7 +10,7 @@ Model selection выполнялся только по шести независ
 
 ## Основные файлы
 
-Runtime evaluation report хранится в `filin/ml/reports/v0_3_1/` и не коммитится.
+Runtime evaluation report хранится в `ml/reports/v0_3_1/` и не коммитится.
 
 ## Входные данные и выходные данные
 

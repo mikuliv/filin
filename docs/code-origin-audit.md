@@ -26,16 +26,16 @@
 
 | Файл/группа | Первый commit | Автор в Git | Исходный путь | Заимствование по проверке | Предполагаемый технический статус |
 | --- | --- | --- | --- | --- | --- |
-| `filin/backend/**` | `be7b8fd`, `027c42a`, `70906de` | `mikuliv` | Добавлен сразу в `filin/` | Не найдено | Самостоятельно добавленный код, права не подтверждены договорно |
-| `filin/lab/**` | `a64c148` и последующие | `mikuliv` | Добавлен в `filin/lab/` | Не найдено | Самостоятельная лабораторная подсистема |
-| `filin/ml/features/**` | `f52d6e7` и последующие | `mikuliv` | Добавлен в `filin/ml/` | Не найдено | Самостоятельный feature pipeline |
-| Zeek sensor | `509b4f0`, `e2a5dad`, `3ea23f9` | `mikuliv` | Добавлен в `filin/lab/sensor/` | Не найдено | Самостоятельная интеграция внешнего Zeek runtime |
-| ML evaluation | `0428177`, `9f40b58` | `mikuliv` | Добавлен в `filin/ml/experiments/` | Не найдено | Самостоятельные scripts, runtime models не в Git |
+| `backend/**` | `be7b8fd`, `027c42a`, `70906de` | `mikuliv` | До выделения: `filin/backend/` | Не найдено | Самостоятельно добавленный код, права не подтверждены договорно |
+| `lab/**` | `a64c148` и последующие | `mikuliv` | До выделения: `filin/lab/` | Не найдено | Самостоятельная лабораторная подсистема |
+| `ml/features/**` | `f52d6e7` и последующие | `mikuliv` | До выделения: `filin/ml/features/` | Не найдено | Самостоятельный feature pipeline |
+| Zeek sensor | `509b4f0`, `e2a5dad`, `3ea23f9` | `mikuliv` | До выделения: `filin/lab/sensor/` | Не найдено | Самостоятельная интеграция внешнего Zeek runtime |
+| ML evaluation | `0428177`, `9f40b58` | `mikuliv` | До выделения: `filin/ml/experiments/` | Не найдено | Самостоятельные scripts, runtime models не в Git |
 | Исторические модели | `42e0280` | `mikuliv` | Только `Anomalyzer-main/pretrained-models/` | Не перенесены | Отдельный GPL/historical review scope |
 
 ## Пограничные места для дальнейшей проверки
 
-- `filin/ml/configs/inference.yaml` описывает local ONNX/scaler paths. Это не ссылка на historical artifact, но перед distribution следует закрепить происхождение каждой подставленной модели.
+- `ml/configs/inference.yaml` описывает local ONNX/scaler paths. Это не ссылка на historical artifact, но перед distribution следует закрепить происхождение каждой подставленной модели.
 - Backend, FastAPI, Docker Compose и ML patterns могут быть концептуально похожи на типовые решения; автоматическое сравнение не доказывает отсутствие заимствований идей или внешних не-Git источников.
 - Git author у всех доступных commits один. Это не снимает риск служебного произведения, неотражённых contributors или прав третьих лиц.
 

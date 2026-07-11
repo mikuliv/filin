@@ -14,7 +14,7 @@ Audits проверяют PCAP/Zeek integrity, marker-aware assignments, profile
 
 ## Входные данные и выходные данные
 
-Вход — runtime campaign artifacts; output — JSON/Markdown reports в `filin/ml/reports/`, не коммитятся.
+Вход — runtime campaign artifacts; output — JSON/Markdown reports в `ml/reports/`, не коммитятся.
 
 ## Запуск
 

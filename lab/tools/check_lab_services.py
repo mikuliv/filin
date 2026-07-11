@@ -84,7 +84,7 @@ def check_services(checks: list[ServiceCheck], timeout: float, mode: str) -> tup
 
 
 def run_compose_exec(timeout: float) -> int:
-    repo_root = Path(__file__).resolve().parents[3]
+    repo_root = Path(__file__).resolve().parents[2]
     compose_file = repo_root / "filin" / "lab" / "docker" / "docker-compose.lab.yml"
     command = [
         "docker",

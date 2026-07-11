@@ -14,7 +14,7 @@
 
 ## Запуск
 
-Для быстрой проверки: `python -m unittest discover -s filin/ml/tests -p "test_*.py"`.
+Для быстрой проверки: `python -m unittest discover -s ml/tests -p "test_*.py"`.
 
 ## Проверки
 

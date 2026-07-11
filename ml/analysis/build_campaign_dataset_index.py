@@ -11,5 +11,5 @@ def build_index(output_root:Path)->dict:
  (campaign_dir/'train_datasets.json').write_text(json.dumps({k:v for k,v in result.items() if k.endswith('_train')},ensure_ascii=False,indent=2),encoding='utf-8');(campaign_dir/'test_datasets.json').write_text(json.dumps({k:v for k,v in result.items() if k.endswith('_test')},ensure_ascii=False,indent=2),encoding='utf-8')
  return result
 def main():
- p=argparse.ArgumentParser(description='Построение индекса datasets кампании.');p.add_argument('--output-root',default='filin/lab/output');a=p.parse_args();r=build_index(Path(a.output_root));print(json.dumps(r,ensure_ascii=False))
+ p=argparse.ArgumentParser(description='Построение индекса datasets кампании.');p.add_argument('--output-root',default='lab/output');a=p.parse_args();r=build_index(Path(a.output_root));print(json.dumps(r,ensure_ascii=False))
 if __name__=='__main__':main()

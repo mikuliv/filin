@@ -16,11 +16,11 @@ Frozen `LogisticRegression` с `SimpleImputer(strategy="median")` и `StandardSc
 
 ## Входные и выходные данные
 
-Вход — runtime datasets `network_sensor_v0_3` и artifact модели v0.3.1. Выход — runtime reports в `filin/ml/reports/v0_3_2/`; они не коммитятся.
+Вход — runtime datasets `network_sensor_v0_3` и artifact модели v0.3.1. Выход — runtime reports в `ml/reports/v0_3_2/`; они не коммитятся.
 
 ## Запуск
 
-Проверка доступных параметров: `python filin/ml/experiments/v0_3_2/run_robustness_evaluation.py --help`.
+Проверка доступных параметров: `python ml/experiments/v0_3_2/run_robustness_evaluation.py --help`.
 
 ## Проверки и ограничения
 

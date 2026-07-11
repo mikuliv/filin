@@ -3,7 +3,7 @@ import argparse,csv,json
 from collections import Counter
 from pathlib import Path
 def main():
- p=argparse.ArgumentParser(description='Сводная проверка sensor-кампании Филин v0.3.');p.add_argument('--campaign',required=True);p.add_argument('--output-root',default='filin/lab/output');p.add_argument('--report-dir',required=True);p.add_argument('--strict',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args();root=Path(a.output_root);status=json.loads((root/'campaigns/filin_v0_3/status.json').read_text(encoding='utf-8'));rows=[];errors=[]
+ p=argparse.ArgumentParser(description='Сводная проверка sensor-кампании Филин v0.3.');p.add_argument('--campaign',required=True);p.add_argument('--output-root',default='lab/output');p.add_argument('--report-dir',required=True);p.add_argument('--strict',action='store_true');p.add_argument('--resume',action='store_true');a=p.parse_args();root=Path(a.output_root);status=json.loads((root/'campaigns/filin_v0_3/status.json').read_text(encoding='utf-8'));rows=[];errors=[]
  for run,value in status.items():
   dataset=root/'datasets'/f'windows_network_sensor_v0_3_{run}.csv';events=root/'runs'/run/'sensor/normalized_sensor_events.jsonl';assigned=sum(1 for line in events.read_text(encoding='utf-8').splitlines() if '"correlation_status": "assigned"' in line) if events.exists() else 0
   with dataset.open(encoding='utf-8') as source:data=list(csv.DictReader(source)) if dataset.exists() else []

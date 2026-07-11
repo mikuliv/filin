@@ -5,6 +5,7 @@
 - [Текущие возможности](current-capabilities.md)
 - [Текущий статус](status.md)
 - [История разработки](development-history.md)
+- [Выделение в отдельный репозиторий](repository-migration.md)
 
 ## Архитектура и данные
 

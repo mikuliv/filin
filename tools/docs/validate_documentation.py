@@ -8,8 +8,8 @@ import sys
 from pathlib import Path
 
 
-ROOT = Path(__file__).resolve().parents[3]
-DOCS = ROOT / "filin" / "docs"
+ROOT = Path(__file__).resolve().parents[2]
+DOCS = ROOT / "docs"
 REQUIRED = (
     "index.md",
     "architecture.md",
@@ -25,6 +25,7 @@ REQUIRED = (
     "roadmap.md",
     "documentation-policy.md",
 )
+ROOT_DIRECTORIES = ("backend", "collectors", "datasets", "docs", "examples", "lab", "ml", "runtime", "tools")
 MAIN_READMES = (ROOT / "README.md", ROOT / "filin" / "README.md")
 LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 HEADER = re.compile(r"^#{1,6}\s+(.+?)\s*$", re.MULTILINE)
@@ -32,17 +33,22 @@ FORBIDDEN = ("готово к внедрению", "готовая систем�
 
 
 def markdown_files(root: Path) -> list[Path]:
-    return sorted(path for path in root.rglob("*.md") if "Anomalyzer-main" not in path.parts)
+    return sorted(path for path in root.rglob("*.md"))
 
 
 def validate(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
-    docs = root / "filin" / "docs"
+    docs = root / "docs"
+    for name in ROOT_DIRECTORIES:
+        if not (root / name).is_dir():
+            errors.append(f"Отсутствует обязательный каталог корня: {name}")
+    if (root / "filin").exists():
+        errors.append("В корне не должен присутствовать прежний каталог filin.")
     for name in REQUIRED:
         if not (docs / name).is_file():
-            errors.append(f"Отсутствует обязательный документ: filin/docs/{name}")
+            errors.append(f"Отсутствует обязательный документ: docs/{name}")
 
-    for readme in (root / "README.md", root / "filin" / "README.md"):
+    for readme in (root / "README.md",):
         if not readme.is_file() or "docs/index.md" not in readme.read_text(encoding="utf-8"):
             errors.append(f"Основной README не содержит ссылку на docs/index.md: {readme.relative_to(root)}")
 

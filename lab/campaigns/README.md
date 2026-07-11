@@ -16,11 +16,11 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 
 ## Входные данные и выходные данные
 
-Вход — manifest; выход — run statuses и runtime artifacts в `filin/lab/output/`.
+Вход — manifest; выход — run statuses и runtime artifacts в `lab/output/`.
 
 ## Запуск
 
-Параметры runner: `python filin/lab/campaigns/run_sensor_campaign.py --help`.
+Параметры runner: `python lab/campaigns/run_sensor_campaign.py --help`.
 
 ## Проверки
 

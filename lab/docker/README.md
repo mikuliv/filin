@@ -45,23 +45,23 @@ filin-backend -> http://filin-backend:8000/health
 Проверка с хоста:
 
 ```powershell
-cd H:\Anomalyzer
+cd <корень-репозитория>
 
-python filin/lab/tools/check_lab_services.py --mode host
+python lab/tools/check_lab_services.py --mode host
 ```
 
 Проверка Docker DNS-имён через `traffic-client`:
 
 ```powershell
-cd H:\Anomalyzer
+cd <корень-репозитория>
 
-python filin/lab/tools/check_lab_services.py --mode compose-exec
+python lab/tools/check_lab_services.py --mode compose-exec
 ```
 
 Ручная проверка внутри Docker-сети:
 
 ```powershell
-cd H:\Anomalyzer\filin\lab\docker
+cd lab\docker
 
 docker compose -f docker-compose.lab.yml exec traffic-client python -c "import requests; print(requests.get('http://target-web/').status_code)"
 
@@ -75,7 +75,7 @@ docker compose -f docker-compose.lab.yml exec traffic-client python -c "import r
 ## Запуск
 
 ```powershell
-cd H:\Anomalyzer\filin\lab\docker
+cd lab\docker
 
 docker compose -f docker-compose.lab.yml up -d --build
 docker compose -f docker-compose.lab.yml ps
@@ -84,7 +84,7 @@ docker compose -f docker-compose.lab.yml ps
 ## Остановка
 
 ```powershell
-cd H:\Anomalyzer\filin\lab\docker
+cd lab\docker
 
 docker compose -f docker-compose.lab.yml down
 ```
@@ -116,8 +116,8 @@ Docker-стенд v0.2 предназначен для безопасного с
 Полный запуск и сбор диагностических логов:
 
 ```powershell
-cd H:\Anomalyzer
-python filin/lab/tools/run_lab_pipeline.py --run-dir filin/lab/output/runs/run_docker_001 --base-time 2026-07-10T15:00:00Z --gap-seconds 30 --repeat 1 --docker --window-seconds 60 --time-scale 0.05 --random-seed 101 --start-services
+cd <корень-репозитория>
+python lab/tools/run_lab_pipeline.py --run-dir lab/output/runs/run_docker_001 --base-time 2026-07-10T15:00:00Z --gap-seconds 30 --repeat 1 --docker --window-seconds 60 --time-scale 0.05 --random-seed 101 --start-services
 ```
 
 Логи сервисов сохраняются в `<run-dir>/service_logs/` и не добавляются в Git.

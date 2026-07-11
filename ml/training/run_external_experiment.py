@@ -7,7 +7,7 @@ from pathlib import Path
 from train_baselines import train_baselines
 
 
-REPO_ROOT = Path(__file__).resolve().parents[3]
+REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def dataset_path(run_name: str) -> Path:
@@ -18,7 +18,7 @@ def ensure_dataset(path: Path, run_name: str) -> None:
     if not path.exists():
         raise FileNotFoundError(
             f"Датасет для {run_name} не найден: {path}. "
-            f"Сначала выполните: python filin/lab/tools/run_lab_pipeline.py --run-dir filin/lab/output/runs/{run_name} "
+            f"Сначала выполните: python lab/tools/run_lab_pipeline.py --run-dir lab/output/runs/{run_name} "
             "--base-time 2026-07-09T13:00:00Z --mock --window-seconds 60"
         )
 
