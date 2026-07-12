@@ -38,7 +38,10 @@ def run(campaign,row,root):
  volume='filin_v034_'+row['run_id'].lower();env={**os.environ,'FILIN_SENSOR_CAPTURE_VOLUME':volume};compose=ROOT/'lab'/'docker'/'docker-compose.lab.yml'
  docker(['docker','compose','-f',str(compose),'stop','sensor-capture'],env,False);docker_retry(['docker','compose','-f',str(compose),'up','-d','--build','target-web','target-api','control-api','target-ssh-sim','traffic-client'],env);time.sleep(3);docker_retry(['docker','compose','-f',str(compose),'up','-d','sensor-capture'],env);time.sleep(1)
  try:
-  done,failed,skipped=execute_manifest(manifest_path,allow_dry_run_manifest=True,respect_schedule=False,max_runtime_seconds=1200,mock=False,compose_file=compose,compose_project_dir=ROOT/'lab'/'docker',time_scale=.05,random_seed=int(row['random_seed']))
+  # One-second executions intermittently outran passive capture.  A bounded
+  # 0.2 scale preserves the safe scenario shape while leaving enough time for
+  # marker-aware Zeek observation and is validated before a run is accepted.
+  done,failed,skipped=execute_manifest(manifest_path,allow_dry_run_manifest=True,respect_schedule=False,max_runtime_seconds=1200,mock=False,compose_file=compose,compose_project_dir=ROOT/'lab'/'docker',time_scale=.2,random_seed=int(row['random_seed']))
   if failed or skipped or done!=21: raise RuntimeError(f'completed={done}/21 failed={failed} skipped={skipped}')
   # Keep tcpdump alive long enough to flush the final marker and traffic-client
   # clock-skewed heartbeat. This is capture coverage, not correlation tolerance.
