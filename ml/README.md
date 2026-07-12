@@ -19,6 +19,9 @@
 ## Проверки
 
 Model selection, external evaluation и robustness evaluation разделены. В v0.3.2 запрещено `.fit()` на robustness data.
+v0.3.4 добавляет fixed `network_sensor_v0_3_control`, rates и hybrid profiles.
+Selection использует только training-runs; internal validation доступна только
+после candidate freeze. Данные v0.3.3 заблокированы.
 
 ## Ограничения
 

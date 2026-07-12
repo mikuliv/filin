@@ -13,6 +13,9 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 - `v0_3_zeek_sensor.yaml` — независимая sensor campaign v0.3;
 - `v0_3_2_zeek_robustness.yaml` — robustness campaign v0.3.2;
 - `run_sensor_campaign.py` — запуск/продолжение sensor campaign.
+- `v0_3_4_training.yaml` и `v0_3_4_internal_validation.yaml` — раздельные
+  кампании 12/6 для v0.3.4;
+- `run_v034_campaign.py` — последовательный resume-runner v0.3.4.
 
 ## Входные данные и выходные данные
 
@@ -29,6 +32,8 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 ## Ограничения
 
 Campaign roles разделяют данные, но не подтверждают production applicability.
+`v0.3.3` не является входом v0.3.4; его runtime dataset не допускается в
+training или model selection.
 
 ## Связанные документы
 

@@ -1,6 +1,9 @@
-# v0.3.4 training stage
+# Этап обучения v0.3.4
 
-The stage validates the data-access policy before any campaign execution. It
-must never load v0.3.3 feature rows or labels for fit, model selection, CV, or
-threshold tuning. Internal validation is separate and permitted only after the
-candidate freeze. v0.3.3 remains locked for future v0.3.5 regression work.
+`run_v0_3_4_stage.py` сначала проводит шесть preflight-проверок. Полный запуск
+требует policy, report и artifact paths; до этого он выполняет лишь безопасную
+проверку конфигурации. Training состоит из 12 runs, internal validation — из
+6 иных runs. v0.3.3 запрещён data-access policy.
+
+Selection использует `StratifiedGroupKFold` только по `run_id`. Candidate
+замораживается до загрузки validation; validation делает исключительно predict.

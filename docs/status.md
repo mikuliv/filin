@@ -19,6 +19,7 @@
 | Robustness evaluation | Экспериментально подтверждено | v0.3.2 | 12 external robustness-runs | Controlled shifts, identical metrics требуют осторожности |
 | Environment evaluation v0.3.3 | Завершено с отрицательным результатом | v0.3.3 | Bridge validation и forensic audit | Benign recall `0.000`; backend integration запрещена |
 | Backend model integration | Не начато | — | — | Нельзя считать backend готовым |
+| v0.3.4 benign redesign | Реализована конфигурация research-этапа | v0.3.4 | Isolation policy, three profiles, grouped CV/freeze | Результаты кампаний являются runtime artifacts; backend не меняется |
 | MITRE ATT&CK mapping | Запланировано | — | — | Будущая работа |
 | Sigma generation | Запланировано | — | — | Будущая работа |
 | SIEM integration | Запланировано | — | — | Будущая работа |
