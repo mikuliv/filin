@@ -3,15 +3,14 @@ from __future__ import annotations
 
 import hashlib
 from pathlib import Path
+import sys
 
 import pandas as pd
 
+_ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(_ROOT / "ml" / "features"))
 from v034_data_access import assert_allowed_dataset
 from v034_feature_contract import select_v034_features
-from pathlib import Path as _Path
-import sys
-_ROOT = _Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(_ROOT / "ml" / "features"))
 from v034_profiles import project_row, profile_features
 
 
