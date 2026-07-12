@@ -63,7 +63,14 @@ def main():
  p=argparse.ArgumentParser();p.add_argument('--campaign',required=True);p.add_argument('--output-root',default='lab/output');p.add_argument('--resume',action='store_true');p.add_argument('--strict',action='store_true');p.add_argument('--run-ids',nargs='*');a=p.parse_args();campaign=load_campaign(Path(a.campaign));root=Path(a.output_root);status_path=root/'campaigns'/campaign['campaign_id'].replace('.','_').replace('-','_')/'status.json';lock=status_path.with_name('runner.lock')
  try:
   lock.parent.mkdir(parents=True,exist_ok=True);handle=lock.open('x');handle.write(str(os.getpid()));handle.close()
- except FileExistsError: raise RuntimeError('v0.3.4 campaign runner is already active')
+ except FileExistsError:
+  # Interrupted parent processes may leave a lock behind; only a live owner
+  # blocks resume.  This never removes a lock held by another active runner.
+  try:
+   owner=int(lock.read_text(encoding='utf-8').strip()); os.kill(owner, 0)
+  except (ValueError, ProcessLookupError):
+   lock.unlink(missing_ok=True); handle=lock.open('x'); handle.write(str(os.getpid())); handle.close()
+  else: raise RuntimeError('v0.3.4 campaign runner is already active')
  status=json.loads(status_path.read_text()) if a.resume and status_path.exists() else {}
  for row in campaign['runs']:
   if a.run_ids and row['run_id'] not in a.run_ids: continue
