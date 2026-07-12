@@ -136,11 +136,10 @@ def execute_scenario(manifest: dict[str, Any], scenario: dict[str, Any], events_
                 elif field in manifest:
                     event[field] = manifest[field]
             append_event(traffic_path, event)
-        # Low-rate and heartbeat traffic can reach Zeek immediately after the
-        # client exits.  Keep the marker interval open for a bounded local
-        # flush grace, rather than accepting a zero-observation window.
-        if scenario.get("label") in {"low_rate_dos", "beacon_simulation"}:
-            time.sleep(2)
+        # Manifest timestamps are second-granular.  Keep every interval open
+        # after the client exits so adjacent marker windows cannot collapse;
+        # low-rate traffic receives one additional second for Zeek flush.
+        time.sleep(1 + int(scenario.get("label") in {"low_rate_dos", "beacon_simulation"}))
         details = {**start_details, "traffic_events": len(traffic_events), "requests_sent": len(traffic_events), "errors": sum(1 for event in traffic_events if event.get("status") in {"error", "closed", "timeout"}), "stderr": notes}
         append_event(events_path, execution_event(manifest, scenario, "scenario_finished", "completed", details))
         return {"status": "completed", "details": details}
