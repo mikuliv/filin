@@ -12,6 +12,7 @@
 | Independent train/test campaign | Готово | v0.3 | 6 train + 3 test runs | Лабораторный support |
 | Frozen baseline evaluation | Экспериментально подтверждено | v0.3.1 | Pooled external test | Не production validation |
 | Robustness evaluation | Экспериментально подтверждено | v0.3.2 | 12 external robustness-runs | Controlled shifts, identical metrics требуют осторожности |
+| Environment evaluation v0.3.3 | Завершено с отрицательным результатом | v0.3.3 | Bridge validation и forensic audit | Benign recall `0.000`; backend integration запрещена |
 | Backend model integration | Не начато | — | — | Нельзя считать backend готовым |
 | MITRE ATT&CK mapping | Запланировано | — | — | Будущая работа |
 | Sigma generation | Запланировано | — | — | Будущая работа |

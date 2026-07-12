@@ -8,6 +8,7 @@
 | v0.3 | Независимый Zeek sensor pipeline. | 9 runs, 117 windows, PCAP→Zeek pipeline, marker correlation. | Лабораторная топология и ограниченный support. |
 | v0.3.1 | Сравнение client и `network_sensor_v0_3`. | 6 train, 3 test runs; LORO и external test. | Результаты не подтверждают production readiness. |
 | v0.3.2 | Внешняя robustness evaluation frozen baseline. | 12 runs, 156 windows, topology/background/temporal/combined shifts. | Идентичность метрик между runs требует осторожной интерпретации. |
+| v0.3.3 | Forensic external environment evaluation frozen baseline. | 12 runs, 204 windows, bridge validation и reconstruction B. | Полный collapse benign-класса; policy не пройдена, модель не переобучалась. |
 
 Связанные подтверждённые коммиты: `509b4f0` (passive capture), `e2a5dad` (campaign), `3ea23f9` (audits), `0428177` (baseline) и `9f40b58` (robustness evaluation).
 

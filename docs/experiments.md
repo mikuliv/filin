@@ -8,6 +8,14 @@
 | v0.3.1 | Какой профиль лучше переносится на независимый test? | 6 train и 3 test sensor-runs; test не использовался для model selection. | `network_sensor_v0_3` рекомендован; feature fusion отсутствовала. | Лабораторная среда ограничена. |
 | v0.3.2 | Сохраняется ли frozen baseline при controlled shifts? | 12 robustness-runs, 156 windows; только transform/predict/evaluation. | Policy пройдена. | Это не production validation. |
 
+## v0.3.3
+
+Frozen baseline восстановлен как deterministic source reconstruction B из шести
+v0.3.1 train datasets. Bridge validation воспроизвела macro F1
+`0.9181818181818181`, balanced accuracy `0.9722222222222223` и attack macro
+recall `1.0`. На 204 v0.3.3 windows benign recall равен `0.000`, false positive
+rate равен `1.000`; policy не пройдена. Модель не переобучалась на v0.3.3.
+
 ## v0.3.1
 
 | Профиль | Train CV macro F1 | Pooled test macro F1 | Balanced accuracy | Attack macro recall | Support test |

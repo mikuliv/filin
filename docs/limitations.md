@@ -1,5 +1,9 @@
 # Ограничения
 
+v0.3.3 подтвердил: frozen `network_sensor_v0_3` baseline имеет benign recall
+`0.000` и false positive rate `1.000` на сложном external benign-трафике.
+Backend integration до нового training campaign запрещена.
+
 - лабораторная топология, ограниченный набор сервисов и классов;
 - controlled scenarios вместо реального корпоративного background;
 - отсутствие анализа encrypted traffic beyond доступных metadata;
