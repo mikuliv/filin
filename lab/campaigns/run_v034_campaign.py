@@ -67,7 +67,9 @@ def main():
   # Interrupted parent processes may leave a lock behind; only a live owner
   # blocks resume.  This never removes a lock held by another active runner.
   try:
-   owner=int(lock.read_text(encoding='utf-8').strip()); os.kill(owner, 0)
+   owner=int(lock.read_text(encoding='utf-8').strip())
+   probe=subprocess.run(['tasklist','/FI',f'PID eq {owner}','/NH'],capture_output=True,text=True,check=False)
+   if str(owner) not in probe.stdout: raise ProcessLookupError(owner)
   except (ValueError, ProcessLookupError):
    lock.unlink(missing_ok=True); handle=lock.open('x'); handle.write(str(os.getpid())); handle.close()
   else: raise RuntimeError('v0.3.4 campaign runner is already active')
