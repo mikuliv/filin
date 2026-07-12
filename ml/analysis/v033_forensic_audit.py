@@ -16,6 +16,10 @@ from sklearn.metrics import f1_score
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "ml" / "experiments" / "v0_3_3"))
 from environment_evaluation import ATTACK_LABELS, LEAKAGE_COLUMNS, metrics  # noqa: E402
+sys.path.insert(0, str(ROOT / "ml" / "features"))
+from build_network_sensor_dataset import aggregate as historical_aggregate  # noqa: E402
+from schema import NETWORK_SENSOR_V0_3  # noqa: E402
+from v033_forensic_checks import duplicate_assignment_audit, feature_semantics_audit, marker_exclusion_audit, reproduce_aggregation  # noqa: E402
 
 
 def hash_features(features: list[str]) -> str:
@@ -106,9 +110,12 @@ def run() -> dict:
         path = Path(args.runs_dir) / run_id / "sensor" / "normalized_sensor_events.jsonl"
         events = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
         assigned = [event for event in events if event.get("correlation_status") == "assigned"]
-        markers = [event for event in events if "sensor-marker" in str((event.get("raw") or {}).get("uri", ""))]
-        aggregation.append({"run_id": run_id, "assigned_event_ids_unique": len({event["event_id"] for event in assigned}) == len(assigned), "duplicated_assignments": 0, "aggregation_mismatches": 0, "marker_events": len(markers), "marker_observations_in_features": 0, "marker_events_excluded": all(event.get("correlation_status") == "excluded" for event in markers)})
-    aggregation_valid = all(item["assigned_event_ids_unique"] and item["marker_events_excluded"] for item in aggregation)
+        run_rows = target[target.run_id == run_id].to_dict("records")
+        duplicate = duplicate_assignment_audit(events)
+        reproduction = reproduce_aggregation(events, run_rows, historical_aggregate, NETWORK_SENSOR_V0_3, tolerance=1e-9)
+        marker = marker_exclusion_audit(events, {str(event.get("event_id")) for event in assigned})
+        aggregation.append({"run_id": run_id, "assigned_event_ids_unique": duplicate["duplicated_assignments"] == 0, **duplicate, **reproduction, **marker})
+    aggregation_valid = all(item["assigned_event_ids_unique"] and item["marker_events_excluded"] and item["aggregation_mismatches"] == 0 for item in aggregation)
     (report_dir / "benign_collapse_aggregation_audit.json").write_text(json.dumps({"aggregation_valid": aggregation_valid, "runs": aggregation}, ensure_ascii=False, indent=2), encoding="utf-8")
 
     overall = metrics(target.label, predictions)
@@ -125,7 +132,8 @@ def run() -> dict:
     domain_shift = any(item["out_of_source_range_rate"] > .5 or abs(item["standardized_mean_difference"]) > 2 for item in drift)
     bridge_path = report_dir / "bridge_validation.json"
     bridge_valid = bool(json.loads(bridge_path.read_text(encoding="utf-8")).get("v031_bridge_validation_passed")) if bridge_path.exists() else False
-    root = {"root_cause_class": "genuine_environment_domain_shift" if bridge_valid and schema["schema_compatibility_valid"] and preprocessing["preprocessing_integrity_valid"] and mapping["class_mapping_valid"] and aggregation_valid and domain_shift else "inconclusive", "bridge_validation_passed": bridge_valid, "schema_compatibility_valid": schema["schema_compatibility_valid"], "preprocessing_integrity_valid": preprocessing["preprocessing_integrity_valid"], "class_mapping_valid": mapping["class_mapping_valid"], "feature_semantics_valid": True, "aggregation_valid": aggregation_valid, "domain_shift_detected": domain_shift, "evidence": {"benign_recall": overall["per_class"]["benign"]["recall"], "false_positive_rate": float((benign.prediction != "benign").mean()), "top_drift_features": [item["feature"] for item in drift[:10]]}, "remaining_uncertainties": ["v0.3.3 environment condition metadata was not model input; audit relies on captured sensor windows."]}
+    semantics = feature_semantics_audit(target, features, {"orig_resp_bytes_ratio", "orig_resp_packets_ratio", "connection_success_rate", "connection_failure_rate", "http_error_rate", "dns_error_rate"})
+    root = {"root_cause_class": "environment_domain_shift_supported" if bridge_valid and schema["schema_compatibility_valid"] and preprocessing["preprocessing_integrity_valid"] and mapping["class_mapping_valid"] and aggregation_valid and semantics["feature_semantics_valid"] and domain_shift else "inconclusive", "bridge_validation_passed": bridge_valid, "schema_compatibility_valid": schema["schema_compatibility_valid"], "preprocessing_integrity_valid": preprocessing["preprocessing_integrity_valid"], "class_mapping_valid": mapping["class_mapping_valid"], "feature_semantics_valid": semantics["feature_semantics_valid"], "feature_semantics": semantics, "aggregation_valid": aggregation_valid, "domain_shift_detected": domain_shift, "evidence": {"benign_recall": overall["per_class"]["benign"]["recall"], "false_positive_rate": float((benign.prediction != "benign").mean()), "top_drift_features": [item["feature"] for item in drift[:10]]}, "remaining_uncertainties": ["v0.3.3 condition metadata was not model input; its windows are no longer a future blind holdout."]}
     (report_dir / "benign_collapse_root_cause.json").write_text(json.dumps(root, ensure_ascii=False, indent=2), encoding="utf-8")
     return root
 

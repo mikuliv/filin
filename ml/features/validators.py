@@ -143,7 +143,7 @@ def validate_dataset(path: Path, kind: str = "generic", feature_profile: str | N
                 if key in row and not 0<=float(row[key])<=1: raise ValueError("Доля вне диапазона")
         return
 
-    if feature_profile == "network_sensor_v0_3":
+    if feature_profile in {"network_sensor_v0_3", "network_sensor_v0_4"}:
         required = {
             "run_id", "execution_id", "scenario_execution_key", "window_index", "label",
             "execution_mode", "synthetic", "observation_source", "sensor_type", "feature_profile",
