@@ -29,3 +29,11 @@ Robustness-данные не участвуют в выборе модели, pr
 ## Связанные документы
 
 [Эксперименты](../../../docs/experiments.md), [ограничения](../../../docs/limitations.md), [воспроизводимость](../../../docs/reproducibility.md).
+# Reconstruction and external evaluation
+
+v0.3.2 is not an original serialized frozen artifact. It uses a
+**deterministically reconstructed v0.3.1 baseline** from only the six source
+train datasets. `reconstruct_v031_baseline.py` is the sole reconstruction entry
+point and may call `fit`. `run_robustness_evaluation.py` only verifies an
+artifact hash and performs load/transform/predict; it must not call `fit`, tune
+thresholds, select features, or use robustness rows for reconstruction.

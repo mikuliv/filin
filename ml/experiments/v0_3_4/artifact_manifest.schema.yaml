@@ -1,0 +1,16 @@
+required:
+  - artifact_sha256
+  - ordered_feature_list
+  - feature_profile
+  - source_dataset_sha256
+  - training_configuration_sha256
+  - dependency_versions
+  - model_parameters
+forbidden_model_features:
+  - label
+  - run_id
+  - execution_id
+  - scenario_id
+  - marker_start_uid
+  - marker_end_uid
+  - raw_endpoint

@@ -1,5 +1,10 @@
 # Платформа «Филин»
 
+> **Current research status:** the latest completed stage is **v0.3.3** and it
+> produced a negative environment-evaluation result: benign recall `0.000` and
+> false positive rate `1.000`. ML backend integration is prohibited. The next
+> stage is **v0.3.4**; a new blind external holdout is reserved for v0.3.5.
+
 ## Назначение
 
 «Филин» — исследовательская платформа для разработки и проверки методов интеллектуального мониторинга сетевого трафика и обнаружения лабораторных инцидентов информационной безопасности.

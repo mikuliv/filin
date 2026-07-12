@@ -1,0 +1,6 @@
+evaluation_policy:
+  status: planned_not_executed
+  require_independent_v035_holdout: true
+  prohibit_threshold_tuning_on_external_holdout: true
+  require_feature_schema_match: true
+  reject_metadata_features: true

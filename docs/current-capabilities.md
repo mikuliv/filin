@@ -1,5 +1,10 @@
 # Текущие возможности
 
+> v0.3.3 is the latest completed experiment and failed its environment policy:
+> benign recall `0.000`, false positive rate `1.000`. This repository does not
+> confirm ML backend integration, MITRE/Sigma/SIEM pipeline, analyst interface,
+> or production readiness.
+
 ## Реализовано
 
 - изолированный Docker laboratory с безопасными локальными сценариями;

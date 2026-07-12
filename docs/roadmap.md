@@ -1,5 +1,19 @@
 # Roadmap
 
+## v0.3.4 research boundary
+
+v0.3.3 is completed with a negative environment-evaluation result. The active
+next stage is **v0.3.4 — redesign training campaign, benign representation and
+feature pipeline**. A new blind/external holdout belongs to **v0.3.5** and must
+not be used during v0.3.4 development.
+
+## Current roadmap status
+
+v0.3.3 is completed with a negative environment-evaluation result. The active
+next stage is **v0.3.4 — redesign training campaign, benign representation and
+feature pipeline**. A new blind/external holdout belongs to **v0.3.5** and must
+not be used during v0.3.4 development.
+
 ## Завершённые этапы
 
 - v0.2.2 — source-aware feature profiles и actual execution windows.
@@ -8,6 +22,8 @@
 - v0.3 — независимый Zeek sensor pipeline и marker-aware correlation.
 - v0.3.1 — baseline evaluation `network_sensor_v0_3`.
 - v0.3.2 — frozen robustness evaluation.
+- v0.3.3 — completed negative environment evaluation; benign recall `0.000`.
+- v0.3.3 — completed negative environment evaluation; benign recall `0.000`.
 
 ## Текущий документационный этап
 

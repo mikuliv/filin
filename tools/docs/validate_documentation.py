@@ -79,6 +79,10 @@ def validate(root: Path = ROOT) -> list[str]:
         "v0.3.1 не должна быть будущим этапом": "v0.3.1" not in roadmap_text.split("## Текущий документационный этап", 1)[0],
         "v0.3.2 не должна быть будущим этапом": "v0.3.2" not in roadmap_text.split("## Текущий документационный этап", 1)[0],
         "неверный backend status": "sensor_ready_for_backend_integration=true" in all_text,
+        "README ошибочно называет v0.3.2 текущим этапом": "Current research status" not in (root / "README.md").read_text(encoding="utf-8") or "v0.3.3" not in (root / "README.md").read_text(encoding="utf-8"),
+        "roadmap не указывает v0.3.4/v0.3.5": "v0.3.4" not in roadmap_text or "v0.3.5" not in roadmap_text,
+        "status не содержит отрицательный результат v0.3.3": "v0.3.3 negative result" not in (docs / "status.md").read_text(encoding="utf-8"),
+        "документация заявляет production readiness": "production ready" in all_text.casefold() and "not production ready" not in all_text.casefold(),
     }
     for message, failed in checks.items():
         if failed:

@@ -1,0 +1,12 @@
+campaign_id: filin-v0.3.4-redesign
+status: planned_not_executed
+feature_profile: network_sensor_v0_4
+roles:
+  train: development_only
+  validation: development_only
+  external_holdout_v035: never_used_by_v034
+requirements:
+  exact_feature_order: true
+  marker_correlation: true
+  provenance_hashes: true
+  reject_unavailable_or_constant_features: true

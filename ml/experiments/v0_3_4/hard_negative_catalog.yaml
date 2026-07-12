@@ -1,0 +1,10 @@
+catalog_version: v0.3.4-planned
+status: planned_not_executed
+categories:
+  - continuous_background
+  - tls_proxy
+  - degraded_network
+  - recovery_and_retry
+  - administrative_benign_activity
+usage: diagnostic_or_development_only
+external_holdout: v0.3.5

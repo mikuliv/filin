@@ -1,5 +1,10 @@
 # Текущий статус
 
+> **v0.3.3 negative result:** benign recall `0.000`, false positive rate
+> `1.000`, and backend ML integration is prohibited. The backend is a
+> historical demonstration prototype. MITRE ATT&CK, Sigma, SIEM and analyst
+> interface are not confirmed production pipelines.
+
 | Компонент | Состояние | Последняя подтверждённая версия | Подтверждение | Ограничения |
 | --- | --- | --- | --- | --- |
 | Docker laboratory | Готово | v0.3 | Изолированные campaign runs | Только лабораторная сеть |

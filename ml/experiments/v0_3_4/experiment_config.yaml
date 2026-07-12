@@ -1,0 +1,7 @@
+experiment_id: filin-v0.3.4-redesign
+status: planned_not_executed
+feature_profile: network_sensor_v0_4
+roles: [train, validation, reserved_external_test]
+forbid_v033_as_blind_test: true
+artifact_manifest_required: true
+exact_feature_order_required: true

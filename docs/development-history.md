@@ -1,5 +1,10 @@
 # История разработки
 
+> Historical interpretation: v0.3.1 showed transfer inside the original
+> laboratory campaign; v0.3.2 tested controlled robustness; v0.3.3 added a
+> harder benign environment shift and preserved a negative result. These do not
+> establish production readiness.
+
 | Версия | Цель и результат | Данные и проверки | Ограничение |
 | --- | --- | --- | --- |
 | v0.2.2 | Source-aware profiles и окна по actual execution intervals. | Docker client observations, validators и aggregation audits. | Недостаточно независимых attack executions для ML. |

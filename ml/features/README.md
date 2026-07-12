@@ -34,3 +34,15 @@ Packet/flow признаки требуют независимого sensor sour
 ## Связанные документы
 
 [Происхождение данных](../../docs/data-provenance.md), [datasets](../../datasets/README.md).
+# Historical and future sensor profiles
+
+`network_sensor_v0_3` is preserved for reproduction of v0.3.1--v0.3.3. The
+historical baseline did **not** use only its declared feature profile: its
+numeric-column selector also included `window_index`, `window_event_count`,
+`window_has_events`, and `window_duration_seconds`. That immutable historical
+list is `HISTORICAL_V031_BASELINE_FEATURES` in `schema.py` and must not be
+renamed as the declared v0.3 profile.
+
+`network_sensor_v0_4` is a future, strict profile. Its ordered list in
+`schema.py` is the sole source of model columns; v0.4 builders must not select
+all numeric CSV columns or synthesize unavailable measures as zero.
