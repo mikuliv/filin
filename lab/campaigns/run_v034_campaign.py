@@ -46,7 +46,16 @@ def run(campaign,row,root):
  finally: docker(['docker','compose','-f',str(compose),'stop','sensor-capture'],env,False)
  internal=f"runs/{row['run_id']}/attempt_001/capture.pcap";docker(['docker','run','--rm','-v',f'{volume}:/captures','busybox','sh','-c',f'mkdir -p /captures/runs/{row["run_id"]}/attempt_001 && cp /captures/capture.pcap /captures/{internal}'],env)
  events=sensor/'zeek_events.jsonl';normalized=sensor/'normalized_sensor_events.jsonl';dataset=root/'datasets'/f"windows_network_sensor_v0_4_{row['run_id']}.csv"
- for command in ([sys.executable,str(ROOT/'lab'/'sensor'/'run_zeek.py'),'--pcap',internal,'--output-dir',str(sensor/'zeek'),'--storage-backend','docker_volume','--capture-volume',volume,'--run-id',row['run_id'],'--strict'],[sys.executable,str(ROOT/'lab'/'sensor'/'normalize_zeek_events.py'),'--logs-dir',str(sensor/'zeek'),'--output',str(events),'--run-id',row['run_id']],[sys.executable,str(ROOT/'lab'/'sensor'/'correlate_sensor_events.py'),'--manifest',str(manifest_path),'--events',str(events),'--output',str(normalized),'--strict'],[sys.executable,str(ROOT/'ml'/'features'/'build_network_sensor_v4_dataset.py'),'--manifest',str(manifest_path),'--events',str(normalized),'--output',str(dataset)]): subprocess.run(command,cwd=ROOT,check=True)
+ for command in ([sys.executable,str(ROOT/'lab'/'sensor'/'run_zeek.py'),'--pcap',internal,'--output-dir',str(sensor/'zeek'),'--storage-backend','docker_volume','--capture-volume',volume,'--run-id',row['run_id'],'--strict'],[sys.executable,str(ROOT/'lab'/'sensor'/'normalize_zeek_events.py'),'--logs-dir',str(sensor/'zeek'),'--output',str(events),'--run-id',row['run_id']],[sys.executable,str(ROOT/'lab'/'sensor'/'correlate_sensor_events.py'),'--manifest',str(manifest_path),'--events',str(events),'--output',str(normalized),'--strict'],[sys.executable,str(ROOT/'ml'/'features'/'build_network_sensor_v4_dataset.py'),'--manifest',str(manifest_path),'--events',str(normalized),'--output',str(dataset)]):
+  # Offline processing is deterministic; retry only transient Docker/IO exits.
+  failure=None
+  for attempt in range(3):
+   try:
+    subprocess.run(command,cwd=ROOT,check=True); failure=None; break
+   except subprocess.CalledProcessError as error:
+    failure=error
+    if attempt < 2: time.sleep(2)
+  if failure: raise failure
  validate_dataset(dataset,kind='windows',feature_profile='network_sensor_v0_4')
  atomic(run_dir/'v034_run_integrity.json',{'run':row,'manifest_sha256':sha(manifest_path),'events_sha256':sha(normalized),'dataset_sha256':sha(dataset)})
  return {**{k:'success' for k in ('run_status','capture_audit_status','correlation_audit_status','aggregation_consistency_status','sensor_validator_status','dataset_status')},'run_id':row['run_id']}
