@@ -1,9 +1,6 @@
 # Платформа «Филин»
 
-> **Current research status:** the latest completed stage is **v0.3.3** and it
-> produced a negative environment-evaluation result: benign recall `0.000` and
-> false positive rate `1.000`. ML backend integration is prohibited. The next
-> stage is **v0.3.4**; a new blind external holdout is reserved for v0.3.5.
+> **Текущий статус исследования: последний завершенный этап - версия 0.3.3, и он дал отрицательный результат оценки среды: количество положительных отзывов 0.000 и количество ложных срабатываний 1.000. Интеграция с серверной частью ML запрещена. Следующий этап - версия 0.3.4; для версии 0.3.5 зарезервирован новый внешний защитный экран.
 
 ## Назначение
 
