@@ -8,7 +8,15 @@ from app.rules.validator import validate_rule
 from app.sigma.generator import SigmaGenerator
 from app.storage.repository import InMemoryIncidentRepository
 
-app = FastAPI(title=settings.project_name, version=settings.api_version)
+app = FastAPI(
+    title=settings.project_name,
+    version=settings.api_version,
+    description=(
+        "HISTORICAL / DEMONSTRATION PROTOTYPE. This API is not connected to the "
+        "validated network_sensor ML pipeline. Its heuristic confidence is not a "
+        "calibrated probability; MITRE and Sigma outputs are static drafts."
+    ),
+)
 
 repository = InMemoryIncidentRepository()
 inference_service = InferenceService()
@@ -17,8 +25,21 @@ sigma_generator = SigmaGenerator()
 
 
 @app.get("/health")
-def health() -> dict[str, str]:
-    return {"status": "ok", "service": settings.project_name}
+def health() -> dict[str, str | bool]:
+    return {"status": "ok", "service": settings.project_name, "prototype_mode": True}
+
+
+@app.get("/api/v1/capabilities")
+def capabilities() -> dict[str, object]:
+    return {
+        "prototype_mode": True,
+        "network_sensor_model_integrated": False,
+        "production_ready": False,
+        "mitre_mapping": "static_candidate",
+        "sigma_generation": "draft",
+        "rule_validation": "syntax_only",
+        "matched_events": "demonstration_only",
+    }
 
 
 @app.post("/api/v1/predict")

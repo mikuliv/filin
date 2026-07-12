@@ -1,0 +1,7 @@
+# Future v0.3.4 development environment, observed locally on 2026-07-12.
+# These pins are not claimed as historical v0.3.1--v0.3.3 provenance.
+numpy==2.2.6
+pandas==3.0.0
+scikit-learn==1.8.0
+joblib==1.5.3
+PyYAML==6.0.3

@@ -1,0 +1,6 @@
+# Future v0.3.4 development environment, observed locally on 2026-07-12.
+# Not historical experiment provenance.
+fastapi==0.129.0
+uvicorn[standard]==0.41.0
+pydantic==2.12.2
+PyYAML==6.0.3
