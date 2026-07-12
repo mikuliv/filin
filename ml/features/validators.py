@@ -167,6 +167,11 @@ def validate_dataset(path: Path, kind: str = "generic", feature_profile: str | N
             if numeric_value(row, "window_duration_seconds", number) <= 0 or numeric_value(row, "window_event_count", number) <= 0:
                 raise ValueError(f"Пустое или нулевое sensor окно в строке {number}.")
             for feature in profile_features:
+                if feature_profile == "network_sensor_v0_4" and feature in {
+                    "flow_duration_mean", "flow_duration_median", "flow_duration_std", "flow_duration_p95", "flow_duration_max",
+                    "flow_interarrival_mean", "flow_interarrival_std", "flow_periodicity_score", "flow_burst_score",
+                } and row.get(feature, "").strip().lower() == "nan":
+                    continue
                 if numeric_value(row, feature, number) < 0:
                     raise ValueError(f"Отрицательный sensor count в строке {number}: {feature}")
             for ratio in ("connection_success_rate", "connection_failure_rate", "http_error_rate", "dns_error_rate"):
