@@ -1,0 +1,11 @@
+scenario_id: benign_parallel_transfer
+type: benign
+name: Parallel transfer
+description: Bounded internal file requests.
+source_role: benign-client
+target_role: target-web
+expected_label: benign
+duration_seconds: 12
+intensity: low
+safety_limits: {allowed_targets: [target-web], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

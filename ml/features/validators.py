@@ -143,6 +143,43 @@ def validate_dataset(path: Path, kind: str = "generic", feature_profile: str | N
                 if key in row and not 0<=float(row[key])<=1: raise ValueError("Доля вне диапазона")
         return
 
+    if feature_profile == "network_sensor_v0_3":
+        required = {
+            "run_id", "execution_id", "scenario_execution_key", "window_index", "label",
+            "execution_mode", "synthetic", "observation_source", "sensor_type", "feature_profile",
+            "window_event_count", "window_has_events", "window_duration_seconds",
+        }
+        missing = required - set(columns)
+        if missing:
+            raise ValueError("Отсутствует sensor metadata: " + ", ".join(sorted(missing)))
+        profile_features = get_feature_profile(feature_profile)
+        missing_features = set(profile_features) - set(columns)
+        if missing_features:
+            raise ValueError("Отсутствуют признаки sensor profile: " + ", ".join(sorted(missing_features)))
+        keys: set[tuple[str, str]] = set()
+        for number, row in enumerate(rows, start=2):
+            if row["feature_profile"] != feature_profile or row["execution_mode"] != "docker" or row["synthetic"].lower() != "false" or row["observation_source"] != "network_sensor" or row["sensor_type"] != "zeek":
+                raise ValueError(f"Некорректная provenance metadata в строке {number}.")
+            key = (row["scenario_execution_key"], row["window_index"])
+            if not all(key) or key in keys:
+                raise ValueError(f"Неуникальный ключ окна в строке {number}.")
+            keys.add(key)
+            if numeric_value(row, "window_duration_seconds", number) <= 0 or numeric_value(row, "window_event_count", number) <= 0:
+                raise ValueError(f"Пустое или нулевое sensor окно в строке {number}.")
+            for feature in profile_features:
+                if numeric_value(row, feature, number) < 0:
+                    raise ValueError(f"Отрицательный sensor count в строке {number}: {feature}")
+            for ratio in ("connection_success_rate", "connection_failure_rate", "http_error_rate", "dns_error_rate"):
+                if not 0 <= numeric_value(row, ratio, number) <= 1:
+                    raise ValueError(f"Sensor ratio вне диапазона в строке {number}: {ratio}")
+            if numeric_value(row, "tcp_flow_count", number) + numeric_value(row, "udp_flow_count", number) + numeric_value(row, "icmp_flow_count", number) > numeric_value(row, "flow_count", number) + RELATION_TOLERANCE:
+                raise ValueError(f"Protocol counts превышают flow_count в строке {number}.")
+            if numeric_value(row, "successful_connection_count", number) + numeric_value(row, "failed_connection_count", number) > numeric_value(row, "flow_count", number) + RELATION_TOLERANCE:
+                raise ValueError(f"Connection state counts превышают flow_count в строке {number}.")
+            assert_close(numeric_value(row, "total_bytes", number), numeric_value(row, "orig_bytes_total", number) + numeric_value(row, "resp_bytes_total", number), f"total_bytes не сходится в строке {number}")
+            assert_close(numeric_value(row, "total_packets", number), numeric_value(row, "orig_packets_total", number) + numeric_value(row, "resp_packets_total", number), f"total_packets не сходится в строке {number}")
+        return
+
     labels = {row.get("label") for row in rows}
     has_benign = "benign" in labels
     has_attack = any(label not in {None, "", "benign", "unknown"} for label in labels)

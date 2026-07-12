@@ -26,6 +26,17 @@ DNS_NAMES = ["target-web", "target-api", "control-api", "target-ssh-sim"]
 
 SCENARIOS = {
     "benign_web_browsing": ("benign", "benign", "benign-client", "target-web"),
+    "benign_api_workflow": ("benign", "benign", "benign-client", "target-api"),
+    "benign_dns_discovery": ("benign", "benign", "benign-client", "internal-dns"),
+    "benign_update_check": ("benign", "benign", "benign-client", "target-api"),
+    "benign_file_download": ("benign", "benign", "benign-client", "target-web"),
+    "benign_backup_sync": ("benign", "benign", "benign-client", "target-web"),
+    "benign_log_shipping": ("benign", "benign", "benign-client", "target-api"),
+    "benign_service_inventory": ("benign", "benign", "benign-client", "target-ssh-sim"),
+    "benign_auth_retry_recovery": ("benign", "benign", "benign-client", "target-api"),
+    "benign_broken_link_check": ("benign", "benign", "benign-client", "target-web"),
+    "benign_parallel_transfer": ("benign", "benign", "benign-client", "target-web"),
+    "benign_monitoring_heartbeat": ("benign", "benign", "benign-client", "control-api"),
     "benign_api_usage": ("benign", "benign", "benign-client", "target-api"),
     "benign_dns_activity": ("benign", "benign", "benign-client", "internal-dns"),
     "benign_file_downloads": ("benign", "benign", "benign-client", "target-web"),
@@ -98,6 +109,27 @@ def emit(event: dict[str, Any]) -> None:
     print(json.dumps(event, ensure_ascii=False), flush=True)
 
 
+def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, str]) -> None:
+    """Deliver a real marker before/after traffic; fail rather than silently losing it."""
+    if not args.execution_id or not args.marker_nonce:
+        return
+    last_error: Exception | None = None
+    for _attempt in range(3):
+        try:
+            response = requests.post(
+                f"http://control-api:8090/sensor-marker/{marker_type}/{args.marker_nonce}",
+                headers={**headers, "X-Filin-Marker-Type": marker_type}, timeout=2.0,
+            )
+            response.raise_for_status()
+            # Keep the marker flow separated from the first payload flow.
+            time.sleep(0.05)
+            return
+        except requests.RequestException as error:
+            last_error = error
+            time.sleep(0.15)
+    raise RuntimeError(f"Не удалось отправить network marker {marker_type}: {last_error}")
+
+
 def request_event(args: argparse.Namespace, method: str, target: str, path: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
     if target not in ALLOWED_HTTP_TARGETS:
         raise SafetyError(f"HTTP-цель не входит в allowlist: {target}")
@@ -160,6 +192,37 @@ def scenario_events(args: argparse.Namespace, rng: random.Random) -> list[dict[s
     capacity = max(1, min(args.max_events, int(args.duration_seconds * args.max_rate)))
     if args.scenario == "benign_web_browsing":
         return [request_event(args, "GET", "target-web", rng.choice(WEB_PATHS)) for _ in range(min(80, capacity))]
+    if args.scenario == "benign_api_workflow":
+        paths = ["/api/items", "/api/status", "/api/profile/test-user"]
+        return [request_event(args, "GET", "target-api", rng.choice(paths)) for _ in range(min(40, capacity))]
+    if args.scenario == "benign_dns_discovery":
+        return [dns_event(args, rng.choice(DNS_NAMES)) for _ in range(min(30, capacity))]
+    if args.scenario == "benign_update_check":
+        return [request_event(args, "GET", "target-api", "/api/status") for _ in range(min(16, capacity))]
+    if args.scenario == "benign_file_download":
+        return [request_event(args, "GET", "target-web", rng.choice(["/files/sample-small.txt", "/files/sample-config.json"])) for _ in range(min(20, capacity))]
+    if args.scenario == "benign_backup_sync":
+        return [request_event(args, "GET", "target-web", "/files/sample-config.json") for _ in range(min(24, capacity))]
+    if args.scenario == "benign_log_shipping":
+        return [request_event(args, "POST", "target-api", "/api/items", {"source": "lab", "kind": "benign-log"}) for _ in range(min(24, capacity))]
+    if args.scenario == "benign_service_inventory":
+        return [tcp_event(args, "target-ssh-sim", 2222, "admin_tcp_session_check") for _ in range(min(12, capacity))]
+    if args.scenario == "benign_auth_retry_recovery":
+        events = [request_event(args, "POST", "target-api", "/api/login", {"username": "test-user", "password": "invalid-lab-password"})]
+        events.extend(request_event(args, "GET", "target-api", "/api/profile/test-user") for _ in range(max(0, min(12, capacity) - 1)))
+        return events
+    if args.scenario == "benign_broken_link_check":
+        return [request_event(args, "GET", "target-web", rng.choice(PROBE_PATHS)) for _ in range(min(12, capacity))]
+    if args.scenario == "benign_parallel_transfer":
+        paths = ["/files/sample-small.txt", "/files/sample-config.json"]
+        return [request_event(args, "GET", "target-web", paths[index % len(paths)]) for index in range(min(32, capacity))]
+    if args.scenario == "benign_monitoring_heartbeat":
+        events = []
+        for number in range(1, min(24, capacity) + 1):
+            event = request_event(args, "POST", "control-api", "/beacon", {"agent": "benign-monitor", "status": "ok", "sequence": number})
+            event["event_type"] = "heartbeat_request"
+            events.append(event)
+        return events
     if args.scenario == "benign_api_usage":
         return [request_event(args, "GET", "target-api", rng.choice(API_PATHS)) for _ in range(min(90, capacity))]
     if args.scenario == "benign_dns_activity":
@@ -211,16 +274,19 @@ def main() -> None:
     try:
         validate_args(args)
         rng = random.Random(args.random_seed)
-        if args.execution_id and args.marker_nonce:
-            requests.post(f"http://control-api:8090/sensor-marker/start/{args.marker_nonce}", timeout=2.0)
+        marker_headers = {
+            "X-Filin-Run-Id": args.run_id,
+            "X-Filin-Execution-Id": args.execution_id or "",
+            "X-Filin-Marker-Nonce": args.marker_nonce or "",
+        }
+        send_marker("start", args, marker_headers)
         events = scenario_events(args, rng)
         delay = 1.0 / args.max_rate
         for index, event in enumerate(events):
             emit(event)
             if index + 1 < len(events):
                 time.sleep(delay * rng.uniform(0.85, 1.15))
-        if args.execution_id and args.marker_nonce:
-            requests.post(f"http://control-api:8090/sensor-marker/end/{args.marker_nonce}", timeout=2.0)
+        send_marker("end", args, marker_headers)
     except KeyError:
         print("Неизвестный лабораторный сценарий.", file=sys.stderr)
         raise SystemExit(3)

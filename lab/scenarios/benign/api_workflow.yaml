@@ -1,0 +1,11 @@
+scenario_id: benign_api_workflow
+type: benign
+name: API workflow
+description: Safe internal API reads.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 12
+intensity: low
+safety_limits: {allowed_targets: [target-api], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

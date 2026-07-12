@@ -1,0 +1,11 @@
+scenario_id: benign_update_check
+type: benign
+name: Update check
+description: Safe internal status checks.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 8
+intensity: low
+safety_limits: {allowed_targets: [target-api], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

@@ -1,0 +1,11 @@
+scenario_id: benign_monitoring_heartbeat
+type: benign
+name: Monitoring heartbeat
+description: Safe internal control service heartbeat.
+source_role: benign-client
+target_role: control-api
+expected_label: benign
+duration_seconds: 10
+intensity: low
+safety_limits: {allowed_targets: [control-api], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

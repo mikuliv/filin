@@ -1,0 +1,11 @@
+scenario_id: benign_log_shipping
+type: benign
+name: Log shipping
+description: Safe internal API posts representing benign log delivery.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 12
+intensity: low
+safety_limits: {allowed_targets: [target-api], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

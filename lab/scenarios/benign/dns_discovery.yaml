@@ -1,0 +1,11 @@
+scenario_id: benign_dns_discovery
+type: benign
+name: DNS discovery
+description: Safe Docker-internal DNS resolution.
+source_role: benign-client
+target_role: internal-dns
+expected_label: benign
+duration_seconds: 10
+intensity: low
+safety_limits: {allowed_targets: [internal-dns], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

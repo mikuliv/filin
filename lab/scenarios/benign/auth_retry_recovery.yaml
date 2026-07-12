@@ -1,0 +1,11 @@
+scenario_id: benign_auth_retry_recovery
+type: benign
+name: Authentication retry recovery
+description: A bounded failed test login followed by benign internal reads.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 10
+intensity: low
+safety_limits: {allowed_targets: [target-api], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]

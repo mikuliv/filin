@@ -1,0 +1,11 @@
+scenario_id: benign_file_download
+type: benign
+name: File download
+description: Safe downloads from the laboratory web service.
+source_role: benign-client
+target_role: target-web
+expected_label: benign
+duration_seconds: 10
+intensity: low
+safety_limits: {allowed_targets: [target-web], max_duration_seconds: 60, external_network_allowed: false}
+notes: [Internal laboratory traffic only.]
