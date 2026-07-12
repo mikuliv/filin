@@ -1,0 +1,14 @@
+allowed_training_campaigns:
+  - filin-v0.3.4-training
+allowed_validation_campaigns:
+  - filin-v0.3.4-internal-validation
+blocked_data_roots:
+  - lab/output/campaigns/filin_v0_3_3_environment
+  - ml/reports/v0_3_3
+  - ml/artifacts/v0_3_3
+blocked_run_prefixes:
+  - run_v033_
+prohibit_v033_feature_loading: true
+prohibit_v033_label_loading: true
+prohibit_v033_model_selection: true
+prohibit_v033_threshold_tuning: true

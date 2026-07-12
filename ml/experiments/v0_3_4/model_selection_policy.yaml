@@ -1,0 +1,14 @@
+model_selection_policy:
+  status: frozen_before_validation
+  feature_profile: network_sensor_v0_4
+  cv_group_column: run_id
+  candidates:
+    - name: logistic_regression_balanced
+      estimator: LogisticRegression
+      parameters: {max_iter: 1000, class_weight: balanced, random_state: 42}
+    - name: random_forest_balanced
+      estimator: RandomForestClassifier
+      parameters: {n_estimators: 200, class_weight: balanced, random_state: 42}
+  preprocessing: [SimpleImputer_median, StandardScaler]
+  prohibit_validation_fit: true
+  prohibit_v033_input: true

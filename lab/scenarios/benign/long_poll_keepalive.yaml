@@ -1,0 +1,11 @@
+scenario_id: benign_long_poll_keepalive
+type: benign
+name: Long poll keepalive
+description: Safe local keepalive requests with bounded retry.
+source_role: benign-client
+target_role: control-api
+expected_label: benign
+duration_seconds: 30
+intensity: low
+safety_limits: {allowed_targets: [control-api], max_rate: 5/min, max_duration_seconds: 60, external_network_allowed: false}
+notes: [internal endpoint only]

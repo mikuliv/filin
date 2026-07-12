@@ -1,0 +1,11 @@
+scenario_id: benign_database_pool_recovery
+type: benign
+name: Database pool recovery
+description: Safe local retry and recovery workflow.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 30
+intensity: low
+safety_limits: {allowed_targets: [target-api], max_rate: 5/min, max_duration_seconds: 60, external_network_allowed: false}
+notes: [test credentials only, no external target]

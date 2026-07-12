@@ -1,0 +1,11 @@
+campaign_id: filin-v0.3.4-internal-validation
+role: internal_validation
+execution_catalog:
+  benign: [benign_web_browsing, benign_api_workflow, benign_dns_discovery, benign_update_check, benign_file_download, benign_backup_sync, benign_log_shipping, benign_service_inventory, benign_auth_retry_recovery, benign_broken_link_check, benign_parallel_transfer, benign_monitoring_heartbeat, benign_database_pool_recovery, benign_multi_service_health, benign_long_poll_keepalive, benign_mirror_sync_burst]
+runs:
+  - {run_id: run_v034_validation_composition_001, group: composition, random_seed: 10701, run_index: 1}
+  - {run_id: run_v034_validation_composition_002, group: composition, random_seed: 10702, run_index: 2}
+  - {run_id: run_v034_validation_composition_003, group: composition, random_seed: 10703, run_index: 3}
+  - {run_id: run_v034_validation_shift_001, group: shift, random_seed: 10801, run_index: 4}
+  - {run_id: run_v034_validation_shift_002, group: shift, random_seed: 10802, run_index: 5}
+  - {run_id: run_v034_validation_shift_003, group: shift, random_seed: 10803, run_index: 6}

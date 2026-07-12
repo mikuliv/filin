@@ -41,6 +41,10 @@ SCENARIOS = {
     "benign_dns_activity": ("benign", "benign", "benign-client", "internal-dns"),
     "benign_file_downloads": ("benign", "benign", "benign-client", "target-web"),
     "benign_ssh_admin": ("benign", "benign", "benign-client", "target-ssh-sim"),
+    "benign_database_pool_recovery": ("benign", "benign", "benign-client", "target-api"),
+    "benign_multi_service_health": ("benign", "benign", "benign-client", "target-api"),
+    "benign_long_poll_keepalive": ("benign", "benign", "benign-client", "control-api"),
+    "benign_mirror_sync_burst": ("benign", "benign", "benign-client", "target-web"),
     "attack_port_scan": ("attack", "port_scan", "attacker-simulator", "target-web"),
     "attack_auth_failures": ("attack", "auth_failures", "attacker-simulator", "target-api"),
     "attack_web_probe": ("attack", "web_probe", "attacker-simulator", "target-web"),
@@ -232,6 +236,19 @@ def scenario_events(args: argparse.Namespace, rng: random.Random) -> list[dict[s
         return [request_event(args, "GET", "target-web", rng.choice(paths)) for _ in range(min(20, capacity))]
     if args.scenario == "benign_ssh_admin":
         return [tcp_event(args, "target-ssh-sim", 2222, "admin_tcp_session_check") for _ in range(min(15, capacity))]
+    if args.scenario == "benign_database_pool_recovery":
+        events = [request_event(args, "POST", "target-api", "/api/login", {"username": "test-user", "password": "invalid-lab-password"}) for _ in range(min(3, capacity))]
+        events.extend(request_event(args, "GET", "target-api", "/api/status") for _ in range(min(5, max(0, capacity - len(events)))))
+        return events
+    if args.scenario == "benign_multi_service_health":
+        events = [request_event(args, "GET", "target-api", "/health"), request_event(args, "GET", "target-web", "/")]
+        events.extend(tcp_event(args, "target-ssh-sim", 2222, "admin_tcp_session_check") for _ in range(min(3, max(0, capacity - len(events)))))
+        return events
+    if args.scenario == "benign_long_poll_keepalive":
+        return [request_event(args, "POST", "control-api", "/beacon", {"agent": "keepalive", "status": "ok", "sequence": index}) for index in range(1, min(8, capacity) + 1)]
+    if args.scenario == "benign_mirror_sync_burst":
+        paths = ["/files/sample-small.txt", "/files/sample-config.json"]
+        return [request_event(args, "GET", "target-web", paths[index % 2]) for index in range(min(16, capacity))]
     if args.scenario == "attack_port_scan":
         return [tcp_event(args, "target-web", rng.choice(SCAN_PORTS), "tcp_connect_check") for _ in range(min(60, capacity))]
     if args.scenario == "attack_auth_failures":

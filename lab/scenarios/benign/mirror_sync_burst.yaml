@@ -1,0 +1,11 @@
+scenario_id: benign_mirror_sync_burst
+type: benign
+name: Mirror sync burst
+description: Bounded local file synchronization requests.
+source_role: benign-client
+target_role: target-web
+expected_label: benign
+duration_seconds: 30
+intensity: low
+safety_limits: {allowed_targets: [target-web], max_rate: 5/min, max_duration_seconds: 60, external_network_allowed: false}
+notes: [maximum four local workers, no external network]

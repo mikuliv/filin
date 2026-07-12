@@ -1,0 +1,17 @@
+campaign_id: filin-v0.3.4-training
+role: training
+execution_catalog:
+  benign: [benign_web_browsing, benign_api_workflow, benign_dns_discovery, benign_update_check, benign_file_download, benign_backup_sync, benign_log_shipping, benign_service_inventory, benign_auth_retry_recovery, benign_broken_link_check, benign_parallel_transfer, benign_monitoring_heartbeat, benign_database_pool_recovery, benign_multi_service_health, benign_long_poll_keepalive, benign_mirror_sync_burst]
+runs:
+  - {run_id: run_v034_train_standard_001, group: standard, random_seed: 10301, run_index: 1}
+  - {run_id: run_v034_train_standard_002, group: standard, random_seed: 10302, run_index: 2}
+  - {run_id: run_v034_train_standard_003, group: standard, random_seed: 10303, run_index: 3}
+  - {run_id: run_v034_train_mixed_001, group: mixed, random_seed: 10401, run_index: 4}
+  - {run_id: run_v034_train_mixed_002, group: mixed, random_seed: 10402, run_index: 5}
+  - {run_id: run_v034_train_mixed_003, group: mixed, random_seed: 10403, run_index: 6}
+  - {run_id: run_v034_train_hard_negative_001, group: hard_negative, random_seed: 10501, run_index: 7}
+  - {run_id: run_v034_train_hard_negative_002, group: hard_negative, random_seed: 10502, run_index: 8}
+  - {run_id: run_v034_train_hard_negative_003, group: hard_negative, random_seed: 10503, run_index: 9}
+  - {run_id: run_v034_train_environment_001, group: environment, random_seed: 10601, run_index: 10}
+  - {run_id: run_v034_train_environment_002, group: environment, random_seed: 10602, run_index: 11}
+  - {run_id: run_v034_train_environment_003, group: environment, random_seed: 10603, run_index: 12}

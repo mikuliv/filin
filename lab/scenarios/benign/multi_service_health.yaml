@@ -1,0 +1,11 @@
+scenario_id: benign_multi_service_health
+type: benign
+name: Multi service health
+description: Safe allowlisted HTTP and TCP health checks.
+source_role: benign-client
+target_role: target-api
+expected_label: benign
+duration_seconds: 30
+intensity: low
+safety_limits: {allowed_targets: [target-api, target-web, target-ssh-sim], max_rate: 5/min, max_duration_seconds: 60, external_network_allowed: false}
+notes: [allowlisted internal services only, no scanner]
