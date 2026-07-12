@@ -1,0 +1,90 @@
+experiment_id: filin-v0.3.3-environment-evaluation
+source_experiment: filin-v0.3.1-sensor-baseline
+previous_evaluation: filin-v0.3.2-zeek-robustness
+feature_profile: network_sensor_v0_3
+model_class: LogisticRegression
+random_state: 42
+preprocessing:
+  imputer: {class: SimpleImputer, strategy: median}
+  scaler: {class: StandardScaler}
+model_parameters: {max_iter: 1000, class_weight: balanced, random_state: 42}
+prohibit_v033_fit: true
+prohibit_model_selection: true
+prohibit_feature_selection: true
+prohibit_threshold_tuning: true
+prohibit_run_exclusion: true
+artifact_path: ml/artifacts/v0_3_3/frozen_network_sensor_v0_3_v031.joblib
+provenance_type: deterministic_source_reconstruction
+model_reconstructed_from_source_train: true
+model_retrained_on_v033_data: false
+model_sha256: 9f06f8c73a669e5fdefbd93e3c728393a1adfa87cb6ad88e0ef2826736e44575
+ordered_feature_list:
+  - window_index
+  - window_event_count
+  - window_has_events
+  - window_duration_seconds
+  - flow_count
+  - tcp_flow_count
+  - udp_flow_count
+  - icmp_flow_count
+  - unique_destination_ip_count
+  - unique_destination_port_count
+  - unique_service_count
+  - flow_duration_mean
+  - flow_duration_median
+  - flow_duration_std
+  - flow_duration_p95
+  - flow_duration_max
+  - orig_bytes_total
+  - resp_bytes_total
+  - total_bytes
+  - orig_bytes_mean
+  - resp_bytes_mean
+  - orig_resp_bytes_ratio
+  - orig_packets_total
+  - resp_packets_total
+  - total_packets
+  - orig_packets_mean
+  - resp_packets_mean
+  - orig_resp_packets_ratio
+  - successful_connection_count
+  - failed_connection_count
+  - rejected_connection_count
+  - reset_connection_count
+  - connection_success_rate
+  - connection_failure_rate
+  - unique_conn_state_count
+  - http_request_count
+  - http_get_count
+  - http_post_count
+  - http_2xx_count
+  - http_4xx_count
+  - http_5xx_count
+  - http_error_rate
+  - unique_http_host_count
+  - unique_uri_count
+  - http_request_body_bytes
+  - http_response_body_bytes
+  - dns_query_count
+  - dns_success_count
+  - dns_error_count
+  - unique_dns_query_count
+  - unique_dns_answer_count
+  - dns_error_rate
+  - flow_interarrival_mean
+  - flow_interarrival_std
+  - flow_periodicity_score
+  - flow_burst_score
+source_train_run_ids: [run_v030_zeek_train_001, run_v030_zeek_train_002, run_v030_zeek_train_003, run_v030_zeek_train_004, run_v030_zeek_train_005, run_v030_zeek_train_006]
+source_train_dataset_sha256:
+  windows_network_sensor_v0_3_run_v030_zeek_train_001.csv: e070a5690bb352caad6b7ed34fc3f24c075976550c18e0cd9472a60d95dd9988
+  windows_network_sensor_v0_3_run_v030_zeek_train_002.csv: 12705ac22f075ebb27be8c4ebe987fa67f9ea23bfe1b35125529673ecf187b5c
+  windows_network_sensor_v0_3_run_v030_zeek_train_003.csv: 1be9816365b1beda2fc11a23171cd57fa5ffa8b0b9f8888b5f4e38a1c29f935c
+  windows_network_sensor_v0_3_run_v030_zeek_train_004.csv: d22759cdf17a8afafaf3891bad89e9bffc46507982ab5f4282645b6d53778e6f
+  windows_network_sensor_v0_3_run_v030_zeek_train_005.csv: b4eb846e5a9d5ac66dc1d3987191e35f5f13ad989ad5f8b2a91becc7fec5eeae
+  windows_network_sensor_v0_3_run_v030_zeek_train_006.csv: 9d3e01909205c7ad507c12308530be489e6a3a8ecf372bf8aacebe8167e2efba
+source_config_sha256: 1fc0a540f91b73113a2f4b6822f18315a42678d1621a5f618e8633b6ec8c84b7
+source_policy_sha256: f480a47eb9e932cdebff595076b3d675fa1f25d27f6657a3e645b558d20467b3
+source_campaign_index_sha256: null
+source_campaign_status_sha256: 3e06efed503171eba2d5ce2ea7ce5b2c24dc6b52629319c4f41be20440a161a9
+reconstruction_manifest_path: ml/artifacts/v0_3_3/frozen_network_sensor_v0_3_v031.manifest.json

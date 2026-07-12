@@ -1,0 +1,16 @@
+evaluation_policy:
+  minimum_overall_macro_f1: 0.70
+  minimum_overall_benign_recall: 0.85
+  maximum_overall_false_positive_rate: 0.15
+  minimum_hard_negative_benign_recall: 0.75
+  minimum_overall_attack_macro_recall: 0.80
+  minimum_collapsed_attack_precision: 0.80
+  minimum_collapsed_attack_recall: 0.80
+  minimum_group_macro_f1: 0.60
+  minimum_group_benign_recall: 0.70
+  minimum_group_attack_macro_recall: 0.60
+  minimum_hard_negative_variant_recall: 0.50
+  maximum_macro_f1_std_across_runs: 0.20
+  prohibit_zero_attack_recall_group: true
+  require_all_integrity_audits: true
+  require_condition_application_audits: true
