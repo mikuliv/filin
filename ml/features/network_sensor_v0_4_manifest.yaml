@@ -1,0 +1,13 @@
+profile_version: 0.3.4
+profiles:
+  network_sensor_v0_3_control:
+    feature_count: 56
+    purpose: control_only
+  network_sensor_v0_4_rates:
+    feature_count: 16
+    purpose: normalized_rates_and_shares
+  network_sensor_v0_4_hybrid:
+    feature_count: 40
+    maximum_feature_count: 90
+    purpose: fixed_hybrid_before_model_selection
+forbidden_metadata: [label, run_id, execution_id, scenario_id, campaign_id, campaign_seed, scenario_parameter_hash]

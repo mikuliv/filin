@@ -1,0 +1,6 @@
+{
+  "title": "network_sensor_v0_4",
+  "version": "0.3.4",
+  "description": "Фиксированные control, rate и hybrid профили без metadata.",
+  "max_hybrid_features": 90
+}

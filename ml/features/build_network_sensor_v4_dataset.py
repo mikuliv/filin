@@ -10,9 +10,10 @@ import yaml
 
 from network_sensor_v4 import aggregate_network_sensor_v4
 from schema import NETWORK_SENSOR_V0_4
+from v034_profiles import project_row, profile_features
 
 
-def build(manifest_path: Path, events_path: Path, output_path: Path) -> None:
+def build(manifest_path: Path, events_path: Path, output_path: Path, profile: str = "network_sensor_v0_4") -> None:
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     events = [json.loads(line) for line in events_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     rows = []
@@ -28,14 +29,17 @@ def build(manifest_path: Path, events_path: Path, output_path: Path) -> None:
             "window_event_count": len(assigned), "window_has_events": bool(assigned),
             "window_duration_seconds": float(scenario.get("actual_duration_seconds") or 1.0),
         }
-        row.update(aggregate_network_sensor_v4(assigned))
+        raw = aggregate_network_sensor_v4(assigned)
+        row.update(raw if profile == "network_sensor_v0_4" else project_row({**row, **raw}, profile))
+        row["feature_profile"] = profile
         rows.append(row)
     if not rows:
         raise ValueError("No scenario rows in manifest")
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    metadata = [field for field in rows[0] if field not in NETWORK_SENSOR_V0_4]
+    features = NETWORK_SENSOR_V0_4 if profile == "network_sensor_v0_4" else profile_features(profile)
+    metadata = [field for field in rows[0] if field not in features]
     with output_path.open("w", encoding="utf-8", newline="") as destination:
-        writer = csv.DictWriter(destination, fieldnames=[*metadata, *NETWORK_SENSOR_V0_4])
+        writer = csv.DictWriter(destination, fieldnames=[*metadata, *features])
         writer.writeheader()
         writer.writerows(rows)
 
@@ -45,8 +49,9 @@ def main() -> None:
     parser.add_argument("--manifest", required=True)
     parser.add_argument("--events", required=True)
     parser.add_argument("--output", required=True)
+    parser.add_argument("--profile", default="network_sensor_v0_4")
     args = parser.parse_args()
-    build(Path(args.manifest), Path(args.events), Path(args.output))
+    build(Path(args.manifest), Path(args.events), Path(args.output), args.profile)
 
 
 if __name__ == "__main__":
