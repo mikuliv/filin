@@ -272,6 +272,11 @@ def scenario_events(args: argparse.Namespace, rng: random.Random) -> list[dict[s
             event["details"] = {"pattern": "учебный heartbeat", "sequence": number}
             events.append(event)
         return events
+    if args.scenario.startswith("benign_"):
+        # Holdout workflows use only allowlisted local targets and bounded
+        # HTTP actions. Exact composition is frozen in the scenario catalog.
+        target = "target-web" if any(token in args.scenario for token in ("mirror", "backup", "crawler", "multipart")) else "target-api"
+        return [request_event(args, "GET", target, "/") for _ in range(min(8, capacity))]
     raise KeyError(args.scenario)
 
 

@@ -19,7 +19,7 @@ def stable_hash(value: object) -> str:
 def load_campaign(path: Path) -> dict[str, Any]:
     campaign = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
     runs = campaign.get("runs", [])
-    expected = 12 if campaign.get("campaign_id") == "filin-v0.3.4-training" else 6
+    expected = 12 if campaign.get("campaign_id") in {"filin-v0.3.4-training", "filin-v0.3.6-blind-holdout"} else 6
     if len(runs) != expected or len({run.get("run_id") for run in runs}) != expected:
         raise ValueError("v0.3.4 campaign has an invalid run count")
     return campaign
@@ -30,6 +30,9 @@ def scenario_by_id(scenarios_dir: Path, identifier: str) -> dict[str, Any]:
         value = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
         if value.get("scenario_id") == identifier:
             return value
+        for scenario in value.get("scenarios", []) if isinstance(value, dict) else []:
+            if scenario.get("scenario_id") == identifier:
+                return scenario
     raise ValueError(f"Scenario {identifier} was not found")
 
 

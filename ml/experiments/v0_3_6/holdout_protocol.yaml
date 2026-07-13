@@ -1,0 +1,16 @@
+experiment_id: filin-v0.3.6-prospective-holdout
+candidate_selection_blind: true
+double_blind: false
+candidate_frozen_before_protocol: true
+candidate_predictions_allowed_before_lock: false
+candidate_predictions_allowed_after_lock: true
+prohibit_refit: true
+prohibit_threshold_tuning: true
+prohibit_feature_selection: true
+prohibit_row_exclusion: true
+prohibit_metric_driven_rerun: true
+sensor_ready_for_backend_integration: false
+candidate_manifest: ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
+candidate_artifact_sha256: f11ac7b27fba1f032aeebd466d8a9076ab681db004a3b1f09a7aa1eb8d7862f3
+runner_version: v0.3.6
+audit_protocol_versions: [protocol_freeze_v1, holdout_lock_v1, no_fit_v1]

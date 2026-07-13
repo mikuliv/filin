@@ -1,0 +1,17 @@
+campaign_id: filin-v0.3.6-blind-holdout
+role: prospective_holdout
+execution_catalog:
+  benign: [benign_ci_cd_agent, benign_service_mesh_readiness, benign_dns_failover_rotation, benign_object_storage_multipart, benign_message_queue_consumer, benign_certificate_renewal, benign_remote_maintenance, benign_batch_api_import, benign_websocket_keepalive, benign_package_mirror_refresh, benign_backup_verification, benign_log_rotation_shipping, benign_multi_resolver_discovery, benign_auth_token_refresh, benign_polite_link_crawler, benign_inventory_with_recovery]
+runs:
+  - {run_id: run_v036_novel_workflows_001, group: novel_workflows, random_seed: 11601, run_index: 1}
+  - {run_id: run_v036_novel_workflows_002, group: novel_workflows, random_seed: 11602, run_index: 2}
+  - {run_id: run_v036_novel_workflows_003, group: novel_workflows, random_seed: 11603, run_index: 3}
+  - {run_id: run_v036_ambiguous_low_signal_001, group: ambiguous_low_signal, random_seed: 11701, run_index: 4}
+  - {run_id: run_v036_ambiguous_low_signal_002, group: ambiguous_low_signal, random_seed: 11702, run_index: 5}
+  - {run_id: run_v036_ambiguous_low_signal_003, group: ambiguous_low_signal, random_seed: 11703, run_index: 6}
+  - {run_id: run_v036_topology_protocol_001, group: topology_protocol, random_seed: 11801, run_index: 7}
+  - {run_id: run_v036_topology_protocol_002, group: topology_protocol, random_seed: 11802, run_index: 8}
+  - {run_id: run_v036_topology_protocol_003, group: topology_protocol, random_seed: 11803, run_index: 9}
+  - {run_id: run_v036_observation_stress_001, group: observation_stress, random_seed: 11901, run_index: 10}
+  - {run_id: run_v036_observation_stress_002, group: observation_stress, random_seed: 11902, run_index: 11}
+  - {run_id: run_v036_observation_stress_003, group: observation_stress, random_seed: 11903, run_index: 12}
