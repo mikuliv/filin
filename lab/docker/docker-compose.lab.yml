@@ -73,7 +73,9 @@ services:
       context: .
       dockerfile: Dockerfile.sensor-capture
     network_mode: "service:traffic-client"
-    command: ["-i", "any", "-U", "-w", "/capture/capture.pcap", "not", "port", "53"]
+    # Увеличенный kernel buffer предотвращает короткие разрывы marker-интервалов
+    # во время burst-сценариев; immediate mode сохраняет границы сразу.
+    command: ["-i", "any", "-B", "16384", "--immediate-mode", "-U", "-w", "/capture/capture.pcap", "not", "port", "53"]
     volumes:
       - filin_sensor_capture:/capture
     cap_add:
