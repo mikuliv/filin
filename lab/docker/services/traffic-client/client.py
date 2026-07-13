@@ -61,6 +61,22 @@ for _holdout_id in (
 ):
     SCENARIOS[_holdout_id] = ("benign", "benign", "benign-client", "target-api")
 
+for _v037_id in (
+    "benign_incremental_backup_readback", "benign_chunked_replication_sync", "benign_repository_delta_sync",
+    "benign_bounded_web_audit", "benign_metrics_scrape_wave", "benign_cache_prefetch",
+    "benign_database_health_rotation", "benign_queue_consumer_rebalance", "benign_api_cursor_pagination",
+    "benign_artifact_integrity_readback", "benign_certificate_inventory_refresh", "benign_service_discovery_reconcile",
+    "benign_remote_patch_inventory", "benign_token_refresh_recovery", "benign_dns_cache_repopulation",
+    "benign_log_ship_backoff", "benign_websocket_session_recovery", "benign_bulk_transaction_commit",
+    "benign_snapshot_restore_check", "benign_multipart_replica_transfer", "benign_package_index_delta_pull",
+    "benign_accessibility_link_review", "benign_observability_export_burst", "benign_cdn_cache_fill",
+    "benign_database_failover_probe", "benign_consumer_group_rejoin", "benign_cursor_export_resume",
+    "benign_release_bundle_validation", "benign_trust_store_refresh", "benign_registry_service_refresh",
+    "benign_configuration_inventory", "benign_session_renewal_recovery", "benign_resolver_failover_cycle",
+    "benign_audit_log_forward_retry", "benign_long_poll_reconnect", "benign_bulk_api_reconciliation",
+):
+    SCENARIOS[_v037_id] = ("benign", "benign", "benign-client", "target-api")
+
 
 class SafetyError(ValueError):
     """Ошибка нарушения ограничений изолированного лабораторного стенда."""

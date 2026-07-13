@@ -1,0 +1,13 @@
+campaign_id: filin-v0.3.7-hierarchical-validation
+role: hierarchical_internal_validation
+catalog: lab/scenarios/v0_3_7_validation_benign.yaml
+warmup_windows: 6
+scored_windows: 28
+episodes_per_run: 14
+runs:
+  - {run_id: run_v037_validation_cross_workflow_001, group: cross_workflow_composition, random_seed: 13101, run_index: 1}
+  - {run_id: run_v037_validation_cross_workflow_002, group: cross_workflow_composition, random_seed: 13102, run_index: 2}
+  - {run_id: run_v037_validation_low_signal_001, group: low_signal_temporal, random_seed: 13201, run_index: 3}
+  - {run_id: run_v037_validation_low_signal_002, group: low_signal_temporal, random_seed: 13202, run_index: 4}
+  - {run_id: run_v037_validation_context_shift_001, group: contextual_shift, random_seed: 13301, run_index: 5}
+  - {run_id: run_v037_validation_context_shift_002, group: contextual_shift, random_seed: 13302, run_index: 6}

@@ -1,0 +1,9 @@
+profiles:
+  - background_v037_contextual
+  - background_v037_temporal
+  - background_v037_recovery
+  - background_v037_mixed
+  - background_v037_validation_cross
+  - background_v037_validation_low_signal
+  - background_v037_validation_shift
+limits: {maximum_clients: 6, maximum_actions_per_second: 4, maximum_actions_per_scored_window: 80, local_allowlist_only: true}

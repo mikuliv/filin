@@ -115,7 +115,11 @@ def execute_scenario(manifest: dict[str, Any], scenario: dict[str, Any], events_
             # Для кампании обычные действия короткие; временная структура сохраняется
             # отдельно для low_rate_dos и beacon_simulation ниже.
             max_events = min(4, max(1, int(effective_duration * 3)))
-            if manifest.get("campaign_id") == "filin-v0.3.6-blind-holdout":
+            if manifest.get("campaign_id") in {
+                "filin-v0.3.6-blind-holdout",
+                "filin-v0.3.7-hierarchical-training",
+                "filin-v0.3.7-hierarchical-validation",
+            }:
                 # Holdout execution markers are second-granular.  Keep prospective
                 # windows wide enough that short requests cannot all land on the
                 # same marker boundary and disappear from the correlated window.
