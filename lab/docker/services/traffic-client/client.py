@@ -11,6 +11,8 @@ from typing import Any
 
 import requests
 
+from future_workflows import WORKFLOW_PLANS, Action
+
 
 ALLOWED_HTTP_TARGETS = {
     "target-web": "http://target-web",
@@ -244,6 +246,41 @@ def dns_event(args: argparse.Namespace, name: str) -> dict[str, Any]:
     return event
 
 
+def websocket_event(args: argparse.Namespace, operation: str) -> dict[str, Any]:
+    """Perform a real local WebSocket upgrade; never represent it as GET traffic."""
+    event = event_base(args, "websocket_session", "websocket", "control-api", 8090)
+    event["method"], event["path"] = "WEBSOCKET", "/ws/lab"
+    event["details"] = {"operation": operation}
+    started = time.perf_counter()
+    try:
+        import base64, os
+        key = base64.b64encode(os.urandom(16)).decode("ascii")
+        with socket.create_connection(("control-api", 8090), timeout=2.0) as connection:
+            request = ("GET /ws/lab HTTP/1.1\r\nHost: control-api:8090\r\nUpgrade: websocket\r\n"
+                       f"Connection: Upgrade\r\nSec-WebSocket-Key: {key}\r\nSec-WebSocket-Version: 13\r\n\r\n")
+            connection.sendall(request.encode("ascii")); response = connection.recv(512)
+            event["bytes_out"], event["bytes_in"] = len(request), len(response)
+            event["status"] = "open" if b" 101 " in response else "error"
+            event["status_code"] = 101 if b" 101 " in response else None
+    except OSError as error:
+        event["status"], event["error"] = "error", str(error)
+    event["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
+    return event
+
+
+def execute_workflow_plan(args: argparse.Namespace) -> list[dict[str, Any]]:
+    events: list[dict[str, Any]] = []
+    for action in WORKFLOW_PLANS[args.scenario]:
+        if action.kind == "http":
+            method, path = action.operation.split(":", 1)
+            events.append(request_event(args, method, action.target, path, dict(action.payload) or None))
+        elif action.kind == "dns": events.append(dns_event(args, action.target))
+        elif action.kind == "tcp": events.append(tcp_event(args, action.target, int(action.operation), "admin_tcp_session_check"))
+        elif action.kind == "websocket": events.append(websocket_event(args, action.operation))
+        else: raise SafetyError(f"Unknown workflow action: {action.kind}")
+    return events[: max(1, min(args.max_events, int(args.duration_seconds * args.max_rate)))]
+
+
 def scenario_events(args: argparse.Namespace, rng: random.Random) -> list[dict[str, Any]]:
     capacity = max(1, min(args.max_events, int(args.duration_seconds * args.max_rate)))
     if args.scenario == "benign_web_browsing":
@@ -324,11 +361,8 @@ def scenario_events(args: argparse.Namespace, rng: random.Random) -> list[dict[s
             event["details"] = {"pattern": "учебный heartbeat", "sequence": number}
             events.append(event)
         return events
-    if args.scenario.startswith("benign_"):
-        # Holdout workflows use only allowlisted local targets and bounded
-        # HTTP actions. Exact composition is frozen in the scenario catalog.
-        target = "target-web" if any(token in args.scenario for token in ("mirror", "backup", "crawler", "multipart")) else "target-api"
-        return [request_event(args, "GET", target, "/") for _ in range(min(8, capacity))]
+    if args.scenario in WORKFLOW_PLANS:
+        return execute_workflow_plan(args)
     raise KeyError(args.scenario)
 
 

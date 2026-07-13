@@ -4,10 +4,22 @@ import json
 from datetime import UTC, datetime
 from typing import Any
 
-from fastapi import FastAPI, Header
+from fastapi import FastAPI, Header, WebSocket, WebSocketDisconnect
 
 
 app = FastAPI(title="Филин control-api")
+
+
+@app.websocket("/ws/lab")
+async def lab_websocket(websocket: WebSocket) -> None:
+    """Bounded local endpoint for benign WebSocket workflow observations."""
+    await websocket.accept()
+    try:
+        while True:
+            message = await websocket.receive_text()
+            await websocket.send_text("pong" if message == "ping" else "ack")
+    except WebSocketDisconnect:
+        return
 
 
 def log_event(event_type: str, details: dict[str, Any]) -> None:

@@ -6,7 +6,7 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends tcpdump procps \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir -r requirements.txt
-COPY client.py .
+COPY client.py future_workflows.py ./
 RUN useradd --create-home --uid 10001 labuser
 USER labuser
 
