@@ -35,7 +35,7 @@ def validate(manifest_path: Path, artifact_path: Path, datasets: list[Path], acc
     aliases = {"minimum_macro_f1": "macro_f1", "minimum_balanced_accuracy": "balanced_accuracy", "minimum_benign_recall": "benign_recall", "maximum_false_positive_rate": "false_positive_rate", "minimum_hard_negative_benign_recall": "hard_negative_benign_recall", "minimum_attack_macro_recall": "attack_macro_recall", "minimum_collapsed_attack_precision": "collapsed_attack_precision", "minimum_collapsed_attack_recall": "collapsed_attack_recall"}
     flags = {rule: result[metric] >= threshold if rule.startswith("minimum") else result[metric] <= threshold for rule, metric in aliases.items() for threshold in [rules[rule]]}
     if rules.get("prohibit_zero_recall_class"):
-        flags["prohibit_zero_recall_class"] = all(value > 0 for value in result["per_group"].values())
+        flags["prohibit_zero_recall_class"] = all(value["attack_macro_recall"] > 0 for value in result["per_group"].values())
     result["policy_flags"] = flags; result["v034_internal_validation_passed"] = all(flags.values()); result["candidate_ready_for_v035"] = result["v034_internal_validation_passed"]
     return result
 
