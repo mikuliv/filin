@@ -1,0 +1,17 @@
+policy_id: filin-v0.3.7-training-isolation-v1
+allowed_training_sources:
+  - lab/output/datasets/windows_network_sensor_v0_4_run_v037_train_
+allowed_validation_sources:
+  - lab/output/datasets/windows_network_sensor_v0_4_run_v037_validation_
+validation_requires_candidate_freeze: true
+forbidden_path_fragments:
+  - filin_v0_3_6_blind_holdout
+  - ml/artifacts/v0_3_6
+  - ml/reports/v0_3_6
+  - ml/experiments/v0_3_6/holdout_lock_manifest.yaml
+  - run_v036_
+forbidden_campaign_versions: [v0.3, v0.3.2, v0.3.3, v0.3.4, v0.3.5, v0.3.6]
+model_trained_on_v036_data: false
+v036_feature_rows_loaded: false
+v036_predictions_loaded: false
+v036_labels_loaded: false
