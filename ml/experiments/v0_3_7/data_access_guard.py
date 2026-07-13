@@ -3,7 +3,11 @@ from __future__ import annotations
 import hashlib,json
 from pathlib import Path
 import yaml
+
+
 class DataAccessError(PermissionError):pass
+
+
 class DataAccessGuard:
  def __init__(self,root:Path,policy_path:Path,audit_path:Path|None=None):
   self.root=root.resolve();self.policy=yaml.safe_load(policy_path.read_text(encoding='utf-8'));self.audit_path=audit_path;self.accesses=[];self.validation_opened=False
@@ -14,10 +18,12 @@ class DataAccessGuard:
  def open_dataset(self,path:Path,candidate_frozen:bool=False,validation:bool=False):
   relative=self._relative(path);lower=relative.lower()
   if any(fragment.lower() in lower for fragment in self.policy['forbidden_path_fragments']):raise DataAccessError(f'Запрещённый источник: {relative}')
+  digest=hashlib.sha256(path.read_bytes()).hexdigest()
+  if digest in set(self.policy.get('forbidden_source_sha256',[])):raise DataAccessError(f'Запрещённая копия источника по SHA-256: {relative}')
   if validation and self.policy['validation_requires_candidate_freeze'] and not candidate_frozen:raise DataAccessError('Validation rows запрещены до candidate freeze')
   allowed=self.policy['allowed_validation_sources' if validation else 'allowed_training_sources']
   if not any(prefix in relative for prefix in allowed):raise DataAccessError(f'Источник не входит в allowlist: {relative}')
-  digest=hashlib.sha256(path.read_bytes()).hexdigest();self.accesses.append({'path':relative,'sha256':digest,'validation':validation});self.validation_opened|=validation;self.save();return path.open('r',encoding='utf-8')
+  self.accesses.append({'path':relative,'sha256':digest,'validation':validation});self.validation_opened|=validation;self.save();return path.open('r',encoding='utf-8')
  def save(self):
   if self.audit_path:
    self.audit_path.parent.mkdir(parents=True,exist_ok=True);self.audit_path.write_text(json.dumps(self.audit(),ensure_ascii=False,indent=2),encoding='utf-8')

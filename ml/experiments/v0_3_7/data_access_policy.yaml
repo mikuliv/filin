@@ -11,6 +11,19 @@ forbidden_path_fragments:
   - ml/experiments/v0_3_6/holdout_lock_manifest.yaml
   - run_v036_
 forbidden_campaign_versions: [v0.3, v0.3.2, v0.3.3, v0.3.4, v0.3.5, v0.3.6]
+forbidden_source_sha256:
+  - 18223a987fed7d5f19d952dc2605d64d5f11d86c91d3973ea43409e17b43579b
+  - e8348ead0ecdbfa9e1a6ecfda0fdaf49e8f2e8e27a783b5ac9dfcefc74ba7f5c
+  - 46cbde0d1baf2cc8b8785d368b6ce81abc4f5504331d0ba7b9d8788e6a75dbc9
+  - 9709b8e8796acc329f5faa0245e20a19de46690d10e11c504dea4f1041f22d9e
+  - 90ae05d119a0d0a80e585ed69bd52f5b51fa6c59be18450bbf312ff3731d0c3c
+  - 98306c863056cff5a2c6fbb5383219f60352455cea5218817d20474db5f0316c
+  - 511ebeb1b6f1caab247d7fdb3a5a1f7a9c837cb0c399c983912098a3f56f5dc2
+  - 99280ac708ab4da7abe594884ffb44a6dcc78affa6b2340e00b8474c4adac8ff
+  - 654d1345d51cb626628a2bc0b15f50a9e790ed3283346f46cb91fdda738c7a01
+  - f5aadf987e05d00d3e2ecb906e38570ff8f7bc3ae5f5ea6545748eda75eb7abd
+  - 2670b35f47f0a1a7cf9e25587665041e8ef3c02d4e296651533279205608f02c
+  - b668076540934964c3ed274a753b4d22b0512fe9a02b999fe104c8b4fea9222e
 model_trained_on_v036_data: false
 v036_feature_rows_loaded: false
 v036_predictions_loaded: false

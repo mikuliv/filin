@@ -10,4 +10,6 @@ class TemporalEvidenceAccumulator:
   if self.variant=='2_of_3':return sum(x>=.5 for x in list(self.history)[-3:])>=2
   if self.variant=='2_of_4':return sum(x>=.5 for x in self.history)>=2
   if self.variant=='decayed':self.evidence=self.alpha*self.evidence+(1-self.alpha)*p;return self.evidence>=self.activation_threshold
-  return p>=.5
+  # Variant none не создаёт дополнительного evidence: raw thresholds
+  # применяются иерархическим decision layer самостоятельно.
+  return False
