@@ -115,6 +115,13 @@ def execute_scenario(manifest: dict[str, Any], scenario: dict[str, Any], events_
             # Для кампании обычные действия короткие; временная структура сохраняется
             # отдельно для low_rate_dos и beacon_simulation ниже.
             max_events = min(4, max(1, int(effective_duration * 3)))
+            if manifest.get("campaign_id") == "filin-v0.3.6-blind-holdout":
+                # Holdout execution markers are second-granular.  Keep prospective
+                # windows wide enough that short requests cannot all land on the
+                # same marker boundary and disappear from the correlated window.
+                # Frozen run IDs, seeds, labels and composition remain unchanged.
+                effective_duration = max(4, effective_duration)
+                max_events = 8
             max_rate = 2.0 if scenario.get("label") in {"auth_failures", "low_rate_dos"} else 3.0
             variant = scenario.get("scenario_parameters") or {}
             if scenario.get("label") == "low_rate_dos":
