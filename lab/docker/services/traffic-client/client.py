@@ -143,9 +143,9 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
     if not args.execution_id or not args.marker_nonce:
         return
     # A capture can occasionally lose one otherwise successful HTTP marker.
-    # Three independently acknowledged marker flows make long episode campaigns
+    # Five independently acknowledged marker flows make long episode campaigns
     # robust; all carry the same nonce and are excluded from feature aggregation.
-    for _copy in range(3):
+    for _copy in range(5):
         last_error: Exception | None = None
         for _attempt in range(3):
             try:
@@ -154,7 +154,7 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
                     headers={**headers, "X-Filin-Marker-Type": marker_type}, timeout=2.0,
                 )
                 response.raise_for_status()
-                time.sleep(0.05)
+                time.sleep(0.20)
                 break
             except requests.RequestException as error:
                 last_error = error
