@@ -1,0 +1,50 @@
+schema_version: 1
+profile: network_sensor_v0_6_integrity
+semantics_change: future_only
+historical_profiles_immutable: true
+ordered_features:
+  - flow_count
+  - tcp_flow_count
+  - udp_flow_count
+  - failed_connection_count
+  - total_bytes
+  - total_packets
+  - http_request_count
+  - dns_query_count
+  - connection_failure_rate
+  - http_error_rate
+  - dns_error_rate
+  - orig_bytes_share
+  - orig_packets_share
+  - events_per_second
+  - flows_per_second
+  - bytes_per_second
+  - packets_per_second
+  - failed_connections_per_second
+  - unique_destinations_per_flow
+  - unique_services_per_flow
+defaults: &defaults
+  source: marker-correlated Zeek aggregation
+  missing: reject execution
+  empty_window: counts are zero; undefined measurements reject execution
+features:
+  flow_count: {<<: *defaults, description: Correlated connection-flow count, unit: flows, valid_range: "[0, +inf)"}
+  tcp_flow_count: {<<: *defaults, description: TCP flow count, unit: flows, valid_range: "[0, +inf)"}
+  udp_flow_count: {<<: *defaults, description: UDP flow count, unit: flows, valid_range: "[0, +inf)"}
+  failed_connection_count: {<<: *defaults, description: Non-success connection count, unit: connections, valid_range: "[0, +inf)"}
+  total_bytes: {<<: *defaults, description: Observed originator and responder bytes, unit: bytes, valid_range: "[0, +inf)"}
+  total_packets: {<<: *defaults, description: Observed originator and responder packets, unit: packets, valid_range: "[0, +inf)"}
+  http_request_count: {<<: *defaults, description: Observed HTTP request count, unit: requests, valid_range: "[0, +inf)"}
+  dns_query_count: {<<: *defaults, description: Observed DNS query count, unit: queries, valid_range: "[0, +inf)"}
+  connection_failure_rate: {<<: *defaults, description: Failed share of flows, unit: fraction, valid_range: "[0, 1]"}
+  http_error_rate: {<<: *defaults, description: HTTP error share of requests, unit: fraction, valid_range: "[0, 1]"}
+  dns_error_rate: {<<: *defaults, description: DNS error share of queries, unit: fraction, valid_range: "[0, 1]"}
+  orig_bytes_share: {<<: *defaults, description: Originator bytes divided by total bytes, unit: fraction, valid_range: "[0, 1]"}
+  orig_packets_share: {<<: *defaults, description: Originator packets divided by total packets, unit: fraction, valid_range: "[0, 1]"}
+  events_per_second: {<<: *defaults, description: Correlated events per marker second, unit: events/second, valid_range: "[0, +inf)"}
+  flows_per_second: {<<: *defaults, description: Flows per marker second, unit: flows/second, valid_range: "[0, +inf)"}
+  bytes_per_second: {<<: *defaults, description: Bytes per marker second, unit: bytes/second, valid_range: "[0, +inf)"}
+  packets_per_second: {<<: *defaults, description: Packets per marker second, unit: packets/second, valid_range: "[0, +inf)"}
+  failed_connections_per_second: {<<: *defaults, description: Failed connections per marker second, unit: connections/second, valid_range: "[0, +inf)"}
+  unique_destinations_per_flow: {<<: *defaults, description: Unique destinations normalized by flows, unit: ratio, valid_range: "[0, +inf)"}
+  unique_services_per_flow: {<<: *defaults, description: Unique services normalized by flows, unit: ratio, valid_range: "[0, +inf)"}
