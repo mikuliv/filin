@@ -24,3 +24,7 @@ Holdout был заблокирован до единственного predict,
 Связанные подтверждённые коммиты: `509b4f0` (passive capture), `e2a5dad` (campaign), `3ea23f9` (audits), `0428177` (baseline) и `9f40b58` (robustness evaluation).
 
 11 июля 2026 года история платформы была технически выделена в отдельный репозиторий. После фильтрации Git идентификаторы коммитов изменились; сведения о выделении и ограничениях приведены в [документе о миграции](repository-migration.md).
+
+## v0.3.7
+
+Flat multiclass архитектура v0.3.4 показала систематические benign→attack ошибки на v0.3.6. Новый цикл ввёл causal temporal/contextual profiles, отдельные detection и subtype stages, group-aware sigmoid calibration, benign-only IsolationForest OOD guard, abstention и temporal evidence. Training и validation каталоги не пересекаются; candidate и policy фиксируются до первого validation prediction.

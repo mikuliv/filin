@@ -39,13 +39,20 @@ def load_rows(campaign_path:Path,guard:DataAccessGuard,validation:bool)->tuple[p
 def marker_integrity(campaign:dict)->dict:
  run_records=[];pairs=0
  for run in campaign['runs']:
-  run_id=run['run_id'];path=ROOT/'lab/output/runs'/run_id/'sensor/normalized_sensor_events.jsonl';markers={};assigned=ambiguous=0
+  run_id=run['run_id'];run_dir=ROOT/'lab/output/runs'/run_id;path=run_dir/'sensor/normalized_sensor_events.jsonl';markers={};sensor_markers={};assigned=ambiguous=0
   for line in path.read_text(encoding='utf-8').splitlines():
    event=json.loads(line);status=event.get('correlation_status');assigned+=status=='assigned';ambiguous+=status=='ambiguous'
    uri=str((event.get('raw') or {}).get('uri',''));parts=uri.split('/')
-   if len(parts)>=4 and parts[1]=='sensor-marker':markers.setdefault(parts[3],set()).add(parts[2])
+   if len(parts)>=4 and parts[1]=='sensor-marker':sensor_markers.setdefault(parts[3],set()).add(parts[2])
+  control_path=run_dir/'marker_control.jsonl'
+  if control_path.exists():
+   for line in control_path.read_text(encoding='utf-8').splitlines():
+    item=json.loads(line);markers.setdefault(str(item['marker_nonce']),set()).add(str(item['marker_type']))
+  else:markers=sensor_markers
   complete=sum(value=={'start','end'} for value in markers.values());pairs+=complete
   run_records.append({'run_id':run_id,'complete_marker_pairs':complete,'assigned_observations':assigned,
+   'sensor_observed_complete_marker_pairs':sum(value=={'start','end'} for value in sensor_markers.values()),
+   'boundary_source':'traffic_client_marker_control' if control_path.exists() else 'sensor_http_markers',
    'ambiguous_assignments':ambiguous,'success':complete==34 and assigned>0 and ambiguous==0})
  return {'runs':run_records,'successful_runs':sum(x['success'] for x in run_records),'expected_runs':len(run_records),
   'complete_marker_pairs':pairs,'expected_marker_pairs':34*len(run_records),'integrity_passed':all(x['success'] for x in run_records)}

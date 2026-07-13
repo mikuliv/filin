@@ -1,0 +1,203 @@
+candidate_id: hierarchical:network_sensor_v0_5_contextual:logistic_regression:random_forest
+architecture_id: network_sensor_v0_5_hierarchical
+binary_gate_model: logistic_regression
+binary_gate_parameters:
+  C: 1.0
+  class_weight: balanced
+  max_iter: 2000
+  random_state: 42
+subtype_model: random_forest
+subtype_parameters:
+  n_estimators: 300
+  max_depth: 6
+  min_samples_leaf: 2
+  class_weight: balanced_subsample
+  random_state: 42
+  n_jobs: -1
+feature_profile: network_sensor_v0_5_contextual
+feature_count: 51
+ordered_feature_list:
+- failed_connection_rate
+- udp_flow_share
+- tcp_flow_share
+- http_requests_per_flow
+- dns_requests_per_flow
+- events_per_second
+- flows_per_second
+- bytes_per_flow
+- packets_per_flow
+- orig_bytes_per_flow
+- resp_bytes_per_flow
+- failed_connections_per_second
+- unique_destinations_per_flow
+- unique_services_per_flow
+- response_bytes_share
+- orig_packet_share
+- delta_flows_per_second
+- flows_per_second_to_rolling_median
+- robust_z_flows_per_second
+- delta_events_per_second
+- events_per_second_to_rolling_median
+- robust_z_events_per_second
+- delta_failed_connections_per_second
+- failed_connections_to_rolling_median
+- robust_z_failed_connections
+- delta_bytes_per_flow
+- bytes_per_flow_to_rolling_median
+- delta_packets_per_flow
+- packets_per_flow_to_rolling_median
+- delta_unique_destinations_per_flow
+- destination_set_jaccard_change
+- protocol_mix_l1_change
+- response_bytes_share_change
+- udp_flow_share_change
+- consecutive_high_failure_windows
+- consecutive_high_flow_windows
+- rolling_activity_slope
+- rolling_failure_slope
+- request_spacing_cv
+- periodicity_stability
+- long_lived_flow_persistence
+- success_response_share
+- failed_then_successful_connection_rate
+- retry_recovery_rate
+- target_responsiveness_ratio
+- connection_completion_rate
+- long_lived_flow_share
+- http_method_diversity
+- http_response_status_entropy
+- response_direction_balance
+- service_availability_recovery_evidence
+feature_schema_sha256: e9adc0617e2e670c1d846936ff69d36b5f9749faedf34ac9ecd21c4c7a00526c
+feature_builder_sha256: 3b4e072e621091f1278bb075b2b1e24ca39ef1da58e5a383c56eee4bc4a8194a
+rolling_history_depth: 6
+calibration_method: group_aware_oof_sigmoid
+calibrator_parameters:
+  binary_gate:
+    coef:
+    - - 0.9779707045944297
+    intercept:
+    - -0.22055583366324785
+    classes:
+    - 0
+    - 1
+    method: sigmoid
+  attack_subtype:
+    coef:
+    - - 0.07771934345369458
+      - 0.90159117888898
+      - -0.24551759440844784
+      - -0.43432165697101516
+      - -0.079130466388203
+    - - -0.11229973778867633
+      - -0.22594768820101838
+      - -0.3770336943255538
+      - -0.04928487226431884
+      - 1.0255055528527777
+    - - -0.35212519829083716
+      - -0.436848376676787
+      - -0.12341840981685355
+      - 0.7788096907982915
+      - -0.3415298374770886
+    - - 0.49408241293620075
+      - -0.33439230867484165
+      - -0.4921725554377599
+      - -0.4377145728068494
+      - -0.28354577773564377
+    - - -0.10737682031037366
+      - 0.0955971946636638
+      - 1.238142253988614
+      - 0.14251141124389557
+      - -0.3212994712518443
+    intercept:
+    - 2.149397953678412
+    - 1.061171287098155
+    - -2.4935637229059098
+    - -3.3525567898965174
+    - 2.63555127202586
+    classes:
+    - auth_failures
+    - beacon_simulation
+    - low_rate_dos
+    - port_scan
+    - web_probe
+    method: sigmoid
+calibration_training_run_ids:
+- run_v037_train_contextual_001
+- run_v037_train_contextual_002
+- run_v037_train_contextual_003
+- run_v037_train_mixed_001
+- run_v037_train_mixed_002
+- run_v037_train_mixed_003
+- run_v037_train_recovery_001
+- run_v037_train_recovery_002
+- run_v037_train_recovery_003
+- run_v037_train_temporal_001
+- run_v037_train_temporal_002
+- run_v037_train_temporal_003
+calibration_oof_hash: 1b0147e6fdae6c67106e3673d336912476a640ec29e74f8d16e04133f5db8bac
+calibration_fitted_on_validation: false
+ood_model: IsolationForest
+ood_parameters:
+  n_estimators: 300
+  max_samples: auto
+  contamination: auto
+  random_state: 42
+  n_jobs: -1
+ood_threshold: 0.6389177788293281
+ood_quantile_grid:
+- 0.95
+- 0.975
+- 0.99
+gate_benign_threshold: 0.2
+gate_attack_threshold: 0.6
+subtype_confidence_threshold: 0.35
+temporal_evidence_variant: decayed
+temporal_evidence_parameters:
+  alpha: 0.5
+  activation_threshold: 0.55
+classes:
+- benign
+- port_scan
+- auth_failures
+- web_probe
+- low_rate_dos
+- beacon_simulation
+decision_states:
+- benign
+- insufficient_evidence
+- suspicious_unclassified
+- attack_candidate:port_scan
+- attack_candidate:auth_failures
+- attack_candidate:web_probe
+- attack_candidate:low_rate_dos
+- attack_candidate:beacon_simulation
+training_run_ids:
+- run_v037_train_contextual_001
+- run_v037_train_contextual_002
+- run_v037_train_contextual_003
+- run_v037_train_mixed_001
+- run_v037_train_mixed_002
+- run_v037_train_mixed_003
+- run_v037_train_recovery_001
+- run_v037_train_recovery_002
+- run_v037_train_recovery_003
+- run_v037_train_temporal_001
+- run_v037_train_temporal_002
+- run_v037_train_temporal_003
+training_dataset_sha256: 6ec555d4eca1816e9149dbbebcbd1e9245d37e6cdd2ec4dbe0aba46aab5f0f67
+training_execution_mapping_sha256: cb21fdcbec00c59b10b126632695ecc53f615855c7ad776c7126d35d54fcd1dc
+nested_cv_policy_sha256: 497f5c85582d5cae04133a42d790805e04b3bdd3aeed965890d1e4e5c304a080
+model_selection_policy_sha256: 497f5c85582d5cae04133a42d790805e04b3bdd3aeed965890d1e4e5c304a080
+data_access_policy_sha256: a4adcac7c099d7fd89bf1f2528f5414a3c803c6e5186da29ce73915feec9c66f
+validation_campaign_sha256: fa25312d52d92d2dd5525f4809a6272a4ece63419ab7c8c344e3d2c91c927df8
+validation_policy_sha256: ee4fff66a58478eb88a8a3bcdecb92b268470fd031d6e82527c8ef377b6a86c1
+artifact_paths:
+- ml/artifacts/v0_3_7/network_sensor_v0_5_hierarchical.joblib
+artifact_sha256:
+  ml/artifacts/v0_3_7/network_sensor_v0_5_hierarchical.joblib: d11ad593b70f9f69593a7500e397fd58e2ae0b0ce1e3627d985b552599529f25
+candidate_frozen_at: '2026-07-13T16:36:47.274106+00:00'
+candidate_frozen_before_validation: true
+model_trained_on_v036_data: false
+prohibit_refit_on_validation: true
+prohibit_refit_on_v036: true

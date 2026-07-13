@@ -43,3 +43,9 @@ Frozen candidate v0.3.4 оценивается offline на неизменяем
 regression benchmark. Он не участвовал в fit, выборе модели, preprocessing,
 hyperparameter или threshold tuning и не является полностью слепым final test.
 После него требуется отдельный blind holdout; backend integration не выполняется.
+
+## v0.3.7 — иерархический network sensor
+
+После отрицательного prospective holdout v0.3.6 введён новый независимый цикл: 12 training runs и 6 validation runs. Строки, labels и predictions v0.3.6 не участвуют в обучении, выборе profiles, calibration или thresholds. Model selection использует nested `StratifiedGroupKFold` 6×4 по `run_id`; единственный candidate замораживается до однократной internal validation.
+
+Flat multiclass control сохранён только для ablation. Основной тракт разделяет suspicious gate, benign OOD guard, attack subtype model, abstention и причинный temporal accumulator. Internal validation не разрешает fit или tuning и сама по себе не подтверждает generalization.

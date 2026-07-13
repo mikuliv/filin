@@ -142,10 +142,30 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
     """Deliver a real marker before/after traffic; fail rather than silently losing it."""
     if not args.execution_id or not args.marker_nonce:
         return
+    marker_log = getattr(args, "marker_log", None)
+
+    def write_control_boundary() -> None:
+        if not marker_log:
+            return
+        record = {
+            "timestamp": time.time(),
+            "run_id": args.run_id,
+            "run_sequence": args.run_sequence,
+            "execution_id": args.execution_id,
+            "marker_nonce": args.marker_nonce,
+            "marker_type": marker_type,
+            "event_source": "traffic_client_marker_control",
+        }
+        with open(marker_log, "a", encoding="utf-8") as file:
+            file.write(json.dumps(record, ensure_ascii=False) + "\n")
+            file.flush()
+    # The end boundary is recorded before end-marker packets are emitted.
+    if marker_type == "end":
+        write_control_boundary()
     # A capture can occasionally lose one otherwise successful HTTP marker.
     # Five independently acknowledged marker flows make long episode campaigns
     # robust; all carry the same nonce and are excluded from feature aggregation.
-    for _copy in range(5):
+    for _copy in range(getattr(args, "marker_copies", 2)):
         last_error: Exception | None = None
         for _attempt in range(3):
             try:
@@ -161,6 +181,9 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
                 time.sleep(0.15)
         else:
             raise RuntimeError(f"Не удалось отправить network marker {marker_type}: {last_error}")
+    # The start boundary is recorded after start-marker packets are emitted.
+    if marker_type == "start":
+        write_control_boundary()
 
 
 def request_event(args: argparse.Namespace, method: str, target: str, path: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
@@ -321,6 +344,8 @@ def main() -> None:
     parser.add_argument("--output-format", default="jsonl")
     parser.add_argument("--execution-id", default=None)
     parser.add_argument("--marker-nonce", default=None)
+    parser.add_argument("--marker-log", default=None)
+    parser.add_argument("--marker-copies", type=int, choices=range(1, 6), default=2)
     args = parser.parse_args()
     try:
         validate_args(args)

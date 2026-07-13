@@ -21,6 +21,8 @@ flowchart LR
 
 `traffic-client` выполняет безопасные действия в изолированной сети. Capture-sidecar наблюдает тот же network namespace; PCAP является первичным источником sensor observations. Zeek logs нормализуются до корреляции. Execution markers используются только для временной привязки и исключаются из feature aggregation.
 
+В v0.3.7 internal validation каждый execution дополнительно захватывается в отдельный PCAP внутри namespace `traffic-client`. Такая изоляция сохраняет marker-семантику, но не позволяет откату Docker wall-clock смешать соседние окна. Marker control journal служит только аудитируемым источником границ; labels и control records не агрегируются в model features.
+
 ## Campaign separation
 
 ```mermaid
@@ -46,3 +48,20 @@ flowchart LR
 ```
 
 Концептуальная архитектура. На текущем этапе полностью не реализована.
+
+## network_sensor_v0_5_hierarchical
+
+```mermaid
+flowchart LR
+  W["Текущее окно и causal asset history"] --> F["Temporal/contextual features"]
+  F --> G["Calibrated benign/suspicious gate"]
+  F --> O["Benign-only OOD guard"]
+  G --> U["Abstention policy"]
+  O --> U
+  U -->|"достаточно evidence"| S["Calibrated attack subtype"]
+  U -->|"недостаточно evidence"| I["insufficient_evidence"]
+  S --> T["Causal temporal accumulator"]
+  T --> D["benign / suspicious_unclassified / attack_candidate"]
+```
+
+Detection отделён от subtype classification: benign gate не вызывает subtype model. OOD не конвертируется в attack автоматически. Asset state сбрасывается между runs и folds; warm-up инициализирует state, но исключён из support и metrics.

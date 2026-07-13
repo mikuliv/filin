@@ -43,3 +43,13 @@ training или model selection.
 ## Связанные документы
 
 [Происхождение данных](../../docs/data-provenance.md), [воспроизводимость](../../docs/reproducibility.md).
+
+## v0.3.7
+
+- `v0_3_7_training.yaml`: 12 runs, seeds 12701–13003, 336 scored окон.
+- `v0_3_7_internal_validation.yaml`: 6 validation-only runs, seeds 13101–13302, 168 scored окон.
+- `run_v0_3_7_training.py` и `run_v0_3_7_validation.py`: strict resumable Docker runners.
+- `v0_3_7_preflight.py`: проверка safety, capture, marker mapping, profiles и warm-up isolation без открытия validation rows.
+- `v037_runner.py`: resumable Docker runner; для validation изолирует каждый execution в собственный PCAP и объединяет только нормализованные Zeek observations, исключая marker flows.
+
+Успешные runs при `--resume` не выполняются повторно. Validation runner требует frozen candidate manifest.

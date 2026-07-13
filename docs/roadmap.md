@@ -55,3 +55,7 @@ windows. Новое обучение и tuning не относятся к v0.3.3
 ## Долгосрочная концепция
 
 Incident representation, MITRE ATT&CK mapping, Sigma drafts, test bench validation, SIEM integration и analyst interface остаются будущими направлениями. Они не реализованы в текущем pipeline.
+
+## После v0.3.7
+
+Если `candidate_ready_for_v038_regression=true`, v0.3.8 выполняет только frozen evaluation на неизменяемом prospective holdout v0.3.6: без fit, calibration, threshold tuning и исключения строк. Новый prospective holdout планируется не ранее v0.3.9. Shadow mode можно рассматривать только после успешного нового prospective holdout, не после internal validation.

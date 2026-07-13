@@ -23,3 +23,7 @@ Backend integration до нового training campaign запрещена.
 Для v0.3.4 internal validation не является будущим полностью слепым final test:
 постановка этапа использовала выводы v0.3.3. Нужен новый заранее зафиксированный
 blind holdout; до него backend integration и online inference не выполняются.
+
+## Ограничения v0.3.7
+
+OOD означает недостаток знания, а не атаку. `insufficient_evidence` не считается правильным benign и не используется для маскировки false positives. Контекст строится только из наблюдаемого сетевого workflow; будущие окна, labels, execution metadata и identity-поля не являются features. Лабораторная internal validation не даёт разрешения на backend integration, response actions, shadow mode или deployment.

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import random
 import subprocess
 import time
@@ -76,8 +77,40 @@ def run_docker_scenario(manifest: dict[str, Any], scenario: dict[str, Any], comp
     ]
     execution_id = scenario.get("execution_id")
     if execution_id:
-        command.extend(["--execution-id", str(execution_id), "--marker-nonce", str(scenario.get("scenario_parameter_hash", execution_id))[:24]])
-    completed = subprocess.run(command, cwd=compose_project_dir, capture_output=True, text=True, encoding="utf-8", timeout=max(30, duration + 30), check=False)
+        command.extend([
+            "--execution-id", str(execution_id),
+            "--marker-nonce", str(scenario.get("scenario_parameter_hash", execution_id))[:24],
+            "--marker-log", "/capture/marker_control.jsonl",
+        ])
+    capture_dir = os.environ.get("FILIN_SCENARIO_CAPTURE_DIR")
+    if capture_dir:
+        command.extend(["--marker-copies", "2"])
+    elif manifest.get("campaign_id") == "filin-v0.3.7-hierarchical-training":
+        command.extend(["--marker-copies", "5"])
+    capture_started = False
+    if capture_dir:
+        capture_path = f"{capture_dir.rstrip('/')}/{int(scenario['run_sequence']):03d}.pcap"
+        subprocess.run([
+            "docker", "compose", "-f", str(compose_file), "exec", "-T", "-u", "root", "traffic-client",
+            "sh", "-lc", f"mkdir -p {capture_dir} && rm -f {capture_path}",
+        ], cwd=compose_project_dir, check=True)
+        subprocess.run([
+            "docker", "compose", "-f", str(compose_file), "exec", "-d", "-u", "root", "traffic-client",
+            "tcpdump", "-i", "eth0", "-B", "16384", "--immediate-mode", "-U", "-Z", "root",
+            "-w", capture_path, "not", "port", "53",
+        ], cwd=compose_project_dir, check=True)
+        capture_started = True
+        time.sleep(0.5)
+    try:
+        completed = subprocess.run(command, cwd=compose_project_dir, capture_output=True, text=True, encoding="utf-8", timeout=max(30, duration + 30), check=False)
+    finally:
+        if capture_started:
+            time.sleep(0.5)
+            subprocess.run([
+                "docker", "compose", "-f", str(compose_file), "exec", "-T", "-u", "root", "traffic-client",
+                "pkill", "-INT", "tcpdump",
+            ], cwd=compose_project_dir, check=False, capture_output=True)
+            time.sleep(1.0)
     events: list[dict[str, Any]] = []
     invalid = 0
     for line in completed.stdout.splitlines():
@@ -150,7 +183,8 @@ def execute_scenario(manifest: dict[str, Any], scenario: dict[str, Any], events_
         # Manifest timestamps are second-granular.  Keep every interval open
         # after the client exits so adjacent marker windows cannot collapse;
         # low-rate traffic receives one additional second for Zeek flush.
-        time.sleep(1 + int(scenario.get("label") in {"low_rate_dos", "beacon_simulation"}))
+        if not os.environ.get("FILIN_SCENARIO_CAPTURE_DIR"):
+            time.sleep(1 + int(scenario.get("label") in {"low_rate_dos", "beacon_simulation"}))
         details = {**start_details, "traffic_events": len(traffic_events), "requests_sent": len(traffic_events), "errors": sum(1 for event in traffic_events if event.get("status") in {"error", "closed", "timeout"}), "stderr": notes}
         append_event(events_path, execution_event(manifest, scenario, "scenario_finished", "completed", details))
         return {"status": "completed", "details": details}

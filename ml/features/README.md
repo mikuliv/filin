@@ -46,3 +46,7 @@ renamed as the declared v0.3 profile.
 `network_sensor_v0_4` is a future, strict profile. Its ordered list in
 `schema.py` is the sole source of model columns; v0.4 builders must not select
 all numeric CSV columns or synthesize unavailable measures as zero.
+
+## Causal profiles v0.3.7
+
+`network_sensor_v0_5_temporal` добавляет к 16 rate/share признакам 25 delta, rolling median, robust-z, slope, periodicity и persistence признаков. `network_sensor_v0_5_contextual` добавляет 10 признаков response/retry/recovery/workflow. Builder использует только текущее и прошлые окна одного asset/run; future mutation, labels, warm-up flag и identity metadata не меняют model vector.

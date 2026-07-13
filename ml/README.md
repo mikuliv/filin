@@ -35,3 +35,7 @@ ML-результаты относятся к controlled laboratory data; backen
 ## Связанные документы
 
 [Эксперименты](../docs/experiments.md), [datasets](../datasets/README.md), [ограничения](../docs/limitations.md).
+
+## network_sensor_v0_5
+
+Профили: control 16, temporal 41 и contextual 51 features. Иерархический candidate состоит из binary gate, group-aware sigmoid calibrators, benign-only OOD guard, subtype classifier и causal temporal evidence. Nested grouped CV и все параметры выбираются только на training OOF; internal validation работает в no-fit режиме. Runtime models, predictions и reports не коммитятся.

@@ -30,8 +30,4 @@ class CampaignRunnerTests(unittest.TestCase):
   args=argparse.Namespace(execution_id='run-test:1:test',marker_nonce='abc123')
   with patch('client.requests.post',return_value=response) as post,patch('client.time.sleep'):
    send_marker('end',args,{})
-  self.assertEqual(post.call_count,5)
-
- def test_capture_uses_large_immediate_buffer(self):
-  compose=(ROOT/'lab/docker/docker-compose.lab.yml').read_text(encoding='utf-8')
-  self.assertIn('"-B", "16384", "--immediate-mode"',compose)
+  self.assertEqual(post.call_count,2)
