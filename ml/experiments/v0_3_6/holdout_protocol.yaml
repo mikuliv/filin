@@ -11,6 +11,11 @@ prohibit_row_exclusion: true
 prohibit_metric_driven_rerun: true
 sensor_ready_for_backend_integration: false
 candidate_manifest: ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
+campaign_manifest: lab/campaigns/v0_3_6_blind_holdout.yaml
+scenario_catalog: lab/scenarios/benign/v036_holdout_catalog.yaml
+environment_catalog: lab/holdout/v036_environment_profiles.yaml
+safety_policy: lab/holdout/v036_safety_policy.yaml
+feature_schema: ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
 candidate_artifact_sha256: f11ac7b27fba1f032aeebd466d8a9076ab681db004a3b1f09a7aa1eb8d7862f3
 runner_version: v0.3.6
 audit_protocol_versions: [protocol_freeze_v1, holdout_lock_v1, no_fit_v1]

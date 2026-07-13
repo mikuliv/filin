@@ -1,0 +1,33 @@
+catalog_id: v036_environment_profiles_v1
+condition_assignment_independent_of_label: true
+profiles:
+  novel_workflows:
+    profile_id: v036_novel_workflows_v1
+    clients: [2, 5]
+    latency_ms: [0, 40]
+    packet_loss_percent: 0
+    background_profile: background_v036_novel
+  ambiguous_low_signal:
+    profile_id: v036_ambiguous_low_signal_v1
+    clients: [3, 6]
+    low_signal: true
+    interleaved: true
+    background_profile: background_v036_ambiguous
+  topology_protocol:
+    profile_id: v036_topology_protocol_v1
+    local_proxy: true
+    resolver_paths: 2
+    tls_termination: true
+    background_profile: background_v036_topology
+  observation_stress:
+    profile_id: v036_observation_stress_v1
+    latency_ms: [30, 180]
+    jitter_ms: [5, 50]
+    packet_loss_percent: [0.2, 2.5]
+    reordering_percent: [0, 0.5]
+    background_profile: background_v036_observation
+background_limits:
+  maximum_clients: 6
+  maximum_actions_per_second: 4
+  maximum_actions_per_interval: 60
+  local_allowlist_only: true

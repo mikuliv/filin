@@ -1,0 +1,14 @@
+policy_id: v036_isolated_lab_safety_v1
+docker_lab_only: true
+external_targets_prohibited: true
+real_credentials_prohibited: true
+real_exploit_payloads_prohibited: true
+nmap_prohibited: true
+masscan_prohibited: true
+malware_prohibited: true
+maximum_workers: 4
+maximum_requests_per_second: 3
+maximum_background_clients: 6
+netem_lab_namespace_only: true
+automatic_blocking_prohibited: true
+response_actions_prohibited: true

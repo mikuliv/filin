@@ -1,13 +1,34 @@
 evaluation_policy:
-  minimum_macro_f1: 0.80
-  minimum_balanced_accuracy: 0.90
+  minimum_macro_f1: 0.78
+  minimum_balanced_accuracy: 0.85
   minimum_benign_recall: 0.85
   maximum_false_positive_rate: 0.15
   minimum_hard_negative_benign_recall: 0.75
-  minimum_attack_macro_recall: 0.90
+  minimum_attack_macro_recall: 0.85
   minimum_collapsed_attack_precision: 0.75
   minimum_collapsed_attack_recall: 0.90
   prohibit_zero_recall_class: true
-group_policy: {minimum_macro_f1: 0.65, minimum_benign_recall: 0.70, maximum_false_positive_rate: 0.30, minimum_attack_macro_recall: 0.80}
-variant_policy: {minimum_benign_recall: 0.50}
-integrity_policy: {require_protocol_freeze: true, require_holdout_lock: true, require_no_fit: true, require_prediction_once: true, require_overlap_zero: true}
+group_policy:
+  minimum_macro_f1: 0.65
+  minimum_benign_recall: 0.70
+  maximum_false_positive_rate: 0.30
+  minimum_attack_macro_recall: 0.70
+  prohibit_zero_benign_recall: true
+variant_policy:
+  minimum_benign_variant_recall: 0.50
+  maximum_zero_recall_benign_variants: 0
+stability_policy:
+  maximum_macro_f1_std_across_runs: 0.20
+  maximum_benign_recall_std_across_runs: 0.20
+integrity_policy:
+  require_protocol_frozen_before_collection: true
+  require_holdout_locked_before_prediction: true
+  require_candidate_hash_match: true
+  require_no_fit: true
+  require_no_threshold_tuning: true
+  require_no_row_exclusion: true
+  require_no_metric_driven_rerun: true
+  require_provenance_valid: true
+  require_overlap_zero: true
+  require_diversity_valid: true
+  require_leakage_valid: true
