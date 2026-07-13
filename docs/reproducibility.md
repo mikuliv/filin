@@ -1,8 +1,8 @@
 # Воспроизводимость
 
-## Post-v0.3.7 integrity commands
+## Команды проверки целостности после v0.3.7
 
-Automatic CI uses no protected runtime artifacts:
+Автоматический CI не использует защищённые runtime-артефакты:
 
 ```text
 python tools/docs/validate_documentation.py --strict
@@ -14,22 +14,24 @@ python -m unittest discover -s backend/tests -p "test_*.py"
 git diff --check
 ```
 
-Protected candidate verification is a separate local command:
+Проверка защищённого кандидата выполняется отдельной локальной командой:
 
 ```text
 python tools/audit/verify_secure_artifacts.py --root "%FILIN_SECURE_ARTIFACT_ROOT%" --strict
 ```
 
-If the secure root is unavailable the result is
-`secure_artifacts_not_available`; it is not a pass. A real environment-control
-check is also manual and container-scoped:
+Если защищённое хранилище недоступно, результатом будет
+`secure_artifacts_not_available`; это не считается успешной проверкой. Реальная
+проверка управления условиями среды также выполняется вручную и ограничивается
+конкретным контейнером:
 
 ```text
 python tools/audit/apply_environment_profile.py --catalog lab/holdout/v036_environment_profiles.yaml --profile observation_stress --container traffic-client --seed 1
 ```
 
-The environment command always attempts rollback and verifies that netem is no
-longer active. It must run only in the isolated laboratory Docker network.
+Команда управления средой всегда пытается выполнить откат и проверяет, что
+netem больше не активен. Её разрешено запускать только в изолированной
+лабораторной Docker-сети.
 
 ## Требования
 

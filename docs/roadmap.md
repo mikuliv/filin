@@ -1,44 +1,48 @@
-# Roadmap
+# Дорожная карта
 
-The machine-readable authority for current status is
+Машиночитаемым авторитетным источником текущего статуса является
 [`research-state.yaml`](research-state.yaml).
 
-## Completed research stages
+## Завершённые исследовательские этапы
 
-- v0.3.1 — baseline evaluation.
-- v0.3.2 — frozen robustness evaluation.
-- v0.3.3 — negative environment evaluation; benign recall `0.000` and false
-  positive rate `1.000` in that historical protocol.
-- v0.3.4 — benign representation redesign, grouped internal validation and
-  candidate freeze.
-- v0.3.5 — frozen regression evaluation on a known historical benchmark; not a
-  blind prospective holdout.
-- v0.3.6 — prospective holdout completed with policy not passed; historical
-  result is immutable and may not be reopened for tuning.
-- v0.3.7 — new hierarchical training/internal-validation cycle completed with
-  frozen internal-validation policy not passed.
+- v0.3.1 — базовая оценка.
+- v0.3.2 — проверка устойчивости зафиксированной модели.
+- v0.3.3 — отрицательная оценка в изменённой среде: benign recall `0.000` и
+  false positive rate `1.000` в рамках исторического протокола.
+- v0.3.4 — переработка benign-представления, групповая внутренняя валидация и
+  заморозка кандидата.
+- v0.3.5 — frozen regression evaluation на известном историческом benchmark;
+  это не слепой перспективный holdout.
+- v0.3.6 — перспективный holdout завершён, политика не пройдена; исторический
+  результат неизменяем и не может повторно использоваться для настройки.
+- v0.3.7 — новый иерархический цикл обучения и внутренней валидации завершён;
+  зафиксированная политика внутренней валидации не пройдена.
 
-## Active work
+## Активная работа
 
-The post-v0.3.7 research-integrity audit records historical limitations and
-implements future-only corrections. It does not alter historical metrics,
-rerun holdout prediction or correct the v0.3.7 candidate retrospectively.
+Аудит исследовательской целостности после v0.3.7 фиксирует исторические
+ограничения и реализует исправления только для будущих циклов. Он не меняет
+исторические метрики, не повторяет holdout prediction и не исправляет кандидата
+v0.3.7 задним числом.
 
-## Next allowed stage
+## Следующий допустимый этап
 
-The next free version is v0.3.8. Because duration semantics, benign workflows,
-environment application, feature semantics and integrity gates changed, the
-only allowed use is a new training cycle with new runs, scenario IDs, seeds,
-feature profile, candidate freeze and internal validation. v0.3.6 and v0.3.7
-must not be presented as a new blind holdout or used for hidden tuning.
+Следующая свободная версия — v0.3.8. Поскольку изменились семантика
+длительности, benign-сценарии, применение условий среды, признаки и integrity
+gates, эта версия может быть только новым циклом обучения с новыми runs,
+scenario IDs, seeds, feature profile, заморозкой кандидата и внутренней
+валидацией. v0.3.6 и v0.3.7 нельзя представлять как новый blind holdout или
+использовать для скрытой настройки.
 
-A later prospective holdout requires a separately pre-registered protocol,
-unseen scenarios and a single prediction after candidate and policy freeze.
-Backend integration and shadow mode remain prohibited until an applicable
-future policy explicitly passes. Production readiness is not established.
+Последующий перспективный holdout потребует отдельно зарегистрированного
+протокола, ранее не использовавшихся сценариев и единственного predict после
+заморозки кандидата и политики. Интеграция с backend и теневой режим остаются
+запрещены до явного прохождения применимой будущей политики. Готовность к
+промышленной эксплуатации не подтверждена.
 
-## Longer-term work
+## Долгосрочные направления
 
-Independent-infrastructure validation, encrypted-traffic observability,
-online inference, analyst workflow, SIEM integration and response actions are
-future research. Active response and automatic blocking are out of scope.
+Валидация на независимой инфраструктуре, наблюдаемость шифрованного трафика,
+online inference, рабочее место аналитика, интеграция с SIEM и response actions
+остаются будущими исследовательскими направлениями. Active response и
+автоматическая блокировка не входят в текущий объём работ.

@@ -64,10 +64,10 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append("research-state.yaml illegally authorizes integration, shadow mode, or production")
     latest = str(state.get("latest_completed_stage", ""))
     critical = {
-        "README latest stage": (readme, f"Latest completed stage: {latest}"),
-        "status latest stage": (docs / "status.md", f"Latest completed stage: {latest}"),
-        "README integration false": (readme, "Backend integration allowed: false"),
-        "status production false": (docs / "status.md", "Production ready: false"),
+        "README latest stage": (readme, f"Последний завершённый этап: {latest}"),
+        "status latest stage": (docs / "status.md", f"Последний завершённый этап: {latest}"),
+        "README integration false": (readme, "Интеграция с backend разрешена: нет"),
+        "status production false": (docs / "status.md", "Готовность к промышленной эксплуатации: нет"),
         "roadmap completed v0.3.7": (docs / "roadmap.md", "v0.3.7"),
     }
     for label, (path, marker) in critical.items():

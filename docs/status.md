@@ -1,15 +1,15 @@
 # Текущий статус
 
-Authoritative state: [`research-state.yaml`](research-state.yaml).
+Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Latest completed stage: v0.3.7.
-- Latest result: internal validation policy not passed.
-- Backend integration allowed: false.
-- Shadow mode allowed: false.
-- Production ready: false.
+- Последний завершённый этап: v0.3.7.
+- Итог последнего этапа: политика внутренней валидации не пройдена.
+- Интеграция с backend разрешена: нет.
+- Теневой режим разрешён: нет.
+- Готовность к промышленной эксплуатации: нет.
 
-The post-v0.3.7 audit does not change historical metrics. Corrected semantics
-require a new v0.3.8 training cycle and a new candidate.
+Аудит после v0.3.7 не меняет исторические метрики. Исправленная семантика
+требует нового цикла обучения v0.3.8 и нового кандидата.
 
 ## v0.3.6
 

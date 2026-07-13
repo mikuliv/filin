@@ -1,20 +1,20 @@
 # Платформа «Филин»
 
-## Current research status
+## Текущий статус исследования
 
-Authoritative source: [`docs/research-state.yaml`](docs/research-state.yaml).
+Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-- Latest completed stage: v0.3.7.
-- Latest result: internal validation policy not passed.
-- Active work: post-v0.3.7 research-integrity audit and future-only corrections.
-- Next allowed stage: v0.3.8 new training cycle; it is not a replay of v0.3.6 or v0.3.7.
-- Backend integration allowed: false.
-- Shadow mode allowed: false.
-- Production ready: false.
+- Последний завершённый этап: v0.3.7.
+- Итог последнего этапа: политика внутренней валидации не пройдена.
+- Активная работа: аудит исследовательской целостности после v0.3.7 и исправления только для будущих циклов.
+- Следующий допустимый этап: новый цикл обучения v0.3.8; он не является повтором v0.3.6 или v0.3.7.
+- Интеграция с backend разрешена: нет.
+- Теневой режим разрешён: нет.
+- Готовность к промышленной эксплуатации: нет.
 
-Historical v0.3.1–v0.3.7 metrics remain immutable. The audit identified
-duration, workflow, environment-condition and integrity-evidence limitations;
-corrected code was not used by historical experiments.
+Исторические метрики v0.3.1–v0.3.7 остаются неизменными. Аудит выявил
+ограничения семантики длительности, сценариев, условий среды и свидетельств
+целостности; исправленный код не использовался в исторических экспериментах.
 
 ## Назначение
 
