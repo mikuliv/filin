@@ -1,9 +1,9 @@
-import sys,tempfile,unittest
+import argparse,sys,tempfile,unittest
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2];sys.path.insert(0,str(ROOT/'lab/docker/services/traffic-client'))
 sys.path.insert(0,str(ROOT/'lab/tools'))
-from client import SCENARIOS
-from unittest.mock import patch
+from client import SCENARIOS,send_marker
+from unittest.mock import Mock,patch
 from scenario_executor import execute_scenario
 class CampaignRunnerTests(unittest.TestCase):
  def test_all_holdout_workflows_registered(self):
@@ -24,3 +24,10 @@ class CampaignRunnerTests(unittest.TestCase):
   self.assertEqual(result['status'],'completed')
   self.assertGreaterEqual(observed['duration'],4)
   self.assertEqual(observed['max_events'],8)
+
+ def test_sensor_markers_are_redundant(self):
+  response=Mock();response.raise_for_status.return_value=None
+  args=argparse.Namespace(execution_id='run-test:1:test',marker_nonce='abc123')
+  with patch('client.requests.post',return_value=response) as post,patch('client.time.sleep'):
+   send_marker('end',args,{})
+  self.assertEqual(post.call_count,2)

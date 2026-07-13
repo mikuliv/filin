@@ -126,21 +126,25 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
     """Deliver a real marker before/after traffic; fail rather than silently losing it."""
     if not args.execution_id or not args.marker_nonce:
         return
-    last_error: Exception | None = None
-    for _attempt in range(3):
-        try:
-            response = requests.post(
-                f"http://control-api:8090/sensor-marker/{marker_type}/{args.marker_nonce}",
-                headers={**headers, "X-Filin-Marker-Type": marker_type}, timeout=2.0,
-            )
-            response.raise_for_status()
-            # Keep the marker flow separated from the first payload flow.
-            time.sleep(0.05)
-            return
-        except requests.RequestException as error:
-            last_error = error
-            time.sleep(0.15)
-    raise RuntimeError(f"Не удалось отправить network marker {marker_type}: {last_error}")
+    # A capture can occasionally lose one otherwise successful HTTP marker.
+    # Two independently acknowledged marker flows make the delimiter robust;
+    # both carry the same nonce and are excluded from feature aggregation.
+    for _copy in range(2):
+        last_error: Exception | None = None
+        for _attempt in range(3):
+            try:
+                response = requests.post(
+                    f"http://control-api:8090/sensor-marker/{marker_type}/{args.marker_nonce}",
+                    headers={**headers, "X-Filin-Marker-Type": marker_type}, timeout=2.0,
+                )
+                response.raise_for_status()
+                time.sleep(0.05)
+                break
+            except requests.RequestException as error:
+                last_error = error
+                time.sleep(0.15)
+        else:
+            raise RuntimeError(f"Не удалось отправить network marker {marker_type}: {last_error}")
 
 
 def request_event(args: argparse.Namespace, method: str, target: str, path: str, payload: dict[str, Any] | None = None) -> dict[str, Any]:
