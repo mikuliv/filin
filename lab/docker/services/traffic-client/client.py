@@ -143,9 +143,9 @@ def send_marker(marker_type: str, args: argparse.Namespace, headers: dict[str, s
     if not args.execution_id or not args.marker_nonce:
         return
     # A capture can occasionally lose one otherwise successful HTTP marker.
-    # Two independently acknowledged marker flows make the delimiter robust;
-    # both carry the same nonce and are excluded from feature aggregation.
-    for _copy in range(2):
+    # Three independently acknowledged marker flows make long episode campaigns
+    # robust; all carry the same nonce and are excluded from feature aggregation.
+    for _copy in range(3):
         last_error: Exception | None = None
         for _attempt in range(3):
             try:

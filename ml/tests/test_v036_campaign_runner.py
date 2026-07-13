@@ -30,4 +30,4 @@ class CampaignRunnerTests(unittest.TestCase):
   args=argparse.Namespace(execution_id='run-test:1:test',marker_nonce='abc123')
   with patch('client.requests.post',return_value=response) as post,patch('client.time.sleep'):
    send_marker('end',args,{})
-  self.assertEqual(post.call_count,2)
+  self.assertEqual(post.call_count,3)
