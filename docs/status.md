@@ -1,5 +1,11 @@
 # Текущий статус
 
+## v0.3.6
+
+Prospective holdout завершён с отрицательным результатом: 12 runs, 252 locked windows,
+`candidate_ready_for_shadow_mode=false`, `model_refit_on_v036=false` и
+`sensor_ready_for_backend_integration=false`. Shadow mode и backend integration запрещены.
+
 > **v0.3.3 negative result:** benign recall `0.000`, false positive rate
 > `1.000`, and backend ML integration is prohibited. The backend is a
 > historical demonstration prototype. MITRE ATT&CK, Sigma, SIEM and analyst

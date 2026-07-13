@@ -1,5 +1,11 @@
 # Эксперименты и метрики
 
+## v0.3.6 — prospective holdout
+
+Candidate был заморожен заранее; v0.3.6 не использовалась для model selection или threshold tuning.
+Predictions были запрещены до блокировки 252 окон. Macro F1 `0.730381`, benign recall `0.625`,
+FPR `0.375`, attack macro recall `0.933333`. Policy не пройдена; модель после evaluation не менялась.
+
 Технические таблицы используют точку как десятичный разделитель и три знака после запятой.
 
 | Версия | Вопрос | Train/test и grouping | Результат | Ограничение |

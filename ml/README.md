@@ -1,5 +1,10 @@
 # ML-подсистема
 
+## Frozen prospective evaluation v0.3.6
+
+`experiments/v0_3_6/` реализует protocol freeze, holdout lock и единственный predict. Policy не
+пройдена; `.fit()`, calibration, threshold tuning и feature selection не выполнялись.
+
 ## Назначение
 
 Построение проверяемых feature datasets, внешняя оценка и диагностические analyses лабораторного сетевого сенсора.

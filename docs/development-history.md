@@ -1,5 +1,10 @@
 # История разработки
 
+## 13 июля 2026 — v0.3.6
+
+Holdout был заблокирован до единственного predict, candidate не переобучался. Policy не пройдена
+из-за benign recall `0.625` и FPR `0.375`; результат сохранён без изменения модели.
+
 > Historical interpretation: v0.3.1 showed transfer inside the original
 > laboratory campaign; v0.3.2 tested controlled robustness; v0.3.3 added a
 > harder benign environment shift and preserved a negative result. These do not

@@ -1,5 +1,10 @@
 # Campaigns
 
+## v0.3.6
+
+`v0_3_6_blind_holdout.yaml` задаёт 12 prospective runs и 252 окна. Повтор допускается только до lock
+при infrastructure/integrity ошибке; metric-driven rerun запрещён.
+
 ## Назначение
 
 Campaign manifest задаёт независимые laboratory runs, seeds, роли train/test/robustness и безопасные параметры сценариев.

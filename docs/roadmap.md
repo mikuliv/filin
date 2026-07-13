@@ -1,5 +1,11 @@
 # Roadmap
 
+## После v0.3.6
+
+Prospective holdout policy не пройдена, поэтому v0.3.7 shadow mode не разрешён. Следующий допустимый
+шаг — новый training cycle с новой internal validation и новым holdout. Данные v0.3.6 нельзя
+использовать для настройки текущего candidate или threshold.
+
 ## v0.3.4 research boundary
 
 v0.3.3 is completed with a negative environment-evaluation result. The active

@@ -1,5 +1,11 @@
 # Ограничения
 
+## v0.3.6
+
+Prospective holdout показал benign recall `0.625`, FPR `0.375` и macro F1 `0.730381`. Даже успешный
+лабораторный holdout не означал бы production readiness; запрещены shadow mode, backend integration,
+active response и автоматическое блокирование.
+
 v0.3.3 подтвердил: frozen `network_sensor_v0_3` baseline имеет benign recall
 `0.000` и false positive rate `1.000` на сложном external benign-трафике.
 Backend integration до нового training campaign запрещена.

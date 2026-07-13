@@ -1,5 +1,10 @@
 # Лабораторный стенд
 
+## Prospective holdout v0.3.6
+
+`holdout/` отделяет collection/lock от one-time evaluation. Candidate artifact не загружается до
+holdout lock; backend не изменяется.
+
 ## Назначение
 
 Изолированное воспроизводимое выполнение безопасных Docker-сценариев и получение фактических client/sensor observations.
