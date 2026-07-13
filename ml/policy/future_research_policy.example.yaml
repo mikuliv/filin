@@ -1,0 +1,19 @@
+schema_version: 1
+policy_id: future_research_integrity_contract_example
+template_only: true
+may_authorize_backend_integration: false
+may_authorize_shadow_mode: false
+supported_classes: [benign, port_scan, auth_failures, web_probe, low_rate_dos, beacon_simulation]
+rules:
+  minimum_macro_f1: {kind: metric, metric: macro_f1, operator: gte, value: 0.0}
+  no_zero_recall_supported_class: {kind: zero_recall}
+  candidate_hash_matches: {kind: integrity, check_id: candidate_hash}
+  feature_schema_hash_matches: {kind: integrity, check_id: feature_schema_hash}
+  source_provenance_valid: {kind: integrity, check_id: source_provenance}
+  marker_intervals_valid: {kind: integrity, check_id: marker_intervals}
+  aggregation_reproduced: {kind: integrity, check_id: aggregation_reproduction}
+  environment_application_verified: {kind: integrity, check_id: environment_application}
+  no_fit: {kind: boolean, field: no_fit, expected: true}
+  no_threshold_tuning: {kind: boolean, field: no_threshold_tuning, expected: true}
+  no_row_exclusion: {kind: boolean, field: no_row_exclusion, expected: true}
+  prediction_lock_valid: {kind: integrity, check_id: prediction_lock}
