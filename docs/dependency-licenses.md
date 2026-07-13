@@ -20,10 +20,10 @@
 | httpx | `<0.24` в historical requirements; не объявлен Filin requirements | Исторический scope | BSD-3-Clause | Если переносится, inventory обязателен | Условно; не является Filin dependency по текущим declarations |
 | NumPy | Historical requirements | Исторический ML scope | BSD-3-Clause | При переносе — notice | Условно; не является declared Filin dependency |
 | ONNX / ONNX Runtime | Config/предполагаемый runtime | Model interchange/inference prototype | MIT | При включении packages — notices | Да / Да / Да / Да |
-| Zeek | `zeek/zeek:latest` | Offline PCAP processing и sensor capture base | BSD-3-Clause | Проверить конкретный image notice/digest | Обычно да; фиксировать digest |
+| Zeek | `zeek/zeek:7.0.5` | Offline PCAP processing и sensor capture base | BSD-3-Clause | Проверить конкретный image notice/digest | Обычно да; фиксировать digest |
 | tcpdump / libpcap | Устанавливается в sensor image | Passive capture | BSD-3-Clause family; проверить package metadata конкретного образа | Package notices/SBOM | Обычно да; отдельные OS packages проверить |
 | Nginx | `1.27-alpine` | target-web laboratory service | BSD-2-Clause | Сохранить notice при image distribution | Обычно да; Alpine packages проверить |
-| Suricata | `jasonish/suricata:latest` | Optional sensor container | GPL-2.0-only (проверить конкретный image) | Source/notice obligations при redistributing image | Не считать безусловно совместимым с proprietary distribution; отдельный container boundary review |
+| Suricata | `jasonish/suricata:7.0.8` | Optional sensor container | GPL-2.0-only (проверить конкретный image) | Source/notice obligations при redistributing image | Не считать безусловно совместимым с proprietary distribution; отдельный container boundary review |
 | Elasticsearch | `8.15.0` | Optional laboratory stack | ELv2 для default distribution | Не скрывать notices; проверить image terms | Условно: ELv2 ограничивает managed service; не эквивалент Apache/MPL/GPL |
 | Kibana | `8.15.0` | Optional laboratory UI | ELv2 для default distribution | Не скрывать notices; проверить image terms | Условно: ELv2 ограничивает managed service |
 | Filebeat | `8.15.0` | Optional log shipping | Проверить конкретный distribution/image; вероятно ELv2/Apache components | Проверить manifest и notices | Условно до SBOM и image review |
@@ -32,7 +32,7 @@
 
 ## Внешние образы и воспроизводимость
 
-`zeek/zeek:latest` и `jasonish/suricata:latest` не закреплены digest. Это не доказывает нарушение, но создаёт риск воспроизводимости и усложняет license/SBOM audit: один и тот же tag может указывать на разные manifests. Перед external distribution закрепить image digest, собрать SBOM и сохранить license notices для каждого образа и его базовых OS packages.
+Zeek и Suricata закреплены version tags для CI guard, но ещё не image digest. Перед external distribution следует закрепить digest, собрать SBOM и сохранить license notices для каждого образа и его базовых OS packages.
 
 Compose также объявляет `elastic/filebeat:8.15.0`, `elasticsearch:8.15.0` и `kibana:8.15.0`. Эти сервисы не образуют доказанной кодовой связи с historical Anomalyzer, но их лицензирование нельзя описывать как Apache-2.0 без проверки конкретной distribution. Elastic указывает ELv2 для default Elasticsearch/Kibana distribution и ограничения на предоставление продукта как managed service. См. [Elastic FAQ](https://www.elastic.co/licensing/elastic-license/faq/).
 

@@ -158,29 +158,69 @@ new candidate, new internal validation and a genuinely new prospective holdout.
 
 ## 8. Changes made
 
-This section is finalized after implementation. Planned corrections are
-future-only duration semantics, feature names and dictionary, explicit workflow
-plans, environment evidence/rollback, typed hashes, tri-state integrity, policy
-coverage, secure-artifact verification, research-state validation, tests and CI.
+Implemented future-only corrections:
+
+- strict marker interval resolution and evidence attachment with no one-second
+  fallback;
+- `network_sensor_v0_6_integrity`, corrected share names, exact ordered contract
+  and a machine-readable feature dictionary;
+- explicit bounded local benign workflows including DNS observations and a real
+  WebSocket upgrade endpoint;
+- container-scoped netem apply/verify/rollback controller and computed
+  condition-evidence audit;
+- semantically separated hash domains, tri-state integrity evidence and an
+  independent aggregation comparator;
+- external secure-artifact descriptor and safe verifier using
+  `FILIN_SECURE_ARTIFACT_ROOT`;
+- generic full-coverage YAML policy evaluator with integrity and per-supported-
+  class zero-recall gates;
+- authoritative `docs/research-state.yaml`, synchronized README/status/roadmap
+  and documentation validation;
+- protected/generated artifact exclusion, immutable container image tags,
+  expanded CI and unit tests.
+
+No historical dataset, report, prediction, candidate, metric, tag or feature
+profile was replaced. The historical v0.3.7 condition audit now reports missing
+application evidence as `not_executed` instead of returning literal success.
 
 ## 9. Tests executed
 
-To be finalized after implementation.
+- Documentation validator: passed.
+- Release image mutable-tag guard: passed after version pinning.
+- Protected/generated artifact exclusion: passed.
+- `compileall` for tools, ML, backend and laboratory code: passed.
+- Full ML unit discovery: 181 tests passed.
+- Full backend unit discovery: 1 test passed.
+- New focused tests cover duration, marker evidence, finite feature projection,
+  feature dictionary, workflow fingerprints, DNS/WebSocket behavior,
+  environment application/rollback, hash domains, tri-state integrity,
+  aggregation reproduction, secure-root absence, policy coverage, per-class
+  zero recall, research state and artifact exclusion.
+- `git diff --check`: passed.
 
 ## 10. Tests not executed
 
 Protected runtime audits and a long Docker campaign are intentionally excluded
 from automatic CI and remain not executed unless run manually with a trusted
-secure-artifact root.
+secure-artifact root. Specifically not executed: external frozen artifact hash
+verification, real PCAP/Zeek/normalized-event reproduction, full historical
+aggregation reproduction and real Docker/netem application. Their status is
+`not_executed_secure_artifacts_unavailable` or `not_executed_runtime_manual`,
+not passed.
 
 ## 11. Remaining risks
 
 - Historical reports contain asserted fields that cannot be upgraded into
   computed evidence after the fact.
+- The v0.3.6 lock records identical values for each PCAP and normalized-event
+  hash and uses the execution-mapping hash as marker-interval hash. Those fields
+  remain historical evidence of the defect, not valid typed hash proof.
 - A fixture-driven environment-controller test cannot prove host kernel or
   Docker capability.
 - The historical tracked v0.3.7 frozen manifest remains an exception to the
   future external-manifest policy.
+- Version tags reduce mutable `latest` risk but are not registry digests; a
+  release still needs digest pinning and SBOM/license verification.
 
 ## 12. Requirements for the next training cycle
 
