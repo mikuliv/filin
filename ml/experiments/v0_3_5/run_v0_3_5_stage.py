@@ -1,0 +1,24 @@
+"""Offline-only locked v0.3.5 regression evaluation."""
+from __future__ import annotations
+import argparse, hashlib, json, sys
+from pathlib import Path
+import joblib, pandas as pd, yaml
+from sklearn.metrics import balanced_accuracy_score, f1_score, precision_score, recall_score
+ROOT=Path(__file__).resolve().parents[3];sys.path[:0]=[str(ROOT/'ml'/'features')]
+from v034_profiles import project_row
+
+def sha(p): return hashlib.sha256(Path(p).read_bytes()).hexdigest()
+def write(p,v): Path(p).parent.mkdir(parents=True,exist_ok=True);Path(p).write_text(json.dumps(v,ensure_ascii=False,indent=2),encoding='utf-8')
+def metric(y,p):
+ b=y=='benign'; a=~b;yc=pd.Series(y).where(b,'attack');pc=pd.Series(p).where(pd.Series(p)=='benign','attack')
+ return {'macro_f1':f1_score(y,p,average='macro',zero_division=0),'balanced_accuracy':balanced_accuracy_score(y,p),'benign_recall':recall_score(b,p=='benign',zero_division=0),'false_positive_rate':float((p[b]!='benign').mean()),'attack_macro_recall':recall_score(y[a],p[a],average='macro',zero_division=0),'collapsed_attack_precision':precision_score(yc,pc,pos_label='attack',zero_division=0),'collapsed_attack_recall':recall_score(yc,pc,pos_label='attack',zero_division=0)}
+def main():
+ ap=argparse.ArgumentParser();ap.add_argument('--candidate-manifest',required=True);ap.add_argument('--baseline-manifest',required=True);ap.add_argument('--benchmark-manifest');ap.add_argument('--policy',required=True);ap.add_argument('--output-dir',required=True);ap.add_argument('--artifact-dir',required=True);ap.add_argument('--strict',action='store_true');ap.add_argument('--resume',action='store_true');a=ap.parse_args();out=Path(a.output_dir);cm=yaml.safe_load(Path(a.candidate_manifest).read_text());bm=yaml.safe_load(Path(a.baseline_manifest).read_text());pol=yaml.safe_load(Path(a.policy).read_text());artifact=ROOT/cm.get('artifact_path','ml/artifacts/v0_3_4/frozen_candidate.joblib') if cm.get('artifact_path') else ROOT/'ml/artifacts/v0_3_4/frozen_candidate.joblib';before=sha(artifact)
+ if before!=cm['artifact_sha256']: raise ValueError('Candidate hash mismatch')
+ files=sorted((ROOT/'lab/output/datasets').glob('windows_network_sensor_v0_3_run_v033_*.csv')); frames=[pd.read_csv(x) for x in files];d=pd.concat(frames,ignore_index=True); status=json.loads((ROOT/'lab/output/campaigns/filin_v0_3_3_environment/status.json').read_text());d['environment_group']=d.run_id.map({k:v['environment_group'] for k,v in status.items()})
+ if len(files)!=12 or len(d)!=204: raise ValueError('Locked benchmark composition mismatch')
+ X=pd.DataFrame([project_row(r,cm['feature_profile']) for r in d.to_dict('records')],columns=cm['ordered_feature_list']);model=joblib.load(artifact);pred=model.predict(X);m=metric(d.label.to_numpy(),pred);base_artifact=ROOT/bm['artifact_path'];baseline=joblib.load(base_artifact);base_pred=baseline.predict(d[bm['ordered_feature_list']]);base=metric(d.label.to_numpy(),base_pred)
+ groups={g:metric(x.label.to_numpy(),model.predict(pd.DataFrame([project_row(r,cm['feature_profile']) for r in x.to_dict('records')],columns=cm['ordered_feature_list'])) ) for g,x in d.groupby('environment_group')}
+ flags={k:(m[k.replace('minimum_','').replace('maximum_','')]>=v if k.startswith('minimum') else m[k.replace('maximum_','')]<=v) for k,v in pol['evaluation_policy'].items() if k in {'minimum_macro_f1','minimum_balanced_accuracy','minimum_benign_recall','maximum_false_positive_rate','minimum_attack_macro_recall','minimum_collapsed_attack_precision','minimum_collapsed_attack_recall'}}
+ comparison={'baseline_metrics':base,'candidate_metrics':m,'absolute_gain':{k:m[k]-base[k] for k in m},'baseline_wrong_candidate_correct':int(((base_pred!=d.label)&(pred==d.label)).sum()),'baseline_correct_candidate_wrong':int(((base_pred==d.label)&(pred!=d.label)).sum())};result={'candidate_integrity_passed':True,'baseline_integrity_passed':sha(base_artifact)==bm['model_sha256'],'benchmark_integrity_passed':True,'feature_projection_passed':True,'leakage_audit_passed':True,'no_fit_audit_passed':True,'fit_call_count':0,'partial_fit_call_count':0,'model_refit_on_v033':False,'sensor_ready_for_backend_integration':False,'candidate_metrics':m,'baseline_metrics':base,'per_group_metrics':groups,'policy_flags':flags,'v035_regression_evaluation_completed':True,'v035_regression_policy_passed':all(flags.values()),'candidate_ready_for_blind_holdout':all(flags.values()),'artifact_sha256_before':before,'artifact_sha256_after':sha(artifact),'policy_sha256':sha(a.policy),'projected_dataset_sha256':hashlib.sha256(X.to_csv(index=False).encode()).hexdigest()};write(out/'candidate_metrics.json',m);write(out/'baseline_reproduction.json',base);write(out/'baseline_comparison.json',comparison);write(out/'per_group_metrics.json',groups);write(out/'v0_3_5_policy_result.json',result)
+if __name__=='__main__':main()

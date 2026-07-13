@@ -1,0 +1,35 @@
+evaluation_policy:
+  minimum_macro_f1: 0.80
+  minimum_balanced_accuracy: 0.90
+  minimum_benign_recall: 0.85
+  maximum_false_positive_rate: 0.15
+  minimum_hard_negative_benign_recall: 0.75
+  minimum_attack_macro_recall: 0.90
+  minimum_collapsed_attack_precision: 0.75
+  minimum_collapsed_attack_recall: 0.90
+  minimum_group_macro_f1: 0.65
+  minimum_group_benign_recall: 0.70
+  maximum_group_false_positive_rate: 0.30
+  minimum_group_attack_macro_recall: 0.80
+  minimum_benign_variant_recall: 0.50
+  prohibit_zero_recall_class: true
+  prohibit_zero_benign_recall_group: true
+regression_improvement_policy:
+  minimum_macro_f1_gain_over_v031: 0.15
+  minimum_benign_recall_gain_over_v031: 0.70
+  minimum_false_positive_rate_reduction: 0.70
+  minimum_collapsed_attack_precision_gain: 0.30
+internal_validation_degradation_policy:
+  maximum_macro_f1_drop: 0.20
+  maximum_benign_recall_drop: 0.20
+  maximum_attack_macro_recall_drop: 0.10
+  maximum_collapsed_attack_precision_drop: 0.20
+integrity_policy:
+  require_candidate_hash_match: true
+  require_baseline_hash_match: true
+  require_benchmark_hash_match: true
+  require_execution_mapping_1_to_1: true
+  require_no_fit: true
+  require_no_threshold_tuning: true
+  require_no_row_exclusion: true
+  require_no_source_modification: true
