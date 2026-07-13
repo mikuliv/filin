@@ -1,0 +1,265 @@
+benchmark_id: filin-v0.3.3-environment-locked
+benchmark_role: locked_regression_benchmark
+blind_final_test: false
+source_campaign_id: filin-v0.3.3-environment
+source_campaign_index_path: lab/output/campaigns/filin_v0_3_3_environment/status.json
+source_campaign_index_sha256: ceb10431f0c32741e1d070e6a9f2027d950380a7d92d2914d608166ed0a13dae
+source_run_ids:
+- run_v033_degraded_001
+- run_v033_degraded_002
+- run_v033_degraded_003
+- run_v033_hard_negative_001
+- run_v033_hard_negative_002
+- run_v033_hard_negative_003
+- run_v033_mixed_001
+- run_v033_mixed_002
+- run_v033_mixed_003
+- run_v033_tls_proxy_001
+- run_v033_tls_proxy_002
+- run_v033_tls_proxy_003
+source_dataset_paths:
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_degraded_001.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_degraded_002.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_degraded_003.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_hard_negative_001.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_hard_negative_002.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_hard_negative_003.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_mixed_001.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_mixed_002.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_mixed_003.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_tls_proxy_001.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_tls_proxy_002.csv
+- lab/output/datasets/windows_network_sensor_v0_3_run_v033_tls_proxy_003.csv
+source_dataset_sha256:
+  windows_network_sensor_v0_3_run_v033_degraded_001.csv: 6ae12e2ffd6a0a026a8e233b05847c5aa6d8d4f13d310bedc1f67dc49093b05f
+  windows_network_sensor_v0_3_run_v033_degraded_002.csv: 7099ea2b0040bfd1da9f78517dd27331019eafe128447e5787fb4f055ccb0fdd
+  windows_network_sensor_v0_3_run_v033_degraded_003.csv: 2c36d3f9578ced3ca0ea57fcf09eabe22460ce4bfe83eaa0284b35b165753d29
+  windows_network_sensor_v0_3_run_v033_hard_negative_001.csv: 5c4ac993759c9d03cabc4ac39214639872f99da1cfc54425c507070505cd2f01
+  windows_network_sensor_v0_3_run_v033_hard_negative_002.csv: 00a9fb276200a26a99538a3afcf6a0783ad43a77ff37757e7a033d7f07306e4f
+  windows_network_sensor_v0_3_run_v033_hard_negative_003.csv: da6cac221931d03aca4a876afb59d54d1ca8bd1de1339984e7e0d6d99cf1a941
+  windows_network_sensor_v0_3_run_v033_mixed_001.csv: 67d829968749f827870fdc4e44f30c0c5f0ba157269f17a61424736037ed35c3
+  windows_network_sensor_v0_3_run_v033_mixed_002.csv: 1f02ef0a9e48703da01c0e635ba743632f7338cccf9dbcd8c677f9cb0fa6d6de
+  windows_network_sensor_v0_3_run_v033_mixed_003.csv: bb600dd6c34e32ad9c4fd74a7fee7be52cd9131d28b319421e7ab27e06c498fa
+  windows_network_sensor_v0_3_run_v033_tls_proxy_001.csv: 0fe5025dfb58395bd8520837a3f9e149857c0d0b39136687bee8a33c9fb6b5e9
+  windows_network_sensor_v0_3_run_v033_tls_proxy_002.csv: fa4078275004944a9d4663c930f5b005786281c1c1912452ef8ceb1adc07d925
+  windows_network_sensor_v0_3_run_v033_tls_proxy_003.csv: 7b44a691c1fdfde84e00d6551fc42cd2cf0ee75fba6972c15f0fc52be4b7a0f1
+source_execution_ids:
+- run_v033_degraded_001:1:benign_web_browsing
+- run_v033_degraded_001:2:benign_api_workflow
+- run_v033_degraded_001:3:benign_dns_discovery
+- run_v033_degraded_001:4:benign_update_check
+- run_v033_degraded_001:5:benign_file_download
+- run_v033_degraded_001:6:benign_backup_sync
+- run_v033_degraded_001:7:benign_log_shipping
+- run_v033_degraded_001:8:benign_service_inventory
+- run_v033_degraded_001:9:benign_auth_retry_recovery
+- run_v033_degraded_001:10:benign_broken_link_check
+- run_v033_degraded_001:11:benign_parallel_transfer
+- run_v033_degraded_001:12:benign_monitoring_heartbeat
+- run_v033_degraded_001:13:attack_port_scan
+- run_v033_degraded_001:14:attack_auth_failures
+- run_v033_degraded_001:15:attack_web_probe
+- run_v033_degraded_001:16:attack_low_rate_dos
+- run_v033_degraded_001:17:attack_beacon_simulation
+- run_v033_degraded_002:1:benign_web_browsing
+- run_v033_degraded_002:2:benign_api_workflow
+- run_v033_degraded_002:3:benign_dns_discovery
+- run_v033_degraded_002:4:benign_update_check
+- run_v033_degraded_002:5:benign_file_download
+- run_v033_degraded_002:6:benign_backup_sync
+- run_v033_degraded_002:7:benign_log_shipping
+- run_v033_degraded_002:8:benign_service_inventory
+- run_v033_degraded_002:9:benign_auth_retry_recovery
+- run_v033_degraded_002:10:benign_broken_link_check
+- run_v033_degraded_002:11:benign_parallel_transfer
+- run_v033_degraded_002:12:benign_monitoring_heartbeat
+- run_v033_degraded_002:13:attack_port_scan
+- run_v033_degraded_002:14:attack_auth_failures
+- run_v033_degraded_002:15:attack_web_probe
+- run_v033_degraded_002:16:attack_low_rate_dos
+- run_v033_degraded_002:17:attack_beacon_simulation
+- run_v033_degraded_003:1:benign_web_browsing
+- run_v033_degraded_003:2:benign_api_workflow
+- run_v033_degraded_003:3:benign_dns_discovery
+- run_v033_degraded_003:4:benign_update_check
+- run_v033_degraded_003:5:benign_file_download
+- run_v033_degraded_003:6:benign_backup_sync
+- run_v033_degraded_003:7:benign_log_shipping
+- run_v033_degraded_003:8:benign_service_inventory
+- run_v033_degraded_003:9:benign_auth_retry_recovery
+- run_v033_degraded_003:10:benign_broken_link_check
+- run_v033_degraded_003:11:benign_parallel_transfer
+- run_v033_degraded_003:12:benign_monitoring_heartbeat
+- run_v033_degraded_003:13:attack_port_scan
+- run_v033_degraded_003:14:attack_auth_failures
+- run_v033_degraded_003:15:attack_web_probe
+- run_v033_degraded_003:16:attack_low_rate_dos
+- run_v033_degraded_003:17:attack_beacon_simulation
+- run_v033_hard_negative_001:1:benign_web_browsing
+- run_v033_hard_negative_001:2:benign_api_workflow
+- run_v033_hard_negative_001:3:benign_dns_discovery
+- run_v033_hard_negative_001:4:benign_update_check
+- run_v033_hard_negative_001:5:benign_file_download
+- run_v033_hard_negative_001:6:benign_backup_sync
+- run_v033_hard_negative_001:7:benign_log_shipping
+- run_v033_hard_negative_001:8:benign_service_inventory
+- run_v033_hard_negative_001:9:benign_auth_retry_recovery
+- run_v033_hard_negative_001:10:benign_broken_link_check
+- run_v033_hard_negative_001:11:benign_parallel_transfer
+- run_v033_hard_negative_001:12:benign_monitoring_heartbeat
+- run_v033_hard_negative_001:13:attack_port_scan
+- run_v033_hard_negative_001:14:attack_auth_failures
+- run_v033_hard_negative_001:15:attack_web_probe
+- run_v033_hard_negative_001:16:attack_low_rate_dos
+- run_v033_hard_negative_001:17:attack_beacon_simulation
+- run_v033_hard_negative_002:1:benign_web_browsing
+- run_v033_hard_negative_002:2:benign_api_workflow
+- run_v033_hard_negative_002:3:benign_dns_discovery
+- run_v033_hard_negative_002:4:benign_update_check
+- run_v033_hard_negative_002:5:benign_file_download
+- run_v033_hard_negative_002:6:benign_backup_sync
+- run_v033_hard_negative_002:7:benign_log_shipping
+- run_v033_hard_negative_002:8:benign_service_inventory
+- run_v033_hard_negative_002:9:benign_auth_retry_recovery
+- run_v033_hard_negative_002:10:benign_broken_link_check
+- run_v033_hard_negative_002:11:benign_parallel_transfer
+- run_v033_hard_negative_002:12:benign_monitoring_heartbeat
+- run_v033_hard_negative_002:13:attack_port_scan
+- run_v033_hard_negative_002:14:attack_auth_failures
+- run_v033_hard_negative_002:15:attack_web_probe
+- run_v033_hard_negative_002:16:attack_low_rate_dos
+- run_v033_hard_negative_002:17:attack_beacon_simulation
+- run_v033_hard_negative_003:1:benign_web_browsing
+- run_v033_hard_negative_003:2:benign_api_workflow
+- run_v033_hard_negative_003:3:benign_dns_discovery
+- run_v033_hard_negative_003:4:benign_update_check
+- run_v033_hard_negative_003:5:benign_file_download
+- run_v033_hard_negative_003:6:benign_backup_sync
+- run_v033_hard_negative_003:7:benign_log_shipping
+- run_v033_hard_negative_003:8:benign_service_inventory
+- run_v033_hard_negative_003:9:benign_auth_retry_recovery
+- run_v033_hard_negative_003:10:benign_broken_link_check
+- run_v033_hard_negative_003:11:benign_parallel_transfer
+- run_v033_hard_negative_003:12:benign_monitoring_heartbeat
+- run_v033_hard_negative_003:13:attack_port_scan
+- run_v033_hard_negative_003:14:attack_auth_failures
+- run_v033_hard_negative_003:15:attack_web_probe
+- run_v033_hard_negative_003:16:attack_low_rate_dos
+- run_v033_hard_negative_003:17:attack_beacon_simulation
+- run_v033_mixed_001:1:benign_web_browsing
+- run_v033_mixed_001:2:benign_api_workflow
+- run_v033_mixed_001:3:benign_dns_discovery
+- run_v033_mixed_001:4:benign_update_check
+- run_v033_mixed_001:5:benign_file_download
+- run_v033_mixed_001:6:benign_backup_sync
+- run_v033_mixed_001:7:benign_log_shipping
+- run_v033_mixed_001:8:benign_service_inventory
+- run_v033_mixed_001:9:benign_auth_retry_recovery
+- run_v033_mixed_001:10:benign_broken_link_check
+- run_v033_mixed_001:11:benign_parallel_transfer
+- run_v033_mixed_001:12:benign_monitoring_heartbeat
+- run_v033_mixed_001:13:attack_port_scan
+- run_v033_mixed_001:14:attack_auth_failures
+- run_v033_mixed_001:15:attack_web_probe
+- run_v033_mixed_001:16:attack_low_rate_dos
+- run_v033_mixed_001:17:attack_beacon_simulation
+- run_v033_mixed_002:1:benign_web_browsing
+- run_v033_mixed_002:2:benign_api_workflow
+- run_v033_mixed_002:3:benign_dns_discovery
+- run_v033_mixed_002:4:benign_update_check
+- run_v033_mixed_002:5:benign_file_download
+- run_v033_mixed_002:6:benign_backup_sync
+- run_v033_mixed_002:7:benign_log_shipping
+- run_v033_mixed_002:8:benign_service_inventory
+- run_v033_mixed_002:9:benign_auth_retry_recovery
+- run_v033_mixed_002:10:benign_broken_link_check
+- run_v033_mixed_002:11:benign_parallel_transfer
+- run_v033_mixed_002:12:benign_monitoring_heartbeat
+- run_v033_mixed_002:13:attack_port_scan
+- run_v033_mixed_002:14:attack_auth_failures
+- run_v033_mixed_002:15:attack_web_probe
+- run_v033_mixed_002:16:attack_low_rate_dos
+- run_v033_mixed_002:17:attack_beacon_simulation
+- run_v033_mixed_003:1:benign_web_browsing
+- run_v033_mixed_003:2:benign_api_workflow
+- run_v033_mixed_003:3:benign_dns_discovery
+- run_v033_mixed_003:4:benign_update_check
+- run_v033_mixed_003:5:benign_file_download
+- run_v033_mixed_003:6:benign_backup_sync
+- run_v033_mixed_003:7:benign_log_shipping
+- run_v033_mixed_003:8:benign_service_inventory
+- run_v033_mixed_003:9:benign_auth_retry_recovery
+- run_v033_mixed_003:10:benign_broken_link_check
+- run_v033_mixed_003:11:benign_parallel_transfer
+- run_v033_mixed_003:12:benign_monitoring_heartbeat
+- run_v033_mixed_003:13:attack_port_scan
+- run_v033_mixed_003:14:attack_auth_failures
+- run_v033_mixed_003:15:attack_web_probe
+- run_v033_mixed_003:16:attack_low_rate_dos
+- run_v033_mixed_003:17:attack_beacon_simulation
+- run_v033_tls_proxy_001:1:benign_web_browsing
+- run_v033_tls_proxy_001:2:benign_api_workflow
+- run_v033_tls_proxy_001:3:benign_dns_discovery
+- run_v033_tls_proxy_001:4:benign_update_check
+- run_v033_tls_proxy_001:5:benign_file_download
+- run_v033_tls_proxy_001:6:benign_backup_sync
+- run_v033_tls_proxy_001:7:benign_log_shipping
+- run_v033_tls_proxy_001:8:benign_service_inventory
+- run_v033_tls_proxy_001:9:benign_auth_retry_recovery
+- run_v033_tls_proxy_001:10:benign_broken_link_check
+- run_v033_tls_proxy_001:11:benign_parallel_transfer
+- run_v033_tls_proxy_001:12:benign_monitoring_heartbeat
+- run_v033_tls_proxy_001:13:attack_port_scan
+- run_v033_tls_proxy_001:14:attack_auth_failures
+- run_v033_tls_proxy_001:15:attack_web_probe
+- run_v033_tls_proxy_001:16:attack_low_rate_dos
+- run_v033_tls_proxy_001:17:attack_beacon_simulation
+- run_v033_tls_proxy_002:1:benign_web_browsing
+- run_v033_tls_proxy_002:2:benign_api_workflow
+- run_v033_tls_proxy_002:3:benign_dns_discovery
+- run_v033_tls_proxy_002:4:benign_update_check
+- run_v033_tls_proxy_002:5:benign_file_download
+- run_v033_tls_proxy_002:6:benign_backup_sync
+- run_v033_tls_proxy_002:7:benign_log_shipping
+- run_v033_tls_proxy_002:8:benign_service_inventory
+- run_v033_tls_proxy_002:9:benign_auth_retry_recovery
+- run_v033_tls_proxy_002:10:benign_broken_link_check
+- run_v033_tls_proxy_002:11:benign_parallel_transfer
+- run_v033_tls_proxy_002:12:benign_monitoring_heartbeat
+- run_v033_tls_proxy_002:13:attack_port_scan
+- run_v033_tls_proxy_002:14:attack_auth_failures
+- run_v033_tls_proxy_002:15:attack_web_probe
+- run_v033_tls_proxy_002:16:attack_low_rate_dos
+- run_v033_tls_proxy_002:17:attack_beacon_simulation
+- run_v033_tls_proxy_003:1:benign_web_browsing
+- run_v033_tls_proxy_003:2:benign_api_workflow
+- run_v033_tls_proxy_003:3:benign_dns_discovery
+- run_v033_tls_proxy_003:4:benign_update_check
+- run_v033_tls_proxy_003:5:benign_file_download
+- run_v033_tls_proxy_003:6:benign_backup_sync
+- run_v033_tls_proxy_003:7:benign_log_shipping
+- run_v033_tls_proxy_003:8:benign_service_inventory
+- run_v033_tls_proxy_003:9:benign_auth_retry_recovery
+- run_v033_tls_proxy_003:10:benign_broken_link_check
+- run_v033_tls_proxy_003:11:benign_parallel_transfer
+- run_v033_tls_proxy_003:12:benign_monitoring_heartbeat
+- run_v033_tls_proxy_003:13:attack_port_scan
+- run_v033_tls_proxy_003:14:attack_auth_failures
+- run_v033_tls_proxy_003:15:attack_web_probe
+- run_v033_tls_proxy_003:16:attack_low_rate_dos
+- run_v033_tls_proxy_003:17:attack_beacon_simulation
+class_distribution:
+  auth_failures: 12
+  beacon_simulation: 12
+  benign: 144
+  low_rate_dos: 12
+  port_scan: 12
+  web_probe: 12
+group_distribution:
+  degraded: 3
+  hard_negative: 3
+  mixed: 3
+  tls_proxy: 3
+expected_rows: 204
+expected_runs: 12
+source_modified: false
