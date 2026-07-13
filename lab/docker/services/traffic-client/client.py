@@ -51,6 +51,15 @@ SCENARIOS = {
     "attack_low_rate_dos": ("attack", "low_rate_dos", "attacker-simulator", "target-web"),
     "attack_beacon_simulation": ("attack", "beacon_simulation", "attacker-simulator", "control-api"),
 }
+for _holdout_id in (
+    "benign_ci_cd_agent", "benign_service_mesh_readiness", "benign_dns_failover_rotation",
+    "benign_object_storage_multipart", "benign_message_queue_consumer", "benign_certificate_renewal",
+    "benign_remote_maintenance", "benign_batch_api_import", "benign_websocket_keepalive",
+    "benign_package_mirror_refresh", "benign_backup_verification", "benign_log_rotation_shipping",
+    "benign_multi_resolver_discovery", "benign_auth_token_refresh", "benign_polite_link_crawler",
+    "benign_inventory_with_recovery",
+):
+    SCENARIOS[_holdout_id] = ("benign", "benign", "benign-client", "target-api")
 
 
 class SafetyError(ValueError):
