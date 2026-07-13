@@ -1,0 +1,24 @@
+policy_id: v037_nested_selection_v1
+outer_cv: {class: StratifiedGroupKFold, n_splits: 6, shuffle: true, random_state: 42, group: run_id}
+inner_cv: {class: StratifiedGroupKFold, n_splits: 4, shuffle: true, random_state: 42, group: run_id}
+rolling_history_depth_grid: [3, 4, 6]
+ood_quantile_grid: [0.95, 0.975, 0.99]
+gate_benign_threshold_grid: [0.20, 0.30, 0.40]
+gate_attack_threshold_grid: [0.60, 0.70, 0.80]
+subtype_confidence_threshold_grid: [0.35, 0.45, 0.55, 0.65]
+temporal_variants: [none, 2_of_3, 2_of_4, decayed]
+temporal_alpha_grid: [0.5, 0.7]
+temporal_activation_grid: [0.55, 0.65, 0.75]
+selection_gates:
+  minimum_attack_alert_recall: 0.90
+  maximum_attack_to_benign_false_negative_rate: 0.05
+  minimum_benign_recall: 0.82
+  maximum_false_positive_rate: 0.15
+  maximum_high_severity_false_positive_rate: 0.10
+  minimum_hard_negative_benign_recall: 0.75
+  minimum_decision_coverage: 0.75
+  maximum_attack_unresolved_rate: 0.10
+  maximum_benign_insufficient_evidence_rate: 0.20
+  minimum_attack_subtype_macro_recall: 0.80
+  prohibit_zero_recall_attack_classes: true
+episode_gates: {minimum_attack_episode_recall: 0.95, maximum_benign_episode_false_alert_rate: 0.20, maximum_attack_episode_unresolved_rate: 0.05, maximum_median_time_to_alert_windows: 2, prohibit_zero_recall_attack_episode_class: true}
