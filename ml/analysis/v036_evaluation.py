@@ -181,7 +181,17 @@ def evaluate(candidate_manifest_path: Path, protocol_path: Path, lock_path: Path
                                     "prediction_count": len(saved), "predict_call_count": 1,
                                     "holdout_lock_sha256": sha256(lock_path), "immutable": True})
     overall = metrics(frame); per_run = {name: metrics(group) for name,group in frame.groupby("run_id")}; per_group = {name: metrics(group) for name,group in frame.groupby("environment_group")}
-    variants = _variant_metrics(frame); attacks = {name: metrics(frame[frame.label == name]) for name in ATTACKS}
+    variants = _variant_metrics(frame)
+    attacks = {}
+    for name in ATTACKS:
+        subset = frame[frame.label == name]
+        class_metric = overall["per_class"][name]
+        attacks[name] = {**class_metric,
+            "attack_to_benign": int((subset.prediction == "benign").sum()),
+            "attack_to_wrong_attack": int(((subset.prediction != "benign") & (subset.prediction != name)).sum()),
+            "mean_confidence": float(subset.confidence.mean()),
+            "median_confidence": float(subset.confidence.median()),
+            "confidence_minimum": float(subset.confidence.min())}
     calibration = _calibration(frame, probabilities, classes); bootstrap = _bootstrap(frame)
     historical = compare(overall); drift_frame = pd.concat([X.reset_index(drop=True), frame[["label","prediction"]].reset_index(drop=True)], axis=1)
     feature_distribution = _feature_distribution(drift_frame, features)
@@ -198,7 +208,7 @@ def evaluate(candidate_manifest_path: Path, protocol_path: Path, lock_path: Path
                    "mean_event_count":float(frame.window_event_count.mean()),"mean_flow_count":float(frame.flow_count.mean()),
                    "errors":int((frame.label!=frame.prediction).sum()),"errors_by_group":Counter(frame[frame.label!=frame.prediction].environment_group).most_common()}
     worst_variant = min(variants, key=lambda x: variants[x]["benign_recall"]); best_variant = max(variants, key=lambda x: variants[x]["benign_recall"])
-    worst_attack = min(ATTACKS, key=lambda x: attacks[x]["per_class"][x]["recall"])
+    worst_attack = min(ATTACKS, key=lambda x: attacks[x]["recall"])
     overall_policy = policy["evaluation_policy"]
     policy_flags = {
         "minimum_macro_f1_passed": overall["macro_f1"] >= overall_policy["minimum_macro_f1"],
