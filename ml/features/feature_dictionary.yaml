@@ -24,27 +24,27 @@ ordered_features:
   - unique_destinations_per_flow
   - unique_services_per_flow
 defaults: &defaults
-  source: marker-correlated Zeek aggregation
-  missing: reject execution
-  empty_window: counts are zero; undefined measurements reject execution
+  source: агрегация Zeek-событий, сопоставленных по маркерам
+  missing: отклонить execution
+  empty_window: счётчики равны нулю; execution с неопределёнными измерениями отклоняется
 features:
-  flow_count: {<<: *defaults, description: Correlated connection-flow count, unit: flows, valid_range: "[0, +inf)"}
-  tcp_flow_count: {<<: *defaults, description: TCP flow count, unit: flows, valid_range: "[0, +inf)"}
-  udp_flow_count: {<<: *defaults, description: UDP flow count, unit: flows, valid_range: "[0, +inf)"}
-  failed_connection_count: {<<: *defaults, description: Non-success connection count, unit: connections, valid_range: "[0, +inf)"}
-  total_bytes: {<<: *defaults, description: Observed originator and responder bytes, unit: bytes, valid_range: "[0, +inf)"}
-  total_packets: {<<: *defaults, description: Observed originator and responder packets, unit: packets, valid_range: "[0, +inf)"}
-  http_request_count: {<<: *defaults, description: Observed HTTP request count, unit: requests, valid_range: "[0, +inf)"}
-  dns_query_count: {<<: *defaults, description: Observed DNS query count, unit: queries, valid_range: "[0, +inf)"}
-  connection_failure_rate: {<<: *defaults, description: Failed share of flows, unit: fraction, valid_range: "[0, 1]"}
-  http_error_rate: {<<: *defaults, description: HTTP error share of requests, unit: fraction, valid_range: "[0, 1]"}
-  dns_error_rate: {<<: *defaults, description: DNS error share of queries, unit: fraction, valid_range: "[0, 1]"}
-  orig_bytes_share: {<<: *defaults, description: Originator bytes divided by total bytes, unit: fraction, valid_range: "[0, 1]"}
-  orig_packets_share: {<<: *defaults, description: Originator packets divided by total packets, unit: fraction, valid_range: "[0, 1]"}
-  events_per_second: {<<: *defaults, description: Correlated events per marker second, unit: events/second, valid_range: "[0, +inf)"}
-  flows_per_second: {<<: *defaults, description: Flows per marker second, unit: flows/second, valid_range: "[0, +inf)"}
-  bytes_per_second: {<<: *defaults, description: Bytes per marker second, unit: bytes/second, valid_range: "[0, +inf)"}
-  packets_per_second: {<<: *defaults, description: Packets per marker second, unit: packets/second, valid_range: "[0, +inf)"}
-  failed_connections_per_second: {<<: *defaults, description: Failed connections per marker second, unit: connections/second, valid_range: "[0, +inf)"}
-  unique_destinations_per_flow: {<<: *defaults, description: Unique destinations normalized by flows, unit: ratio, valid_range: "[0, +inf)"}
-  unique_services_per_flow: {<<: *defaults, description: Unique services normalized by flows, unit: ratio, valid_range: "[0, +inf)"}
+  flow_count: {<<: *defaults, description: Число сопоставленных потоков соединений, unit: потоки, valid_range: "[0, +inf)"}
+  tcp_flow_count: {<<: *defaults, description: Число TCP-потоков, unit: потоки, valid_range: "[0, +inf)"}
+  udp_flow_count: {<<: *defaults, description: Число UDP-потоков, unit: потоки, valid_range: "[0, +inf)"}
+  failed_connection_count: {<<: *defaults, description: Число соединений без успешного завершения, unit: соединения, valid_range: "[0, +inf)"}
+  total_bytes: {<<: *defaults, description: Наблюдаемые байты инициатора и ответчика, unit: байты, valid_range: "[0, +inf)"}
+  total_packets: {<<: *defaults, description: Наблюдаемые пакеты инициатора и ответчика, unit: пакеты, valid_range: "[0, +inf)"}
+  http_request_count: {<<: *defaults, description: Число наблюдаемых HTTP-запросов, unit: запросы, valid_range: "[0, +inf)"}
+  dns_query_count: {<<: *defaults, description: Число наблюдаемых DNS-запросов, unit: запросы, valid_range: "[0, +inf)"}
+  connection_failure_rate: {<<: *defaults, description: Доля неуспешных потоков, unit: доля, valid_range: "[0, 1]"}
+  http_error_rate: {<<: *defaults, description: Доля HTTP-запросов с ошибкой, unit: доля, valid_range: "[0, 1]"}
+  dns_error_rate: {<<: *defaults, description: Доля DNS-запросов с ошибкой, unit: доля, valid_range: "[0, 1]"}
+  orig_bytes_share: {<<: *defaults, description: Доля байтов инициатора в общем числе байтов, unit: доля, valid_range: "[0, 1]"}
+  orig_packets_share: {<<: *defaults, description: Доля пакетов инициатора в общем числе пакетов, unit: доля, valid_range: "[0, 1]"}
+  events_per_second: {<<: *defaults, description: Сопоставленные события за секунду marker interval, unit: события/секунда, valid_range: "[0, +inf)"}
+  flows_per_second: {<<: *defaults, description: Потоки за секунду marker interval, unit: потоки/секунда, valid_range: "[0, +inf)"}
+  bytes_per_second: {<<: *defaults, description: Байты за секунду marker interval, unit: байты/секунда, valid_range: "[0, +inf)"}
+  packets_per_second: {<<: *defaults, description: Пакеты за секунду marker interval, unit: пакеты/секунда, valid_range: "[0, +inf)"}
+  failed_connections_per_second: {<<: *defaults, description: Неуспешные соединения за секунду marker interval, unit: соединения/секунда, valid_range: "[0, +inf)"}
+  unique_destinations_per_flow: {<<: *defaults, description: Число уникальных назначений относительно числа потоков, unit: отношение, valid_range: "[0, +inf)"}
+  unique_services_per_flow: {<<: *defaults, description: Число уникальных сервисов относительно числа потоков, unit: отношение, valid_range: "[0, +inf)"}
