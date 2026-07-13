@@ -1,61 +1,44 @@
 # Roadmap
 
-## После v0.3.6
+The machine-readable authority for current status is
+[`research-state.yaml`](research-state.yaml).
 
-Prospective holdout policy не пройдена, поэтому v0.3.7 shadow mode не разрешён. Следующий допустимый
-шаг — новый training cycle с новой internal validation и новым holdout. Данные v0.3.6 нельзя
-использовать для настройки текущего candidate или threshold.
+## Completed research stages
 
-## v0.3.4 research boundary
-
-v0.3.3 is completed with a negative environment-evaluation result. The active
-next stage is **v0.3.4 — redesign training campaign, benign representation and
-feature pipeline**. A new blind/external holdout belongs to **v0.3.5** and must
-not be used during v0.3.4 development.
-
-## Current roadmap status
-
-v0.3.3 is completed with a negative environment-evaluation result. The active
-next stage is **v0.3.4 — redesign training campaign, benign representation and
-feature pipeline**. A new blind/external holdout belongs to **v0.3.5** and must
-not be used during v0.3.4 development.
-
-## Завершённые этапы
-
-- v0.2.2 — source-aware feature profiles и actual execution windows.
-- v0.2.3 — независимые laboratory executions с train/test separation.
-- v0.2.4 — baseline evaluation client profiles.
-- v0.3 — независимый Zeek sensor pipeline и marker-aware correlation.
-- v0.3.1 — baseline evaluation `network_sensor_v0_3`.
+- v0.3.1 — baseline evaluation.
 - v0.3.2 — frozen robustness evaluation.
-- v0.3.3 — completed negative environment evaluation; benign recall `0.000`.
-- v0.3.3 — completed negative environment evaluation; benign recall `0.000`.
+- v0.3.3 — negative environment evaluation; benign recall `0.000` and false
+  positive rate `1.000` in that historical protocol.
+- v0.3.4 — benign representation redesign, grouped internal validation and
+  candidate freeze.
+- v0.3.5 — frozen regression evaluation on a known historical benchmark; not a
+  blind prospective holdout.
+- v0.3.6 — prospective holdout completed with policy not passed; historical
+  result is immutable and may not be reopened for tuning.
+- v0.3.7 — new hierarchical training/internal-validation cycle completed with
+  frozen internal-validation policy not passed.
 
-## Текущий документационный этап
+## Active work
 
-Нормализация и актуализация документации проекта «Филин»: единые термины, проверяемые ссылки, разделение реализованного и запланированного, фиксация ограничений.
+The post-v0.3.7 research-integrity audit records historical limitations and
+implements future-only corrections. It does not alter historical metrics,
+rerun holdout prediction or correct the v0.3.7 candidate retrospectively.
 
-## Ближайший технический этап
+## Next allowed stage
 
-**Филин v0.3.3 — расширение проверки на изменённой сетевой среде и более разнообразном фоновом трафике.** Этап не начат. Его цель — расширить независимую внешнюю проверку, не подменяя её дополнительными связанными окнами.
+The next free version is v0.3.8. Because duration semantics, benign workflows,
+environment application, feature semantics and integrity gates changed, the
+only allowed use is a new training cycle with new runs, scenario IDs, seeds,
+feature profile, candidate freeze and internal validation. v0.3.6 and v0.3.7
+must not be presented as a new blind holdout or used for hidden tuning.
 
-## Филин v0.3.4
+A later prospective holdout requires a separately pre-registered protocol,
+unseen scenarios and a single prediction after candidate and policy freeze.
+Backend integration and shadow mode remain prohibited until an applicable
+future policy explicitly passes. Production readiness is not established.
 
-Redesign training campaign и benign representation. Причина: frozen baseline
-воспроизводит source test, но имеет benign recall `0.000` на 204 external
-windows. Новое обучение и tuning не относятся к v0.3.3.
+## Longer-term work
 
-## Среднесрочные этапы
-
-- дополнительная validation на иной инфраструктуре и сервисной топологии;
-- более разнообразные безопасные background patterns;
-- воспроизводимая процедура deployment validation после накопления данных;
-- отдельная оценка наблюдаемости encrypted traffic metadata.
-
-## Долгосрочная концепция
-
-Incident representation, MITRE ATT&CK mapping, Sigma drafts, test bench validation, SIEM integration и analyst interface остаются будущими направлениями. Они не реализованы в текущем pipeline.
-
-## После v0.3.7
-
-Если `candidate_ready_for_v038_regression=true`, v0.3.8 выполняет только frozen evaluation на неизменяемом prospective holdout v0.3.6: без fit, calibration, threshold tuning и исключения строк. Новый prospective holdout планируется не ранее v0.3.9. Shadow mode можно рассматривать только после успешного нового prospective holdout, не после internal validation.
+Independent-infrastructure validation, encrypted-traffic observability,
+online inference, analyst workflow, SIEM integration and response actions are
+future research. Active response and automatic blocking are out of scope.

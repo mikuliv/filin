@@ -2,10 +2,19 @@
 
 ## Current research status
 
-v0.3.3 завершена с отрицательным environment result; v0.3.5 выполняет frozen
-regression evaluation. Интеграция с backend не выполняется.
+Authoritative source: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-> Текущий статус исследования: последний завершенный этап - версия 0.3.3, и он дал отрицательный результат оценки среды: количество положительных отзывов 0.000 и количество ложных срабатываний 1.000. Интеграция с серверной частью ML запрещена. Следующий этап - версия 0.3.4; для версии 0.3.5 зарезервирован новый внешний защитный экран.
+- Latest completed stage: v0.3.7.
+- Latest result: internal validation policy not passed.
+- Active work: post-v0.3.7 research-integrity audit and future-only corrections.
+- Next allowed stage: v0.3.8 new training cycle; it is not a replay of v0.3.6 or v0.3.7.
+- Backend integration allowed: false.
+- Shadow mode allowed: false.
+- Production ready: false.
+
+Historical v0.3.1–v0.3.7 metrics remain immutable. The audit identified
+duration, workflow, environment-condition and integrity-evidence limitations;
+corrected code was not used by historical experiments.
 
 ## Назначение
 
@@ -37,7 +46,10 @@ flowchart LR
 
 ## Текущая версия
 
-v0.3.2 подтвердил внешнюю оценку зафиксированной модели на 12 robustness-runs. Robustness-данные не участвовали в обучении, выборе признаков, preprocessing или настройке гиперпараметров.
+v0.3.7 завершил отдельный иерархический training/internal-validation cycle,
+но его frozen policy не пройдена. Он не разрешает backend integration, shadow
+mode или production deployment. Подробный текущий статус определяется только
+`docs/research-state.yaml`.
 
 ## Лабораторный стенд и сенсор
 

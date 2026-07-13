@@ -1,0 +1,33 @@
+schema_version: 1
+latest_completed_stage: v0.3.7
+latest_completed_result: internal_validation_policy_not_passed
+active_stage: post_v0.3.7_research_integrity_audit
+next_allowed_stage:
+  version: v0.3.8
+  kind: new_training_cycle
+  reason: corrected duration workflow environment and feature semantics require a new candidate
+backend_integration_allowed: false
+shadow_mode_allowed: false
+production_ready: false
+frozen_candidate:
+  stage: v0.3.7
+  usable_for_backend: false
+  corrected_by_audit: false
+holdout_boundaries:
+  v0.3.5: frozen_regression_not_blind
+  v0.3.6: historical_prospective_holdout_do_not_reopen_for_tuning
+  v0.3.7: internal_validation_not_prospective_holdout
+historical_stage_summary:
+  v0.3.1: baseline_evaluation_completed
+  v0.3.2: frozen_robustness_evaluation_completed
+  v0.3.3: environment_evaluation_negative
+  v0.3.4: benign_redesign_and_candidate_freeze_completed
+  v0.3.5: frozen_regression_evaluation_completed
+  v0.3.6: prospective_holdout_policy_not_passed
+  v0.3.7: hierarchical_internal_validation_policy_not_passed
+protected_artifact_policy:
+  external_storage_required: true
+  environment_variable: FILIN_SECURE_ARTIFACT_ROOT
+  absence_status: not_executed_secure_artifacts_unavailable
+  tracked_sensitive_artifacts_allowed: false
+  historical_v0_3_7_manifest_exception: already_tracked_immutable_evidence

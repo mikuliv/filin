@@ -1,5 +1,16 @@
 # Текущий статус
 
+Authoritative state: [`research-state.yaml`](research-state.yaml).
+
+- Latest completed stage: v0.3.7.
+- Latest result: internal validation policy not passed.
+- Backend integration allowed: false.
+- Shadow mode allowed: false.
+- Production ready: false.
+
+The post-v0.3.7 audit does not change historical metrics. Corrected semantics
+require a new v0.3.8 training cycle and a new candidate.
+
 ## v0.3.6
 
 Prospective holdout завершён с отрицательным результатом: 12 runs, 252 locked windows,
