@@ -42,6 +42,7 @@ env/
 lab/output/
 ml/reports/
 ml/artifacts/
+ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
 datasets/runtime/
 runtime/data/
 runtime/logs/
