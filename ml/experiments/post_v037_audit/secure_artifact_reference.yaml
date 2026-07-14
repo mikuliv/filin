@@ -1,7 +1,8 @@
-schema_version: 1
+schema_version: 2
 artifact_type: historical_v0_3_7_frozen_candidate
 external_storage_required: true
 artifact_relative_path: v0_3_7/network_sensor_v0_5_hierarchical.joblib
+manifest_relative_path: v0_3_7/frozen_candidate_manifest.yaml
 expected_manifest_schema_version: 1
 expected_artifact_sha256: d11ad593b70f9f69593a7500e397fd58e2ae0b0ce1e3627d985b552599529f25
 expected_feature_schema_sha256: e9adc0617e2e670c1d846936ff69d36b5f9749faedf34ac9ecd21c4c7a00526c
