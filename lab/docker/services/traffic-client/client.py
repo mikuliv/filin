@@ -24,7 +24,7 @@ SCAN_PORTS = [22, 80, 443, 8000, 8080, 5601]
 WEB_PATHS = ["/", "/about.html", "/docs.html", "/files/sample-small.txt", "/files/sample-config.json"]
 API_PATHS = ["/health", "/api/items", "/api/status", "/api/profile/test-user"]
 PROBE_PATHS = ["/admin-test", "/debug-test", "/backup-test", "/old-login-test", "/not-found-test"]
-DNS_NAMES = ["target-web", "target-api", "control-api", "target-ssh-sim"]
+DNS_NAMES = ["target-web", "target-api", "control-api", "target-ssh-sim", "filin-missing-service"]
 
 SCENARIOS = {
     "benign_web_browsing": ("benign", "benign", "benign-client", "target-web"),

@@ -11,8 +11,25 @@ from typing import Any
 
 
 ALLOWED_TARGETS = {"target-web", "target-api", "control-api", "internal-dns", "target-ssh-sim"}
+INTERNAL_DNS_NAMES = {"target-web", "target-api", "control-api", "target-ssh-sim", "filin-missing-service"}
 REQUIRED_TRAFFIC_FIELDS = {"timestamp", "run_id", "run_sequence", "scenario_id", "target_host", "event_type", "execution_mode", "synthetic"}
 CAMPAIGN_FIELDS = ("campaign_id", "campaign_version", "campaign_role", "campaign_run_index", "campaign_seed", "execution_id", "scenario_variant_id", "scenario_parameter_hash")
+
+
+def capture_bpf(manifest: dict[str, Any]) -> list[str]:
+    """Enable DNS capture only for an explicitly internal future smoke."""
+    if manifest.get("capture_dns") is True:
+        if manifest.get("campaign_role") != "pre_training_smoke":
+            raise ValueError("DNS capture without the future smoke role is prohibited")
+        policy = manifest.get("network_policy") or {}
+        names = set(policy.get("allowed_dns_names") or [])
+        if policy.get("scope") != "internal_docker_only" or policy.get("external_dns_allowed") is not False:
+            raise ValueError("future DNS capture requires an internal-only network policy")
+        if not names or not names <= INTERNAL_DNS_NAMES:
+            raise ValueError("future DNS capture contains a name outside the local allowlist")
+        return []
+    # Preserve the historical capture behavior for immutable stages.
+    return ["not", "port", "53"]
 
 
 def utc_now() -> str:
@@ -94,11 +111,12 @@ def run_docker_scenario(manifest: dict[str, Any], scenario: dict[str, Any], comp
             "docker", "compose", "-f", str(compose_file), "exec", "-T", "-u", "root", "traffic-client",
             "sh", "-lc", f"mkdir -p {capture_dir} && rm -f {capture_path}",
         ], cwd=compose_project_dir, check=True)
-        subprocess.run([
+        capture_command = [
             "docker", "compose", "-f", str(compose_file), "exec", "-d", "-u", "root", "traffic-client",
             "tcpdump", "-i", "eth0", "-B", "16384", "--immediate-mode", "-U", "-Z", "root",
-            "-w", capture_path, "not", "port", "53",
-        ], cwd=compose_project_dir, check=True)
+            "-w", capture_path, *capture_bpf(manifest),
+        ]
+        subprocess.run(capture_command, cwd=compose_project_dir, check=True)
         capture_started = True
         time.sleep(0.5)
     try:
