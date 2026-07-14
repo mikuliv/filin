@@ -36,7 +36,7 @@ WORKFLOW_PLANS: dict[str, tuple[Action, ...]] = {
     "benign_certificate_renewal": (DNS("target-api"), TCP("target-api", 8080), Action.http("GET", "target-api", "/api/status", workflow="certificate")),
     "benign_remote_maintenance": (TCP("target-ssh-sim", 2222), Action.http("GET", "target-api", "/api/status")),
     "benign_batch_api_import": _http_sequence("target-api", ["/api/items", "/api/items", "/api/status"], post=True, tag="batch_import"),
-    "benign_websocket_keepalive": (WS("open"), WS("ping"), WS("close")),
+    "benign_websocket_keepalive": (WS("session_ping_close"),),
     "benign_package_mirror_refresh": _http_sequence("target-web", ["/files/sample-config.json", "/files/sample-small.txt", "/about.html"], tag="package_mirror"),
     "benign_backup_verification": _http_sequence("target-web", ["/files/sample-config.json", "/files/sample-config.json"], tag="backup_verify"),
     "benign_log_rotation_shipping": _http_sequence("target-api", ["/api/items", "/api/status"], post=True, tag="log_rotation"),
@@ -45,6 +45,15 @@ WORKFLOW_PLANS: dict[str, tuple[Action, ...]] = {
     "benign_polite_link_crawler": _http_sequence("target-web", ["/", "/about.html", "/docs.html"], tag="polite_crawler"),
     "benign_inventory_with_recovery": (TCP("target-ssh-sim", 2222), DNS("target-api"), Action.http("GET", "target-api", "/api/items")),
 }
+
+WORKFLOW_PLANS.update({
+    "smoke_http_readback": (Action.http("GET", "target-web", "/files/sample-small.txt"),),
+    "smoke_dns_local_resolution": (DNS("target-api"), DNS("filin-missing-service")),
+    "smoke_websocket_ping_pong": (WS("session_ping_close"),),
+    "smoke_tcp_admin_check": (TCP("target-ssh-sim", 2222),),
+    "smoke_mixed_service_check": (DNS("target-api"), TCP("target-api", 8080), Action.http("GET", "target-api", "/health")),
+    "smoke_attack_like_probe": (Action.http("GET", "target-web", "/admin-test"), Action.http("GET", "target-web", "/debug-test")),
+})
 
 
 # v0.3.7 identifiers receive explicit semantic families.  Plans are generated
@@ -94,7 +103,7 @@ def _family_plan(scenario_id: str, family: str, target: str, ordinal: int) -> tu
     if family == "dns":
         base = (DNS("target-web"), DNS("target-api"), DNS("control-api"))
     elif family == "websocket":
-        base = (WS("open"), WS("ping"), WS("reconnect"))
+        base = (WS("reconnect_ping_close"),)
     elif family == "maintenance":
         base = (TCP("target-ssh-sim", 2222), DNS("target-api"))
     elif family in {"queue", "log", "transaction", "auth"}:
@@ -119,3 +128,50 @@ for _index, (_scenario_id, (_family, _target)) in enumerate(_V037.items()):
 def behavioral_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
     plan = WORKFLOW_PLANS[scenario_id]
     return tuple((action.kind, action.target, action.operation, action.payload) for action in plan)
+
+
+def primary_target(scenario_id: str) -> str:
+    """Return the actual first non-provenance target used by a workflow."""
+    return WORKFLOW_PLANS[scenario_id][0].target
+
+
+def observable_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
+    """Fingerprint protocols without the scenario-id provenance beacon."""
+    result = []
+    for action in WORKFLOW_PLANS[scenario_id]:
+        payload = dict(action.payload)
+        if action.target == "control-api" and action.operation == "POST:/beacon" and payload.get("workflow") == scenario_id:
+            continue
+        result.append((action.kind, action.target, action.operation))
+    return tuple(result)
+
+
+def workflow_runtime_audit() -> dict[str, Any]:
+    unsupported_families = {"database", "queue", "certificate", "transaction", "replication", "snapshot"}
+    rows = []
+    for scenario_id, plan in sorted(WORKFLOW_PLANS.items()):
+        family = _V037.get(scenario_id, (scenario_id.removeprefix("benign_").removeprefix("smoke_"), ""))[0]
+        rows.append({
+            "scenario_id": scenario_id,
+            "semantic_family": family,
+            "actual_actions": [
+                {"protocol": action.kind, "target": action.target, "operation": action.operation}
+                for action in plan
+            ],
+            "semantic_status": "local_protocol_approximation" if family in unsupported_families else "implemented",
+            "unsupported_claim": family if family in unsupported_families else None,
+            "expected_sensor_logs": sorted({
+                "http" if action.kind in {"http", "websocket"} else "dns" if action.kind == "dns" else "conn"
+                for action in plan
+            }),
+        })
+    collisions: dict[tuple[tuple[Any, ...], ...], list[str]] = {}
+    for scenario_id in WORKFLOW_PLANS:
+        collisions.setdefault(observable_fingerprint(scenario_id), []).append(scenario_id)
+    return {
+        "status": "passed",
+        "workflow_count": len(rows),
+        "workflows": rows,
+        "observable_protocol_collisions": [names for names in collisions.values() if len(names) > 1],
+        "collision_basis": "protocol/target/operation; terminal provenance beacon excluded",
+    }

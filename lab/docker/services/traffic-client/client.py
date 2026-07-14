@@ -11,7 +11,7 @@ from typing import Any
 
 import requests
 
-from future_workflows import WORKFLOW_PLANS, Action
+from future_workflows import WORKFLOW_PLANS, Action, primary_target
 
 
 ALLOWED_HTTP_TARGETS = {
@@ -78,6 +78,15 @@ for _v037_id in (
     "benign_audit_log_forward_retry", "benign_long_poll_reconnect", "benign_bulk_api_reconciliation",
 ):
     SCENARIOS[_v037_id] = ("benign", "benign", "benign-client", "target-api")
+
+# Future plans declare their actual primary target.  This corrects metadata
+# only for new executions; completed campaign artifacts are not rewritten.
+for _workflow_id in WORKFLOW_PLANS:
+    _target = primary_target(_workflow_id)
+    _kind = "attack" if _workflow_id == "smoke_attack_like_probe" else "benign"
+    _label = "web_probe" if _kind == "attack" else "benign"
+    _source = "attacker-simulator" if _kind == "attack" else "benign-client"
+    SCENARIOS[_workflow_id] = (_kind, _label, _source, _target)
 
 
 class SafetyError(ValueError):
@@ -246,22 +255,108 @@ def dns_event(args: argparse.Namespace, name: str) -> dict[str, Any]:
     return event
 
 
+def _recv_exact(connection: socket.socket, size: int) -> bytes:
+    chunks = bytearray()
+    while len(chunks) < size:
+        chunk = connection.recv(size - len(chunks))
+        if not chunk:
+            raise OSError("WebSocket peer closed before a complete frame")
+        chunks.extend(chunk)
+    return bytes(chunks)
+
+
+def _client_frame(opcode: int, payload: bytes = b"") -> bytes:
+    """Encode one RFC 6455 client frame with the mandatory mask."""
+    import os
+    if len(payload) >= 126:
+        raise SafetyError("bounded WebSocket payload is too large")
+    mask = os.urandom(4)
+    masked = bytes(value ^ mask[index % 4] for index, value in enumerate(payload))
+    return bytes([0x80 | opcode, 0x80 | len(payload)]) + mask + masked
+
+
+def _recv_server_frame(connection: socket.socket) -> tuple[int, bytes]:
+    first, second = _recv_exact(connection, 2)
+    if not first & 0x80:
+        raise OSError("fragmented WebSocket response is not supported by the bounded client")
+    length = second & 0x7F
+    if length == 126:
+        length = int.from_bytes(_recv_exact(connection, 2), "big")
+    elif length == 127:
+        length = int.from_bytes(_recv_exact(connection, 8), "big")
+    mask = _recv_exact(connection, 4) if second & 0x80 else b""
+    payload = _recv_exact(connection, length)
+    if mask:
+        payload = bytes(value ^ mask[index % 4] for index, value in enumerate(payload))
+    return first & 0x0F, payload
+
+
+def perform_websocket_session(connection: socket.socket, host_header: str = "control-api:8090") -> dict[str, Any]:
+    """Upgrade, exchange text and protocol ping/pong, then close cleanly."""
+    import base64, os
+    key = base64.b64encode(os.urandom(16)).decode("ascii")
+    request = (
+        f"GET /ws/lab HTTP/1.1\r\nHost: {host_header}\r\nUpgrade: websocket\r\n"
+        f"Connection: Upgrade\r\nSec-WebSocket-Key: {key}\r\nSec-WebSocket-Version: 13\r\n\r\n"
+    )
+    connection.sendall(request.encode("ascii"))
+    headers = bytearray()
+    while b"\r\n\r\n" not in headers:
+        headers.extend(connection.recv(512))
+        if len(headers) > 8192:
+            raise OSError("WebSocket upgrade headers exceed the laboratory limit")
+    if b" 101 " not in headers.split(b"\r\n", 1)[0]:
+        raise OSError("WebSocket upgrade was rejected")
+    import hashlib
+    expected_accept = base64.b64encode(hashlib.sha1((key + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11").encode("ascii")).digest())
+    normalized_headers = headers.lower().replace(b" ", b"")
+    if b"sec-websocket-accept:" + expected_accept.lower() not in normalized_headers:
+        raise OSError("WebSocket accept key is invalid")
+
+    text_frame = _client_frame(0x1, b"ping")
+    connection.sendall(text_frame)
+    text_opcode, text_payload = _recv_server_frame(connection)
+    if text_opcode != 0x1 or text_payload != b"pong":
+        raise OSError("WebSocket application pong was not observed")
+
+    ping_frame = _client_frame(0x9, b"filin")
+    connection.sendall(ping_frame)
+    pong_opcode, pong_payload = _recv_server_frame(connection)
+    if pong_opcode != 0xA or pong_payload != b"filin":
+        raise OSError("WebSocket protocol pong was not observed")
+
+    close_frame = _client_frame(0x8, (1000).to_bytes(2, "big"))
+    connection.sendall(close_frame)
+    close_opcode, _ = _recv_server_frame(connection)
+    if close_opcode != 0x8:
+        raise OSError("WebSocket close acknowledgement was not observed")
+    return {
+        "upgrade_101": True, "text_ping_pong": True, "protocol_ping_pong": True,
+        "close_handshake": True,
+        "bytes_out": len(request.encode("ascii")) + len(text_frame) + len(ping_frame) + len(close_frame),
+        "bytes_in_minimum": len(headers) + len(text_payload) + len(pong_payload),
+    }
+
+
 def websocket_event(args: argparse.Namespace, operation: str) -> dict[str, Any]:
-    """Perform a real local WebSocket upgrade; never represent it as GET traffic."""
+    """Perform complete local WebSocket sessions; never represent them as GET."""
     event = event_base(args, "websocket_session", "websocket", "control-api", 8090)
     event["method"], event["path"] = "WEBSOCKET", "/ws/lab"
-    event["details"] = {"operation": operation}
+    if operation not in {"session_ping_close", "reconnect_ping_close"}:
+        raise SafetyError(f"unsupported WebSocket operation: {operation}")
+    event["details"] = {"operation": operation, "sessions": []}
     started = time.perf_counter()
     try:
-        import base64, os
-        key = base64.b64encode(os.urandom(16)).decode("ascii")
-        with socket.create_connection(("control-api", 8090), timeout=2.0) as connection:
-            request = ("GET /ws/lab HTTP/1.1\r\nHost: control-api:8090\r\nUpgrade: websocket\r\n"
-                       f"Connection: Upgrade\r\nSec-WebSocket-Key: {key}\r\nSec-WebSocket-Version: 13\r\n\r\n")
-            connection.sendall(request.encode("ascii")); response = connection.recv(512)
-            event["bytes_out"], event["bytes_in"] = len(request), len(response)
-            event["status"] = "open" if b" 101 " in response else "error"
-            event["status_code"] = 101 if b" 101 " in response else None
+        session_count = 2 if operation == "reconnect_ping_close" else 1
+        for _ in range(session_count):
+            with socket.create_connection(("control-api", 8090), timeout=2.0) as connection:
+                connection.settimeout(2.0)
+                session = perform_websocket_session(connection)
+            event["details"]["sessions"].append(session)
+            event["bytes_out"] += session["bytes_out"]
+            event["bytes_in"] += session["bytes_in_minimum"]
+        event["status"] = "completed"
+        event["status_code"] = 101
     except OSError as error:
         event["status"], event["error"] = "error", str(error)
     event["latency_ms"] = round((time.perf_counter() - started) * 1000, 2)
