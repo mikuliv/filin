@@ -50,3 +50,18 @@ all numeric CSV columns or synthesize unavailable measures as zero.
 ## Causal profiles v0.3.7
 
 `network_sensor_v0_5_temporal` добавляет к 16 rate/share признакам 25 delta, rolling median, robust-z, slope, periodicity и persistence признаков. `network_sensor_v0_5_contextual` добавляет 10 признаков response/retry/recovery/workflow. Builder использует только текущее и прошлые окна одного asset/run; future mutation, labels, warm-up flag и identity metadata не меняют model vector.
+
+Имена некоторых исторических v0.5 признаков не выражают фактическую формулу:
+`destination_set_jaccard_change` не является Jaccard distance,
+`http_response_status_entropy` не является entropy, два `consecutive_*` не
+измеряют непрерывную серию, а `failed_then_successful_connection_rate` не
+проверяет порядок событий. Точные ограничения перечислены в
+[`docs/limitations.md`](../../docs/limitations.md); исторические значения не
+пересчитываются.
+
+## Future integrity profile v0.6
+
+`network_sensor_v0_6_integrity` предназначен только для новых executions.
+Единственный ordered contract загружается из `feature_dictionary.yaml` через
+`profile_registry.py`; builder обязан вызвать validator и зафиксировать schema,
+builder, dataset, row-order, execution-mapping и marker-interval hashes.

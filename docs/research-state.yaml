@@ -1,7 +1,12 @@
 schema_version: 1
 latest_completed_stage: v0.3.7
 latest_completed_result: internal_validation_policy_not_passed
-active_stage: post_v0.3.7_research_integrity_audit
+active_stage: pre_v0.3.8_runtime_integrity_acceptance
+runtime_integrity_acceptance:
+  status: implementation_complete_smoke_pending
+  historical_results_modified: false
+  full_v0_3_8_training_allowed: false
+  secure_artifact_verification: not_executed_secure_artifacts_unavailable
 next_allowed_stage:
   version: v0.3.8
   kind: new_training_cycle

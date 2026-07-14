@@ -1,29 +1,42 @@
 # Текущие возможности
 
-> v0.3.3 is the latest completed experiment and failed its environment policy:
-> benign recall `0.000`, false positive rate `1.000`. This repository does not
-> confirm ML backend integration, MITRE/Sigma/SIEM pipeline, analyst interface,
-> or production readiness.
+Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
 
-## Реализовано
+Последний завершённый исследовательский этап — v0.3.7. Его frozen policy внутренней
+валидации не пройдена. Backend integration, shadow mode и production deployment
+не разрешены. Сейчас выполняется приёмка исправленного будущего runtime перед
+новым циклом v0.3.8; это не повтор и не исправление результатов v0.3.6/v0.3.7.
 
-- изолированный Docker laboratory с безопасными локальными сценариями;
-- marker-aware executions, passive capture и Docker-managed PCAP storage;
-- offline Zeek и профиль `network_sensor_v0_3`;
-- train/test campaign v0.3: 9 runs и 117 sensor windows;
-- baseline evaluation v0.3.1 и frozen robustness evaluation v0.3.2;
-- validators, provenance, split и feature audits.
+## Реализовано и проверяется
 
-## Экспериментально подтверждено
+- изолированный Docker-стенд с внутренним allowlist;
+- per-execution capture с DNS для будущего internal-only smoke;
+- copy-aware marker intervals с независимым control evidence;
+- offline Zeek normalization и sensor aggregation;
+- единый исполняемый контракт `network_sensor_v0_6_integrity`;
+- application controller, удерживающий сетевое условие весь сценарий и
+  откатывающий его также при ошибке или timeout;
+- fail-closed predict-only guard для будущих frozen candidates;
+- runtime workflows HTTP, DNS, TCP и WebSocket с machine-readable аудитом;
+- типизированные SHA-256 evidence и fail-closed secure-artifact verifier.
 
-В v0.3.1 внешний pooled test `network_sensor_v0_3` дал macro F1 `0.918`, balanced accuracy `0.972` и attack macro recall `1.000`. В v0.3.2 на 12 external robustness-runs — `0.933`, `0.979` и `1.000` соответственно. Это результаты контролируемого стенда, а не гарантия работы в иной среде.
+Исправления относятся только к будущим execution. До успешного короткого Docker
+smoke они не являются основанием для начала полного обучения v0.3.8.
 
-## Частично готово
+## Исторические результаты
 
-Исторический backend содержит прототипные endpoint-ы, но модель `network_sensor_v0_3` в него не интегрирована. Не следует трактовать наличие endpoint-ов как готовый production pipeline.
+v0.3.1–v0.3.7 остаются неизменяемыми записями исполнения прежнего кода.
+Новые validators, marker rules, feature formulas и runtime workflows не
+применялись задним числом. Ограничения формул и доказательств перечислены в
+[`limitations.md`](limitations.md) и post-v0.3.7 аудите.
 
-## Запланировано
+## Не реализовано и не разрешено
 
-MITRE ATT&CK mapping, Sigma drafts, SIEM integration, incident representation и analyst interface относятся к будущей концептуальной архитектуре.
+- production capture и production validation;
+- backend ML integration и online inference;
+- shadow mode, active response и автоматическое блокирование;
+- подтверждённые MITRE ATT&CK, Sigma, SIEM и analyst-interface pipelines;
+- использование secure frozen candidate без успешной внешней проверки.
 
-Полученные результаты относятся к контролируемому лабораторному стенду и не подтверждают готовность модели к эксплуатации в производственной инфраструктуре.
+Все результаты относятся к контролируемому лабораторному стенду и не
+подтверждают пригодность к эксплуатации в производственной инфраструктуре.

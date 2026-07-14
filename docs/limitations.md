@@ -27,3 +27,25 @@ blind holdout; до него backend integration и online inference не вып
 ## Ограничения v0.3.7
 
 OOD означает недостаток знания, а не атаку. `insufficient_evidence` не считается правильным benign и не используется для маскировки false positives. Контекст строится только из наблюдаемого сетевого workflow; будущие окна, labels, execution metadata и identity-поля не являются features. Лабораторная internal validation не даёт разрешения на backend integration, response actions, shadow mode или deployment.
+
+## Ограничения исторических формул v0.3.7
+
+Следующие имена профиля `network_sensor_v0_5` не соответствуют буквальной
+математической семантике, которую можно предположить по названию. Их значения и
+исторические метрики не пересчитываются:
+
+- `destination_set_jaccard_change` — ограниченная единицей абсолютная разность
+  `unique_destinations_per_flow`, а не Jaccard distance множеств назначений;
+- `http_response_status_entropy` — доля непустых групп 2xx/4xx/5xx, а не entropy
+  распределения HTTP statuses;
+- `consecutive_high_failure_windows` — сумма всех high-failure окон в доступной
+  истории плюс текущее, а не длина непрерывной серии;
+- `consecutive_high_flow_windows` — число исторических окон выше медианы плюс
+  единица, а не длина непрерывной серии;
+- `failed_then_successful_connection_rate` — минимум числа успешных и неуспешных
+  соединений, делённый на `flow_count`; порядок «failed then successful» не
+  устанавливается.
+
+Эти признаки допустимы только как документированные исторические значения.
+Будущий цикл обязан использовать новый semantic version и не должен выдавать
+их за исправленные формулы.

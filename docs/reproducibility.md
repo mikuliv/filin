@@ -21,7 +21,8 @@ python tools/audit/verify_secure_artifacts.py --root "%FILIN_SECURE_ARTIFACT_ROO
 ```
 
 Если защищённое хранилище недоступно, результатом будет
-`secure_artifacts_not_available`; это не считается успешной проверкой. Реальная
+`not_executed_secure_artifacts_unavailable`; это не считается успешной проверкой, а
+`--strict` завершится кодом 2. Реальная
 проверка управления условиями среды также выполняется вручную и ограничивается
 конкретным контейнером:
 

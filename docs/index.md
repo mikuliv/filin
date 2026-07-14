@@ -26,4 +26,5 @@
 - [Ограничения](limitations.md)
 - [Roadmap](roadmap.md)
 - [Политика документации](documentation-policy.md)
+- [Приёмка runtime-целостности перед v0.3.8](audits/pre-v0.3.8-runtime-integrity-acceptance.md)
 - [Сторонние компоненты](third-party-components.md)
