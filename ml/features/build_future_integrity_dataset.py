@@ -11,6 +11,7 @@ import yaml
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(ROOT / "lab" / "sensor"))
 
@@ -33,7 +34,12 @@ def build(
     manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     events = [json.loads(line) for line in events_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     controls = [] if marker_log is None else [json.loads(line) for line in marker_log.read_text(encoding="utf-8").splitlines() if line.strip()]
-    intervals = resolve_marker_intervals(manifest, events, controls)
+    marker_policy = manifest.get("marker_reconciliation_policy") or {}
+    intervals = resolve_marker_intervals(
+        manifest, events, controls,
+        timestamp_resolution_seconds=float(marker_policy.get("timestamp_resolution_seconds", 0.001)),
+        allowed_capture_jitter_seconds=float(marker_policy.get("allowed_capture_jitter_seconds", 0.500)),
+    )
     correlated = attach_interval_evidence(events, intervals)
     rows = []
     for scenario in sorted(manifest.get("scenarios", []), key=lambda item: str(item["execution_id"])):

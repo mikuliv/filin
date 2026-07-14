@@ -48,6 +48,10 @@ class TestFutureEnvironmentApplication(unittest.TestCase):
         self.assertFalse(runner.netem)
         self.assertEqual(evidence.status, "passed")
         self.assertTrue(evidence.rollback_verified)
+        self.assertEqual(evidence.resolved_parameters["latency_ms"], 20)
+        self.assertTrue(evidence.application_started_at)
+        self.assertTrue(evidence.experiment_ended_at)
+        self.assertTrue(evidence.rollback_completed_at)
 
     def test_rollback_on_exception_and_timeout(self):
         for error in (RuntimeError("failure"), TimeoutError("timeout")):
@@ -81,6 +85,7 @@ class TestFutureEnvironmentApplication(unittest.TestCase):
         with controller(runner).applied(profile, 1) as evidence:
             pass
         self.assertEqual(evidence.unsupported_fields, ["background_profile", "clients"])
+        self.assertEqual(evidence.unsupported_parameters, {"background_profile": "unsupported", "clients": "unsupported"})
         applied = " ".join(evidence.applied_command)
         self.assertNotIn("clients", applied)
         self.assertNotIn("background_profile", applied)

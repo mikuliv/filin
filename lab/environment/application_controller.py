@@ -10,6 +10,7 @@ import re
 import subprocess
 from contextlib import contextmanager
 from dataclasses import asdict, dataclass, field
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any, Callable, Iterator, Protocol
 
@@ -42,9 +43,17 @@ class ConditionEvidence:
     applied_command: list[str]
     verification: str
     rollback_command: list[str]
+    requested_profile: dict[str, Any]
+    resolved_parameters: dict[str, float]
+    application_started_at: str
+    application_verified_at: str
+    experiment_started_at: str
     after_rollback: str = ""
     rollback_verified: bool = False
+    experiment_ended_at: str = ""
+    rollback_completed_at: str = ""
     unsupported_fields: list[str] = field(default_factory=list)
+    unsupported_parameters: dict[str, str] = field(default_factory=dict)
     measurements: dict[str, Any] = field(default_factory=dict)
 
     def public_record(self) -> dict[str, Any]:
@@ -53,6 +62,10 @@ class ConditionEvidence:
 
 def _run(command: list[str]) -> subprocess.CompletedProcess[str]:
     return subprocess.run(command, check=False, capture_output=True, text=True, encoding="utf-8")
+
+
+def _now() -> str:
+    return datetime.now(UTC).isoformat().replace("+00:00", "Z")
 
 
 def _safe_identity(value: str, kind: str) -> str:
@@ -119,7 +132,7 @@ class EnvironmentApplicationController:
     def _command(self, *parts: str) -> list[str]:
         if not parts:
             raise EnvironmentSafetyError("qdisc action is required")
-        return ["docker", "exec", self.container, "tc", "qdisc", parts[0], "dev", self.interface, *parts[1:]]
+        return ["docker", "exec", "-u", "root", self.container, "tc", "qdisc", parts[0], "dev", self.interface, *parts[1:]]
 
     def _inspect_identity(self) -> None:
         completed = self.runner(["docker", "inspect", self.container])
@@ -159,8 +172,10 @@ class EnvironmentApplicationController:
             raise EnvironmentSafetyError("container already has a root qdisc")
 
         unsupported = sorted(set(profile) - SUPPORTED_CONDITION_FIELDS - PROFILE_METADATA_FIELDS)
+        resolved = resolved_conditions(profile, seed)
         apply = self._command("replace", "root", *netem_arguments(profile, seed))
         rollback = self._command("del", "root")
+        application_started_at = _now()
         completed = self.runner(apply)
         if completed.returncode:
             raise RuntimeError("container netem application failed")
@@ -169,12 +184,18 @@ class EnvironmentApplicationController:
             self.runner(rollback)
             raise RuntimeError("container netem verification failed")
 
+        application_verified_at = _now()
         evidence = ConditionEvidence(
             status="active", container=self.container, interface=self.interface,
             compose_project=self.expected_compose_project, network=self.expected_network,
             profile_id=profile_id, before=before, applied_command=apply,
             verification=verification, rollback_command=rollback,
+            requested_profile=dict(profile), resolved_parameters=resolved,
+            application_started_at=application_started_at,
+            application_verified_at=application_verified_at,
+            experiment_started_at=_now(),
             unsupported_fields=unsupported,
+            unsupported_parameters={name: "unsupported" for name in unsupported},
         )
         try:
             yield evidence
@@ -185,8 +206,10 @@ class EnvironmentApplicationController:
             evidence.status = "execution_failed"
             raise
         finally:
+            evidence.experiment_ended_at = _now()
             rollback_result = self.runner(rollback)
             evidence.after_rollback = self.show()
+            evidence.rollback_completed_at = _now()
             evidence.rollback_verified = rollback_result.returncode in {0, 2} and "netem" not in evidence.after_rollback
             if not evidence.rollback_verified:
                 evidence.status = "rollback_failed"

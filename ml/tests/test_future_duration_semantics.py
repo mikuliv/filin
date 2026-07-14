@@ -66,6 +66,21 @@ class TestFutureDurationSemantics(unittest.TestCase):
         values = [event("start", 10), event("end", 20), event("start", 15, second), event("end", 25, second)]
         with self.assertRaises(MarkerIntervalError): resolve_marker_intervals(manifest(2), values)
 
+    def test_overlap_detection_uses_time_order_not_execution_id_order(self):
+        nonces = ["a" * 24, "b" * 24, "c" * 24]
+        value = {"scenarios": [
+            {"execution_id": "a", "marker_nonce": nonces[0]},
+            {"execution_id": "b", "marker_nonce": nonces[1]},
+            {"execution_id": "c", "marker_nonce": nonces[2]},
+        ]}
+        events = [
+            event("start", 0, nonces[0]), event("end", 100, nonces[0]),
+            event("start", 110, nonces[1]), event("end", 120, nonces[1]),
+            event("start", 50, nonces[2]), event("end", 60, nonces[2]),
+        ]
+        with self.assertRaises(MarkerIntervalError):
+            resolve_marker_intervals(value, events)
+
     def test_marker_flows_never_enter_features(self):
         intervals = resolve_marker_intervals(manifest(), [event("start", 10), event("end", 20)])
         with self.assertRaises(MarkerIntervalError): attach_interval_evidence([{"execution_id": "e0", **event("start", 10, status="assigned")}], intervals)

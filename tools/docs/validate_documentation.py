@@ -72,7 +72,18 @@ def validate(root: Path = ROOT) -> list[str]:
     }
     for label, (path, marker) in critical.items():
         if marker not in path.read_text(encoding="utf-8"): errors.append(f"{label} contradicts research-state.yaml")
+    for name in ("current-capabilities.md", "roadmap.md", "experiments.md", "development-history.md"):
+        if latest not in (docs / name).read_text(encoding="utf-8"):
+            errors.append(f"docs/{name} does not contain latest completed stage {latest}")
     all_text = "\n".join(path.read_text(encoding="utf-8").casefold() for path in markdown_files(root))
+    for claim in (
+        "v0.3.3 is the latest completed experiment", "v0.3.7 policy passed",
+        "backend integration allowed: true", "shadow mode allowed: true",
+        "corrected duration was used in v0.3.7", "v0.3.7 environment profiles were applied",
+        "historical hashes are complete integrity proof",
+    ):
+        if claim in all_text:
+            errors.append(f"forbidden historical/readiness claim: {claim}")
     if "sensor_ready_for_backend_integration=true" in all_text: errors.append("documentation enables backend integration")
     if "production_ready: true" in all_text or "production ready: true" in all_text: errors.append("documentation claims production readiness")
     return errors

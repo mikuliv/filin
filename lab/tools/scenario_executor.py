@@ -204,6 +204,9 @@ def execute_scenario(manifest: dict[str, Any], scenario: dict[str, Any], events_
         if not os.environ.get("FILIN_SCENARIO_CAPTURE_DIR"):
             time.sleep(1 + int(scenario.get("label") in {"low_rate_dos", "beacon_simulation"}))
         details = {**start_details, "traffic_events": len(traffic_events), "requests_sent": len(traffic_events), "errors": sum(1 for event in traffic_events if event.get("status") in {"error", "closed", "timeout"}), "stderr": notes}
+        if manifest.get("campaign_role") == "pre_training_smoke":
+            latencies = [float(event["latency_ms"]) for event in traffic_events if event.get("latency_ms") is not None]
+            details["measured_mean_latency_ms"] = round(sum(latencies) / len(latencies), 3) if latencies else None
         append_event(events_path, execution_event(manifest, scenario, "scenario_finished", "completed", details))
         return {"status": "completed", "details": details}
     except Exception as error:

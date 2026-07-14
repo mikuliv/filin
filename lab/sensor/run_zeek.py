@@ -13,6 +13,7 @@ def main() -> None:
     parser.add_argument("--strict", action="store_true")
     parser.add_argument("--storage-backend", default="host_filesystem", choices=("host_filesystem", "docker_volume"))
     parser.add_argument("--capture-volume", default="filin_sensor_capture")
+    parser.add_argument("--zeek-volume", default="filin_sensor_zeek")
     parser.add_argument("--run-id")
     parser.add_argument("--attempt-id", default="attempt_001")
     args = parser.parse_args()
@@ -22,13 +23,13 @@ def main() -> None:
         sys.path.insert(0, str(Path(__file__).parent))
         from artifact_storage import SensorArtifactStorage
 
-        result = SensorArtifactStorage(volume_name=args.capture_volume).run_zeek(
+        result = SensorArtifactStorage(volume_name=args.capture_volume, output_volume_name=args.zeek_volume).run_zeek(
             args.pcap, args.run_id or "run", args.attempt_id
         )
         if result.returncode == 0:
             subprocess.run(
                 [
-                    "docker", "run", "--rm", "-v", "filin_sensor_zeek:/zeek:ro",
+                    "docker", "run", "--rm", "-v", f"{args.zeek_volume}:/zeek:ro",
                     "-v", f"{output.resolve()}:/export", "busybox", "sh", "-c",
                     f"cp -a /zeek/{args.run_id or 'run'}/{args.attempt_id}/. /export/",
                 ],

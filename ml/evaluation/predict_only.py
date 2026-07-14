@@ -11,8 +11,9 @@ from typing import Any, Callable
 
 
 FORBIDDEN_METHODS = frozenset({
-    "fit", "fit_predict", "fit_transform", "partial_fit", "train", "update",
-    "calibrate", "tune", "optimize", "search", "select_features", "set_params",
+    "fit", "fit_predict", "fit_transform", "partial_fit", "train",
+    "calibrate", "calibration_fit", "tune", "optimize", "search", "select_features", "set_params",
+    "tune_threshold", "select_threshold", "tune_ood", "tune_temporal_parameters", "select_rolling_depth",
 })
 FORBIDDEN_IMPORT_PARTS = frozenset({"training", "model_selection", "calibration", "tuning"})
 
@@ -41,6 +42,7 @@ class RuntimeNoFitGuard(AbstractContextManager["RuntimeNoFitGuard"]):
         self.artifact = artifact
         self.call_counts = {name: 0 for name in sorted(FORBIDDEN_METHODS)}
         self._patched: list[tuple[Any, str, bool, Any]] = []
+        self.guarded_classes: set[str] = set()
 
     def _blocked(self, name: str):
         def blocked(_instance, *_args, **_kwargs):
@@ -57,6 +59,7 @@ class RuntimeNoFitGuard(AbstractContextManager["RuntimeNoFitGuard"]):
                 continue
             seen.add(id(current))
             pending.extend(_children(current))
+            patched_current = False
             for name in FORBIDDEN_METHODS:
                 candidate = getattr(current, name, None)
                 if not callable(candidate):
@@ -69,6 +72,9 @@ class RuntimeNoFitGuard(AbstractContextManager["RuntimeNoFitGuard"]):
                 except (AttributeError, TypeError) as exc:
                     raise RuntimeError(f"unable to enforce predict-only policy for {type(current).__name__}.{name}") from exc
                 self._patched.append((current, name, existed, original))
+                patched_current = True
+            if patched_current:
+                self.guarded_classes.add(f"{type(current).__module__}.{type(current).__qualname__}")
         return self
 
     def __exit__(self, exc_type, exc, traceback):
@@ -84,6 +90,9 @@ class RuntimeNoFitGuard(AbstractContextManager["RuntimeNoFitGuard"]):
         return {
             "status": "passed" if not any(self.call_counts.values()) else "blocked_attempt",
             "method_call_counts": dict(self.call_counts),
+            "guarded_classes": sorted(self.guarded_classes),
+            "blocked_method_names": sorted(FORBIDDEN_METHODS),
+            "attempted_forbidden_calls": sum(self.call_counts.values()),
             "fit_call_count": self.call_counts["fit"],
             "partial_fit_call_count": self.call_counts["partial_fit"],
         }
@@ -150,11 +159,15 @@ def run_predict_only(
     guard = RuntimeNoFitGuard(artifact)
     with guard:
         predictions = _jsonable_predictions(artifact.predict(features))
-    if sha256_file(artifact_path) != artifact_hash:
+    artifact_hash_after = sha256_file(artifact_path)
+    if artifact_hash_after != artifact_hash:
         raise RuntimeError("frozen artifact changed during prediction")
     predictions_path.write_text(json.dumps(predictions, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     lock = {
+        "process_entry_point": "ml.evaluation.predict_only.run_predict_only",
         "artifact_sha256": artifact_hash,
+        "artifact_sha256_before": artifact_hash,
+        "artifact_sha256_after": artifact_hash_after,
         "predictions_sha256": sha256_file(predictions_path),
         "prediction_count": len(predictions),
         "no_fit_audit": guard.audit(),

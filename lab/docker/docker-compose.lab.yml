@@ -1,4 +1,16 @@
 services:
+  internal-dns:
+    build:
+      context: ./services/internal-dns
+    networks:
+      - filin_lab_net
+    expose:
+      - "53/udp"
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+
   target-web:
     build:
       context: ./services/target-web
@@ -50,7 +62,7 @@ services:
       - no-new-privileges:true
 
   traffic-client:
-    image: filin-traffic-client:0.1
+    image: ${FILIN_TRAFFIC_CLIENT_IMAGE:-filin-traffic-client:0.1}
     build:
       context: ./services/traffic-client
     command: python -c "import time; time.sleep(86400)"
@@ -60,6 +72,7 @@ services:
     networks:
       - filin_lab_net
     depends_on:
+      - internal-dns
       - target-web
       - target-api
       - control-api

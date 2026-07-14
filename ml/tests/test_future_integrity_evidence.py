@@ -2,12 +2,14 @@ import tempfile
 import unittest
 import hashlib
 import yaml
+from unittest.mock import patch
 from pathlib import Path
 
 from tools.audit.artifact_hashes import canonical_sha256, execution_mapping_sha256, marker_intervals_sha256
 from tools.audit.integrity_evidence import IntegrityEvidence, final_integrity_gate
 from tools.audit.reproduction_audit import compare_aggregates
 from tools.audit.verify_secure_artifacts import verify
+from tools.audit.verify_secure_artifacts import _inside_without_symlinks
 
 
 class TestFutureIntegrityEvidence(unittest.TestCase):
@@ -79,6 +81,13 @@ class TestFutureIntegrityEvidence(unittest.TestCase):
             descriptor["unexpected"] = True
             path.write_text(yaml.safe_dump(descriptor), encoding="utf-8")
             self.assertEqual(verify(str(root), path)["reason"], "descriptor_schema_mismatch")
+
+    def test_resolved_symlink_component_is_rejected(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            root = Path(temporary).resolve()
+            (root / "artifact.bin").write_bytes(b"x")
+            with patch.object(Path, "is_symlink", return_value=True):
+                self.assertIsNone(_inside_without_symlinks(root, Path("artifact.bin")))
 
 
 if __name__ == "__main__": unittest.main()

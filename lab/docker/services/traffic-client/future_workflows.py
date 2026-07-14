@@ -48,7 +48,7 @@ WORKFLOW_PLANS: dict[str, tuple[Action, ...]] = {
 
 WORKFLOW_PLANS.update({
     "smoke_http_readback": (Action.http("GET", "target-web", "/files/sample-small.txt"),),
-    "smoke_dns_local_resolution": (DNS("target-api"), DNS("filin-missing-service")),
+    "smoke_dns_local_resolution": (DNS("target-api"), DNS("target-web"), DNS("filin-missing-service")),
     "smoke_websocket_ping_pong": (WS("session_ping_close"),),
     "smoke_tcp_admin_check": (TCP("target-ssh-sim", 2222),),
     "smoke_mixed_service_check": (DNS("target-api"), TCP("target-api", 8080), Action.http("GET", "target-api", "/health")),
@@ -132,7 +132,8 @@ def behavioral_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
 
 def primary_target(scenario_id: str) -> str:
     """Return the actual first non-provenance target used by a workflow."""
-    return WORKFLOW_PLANS[scenario_id][0].target
+    action = WORKFLOW_PLANS[scenario_id][0]
+    return "internal-dns" if action.kind == "dns" else action.target
 
 
 def observable_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
@@ -151,18 +152,32 @@ def workflow_runtime_audit() -> dict[str, Any]:
     rows = []
     for scenario_id, plan in sorted(WORKFLOW_PLANS.items()):
         family = _V037.get(scenario_id, (scenario_id.removeprefix("benign_").removeprefix("smoke_"), ""))[0]
+        protocols = sorted({action.kind for action in plan})
+        expected_logs = sorted({
+            "http" if action.kind in {"http", "websocket"} else "dns" if action.kind == "dns" else "conn"
+            for action in plan
+        })
         rows.append({
             "scenario_id": scenario_id,
             "semantic_family": family,
             "actual_actions": [
-                {"protocol": action.kind, "target": action.target, "operation": action.operation}
+                {"protocol": action.kind, "target": "internal-dns" if action.kind == "dns" else action.target,
+                 "operation": action.operation,
+                 **({"method": action.operation.split(":", 1)[0], "uri": action.operation.split(":", 1)[1]} if action.kind == "http" else {}),
+                 **({"dns_name": action.target, "dns_behavior": "direct_internal_udp_query"} if action.kind == "dns" else {}),
+                 **({"tcp_behavior": "bounded_connect_and_optional_banner"} if action.kind == "tcp" else {}),
+                 **({"websocket_behavior": action.operation} if action.kind == "websocket" else {})}
                 for action in plan
             ],
+            "protocols": protocols,
+            "targets": sorted({"internal-dns" if action.kind == "dns" else action.target for action in plan}),
+            "timing_behavior": "bounded_sequential_actions_with_campaign_rate_limit",
             "semantic_status": "local_protocol_approximation" if family in unsupported_families else "implemented",
             "unsupported_claim": family if family in unsupported_families else None,
-            "expected_sensor_logs": sorted({
-                "http" if action.kind in {"http", "websocket"} else "dns" if action.kind == "dns" else "conn"
-                for action in plan
+            "expected_sensor_logs": expected_logs,
+            "expected_observable_feature_family": sorted({
+                "dns_counts" if log == "dns" else "http_counts" if log == "http" else "flow_and_rate_features"
+                for log in expected_logs
             }),
         })
     collisions: dict[tuple[tuple[Any, ...], ...], list[str]] = {}

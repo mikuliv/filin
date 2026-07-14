@@ -15,6 +15,23 @@ from client import SCENARIOS, _client_frame, _recv_server_frame, perform_websock
 
 
 class TestFutureBenignWorkflows(unittest.TestCase):
+    def test_internal_dns_responder_returns_a_or_nxdomain(self):
+        dns_path = ROOT / "lab" / "docker" / "services" / "internal-dns" / "server.py"
+        spec = importlib.util.spec_from_file_location("filin_internal_dns", dns_path)
+        module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+        import struct
+        def query(name):
+            labels = b"".join(bytes([len(value)]) + value.encode() for value in name.split(".")) + b"\0"
+            return b"\x12\x34" + struct.pack("!HHHHH", 0x0100, 1, 0, 0, 0) + labels + struct.pack("!HH", 1, 1)
+        original = module.socket.gethostbyname
+        module.socket.gethostbyname = lambda _: "10.0.0.2"
+        try:
+            good = module.response(query("target-api")); missing = module.response(query("filin-missing-service"))
+        finally:
+            module.socket.gethostbyname = original
+        self.assertEqual(good[3] & 0x0F, 0)
+        self.assertEqual(missing[3] & 0x0F, 3)
+
     def test_duplicate_behavior_is_disclosed_by_collision_audit(self):
         fingerprints = [behavioral_fingerprint(name) for name in WORKFLOW_PLANS]
         duplicate_count = len(fingerprints) - len(set(fingerprints))
@@ -73,6 +90,8 @@ class TestFutureBenignWorkflows(unittest.TestCase):
         self.assertEqual(audit["workflow_count"], len(WORKFLOW_PLANS))
         self.assertTrue(any(row["unsupported_claim"] == "database" for row in audit["workflows"]))
         self.assertIn("terminal provenance beacon excluded", audit["collision_basis"])
+        self.assertTrue(all(row["timing_behavior"] for row in audit["workflows"]))
+        self.assertTrue(all(row["expected_observable_feature_family"] for row in audit["workflows"]))
 
     def test_plans_are_bounded_and_local(self):
         allowed = {"target-web", "target-api", "control-api", "internal-dns", "target-ssh-sim", "filin-missing-service"}

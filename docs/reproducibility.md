@@ -46,6 +46,18 @@ python -m compileall tools ml/tests
 python -m unittest discover -s ml/tests -p "test_*.py"
 ```
 
+## Ручная Docker-приёмка перед v0.3.8
+
+Эта команда не входит в обычный CI и не выполняет model training или predict:
+
+```powershell
+python lab/campaigns/run_pre_v038_runtime_smoke.py --output lab/output/pre_v038_runtime_smoke/attempt_local
+```
+
+Каждый запуск требует нового output directory и отдельного Compose project
+`filin_pre_v038_smoke`. PCAP, Zeek logs, normalized events, dataset и runtime
+report остаются в ignored storage.
+
 ## Проверка CLI
 
 ```powershell

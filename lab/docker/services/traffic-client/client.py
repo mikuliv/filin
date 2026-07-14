@@ -243,11 +243,27 @@ def tcp_event(args: argparse.Namespace, host: str, port: int, event_type: str) -
 def dns_event(args: argparse.Namespace, name: str) -> dict[str, Any]:
     if name not in DNS_NAMES:
         raise SafetyError(f"DNS-имя не входит в allowlist: {name}")
-    event = event_base(args, "dns_resolution", "dns", name, 53)
+    event = event_base(args, "dns_resolution", "dns", "internal-dns", 53)
     started = time.perf_counter()
     try:
-        addresses = sorted({item[4][0] for item in socket.getaddrinfo(name, None)})
-        event["details"] = {"resolved_addresses": addresses, "scope": "internal"}
+        import os, struct
+        transaction_id = os.urandom(2)
+        encoded_name = b"".join(bytes([len(label)]) + label.encode("ascii") for label in name.split(".")) + b"\x00"
+        query = transaction_id + struct.pack("!HHHHH", 0x0100, 1, 0, 0, 0) + encoded_name + struct.pack("!HH", 1, 1)
+        with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as resolver:
+            resolver.settimeout(2.0)
+            resolver.sendto(query, ("internal-dns", 53))
+            response, _ = resolver.recvfrom(512)
+        if len(response) < 12 or response[:2] != transaction_id:
+            raise OSError("invalid response from internal laboratory resolver")
+        flags, answer_count = struct.unpack("!HH", response[2:6])
+        rcode = flags & 0x0F
+        addresses = [socket.inet_ntoa(response[-4:])] if rcode == 0 and answer_count else []
+        event["bytes_out"], event["bytes_in"] = len(query), len(response)
+        event["details"] = {"queried_name": name, "resolved_addresses": addresses, "scope": "internal", "rcode": rcode}
+        if rcode != 0:
+            event["status"] = "error"
+            event["error"] = f"internal DNS rcode={rcode}"
     except OSError as error:
         event["status"] = "error"
         event["error"] = str(error)

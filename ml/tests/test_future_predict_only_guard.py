@@ -46,6 +46,8 @@ class TestFuturePredictOnlyGuard(unittest.TestCase):
                     getattr(estimator, name)([])
             self.assertEqual(estimator.predict([[1]]), [1])
         self.assertEqual(guard.audit()["fit_call_count"], 1)
+        self.assertTrue(any(name.endswith(".DummyEstimator") for name in guard.audit()["guarded_classes"]))
+        self.assertIn("tune_threshold", guard.audit()["blocked_method_names"])
 
     def test_guard_blocks_fit_called_from_inside_predict(self):
         with RuntimeNoFitGuard(SelfFittingEstimator()) as guard:
@@ -61,6 +63,8 @@ class TestFuturePredictOnlyGuard(unittest.TestCase):
             estimator = DummyEstimator()
             result = run_predict_only(artifact, [[1], [2]], output, loader=lambda _: estimator)
             self.assertEqual(result["status"], "completed")
+            self.assertEqual(result["artifact_sha256_before"], result["artifact_sha256_after"])
+            self.assertEqual(result["process_entry_point"], "ml.evaluation.predict_only.run_predict_only")
             self.assertEqual(estimator.predict_calls, 1)
             resumed = run_predict_only(
                 artifact, [[9]], output, resume=True,

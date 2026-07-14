@@ -195,7 +195,7 @@ def resolve_marker_intervals(
         values["evidence_sha256"] = _canonical_hash("marker_interval_evidence", values)
         resolved[execution_id] = MarkerInterval(**values)
 
-    ordered = sorted(resolved.values(), key=lambda item: item.execution_id)
+    ordered = sorted(resolved.values(), key=lambda item: (item.start, item.end, item.execution_id))
     for previous, current in zip(ordered, ordered[1:]):
         if max(previous.start, current.start) < min(previous.end, current.end):
             raise MarkerIntervalError("marker intervals overlap across executions")
