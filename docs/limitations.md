@@ -57,3 +57,7 @@ Shannon entropy по распределению status codes; trailing run lengt
 сохраняются в feature builder, признак должен быть удалён или честно переименован,
 а не вычисляться из несоответствующего surrogate. Затронутый исторический этап —
 v0.3.7; ретроспективное исправление запрещено.
+
+## Ограничения v0.3.8
+
+Результат получен на controlled Docker lab, шести validation runs и 72 episodes; это внутренняя, а не перспективная или production validation. Несмотря на FPR `0` и высокий closed-set macro F1, система пропустила два attack episodes, attack-window alert recall составил только `0.60`, а 40% attack windows ушли в `review_required:weak_evidence`. Class-conditional support сильно перекрывается: support-conflict rate `0.981481`, поэтому наличие support нельзя трактовать как надёжную идентификацию класса. Очень большие thresholds отражают неоднородный масштаб лабораторных признаков. Validation запрещено использовать для fit, calibration, threshold tuning или повторной оценки после изменений.

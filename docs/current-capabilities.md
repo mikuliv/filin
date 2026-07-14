@@ -2,10 +2,9 @@
 
 Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
 
-Последний завершённый исследовательский этап — v0.3.7. Его frozen policy внутренней
-валидации не пройдена. Backend integration, shadow mode и production deployment
-не разрешены. Приёмка исправленного будущего runtime перед новым циклом v0.3.8
-пройдена; это не повтор и не исправление результатов v0.3.6/v0.3.7.
+Последний завершённый исследовательский этап — v0.3.8. Его frozen policy
+внутренней валидации не пройдена. Backend integration, shadow mode и production
+deployment не разрешены.
 
 ## Реализовано и проверяется
 
@@ -20,13 +19,13 @@
 - runtime workflows HTTP, DNS, TCP и WebSocket с machine-readable аудитом;
 - типизированные SHA-256 evidence и fail-closed secure-artifact verifier.
 
-Исправления относятся только к будущим execution. Короткий Docker smoke пройден,
-поэтому владелец может отдельно начать новый training cycle v0.3.8. Само обучение
-в рамках приёмки не запускалось.
+Реализованы Mondrian conformal prediction, class-conditional kNN support и
+episode evidence. Полный цикл v0.3.8 выполнен; его validation data не допускаются
+к fit, calibration, выбору thresholds или повторному predict.
 
 ## Исторические результаты
 
-v0.3.1–v0.3.7 остаются неизменяемыми записями исполнения прежнего кода.
+v0.3.1–v0.3.8 остаются неизменяемыми записями исполнения соответствующего кода.
 Новые validators, marker rules, feature formulas и runtime workflows не
 применялись задним числом. Ограничения формул и доказательств перечислены в
 [`limitations.md`](limitations.md) и post-v0.3.7 аудите.

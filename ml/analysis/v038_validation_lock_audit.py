@@ -31,7 +31,8 @@ def create(root: Path, campaign_path: Path, output_root: Path, manifest_path: Pa
     from network_sensor_v0_6 import build_causal_frame
     candidate = yaml.safe_load((root / "ml/experiments/v0_3_8/frozen_candidate_manifest.yaml").read_text(encoding="utf-8"))
     all_frames = [pd.read_csv(output_root / "datasets" / f"windows_network_sensor_v0_4_{run_id}_all.csv") for run_id in run_ids]
-    all_combined = pd.concat(all_frames, ignore_index=True).sort_values(["run_id", "run_sequence"]).reset_index(drop=True)
+    # Внутри каждого run исходный CSV уже находится в frozen execution order.
+    all_combined = pd.concat(all_frames, ignore_index=True).reset_index(drop=True)
     features = build_causal_frame(all_combined.to_dict("records"), candidate["feature_profile"])
     features = features.loc[~all_combined["warmup"].astype(bool)].reset_index(drop=True)
     feature_path = output_root / "datasets" / "v038_validation_frozen_features.csv"

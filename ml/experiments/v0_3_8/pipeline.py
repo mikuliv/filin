@@ -159,7 +159,11 @@ def closed_set_metrics(labels, probabilities) -> dict:
 
 
 def build_feature_frame(all_rows: pd.DataFrame, profile: str) -> tuple[pd.DataFrame, pd.DataFrame]:
-    ordered = all_rows.sort_values(["run_id", "run_sequence"]).reset_index(drop=True)
+    # Dataset builder сохраняет execution order строками, но намеренно не
+    # экспортирует служебный run_sequence как потенциальный leakage field.
+    ordered = all_rows.reset_index(drop=True).copy()
+    ordered["_causal_row_order"] = np.arange(len(ordered))
+    ordered = ordered.sort_values(["run_id", "_causal_row_order"]).drop(columns="_causal_row_order").reset_index(drop=True)
     features = build_causal_frame(ordered.to_dict("records"), profile, history_depth=4)
     scored = ~ordered["warmup"].astype(bool)
     return ordered.loc[scored].reset_index(drop=True), features.loc[scored].reset_index(drop=True)

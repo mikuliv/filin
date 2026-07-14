@@ -53,3 +53,13 @@ training или model selection.
 - `v037_runner.py`: resumable Docker runner; для validation изолирует каждый execution в собственный PCAP и объединяет только нормализованные Zeek observations, исключая marker flows.
 
 Успешные runs при `--resume` не выполняются повторно. Validation runner требует frozen candidate manifest.
+
+## v0.3.8
+
+- `v0_3_8_training.yaml`: 12 новых runs, 72 warm-up и 432 scored окна.
+- `v0_3_8_internal_validation.yaml`: 6 новых runs, 36 warm-up и 216 scored окон.
+- `run_v0_3_8_training.py` и `run_v0_3_8_validation.py`: strict resumable runners.
+- `v0_3_8_preflight.py`: fail-closed проверка изоляции, capability и integrity.
+- `v038_runner.py`: per-run Docker capture, нормализация вывода subprocess и безопасное возобновление без повторения успешных запусков.
+
+Validation runner требует frozen candidate, а evaluation — дополнительно frozen validation lock. Ни один validation row не доступен nested selection.

@@ -28,3 +28,7 @@ Holdout был заблокирован до единственного predict,
 ## v0.3.7
 
 Flat multiclass архитектура v0.3.4 показала систематические benign→attack ошибки на v0.3.6. Новый цикл ввёл causal temporal/contextual profiles, отдельные detection и subtype stages, group-aware sigmoid calibration, benign-only IsolationForest OOD guard, abstention и temporal evidence. Training и validation каталоги не пересекаются; candidate и policy фиксируются до первого validation prediction.
+
+## v0.3.8
+
+14 июля 2026 года выполнен полный class-conditional evidence cycle. Собраны 12 новых training и 6 новых validation runs, проведён nested grouped selection, заморожены candidate/validation manifests и один раз сформированы immutable predictions. Из 51-признакового control и 60-признакового evidence profile выбран control: дополнительные evidence-признаки не дали достаточного преимущества. Итоговая policy отрицательна из-за window/episode gates, поэтому продолжение в виде frozen regression v0.3.9 не открыто.

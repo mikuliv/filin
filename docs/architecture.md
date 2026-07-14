@@ -65,3 +65,19 @@ flowchart LR
 ```
 
 Detection отделён от subtype classification: benign gate не вызывает subtype model. OOD не конвертируется в attack автоматически. Asset state сбрасывается между runs и folds; warm-up инициализирует state, но исключён из support и metrics.
+
+## Class-conditional evidence v0.3.8
+
+```mermaid
+flowchart LR
+  W["Causal window features"] --> G["Calibrated benign/attack gate"]
+  G --> S["Calibrated subtype probabilities"]
+  S --> C["Mondrian conformal set"]
+  W --> K["Per-class robust-scaled kNN support"]
+  C --> E["Evidence reconciliation"]
+  K --> E
+  E --> A["Causal episode accumulator"]
+  A --> D["benign / review / attack candidate"]
+```
+
+Conformal scores и support thresholds обучаются только на group-aware training OOF. Решение класса требует согласования вероятности, conformal membership и support; отсутствие support ведёт к review, а не автоматически к атаке. Episode state изолирован по run и asset и использует только текущие/предыдущие окна.

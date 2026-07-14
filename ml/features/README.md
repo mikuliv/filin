@@ -65,3 +65,5 @@ all numeric CSV columns or synthesize unavailable measures as zero.
 Единственный ordered contract загружается из `feature_dictionary.yaml` через
 `profile_registry.py`; builder обязан вызвать validator и зафиксировать schema,
 builder, dataset, row-order, execution-mapping и marker-interval hashes.
+
+В v0.3.8 evidence profile расширяет 51 contextual feature девятью причинными признаками availability/recovery. Все вычисления используют только текущее и предыдущие окна, state сбрасывается между runs, а identity, labels, scenario, seed, condition и будущие окна запрещены. Selection выбрал contextual control; это не отменяет проверку и доступность evidence profile для будущих новых циклов.

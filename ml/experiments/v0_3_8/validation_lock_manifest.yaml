@@ -1,0 +1,61 @@
+validation_campaign_sha256: 581da5d551ca1b206744e7e59cd081ae35a75fe82fdf50dce2ccf4d63c4bc1a1
+campaign_index_sha256: 1ab8f5bb60e4f6257ca6cabab667205a18b35c5e6b5211985e8b2708ed9ff87e
+run_ids:
+- run_v038_validation_unseen_composition_001
+- run_v038_validation_unseen_composition_002
+- run_v038_validation_boundary_shift_001
+- run_v038_validation_boundary_shift_002
+- run_v038_validation_conflicting_evidence_001
+- run_v038_validation_conflicting_evidence_002
+run_status_sha256: 0b0884c9c93f141fb2eef9d7d89cfadadda9a578f3a9e77bd46dc1cdcacea8ea
+dataset_paths:
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_unseen_composition_001.csv
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_unseen_composition_002.csv
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_boundary_shift_001.csv
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_boundary_shift_002.csv
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_conflicting_evidence_001.csv
+- lab/output/datasets/windows_network_sensor_v0_4_run_v038_validation_conflicting_evidence_002.csv
+dataset_sha256:
+  windows_network_sensor_v0_4_run_v038_validation_unseen_composition_001.csv: a39c8f22407d5b526514059d9da67eac85d0ef789e2056a06ac9c33e33aa8a20
+  windows_network_sensor_v0_4_run_v038_validation_unseen_composition_002.csv: 46b6361376ebf5e14f127444eb54106e7e7f6a8175ef16a817cf1c8da45f5246
+  windows_network_sensor_v0_4_run_v038_validation_boundary_shift_001.csv: a2f2b37f0644ee8744844fb7b30f8634e629354c79141dcb94ed11d4931d55ab
+  windows_network_sensor_v0_4_run_v038_validation_boundary_shift_002.csv: 96249a954d21d52240c3fec4f78447f4808944be611bc9b016e8327212de8eef
+  windows_network_sensor_v0_4_run_v038_validation_conflicting_evidence_001.csv: 869032beeb509b015579227b9b0e4ccae0e39f9ae907eb68b33963175703bb9a
+  windows_network_sensor_v0_4_run_v038_validation_conflicting_evidence_002.csv: 20d03b62dbbee5003de8012a8644e453afe244645fd4db74f5c4814e02ce7367
+frozen_feature_path: lab/output/datasets/v038_validation_frozen_features.csv
+frozen_feature_sha256: 8d55a2953bc2ad5e1fce53f9507d6a8137d0d2992c84978c28404f4090e8a768
+row_order_sha256: 1f29da17ba8bc211ca37962eabb930b68ef1bd52d3e105f44abf8e91e86eda79
+execution_mapping_sha256: d7b76bb9b827f833486b544c624d2023483d47e7a2adf423c068139af8b6d930
+episode_mapping_sha256: 8d6159fc6ccecbdf9b81b27faed1720a7d99ac7239042d12e8f9962c516bd42c
+class_distribution:
+  auth_failures: 18
+  beacon_simulation: 18
+  benign: 126
+  low_rate_dos: 18
+  port_scan: 18
+  web_probe: 18
+group_distribution:
+  boundary_shift: 72
+  conflicting_evidence: 72
+  unseen_composition: 72
+benign_variant_distribution:
+  benign_accessibility_map_review: 9
+  benign_archive_forward_recovery: 9
+  benign_backup_catalog_rehydrate: 9
+  benign_consumer_checkpoint_resume: 9
+  benign_dependency_index_pull: 9
+  benign_endpoint_compliance_round: 9
+  benign_mesh_readiness_rotation: 9
+  benign_partition_rebalance: 9
+  benign_registry_watch_failover: 9
+  benign_release_mirror_delta: 9
+  benign_replica_lag_normalization: 9
+  benign_session_credential_renewal: 9
+  benign_telemetry_rollup_export: 9
+  benign_websocket_state_reconnect: 9
+feature_schema_sha256: 215282131f821fef4018e491e710e77323a80c0591641766896c1c478acc1e6a
+expected_runs: 6
+expected_rows: 216
+expected_episodes: 72
+locked_at: '2026-07-14T18:52:22.172880+00:00'
+modified_after_lock: false

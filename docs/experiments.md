@@ -49,3 +49,9 @@ hyperparameter или threshold tuning и не является полность
 После отрицательного prospective holdout v0.3.6 введён новый независимый цикл: 12 training runs и 6 validation runs. Строки, labels и predictions v0.3.6 не участвуют в обучении, выборе profiles, calibration или thresholds. Model selection использует nested `StratifiedGroupKFold` 6×4 по `run_id`; единственный candidate замораживается до однократной internal validation.
 
 Flat multiclass control сохранён только для ablation. Основной тракт разделяет suspicious gate, benign OOD guard, attack subtype model, abstention и причинный temporal accumulator. Internal validation не разрешает fit или tuning и сама по себе не подтверждает generalization.
+
+## v0.3.8 — class-conditional evidence
+
+Новый независимый цикл содержит 12 training runs (432 scored windows, 144 episodes) и 6 validation runs (216 scored windows, 72 episodes). До сбора validation заморожены candidate и policy; после сбора заморожен validation lock. Единственная оценка выполнена в no-fit режиме.
+
+Выбран 51-признаковый contextual control, два calibrated HistGradientBoosting-этапа, Mondrian conformal при `alpha=0.05`, class-conditional 3-NN support с training-квантилем `0.975` и episode policy `consistent_2_of_3`. Closed-set macro F1 равен `0.990734`, FPR — `0`, conformal coverage — `0.995370`. Но attack-window alert recall `0.600000`, episode recall `0.933333` и unresolved episode rate `0.066667` нарушили frozen policy. Итог отрицательный; повторная настройка на validation запрещена.

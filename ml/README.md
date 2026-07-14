@@ -39,3 +39,7 @@ ML-результаты относятся к controlled laboratory data; backen
 ## network_sensor_v0_5
 
 Профили: control 16, temporal 41 и contextual 51 features. Иерархический candidate состоит из binary gate, group-aware sigmoid calibrators, benign-only OOD guard, subtype classifier и causal temporal evidence. Nested grouped CV и все параметры выбираются только на training OOF; internal validation работает в no-fit режиме. Runtime models, predictions и reports не коммитятся.
+
+## network_sensor_v0_6 class-conditional evidence
+
+v0.3.8 добавляет 60-признаковый audited evidence profile, Mondrian conformal prediction, robust-scaled class-conditional kNN support и episode-level evidence. Nested grouped selection выбрал 51-признаковый contextual control. Замороженные source manifests коммитятся; model artifacts, datasets, predictions и reports остаются runtime artifacts вне Git. Frozen policy не пройдена.

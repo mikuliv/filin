@@ -203,7 +203,7 @@ def main():
         path=ROOT/"lab/output/datasets"/f"windows_network_sensor_v0_4_{run_id}_all.csv"
         with guard.open_dataset(path,purpose="training_rows") as stream:frame=pd.read_csv(stream)
         sys.path.insert(0,str(ROOT/"ml/features"));from network_sensor_v0_6 import build_causal_frame
-        built=build_causal_frame(frame.sort_values(["run_id","run_sequence"]).to_dict("records"),manifest["feature_profile"]);training_features.append(built.loc[~frame.sort_values(["run_id","run_sequence"])["warmup"].astype(bool)].reset_index(drop=True))
+        frame=frame.reset_index(drop=True);built=build_causal_frame(frame.to_dict("records"),manifest["feature_profile"]);training_features.append(built.loc[~frame["warmup"].astype(bool)].reset_index(drop=True))
     distribution=feature_distribution_analysis(pd.concat(training_features,ignore_index=True),X,predictions["final_decision"])
     bundle=joblib.load(artifact);gate_model=bundle["gate"].named_steps["model"];subtype_model=bundle["subtype"].named_steps["model"]
     def importance(model):

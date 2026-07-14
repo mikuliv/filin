@@ -39,7 +39,7 @@ def sha256(path: Path) -> str:
 
 
 def docker(command, environment, check=True):
-    return subprocess.run(command, cwd=ROOT / "lab/docker", env=environment, check=check, capture_output=True, text=True, encoding="utf-8")
+    return subprocess.run(command, cwd=ROOT / "lab/docker", env=environment, check=check, capture_output=True, text=True, encoding="utf-8", errors="replace")
 
 
 def retry(command, environment):
@@ -126,7 +126,7 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
             [sys.executable, str(ROOT / "lab/sensor/correlate_sensor_events.py"), "--manifest", str(manifest_path), "--events", str(part_events), "--execution-id", str(scenario["execution_id"]), "--output", str(part_normalized), "--strict"],
         )
         for command in commands:
-            completed = subprocess.run(command, cwd=ROOT, check=False, capture_output=True, text=True, encoding="utf-8")
+            completed = subprocess.run(command, cwd=ROOT, check=False, capture_output=True, text=True, encoding="utf-8", errors="replace")
             if completed.returncode:
                 raise RuntimeError(f"Sensor subprocess завершился с кодом {completed.returncode}: {completed.stderr.strip()}")
         return sequence, part_events, part_normalized
@@ -140,7 +140,7 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
             output.write(part_normalized.read_text(encoding="utf-8"))
         part_events.unlink()
         part_normalized.unlink()
-    completed = subprocess.run([sys.executable, str(ROOT / "ml/features/build_network_sensor_v4_dataset.py"), "--manifest", str(manifest_path), "--events", str(normalized), "--output", str(all_dataset)], cwd=ROOT, check=False, capture_output=True, text=True, encoding="utf-8")
+    completed = subprocess.run([sys.executable, str(ROOT / "ml/features/build_network_sensor_v4_dataset.py"), "--manifest", str(manifest_path), "--events", str(normalized), "--output", str(all_dataset)], cwd=ROOT, check=False, capture_output=True, text=True, encoding="utf-8", errors="replace")
     if completed.returncode:
         raise RuntimeError(f"Построитель dataset завершился с кодом {completed.returncode}: {completed.stderr.strip()}")
     validate_dataset(all_dataset, kind="windows", feature_profile="network_sensor_v0_4")
