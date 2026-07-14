@@ -1,5 +1,6 @@
-schema_version: 1
+schema_version: 2
 profile: network_sensor_v0_6_integrity
+profile_semantic_version: 0.6.0
 semantics_change: future_only
 historical_profiles_immutable: true
 ordered_features:
@@ -24,27 +25,27 @@ ordered_features:
   - unique_destinations_per_flow
   - unique_services_per_flow
 defaults: &defaults
-  source: агрегация Zeek-событий, сопоставленных по маркерам
-  missing: отклонить execution
-  empty_window: счётчики равны нулю; execution с неопределёнными измерениями отклоняется
+  source: Zeek events assigned to one validated marker interval
+  missing: reject execution
+  empty_window: zero counts; reject an undefined measurement
 features:
-  flow_count: {<<: *defaults, description: Число сопоставленных потоков соединений, unit: потоки, valid_range: "[0, +inf)"}
-  tcp_flow_count: {<<: *defaults, description: Число TCP-потоков, unit: потоки, valid_range: "[0, +inf)"}
-  udp_flow_count: {<<: *defaults, description: Число UDP-потоков, unit: потоки, valid_range: "[0, +inf)"}
-  failed_connection_count: {<<: *defaults, description: Число соединений без успешного завершения, unit: соединения, valid_range: "[0, +inf)"}
-  total_bytes: {<<: *defaults, description: Наблюдаемые байты инициатора и ответчика, unit: байты, valid_range: "[0, +inf)"}
-  total_packets: {<<: *defaults, description: Наблюдаемые пакеты инициатора и ответчика, unit: пакеты, valid_range: "[0, +inf)"}
-  http_request_count: {<<: *defaults, description: Число наблюдаемых HTTP-запросов, unit: запросы, valid_range: "[0, +inf)"}
-  dns_query_count: {<<: *defaults, description: Число наблюдаемых DNS-запросов, unit: запросы, valid_range: "[0, +inf)"}
-  connection_failure_rate: {<<: *defaults, description: Доля неуспешных потоков, unit: доля, valid_range: "[0, 1]"}
-  http_error_rate: {<<: *defaults, description: Доля HTTP-запросов с ошибкой, unit: доля, valid_range: "[0, 1]"}
-  dns_error_rate: {<<: *defaults, description: Доля DNS-запросов с ошибкой, unit: доля, valid_range: "[0, 1]"}
-  orig_bytes_share: {<<: *defaults, description: Доля байтов инициатора в общем числе байтов, unit: доля, valid_range: "[0, 1]"}
-  orig_packets_share: {<<: *defaults, description: Доля пакетов инициатора в общем числе пакетов, unit: доля, valid_range: "[0, 1]"}
-  events_per_second: {<<: *defaults, description: Сопоставленные события за секунду marker interval, unit: события/секунда, valid_range: "[0, +inf)"}
-  flows_per_second: {<<: *defaults, description: Потоки за секунду marker interval, unit: потоки/секунда, valid_range: "[0, +inf)"}
-  bytes_per_second: {<<: *defaults, description: Байты за секунду marker interval, unit: байты/секунда, valid_range: "[0, +inf)"}
-  packets_per_second: {<<: *defaults, description: Пакеты за секунду marker interval, unit: пакеты/секунда, valid_range: "[0, +inf)"}
-  failed_connections_per_second: {<<: *defaults, description: Неуспешные соединения за секунду marker interval, unit: соединения/секунда, valid_range: "[0, +inf)"}
-  unique_destinations_per_flow: {<<: *defaults, description: Число уникальных назначений относительно числа потоков, unit: отношение, valid_range: "[0, +inf)"}
-  unique_services_per_flow: {<<: *defaults, description: Число уникальных сервисов относительно числа потоков, unit: отношение, valid_range: "[0, +inf)"}
+  flow_count: {<<: *defaults, formula: count(conn), source_fields: [conn], denominator_zero: not_applicable, unit: flows, valid_range: "[0, +inf)"}
+  tcp_flow_count: {<<: *defaults, formula: count(conn where proto=tcp), source_fields: [conn.proto], denominator_zero: not_applicable, unit: flows, valid_range: "[0, +inf)"}
+  udp_flow_count: {<<: *defaults, formula: count(conn where proto=udp), source_fields: [conn.proto], denominator_zero: not_applicable, unit: flows, valid_range: "[0, +inf)"}
+  failed_connection_count: {<<: *defaults, formula: count(conn where state is unsuccessful), source_fields: [conn.conn_state], denominator_zero: not_applicable, unit: connections, valid_range: "[0, +inf)"}
+  total_bytes: {<<: *defaults, formula: sum(orig_bytes + resp_bytes), source_fields: [conn.orig_bytes, conn.resp_bytes], denominator_zero: not_applicable, unit: bytes, valid_range: "[0, +inf)"}
+  total_packets: {<<: *defaults, formula: sum(orig_pkts + resp_pkts), source_fields: [conn.orig_pkts, conn.resp_pkts], denominator_zero: not_applicable, unit: packets, valid_range: "[0, +inf)"}
+  http_request_count: {<<: *defaults, formula: count(http), source_fields: [http], denominator_zero: not_applicable, unit: requests, valid_range: "[0, +inf)"}
+  dns_query_count: {<<: *defaults, formula: count(dns), source_fields: [dns], denominator_zero: not_applicable, unit: queries, valid_range: "[0, +inf)"}
+  connection_failure_rate: {<<: *defaults, formula: failed_connection_count / flow_count, source_fields: [failed_connection_count, flow_count], denominator_zero: return_zero, unit: share, valid_range: "[0, 1]"}
+  http_error_rate: {<<: *defaults, formula: http_error_count / http_request_count, source_fields: [http_error_count, http_request_count], denominator_zero: return_zero, unit: share, valid_range: "[0, 1]"}
+  dns_error_rate: {<<: *defaults, formula: dns_error_count / dns_query_count, source_fields: [dns_error_count, dns_query_count], denominator_zero: return_zero, unit: share, valid_range: "[0, 1]"}
+  orig_bytes_share: {<<: *defaults, formula: orig_bytes_total / (orig_bytes_total + resp_bytes_total), source_fields: [orig_bytes_total, resp_bytes_total], denominator_zero: return_zero, unit: share, valid_range: "[0, 1]"}
+  orig_packets_share: {<<: *defaults, formula: orig_packets_total / (orig_packets_total + resp_packets_total), source_fields: [orig_packets_total, resp_packets_total], denominator_zero: return_zero, unit: share, valid_range: "[0, 1]"}
+  events_per_second: {<<: *defaults, formula: window_event_count / window_duration_seconds, source_fields: [window_event_count, window_duration_seconds], denominator_zero: reject_execution, unit: events/second, valid_range: "[0, +inf)"}
+  flows_per_second: {<<: *defaults, formula: flow_count / window_duration_seconds, source_fields: [flow_count, window_duration_seconds], denominator_zero: reject_execution, unit: flows/second, valid_range: "[0, +inf)"}
+  bytes_per_second: {<<: *defaults, formula: total_bytes / window_duration_seconds, source_fields: [total_bytes, window_duration_seconds], denominator_zero: reject_execution, unit: bytes/second, valid_range: "[0, +inf)"}
+  packets_per_second: {<<: *defaults, formula: total_packets / window_duration_seconds, source_fields: [total_packets, window_duration_seconds], denominator_zero: reject_execution, unit: packets/second, valid_range: "[0, +inf)"}
+  failed_connections_per_second: {<<: *defaults, formula: failed_connection_count / window_duration_seconds, source_fields: [failed_connection_count, window_duration_seconds], denominator_zero: reject_execution, unit: connections/second, valid_range: "[0, +inf)"}
+  unique_destinations_per_flow: {<<: *defaults, formula: unique_destination_ip_count / flow_count, source_fields: [unique_destination_ip_count, flow_count], denominator_zero: return_zero, unit: ratio, valid_range: "[0, +inf)"}
+  unique_services_per_flow: {<<: *defaults, formula: unique_service_count / flow_count, source_fields: [unique_service_count, flow_count], denominator_zero: return_zero, unit: ratio, valid_range: "[0, +inf)"}

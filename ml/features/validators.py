@@ -7,6 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from schema import get_feature_profile, get_forbidden_feature_columns, get_model_feature_columns
+from profile_registry import FUTURE_METADATA_COLUMNS
 
 
 RELATION_TOLERANCE = 0.02
@@ -129,6 +130,49 @@ def validate_dataset(path: Path, kind: str = "generic", feature_profile: str | N
         raise ValueError(f"CSV-файл пустой: {path}")
     if "label" not in columns:
         raise ValueError("В CSV отсутствует обязательная колонка label.")
+    if feature_profile == "network_sensor_v0_6_integrity":
+        profile_features = get_feature_profile(feature_profile)
+        expected_columns = [*FUTURE_METADATA_COLUMNS, *profile_features]
+        if columns != expected_columns:
+            raise ValueError("future sensor dataset columns do not match the ordered profile contract")
+        if "label" in profile_features or set(profile_features) & set(get_forbidden_feature_columns()):
+            raise ValueError("label or provenance metadata entered future model features")
+        keys: set[tuple[str, int]] = set()
+        prior_key: tuple[str, int] | None = None
+        for number, row in enumerate(rows, start=2):
+            if not row["execution_id"] or not row["scenario_execution_key"]:
+                raise ValueError(f"future row {number} lacks execution identity")
+            key = (row["execution_id"], int(numeric_value(row, "window_index", number)))
+            if key in keys:
+                raise ValueError(f"duplicate future execution/window key in row {number}")
+            if prior_key is not None and key < prior_key:
+                raise ValueError("future rows are not in deterministic execution/window order")
+            keys.add(key)
+            prior_key = key
+            if (row["feature_profile"] != feature_profile or row["execution_mode"] != "docker"
+                    or row["synthetic"].lower() != "false" or row["observation_source"] != "network_sensor"
+                    or row["sensor_type"] != "zeek"):
+                raise ValueError(f"invalid future provenance metadata in row {number}")
+            duration = numeric_value(row, "window_duration_seconds", number)
+            if duration <= 0:
+                raise ValueError(f"non-positive marker duration in row {number}")
+            if len(row["marker_interval_evidence_sha256"]) != 64:
+                raise ValueError(f"missing marker evidence hash in row {number}")
+            for feature in profile_features:
+                if numeric_value(row, feature, number) < 0:
+                    raise ValueError(f"negative future feature {feature} in row {number}")
+            for ratio in ("connection_failure_rate", "http_error_rate", "dns_error_rate", "orig_bytes_share", "orig_packets_share"):
+                if not 0 <= numeric_value(row, ratio, number) <= 1:
+                    raise ValueError(f"future share {ratio} is outside [0, 1] in row {number}")
+            flow_count = numeric_value(row, "flow_count", number)
+            if numeric_value(row, "tcp_flow_count", number) + numeric_value(row, "udp_flow_count", number) > flow_count + RELATION_TOLERANCE:
+                raise ValueError(f"protocol counts exceed flow_count in row {number}")
+            assert_close(numeric_value(row, "flows_per_second", number), flow_count / duration, f"flows_per_second mismatch in row {number}")
+            assert_close(numeric_value(row, "bytes_per_second", number), numeric_value(row, "total_bytes", number) / duration, f"bytes_per_second mismatch in row {number}")
+            assert_close(numeric_value(row, "packets_per_second", number), numeric_value(row, "total_packets", number) / duration, f"packets_per_second mismatch in row {number}")
+            assert_close(numeric_value(row, "failed_connections_per_second", number), numeric_value(row, "failed_connection_count", number) / duration, f"failed_connections_per_second mismatch in row {number}")
+        return
+
     if feature_profile and feature_profile.startswith("client_"):
         required = {"run_id","run_sequence","scenario_id","scenario_execution_key","window_index","window_start","window_end","window_duration_seconds","label","execution_mode","synthetic","observation_source","feature_profile","window_event_count","window_has_events"}
         missing = required-set(columns)

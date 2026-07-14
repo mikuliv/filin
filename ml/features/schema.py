@@ -69,6 +69,11 @@ HISTORICAL_V031_BASELINE_FEATURES = [
 
 
 def get_feature_profile(name: str) -> list[str]:
+    # Future profiles are defined by the executable registry.  Historical
+    # constants above remain byte-for-byte compatible with completed stages.
+    from profile_registry import has_profile, ordered_features
+    if has_profile(name):
+        return ordered_features(name)
     if name == "client_core_v0_2":
         return list(CLIENT_CORE_V0_2)
     if name == "client_extended_v0_2":

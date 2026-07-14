@@ -4,17 +4,11 @@ from __future__ import annotations
 import math
 from typing import Any
 
+from profile_registry import ordered_features
+
 
 PROFILE_NAME = "network_sensor_v0_6_integrity"
-ORDERED_FEATURES = [
-    "flow_count", "tcp_flow_count", "udp_flow_count", "failed_connection_count",
-    "total_bytes", "total_packets", "http_request_count", "dns_query_count",
-    "connection_failure_rate", "http_error_rate", "dns_error_rate",
-    "orig_bytes_share", "orig_packets_share", "events_per_second",
-    "flows_per_second", "bytes_per_second", "packets_per_second",
-    "failed_connections_per_second", "unique_destinations_per_flow",
-    "unique_services_per_flow",
-]
+ORDERED_FEATURES = ordered_features(PROFILE_NAME)
 
 
 def _required(row: dict[str, Any], name: str) -> float:
