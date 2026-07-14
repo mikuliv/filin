@@ -1,0 +1,24 @@
+safety_gates:
+  minimum_attack_episode_recall: 0.95
+  maximum_attack_episode_to_benign_miss_rate: 0.05
+  prohibit_zero_recall_attack_episode_class: true
+benign_operational_gates:
+  maximum_benign_episode_false_alert_rate: 0.12
+  maximum_benign_episode_high_severity_alert_rate: 0.07
+  minimum_episode_alert_precision: 0.75
+window_gates:
+  minimum_benign_recall: 0.85
+  maximum_false_positive_rate: 0.12
+  maximum_high_severity_false_positive_rate: 0.06
+  minimum_attack_alert_recall: 0.90
+  maximum_review_rate: 0.22
+conformal_gates:
+  minimum_empirical_coverage: 0.85
+  minimum_per_class_coverage: 0.80
+  maximum_average_prediction_set_size: 2.0
+  maximum_empty_set_rate: 0.10
+stability:
+  maximum_episode_false_alert_std_across_runs: 0.15
+  maximum_benign_recall_std_across_runs: 0.15
+  maximum_attack_episode_recall_std_across_runs: 0.10
+ranking: [minimum_benign_episode_false_alert_rate, maximum_episode_alert_precision, maximum_attack_episode_recall, minimum_high_severity_benign_alert_rate, minimum_review_rate, maximum_benign_recall, minimum_run_instability, maximum_conformal_coverage, minimum_model_complexity]

@@ -1,0 +1,17 @@
+catalog_id: v038_training_benign_v1
+role: training_only
+scenarios:
+  - {scenario_id: benign_incremental_object_verify, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20, hard_negative_target_class: low_rate_dos}
+  - {scenario_id: benign_mirror_checksum_reconcile, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20, hard_negative_target_class: low_rate_dos}
+  - {scenario_id: benign_log_compaction_upload, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: low_rate_dos}
+  - {scenario_id: benign_database_replica_catchup, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: low_rate_dos}
+  - {scenario_id: benign_event_stream_checkpoint, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20, hard_negative_target_class: beacon_simulation}
+  - {scenario_id: benign_metrics_federation_pull, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: beacon_simulation}
+  - {scenario_id: benign_long_poll_state_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20, hard_negative_target_class: beacon_simulation}
+  - {scenario_id: benign_health_probe_fanout, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: port_scan}
+  - {scenario_id: benign_asset_inventory_rounds, type: benign, expected_label: benign, source_role: benign-client, target_role: target-ssh-sim, duration_seconds: 20, hard_negative_target_class: port_scan}
+  - {scenario_id: benign_service_registry_watch, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: port_scan}
+  - {scenario_id: benign_token_renewal_chain, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20, hard_negative_target_class: auth_failures}
+  - {scenario_id: benign_web_index_review, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20, hard_negative_target_class: web_probe}
+  - {scenario_id: benign_package_metadata_sync, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20, hard_negative_target_class: null}
+  - {scenario_id: benign_queue_backlog_drain, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20, hard_negative_target_class: beacon_simulation}

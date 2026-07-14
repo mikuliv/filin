@@ -1,0 +1,12 @@
+scope: isolated_docker_lab
+external_network: false
+external_dns: false
+real_credentials: false
+real_exploits: false
+malware: false
+nmap: false
+masscan: false
+bounded_load: true
+maximum_workers: 4
+maximum_requests_per_second: 3
+require_target_responsive: true

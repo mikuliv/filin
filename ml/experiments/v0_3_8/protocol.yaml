@@ -1,0 +1,24 @@
+experiment_id: filin-v0.3.8-class-conditional-evidence
+architecture_id: network_sensor_v0_6_class_conditional_evidence
+candidate_frozen_before_validation_collection: true
+validation_predictions_allowed_before_lock: false
+prohibit_old_rows: true
+prohibit_refit_on_validation: true
+prohibit_threshold_tuning_on_validation: true
+prohibit_conformal_tuning_on_validation: true
+prohibit_support_tuning_on_validation: true
+prohibit_episode_tuning_on_validation: true
+sensor_ready_for_backend_integration: false
+candidate_ready_for_shadow_mode: false
+seeds: [14001, 14002, 14003, 14101, 14102, 14103, 14201, 14202, 14203, 14301, 14302, 14303, 14401, 14402, 14501, 14502, 14601, 14602]
+files:
+  data_access_policy: ml/experiments/v0_3_8/data_access_policy.yaml
+  training_campaign: lab/campaigns/v0_3_8_training.yaml
+  validation_campaign: lab/campaigns/v0_3_8_internal_validation.yaml
+  training_scenario_catalog: lab/scenarios/v0_3_8_training_benign.yaml
+  validation_scenario_catalog: lab/scenarios/v0_3_8_validation_benign.yaml
+  environment_catalog: ml/experiments/v0_3_8/environment_catalog.yaml
+  model_selection_policy: ml/experiments/v0_3_8/model_selection_policy.yaml
+  validation_policy: ml/experiments/v0_3_8/internal_validation_policy.yaml
+  feature_schema_policy: ml/features/network_sensor_v0_6.py
+  safety_policy: ml/experiments/v0_3_8/safety_policy.yaml

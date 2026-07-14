@@ -125,6 +125,43 @@ for _index, (_scenario_id, (_family, _target)) in enumerate(_V037.items()):
     WORKFLOW_PLANS[_scenario_id] = _family_plan(_scenario_id, _family, _target, _index)
 
 
+# Новые training/validation идентификаторы имеют собственные ограниченные
+# локальные планы. Они не переиспользуют идентификаторы старых кампаний.
+_V038 = {
+    "benign_incremental_object_verify": ("backup", "target-web"),
+    "benign_mirror_checksum_reconcile": ("replication", "target-web"),
+    "benign_log_compaction_upload": ("log", "target-api"),
+    "benign_database_replica_catchup": ("database", "target-api"),
+    "benign_event_stream_checkpoint": ("queue", "control-api"),
+    "benign_metrics_federation_pull": ("metrics", "target-api"),
+    "benign_long_poll_state_refresh": ("websocket", "control-api"),
+    "benign_health_probe_fanout": ("discovery", "target-api"),
+    "benign_asset_inventory_rounds": ("maintenance", "target-ssh-sim"),
+    "benign_service_registry_watch": ("discovery", "target-api"),
+    "benign_token_renewal_chain": ("auth", "target-api"),
+    "benign_web_index_review": ("crawler", "target-web"),
+    "benign_package_metadata_sync": ("package", "target-web"),
+    "benign_queue_backlog_drain": ("queue", "control-api"),
+    "benign_backup_catalog_rehydrate": ("snapshot", "target-web"),
+    "benign_release_mirror_delta": ("replication", "target-web"),
+    "benign_archive_forward_recovery": ("log", "target-api"),
+    "benign_replica_lag_normalization": ("database", "target-api"),
+    "benign_consumer_checkpoint_resume": ("queue", "control-api"),
+    "benign_telemetry_rollup_export": ("metrics", "target-api"),
+    "benign_websocket_state_reconnect": ("websocket", "control-api"),
+    "benign_mesh_readiness_rotation": ("discovery", "target-api"),
+    "benign_endpoint_compliance_round": ("maintenance", "target-ssh-sim"),
+    "benign_registry_watch_failover": ("discovery", "target-api"),
+    "benign_session_credential_renewal": ("auth", "target-api"),
+    "benign_accessibility_map_review": ("crawler", "target-web"),
+    "benign_dependency_index_pull": ("package", "target-web"),
+    "benign_partition_rebalance": ("queue", "control-api"),
+}
+
+for _index, (_scenario_id, (_family, _target)) in enumerate(_V038.items()):
+    WORKFLOW_PLANS[_scenario_id] = _family_plan(_scenario_id, _family, _target, 100 + _index)
+
+
 def behavioral_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
     plan = WORKFLOW_PLANS[scenario_id]
     return tuple((action.kind, action.target, action.operation, action.payload) for action in plan)

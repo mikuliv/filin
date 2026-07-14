@@ -17,16 +17,17 @@ CAMPAIGN_FIELDS = ("campaign_id", "campaign_version", "campaign_role", "campaign
 
 
 def capture_bpf(manifest: dict[str, Any]) -> list[str]:
-    """Enable DNS capture only for an explicitly internal future smoke."""
+    """Включить DNS только для явно изолированного будущего запуска."""
     if manifest.get("capture_dns") is True:
-        if manifest.get("campaign_role") != "pre_training_smoke":
-            raise ValueError("DNS capture without the future smoke role is prohibited")
+        allowed_roles = {"pre_training_smoke", "evidence_training", "evidence_internal_validation"}
+        if manifest.get("campaign_role") not in allowed_roles:
+            raise ValueError("DNS capture запрещён для этой роли кампании")
         policy = manifest.get("network_policy") or {}
         names = set(policy.get("allowed_dns_names") or [])
         if policy.get("scope") != "internal_docker_only" or policy.get("external_dns_allowed") is not False:
-            raise ValueError("future DNS capture requires an internal-only network policy")
+            raise ValueError("DNS capture требует internal-only network policy")
         if not names or not names <= INTERNAL_DNS_NAMES:
-            raise ValueError("future DNS capture contains a name outside the local allowlist")
+            raise ValueError("DNS capture содержит имя вне локального allowlist")
         return []
     # Preserve the historical capture behavior for immutable stages.
     return ["not", "port", "53"]

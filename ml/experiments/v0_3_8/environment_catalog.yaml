@@ -1,0 +1,7 @@
+composition_diversity: {concurrent_clients: [3, 6], protocols: [http, dns, tls], degradation: low}
+support_boundaries: {hard_negatives: true, low_signal_attacks: true, shared_routes: true, responsive_target: true}
+episode_evidence: {isolated_benign_spikes: true, benign_counter_evidence: true, adjacent_class_conflict: true}
+observation_context: {latency_ms: [20, 160], jitter_ms: [5, 40], loss_percent: [0, 2], dns_retry: true, tls_reconnect: true}
+unseen_composition: {new_parameter_combinations: true}
+boundary_shift: {new_parameter_combinations: true}
+conflicting_evidence: {new_parameter_combinations: true}
