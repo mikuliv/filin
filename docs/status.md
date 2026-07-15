@@ -2,16 +2,16 @@
 
 Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Последний завершённый этап: v0.3.9.
+- Последний завершённый этап: v0.3.10.
 - Итог последнего этапа: политика внутренней валидации не пройдена.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
 
-Этап v0.3.9 завершён: 12 training и 6 prospective internal-validation runs,
-заморозка кандидата до validation collection, lock 252 окон и единственная
-no-fit evaluation. Итоговая политика не пройдена; новый training cycle должен
-получить отдельный будущий номер.
+Этап v0.3.10 завершён: 12 training и 6 prospective internal-validation runs,
+заморозка кандидата до validation collection, lock 324 окон и 360 canonical
+capture hashes до единственной no-fit evaluation. Итоговая политика не
+пройдена; новый training cycle должен получить отдельный будущий номер.
 
 ## v0.3.6
 
@@ -77,3 +77,22 @@ Integrity-оговорка: core validation lock был создан до predic
 `capture_hashes` ошибочно читались из `sensor/` и оказались пусты. После
 prediction добавлены hashes 288 неизменённых PCAP из `captures/`; prediction не
 повторялась. Исходный и исправленный lock hashes сохранены в audit.
+
+## v0.3.10
+
+Minimal probability-conformal cycle завершён полностью: training 12/12
+(`648` scored windows, `216` episodes, `720` marker/capture intervals) и
+validation 6/6 (`324`, `108`, `360`). Candidate
+`minimal:8cd02e11bdda:hgb:hgb` заморожен до validation collection; все
+`360/360` hashes из canonical `captures/` вошли в pre-prediction lock.
+
+Frozen validation дала closed-set macro F1 `1.000000`, benign recall
+`1.000000`, FPR `0.000000`, strong precision/recall `1.000000/1.000000`,
+attack episode recall `1.000000`, episode alert precision `1.000000`, benign
+episode false-alert rate `0.000000` и first-window detection `1.000000`.
+Однако overall pending rate `0.370370` и attack pending rate `0.666667`
+нарушают frozen pending/review policy; кроме того, training-only
+`model_selection_policy_passed=false`. Поэтому
+`v0310_internal_validation_passed=false` и
+`candidate_ready_for_v0_3_11_regression=false`. Пороговые значения после
+validation не менялись; backend integration и shadow mode запрещены.

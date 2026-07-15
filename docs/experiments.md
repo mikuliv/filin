@@ -73,3 +73,12 @@ second window `0.666667`, unresolved rate `0.300000`, support top-2 rate
 После отрицательного результата v0.3.9 открыт новый изолированный training/internal-validation cycle. Он сохраняет HGB/HGB, 51 contextual feature, grouped OOF calibration и Mondrian conformal, но удаляет k-NN support, signed accumulation, decay и active lifecycle из promotion path. Support остаётся diagnostic-only.
 
 Training содержит 12 новых runs, 216 episodes и 648 scored windows; prospective validation — 6 новых runs, 108 episodes и 324 scored windows. Главный detection gate — attack episode recall. Alert-emission window rate используется только диагностически.
+
+Цикл завершён 16 июля 2026 года. Все 12/12 training и 6/6 validation runs
+успешны; candidate заморожен до validation, а lock включил 360/360 capture
+hashes до единственной prediction. Closed-set macro F1, benign recall, strong
+precision/recall, attack episode recall и episode alert precision равны
+`1.000000`; FPR и benign episode false-alert rate равны `0.000000`.
+Attack pending rate `0.666667` и overall pending rate `0.370370` превысили
+frozen limits, а training-only model-selection policy не была пройдена.
+Поэтому итог отрицательный и regression v0.3.11 не разрешена.

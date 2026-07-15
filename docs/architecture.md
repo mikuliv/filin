@@ -92,3 +92,11 @@ Lifecycle `observing → pending → active → cooldown` использует a
 `network_sensor_v0_8_minimal_promotion` выполняет causal feature build → HGB gate → HGB subtype → frozen calibration → joint probabilities → Mondrian set → strong single-window либо repeated weak path → immutable alert emission. Pending хранит только прошлое и текущее окно по причинному activity key. Incident lifecycle вынесен за пределы sensor decision layer.
 
 Continuous k-NN support плохо совпал с нелинейными границами HGB в v0.3.9, поэтому не влияет на strong/weak promotion, benign acceptance, ambiguity, novelty или subtype. Signed evidence, decay, hysteresis и active-alert persistence отключены.
+
+Frozen candidate использовал global strong threshold `0.7`, margin `0.1`,
+maximum benign probability `0.2`; weak threshold `0.35`, margin `0.0`, benign
+ceiling `0.5`, repetition `two_consecutive`, pending TTL `2`, ambiguity margin
+`0.03`, strong-benign reset `0.8/0.3` и dedup TTL `3`. На validation все 60
+attack episodes обнаружены первым окном, а 120 последующих strong candidates
+подавлены как duplicates и представлены pending decisions. Это не изменило
+episode recall, но привело к отрицательному frozen pending-rate gate.

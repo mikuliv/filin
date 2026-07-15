@@ -10,3 +10,9 @@ Lifecycle причинный, не использует labels или `episode_i
 Strong path требует attack top class, conformal singleton, frozen probability/margin thresholds и benign ceiling. Weak path создаёт pending и подтверждается `two_consecutive` либо `two_of_three`, выбранной только на training. Strong benign evidence сбрасывает pending. Ambiguous и novel направляются в review без автоматического analyst review для одиночного pending.
 
 Alert — однократное immutable событие. Frozen dedup TTL подавляет повтор того же класса в одной causal activity sequence. Support, signed summation, decay, hysteresis и persistence не участвуют в решении.
+
+Выбран global strong threshold `0.7`, margin `0.1`, benign ceiling `0.2`; weak
+threshold `0.35`, repetition `two_consecutive`, pending TTL `2`, ambiguity
+margin `0.03`, dedup TTL `3`. Frozen validation обнаружила 60/60 attack
+episodes первым окном и подавила 120 повторных emissions. Pending-rate gate не
+пройден; policy после validation не менялась.

@@ -1,0 +1,220 @@
+candidate_id: minimal:8cd02e11bdda:hgb:hgb
+architecture_id: network_sensor_v0_8_minimal_promotion
+feature_profile: network_sensor_v0_5_contextual_control
+feature_count: 51
+ordered_feature_list:
+- failed_connection_rate
+- udp_flow_share
+- tcp_flow_share
+- http_requests_per_flow
+- dns_requests_per_flow
+- events_per_second
+- flows_per_second
+- bytes_per_flow
+- packets_per_flow
+- orig_bytes_per_flow
+- resp_bytes_per_flow
+- failed_connections_per_second
+- unique_destinations_per_flow
+- unique_services_per_flow
+- response_bytes_share
+- orig_packet_share
+- delta_flows_per_second
+- flows_per_second_to_rolling_median
+- robust_z_flows_per_second
+- delta_events_per_second
+- events_per_second_to_rolling_median
+- robust_z_events_per_second
+- delta_failed_connections_per_second
+- failed_connections_to_rolling_median
+- robust_z_failed_connections
+- delta_bytes_per_flow
+- bytes_per_flow_to_rolling_median
+- delta_packets_per_flow
+- packets_per_flow_to_rolling_median
+- delta_unique_destinations_per_flow
+- destination_set_jaccard_change
+- protocol_mix_l1_change
+- response_bytes_share_change
+- udp_flow_share_change
+- consecutive_high_failure_windows
+- consecutive_high_flow_windows
+- rolling_activity_slope
+- rolling_failure_slope
+- request_spacing_cv
+- periodicity_stability
+- long_lived_flow_persistence
+- success_response_share
+- failed_then_successful_connection_rate
+- retry_recovery_rate
+- target_responsiveness_ratio
+- connection_completion_rate
+- long_lived_flow_share
+- http_method_diversity
+- http_response_status_entropy
+- response_direction_balance
+- service_availability_recovery_evidence
+feature_schema_sha256: e9adc0617e2e670c1d846936ff69d36b5f9749faedf34ac9ecd21c4c7a00526c
+feature_builder_sha256: 215282131f821fef4018e491e710e77323a80c0591641766896c1c478acc1e6a
+rolling_history_depth: 6
+gate_model: HistGradientBoostingClassifier
+gate_parameters:
+  learning_rate: 0.05
+  max_iter: 200
+  max_leaf_nodes: 15
+  l2_regularization: 1.0
+  random_state: 42
+gate_artifact_sha256: 66524f4b1dc40615a24083877dfe5b4e4b93db613e040092f1c5a5ad99dfd523
+subtype_model: HistGradientBoostingClassifier
+subtype_parameters:
+  learning_rate: 0.05
+  max_iter: 200
+  max_leaf_nodes: 15
+  l2_regularization: 1.0
+  random_state: 42
+subtype_artifact_sha256: 66524f4b1dc40615a24083877dfe5b4e4b93db613e040092f1c5a5ad99dfd523
+calibration_method: group_aware_oof_sigmoid
+gate_calibrator_parameters:
+  coef:
+  - - 1.182634962184702
+  intercept:
+  - 0.013832135328859126
+  classes:
+  - 0
+  - 1
+  method: sigmoid
+subtype_calibrator_parameters:
+  coef:
+  - - -0.1212926948024285
+    - 0.4931864155575481
+    - -0.16277923520680873
+    - -0.12918781842650864
+    - -0.12682152803782085
+  - - -0.11161444231912059
+    - -0.1292932087490203
+    - -0.17036976804878526
+    - -0.1292393246010726
+    - 0.4952802226146646
+  - - -0.12144591473488635
+    - -0.1291789520919137
+    - -0.16272173042996557
+    - 0.49316022048611297
+    - -0.1268028488850988
+  - - 0.6323461359701316
+    - 0.04441070748933154
+    - 0.09317033163096364
+    - 0.04436776766759788
+    - 0.04765984307519451
+  - - -0.2779930841140352
+    - -0.2791249622062691
+    - 0.4027004020548836
+    - -0.2791008451255943
+    - -0.289315688767121
+  intercept:
+  - -0.2652165349354438
+  - -0.2628942902326715
+  - -0.2652201578261847
+  - 5.2644164074056095
+  - -4.471085424411169
+  classes:
+  - auth_failures
+  - beacon_simulation
+  - low_rate_dos
+  - port_scan
+  - web_probe
+  method: sigmoid
+calibration_oof_sha256: f6114cab3d539f9adf48fee9ec71d4beb9a2290c0ce474a2df409c18f75f982b
+conformal_method: mondrian_class_conditional
+conformal_alpha: 0.05
+conformal_class_counts:
+  benign: 288
+  port_scan: 72
+  auth_failures: 72
+  web_probe: 72
+  low_rate_dos: 72
+  beacon_simulation: 72
+conformal_score_hashes:
+  benign: b1a7bfa39d9d5ea3e9c4a73b169789efafa0438e9986cc0e232763aa971e3f15
+  port_scan: 1104995dd93d5f4db4ba955e2320d45290f5c06ebf2aa84d6ee11806a3323892
+  auth_failures: eba703223e595648f74a332fdd33627c03bf7dc92b7f8f010f0b75f27ae1f329
+  web_probe: d26dc76638801f216259983119aea91813421d0287d5c711ffdd8b3e3630543a
+  low_rate_dos: a32e4cae84a0e3598ec6fd49fddc979e19396e73dde41c44a19c71aeedd24c4d
+  beacon_simulation: dcdd947769dda59bab6de6bd5aa13da182c648bf285aaee6a35947d926b6e074
+diagnostic_support_method: robust_scaler_class_conditional_nearest_neighbors
+diagnostic_support_affects_decision: false
+diagnostic_support_k: 3
+diagnostic_support_quantile: 0.975
+maximum_strong_benign_probability: 0.2
+weak_thresholds_per_class:
+  port_scan: 0.35
+  auth_failures: 0.35
+  web_probe: 0.35
+  low_rate_dos: 0.35
+  beacon_simulation: 0.35
+weak_probability_margin: 0.0
+weak_benign_ceiling: 0.5
+weak_repetition_policy: two_consecutive
+pending_ttl_windows: 2
+ambiguity_margin: 0.03
+strong_benign_probability: 0.8
+strong_benign_margin: 0.3
+dedup_ttl_windows: 3
+strong_threshold_mode: global
+strong_thresholds_per_class:
+  port_scan: 0.7
+  auth_failures: 0.7
+  web_probe: 0.7
+  low_rate_dos: 0.7
+  beacon_simulation: 0.7
+strong_probability_margin: 0.1
+alert_event_schema:
+  immutable: true
+  fields:
+  - activity_state_key
+  - alert_class
+  - emitted_at
+  - dedup_expires_at
+  - source_path
+operational_states:
+- benign
+- observe_pending:<class>
+- review_required:ambiguous
+- review_required:novel
+- alert_emitted:<class>
+- alert_emitted:unclassified
+classes:
+- benign
+- port_scan
+- auth_failures
+- web_probe
+- low_rate_dos
+- beacon_simulation
+training_run_ids:
+- run_v0310_train_strong_001
+- run_v0310_train_strong_002
+- run_v0310_train_strong_003
+- run_v0310_train_gradual_001
+- run_v0310_train_gradual_002
+- run_v0310_train_gradual_003
+- run_v0310_train_mimicry_001
+- run_v0310_train_mimicry_002
+- run_v0310_train_mimicry_003
+- run_v0310_train_composition_001
+- run_v0310_train_composition_002
+- run_v0310_train_composition_003
+training_dataset_sha256: 3cc856b107eca84a2ec289d06aee6636bd88818eeb06eb2f77a6b6a134afa8bb
+training_mapping_sha256: 2f77bd98b9d88fd8da39a3164cb869221a4bee203d70dca1eab636b0199baa71
+training_oof_sha256: f6114cab3d539f9adf48fee9ec71d4beb9a2290c0ce474a2df409c18f75f982b
+protocol_sha256: 56b9a7771edf4d5428715b847bcedb1574590d6b117625ac13abb511ea1e652f
+data_access_policy_sha256: 4bd5a0b9083cde3dab1e952d50b9e0fadd4829b714d21b75fa0373f16cdab41a
+model_selection_policy_sha256: 14e9600ffcfa1b5e31865091cbf539626885f8ed513dddf8f4065fca7ebeeff5
+candidate_artifact: ml/artifacts/v0_3_10/frozen_candidate.joblib
+candidate_frozen_at: '2026-07-15T17:09:39.468218+00:00'
+candidate_frozen_before_validation_collection: true
+model_trained_on_v036_data: false
+model_trained_on_v037_data: false
+model_trained_on_v038_data: false
+model_trained_on_v039_data: false
+model_selection_policy_passed: false
+prohibit_refit_on_validation: true
+prohibit_tuning_on_validation: true

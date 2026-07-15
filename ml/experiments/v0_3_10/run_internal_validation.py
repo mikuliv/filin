@@ -7,10 +7,10 @@ import joblib, numpy as np, pandas as pd, yaml
 from sklearn.metrics import brier_score_loss, log_loss
 
 ROOT=Path(__file__).resolve().parents[3];HERE=Path(__file__).resolve().parent
-sys.path[:0]=[str(HERE),str(ROOT/"ml/analysis"),str(ROOT/"ml/models"),str(ROOT/"ml/evaluation"),str(ROOT/"ml/decision")]
+sys.path[:0]=[str(ROOT),str(HERE),str(ROOT/"ml/analysis"),str(ROOT/"ml/models"),str(ROOT/"ml/evaluation"),str(ROOT/"ml/decision")]
 from data_access_guard import DataAccessGuard
-from no_fit_guard import NoFitGuard
-from pipeline import *
+from ml.experiments.v0_3_10.no_fit_guard import NoFitGuard
+from ml.experiments.v0_3_10.pipeline import *
 from v0310_validation_lock_audit import verify
 from v0310_promotion_funnel import analyze as analyze_funnel
 from v0310_decision_transitions import analyze as analyze_transitions

@@ -53,3 +53,8 @@ Episode-first cycle использует отдельный Docker project `fili
 # Кампании v0.3.10
 
 Изолированный Docker lab выполняет 12 training и 6 prospective validation runs minimal-promotion цикла. Каждый run содержит шесть warm-up окон и 18 трёхоконных scored episodes. Все цели и DNS находятся в локальном allowlist; нагрузка ограничена safety policy.
+
+Фактически завершены 18/18 runs: training содержит 72 warm-up, 648 scored
+окон, 216 episodes и 720 непустых captures; validation — 36, 324, 108 и 360.
+Все 360 validation capture hashes зафиксированы до prediction. PCAP, Zeek,
+datasets, predictions и models остаются runtime artifacts вне Git.

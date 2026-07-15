@@ -4,7 +4,13 @@ import argparse, json, subprocess, sys
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[3];HERE=Path(__file__).resolve().parent
-sys.path[:0]=[str(ROOT/"lab/campaigns"),str(ROOT/"ml/analysis"),str(ROOT/"ml/features"),str(HERE)]
+sys.path[:0]=[
+    str(ROOT/"lab/campaigns"),
+    str(ROOT/"ml/analysis"),
+    str(ROOT/"ml/decision"),
+    str(ROOT/"ml/features"),
+    str(HERE),
+]
 
 def command(arguments):
     subprocess.run([sys.executable,*arguments],cwd=ROOT,check=True)

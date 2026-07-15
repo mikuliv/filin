@@ -45,3 +45,10 @@ v0.3.10 regression, backend integration и shadow mode не разрешены.
 # v0.3.10
 
 После технически корректной, но отрицательной v0.3.9 decision layer сокращён до двух причинных promotion paths и однократного alert emission. Новый цикл использует только собственные training и prospective validation rows. Capture lock теперь fail-closed требует все 360 hashes до единственной prediction и запрещает post-hoc дополнение.
+
+16 июля 2026 года завершены 12 training и 6 validation runs, nested grouped
+selection 6×4, candidate freeze, полный pre-prediction capture lock и no-fit
+evaluation. Candidate дал macro F1 и episode recall `1.0` без benign false
+alerts, но frozen training-selection и pending/review policies не прошёл:
+attack pending rate `0.666667`. Результат зафиксирован отрицательным; v0.3.11
+regression, backend integration и shadow mode не разрешены.

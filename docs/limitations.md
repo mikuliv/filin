@@ -83,3 +83,12 @@ prediction не повторялась и данные не менялись. Au
 Internal validation остаётся контролируемым локальным экспериментом и сама по себе не разрешает shadow mode. Старые v0.3.6–v0.3.9 datasets не используются для fit или tuning; после успешной policy они могут быть открыты только неизменному candidate на отдельном regression-этапе v0.3.11. Полностью новая prospective holdout всё равно потребуется после regression.
 
 Pending и review не считаются правильным benign. Diagnostic support не является доказательством novelty и не участвует в pass/fail policy.
+
+Фактическая internal validation показала идеальные closed-set и episode
+метрики, но `120` из `180` attack windows после первого однократного alert
+оказались в pending из-за causal deduplication: overall pending rate
+`0.370370`, attack pending rate `0.666667`. Frozen policy трактует эти значения
+как failure, хотя все 60 attack episodes обнаружены первым окном. Изменять
+определение метрики, TTL или thresholds по validation запрещено. Continuous
+support остаётся несогласованным с HGB: top-1 `0.311728`, top-2 `0.663580`,
+binary conflict `0.941358`; поэтому он остаётся только диагностическим.

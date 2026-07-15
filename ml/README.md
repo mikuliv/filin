@@ -50,3 +50,8 @@ v0.3.9 фиксирует HGB/HGB и contextual control из 51 признака
 # Цикл v0.3.10
 
 Minimal probability-conformal candidate сохраняет fixed HGB/HGB и 51-feature contextual profile. Group-aware calibration, conformal scores и decision thresholds строятся только на новых training grouped OOF rows. Validation работает predict-only после полного capture lock.
+
+Frozen evaluation завершена: closed-set macro F1 `1.0`, attack episode recall
+`1.0`, benign episode false-alert rate `0.0`, но pending rate `0.370370` и
+attack pending rate `0.666667`. Поэтому итоговая policy отрицательна;
+candidate не разрешён для regression, backend или shadow mode.

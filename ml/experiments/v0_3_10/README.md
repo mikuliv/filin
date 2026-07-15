@@ -21,3 +21,13 @@ python ml/experiments/v0_3_10/run_v0_3_10_stage.py `
 ```
 
 Validation prediction блокируется, пока pre-prediction lock не содержит все 360 canonical `captures/` hashes. Post-hoc дополнение capture evidence запрещено.
+
+## Итог
+
+Stage завершён: training 12/12 и validation 6/6, capture lock 360/360 создан
+до immutable prediction. Candidate `minimal:8cd02e11bdda:hgb:hgb` дал macro F1
+`1.0`, FPR `0.0`, attack episode recall `1.0`, episode precision `1.0` и benign
+episode false-alert rate `0.0`. Frozen policy всё же не пройдена из-за
+training-selection failure и pending rates `0.370370/0.666667`. Fit-call count
+на validation равен `0`; regression, shadow mode и backend integration
+запрещены.

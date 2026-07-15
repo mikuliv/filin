@@ -4,18 +4,18 @@
 
 Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-- Последний завершённый этап: v0.3.9.
+- Последний завершённый этап: v0.3.10.
 - Итог последнего этапа: политика внутренней валидации не пройдена.
-- Активная работа: отсутствует; v0.3.9 завершён с отрицательным результатом.
-- Следующий допустимый этап: проектирование нового training cycle; frozen regression v0.3.10 не разрешён.
+- Активная работа: отсутствует; v0.3.10 завершён с отрицательным результатом.
+- Следующий допустимый этап: проектирование нового training cycle; frozen regression v0.3.11 не разрешён.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
 
-Исторические метрики v0.3.1–v0.3.9 остаются неизменными. В v0.3.9 успешно
-пройдены integrity, closed-set, calibration, conformal и strong-evidence gates,
-но не пройдены window, episode, continuous-support, group и benign-variant
-gates; backend, shadow mode и production остаются запрещены.
+Исторические метрики v0.3.1–v0.3.9 остаются неизменными. В v0.3.10 успешно
+пройдены integrity, closed-set, calibration, conformal, strong-path и episode
+gates, но training-only model-selection policy и pending/review gate не
+пройдены; backend, shadow mode и production остаются запрещены.
 
 ## Назначение
 
@@ -47,7 +47,7 @@ flowchart LR
 
 ## Текущая версия
 
-v0.3.9 завершил отдельный episode-first training/internal-validation cycle,
+v0.3.10 завершил отдельный minimal-promotion training/internal-validation cycle,
 но его frozen policy не пройдена. Он не разрешает backend integration, shadow
 mode или production deployment. Подробный текущий статус определяется только
 `docs/research-state.yaml`.

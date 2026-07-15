@@ -7,11 +7,11 @@ import joblib, numpy as np, yaml
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = Path(__file__).resolve().parent
-sys.path[:0] = [str(HERE), str(ROOT / "ml/models"), str(ROOT / "ml/features"), str(ROOT / "ml/decision")]
+sys.path[:0] = [str(ROOT), str(HERE), str(ROOT / "ml/models"), str(ROOT / "ml/features"), str(ROOT / "ml/decision")]
 from continuous_class_support import ContinuousClassSupport
 from group_aware_sigmoid_calibration import GroupAwareSigmoidCalibrator
 from mondrian_conformal_classifier import MondrianConformalClassifier
-from pipeline import *
+from ml.experiments.v0_3_10.pipeline import *
 
 def rank(record):
     episode, window = record["episode_metrics"], record["window_metrics"]
