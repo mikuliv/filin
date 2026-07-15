@@ -1,0 +1,19 @@
+campaign_id: filin-v0.3.9-episode-first-training
+role: episode_first_training
+catalog: lab/scenarios/v0_3_9_training_benign.yaml
+warmup_windows: 6
+scored_windows: 42
+episodes_per_run: 14
+runs:
+  - {run_id: run_v039_train_early_001, group: early_strong_evidence, random_seed: 14701, run_index: 1}
+  - {run_id: run_v039_train_early_002, group: early_strong_evidence, random_seed: 14702, run_index: 2}
+  - {run_id: run_v039_train_early_003, group: early_strong_evidence, random_seed: 14703, run_index: 3}
+  - {run_id: run_v039_train_counter_001, group: benign_counter_evidence, random_seed: 14801, run_index: 4}
+  - {run_id: run_v039_train_counter_002, group: benign_counter_evidence, random_seed: 14802, run_index: 5}
+  - {run_id: run_v039_train_counter_003, group: benign_counter_evidence, random_seed: 14803, run_index: 6}
+  - {run_id: run_v039_train_composition_001, group: composition_interference, random_seed: 14901, run_index: 7}
+  - {run_id: run_v039_train_composition_002, group: composition_interference, random_seed: 14902, run_index: 8}
+  - {run_id: run_v039_train_composition_003, group: composition_interference, random_seed: 14903, run_index: 9}
+  - {run_id: run_v039_train_latency_001, group: observation_and_latency, random_seed: 15001, run_index: 10}
+  - {run_id: run_v039_train_latency_002, group: observation_and_latency, random_seed: 15002, run_index: 11}
+  - {run_id: run_v039_train_latency_003, group: observation_and_latency, random_seed: 15003, run_index: 12}

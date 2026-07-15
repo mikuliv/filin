@@ -1,0 +1,17 @@
+strong_stage:
+  strong_attack_probability: [0.85, 0.90]
+  strong_probability_margin: [0.40, 0.55]
+  strong_support_ratio: [0.90, 1.00]
+  maximum_strong_benign_probability: [0.10]
+  maximum_finalists: 2
+weak_stage:
+  weak_attack_probability: [0.45, 0.60]
+  weak_repeat_policy: [consistent_2_of_3, consistent_2_of_4]
+  maximum_finalists: 4
+lifecycle_stage:
+  decay: [0.50, 0.70]
+  activation_threshold: [1.20, 1.60]
+  strong_benign_reset_probability: [0.80, 0.90]
+  active_minimum_hold_windows: [2]
+state_ttl_windows: 3
+inactivity_reset_policy: timestamp_gap

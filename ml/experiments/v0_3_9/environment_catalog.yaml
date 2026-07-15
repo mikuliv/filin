@@ -1,0 +1,11 @@
+profiles:
+  - {id: background_v039_early, group: early_strong_evidence, max_clients: 5, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_counter, group: benign_counter_evidence, max_clients: 5, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_composition, group: composition_interference, max_clients: 7, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_latency, group: observation_and_latency, max_clients: 5, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_validation_early, group: unseen_early_signal_shift, max_clients: 5, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_validation_cross, group: cross_workflow_interference, max_clients: 7, max_actions_per_second: 4, max_actions_per_window: 90}
+  - {id: background_v039_validation_conflict, group: conflict_and_recovery_shift, max_clients: 5, max_actions_per_second: 4, max_actions_per_window: 90}
+network_scope: internal_docker_only
+external_dns_allowed: false
+target_responsive_required: true

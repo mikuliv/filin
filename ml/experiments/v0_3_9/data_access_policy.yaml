@@ -1,0 +1,40 @@
+policy_id: filin-v0.3.9-data-isolation-v1
+allowed_training_sources: [lab/output/datasets/windows_network_sensor_v0_4_run_v039_train_]
+allowed_validation_sources: [lab/output/datasets/windows_network_sensor_v0_4_run_v039_validation_]
+validation_requires_candidate_freeze: true
+validation_labels_require_lock: true
+validation_predictions_require_lock: true
+immutable_prediction_once: true
+forbidden_roots:
+  - lab/output/campaigns/filin_v0_3_6_blind_holdout
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_training
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_validation
+  - lab/output/campaigns/filin_v0_3_8_evidence_training
+  - lab/output/campaigns/filin_v0_3_8_evidence_validation
+  - ml/artifacts/v0_3_6
+  - ml/artifacts/v0_3_7
+  - ml/artifacts/v0_3_8
+  - ml/reports/v0_3_6
+  - ml/reports/v0_3_7
+  - ml/reports/v0_3_8
+forbidden_path_fragments: [run_v036_, run_v037_, run_v038_, filin_v0_3_6, filin_v0_3_7, filin_v0_3_8]
+forbidden_source_sha256:
+  - 0dfbde904d046ccb2932b6114cddbbbce3a4bc4e0d4af9ae8c592d8736fe958a
+  - 1711b5e99efd327443a51a3070e59a6a1b873d268ab78aa7d2fd9d01a772494f
+  - 20d03b62dbbee5003de8012a8644e453afe244645fd4db74f5c4814e02ce7367
+  - 46b6361376ebf5e14f127444eb54106e7e7f6a8175ef16a817cf1c8da45f5246
+  - 840cdbe923873a2d11cf532b0c17117b760939a2705d93759e827c26ec1acaa0
+  - 869032beeb509b015579227b9b0e4ccae0e39f9ae907eb68b33963175703bb9a
+  - 96249a954d21d52240c3fec4f78447f4808944be611bc9b016e8327212de8eef
+  - a2f2b37f0644ee8744844fb7b30f8634e629354c79141dcb94ed11d4931d55ab
+  - a39c8f22407d5b526514059d9da67eac85d0ef789e2056a06ac9c33e33aa8a20
+required_flags:
+  v039_data_access_valid: true
+  v036_rows_loaded: false
+  v037_rows_loaded: false
+  v038_rows_loaded: false
+  v038_predictions_loaded: false
+  v038_labels_loaded: false
+  model_trained_on_v036_data: false
+  model_trained_on_v037_data: false
+  model_trained_on_v038_data: false

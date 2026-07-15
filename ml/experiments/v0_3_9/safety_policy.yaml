@@ -1,0 +1,17 @@
+scope: internal_docker_only
+external_targets_allowed: false
+external_dns_allowed: false
+real_credentials_allowed: false
+exploit_payloads_allowed: false
+malware_allowed: false
+nmap_allowed: false
+masscan_allowed: false
+maximum_clients: 7
+maximum_workers: 4
+maximum_attack_requests_per_second: 3
+maximum_background_actions_per_second: 4
+maximum_background_actions_per_window: 90
+target_responsiveness_required: true
+backend_integration_allowed: false
+shadow_mode_allowed: false
+active_response_allowed: false
