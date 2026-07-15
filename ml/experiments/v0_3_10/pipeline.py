@@ -410,7 +410,10 @@ def evidence_decisions(rows: pd.DataFrame, probabilities: np.ndarray, conformal,
         record = engine.decide(activity_state_key=key, window_index=run_window,
                                probabilities=probability_map, conformal_set=list(conformal_sets[index]))
         record.update({"activity_state_key": key, "top_class": CLASSES[int(np.argmax(probabilities[index]))],
-                       "conformal_set": list(conformal_sets[index]), "support_result": support_rows[index],
+                       "joint_probabilities": probability_map, "conformal_set": list(conformal_sets[index]),
+                       "support_ranks": support_rows[index].ranks, "support_margins": support_rows[index].margins,
+                       "support_normalized_distances": support_rows[index].normalized_distances,
+                       "support_result": support_rows[index],
                        "diagnostic_support_affects_decision": False})
         records.append(record)
     return pd.DataFrame(records)
