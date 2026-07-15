@@ -53,9 +53,12 @@ def analyze(training: pd.DataFrame, validation: pd.DataFrame, rows: pd.DataFrame
     return {
         "feature_count": len(features), "per_feature": features,
         "top_drift_features": ranked[:10], "stable_features": list(reversed(ranked[-10:])),
+        "features_associated_with_strong_detection": _association(validation, decisions.strong_attack_evidence.astype(bool).to_numpy()),
+        "features_associated_with_pending": _association(validation, final.str.startswith("observe_pending:").to_numpy()),
         "features_associated_with_delayed_alerts": _association(validation, (rows.episode_position.to_numpy() > 1) & active),
         "features_associated_with_review": _association(validation, final.str.startswith("review_required:").to_numpy()),
         "features_associated_with_false_promotions": _association(validation, (labels == "benign") & active),
+        "features_associated_with_false_benign_decisions": _association(validation, (labels != "benign") & final.eq("benign").to_numpy()),
         "features_associated_with_unresolved_episodes": _association(validation, (labels != "benign") & ~active),
         "training_oof_distribution_source": "same training feature rows used for grouped OOF",
         "validation_used_for_tuning": False,

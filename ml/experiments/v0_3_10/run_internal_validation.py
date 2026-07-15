@@ -124,8 +124,14 @@ def attack_metrics(rows,decisions,closed):
 
 def bootstrap(rows,decisions):
     run_values=[]
-    for _,idx in rows.groupby("run_id",sort=False).groups.items():run_values.append(subset(rows.loc[idx].reset_index(drop=True),decisions.loc[idx].reset_index(drop=True)))
-    fields=["closed_set_macro_f1","closed_set_benign_recall","closed_set_FPR","true_class_candidate_evidence_recall","benign_recall","benign_window_alert_emission_rate","pending_rate","review_rate","attack_pending_rate","attack_episode_recall","episode_alert_precision","benign_episode_false_alert_rate","detection_by_second_window"]
+    for _,idx in rows.groupby("run_id",sort=False).groups.items():
+        r=rows.loc[idx].reset_index(drop=True);d=decisions.loc[idx].reset_index(drop=True);value=subset(r,d);labels=r.episode_class.astype(str).to_numpy();attack=labels!="benign"
+        strong=d.strong_attack_evidence.astype(bool).to_numpy();correct=np.array([flag and evidence==label for flag,evidence,label in zip(strong,d.evidence_class,labels)])
+        value.update({"strong_alert_precision":float(correct.sum()/max(strong.sum(),1)),"strong_attack_recall":float(correct[attack].mean()),
+          "conformal_coverage":float(np.mean([label in values for label,values in zip(labels,d.conformal_set)])),
+          "median_time_to_alert":float(value["time_to_first_alert"]["median"] or 0)})
+        run_values.append(value)
+    fields=["closed_set_macro_f1","closed_set_benign_recall","closed_set_FPR","true_class_candidate_evidence_recall","strong_alert_precision","strong_attack_recall","benign_recall","benign_window_alert_emission_rate","pending_rate","review_rate","attack_pending_rate","attack_episode_recall","episode_alert_precision","benign_episode_false_alert_rate","detection_by_second_window","median_time_to_alert","conformal_coverage"]
     matrix=np.array([[value[field] for field in fields] for value in run_values]);rng=np.random.default_rng(42);samples=matrix[rng.integers(0,len(matrix),size=(5000,len(matrix)))].mean(axis=1)
     return {"iterations":5000,"random_state":42,"sampling_unit":"run_id","confidence_level":.95,
       **{field:{"point_estimate":float(matrix[:,i].mean()),"lower":float(np.quantile(samples[:,i],.025)),"upper":float(np.quantile(samples[:,i],.975))} for i,field in enumerate(fields)}}
@@ -199,17 +205,46 @@ def main():
       "mean_support_margin_per_class":{label:float(np.mean([value.margins[label] for value in support_results])) for label in CLASSES}})
     truth=np.array([CLASSES.index(value) for value in labels]);binary=(labels!="benign").astype(int);attack=binary.astype(bool)
     gate_after=bundle["gate_calibrator"].predict_proba(gate_raw)[:,list(bundle["gate_calibrator"].model.classes_).index(1)]
+    subtype_calibrated_raw=bundle["subtype_calibrator"].predict_proba(sub_raw)
+    subtype_after=np.zeros_like(sub_raw)
+    for index,label in enumerate(ATTACK_CLASSES):
+        subtype_after[:,index]=subtype_calibrated_raw[:,list(bundle["subtype_calibrator"].model.classes_).index(label)]
+    subtype_truth=np.array([ATTACK_CLASSES.index(value) for value in labels[attack]])
+    subtype_onehot=np.eye(len(ATTACK_CLASSES))[subtype_truth]
     calibration={"gate":{"before":{"log_loss":float(log_loss(binary,np.column_stack([1-gate_raw,gate_raw]))),"brier":float(brier_score_loss(binary,gate_raw)),"ECE":expected_calibration_error(binary,np.column_stack([1-gate_raw,gate_raw]))},
       "after":{"log_loss":float(log_loss(binary,np.column_stack([1-gate_after,gate_after]))),"brier":float(brier_score_loss(binary,gate_after)),"ECE":expected_calibration_error(binary,np.column_stack([1-gate_after,gate_after]))}},
+      "subtype":{"before":{"multiclass_log_loss":float(log_loss(subtype_truth,sub_raw[attack],labels=list(range(len(ATTACK_CLASSES))))),"multiclass_brier":float(np.mean(np.sum((sub_raw[attack]-subtype_onehot)**2,axis=1))),"ECE":expected_calibration_error(subtype_truth,sub_raw[attack])},
+        "after":{"multiclass_log_loss":float(log_loss(subtype_truth,subtype_after[attack],labels=list(range(len(ATTACK_CLASSES))))),"multiclass_brier":float(np.mean(np.sum((subtype_after[attack]-subtype_onehot)**2,axis=1))),"ECE":expected_calibration_error(subtype_truth,subtype_after[attack])}},
       "joint":calibration_metrics(labels,before,after),"validation_calibration_performed":False}
     window,episode=operational_metrics(rows,decisions);strong,weak=evidence_reports(rows,decisions)
     alert,review,pending=masks(decisions);source=decisions.alert_record.map(lambda value:value.get("source_path") if value else None)
+    benign_mask=rows.episode_class.eq("benign").to_numpy();attack_mask=~benign_mask
+    window.update({"benign_decision_count":int(decisions.loc[benign_mask,"final_decision"].eq("benign").sum()),
+      "benign_pending_count":int(pending[benign_mask].sum()),"benign_review_count":int(review[benign_mask].sum()),
+      "benign_alert_emission_count":int(alert[benign_mask].sum()),"attack_candidate_evidence_recall":window["true_class_candidate_evidence_recall"],
+      "attack_to_benign_window_rate":float(decisions.loc[attack_mask,"final_decision"].eq("benign").mean()),
+      "overall_pending_rate":window["pending_rate"],"overall_review_rate":window["review_rate"]})
+    episode_predictions=[];attack_to_benign_misses=0
+    for _,idx in rows.groupby("episode_id",sort=False).groups.items():
+        truth=str(rows.loc[list(idx)[0],"episode_class"]);d=decisions.loc[idx];emitted=d[d.alert_emitted]
+        predicted=(str(emitted.iloc[0].evidence_class) if len(emitted) else None);episode_predictions.append((truth,predicted))
+        if truth!="benign" and d.final_decision.eq("benign").all():attack_to_benign_misses+=1
+    subtype_pairs=[(truth,predicted) for truth,predicted in episode_predictions if truth!="benign" and predicted is not None and predicted!="unclassified"]
+    subtype_correct=sum(truth==predicted for truth,predicted in subtype_pairs);detected_attack=max(sum(predicted is not None for truth,predicted in episode_predictions if truth!="benign"),1)
+    episode.update({"attack_episode_to_benign_miss_count":attack_to_benign_misses,"attack_episode_to_benign_miss_rate":attack_to_benign_misses/max(episode["attack_episode_support"],1),
+      "episode_alert_event_count":int(alert.sum()),"episode_subtype_precision":subtype_correct/max(len(subtype_pairs),1),"episode_subtype_recall":subtype_correct/detected_attack})
+    precision_value=episode["episode_subtype_precision"];recall_value=episode["episode_subtype_recall"]
+    episode["episode_subtype_f1"]=2*precision_value*recall_value/max(precision_value+recall_value,1e-12)
     dedup={"total_alert_emissions":int(alert.sum()),"strong_alert_emissions":int(source.eq("strong").sum()),"weak_repeated_alert_emissions":int(source.eq("weak_repeated").sum()),
       "unclassified_alert_emissions":int(source.eq("unclassified").sum()),"duplicate_candidates":int(decisions.duplicate_suppressed.sum()),"duplicates_suppressed":int(decisions.duplicate_suppressed.sum()),
       "duplicate_suppression_rate":float(decisions.duplicate_suppressed.mean()),"duplicate_false_suppression_count":0,"cross_episode_contamination_count":0,"cross_run_contamination_count":0,
       "alerts_emitted_after_inactivity_reset":int(alert.sum()),"alerts_incorrectly_blocked_after_inactivity_reset":0}
     per_run={str(name):subset(rows.loc[idx].reset_index(drop=True),decisions.loc[idx].reset_index(drop=True)) for name,idx in rows.groupby("run_id").groups.items()}
     groups=group_metrics(rows,decisions,sets,support_results,after);variants=variant_metrics(rows,decisions);attacks=attack_metrics(rows,decisions,closed)
+    probability_top=[CLASSES[index] for index in after.argmax(axis=1)]
+    support["probability_support_agreement"]=float(np.mean([predicted==value.best_class for predicted,value in zip(probability_top,support_results)]))
+    support["weakest_support_group"]=min(groups["groups"],key=lambda name:groups["groups"][name]["diagnostic_support_top2_rate"])
+    support["weakest_benign_variant"]=min(variants["variants"],key=lambda name:variants["variants"][name]["diagnostic_benign_support_rank"]*-1)
     funnel=analyze_funnel(rows,decisions,bundle["decision_parameters"]);transitions=analyze_transitions(rows,decisions);controls=analyze_controls(rows,after,sets,decisions)
     training_payload=joblib.load(artifact/"grouped_oof.joblib");feature_distribution=analyze_feature_distribution(training_payload["X"],X,rows,decisions)
     interpretation=analyze_model_interpretation(bundle,X,rows,decisions);intervals=bootstrap(rows,decisions)
@@ -221,7 +256,7 @@ def main():
     episode_pass=episode["attack_episode_recall"]>=.95 and episode["attack_episode_unresolved_rate"]<=.05 and episode["episode_alert_precision"]>=.95 and episode["detection_by_second_window"]>=.90 and (episode["time_to_first_alert"]["median"] or 99)<=2 and (episode["time_to_first_alert"]["maximum"] or 99)<=3 and all(value["recall"]>=.8333333333333334 for value in episode["per_class"].values())
     conformal_pass=conformal["empirical_coverage_overall"]>=.90 and min(conformal["coverage_per_class"].values())>=.85 and conformal["average_prediction_set_size"]<=1.5 and conformal["empty_set_rate"]<=.08 and conformal["wrong_only_set_rate"]<=.01
     group_pass=all(value["attack_episode_recall"]>=.90 and value["benign_recall"]>=.80 for value in groups["groups"].values());variant_pass=not variants["zero_recall_benign_variants"]
-    policy={"protocol_frozen_before_training":True,"data_access_valid":True,"training_campaign_completed":True,"training_integrity_passed":True,"nested_grouped_selection_completed":True,"model_selection_policy_passed":True,
+    policy={"protocol_frozen_before_training":True,"data_access_valid":True,"training_campaign_completed":True,"training_integrity_passed":True,"nested_grouped_selection_completed":True,"model_selection_policy_passed":bool(manifest.get("model_selection_policy_passed")),
       "candidate_frozen":True,"candidate_frozen_before_validation_collection":True,"validation_campaign_completed":True,"validation_integrity_passed":True,"capture_hashes_complete_before_prediction":True,"validation_locked_before_prediction":True,
       "condition_independence_passed":True,"feature_schema_audit_passed":True,"activity_key_audit_passed":True,"causal_feature_audit_passed":True,"causal_decision_audit_passed":True,"leakage_audit_passed":True,"contamination_audit_passed":True,
       "candidate_integrity_passed":True,"no_fit_audit_passed":nofit.report()["fit_call_count"]==0,"prediction_mapping_complete":len(rows)==324,"episode_mapping_complete":rows.episode_id.nunique()==108,
@@ -229,7 +264,7 @@ def main():
       "closed_set_policy_passed":closed_pass,"strong_path_policy_passed":strong_pass,"candidate_evidence_policy_passed":evidence_pass,"benign_operational_policy_passed":benign_pass,
       "pending_review_policy_passed":pending_pass,"episode_policy_passed":episode_pass,"alert_event_integrity_passed":dedup["cross_episode_contamination_count"]==0 and dedup["cross_run_contamination_count"]==0,
       "conformal_policy_passed":conformal_pass,"diagnostic_support_analysis_completed":True,"all_group_policies_passed":group_pass,"all_benign_variant_policies_passed":variant_pass,
-      "stability_policy_passed":True,"calibration_policy_passed":calibration["gate"]["after"]["ECE"]<=.15 and calibration["joint"]["after_frozen_calibration"]["ECE"]<=.15,
+      "stability_policy_passed":True,"calibration_policy_passed":calibration["gate"]["after"]["ECE"]<=.15 and calibration["subtype"]["after"]["ECE"]<=.15 and calibration["joint"]["after_frozen_calibration"]["ECE"]<=.15,
       "model_trained_on_v036_data":False,"model_trained_on_v037_data":False,"model_trained_on_v038_data":False,"model_trained_on_v039_data":False,"model_refit_on_validation":False,
       "candidate_ready_for_shadow_mode":False,"sensor_ready_for_backend_integration":False}
     required=[key for key,value in policy.items() if key.endswith("_passed")];policy["v0310_internal_validation_completed"]=True;policy["v0310_internal_validation_passed"]=all(policy[key] for key in required)

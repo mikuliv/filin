@@ -13,7 +13,8 @@ class DataAccessGuard:
         self.policy = yaml.safe_load(policy_path.read_text(encoding="utf-8"))
         hashes_path = self.root / self.policy["forbidden_hash_file"]
         self.forbidden_hashes = set(yaml.safe_load(hashes_path.read_text(encoding="utf-8"))["hashes"])
-        self.audit_path, self.accesses, self.prediction_created = audit_path, [], False
+        previous = json.loads(audit_path.read_text(encoding="utf-8")) if audit_path and audit_path.exists() else {}
+        self.audit_path, self.accesses, self.prediction_created = audit_path, list(previous.get("accesses", [])), False
 
     def _relative(self, path):
         candidate = Path(path)

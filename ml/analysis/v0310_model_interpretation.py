@@ -23,6 +23,15 @@ def _ranges(X, mask):
         result.append({"feature": name, "minimum": float(values.min()), "median": float(values.median()), "maximum": float(values.max())})
     return result
 
+def _dominant(X, mask):
+    mask=np.asarray(mask,dtype=bool)
+    if not mask.any() or mask.all():return []
+    result=[]
+    for name in X.columns:
+        values=X[name].astype(float).to_numpy();scale=np.std(values) or 1.0
+        result.append({"feature":name,"absolute_standardized_effect":abs(float((values[mask].mean()-values[~mask].mean())/scale))})
+    return sorted(result,key=lambda row:(-row["absolute_standardized_effect"],row["feature"]))[:10]
+
 
 def analyze(bundle, X, rows, decisions):
     labels = rows.episode_class.astype(str).reset_index(drop=True)
@@ -34,6 +43,11 @@ def analyze(bundle, X, rows, decisions):
         "subtype_top_features": _importance(bundle["subtype"], X.loc[attack], labels.loc[attack]),
         "tree_path_frequency_supported": False,
         "partial_dependence_performed": False,
+        "features_dominant_in_strong_path":_dominant(X,decisions.strong_attack_evidence.astype(bool)),
+        "features_dominant_in_weak_path":_dominant(X,decisions.weak_attack_evidence.astype(bool)),
+        "features_dominant_in_pending":_dominant(X,final.str.startswith("observe_pending:")),
+        "features_dominant_in_review":_dominant(X,final.str.startswith("review_required:")),
+        "features_dominant_in_unresolved_episodes":_dominant(X,attack.to_numpy() & ~final.str.startswith("alert_emitted:").to_numpy()),
         "feature_ranges_by_decision_outcome": {
             "strong_promotion": _ranges(X, decisions.strong_attack_evidence.astype(bool)),
             "pending": _ranges(X, final.str.startswith("observe_pending:")),

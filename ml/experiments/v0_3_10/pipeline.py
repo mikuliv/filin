@@ -179,16 +179,17 @@ def attach_manifest_timestamps(rows: pd.DataFrame, output_root: Path) -> pd.Data
     Episode metadata не используется: timestamp берётся только из immutable
     scenario manifest и нужен lifecycle для причинного inactivity reset.
     """
-    frame = rows.drop(columns=["planned_started_at"], errors="ignore").copy()
+    frame = rows.drop(columns=["planned_started_at", "planned_finished_at"], errors="ignore").copy()
     mappings = []
     for run_id in frame["run_id"].astype(str).drop_duplicates():
         path = output_root / "runs" / run_id / "scenario_manifest.yaml"
         payload = __import__("yaml").safe_load(path.read_text(encoding="utf-8"))
-        mappings.extend({"execution_id": item["execution_id"], "planned_started_at": item["planned_started_at"]}
+        mappings.extend({"execution_id": item["execution_id"], "planned_started_at": item["planned_started_at"],
+                         "planned_finished_at": item["planned_finished_at"]}
                         for item in payload["scenarios"])
     mapping = pd.DataFrame(mappings).drop_duplicates("execution_id")
     result = frame.merge(mapping, on="execution_id", how="left", validate="many_to_one", sort=False)
-    if result["planned_started_at"].isna().any() or len(result) != len(frame):
+    if result[["planned_started_at", "planned_finished_at"]].isna().any().any() or len(result) != len(frame):
         raise ValueError("Неполное timestamp mapping из immutable scenario manifests")
     return result
 
@@ -397,14 +398,14 @@ def evidence_decisions(rows: pd.DataFrame, probabilities: np.ndarray, conformal,
         strong_benign_probability=parameters.get("strong_benign_probability", .8),
         strong_benign_margin=parameters.get("strong_benign_margin", .3), dedup_ttl_windows=parameters.get("dedup_ttl_windows", 3))
     engine = MinimalPromotionDecision(policy)
-    records, last_run, sequence, previous_time, run_window = [], None, 0, None, 0
+    records, last_run, sequence, previous_finished, run_window = [], None, 0, None, 0
     for index, row in rows.reset_index(drop=True).iterrows():
         timestamp = pd.Timestamp(row["planned_started_at"])
         if last_run is None or row["run_id"] != last_run:
-            engine.reset(); sequence = 0; run_window = 0; previous_time = None
-        elif previous_time is not None and (timestamp - previous_time).total_seconds() > 120:
+            engine.reset(); sequence = 0; run_window = 0; previous_finished = None
+        elif previous_finished is not None and (timestamp - previous_finished).total_seconds() > 120:
             sequence += 1
-        last_run, previous_time, run_window = row["run_id"], timestamp, run_window + 1
+        last_run, previous_finished, run_window = row["run_id"], pd.Timestamp(row["planned_finished_at"]), run_window + 1
         probability_map = dict(zip(CLASSES, map(float, probabilities[index])))
         key = activity_state_key(str(row["run_id"]), str(sequence))
         record = engine.decide(activity_state_key=key, window_index=run_window,
