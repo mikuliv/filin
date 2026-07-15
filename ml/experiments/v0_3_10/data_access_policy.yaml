@@ -1,0 +1,26 @@
+policy_id: filin-v0.3.10-data-isolation-v1
+allowed_training_sources: [lab/output/datasets/windows_network_sensor_v0_4_run_v0310_train_]
+allowed_validation_sources: [lab/output/datasets/windows_network_sensor_v0_4_run_v0310_validation_]
+validation_requires_candidate_freeze: true
+validation_labels_require_lock: true
+validation_predictions_require_lock: true
+immutable_prediction_once: true
+forbidden_roots:
+  - lab/output/campaigns/filin_v0_3_6_blind_holdout
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_training
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_validation
+  - lab/output/campaigns/filin_v0_3_8_evidence_training
+  - lab/output/campaigns/filin_v0_3_8_evidence_validation
+  - lab/output/campaigns/filin_v0_3_9_episode_first_training
+  - lab/output/campaigns/filin_v0_3_9_episode_first_validation
+  - ml/artifacts/v0_3_6
+  - ml/artifacts/v0_3_7
+  - ml/artifacts/v0_3_8
+  - ml/artifacts/v0_3_9
+  - ml/reports/v0_3_6
+  - ml/reports/v0_3_7
+  - ml/reports/v0_3_8
+  - ml/reports/v0_3_9
+forbidden_path_fragments: [run_v036_, run_v037_, run_v038_, run_v039_, filin_v0_3_6, filin_v0_3_7, filin_v0_3_8, filin_v0_3_9]
+forbidden_hash_file: ml/experiments/v0_3_10/forbidden_dataset_hashes.yaml
+required_flags: {v0310_data_access_valid: true, v036_rows_loaded: false, v037_rows_loaded: false, v038_rows_loaded: false, v039_rows_loaded: false, v038_predictions_loaded: false, v039_predictions_loaded: false, v038_labels_loaded: false, v039_labels_loaded: false, model_trained_on_v036_data: false, model_trained_on_v037_data: false, model_trained_on_v038_data: false, model_trained_on_v039_data: false}

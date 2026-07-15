@@ -1,0 +1,7 @@
+global_strong: {probabilities: [0.70, 0.80, 0.90, 0.95], margins: [0.10, 0.20, 0.30], maximum_benign_probability: 0.20}
+class_conditional_strong: {probabilities: [0.65, 0.70, 0.75, 0.80, 0.85, 0.90, 0.95], margins: [0.10, 0.20, 0.30], minimum_precision: 0.97, maximum_benign_false_promotion_rate: 0.02, minimum_true_positive_windows: 6}
+weak: {probabilities: [0.35, 0.45, 0.55, 0.65], margins: [0.00, 0.05], benign_ceiling: 0.50, repetitions: [two_consecutive, two_of_three]}
+final: {ambiguity_margins: [0.03, 0.07], pending_ttls: [2, 3]}
+limits: {strong_families: 13, strong_finalists: 4, weak_combinations: 64, weak_finalists: 6, final_combinations: 24, total_combinations: 101}
+strong_benign: {probability: 0.80, margin: 0.30}
+dedup_ttl_windows: 3

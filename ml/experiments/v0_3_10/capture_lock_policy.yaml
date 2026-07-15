@@ -1,0 +1,12 @@
+canonical_capture_root: captures/
+forbidden_fallback_root: sensor/
+recursive_discovery: true
+normalize_paths: true
+reject_duplicate_paths: true
+reject_zero_byte_files: true
+hash_algorithm: sha256
+expected_validation_capture_count: 360
+require_marker_interval_mapping: true
+require_complete_hashes_before_prediction: true
+post_hoc_lock_completion_prohibited: true
+prediction_requires_unchanged_lock_hash: true

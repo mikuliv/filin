@@ -1,0 +1,14 @@
+integrity: {require_protocol_frozen: true, require_data_access_valid: true, require_candidate_frozen_before_validation_collection: true, require_validation_locked_before_prediction: true, require_complete_capture_hashes_before_prediction: true, require_capture_hash_count: 360, require_candidate_hash_match: true, require_validation_hash_match: true, require_mapping_1_to_1: true, require_episode_mapping_complete: true, require_marker_mapping_complete: true, require_prediction_once: true, require_no_refit: true, require_no_calibration: true, require_no_threshold_tuning: true, require_no_conformal_tuning: true, require_no_row_exclusion: true}
+closed_set: {minimum_macro_f1: 0.90, minimum_balanced_accuracy: 0.92, minimum_benign_recall: 0.92, maximum_FPR: 0.08, minimum_attack_macro_recall: 0.92, prohibit_zero_recall_attack_class: true}
+strong_path: {minimum_alert_precision: 0.95, minimum_attack_window_recall: 0.30, maximum_benign_false_promotion_rate: 0.03}
+candidate_evidence: {minimum_true_class_recall: 0.90, minimum_per_class_recall: 0.80}
+benign_operational: {minimum_window_recall: 0.90, maximum_window_alert_emission_rate: 0.05, maximum_episode_false_alert_rate: 0.05, maximum_episode_high_severity_alert_rate: 0.03}
+pending_review: {maximum_overall_pending_rate: 0.20, maximum_attack_pending_rate: 0.20, maximum_overall_review_rate: 0.15, maximum_attack_review_rate: 0.15}
+episode: {minimum_attack_recall: 0.95, maximum_unresolved_rate: 0.05, minimum_alert_precision: 0.95, minimum_detection_by_second_window: 0.90, maximum_median_time_to_alert_windows: 2, maximum_time_to_alert_windows: 3, minimum_per_class_recall: 0.8333333333333334, prohibit_zero_recall_class: true}
+alert_event_integrity: {maximum_duplicate_alert_rate: 0.10, maximum_cross_episode_alert_contamination: 0, maximum_cross_run_state_contamination: 0}
+conformal: {minimum_empirical_coverage: 0.90, minimum_per_class_coverage: 0.85, maximum_average_prediction_set_size: 1.50, maximum_empty_set_rate: 0.08, maximum_wrong_only_set_rate: 0.01}
+diagnostic_support: {require_report: true, affects_pass_fail: false}
+group: {minimum_closed_set_macro_f1: 0.82, minimum_benign_window_recall: 0.80, maximum_benign_window_alert_rate: 0.15, minimum_attack_episode_recall: 0.90, minimum_episode_alert_precision: 0.85, maximum_benign_episode_false_alert_rate: 0.15, maximum_attack_pending_rate: 0.30, prohibit_zero_benign_recall: true, prohibit_zero_attack_episode_recall: true}
+benign_variant: {minimum_recall: 0.6666666666666666, maximum_zero_recall_variants: 0, maximum_alert_emission_rate: 0.2222222222222222}
+stability: {maximum_attack_episode_recall_std_across_runs: 0.12, maximum_benign_episode_false_alert_std_across_runs: 0.12, maximum_benign_window_recall_std_across_runs: 0.15, maximum_pending_rate_std_across_runs: 0.15, maximum_review_rate_std_across_runs: 0.12}
+calibration: {maximum_gate_ECE: 0.15, maximum_subtype_ECE: 0.15, maximum_joint_ECE: 0.15}

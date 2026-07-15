@@ -1,0 +1,10 @@
+profiles:
+  background_v0310_strong: {group: strong_onset_diversity, maximum_clients: 5}
+  background_v0310_gradual: {group: gradual_confirmation, maximum_clients: 5}
+  background_v0310_mimicry: {group: benign_mimicry, maximum_clients: 7}
+  background_v0310_composition: {group: composition_and_ambiguity, maximum_clients: 7}
+  background_v0310_validation_confidence: {group: unseen_confidence_shift, maximum_clients: 5}
+  background_v0310_validation_delayed: {group: delayed_confirmation_shift, maximum_clients: 5}
+  background_v0310_validation_ambiguity: {group: mixed_ambiguity_shift, maximum_clients: 7}
+limits: {maximum_total_actions_per_second: 4, maximum_background_actions_per_scored_window: 90, scope: local_allowlist_only}
+label_independent: true

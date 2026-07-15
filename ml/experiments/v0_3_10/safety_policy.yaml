@@ -1,0 +1,17 @@
+scope: isolated_local_docker_lab
+external_targets: false
+external_dns: false
+external_api: false
+real_credentials: false
+real_exploit_payloads: false
+malware: false
+nmap: false
+masscan: false
+real_dos: false
+maximum_workers: 4
+maximum_requests_per_second: 3
+target_responsiveness_required: true
+backend_integration: false
+shadow_mode: false
+production_deployment: false
+automatic_blocking: false

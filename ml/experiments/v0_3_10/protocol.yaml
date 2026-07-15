@@ -1,0 +1,46 @@
+experiment_id: filin-v0.3.10-minimal-probability-conformal-promotion
+base_architecture:
+  architecture_id: network_sensor_v0_8_minimal_promotion
+  feature_profile: network_sensor_v0_5_contextual_control
+  feature_count: 51
+  gate_model: HistGradientBoostingClassifier
+  subtype_model: HistGradientBoostingClassifier
+  calibration: group_aware_oof_sigmoid
+  conformal: mondrian
+  conformal_alpha: 0.05
+  diagnostic_support_only: true
+  signed_evidence_enabled: false
+  complex_lifecycle_enabled: false
+  alert_representation: immutable_emission_event
+base_parameters: {learning_rate: 0.05, max_iter: 200, max_leaf_nodes: 15, l2_regularization: 1.0, random_state: 42}
+rolling_history_depth: 6
+diagnostic_support: {method: robust_scaler_class_conditional_nearest_neighbors, k: 3, quantile: 0.975, affects_decision: false}
+controls: [direct_closed_set_upper_bound, conformal_singleton_direct, v038_style_repeated_without_support, v039_style_conservative_specification]
+constraints:
+  candidate_frozen_before_validation_collection: true
+  validation_capture_lock_required_before_prediction: true
+  validation_locked_before_prediction: true
+  old_rows_prohibited: true
+  refit_on_validation_prohibited: true
+  calibration_on_validation_prohibited: true
+  threshold_tuning_on_validation_prohibited: true
+  conformal_tuning_on_validation_prohibited: true
+  row_exclusion_prohibited: true
+  backend_integration_prohibited: true
+  shadow_mode_prohibited: true
+files:
+  data_access_policy: ml/experiments/v0_3_10/data_access_policy.yaml
+  training_campaign: lab/campaigns/v0_3_10_training.yaml
+  validation_campaign: lab/campaigns/v0_3_10_internal_validation.yaml
+  training_scenario_catalog: lab/scenarios/v0_3_10_training_benign.yaml
+  validation_scenario_catalog: lab/scenarios/v0_3_10_validation_benign.yaml
+  environment_catalog: ml/experiments/v0_3_10/environment_catalog.yaml
+  feature_schema: ml/features/network_sensor_v0_6.py
+  base_model_policy: ml/experiments/v0_3_10/base_model_policy.yaml
+  decision_grid: ml/experiments/v0_3_10/decision_grid.yaml
+  model_selection_policy: ml/experiments/v0_3_10/model_selection_policy.yaml
+  validation_policy: ml/experiments/v0_3_10/internal_validation_policy.yaml
+  capture_lock_policy: ml/experiments/v0_3_10/capture_lock_policy.yaml
+  safety_policy: ml/experiments/v0_3_10/safety_policy.yaml
+seeds: [15401,15402,15403,15501,15502,15503,15601,15602,15603,15701,15702,15703,15801,15802,15901,15902,16001,16002]
+expected: {training_runs: 12, training_rows: 648, training_episodes: 216, training_captures: 720, validation_runs: 6, validation_rows: 324, validation_episodes: 108, validation_captures: 360}
