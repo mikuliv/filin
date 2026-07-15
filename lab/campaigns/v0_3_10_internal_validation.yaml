@@ -1,0 +1,13 @@
+campaign_id: filin-v0.3.10-minimal-promotion-validation
+role: minimal_promotion_validation
+catalog: lab/scenarios/v0_3_10_validation_benign.yaml
+warmup_windows: 6
+scored_windows: 54
+episodes_per_run: 18
+runs:
+  - {run_id: run_v0310_validation_confidence_001, group: unseen_confidence_shift, random_seed: 15801, run_index: 1}
+  - {run_id: run_v0310_validation_confidence_002, group: unseen_confidence_shift, random_seed: 15802, run_index: 2}
+  - {run_id: run_v0310_validation_delayed_001, group: delayed_confirmation_shift, random_seed: 15901, run_index: 3}
+  - {run_id: run_v0310_validation_delayed_002, group: delayed_confirmation_shift, random_seed: 15902, run_index: 4}
+  - {run_id: run_v0310_validation_ambiguity_001, group: mixed_ambiguity_shift, random_seed: 16001, run_index: 5}
+  - {run_id: run_v0310_validation_ambiguity_002, group: mixed_ambiguity_shift, random_seed: 16002, run_index: 6}
