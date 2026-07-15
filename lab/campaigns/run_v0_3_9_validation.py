@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.3 seconds
-Output:
 from __future__ import annotations
 import argparse
 from pathlib import Path
@@ -13,5 +10,3 @@ if __name__ == "__main__":
     args=parser.parse_args();freeze=ROOT/args.candidate_freeze
     if not freeze.exists():raise SystemExit("Validation запрещена до candidate freeze")
     execute(load(ROOT/args.campaign),ROOT/args.output_root,args.resume,args.strict)
-
-

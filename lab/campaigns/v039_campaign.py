@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.2 seconds
-Output:
 """Детерминированное трёхоконное episode-планирование кампаний v0.3.9."""
 from __future__ import annotations
 
@@ -110,7 +107,7 @@ def build_manifest(root: Path, campaign: dict, run: dict) -> dict:
             "variant_id": item["scenario_id"],
             "hard_negative_target_class": item.get("hard_negative_target_class"),
         })
-        planned += timedelta(seconds=duration + 1)
+        planned += timedelta(seconds=duration + (181 if phase == "phase_3" else 1))
     if len(rows) != 48:
         raise ValueError("Run v0.3.9 обязан содержать 48 execution-окон")
     return {
@@ -133,5 +130,3 @@ def build_manifest(root: Path, campaign: dict, run: dict) -> dict:
         "scenario_count": len(rows),
         "scenarios": rows,
     }
-
-

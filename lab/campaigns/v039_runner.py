@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.3 seconds
-Output:
 """Последовательный resumable Docker runner кампаний v0.3.9."""
 from __future__ import annotations
 
@@ -210,4 +207,3 @@ def execute(campaign: dict, output_root: Path, resume: bool = False, strict: boo
     if strict and not all(complete(status.get(row["run_id"], {})) for row in campaign["runs"]):
         raise RuntimeError("Не все v0.3.9 runs завершены")
     return status
-

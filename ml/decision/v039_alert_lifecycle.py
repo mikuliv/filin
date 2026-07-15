@@ -56,13 +56,17 @@ class AlertLifecycle:
         elif record["strong_benign_evidence"]:
             state.pending.clear(); state.state="observing"
         elif record["weak_attack_evidence"]:
+            state.idle_windows=0
             state.pending=(state.pending+[attack])[-self.repeat_depth:]
             confirmed=state.pending.count(attack)>=self.repeat_count or scores[attack]>=self.activation_threshold
             if confirmed: state.active_class=attack; state.state=f"active:{attack}"; state.active_age=0; state.pending.clear()
             else: state.state=f"pending:{attack}"
-        elif record["novel_evidence"]: state.state="review:novel"; state.pending.clear()
+        elif record["novel_evidence"]: state.state="review:novel"; state.pending.clear(); state.idle_windows=0
         elif record["ambiguous_evidence"]: state.state="review:ambiguous"
-        elif state.pending: state.state="review:weak"
+        elif state.pending:
+            state.idle_windows+=1
+            if state.idle_windows>=self.ttl:state.pending.clear();state.state="observing";state.idle_windows=0
+            else:state.state="review:weak"
         else: state.state="observing"
         return {"state_before":before,"state_after":state.state,"final_decision":state.state,
             "active_alert_class":state.active_class,"pending_class":state.pending[-1] if state.pending else None,

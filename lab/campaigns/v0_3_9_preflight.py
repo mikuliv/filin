@@ -1,6 +1,3 @@
-Exit code: 0
-Wall time: 0.2 seconds
-Output:
 """Preflight протокола, Docker lab и episode-планов v0.3.9."""
 from __future__ import annotations
 
@@ -55,4 +52,3 @@ if __name__ == "__main__":
     output = ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2), encoding="utf-8")
-
