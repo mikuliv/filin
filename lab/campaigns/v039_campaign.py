@@ -111,10 +111,10 @@ def build_manifest(root: Path, campaign: dict, run: dict) -> dict:
     if len(rows) != 48:
         raise ValueError("Run v0.3.9 обязан содержать 48 execution-окон")
     return {
-        "manifest_version": "0.3.8",
+        "manifest_version": "0.3.9",
         "run_id": run["run_id"],
         "campaign_id": campaign["campaign_id"],
-        "campaign_version": "0.3.8",
+        "campaign_version": "0.3.9",
         "campaign_role": campaign["role"],
         "campaign_run_index": run["run_index"],
         "campaign_seed": run["random_seed"],

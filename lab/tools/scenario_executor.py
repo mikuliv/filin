@@ -19,7 +19,8 @@ CAMPAIGN_FIELDS = ("campaign_id", "campaign_version", "campaign_role", "campaign
 def capture_bpf(manifest: dict[str, Any]) -> list[str]:
     """Включить DNS только для явно изолированного будущего запуска."""
     if manifest.get("capture_dns") is True:
-        allowed_roles = {"pre_training_smoke", "evidence_training", "evidence_internal_validation"}
+        allowed_roles = {"pre_training_smoke", "evidence_training", "evidence_internal_validation",
+                         "episode_first_training", "episode_first_validation"}
         if manifest.get("campaign_role") not in allowed_roles:
             raise ValueError("DNS capture запрещён для этой роли кампании")
         policy = manifest.get("network_policy") or {}
