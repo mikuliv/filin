@@ -47,3 +47,6 @@ v0.3.8 добавляет 60-признаковый audited evidence profile, Mo
 ## network_sensor_v0_7 episode-first
 
 v0.3.9 фиксирует HGB/HGB и contextual control из 51 признака. После calibrated probabilities применяются Mondrian conformal, continuous class-support margins, strong/weak evidence, signed accumulation и alert lifecycle. Decision-layer значения никогда не входят в model X. Grouped OOF используется только на новых training runs; validation выполняется в no-fit режиме.
+# Цикл v0.3.10
+
+Minimal probability-conformal candidate сохраняет fixed HGB/HGB и 51-feature contextual profile. Group-aware calibration, conformal scores и decision thresholds строятся только на новых training grouped OOF rows. Validation работает predict-only после полного capture lock.

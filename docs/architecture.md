@@ -87,3 +87,8 @@ Conformal scores и support thresholds обучаются только на grou
 Closed-set prediction отвечает только на вопрос о наиболее вероятном классе и не является alert. После HGB/HGB и group-aware calibration формируются Mondrian p-values, непрерывные normalized class distances, probability/support margins и signed evidence. Сильный согласованный сигнал допускает first-window promotion; слабый сигнал сначала создаёт `pending` и требует причинного подтверждения.
 
 Lifecycle `observing → pending → active → cooldown` использует asset key и timestamp, но не `episode_id`. Hysteresis удерживает active alert минимум два окна; одно benign-окно не отменяет alert. Два последовательных strong benign evidence либо frozen inactivity TTL могут завершить состояние.
+# Minimal promotion layer v0.3.10
+
+`network_sensor_v0_8_minimal_promotion` выполняет causal feature build → HGB gate → HGB subtype → frozen calibration → joint probabilities → Mondrian set → strong single-window либо repeated weak path → immutable alert emission. Pending хранит только прошлое и текущее окно по причинному activity key. Incident lifecycle вынесен за пределы sensor decision layer.
+
+Continuous k-NN support плохо совпал с нелинейными границами HGB в v0.3.9, поэтому не влияет на strong/weak promotion, benign acceptance, ambiguity, novelty или subtype. Signed evidence, decay, hysteresis и active-alert persistence отключены.

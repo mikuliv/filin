@@ -46,3 +46,8 @@ Frozen regression v0.3.10 не разрешён, поскольку
 online inference, рабочее место аналитика, интеграция с SIEM и response actions
 остаются будущими исследовательскими направлениями. Active response и
 автоматическая блокировка не входят в текущий объём работ.
+# После v0.3.10
+
+Если frozen policy v0.3.10 пройдена, следующий этап — v0.3.11 frozen multi-benchmark regression без fit, calibration или изменения decision policy. После успешной regression потребуется v0.3.12 prospective holdout. Shadow mode можно рассматривать только после успешной v0.3.12.
+
+Если policy v0.3.10 не пройдена, старые benchmarks не открываются для tuning: фиксируется отрицательный результат и проектируется новый training cycle.

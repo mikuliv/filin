@@ -50,3 +50,6 @@ Capture, correlation, aggregation, validator, provenance и split audits под�
 ## Кампании v0.3.9
 
 Episode-first cycle использует отдельный Docker project `filin_v039_lab`, новые scenario IDs и seeds. Каждый run содержит 6 warm-up окон и 14 трёхоконных scored episodes. Causal inactivity gap разделяет независимые activity sequences; decision engine не получает episode metadata. PCAP, Zeek logs и datasets остаются runtime artifacts вне Git.
+# Кампании v0.3.10
+
+Изолированный Docker lab выполняет 12 training и 6 prospective validation runs minimal-promotion цикла. Каждый run содержит шесть warm-up окон и 18 трёхоконных scored episodes. Все цели и DNS находятся в локальном allowlist; нагрузка ограничена safety policy.

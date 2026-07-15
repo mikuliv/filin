@@ -78,3 +78,8 @@ features, но из-за ошибочного пути сохранил пуст
 prediction не повторялась и данные не менялись. Audit сохраняет оба SHA-256 и
 флаг `capture_evidence_completed_after_prediction=true`. Поэтому доказательство
 порядка для PCAP-hash evidence слабее, чем для dataset/feature lock.
+# Ограничения v0.3.10
+
+Internal validation остаётся контролируемым локальным экспериментом и сама по себе не разрешает shadow mode. Старые v0.3.6–v0.3.9 datasets не используются для fit или tuning; после успешной policy они могут быть открыты только неизменному candidate на отдельном regression-этапе v0.3.11. Полностью новая prospective holdout всё равно потребуется после regression.
+
+Pending и review не считаются правильным benign. Diagnostic support не является доказательством novelty и не участвует в pass/fail policy.

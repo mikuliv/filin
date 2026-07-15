@@ -68,3 +68,8 @@ benign recall — `1.000000`, FPR — `0.000000`; strong-evidence precision —
 разрыв: review rate `0.416667`, attack episode recall `0.700000`, detection by
 second window `0.666667`, unresolved rate `0.300000`, support top-2 rate
 `0.607143`. Frozen policy не пройдена, validation не использовалась для tuning.
+# v0.3.10: minimal probability-conformal promotion
+
+После отрицательного результата v0.3.9 открыт новый изолированный training/internal-validation cycle. Он сохраняет HGB/HGB, 51 contextual feature, grouped OOF calibration и Mondrian conformal, но удаляет k-NN support, signed accumulation, decay и active lifecycle из promotion path. Support остаётся diagnostic-only.
+
+Training содержит 12 новых runs, 216 episodes и 648 scored windows; prospective validation — 6 новых runs, 108 episodes и 324 scored windows. Главный detection gate — attack episode recall. Alert-emission window rate используется только диагностически.
