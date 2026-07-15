@@ -46,3 +46,7 @@ Capture, correlation, aggregation, validator, provenance и split audits под�
 ## Кампании v0.3.8
 
 Новые 12 training и 6 validation runs используют отдельные scenario IDs, seeds, Docker project `filin_v038_lab`, volumes и manifests. Получено 108 warm-up и 648 scored окон, 216 episodes и 756 пар markers/PCAP-интервалов. Validation собирается только после заморозки candidate; runtime PCAP, журналы и datasets не входят в Git.
+
+## Кампании v0.3.9
+
+Episode-first cycle использует отдельный Docker project `filin_v039_lab`, новые scenario IDs и seeds. Каждый run содержит 6 warm-up окон и 14 трёхоконных scored episodes. Causal inactivity gap разделяет независимые activity sequences; decision engine не получает episode metadata. PCAP, Zeek logs и datasets остаются runtime artifacts вне Git.

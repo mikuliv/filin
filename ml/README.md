@@ -43,3 +43,7 @@ ML-результаты относятся к controlled laboratory data; backen
 ## network_sensor_v0_6 class-conditional evidence
 
 v0.3.8 добавляет 60-признаковый audited evidence profile, Mondrian conformal prediction, robust-scaled class-conditional kNN support и episode-level evidence. Nested grouped selection выбрал 51-признаковый contextual control. Замороженные source manifests коммитятся; model artifacts, datasets, predictions и reports остаются runtime artifacts вне Git. Frozen policy не пройдена.
+
+## network_sensor_v0_7 episode-first
+
+v0.3.9 фиксирует HGB/HGB и contextual control из 51 признака. После calibrated probabilities применяются Mondrian conformal, continuous class-support margins, strong/weak evidence, signed accumulation и alert lifecycle. Decision-layer значения никогда не входят в model X. Grouped OOF используется только на новых training runs; validation выполняется в no-fit режиме.

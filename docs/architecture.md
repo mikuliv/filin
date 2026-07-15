@@ -81,3 +81,9 @@ flowchart LR
 ```
 
 Conformal scores и support thresholds обучаются только на group-aware training OOF. Решение класса требует согласования вероятности, conformal membership и support; отсутствие support ведёт к review, а не автоматически к атаке. Episode state изолирован по run и asset и использует только текущие/предыдущие окна.
+
+## Episode-first architecture v0.3.9
+
+Closed-set prediction отвечает только на вопрос о наиболее вероятном классе и не является alert. После HGB/HGB и group-aware calibration формируются Mondrian p-values, непрерывные normalized class distances, probability/support margins и signed evidence. Сильный согласованный сигнал допускает first-window promotion; слабый сигнал сначала создаёт `pending` и требует причинного подтверждения.
+
+Lifecycle `observing → pending → active → cooldown` использует asset key и timestamp, но не `episode_id`. Hysteresis удерживает active alert минимум два окна; одно benign-окно не отменяет alert. Два последовательных strong benign evidence либо frozen inactivity TTL могут завершить состояние.

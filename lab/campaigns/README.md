@@ -63,3 +63,12 @@ training или model selection.
 - `v038_runner.py`: per-run Docker capture, нормализация вывода subprocess и безопасное возобновление без повторения успешных запусков.
 
 Validation runner требует frozen candidate, а evaluation — дополнительно frozen validation lock. Ни один validation row не доступен nested selection.
+
+## v0.3.9
+
+- `v0_3_9_training.yaml`: 12 runs, 72 warm-up, 504 scored windows, 168 episodes.
+- `v0_3_9_internal_validation.yaml`: 6 runs, 36 warm-up, 252 scored windows, 84 episodes.
+- `v039_runner.py`: strict/resumable per-execution capture без повторения success.
+- Validation collection требует frozen candidate; prediction требует immutable lock.
+
+Background и routes не зависят от labels. Rate limits, internal DNS allowlist и target responsiveness проверяются до принятия run.
