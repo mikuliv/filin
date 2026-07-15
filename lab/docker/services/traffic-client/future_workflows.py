@@ -208,6 +208,47 @@ for _index, (_scenario_id, (_family, _target)) in enumerate(_V039.items()):
     WORKFLOW_PLANS[_scenario_id] = _family_plan(_scenario_id, _family, _target, 200 + _index)
 
 
+# Новые mutually-exclusive workflow identifiers v0.3.10. Все действия остаются
+# ограниченными локальным allowlist; family определяет только безопасный traffic plan.
+_V0310 = {
+    "benign_backup_index_reconcile": ("backup", "target-web"),
+    "benign_object_delta_verification": ("integrity", "target-web"),
+    "benign_repository_signature_refresh": ("repository", "target-web"),
+    "benign_replica_catchup_sequence": ("database", "target-api"),
+    "benign_stream_offset_commit": ("queue", "control-api"),
+    "benign_telemetry_batch_export": ("metrics", "target-api"),
+    "benign_session_reconnect_cycle": ("websocket", "control-api"),
+    "benign_mesh_probe_rotation": ("discovery", "target-api"),
+    "benign_endpoint_inventory_wave": ("maintenance", "target-ssh-sim"),
+    "benign_registry_consistency_check": ("discovery", "target-api"),
+    "benign_credential_refresh_chain": ("auth", "target-api"),
+    "benign_accessibility_structure_scan": ("crawler", "target-web"),
+    "benign_audit_forward_recovery": ("log", "control-api"),
+    "benign_partition_reassignment": ("queue", "control-api"),
+    "benign_storage_scrub_cycle": ("integrity", "target-web"),
+    "benign_transaction_batch_commit": ("transaction", "target-api"),
+    "benign_snapshot_manifest_review": ("snapshot", "target-web"),
+    "benign_archive_delta_transfer": ("backup", "target-web"),
+    "benign_dependency_signature_pull": ("package", "target-web"),
+    "benign_replica_health_normalization": ("database", "target-api"),
+    "benign_consumer_offset_recovery": ("queue", "control-api"),
+    "benign_metrics_rollup_delivery": ("metrics", "target-api"),
+    "benign_channel_reconnect_sequence": ("websocket", "control-api"),
+    "benign_service_readiness_rotation": ("discovery", "target-api"),
+    "benign_compliance_inventory_round": ("maintenance", "target-ssh-sim"),
+    "benign_registry_failover_reconcile": ("discovery", "target-api"),
+    "benign_session_token_reissue": ("auth", "target-api"),
+    "benign_web_map_accessibility_check": ("crawler", "target-web"),
+    "benign_log_stream_retry": ("log", "control-api"),
+    "benign_queue_assignment_recovery": ("queue", "control-api"),
+    "benign_volume_checksum_scan": ("integrity", "target-web"),
+    "benign_bulk_commit_reconciliation": ("transaction", "target-api"),
+}
+
+for _index, (_scenario_id, (_family, _target)) in enumerate(_V0310.items()):
+    WORKFLOW_PLANS[_scenario_id] = _family_plan(_scenario_id, _family, _target, 300 + _index)
+
+
 def behavioral_fingerprint(scenario_id: str) -> tuple[tuple[Any, ...], ...]:
     plan = WORKFLOW_PLANS[scenario_id]
     return tuple((action.kind, action.target, action.operation, action.payload) for action in plan)
