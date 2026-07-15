@@ -41,7 +41,8 @@ class ContinuousClassSupport:
         matrix = np.asarray(X, dtype=float); labels = np.asarray(y, dtype=str)
         if not np.isfinite(matrix).all():
             raise ValueError("Support features должны быть конечными")
-        self.classes_ = sorted(set(labels)); self.scaler_ = RobustScaler().fit(matrix)
+        # Manifest/YAML contract требует обычные Python str, не numpy.str_.
+        self.classes_ = sorted(str(label) for label in set(labels)); self.scaler_ = RobustScaler().fit(matrix)
         scaled = self.scaler_.transform(matrix); self.models_ = {}; self.thresholds_ = {}; self.distance_hashes_ = {}
         for label in self.classes_:
             class_rows = scaled[labels == label]

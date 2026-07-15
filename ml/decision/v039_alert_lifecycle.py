@@ -12,6 +12,7 @@ class _State:
     state: str = "observing"
     active_class: str | None = None
     pending: list[str] = field(default_factory=list)
+    replacement: list[str] = field(default_factory=list)
     active_age: int = 0
     benign_streak: int = 0
     idle_windows: int = 0
@@ -47,10 +48,16 @@ class AlertLifecycle:
             if record["strong_benign_evidence"]: state.benign_streak += 1
             else: state.benign_streak=0
             if attack and attack != state.active_class and record["strong_attack_evidence"]:
-                state.active_class=attack; state.state=f"active:{attack}"; state.active_age=0
+                state.replacement=(state.replacement+[attack])[-2:]
+                if len(state.replacement)==2 and len(set(state.replacement))==1:
+                    state.active_class=attack; state.state=f"active:{attack}"; state.active_age=0; state.replacement.clear()
+                else:
+                    state.state=f"active:{state.active_class}"
             elif state.benign_streak>=2 and state.active_age>=self.hold:
-                state.state=f"cooldown:{state.active_class}"; state.active_class=None; state.pending.clear()
-            else: state.state=f"active:{state.active_class}"
+                state.state=f"cooldown:{state.active_class}"; state.active_class=None; state.pending.clear(); state.replacement.clear()
+            else:
+                state.state=f"active:{state.active_class}"
+                if not (attack and attack != state.active_class and record["strong_attack_evidence"]): state.replacement.clear()
         elif record["strong_attack_evidence"]:
             state.active_class=attack; state.state=f"active:{attack}"; state.active_age=0; state.pending.clear()
         elif record["strong_benign_evidence"]:

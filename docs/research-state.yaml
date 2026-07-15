@@ -1,7 +1,7 @@
 schema_version: 1
-latest_completed_stage: v0.3.8
+latest_completed_stage: v0.3.9
 latest_completed_result: internal_validation_policy_not_passed
-active_stage: v0.3.8_completed_negative_result
+active_stage: v0.3.9_completed_negative_result
 runtime_integrity_acceptance:
   status: passed
   historical_results_modified: false
@@ -10,12 +10,12 @@ runtime_integrity_acceptance:
 next_allowed_stage:
   version: unassigned
   kind: new_training_cycle_design
-  reason: v0.3.8 episode and window policies failed; v0.3.9 frozen regression is not authorized
+  reason: v0.3.9 window, episode, continuous-support, group and benign-variant policies failed; v0.3.10 frozen regression is not authorized
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false
 frozen_candidate:
-  stage: v0.3.8
+  stage: v0.3.9
   usable_for_backend: false
   corrected_by_audit: false
 holdout_boundaries:
@@ -23,6 +23,7 @@ holdout_boundaries:
   v0.3.6: historical_prospective_holdout_do_not_reopen_for_tuning
   v0.3.7: internal_validation_not_prospective_holdout
   v0.3.8: class_conditional_internal_validation_not_prospective_holdout
+  v0.3.9: episode_first_internal_validation_not_prospective_holdout
 historical_stage_summary:
   v0.3.1: baseline_evaluation_completed
   v0.3.2: frozen_robustness_evaluation_completed
@@ -32,6 +33,7 @@ historical_stage_summary:
   v0.3.6: prospective_holdout_policy_not_passed
   v0.3.7: hierarchical_internal_validation_policy_not_passed
   v0.3.8: class_conditional_internal_validation_policy_not_passed
+  v0.3.9: episode_first_internal_validation_policy_not_passed
 protected_artifact_policy:
   external_storage_required: true
   environment_variable: FILIN_SECURE_ARTIFACT_ROOT

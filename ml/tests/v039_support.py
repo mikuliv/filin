@@ -2,6 +2,13 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
+# Full discovery сначала загружает одноимённые v0.3.7/v0.3.8 modules. Удаляем
+# только эти versioned aliases до импорта v0.3.9, иначе sys.path уже не влияет
+# на Python module cache.
+for name in ('pipeline','data_access_guard','no_fit_guard'):
+ cached=sys.modules.get(name)
+ if cached is not None and 'v0_3_9' not in str(getattr(cached,'__file__','')).replace('\\','/'):
+  sys.modules.pop(name,None)
 for path in (ROOT,ROOT/'ml/features',ROOT/'ml/models',ROOT/'ml/decision',ROOT/'ml/experiments/v0_3_9',ROOT/'ml/analysis',ROOT/'lab/campaigns'):
  if str(path) not in sys.path:sys.path.insert(0,str(path))
 from continuous_class_support import SupportResult

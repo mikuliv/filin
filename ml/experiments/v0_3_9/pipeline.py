@@ -170,6 +170,26 @@ def build_feature_frame(all_rows: pd.DataFrame, profile: str) -> tuple[pd.DataFr
     return ordered.loc[scored].reset_index(drop=True), features.loc[scored].reset_index(drop=True)
 
 
+def attach_manifest_timestamps(rows: pd.DataFrame, output_root: Path) -> pd.DataFrame:
+    """Присоединить заранее запланированное observable time по execution_id.
+
+    Episode metadata не используется: timestamp берётся только из immutable
+    scenario manifest и нужен lifecycle для причинного inactivity reset.
+    """
+    frame = rows.drop(columns=["planned_started_at"], errors="ignore").copy()
+    mappings = []
+    for run_id in frame["run_id"].astype(str).drop_duplicates():
+        path = output_root / "runs" / run_id / "scenario_manifest.yaml"
+        payload = __import__("yaml").safe_load(path.read_text(encoding="utf-8"))
+        mappings.extend({"execution_id": item["execution_id"], "planned_started_at": item["planned_started_at"]}
+                        for item in payload["scenarios"])
+    mapping = pd.DataFrame(mappings).drop_duplicates("execution_id")
+    result = frame.merge(mapping, on="execution_id", how="left", validate="many_to_one", sort=False)
+    if result["planned_started_at"].isna().any() or len(result) != len(frame):
+        raise ValueError("Неполное timestamp mapping из immutable scenario manifests")
+    return result
+
+
 def oof_base(rows: pd.DataFrame, X: pd.DataFrame, gate_name: str, subtype_name: str) -> dict:
     labels = rows["episode_class"].astype(str).to_numpy()
     binary = (labels != "benign").astype(int)

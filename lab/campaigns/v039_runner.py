@@ -75,7 +75,7 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     volume = "filin_v039_" + run_id.lower()
     environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": "filin_v039_lab"}
     compose = ROOT / "lab/docker/docker-compose.lab.yml"
-    retry(["docker", "compose", "-f", str(compose), "up", "-d", "--build", "target-web", "target-api", "control-api", "target-ssh-sim", "internal-dns", "traffic-client"], environment)
+    retry(["docker", "compose", "-f", str(compose), "up", "-d", "target-web", "target-api", "control-api", "target-ssh-sim", "internal-dns", "traffic-client"], environment)
     time.sleep(3)
     retry(["docker", "compose", "-f", str(compose), "exec", "-T", "-u", "root", "traffic-client", "sh", "-c", "rm -rf /capture/scenarios /capture/marker_control.jsonl && mkdir -p /capture/scenarios && install -m 0666 /dev/null /capture/marker_control.jsonl"], environment)
     previous_capture = os.environ.get("FILIN_SCENARIO_CAPTURE_DIR")
@@ -194,6 +194,11 @@ def execute(campaign: dict, output_root: Path, resume: bool = False, strict: boo
         raise RuntimeError("Обнаружен активный v0.3.9 runner lock")
     lock.write_text(str(os.getpid()), encoding="utf-8")
     try:
+        # Код traffic-client меняется вместе с каталогом кампании. Собираем его
+        # ровно один раз на invocation, а не перед каждым из 12/6 immutable runs.
+        environment = {**os.environ, "COMPOSE_PROJECT_NAME": "filin_v039_lab"}
+        compose = ROOT / "lab/docker/docker-compose.lab.yml"
+        retry(["docker", "compose", "-f", str(compose), "build", "traffic-client"], environment)
         for row in campaign["runs"]:
             if resume and complete(status.get(row["run_id"], {})):
                 continue

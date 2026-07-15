@@ -2,15 +2,16 @@
 
 Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Последний завершённый этап: v0.3.8.
+- Последний завершённый этап: v0.3.9.
 - Итог последнего этапа: политика внутренней валидации не пройдена.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
 
-Этап v0.3.8 завершён: 12 training и 6 internal-validation runs, заморозка
-кандидата до validation collection и единственная no-fit evaluation. Итоговая
-политика не пройдена; новый цикл должен получить отдельный будущий номер.
+Этап v0.3.9 завершён: 12 training и 6 prospective internal-validation runs,
+заморозка кандидата до validation collection, lock 252 окон и единственная
+no-fit evaluation. Итоговая политика не пройдена; новый training cycle должен
+получить отдельный будущий номер.
 
 ## v0.3.6
 
@@ -55,3 +56,24 @@ macro F1 `0.990734`, FPR `0.000000`, episode recall `0.933333`, unresolved rate
 support gates пройдены, window и episode gates не пройдены. Поэтому
 `v0_3_8_policy_passed=false`, `ready_for_v0_3_9=false`, backend integration и
 shadow mode запрещены.
+
+## v0.3.9
+
+Episode-first цикл завершён полностью: training 12/12 (`504` scored windows,
+`168` episodes, `576` marker pairs) и validation 6/6 (`252`, `84`, `288`).
+Candidate `decision:f5e327a3497c:hgb:hgb` заморожен до validation, lock создан
+до единственной prediction; validation fit-call count равен `0`.
+
+Closed-set macro F1 `0.990734`, benign recall `1.000000`, FPR `0.000000`;
+strong-evidence precision `1.000000`, recall `0.600000`. При этом review rate
+`0.416667`, true-class evidence window recall `0.655556`, attack episode recall
+`0.700000`, detection by second window `0.666667`, unresolved rate `0.300000` и
+support top-2 rate `0.607143`. Frozen policy отрицательна:
+`v039_internal_validation_passed=false` и
+`candidate_ready_for_v0_3_10_regression=false`. Backend integration и shadow
+mode запрещены.
+
+Integrity-оговорка: core validation lock был создан до prediction, но его
+`capture_hashes` ошибочно читались из `sensor/` и оказались пусты. После
+prediction добавлены hashes 288 неизменённых PCAP из `captures/`; prediction не
+повторялась. Исходный и исправленный lock hashes сохранены в audit.

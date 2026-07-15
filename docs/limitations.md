@@ -65,3 +65,16 @@ v0.3.7; ретроспективное исправление запрещено
 ## Ограничения v0.3.9
 
 Episode-first promotion проверяется только на новых controlled Docker scenarios. Review не является benign и не является alert. Continuous support margin выражает относительную близость, а не доказательство класса; высокий binary support conflict сохраняется как диагностика и больше не используется как gate. Internal validation, даже положительная, не разрешает backend integration, shadow mode или production deployment и не заменяет новую prospective holdout.
+
+Фактическая frozen validation отрицательна: 41.67% окон потребовали review,
+attack episode recall равен 0.70, девять из 30 attack episodes не получили
+active alert, а true-class support вошёл в top-2 только для 60.71% окон.
+Высокий closed-set macro F1 не компенсирует этот operational failure. Нельзя
+подбирать thresholds, support или lifecycle по этим 252 validation rows.
+
+Первичный pre-prediction lock зафиксировал dataset, order, mapping и frozen
+features, но из-за ошибочного пути сохранил пустые списки `capture_hashes`.
+После prediction в manifest добавлены hashes 288 уже существовавших PCAP;
+prediction не повторялась и данные не менялись. Audit сохраняет оба SHA-256 и
+флаг `capture_evidence_completed_after_prediction=true`. Поэтому доказательство
+порядка для PCAP-hash evidence слабее, чем для dataset/feature lock.

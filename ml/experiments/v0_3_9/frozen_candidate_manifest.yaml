@@ -1,0 +1,220 @@
+candidate_id: decision:f5e327a3497c:hgb:hgb
+architecture_id: network_sensor_v0_7_episode_first
+feature_profile: network_sensor_v0_5_contextual_control
+feature_count: 51
+ordered_feature_list:
+- failed_connection_rate
+- udp_flow_share
+- tcp_flow_share
+- http_requests_per_flow
+- dns_requests_per_flow
+- events_per_second
+- flows_per_second
+- bytes_per_flow
+- packets_per_flow
+- orig_bytes_per_flow
+- resp_bytes_per_flow
+- failed_connections_per_second
+- unique_destinations_per_flow
+- unique_services_per_flow
+- response_bytes_share
+- orig_packet_share
+- delta_flows_per_second
+- flows_per_second_to_rolling_median
+- robust_z_flows_per_second
+- delta_events_per_second
+- events_per_second_to_rolling_median
+- robust_z_events_per_second
+- delta_failed_connections_per_second
+- failed_connections_to_rolling_median
+- robust_z_failed_connections
+- delta_bytes_per_flow
+- bytes_per_flow_to_rolling_median
+- delta_packets_per_flow
+- packets_per_flow_to_rolling_median
+- delta_unique_destinations_per_flow
+- destination_set_jaccard_change
+- protocol_mix_l1_change
+- response_bytes_share_change
+- udp_flow_share_change
+- consecutive_high_failure_windows
+- consecutive_high_flow_windows
+- rolling_activity_slope
+- rolling_failure_slope
+- request_spacing_cv
+- periodicity_stability
+- long_lived_flow_persistence
+- success_response_share
+- failed_then_successful_connection_rate
+- retry_recovery_rate
+- target_responsiveness_ratio
+- connection_completion_rate
+- long_lived_flow_share
+- http_method_diversity
+- http_response_status_entropy
+- response_direction_balance
+- service_availability_recovery_evidence
+feature_schema_sha256: e9adc0617e2e670c1d846936ff69d36b5f9749faedf34ac9ecd21c4c7a00526c
+feature_builder_sha256: 215282131f821fef4018e491e710e77323a80c0591641766896c1c478acc1e6a
+rolling_history_depth: 6
+gate_model: HistGradientBoostingClassifier
+gate_parameters:
+  learning_rate: 0.05
+  max_iter: 200
+  max_leaf_nodes: 15
+  l2_regularization: 1.0
+  random_state: 42
+gate_artifact_sha256: 0a70599178d9d68ae35a36e838c909f6b0c035f83c1023ba05dfdc7cbbd44c5c
+subtype_model: HistGradientBoostingClassifier
+subtype_parameters:
+  learning_rate: 0.05
+  max_iter: 200
+  max_leaf_nodes: 15
+  l2_regularization: 1.0
+  random_state: 42
+subtype_artifact_sha256: 0a70599178d9d68ae35a36e838c909f6b0c035f83c1023ba05dfdc7cbbd44c5c
+calibration_method: group_aware_oof_sigmoid
+gate_calibrator_parameters:
+  coef:
+  - - 1.176986159550666
+  intercept:
+  - -0.03592774392025245
+  classes:
+  - 0
+  - 1
+  method: sigmoid
+subtype_calibrator_parameters:
+  coef:
+  - - -0.12507282133273387
+    - 0.49371732769527005
+    - -0.12390407842121182
+    - -0.12507996205653701
+    - -0.12602536159733865
+  - - -0.12127898955970877
+    - -0.12129187036450387
+    - -0.13039556626791818
+    - -0.12128639776907728
+    - 0.4917956900273365
+  - - -0.12510155816265486
+    - -0.12511317464485855
+    - -0.12387092782492212
+    - 0.4937291987971595
+    - -0.12605305368314967
+  - - 0.49372044530001064
+    - -0.12510277204659115
+    - -0.1238510941966452
+    - -0.12509829544495402
+    - -0.12604246733739105
+  - - -0.12226707624492168
+    - -0.12220951063933555
+    - 0.5020216667106795
+    - -0.12226454352660539
+    - -0.11367480740944519
+  intercept:
+  - 0.00041585008187806937
+  - 1.1154767445273979e-05
+  - 0.0004190553667646653
+  - 0.00041535244419192816
+  - -0.0012614126602781654
+  classes:
+  - auth_failures
+  - beacon_simulation
+  - low_rate_dos
+  - port_scan
+  - web_probe
+  method: sigmoid
+calibration_oof_sha256: a1b332e648263e56a21510dce08d141c9389cbfd36bad58e1883264ebc80c76e
+conformal_method: mondrian_class_conditional
+conformal_alpha: 0.05
+conformal_class_counts:
+  benign: 324
+  port_scan: 36
+  auth_failures: 36
+  web_probe: 36
+  low_rate_dos: 36
+  beacon_simulation: 36
+conformal_score_hashes:
+  benign: aee6d1298a9291efd914c4fbd4eb00e02067c1759a5a05294dd0107bd81ecc26
+  port_scan: 2e501cd2088dc1afa959c595701a7afd61960e7858a30221952b2f4ffc8d9738
+  auth_failures: 9b7b002efa4548e5263ff9fe857a97f0e874218d344e96d0e3062db21100420b
+  web_probe: c33fe7ef1b2b8c7a3fd5a845ca0c267fde3ac367d3f32e38e9687d0f86e12ab9
+  low_rate_dos: 8d1ae0bddab232479a2d41e958f12cad27ba68e03bde7ebca259e22209486cf4
+  beacon_simulation: 011d75928e8dd3cf8ca763d112ca44037cc2c30e3d886afea472a5c83afa83ff
+support_method: robust_scaler_class_conditional_nearest_neighbors
+support_k: 3
+support_quantile: 0.975
+support_class_thresholds:
+  auth_failures: 164734173.3335445
+  beacon_simulation: 1303323254.9077804
+  benign: 152378484.79345638
+  low_rate_dos: 1622435290.9447255
+  port_scan: 1681565176.0530393
+  web_probe: 164734175.0755675
+support_scaler_sha256: 599fb5ea1ddf98122f7ca30f5f34989486aaf79df25f462f4e5318090628eb3b
+support_artifact_sha256: 0a70599178d9d68ae35a36e838c909f6b0c035f83c1023ba05dfdc7cbbd44c5c
+maximum_strong_benign_probability: 0.1
+weak_attack_probability: 0.45
+weak_repeat_policy: consistent_2_of_3
+decay: 0.5
+activation_threshold: 1.2
+strong_benign_reset_probability: 0.8
+strong_attack_probability: 0.85
+strong_probability_margin: 0.4
+strong_support_ratio: 0.9
+signed_evidence_weights:
+  probability: 0.5
+  conformal: 0.2
+  probability_margin: 0.15
+  support_margin: 0.15
+active_minimum_hold_windows: 2
+state_ttl_windows: 3
+inactivity_reset_policy: timestamp_gap
+decision_states:
+- observing
+- pending
+- active
+- review
+- cooldown
+lifecycle_states:
+- observing
+- pending:<class>
+- active:<class>
+- active:unclassified
+- review:novel
+- review:ambiguous
+- review:weak
+- cooldown:<class>
+classes:
+- benign
+- port_scan
+- auth_failures
+- web_probe
+- low_rate_dos
+- beacon_simulation
+training_run_ids:
+- run_v039_train_early_001
+- run_v039_train_early_002
+- run_v039_train_early_003
+- run_v039_train_counter_001
+- run_v039_train_counter_002
+- run_v039_train_counter_003
+- run_v039_train_composition_001
+- run_v039_train_composition_002
+- run_v039_train_composition_003
+- run_v039_train_latency_001
+- run_v039_train_latency_002
+- run_v039_train_latency_003
+training_dataset_sha256: 0d7a0e81a444f395c0e955abb796ec5efada87d79a67a88fc972b209fc7d242a
+training_mapping_sha256: 03fa34b98851b84ec08a25045669e7959641914d82ab4c704af4b8cad1ecd0fe
+training_oof_sha256: a1b332e648263e56a21510dce08d141c9389cbfd36bad58e1883264ebc80c76e
+protocol_sha256: 7931072366fb74e280bb3a71d600ad239393a2157b48e52d08040532f575f143
+data_access_policy_sha256: 5cdc26ed2397820a451204f9b3683ea82bd06ff6b311011a418d565f34a20b6e
+model_selection_policy_sha256: 30613d53c7a7fae886c20b7966ee2c984060e00ea139f62ffe0a0d1584dbdf9e
+candidate_artifact: ml/artifacts/v0_3_9/frozen_candidate.joblib
+candidate_frozen_at: '2026-07-15T04:33:05.358603+00:00'
+candidate_frozen_before_validation_collection: true
+model_trained_on_v036_data: false
+model_trained_on_v037_data: false
+model_trained_on_v038_data: false
+prohibit_refit_on_validation: true
+prohibit_tuning_on_validation: true

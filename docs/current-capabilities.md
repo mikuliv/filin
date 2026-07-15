@@ -2,7 +2,7 @@
 
 Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
 
-Последний завершённый исследовательский этап — v0.3.8. Его frozen policy
+Последний завершённый исследовательский этап — v0.3.9. Его frozen policy
 внутренней валидации не пройдена. Backend integration, shadow mode и production
 deployment не разрешены.
 
@@ -20,12 +20,12 @@ deployment не разрешены.
 - типизированные SHA-256 evidence и fail-closed secure-artifact verifier.
 
 Реализованы Mondrian conformal prediction, class-conditional kNN support и
-episode evidence. Полный цикл v0.3.8 выполнен; его validation data не допускаются
+episode evidence. Полный цикл v0.3.9 выполнен; его validation data не допускаются
 к fit, calibration, выбору thresholds или повторному predict.
 
 ## Исторические результаты
 
-v0.3.1–v0.3.8 остаются неизменяемыми записями исполнения соответствующего кода.
+v0.3.1–v0.3.9 остаются неизменяемыми записями исполнения соответствующего кода.
 Новые validators, marker rules, feature formulas и runtime workflows не
 применялись задним числом. Ограничения формул и доказательств перечислены в
 [`limitations.md`](limitations.md) и post-v0.3.7 аудите.
