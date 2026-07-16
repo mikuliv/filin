@@ -37,7 +37,8 @@ def build_manifest(root:Path,campaign:dict,run:dict)->dict:
    "planned_started_at":planned.isoformat().replace("+00:00","Z"),"planned_finished_at":(planned+timedelta(seconds=duration)).isoformat().replace("+00:00","Z"),"actual_started_at":None,"actual_finished_at":None,"execution_status":"pending",
    "execution_id":f"{run['run_id']}:{seq}:{item['scenario_id']}","scenario_variant_id":f"{variant}:{stable(params)[:12]}","scenario_parameter_hash":stable(params),"scenario_parameters":params,"environment_group":run["group"],
    "warmup":warmup,"episode_id":eid,"episode_phase":"warmup" if warmup else f"phase_{pos}","episode_position":0 if warmup else pos,"episode_length":0 if warmup else length,"episode_class":label,"variant_id":variant,"hard_negative_target_class":item.get("hard_negative_target_class")})
-  planned+=timedelta(seconds=duration+1)
+  # Одинаковый для benign/attack причинный inactivity gap отделяет activity sequence.
+  planned+=timedelta(seconds=duration+(181 if eid is not None and pos==length else 1))
  if len(rows)!=66:raise ValueError("Run v0.3.11 обязан содержать 66 окон")
  return {"manifest_version":"0.3.11","run_id":run["run_id"],"campaign_id":campaign["campaign_id"],"campaign_version":"0.3.11","campaign_role":campaign["role"],"campaign_run_index":run["run_index"],"campaign_seed":run["random_seed"],"execution_mode":"docker","synthetic":False,"timezone":"UTC","capture_dns":True,
   "network_policy":{"scope":"internal_docker_only","external_dns_allowed":False,"allowed_dns_names":["target-web","target-api","control-api","target-ssh-sim","filin-missing-service"]},"scenario_count":66,"scenarios":rows}
