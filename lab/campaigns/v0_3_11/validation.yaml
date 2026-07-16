@@ -5,6 +5,8 @@ catalog: lab/scenarios/v0_3_11/validation_benign.yaml
 warmup_windows: 6
 scored_windows: 60
 total_windows: 66
+time_scale: 0.03
+docker_workers: 3
 episodes_per_run: 20
 runs:
   - {run_id: validation_timing_001, group: validation_timing, random_seed: 16501, run_index: 1}

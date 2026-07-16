@@ -5,6 +5,8 @@ catalog: lab/scenarios/v0_3_11/training_benign.yaml
 warmup_windows: 6
 scored_windows: 60
 total_windows: 66
+time_scale: 0.03
+docker_workers: 3
 episodes_per_run: 20
 runs:
   - {run_id: train_onset_001, group: train_onset, random_seed: 16101, run_index: 1}

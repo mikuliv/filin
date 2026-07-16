@@ -8,7 +8,7 @@ import shutil
 import subprocess
 import sys
 import time
-from concurrent.futures import ThreadPoolExecutor
+from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor, as_completed
 from pathlib import Path
 
 import pandas as pd
@@ -90,7 +90,7 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     try:
         done, failed, skipped = execute_manifest(manifest_path, allow_dry_run_manifest=True, respect_schedule=False,
             max_runtime_seconds=2400, mock=False, compose_file=compose, compose_project_dir=ROOT / "lab/docker",
-            time_scale=.2, random_seed=int(row["random_seed"]))
+            time_scale=float(campaign.get("time_scale", .2)), random_seed=int(row["random_seed"]))
         if failed or skipped or done != total_windows:
             raise RuntimeError(f"Выполнено={done}/{total_windows}, ошибок={failed}, пропущено={skipped}")
     finally:
@@ -204,14 +204,20 @@ def execute(campaign: dict, output_root: Path, resume: bool = False, strict: boo
         environment = {**os.environ, "COMPOSE_PROJECT_NAME": f"filin_{campaign.get('stage_tag','v0310')}_build"}
         compose = ROOT / "lab/docker/docker-compose.lab.yml"
         retry(["docker", "compose", "-f", str(compose), "build", "traffic-client"], environment)
-        for row in campaign["runs"]:
-            if resume and complete(status.get(row["run_id"], {})):
-                continue
-            try:
-                status[row["run_id"]] = run(campaign, row, output_root)
-            except Exception as error:
-                status[row["run_id"]] = {"run_id": row["run_id"], "run_status": "failed", "error_type": type(error).__name__, "error_message": str(error)}
-            atomic(status_path, status)
+        pending = [row for row in campaign["runs"] if not (resume and complete(status.get(row["run_id"], {})))]
+        if campaign.get("stage_tag") == "v0311":
+            with ProcessPoolExecutor(max_workers=min(int(campaign.get("docker_workers", 3)), 3)) as pool:
+                futures = {pool.submit(run, campaign, row, output_root): row for row in pending}
+                for future in as_completed(futures):
+                    row = futures[future]
+                    try: status[row["run_id"]] = future.result()
+                    except Exception as error: status[row["run_id"]] = {"run_id": row["run_id"], "run_status": "failed", "error_type": type(error).__name__, "error_message": str(error)}
+                    atomic(status_path, status)
+        else:
+            for row in pending:
+                try: status[row["run_id"]] = run(campaign, row, output_root)
+                except Exception as error: status[row["run_id"]] = {"run_id": row["run_id"], "run_status": "failed", "error_type": type(error).__name__, "error_message": str(error)}
+                atomic(status_path, status)
     finally:
         lock.unlink(missing_ok=True)
     if strict and not all(complete(status.get(row["run_id"], {})) for row in campaign["runs"]):
