@@ -75,7 +75,11 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     sensor = run_dir / "sensor"
     sensor.mkdir(parents=True, exist_ok=True)
     manifest_path = run_dir / "scenario_manifest.yaml"
-    save_manifest(manifest_path, build_manifest(ROOT, campaign, row))
+    if campaign.get("stage_tag") == "v0311":
+        from v0311_campaign import build_manifest as selected_manifest_builder
+    else:
+        selected_manifest_builder = build_manifest
+    save_manifest(manifest_path, selected_manifest_builder(ROOT, campaign, row))
     volume = f"filin_{stage_tag}_" + run_id.lower()
     project = f"filin_{stage_tag}_{run_id.lower().replace('_','-')}"
     environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": project}
