@@ -1,0 +1,8 @@
+closed_set: {minimum_macro_f1: 0.95, minimum_balanced_accuracy: 0.95, minimum_benign_recall: 0.95, maximum_fpr: 0.05, minimum_attack_macro_recall: 0.95}
+operational: {minimum_candidate_evidence_recall: 0.95, minimum_strong_precision: 0.98, minimum_attack_episode_recall: 0.95, minimum_episode_precision: 0.95, maximum_benign_episode_far: 0.05, minimum_detection_by_second: 0.90, maximum_pre_alert_attack_window_rate: 0.25, maximum_unresolved_episode_rate: 0.05, maximum_review_rate: 0.10, maximum_attack_review_rate: 0.20, minimum_dedup_precision: 0.99, maximum_false_suppression_count: 0}
+per_class_minimum_episode_recall: 0.833333
+group: {minimum_episode_recall: 0.90, minimum_episode_precision: 0.90, maximum_benign_far: 0.10, maximum_unresolved_rate: 0.10}
+calibration: {maximum_joint_ece: 0.05, maximum_joint_brier: 0.05}
+conformal: {minimum_overall_coverage: 0.90, minimum_per_class_coverage: 0.80, maximum_wrong_only_rate: 0.02}
+all_benign_variants_zero_alerts: true
+legacy_pending_affects_pass_fail: false

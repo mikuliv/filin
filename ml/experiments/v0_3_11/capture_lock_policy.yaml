@@ -1,0 +1,10 @@
+expected_validation_runs: 6
+expected_marker_pairs: 396
+expected_capture_hashes: 396
+expected_scored_rows: 360
+expected_episodes: 120
+canonical_capture_directory: captures
+hash_algorithm: sha256
+unique_hashes_required: true
+post_hoc_hash_completion_allowed: false
+prediction_blocked_on_missing_hash: true

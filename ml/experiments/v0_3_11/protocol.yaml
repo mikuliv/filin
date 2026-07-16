@@ -1,0 +1,22 @@
+stage: v0.3.11
+architecture_id: network_sensor_v0_9_burden_aware_promotion
+feature_profile: network_sensor_v0_5_contextual_control
+decision_semantics_version: burden_aware_v1
+model_family: hgb_gate_hgb_subtype
+new_training_cycle: true
+regression_evaluation: false
+training_campaign: lab/campaigns/v0_3_11/training.yaml
+validation_campaign: lab/campaigns/v0_3_11/validation.yaml
+validation_collection_after_candidate_freeze: true
+features: ml/experiments/v0_3_11/feature_schema.yaml
+policy_grid: ml/experiments/v0_3_11/policy_grid.yaml
+model_parameters: {learning_rate: 0.05, max_iter: 200, max_leaf_nodes: 15, l2_regularization: 1.0, random_state: 42}
+calibration: {method: sigmoid, grouped_oof_only: true, group: run_id}
+conformal: {method: class_conditional_mondrian, alpha: 0.05, grouped_oof_only: true}
+diagnostic_support: {scaler: RobustScaler, neighbors: 3, quantile: 0.975, affects_decision: false}
+folds: {outer: 6, inner: 4, group: run_id}
+bootstrap: {iterations: 5000, seed: 42, unit: run_id}
+gpu_acceleration_used: false
+historical_scientific_rows_allowed: false
+training_seeds: [16101, 16102, 16103, 16201, 16202, 16203, 16301, 16302, 16303, 16401, 16402, 16403]
+validation_seeds: [16501, 16502, 16601, 16602, 16701, 16702]

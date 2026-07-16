@@ -1,0 +1,10 @@
+version: v0311-1
+hardware: {cpu: AMD Ryzen 5 5600X, physical_cores: 6, logical_threads: 12, ram_gb: 64, gpu: NVIDIA GeForce RTX 5060 Ti, computers: 1}
+collection: {docker_workers: 3, zeek_workers: 4, feature_workers: 6}
+hgb_profiles:
+  A: {fit_processes: 3, openmp_threads_per_process: 4, blas_threads_per_process: 1}
+  B: {fit_processes: 6, openmp_threads_per_process: 2, blas_threads_per_process: 1}
+policy: {workers: 8, omp_threads: 1, mkl_threads: 1, openblas_threads: 1, numexpr_threads: 1}
+post_hoc: {analysis_workers: 8, bootstrap_workers: 8, threads_per_worker: 1}
+memory: {maximum_computation_gb: 48, minimum_available_gb: 8, maximum_swap_growth_gb: 1}
+gpu_acceleration_used: false

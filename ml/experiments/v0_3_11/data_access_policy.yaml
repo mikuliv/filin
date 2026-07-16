@@ -1,0 +1,28 @@
+stage: v0.3.11
+mode: fail_closed
+allowed_scientific_roots:
+  - lab/output/campaigns/filin_v0_3_11_burden_aware_training/
+  - lab/output/campaigns/filin_v0_3_11_burden_aware_validation/
+  - ml/artifacts/v0_3_11/
+  - ml/reports/v0_3_11/
+methodology_only:
+  - ml/reports/v0_3_10/v0_3_10_summary.md
+  - ml/reports/v0_3_10/v0_3_10_policy_result.json
+  - ml/reports/v0_3_10_1/v0_3_10_1_summary.md
+  - ml/audits/v0_3_10_1/next_stage_recommendations.yaml
+  - ml/reports/v0_3_10_1/resource_profile_recommendation.json
+  - ml/reports/v0_3_10_1/performance_benchmark.json
+forbidden_scientific_roots:
+  - ml/artifacts/v0_3_6/
+  - ml/artifacts/v0_3_7/
+  - ml/artifacts/v0_3_8/
+  - ml/artifacts/v0_3_9/
+  - ml/artifacts/v0_3_10/
+  - ml/reports/v0_3_6/
+  - ml/reports/v0_3_7/
+  - ml/reports/v0_3_8/
+  - ml/reports/v0_3_9/
+  - ml/reports/v0_3_10/validation_predictions.json
+  - ml/reports/v0_3_10/decision_transitions.json
+  - ml/reports/v0_3_10_1/pending_transition_mapping.json
+validation_closed_until_candidate_freeze: true

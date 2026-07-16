@@ -1,0 +1,5 @@
+frozen_before_training: true
+strong: {attack_probability: [0.70, 0.75, 0.80], margin: [0.10, 0.15], benign_ceiling: [0.20, 0.25]}
+weak: {attack_probability: [0.35, 0.45], margin: [0.00, 0.05], benign_ceiling: [0.45, 0.50], repetition: [two_consecutive, two_of_three]}
+state: {pending_ttl: [2, 3], ambiguity_margin: [0.03, 0.05], dedup_ttl: [3], benign_reset_probability: [0.80], benign_reset_margin: [0.30]}
+stages: {stage_a: 12, stage_a_keep: 4, stage_b: 64, stage_b_keep: 4, stage_c: 16, total_records: 92}

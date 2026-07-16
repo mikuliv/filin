@@ -1,0 +1,9 @@
+closed_set: {minimum_macro_f1: 0.95, minimum_balanced_accuracy: 0.95, minimum_benign_recall: 0.95, maximum_fpr: 0.05, minimum_attack_macro_recall: 0.95}
+evidence: {minimum_candidate_recall: 0.95, minimum_strong_precision: 0.98}
+episode: {minimum_recall: 0.95, minimum_precision: 0.95, maximum_benign_far: 0.05, minimum_detection_by_second: 0.90}
+burden: {maximum_pre_alert_attack_window_rate: 0.25, maximum_unresolved_episode_rate: 0.05, maximum_review_rate: 0.10, maximum_attack_review_rate: 0.20}
+dedup: {minimum_precision: 0.99, maximum_false_suppression_count: 0}
+contamination: {maximum_cross_run: 0, maximum_cross_activity: 0}
+fold: {minimum_episode_recall: 0.90, minimum_episode_precision: 0.90, maximum_benign_far: 0.10, minimum_detection_by_second: 0.80, minimum_per_class_recall: 0.75, maximum_unresolved_rate: 0.10}
+ranking: [minimum_outer_recall_desc, minimum_outer_precision_desc, minimum_per_class_recall_desc, benign_far_asc, unresolved_asc, review_asc, first_window_desc, second_window_desc, pre_alert_pending_asc, dedup_precision_desc, complexity_asc, candidate_id_asc]
+legacy_pending_affects_pass_fail: false
