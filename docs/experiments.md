@@ -82,3 +82,6 @@ precision/recall, attack episode recall и episode alert precision равны
 Attack pending rate `0.666667` и overall pending rate `0.370370` превысили
 frozen limits, а training-only model-selection policy не была пройдена.
 Поэтому итог отрицательный и regression v0.3.11 не разрешена.
+# Технический аудит v0.3.10.1
+
+Post-hoc аудит использует только immutable validation predictions/transitions и сохранённые grouped OOF records v0.3.10. Он не выполняет fit, calibration, tuning или новую генерацию predictions. Аудит разделяет pre-alert pending, alert emission, post-alert continuation, duplicate suppression и unresolved pending и повторяет метрики всех 101 training policies. Официальный отрицательный результат v0.3.10 не изменён.

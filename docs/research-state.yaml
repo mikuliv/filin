@@ -42,3 +42,11 @@ protected_artifact_policy:
   absence_status: not_executed_secure_artifacts_unavailable
   tracked_sensitive_artifacts_allowed: false
   historical_v0_3_7_manifest_exception: already_tracked_immutable_evidence
+technical_audits:
+  v0_3_10_1:
+    status: completed_post_hoc_semantics_and_performance
+    scientific_status_changed: false
+    frozen_candidate_changed: false
+    official_validation_result_changed: false
+    finding: legacy_pending_combines_post_alert_continuation_with_operator_burden
+    readiness_changed: false

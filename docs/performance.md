@@ -1,0 +1,19 @@
+# Производительность исследовательского контура
+
+## Базовая линия v0.3.10
+
+Технический аудит v0.3.10.1 не повторял обучение. Для одного компьютера с Ryzen 5 5600X (6 ядер/12 потоков), 64 ГБ RAM и RTX 5060 Ti сохранена операторская базовая линия: полный этап занял приблизительно 5 часов 5 минут, selection — более 66 минут. Наблюдавшиеся 14 745 секунд CPU на 3 960 секунд wall time соответствуют примерно 3,72 занятым логическим потокам, или 31% от 12; peak RSS оценивался примерно в 782 MiB.
+
+## Причина и безопасная параллельность
+
+Основной инженерный резерв находился в последовательной оценке 101 независимой decision policy. `ml/performance/parallel_policy_evaluator.py` загружает неизменные grouped OOF и frozen calibrators один раз на процесс, не вызывает fit/predict generation и распределяет только причинный state-machine evaluation. Внутри worker заданы `OMP_NUM_THREADS=1`, `MKL_NUM_THREADS=1`, `OPENBLAS_NUM_THREADS=1` и `NUMEXPR_NUM_THREADS=1`.
+
+Профили 1/3/6/8 workers измеряются на полном наборе. Результат допускается к использованию только после exact-equivalence с workers=1, проверки input/source hashes и canonical ordering. Atomic checkpoint содержит completed marker и input hash; partial или устаревший checkpoint не принимается. Свободная RAM должна оставаться не ниже 8 ГБ, вычисления — ниже 48 ГБ, рост swap более 1 ГБ останавливает benchmark.
+
+## GPU
+
+RTX 5060 Ti не ускоряет frozen путь на scikit-learn HistGradientBoosting, NumPy и Python state machine: в нём нет CUDA backend. Замена estimator или вычислительного стека изменит научный метод и требует отдельного заранее frozen этапа.
+
+## Будущие этапы
+
+Для collection базовый Docker profile — 3 workers, aggressive preflight — 4, Zeek — 4–6. Для model fitting нельзя допускать nested oversubscription; профили `3 processes × 4 OpenMP threads` и `6 × 2` можно сравнивать только в новом preflight. Долгие операции должны показывать task/fold/candidate progress, ETA, worker count, CPU, RAM и checkpoint count.

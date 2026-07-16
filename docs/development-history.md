@@ -52,3 +52,6 @@ evaluation. Candidate дал macro F1 и episode recall `1.0` без benign fals
 alerts, но frozen training-selection и pending/review policies не прошёл:
 attack pending rate `0.666667`. Результат зафиксирован отрицательным; v0.3.11
 regression, backend integration и shadow mode не разрешены.
+# v0.3.10.1
+
+Выполнен read-only аудит frozen v0.3.10: проверены 12 SHA-256, причинно восстановлена семантика 324 validation окон, повторно оценены 101 grouped-OOF policies без fit, добавлены параллельный evaluator, resource monitoring, checkpoint/resume и controlled benchmark 1/3/6/8 workers. Научный статус v0.3.10 не изменён.

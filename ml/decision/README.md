@@ -16,3 +16,6 @@ threshold `0.35`, repetition `two_consecutive`, pending TTL `2`, ambiguity
 margin `0.03`, dedup TTL `3`. Frozen validation обнаружила 60/60 attack
 episodes первым окном и подавила 120 повторных emissions. Pending-rate gate не
 пройден; policy после validation не менялась.
+# Семантическое уточнение v0.3.10.1
+
+Для будущего цикла различаются `pre_alert_pending`, `alert_emitted`, `post_alert_continuation`, `duplicate_alert_suppressed`, `review_required` и `unresolved_pending`. Post-alert continuation не входит в pending burden, а deduplication не является analyst review. Frozen реализация v0.3.10 не изменена.

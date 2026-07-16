@@ -96,3 +96,6 @@ episode false-alert rate `0.000000` и first-window detection `1.000000`.
 `v0310_internal_validation_passed=false` и
 `candidate_ready_for_v0_3_11_regression=false`. Пороговые значения после
 validation не менялись; backend integration и shadow mode запрещены.
+# Техническое уточнение v0.3.10.1
+
+Аудит показал, что 120 legacy pending окон validation являются post-alert continuation с корректным duplicate suppression, а burden-aware pending равен нулю. Это диагностическое уточнение не переписывает frozen policy: internal validation, regression readiness, shadow mode и backend integration остаются `false`.

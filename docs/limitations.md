@@ -92,3 +92,6 @@ Pending и review не считаются правильным benign. Diagnosti
 определение метрики, TTL или thresholds по validation запрещено. Continuous
 support остаётся несогласованным с HGB: top-1 `0.311728`, top-2 `0.663580`,
 binary conflict `0.941358`; поэтому он остаётся только диагностическим.
+# Ограничения аудита v0.3.10.1
+
+Диагностическая переклассификация не является новой validation и не разрешает post-hoc изменение thresholds. Deduplicated continuation уже обнаруженного эпизода не означает analyst review или пропущенную детекцию. RTX 5060 Ti не используется frozen HGB/NumPy/Python pipeline; GPU-смена требует нового научного протокола.

@@ -57,3 +57,6 @@ pending/review gate не пройден (`pending_rate=0.370370`,
 `attack_pending_rate=0.666667`), а training-only model-selection policy также
 не пройдена. Поэтому v0.3.11 не открыта; разрешено только проектирование нового
 training cycle на новых данных с заранее зафиксированным протоколом.
+# После аудита v0.3.10.1
+
+Следующий научный цикл должен заранее заморозить раздельные состояния и gates для pre-alert pending, post-alert continuation, duplicate suppression и unresolved pending. Validation v0.3.10 нельзя использовать для tuning; оно может стать regression benchmark только после независимого выбора нового candidate.

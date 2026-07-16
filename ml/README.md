@@ -55,3 +55,6 @@ Frozen evaluation завершена: closed-set macro F1 `1.0`, attack episode 
 `1.0`, benign episode false-alert rate `0.0`, но pending rate `0.370370` и
 attack pending rate `0.666667`. Поэтому итоговая policy отрицательна;
 candidate не разрешён для regression, backend или shadow mode.
+# Аудит v0.3.10.1
+
+`audits/v0_3_10_1` содержит технический read-only аудит pending semantics и `performance` — эквивалентный параллельный evaluator. Он читает только frozen v0.3.10 и не создаёт новую модель, calibration или validation prediction.
