@@ -99,6 +99,6 @@ def run(campaign:Path,output_root:Path,report:Path,artifact:Path,resume=False):
  selection["outer_fold_policy_passed"]=outer_pass;selection["model_selection_policy_passed"]=selection["model_selection_policy_passed"] and outer_pass
  gm=make_gate("hist_gradient_boosting").fit(X,binary);sm=make_subtype("hist_gradient_boosting").fit(X[binary==1],labels[binary==1]);artifact.mkdir(parents=True,exist_ok=True)
  bundle={"architecture_id":"network_sensor_v0_9_burden_aware_promotion","classes":CLASSES,"feature_profile":CONTROL_PROFILE,"gate":gm,"subtype":sm,"gate_calibrator":gate_cal,"subtype_calibrator":sub_cal,"conformal":conformal,"diagnostic_support":support,"decision_parameters":selection["selected"]["parameters"],"candidate_id":selection["selected"]["candidate_id"]}
- joblib.dump({"rows":rows,"X":X,"oof":oof,"probabilities":probs},grouped_path);joblib.dump(bundle,artifact/"frozen_candidate.joblib")
+ joblib.dump({"rows":rows,"X":X,"oof":oof,"probabilities":probs,"conformal":conformal},grouped_path);joblib.dump(bundle,artifact/"frozen_candidate.joblib")
  write(report/"grouped_oof_predictions.json",{"completed":True,"rows":len(rows),"runs":rows.run_id.nunique(),"folds":oof["folds"],"closed_set_metrics":oof["metrics"],"oof_sha256":sha256_json(probs.tolist())});write(report/"policy_candidates.json",selection["records"]);write(report/"nested_outer_fold_metrics.json",outer);write(report/"candidate_selection.json",{k:v for k,v in selection.items() if k!="records"})
  return {k:v for k,v in selection.items() if k!="records"}
