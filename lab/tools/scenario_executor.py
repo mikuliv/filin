@@ -21,7 +21,8 @@ def capture_bpf(manifest: dict[str, Any]) -> list[str]:
     if manifest.get("capture_dns") is True:
         allowed_roles = {"pre_training_smoke", "evidence_training", "evidence_internal_validation",
                          "episode_first_training", "episode_first_validation",
-                         "minimal_promotion_training", "minimal_promotion_validation"}
+                         "minimal_promotion_training", "minimal_promotion_validation",
+                         "burden_aware_training", "burden_aware_validation"}
         if manifest.get("campaign_role") not in allowed_roles:
             raise ValueError("DNS capture запрещён для этой роли кампании")
         policy = manifest.get("network_policy") or {}

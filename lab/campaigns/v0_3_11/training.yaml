@@ -1,0 +1,21 @@
+campaign_id: filin_v0_3_11_burden_aware_training
+role: burden_aware_training
+stage_tag: v0311
+catalog: lab/scenarios/v0_3_11/training_benign.yaml
+warmup_windows: 6
+scored_windows: 60
+total_windows: 66
+episodes_per_run: 20
+runs:
+  - {run_id: train_onset_001, group: train_onset, random_seed: 16101, run_index: 1}
+  - {run_id: train_onset_002, group: train_onset, random_seed: 16102, run_index: 2}
+  - {run_id: train_onset_003, group: train_onset, random_seed: 16103, run_index: 3}
+  - {run_id: train_gradual_001, group: train_gradual, random_seed: 16201, run_index: 4}
+  - {run_id: train_gradual_002, group: train_gradual, random_seed: 16202, run_index: 5}
+  - {run_id: train_gradual_003, group: train_gradual, random_seed: 16203, run_index: 6}
+  - {run_id: train_overlap_001, group: train_overlap, random_seed: 16301, run_index: 7}
+  - {run_id: train_overlap_002, group: train_overlap, random_seed: 16302, run_index: 8}
+  - {run_id: train_overlap_003, group: train_overlap, random_seed: 16303, run_index: 9}
+  - {run_id: train_recovery_001, group: train_recovery, random_seed: 16401, run_index: 10}
+  - {run_id: train_recovery_002, group: train_recovery, random_seed: 16402, run_index: 11}
+  - {run_id: train_recovery_003, group: train_recovery, random_seed: 16403, run_index: 12}

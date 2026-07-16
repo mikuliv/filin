@@ -59,6 +59,10 @@ def complete(value: dict) -> bool:
 
 def run(campaign: dict, row: dict, output_root: Path) -> dict:
     run_id = row["run_id"]
+    total_windows = int(campaign.get("total_windows", 60))
+    scored_windows = int(campaign.get("scored_windows", 54))
+    episode_count = int(campaign.get("episodes_per_run", 18))
+    stage_tag = str(campaign.get("stage_tag", "v0310"))
     run_dir = output_root / "runs" / run_id
     if (run_dir / "scenario_manifest.yaml").exists():
         attempts = run_dir / "attempts"
@@ -72,8 +76,9 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     sensor.mkdir(parents=True, exist_ok=True)
     manifest_path = run_dir / "scenario_manifest.yaml"
     save_manifest(manifest_path, build_manifest(ROOT, campaign, row))
-    volume = "filin_v0310_" + run_id.lower()
-    environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": "filin_v0310_lab"}
+    volume = f"filin_{stage_tag}_" + run_id.lower()
+    project = f"filin_{stage_tag}_{run_id.lower().replace('_','-')}"
+    environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": project}
     compose = ROOT / "lab/docker/docker-compose.lab.yml"
     retry(["docker", "compose", "-f", str(compose), "up", "-d", "target-web", "target-api", "control-api", "target-ssh-sim", "internal-dns", "traffic-client"], environment)
     time.sleep(3)
@@ -81,13 +86,13 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     previous_capture = os.environ.get("FILIN_SCENARIO_CAPTURE_DIR")
     previous_project = os.environ.get("COMPOSE_PROJECT_NAME")
     os.environ["FILIN_SCENARIO_CAPTURE_DIR"] = "/capture/scenarios"
-    os.environ["COMPOSE_PROJECT_NAME"] = "filin_v0310_lab"
+    os.environ["COMPOSE_PROJECT_NAME"] = project
     try:
         done, failed, skipped = execute_manifest(manifest_path, allow_dry_run_manifest=True, respect_schedule=False,
             max_runtime_seconds=2400, mock=False, compose_file=compose, compose_project_dir=ROOT / "lab/docker",
             time_scale=.2, random_seed=int(row["random_seed"]))
-        if failed or skipped or done != 60:
-            raise RuntimeError(f"Выполнено={done}/60, ошибок={failed}, пропущено={skipped}")
+        if failed or skipped or done != total_windows:
+            raise RuntimeError(f"Выполнено={done}/{total_windows}, ошибок={failed}, пропущено={skipped}")
     finally:
         if previous_capture is None:
             os.environ.pop("FILIN_SCENARIO_CAPTURE_DIR", None)
@@ -111,8 +116,8 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     normalized.unlink(missing_ok=True)
     frozen_manifest = yaml.safe_load(manifest_path.read_text(encoding="utf-8"))
     captures = list(captures_dir.glob("*.pcap"))
-    if len(captures) != 60 or any(path.stat().st_size <= 24 for path in captures):
-        raise ValueError(f"Ожидалось 60 непустых PCAP, получено {len(captures)}")
+    if len(captures) != total_windows or any(path.stat().st_size <= 24 for path in captures):
+        raise ValueError(f"Ожидалось {total_windows} непустых PCAP, получено {len(captures)}")
 
     def process_capture(scenario):
         sequence = int(scenario["run_sequence"])
@@ -151,20 +156,20 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     scored = full[~full.warmup.astype(bool)].copy()
     scored.to_csv(dataset, index=False)
     full.to_csv(all_dataset, index=False)
-    if len(full) != 60 or len(scored) != 54 or scored.episode_id.nunique() != 18:
+    if len(full) != total_windows or len(scored) != scored_windows or scored.episode_id.nunique() != episode_count:
         raise ValueError("Нарушена warm-up/episode композиция")
     validate_dataset(dataset, kind="windows", feature_profile="network_sensor_v0_4")
     capture_hashes = [sha256(path) for path in sorted(captures)]
-    if len(set(capture_hashes)) != 60:
+    if len(set(capture_hashes)) != total_windows:
         raise ValueError("Capture hashes должны быть уникальны внутри run")
     integrity = {
         "run": row,
         "warmup_rows": 6,
-        "scored_rows": 54,
-        "episodes": 18,
-        "marker_pairs": 60,
-        "pcap_count": 60,
-        "unique_capture_hashes": 60,
+        "scored_rows": scored_windows,
+        "episodes": episode_count,
+        "marker_pairs": total_windows,
+        "pcap_count": total_windows,
+        "unique_capture_hashes": total_windows,
         "assigned_observations_positive": True,
         "marker_flows_excluded": True,
         "duplicated_assignments": 0,
@@ -180,8 +185,8 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
         "dataset_sha256": sha256(dataset),
         "all_dataset_sha256": sha256(all_dataset),
     }
-    atomic(run_dir / "v0310_run_integrity.json", integrity)
-    return {**{name: "success" for name in STATUS_FIELDS}, "run_id": run_id, "warmup_rows": 6, "scored_rows": 54, "episodes": 18, "marker_pairs": 60, "capture_hashes": 60}
+    atomic(run_dir / f"{stage_tag}_run_integrity.json", integrity)
+    return {**{name: "success" for name in STATUS_FIELDS}, "run_id": run_id, "warmup_rows": 6, "scored_rows": scored_windows, "episodes": episode_count, "marker_pairs": total_windows, "capture_hashes": total_windows}
 
 
 def execute(campaign: dict, output_root: Path, resume: bool = False, strict: bool = False) -> dict:
@@ -196,7 +201,7 @@ def execute(campaign: dict, output_root: Path, resume: bool = False, strict: boo
     try:
         # Код traffic-client меняется вместе с каталогом кампании. Собираем его
         # ровно один раз на invocation, а не перед каждым из 12/6 immutable runs.
-        environment = {**os.environ, "COMPOSE_PROJECT_NAME": "filin_v0310_lab"}
+        environment = {**os.environ, "COMPOSE_PROJECT_NAME": f"filin_{campaign.get('stage_tag','v0310')}_build"}
         compose = ROOT / "lab/docker/docker-compose.lab.yml"
         retry(["docker", "compose", "-f", str(compose), "build", "traffic-client"], environment)
         for row in campaign["runs"]:

@@ -1,0 +1,23 @@
+catalog_id: v0311_validation_benign_v1
+role: validation_only
+scenarios:
+  - {scenario_id: benign_backup_index_reconcile, variant_id: artifact_index_rebuild, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_object_delta_verification, variant_id: backup_catalog_rotation, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_repository_signature_refresh, variant_id: certificate_chain_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_replica_catchup_sequence, variant_id: cluster_membership_sync, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_stream_offset_commit, variant_id: container_image_cleanup, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_telemetry_batch_export, variant_id: database_replica_catchup, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_session_reconnect_cycle, variant_id: dns_cache_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_mesh_probe_rotation, variant_id: endpoint_policy_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_endpoint_inventory_wave, variant_id: event_queue_rebalance, type: benign, expected_label: benign, source_role: benign-client, target_role: target-ssh-sim, duration_seconds: 20}
+  - {scenario_id: benign_registry_consistency_check, variant_id: file_integrity_baseline, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_credential_refresh_chain, variant_id: log_archive_compaction, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_accessibility_structure_scan, variant_id: package_mirror_sync, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_audit_forward_recovery, variant_id: patch_inventory_scan, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_partition_reassignment, variant_id: service_dependency_warmup, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_storage_scrub_cycle, variant_id: storage_scrub_report, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_transaction_batch_commit, variant_id: telemetry_batch_flush, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_backup_index_reconcile, variant_id: token_cache_rehydration, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_object_delta_verification, variant_id: user_directory_delta_sync, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_repository_signature_refresh, variant_id: vm_snapshot_consolidation, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_replica_catchup_sequence, variant_id: web_cache_prefill, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}

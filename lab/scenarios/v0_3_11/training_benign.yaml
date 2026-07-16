@@ -1,0 +1,23 @@
+catalog_id: v0311_training_benign_v1
+role: training_only
+scenarios:
+  - {scenario_id: benign_backup_index_reconcile, variant_id: training_backup_reconcile, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_object_delta_verification, variant_id: training_object_delta, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_repository_signature_refresh, variant_id: training_signature_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_replica_catchup_sequence, variant_id: training_replica_catchup, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_stream_offset_commit, variant_id: training_offset_commit, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_telemetry_batch_export, variant_id: training_telemetry_export, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_session_reconnect_cycle, variant_id: training_reconnect, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_mesh_probe_rotation, variant_id: training_mesh_rotation, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_endpoint_inventory_wave, variant_id: training_inventory, type: benign, expected_label: benign, source_role: benign-client, target_role: target-ssh-sim, duration_seconds: 20}
+  - {scenario_id: benign_registry_consistency_check, variant_id: training_registry_check, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_credential_refresh_chain, variant_id: training_credential_refresh, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_accessibility_structure_scan, variant_id: training_accessibility_scan, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_audit_forward_recovery, variant_id: training_audit_recovery, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_partition_reassignment, variant_id: training_partition_reassignment, type: benign, expected_label: benign, source_role: benign-client, target_role: control-api, duration_seconds: 20}
+  - {scenario_id: benign_storage_scrub_cycle, variant_id: training_storage_scrub, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_transaction_batch_commit, variant_id: training_batch_commit, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
+  - {scenario_id: benign_backup_index_reconcile, variant_id: training_backup_reconcile_alt, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_object_delta_verification, variant_id: training_object_delta_alt, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_repository_signature_refresh, variant_id: training_signature_refresh_alt, type: benign, expected_label: benign, source_role: benign-client, target_role: target-web, duration_seconds: 20}
+  - {scenario_id: benign_replica_catchup_sequence, variant_id: training_replica_catchup_alt, type: benign, expected_label: benign, source_role: benign-client, target_role: target-api, duration_seconds: 20}
