@@ -82,7 +82,10 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     save_manifest(manifest_path, selected_manifest_builder(ROOT, campaign, row))
     volume = f"filin_{stage_tag}_" + run_id.lower()
     project = f"filin_{stage_tag}_{run_id.lower().replace('_','-')}"
-    environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": project}
+    port_base = 18080 + int(row.get("run_index", 0)) * 10
+    environment = {**os.environ, "FILIN_SENSOR_CAPTURE_VOLUME": volume, "COMPOSE_PROJECT_NAME": project,
+                   "FILIN_TARGET_WEB_PORT": f"127.0.0.1:{port_base}",
+                   "FILIN_TARGET_API_PORT": f"127.0.0.1:{port_base + 1}"}
     compose = ROOT / "lab/docker/docker-compose.lab.yml"
     retry(["docker", "compose", "-f", str(compose), "up", "-d", "target-web", "target-api", "control-api", "target-ssh-sim", "internal-dns", "traffic-client"], environment)
     time.sleep(3)
