@@ -5,8 +5,9 @@ from pathlib import Path
 import psutil
 
 class ResourceMonitor:
-    def __init__(self, parent_pid: int, output: Path, interval: float = 1.0):
+    def __init__(self, parent_pid: int, output: Path, interval: float = 1.0, stage: str = "unspecified", phase: str = "running", progress=None):
         self.parent_pid, self.output, self.interval = parent_pid, output, interval
+        self.stage, self.phase, self.progress = stage, phase, progress
         self.samples, self._stop, self._thread, self.cpu_seconds = [], threading.Event(), None, {}
 
     def _gpu(self):
@@ -32,12 +33,15 @@ class ResourceMonitor:
                 process_cpu += process.cpu_percent(None)
             except psutil.Error: pass
         vm, swap = psutil.virtual_memory(), psutil.swap_memory()
-        item = {"timestamp": time.time(), "parent_pid": self.parent_pid, "child_process_count": max(len(processes)-1, 0),
-                "process_cpu_percent": process_cpu, "system_cpu_percent": psutil.cpu_percent(None),
+        progress = self.progress() if callable(self.progress) else {}
+        item = {"timestamp": time.time(), "stage": self.stage, "phase": self.phase, "parent_pid": self.parent_pid, "child_process_count": max(len(processes)-1, 0),
+                "process_cpu_percent": process_cpu, "parent_cpu_percent": process_cpu if len(processes)<=1 else 0.0,
+                "children_cpu_percent": process_cpu if len(processes)>1 else 0.0, "system_cpu_percent": psutil.cpu_percent(None),
                 "per_core_cpu_percent": psutil.cpu_percent(None, percpu=True), "process_rss_mb": rss_parent,
-                "children_rss_mb": rss_children, "system_memory_used_mb": vm.used/1024/1024,
+                "parent_rss_mb": rss_parent, "children_rss_mb": rss_children, "aggregate_rss_mb": rss_parent+rss_children, "system_memory_used_mb": vm.used/1024/1024,
                 "system_memory_available_mb": vm.available/1024/1024, "swap_used_mb": swap.used/1024/1024,
-                "disk_read_bytes": read_bytes, "disk_write_bytes": write_bytes}
+                "disk_read_bytes": read_bytes, "disk_write_bytes": write_bytes,
+                "completed_tasks": progress.get("completed_tasks"), "active_workers": progress.get("active_workers"), "queued_tasks": progress.get("queued_tasks")}
         item.update(self._gpu()); self.samples.append(item); return item
 
     def _run(self):
@@ -56,6 +60,7 @@ class ResourceMonitor:
     def summary(self):
         cpu = sorted(item["system_cpu_percent"] for item in self.samples)
         pick = lambda q: cpu[min(int((len(cpu)-1)*q), len(cpu)-1)] if cpu else 0.0
+        rss=sorted(item["aggregate_rss_mb"] for item in self.samples)
         return {"sample_count": len(self.samples), "system_cpu_average": sum(cpu)/len(cpu) if cpu else 0.0,
                 "system_cpu_p50": pick(.5), "system_cpu_p95": pick(.95),
                 "peak_rss_mb": max((x["process_rss_mb"] for x in self.samples), default=0),
@@ -64,4 +69,3 @@ class ResourceMonitor:
                 "disk_read_bytes": max((x["disk_read_bytes"] for x in self.samples), default=0),
                 "disk_write_bytes": max((x["disk_write_bytes"] for x in self.samples), default=0),
                 "gpu_metrics_available": any(x.get("gpu_metrics_available") for x in self.samples)}
-
