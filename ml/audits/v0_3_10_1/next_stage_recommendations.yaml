@@ -1,0 +1,16 @@
+status: recommendation_only_not_frozen_policy
+scientific:
+  - split pre_alert_pending, post_alert_continuation, duplicate_suppressed and unresolved_pending
+  - apply burden gates only to pre-alert and unresolved operator burden
+  - preserve episode-first alert emission and causal ordering
+  - select a new candidate on new training data before using v0.3.10 validation as regression benchmark
+engineering:
+  - use process-level parallelism for independent policy evaluation
+  - default to the measured safe worker profile and retain workers=1 reference mode
+  - retain atomic per-policy checkpoints, canonical ordering and exact equivalence gate
+  - keep OMP, MKL, OPENBLAS and NUMEXPR threads at one inside workers
+prohibitions:
+  - do not tune on v0.3.10 validation
+  - do not reinterpret this audit as a validation pass
+  - do not replace frozen policy thresholds post hoc
+  - do not introduce a GPU estimator without a separate scientific protocol

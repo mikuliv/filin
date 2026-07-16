@@ -1,0 +1,44 @@
+audit_id: filin-v0.3.10.1-pending-and-performance-audit
+audit_type: technical_post_hoc
+source_stage: v0.3.10
+scientific_status_change_allowed: false
+candidate_change_allowed: false
+policy_change_allowed: false
+prediction_change_allowed: false
+refit_allowed: false
+calibration_allowed: false
+threshold_tuning_allowed: false
+docker_campaign_allowed: false
+old_benchmark_access_allowed: false
+allowed_source_roots:
+  - ml/reports/v0_3_10/
+  - ml/artifacts/v0_3_10/
+  - ml/experiments/v0_3_10/
+  - lab/output/campaigns/filin_v0_3_10_minimal_promotion_training/
+  - lab/output/campaigns/filin_v0_3_10_minimal_promotion_validation/
+forbidden_roots:
+  - lab/output/campaigns/filin_v0_3_6_blind_holdout/
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_training/
+  - lab/output/campaigns/filin_v0_3_7_hierarchical_validation/
+  - lab/output/campaigns/filin_v0_3_8_evidence_training/
+  - lab/output/campaigns/filin_v0_3_8_evidence_validation/
+  - lab/output/campaigns/filin_v0_3_9_episode_first_training/
+  - lab/output/campaigns/filin_v0_3_9_episode_first_validation/
+  - ml/artifacts/v0_3_6/
+  - ml/artifacts/v0_3_7/
+  - ml/artifacts/v0_3_8/
+  - ml/artifacts/v0_3_9/
+expected_frozen_hashes:
+  protocol: 56b9a7771edf4d5428715b847bcedb1574590d6b117625ac13abb511ea1e652f
+  data_access_policy: 4bd5a0b9083cde3dab1e952d50b9e0fadd4829b714d21b75fa0373f16cdab41a
+  training_campaign: 8d5dc3a8550121976b76189b983befeef4d3480a0f7e49cf223d65521f488c6d
+  validation_campaign: 077812183a39dc464418cbc944535b8db62b4d680a10d500a64e2ededc5e23d0
+  model_selection_policy: 14e9600ffcfa1b5e31865091cbf539626885f8ed513dddf8f4065fca7ebeeff5
+  validation_policy: 82a04961f0a5efc71c4157eae6483e4bbefb19ce61d7fb05cb348da6611ee2de
+  capture_lock_policy: a8a21c2386324bd60e1bddb122db86a9d9271a74e55c05a266d6cb57a3fcab81
+  candidate_artifact: 66524f4b1dc40615a24083877dfe5b4e4b93db613e040092f1c5a5ad99dfd523
+  candidate_manifest: 2bd904e0572e164795875006444f0819353ee133dcb53a4d0e7e7a6c93b542ff
+  capture_manifest: 74e765f67e8abc314cd01dd46e1a390009bc8a6a7aa885b83939d13be9c2d870
+  validation_lock: 906ae04957ecd0439b17971e2b70bf3cd0dba00f648ee83a7d1cdbde44605544
+  immutable_prediction: 216647dacfbe903aba0f293d0ba3b8ffe79188aa1117a36470846231f59be64e
+
