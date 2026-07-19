@@ -12,6 +12,11 @@ from .common import ROOT, canonical_label, read_yaml, sha256_file, sha256_json, 
 
 def prepare(campaign_path: Path, output_root: Path, runtime_root: Path) -> dict:
     rows, matrix = source_rows(campaign_path, output_root)
+    campaign = read_yaml(campaign_path)
+    episode_lengths = {}
+    for run in campaign["runs"]:
+        manifest = read_yaml(output_root / "runs" / run["run_id"] / "scenario_manifest.yaml")
+        episode_lengths.update({str(item["execution_id"]): int(item["episode_length"]) for item in manifest["scenarios"] if not item["warmup"]})
     schema = read_yaml(ROOT / "ml/experiments/v0_3_11/feature_schema.yaml")["ordered_features"]
     if len(rows) != 700 or len(matrix) != 700 or list(matrix.columns) != schema or len(schema) != 51:
         raise RuntimeError("Нарушена frozen 51-feature schema или expected row count")
@@ -42,7 +47,7 @@ def prepare(campaign_path: Path, output_root: Path, runtime_root: Path) -> dict:
         immutable_id = sha256_json(["v0313_environmental_holdout", run, str(row.execution_id)])
         activity_key = f"{run}:activity:{activity_sequence}"
         mapping.append({"benchmark_id": "v0313_environmental_blind_holdout", "run_id": run, "immutable_row_id": immutable_id, "execution_id": str(row.execution_id), "causal_order": run_position, "activity_key_source": activity_key})
-        vault.append({"immutable_row_id": immutable_id, "run_id": run, "episode_id": str(row.episode_id), "true_class": canonical_label(row.episode_class), "variant_id": str(row.variant_id), "environment_group": str(row.environment_group), "episode_length": int(row.episode_length), "episode_position": int(row.episode_position)})
+        vault.append({"immutable_row_id": immutable_id, "run_id": run, "episode_id": str(row.episode_id), "true_class": canonical_label(row.episode_class), "variant_id": str(row.variant_id), "environment_group": str(row.environment_group), "episode_length": episode_lengths[str(row.execution_id)], "episode_position": int(row.episode_position)})
         last_run, last_finish = run, finish
     matrix.to_csv(feature_path, index=False, lineterminator="\n")
     write_json(row_path, {"record_count": len(mapping), "rows": mapping})
