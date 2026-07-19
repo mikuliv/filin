@@ -1,12 +1,14 @@
 # Платформа «Филин»
 
+Последний завершённый научный этап — v0.3.12.2. Causal-order corrected frozen regression пройден; кандидат v0.3.11 разрешён для blind holdout v0.3.13, но не для shadow mode, backend или production. Авторитетный статус: [`docs/research-state.yaml`](docs/research-state.yaml).
+
 ## Текущий статус исследования
 
 Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-- Последний завершённый этап: v0.3.12.
+- Последний завершённый этап: v0.3.12.2.
 - Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена из-за недостаточного evaluation coverage и episode gate.
-- Активная работа: этап v0.3.12 завершён; frozen candidate v0.3.11 не изменён.
+- Активная работа: этап v0.3.12.2 завершён; frozen candidate v0.3.11 не изменён и разрешён только для v0.3.13 blind holdout.
 - Следующий допустимый этап: новый training cycle на новых данных; v0.3.13 blind holdout не разрешён.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.

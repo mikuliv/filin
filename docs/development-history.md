@@ -1,5 +1,9 @@
 # История разработки
 
+## 19 июля 2026 — v0.3.12.2
+
+Добавлен новый frozen regression protocol с обязательным causal order, восстановлен полный v0.3.8 bundle и один immutable prediction, переиспользованы прогнозы v0.3.9/v0.3.10. Все научные gates пройдены; разрешён v0.3.13 blind holdout при сохранении запрета backend/shadow mode.
+
 ## 13 июля 2026 — v0.3.6
 
 Holdout был заблокирован до единственного predict, candidate не переобучался. Policy не пройдена

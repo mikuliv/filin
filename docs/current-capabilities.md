@@ -1,5 +1,7 @@
 # Текущие возможности
 
+После v0.3.12.2 платформа умеет воспроизводимо оценивать frozen candidate в обязательном causal order на трёх строгих regression bundles. Это разрешает только v0.3.13 prospective blind holdout; shadow mode, backend integration и production запрещены.
+
 Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
 
 Последний завершённый исследовательский этап — v0.3.11. Его frozen policy

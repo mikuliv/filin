@@ -1,5 +1,7 @@
 # Decision layer
 
+В v0.3.12.2 state machine оценивается исключительно в frozen causal order внутри `(benchmark, run, activity)`. Физический порядок JSON запрещён как источник episode latency и допускается только в явно помеченном legacy control, который не влияет на policy.
+
 Decision layer получает только результаты уже выполненного model prediction. Closed-set class, conformal singleton и support по отдельности не являются alert.
 
 В v0.3.9 strong согласованный attack evidence может активировать alert в первом окне. Weak evidence создаёт `pending:<class>` и требует повторения либо достижения signed threshold. Novel/ambiguous evidence ведёт в review только при отсутствии active alert. Review не считается правильным benign и не считается alert.

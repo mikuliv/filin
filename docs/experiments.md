@@ -1,5 +1,9 @@
 # Эксперименты и метрики
 
+## v0.3.12.2 — causal-order corrected frozen regression
+
+Три scientific bundles прошли window, stateful, episode, aggregate и non-inferiority gates. Causal alert windows: v0.3.9 `29/1/0`, v0.3.10 `60/0/0`; v0.3.8 также прошёл все gates. Readiness к blind holdout v0.3.13 — true, к backend и shadow mode — false.
+
 ## v0.3.6 — prospective holdout
 
 Candidate был заморожен заранее; v0.3.6 не использовалась для model selection или threshold tuning.

@@ -1,5 +1,7 @@
 # ML-подсистема
 
+`experiments/v0_3_12_2/` реализует causal-order corrected frozen regression без fit/tuning. Научный знаменатель — v0.3.8/v0.3.9/v0.3.10; итог разрешает только v0.3.13 blind holdout.
+
 ## Frozen prospective evaluation v0.3.6
 
 `experiments/v0_3_6/` реализует protocol freeze, holdout lock и единственный predict. Policy не

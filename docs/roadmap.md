@@ -1,5 +1,7 @@
 # Дорожная карта
 
+После успешного v0.3.12.2 следующий разрешённый этап — v0.3.13 prospective blind holdout. Повторное обучение и tuning на regression rows запрещены; backend и shadow mode не разрешены.
+
 Машиночитаемым авторитетным источником текущего статуса является
 [`research-state.yaml`](research-state.yaml).
 
