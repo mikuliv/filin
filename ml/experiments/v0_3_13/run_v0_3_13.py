@@ -74,8 +74,16 @@ def breakdowns(records: list[dict], meta: dict, overall: dict, episodes: list[di
         subset = [row for row in records if row["run_id"] == run]
         value, _ = evaluate(subset, meta)
         per_run[run] = {"window": {key: value[key] for key in ("macro_f1", "benign_recall", "FPR", "attack_macro_recall")}, "episode": value["episode"]}
-    per_group = overall["episode"]["per_group"]
-    per_length = overall["episode"]["per_episode_length"]
+    per_group = {}
+    for group in sorted({row["environment_group"] for row in meta.values()}):
+        subset = [row for row in records if meta[row["immutable_row_id"]]["environment_group"] == group]
+        value, _ = evaluate(subset, meta)
+        per_group[group] = value["episode"]
+    per_length = {}
+    for length in sorted({row["episode_length"] for row in meta.values()}):
+        subset = [row for row in records if meta[row["immutable_row_id"]]["episode_length"] == length]
+        value, _ = evaluate(subset, meta)
+        per_length[str(length)] = value["episode"]
     per_class = {}
     false_alerts = sum(row["alert_window"] is not None for row in episodes if row["label"] == "benign")
     for name in ATTACK_CLASSES:
