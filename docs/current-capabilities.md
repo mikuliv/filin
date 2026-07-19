@@ -2,7 +2,7 @@
 
 Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
 
-Последний завершённый исследовательский этап — v0.3.10. Его frozen policy
+Последний завершённый исследовательский этап — v0.3.11. Его frozen policy
 внутренней валидации не пройдена. Backend integration, shadow mode и production
 deployment не разрешены.
 
@@ -40,3 +40,7 @@ v0.3.1–v0.3.10 остаются неизменяемыми записями и
 
 Все результаты относятся к контролируемому лабораторному стенду и не
 подтверждают пригодность к эксплуатации в производственной инфраструктуре.
+
+## Burden-aware candidate v0.3.11
+
+Новый HGB/HGB candidate прошёл frozen internal validation: closed-set macro F1 1,0, attack episode recall 1,0, benign false-alert rate 0,0, unresolved pending 0,0 и duplicate suppression precision 1,0. Это разрешает только regression v0.3.12; production, backend и shadow mode остаются запрещёнными.

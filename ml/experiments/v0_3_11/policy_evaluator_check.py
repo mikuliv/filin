@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import time
 from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
 
@@ -41,15 +42,22 @@ def check(grouped_artifact: Path, policy_candidates: Path, output: Path) -> dict
             raise RuntimeError("Grouped artifact не содержит frozen conformal evaluator")
         payloads = [(rows, grouped["probabilities"], conformal, p) for p in parameters]
 
+    started = time.perf_counter()
     serial = [_run_one(item) for item in payloads]
+    serial_seconds = time.perf_counter() - started
+    started = time.perf_counter()
     with ProcessPoolExecutor(max_workers=8) as pool:
         parallel = list(pool.map(_run_one, payloads))
+    parallel_seconds = time.perf_counter() - started
     serial_hashes = [_canonical(item) for item in serial]
     parallel_hashes = [_canonical(item) for item in parallel]
     report = {
         "candidate_count": 12,
         "serial_workers": 1,
         "parallel_workers": 8,
+        "serial_seconds": serial_seconds,
+        "parallel_seconds": parallel_seconds,
+        "speedup": serial_seconds / max(parallel_seconds, 1e-9),
         "serial_hashes": serial_hashes,
         "parallel_hashes": parallel_hashes,
         "policy_parallel_equivalence_passed": serial_hashes == parallel_hashes,

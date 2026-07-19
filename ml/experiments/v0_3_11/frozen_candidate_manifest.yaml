@@ -1,0 +1,43 @@
+candidate_id: v0311:19176acb401be2d4
+architecture_id: network_sensor_v0_9_burden_aware_promotion
+state_semantics: burden_aware_v1
+model_family: hgb_gate_hgb_subtype
+feature_count: 51
+decision_policy:
+  strong_probability: 0.7
+  strong_margin: 0.1
+  strong_benign_ceiling: 0.2
+  weak_probability: 0.35
+  weak_margin: 0.0
+  weak_benign_ceiling: 0.45
+  repetition: two_consecutive
+  pending_ttl: 2
+  ambiguity_margin: 0.03
+candidate_artifact_path: ml/artifacts/v0_3_11/frozen_candidate.joblib
+candidate_artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+source_hashes:
+  protocol: 55b93a226a749e153b0d524b64572a0f016e780ca83a00cdb237b4114282515f
+  training_campaign: 2f0cd609ac43536594aace6683ab2562088695585e98267fc12eb51e8a71a0ce
+  feature_schema: cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf
+  policy_grid: e22ef6a31962283b53bfb3605ed1f6d832c95a593d1bb557ce6da0dc7ea65057
+  decision_implementation: 3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c
+  selection_implementation: c5827b549f5547f58ccd5f99e9f63a9f375b48fab3fac06ad41901ee2e2f07d3
+  prediction_implementation: dd7b446499b25d4c8f39fab5fc74b0307dba9e815abb5f9861ba72369a1e985d
+  evaluation_implementation: 4d87e7a678485db6f04cd2a23d4f86d3a4a4958372b1f45f96df0fe2ced9507d
+  model_selection_report: a41575604ad9c589a6d64e545a70b2633d1028c00bff1de1f1de8bc0d0d1f446
+  dependency_lock: 2f06a8dd668135814eedbb7cc2759f3f7eab31e25d5de70711a162ffc5fa16d0
+source_paths:
+  protocol: ml/experiments/v0_3_11/protocol.yaml
+  training_campaign: lab/campaigns/v0_3_11/training.yaml
+  feature_schema: ml/experiments/v0_3_11/feature_schema.yaml
+  policy_grid: ml/experiments/v0_3_11/policy_grid.yaml
+  decision_implementation: ml/experiments/v0_3_11/state_machine.py
+  selection_implementation: ml/experiments/v0_3_11/nested_selection.py
+  prediction_implementation: ml/experiments/v0_3_11/immutable_prediction.py
+  evaluation_implementation: ml/experiments/v0_3_11/evaluate_validation.py
+  model_selection_report: ml/reports/v0_3_11/candidate_selection.json
+  dependency_lock: ml/requirements.txt
+source_commit: e541911b257c0f3b7b609d7f0821bf3493aa5595
+freeze_timestamp: '2026-07-16T12:22:34.447864+00:00'
+frozen_before_validation_collection: true
+model_selection_policy_passed: true

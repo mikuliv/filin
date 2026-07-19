@@ -19,3 +19,7 @@ episodes первым окном и подавила 120 повторных emis
 # Семантическое уточнение v0.3.10.1
 
 Для будущего цикла различаются `pre_alert_pending`, `alert_emitted`, `post_alert_continuation`, `duplicate_alert_suppressed`, `review_required` и `unresolved_pending`. Post-alert continuation не входит в pending burden, а deduplication не является analyst review. Frozen реализация v0.3.10 не изменена.
+
+# Burden-aware promotion v0.3.11
+
+Семантика `burden_aware_v1` причинно разделяет benign, pre-alert pending, alert emission, post-alert continuation и review states. Первый alert не подавляется, continuation относится к prior alert, dedup key ограничен run/activity/class и TTL=3, unresolved pending вычисляется только post-hoc. Frozen validation прошла все pending, review, dedup, episode, group, class и variant gates.

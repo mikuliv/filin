@@ -58,3 +58,7 @@ candidate не разрешён для regression, backend или shadow mode.
 # Аудит v0.3.10.1
 
 `audits/v0_3_10_1` содержит технический read-only аудит pending semantics и `performance` — эквивалентный параллельный evaluator. Он читает только frozen v0.3.10 и не создаёт новую модель, calibration или validation prediction.
+
+# Цикл v0.3.11
+
+`experiments/v0_3_11` реализует новый HGB/HGB burden-aware цикл на 51 причинном признаке. Training grouped OOF полностью отделён от prospective validation; candidate, capture manifest и validation lock создаются до единственной no-fit prediction. Frozen policy пройдена и разрешена только для v0.3.12 regression; runtime models, datasets, PCAP, predictions и отчёты остаются вне Git.

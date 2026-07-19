@@ -39,10 +39,14 @@ def assert_case(name: str) -> None:
     elif name == "scenario_counts":
         assert len(training["runs"]) == 12 and len(validation["runs"]) == 6
         assert training["total_windows"] == 66 and validation["total_windows"] == 66
+        assert {x["run_id"] for x in training["runs"]}.isdisjoint(x["run_id"] for x in validation["runs"])
     elif name == "episode_lengths":
         text = (ROOT / "lab/campaigns/v0311_campaign.py").read_text(encoding="utf-8")
         assert "short" in text and "long" in text and "episode_position" in text
-    elif name in {"condition_independence", "activity_key", "causal_features"}:
+    elif name == "activity_key":
+        first = engine.update(strong(key="a")); other = engine.update(strong(2, key="b"))
+        assert first.alert_emitted and other.alert_emitted and not other.duplicate_alert_suppressed
+    elif name in {"condition_independence", "causal_features"}:
         text = (ROOT / "lab/campaigns/v0311_campaign.py").read_text(encoding="utf-8"); assert "episode" in text and "activity" in text
     elif name == "feature_schema":
         schema = yaml.safe_load((EXP / "feature_schema.yaml").read_text(encoding="utf-8")); assert len(schema["ordered_features"]) == 51
@@ -60,13 +64,16 @@ def assert_case(name: str) -> None:
     elif name == "pending_expiration":
         engine.update(weak()); assert engine.update(benign(3)).pending_expired
     elif name in {"post_alert_continuation", "duplicate_suppression"}:
-        first = engine.update(strong()); second = engine.update(strong(2)); assert first.alert_emitted and second.duplicate_alert_suppressed and second.primary_state.startswith("post_alert_continuation:")
+        first = engine.update(strong()); continuation = [engine.update(strong(i)) for i in (2, 3, 4)]
+        assert first.alert_emitted and all(x.duplicate_alert_suppressed and x.primary_state.startswith("post_alert_continuation:") for x in continuation)
+        assert not any(x.primary_state.startswith("pre_alert_pending:") for x in continuation)
     elif name == "false_duplicate_suppression":
         assert not engine.update(strong()).duplicate_alert_suppressed
     elif name == "class_conflict":
-        engine.update(strong()); assert engine.update(strong(2, "web_probe")).class_conflict_detected
+        engine.update(strong()); decision = engine.update(strong(2, "web_probe")); assert decision.class_conflict_detected and not decision.duplicate_alert_suppressed
     elif name == "review_states":
-        ambiguous = Evidence("run", "a", 1, "port_scan", .8, .1, .01, ("port_scan", "web_probe")); assert engine.update(ambiguous).primary_state == "review_required:ambiguous"
+        ambiguous = Evidence("run", "a", 1, "port_scan", .8, .1, .01, ("port_scan", "web_probe")); decision = engine.update(ambiguous)
+        assert decision.primary_state == "review_required:ambiguous" and not decision.pending_started
     elif name in {"burden_metrics", "unresolved_pending"}:
         rows = [{"run_id":"r","episode_id":"e","true_class":"port_scan","primary_state":"pre_alert_pending:port_scan","alert_emitted":False,"duplicate_alert_suppressed":False}]
         value = calculate(rows); assert value["unresolved_pending_episode_count"] == 1 and value["legacy_pending_affects_pass_fail"] is False
@@ -77,7 +84,10 @@ def assert_case(name: str) -> None:
     elif name in {"frozen_ranking", "fallback_candidate"}:
         text = (EXP / "nested_selection.py").read_text(encoding="utf-8"); assert "def rank" in text and "fallback_reason" in text
     elif name in {"candidate_freeze", "candidate_integrity"}:
-        text = (EXP / "candidate_freeze.py").read_text(encoding="utf-8"); assert "frozen_before_validation_collection" in text and "candidate_integrity_passed" in text
+        freeze_text = (EXP / "candidate_freeze.py").read_text(encoding="utf-8")
+        selection_text = (EXP / "nested_selection.py").read_text(encoding="utf-8")
+        assert "frozen_before_validation_collection" in freeze_text and "candidate_integrity_passed" in freeze_text
+        assert all(field in selection_text for field in ("feature_order", "fold_mapping_sha256", "model_selection_report_sha256", "dependency_lock_sha256"))
     elif name in {"hgb_profile_equivalence", "thread_limits"}:
         profile = yaml.safe_load((EXP / "resource_profile.yaml").read_text(encoding="utf-8")); assert profile["hgb_profiles"]["A"]["fit_processes"] * profile["hgb_profiles"]["A"]["openmp_threads_per_process"] <= 12
     elif name == "policy_parallel_equivalence":
@@ -89,7 +99,9 @@ def assert_case(name: str) -> None:
         text = (EXP / "run_v0_3_11.py").read_text(encoding="utf-8"); assert len(STAGES) == 57 and "checkpoint" in text and "worker_failure" not in text
     elif name in {"capture_lock", "validation_lock", "mapping"}:
         target = "capture_lock.py" if name == "capture_lock" else "validation_lock.py"
-        assert "created_before_prediction" in (EXP / target).read_text(encoding="utf-8")
+        text = (EXP / target).read_text(encoding="utf-8"); assert "created_before_prediction" in text
+        if target == "validation_lock.py":
+            assert all(field in text for field in ("episode_mapping_sha256", "marker_mapping_sha256", "activity_key_mapping_sha256", "dependency_lock_sha256"))
     elif name == "no_fit":
         assert "HistGradientBoostingClassifier.fit" in (EXP / "no_fit_guard.py").read_text(encoding="utf-8")
     elif name in {"immutable_prediction", "prediction_resume"}:

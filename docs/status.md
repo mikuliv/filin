@@ -2,16 +2,16 @@
 
 Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Последний завершённый этап: v0.3.10.
-- Итог последнего этапа: политика внутренней валидации не пройдена.
+- Последний завершённый этап: v0.3.11.
+- Итог последнего этапа: burden-aware политика внутренней валидации пройдена.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
 
-Этап v0.3.10 завершён: 12 training и 6 prospective internal-validation runs,
-заморозка кандидата до validation collection, lock 324 окон и 360 canonical
-capture hashes до единственной no-fit evaluation. Итоговая политика не
-пройдена; новый training cycle должен получить отдельный будущий номер.
+Этап v0.3.11 завершён: 12 training и 6 prospective internal-validation runs,
+792 и 396 уникальных capture hashes, заморозка кандидата до validation collection
+и единственная no-fit immutable prediction. Все scientific policies пройдены;
+разрешена только frozen regression v0.3.12, backend и shadow mode запрещены.
 
 ## v0.3.6
 

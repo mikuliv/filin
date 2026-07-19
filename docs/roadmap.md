@@ -24,7 +24,7 @@
 
 ## Активная работа
 
-Активный эксперимент отсутствует. v0.3.10 завершён с отрицательным результатом;
+Активный эксперимент отсутствует. v0.3.11 завершён с положительным результатом внутренней validation;
 его frozen predictions и метрики не могут использоваться для скрытой настройки.
 
 ## Следующий допустимый этап
@@ -60,3 +60,7 @@ training cycle на новых данных с заранее зафиксиро
 # После аудита v0.3.10.1
 
 Следующий научный цикл должен заранее заморозить раздельные состояния и gates для pre-alert pending, post-alert continuation, duplicate suppression и unresolved pending. Validation v0.3.10 нельзя использовать для tuning; оно может стать regression benchmark только после независимого выбора нового candidate.
+
+# После v0.3.11
+
+Burden-aware internal validation пройдена. Следующий разрешённый этап — v0.3.12 frozen multi-benchmark regression на неизменённых benchmarks v0.3.6–v0.3.10 без fit, calibration, tuning и изменения policy. После успешной regression потребуется новая prospective blind holdout v0.3.13. Shadow mode и backend integration до неё запрещены.

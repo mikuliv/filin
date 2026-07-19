@@ -17,3 +17,7 @@ RTX 5060 Ti не ускоряет frozen путь на scikit-learn HistGradient
 ## Будущие этапы
 
 Для collection базовый Docker profile — 3 workers, aggressive preflight — 4, Zeek — 4–6. Для model fitting нельзя допускать nested oversubscription; профили `3 processes × 4 OpenMP threads` и `6 × 2` можно сравнивать только в новом preflight. Долгие операции должны показывать task/fold/candidate progress, ETA, worker count, CPU, RAM и checkpoint count.
+
+## Профиль v0.3.11
+
+HGB profiles A (3 процесса × 4 OpenMP) и B (6 × 2) дали канонически одинаковые probabilities; выбран профиль B. Policy evaluator при 1 и 8 workers также дал точное совпадение, но короткий environment check ускорился только в 1,23× из-за стоимости запуска процессов. CPU average и median не достигли инженерных целей; дальнейшее ускорение должно использовать persistent pools и shared read-only arrays без изменения frozen вычислений. Validation после Docker race была безопасно продолжена с одним Docker worker; Zeek оставался ограничен четырьмя workers.

@@ -55,3 +55,7 @@ regression, backend integration и shadow mode не разрешены.
 # v0.3.10.1
 
 Выполнен read-only аудит frozen v0.3.10: проверены 12 SHA-256, причинно восстановлена семантика 324 validation окон, повторно оценены 101 grouped-OOF policies без fit, добавлены параллельный evaluator, resource monitoring, checkpoint/resume и controlled benchmark 1/3/6/8 workers. Научный статус v0.3.10 не изменён.
+
+# v0.3.11
+
+Реализован новый burden-aware training/validation cycle с эпизодами длины 2 и 4, раздельными pre-alert pending и post-alert continuation, nested grouped selection и 92-policy grid. Собраны 792 training и 396 validation captures, candidate заморожен до prospective validation, выполнена одна no-fit immutable prediction. Все frozen scientific policies пройдены; regression v0.3.12 разрешена, backend и shadow mode остаются запрещены.

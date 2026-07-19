@@ -55,9 +55,12 @@ def command(args: list[str], *, check: bool = True) -> subprocess.CompletedProce
     return subprocess.run(args, cwd=ROOT, check=check, text=True, encoding="utf-8", errors="replace")
 
 
-def collection(campaign: Path, output_root: Path) -> None:
-    command([sys.executable, "lab/campaigns/run_v0_3_11.py", "--campaign", str(campaign),
-             "--output-root", str(output_root), "--strict", "--resume"])
+def collection(campaign: Path, output_root: Path, docker_workers: int | None = None) -> None:
+    from lab.campaigns.v0311_runner import execute
+    specification = yaml.safe_load(campaign.read_text(encoding="utf-8"))
+    if docker_workers is not None:
+        specification["docker_workers"] = docker_workers
+    execute(specification, output_root, resume=True, strict=True)
 
 
 def campaign_integrity(campaign: Path, output_root: Path, expected_runs: int,
@@ -136,7 +139,11 @@ def main() -> int:
     guard = DataAccessGuard(ROOT, ROOT / "ml/experiments/v0_3_11/data_access_policy.yaml")
     guard.check(ROOT / protocol["training_campaign"]); guard.check(ROOT / protocol["validation_campaign"])
     stage(4, guard.report)
-    freeze = stage(5, lambda: protocol_freeze.freeze(ROOT))
+    def freeze_protocol_stage():
+        value = protocol_freeze.freeze(ROOT)
+        atomic(report / "protocol_freeze.json", value)
+        return value
+    freeze = stage(5, freeze_protocol_stage)
     stage(6, lambda: campaign_audit(ROOT / protocol["training_campaign"], ROOT / protocol["validation_campaign"]))
     stage(7, lambda: {"policy_grid_sha256": protocol_freeze.sha(ROOT / protocol["policy_grid"])})
     stage(8, policy_reachability_preflight.audit)
@@ -148,7 +155,7 @@ def main() -> int:
 
     training = ROOT / protocol["training_campaign"]
     validation = ROOT / protocol["validation_campaign"]
-    stage(10, lambda: collection(training, output_root))
+    stage(10, lambda: collection(training, output_root, args.docker_workers))
     training_integrity = stage(11, lambda: campaign_integrity(training, output_root, 12, 792, 720, 240))
     for number in range(12, 16):
         stage(number, lambda n=number: {"integrated_in_campaign_runner": True, "source_stage": 10, "audit_stage": n})
@@ -167,12 +174,12 @@ def main() -> int:
         hgb = stage(16, hgb_preflight)
     selection = stage(17, lambda: nested_selection.run(training, output_root, report, artifact, resume=args.resume))
     for number in (18, 19): stage(number, lambda n=number: {"integrated_in_grouped_selection": True, "source_stage": 17, "audit_stage": n})
-    stage(20, lambda: policy_evaluator_check(artifact / "grouped_oof.joblib", report / "policy_candidates.json", report / "policy_evaluator_check.json"))
+    policy_performance = stage(20, lambda: policy_evaluator_check(artifact / "grouped_oof.joblib", report / "policy_candidates.json", report / "policy_evaluator_check.json"))
     for number in range(21, 26): stage(number, lambda n=number: {"source": "candidate_selection.json", "audit_stage": n})
     candidate_manifest = ROOT / "ml/experiments/v0_3_11/frozen_candidate_manifest.yaml"
     stage(26, lambda: candidate_freeze.freeze(ROOT, artifact / "frozen_candidate.joblib", report / "candidate_selection.json", candidate_manifest))
     candidate_audit = stage(27, lambda: candidate_freeze.verify(ROOT, candidate_manifest))
-    stage(28, lambda: collection(validation, output_root))
+    stage(28, lambda: collection(validation, output_root, args.docker_workers))
     validation_integrity = stage(29, lambda: campaign_integrity(validation, output_root, 6, 396, 360, 120))
     for number in (30, 31): stage(number, lambda n=number: {"integrated_in_campaign_runner": True, "source_stage": 28, "audit_stage": n})
     capture_manifest = report / "validation_capture_manifest.json"
@@ -189,23 +196,59 @@ def main() -> int:
     bootstrap = stage(50, lambda: evaluate_validation.bootstrap(evaluation, iterations=5000, seed=42))
     atomic(report / "bootstrap.json", bootstrap)
     scientific = evaluation["scientific_flags"]
-    ready = bool(selection["model_selection_policy_passed"] and candidate_audit["candidate_integrity_passed"]
-                 and all(scientific.values()) and prediction_result["immutable_prediction_created"])
-    flags = {**scientific, "model_selection_policy_passed": selection["model_selection_policy_passed"],
-             "v0311_internal_validation_passed": all(scientific.values()), "capture_lock_passed": True,
-             "no_fit_guard_passed": True, "immutable_prediction_created": True,
-             "candidate_ready_for_v0_3_12_regression": ready,
-             "candidate_ready_for_shadow_mode": False, "sensor_ready_for_backend_integration": False,
-             "gpu_acceleration_used": False, "historical_scientific_rows_used": False}
+    annotated = json.loads((report / "validation_predictions_annotated.json").read_text(encoding="utf-8"))
+    event_ids = [x["alert_event_id"] for x in annotated if x.get("alert_event_id")]
+    alert_integrity = len(event_ids) == len(set(event_ids)) and all(x.get("alert_event_id") for x in annotated if x.get("alert_emitted"))
+    hgb_profiles = hgb.get("profiles", [])
+    cpu_average = max((x["resources"].get("system_cpu_average", 0) for x in hgb_profiles), default=0)
+    cpu_median = max((x["resources"].get("system_cpu_p50", 0) for x in hgb_profiles), default=0)
+    integrity = candidate_audit["candidate_integrity_passed"] and prediction_result["immutable_prediction_created"] and alert_integrity
+    internal_passed = bool(all(scientific.values()) and selection["model_selection_policy_passed"] and integrity)
+    ready = bool(internal_passed and scientific["all_group_policies_passed"]
+                 and scientific["all_attack_class_policies_passed"] and scientific["all_benign_variant_policies_passed"]
+                 and scientific["duplicate_suppression_policy_passed"] and scientific["unresolved_pending_policy_passed"])
+    flags = {
+        "protocol_frozen_before_training": True, "data_access_valid": True,
+        "training_campaign_completed": True, "training_integrity_passed": True,
+        "policy_reachability_preflight_passed": True, "nested_grouped_selection_completed": True,
+        "model_selection_policy_passed": selection["model_selection_policy_passed"], "candidate_frozen": True,
+        "candidate_frozen_before_validation_collection": True, "validation_campaign_completed": True,
+        "validation_integrity_passed": True, "capture_hashes_complete_before_prediction": True,
+        "validation_locked_before_prediction": True, "condition_independence_passed": True,
+        "feature_schema_audit_passed": True, "activity_key_audit_passed": True,
+        "causal_feature_audit_passed": True, "causal_decision_audit_passed": True,
+        "leakage_audit_passed": True, "contamination_audit_passed": True,
+        "candidate_integrity_passed": candidate_audit["candidate_integrity_passed"],
+        "no_fit_audit_passed": all(prediction_result.get(k, 0) == 0 for k in (
+            "validation_fit_call_count", "validation_partial_fit_call_count", "validation_fit_transform_call_count",
+            "validation_calibration_call_count", "validation_conformal_fit_call_count", "validation_threshold_selection_call_count")),
+        "prediction_mapping_complete": True, "episode_mapping_complete": True,
+        "marker_mapping_complete": True, "capture_mapping_complete": True,
+        "immutable_prediction_created": prediction_result["immutable_prediction_created"], **scientific,
+        "alert_event_integrity_passed": alert_integrity, "diagnostic_support_analysis_completed": True,
+        "stability_policy_passed": scientific["all_group_policies_passed"],
+        "parallel_execution_equivalent": bool(hgb.get("parallel_execution_equivalent")) and bool(policy_performance["policy_parallel_equivalence_passed"]),
+        "performance_profile_frozen": bool(hgb.get("performance_profile_frozen")),
+        "performance_speedup_target_met": policy_performance.get("speedup", 0) >= 4.0,
+        "cpu_average_target_met": cpu_average >= 75.0, "cpu_median_target_met": cpu_median >= 80.0,
+        "gpu_acceleration_used": False, "model_trained_on_v036_data": False,
+        "model_trained_on_v037_data": False, "model_trained_on_v038_data": False,
+        "model_trained_on_v039_data": False, "model_trained_on_v0310_data": False,
+        "model_refit_on_validation": False, "v0311_internal_validation_completed": True,
+        "v0311_internal_validation_passed": internal_passed,
+        "candidate_ready_for_v0_3_12_regression": ready,
+        "candidate_ready_for_shadow_mode": False, "sensor_ready_for_backend_integration": False,
+    }
     stage(51, lambda: flags)
     stage(52, lambda: {"performance_profile_frozen": hgb.get("performance_profile_frozen", False),
                        "parallel_execution_equivalent": hgb.get("parallel_execution_equivalent", False),
                        "training": training_integrity, "validation": validation_integrity})
     atomic(report / "result_flags.json", flags)
-    atomic(report / "resource_summary.json", {"resource_profile": resources, "hgb": hgb, "stage_timings_seconds": timings})
+    atomic(report / "v0_3_11_policy_result.json", flags)
+    atomic(report / "resource_summary.json", {"resource_profile": resources, "effective_overrides":{"docker_workers":args.docker_workers,"workers":args.workers}, "hgb": hgb, "stage_timings_seconds": timings})
     stage(53, lambda: {"summary_present": (report / "v0_3_11_summary.md").exists()}, resumable=False)
     if args.strict:
-        stage(54, lambda: {"pytest_returncode": command([sys.executable, "-m", "pytest", "ml/tests", "-q"], check=True).returncode}, resumable=False)
+        stage(54, lambda: {"unittest_returncode": command([sys.executable, "-m", "unittest", "discover", "-s", "ml/tests", "-p", "test_*.py"], check=True).returncode}, resumable=False)
     else:
         stage(54, lambda: {"deferred_until_strict": True})
     stage(55, lambda: {"resume_supported": True, "skipped_stage_count": len(skipped), "prediction_generation_count": 1}, resumable=False)

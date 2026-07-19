@@ -117,6 +117,9 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     captures_dir = run_dir / "captures"
     captures_dir.mkdir(exist_ok=True)
     docker(["docker", "run", "--rm", "-v", f"{volume}:/captures:ro", "-v", f"{captures_dir.resolve()}:/export", "busybox", "sh", "-c", "cp /captures/scenarios/*.pcap /export/"], environment)
+    # После экспорта PCAP сетевые сервисы run больше не нужны. Освобождаем
+    # host-порты до запуска следующего run, но сохраняем named capture volume.
+    docker(["docker", "compose", "-f", str(compose), "down", "--timeout", "3"], environment, check=False)
     zeek = sensor / "zeek_events.jsonl"
     normalized = sensor / "normalized_sensor_events.jsonl"
     all_dataset = output_root / "datasets" / f"windows_network_sensor_v0_4_{run_id}_all.csv"
@@ -128,7 +131,7 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
     if len(captures) != total_windows or any(path.stat().st_size <= 24 for path in captures):
         raise ValueError(f"Ожидалось {total_windows} непустых PCAP, получено {len(captures)}")
 
-    def process_capture(scenario):
+    def _process_capture_unlimited(scenario):
         sequence = int(scenario["run_sequence"])
         pcap = captures_dir / f"{sequence:03d}.pcap"
         zeek_dir = sensor / "zeek" / f"{sequence:03d}"
@@ -144,6 +147,28 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
             if completed.returncode:
                 raise RuntimeError(f"Sensor subprocess завершился с кодом {completed.returncode}: {completed.stderr.strip()}")
         return sequence, part_events, part_normalized
+
+    def process_capture(scenario):
+        slot_root_value = campaign.get("_zeek_slot_root")
+        if not slot_root_value:
+            return _process_capture_unlimited(scenario)
+        slot_root = Path(slot_root_value)
+        slot = None
+        while slot is None:
+            for index in range(int(campaign.get("zeek_workers", 4))):
+                candidate = slot_root / f"slot_{index}"
+                try:
+                    candidate.mkdir()
+                    slot = candidate
+                    break
+                except FileExistsError:
+                    continue
+            if slot is None:
+                time.sleep(0.05)
+        try:
+            return _process_capture_unlimited(scenario)
+        finally:
+            slot.rmdir()
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         parts = list(pool.map(process_capture, frozen_manifest["scenarios"]))
@@ -215,6 +240,12 @@ def execute(campaign: dict, output_root: Path, resume: bool = False, strict: boo
         retry(["docker", "compose", "-f", str(compose), "build", "traffic-client"], environment)
         pending = [row for row in campaign["runs"] if not (resume and complete(status.get(row["run_id"], {})))]
         if campaign.get("stage_tag") == "v0311":
+            slot_root = directory / "zeek_worker_slots"
+            slot_root.mkdir(exist_ok=True)
+            for stale_slot in slot_root.glob("slot_*"):
+                if stale_slot.is_dir():
+                    stale_slot.rmdir()
+            campaign = {**campaign, "_zeek_slot_root": str(slot_root.resolve())}
             with ProcessPoolExecutor(max_workers=min(int(campaign.get("docker_workers", 3)), 3)) as pool:
                 futures = {pool.submit(run, campaign, row, output_root): row for row in pending}
                 for future in as_completed(futures):

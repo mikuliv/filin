@@ -1,6 +1,6 @@
 """Grouped OOF, nested training-only policy selection и fixed HGB fit v0.3.11."""
 from __future__ import annotations
-import hashlib,itertools,json,sys,time
+import hashlib,itertools,json,subprocess,sys,time
 from pathlib import Path
 import joblib,numpy as np,pandas as pd,yaml
 from sklearn.model_selection import StratifiedGroupKFold
@@ -50,7 +50,7 @@ def decisions(rows,probabilities,sets,params):
   last_run,last_finish=run,finish
  return out
 def episode_metrics(rows):
- groups={k:list(v) for k,v in pd.DataFrame(rows).groupby(["run_id","episode_id"],sort=False)};attack=[v for v in groups.values() if v[0]["true_class"]!="benign"];benign=[v for v in groups.values() if v[0]["true_class"]=="benign"]
+ groups={k:v.to_dict("records") for k,v in pd.DataFrame(rows).groupby(["run_id","episode_id"],sort=False)};attack=[v for v in groups.values() if v[0]["true_class"]!="benign"];benign=[v for v in groups.values() if v[0]["true_class"]=="benign"]
  detected=[];lat=[];correct=[];per={c:[] for c in ("port_scan","auth_failures","web_probe","low_rate_dos","beacon")}
  for ep in attack:
   pos=next((i for i,x in enumerate(ep) if x["alert_emitted"]),None);ok=pos is not None;detected.append(ok)
@@ -91,14 +91,16 @@ def run(campaign:Path,output_root:Path,report:Path,artifact:Path,resume=False):
  outer=[];groups=rows.run_id.astype(str).to_numpy();split=StratifiedGroupKFold(6,shuffle=True,random_state=42)
  for fold,(tr,te) in enumerate(split.split(X,labels,groups),1):
   inner=grouped_predictions(rows.iloc[tr].reset_index(drop=True),X.iloc[tr].reset_index(drop=True),4);tl=labels[tr];tb=(tl!="benign").astype(int)
-  gc=GroupAwareSigmoidCalibrator().fit(inner["gate_oof"],tb);sc=GroupAwareSigmoidCalibrator().fit(inner["subtype_oof"][tb==1],tl[tb==1]);ip=calibrated_joint(gc,sc,inner["gate_oof"],inner["subtype_oof"]);cf=MondrianConformalClassifier(.05).fit(ip,tl,CLASSES,source="inner_training_oof")
+  gc=GroupAwareSigmoidCalibrator().fit(inner["gate_oof"],tb);sc=GroupAwareSigmoidCalibrator().fit(inner["subtype_oof"][tb==1],tl[tb==1]);ip=calibrated_joint(gc,sc,inner["gate_oof"],inner["subtype_oof"]);cf=MondrianConformalClassifier(.05).fit(ip,tl,CLASSES,source="training_oof")
   chosen=staged(rows.iloc[tr].reset_index(drop=True),ip,cf,inner["metrics"])["selected"]["parameters"]
   gm=make_gate("hist_gradient_boosting").fit(X.iloc[tr],binary[tr]);sm=make_subtype("hist_gradient_boosting").fit(X.iloc[tr][binary[tr]==1],labels[tr][binary[tr]==1]);tp=calibrated_joint(gc,sc,aligned_probabilities(gm,X.iloc[te],["0","1"])[:,1],aligned_probabilities(sm,X.iloc[te],ATTACK_CLASSES));res=evaluate(rows.iloc[te].reset_index(drop=True),tp,cf,chosen);res.pop("decisions",None)
   outer.append({"fold":fold,"train_runs":sorted(set(groups[tr])),"test_runs":sorted(set(groups[te])),"run_overlap":0,"inner_folds":inner["folds"],"metrics":res})
  outer_pass=all(x["metrics"]["episode"]["attack_episode_recall"]>=.90 and x["metrics"]["episode"]["episode_alert_precision"]>=.90 and x["metrics"]["episode"]["benign_episode_false_alert_rate"]<=.10 and x["metrics"]["episode"]["detection_by_second_window"]>=.80 and min(x["metrics"]["episode"]["per_class_episode_recall"].values())>=.75 and x["metrics"]["burden"]["unresolved_pending_episode_rate"]<=.10 and x["metrics"]["burden"]["duplicate_false_suppression_count"]==0 for x in outer)
  selection["outer_fold_policy_passed"]=outer_pass;selection["model_selection_policy_passed"]=selection["model_selection_policy_passed"] and outer_pass
  gm=make_gate("hist_gradient_boosting").fit(X,binary);sm=make_subtype("hist_gradient_boosting").fit(X[binary==1],labels[binary==1]);artifact.mkdir(parents=True,exist_ok=True)
- bundle={"architecture_id":"network_sensor_v0_9_burden_aware_promotion","classes":CLASSES,"feature_profile":CONTROL_PROFILE,"gate":gm,"subtype":sm,"gate_calibrator":gate_cal,"subtype_calibrator":sub_cal,"conformal":conformal,"diagnostic_support":support,"decision_parameters":selection["selected"]["parameters"],"candidate_id":selection["selected"]["candidate_id"]}
+ selection_report={k:v for k,v in selection.items() if k!="records"}
+ write(report/"candidate_selection.json",selection_report)
+ bundle={"architecture_id":"network_sensor_v0_9_burden_aware_promotion","state_semantics_version":"burden_aware_v1","model_family":"hgb_gate_hgb_subtype","classes":CLASSES,"feature_order":list(X.columns),"feature_profile":CONTROL_PROFILE,"gate":gm,"subtype":sm,"gate_calibrator":gate_cal,"subtype_calibrator":sub_cal,"conformal":conformal,"diagnostic_support":support,"decision_parameters":selection["selected"]["parameters"],"dedup_policy":{"key":["run_id","activity_key","predicted_class"],"ttl":3},"reset_policy":{"benign_probability":.80,"benign_margin":.30},"candidate_id":selection["selected"]["candidate_id"],"training_campaign_sha256":sha256_file(campaign),"fold_mapping_sha256":sha256_json(oof["folds"]),"model_selection_report_sha256":sha256_file(report/"candidate_selection.json"),"source_commit":subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip(),"dependency_lock_sha256":sha256_file(ROOT/"ml/requirements.txt")}
  joblib.dump({"rows":rows,"X":X,"oof":oof,"probabilities":probs,"conformal":conformal},grouped_path);joblib.dump(bundle,artifact/"frozen_candidate.joblib")
- write(report/"grouped_oof_predictions.json",{"completed":True,"rows":len(rows),"runs":rows.run_id.nunique(),"folds":oof["folds"],"closed_set_metrics":oof["metrics"],"oof_sha256":sha256_json(probs.tolist())});write(report/"policy_candidates.json",selection["records"]);write(report/"nested_outer_fold_metrics.json",outer);write(report/"candidate_selection.json",{k:v for k,v in selection.items() if k!="records"})
- return {k:v for k,v in selection.items() if k!="records"}
+ write(report/"grouped_oof_predictions.json",{"completed":True,"rows":len(rows),"runs":rows.run_id.nunique(),"folds":oof["folds"],"closed_set_metrics":oof["metrics"],"oof_sha256":sha256_json(probs.tolist())});write(report/"policy_candidates.json",selection["records"]);write(report/"nested_outer_fold_metrics.json",outer);write(report/"candidate_selection.json",selection_report)
+ return selection_report
