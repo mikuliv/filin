@@ -1,0 +1,11 @@
+stage: v0.3.12
+kind: frozen_multi_benchmark_regression
+candidate_id: v0311:19176acb401be2d4
+candidate_source_stage: v0.3.11
+no_fit: true
+data_access_phases: [input_lock, frozen_prediction, post_hoc_labels, historical_comparison]
+benchmark_ids: [v036_prospective_holdout, v037_hierarchical_validation, v038_evidence_validation, v039_episode_first_validation, v0310_minimal_promotion_validation]
+bootstrap_iterations: 5000
+bootstrap_seed: 42
+canonical_serialization: {encoding: UTF-8, newline: LF, stable_key_order: true, timestamps: false}
+

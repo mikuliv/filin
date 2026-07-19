@@ -1,0 +1,7 @@
+window_gates: {macro_f1_min: 0.75, balanced_accuracy_min: 0.80, benign_recall_min: 0.75, fpr_max: 0.25, attack_macro_recall_min: 0.80, zero_recall_attack_classes_max: 0}
+catastrophic: {benign_recall_below: 0.50, fpr_above: 0.50, attack_macro_recall_below: 0.50}
+stateful_gates: {candidate_evidence_recall_min: 0.85, strong_evidence_precision_min: 0.90, duplicate_suppression_precision_min: 0.99, duplicate_false_suppression_count_max: 0, review_window_rate_max: 0.25, attack_review_window_rate_max: 0.35, pre_alert_pending_attack_window_rate_max: 0.35}
+episode_gates: {attack_episode_recall_min: 0.85, episode_alert_precision_min: 0.90, benign_episode_false_alert_rate_max: 0.10, detection_by_second_window_min: 0.75, unresolved_pending_episode_rate_max: 0.15, per_class_episode_recall_min: 0.666667}
+conformal_gates: {overall_coverage_min: 0.80, wrong_only_rate_max: 0.10}
+non_inferiority: {macro_f1_min_delta: -0.02, balanced_accuracy_min_delta: -0.02, benign_recall_min_delta: -0.02, attack_macro_recall_min_delta: -0.02, fpr_max_delta: 0.02, episode_recall_min_delta: -0.05, episode_precision_min_delta: -0.02, benign_episode_far_max_delta: 0.02, review_rate_max_delta: 0.05, unresolved_pending_rate_max_delta: 0.05}
+

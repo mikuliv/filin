@@ -1,0 +1,8 @@
+hardware: {cpu: AMD Ryzen 5 5600X, physical_cores: 6, logical_threads: 12, ram_gb: 64, gpu: NVIDIA GeForce RTX 5060 Ti, computers: 1}
+gpu_acceleration: false
+profiles:
+  A: {benchmark_workers: 1, threads_per_worker: 6}
+  B: {benchmark_workers: 3, threads_per_worker: 2}
+  C: {benchmark_workers: 5, threads_per_worker: 1}
+limits: {effective_max_threads: 12, nested_process_pools: false}
+

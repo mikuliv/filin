@@ -1,0 +1,14 @@
+required_feature_schema: ml/experiments/v0_3_11/feature_schema.yaml
+required_feature_count: 51
+allow_extra_columns: true
+allow_reordering: true
+allow_imputation: false
+allow_proxy_features: false
+allow_feature_recomputation: false
+modes: [full_stateful, stateful_without_episode_mapping, window_only, incompatible]
+coverage:
+  core_benchmarks: 5
+  minimum_stateful: 4
+  minimum_episode: 3
+  v0310_requires_full_stateful: true
+

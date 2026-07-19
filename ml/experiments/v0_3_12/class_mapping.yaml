@@ -1,0 +1,5 @@
+canonical_classes: [benign, port_scan, auth_failures, web_probe, low_rate_dos, beacon]
+aliases:
+  beacon_simulation: beacon
+unknown_class_policy: incompatible
+
