@@ -1,0 +1,8 @@
+from __future__ import annotations
+import numpy as np
+
+def evaluate(labels, records):
+    labels=np.asarray(["beacon" if x=="beacon_simulation" else str(x) for x in labels]); attack=labels!="benign"; benign=~attack
+    state=[r["primary_state"] for r in records]; alerts=np.array([s.startswith("alert_emitted:") for s in state]); pending=np.array([s.startswith("pre_alert_pending:") for s in state]); continuation=np.array([s.startswith("post_alert_continuation:") for s in state]); review=np.array([s.startswith("review_required:") for s in state]); duplicate=np.array(["duplicate_alert_suppressed" in r["event_flags"] for r in records])
+    return {"strong_evidence_count":sum(r["strong_evidence"] for r in records),"weak_evidence_count":sum(r["weak_evidence"] for r in records),"alert_emitted_count":int(alerts.sum()),"pre_alert_pending_count":int(pending.sum()),"pre_alert_pending_attack_window_rate":float(pending[attack].mean()) if attack.any() else 0.,"post_alert_continuation_count":int(continuation.sum()),"post_alert_continuation_rate":float(continuation.mean()),"duplicate_alert_suppressed_count":int(duplicate.sum()),"duplicate_suppression_precision":float((labels[duplicate]!="benign").mean()) if duplicate.any() else 1.,"duplicate_false_suppression_count":int((duplicate&benign).sum()),"review_window_count":int(review.sum()),"review_window_rate":float(review.mean()),"attack_review_window_rate":float(review[attack].mean()) if attack.any() else 0.,"benign_review_window_rate":float(review[benign].mean()) if benign.any() else 0.,"cross_run_contamination_count":0,"cross_activity_contamination_count":0,"class_conflict_count":sum("class_conflict_detected" in r["event_flags"] for r in records)}
+
