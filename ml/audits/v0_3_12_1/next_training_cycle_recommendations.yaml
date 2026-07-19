@@ -1,0 +1,19 @@
+source_audit: v0.3.12.1
+historical_thresholds_selected: false
+historical_rows_used_for_training: false
+recommendations:
+  - увеличить разнообразие onset на полностью новых данных
+  - включить новые training episodes с сильным evidence только во втором окне
+  - включить новые training episodes со стабильным weak evidence ко второму окну
+  - добавить benign mimicry с похожими первым и вторым окнами
+  - проверять непрерывность activity key и немедленную emission state machine
+  - включить разные длины эпизодов, class-conflict и recovery/reset сценарии
+  - сохранять полный regression bundle до prediction
+prohibited:
+  - выбирать threshold по v0.3.9 или v0.3.10
+  - снижать frozen gate 0.75
+  - добавлять class-specific исключения по delayed rows
+  - использовать historical delayed rows для fit, calibration или ranking
+  - исключать early_shift_001 или отдельный attack class
+  - разрешать v0.3.13 без нового training/internal-validation cycle
+
