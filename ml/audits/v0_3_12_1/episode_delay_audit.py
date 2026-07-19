@@ -109,7 +109,7 @@ def summarize(episodes):
         out={}
         for value in sorted({e[key] for e in episodes},key=str):
             rows=[e for e in episodes if e[key]==value]; ds=[e for e in rows if e["delayed"]]
-            out[str(value)]={"episode_count":len(rows),"delayed_episode_count":len(ds),"delayed_rate":len(ds)/len(rows),"detection_by_second_rate":sum(e["alert_emitted_by_second"] for e in rows)/len(rows),"primary_reasons":dict(Counter(e["primary_reason"] for e in ds))}
+            out[str(value)]={"episode_count":len(rows),"delayed_episode_count":len(ds),"delayed_rate":len(ds)/len(rows),"detection_by_second_rate":sum(e["reported_alert_window"] is not None and e["reported_alert_window"]<=2 for e in rows)/len(rows),"causal_detection_by_second_rate":sum(e["alert_emitted_by_second"] for e in rows)/len(rows),"primary_reasons":dict(Counter(e["primary_reason"] for e in ds))}
         return out
     gap_values=defaultdict(list)
     for e in delayed:
