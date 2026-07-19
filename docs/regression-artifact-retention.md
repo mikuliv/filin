@@ -1,5 +1,9 @@
 # Стандарт хранения regression-артефактов
 
+## Артефакты v0.3.13
+
+В Git хранятся protocol, policies, код, тесты и документация. PCAP, Zeek logs, feature table, label vault, prediction, метрики и bundle evidence остаются ignored runtime-артефактами; их хеши связаны manifest и locks.
+
 v0.3.12.2 сохраняет в Git строгие manifests трёх bundles, а объёмные prediction, metrics, bootstrap и performance reports — только как воспроизводимые runtime-артефакты. Manifest отдельно фиксирует файловый hash источника episode mapping и canonical hash самого frozen mapping.
 
 Каждый новый benchmark после v0.3.12.1 закрывается только вместе с полным, неизменяемым regression bundle. Manifest должен быть создан до prediction и содержать идентификатор этапа, SHA-256 протокола, кампании, исходного commit и dependency lock.

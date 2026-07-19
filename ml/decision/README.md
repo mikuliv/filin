@@ -1,5 +1,9 @@
 # Decision layer
 
+## Решение v0.3.13
+
+`v0313_holdout_completed=true`, `v0313_holdout_passed=true`, `candidate_ready_for_v0_3_14_shadow_readiness=true`. При этом shadow mode и backend integration остаются `false`; holdout запрещено использовать для tuning.
+
 В v0.3.12.2 state machine оценивается исключительно в frozen causal order внутри `(benchmark, run, activity)`. Физический порядок JSON запрещён как источник episode latency и допускается только в явно помеченном legacy control, который не влияет на policy.
 
 Decision layer получает только результаты уже выполненного model prediction. Closed-set class, conformal singleton и support по отдельности не являются alert.

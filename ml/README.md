@@ -1,5 +1,9 @@
 # ML-подсистема
 
+## v0.3.13
+
+Frozen candidate v0.3.11 прошёл prospective blind holdout: 700 scored rows, 200 episodes, 51 causal features и 7/7 causal-order profiles. Fit и tuning не выполнялись. Следующая работа — v0.3.14 shadow-readiness, не shadow deployment.
+
 `experiments/v0_3_12_2/` реализует causal-order corrected frozen regression без fit/tuning. Научный знаменатель — v0.3.8/v0.3.9/v0.3.10; итог разрешает только v0.3.13 blind holdout.
 
 ## Frozen prospective evaluation v0.3.6

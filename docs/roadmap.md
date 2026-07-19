@@ -1,5 +1,9 @@
 # Дорожная карта
 
+## После v0.3.13
+
+v0.3.13 прошёл frozen policy. Разрешено проектировать v0.3.14: privacy и data minimization, rate limiting, event schema, fail-safe behavior, monitoring, rollback и проверка shadow bundle. До успешного v0.3.14 включать shadow mode нельзя.
+
 После успешного v0.3.12.2 следующий разрешённый этап — v0.3.13 prospective blind holdout. Повторное обучение и tuning на regression rows запрещены; backend и shadow mode не разрешены.
 
 Машиночитаемым авторитетным источником текущего статуса является

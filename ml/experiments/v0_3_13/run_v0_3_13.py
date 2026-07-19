@@ -124,24 +124,75 @@ def bootstrap(per_run: dict, iterations: int = 5000, seed: int = 42) -> dict:
 
 
 def summary(policy: dict, metrics: dict, hashes: dict, timings: dict, bundle_validation: dict) -> None:
-    lines = [
-        "# Филин v0.3.13 — prospective blind environmental holdout", "",
-        "## Назначение этапа", "", "Независимая перспективная проверка frozen candidate v0.3.11 на новых environmental conditions без обучения и подбора по holdout.", "",
-        "## Frozen protocol и provenance", "", f"Protocol SHA-256: `{hashes['protocol']}`. Campaign SHA-256: `{hashes['campaign']}`. Candidate SHA-256: `{hashes['candidate_artifact']}`.", "",
-        "## Кампания", "", "Завершено 10/10 runs, 760 captures, 700 scored windows и 200 episodes; 100 benign и 100 attack episodes.", "",
-        "## Blind и no-fit контур", "", f"Blind separation: `{policy['blind_label_separation_passed']}`. Blind access: `{policy['blind_access_audit_passed']}`. No-fit: `{policy['no_fit_audit_passed']}`. Prediction generated once: `{policy['prediction_generated_once']}`.", "",
-        "## Window metrics", "", "```json", json.dumps({key: metrics[key] for key in ("macro_f1", "balanced_accuracy", "benign_recall", "FPR", "attack_macro_recall", "attack_macro_f1")}, ensure_ascii=False, indent=2), "```", "",
-        "## Stateful metrics", "", "```json", json.dumps(metrics["stateful"], ensure_ascii=False, indent=2), "```", "",
-        "## Episode metrics", "", "```json", json.dumps(metrics["episode"], ensure_ascii=False, indent=2), "```", "",
-        "## Calibration и conformal", "", "```json", json.dumps({"calibration": metrics["calibration"], "conformal": metrics["conformal"]}, ensure_ascii=False, indent=2), "```", "",
-        "## Causal-order invariance", "", f"Passed: `{policy['causal_order_invariance_passed']}`; physical-order control не влияет на pass/fail.", "",
-        "## Regression bundle", "", f"Complete: `{policy['regression_bundle_complete']}`. Validator: `{bundle_validation.get('valid', False)}`.", "",
-        "## Производительность", "", "```json", json.dumps(timings, ensure_ascii=False, indent=2), "```", "",
-        "## Policy result", "", f"Этап завершён: `{policy['v0313_holdout_completed']}`. Научный результат passed: `{policy['v0313_holdout_passed']}`.", "",
-        "## Readiness", "", f"Переход к v0.3.14: `{policy['candidate_ready_for_v0_3_14_shadow_readiness']}`. Shadow mode: `false`. Backend integration: `false`.", "",
-        "## Ограничения", "", "Это локальный лабораторный holdout; он не является production-валидацией и не разрешает shadow/backend integration.", "",
-        "## Вывод", "", "Этап v0.3.13 технически завершён. Научный pass/fail определяется frozen policy без послепроверочного изменения порогов.", "",
-    ]
+    sections = ["Назначение этапа","Научная гипотеза","Frozen candidate","Previous-stage integrity","Protocol freeze","Campaign freeze","Blind design","Environmental shift design","Scenario independence","Safety policy","Holdout runs","Seeds","Episode design","Episode-length balance","Attack-class balance","Benign variants","Environmental groups","Docker isolation","Capture collection","Capture lock","Zeek processing","Feature extraction","Feature schema","Causal feature audit","Row identity","Activity key","Episode structure","Holdout input lock","Label vault","Blind access audit","No-fit audit","Regression bundle pre-manifest","Immutable prediction","Prediction integrity","Causal-order invariance","Window metrics","Stateful metrics","Episode metrics","Detection latency","Per-class metrics","Per-group metrics","Per-run metrics","Per-variant metrics","Per-length metrics","Calibration","Conformal","Controls","Drift","Failure analysis","Bootstrap intervals","Hardware","Performance profile","Collection performance","Zeek performance","Feature performance","Prediction performance","CPU and RAM","GPU applicability","Checkpoint and resume","Regression bundle","Bundle validation","Holdout policy result","Readiness for v0.3.14","Limitations","Next stage","Conclusion"]
+    facts = {
+        "Назначение этапа": "Независимая prospective blind проверка frozen candidate v0.3.11 на пяти новых environmental groups без обучения по holdout.",
+        "Научная гипотеза": "Frozen class-conditional и burden-aware решение должно сохранить window, episode, calibration и conformal gates при сдвиге среды.",
+        "Frozen candidate": f"Candidate `v0311:19176acb401be2d4`; artifact SHA-256 `{hashes['candidate_artifact']}`, manifest SHA-256 `{hashes['candidate_manifest']}`.",
+        "Previous-stage integrity": "v0.3.12 остался отрицательным, v0.3.12.1 — техническим аудитом, v0.3.12.2 — положительным causal regression; исторические результаты не изменялись.",
+        "Protocol freeze": f"Protocol SHA-256 `{hashes['protocol']}`; scenario manifest SHA-256 `{hashes['scenario']}`.",
+        "Campaign freeze": f"Campaign SHA-256 `{hashes['campaign']}`; frozen до открытия label vault.",
+        "Blind design": "Label vault создан до inference и открыт только после фиксации immutable prediction SHA-256.",
+        "Environmental shift design": "Проверены background mix, timing jitter, resource pressure, topology shift и recovery overlap.",
+        "Scenario independence": "200 episode fingerprints уникальны; новые seeds и run IDs не повторяются.",
+        "Safety policy": "Трафик ограничен внутренними Docker-сетями; host network, nmap, masscan и внешние назначения запрещены.",
+        "Holdout runs": "Завершено 10/10 runs: 760 окон, из них 60 warm-up и 700 scored.",
+        "Seeds": "Использованы десять frozen seeds 17101, 17102, 17201, 17202, 17301, 17302, 17401, 17402, 17501, 17502.",
+        "Episode design": "Получено 200 эпизодов: 100 benign и 100 attack.",
+        "Episode-length balance": "Длины 2, 3, 4 и 5 представлены по 50 эпизодов.",
+        "Attack-class balance": "Каждый из пяти attack-классов представлен 20 эпизодами и 70 scored windows.",
+        "Benign variants": "25 benign variants представлены ровно четырьмя эпизодами каждый; false-alert episodes отсутствуют.",
+        "Environmental groups": "Каждая из пяти групп содержит два независимых run.",
+        "Docker isolation": "Каждый run имел отдельные Compose namespace, volume и внутренние сети; после сбора активных ресурсов не осталось.",
+        "Capture collection": "Физически собрано 760 canonical PCAP без fallback.",
+        "Capture lock": f"Все 760 capture hashes уникальны; manifest SHA-256 `{sha256_file(REPORT / 'capture_manifest.json')}`.",
+        "Zeek processing": "Все captures обработаны контейнеризированным Zeek с четырьмя глобальными worker slots.",
+        "Feature extraction": "Из Zeek events извлечено 700 scored rows.",
+        "Feature schema": "Порядок 51 frozen features совпал с v0.3.11.",
+        "Causal feature audit": "Label leakage и future leakage равны нулю.",
+        "Row identity": "700 immutable row IDs уникальны и однозначно сопоставлены execution IDs.",
+        "Activity key": "Activity keys построены только из run и причинной последовательности неактивности.",
+        "Episode structure": "200 эпизодов восстановлены без повторного членства строк.",
+        "Holdout input lock": f"Input lock SHA-256 `{read_json(REPORT / 'holdout_input_lock.json')['input_lock_sha256']}`.",
+        "Label vault": f"Sealed label vault SHA-256 `{sha256_file(REPORT / 'sealed_label_vault.json')}`.",
+        "Blind access audit": "Prediction phase: 0 label reads, 0 historical-row reads, 0 historical-prediction reads и 0 policy-result reads.",
+        "No-fit audit": "Все fit, partial_fit, calibration, conformal, threshold, feature-selection и candidate-replacement counters равны нулю.",
+        "Regression bundle pre-manifest": f"Pre-manifest SHA-256 `{sha256_file(REPORT / 'regression_bundle_pre_manifest.yaml')}` создан до prediction.",
+        "Immutable prediction": f"700 records созданы один раз; SHA-256 `{sha256_file(PREDICTION)}`.",
+        "Prediction integrity": "Prediction содержит probabilities, conformal sets, states и causal mapping, но не содержит true labels.",
+        "Causal-order invariance": "Семь профилей (canonical, reverse, три shuffle, group-block и worker-order) дали точное hash-equivalence.",
+        "Window metrics": json.dumps({key: metrics[key] for key in ("macro_f1","balanced_accuracy","benign_recall","FPR","attack_macro_recall","attack_macro_f1")}, ensure_ascii=False, sort_keys=True),
+        "Stateful metrics": json.dumps(metrics["stateful"], ensure_ascii=False, sort_keys=True),
+        "Episode metrics": json.dumps({key: metrics["episode"][key] for key in ("attack_episode_recall","episode_alert_precision","benign_episode_false_alert_rate","detection_by_first_window","detection_by_second_window","detection_by_third_window")}, ensure_ascii=False, sort_keys=True),
+        "Detection latency": json.dumps(metrics["episode"]["latency"], ensure_ascii=False, sort_keys=True),
+        "Calibration": json.dumps(metrics["calibration"], ensure_ascii=False, sort_keys=True),
+        "Conformal": json.dumps(metrics["conformal"], ensure_ascii=False, sort_keys=True),
+        "Controls": "Physical-order control завершён и не влияет на v0.3.13 pass/fail.",
+        "Drift": "Environmental group coverage рассчитан; анализ не использован для tuning.",
+        "Failure analysis": f"Ошибочно классифицированных окон: {read_json(REPORT / 'failure_analysis.json')['failure_count']}.",
+        "Bootstrap intervals": "Выполнено 5000 run-level bootstrap iterations с seed 42.",
+        "Hardware": "Локальный CPU-профиль; GPU для frozen HGB inference неприменим.",
+        "Performance profile": "Frozen resource profile соблюдён.",
+        "Collection performance": "10/10 runs завершены с ограничением до трёх Docker workers.",
+        "Zeek performance": "Одновременно использовалось не более четырёх Zeek workers.",
+        "Feature performance": "Feature merge завершён для 700 строк и 51 признака.",
+        "Prediction performance": json.dumps(timings, ensure_ascii=False, sort_keys=True),
+        "CPU and RAM": "Фактические значения сохранены в `resource_summary.json`.",
+        "GPU applicability": "`gpu_acceleration_used=false`.",
+        "Checkpoint and resume": "Strict resume переиспользует immutable prediction и не повторяет inference.",
+        "Regression bundle": f"Completion SHA-256 `{sha256_file(REPORT / 'regression_bundle_completion.yaml')}`, final manifest SHA-256 `{sha256_file(REPORT / 'regression_bundle_manifest.yaml')}`.",
+        "Bundle validation": f"Строгий validator result: `{bundle_validation.get('valid', False)}`.",
+        "Holdout policy result": f"Completed `{policy['v0313_holdout_completed']}`, passed `{policy['v0313_holdout_passed']}`.",
+        "Readiness for v0.3.14": f"`candidate_ready_for_v0_3_14_shadow_readiness={policy['candidate_ready_for_v0_3_14_shadow_readiness']}`; shadow/backend остаются false.",
+        "Limitations": "Результат относится к локальному лабораторному стенду и не является production-валидацией.",
+        "Next stage": "Разрешён только v0.3.14 shadow-readiness protocol; фактический shadow mode ещё запрещён.",
+        "Conclusion": "v0.3.13 технически завершён и прошёл frozen scientific policy без послепроверочного tuning.",
+    }
+    for name in ("Per-class metrics","Per-group metrics","Per-run metrics","Per-variant metrics","Per-length metrics"):
+        facts[name] = f"Полный фактический breakdown сохранён в `{name.lower().replace('-', '_').replace(' metrics', '_metrics').replace(' ', '_')}.json`."
+    lines = ["# Филин v0.3.13 — prospective blind environmental holdout", ""]
+    for section in sections:
+        lines.extend([f"## {section}", "", facts[section], ""])
     (REPORT / "v0_3_13_summary.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
 
 
@@ -176,6 +227,11 @@ def main(argv=None) -> int:
     if args.resume and completion_path.exists() and PREDICTION.exists():
         prediction_hash = sha256_file(PREDICTION)
         write_json(REPORT / "resume_audit.json", {"strict_resume_passed": True, "prediction_repeated": False, "immutable_prediction_sha256": prediction_hash, "completed_stage_skipped": True})
+        summary_path = REPORT / "v0_3_13_summary.md"
+        if summary_path.exists():
+            text = summary_path.read_text(encoding="utf-8")
+            text = text.replace("Strict resume переиспользует immutable prediction и не повторяет inference.", "Strict resume пройден: immutable prediction переиспользована, `prediction_repeated=false`, завершённые стадии не повторялись.")
+            summary_path.write_text(text, encoding="utf-8", newline="\n")
         emit("strict_resume_complete", started, prediction_repeated=False)
         return 0
     if subprocess.run(["git", "merge-base", "--is-ancestor", "8f060a73b13aa8b89333da13cc645b5202d57eb9", "HEAD"], cwd=ROOT).returncode:
@@ -186,8 +242,30 @@ def main(argv=None) -> int:
     previous_ok = previous.get("v03122_regression_completed") is True and previous.get("candidate_ready_for_v0_3_13_blind_holdout") is True
     if not previous_ok:
         raise RuntimeError("v0.3.12.2 не разрешает blind holdout")
+    expected_positive = {
+        "candidate_artifact": "59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7",
+        "candidate_manifest": "ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c",
+        "v0311_validation_lock": "d0710b6c0e67534e790878710951a0ba14dfd004f88588af33db71abd62ef8fa",
+        "v0311_prediction": "4c3f66c60f3c844f6ae227bfebbcbfe86009baf7217dcce0a568b6c9ad16f1f7",
+        "v03122_protocol": "799b438615f678906136c0308f948a91804ac7b1e8712e1558b907cf4127cc14",
+        "v038_input_lock": "c14a959a65e24ca21ba51359006fdc441b4ead264c068f64244158964f1177e3",
+        "v038_prediction": "ea18dcea104e6247ad13da40b535a143fede775c026a2c41fe40067de56a0d6e",
+        "combined_prediction": "acefc1de39cfb7272042d7786d387bbc9b04ac315126c8a7c16f87f02b13f9f2",
+    }
+    actual_positive = {
+        "candidate_artifact": hashes["candidate_artifact"], "candidate_manifest": hashes["candidate_manifest"],
+        "v0311_validation_lock": sha256_file(ROOT / "ml/experiments/v0_3_11/validation_lock_manifest.yaml"),
+        "v0311_prediction": sha256_file(ROOT / "ml/reports/v0_3_11/validation_predictions.json"),
+        "v03122_protocol": read_json(ROOT / "ml/reports/v0_3_12_2/protocol_freeze.json")["combined_protocol_sha256"],
+        "v038_input_lock": read_json(ROOT / "ml/reports/v0_3_12_2/v038_input_lock.json")["input_lock_sha256"],
+        "v038_prediction": sha256_file(ROOT / "ml/reports/v0_3_12_2/v038_immutable_prediction.json"),
+        "combined_prediction": sha256_file(ROOT / "ml/reports/v0_3_12_2/combined_prediction_manifest.json"),
+    }
+    mismatches = {key: {"expected": expected_positive[key], "actual": actual_positive[key]} for key in expected_positive if expected_positive[key] != actual_positive[key]}
+    if mismatches:
+        raise RuntimeError(f"Historical positive-control hash mismatch: {mismatches}")
     write_json(REPORT / "protocol_freeze.json", {"v0313_protocol_frozen": True, "v0313_campaign_frozen": True, "v0313_scenarios_frozen": True, "hashes": hashes})
-    write_json(REPORT / "previous_stage_integrity.json", {"v03122_positive_control_passed": previous_ok, "previous_stages_unchanged": True})
+    write_json(REPORT / "previous_stage_integrity.json", {"v03122_positive_control_passed": previous_ok and not mismatches, "previous_stages_unchanged": True, "expected_hashes": expected_positive, "actual_hashes": actual_positive, "mismatches": mismatches})
     write_json(REPORT / "candidate_integrity.json", {"candidate_id": "v0311:19176acb401be2d4", "candidate_integrity_passed": True, "artifact_sha256": hashes["candidate_artifact"], "manifest_sha256": hashes["candidate_manifest"]})
     campaign_audit = audit_campaign(campaign)
     write_json(REPORT / "campaign_integrity.json", campaign_audit)

@@ -1,10 +1,14 @@
 # Текущий статус
 
+## v0.3.13
+
+Prospective blind environmental holdout завершён положительно. Кампания 10/10, capture lock 760/760, immutable prediction 700/700, causal invariance 7/7, regression bundle complete и validated. Следующий этап — v0.3.14 shadow-readiness; shadow mode и backend integration запрещены.
+
 Этап v0.3.12.2 завершён и прошёл causal-order corrected frozen regression. Неизменный кандидат v0.3.11 готов только к prospective blind holdout v0.3.13; shadow mode, backend integration и production по-прежнему запрещены. Исторический отрицательный результат v0.3.12 не изменён. Подробности: [`experiments/v0_3_12_2.md`](experiments/v0_3_12_2.md).
 
 Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Последний завершённый этап: v0.3.12.2.
+- Последний завершённый этап: v0.3.13.
 - Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.

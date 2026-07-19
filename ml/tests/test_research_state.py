@@ -11,9 +11,9 @@ ROOT = Path(__file__).resolve().parents[2]
 class TestResearchState(unittest.TestCase):
     def test_authoritative_state_is_safe_and_current(self):
         state = yaml.safe_load((ROOT / "docs/research-state.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(state["latest_completed_stage"], "v0.3.12.2")
-        self.assertEqual(state["latest_completed_result"], "causal_order_corrected_frozen_regression_passed")
-        self.assertEqual(state["next_allowed_stage"]["kind"], "prospective_blind_holdout")
+        self.assertEqual(state["latest_completed_stage"], "v0.3.13")
+        self.assertEqual(state["latest_completed_result"], "prospective_blind_environmental_holdout_passed")
+        self.assertEqual(state["next_allowed_stage"]["kind"], "shadow_readiness_protocol")
         self.assertFalse(state["backend_integration_allowed"]); self.assertFalse(state["shadow_mode_allowed"]); self.assertFalse(state["production_ready"])
 
     def test_documentation_validator_passes(self):

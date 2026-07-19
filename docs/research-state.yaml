@@ -1,16 +1,16 @@
 schema_version: 1
-latest_completed_stage: v0.3.12.2
-latest_completed_result: causal_order_corrected_frozen_regression_passed
-active_stage: v0.3.12.2_completed_ready_for_v0.3.13_blind_holdout
+latest_completed_stage: v0.3.13
+latest_completed_result: prospective_blind_environmental_holdout_passed
+active_stage: v0.3.13_completed_ready_for_v0.3.14_shadow_readiness
 runtime_integrity_acceptance:
   status: passed
   historical_results_modified: false
   full_v0_3_8_training_allowed: false
   secure_artifact_verification: not_executed_secure_artifacts_unavailable
 next_allowed_stage:
-  version: v0.3.13
-  kind: prospective_blind_holdout
-  reason: v0.3.12.2 passed the corrected causal-order frozen regression policy
+  version: v0.3.14
+  kind: shadow_readiness_protocol
+  reason: v0.3.13 passed the prospective blind environmental holdout policy
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false
@@ -23,6 +23,9 @@ frozen_candidate:
   regression_completed: true
   regression_passed: true
   ready_for_v0_3_13_blind_holdout: true
+  prospective_blind_holdout_completed: true
+  prospective_blind_holdout_passed: true
+  ready_for_v0_3_14_shadow_readiness: true
 holdout_boundaries:
   v0.3.5: frozen_regression_not_blind
   v0.3.6: historical_prospective_holdout_do_not_reopen_for_tuning
@@ -33,6 +36,7 @@ holdout_boundaries:
   v0.3.11: burden_aware_internal_validation_not_prospective_holdout
   v0.3.12: frozen_multi_benchmark_regression_not_blind_holdout
   v0.3.12.2: causal_order_corrected_frozen_regression_not_blind_holdout
+  v0.3.13: prospective_blind_environmental_holdout_do_not_reopen_for_tuning
 historical_stage_summary:
   v0.3.1: baseline_evaluation_completed
   v0.3.2: frozen_robustness_evaluation_completed
@@ -47,6 +51,18 @@ historical_stage_summary:
   v0.3.11: burden_aware_internal_validation_policy_passed
   v0.3.12: frozen_multi_benchmark_regression_not_passed
   v0.3.12.2: causal_order_corrected_frozen_regression_passed
+  v0.3.13: prospective_blind_environmental_holdout_passed
+v0_3_13_holdout:
+  status: completed
+  passed: true
+  candidate_source: v0.3.11
+  campaign: {runs: 10, captures: 760, warmup_rows: 60, scored_rows: 700, episodes: 200}
+  blind_label_separation_passed: true
+  causal_order_invariance_passed: true
+  regression_bundle_complete: true
+  candidate_ready_for_v0_3_14_shadow_readiness: true
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
 v0_3_12_2_regression:
   status: completed
   passed: true

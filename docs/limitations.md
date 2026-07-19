@@ -1,5 +1,9 @@
 # Ограничения
 
+## После v0.3.13
+
+Положительный локальный prospective holdout не является production-валидацией. Holdout-строки запрещено использовать для tuning. Shadow mode, backend integration и active response остаются выключены.
+
 ## v0.3.12.2
 
 Это не blind holdout и не production validation. v0.3.6/v0.3.7 исключены из scientific denominator как `rebuildable_but_not_frozen`. Исправленные causal-order метрики не переписывают frozen результат v0.3.12. Разрешение относится только к запуску v0.3.13; backend и shadow mode запрещены.

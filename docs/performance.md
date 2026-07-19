@@ -1,5 +1,9 @@
 # Производительность исследовательского контура
 
+## Профиль v0.3.13
+
+Сбор ограничен тремя Docker workers, Zeek — четырьмя slots, feature/metrics/bootstrap — шестью workers. Frozen inference выполнен на CPU и уложился в лимит 120 секунд; GPU не применялся.
+
 ## v0.3.12.2
 
 Профиль фиксирует один процесс inference и детерминированную causal evaluation; GPU не применяется. Bootstrap использует 5000 run-level resamples с seed 42. Фактические wall-time, CPU и peak RSS сохраняются в runtime-отчётах этапа.

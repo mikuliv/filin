@@ -1,5 +1,9 @@
 # Эксперименты и метрики
 
+## Prospective blind environmental holdout v0.3.13
+
+Frozen candidate v0.3.11 проверен на 10 новых environmental runs без fit и tuning. Получены 760 captures, 700 scored windows и 200 episodes; все scientific gates пройдены. Полный результат: [v0.3.13](experiments/v0_3_13.md).
+
 ## v0.3.12.2 — causal-order corrected frozen regression
 
 Три scientific bundles прошли window, stateful, episode, aggregate и non-inferiority gates. Causal alert windows: v0.3.9 `29/1/0`, v0.3.10 `60/0/0`; v0.3.8 также прошёл все gates. Readiness к blind holdout v0.3.13 — true, к backend и shadow mode — false.
