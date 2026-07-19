@@ -168,7 +168,17 @@ def run(campaign: dict, row: dict, output_root: Path) -> dict:
         try:
             return _process_capture_unlimited(scenario)
         finally:
-            slot.rmdir()
+            # Windows may keep the freshly used directory handle briefly after
+            # the sensor subprocess exits.  Releasing a worker slot is
+            # bookkeeping and must tolerate that transient sharing violation.
+            for attempt in range(20):
+                try:
+                    slot.rmdir()
+                    break
+                except PermissionError:
+                    if attempt == 19:
+                        raise
+                    time.sleep(0.05)
 
     with ThreadPoolExecutor(max_workers=4) as pool:
         parts = list(pool.map(process_capture, frozen_manifest["scenarios"]))
