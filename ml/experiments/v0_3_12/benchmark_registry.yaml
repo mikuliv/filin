@@ -3,6 +3,7 @@ benchmarks:
     source_stage: v0.3.6
     source_root: lab/output/campaigns/filin_v0_3_6_blind_holdout
     validation_lock_path: ml/experiments/v0_3_6/holdout_lock_manifest.yaml
+    historical_candidate_manifest_path: ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
     feature_table_path: null
     historical_prediction_path: ml/artifacts/v0_3_6/v036_predictions.csv
     historical_policy_result_path: ml/reports/v0_3_6/v0_3_6_policy_result.json
@@ -14,6 +15,7 @@ benchmarks:
     source_stage: v0.3.7
     source_root: lab/output/campaigns/filin_v0_3_7_hierarchical_validation
     validation_lock_path: null
+    historical_candidate_manifest_path: ml/experiments/v0_3_7/frozen_candidate_manifest.yaml
     feature_table_path: null
     historical_prediction_path: ml/reports/v0_3_7/validation_predictions.json
     historical_policy_result_path: ml/reports/v0_3_7/v0_3_7_policy_result.json
@@ -25,6 +27,7 @@ benchmarks:
     source_stage: v0.3.8
     source_root: lab/output/campaigns/filin_v0_3_8_evidence_validation
     validation_lock_path: ml/experiments/v0_3_8/validation_lock_manifest.yaml
+    historical_candidate_manifest_path: ml/experiments/v0_3_8/frozen_candidate_manifest.yaml
     feature_table_path: lab/output/datasets/v038_validation_frozen_features.csv
     historical_prediction_path: ml/reports/v0_3_8/validation_predictions.json
     historical_policy_result_path: ml/reports/v0_3_8/v0_3_8_policy_result.json
@@ -36,6 +39,7 @@ benchmarks:
     source_stage: v0.3.9
     source_root: lab/output/campaigns/filin_v0_3_9_episode_first_validation
     validation_lock_path: ml/experiments/v0_3_9/validation_lock_manifest.yaml
+    historical_candidate_manifest_path: ml/experiments/v0_3_9/frozen_candidate_manifest.yaml
     feature_table_path: lab/output/datasets/v039_validation_frozen_features.csv
     historical_prediction_path: ml/reports/v0_3_9/validation_predictions.json
     historical_policy_result_path: ml/reports/v0_3_9/v0_3_9_policy_result.json
@@ -47,6 +51,7 @@ benchmarks:
     source_stage: v0.3.10
     source_root: lab/output/campaigns/filin_v0_3_10_minimal_promotion_validation
     validation_lock_path: ml/experiments/v0_3_10/validation_lock_manifest.yaml
+    historical_candidate_manifest_path: ml/experiments/v0_3_10/frozen_candidate_manifest.yaml
     feature_table_path: lab/output/datasets/v0310_validation_frozen_features.csv
     historical_prediction_path: ml/reports/v0_3_10/validation_predictions.json
     historical_policy_result_path: ml/reports/v0_3_10/v0_3_10_policy_result.json
@@ -54,4 +59,3 @@ benchmarks:
     expected_run_count: 6
     expected_scored_row_count: 324
     expected_episode_count: 108
-
