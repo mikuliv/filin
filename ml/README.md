@@ -62,3 +62,6 @@ candidate не разрешён для regression, backend или shadow mode.
 # Цикл v0.3.11
 
 `experiments/v0_3_11` реализует новый HGB/HGB burden-aware цикл на 51 причинном признаке. Training grouped OOF полностью отделён от prospective validation; candidate, capture manifest и validation lock создаются до единственной no-fit prediction. Frozen policy пройдена и разрешена только для v0.3.12 regression; runtime models, datasets, PCAP, predictions и отчёты остаются вне Git.
+# Frozen regression v0.3.12
+
+`experiments/v0_3_12` реализует predict-only regression кандидата v0.3.11. Compatibility audit fail-closed блокирует missing features, count mismatch, imputation и реконструкцию episode mapping. На доступных v0.3.9/v0.3.10 predictions заморожены, но общая policy не пройдена из-за coverage и episode latency gate.

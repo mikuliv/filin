@@ -54,14 +54,29 @@ def bootstrap(run_metrics,iterations=5000,seed=42):
         for k in keys: values[k].append(float(np.mean([run_metrics[r][k] for r in sample])))
     return {"iterations":iterations,"seed":seed,"resampling_unit":"run_id","intervals":{k:{"low":float(np.quantile(v,.025)),"high":float(np.quantile(v,.975))} for k,v in values.items()}}
 
-def drift(X, bundle):
-    baseline=bundle.get("feature_order",[]); return {"feature_count":len(X.columns),"psi_by_feature":{c:0.0 for c in X.columns},"median_psi":0.0,"maximum_psi":0.0,"probability_js_distance":0.0,"probability_entropy_shift":0.0,"note":"Reference feature distribution is not embedded in the frozen candidate; zero is a structural self-reference diagnostic, not a pass/fail input.","used_for_pass_fail":False}
+def drift(X, reference_X, current_probabilities, reference_probabilities, current_sets, reference_sets):
+    from scipy.spatial.distance import jensenshannon
+    def psi(ref,cur):
+        edges=np.unique(np.quantile(ref,np.linspace(0,1,11)))
+        if len(edges)<2: return 0.0
+        edges[0]=-np.inf; edges[-1]=np.inf; a=np.histogram(ref,bins=edges)[0]/len(ref); b=np.histogram(cur,bins=edges)[0]/len(cur); a=np.clip(a,1e-6,None); b=np.clip(b,1e-6,None)
+        return float(np.sum((b-a)*np.log(b/a)))
+    values={c:psi(reference_X[c].to_numpy(float),X[c].to_numpy(float)) for c in X.columns}
+    ref_mean=np.asarray(reference_probabilities).mean(0); cur_mean=np.asarray(current_probabilities).mean(0); ref_mean/=ref_mean.sum(); cur_mean/=cur_mean.sum()
+    entropy=lambda p:float(np.mean(-np.sum(np.clip(p,1e-15,1)*np.log(np.clip(p,1e-15,1)),axis=1)))
+    distribution=lambda sets:{str(n):float(np.mean([len(x)==n for x in sets])) for n in sorted(set(map(len,sets))|set(map(len,current_sets)))}
+    return {"feature_count":len(X.columns),"psi_by_feature":values,"median_psi":float(np.median(list(values.values()))),"maximum_psi":float(max(values.values())),"probability_js_distance":float(jensenshannon(ref_mean,cur_mean,base=2)),"probability_entropy_shift":entropy(np.asarray(current_probabilities))-entropy(np.asarray(reference_probabilities)),"conformal_set_size_distribution":distribution(current_sets),"reference_conformal_set_size_distribution":distribution(reference_sets),"calibration_confidence_mean":float(np.asarray(current_probabilities).max(1).mean()),"reference_calibration_confidence_mean":float(np.asarray(reference_probabilities).max(1).mean()),"used_for_pass_fail":False}
 
 def main(argv=None):
     ap=argparse.ArgumentParser(); ap.add_argument("--protocol",type=Path,required=True); ap.add_argument("--benchmark-registry",type=Path,required=True); ap.add_argument("--candidate-manifest",type=Path,required=True); ap.add_argument("--workers",default="auto"); ap.add_argument("--strict",action="store_true"); ap.add_argument("--resume",action="store_true"); ap.add_argument("--prediction-profile"); ap.add_argument("--benchmark-workers",type=int); ap.add_argument("--threads-per-worker",type=int); ap.add_argument("--bootstrap-workers",type=int); ap.add_argument("--resource-monitor",action="store_true"); ap.add_argument("--progress-interval-seconds",type=float,default=1.0); ap.add_argument("--dry-run",action="store_true"); ap.add_argument("--compatibility-only",action="store_true"); ap.add_argument("--metrics-only",action="store_true"); args=ap.parse_args(argv)
     started=time.perf_counter(); REPORT.mkdir(parents=True,exist_ok=True); checkpoint=REPORT/"stage_checkpoint.json"
     if args.resume and checkpoint.exists() and read_json(checkpoint).get("stage_complete"):
         write_json(REPORT/"resume_audit.json",{"strict_resume_passed":True,"predictions_repeated":False,"skipped_stages":list(range(1,57)),"checkpoint_sha256":sha256_file(checkpoint)})
+        summary=REPORT/"v0_3_12_summary.md"
+        if summary.exists():
+            text=summary.read_text(encoding="utf-8")
+            text=text.replace('{\n  "checkpoint_created": true,\n  "strict_resume_pending": true\n}',json.dumps({"checkpoint_created":True,"predictions_repeated":False,"skipped_stages":56,"strict_resume_passed":True},ensure_ascii=False,sort_keys=True,indent=2))
+            summary.write_text(text,encoding="utf-8",newline="\n")
         print("v0.3.12 strict resume: 56/56 стадий пропущены; predictions не повторялись")
         return 0
     progress("git_preflight",started=started); head=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
@@ -75,7 +90,8 @@ def main(argv=None):
     if not integrity["candidate_integrity_passed"] or not positive["v0311_positive_control_integrity_passed"]: raise RuntimeError("v0.3.11 integrity failed")
     write_json(REPORT/"candidate_integrity.json",integrity); write_json(REPORT/"v0311_positive_control.json",positive)
     config={"protocol":ROOT/args.protocol,"registry":ROOT/args.benchmark_registry,"class_mapping":ROOT/"ml/experiments/v0_3_12/class_mapping.yaml","compatibility":ROOT/"ml/experiments/v0_3_12/compatibility_policy.yaml","metric":ROOT/"ml/experiments/v0_3_12/metric_policy.yaml","readiness":ROOT/"ml/experiments/v0_3_12/readiness_policy.yaml","resource":ROOT/"ml/experiments/v0_3_12/resource_profile.yaml"}
-    hashes={k:sha256_file(v) for k,v in config.items()}; hashes.update({"candidate_artifact":sha256_file(artifact),"candidate_manifest":sha256_file(manifest),"feature_schema":sha256_file(ROOT/"ml/experiments/v0_3_11/feature_schema.yaml"),"head":head})
+    prediction_source_commit=subprocess.check_output(["git","log","-1","--format=%H","--","ml/experiments/v0_3_12/frozen_predictor.py"],cwd=ROOT,text=True).strip()
+    hashes={k:sha256_file(v) for k,v in config.items()}; hashes.update({"candidate_artifact":sha256_file(artifact),"candidate_manifest":sha256_file(manifest),"feature_schema":sha256_file(ROOT/"ml/experiments/v0_3_11/feature_schema.yaml"),"head":head,"prediction_source_commit":prediction_source_commit})
     hashes["combined_regression_protocol"]=sha256_json({k:hashes[k] for k in ("protocol","registry","class_mapping","compatibility","metric","readiness","resource")})
     write_json(REPORT/"protocol_freeze.json",{"regression_protocol_frozen":True,"opened_benchmark_rows_before_freeze":False,"hashes":hashes})
     resolved=resolve(config["registry"]); before=historical_hashes(resolved); write_json(REPORT/"benchmark_registry_resolved.json",resolved)
@@ -99,7 +115,7 @@ def main(argv=None):
         write_json(REPORT/f"{short}_input_lock.json",blocked); write_json(REPORT/f"{short}_metrics.json",{"benchmark_id":row["benchmark_id"],"status":"not_applicable","blocking_reasons":row["blocking_reasons"],"absolute_metrics_calculated":False})
     if args.dry_run or args.compatibility_only: return 0
     from ml.experiments.v0_3_12.frozen_predictor import load_candidate,predict_block
-    bundle=load_candidate(artifact); profile_rows=[]; reference=None
+    bundle=load_candidate(artifact); grouped=__import__('joblib').load(ROOT/"ml/artifacts/v0_3_11/grouped_oof.joblib"); reference_X=grouped["X"]; reference_probabilities=np.asarray(grouped["probabilities"]); reference_sets=bundle["conformal"].predict_set(reference_probabilities); profile_rows=[]; reference=None
     for name,(workers,threads) in PROFILES.items():
         t=time.perf_counter(); blocks=[]
         for item in resolved["benchmarks"]:
@@ -118,9 +134,11 @@ def main(argv=None):
         labels,meta=labels_for(item,lock,payload["records"]); t=time.perf_counter(); core=evaluate_core(labels,payload["records"]); core["per_run"]=per_run(labels,payload["records"]); core["stateful"]=evaluate_stateful(labels,payload["records"])
         if ca["episode_evaluable"]: core["episode"]=evaluate_episode(meta,payload["records"])
         if item["benchmark_id"].startswith("v0310"):
-            legacy=read_json(ROOT/"ml/reports/v0_3_10/pending_metrics.json"); core["legacy_pending_control"]={"legacy_pending_control_count":legacy.get("pending_window_count"),"legacy_pending_control_rate":legacy.get("pending_window_rate"),"legacy_attack_pending_control_rate":legacy.get("attack_pending_window_rate"),"legacy_pending_affects_v0312_pass_fail":False}
+            legacy=read_json(ROOT/"ml/reports/v0_3_10/pending_metrics.json"); count=int(legacy["pending_state_count"]); attack_count=sum(x!="benign" for x in labels); core["legacy_pending_control"]={"legacy_pending_control_count":count,"legacy_pending_control_rate":count/len(labels),"legacy_attack_pending_control_rate":count/attack_count,"legacy_pending_affects_v0312_pass_fail":False}
         metrics[item["benchmark_id"]]=core; write_json(REPORT/f"{short}_metrics.json",core); metric_seconds+=time.perf_counter()-t
-        t=time.perf_counter(); bootstrap_all[item["benchmark_id"]]=bootstrap(core["per_run"]); bootstrap_seconds+=time.perf_counter()-t; drift_all[item["benchmark_id"]]=drift(pd.read_csv(ROOT/item["feature_table_path"]),bundle)
+        t=time.perf_counter(); bootstrap_all[item["benchmark_id"]]=bootstrap(core["per_run"]); bootstrap_seconds+=time.perf_counter()-t
+        current_probabilities=np.asarray([[r["joint_class_probabilities"][c] for c in CLASSES] for r in payload["records"]]); current_sets=[r["conformal_set"] for r in payload["records"]]
+        drift_all[item["benchmark_id"]]=drift(pd.read_csv(ROOT/item["feature_table_path"]),reference_X,current_probabilities,reference_probabilities,current_sets,reference_sets)
         for label,record in zip(labels,payload["records"]):
             canonical="beacon" if label=="beacon_simulation" else label
             if record["top_class"]!=canonical: failures.append({"benchmark_id":item["benchmark_id"],"run_id":record["run_id"],"row_id":record["immutable_row_id"],"true_class":canonical,"predicted_class":record["top_class"],"reason_code":"closed_set_misclassification"})

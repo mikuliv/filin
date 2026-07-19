@@ -6,7 +6,14 @@ from .common import ROOT, read_yaml, sha256_file, sha256_json, source_metadata
 def audit_benchmark(item: dict, feature_order: list[str]) -> dict:
     reasons=[]; path=ROOT/item["feature_table_path"] if item.get("feature_table_path") else None
     actual_rows=0; matrix_hash=None; feature_count=0; values_finite=False
-    if path is None or not path.exists(): reasons.append("blocked_missing_frozen_features")
+    if path is None or not path.exists():
+        reasons.append("blocked_missing_frozen_features")
+        status_path=ROOT/item["source_root"]/"status.json"
+        if status_path.exists():
+            import json
+            status=json.loads(status_path.read_text(encoding="utf-8")); runs=list(status.values()) if isinstance(status,dict) else []
+            actual_rows=sum(int(x.get("scored_rows",0)) for x in runs if isinstance(x,dict)); status_run_count=len(runs); status_episode_count=sum(int(x.get("episodes",0)) for x in runs if isinstance(x,dict))
+        else: status_run_count=status_episode_count=0
     else:
         with path.open(encoding="utf-8",newline="") as stream:
             reader=csv.DictReader(stream); names=reader.fieldnames or []; feature_count=len(names)
@@ -25,14 +32,15 @@ def audit_benchmark(item: dict, feature_order: list[str]) -> dict:
             matrix_hash=sha256_json({"benchmark_id":item["benchmark_id"],"ordered_feature_names":feature_order,"rows":digest_rows,"dtypes":["float64"]*len(feature_order),"missing_value_mask":[]})
     if actual_rows and actual_rows!=item["expected_scored_row_count"]: reasons.append(f"row_count_mismatch:{actual_rows}!={item['expected_scored_row_count']}")
     lock=read_yaml(ROOT/item["validation_lock_path"]) if item.get("validation_lock_path") and (ROOT/item["validation_lock_path"]).exists() else {}
-    run_count=len(lock.get("run_ids",[]))
+    if not actual_rows and lock.get("class_distribution"): actual_rows=sum(int(x) for x in lock["class_distribution"].values())
+    run_count=len(lock.get("run_ids",[])) or locals().get("status_run_count",0)
     if run_count and run_count!=item["expected_run_count"]: reasons.append(f"run_count_mismatch:{run_count}!={item['expected_run_count']}")
     has_mapping=bool(lock.get("dataset_paths"))
     has_episode=bool(lock.get("episode_mapping_sha256"))
     mode="incompatible" if reasons else ("full_stateful" if has_mapping and has_episode else "stateful_without_episode_mapping" if has_mapping else "window_only")
-    return {"benchmark_id":item["benchmark_id"],"compatibility_status":mode,"evaluation_mode":mode,"blocking_reasons":reasons,"actual_run_count":run_count,"actual_scored_row_count":actual_rows,"actual_episode_count":item.get("expected_episode_count") if has_episode else None,"feature_count":feature_count,"all_values_finite":values_finite,"feature_table_sha256":sha256_file(path) if path and path.exists() else None,"canonical_feature_matrix_sha256":matrix_hash,"run_mapping_available":has_mapping,"episode_mapping_available":has_episode,"integrity_passed":not any(x.startswith("row_count_mismatch") or x.startswith("non_finite") for x in reasons),"core_evaluable":mode!="incompatible","stateful_evaluable":mode.startswith("stateful") or mode=="full_stateful","episode_evaluable":mode=="full_stateful"}
+    episodes=(lock.get("expected_episodes") or item.get("expected_episode_count")) if has_episode else (locals().get("status_episode_count") or None)
+    return {"benchmark_id":item["benchmark_id"],"compatibility_status":mode,"evaluation_mode":mode,"blocking_reasons":reasons,"actual_run_count":run_count,"actual_scored_row_count":actual_rows,"actual_episode_count":episodes,"feature_count":feature_count,"all_values_finite":values_finite,"feature_table_sha256":sha256_file(path) if path and path.exists() else None,"canonical_feature_matrix_sha256":matrix_hash,"run_mapping_available":has_mapping,"episode_mapping_available":has_episode,"integrity_passed":not any(x.startswith("row_count_mismatch") or x.startswith("non_finite") for x in reasons),"core_evaluable":mode!="incompatible","stateful_evaluable":mode.startswith("stateful") or mode=="full_stateful","episode_evaluable":mode=="full_stateful"}
 
 def audit(resolved: dict, schema_path: Path) -> dict:
     order=read_yaml(schema_path)["ordered_features"]
     return {"required_feature_count":len(order),"benchmarks":[audit_benchmark(x,order) for x in resolved["benchmarks"]]}
-

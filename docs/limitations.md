@@ -99,3 +99,6 @@ binary conflict `0.941358`; поэтому он остаётся только д
 # Ограничения v0.3.11
 
 Положительная внутренняя validation v0.3.11 относится только к synthetic traffic контролируемого Docker-стенда. Она не является blind holdout, production validation или доказательством переносимости. Policy evaluator на короткой 12-policy проверке дал speedup 1,23× вместо инженерной цели 4×; CPU average/median targets также не пройдены. Из-за Windows/Docker race пять validation runs пришлось безопасно возобновить с одним Docker worker. Эти ограничения не меняют probabilities или scientific pass/fail, но требуют v0.3.12 regression и последующей v0.3.13 blind holdout до обсуждения shadow mode.
+# Ограничения regression v0.3.12
+
+v0.3.12 не подтверждает переносимость на все исторические условия: три из пяти benchmark нельзя было оценить без нарушения frozen-data contract. Положительные результаты v0.3.9/v0.3.10 не компенсируют отсутствие coverage; readiness к blind holdout, shadow mode и backend integration остаётся отрицательной.

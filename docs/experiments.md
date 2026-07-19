@@ -89,3 +89,6 @@ Post-hoc аудит использует только immutable validation predi
 # v0.3.11: burden-aware promotion
 
 Новый независимый цикл завершён положительно: 12 training и 6 prospective validation runs, 792 и 396 уникальных captures соответственно. Frozen HGB/HGB candidate использует 51 причинный признак, grouped OOF calibration, Mondrian conformal и раздельные pre-alert/post-alert состояния. Все scientific и integrity policies пройдены; следующий разрешённый этап — v0.3.12 frozen regression. Подробный протокол: [эксперимент v0.3.11](experiments/v0_3_11.md).
+# Frozen multi-benchmark regression v0.3.12
+
+Этап v0.3.12 завершён без fit и tuning. Из пяти зарегистрированных benchmark core-evaluable оказались только v0.3.9 и v0.3.10; v0.3.6/v0.3.7 не имеют frozen 51-feature table, а v0.3.8 имеет count mismatch 216/252. На двух допустимых наборах macro F1 равна `0.990734` и `1.0`, но evaluation coverage и detection-by-second-window gate не пройдены. Подробности: [отчёт v0.3.12](experiments/v0_3_12.md).

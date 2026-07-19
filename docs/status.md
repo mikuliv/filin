@@ -2,8 +2,8 @@
 
 Авторитетный источник: [`research-state.yaml`](research-state.yaml).
 
-- Последний завершённый этап: v0.3.11.
-- Итог последнего этапа: burden-aware политика внутренней валидации пройдена.
+- Последний завершённый этап: v0.3.12.
+- Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
@@ -12,6 +12,12 @@
 792 и 396 уникальных capture hashes, заморозка кандидата до validation collection
 и единственная no-fit immutable prediction. Все scientific policies пройдены;
 разрешена только frozen regression v0.3.12, backend и shadow mode запрещены.
+
+## v0.3.12
+
+Frozen regression выполнена без обучения, калибровки, tuning, Docker, Zeek и feature extraction. Core prediction допустима только для v0.3.9 и v0.3.10; их macro F1 равна `0.990734` и `1.000000`, benign recall — `1.0`, FPR — `0.0`, episode recall/precision — `1.0/1.0`. Detection by second window равна `0.733333` на обоих наборах и ниже gate `0.75`.
+
+v0.3.6 и v0.3.7 не имеют frozen 51-feature table. v0.3.8 содержит 216 строк вместо 252, поэтому prediction запрещена. `evaluation_coverage_policy_passed=false`, `all_episode_gates_passed=false`, `v0312_regression_passed=false`, readiness к v0.3.13 — false.
 
 ## v0.3.6
 

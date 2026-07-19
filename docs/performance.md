@@ -21,3 +21,6 @@ RTX 5060 Ti не ускоряет frozen путь на scikit-learn HistGradient
 ## Профиль v0.3.11
 
 HGB profiles A (3 процесса × 4 OpenMP) и B (6 × 2) дали канонически одинаковые probabilities; выбран профиль B. Policy evaluator при 1 и 8 workers также дал точное совпадение, но короткий environment check ускорился только в 1,23× из-за стоимости запуска процессов. CPU average и median не достигли инженерных целей; дальнейшее ускорение должно использовать persistent pools и shared read-only arrays без изменения frozen вычислений. Validation после Docker race была безопасно продолжена с одним Docker worker; Zeek оставался ограничен четырьмя workers.
+# Predict-only профиль v0.3.12
+
+Label-blind preflight сравнил A (1×6), B (3×2) и C (5×1); вероятности эквивалентны с tolerance `1e-12`. Выбран B, поскольку его время отличается от C менее чем на 5%, а процессов меньше. Полный stage занял `13.032655` s, prediction `0.343479` s, metrics `0.101413` s, bootstrap `0.596444` s. CPU utilization ниже engineering targets из-за малого объёма двух совместимых наборов; научное решение от этого не зависит.

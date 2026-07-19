@@ -1,0 +1,55 @@
+stage: v0.3.12
+status: completed
+passed: false
+candidate_id: v0311:19176acb401be2d4
+hashes:
+  combined_regression_protocol: bf40e4bbe820274800d232c22ca299da8cf4dba0003f3a1154d171b658d108be
+  benchmark_registry: ecb4fe8a5de631e0743fc2a41f5e0e39a6b5d350a23e59f53892fa42a2cab6cf
+  compatibility_policy: 4bd275b2c1ee765e62a28d84ad34ad35e8eb59a74b7d93d69b32ad18fb44763d
+  metric_policy: f5aebcaeefcea38eaee4d7e7e085e044636b70e7bc45d733246abc0bfc411eb6
+  readiness_policy: 06f98e66f9de40b2d2618808aa85bd3e9fa0198fe574d1e1fbf8104199d641f2
+  candidate_artifact: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  candidate_manifest: ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c
+  v0311_validation_lock: d0710b6c0e67534e790878710951a0ba14dfd004f88588af33db71abd62ef8fa
+  v0311_immutable_prediction: 4c3f66c60f3c844f6ae227bfebbcbfe86009baf7217dcce0a568b6c9ad16f1f7
+  combined_prediction: 62671899371d20a868802b1063001368b50302745592025c8b41defe0f9051de
+benchmarks:
+  v036_prospective_holdout: {compatibility: incompatible, evaluation_mode: incompatible, runs: 12, rows: 252, episodes: null, features: 0, input_lock: null, prediction: null, reason: blocked_missing_frozen_features}
+  v037_hierarchical_validation: {compatibility: incompatible, evaluation_mode: incompatible, runs: 6, rows: 168, episodes: 84, features: 0, input_lock: null, prediction: null, reason: blocked_missing_frozen_features}
+  v038_evidence_validation: {compatibility: incompatible, evaluation_mode: incompatible, runs: 6, rows: 216, episodes: null, features: 51, input_lock: null, prediction: null, reason: row_count_mismatch_216_vs_252}
+  v039_episode_first_validation:
+    compatibility: full_stateful
+    evaluation_mode: full_stateful
+    runs: 6
+    rows: 252
+    episodes: 84
+    features: 51
+    input_lock: d8724fa1737a0bd4f16c69826650362f98941bb8adfb745fdc7a4e65574ce4b3
+    prediction: a777ed12cedcd29daf83133cd9eae57cb0864fbde4def65951c5385baf8cf5b0
+    metrics: {macro_f1: 0.9907335907335907, balanced_accuracy: 0.9907407407407408, benign_recall: 1.0, fpr: 0.0, attack_macro_recall: 0.9888888888888889, episode_recall: 1.0, episode_precision: 1.0, benign_episode_far: 0.0, detection_by_second_window: 0.7333333333333333, conformal_coverage: 0.996031746031746, conformal_wrong_only_rate: 0.0}
+  v0310_minimal_promotion_validation:
+    compatibility: full_stateful
+    evaluation_mode: full_stateful
+    runs: 6
+    rows: 324
+    episodes: 108
+    features: 51
+    input_lock: 512db1e5f2f36c3359da4d9c52568bb23bf9af44ab190345ff8d8c5cad4d3995
+    prediction: 697e9dec023ced50b6f544a87edc44c4509d0766e11dd4eba2ae53afb675db7b
+    metrics: {macro_f1: 1.0, balanced_accuracy: 1.0, benign_recall: 1.0, fpr: 0.0, attack_macro_recall: 1.0, episode_recall: 1.0, episode_precision: 1.0, benign_episode_far: 0.0, detection_by_second_window: 0.7333333333333333, conformal_coverage: 1.0, conformal_wrong_only_rate: 0.0}
+aggregate: {median_macro_f1: 0.9953667953667953, minimum_macro_f1: 0.9907335907335907, median_balanced_accuracy: 0.9953703703703705, median_benign_recall: 1.0, median_fpr: 0.0, median_attack_macro_recall: 0.9944444444444445, catastrophic_benchmark_count: 0}
+no_fit: {fit_call_count: 0, partial_fit_call_count: 0, fit_transform_call_count: 0, calibration_call_count: 0, conformal_fit_call_count: 0, threshold_selection_call_count: 0, feature_selection_call_count: 0, candidate_replacement_count: 0, docker_campaign_call_count: 0, zeek_processing_call_count: 0, feature_extraction_call_count: 0}
+policy:
+  evaluation_coverage_policy_passed: false
+  all_absolute_window_gates_passed: true
+  all_stateful_gates_passed: true
+  all_episode_gates_passed: false
+  cross_benchmark_aggregate_policy_passed: true
+  non_inferiority_policy_passed: true
+  catastrophic_regression_absent: true
+  v0312_regression_completed: true
+  v0312_regression_passed: false
+  candidate_ready_for_v0_3_13_blind_holdout: false
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+strict_resume: {passed: true, skipped_stages: 56, predictions_repeated: false}

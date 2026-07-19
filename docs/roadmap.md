@@ -21,18 +21,15 @@
   episode-level decision проверены на новых 12+6 runs; policy не пройдена.
 - v0.3.9 — episode-first promotion, signed evidence и lifecycle проверены на
   новых 12+6 runs; policy не пройдена.
+- v0.3.12 — frozen multi-benchmark regression завершена без fit; evaluation coverage и episode gate не пройдены.
 
 ## Активная работа
 
-Активный эксперимент отсутствует. v0.3.11 завершён с положительным результатом внутренней validation;
-его frozen predictions и метрики не могут использоваться для скрытой настройки.
+Активный эксперимент отсутствует. v0.3.12 завершён с отрицательным regression-решением; frozen candidate v0.3.11 не изменён.
 
 ## Следующий допустимый этап
 
-Следующий допустимый вид работ — проектирование нового training cycle с новыми
-runs, сценариями и заранее зарегистрированной политикой. Номер ему не присвоен.
-Frozen regression v0.3.11 не разрешена, поскольку
-`candidate_ready_for_v0_3_11_regression=false`.
+Следующий допустимый вид работ — новый training cycle с новыми данными, runs и заранее зарегистрированной политикой. v0.3.13 blind holdout, shadow mode и backend integration запрещены, поскольку `candidate_ready_for_v0_3_13_blind_holdout=false`.
 
 Последующий перспективный holdout потребует отдельно зарегистрированного
 протокола, ранее не использовавшихся сценариев и единственного predict после

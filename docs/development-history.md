@@ -59,3 +59,6 @@ regression, backend integration и shadow mode не разрешены.
 # v0.3.11
 
 Реализован новый burden-aware training/validation cycle с эпизодами длины 2 и 4, раздельными pre-alert pending и post-alert continuation, nested grouped selection и 92-policy grid. Собраны 792 training и 396 validation captures, candidate заморожен до prospective validation, выполнена одна no-fit immutable prediction. Все frozen scientific policies пройдены; regression v0.3.12 разрешена, backend и shadow mode остаются запрещены.
+# v0.3.12
+
+Добавлен frozen multi-benchmark regression runner с read-only/no-fit guards, двухфазным доступом, compatibility audit, immutable predictions, run-level bootstrap и historical comparison. Этап завершён отрицательно: оценены v0.3.9/v0.3.10, три старых набора заблокированы, coverage и episode gates не пройдены.

@@ -23,3 +23,6 @@ episodes первым окном и подавила 120 повторных emis
 # Burden-aware promotion v0.3.11
 
 Семантика `burden_aware_v1` причинно разделяет benign, pre-alert pending, alert emission, post-alert continuation и review states. Первый alert не подавляется, continuation относится к prior alert, dedup key ограничен run/activity/class и TTL=3, unresolved pending вычисляется только post-hoc. Frozen validation прошла все pending, review, dedup, episode, group, class и variant gates.
+# Regression semantics v0.3.12
+
+Frozen `burden_aware_v1` применена без изменения thresholds. На v0.3.9 получено 30 alert events и 59 post-alert continuations, на v0.3.10 — 60 и 120; continuation не считается pending или analyst burden. False duplicate suppression равна нулю. Detection by second window `0.733333` на обоих наборах ниже frozen gate `0.75`.

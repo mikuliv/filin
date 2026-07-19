@@ -44,3 +44,6 @@ v0.3.1–v0.3.10 остаются неизменяемыми записями и
 ## Burden-aware candidate v0.3.11
 
 Новый HGB/HGB candidate прошёл frozen internal validation: closed-set macro F1 1,0, attack episode recall 1,0, benign false-alert rate 0,0, unresolved pending 0,0 и duplicate suppression precision 1,0. Это разрешает только regression v0.3.12; production, backend и shadow mode остаются запрещёнными.
+# Статус после v0.3.12
+
+Платформа умеет воспроизводимо применять frozen candidate к совместимым 51-feature tables и формировать immutable regression evidence. Этап v0.3.12 не дал допуска к v0.3.13, shadow mode или backend integration.

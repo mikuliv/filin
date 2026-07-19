@@ -4,10 +4,10 @@
 
 Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-- Последний завершённый этап: v0.3.11.
-- Итог последнего этапа: burden-aware политика внутренней валидации пройдена.
-- Активная работа: этап v0.3.11 завершён; candidate заморожен.
-- Следующий допустимый этап: v0.3.12 frozen multi-benchmark regression без fit и tuning.
+- Последний завершённый этап: v0.3.12.
+- Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена из-за недостаточного evaluation coverage и episode gate.
+- Активная работа: этап v0.3.12 завершён; frozen candidate v0.3.11 не изменён.
+- Следующий допустимый этап: новый training cycle на новых данных; v0.3.13 blind holdout не разрешён.
 - Интеграция с backend разрешена: нет.
 - Теневой режим разрешён: нет.
 - Готовность к промышленной эксплуатации: нет.
@@ -16,6 +16,8 @@
 пройдены integrity, closed-set, calibration, conformal, strong-path и episode
 gates, но training-only model-selection policy и pending/review gate не
 пройдены; backend, shadow mode и production остаются запрещены.
+
+В v0.3.12 кандидат `v0311:19176acb401be2d4` без fit и tuning оценён на двух совместимых frozen наборах: v0.3.9 (252 окна) и v0.3.10 (324 окна). Наборы v0.3.6 и v0.3.7 заблокированы из-за отсутствия готовой 51-признаковой таблицы, v0.3.8 — из-за расхождения 216 фактических и 252 ожидаемых строк. Regression не пройдена; shadow mode и backend integration не разрешены.
 
 ## Назначение
 

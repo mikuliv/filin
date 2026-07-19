@@ -1,16 +1,16 @@
 schema_version: 1
-latest_completed_stage: v0.3.11
-latest_completed_result: internal_validation_policy_passed
-active_stage: v0.3.11_completed_positive_internal_validation
+latest_completed_stage: v0.3.12
+latest_completed_result: frozen_multi_benchmark_regression_not_passed
+active_stage: v0.3.12_completed_negative_coverage_and_episode_gates
 runtime_integrity_acceptance:
   status: passed
   historical_results_modified: false
   full_v0_3_8_training_allowed: false
   secure_artifact_verification: not_executed_secure_artifacts_unavailable
 next_allowed_stage:
-  version: v0.3.12
-  kind: frozen_multi_benchmark_regression
-  reason: v0.3.11 passed frozen internal validation; regression is allowed without fit, calibration, tuning, or policy changes
+  version: unassigned
+  kind: new_training_cycle_on_new_data
+  reason: v0.3.12 regression did not pass coverage and episode gates; v0.3.13 blind holdout is not allowed
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false
@@ -18,6 +18,11 @@ frozen_candidate:
   stage: v0.3.11
   usable_for_backend: false
   corrected_by_audit: false
+  candidate_id: v0311:19176acb401be2d4
+  regression_stage: v0.3.12
+  regression_completed: true
+  regression_passed: false
+  ready_for_v0_3_13_blind_holdout: false
 holdout_boundaries:
   v0.3.5: frozen_regression_not_blind
   v0.3.6: historical_prospective_holdout_do_not_reopen_for_tuning
@@ -26,6 +31,7 @@ holdout_boundaries:
   v0.3.9: episode_first_internal_validation_not_prospective_holdout
   v0.3.10: minimal_promotion_internal_validation_not_prospective_holdout
   v0.3.11: burden_aware_internal_validation_not_prospective_holdout
+  v0.3.12: frozen_multi_benchmark_regression_not_blind_holdout
 historical_stage_summary:
   v0.3.1: baseline_evaluation_completed
   v0.3.2: frozen_robustness_evaluation_completed
@@ -38,6 +44,24 @@ historical_stage_summary:
   v0.3.9: episode_first_internal_validation_policy_not_passed
   v0.3.10: minimal_promotion_internal_validation_policy_not_passed
   v0.3.11: burden_aware_internal_validation_policy_passed
+  v0.3.12: frozen_multi_benchmark_regression_not_passed
+v0_3_12_regression:
+  status: completed
+  passed: false
+  candidate_source: v0.3.11
+  evaluation_coverage_policy_passed: false
+  all_absolute_window_gates_passed: true
+  all_stateful_gates_passed: true
+  all_episode_gates_passed: false
+  cross_benchmark_aggregate_policy_passed: true
+  non_inferiority_policy_passed: true
+  catastrophic_benchmark_count: 0
+  benchmarks:
+    v036_prospective_holdout: {compatibility: incompatible, rows: 252, reason: blocked_missing_frozen_features}
+    v037_hierarchical_validation: {compatibility: incompatible, rows: 168, reason: blocked_missing_frozen_features}
+    v038_evidence_validation: {compatibility: incompatible, rows: 216, reason: row_count_mismatch_216_vs_252}
+    v039_episode_first_validation: {compatibility: full_stateful, rows: 252, episodes: 84, macro_f1: 0.9907335907335907, attack_episode_recall: 1.0, detection_by_second_window: 0.7333333333333333}
+    v0310_minimal_promotion_validation: {compatibility: full_stateful, rows: 324, episodes: 108, macro_f1: 1.0, attack_episode_recall: 1.0, detection_by_second_window: 0.7333333333333333}
 protected_artifact_policy:
   external_storage_required: true
   environment_variable: FILIN_SECURE_ARTIFACT_ROOT
