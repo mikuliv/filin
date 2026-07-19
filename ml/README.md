@@ -65,3 +65,7 @@ candidate не разрешён для regression, backend или shadow mode.
 # Frozen regression v0.3.12
 
 `experiments/v0_3_12` реализует predict-only regression кандидата v0.3.11. Compatibility audit fail-closed блокирует missing features, count mismatch, imputation и реконструкцию episode mapping. На доступных v0.3.9/v0.3.10 predictions заморожены, но общая policy не пройдена из-за coverage и episode latency gate.
+
+# Технический аудит v0.3.12.1
+
+`audits/v0_3_12_1` читает immutable predictions и frozen mappings без fit/predict. Он воспроизводит frozen record-order metric, отдельно восстанавливает causal emission и проверяет historical coverage. Runtime row-level отчёты остаются вне Git.

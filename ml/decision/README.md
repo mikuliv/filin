@@ -26,3 +26,7 @@ episodes первым окном и подавила 120 повторных emis
 # Regression semantics v0.3.12
 
 Frozen `burden_aware_v1` применена без изменения thresholds. На v0.3.9 получено 30 alert events и 59 post-alert continuations, на v0.3.10 — 60 и 120; continuation не считается pending или analyst burden. False duplicate suppression равна нулю. Detection by second window `0.733333` на обоих наборах ниже frozen gate `0.75`.
+
+# Причинное уточнение v0.3.12.1
+
+Immutable prediction хранит правильные `causal_order` и state transitions, но порядок элементов `records` не является causal. Поэтому episode latency нельзя вычислять через позицию элемента без сортировки. В causal order первый alert не подавляется, eligibility и emission совпадают, а дополнительная задержка state machine равна нулю. Frozen report и pass/fail не переписываются.

@@ -76,3 +76,21 @@ technical_audits:
     official_validation_result_changed: false
     finding: legacy_pending_combines_post_alert_continuation_with_operator_burden
     readiness_changed: false
+  v0_3_12_1:
+    status: completed_post_hoc_delay_and_coverage_audit
+    scientific_status_changed: false
+    frozen_candidate_changed: false
+    official_regression_result_changed: false
+    frozen_second_window_rates: {v0.3.9: 0.7333333333333333, v0.3.10: 0.7333333333333333}
+    frozen_alert_window_counts: {v0.3.9: [12, 10, 8], v0.3.10: [23, 21, 16]}
+    causal_alert_window_counts: {v0.3.9: [29, 1, 0], v0.3.10: [60, 0, 0]}
+    primary_delay_finding: immutable_prediction_record_order_is_not_causal_order
+    state_machine_extra_delay_count: 0
+    activity_key_anomaly_count: 0
+    first_alert_suppression_count: 0
+    v0_3_8_count_provenance: 252_intervals_minus_36_warmup_equals_216_scored_rows
+    v0_3_8_mismatch_classification: expected_count_metadata_error
+    v0_3_6_recoverability: rebuildable_but_not_frozen
+    v0_3_7_recoverability: rebuildable_but_not_frozen
+    regression_artifact_retention_standard: docs/regression-artifact-retention.md
+    readiness_changed: false

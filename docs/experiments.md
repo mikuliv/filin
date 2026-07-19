@@ -92,3 +92,7 @@ Post-hoc аудит использует только immutable validation predi
 # Frozen multi-benchmark regression v0.3.12
 
 Этап v0.3.12 завершён без fit и tuning. Из пяти зарегистрированных benchmark core-evaluable оказались только v0.3.9 и v0.3.10; v0.3.6/v0.3.7 не имеют frozen 51-feature table, а v0.3.8 имеет count mismatch 216/252. На двух допустимых наборах macro F1 равна `0.990734` и `1.0`, но evaluation coverage и detection-by-second-window gate не пройдены. Подробности: [отчёт v0.3.12](experiments/v0_3_12.md).
+
+# Технический аудит v0.3.12.1
+
+Post-hoc аудит отделил frozen record-order latency от causal alert emission, объяснил 216/252 для v0.3.8 и классифицировал восстановимость v0.3.6/v0.3.7. [Протокол и выводы](experiments/v0_3_12_1.md) не меняют научный результат v0.3.12.

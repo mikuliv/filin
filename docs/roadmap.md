@@ -61,3 +61,7 @@ training cycle на новых данных с заранее зафиксиро
 # После v0.3.11
 
 Burden-aware internal validation пройдена. Следующий разрешённый этап — v0.3.12 frozen multi-benchmark regression на неизменённых benchmarks v0.3.6–v0.3.10 без fit, calibration, tuning и изменения policy. После успешной regression потребуется новая prospective blind holdout v0.3.13. Shadow mode и backend integration до неё запрещены.
+
+# После технического аудита v0.3.12.1
+
+v0.3.13 по-прежнему запрещён. Следующий допустимый научный этап — полностью новый training/internal-validation cycle с новыми данными и seeds, обязательным regression bundle и pre-close compatibility self-test без model prediction.

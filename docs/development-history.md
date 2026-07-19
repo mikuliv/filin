@@ -62,3 +62,7 @@ regression, backend integration и shadow mode не разрешены.
 # v0.3.12
 
 Добавлен frozen multi-benchmark regression runner с read-only/no-fit guards, двухфазным доступом, compatibility audit, immutable predictions, run-level bootstrap и historical comparison. Этап завершён отрицательно: оценены v0.3.9/v0.3.10, три старых набора заблокированы, coverage и episode gates не пройдены.
+
+# v0.3.12.1
+
+Добавлен технический аудит причинности episode latency, state machine, activity key, дискретности gate и provenance v0.3.8. Созданы historical artifact inventory, recoverability classification, стандарт regression bundle, template и validator. Frozen v0.3.12 не изменён.

@@ -102,3 +102,7 @@ binary conflict `0.941358`; поэтому он остаётся только д
 # Ограничения regression v0.3.12
 
 v0.3.12 не подтверждает переносимость на все исторические условия: три из пяти benchmark нельзя было оценить без нарушения frozen-data contract. Положительные результаты v0.3.9/v0.3.10 не компенсируют отсутствие coverage; readiness к blind holdout, shadow mode и backend integration остаётся отрицательной.
+
+# Ограничения аудита v0.3.12.1
+
+Аудит использует только frozen records и не предлагает thresholds по историческим строкам. Исправленная causal интерпретация latency не является пересчётом официального gate. Rebuildable PCAP/Zeek источники v0.3.6/v0.3.7 не эквивалентны отсутствующей frozen feature table.
