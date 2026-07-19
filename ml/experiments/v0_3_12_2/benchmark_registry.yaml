@@ -1,0 +1,54 @@
+benchmarks:
+  - benchmark_id: v038_evidence_validation
+    source_stage: v0.3.8
+    scientific_role: frozen_regression
+    source_root: lab/output/campaigns/filin_v0_3_8_evidence_validation
+    validation_lock_path: ml/experiments/v0_3_8/validation_lock_manifest.yaml
+    feature_table_path: lab/output/datasets/v038_validation_frozen_features.csv
+    expected_runs: 6
+    expected_extracted_rows: 252
+    expected_warmup_rows: 36
+    expected_scored_rows: 216
+    expected_episodes: 72
+    expected_features: 51
+    prediction_mode: new_predict_once
+    evaluation_mode: full_stateful
+    compatibility_basis: v0.3.12.1 expected_count_metadata_error audit
+  - benchmark_id: v039_episode_first_validation
+    source_stage: v0.3.9
+    scientific_role: frozen_regression
+    source_root: lab/output/campaigns/filin_v0_3_9_episode_first_validation
+    validation_lock_path: ml/experiments/v0_3_9/validation_lock_manifest.yaml
+    feature_table_path: lab/output/datasets/v039_validation_frozen_features.csv
+    expected_runs: 6
+    expected_scored_rows: 252
+    expected_episodes: 84
+    expected_attack_episodes: 30
+    expected_features: 51
+    prediction_mode: reuse_v0312_immutable_prediction
+    evaluation_mode: full_stateful
+  - benchmark_id: v0310_minimal_promotion_validation
+    source_stage: v0.3.10
+    scientific_role: frozen_regression
+    source_root: lab/output/campaigns/filin_v0_3_10_minimal_promotion_validation
+    validation_lock_path: ml/experiments/v0_3_10/validation_lock_manifest.yaml
+    feature_table_path: lab/output/datasets/v0310_validation_frozen_features.csv
+    expected_runs: 6
+    expected_scored_rows: 324
+    expected_episodes: 108
+    expected_attack_episodes: 60
+    expected_features: 51
+    prediction_mode: reuse_v0312_immutable_prediction
+    evaluation_mode: full_stateful
+  - benchmark_id: v036_prospective_holdout
+    source_stage: v0.3.6
+    scientific_role: legacy_not_evaluable
+    reason: missing_frozen_regression_bundle
+    recoverability: rebuildable_but_not_frozen
+    included_in_coverage_denominator: false
+  - benchmark_id: v037_hierarchical_validation
+    source_stage: v0.3.7
+    scientific_role: legacy_not_evaluable
+    reason: missing_frozen_regression_bundle
+    recoverability: rebuildable_but_not_frozen
+    included_in_coverage_denominator: false

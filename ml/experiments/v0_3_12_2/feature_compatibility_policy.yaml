@@ -1,0 +1,8 @@
+required_feature_count: 51
+canonical_schema: ml/experiments/v0_3_11/feature_schema.yaml
+allow_extra_metadata_columns: true
+allow_canonical_reorder: true
+allowed_exact_aliases: {}
+imputation_allowed: false
+feature_reconstruction_allowed: false
+label_dependent_columns_allowed: false

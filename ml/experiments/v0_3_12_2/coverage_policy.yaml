@@ -1,0 +1,9 @@
+required_benchmarks: [v038_evidence_validation, v039_episode_first_validation, v0310_minimal_promotion_validation]
+required_bundle_count: 3
+core_evaluable_count: 3
+stateful_evaluable_count: 3
+episode_evaluable_count: 3
+integrity_corruption_count: 0
+missing_required_bundle_count: 0
+legacy_unavailable_count: 2
+legacy_unavailable_affects_pass_fail: false

@@ -1,0 +1,25 @@
+protocol_id: filin-v0.3.12.2-causal-order-corrected-frozen-regression
+stage_type: frozen_regression
+candidate_source: v0.3.11
+candidate_id: v0311:19176acb401be2d4
+training_allowed: false
+refit_allowed: false
+calibration_fit_allowed: false
+conformal_fit_allowed: false
+threshold_tuning_allowed: false
+feature_selection_allowed: false
+candidate_replacement_allowed: false
+docker_allowed: false
+zeek_allowed: false
+feature_extraction_allowed: false
+historical_bundle_rebuild_allowed: false
+causal_order_required: true
+physical_record_order_allowed: false
+scientific_benchmarks: [v0.3.8, v0.3.9, v0.3.10]
+legacy_non_evaluable_benchmarks: [v0.3.6, v0.3.7]
+data_access_phases:
+  A: protocol_integrity_without_rows
+  B: input_locks_without_labels
+  C: prediction_without_labels
+  D: corrected_causal_metrics
+  E: historical_comparison_after_absolute_metrics_freeze

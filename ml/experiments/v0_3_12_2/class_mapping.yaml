@@ -1,0 +1,2 @@
+classes: [benign, port_scan, auth_failures, web_probe, low_rate_dos, beacon]
+exact_aliases: {beacon_simulation: beacon}
