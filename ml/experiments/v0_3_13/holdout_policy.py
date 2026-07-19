@@ -1,0 +1,20 @@
+from __future__ import annotations
+
+from .common import ATTACK_CLASSES
+
+
+def apply(metrics: dict, per_run: dict, per_group: dict, per_class: dict, variants: dict, per_length: dict, integrity: dict) -> dict:
+    state = metrics["stateful"]
+    episode = metrics["episode"]
+    window_pass = metrics["macro_f1"] >= .90 and metrics["balanced_accuracy"] >= .90 and metrics["benign_recall"] >= .90 and metrics["FPR"] <= .10 and metrics["attack_macro_recall"] >= .90 and metrics["attack_macro_f1"] >= .90 and not metrics["zero_recall_classes"] and metrics["candidate_evidence_recall"] >= .90 and metrics["strong_evidence_precision"] >= .95
+    state_pass = state["duplicate_suppression_precision"] >= .99 and state["duplicate_false_suppression_count"] == 0 and state["first_alert_suppression_count"] == 0 and state["eligible_but_not_emitted_count"] == 0 and state["state_machine_extra_delay_count"] == 0 and state["cross_run_contamination_count"] == 0 and state["cross_activity_contamination_count"] == 0 and state["review_window_rate"] <= .15 and state["attack_review_window_rate"] <= .25 and state["benign_review_window_rate"] <= .10 and state["pre_alert_pending_attack_window_rate"] <= .25 and state["unresolved_pending_episode_rate"] <= .10
+    episode_pass = episode["attack_episode_recall"] >= .90 and episode["episode_alert_precision"] >= .95 and episode["benign_episode_false_alert_rate"] <= .05 and episode["detection_by_first_window"] >= .65 and episode["detection_by_second_window"] >= .85 and episode["detection_by_third_window"] >= .95 and episode["latency"]["median"] <= 2 and episode["latency"]["maximum"] <= 4 and episode["unresolved_pending_episode_rate"] <= .10
+    class_pass = all(value["episode_recall"] >= .80 and value["window_recall"] >= .80 and value["episode_precision"] >= .90 and value["unresolved_pending_episode_rate"] <= .15 and value["support_episodes"] == 20 for value in per_class.values())
+    group_pass = all(value["attack_episode_recall"] >= .80 and value["episode_alert_precision"] >= .90 and value["benign_episode_false_alert_rate"] <= .10 and value["detection_by_second_window"] >= .75 and value["unresolved_pending_episode_rate"] <= .15 for value in per_group.values())
+    run_pass = all(value["window"]["macro_f1"] >= .70 and value["window"]["benign_recall"] >= .70 and value["window"]["FPR"] <= .30 and value["episode"]["attack_episode_recall"] >= .75 and value["episode"]["episode_alert_precision"] >= .85 for value in per_run.values())
+    variant_pass = len(variants) == 25 and all(value["episode_count"] == 4 and value["alert_episode_count"] == 0 for value in variants.values())
+    length_pass = all(value["attack_episode_recall"] >= .80 and value["episode_alert_precision"] >= .90 and value["detection_by_second_window"] >= .75 and value["unresolved_pending_episode_rate"] <= .15 for value in per_length.values())
+    calibration_pass = metrics["calibration"]["joint_ece"] <= .10 and metrics["calibration"]["joint_brier"] <= .10
+    conformal_pass = metrics["conformal"]["empirical_coverage_overall"] >= .85 and min(metrics["conformal"]["coverage_per_class"].values()) >= .75 and metrics["conformal"]["wrong_only_rate"] <= .05 and metrics["conformal"]["empty_set_rate"] <= .10
+    catastrophic = metrics["macro_f1"] < .60 or metrics["benign_recall"] < .60 or metrics["FPR"] > .40 or metrics["attack_macro_recall"] < .60 or any(metrics["per_class"][name]["recall"] == 0 for name in ATTACK_CLASSES) or state["first_alert_suppression_count"] > 0 or state["cross_run_contamination_count"] > 0
+    return {"window_policy_passed": window_pass, "stateful_policy_passed": state_pass, "episode_policy_passed": episode_pass, "per_class_policy_passed": class_pass, "per_group_policy_passed": group_pass, "per_run_stability_policy_passed": run_pass, "all_benign_variant_policies_passed": variant_pass, "episode_length_policy_passed": length_pass, "calibration_policy_passed": calibration_pass, "conformal_policy_passed": conformal_pass, "catastrophic_failure_absent": not catastrophic, "catastrophic_failure_count": int(catastrophic)}
