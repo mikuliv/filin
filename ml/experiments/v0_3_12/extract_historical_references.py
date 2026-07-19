@@ -8,7 +8,9 @@ def extract(items):
     out=[]
     for item in items:
         policy=ROOT/item["historical_policy_result_path"]; summary=ROOT/item["historical_summary_path"]; prediction=ROOT/item["historical_prediction_path"]
-        payload=read_json(policy) if policy.exists() else {}; metrics={k:payload[k] for k in ALLOWED if k in payload}
-        out.append({"benchmark_id":item["benchmark_id"],"historical_candidate_id":payload.get("candidate_id") or payload.get("selected_candidate_id"),"historical_prediction_available":prediction.exists(),"historical_prediction_sha256":sha256_file(prediction) if prediction.exists() else None,"historical_metric_source":item["historical_policy_result_path"],"historical_metric_source_sha256":sha256_file(policy) if policy.exists() else None,"historical_summary_sha256":sha256_file(summary) if summary.exists() else None,"metrics":metrics,"json_authoritative":True,"summary_discrepancies":[]})
+        payload=read_json(policy) if policy.exists() else {}; stage=item["source_stage"].replace(".","_"); report=ROOT/"ml/reports"/stage
+        candidates=[report/"closed_set_metrics.json",report/"window_metrics.json",report/"overall_metrics.json"]
+        metric_path=next((p for p in candidates if p.exists()),policy); metric_payload=read_json(metric_path) if metric_path.exists() else {}
+        metrics={k:metric_payload[k] for k in ALLOWED if k in metric_payload}
+        out.append({"benchmark_id":item["benchmark_id"],"historical_candidate_id":payload.get("candidate_id") or payload.get("selected_candidate_id"),"historical_prediction_available":prediction.exists(),"historical_prediction_sha256":sha256_file(prediction) if prediction.exists() else None,"historical_metric_source":metric_path.relative_to(ROOT).as_posix(),"historical_metric_source_sha256":sha256_file(metric_path) if metric_path.exists() else None,"historical_summary_sha256":sha256_file(summary) if summary.exists() else None,"metrics":metrics,"json_authoritative":True,"summary_discrepancies":[]})
     return {"historical_results_opened_after_new_metrics_freeze":True,"benchmarks":out}
-

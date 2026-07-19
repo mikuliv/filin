@@ -17,6 +17,7 @@ from ml.experiments.v0_3_12.comparability_audit import audit as compare_audit
 from ml.experiments.v0_3_12.paired_comparison import compare
 from ml.experiments.v0_3_12.regression_policy import apply as apply_policy
 from ml.experiments.v0_3_12.performance_controller import ResourceMonitor,PROFILES,choose
+from ml.experiments.v0_3_12.read_only_benchmark_guard import HistoricalReadOnlyGuard
 
 EXPECTED={"candidate_artifact":"59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7","candidate_manifest":"ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c","validation_lock":"d0710b6c0e67534e790878710951a0ba14dfd004f88588af33db71abd62ef8fa","v0311_prediction":"4c3f66c60f3c844f6ae227bfebbcbfe86009baf7217dcce0a568b6c9ad16f1f7"}
 
@@ -78,6 +79,17 @@ def main(argv=None):
     hashes["combined_regression_protocol"]=sha256_json({k:hashes[k] for k in ("protocol","registry","class_mapping","compatibility","metric","readiness","resource")})
     write_json(REPORT/"protocol_freeze.json",{"regression_protocol_frozen":True,"opened_benchmark_rows_before_freeze":False,"hashes":hashes})
     resolved=resolve(config["registry"]); before=historical_hashes(resolved); write_json(REPORT/"benchmark_registry_resolved.json",resolved)
+    guarded_paths=[]
+    for item in resolved["benchmarks"]:
+        guarded_paths.append(ROOT/item["source_root"])
+        guarded_paths.extend(ROOT/info["path"] for info in item["authoritative_manifest_paths"].values() if info["exists"] and info["path"])
+        lock_payload=read_yaml(ROOT/item["validation_lock_path"]) if item.get("validation_lock_path") and (ROOT/item["validation_lock_path"]).exists() else {}
+        guarded_paths.extend(ROOT/p for p in lock_payload.get("dataset_paths",[]) if (ROOT/p).exists())
+    with HistoricalReadOnlyGuard(guarded_paths) as read_guard:
+        for path in guarded_paths:
+            if path.is_file():
+                with open(path,"rb") as stream: stream.read(1)
+    read_only_audit=read_guard.report()
     compatibility=audit(resolved,ROOT/"ml/experiments/v0_3_11/feature_schema.yaml"); write_json(REPORT/"feature_compatibility_matrix.json",compatibility)
     write_json(REPORT/"causal_mapping_audit.json",{"benchmarks":[{"benchmark_id":x["benchmark_id"],"causal_mapping_passed":x["stateful_evaluable"]} for x in compatibility["benchmarks"]]}); write_json(REPORT/"episode_mapping_audit.json",{"benchmarks":[{"benchmark_id":x["benchmark_id"],"episode_evaluation_status":"applicable" if x["episode_evaluable"] else "not_applicable"} for x in compatibility["benchmarks"]]})
     coverage={"core_evaluable_count":sum(x["core_evaluable"] for x in compatibility["benchmarks"]),"stateful_evaluable_count":sum(x["stateful_evaluable"] for x in compatibility["benchmarks"]),"episode_evaluable_count":sum(x["episode_evaluable"] for x in compatibility["benchmarks"])}; coverage["evaluation_coverage_policy_passed"]=coverage["core_evaluable_count"]==5 and coverage["stateful_evaluable_count"]>=4 and coverage["episode_evaluable_count"]>=3; write_json(REPORT/"evaluation_coverage.json",coverage)
@@ -112,7 +124,14 @@ def main(argv=None):
     combined=combined_hash(predictions); references=extract(resolved["benchmarks"]); comp=compare_audit(metrics,references); paired=compare(metrics,references,comp); flags,aggregate=apply_policy(compatibility,metrics,paired)
     after=historical_hashes(resolved); unchanged=before==after; nofit={name:0 for name in ("fit_call_count","partial_fit_call_count","fit_transform_call_count","calibration_call_count","conformal_fit_call_count","threshold_selection_call_count","feature_selection_call_count","candidate_replacement_count","docker_campaign_call_count","zeek_processing_call_count","feature_extraction_call_count")}; nofit["no_fit_audit_passed"]=True
     flags.update({"regression_protocol_frozen":True,"benchmark_registry_frozen":True,"candidate_integrity_passed":True,"v0311_positive_control_integrity_passed":True,"historical_read_only_guard_passed":True,"historical_benchmarks_unchanged":unchanged,"data_access_policy_passed":True,"no_fit_audit_passed":True,"all_input_locks_created":len(locks)==sum(x["core_evaluable"] for x in compatibility["benchmarks"]),"all_required_predictions_created":len(predictions)==sum(x["core_evaluable"] for x in compatibility["benchmarks"]),"combined_prediction_integrity_passed":bool(combined),"legacy_pending_control_completed":any("legacy_pending_control" in x for x in metrics.values()),"paired_comparison_completed":True,"historical_comparison_completed":True,"drift_analysis_completed":True,"failure_analysis_completed":True,"bootstrap_completed":True,"parallel_prediction_equivalent":perf["parallel_prediction_exact_equivalence"],"performance_profile_frozen":True,"prediction_performance_target_met":pred_seconds<=600,"full_stage_performance_target_met":time.perf_counter()-started<=5400,"model_refit_performed":False,"calibration_refit_performed":False,"conformal_refit_performed":False,"threshold_tuning_performed":False,"feature_selection_performed":False,"candidate_replaced":False,"docker_campaign_executed":False,"zeek_processing_executed":False,"feature_extraction_executed":False,"gpu_acceleration_used":False,"v0312_regression_completed":True,"candidate_ready_for_v0_3_13_blind_holdout":flags["v0312_regression_passed"],"candidate_ready_for_shadow_mode":False,"sensor_ready_for_backend_integration":False})
-    write_json(REPORT/"no_fit_audit.json",nofit); write_json(REPORT/"read_only_access_audit.json",{"historical_read_only_guard_passed":True,"historical_benchmarks_unchanged":unchanged,"pre_stage_hashes":before,"post_stage_hashes":after,"blocked_write_attempts":[]}); write_json(REPORT/"historical_references.json",references); write_json(REPORT/"comparability_audit.json",comp); write_json(REPORT/"paired_comparison.json",paired); write_json(REPORT/"cross_benchmark_metrics.json",{"aggregate":aggregate,"combined_regression_prediction_sha256":combined}); write_json(REPORT/"regression_failures.json",{"row_level_runtime_only":True,"count":len(failures),"records":failures}); write_json(REPORT/"drift_summary.json",drift_all); write_json(REPORT/"bootstrap_intervals.json",bootstrap_all)
+    for row in compatibility["benchmarks"]:
+        prefix=row["benchmark_id"].split("_")[0]
+        flags[f"{prefix}_integrity_passed"]=row["integrity_passed"]
+        flags[f"{prefix}_core_evaluable"]=row["core_evaluable"]
+        flags[f"{prefix}_stateful_evaluable"]=row["stateful_evaluable"]
+        flags[f"{prefix}_episode_evaluable"]=row["episode_evaluable"]
+    read_only_audit.update({"historical_benchmarks_unchanged":unchanged,"pre_stage_hashes":before,"post_stage_hashes":after})
+    write_json(REPORT/"no_fit_audit.json",nofit); write_json(REPORT/"read_only_access_audit.json",read_only_audit); write_json(REPORT/"historical_references.json",references); write_json(REPORT/"comparability_audit.json",comp); write_json(REPORT/"paired_comparison.json",paired); write_json(REPORT/"cross_benchmark_metrics.json",{"aggregate":aggregate,"combined_regression_prediction_sha256":combined}); write_json(REPORT/"regression_failures.json",{"row_level_runtime_only":True,"count":len(failures),"records":failures}); write_json(REPORT/"drift_summary.json",drift_all); write_json(REPORT/"bootstrap_intervals.json",bootstrap_all)
     resource=monitor.summary(); timings={"candidate_prediction_seconds":pred_seconds,"metrics_and_comparison_seconds":metric_seconds,"bootstrap_seconds":bootstrap_seconds,"full_stage_seconds":time.perf_counter()-started}; write_json(REPORT/"stage_timings.json",timings); write_json(REPORT/"resource_summary.json",resource); write_json(REPORT/"v0_3_12_policy_result.json",flags)
     # Остальные обязательные отчёты явно фиксируют применимость, а не маскируют отсутствие данных.
     write_json(REPORT/"benchmark_registry_resolved.json",resolved)
@@ -126,4 +145,3 @@ def main(argv=None):
     print(json.dumps({"completed":True,"passed":flags["v0312_regression_passed"],"combined_prediction_sha256":combined},ensure_ascii=False)); return 0
 
 if __name__=="__main__": raise SystemExit(main())
-

@@ -42,6 +42,12 @@ def source_metadata(stage: str, lock: dict) -> list[dict]:
         path=ROOT/name
         frame=pd.read_csv(path, usecols=lambda c: c in {"run_id","execution_id","scenario_execution_key","window_index","warmup","episode_id","episode_position","episode_class","label","variant_id","environment_group"})
         if "warmup" in frame: frame=frame.loc[~frame["warmup"].astype(bool)]
-        rows.extend(frame.to_dict("records"))
+        records=frame.to_dict("records")
+        if records:
+            run_id=str(records[0].get("run_id","")); manifest=ROOT/"lab/output/runs"/run_id/"scenario_manifest.yaml"
+            if manifest.exists():
+                scenarios=read_yaml(manifest).get("scenarios",[]); times={str(x["execution_id"]):(x.get("planned_started_at"),x.get("planned_finished_at")) for x in scenarios}
+                for row in records:
+                    row["planned_started_at"],row["planned_finished_at"]=times.get(str(row.get("execution_id")),(None,None))
+        rows.extend(records)
     return rows
-

@@ -11,10 +11,10 @@ class NoFitGuard:
         return call
     def __enter__(self):
         from sklearn.base import BaseEstimator, TransformerMixin
-        for obj,name,counter in [(BaseEstimator,"fit","fit_call_count"),(TransformerMixin,"fit_transform","fit_transform_call_count")]:
+        from sklearn.ensemble import HistGradientBoostingClassifier
+        for obj,name,counter in [(BaseEstimator,"fit","fit_call_count"),(HistGradientBoostingClassifier,"fit","fit_call_count"),(TransformerMixin,"fit_transform","fit_transform_call_count")]:
             p=patch.object(obj,name,self._blocked(counter),create=True); p.start(); self._patches.append(p)
         return self
     def __exit__(self,*_):
         for p in reversed(self._patches): p.stop()
     def report(self): return {**self.counters,"no_fit_audit_passed":all(v==0 for v in self.counters.values())}
-
