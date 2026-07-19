@@ -2,7 +2,11 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))
 
 from lab.campaigns.v0313_campaign import load
 from lab.campaigns.v0313_runner import execute
