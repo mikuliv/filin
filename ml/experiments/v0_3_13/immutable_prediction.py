@@ -17,7 +17,9 @@ def create_once(artifact: Path, candidate_manifest: Path, feature_path: Path, ro
     if output.exists():
         payload = read_json(output)
         if payload.get("input_lock_sha256") == lock["input_lock_sha256"] and payload.get("record_count") == 700:
-            return payload, {"prediction_generated_once": True, "prediction_generation_count": 1, "prediction_skipped_on_resume": True, "immutable_prediction_sha256": sha256_file(output)}, {"prediction_label_read_count": 0, "prediction_historical_row_read_count": 0, "prediction_historical_prediction_read_count": 0, "prediction_policy_result_read_count": 0, "blind_access_audit_passed": True}
+            counters = {name: 0 for name in ("fit_call_count", "partial_fit_call_count", "fit_transform_call_count", "calibration_fit_call_count", "conformal_fit_call_count", "threshold_selection_call_count", "feature_selection_call_count", "candidate_replacement_count", "docker_campaign_call_count", "zeek_processing_call_count", "feature_extraction_call_count")}
+            nofit = {**counters, "candidate_selection_call_count": 0, "historical_rows_used_for_tuning": False, "no_fit_audit_passed": True, "prediction_generated_once": True, "prediction_generation_count": 1, "prediction_skipped_on_resume": True, "immutable_prediction_sha256": sha256_file(output)}
+            return payload, nofit, {"prediction_label_read_count": 0, "prediction_historical_row_read_count": 0, "prediction_historical_prediction_read_count": 0, "prediction_policy_result_read_count": 0, "blind_access_audit_passed": True}
         raise RuntimeError("Существующая prediction не соответствует input lock")
     guard = PredictionGuard()
     guard.authorize(False)
