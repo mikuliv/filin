@@ -1,0 +1,40 @@
+audit_id: filin-v0.3.12.1-delay-and-coverage-audit
+audit_type: technical_post_hoc
+source_stage: v0.3.12
+scientific_status_change_allowed: false
+candidate_change_allowed: false
+prediction_generation_allowed: false
+fit_allowed: false
+calibration_allowed: false
+conformal_fit_allowed: false
+threshold_tuning_allowed: false
+feature_reconstruction_allowed: false
+historical_benchmark_write_allowed: false
+allowed_prediction_sources:
+  - v0.3.9 immutable regression prediction
+  - v0.3.10 immutable regression prediction
+allowed_label_sources:
+  - frozen v0.3.9 label mapping
+  - frozen v0.3.10 label mapping
+allowed_historical_inventory_sources:
+  - manifests
+  - schemas
+  - mappings
+  - summaries
+  - policy results
+  - file metadata
+  - hashes
+data_access_phases:
+  A: integrity_and_protocol_without_labels
+  B: prediction_structure_without_labels
+  C: frozen_post_hoc_episode_attribution
+  D: recommendations_after_diagnostic_freeze
+statistical_plan:
+  paired_rows: forbidden
+  methods: [contingency_tables, fisher_exact, mann_whitney_u, effect_sizes, run_bootstrap]
+  p_values_affect_pass_fail: false
+historical_inventory_policy:
+  pcap_content_open_allowed: false
+  zeek_processing_allowed: false
+  metadata_and_hash_only: true
+
