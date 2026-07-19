@@ -1,0 +1,15 @@
+generator_version: v0313-safe-local-v1
+scope: isolated_docker_network
+external_destinations_allowed: false
+host_network_allowed: false
+nmap_allowed: false
+masscan_allowed: false
+attack_payloads_allowed: false
+destructive_workloads_allowed: false
+fingerprint_fields: [generator_version, environmental_group, timing_profile, background_profile, topology_profile, resource_profile, episode_length, schedule_seed, service_composition]
+attack_scenarios:
+  port_scan: attack_port_scan
+  auth_failures: attack_auth_failures
+  web_probe: attack_web_probe
+  low_rate_dos: attack_low_rate_dos
+  beacon: attack_beacon_simulation

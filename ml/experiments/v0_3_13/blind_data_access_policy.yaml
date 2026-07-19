@@ -1,0 +1,3 @@
+prediction_allowlist: [candidate_artifact, candidate_manifest, feature_matrix, row_mapping, causal_mapping, activity_key_mapping, dependency_lock, prediction_output]
+prediction_denylist: [label_vault, scenario_label_mapping, historical_rows, historical_predictions, historical_metrics, policy_result]
+required_zero_counters: [prediction_label_read_count, prediction_historical_row_read_count, prediction_historical_prediction_read_count, prediction_policy_result_read_count]

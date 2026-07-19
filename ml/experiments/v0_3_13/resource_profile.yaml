@@ -1,0 +1,9 @@
+hardware: {cpu: AMD Ryzen 5 5600X, physical_cores: 6, logical_threads: 12, ram_gb: 64, gpu: NVIDIA GeForce RTX 5060 Ti, computers: 1}
+collection: {docker_workers: 3}
+zeek: {workers: 4}
+features: {workers: 6}
+prediction_profiles: {A: {workers: 1, threads_per_worker: 4}, B: {workers: 2, threads_per_worker: 2}, C: {workers: 3, threads_per_worker: 1}}
+metrics: {workers: 3, threads_per_worker: 1}
+bootstrap: {workers: 6, threads_per_worker: 1}
+gpu_acceleration_used: false
+effective_max_threads: 12

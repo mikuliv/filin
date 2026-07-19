@@ -1,0 +1,6 @@
+profiles:
+  background_mix: {tcp_udp_mix: shifted, short_connections: elevated, long_lived_connections: present, destination_diversity: elevated}
+  timing_jitter: {spacing: variable, burst_pause: true, jitter: bounded, weak_onset: true, delayed_strong_onset: true}
+  resource_pressure: {cpu_quota: bounded, memory_quota: bounded, response_delay: bounded, queue_backlog: bounded, host_pressure: forbidden}
+  topology_shift: {service_endpoints: shifted, local_aliases: shifted, port_distribution: shifted, external_ip: forbidden, host_network: forbidden}
+  recovery_overlap: {legitimate_retry_storm: true, service_recovery: true, class_ambiguity: true, dedup_expiry_sequence: true}

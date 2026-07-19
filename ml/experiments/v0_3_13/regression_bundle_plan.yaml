@@ -1,0 +1,5 @@
+stage_id: v0.3.13
+pre_manifest_required_before_prediction: true
+completion_required_after_policy: true
+strict_validator_required: true
+runtime_only_payloads: [captures, zeek_logs, feature_tables, label_vault, mappings, predictions, reports, resource_traces]

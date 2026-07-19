@@ -1,0 +1,10 @@
+attack_classes: [port_scan, auth_failures, web_probe, low_rate_dos, beacon]
+attack_episodes_per_class_per_run: 2
+pair_rule: (run_index + class_index) mod 2
+pair_0: [2, 5]
+pair_1: [3, 4]
+benign_episode_counts_even_run: {2: 3, 3: 2, 4: 2, 5: 3}
+benign_episode_counts_odd_run: {2: 2, 3: 3, 4: 3, 5: 2}
+warmup_windows_per_run: 6
+scored_windows_per_run: 70
+episodes_per_run: 20

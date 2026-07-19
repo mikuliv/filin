@@ -1,0 +1,17 @@
+protocol_id: filin-v0.3.13-prospective-blind-environmental-holdout
+stage_type: prospective_blind_holdout
+candidate_source: v0.3.11
+candidate_id: v0311:19176acb401be2d4
+training_allowed: false
+refit_allowed: false
+calibration_fit_allowed: false
+conformal_fit_allowed: false
+threshold_tuning_allowed: false
+feature_selection_allowed: false
+candidate_replacement_allowed: false
+labels_available_before_prediction: false
+historical_rows_allowed: false
+causal_order_required: true
+physical_record_order_allowed: false
+full_regression_bundle_required: true
+source_completion_commit: 8f060a73b13aa8b89333da13cc645b5202d57eb9

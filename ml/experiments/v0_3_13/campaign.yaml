@@ -1,0 +1,23 @@
+campaign_id: filin_v0_3_13_environmental_blind_holdout
+role: prospective_blind_environmental_holdout
+stage_tag: v0313
+catalog: lab/scenarios/v0_3_13/benign_catalog.yaml
+warmup_windows: 6
+scored_windows: 70
+total_windows: 76
+episodes_per_run: 20
+time_scale: 0.03
+docker_workers: 3
+zeek_workers: 4
+feature_workers: 6
+runs:
+  - {run_id: holdout_background_mix_001, group: background_mix, random_seed: 17101, run_index: 1}
+  - {run_id: holdout_background_mix_002, group: background_mix, random_seed: 17102, run_index: 2}
+  - {run_id: holdout_timing_jitter_001, group: timing_jitter, random_seed: 17201, run_index: 3}
+  - {run_id: holdout_timing_jitter_002, group: timing_jitter, random_seed: 17202, run_index: 4}
+  - {run_id: holdout_resource_pressure_001, group: resource_pressure, random_seed: 17301, run_index: 5}
+  - {run_id: holdout_resource_pressure_002, group: resource_pressure, random_seed: 17302, run_index: 6}
+  - {run_id: holdout_topology_shift_001, group: topology_shift, random_seed: 17401, run_index: 7}
+  - {run_id: holdout_topology_shift_002, group: topology_shift, random_seed: 17402, run_index: 8}
+  - {run_id: holdout_recovery_overlap_001, group: recovery_overlap, random_seed: 17501, run_index: 9}
+  - {run_id: holdout_recovery_overlap_002, group: recovery_overlap, random_seed: 17502, run_index: 10}

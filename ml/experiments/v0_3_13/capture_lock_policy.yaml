@@ -1,0 +1,7 @@
+expected_runs: 10
+expected_markers: 760
+expected_captures: 760
+canonical_directory: captures
+fallback_directory_allowed: false
+duplicate_capture_hashes_allowed: 0
+missing_capture_hashes_allowed: 0

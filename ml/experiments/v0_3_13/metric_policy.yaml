@@ -1,0 +1,7 @@
+window: {macro_f1_min: 0.90, balanced_accuracy_min: 0.90, benign_recall_min: 0.90, fpr_max: 0.10, attack_macro_recall_min: 0.90, attack_macro_f1_min: 0.90, candidate_evidence_recall_min: 0.90, strong_evidence_precision_min: 0.95}
+stateful: {duplicate_suppression_precision_min: 0.99, review_window_rate_max: 0.15, attack_review_window_rate_max: 0.25, benign_review_window_rate_max: 0.10, pre_alert_pending_attack_window_rate_max: 0.25, unresolved_pending_episode_rate_max: 0.10}
+episode: {attack_episode_recall_min: 0.90, episode_alert_precision_min: 0.95, benign_episode_far_max: 0.05, detection_first_min: 0.65, detection_second_min: 0.85, detection_third_min: 0.95, median_latency_max: 2, maximum_latency_max: 4}
+calibration: {joint_ece_max: 0.10, joint_brier_max: 0.10}
+conformal: {overall_coverage_min: 0.85, per_class_coverage_min: 0.75, wrong_only_rate_max: 0.05, empty_set_rate_max: 0.10}
+bootstrap: {iterations: 5000, seed: 42, unit: run_id}
+causal_invariance: {seeds: [111, 222, 333], reverse: true, group_block: true, worker_completion: true, tolerance: 1.0e-12}

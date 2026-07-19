@@ -1,0 +1,28 @@
+variants:
+  - api_schema_cache_warmup
+  - artifact_signature_verification
+  - audit_log_rotation
+  - background_index_merge
+  - certificate_status_refresh
+  - configuration_snapshot_export
+  - container_health_probe_burst
+  - database_statistics_refresh
+  - dependency_graph_rebuild
+  - distributed_lock_recovery
+  - filesystem_metadata_scan
+  - garbage_collection_compaction
+  - identity_provider_key_refresh
+  - message_broker_replay
+  - network_policy_reconciliation
+  - object_store_listing
+  - package_integrity_verification
+  - read_replica_failover_test
+  - registry_metadata_sync
+  - service_mesh_route_refresh
+  - session_store_cleanup
+  - software_inventory_reconcile
+  - storage_tiering_scan
+  - time_sync_correction
+  - webhook_delivery_retry
+episodes_per_variant: 4
+lengths_per_variant: [2, 3, 4, 5]
