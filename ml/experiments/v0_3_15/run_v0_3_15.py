@@ -208,6 +208,15 @@ def main(argv=None) -> int:
     paths = config_paths(protocol, campaign_path, candidate, contract); digest = hashes(paths)
     completion = REPORT / "shadow_trial_bundle_completion.yaml"
     if args.resume and completion.exists() and (REPORT / "v0_3_15_policy_result.json").exists():
+        preflight(paths, digest)
+        pre_hash = sha256_file(REPORT / "shadow_trial_bundle_pre_manifest.yaml")
+        checkpoint_key = {**digest, "bundle_pre_manifest_sha256": pre_hash, "prediction_code_sha256": sha256_file(ROOT / "collectors/shadow_trial/pipeline.py"), "exporter_code_sha256": sha256_file(ROOT / "collectors/shadow/passive_exporter.py")}
+        checkpoint = read_json(RUNTIME / "checkpoint.json")
+        if checkpoint.get("checkpoint_key_sha256") != sha256_json(checkpoint_key):
+            raise RuntimeError("Strict resume заблокирован: checkpoint key не совпадает")
+        validation = subprocess.run([sys.executable, str(ROOT / "tools/audit/validate_shadow_trial_bundle.py"), "--manifest", str(REPORT / "shadow_trial_bundle_manifest.yaml"), "--strict"], cwd=ROOT, capture_output=True, text=True, encoding="utf-8", errors="replace")
+        if validation.returncode:
+            raise RuntimeError("Strict resume заблокирован: bundle integrity нарушена")
         resume = {"strict_resume_passed": True, "completed_sessions_skipped": 10, "completed_captures_skipped": 1520, "completed_windows_skipped": 1440, "repeated_inference_count": 0, "repeated_event_delivery_count": 0, "repeated_semantic_event_count": 0, "bundle_finalization_repeated": False, "metrics_repeated": False, "bootstrap_repeated": False}
         write_json(REPORT / "resume_audit.json", resume)
         emit("strict_resume_complete", started, **resume); return 0
