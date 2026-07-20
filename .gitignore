@@ -47,6 +47,8 @@ datasets/runtime/
 runtime/data/
 runtime/logs/
 runtime/v0_3_14/
+runtime/v0_3_15/
+runtime/v0_3_15_*/
 
 # Zeek runtime
 conn.log
