@@ -1,0 +1,9 @@
+{
+  "alert_source_without_event_count": 0,
+  "event_without_source_count": 0,
+  "mapped_prediction_row_count": 1440,
+  "prediction_without_observation_count": 0,
+  "review_source_without_event_count": 0,
+  "semantic_duplicate_count": 0,
+  "source_event_reconciliation_passed": true
+}

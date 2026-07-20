@@ -1,0 +1,13 @@
+{
+  "capture_to_feature_success_rate": 1.0,
+  "captured_window_count": 1520,
+  "event_to_sink_eventual_success_rate": 1.0,
+  "exported_source_window_count": 1440,
+  "feature_to_prediction_success_rate": 1.0,
+  "pipeline_window_coverage": 1.0,
+  "predicted_window_count": 1440,
+  "prediction_to_event_success_rate": 1.0,
+  "processed_window_count": 1520,
+  "scheduled_window_count": 1520,
+  "sink_reconciled_window_count": 1440
+}

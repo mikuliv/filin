@@ -1,0 +1,7 @@
+{
+  "docker_internal_network_only": true,
+  "external_network_attempt_count": 0,
+  "host_network": false,
+  "safety_policy_passed": true,
+  "unsafe_tool_count": 0
+}

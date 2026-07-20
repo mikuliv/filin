@@ -1,0 +1,12 @@
+{
+  "activity_key_mapping_sha256": "ff6d07326fa49c66bd73ee0792f5352e52813d0a5d9a5d5132499832d5e48295",
+  "causal_mapping_sha256": "c7d7363a2014815e3060453a502f05ed805134f3c124983832f3d4214efe21dc",
+  "feature_count": 51,
+  "feature_integrity_passed": true,
+  "feature_schema_sha256": "cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf",
+  "feature_table_sha256": "8611bc4dc32d6e2711d494b5b07c8b66658cfe9bbb577a7b97b30f64ce060745",
+  "future_leakage_count": 0,
+  "label_leakage_count": 0,
+  "row_mapping_sha256": "fc9b1fbe3b9b72601d90c2cba867a67c6312c2c96c708fd083061429618a3196",
+  "scored_row_count": 1440
+}

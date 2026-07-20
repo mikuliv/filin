@@ -1,0 +1,27 @@
+{
+  "cpu_average_percent": 27.35895833333333,
+  "cpu_median_percent": 24.5,
+  "cpu_p95_percent": 45.1,
+  "effective_thread_count": 12,
+  "gpu_acceleration_used": false,
+  "hardware": {
+    "computers": 1,
+    "cpu": "AMD Ryzen 5 5600X",
+    "gpu": "NVIDIA GeForce RTX 5060 Ti",
+    "ram_gb": 64
+  },
+  "oversubscription_detected": false,
+  "peak_aggregate_rss_mb": 169.2734375,
+  "swap_growth_mb": 0.0,
+  "unbounded_memory_growth": false,
+  "unbounded_queue_growth": false,
+  "workers": {
+    "bootstrap": 6,
+    "capture": 1,
+    "exporter": 1,
+    "feature": 2,
+    "metrics": 3,
+    "prediction": 1,
+    "zeek": 2
+  }
+}

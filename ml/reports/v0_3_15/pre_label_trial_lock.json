@@ -1,0 +1,9 @@
+{
+  "labels_locked": true,
+  "pre_label_trial_lock_sha256": "1690a24ca5ed9b404bd43c348643bff0f7083f5df78b68e54533d526e24acb13",
+  "prediction_count": 1440,
+  "queue_drained": true,
+  "semantic_event_count": 1580,
+  "sessions_completed": 10,
+  "sink_unique_event_count": 1580
+}

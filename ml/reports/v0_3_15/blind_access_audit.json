@@ -1,0 +1,9 @@
+{
+  "blind_access_audit_passed": true,
+  "prediction_historical_prediction_read_count": 0,
+  "prediction_historical_row_read_count": 0,
+  "prediction_label_read_count": 0,
+  "prediction_label_vault_open_count": 0,
+  "prediction_policy_result_read_count": 0,
+  "prediction_previous_metric_read_count": 0
+}

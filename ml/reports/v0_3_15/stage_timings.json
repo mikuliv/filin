@@ -1,0 +1,8 @@
+{
+  "bootstrap_seconds": 0.6172641000011936,
+  "full_stage_wall_seconds": 1306.55502910004,
+  "metrics_seconds": 0.31811809999635443,
+  "pipeline_overhead_seconds": 1306.5550282000331,
+  "time_scale": 0.001,
+  "total_scheduled_traffic_seconds": 91200
+}

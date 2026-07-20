@@ -1,0 +1,12 @@
+{
+  "bootstrap_repeated": false,
+  "bundle_finalization_repeated": false,
+  "completed_captures_skipped": 1520,
+  "completed_sessions_skipped": 10,
+  "completed_windows_skipped": 1440,
+  "metrics_repeated": false,
+  "repeated_event_delivery_count": 0,
+  "repeated_inference_count": 0,
+  "repeated_semantic_event_count": 0,
+  "strict_resume_passed": true
+}

@@ -1,0 +1,67 @@
+{
+  "all_sessions_completed": true,
+  "completed_session_count": 10,
+  "session_manifest_sha256": "2b330794c376c9a70aa0e22d46ef4ca7e7e6a4989c3a519b6b8985ec43500445",
+  "sessions": [
+    {
+      "group": "baseline_endurance",
+      "seed": 18101,
+      "session_id": "shadow_baseline_endurance_001",
+      "session_index": 0
+    },
+    {
+      "group": "baseline_endurance",
+      "seed": 18102,
+      "session_id": "shadow_baseline_endurance_002",
+      "session_index": 1
+    },
+    {
+      "group": "burst_jitter",
+      "seed": 18201,
+      "session_id": "shadow_burst_jitter_001",
+      "session_index": 2
+    },
+    {
+      "group": "burst_jitter",
+      "seed": 18202,
+      "session_id": "shadow_burst_jitter_002",
+      "session_index": 3
+    },
+    {
+      "group": "recovery_overlap",
+      "seed": 18301,
+      "session_id": "shadow_recovery_overlap_001",
+      "session_index": 4
+    },
+    {
+      "group": "recovery_overlap",
+      "seed": 18302,
+      "session_id": "shadow_recovery_overlap_002",
+      "session_index": 5
+    },
+    {
+      "group": "sink_fault",
+      "seed": 18401,
+      "session_id": "shadow_sink_fault_001",
+      "session_index": 6
+    },
+    {
+      "group": "sink_fault",
+      "seed": 18402,
+      "session_id": "shadow_sink_fault_002",
+      "session_index": 7
+    },
+    {
+      "group": "restart_resume",
+      "seed": 18501,
+      "session_id": "shadow_restart_resume_001",
+      "session_index": 8
+    },
+    {
+      "group": "restart_resume",
+      "seed": 18502,
+      "session_id": "shadow_restart_resume_002",
+      "session_index": 9
+    }
+  ]
+}

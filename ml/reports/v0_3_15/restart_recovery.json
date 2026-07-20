@@ -1,0 +1,59 @@
+{
+  "checkpoints_restored": 6,
+  "details": [
+    {
+      "action": "exporter_restart",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_001",
+      "state_restored": true
+    },
+    {
+      "action": "feature_worker_restart",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_001",
+      "state_restored": true
+    },
+    {
+      "action": "restart_after_spool_write_before_ack",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_001",
+      "state_restored": true
+    },
+    {
+      "action": "sensor_process_restart_between_windows",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_002",
+      "state_restored": true
+    },
+    {
+      "action": "restart_after_ack_before_checkpoint",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_002",
+      "state_restored": true
+    },
+    {
+      "action": "mock_sink_restart",
+      "checkpoint_restored": true,
+      "hash_chain_preserved": true,
+      "session_id": "shadow_restart_resume_002",
+      "state_restored": true
+    }
+  ],
+  "exporter_restarts": 1,
+  "feature_worker_restarts": 1,
+  "first_alert_lost_count": 0,
+  "repeated_inference_count": 0,
+  "restart_recovery_policy_passed": true,
+  "review_event_lost_count": 0,
+  "semantic_duplicate_count": 0,
+  "sensor_restarts": 1,
+  "sink_restarts": 1,
+  "spool_recovery_passed": true,
+  "state_recovery_passed": true,
+  "transport_duplicate_count": 2
+}

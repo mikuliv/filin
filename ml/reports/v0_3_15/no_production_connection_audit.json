@@ -1,0 +1,8 @@
+{
+  "automatic_action_attempt_count": 0,
+  "backend_write_attempt_count": 0,
+  "external_network_attempt_count": 0,
+  "network_block_attempt_count": 0,
+  "no_production_connection_passed": true,
+  "production_connection_attempt_count": 0
+}

@@ -1,0 +1,16 @@
+{
+  "event_sets_equal": true,
+  "sink_event_reconciliation_passed": true,
+  "sink_semantic_event_counts": {
+    "alert_continuation": 90,
+    "alert_emitted": 50,
+    "decision_observation": 1440
+  },
+  "sink_unique_event_count": 1580,
+  "source_semantic_event_counts": {
+    "alert_continuation": 90,
+    "alert_emitted": 50,
+    "decision_observation": 1440
+  },
+  "source_unique_semantic_event_count": 1580
+}

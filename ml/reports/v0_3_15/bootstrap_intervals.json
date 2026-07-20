@@ -1,0 +1,39 @@
+{
+  "intervals": {
+    "FPR": {
+      "high": 0.0,
+      "low": 0.0
+    },
+    "attack_episode_recall": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "attack_macro_recall": {
+      "high": 0.8,
+      "low": 0.8
+    },
+    "benign_episode_FAR": {
+      "high": 0.0,
+      "low": 0.0
+    },
+    "benign_recall": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "detection_by_second": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "episode_precision": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "macro_f1": {
+      "high": 0.8333333333333334,
+      "low": 0.8333333333333334
+    }
+  },
+  "iterations": 5000,
+  "seed": 42,
+  "unit": "session_id"
+}

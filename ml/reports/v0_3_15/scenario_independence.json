@@ -1,0 +1,138 @@
+{
+  "attack_class_balance_passed": true,
+  "attack_class_counts": {
+    "auth_failures": 8,
+    "beacon": 8,
+    "low_rate_dos": 8,
+    "port_scan": 8,
+    "web_probe": 8
+  },
+  "attack_episode_count": 40,
+  "attack_length_balance_passed": true,
+  "benign_episode_count": 40,
+  "benign_variant_balance_passed": true,
+  "benign_variant_counts": {
+    "application_cache_reseed": 2,
+    "backup_manifest_compare": 2,
+    "certificate_ocsp_prefetch": 2,
+    "container_registry_metadata_check": 2,
+    "database_connection_pool_warmup": 2,
+    "distributed_cache_rebalance": 2,
+    "dns_zone_serial_check": 2,
+    "file_catalog_delta_scan": 2,
+    "identity_group_sync": 2,
+    "log_index_segment_merge": 2,
+    "message_queue_consumer_rebalance": 2,
+    "metadata_repository_refresh": 2,
+    "object_lifecycle_audit": 2,
+    "package_repository_healthcheck": 2,
+    "policy_snapshot_compare": 2,
+    "read_model_rebuild": 2,
+    "search_shard_relocation": 2,
+    "service_discovery_refresh": 2,
+    "storage_replication_verify": 2,
+    "telemetry_schema_rollout": 2
+  },
+  "condition_independence_passed": true,
+  "episode_count": 80,
+  "namespaces": [
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_001/captures",
+      "compose_project": "filin_v0315_shadow_baseline_endurance_001",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_001/features",
+      "marker_namespace": "v0315:shadow_baseline_endurance_001",
+      "network": "filin_v0315_shadow_baseline_endurance_001_internal",
+      "session_id": "shadow_baseline_endurance_001",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_001/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_002/captures",
+      "compose_project": "filin_v0315_shadow_baseline_endurance_002",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_002/features",
+      "marker_namespace": "v0315:shadow_baseline_endurance_002",
+      "network": "filin_v0315_shadow_baseline_endurance_002_internal",
+      "session_id": "shadow_baseline_endurance_002",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_baseline_endurance_002/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_001/captures",
+      "compose_project": "filin_v0315_shadow_burst_jitter_001",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_001/features",
+      "marker_namespace": "v0315:shadow_burst_jitter_001",
+      "network": "filin_v0315_shadow_burst_jitter_001_internal",
+      "session_id": "shadow_burst_jitter_001",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_001/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_002/captures",
+      "compose_project": "filin_v0315_shadow_burst_jitter_002",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_002/features",
+      "marker_namespace": "v0315:shadow_burst_jitter_002",
+      "network": "filin_v0315_shadow_burst_jitter_002_internal",
+      "session_id": "shadow_burst_jitter_002",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_burst_jitter_002/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_001/captures",
+      "compose_project": "filin_v0315_shadow_recovery_overlap_001",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_001/features",
+      "marker_namespace": "v0315:shadow_recovery_overlap_001",
+      "network": "filin_v0315_shadow_recovery_overlap_001_internal",
+      "session_id": "shadow_recovery_overlap_001",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_001/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_002/captures",
+      "compose_project": "filin_v0315_shadow_recovery_overlap_002",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_002/features",
+      "marker_namespace": "v0315:shadow_recovery_overlap_002",
+      "network": "filin_v0315_shadow_recovery_overlap_002_internal",
+      "session_id": "shadow_recovery_overlap_002",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_recovery_overlap_002/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_001/captures",
+      "compose_project": "filin_v0315_shadow_sink_fault_001",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_001/features",
+      "marker_namespace": "v0315:shadow_sink_fault_001",
+      "network": "filin_v0315_shadow_sink_fault_001_internal",
+      "session_id": "shadow_sink_fault_001",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_001/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_002/captures",
+      "compose_project": "filin_v0315_shadow_sink_fault_002",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_002/features",
+      "marker_namespace": "v0315:shadow_sink_fault_002",
+      "network": "filin_v0315_shadow_sink_fault_002_internal",
+      "session_id": "shadow_sink_fault_002",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_sink_fault_002/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_001/captures",
+      "compose_project": "filin_v0315_shadow_restart_resume_001",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_001/features",
+      "marker_namespace": "v0315:shadow_restart_resume_001",
+      "network": "filin_v0315_shadow_restart_resume_001_internal",
+      "session_id": "shadow_restart_resume_001",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_001/zeek"
+    },
+    {
+      "capture_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_002/captures",
+      "compose_project": "filin_v0315_shadow_restart_resume_002",
+      "feature_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_002/features",
+      "marker_namespace": "v0315:shadow_restart_resume_002",
+      "network": "filin_v0315_shadow_restart_resume_002_internal",
+      "session_id": "shadow_restart_resume_002",
+      "zeek_directory": "runtime/v0_3_15/sessions/shadow_restart_resume_002/zeek"
+    }
+  ],
+  "one_active_session_only": true,
+  "scenario_independence_passed": true,
+  "seed_overlap_count": 0,
+  "seeds_unique": true,
+  "session_attack_length_balance_passed": false,
+  "session_benign_length_balance_passed": true,
+  "session_count": 10,
+  "session_ids_unique": true
+}

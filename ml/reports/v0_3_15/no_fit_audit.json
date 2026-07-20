@@ -1,0 +1,13 @@
+{
+  "calibration_fit_call_count": 0,
+  "candidate_replacement_count": 0,
+  "candidate_selection_call_count": 0,
+  "conformal_fit_call_count": 0,
+  "feature_selection_call_count": 0,
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "no_fit_audit_passed": true,
+  "partial_fit_call_count": 0,
+  "predict_generation_count": 1440,
+  "threshold_selection_call_count": 0
+}

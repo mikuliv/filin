@@ -1,0 +1,66 @@
+expected_counts:
+  captures: 1520
+  predictions: 1440
+files:
+  benign_variants:
+    path: ml/experiments/v0_3_15/benign_variants.yaml
+    sha256: 73c9c23c533663f1cc98024216a85f86901d7fb6baeed9c93137ac8ca755c881
+  campaign:
+    path: ml/experiments/v0_3_15/campaign.yaml
+    sha256: 9cdd55a3058df7d35fb95f6c6826b596db72dc58fa51486c89257c69afa79ce4
+  capture_lock:
+    path: ml/reports/v0_3_15/capture_lock.json
+    sha256: c73f5e040b91fe5a4094b5a6e1388ee332bb076c3801ed2d49947a2825fadab8
+  capture_manifest:
+    path: ml/reports/v0_3_15/capture_manifest.json
+    sha256: ba122c057cebb47172f7595dfa4902b4336e8b1c924667e74ab225bf5a48f76d
+  checkpoint:
+    path: runtime/v0_3_15/checkpoint.json
+    sha256: b243ac9379a81672e81e5ac0152579be6e7f2f6d988b4da594f414b1b714336a
+  completion:
+    path: ml/reports/v0_3_15/shadow_trial_bundle_completion.yaml
+    sha256: d6e81621db40bc9f05a37c47aa1f7a9e23c9748050a9b239f376d64aa7826439
+  episode_schedule:
+    path: ml/experiments/v0_3_15/episode_schedule.yaml
+    sha256: c7cde325605c08cf2bcb0b7c34ddb61007217ac76faac23085bf0009e414789b
+  fault_schedule:
+    path: ml/experiments/v0_3_15/fault_schedule.yaml
+    sha256: 22e849f7f607596e6f42b039ecbf6e8f26885b07acc21c708e9d017917819f2b
+  feature_table:
+    path: runtime/v0_3_15/feature_table.csv
+    sha256: 8611bc4dc32d6e2711d494b5b07c8b66658cfe9bbb577a7b97b30f64ce060745
+  immutable_prediction:
+    path: runtime/v0_3_15/immutable_predictions.json
+    sha256: fe3f31e7f500da8baa6632aae6e1202a83cfdbc22d526d3ed33214aa5ac51ced
+  label_vault:
+    path: runtime/v0_3_15/label_vault.json
+    sha256: 6e6095df21fa7a636d0a57e7fa7c574a35b0782ec0c9a7ae794acc78d107e704
+  metric_policy:
+    path: ml/experiments/v0_3_15/metric_policy.yaml
+    sha256: 98f7a19632e375af8b329ea5db70b91aad34bf96d25f6a888ebe439ba90913ca
+  policy_result:
+    path: ml/reports/v0_3_15/v0_3_15_policy_result.json
+    sha256: cc3c3581c1cbb8a3041ea3201f61504ac652009ca8ae9f05c5909a42bdd26972
+  protocol:
+    path: ml/experiments/v0_3_15/protocol.yaml
+    sha256: 69a2527b1a050c5bb92369caf867f0eb964bb817cd0a1eeb8672a63ed9fccb8d
+  restart_schedule:
+    path: ml/experiments/v0_3_15/restart_schedule.yaml
+    sha256: 17fbec9fbb8e43e6a3e5b912526b0bb8fd00c521725ad23604b68d8748420e6f
+  row_mapping:
+    path: runtime/v0_3_15/row_mapping.json
+    sha256: fc9b1fbe3b9b72601d90c2cba867a67c6312c2c96c708fd083061429618a3196
+  semantic_events:
+    path: runtime/v0_3_15/semantic_events.jsonl
+    sha256: 4a48333389147881903606bca059f7cfc4ff00e7e8191e64372f2443bd329ba3
+  session_manifest:
+    path: ml/experiments/v0_3_15/session_manifest.yaml
+    sha256: 2b330794c376c9a70aa0e22d46ef4ca7e7e6a4989c3a519b6b8985ec43500445
+  sink_events:
+    path: runtime/v0_3_15/sink_events.jsonl
+    sha256: 4a48333389147881903606bca059f7cfc4ff00e7e8191e64372f2443bd329ba3
+  stability_policy:
+    path: ml/experiments/v0_3_15/stability_policy.yaml
+    sha256: 56b95a31ff03e951f1cbafa0fee9e199ca92b35a7a7a148392f3cfc34fdf6b46
+shadow_trial_bundle_complete: true
+stage: v0.3.15

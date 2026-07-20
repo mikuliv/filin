@@ -1,0 +1,7 @@
+{
+  "protocol_sha256": "69a2527b1a050c5bb92369caf867f0eb964bb817cd0a1eeb8672a63ed9fccb8d",
+  "v0315_protocol_frozen": true,
+  "window_duration_source_path": "ml/features/build_network_sensor_v4_dataset.py",
+  "window_duration_source_sha256": "4c2a86e4841bcc57396e7f1cd61a572d2a6dc31ea8a8436c13ee9e8997bbb781",
+  "window_duration_value": 1.0
+}
