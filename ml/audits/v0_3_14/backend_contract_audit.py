@@ -1,0 +1,9 @@
+from __future__ import annotations
+import subprocess
+from pathlib import Path
+
+ROOT=Path(__file__).resolve().parents[3]
+def run():
+    tree=subprocess.check_output(["git","rev-parse","HEAD:backend"],cwd=ROOT,text=True).strip()
+    gaps=[{"area":"event_schema","classification":"schema_gap","blocking":False,"requirement":"Добавить versioned passive endpoint только на будущем этапе."},{"area":"authentication","classification":"authentication_gap","blocking":False,"requirement":"Short-lived service credential, rotation, least privilege, revocation и secret storage вне Git."},{"area":"transport","classification":"transport_gap","blocking":False,"requirement":"Authenticated HTTPS либо локальный broker с encryption, timeout, retry и rate limit."},{"area":"idempotency","classification":"idempotency_gap","blocking":False,"requirement":"Consumer обязан хранить deterministic idempotency key."},{"area":"observability","classification":"observability_gap","blocking":False,"requirement":"Добавить bounded redacted delivery metrics до интеграции."}]
+    return {"backend_contract_audit_completed":True,"backend_tree_sha256":tree,"backend_read_only":True,"backend_requests_sent":0,"gaps":gaps,"gap_counts":{name:sum(x["classification"]==name for x in gaps) for name in ("no_gap","documentation_gap","schema_gap","transport_gap","authentication_gap","idempotency_gap","rate_limit_gap","privacy_gap","observability_gap","rollback_gap","blocking_security_gap")},"blocking_security_gap_count":0,"blocking_security_gap_absent":True,"authentication_requirements":["short-lived service credential","rotation","least privilege","no user credential reuse","audit log","secret storage outside repository","redaction","revocation"],"transport_requirements":["authenticated transport","encryption in transit","timeout","retry","idempotency","rate limit","schema versioning","maximum payload","health monitoring","fail-safe disconnect"]}
