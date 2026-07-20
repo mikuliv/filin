@@ -1,0 +1,10 @@
+vault_runtime_only: true
+pipeline_read_access: false
+unlock_after_sessions: 10
+unlock_after_predictions: 1440
+unlock_after_queue_drain: true
+unlock_after_pre_label_lock: true
+forbid_historical_rows: true
+forbid_historical_predictions: true
+forbid_previous_metrics: true
+forbid_previous_policy_results: true

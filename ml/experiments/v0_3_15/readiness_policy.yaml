@@ -1,0 +1,6 @@
+required_completion: {sessions: 10, captures: 1520, warmup_rows: 80, scored_rows: 1440, benign_episodes: 40, attack_episodes: 40}
+next_stage_on_pass: v0.3.16-staging-connector-readiness
+next_action_on_failure: technical-remediation-or-new-training-cycle
+candidate_ready_for_shadow_mode: false
+sensor_ready_for_backend_integration: false
+production_ready: false

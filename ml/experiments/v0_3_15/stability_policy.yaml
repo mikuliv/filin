@@ -1,0 +1,14 @@
+pipeline_window_coverage_min: 1.0
+capture_to_feature_success_min: 1.0
+feature_to_prediction_success_min: 1.0
+prediction_to_event_success_min: 1.0
+event_to_sink_eventual_success_min: 1.0
+maximum_window_lag: 3
+sustained_lag_over_two_max_consecutive_windows: 2
+healthy_latency_ms: {capture_close_to_prediction_p95_max: 5000, prediction_to_enqueue_p95_max: 100, enqueue_to_sink_p95_max: 250, capture_close_to_sink_p95_max: 5500, alert_end_to_end_p99_max: 6000}
+queue_capacity: 2048
+high_watermark: 0.80
+critical_watermark: 0.95
+maximum_spool_size_mb: 256
+maximum_event_age_hours: 24
+delivery_semantics: at_least_once

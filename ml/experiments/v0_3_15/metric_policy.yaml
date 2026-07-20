@@ -1,0 +1,10 @@
+window: {macro_f1_min: 0.90, balanced_accuracy_min: 0.90, benign_recall_min: 0.90, fpr_max: 0.10, attack_macro_recall_min: 0.90, attack_macro_f1_min: 0.90}
+episode: {attack_recall_min: 0.90, precision_min: 0.95, benign_far_max: 0.05, detection_by_second_min: 0.85, detection_by_third_min: 0.95, median_latency_max: 2, maximum_latency_max: 4}
+stateful: {duplicate_suppression_precision_min: 0.99, unresolved_pending_rate_max: 0.10, review_rate_max: 0.15, pre_alert_pending_attack_rate_max: 0.25}
+per_class: {window_recall_min: 0.75, episode_recall_min: 0.75, episode_precision_min: 0.90}
+per_session: {macro_f1_min: 0.70, benign_recall_min: 0.70, fpr_max: 0.30, attack_episode_recall_min: 0.75, episode_precision_min: 0.85}
+per_group: {attack_episode_recall_min: 0.80, episode_precision_min: 0.90, benign_far_max: 0.10, detection_by_second_min: 0.75}
+per_length: {attack_episode_recall_min: 0.75, episode_precision_min: 0.90, unresolved_pending_rate_max: 0.15, detection_by_second_min: 0.70}
+calibration: {joint_ece_max: 0.10, joint_brier_max: 0.10}
+conformal: {overall_coverage_min: 0.85, per_class_coverage_min: 0.70, wrong_only_rate_max: 0.05, empty_set_rate_max: 0.10}
+bootstrap: {iterations: 5000, seed: 42, unit: session_id}

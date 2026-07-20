@@ -1,0 +1,4 @@
+hardware: {cpu: AMD Ryzen 5 5600X, physical_cores: 6, logical_threads: 12, ram_gb: 64, gpu: NVIDIA GeForce RTX 5060 Ti, computers: 1}
+workers: {capture: 1, zeek: 2, feature: 2, prediction: 1, exporter: 1, metrics: 3, bootstrap: 6}
+thread_limits: {OMP_NUM_THREADS: 2, MKL_NUM_THREADS: 1, OPENBLAS_NUM_THREADS: 1, NUMEXPR_NUM_THREADS: 1, bootstrap_OMP_NUM_THREADS: 1, effective_max_threads: 12}
+limits: {peak_aggregate_rss_mb: 2048, spool_mb: 256, swap_growth_mb: 512, gpu_acceleration_used: false, nested_process_pools: false}

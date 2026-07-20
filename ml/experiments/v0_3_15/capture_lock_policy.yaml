@@ -1,0 +1,6 @@
+canonical_root: captures
+fallback_root_forbidden: sensor
+expected_capture_count: 1520
+unique_hashes_required: true
+lock_before_label_unlock: true
+missing_capture_action: block

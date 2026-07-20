@@ -1,0 +1,6 @@
+bundle_id: filin-v0.3.15-shadow-trial-bundle
+pre_manifest_required: true
+completion_required: true
+strict_validation_required: true
+runtime_artifacts_tracked: false
+components: [protocol, campaign, sessions, captures, feature_schema, feature_table, row_mapping, causal_mapping, activity_key_mapping, label_vault, episode_mapping, immutable_prediction, semantic_events, sink_events, checkpoints, metric_policy, stability_policy, policy_result]
