@@ -40,3 +40,7 @@ Frozen `burden_aware_v1` применена без изменения thresholds
 # Причинное уточнение v0.3.12.1
 
 Immutable prediction хранит правильные `causal_order` и state transitions, но порядок элементов `records` не является causal. Поэтому episode latency нельзя вычислять через позицию элемента без сортировки. В causal order первый alert не подавляется, eligibility и emission совпадают, а дополнительная задержка state machine равна нулю. Frozen report и pass/fail не переписываются.
+
+# Состояние v0.3.15
+
+Burden-aware state хранится отдельно по session, activity key, candidate и schema. Pending, dedup и last alert восстанавливаются только из atomic checkpoint; physical record order и worker completion order не имеют временной семантики.

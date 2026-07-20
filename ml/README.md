@@ -79,3 +79,7 @@ candidate не разрешён для regression, backend или shadow mode.
 # Технический аудит v0.3.12.1
 
 `audits/v0_3_12_1` читает immutable predictions и frozen mappings без fit/predict. Он воспроизводит frozen record-order metric, отдельно восстанавливает causal emission и проверяет historical coverage. Runtime row-level отчёты остаются вне Git.
+
+# Controlled shadow v0.3.15
+
+`experiments/v0_3_15` выполняет разрешённый online inference frozen candidate ровно для 1440 новых scored rows. Fit, calibration/conformal fit, threshold selection, feature selection и candidate replacement заблокированы; labels открываются после pre-label lock.
