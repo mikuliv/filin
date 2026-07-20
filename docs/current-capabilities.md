@@ -1,5 +1,9 @@
 # Текущие возможности
 
+## v0.3.14
+
+Доступен локальный passive exporter `shadow_event_v1` с schema/privacy validation, deterministic identity, hash chain, bounded queue, checkpoint, spool, retry и mock sink. Он не подключён к backend или production и не имеет полномочий действия.
+
 После v0.3.12.2 платформа умеет воспроизводимо оценивать frozen candidate в обязательном causal order на трёх строгих regression bundles. Это разрешает только v0.3.13 prospective blind holdout; shadow mode, backend integration и production запрещены.
 
 Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).

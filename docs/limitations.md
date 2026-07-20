@@ -1,5 +1,9 @@
 # Ограничения
 
+## После v0.3.14
+
+Mock sink и local spool не доказывают production compatibility. Псевдонимизация не равна анонимизации. Production transport не выбран, реальные authentication и backend endpoint не реализованы; shadow mode остаётся запрещённым.
+
 ## После v0.3.13
 
 Положительный локальный prospective holdout не является production-валидацией. Holdout-строки запрещено использовать для tuning. Shadow mode, backend integration и active response остаются выключены.

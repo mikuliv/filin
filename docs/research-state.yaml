@@ -1,16 +1,16 @@
 schema_version: 1
-latest_completed_stage: v0.3.13
-latest_completed_result: prospective_blind_environmental_holdout_passed
-active_stage: v0.3.13_completed_ready_for_v0.3.14_shadow_readiness
+latest_completed_stage: v0.3.14
+latest_completed_result: shadow_readiness_passive_integration_audit_passed
+active_stage: v0.3.14_completed_ready_for_v0.3.15_controlled_shadow_trial
 runtime_integrity_acceptance:
   status: passed
   historical_results_modified: false
   full_v0_3_8_training_allowed: false
   secure_artifact_verification: not_executed_secure_artifacts_unavailable
 next_allowed_stage:
-  version: v0.3.14
-  kind: shadow_readiness_protocol
-  reason: v0.3.13 passed the prospective blind environmental holdout policy
+  version: v0.3.15
+  kind: controlled_passive_shadow_trial
+  reason: v0.3.14 passed the local passive integration and fail-safe policy
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false
@@ -26,6 +26,9 @@ frozen_candidate:
   prospective_blind_holdout_completed: true
   prospective_blind_holdout_passed: true
   ready_for_v0_3_14_shadow_readiness: true
+  shadow_readiness_audit_completed: true
+  shadow_readiness_audit_passed: true
+  ready_for_v0_3_15_controlled_shadow_trial: true
 holdout_boundaries:
   v0.3.5: frozen_regression_not_blind
   v0.3.6: historical_prospective_holdout_do_not_reopen_for_tuning
@@ -37,6 +40,7 @@ holdout_boundaries:
   v0.3.12: frozen_multi_benchmark_regression_not_blind_holdout
   v0.3.12.2: causal_order_corrected_frozen_regression_not_blind_holdout
   v0.3.13: prospective_blind_environmental_holdout_do_not_reopen_for_tuning
+  v0.3.14: technical_shadow_readiness_not_shadow_mode
 historical_stage_summary:
   v0.3.1: baseline_evaluation_completed
   v0.3.2: frozen_robustness_evaluation_completed
@@ -52,6 +56,19 @@ historical_stage_summary:
   v0.3.12: frozen_multi_benchmark_regression_not_passed
   v0.3.12.2: causal_order_corrected_frozen_regression_passed
   v0.3.13: prospective_blind_environmental_holdout_passed
+  v0.3.14: shadow_readiness_passive_integration_audit_passed
+v0_3_14_shadow_readiness:
+  status: completed
+  passed: true
+  contract_version: shadow_event_v1
+  checkpoint_consistency: {classification: policy_flag_stale, passed: true}
+  privacy_audit_passed: true
+  fail_safe_policy_passed: true
+  blocking_security_gap_count: 0
+  candidate_ready_for_v0_3_15_controlled_shadow_trial: true
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
 v0_3_13_holdout:
   status: completed
   passed: true

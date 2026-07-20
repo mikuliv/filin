@@ -1,5 +1,9 @@
 # Стандарт хранения regression-артефактов
 
+## Shadow evidence v0.3.14
+
+Tracked остаются contract, policies, exporter, audits, tests и документация. Canonical events, spool, replay output, traces и reports являются runtime-only и исключены из Git. Frozen v0.3.13 используется read-only.
+
 ## Артефакты v0.3.13
 
 В Git хранятся protocol, policies, код, тесты и документация. PCAP, Zeek logs, feature table, label vault, prediction, метрики и bundle evidence остаются ignored runtime-артефактами; их хеши связаны manifest и locks.

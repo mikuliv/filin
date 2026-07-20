@@ -1,5 +1,9 @@
 # История разработки
 
+## v0.3.14
+
+Добавлены passive event schema, canonical identities, hash chains, local sinks, bounded priority queue, checksum spool, checkpoint/retry/rate limit, privacy/fail-safe/backend audits, deterministic replay и fault/load campaigns.
+
 ## v0.3.13
 
 Добавлены frozen prospective protocol, пять environmental groups, Docker-кампания, capture/input locks, sealed label vault, immutable prediction, causal evaluation, 5000 bootstrap iterations и regression bundle. Этап завершён положительно без изменения candidate.

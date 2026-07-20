@@ -1,5 +1,9 @@
 # Производительность исследовательского контура
 
+## Replay v0.3.14
+
+Сравнены профили A–D без nested pools; выбран простейший профиль в пределах 10% от лучшего. Проверены 700 source rows, 7000 повторных deliveries, 10 000 schema validations и 100 000 envelope identities. GPU не использовался.
+
 ## Профиль v0.3.13
 
 Сбор ограничен тремя Docker workers, Zeek — четырьмя slots, feature/metrics/bootstrap — шестью workers. Frozen inference выполнен на CPU и уложился в лимит 120 секунд; GPU не применялся.

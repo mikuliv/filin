@@ -1,5 +1,9 @@
 # Эксперименты и метрики
 
+## Shadow-readiness v0.3.14
+
+Immutable prediction v0.3.13 преобразована в минимальные passive events без model execution. Девять replay profiles, 22 transport/storage faults и все safety gates пройдены. [Полный отчёт](experiments/v0_3_14.md).
+
 ## Prospective blind environmental holdout v0.3.13
 
 Frozen candidate v0.3.11 проверен на 10 новых environmental runs без fit и tuning. Получены 760 captures, 700 scored windows и 200 episodes; все scientific gates пройдены. Полный результат: [v0.3.13](experiments/v0_3_13.md).

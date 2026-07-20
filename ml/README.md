@@ -1,5 +1,9 @@
 # ML-подсистема
 
+## v0.3.14
+
+Этап не создаёт ML metrics и predictions. Он читает 700 immutable records v0.3.13 и проверяет только passive transport contract, causal replay, privacy, idempotency и fail-safe behavior.
+
 ## v0.3.13
 
 Frozen candidate v0.3.11 прошёл prospective blind holdout: 700 scored rows, 200 episodes, 51 causal features и 7/7 causal-order profiles. Fit и tuning не выполнялись. Следующая работа — v0.3.14 shadow-readiness, не shadow deployment.

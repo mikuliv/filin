@@ -1,5 +1,9 @@
 # Платформа «Филин»
 
+## Shadow-readiness v0.3.14
+
+Локальный passive integration audit завершён: contract `shadow_event_v1`, 935 semantic events, девять эквивалентных replay-профилей и 22 fault-сценария. Модель и backend не запускались для интеграции. Разрешён только v0.3.15 controlled passive trial; shadow/backend/production остаются выключены.
+
 ## Prospective blind holdout v0.3.13
 
 Независимая environmental-кампания завершена: 10/10 runs, 760 уникальных PCAP, 700 scored windows и 200 episodes. Frozen candidate v0.3.11 прошёл все gates без fit или tuning. Разрешён протокол v0.3.14, но shadow mode и backend integration остаются выключены. Подробности: [эксперимент v0.3.13](docs/experiments/v0_3_13.md).
@@ -10,7 +14,7 @@
 
 Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
 
-- Последний завершённый этап: v0.3.13.
+- Последний завершённый этап: v0.3.14.
 - Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена из-за недостаточного evaluation coverage и episode gate.
 - Активная работа: этап v0.3.12.2 завершён; frozen candidate v0.3.11 не изменён и разрешён только для v0.3.13 blind holdout.
 - Следующий допустимый этап: новый training cycle на новых данных; v0.3.13 blind holdout не разрешён.

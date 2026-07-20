@@ -1,5 +1,9 @@
 # Decision layer
 
+## Решение v0.3.14
+
+`v0314_shadow_readiness_passed=true` и разрешён только `candidate_ready_for_v0_3_15_controlled_shadow_trial=true`. `candidate_ready_for_shadow_mode`, backend integration и production readiness остаются `false`.
+
 ## Решение v0.3.13
 
 `v0313_holdout_completed=true`, `v0313_holdout_passed=true`, `candidate_ready_for_v0_3_14_shadow_readiness=true`. При этом shadow mode и backend integration остаются `false`; holdout запрещено использовать для tuning.

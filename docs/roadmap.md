@@ -1,5 +1,9 @@
 # Дорожная карта
 
+## После v0.3.14
+
+Разрешён v0.3.15 controlled passive shadow trial только в изолированной тестовой среде, без production, реальных credentials, automatic actions и backend changes. Он должен проверить длительную устойчивость, recovery, event volume и operator summaries.
+
 ## После v0.3.13
 
 v0.3.13 прошёл frozen policy. Разрешено проектировать v0.3.14: privacy и data minimization, rate limiting, event schema, fail-safe behavior, monitoring, rollback и проверка shadow bundle. До успешного v0.3.14 включать shadow mode нельзя.

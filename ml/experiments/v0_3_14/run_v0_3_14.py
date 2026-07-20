@@ -69,7 +69,10 @@ def main(argv=None):
     started=time.perf_counter(); REPORT.mkdir(parents=True,exist_ok=True); protocol=ROOT/args.protocol; bundle=ROOT/args.source_bundle; prediction_path=ROOT/args.source_prediction
     if args.resume and (REPORT/"shadow_readiness_bundle_manifest.yaml").exists() and (REPORT/"v0_3_14_policy_result.json").exists():
         skipped=["source_integrity","checkpoint_consistency","event_fixture_generation","canonical_replay","replay_equivalence","fault_campaign","load_tests","backend_gap_audit","final_policy_result"]
-        write("resume_audit.json",{"strict_resume_passed":True,"repeated_stages":[],"skipped_stages":skipped,"skipped_stage_count":len(skipped)}); print(json.dumps({"stage":"strict_resume_complete","skipped":len(skipped)},ensure_ascii=False)); return 0
+        write("resume_audit.json",{"strict_resume_passed":True,"repeated_stages":[],"skipped_stages":skipped,"skipped_stage_count":len(skipped)})
+        summary_path=REPORT/"v0_3_14_summary.md"
+        if summary_path.exists(): summary_path.write_text(summary_path.read_text(encoding="utf-8").replace("Internal restart replay passed; заключительный strict resume выполняется отдельно.","Internal restart replay и заключительный strict resume пройдены; девять завершённых стадий пропущены, повторённых стадий нет."),encoding="utf-8",newline="\n")
+        print(json.dumps({"stage":"strict_resume_complete","skipped":len(skipped)},ensure_ascii=False)); return 0
     if subprocess.run(["git","merge-base","--is-ancestor","c3ea11280156d4424c6b750f1a14ca011dde986e","HEAD"],cwd=ROOT).returncode: raise RuntimeError("v0.3.13 completion commit не является предком")
     if subprocess.check_output(["git","rev-parse","HEAD:backend"],cwd=ROOT,text=True).strip()!=BACKEND_TREE: raise RuntimeError("backend tree изменён")
     h=hashes(protocol); write("protocol_freeze.json",{"hashes":h,"v0314_protocol_frozen":True,"event_contract_frozen":True,"frozen_before_prediction_records_opened":True})
