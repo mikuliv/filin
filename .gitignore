@@ -46,6 +46,7 @@ ml/experiments/v0_3_4/frozen_candidate_manifest.yaml
 datasets/runtime/
 runtime/data/
 runtime/logs/
+runtime/v0_3_14/
 
 # Zeek runtime
 conn.log
