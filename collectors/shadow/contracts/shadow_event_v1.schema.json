@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://contracts/shadow_event_v1",
+  "title": "Минимальное passive telemetry event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version","event_type","event_id","idempotency_key","event_created_at","event_observed_at","source_component","source_version","candidate_id","candidate_manifest_sha256","source_bundle_sha256","source_prediction_sha256","source_row_id","source_run_id_hash","activity_key_hash","causal_order","event_sequence","primary_state","event_hash","previous_event_hash","action_authority","enforcement_allowed"],
+  "properties": {
+    "schema_version": {"const": "shadow_event_v1"},
+    "event_type": {"enum": ["sensor_health","decision_observation","alert_emitted","review_required","alert_continuation","delivery_status","drop_summary"]},
+    "event_id": {"$ref": "#/$defs/sha256"}, "idempotency_key": {"$ref": "#/$defs/sha256"},
+    "event_created_at": {"type": "string", "maxLength": 40}, "event_observed_at": {"type": "string", "maxLength": 40},
+    "source_component": {"const": "filin_passive_exporter"}, "source_version": {"const": "v0.3.14"},
+    "candidate_id": {"const": "v0311:19176acb401be2d4"}, "candidate_manifest_sha256": {"$ref": "#/$defs/sha256"},
+    "source_bundle_sha256": {"$ref": "#/$defs/sha256"}, "source_prediction_sha256": {"$ref": "#/$defs/sha256"},
+    "source_row_id": {"$ref": "#/$defs/sha256"}, "source_run_id_hash": {"$ref": "#/$defs/sha256"}, "activity_key_hash": {"$ref": "#/$defs/sha256"},
+    "causal_order": {"type": "integer", "minimum": 0}, "event_sequence": {"type": "integer", "minimum": 0},
+    "primary_state": {"type": "string", "maxLength": 96}, "event_hash": {"$ref": "#/$defs/sha256"}, "previous_event_hash": {"oneOf": [{"type":"null"},{"$ref":"#/$defs/sha256"}]},
+    "action_authority": {"const": "none"}, "enforcement_allowed": {"const": false},
+    "top_class": {"enum": ["benign","port_scan","auth_failures","web_probe","low_rate_dos","beacon"]},
+    "top_probability": {"type":"number","minimum":0,"maximum":1}, "benign_probability": {"type":"number","minimum":0,"maximum":1}, "margin": {"type":"number","minimum":-1,"maximum":1},
+    "conformal_set": {"type":"array","maxItems":6,"uniqueItems":true,"items":{"enum":["benign","port_scan","auth_failures","web_probe","low_rate_dos","beacon"]}},
+    "candidate_evidence":{"type":"boolean"},"strong_evidence":{"type":"boolean"},"weak_evidence":{"type":"boolean"},
+    "alert_event_id":{"$ref":"#/$defs/sha256"},"alert_class":{"enum":["port_scan","auth_failures","web_probe","low_rate_dos","beacon"]},
+    "alert_first_seen_causal_order":{"type":"integer","minimum":0},"dedup_key_hash":{"$ref":"#/$defs/sha256"},"duplicate_suppressed":{"type":"boolean"},"transition_reason":{"type":"string","maxLength":96},
+    "review_reason":{"type":"string","maxLength":96},
+    "continuation_count":{"type":"integer","minimum":1},"continuation_first_causal_order":{"type":"integer","minimum":0},"continuation_last_causal_order":{"type":"integer","minimum":0},
+    "component_status":{"enum":["healthy","degraded","unavailable","critical"]},"queue_depth":{"type":"integer","minimum":0},"queue_capacity":{"type":"integer","minimum":1},"dropped_event_count":{"type":"integer","minimum":0},"retry_count":{"type":"integer","minimum":0},"last_successful_delivery_at":{"type":["string","null"],"maxLength":40},
+    "delivery_result":{"enum":["accepted","duplicate_accepted","retryable_failure","rejected"]},"drop_reason":{"type":"string","maxLength":64}
+  },
+  "$defs": {"sha256":{"type":"string","pattern":"^[0-9a-f]{64}$"}}
+}
