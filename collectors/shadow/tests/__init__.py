@@ -1,0 +1,1 @@
+"""Тесты passive shadow collector."""
