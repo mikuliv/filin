@@ -1,0 +1,11 @@
+queue_capacity: 2048
+high_watermark: 0.80
+critical_watermark: 0.95
+retry_attempts: 5
+initial_backoff_ms: 100
+maximum_backoff_ms: 5000
+jitter_fraction: 0.20
+delivery_timeout_ms: 2000
+maximum_spool_size_mb: 256
+maximum_event_age_hours: 24
+priority: [alert_emitted, review_required, drop_summary, sensor_health_critical, decision_observation, alert_continuation, sensor_health_routine]

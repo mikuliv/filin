@@ -1,0 +1,9 @@
+schema_version: shadow_event_v1
+delivery_semantics: at_least_once
+action_authority: none
+enforcement_allowed: false
+event_types: [sensor_health, decision_observation, alert_emitted, review_required, alert_continuation, delivery_status, drop_summary]
+identity_fields: [schema_version, candidate_id, source_prediction_sha256, source_row_id, event_type, causal_order, primary_state]
+canonical_serialization: {encoding: UTF-8, newline: LF, stable_key_order: true, fixed_float_representation: true, allow_nan: false, volatile_timestamp_in_identity: false}
+retention: {runtime_only: true, maximum_event_age_hours: 24}
+limits: {maximum_event_bytes: 8192, maximum_alert_event_bytes: 12288, maximum_health_event_bytes: 4096, maximum_batch_events: 100, maximum_batch_bytes: 524288}

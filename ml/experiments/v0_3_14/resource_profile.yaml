@@ -1,0 +1,2 @@
+hardware: {cpu: AMD Ryzen 5 5600X, physical_cores: 6, logical_threads: 12, ram_gb: 64, gpu: NVIDIA GeForce RTX 5060 Ti, computers: 1}
+limits: {peak_aggregate_rss_mb: 512, spool_mb: 256, effective_threads: 12, unbounded_growth: false, oversubscription: false, gpu_acceleration_used: false}

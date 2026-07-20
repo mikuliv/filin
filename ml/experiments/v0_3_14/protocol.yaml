@@ -1,0 +1,17 @@
+protocol_id: filin-v0.3.14-shadow-readiness-passive-integration-audit
+stage_type: shadow_readiness_audit
+source_candidate: v0311:19176acb401be2d4
+source_holdout: v0.3.13
+model_execution_allowed: false
+new_prediction_allowed: false
+backend_modification_allowed: false
+production_connection_allowed: false
+automatic_action_allowed: false
+shadow_mode_allowed: false
+passive_event_replay_allowed: true
+local_mock_sink_allowed: true
+fault_injection_allowed: transport_and_storage_only
+raw_pcap_export_allowed: false
+raw_payload_export_allowed: false
+raw_feature_export_allowed: false
+personal_data_export_allowed: false

@@ -1,0 +1,6 @@
+transport_only: true
+profiles_events_per_second: [10, 50, 100, 500, 1000]
+burst_profiles: {500: burst, 1000: short_synthetic_transport_burst}
+changes_model_decisions: false
+changes_alert_counts: false
+changes_causal_state: false

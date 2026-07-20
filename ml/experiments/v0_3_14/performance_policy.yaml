@@ -1,0 +1,8 @@
+profiles:
+  A: {workers: 1, batch_size: 1}
+  B: {workers: 1, batch_size: 50}
+  C: {workers: 2, batch_size: 50}
+  D: {workers: 3, batch_size: 100}
+selection: simplest_within_10_percent_of_best
+gates_ms: {generation_p95: 10, schema_validation_p95: 5, enqueue_p95: 5, delivery_p95: 50, end_to_end_p95: 100, alert_delivery_p99: 250}
+load_tests: {source_once: 700, repeated_deliveries: 7000, synthetic_transport_events: 10000, envelope_generation_operations: 100000}

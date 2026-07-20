@@ -1,0 +1,4 @@
+scope: transport_and_storage_only
+scenarios: [sink_timeout, sink_unavailable_30s, sink_unavailable_until_restart, rate_limit_429, connection_reset_mid_batch, duplicate_delivery, duplicate_ack, out_of_order_ack, malformed_ack, schema_rejection, spool_restart, exporter_crash_after_write_before_ack, exporter_crash_before_write, queue_80_percent, queue_95_percent, queue_full, storage_full_simulated, clock_forward_jump, clock_backward_jump, event_corruption, event_removal, event_reordering]
+host_network_allowed: false
+production_resources_allowed: false

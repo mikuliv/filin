@@ -1,0 +1,6 @@
+version: v0314-privacy-v1
+identifier_mode: sha256_pseudonymization
+anonymity_claimed: false
+forbidden_keys: [raw_pcap, pcap, payload, http_body, authentication_data, password, token, cookie, authorization, username, email, phone, patient_data, medical_data, filesystem_path, ip_address, mac_address, hostname, container_id, label, true_class, benign_variant, historical_policy_result, features, feature_vector]
+forbidden_patterns: [raw_ip, mac_address, credential, cookie, authorization_header, windows_path, unix_path, email, bearer_token]
+scan_targets: [canonical_events, spool, retry_records, delivery_logs, health_events, drop_summaries, error_messages]

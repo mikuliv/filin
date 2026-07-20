@@ -1,0 +1,14 @@
+version: v0314-minimal-passive-v1
+pseudonymization_namespace: filin-shadow-v1
+raw_pcap: forbidden
+raw_payload: forbidden
+raw_features: forbidden
+true_labels: forbidden
+personal_data: forbidden
+events:
+  sensor_health: {model_decision_allowed: false}
+  decision_observation: {decision_summary_only: true, raw_features_allowed: false}
+  alert_emitted: {passive_review_fields_only: true}
+  review_required: {reason_category_only: true}
+  alert_continuation: {aggregate: true, fields: [continuation_count, continuation_first_causal_order, continuation_last_causal_order]}
+  drop_summary: {aggregate_counters_only: true}
