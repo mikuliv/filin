@@ -75,3 +75,7 @@ Burden-aware internal validation пройдена. Следующий разре
 # После технического аудита v0.3.12.1
 
 v0.3.13 по-прежнему запрещён. Следующий допустимый научный этап — полностью новый training/internal-validation cycle с новыми данными и seeds, обязательным regression bundle и pre-close compatibility self-test без model prediction.
+
+# После v0.3.15
+
+Успешный controlled passive shadow trial разрешает проектирование v0.3.16: staging-only receiver, read-only operator workflow, staging credentials, retention, access control, audit trail и rollback. Production connection, automatic enforcement и изменение production backend по-прежнему запрещены.

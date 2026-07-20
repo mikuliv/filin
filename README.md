@@ -90,6 +90,10 @@ v0.3.1 сравнил client и независимый сетевой профи
 
 Платформа выделена в самостоятельный репозиторий из прежнего подкаталога. Технические детали и ограничения provenance приведены в [документе о миграции](docs/repository-migration.md).
 
+## Controlled passive shadow trial v0.3.15
+
+Локальный непрерывный trial frozen candidate завершён на десяти изолированных sessions: 1520 canonical captures и 1440 online predictions. Passive delivery, restart/recovery и scientific gates пройдены; разрешён только аудит staging connector v0.3.16. Shadow mode, backend integration и production readiness остаются `false`.
+
 ## Технический аудит v0.3.12.1
 
 Read-only аудит показал, что frozen detection-by-second `0.733333` воспроизводится из порядка записей immutable prediction, а не из causal order эпизодов. В причинном порядке alerts созданы 29/1/0 и 60/0/0 по окнам; state-machine extra delay и подавление первого alert равны нулю. Официальный отрицательный результат v0.3.12 и запрет v0.3.13, shadow mode и backend integration не изменены. Подробности: [аудит v0.3.12.1](docs/experiments/v0_3_12_1.md).

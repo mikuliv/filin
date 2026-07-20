@@ -78,3 +78,7 @@ regression, backend integration и shadow mode не разрешены.
 # v0.3.12.1
 
 Добавлен технический аудит причинности episode latency, state machine, activity key, дискретности gate и provenance v0.3.8. Созданы historical artifact inventory, recoverability classification, стандарт regression bundle, template и validator. Frozen v0.3.12 не изменён.
+
+# v0.3.15
+
+Добавлен локальный continuous shadow orchestration layer: canonical capture, containerized Zeek, frozen 51-feature extraction, online inference, causal state, `shadow_event_v1`, local sink, fault/restart recovery, blind post-hoc metrics и immutable shadow trial bundle.

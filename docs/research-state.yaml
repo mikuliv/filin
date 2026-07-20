@@ -57,6 +57,21 @@ historical_stage_summary:
   v0.3.12.2: causal_order_corrected_frozen_regression_passed
   v0.3.13: prospective_blind_environmental_holdout_passed
   v0.3.14: shadow_readiness_passive_integration_audit_passed
+  v0.3.15: local_controlled_passive_shadow_trial_passed
+v0_3_15_controlled_shadow:
+  status: completed
+  passed: true
+  candidate_source: v0.3.11
+  campaign: {sessions: 10, captures: 1520, warmup_rows: 80, scored_rows: 1440, benign_episodes: 40, attack_episodes: 40}
+  continuous_pipeline_passed: true
+  source_event_reconciliation_passed: true
+  sink_event_reconciliation_passed: true
+  restart_recovery_policy_passed: true
+  shadow_trial_bundle_complete: true
+  candidate_ready_for_v0_3_16_staging_connector_readiness: true
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
 v0_3_14_shadow_readiness:
   status: completed
   passed: true

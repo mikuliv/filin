@@ -108,3 +108,7 @@ Post-hoc аудит использует только immutable validation predi
 # Технический аудит v0.3.12.1
 
 Post-hoc аудит отделил frozen record-order latency от causal alert emission, объяснил 216/252 для v0.3.8 и классифицировал восстановимость v0.3.6/v0.3.7. [Протокол и выводы](experiments/v0_3_12_1.md) не меняют научный результат v0.3.12.
+
+# v0.3.15
+
+[Local controlled passive shadow trial](experiments/v0_3_15.md) выполнил 10 последовательных sessions и подтвердил непрерывную обработку 1520 captures, 1440 online predictions, passive delivery и restart recovery без production-интеграции.

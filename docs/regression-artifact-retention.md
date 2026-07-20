@@ -25,3 +25,7 @@ python tools/audit/validate_regression_bundle.py --manifest <path> --strict
 ```
 
 `--metadata-only` разрешает инвентаризацию временно недоступных файлов, но никогда не подтверждает полноту bundle.
+
+## Shadow trial v0.3.15
+
+В Git сохраняются protocol, policies, aggregate scientific reports и bundle manifest. PCAP, Zeek logs, feature tables, label vault, row-level predictions/events, sink records, spool, checkpoints и resource traces остаются ignored runtime artifacts. Их hashes фиксируются в tracked manifest.
