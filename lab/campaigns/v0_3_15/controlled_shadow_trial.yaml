@@ -1,0 +1,6 @@
+campaign: ml/experiments/v0_3_15/campaign.yaml
+isolated_internal_network_only: true
+one_session_at_a_time: true
+canonical_capture_root: runtime/v0_3_15/sessions
+window_seconds: 1.0
+time_scale: 0.001

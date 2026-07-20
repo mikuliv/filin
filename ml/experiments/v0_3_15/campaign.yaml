@@ -1,0 +1,19 @@
+campaign_id: filin_v0_3_15_controlled_passive_shadow_trial
+stage_tag: v0315
+sequential_sessions: true
+active_session_limit: 1
+warmup_windows_per_session: 8
+scored_windows_per_session: 144
+capture_intervals_per_session: 152
+episodes_per_session: 8
+sessions:
+  - {session_id: shadow_baseline_endurance_001, group: baseline_endurance, seed: 18101, session_index: 0}
+  - {session_id: shadow_baseline_endurance_002, group: baseline_endurance, seed: 18102, session_index: 1}
+  - {session_id: shadow_burst_jitter_001, group: burst_jitter, seed: 18201, session_index: 2}
+  - {session_id: shadow_burst_jitter_002, group: burst_jitter, seed: 18202, session_index: 3}
+  - {session_id: shadow_recovery_overlap_001, group: recovery_overlap, seed: 18301, session_index: 4}
+  - {session_id: shadow_recovery_overlap_002, group: recovery_overlap, seed: 18302, session_index: 5}
+  - {session_id: shadow_sink_fault_001, group: sink_fault, seed: 18401, session_index: 6}
+  - {session_id: shadow_sink_fault_002, group: sink_fault, seed: 18402, session_index: 7}
+  - {session_id: shadow_restart_resume_001, group: restart_resume, seed: 18501, session_index: 8}
+  - {session_id: shadow_restart_resume_002, group: restart_resume, seed: 18502, session_index: 9}

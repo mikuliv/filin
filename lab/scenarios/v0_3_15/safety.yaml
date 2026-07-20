@@ -1,0 +1,10 @@
+scenario_family: bounded-local-shadow-traffic
+allowed_destinations: [isolated_docker_service]
+host_network: false
+external_network: false
+privileged: false
+real_credentials: false
+malware: false
+exploit_payload: false
+destructive_commands: false
+tools_forbidden: [nmap, masscan]

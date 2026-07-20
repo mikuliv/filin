@@ -1,0 +1,25 @@
+variants:
+  - application_cache_reseed
+  - backup_manifest_compare
+  - certificate_ocsp_prefetch
+  - container_registry_metadata_check
+  - database_connection_pool_warmup
+  - distributed_cache_rebalance
+  - dns_zone_serial_check
+  - file_catalog_delta_scan
+  - identity_group_sync
+  - log_index_segment_merge
+  - message_queue_consumer_rebalance
+  - metadata_repository_refresh
+  - object_lifecycle_audit
+  - package_repository_healthcheck
+  - policy_snapshot_compare
+  - read_model_rebuild
+  - search_shard_relocation
+  - service_discovery_refresh
+  - storage_replication_verify
+  - telemetry_schema_rollout
+occurrences_per_variant: 2
+halves: [first, second]
+different_length_required: true
+different_group_required: true

@@ -1,0 +1,8 @@
+schedule_id: v0315-deterministic-latin-square
+attack_classes: [port_scan, auth_failures, web_probe, low_rate_dos, beacon]
+episode_lengths: [2, 3, 4, 5]
+missing_class_rule: session_index_mod_5
+attack_length_rule: latin_square_class_occurrence_mod_4
+benign_slots_per_session: 4
+attack_slots_per_session: 4
+background_windows_are_unlabelled_episodes: true

@@ -1,0 +1,11 @@
+manifest_id: filin-v0.3.15-session-namespaces
+compose_project_template: filin_v0315_{session_id}
+network_template: filin_v0315_{session_id}_internal
+network_internal: true
+host_network: false
+shared_writable_results: false
+capture_root_template: runtime/v0_3_15/sessions/{session_id}/captures
+zeek_root_template: runtime/v0_3_15/sessions/{session_id}/zeek
+feature_root_template: runtime/v0_3_15/sessions/{session_id}/features
+marker_namespace_template: v0315:{session_id}
+container_name_template: filin-v0315-{session_id}-{role}

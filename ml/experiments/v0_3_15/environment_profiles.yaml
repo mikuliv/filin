@@ -1,0 +1,6 @@
+profiles:
+  baseline_endurance: {jitter: low, transport_faults: false, restarts: false, tcp_udp_mix: stable}
+  burst_jitter: {jitter: variable, bursts: bounded, tcp_udp_mix: mixed, future_timing_used: false}
+  recovery_overlap: {recovery: controlled, overlapping_rates: true, activity_keys_isolated: true}
+  sink_fault: {source_continues_during_fault: true, prediction_isolated_from_transport: true}
+  restart_resume: {state_checkpointed: true, restart_between_causal_windows_only: true}

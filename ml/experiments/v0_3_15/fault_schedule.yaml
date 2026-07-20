@@ -1,0 +1,12 @@
+schedule_id: v0315-frozen-transport-faults
+shadow_sink_fault_001:
+  - {fault: temporary_unavailable, duration_seconds: 30, start_scored_window: 24}
+  - {fault: timeout_sequence, start_scored_window: 48}
+  - {fault: rate_limited, duration_seconds: 10, start_scored_window: 72}
+  - {fault: connection_reset_after_send, start_scored_window: 96}
+shadow_sink_fault_002:
+  - {fault: slow_consumer, start_scored_window: 16}
+  - {fault: temporary_unavailable, duration_seconds: 90, start_scored_window: 40}
+  - {fault: duplicate_ack, start_scored_window: 64}
+  - {fault: malformed_ack, start_scored_window: 88}
+  - {fault: restart_sink_before_drain, start_scored_window: 112}

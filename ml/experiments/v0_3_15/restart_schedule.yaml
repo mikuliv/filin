@@ -1,0 +1,9 @@
+schedule_id: v0315-frozen-restarts
+shadow_restart_resume_001:
+  - {action: exporter_restart, after_scored_window: 31}
+  - {action: feature_worker_restart, after_scored_window: 63}
+  - {action: restart_after_spool_write_before_ack, after_scored_window: 95}
+shadow_restart_resume_002:
+  - {action: sensor_process_restart_between_windows, after_scored_window: 31}
+  - {action: restart_after_ack_before_checkpoint, after_scored_window: 63}
+  - {action: mock_sink_restart, after_scored_window: 95}
