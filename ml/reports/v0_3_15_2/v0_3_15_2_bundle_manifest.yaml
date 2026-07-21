@@ -535,7 +535,7 @@ artifacts:
 - role: report:test_report
   path: ml/reports/v0_3_15_2/test_report.json
   size: 479
-  sha256: 9f25137c70c4db5d877fd5235edb5fc232ee8055a2aa00dac6547123bcc33c55
+  sha256: 426ef863f9c2b83b22a88c2372e827ff09a6daadf28971baee0b8566efe02af3
   schema_version: v03152_artifact_v1
   required: false
   creation_phase: after_label_unlock

@@ -8,8 +8,8 @@
     "backend": 1,
     "collectors_shadow": 137,
     "collectors_shadow_trial": 69,
-    "ml": 709
+    "ml": 711
   },
-  "total_passed": 916,
-  "v03152_behavioral_tests": 25
+  "total_passed": 918,
+  "v03152_behavioral_tests": 27
 }
