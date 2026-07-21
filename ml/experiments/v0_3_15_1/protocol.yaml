@@ -1,0 +1,98 @@
+stage: v0.3.15.1
+revision: 1
+title: Усиление доказательной базы пассивного runtime
+source_commit: 759bd91f849aa69e766fdacb522de606d28c595c
+scope:
+  - passive runtime v0.3.14 и v0.3.15
+  - integrated exporter, fault injection, resume, privacy, performance и документация
+non_goals:
+  - обучение, калибровка или замена модели
+  - изменение feature schema или thresholds
+  - production, backend integration или automatic enforcement
+frozen_references:
+  candidate_id: v0311:19176acb401be2d4
+  candidate_artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  candidate_manifest_sha256: ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c
+  v0315_protocol_sha256: 69a2527b1a050c5bb92369caf867f0eb964bb817cd0a1eeb8672a63ed9fccb8d
+  v0315_campaign_sha256: 9cdd55a3058df7d35fb95f6c6826b596db72dc58fa51486c89257c69afa79ce4
+  v0315_prediction_payload_sha256: fe3f31e7f500da8baa6632aae6e1202a83cfdbc22d526d3ed33214aa5ac51ced
+  v0315_pre_label_lock_sha256: 1690a24ca5ed9b404bd43c348643bff0f7083f5df78b68e54533d526e24acb13
+  shadow_event_v1_schema_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  v0315_bundle_manifest_sha256: fe09945114c3c2fc68e7cb0e9a738c7f6098bbaca7e299b1f5ae4d4b11707124
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+finding_ids: [F001, F002, F003, F004, F005, F006, F007, F008, F009, F010, F011, F012, F013, F014]
+fault_registry_source: ml/experiments/v0_3_14/fault_campaign.yaml
+delivery_semantics: at-least-once
+retry_policy:
+  maximum_attempts: 4
+  initial_backoff_ms: 1
+  maximum_backoff_ms: 20
+  deterministic_jitter_seed: 3151
+performance_profiles:
+  A: {workers: 1, batch_size: 1}
+  B: {workers: 1, batch_size: 50}
+  C: {workers: 2, batch_size: 50}
+  D: {workers: 3, batch_size: 100}
+performance_policy:
+  warmup_events: 64
+  measured_events: 600
+  repetitions: 3
+  require_real_worker_pool: true
+  require_real_batch_delivery: true
+  require_runtime_cpu_sampling: true
+  require_runtime_peak_rss_sampling: true
+privacy_targets:
+  - canonical_event_objects
+  - canonical_serialized_events
+  - spool_files
+  - spool_indexes
+  - retry_journal
+  - delivery_logs
+  - health_events
+  - queue_diagnostics
+  - drop_summaries
+  - checkpoint
+  - acknowledgement_records
+  - error_reports
+  - exception_messages
+  - fault_injection_records
+  - performance_traces
+  - bundle_reports
+resume_integrity_rules:
+  manifest_schema: v03151_bundle_v1
+  require_detached_sha256: true
+  require_size_and_sha256: true
+  require_path_confinement: true
+  reject_duplicate_paths: true
+  reject_unknown_schema: true
+  require_completion_marker: true
+documentation_consistency_rules:
+  source: docs/status/project-status.yaml
+  numeric_version_order: true
+  prohibit_production_ready_claim: true
+  prohibit_backend_ready_claim: true
+ci_requirements:
+  - compileall_ml_collectors_tools
+  - ml_tests
+  - collectors_shadow_tests
+  - backend_tests
+  - semantic_documentation_validator
+  - bundle_and_integrity_tests
+readiness_policy:
+  all_mandatory_predicates_required: true
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
+  automatic_enforcement_ready: false
+prohibited_actions:
+  - fit
+  - partial_fit
+  - calibration_fit
+  - conformal_fit
+  - feature_or_threshold_change
+  - candidate_replacement
+  - production_connection
+  - backend_write
+  - external_network
+  - automatic_action
+  - push
