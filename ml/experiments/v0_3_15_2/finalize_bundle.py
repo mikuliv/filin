@@ -39,9 +39,9 @@ def main() -> int:
     })
     write_json(policy_path, policy)
     write_json(REPORT / "test_report.json", {
-        "total_passed": 916, "failed": 0, "errors": 0, "skipped": 0,
-        "suites": {"ml":709,"collectors_shadow":137,"collectors_shadow_trial":69,"backend":1},
-        "v03152_behavioral_tests":25,"compileall_passed":True,
+        "total_passed": 918, "failed": 0, "errors": 0, "skipped": 0,
+        "suites": {"ml":711,"collectors_shadow":137,"collectors_shadow_trial":69,"backend":1},
+        "v03152_behavioral_tests":27,"compileall_passed":True,
         "environment_note":"Первый shadow запуск столкнулся с системным TEMP permission error; полный набор повторён в изолированном runtime basetemp и прошёл.",
     })
     write_json(REPORT / "ci_coverage_report.json", {"compileall":["ml","collectors","tools","lab","backend"],"test_suites":["ml/tests","collectors/shadow/tests","collectors/shadow_trial/tests","backend/tests","v0.3.15.2 compact behavioral"],"full_campaign_in_ci":False,"external_network_in_ci":False,"ci_stage_tests_enabled":True})

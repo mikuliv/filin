@@ -17,6 +17,8 @@ from collectors.shadow.scenario_runner import run_all, run_scenario
 from ml.experiments.v0_3_15_1.run_v0_3_15_1 import corpus
 from ml.experiments.v0_3_15_2.freeze_campaign import ATTACKS, SEEDS, episode_schedule, fault_schedule, sessions
 from tools.docs.validate_project_status import validate as validate_status
+from tools.audit.check_repository_artifacts import violations
+from tools.audit.strict_bundle import verify_bundle
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -133,6 +135,14 @@ class ProspectiveTrialBehavior(unittest.TestCase):
     def test_25_negative_result_is_not_hidden(self):
         value = read_json(REPORT / "v0_3_15_2_policy_result.json")
         self.assertFalse(value["scientific_policy_passed"]); self.assertFalse(value["v03152_prospective_runtime_trial_passed"]); self.assertFalse(value["candidate_ready_for_v0_3_16_staging_connector_readiness"])
+
+    def test_26_final_bundle_validator(self):
+        result = verify_bundle(REPORT / "v0_3_15_2_bundle_manifest.yaml", REPORT / "v0_3_15_2_bundle_manifest.sha256", allowed_root=ROOT)
+        self.assertEqual(result["verified_artifact_count"], 54)
+
+    def test_27_artifact_exclusion(self):
+        self.assertEqual(violations(["ml/reports/v0_3_15_2/window_metrics.json","runtime/.env.example"]), [])
+        self.assertEqual(violations(["runtime/v0_3_15_2/capture.pcap"]), ["runtime/v0_3_15_2/capture.pcap"])
 
 
 if __name__ == "__main__":
