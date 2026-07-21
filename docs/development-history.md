@@ -2,6 +2,8 @@
 
 Актуализация v0.3.15.1: corrective runtime audit завершён; integrated exporter исправлен, исторический bundle v0.3.15 сохранён, а v0.3.16 заблокирован до нового evidence-bearing runtime trial.
 
+Актуализация v0.3.15.2: prospective trial выполнен на новых PCAP и исправленном runtime. Техническая доставка reconciled, но scientific и часть evidence gates не пройдены; v0.3.16 остаётся заблокирован.
+
 ## v0.3.14
 
 Добавлены passive event schema, canonical identities, hash chains, local sinks, bounded priority queue, checksum spool, checkpoint/retry/rate limit, privacy/fail-safe/backend audits, deterministic replay и fault/load campaigns.

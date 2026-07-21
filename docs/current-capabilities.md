@@ -9,6 +9,7 @@
 - controlled local trial v0.3.15 с неизменным scientific bundle;
 - hash-integrity всех доступных файлов bundle v0.3.15;
 - corrected integrated at-least-once exporter v0.3.15.1;
+- prospective local runtime evidence v0.3.15.2: 2 490/2 490 reconciled events и 35/35 fault-oracles;
 - строгий ACK contract, retry classification и drop reconciliation;
 - hash-verified resume с detached manifest lock и path confinement;
 - реальные worker/batch profiles с resource sampling во время нагрузки;
@@ -19,6 +20,8 @@
 v0.3.14 подтверждает event contract и отдельные компоненты, но не доказывает full integrated fault readiness. Подробности: [errata v0.3.14](experiments/v0_3_14_errata.md).
 
 Оригинальный v0.3.15 result сохранён, однако его точные runtime claims о fault injection, retry и recovery не прошли повторную behavioral атрибуцию к исходному execution path. Подробности: [аудит v0.3.15.1](experiments/v0_3_15_1.md).
+
+v0.3.15.2 не разрешает staging connector: frozen candidate не прошёл scientific gates, а performance/privacy evidence имеет перечисленные в [отчёте](experiments/v0_3_15_2.md) ограничения.
 
 ## Не разрешено
 

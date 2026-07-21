@@ -1,7 +1,7 @@
 schema_version: 2
 deprecated: true
 authoritative_source: status/project-status.yaml
-latest_completed_stage: v0.3.15.1
+latest_completed_stage: v0.3.15.2
 latest_completed_result: corrective_runtime_remediation_passed_readiness_blocked
 active_stage: none
 next_allowed_stage: null

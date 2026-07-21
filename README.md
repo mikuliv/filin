@@ -8,7 +8,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.1. Корректирующий аудит усилил passive exporter, но не подтвердил историческую готовность к v0.3.16: новый этап подготовки staging connector пока заблокирован. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.15.2. Новый prospective trial подтвердил доставку 2 490 canonical events и 35 fault-oracles, но не прошёл frozen scientific, performance-evidence и privacy-evidence gates. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -102,15 +102,16 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.14 — component/contract audit с последующей переоценкой scope.
 - v0.3.15 — controlled local passive shadow trial.
 - v0.3.15.1 — corrective runtime evidence audit.
+- v0.3.15.2 — prospective integrated passive runtime trial с отрицательным итогом.
 <!-- stage-history:end -->
 
-## 19. Текущий этап v0.3.15.1
+## 19. Текущий этап v0.3.15.2
 
-Подробности приведены в [описании этапа](docs/experiments/v0_3_15_1.md), [errata v0.3.14](docs/experiments/v0_3_14_errata.md) и итоговом агрегированном отчёте `ml/reports/v0_3_15_1/v0_3_15_1_summary.md`.
+Подробности приведены в [описании prospective trial](docs/experiments/v0_3_15_2.md), [корректирующем аудите](docs/experiments/v0_3_15_1.md) и итоговом отчёте `ml/reports/v0_3_15_2/v0_3_15_2_summary.md`. Frozen candidate и independent holdout v0.3.13 не переписаны.
 
 ## 20. Следующий разрешённый этап
 
-v0.3.16 заблокирован. Сначала требуется новый заранее frozen local runtime trial, который использует исправленный exporter и создаёт собственную immutable behavioral evidence без обучения и production connection.
+v0.3.16 заблокирован. Следующий допустимый этап v0.3.15.3 должен разобрать scientific regression (`auth_failures` recall 0, attack episode recall 0,40) и определить новый protocol. Результат v0.3.15.2 запрещено исправлять переобучением задним числом.
 
 ## 21. Структура репозитория
 

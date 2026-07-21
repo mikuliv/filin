@@ -5,6 +5,7 @@
 - [v0.3.14](experiments/v0_3_14.md) и [errata](experiments/v0_3_14_errata.md);
 - [v0.3.15](experiments/v0_3_15.md);
 - [v0.3.15.1](experiments/v0_3_15_1.md).
+- [v0.3.15.2](experiments/v0_3_15_2.md).
 
 Текущий машинно-читаемый статус находится в [`status/project-status.yaml`](status/project-status.yaml).
 

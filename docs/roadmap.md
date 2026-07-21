@@ -24,6 +24,8 @@
 - v0.3.14 — completed component/contract audit; scope subsequently reassessed.
 - v0.3.15 — completed local passive trial; runtime claims subsequently reassessed.
 - v0.3.15.1 — completed corrective runtime evidence hardening.
+- v0.3.15.2 — completed negative prospective integrated runtime trial.
+- v0.3.15.3 — следующий допустимый разбор scientific regression и проектирование нового protocol.
 <!-- stage-history:end -->
 
 ## Ближайшая работа

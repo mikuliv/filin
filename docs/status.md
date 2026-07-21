@@ -6,13 +6,16 @@
 - Последний independent model holdout: v0.3.13.
 - Последний runtime trial: v0.3.15.
 - Последний corrective audit: v0.3.15.1.
-- Текущий завершённый этап: v0.3.15.1.
+- Текущий завершённый этап: v0.3.15.2.
+- Последний runtime trial: v0.3.15.2, результат отрицательный.
 - Следующий разрешённый этап: отсутствует.
 - Заблокированный план: v0.3.16 staging connector readiness.
 - Production, shadow mode, backend integration и automatic enforcement: запрещены.
 - External validation: не выполнена.
 
 v0.3.15.1 исправил passive runtime и подтвердил целостность исторического bundle, но не подтвердил, что исходный v0.3.15 execution path действительно выполнял все заявленные fault/recovery проверки. Поэтому readiness v0.3.16 не переносится из исторического policy result.
+
+v0.3.15.2 создал новую prospective evidence непосредственно во время campaign. Runtime reconciliation и faults прошли, но scientific gates, CPU p95, точное latency evidence и полнота ACK privacy surface не прошли обязательную policy. Следующий допустимый этап — v0.3.15.3; v0.3.16 остаётся заблокирован.
 
 См. [reassessment v0.3.14](experiments/v0_3_14_errata.md), [описание v0.3.15](experiments/v0_3_15.md) и [корректирующий аудит v0.3.15.1](experiments/v0_3_15_1.md).
 
