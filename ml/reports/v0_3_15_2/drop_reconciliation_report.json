@@ -1,0 +1,14 @@
+{
+  "canonical_pending_event_count": 0,
+  "event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+  "event_sets_equal": true,
+  "first_alert_lost_count": 0,
+  "hash_chain_root": "6e2a5ad715c02264f84fb686bb0f1002f6e432431fd6d67001b7a989d76761f0",
+  "idempotency_collision_count": 0,
+  "review_event_lost_count": 0,
+  "semantic_duplicate_count": 0,
+  "sink_event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+  "sink_unique_event_count": 2490,
+  "source_event_count": 2490,
+  "unaccounted_drop_count": 0
+}

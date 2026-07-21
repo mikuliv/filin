@@ -1,0 +1,153 @@
+{
+  "checkpoint_acknowledged": 2490,
+  "metrics": {
+    "delivery_attempts": 2490,
+    "duplicate_delivery": 0,
+    "queued_events": 2490,
+    "real_batch_calls": 57,
+    "recovered_events": 4,
+    "spooled_events": 2490,
+    "successful_attempts": 2490,
+    "validated_events": 2490
+  },
+  "queue_peak": 51,
+  "reconciliation": {
+    "canonical_pending_event_count": 0,
+    "event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+    "event_sets_equal": true,
+    "first_alert_lost_count": 0,
+    "hash_chain_root": "6e2a5ad715c02264f84fb686bb0f1002f6e432431fd6d67001b7a989d76761f0",
+    "idempotency_collision_count": 0,
+    "review_event_lost_count": 0,
+    "semantic_duplicate_count": 0,
+    "sink_event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+    "sink_unique_event_count": 2490,
+    "source_event_count": 2490,
+    "unaccounted_drop_count": 0
+  },
+  "reports": [
+    {
+      "automatic_action_attempt_count": 0,
+      "backend_write_attempt_count": 0,
+      "checkpoint_acknowledged": 1860,
+      "delivery_semantics": "at-least-once",
+      "drop_registry": [],
+      "external_network_attempt_count": 0,
+      "metrics": {
+        "delivery_attempts": 1860,
+        "duplicate_delivery": 0,
+        "queued_events": 1860,
+        "real_batch_calls": 42,
+        "spooled_events": 1860,
+        "successful_attempts": 1860,
+        "validated_events": 1860
+      },
+      "network_block_attempt_count": 0,
+      "production_connection_attempt_count": 0,
+      "queue_capacity": 2048,
+      "queue_peak": 51,
+      "reconciliation": {
+        "accounted_dropped_events": 0,
+        "attempt_accounting_delta": 0,
+        "classified_attempts": 1860,
+        "delivered_unique_events": 1860,
+        "delivery_attempts": 1860,
+        "pending_events": 0,
+        "permanent_rejected_events": 0,
+        "total_input_events": 1860,
+        "unaccounted_drop_count": 0
+      },
+      "retry_journal": [],
+      "sink_unique_events": 1860,
+      "spool_peak_bytes": 81806
+    },
+    {
+      "automatic_action_attempt_count": 0,
+      "backend_write_attempt_count": 0,
+      "checkpoint_acknowledged": 2061,
+      "delivery_semantics": "at-least-once",
+      "drop_registry": [],
+      "external_network_attempt_count": 0,
+      "metrics": {
+        "delivery_attempts": 201,
+        "duplicate_delivery": 0,
+        "queued_events": 205,
+        "real_batch_calls": 4,
+        "recovered_events": 0,
+        "spooled_events": 205,
+        "successful_attempts": 201,
+        "validated_events": 205
+      },
+      "network_block_attempt_count": 0,
+      "production_connection_attempt_count": 0,
+      "queue_capacity": 2048,
+      "queue_peak": 51,
+      "reconciliation": {
+        "accounted_dropped_events": 0,
+        "attempt_accounting_delta": 0,
+        "classified_attempts": 201,
+        "delivered_unique_events": 2061,
+        "delivery_attempts": 201,
+        "pending_events": 4,
+        "permanent_rejected_events": 0,
+        "total_input_events": 2065,
+        "unaccounted_drop_count": 0
+      },
+      "retry_journal": [],
+      "sink_unique_events": 2061,
+      "spool_peak_bytes": 81806
+    },
+    {
+      "automatic_action_attempt_count": 0,
+      "backend_write_attempt_count": 0,
+      "checkpoint_acknowledged": 2490,
+      "delivery_semantics": "at-least-once",
+      "drop_registry": [],
+      "external_network_attempt_count": 0,
+      "metrics": {
+        "delivery_attempts": 429,
+        "duplicate_delivery": 0,
+        "queued_events": 425,
+        "real_batch_calls": 11,
+        "recovered_events": 4,
+        "spooled_events": 425,
+        "successful_attempts": 429,
+        "validated_events": 425
+      },
+      "network_block_attempt_count": 0,
+      "production_connection_attempt_count": 0,
+      "queue_capacity": 2048,
+      "queue_peak": 51,
+      "reconciliation": {
+        "accounted_dropped_events": 0,
+        "attempt_accounting_delta": 0,
+        "classified_attempts": 429,
+        "delivered_unique_events": 2490,
+        "delivery_attempts": 429,
+        "pending_events": 0,
+        "permanent_rejected_events": 0,
+        "total_input_events": 2490,
+        "unaccounted_drop_count": 0
+      },
+      "retry_journal": [],
+      "sink_unique_events": 2490,
+      "spool_peak_bytes": 81806
+    }
+  ],
+  "restart_records": [
+    {
+      "evidence_sha256": "b5fe4613b57374ea6084fcb1b43774d22232950864c467007baaef7a7d6fa750",
+      "pending_before": 0,
+      "recovered": 0,
+      "session_id": "prospective_crash_resume_001"
+    },
+    {
+      "evidence_sha256": "350657a82ccbe153d4857e95ef2e87f91327d846ba0aa649a3c29e4f238804f8",
+      "pending_before": 4,
+      "recovered": 4,
+      "session_id": "prospective_crash_resume_002"
+    }
+  ],
+  "sink_unique_events": 2490,
+  "spool_peak_bytes": 81806
+}

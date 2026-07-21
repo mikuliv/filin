@@ -1,0 +1,56 @@
+{
+  "FPR": 0.0,
+  "accuracy": 0.9815789473684211,
+  "attack_macro_f1": 0.7333333333333333,
+  "attack_macro_precision": 0.7,
+  "attack_macro_recall": 0.8,
+  "balanced_accuracy": 0.8333333333333334,
+  "benign_f1": 1.0,
+  "benign_precision": 1.0,
+  "benign_recall": 1.0,
+  "macro_f1": 0.7777777777777777,
+  "macro_precision": 0.75,
+  "macro_recall": 0.8333333333333334,
+  "per_class": {
+    "auth_failures": {
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "support_windows": 42
+    },
+    "beacon": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support_windows": 42
+    },
+    "benign": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support_windows": 2070
+    },
+    "low_rate_dos": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support_windows": 42
+    },
+    "port_scan": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support_windows": 42
+    },
+    "web_probe": {
+      "f1": 0.6666666666666666,
+      "precision": 0.5,
+      "recall": 1.0,
+      "support_windows": 42
+    }
+  },
+  "weighted_f1": 0.9754385964912281,
+  "zero_recall_attack_classes": [
+    "auth_failures"
+  ]
+}

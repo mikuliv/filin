@@ -1,0 +1,8 @@
+{
+  "blind_access_audit_passed": true,
+  "historical_metric_read_count": 0,
+  "label_read_count": 0,
+  "policy_result_read_count": 0,
+  "post_label_artifact_read_count": 0,
+  "threshold_read_from_result_count": 0
+}

@@ -1,0 +1,46 @@
+{
+  "backend_tree": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_unchanged": true,
+  "previous_stages_unchanged": true,
+  "source_commit": "389e81e3ec25b7f04386b08e9b45c10c8fa72973",
+  "trees": {
+    "ml/experiments/v0_3_11": {
+      "actual": "b587717075ee27faf6799cd5d46615f27829d2f7",
+      "expected": "b587717075ee27faf6799cd5d46615f27829d2f7",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_12": {
+      "actual": "031fce9157a148755b4ea63cf91c2e1a3ae25d5a",
+      "expected": "031fce9157a148755b4ea63cf91c2e1a3ae25d5a",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_12_2": {
+      "actual": "44df542d7f71efecf68b227c52308a0b8d902900",
+      "expected": "44df542d7f71efecf68b227c52308a0b8d902900",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_13": {
+      "actual": "b1fbe83e6926bc762742d37df66a6166e3f29be0",
+      "expected": "b1fbe83e6926bc762742d37df66a6166e3f29be0",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_14": {
+      "actual": "6cca661a90731a565901ca05ff175083f555ea18",
+      "expected": "6cca661a90731a565901ca05ff175083f555ea18",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_15": {
+      "actual": "172c8f577f40b0f243f88bd673464652f11c4fd8",
+      "expected": "172c8f577f40b0f243f88bd673464652f11c4fd8",
+      "unchanged": true
+    },
+    "ml/experiments/v0_3_15_1": {
+      "actual": "7c9716e3882be6dd0331ede2affa20df8518f716",
+      "expected": "7c9716e3882be6dd0331ede2affa20df8518f716",
+      "unchanged": true
+    }
+  },
+  "v0315_bundle_integrity_revalidated": true,
+  "v0315_readiness_decision_reconfirmed": false,
+  "v0315_runtime_claims_revalidated": false
+}

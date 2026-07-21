@@ -1,0 +1,14 @@
+{
+  "actual_divergence": [
+    0,
+    0
+  ],
+  "backend_tree": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "expected_divergence": [
+    0,
+    12
+  ],
+  "initial_head": "389e81e3ec25b7f04386b08e9b45c10c8fa72973",
+  "initial_origin_main": "389e81e3ec25b7f04386b08e9b45c10c8fa72973",
+  "origin_changed_without_pull_merge_or_rebase": true
+}

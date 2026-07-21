@@ -1,0 +1,14 @@
+{
+  "campaign_sha256": "8e85e86b92cc084a2af2cedf4300567e187c4706a24efc41d963be8afb82f16f",
+  "capture_count": 2400,
+  "episode_schedule_sha256": "26440220fe554c58c8955bab91ba3561b9b0e19992aef629add30fd873a91b18",
+  "fault_schedule_sha256": "a2a82b7959548b6243cbc81651ea0bfb305b85175f543fb41341165a3e8de9e2",
+  "frozen_before_capture": true,
+  "label_vault_sha256": "21bd31fce972a2079e53e49e23ba4212285c06c1827157b15c697d87187af2b3",
+  "prediction_count": 2280,
+  "protocol_sha256": "43f01cd9a745440bdc995ec1ebccf25fc4bddbc8e90fa6ee784c3411499f4750",
+  "scenario_schedule_sha256": "a2a82b7959548b6243cbc81651ea0bfb305b85175f543fb41341165a3e8de9e2",
+  "schema_version": "v03152_campaign_lock_v1",
+  "seed_reuse_count": 0,
+  "session_manifest_sha256": "596c53d13f87b32a13cbd743e6b63a0ee5beee9f415e98849efa7c352f80ac12"
+}

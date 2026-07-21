@@ -1,0 +1,19 @@
+{
+  "ci_stage_tests_enabled": true,
+  "compileall": [
+    "ml",
+    "collectors",
+    "tools",
+    "lab",
+    "backend"
+  ],
+  "external_network_in_ci": false,
+  "full_campaign_in_ci": false,
+  "test_suites": [
+    "ml/tests",
+    "collectors/shadow/tests",
+    "collectors/shadow_trial/tests",
+    "backend/tests",
+    "v0.3.15.2 compact behavioral"
+  ]
+}

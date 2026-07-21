@@ -1,0 +1,16 @@
+{
+  "calibration_fit_call_count": 0,
+  "candidate_replacement_count": 0,
+  "candidate_selection_call_count": 0,
+  "conformal_fit_call_count": 0,
+  "docker_campaign_call_count": 0,
+  "feature_extraction_call_count": 0,
+  "feature_selection_call_count": 0,
+  "fit_call_count": 0,
+  "fit_transform_call_count": 0,
+  "historical_rows_used_for_tuning": false,
+  "no_fit_audit_passed": true,
+  "partial_fit_call_count": 0,
+  "threshold_selection_call_count": 0,
+  "zeek_processing_call_count": 0
+}

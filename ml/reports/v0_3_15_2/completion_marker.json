@@ -1,0 +1,10 @@
+{
+  "bundle_finalization_count": 1,
+  "completed": true,
+  "event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+  "hash_chain_root": "6e2a5ad715c02264f84fb686bb0f1002f6e432431fd6d67001b7a989d76761f0",
+  "passed": false,
+  "policy_sha256": "87cd229d9032c648984038fd531eddab48d5c66fe3ca846cefbe092552505640",
+  "prediction_manifest_sha256": "da2a25fd527334616c07ade4d80d98c92d7f267cbb076a4a3cbc47732cc848dc",
+  "stage": "v0.3.15.2"
+}

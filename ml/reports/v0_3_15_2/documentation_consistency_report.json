@@ -1,0 +1,10 @@
+{
+  "authoritative_source": "docs/status/project-status.yaml",
+  "checked_stage_count": 20,
+  "current_completed_stage": "v0.3.15.2",
+  "documentation_validator_passed": true,
+  "next_allowed_stage": "v0.3.15.3",
+  "semantic_documentation_validator_passed": true,
+  "v0314_errata_preserved": true,
+  "v0315_negative_revalidation_preserved": true
+}

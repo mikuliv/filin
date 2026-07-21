@@ -1,0 +1,15 @@
+{
+  "compileall_passed": true,
+  "environment_note": "Первый shadow запуск столкнулся с системным TEMP permission error; полный набор повторён в изолированном runtime basetemp и прошёл.",
+  "errors": 0,
+  "failed": 0,
+  "skipped": 0,
+  "suites": {
+    "backend": 1,
+    "collectors_shadow": 137,
+    "collectors_shadow_trial": 69,
+    "ml": 709
+  },
+  "total_passed": 916,
+  "v03152_behavioral_tests": 25
+}

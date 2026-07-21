@@ -1,0 +1,10 @@
+{
+  "batch_size": 50,
+  "docker_network_internal": true,
+  "integrated_exporter_sha256": "d47835040f19a132cec54f2623c29b60a3e6da5c043e956b0d980ac67284b935",
+  "profile": "C",
+  "queue_capacity": 2048,
+  "rate": 25,
+  "workers": 2,
+  "zeek_image": "zeek/zeek:7.0.5"
+}

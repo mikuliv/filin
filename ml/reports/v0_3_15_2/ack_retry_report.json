@@ -1,0 +1,6 @@
+{
+  "raw_ack_records_persisted": false,
+  "retry_classification_passed": true,
+  "strict_ack": true,
+  "validated_acknowledgement_count": 2490
+}

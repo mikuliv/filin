@@ -1,0 +1,28 @@
+{
+  "capture_completeness": 1.0,
+  "capture_to_sink_latency_complete": false,
+  "captured_window_count": 2400,
+  "event_generation_completeness": 1.0,
+  "eventual_delivery_success_rate": 1.0,
+  "feature_completeness": 1.0,
+  "feature_row_count": 2280,
+  "final_backlog": 0,
+  "maximum_processing_lag_windows": 1,
+  "pipeline_window_coverage": 1.0,
+  "prediction_completeness": 1.0,
+  "prediction_count": 2280,
+  "processed_window_count": 2400,
+  "processing_completeness": 1.0,
+  "processing_latency": {
+    "maximum_ms": 4046.9223000000056,
+    "p50_ms": 1651.3240999997834,
+    "p95_ms": 1987.7172049998533,
+    "p99_ms": 2208.341860000073
+  },
+  "queue_peak": 51,
+  "scheduled_capture_count": 2400,
+  "sink_unique_event_count": 2490,
+  "source_event_count": 2490,
+  "spool_peak_bytes": 81806,
+  "sustained_lag_windows": 0
+}

@@ -1,0 +1,5 @@
+{
+  "clock_safety_passed": true,
+  "monotonic_time_used": true,
+  "wall_time_defines_causal_order": false
+}

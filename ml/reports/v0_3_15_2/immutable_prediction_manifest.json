@@ -1,0 +1,9 @@
+{
+  "duplicate_prediction_row_count": 0,
+  "missing_prediction_row_count": 0,
+  "prediction_after_label_unlock_count": 0,
+  "prediction_manifest_sha256": "da2a25fd527334616c07ade4d80d98c92d7f267cbb076a4a3cbc47732cc848dc",
+  "record_count": 2280,
+  "repeated_inference_count": 0,
+  "unique_prediction_row_count": 2280
+}

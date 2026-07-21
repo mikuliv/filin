@@ -1,0 +1,45 @@
+{
+  "fixed_class_macro": {
+    "method": "six frozen classes"
+  },
+  "intervals": {
+    "FPR": {
+      "high": 0.0,
+      "low": 0.0
+    },
+    "attack_episode_recall": {
+      "high": 0.4000000000000001,
+      "low": 0.4000000000000001
+    },
+    "attack_macro_recall": {
+      "high": 0.8000000000000002,
+      "low": 0.8000000000000002
+    },
+    "benign_episode_FAR": {
+      "high": 0.0,
+      "low": 0.0
+    },
+    "benign_recall": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "detection_by_second": {
+      "high": 0.4000000000000001,
+      "low": 0.4000000000000001
+    },
+    "episode_precision": {
+      "high": 1.0,
+      "low": 1.0
+    },
+    "macro_f1": {
+      "high": 0.7777777777777777,
+      "low": 0.7777777777777777
+    }
+  },
+  "iterations": 5000,
+  "observed_class_macro": {
+    "method": "classes present in bootstrap replicate"
+  },
+  "seed": 42,
+  "unit": "session_id"
+}

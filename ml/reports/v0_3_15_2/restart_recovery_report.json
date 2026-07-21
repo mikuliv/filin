@@ -1,0 +1,18 @@
+{
+  "records": [
+    {
+      "evidence_sha256": "b5fe4613b57374ea6084fcb1b43774d22232950864c467007baaef7a7d6fa750",
+      "pending_before": 0,
+      "recovered": 0,
+      "session_id": "prospective_crash_resume_001"
+    },
+    {
+      "evidence_sha256": "350657a82ccbe153d4857e95ef2e87f91327d846ba0aa649a3c29e4f238804f8",
+      "pending_before": 4,
+      "recovered": 4,
+      "session_id": "prospective_crash_resume_002"
+    }
+  ],
+  "restart_count": 2,
+  "restart_invariance_passed": true
+}

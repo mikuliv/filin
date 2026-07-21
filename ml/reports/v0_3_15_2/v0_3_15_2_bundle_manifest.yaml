@@ -1,0 +1,762 @@
+schema_version: v03152_bundle_v1
+stage: v0.3.15.2
+artifacts:
+- role: report:ack_retry_report
+  path: ml/reports/v0_3_15_2/ack_retry_report.json
+  size: 145
+  sha256: 45ac32934858492f5558350c0367be1a6fde09a9ae7cdfe8e2d4106d21b66235
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:blind_access_audit
+  path: ml/reports/v0_3_15_2/blind_access_audit.json
+  size: 215
+  sha256: 8cbc9ad199dd1ab0feb288fbde59609946178db0b91a1a679478073d253486b2
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - blind_label_separation
+- role: report:bootstrap_intervals
+  path: ml/reports/v0_3_15_2/bootstrap_intervals.json
+  size: 899
+  sha256: 4719fe48d232e394285bb5494d2714e2a17213a6a57a2d09c232e60f38af289c
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:calibration_metrics
+  path: ml/reports/v0_3_15_2/calibration_metrics.json
+  size: 410
+  sha256: a4b4d289843792102ad44ccced84bf725d488af5b3322338ace03d0afce81887
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:campaign_manifest
+  path: ml/reports/v0_3_15_2/campaign_manifest.json
+  size: 818
+  sha256: d8f957d0cd68ac9b2594bb6d6b8c55fa6e46dbe4cb88791db3894c9995ac7508
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - campaign_frozen
+- role: report:capture_integrity_report
+  path: ml/reports/v0_3_15_2/capture_integrity_report.json
+  size: 225
+  sha256: 89153bb26cf74443517003be19d8f02d341eacb91c0aef770cc5be1a140d29dd
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - capture_completeness
+- role: report:causal_invariance_report
+  path: ml/reports/v0_3_15_2/causal_invariance_report.json
+  size: 1088
+  sha256: 29b3599357852b3b53157e0f8378ceb496a2fad0a421995b864b705accb4289f
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - causal_invariance
+- role: checkpoint
+  path: ml/reports/v0_3_15_2/checkpoint_evidence.json
+  size: 124
+  sha256: d304f02ba0e1eb25af65f9d85c2af8165c5e56ae93f88e4035db13a53d2fbad1
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:ci_coverage_report
+  path: ml/reports/v0_3_15_2/ci_coverage_report.json
+  size: 357
+  sha256: 960ca0d82fd595dfaecd3e0543a8ae719f5847eb19c011a3ac3a09f9f8a48d53
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: claim_ledger
+  path: ml/reports/v0_3_15_2/claim_evidence_ledger.json
+  size: 50581
+  sha256: 870d71fc919158506242f4c1ddfe2cc67e4959731df9d3a0bd5bf2316516ab46
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:clock_safety_report
+  path: ml/reports/v0_3_15_2/clock_safety_report.json
+  size: 108
+  sha256: 4672af01a3711cf5a4358e184beb6435bd4690e9f39de46eecbdc030596c7efd
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: completion_marker
+  path: ml/reports/v0_3_15_2/completion_marker.json
+  size: 467
+  sha256: 49878628c0255b587b21094b0ea53a46361f069af0374263bcda5f55cd62530a
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:conformal_metrics
+  path: ml/reports/v0_3_15_2/conformal_metrics.json
+  size: 448
+  sha256: 019b4bd902473669a61ea107ea1eedb8b7a4caa272b64ceb9ae4a0f78096aed5
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:continuous_availability_report
+  path: ml/reports/v0_3_15_2/continuous_availability_report.json
+  size: 827
+  sha256: cd87ebe6d2502b169dac38aeb74808d757cc04b732c02015e631038849e31b9c
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:documentation_consistency_report
+  path: ml/reports/v0_3_15_2/documentation_consistency_report.json
+  size: 348
+  sha256: a3a96d243dbab5e179421f8f5699724692f94570a7c0ccaf6fa2dc6de68046ef
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:drift_report
+  path: ml/reports/v0_3_15_2/drift_report.json
+  size: 2474
+  sha256: 289e0b05446b121c53d5add4dcfb1f24a8b12c2ce0dd2150ebec327b9c681a76
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:drop_reconciliation_report
+  path: ml/reports/v0_3_15_2/drop_reconciliation_report.json
+  size: 571
+  sha256: 9bb0eaae0a92e611b24537f13a0d11ed9dff0bfdd9df1ea65f30366dd1094ffa
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - drop_reconciliation
+- role: report:episode_metrics
+  path: ml/reports/v0_3_15_2/episode_metrics.json
+  size: 619
+  sha256: d5beebd4e3bbd04bf8a9d7912260c8fd6bd2b05b5deb8fa22dcdc87acec79815
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - v0316_readiness
+- role: report:episode_schedule_manifest
+  path: ml/reports/v0_3_15_2/episode_schedule_manifest.json
+  size: 45857
+  sha256: eaa9b1b6b4e5f1d9401853633754424ed7ae873cb18e773837a749e339c63ca8
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: event_set
+  path: ml/reports/v0_3_15_2/event_set_anchor.json
+  size: 116
+  sha256: 639964397b102c2a8e160ad4ca5a34f27b7f4b9838201a0b82ca574a196fab07
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:fault_execution_results
+  path: ml/reports/v0_3_15_2/fault_execution_results.json
+  size: 37808
+  sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - retry_classification
+  - all_fault_oracles_passed
+  - fault_injected:sink_timeout
+  - fault_injected:sink_unavailable_30s
+  - fault_injected:sink_unavailable_until_restart
+  - fault_injected:rate_limit_429
+  - fault_injected:connection_reset_mid_batch
+  - fault_injected:duplicate_delivery
+  - fault_injected:duplicate_ack
+  - fault_injected:out_of_order_ack
+  - fault_injected:malformed_ack
+  - fault_injected:schema_rejection
+  - fault_injected:spool_restart
+  - fault_injected:exporter_crash_after_write_before_ack
+  - fault_injected:exporter_crash_before_write
+  - fault_injected:queue_80_percent
+  - fault_injected:queue_95_percent
+  - fault_injected:queue_full
+  - fault_injected:storage_full_simulated
+  - fault_injected:clock_forward_jump
+  - fault_injected:clock_backward_jump
+  - fault_injected:event_corruption
+  - fault_injected:event_removal
+  - fault_injected:event_reordering
+  - fault_injected:unknown_ack
+  - fault_injected:checkpoint_corruption
+  - fault_injected:spool_corruption
+  - fault_injected:crash_after_ack_before_checkpoint
+  - fault_injected:crash_after_checkpoint_before_compaction
+  - fault_injected:sink_restart
+  - fault_injected:exporter_restart
+  - fault_injected:temporary_unavailable
+  - fault_injected:timeout_sequence
+  - fault_injected:rate_limited
+  - fault_injected:connection_reset_after_send
+  - fault_injected:restart_sink_before_drain
+  - fault_injected:slow_consumer
+- role: report:fault_schedule_manifest
+  path: ml/reports/v0_3_15_2/fault_schedule_manifest.json
+  size: 20977
+  sha256: fbfbc94b8cc315b438c31ed38b363d79a40a69e126c5539599899613b4a08917
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: hash_chain
+  path: ml/reports/v0_3_15_2/hash_chain_anchor.json
+  size: 115
+  sha256: 042738a5015bcb229eda8ae1a7c50c4db031142f2288376def98d1cb4018c7c9
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:historical_integrity_report
+  path: ml/reports/v0_3_15_2/historical_integrity_report.json
+  size: 1655
+  sha256: 1349620e4025c8e3731f05ebc9b26e6428d3d0767095f19e3d0a8c5fc075c8bc
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - candidate_unchanged
+- role: source_prediction
+  path: ml/reports/v0_3_15_2/immutable_prediction_manifest.json
+  size: 319
+  sha256: 2f335535af929c1458bd575b4f92f4bcd0af9045ab260404111b28cd6d24a37f
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - prediction_uniqueness
+- role: report:integrated_exporter_report
+  path: ml/reports/v0_3_15_2/integrated_exporter_report.json
+  size: 4831
+  sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - integrated_exporter_used
+  - durable_spool_used
+  - strict_ack
+  - rate_limiter_used
+  - real_batch_used
+- role: report:no_fit_audit
+  path: ml/reports/v0_3_15_2/no_fit_audit.json
+  size: 492
+  sha256: 3ddb7f3012b31236642ef5b5a4a727f8188598cc0081f81aaa8a432e37c9ed98
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - no_fit
+- role: report:per_class_metrics
+  path: ml/reports/v0_3_15_2/per_class_metrics.json
+  size: 12000
+  sha256: 38499f0b9a2f13d3a2e10cd69273991a500a933192729260634879f5f0d93f11
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:per_group_metrics
+  path: ml/reports/v0_3_15_2/per_group_metrics.json
+  size: 12163
+  sha256: 8a1f1c581ec3e3f7e725e956020cfc3e25f028147c26abce21a3d1a150bb3ccc
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:per_length_metrics
+  path: ml/reports/v0_3_15_2/per_length_metrics.json
+  size: 9959
+  sha256: 86bbcd47c17bac13f96de6f53abd88cbdaf624ae545b110049c9e44bdceb3da0
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:per_session_metrics
+  path: ml/reports/v0_3_15_2/per_session_metrics.json
+  size: 24353
+  sha256: f78c69ee81585875889db2d6c65f4202f9351f5aea8a712d66b4c724e1bc703c
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:per_variant_metrics
+  path: ml/reports/v0_3_15_2/per_variant_metrics.json
+  size: 62732
+  sha256: 93d145e31f89673c9b4f12736f4556b307041f765155347473bb7fa8be56e2ca
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:performance_profiles_report
+  path: ml/reports/v0_3_15_2/performance_profiles_report.json
+  size: 9348
+  sha256: 12de814a0d11ad96a6f171146d5573eeea595a4c49e1f36ac5b936f60f9a558a
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - real_worker_pool_used
+  - performance_policy
+- role: report:pre_label_trial_lock
+  path: ml/reports/v0_3_15_2/pre_label_trial_lock.json
+  size: 1119
+  sha256: 5f7743ff70ef4f3f7d1d74d5327d7a4a43159477904c87a04ff8f65f512ea000
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:preliminary_report
+  path: ml/reports/v0_3_15_2/preliminary_report.json
+  size: 340
+  sha256: ce1e6b378733d9b1cd06d373c0653abf1fa00279f2a8dd81c91970c5bf61ee86
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:privacy_targets_report
+  path: ml/reports/v0_3_15_2/privacy_targets_report.json
+  size: 1240
+  sha256: 7e371f117200eca9521cd77678167cfff297c94366dd77ed02b88410b71e6a6d
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - privacy_coverage
+- role: report:protocol_lock
+  path: ml/reports/v0_3_15_2/protocol_lock.json
+  size: 243
+  sha256: dca366a2058265e57c9a039811bc202fd18c469c3b164b4c99b1fe5cafc77160
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:resource_report
+  path: ml/reports/v0_3_15_2/resource_report.json
+  size: 172
+  sha256: 10066d4cb7e2b831aaf6241cc2b18e1e02cc539b765400b55d51a086d27cca4e
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:restart_invariance_report
+  path: ml/reports/v0_3_15_2/restart_invariance_report.json
+  size: 148
+  sha256: fbc83533ea6d450f03878ad573300646dd3c93193f2e2061a25d21677df537df
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - checkpoint_recovery
+  - restart_invariance
+- role: report:restart_recovery_report
+  path: ml/reports/v0_3_15_2/restart_recovery_report.json
+  size: 493
+  sha256: 3a1b30d161b26ffd5227538c91e58be621821972744c2c6d8a94abe1a5363311
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:resume_fixture_report
+  path: ml/reports/v0_3_15_2/resume_fixture_report.json
+  size: 2084
+  sha256: 6c9202a23665d973911f834833a6d8bcd2d98b4c44a094460ed6148d52bc1a4a
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:resume_integrity_report
+  path: ml/reports/v0_3_15_2/resume_integrity_report.json
+  size: 2173
+  sha256: d20322e806251bb407e3e0f73fa70884553e536058a98dfea4a1b8dc6efd5a1a
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - strict_resume
+- role: report:runtime_configuration_report
+  path: ml/reports/v0_3_15_2/runtime_configuration_report.json
+  size: 267
+  sha256: 7d64064eab661d10be82e475333658422fa0ea7d897ec8feb7b61b76c6324495
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - production_prohibition
+  - backend_integration_prohibition
+  - automatic_enforcement_prohibition
+- role: report:session_manifest
+  path: ml/reports/v0_3_15_2/session_manifest.json
+  size: 3059
+  sha256: f1b0aa5a32c256fa7c7cde22a3e59756a5dbff1b96659385cb353215520cf928
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:source_sink_reconciliation_report
+  path: ml/reports/v0_3_15_2/source_sink_reconciliation_report.json
+  size: 571
+  sha256: 9bb0eaae0a92e611b24537f13a0d11ed9dff0bfdd9df1ea65f30366dd1094ffa
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - source_sink_equality
+- role: spool_index
+  path: ml/reports/v0_3_15_2/spool_index_report.json
+  size: 55
+  sha256: 29f2886618c1771824a633cfd39a3ccfd5af074bf960708fa7d5ea04f23b75f8
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:stateful_metrics
+  path: ml/reports/v0_3_15_2/stateful_metrics.json
+  size: 723
+  sha256: 2f1c92adc1431d1f1da479eb406aafd61805e165ed403ae3364eca2676496429
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:test_report
+  path: ml/reports/v0_3_15_2/test_report.json
+  size: 479
+  sha256: 9f25137c70c4db5d877fd5235edb5fc232ee8055a2aa00dac6547123bcc33c55
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: policy_result
+  path: ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json
+  size: 4434
+  sha256: 87cd229d9032c648984038fd531eddab48d5c66fe3ca846cefbe092552505640
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:v0_3_15_2_summary
+  path: ml/reports/v0_3_15_2/v0_3_15_2_summary.md
+  size: 1720
+  sha256: 0fda64e224c97842944d71f1d10e1d14804495fa39d7ea13540182090962b8d7
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: report:window_metrics
+  path: ml/reports/v0_3_15_2/window_metrics.json
+  size: 1199
+  sha256: c9167710eb7ac18e4e3b43cf48c362f5942459e40ca18a41c8f4d68bff79808e
+  schema_version: v03152_artifact_v1
+  required: false
+  creation_phase: after_label_unlock
+  created_before_or_after_label_unlock: after
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids:
+  - scientific_model_policy
+- role: protocol
+  path: ml/protocols/v0_3_15_2_protocol.yaml
+  size: 6360
+  sha256: 43f01cd9a745440bdc995ec1ebccf25fc4bddbc8e90fa6ee784c3411499f4750
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: campaign
+  path: ml/experiments/v0_3_15_2/campaign.yaml
+  size: 2610
+  sha256: 4ecf453784f32d264d9bfa22f26c60092fe886806dfeb9f40bf1bd5155569c63
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+- role: contract_schema
+  path: collectors/shadow/contracts/shadow_event_v1.schema.json
+  size: 3644
+  sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  schema_version: v03152_artifact_v1
+  required: true
+  creation_phase: before_label_unlock
+  created_before_or_after_label_unlock: before
+  producing_command: python -m ml.experiments.v0_3_15_2.finalize_bundle
+  claim_ids: []
+required_roles:
+- source_prediction
+- event_set
+- hash_chain
+- policy_result
+- protocol
+- campaign
+- contract_schema
+- checkpoint
+- spool_index
+- completion_marker
+- claim_ledger
+integrity_anchors:
+  source_prediction_sha256: 2f335535af929c1458bd575b4f92f4bcd0af9045ab260404111b28cd6d24a37f
+  event_set_sha256: 639964397b102c2a8e160ad4ca5a34f27b7f4b9838201a0b82ca574a196fab07
+  hash_chain_root: 042738a5015bcb229eda8ae1a7c50c4db031142f2288376def98d1cb4018c7c9
+  policy_result_sha256: 87cd229d9032c648984038fd531eddab48d5c66fe3ca846cefbe092552505640
+  protocol_sha256: 43f01cd9a745440bdc995ec1ebccf25fc4bddbc8e90fa6ee784c3411499f4750
+  campaign_sha256: 4ecf453784f32d264d9bfa22f26c60092fe886806dfeb9f40bf1bd5155569c63
+  contract_schema_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  checkpoint_sha256: d304f02ba0e1eb25af65f9d85c2af8165c5e56ae93f88e4035db13a53d2fbad1
+  spool_index_sha256: 29f2886618c1771824a633cfd39a3ccfd5af074bf960708fa7d5ea04f23b75f8
+  completion_marker_sha256: 49878628c0255b587b21094b0ea53a46361f069af0374263bcda5f55cd62530a
+claim_evidence:
+- claim_id: campaign_frozen
+  evidence_sha256: d8f957d0cd68ac9b2594bb6d6b8c55fa6e46dbe4cb88791db3894c9995ac7508
+- claim_id: candidate_unchanged
+  evidence_sha256: 1349620e4025c8e3731f05ebc9b26e6428d3d0767095f19e3d0a8c5fc075c8bc
+- claim_id: no_fit
+  evidence_sha256: 3ddb7f3012b31236642ef5b5a4a727f8188598cc0081f81aaa8a432e37c9ed98
+- claim_id: blind_label_separation
+  evidence_sha256: 8cbc9ad199dd1ab0feb288fbde59609946178db0b91a1a679478073d253486b2
+- claim_id: capture_completeness
+  evidence_sha256: 89153bb26cf74443517003be19d8f02d341eacb91c0aef770cc5be1a140d29dd
+- claim_id: prediction_uniqueness
+  evidence_sha256: 2f335535af929c1458bd575b4f92f4bcd0af9045ab260404111b28cd6d24a37f
+- claim_id: integrated_exporter_used
+  evidence_sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+- claim_id: durable_spool_used
+  evidence_sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+- claim_id: checkpoint_recovery
+  evidence_sha256: fbc83533ea6d450f03878ad573300646dd3c93193f2e2061a25d21677df537df
+- claim_id: strict_ack
+  evidence_sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+- claim_id: retry_classification
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: rate_limiter_used
+  evidence_sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+- claim_id: real_batch_used
+  evidence_sha256: 33c9065a0d7a1e7ff54d13c0d6d58b7a6a8b61229a1904264456b3c635a9723b
+- claim_id: real_worker_pool_used
+  evidence_sha256: 12de814a0d11ad96a6f171146d5573eeea595a4c49e1f36ac5b936f60f9a558a
+- claim_id: all_fault_oracles_passed
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: drop_reconciliation
+  evidence_sha256: 9bb0eaae0a92e611b24537f13a0d11ed9dff0bfdd9df1ea65f30366dd1094ffa
+- claim_id: privacy_coverage
+  evidence_sha256: 7e371f117200eca9521cd77678167cfff297c94366dd77ed02b88410b71e6a6d
+- claim_id: source_sink_equality
+  evidence_sha256: 9bb0eaae0a92e611b24537f13a0d11ed9dff0bfdd9df1ea65f30366dd1094ffa
+- claim_id: causal_invariance
+  evidence_sha256: 29b3599357852b3b53157e0f8378ceb496a2fad0a421995b864b705accb4289f
+- claim_id: restart_invariance
+  evidence_sha256: fbc83533ea6d450f03878ad573300646dd3c93193f2e2061a25d21677df537df
+- claim_id: strict_resume
+  evidence_sha256: d20322e806251bb407e3e0f73fa70884553e536058a98dfea4a1b8dc6efd5a1a
+- claim_id: performance_policy
+  evidence_sha256: 12de814a0d11ad96a6f171146d5573eeea595a4c49e1f36ac5b936f60f9a558a
+- claim_id: scientific_model_policy
+  evidence_sha256: c9167710eb7ac18e4e3b43cf48c362f5942459e40ca18a41c8f4d68bff79808e
+- claim_id: v0316_readiness
+  evidence_sha256: d5beebd4e3bbd04bf8a9d7912260c8fd6bd2b05b5deb8fa22dcdc87acec79815
+- claim_id: production_prohibition
+  evidence_sha256: 7d64064eab661d10be82e475333658422fa0ea7d897ec8feb7b61b76c6324495
+- claim_id: backend_integration_prohibition
+  evidence_sha256: 7d64064eab661d10be82e475333658422fa0ea7d897ec8feb7b61b76c6324495
+- claim_id: automatic_enforcement_prohibition
+  evidence_sha256: 7d64064eab661d10be82e475333658422fa0ea7d897ec8feb7b61b76c6324495
+- claim_id: fault_injected:sink_timeout
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:sink_unavailable_30s
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:sink_unavailable_until_restart
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:rate_limit_429
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:connection_reset_mid_batch
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:duplicate_delivery
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:duplicate_ack
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:out_of_order_ack
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:malformed_ack
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:schema_rejection
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:spool_restart
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:exporter_crash_after_write_before_ack
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:exporter_crash_before_write
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:queue_80_percent
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:queue_95_percent
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:queue_full
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:storage_full_simulated
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:clock_forward_jump
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:clock_backward_jump
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:event_corruption
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:event_removal
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:event_reordering
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:unknown_ack
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:checkpoint_corruption
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:spool_corruption
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:crash_after_ack_before_checkpoint
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:crash_after_checkpoint_before_compaction
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:sink_restart
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:exporter_restart
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:temporary_unavailable
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:timeout_sequence
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:rate_limited
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:connection_reset_after_send
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:restart_sink_before_drain
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+- claim_id: fault_injected:slow_consumer
+  evidence_sha256: b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22
+historical_hash_anchors:
+  candidate_artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+readiness:
+  candidate_ready_for_v0_3_16_staging_connector_readiness: false
+  production_ready: false
+  backend_integration_ready: false
+  shadow_mode_ready: false
+  automatic_enforcement_ready: false

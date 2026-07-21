@@ -1,0 +1,18 @@
+{
+  "canonical_result_sha256": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+  "causal_order_invariance_passed": true,
+  "prediction_set_invariant": true,
+  "profile_count": 8,
+  "profile_hashes": {
+    "batch_1": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "batch_50": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "bounded_random_completion": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "canonical_order": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "reverse_physical_completion": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "worker_1": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "worker_2": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206",
+    "worker_3": "c2d0a137c382afb1a4610b8d6d7cb37e3ee748f41e02143a2665bf57f46cc206"
+  },
+  "source_semantic_event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68",
+  "state_transition_set_invariant": true
+}

@@ -1,0 +1,18 @@
+{
+  "average_set_size": 0.9447368421052632,
+  "coverage_per_class": {
+    "auth_failures": 0.0,
+    "beacon": 1.0,
+    "benign": 1.0,
+    "low_rate_dos": 1.0,
+    "port_scan": 0.0,
+    "web_probe": 0.0
+  },
+  "empty_set_rate": 0.05526315789473684,
+  "frozen_conformal_unchanged": true,
+  "median_set_size": 1.0,
+  "multi_class_rate": 0.0,
+  "overall_coverage": 0.9447368421052632,
+  "singleton_rate": 0.9447368421052632,
+  "wrong_only_rate": 0.0
+}

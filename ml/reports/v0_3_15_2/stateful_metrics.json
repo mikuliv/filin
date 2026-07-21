@@ -1,0 +1,23 @@
+{
+  "activity_key_collision_count": 0,
+  "continuation_window_count": 54,
+  "cross_activity_contamination_count": 0,
+  "cross_session_contamination_count": 0,
+  "duplicate_false_suppression_count": 0,
+  "duplicate_suppression_count": 54,
+  "duplicate_suppression_precision": 1.0,
+  "eligible_but_not_emitted_count": 0,
+  "first_alert_suppression_count": 0,
+  "pending_window_count": 0,
+  "pre_alert_pending_attack_window_rate": 0.0,
+  "review_window_count": 126,
+  "review_window_rate": 0.05526315789473684,
+  "state_counts": {
+    "alert_emitted": 30,
+    "benign": 2070,
+    "post_alert_continuation": 54,
+    "review_required": 126
+  },
+  "state_machine_extra_delay_count": 0,
+  "unresolved_pending_episode_rate": 0.0
+}

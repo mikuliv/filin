@@ -1,0 +1,19 @@
+{
+  "all_predictions_created_before_label_unlock": true,
+  "capture_manifest_sha256": "0521ce10acaa4615c648fa6cdd1fc0a198d3a054d1f24709159353913dcc9b40",
+  "completed_session_count": 12,
+  "duplicate_prediction_row_count": 0,
+  "fault_execution_sha256": "b46ddda96e55db4c0d78588f0f8dace907e58c02ccad80e694a5a4b48b3f5c22",
+  "hash_chain_root": "6e2a5ad715c02264f84fb686bb0f1002f6e432431fd6d67001b7a989d76761f0",
+  "missing_prediction_row_count": 0,
+  "no_fit_audit_sha256": "3ddb7f3012b31236642ef5b5a4a727f8188598cc0081f81aaa8a432e37c9ed98",
+  "prediction_after_label_unlock_count": 0,
+  "prediction_count": 2280,
+  "prediction_manifest_sha256": "da2a25fd527334616c07ade4d80d98c92d7f267cbb076a4a3cbc47732cc848dc",
+  "queue_drained": true,
+  "repeated_inference_count": 0,
+  "runtime_configuration_sha256": "7d64064eab661d10be82e475333658422fa0ea7d897ec8feb7b61b76c6324495",
+  "schema_version": "v03152_pre_label_lock_v1",
+  "sink_reconciliation_sha256": "9bb0eaae0a92e611b24537f13a0d11ed9dff0bfdd9df1ea65f30366dd1094ffa",
+  "source_event_set_sha256": "df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68"
+}

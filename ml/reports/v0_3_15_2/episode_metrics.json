@@ -1,0 +1,27 @@
+{
+  "alert_window_distribution": {
+    "1": 24
+  },
+  "attack_episode_count": 60,
+  "attack_episode_recall": 0.4,
+  "benign_episode_count": 60,
+  "benign_episode_false_alert_rate": 0.0,
+  "detection_by_first_window": 0.4,
+  "detection_by_second_window": 0.4,
+  "detection_by_third_window": 0.4,
+  "episode_alert_precision": 1.0,
+  "episode_count": 120,
+  "latency": {
+    "maximum": 1,
+    "mean": 1.0,
+    "median": 1.0
+  },
+  "per_class_episode_recall": {
+    "auth_failures": 0.0,
+    "beacon": 1.0,
+    "low_rate_dos": 1.0,
+    "port_scan": 0.0,
+    "web_probe": 0.0
+  },
+  "unresolved_pending_episode_rate": 0.0
+}
