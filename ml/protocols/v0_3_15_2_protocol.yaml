@@ -1,0 +1,123 @@
+schema_version: v03152_protocol_v1
+stage: v0.3.15.2
+revision: 1
+title: Проспективное испытание интегрированного пассивного runtime
+source_commit: 389e81e3ec25b7f04386b08e9b45c10c8fa72973
+purpose: Получить создаваемые во время нового controlled passive shadow trial доказательства полного интегрированного пути.
+constraints:
+  execution_scope: один локальный компьютер, изолированная Docker-сеть и локальный mock staging sink
+  delivery_semantics: at-least-once
+  sequential_sessions: true
+  external_network: prohibited
+  production_credentials: prohibited
+  backend_writes: prohibited
+non_goals: [обучение, калибровка, conformal fit, подбор признаков или порогов, backend-интеграция, production shadow mode, automatic enforcement, внешняя validation]
+frozen_candidate:
+  candidate_id: v0311:19176acb401be2d4
+  artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  manifest_sha256: ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c
+  feature_count: 51
+  feature_schema_sha256: cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf
+  event_contract_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+integrated_runtime:
+  source_stage: v0.3.15.1
+  exporter_sha256: d47835040f19a132cec54f2623c29b60a3e6da5c043e956b0d980ac67284b935
+  durable_runtime_sha256: bbdb1a6be143b4d8b04c8661b5065c26a10c12367628be95aeda2617e5a81eef
+  profile: C
+  workers: 2
+  batch_size: 50
+  bounded_queue: true
+  token_bucket: true
+  durable_spool: true
+  atomic_checkpoint: true
+  strict_ack: true
+capture:
+  zeek_image: zeek/zeek:7.0.7
+  window_duration_seconds: 1
+  sessions: 12
+  windows_per_session: 200
+  warmup_windows_per_session: 10
+  scored_windows_per_session: 190
+  total_capture_windows: 2400
+  total_warmup_windows: 120
+  total_scored_windows: 2280
+  closed_window_barrier: true
+campaign:
+  groups: [prospective_baseline_endurance, prospective_burst_jitter, prospective_overload_backpressure, prospective_ack_transport_fault, prospective_crash_resume, prospective_clock_integrity]
+  session_ids: [prospective_baseline_endurance_001, prospective_baseline_endurance_002, prospective_burst_jitter_001, prospective_burst_jitter_002, prospective_overload_backpressure_001, prospective_overload_backpressure_002, prospective_ack_transport_fault_001, prospective_ack_transport_fault_002, prospective_crash_resume_001, prospective_crash_resume_002, prospective_clock_integrity_001, prospective_clock_integrity_002]
+  seeds: [19101, 19102, 19201, 19202, 19301, 19302, 19401, 19402, 19501, 19502, 19601, 19602]
+  episode_count: 120
+  benign_episode_count: 60
+  attack_episode_count: 60
+  attack_classes: [auth_failures, beacon, low_rate_dos, port_scan, web_probe]
+  attack_episodes_per_class: 12
+  episode_lengths: [2, 3, 4, 5]
+  episodes_per_length_and_kind: 15
+  benign_variant_count: 30
+  benign_variant_repetitions: 2
+label_vault_policy:
+  frozen_before_capture: true
+  inaccessible_before_unlock: [inference, exporter, state_machine, checkpoint, spool, performance_profiler, fault_runner]
+  unlock_requires_completed_sessions: 12
+  unlock_requires_predictions: 2280
+  inference_after_unlock: prohibited
+no_fit_policy:
+  forbidden_calls: [fit, partial_fit, calibration_fit, conformal_fit, feature_selection, threshold_selection, candidate_replacement]
+  required_counter_value: 0
+fault_policy:
+  registry: collectors/shadow/fault_registry.py
+  scenario_count: 35
+  schedule_frozen_before_capture: true
+  require_injection: true
+  require_observable_effect: true
+  require_oracle: true
+  allowed_failed: 0
+  allowed_unsupported: 0
+  unknown_defaults_to_healthy: false
+runtime_policy:
+  path: [shadow_event_v1, schema_validation, privacy_allowlist, canonical_serialization, durable_spool, bounded_priority_queue, token_bucket, batch_delivery, strict_ack, retry_classification, atomic_checkpoint, spool_compaction, local_idempotent_sink, reconciliation]
+  canonical_pending_events: 0
+  semantic_duplicates: 0
+  idempotency_collisions: 0
+  unaccounted_drops: 0
+  first_alert_lost: 0
+  review_event_lost: 0
+performance_profiles:
+  A: {workers: 1, batch_size: 1}
+  B: {workers: 1, batch_size: 50}
+  C: {workers: 2, batch_size: 50}
+  D: {workers: 3, batch_size: 100}
+performance_policy:
+  corpus_events: 600
+  warmup_events: 64
+  repetitions: 3
+  profile_c_median_throughput_min_eps: 10
+  capture_to_sink_p95_max_ms: 2000
+  capture_to_sink_p99_max_ms: 3000
+  cpu_average_max_percent: 75
+  cpu_p95_max_percent: 95
+  peak_rss_max_mib: 512
+  final_backlog: 0
+scientific_policy:
+  benign_recall_min: 0.98
+  fpr_max: 0.02
+  attack_macro_recall_min: 0.95
+  attack_macro_f1_min: 0.95
+  per_attack_episode_recall_min: 0.90
+  attack_episode_recall_min: 0.95
+  episode_alert_precision_min: 0.95
+  benign_episode_far_max: 0.05
+  detection_by_second_window_min: 0.95
+  unresolved_pending_episode_rate: 0
+bootstrap: {unit: session_id, iterations: 5000, seed: 42, fixed_and_observed_class_macro: true}
+privacy_policy: {runtime_surface_count: 16, negative_fixture_minimum: 14, allowed_findings: 0}
+resume_policy: {schema_version: v03152_bundle_v1, detached_sha256: true, verify_all_hashes_and_sizes: true, path_confinement: true, corruption_case_count: 11, repeat_inference: false, repeat_bundle_finalization: false}
+readiness_policy:
+  all_80_mandatory_criteria_required: true
+  positive_next_allowed_stage: v0.3.16
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+prohibited_actions: [push, history_rewrite, remote_change, host_network, external_destination, real_attack, firewall_change, network_blocking, backend_write, production_receiver, automatic_enforcement, publication_of_raw_runtime_artifacts]
