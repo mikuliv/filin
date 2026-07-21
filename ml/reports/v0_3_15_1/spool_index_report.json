@@ -1,0 +1,39 @@
+{
+  "runtime_spool_used": true,
+  "spool_peak_bytes": 96823,
+  "spool_recovery_scenarios": [
+    {
+      "evidence_sha256": "a39c86c4ef9fb79a3e37c75505abe1c0d10cd677d1b8b06693aab5555893f6b3",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "recovered count and reconciled",
+      "injection_count": 1,
+      "observable_effect": "memory_queue_replaced",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "durable_spool_recovered",
+      "scenario_name": "spool_restart"
+    },
+    {
+      "evidence_sha256": "f3ba7d1975d8851addf7716345d53cb362701f76393ca3dac5fe6eca5e77e688",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "integrity error observed",
+      "injection_count": 1,
+      "observable_effect": "spool_checksum_mismatch",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "recovery_refused",
+      "scenario_name": "spool_corruption"
+    },
+    {
+      "evidence_sha256": "de184bd83afbc9c7af1e4abca218099c82c746115d3d487b603a68c7c6699c62",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "spool full observed and reconciled",
+      "injection_count": 1,
+      "observable_effect": "spool_capacity_exceeded",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "rejection_accounted",
+      "scenario_name": "storage_full_simulated"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "candidate_ready_for_v0_3_16": false,
+  "completed": true,
+  "policy_result_sha256": "9b5a95c07d9dbe5d920498d1a7e4bead88136443ebaa6f53d912a7dd54ea9eeb",
+  "remediation_passed": true,
+  "stage": "v0.3.15.1"
+}

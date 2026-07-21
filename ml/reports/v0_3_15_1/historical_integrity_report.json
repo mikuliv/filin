@@ -1,0 +1,38 @@
+{
+  "actual_file_hashes": {
+    "collectors/shadow/contracts/shadow_event_v1.schema.json": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe",
+    "ml/experiments/v0_3_15/campaign.yaml": "9cdd55a3058df7d35fb95f6c6826b596db72dc58fa51486c89257c69afa79ce4",
+    "ml/experiments/v0_3_15/protocol.yaml": "69a2527b1a050c5bb92369caf867f0eb964bb817cd0a1eeb8672a63ed9fccb8d",
+    "ml/reports/v0_3_15/shadow_trial_bundle_manifest.yaml": "fe09945114c3c2fc68e7cb0e9a738c7f6098bbaca7e299b1f5ae4d4b11707124"
+  },
+  "backend_tree": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_unchanged": true,
+  "current_trees": {
+    "ml/experiments/v0_3_11": "b587717075ee27faf6799cd5d46615f27829d2f7",
+    "ml/experiments/v0_3_12": "031fce9157a148755b4ea63cf91c2e1a3ae25d5a",
+    "ml/experiments/v0_3_12_2": "44df542d7f71efecf68b227c52308a0b8d902900",
+    "ml/experiments/v0_3_13": "b1fbe83e6926bc762742d37df66a6166e3f29be0",
+    "ml/experiments/v0_3_14": "6cca661a90731a565901ca05ff175083f555ea18",
+    "ml/experiments/v0_3_15": "172c8f577f40b0f243f88bd673464652f11c4fd8"
+  },
+  "expected_file_hashes": {
+    "collectors/shadow/contracts/shadow_event_v1.schema.json": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe",
+    "ml/experiments/v0_3_15/campaign.yaml": "9cdd55a3058df7d35fb95f6c6826b596db72dc58fa51486c89257c69afa79ce4",
+    "ml/experiments/v0_3_15/protocol.yaml": "69a2527b1a050c5bb92369caf867f0eb964bb817cd0a1eeb8672a63ed9fccb8d",
+    "ml/reports/v0_3_15/shadow_trial_bundle_manifest.yaml": "fe09945114c3c2fc68e7cb0e9a738c7f6098bbaca7e299b1f5ae4d4b11707124"
+  },
+  "file_hashes_match": true,
+  "historical_experiment_trees_unchanged": true,
+  "source_trees": {
+    "ml/experiments/v0_3_11": "b587717075ee27faf6799cd5d46615f27829d2f7",
+    "ml/experiments/v0_3_12": "031fce9157a148755b4ea63cf91c2e1a3ae25d5a",
+    "ml/experiments/v0_3_12_2": "44df542d7f71efecf68b227c52308a0b8d902900",
+    "ml/experiments/v0_3_13": "b1fbe83e6926bc762742d37df66a6166e3f29be0",
+    "ml/experiments/v0_3_14": "6cca661a90731a565901ca05ff175083f555ea18",
+    "ml/experiments/v0_3_15": "172c8f577f40b0f243f88bd673464652f11c4fd8"
+  },
+  "v0315_pre_label_lock_matches": true,
+  "v0315_pre_label_lock_sha256": "1690a24ca5ed9b404bd43c348643bff0f7083f5df78b68e54533d526e24acb13",
+  "v0315_prediction_payload_matches": true,
+  "v0315_prediction_payload_sha256": "fe3f31e7f500da8baa6632aae6e1202a83cfdbc22d526d3ed33214aa5ac51ced"
+}

@@ -1,0 +1,183 @@
+artifacts:
+- path: ml/reports/v0_3_15/immutable_prediction_manifest.json
+  role: source_prediction
+  sha256: b8695857ffadc471085a18715d1916e0beb33b922eaf85a071d270c681f206e1
+  size: 283
+- path: ml/reports/v0_3_15_1/event_set_anchor.json
+  role: event_set
+  sha256: 2de68a7a5822fd6e37c950d8b2b6c2eab3b0304100090659cae337c65fc68ccd
+  size: 70
+- path: ml/reports/v0_3_15_1/hash_chain_anchor.json
+  role: hash_chain
+  sha256: 1f9921899d0114b704ab2a6310035e4ad6d59dc2711ff05e4b10b10b9d593e07
+  size: 91
+- path: ml/reports/v0_3_15_1/v0_3_15_1_policy_result.json
+  role: policy_result
+  sha256: 9b5a95c07d9dbe5d920498d1a7e4bead88136443ebaa6f53d912a7dd54ea9eeb
+  size: 2524
+- path: ml/experiments/v0_3_15_1/protocol.yaml
+  role: protocol
+  sha256: aec63012e61982cafc723d652031811543a7861e07982588b4c4e3a28058c67c
+  size: 3522
+- path: ml/reports/v0_3_15_1/fault_scenario_registry.json
+  role: campaign
+  sha256: 712ed54da021f9b432b33f2ff44dc96ce79493d26e1967c21318306791229ceb
+  size: 17418
+- path: collectors/shadow/contracts/shadow_event_v1.schema.json
+  role: contract_schema
+  sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  size: 3644
+- path: ml/reports/v0_3_15_1/checkpoint_evidence.json
+  role: checkpoint
+  sha256: 200616896b9662bc969bbbcb2ebd9195a95680e4b22cd0a34fb4805385c46996
+  size: 1472
+- path: ml/reports/v0_3_15_1/spool_index_report.json
+  role: spool_index
+  sha256: d985a2b7eee6217bdde4b2f15521c5afa2915599b426adb26b2a615b36d479d8
+  size: 1394
+- path: ml/reports/v0_3_15_1/completion_marker.json
+  role: completion_marker
+  sha256: 3ad085ac6666c9b06d28a82e847af772fc63916b37773ec2f17c4e525a16d7bd
+  size: 212
+- path: ml/reports/v0_3_15_1/claim_evidence_ledger.json
+  role: claim_ledger
+  sha256: c2892cfd2bc74c26528fa99e3206baa43012bb04aa9dae83a9ec3cd44a3f908c
+  size: 7550
+- path: ml/reports/v0_3_15_1/behavioral_test_report.json
+  role: report_behavioral_test_report
+  sha256: 2f9978243792544b92b05bc16a84260f08d2eb7f1eff0ae1de49a90a8e20485b
+  size: 362
+- path: ml/reports/v0_3_15_1/ci_coverage_report.json
+  role: report_ci_coverage_report
+  sha256: ebaf0411c6a555a4de0fb679e4e510626ac4aeba61d9d1874f12e0d36e56bbf6
+  size: 243
+- path: ml/reports/v0_3_15_1/documentation_consistency_report.json
+  role: report_documentation_consistency_report
+  sha256: f3ff2f465145902cb43570f9625fbb70e1345f52f07f7235d811d33562b24b02
+  size: 139
+- path: ml/reports/v0_3_15_1/drop_reconciliation_report.json
+  role: report_drop_reconciliation_report
+  sha256: 3398cc83e6c1233b3cfa5a13f8b3364a72a5fc84e8b5bc75597331f7e49b154b
+  size: 1389
+- path: ml/reports/v0_3_15_1/fault_execution_results.json
+  role: report_fault_execution_results
+  sha256: 933017d94a4c3d668a94450c0a0cd914401176efa580ee435c31d0820e2c642b
+  size: 15492
+- path: ml/reports/v0_3_15_1/finding_reproduction_matrix.json
+  role: report_finding_reproduction_matrix
+  sha256: 2ad91ddfde605cc6f7259c034a95bf7e18d3da639a8784ef8cabe98596e77df1
+  size: 12525
+- path: ml/reports/v0_3_15_1/historical_integrity_report.json
+  role: report_historical_integrity_report
+  sha256: 69ed820e7ddb5c173a63641862878e1ef6630fc64964e73124c55960413ee150
+  size: 2436
+- path: ml/reports/v0_3_15_1/integrated_exporter_report.json
+  role: report_integrated_exporter_report
+  sha256: 2cd194b091bb041ef2d3b680040913bfa6227cfdea3da7f2a8f3a2164ec6033a
+  size: 1235
+- path: ml/reports/v0_3_15_1/performance_profiles_report.json
+  role: report_performance_profiles_report
+  sha256: 997cec6d6aadeb5eaf9a84761463cc47715acfdfd75ed1b77918117b35b90214
+  size: 9027
+- path: ml/reports/v0_3_15_1/pre_remediation_audit.json
+  role: report_pre_remediation_audit
+  sha256: dc6f4d76462ce918921d582df73c6b2fb95e3f166fb447fceb4c4ab6bee18ca8
+  size: 10195
+- path: ml/reports/v0_3_15_1/privacy_targets_report.json
+  role: report_privacy_targets_report
+  sha256: 7a90cc9be6d6a1b3886813201342a4ac17dc3dd34c4a5be1dd9d9c1e63e8dcbb
+  size: 540
+- path: ml/reports/v0_3_15_1/resume_integrity_report.json
+  role: report_resume_integrity_report
+  sha256: 9893e16c120a1e3f14a8b79f98532f3625b722d20a11857f44b4c7ba1b861c3c
+  size: 1868
+- path: ml/reports/v0_3_15_1/retry_ack_report.json
+  role: report_retry_ack_report
+  sha256: fa98ef78a4b1927942e485ee2335e51f5cc1be90be59a75f7f82a3b27a7b2e57
+  size: 5328
+- path: ml/reports/v0_3_15_1/v0_3_14_claim_reassessment.json
+  role: report_v0_3_14_claim_reassessment
+  sha256: 003a7eabf5049db1747139cc9c26303f43e7135cb5279de23bd191c9e78cdf3c
+  size: 720
+- path: ml/reports/v0_3_15_1/v0_3_15_1_summary.md
+  role: report_v0_3_15_1_summary
+  sha256: 01d8756742fc504b156753e438de8faeb320d5f8d0bb3c0c0aa64a55cd4ec212
+  size: 758
+- path: ml/reports/v0_3_15_1/v0_3_15_revalidation.json
+  role: report_v0_3_15_revalidation
+  sha256: 0720eac1cf0722c1d637f7484d51af0dc775c8be4f01971dffff1ddfa5877507
+  size: 7251
+claim_evidence:
+- claim_id: C001
+  evidence_sha256: 933017d94a4c3d668a94450c0a0cd914401176efa580ee435c31d0820e2c642b
+- claim_id: C002
+  evidence_sha256: 2cd194b091bb041ef2d3b680040913bfa6227cfdea3da7f2a8f3a2164ec6033a
+- claim_id: C003
+  evidence_sha256: 933017d94a4c3d668a94450c0a0cd914401176efa580ee435c31d0820e2c642b
+- claim_id: C004
+  evidence_sha256: fa98ef78a4b1927942e485ee2335e51f5cc1be90be59a75f7f82a3b27a7b2e57
+- claim_id: C005
+  evidence_sha256: 3398cc83e6c1233b3cfa5a13f8b3364a72a5fc84e8b5bc75597331f7e49b154b
+- claim_id: C006
+  evidence_sha256: 7a90cc9be6d6a1b3886813201342a4ac17dc3dd34c4a5be1dd9d9c1e63e8dcbb
+- claim_id: C007
+  evidence_sha256: 9893e16c120a1e3f14a8b79f98532f3625b722d20a11857f44b4c7ba1b861c3c
+- claim_id: C008
+  evidence_sha256: 997cec6d6aadeb5eaf9a84761463cc47715acfdfd75ed1b77918117b35b90214
+- claim_id: C009
+  evidence_sha256: 003a7eabf5049db1747139cc9c26303f43e7135cb5279de23bd191c9e78cdf3c
+- claim_id: C010
+  evidence_sha256: 0720eac1cf0722c1d637f7484d51af0dc775c8be4f01971dffff1ddfa5877507
+- claim_id: C011
+  evidence_sha256: 0720eac1cf0722c1d637f7484d51af0dc775c8be4f01971dffff1ddfa5877507
+- claim_id: C012
+  evidence_sha256: 0720eac1cf0722c1d637f7484d51af0dc775c8be4f01971dffff1ddfa5877507
+- claim_id: C013
+  evidence_sha256: f3ff2f465145902cb43570f9625fbb70e1345f52f07f7235d811d33562b24b02
+integrity_anchors:
+  campaign_sha256: 712ed54da021f9b432b33f2ff44dc96ce79493d26e1967c21318306791229ceb
+  checkpoint_sha256: 200616896b9662bc969bbbcb2ebd9195a95680e4b22cd0a34fb4805385c46996
+  completion_marker_sha256: 3ad085ac6666c9b06d28a82e847af772fc63916b37773ec2f17c4e525a16d7bd
+  contract_schema_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  event_set_sha256: 2de68a7a5822fd6e37c950d8b2b6c2eab3b0304100090659cae337c65fc68ccd
+  hash_chain_root: 1f9921899d0114b704ab2a6310035e4ad6d59dc2711ff05e4b10b10b9d593e07
+  policy_result_sha256: 9b5a95c07d9dbe5d920498d1a7e4bead88136443ebaa6f53d912a7dd54ea9eeb
+  protocol_sha256: aec63012e61982cafc723d652031811543a7861e07982588b4c4e3a28058c67c
+  source_prediction_sha256: b8695857ffadc471085a18715d1916e0beb33b922eaf85a071d270c681f206e1
+  spool_index_sha256: d985a2b7eee6217bdde4b2f15521c5afa2915599b426adb26b2a615b36d479d8
+readiness:
+  automatic_enforcement_ready: false
+  backend_integration_ready: false
+  candidate_ready_for_v0_3_16: false
+  production_ready: false
+  shadow_mode_ready: false
+required_roles:
+- source_prediction
+- event_set
+- hash_chain
+- policy_result
+- protocol
+- campaign
+- contract_schema
+- checkpoint
+- spool_index
+- completion_marker
+- claim_ledger
+- report_behavioral_test_report
+- report_ci_coverage_report
+- report_documentation_consistency_report
+- report_drop_reconciliation_report
+- report_fault_execution_results
+- report_finding_reproduction_matrix
+- report_historical_integrity_report
+- report_integrated_exporter_report
+- report_performance_profiles_report
+- report_pre_remediation_audit
+- report_privacy_targets_report
+- report_resume_integrity_report
+- report_retry_ack_report
+- report_v0_3_14_claim_reassessment
+- report_v0_3_15_1_summary
+- report_v0_3_15_revalidation
+schema_version: v03151_bundle_v1
+stage: v0.3.15.1

@@ -1,0 +1,39 @@
+{
+  "checkpoint_count": 64,
+  "checkpoint_recovery_scenarios": [
+    {
+      "evidence_sha256": "35c2e47c0041fa968f2d3a6feeca7c112ecea3cf64e449a2b8f7e0126c93add2",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "integrity error observed",
+      "injection_count": 1,
+      "observable_effect": "checkpoint_checksum_mismatch",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "resume_refused",
+      "scenario_name": "checkpoint_corruption"
+    },
+    {
+      "evidence_sha256": "3c2cb272ea733c89971071e9246081242fafca26fe15c47418731314993ee46e",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "duplicate ACK and reconciled",
+      "injection_count": 1,
+      "observable_effect": "accepted_without_checkpoint",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "at_least_once_replay_and_sink_dedup",
+      "scenario_name": "crash_after_ack_before_checkpoint"
+    },
+    {
+      "evidence_sha256": "4ca80f67d44a245308cb461212587f527078007e957c016d98e39a784a68219d",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "no repeated semantic event",
+      "injection_count": 1,
+      "observable_effect": "checkpoint_and_spool_coexist",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "checkpoint_wins_and_compacts",
+      "scenario_name": "crash_after_checkpoint_before_compaction"
+    }
+  ],
+  "runtime_checkpoint_created": true
+}

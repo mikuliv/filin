@@ -1,0 +1,141 @@
+{
+  "ack_contract_passed": true,
+  "bounded_backoff": true,
+  "deterministic_jitter_seed": 3151,
+  "malformed_ack_scenario": {
+    "evidence_sha256": "138cf7476377536a54e2096b712049045e7ba44e86a676c66ee67337f009daed",
+    "execution_path_differs_from_healthy": true,
+    "expected_oracle": "ACK failure counted and event pending",
+    "injection_count": 1,
+    "observable_effect": "malformed_ack",
+    "oracle_result": true,
+    "passed": true,
+    "recovery": "fail_closed_spool_preserved",
+    "scenario_name": "malformed_ack"
+  },
+  "maximum_attempts": 4,
+  "permanent_rejection_scenario": {
+    "evidence_sha256": "57e5cac05bfcefa92cfc1c98c7bdcc2f9b3f0136b9993f097f99b3e041cadba2",
+    "execution_path_differs_from_healthy": true,
+    "expected_oracle": "one permanent attempt and accounted rejection",
+    "injection_count": 1,
+    "observable_effect": "schema_rejection",
+    "oracle_result": true,
+    "passed": true,
+    "recovery": "permanent_rejection_accounted",
+    "scenario_name": "schema_rejection"
+  },
+  "retry_classification_passed": true,
+  "retryable_scenarios": [
+    {
+      "evidence_sha256": "6633159234e1e4bab724ead69dc7a074399b3b48b92f3bd9e70b30c29a2e25dd",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "injection>0 and retry>0 and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "sink_timeout"
+    },
+    {
+      "evidence_sha256": "f46b9814669b505de7456f536eba874a4441b65ff697b6a5bcc26ecf82795bcf",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "injection>0 and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "sink_unavailable_30s"
+    },
+    {
+      "evidence_sha256": "74c0cdc803fdc16c28af59ba1905e8393d1deea863aa0818fe5f6bb1a0a6118f",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "validated retryable ACK and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "rate_limit_429"
+    },
+    {
+      "evidence_sha256": "9637f278c121f2adb92b4839a0e1bcccb1f500ea103a91e48d7dc8ecec042e9a",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "injection>0 and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "connection_reset_mid_batch"
+    },
+    {
+      "evidence_sha256": "36c139532f151de7e84e86e01be330d1d2172c3af160b906ce3e85246c2ab13c",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "injection>0 and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "temporary_unavailable"
+    },
+    {
+      "evidence_sha256": "94518ebaa81e40cbb937a3e2d138a9d4816462aa2024ba60e728fd6573332ab6",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "injection>0 and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "timeout_sequence"
+    },
+    {
+      "evidence_sha256": "ff511db5826e08293a1557bba544c91c3acd6bcc8da35f377991b09a863e29f0",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "validated retryable ACK and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "rate_limited"
+    },
+    {
+      "evidence_sha256": "3eb4b38a2435ad2c45572d2d7ca7cfa78681d45e7a5890b6f53ea9d43532bd76",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "duplicate ACK and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "connection_reset_after_send"
+    },
+    {
+      "evidence_sha256": "313d2f95f229f304b7dcf53b5f4b3155a57c4a3f1baa79a3e90f29d486a1e668",
+      "execution_path_differs_from_healthy": true,
+      "expected_oracle": "validated retryable ACK and reconciled",
+      "injection_count": 1,
+      "observable_effect": "retryable_failure",
+      "oracle_result": true,
+      "passed": true,
+      "recovery": "bounded_retry",
+      "scenario_name": "slow_consumer"
+    }
+  ],
+  "unknown_ack_scenario": {
+    "evidence_sha256": "9712613616ac55cc6b0843b58cb19c2ecfdfe7b1857d3db4ce6dc8853d953d31",
+    "execution_path_differs_from_healthy": true,
+    "expected_oracle": "unknown ACK counted and pending",
+    "injection_count": 1,
+    "observable_effect": "unknown_ack",
+    "oracle_result": true,
+    "passed": true,
+    "recovery": "fail_closed_spool_preserved",
+    "scenario_name": "unknown_ack"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "confirmed_scope": [
+    "shadow_event_v1",
+    "schema validation",
+    "privacy validation",
+    "deterministic identity",
+    "component queue/spool/checkpoint tests"
+  ],
+  "full_integrated_fault_readiness_proven_at_v0_3_14": false,
+  "passive_event_contract_and_component_audit_passed": true,
+  "reproduced_findings": {
+    "unconditional_scenario_passed": true,
+    "unknown_scenario_fallback": true
+  },
+  "unproven_scope": [
+    "integrated spool/checkpoint/exporter path",
+    "strict ACK",
+    "real fault execution for every registry entry",
+    "real worker and batch profiles",
+    "hash-verified resume"
+  ],
+  "v0314_claim_scope_reassessed": true,
+  "v0314_original_policy_artifact_unchanged": true
+}

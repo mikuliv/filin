@@ -1,0 +1,293 @@
+[
+  {
+    "actual_implementation": "Mapping ends with .get(name, healthy)",
+    "affected_files": [
+      "ml/experiments/v0_3_14/fault_runner.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F001",
+    "finding_title": "Unknown fault defaults to healthy",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Full fault readiness not proven",
+    "impact_on_v0315": "Historical v0.3.14 positive control overstates scope",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Unknown scenario may use healthy path",
+    "reproduced": true,
+    "reproduction_method": "Static inspection and unsupported-name invocation",
+    "required_fix": "Explicit registry and hard failure",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Every scenario receives passed=true",
+    "affected_files": [
+      "ml/experiments/v0_3_14/fault_runner.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F002",
+    "finding_title": "Unconditional passed fault evidence",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Fault campaign claim unsupported",
+    "impact_on_v0315": "Requires independent technical revalidation",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Scenario result may be passed without oracle",
+    "reproduced": true,
+    "reproduction_method": "AST/static inspection",
+    "required_fix": "Computed oracle and evidence",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Runner writes 20 events separately; exporter never uses spool",
+    "affected_files": [
+      "ml/experiments/v0_3_14/run_v0_3_14.py",
+      "collectors/shadow/passive_exporter.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F003",
+    "finding_title": "Spool is detached demonstration",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Integrated durability unproven",
+    "impact_on_v0315": "v0.3.15 has a separate integrated trial path but revalidation is required",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Spool not in exporter path",
+    "reproduced": true,
+    "reproduction_method": "Call-path inspection",
+    "required_fix": "Single durable exporter path",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "PassiveExporter does not own a checkpoint",
+    "affected_files": [
+      "collectors/shadow/passive_exporter.py",
+      "collectors/shadow/checkpoint.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F004",
+    "finding_title": "Checkpoint detached from exporter",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Crash consistency unproven",
+    "impact_on_v0315": "Trial checkpoint exists in separate pipeline",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "ACK and checkpoint not ordered in one runtime",
+    "reproduced": true,
+    "reproduction_method": "Call-path inspection",
+    "required_fix": "Atomic checkpoint after validated ACK",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Exporter indexes status but validates no protocol/id/status relation",
+    "affected_files": [
+      "collectors/shadow/passive_exporter.py",
+      "collectors/shadow/mock_sink.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F005",
+    "finding_title": "ACK not strictly validated",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "ACK claims unsupported",
+    "impact_on_v0315": "Malformed ACK treatment requires behavioral replay",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Any non-exception return is success",
+    "reproduced": true,
+    "reproduction_method": "Malformed mapping returned by sink",
+    "required_fix": "Formal ACK contract and classifier",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Exporter retries every exception",
+    "affected_files": [
+      "collectors/shadow/passive_exporter.py",
+      "collectors/shadow/mock_sink.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F006",
+    "finding_title": "Retry classification encoded in exception text",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Retry policy unsupported",
+    "impact_on_v0315": "7 historical retries require revalidation",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Permanent and retryable errors not separated",
+    "reproduced": true,
+    "reproduction_method": "schema_reject sink fault",
+    "required_fix": "Typed outcome classification",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Queue returns bool and hardcodes unaccounted_drop_count=0",
+    "affected_files": [
+      "collectors/shadow/queue.py",
+      "collectors/shadow/passive_exporter.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F007",
+    "finding_title": "Drop count is not reconciled",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Drop claim unsupported",
+    "impact_on_v0315": "Historical zero requires independent calculation",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Eviction identity and accounting are lost",
+    "reproduced": true,
+    "reproduction_method": "Priority eviction test",
+    "required_fix": "Structured decisions and reconciliation equation",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Resume paths trust existing manifest/policy and do not verify all sizes/hashes",
+    "affected_files": [
+      "ml/experiments/v0_3_14/run_v0_3_14.py",
+      "ml/experiments/v0_3_15/run_v0_3_15.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F008",
+    "finding_title": "Strict resume checks completion rather than integrity",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Strict resume claim too broad",
+    "impact_on_v0315": "Bundle integrity cannot yet be revalidated",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Corruption may be skipped",
+    "reproduced": true,
+    "reproduction_method": "Static inspection and planned byte-corruption tests",
+    "required_fix": "Detached lock, confinement and full artifact verification",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "All profiles execute the same sequential send loop",
+    "affected_files": [
+      "ml/experiments/v0_3_14/performance_controller.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F009",
+    "finding_title": "Performance profiles do not change topology",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Performance readiness not proven",
+    "impact_on_v0315": "v0.3.15 measures another topology but not A-D delivery profiles",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "workers and batch_size are labels",
+    "reproduced": true,
+    "reproduction_method": "Call-path and call-count inspection",
+    "required_fix": "Real worker pools and send_batch",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "cpu_percent sampling starts after profile loops",
+    "affected_files": [
+      "ml/experiments/v0_3_14/performance_controller.py"
+    ],
+    "affected_stage": "v0.3.14",
+    "finding_id": "F010",
+    "finding_title": "Resource sampling occurs after workload",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Resource claim unsupported",
+    "impact_on_v0315": "v0.3.15 samples during campaign and partially resolves this",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "CPU and RSS not measured under load",
+    "reproduced": true,
+    "reproduction_method": "Execution-order inspection",
+    "required_fix": "Concurrent sampling monitor and repeats",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "v0.3.15 scans canonical events only; v0.3.14 omits ACK/checkpoint/performance targets",
+    "affected_files": [
+      "ml/experiments/v0_3_14/privacy_policy.yaml",
+      "ml/experiments/v0_3_15/run_v0_3_15.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F011",
+    "finding_title": "Privacy target coverage incomplete",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Privacy claim limited",
+    "impact_on_v0315": "Privacy runtime claim not fully covered",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Runtime surfaces omitted",
+    "reproduced": true,
+    "reproduction_method": "Target matrix comparison",
+    "required_fix": "Scan all frozen targets and negative fixtures",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "Most generated tests read historical JSON",
+    "affected_files": [
+      "collectors/shadow/tests/checks.py",
+      "collectors/shadow_trial/tests/checks.py"
+    ],
+    "affected_stage": "v0.3.14-v0.3.15",
+    "finding_id": "F012",
+    "finding_title": "Tests verify reports instead of behavior",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Behavioral evidence insufficient",
+    "impact_on_v0315": "69 claimed tests are report checks and currently fail pytest collection",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Policy booleans are used as evidence",
+    "reproduced": true,
+    "reproduction_method": "Test source inspection",
+    "required_fix": "Behavioral integration/fault/privacy/resume tests",
+    "severity": "critical",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "compileall and tests omit collectors",
+    "affected_files": [
+      ".github/workflows/ci.yml"
+    ],
+    "affected_stage": "current",
+    "finding_id": "F013",
+    "finding_title": "Collectors are absent from CI",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Regression protection absent",
+    "impact_on_v0315": "Regression protection absent",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Shadow runtime not exercised in CI",
+    "reproduced": true,
+    "reproduction_method": "Workflow inspection",
+    "required_fix": "Add compileall and collector behavioral suite",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  },
+  {
+    "actual_implementation": "No docs/status/project-status.yaml semantic authority",
+    "affected_files": [
+      "README.md",
+      "docs/status.md",
+      "docs/research-state.yaml",
+      "docs/roadmap.md"
+    ],
+    "affected_stage": "current",
+    "finding_id": "F014",
+    "finding_title": "Documentation has multiple status authorities",
+    "historical_artifact_changed": false,
+    "impact_on_v0314": "Scope correction not visible",
+    "impact_on_v0315": "Readiness claim lacks reconciled status",
+    "post_remediation_status": "remediated_in_v03151_runtime",
+    "reported_problem": "Current stage and next-stage claims can diverge",
+    "reproduced": true,
+    "reproduction_method": "Documentation inventory and string scan",
+    "required_fix": "Single status registry and semantic validator",
+    "severity": "high",
+    "status": "confirmed",
+    "verification": "behavioral tests and aggregated runtime reports"
+  }
+]

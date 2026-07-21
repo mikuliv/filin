@@ -1,0 +1,38 @@
+{
+  "drop_reconciliation_passed": true,
+  "equation": "total_input_events = delivered_unique_events + pending_events + accounted_dropped_events + permanent_rejected_events",
+  "healthy_reconciliation": {
+    "accounted_dropped_events": 0,
+    "attempt_accounting_delta": 0,
+    "classified_attempts": 64,
+    "delivered_unique_events": 64,
+    "delivery_attempts": 64,
+    "pending_events": 0,
+    "permanent_rejected_events": 0,
+    "total_input_events": 64,
+    "unaccounted_drop_count": 0
+  },
+  "queue_full_evidence": {
+    "evidence_sha256": "135d69454980eba23222401f7e6bb65b30a619543c7d62a53ae4f6e55dfbe54e",
+    "execution_path_differs_from_healthy": true,
+    "expected_oracle": "drop registry reconciles",
+    "injection_count": 1,
+    "observable_effect": "queue_peak=2",
+    "oracle_result": true,
+    "passed": true,
+    "recovery": "bounded_queue_accounting",
+    "scenario_name": "queue_full"
+  },
+  "storage_full_evidence": {
+    "evidence_sha256": "de184bd83afbc9c7af1e4abca218099c82c746115d3d487b603a68c7c6699c62",
+    "execution_path_differs_from_healthy": true,
+    "expected_oracle": "spool full observed and reconciled",
+    "injection_count": 1,
+    "observable_effect": "spool_capacity_exceeded",
+    "oracle_result": true,
+    "passed": true,
+    "recovery": "rejection_accounted",
+    "scenario_name": "storage_full_simulated"
+  },
+  "unaccounted_drop_count": 0
+}

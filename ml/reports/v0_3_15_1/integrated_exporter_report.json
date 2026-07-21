@@ -1,0 +1,43 @@
+{
+  "ack_contract_passed": true,
+  "automatic_action_attempt_count": 0,
+  "backend_write_attempt_count": 0,
+  "checkpoint_acknowledged": 64,
+  "checkpoint_integration_passed": true,
+  "delivery_semantics": "at-least-once",
+  "drop_registry": [],
+  "external_network_attempt_count": 0,
+  "input_event_count": 64,
+  "integrated_path_observed": true,
+  "metrics": {
+    "delivery_attempts": 64,
+    "duplicate_delivery": 0,
+    "queued_events": 64,
+    "real_batch_calls": 4,
+    "spooled_events": 64,
+    "successful_attempts": 64,
+    "token_bucket_wait_count": 3,
+    "token_bucket_wait_us": 46556673,
+    "validated_events": 64
+  },
+  "network_block_attempt_count": 0,
+  "production_connection_attempt_count": 0,
+  "queue_capacity": 2048,
+  "queue_peak": 64,
+  "rate_limiter_integration_passed": true,
+  "reconciliation": {
+    "accounted_dropped_events": 0,
+    "attempt_accounting_delta": 0,
+    "classified_attempts": 64,
+    "delivered_unique_events": 64,
+    "delivery_attempts": 64,
+    "pending_events": 0,
+    "permanent_rejected_events": 0,
+    "total_input_events": 64,
+    "unaccounted_drop_count": 0
+  },
+  "retry_journal": [],
+  "sink_unique_events": 64,
+  "spool_integration_passed": true,
+  "spool_peak_bytes": 96823
+}

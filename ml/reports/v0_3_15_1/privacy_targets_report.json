@@ -1,0 +1,25 @@
+{
+  "finding_count": 0,
+  "findings": [],
+  "negative_fixture_count": 14,
+  "privacy_policy_passed": true,
+  "target_count": 16,
+  "targets": [
+    "acknowledgement_records",
+    "bundle_reports",
+    "canonical_event_objects",
+    "canonical_serialized_events",
+    "checkpoint",
+    "delivery_logs",
+    "drop_summaries",
+    "error_reports",
+    "exception_messages",
+    "fault_injection_records",
+    "health_events",
+    "performance_traces",
+    "queue_diagnostics",
+    "retry_journal",
+    "spool_files",
+    "spool_indexes"
+  ]
+}

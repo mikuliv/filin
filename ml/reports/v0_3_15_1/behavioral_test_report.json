@@ -1,0 +1,9 @@
+{
+  "behavioral_shadow_tests_passed": true,
+  "collectors_compileall_passed": true,
+  "command": "python -m pytest collectors/shadow/tests --ignore test_v03151_no_hardcoded_evidence.py -q",
+  "passed_count": 134,
+  "post_policy_evidence_consistency_test": "collectors/shadow/tests/test_v03151_no_hardcoded_evidence.py",
+  "returncode": 0,
+  "skipped_count": 0
+}

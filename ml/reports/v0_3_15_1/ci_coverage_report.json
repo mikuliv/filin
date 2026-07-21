@@ -1,0 +1,9 @@
+{
+  "backend_tests": true,
+  "bundle_validator": true,
+  "ci_requirements_passed": true,
+  "collectors_shadow_tests": true,
+  "collectors_shadow_trial_tests": true,
+  "compileall_collectors": true,
+  "semantic_documentation_validator": true
+}

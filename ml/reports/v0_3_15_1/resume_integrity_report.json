@@ -1,0 +1,78 @@
+{
+  "corrupted_bundle_rejected": true,
+  "manifest_path_confinement_passed": true,
+  "manifest_sha256": "febc8089a62e8c0cb4cd31a28c570bd218c852486dc5f767be12cebfa0b4d1b7",
+  "negative_case_count": 11,
+  "negative_cases": [
+    {
+      "case": "changed_byte",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "removed_artifact",
+      "error_code": "artifact_missing",
+      "rejected": true
+    },
+    {
+      "case": "replaced_policy",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_event_set",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_hash_chain",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_source_prediction",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "corrupted_spool",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "corrupted_checkpoint",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "path_traversal",
+      "error_code": "path_traversal",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_path",
+      "error_code": "duplicate_path",
+      "rejected": true
+    },
+    {
+      "case": "unknown_schema",
+      "error_code": "unknown_schema_version",
+      "rejected": true
+    }
+  ],
+  "strict_resume_hash_verification_passed": true,
+  "verified_artifact_count": 11,
+  "verified_paths": [
+    "source_prediction.json",
+    "event_set.json",
+    "hash_chain.json",
+    "policy_result.json",
+    "protocol.json",
+    "campaign.json",
+    "contract_schema.json",
+    "checkpoint.json",
+    "spool_index.json",
+    "completion_marker.json",
+    "claim_ledger.json"
+  ]
+}

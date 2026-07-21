@@ -1,0 +1,457 @@
+[
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "6633159234e1e4bab724ead69dc7a074399b3b48b92f3bd9e70b30c29a2e25dd",
+    "expected_effect": "timeout",
+    "expected_recovery": "bounded retry and delivery",
+    "injector": "sink",
+    "oracle": "injection>0 and retry>0 and reconciled",
+    "scenario_name": "sink_timeout",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "f46b9814669b505de7456f536eba874a4441b65ff697b6a5bcc26ecf82795bcf",
+    "expected_effect": "temporary unavailable",
+    "expected_recovery": "bounded retry and delivery",
+    "injector": "sink",
+    "oracle": "injection>0 and reconciled",
+    "scenario_name": "sink_unavailable_30s",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "490d6d74443601aa7bc6b00faa3c3c62fb096554cabe24fe156fda411b39f89d",
+    "expected_effect": "unavailable",
+    "expected_recovery": "new sink and replay spool",
+    "injector": "sink_restart",
+    "oracle": "pending before restart and reconciled after restart",
+    "scenario_name": "sink_unavailable_until_restart",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "74c0cdc803fdc16c28af59ba1905e8393d1deea863aa0818fe5f6bb1a0a6118f",
+    "expected_effect": "rate limited ACK",
+    "expected_recovery": "Retry-After and delivery",
+    "injector": "ack",
+    "oracle": "validated retryable ACK and reconciled",
+    "scenario_name": "rate_limit_429",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "9637f278c121f2adb92b4839a0e1bcccb1f500ea103a91e48d7dc8ecec042e9a",
+    "expected_effect": "connection reset",
+    "expected_recovery": "at-least-once batch retry",
+    "injector": "sink",
+    "oracle": "injection>0 and reconciled",
+    "scenario_name": "connection_reset_mid_batch",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "40921bff0f8aa94ef647d4e6d8a015dfd19bcebba83cee7d0590ef0a4bba6603",
+    "expected_effect": "same event delivered twice",
+    "expected_recovery": "sink deduplication",
+    "injector": "transport",
+    "oracle": "duplicate ACK and one sink event",
+    "scenario_name": "duplicate_delivery",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "1876fc47abb73e8083f68738e53de84f399e876369aaa7e838da04f26ad1431e",
+    "expected_effect": "duplicate ACK",
+    "expected_recovery": "accept as idempotent success",
+    "injector": "ack",
+    "oracle": "strict ACK validation succeeds",
+    "scenario_name": "duplicate_ack",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "7f24b2dee9889982feed2e69a8f7b28e1483b97d4517398de20c53e8b670e490",
+    "expected_effect": "ACK order differs",
+    "expected_recovery": "match by idempotency key",
+    "injector": "ack",
+    "oracle": "all batch members checkpointed",
+    "scenario_name": "out_of_order_ack",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "138cf7476377536a54e2096b712049045e7ba44e86a676c66ee67337f009daed",
+    "expected_effect": "incomplete ACK",
+    "expected_recovery": "fail closed and preserve spool",
+    "injector": "ack",
+    "oracle": "ACK failure counted and event pending",
+    "scenario_name": "malformed_ack",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "57e5cac05bfcefa92cfc1c98c7bdcc2f9b3f0136b9993f097f99b3e041cadba2",
+    "expected_effect": "permanent rejection",
+    "expected_recovery": "no retry",
+    "injector": "ack",
+    "oracle": "one permanent attempt and accounted rejection",
+    "scenario_name": "schema_rejection",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "a39c86c4ef9fb79a3e37c75505abe1c0d10cd677d1b8b06693aab5555893f6b3",
+    "expected_effect": "queued memory lost",
+    "expected_recovery": "recover durable spool",
+    "injector": "exporter_restart",
+    "oracle": "recovered count and reconciled",
+    "scenario_name": "spool_restart",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "2d8686e6c0f2148cd2cc83fc47ee857acb9d4b5084fff56aaed5dcce708db8fc",
+    "expected_effect": "crash after durable write",
+    "expected_recovery": "recover spool and deliver",
+    "injector": "crash",
+    "oracle": "pending durable event then reconciled",
+    "scenario_name": "exporter_crash_after_write_before_ack",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "0f0508a2fcc75d8026ba7bd2a0de5ae605c258e09b5f17aae6769487911416cd",
+    "expected_effect": "crash before durable write",
+    "expected_recovery": "caller resubmits source event",
+    "injector": "crash",
+    "oracle": "no false checkpoint and eventual delivery",
+    "scenario_name": "exporter_crash_before_write",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "e3f923138e2ed0b8cab407ad4f722ec5a4d9be29838aa33760c35e3c71c243c7",
+    "expected_effect": "high watermark",
+    "expected_recovery": "continue bounded operation",
+    "injector": "queue",
+    "oracle": "observed depth >=80% and no unaccounted drop",
+    "scenario_name": "queue_80_percent",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "59656c2be4e6319b32f00a707455fd77df15a4a464fbab3323f431a9334f9876",
+    "expected_effect": "critical watermark",
+    "expected_recovery": "continue bounded operation",
+    "injector": "queue",
+    "oracle": "observed depth >=95% and no unaccounted drop",
+    "scenario_name": "queue_95_percent",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "135d69454980eba23222401f7e6bb65b30a619543c7d62a53ae4f6e55dfbe54e",
+    "expected_effect": "enqueue rejection or priority eviction",
+    "expected_recovery": "account exact decision",
+    "injector": "queue",
+    "oracle": "drop registry reconciles",
+    "scenario_name": "queue_full",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "de184bd83afbc9c7af1e4abca218099c82c746115d3d487b603a68c7c6699c62",
+    "expected_effect": "capacity rejection",
+    "expected_recovery": "account rejection without loss claim",
+    "injector": "spool",
+    "oracle": "spool full observed and reconciled",
+    "scenario_name": "storage_full_simulated",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "3c261dea9dcc1a0dfc9b77c59d53ce1d35efd10f2892ada396d016a9f617d0d1",
+    "expected_effect": "token refill bounded by capacity",
+    "expected_recovery": "continue delivery",
+    "injector": "clock",
+    "oracle": "no negative wait or unbounded tokens",
+    "scenario_name": "clock_forward_jump",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "4e1616327eb6b743492f321baa30d9b0c83701fca8592c262894d00bc4581489",
+    "expected_effect": "negative elapsed clamped",
+    "expected_recovery": "continue delivery",
+    "injector": "clock",
+    "oracle": "no token creation from backward jump",
+    "scenario_name": "clock_backward_jump",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "c2e49e0d0d0d7d5dc02da1f19bf438d5a58824ecd3732ba85f2612b977b06b2d",
+    "expected_effect": "checksum mismatch",
+    "expected_recovery": "reject/quarantine",
+    "injector": "spool",
+    "oracle": "integrity error observed",
+    "scenario_name": "event_corruption",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "fcfe613ca01b8b2b823ef4a8bec2ac1afe0a1adb3cc7b30f47f05468d3c47f16",
+    "expected_effect": "source event absent from sink",
+    "expected_recovery": "detect mismatch",
+    "injector": "reconciliation",
+    "oracle": "unaccounted count becomes nonzero",
+    "scenario_name": "event_removal",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "8367b74820a43f44f9f7fdd8b2dc38d79915205a09d8c79121d00ab7bc07c7fc",
+    "expected_effect": "physical order changed",
+    "expected_recovery": "identity-based ACK matching",
+    "injector": "batch",
+    "oracle": "all events checkpointed",
+    "scenario_name": "event_reordering",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "9712613616ac55cc6b0843b58cb19c2ecfdfe7b1857d3db4ce6dc8853d953d31",
+    "expected_effect": "unknown status",
+    "expected_recovery": "fail closed and preserve spool",
+    "injector": "ack",
+    "oracle": "unknown ACK counted and pending",
+    "scenario_name": "unknown_ack",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "35c2e47c0041fa968f2d3a6feeca7c112ecea3cf64e449a2b8f7e0126c93add2",
+    "expected_effect": "checksum mismatch",
+    "expected_recovery": "refuse recovery",
+    "injector": "checkpoint",
+    "oracle": "integrity error observed",
+    "scenario_name": "checkpoint_corruption",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "f3ba7d1975d8851addf7716345d53cb362701f76393ca3dac5fe6eca5e77e688",
+    "expected_effect": "checksum mismatch",
+    "expected_recovery": "refuse recovery",
+    "injector": "spool",
+    "oracle": "integrity error observed",
+    "scenario_name": "spool_corruption",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "3c2cb272ea733c89971071e9246081242fafca26fe15c47418731314993ee46e",
+    "expected_effect": "sink accepted but checkpoint absent",
+    "expected_recovery": "duplicate delivery and sink dedup",
+    "injector": "crash",
+    "oracle": "duplicate ACK and reconciled",
+    "scenario_name": "crash_after_ack_before_checkpoint",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "4ca80f67d44a245308cb461212587f527078007e957c016d98e39a784a68219d",
+    "expected_effect": "checkpoint and spool coexist",
+    "expected_recovery": "skip acknowledged record and compact",
+    "injector": "crash",
+    "oracle": "no repeated semantic event",
+    "scenario_name": "crash_after_checkpoint_before_compaction",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "5692ce840e3263a5c13d9e3168ba1b50201e1df1798fd582b83239666cd71827",
+    "expected_effect": "volatile transport interruption",
+    "expected_recovery": "spool replay",
+    "injector": "sink_restart",
+    "oracle": "eventual reconciliation",
+    "scenario_name": "sink_restart",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "2d027c8510732ca157efa72cb5b4ee181a0d2199f9ff3edcd25e815b7a20884e",
+    "expected_effect": "in-memory queue loss",
+    "expected_recovery": "spool recovery",
+    "injector": "exporter_restart",
+    "oracle": "eventual reconciliation",
+    "scenario_name": "exporter_restart",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "36c139532f151de7e84e86e01be330d1d2172c3af160b906ce3e85246c2ab13c",
+    "expected_effect": "temporary unavailable",
+    "expected_recovery": "bounded retry and delivery",
+    "injector": "sink",
+    "oracle": "injection>0 and reconciled",
+    "scenario_name": "temporary_unavailable",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "94518ebaa81e40cbb937a3e2d138a9d4816462aa2024ba60e728fd6573332ab6",
+    "expected_effect": "timeout",
+    "expected_recovery": "bounded retry and delivery",
+    "injector": "sink",
+    "oracle": "injection>0 and reconciled",
+    "scenario_name": "timeout_sequence",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "ff511db5826e08293a1557bba544c91c3acd6bcc8da35f377991b09a863e29f0",
+    "expected_effect": "rate limited ACK",
+    "expected_recovery": "Retry-After and delivery",
+    "injector": "ack",
+    "oracle": "validated retryable ACK and reconciled",
+    "scenario_name": "rate_limited",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "3eb4b38a2435ad2c45572d2d7ca7cfa78681d45e7a5890b6f53ea9d43532bd76",
+    "expected_effect": "accepted then connection reset",
+    "expected_recovery": "at-least-once retry and sink dedup",
+    "injector": "sink",
+    "oracle": "duplicate ACK and reconciled",
+    "scenario_name": "connection_reset_after_send",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "3b7de749781edd7359f0d414a99f97af86a5f09ba6e20df0311eb7b7bf186324",
+    "expected_effect": "sink unavailable before drain",
+    "expected_recovery": "new sink and replay spool",
+    "injector": "sink_restart",
+    "oracle": "pending before restart and reconciled after restart",
+    "scenario_name": "restart_sink_before_drain",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  },
+  {
+    "evidence_artifacts": [
+      "ml/reports/v0_3_15_1/fault_execution_results.json"
+    ],
+    "evidence_sha256": "313d2f95f229f304b7dcf53b5f4b3155a57c4a3f1baa79a3e90f29d486a1e668",
+    "expected_effect": "temporary slow-consumer rejection",
+    "expected_recovery": "bounded retry and delivery",
+    "injector": "ack",
+    "oracle": "validated retryable ACK and reconciled",
+    "scenario_name": "slow_consumer",
+    "supported": true,
+    "trigger_condition": "first eligible runtime operation"
+  }
+]
