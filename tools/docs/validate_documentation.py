@@ -1,4 +1,4 @@
-"""Validate documentation links and the authoritative research state."""
+"""Проверка структуры документации и единого реестра статуса."""
 from __future__ import annotations
 
 import argparse
@@ -7,12 +7,12 @@ from pathlib import Path
 
 import yaml
 
+
 ROOT = Path(__file__).resolve().parents[2]
 REQUIRED = (
-    "index.md", "architecture.md", "current-capabilities.md", "development-history.md",
-    "experiments.md", "data-provenance.md", "reproducibility.md", "safety-model.md",
-    "limitations.md", "glossary.md", "status.md", "roadmap.md",
-    "documentation-policy.md", "research-state.yaml",
+    "index.md", "architecture.md", "current-capabilities.md", "development-history.md", "experiments.md",
+    "data-provenance.md", "reproducibility.md", "safety-model.md", "limitations.md", "glossary.md",
+    "status.md", "roadmap.md", "documentation-policy.md", "research-state.yaml", "status/project-status.yaml",
 )
 ROOT_DIRECTORIES = ("backend", "collectors", "datasets", "docs", "examples", "lab", "ml", "runtime", "tools")
 LINK = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
@@ -25,7 +25,7 @@ def markdown_files(root: Path) -> list[Path]:
 
 
 def validate(root: Path = ROOT) -> list[str]:
-    errors: list[str] = []; docs = root / "docs"
+    errors = []; docs = root / "docs"
     for name in ROOT_DIRECTORIES:
         if not (root / name).is_dir(): errors.append(f"missing required root directory: {name}")
     if (root / "filin").exists(): errors.append("obsolete nested filin directory exists")
@@ -34,7 +34,6 @@ def validate(root: Path = ROOT) -> list[str]:
     readme = root / "README.md"
     if not readme.is_file() or "docs/index.md" not in readme.read_text(encoding="utf-8"):
         errors.append("README does not link to docs/index.md")
-
     for document in markdown_files(root):
         text = document.read_text(encoding="utf-8")
         headings = [heading.strip().casefold() for heading in HEADER.findall(text)]
@@ -47,43 +46,34 @@ def validate(root: Path = ROOT) -> list[str]:
             target = raw_target.strip()
             if not target or target.startswith(("http://", "https://", "mailto:", "#")): continue
             target = target.split("#", 1)[0]
-            if target and not (document.parent / target).resolve().exists():
-                errors.append(f"broken relative link in {document.relative_to(root)}: {raw_target}")
-
-    state_path = docs / "research-state.yaml"
-    if not state_path.is_file(): return errors
-    try: state = yaml.safe_load(state_path.read_text(encoding="utf-8")) or {}
+            if target and not (document.parent / target).resolve().exists(): errors.append(f"broken relative link in {document.relative_to(root)}: {raw_target}")
+    try:
+        state = yaml.safe_load((docs / "status/project-status.yaml").read_text(encoding="utf-8")) or {}
+        legacy = yaml.safe_load((docs / "research-state.yaml").read_text(encoding="utf-8")) or {}
     except Exception as error:
-        errors.append(f"research-state.yaml cannot be parsed: {type(error).__name__}"); return errors
-    required_state = {"latest_completed_stage", "latest_completed_result", "active_stage", "next_allowed_stage",
-                      "backend_integration_allowed", "shadow_mode_allowed", "production_ready",
-                      "historical_stage_summary", "protected_artifact_policy"}
+        errors.append(f"status registry cannot be parsed: {type(error).__name__}"); return errors
+    required_state = {"current_completed_stage", "next_allowed_stage", "backend_integration_ready", "shadow_mode_ready", "production_ready", "stages"}
     missing = sorted(required_state - set(state))
-    if missing: errors.append("research-state.yaml missing keys: " + ", ".join(missing))
-    if any(state.get(key) is not False for key in ("backend_integration_allowed", "shadow_mode_allowed", "production_ready")):
-        errors.append("research-state.yaml illegally authorizes integration, shadow mode, or production")
-    latest = str(state.get("latest_completed_stage", ""))
+    if missing: errors.append("project-status.yaml missing keys: " + ", ".join(missing))
+    if any(state.get(key) is not False for key in ("backend_integration_ready", "shadow_mode_ready", "production_ready")):
+        errors.append("project-status.yaml illegally authorizes integration, shadow mode, or production")
+    if legacy.get("deprecated") is not True or legacy.get("authoritative_source") != "status/project-status.yaml":
+        errors.append("research-state.yaml is not an explicit compatibility pointer")
+    latest = str(state.get("current_completed_stage", ""))
     critical = {
-        "README latest stage": (readme, f"Последний завершённый этап: {latest}"),
-        "status latest stage": (docs / "status.md", f"Последний завершённый этап: {latest}"),
-        "README integration false": (readme, "Интеграция с backend разрешена: нет"),
-        "status production false": (docs / "status.md", "Готовность к промышленной эксплуатации: нет"),
+        "README latest stage": (readme, f"Последний завершённый этап — {latest}"),
+        "status latest stage": (docs / "status.md", f"Текущий завершённый этап: {latest}"),
+        "README integration false": (readme, "backend integration и автоматические действия запрещены"),
+        "status production false": (docs / "status.md", "Production, shadow mode, backend integration и automatic enforcement: запрещены"),
         "roadmap completed v0.3.7": (docs / "roadmap.md", "v0.3.7"),
     }
     for label, (path, marker) in critical.items():
-        if marker not in path.read_text(encoding="utf-8"): errors.append(f"{label} contradicts research-state.yaml")
+        if marker not in path.read_text(encoding="utf-8"): errors.append(f"{label} contradicts project-status.yaml")
     for name in ("current-capabilities.md", "roadmap.md", "experiments.md", "development-history.md"):
-        if latest not in (docs / name).read_text(encoding="utf-8"):
-            errors.append(f"docs/{name} does not contain latest completed stage {latest}")
+        if latest not in (docs / name).read_text(encoding="utf-8"): errors.append(f"docs/{name} does not contain latest completed stage {latest}")
     all_text = "\n".join(path.read_text(encoding="utf-8").casefold() for path in markdown_files(root))
-    for claim in (
-        "v0.3.3 is the latest completed experiment", "v0.3.7 policy passed",
-        "backend integration allowed: true", "shadow mode allowed: true",
-        "corrected duration was used in v0.3.7", "v0.3.7 environment profiles were applied",
-        "historical hashes are complete integrity proof",
-    ):
-        if claim in all_text:
-            errors.append(f"forbidden historical/readiness claim: {claim}")
+    for claim in ("v0.3.3 is the latest completed experiment", "v0.3.7 policy passed", "backend integration allowed: true", "shadow mode allowed: true", "corrected duration was used in v0.3.7", "v0.3.7 environment profiles were applied", "historical hashes are complete integrity proof"):
+        if claim in all_text: errors.append(f"forbidden historical/readiness claim: {claim}")
     if "sensor_ready_for_backend_integration=true" in all_text: errors.append("documentation enables backend integration")
     if "production_ready: true" in all_text or "production ready: true" in all_text: errors.append("documentation claims production readiness")
     return errors
