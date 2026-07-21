@@ -1,6 +1,8 @@
 schema_version: v03152_protocol_v1
 stage: v0.3.15.2
-revision: 1
+revision: 2
+supersedes_protocol_sha256: 18ab7d26f33a263ea68eea6a31ffb14509f58cd5b3245fdbe4cd0aa39d424753
+revision_reason: До capture обнаружено, что локально доступен проверенный образ Zeek 7.0.5, а получение 7.0.7 потребовало бы запрещённого внешнего доступа.
 title: Проспективное испытание интегрированного пассивного runtime
 source_commit: 389e81e3ec25b7f04386b08e9b45c10c8fa72973
 purpose: Получить создаваемые во время нового controlled passive shadow trial доказательства полного интегрированного пути.
@@ -32,7 +34,7 @@ integrated_runtime:
   atomic_checkpoint: true
   strict_ack: true
 capture:
-  zeek_image: zeek/zeek:7.0.7
+  zeek_image: zeek/zeek:7.0.5
   window_duration_seconds: 1
   sessions: 12
   windows_per_session: 200
