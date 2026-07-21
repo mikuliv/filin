@@ -7,7 +7,7 @@ from pathlib import Path
 import yaml
 
 
-SCHEMA = "v03151_bundle_v1"
+SUPPORTED_SCHEMAS = {"v03151_bundle_v1", "v03152_bundle_v1"}
 
 
 class BundleIntegrityError(ValueError):
@@ -33,7 +33,7 @@ def load_manifest(path: Path) -> dict:
         value = yaml.safe_load(path.read_text(encoding="utf-8"))
     except Exception as exc:
         raise BundleIntegrityError("manifest_parse_error") from exc
-    if not isinstance(value, dict) or value.get("schema_version") != SCHEMA:
+    if not isinstance(value, dict) or value.get("schema_version") not in SUPPORTED_SCHEMAS:
         raise BundleIntegrityError("unknown_schema_version")
     return value
 
