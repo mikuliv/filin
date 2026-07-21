@@ -1,11 +1,12 @@
 from __future__ import annotations
 
 import json
+import shutil
 from pathlib import Path
 
 import yaml
 
-from tools.audit.strict_bundle import verify_bundle, write_detached
+from tools.audit.strict_bundle import BundleIntegrityError, verify_bundle, write_detached
 
 from .prospective_pipeline import CFG, ROOT, RUNTIME, file_hash, write_json
 
@@ -28,6 +29,37 @@ def _claim(claim_id: str, text: str, evidence: str, status: str = "supported", l
         "oracle": "значение вычислено из immutable evidence", "limitations": limitation,
         "created_before_or_after_label_unlock": "after", "supersedes": [], "superseded_by": [],
     }
+
+
+def _final_bundle_corruption_cases(manifest: dict) -> list[dict]:
+    base = (RUNTIME / "final_bundle_corruption").resolve()
+    base.relative_to(RUNTIME.resolve())
+    if base.exists():
+        shutil.rmtree(base)
+    cases = ["changed_byte","removed_artifact","replaced_policy","changed_prediction_manifest","changed_event_set","changed_hash_chain","corrupted_checkpoint","corrupted_spool","path_traversal","duplicate_path","unknown_schema"]
+    role_map = {row["role"]:row for row in manifest["artifacts"]}
+    results = []
+    for case in cases:
+        root = base / case
+        for row in manifest["artifacts"]:
+            source = ROOT / row["path"]; target = root / row["path"]; target.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(source, target)
+        mpath = root / MANIFEST.relative_to(ROOT); dpath = root / DETACHED.relative_to(ROOT); mpath.parent.mkdir(parents=True, exist_ok=True); shutil.copy2(MANIFEST, mpath); shutil.copy2(DETACHED, dpath)
+        value = yaml.safe_load(mpath.read_text(encoding="utf-8"))
+        role = {"changed_byte":"protocol","removed_artifact":"campaign","replaced_policy":"policy_result","changed_prediction_manifest":"source_prediction","changed_event_set":"event_set","changed_hash_chain":"hash_chain","corrupted_checkpoint":"checkpoint","corrupted_spool":"spool_index"}.get(case)
+        if role:
+            target = root / role_map[role]["path"]
+            if case == "removed_artifact": target.unlink()
+            else: target.write_bytes(target.read_bytes() + b"x")
+        else:
+            if case == "path_traversal": value["artifacts"][0]["path"] = "../escape.json"
+            elif case == "duplicate_path": value["artifacts"][1]["path"] = value["artifacts"][0]["path"]
+            else: value["schema_version"] = "future"
+            mpath.write_text(yaml.safe_dump(value, allow_unicode=True, sort_keys=False), encoding="utf-8", newline="\n"); write_detached(mpath, dpath)
+        rejected = False; error_code = None
+        try: verify_bundle(mpath, dpath, allowed_root=root)
+        except BundleIntegrityError as error: rejected = True; error_code = error.code
+        results.append({"case":case,"rejected":rejected,"error_code":error_code})
+    return results
 
 
 def main() -> int:
@@ -119,7 +151,8 @@ def main() -> int:
     }
     MANIFEST.write_text(yaml.safe_dump(manifest, allow_unicode=True, sort_keys=False), encoding="utf-8", newline="\n"); digest = write_detached(MANIFEST, DETACHED)
     validation = verify_bundle(MANIFEST, DETACHED, allowed_root=ROOT)
-    write_json(REPORT / "bundle_validation_report.json", {"valid":True,**validation,"runtime_artifacts_in_git":False,"absolute_local_paths_found":False,"secrets_found":False})
+    corruption = _final_bundle_corruption_cases(manifest)
+    write_json(REPORT / "bundle_validation_report.json", {"valid":True,**validation,"final_bundle_corruption_cases":corruption,"final_bundle_corruption_case_count":len(corruption),"all_final_bundle_corruption_cases_rejected":all(row["rejected"] for row in corruption),"runtime_artifacts_in_git":False,"absolute_local_paths_found":False,"secrets_found":False})
     print(json.dumps({"manifest_sha256":digest,"artifact_count":len(artifacts),"claim_count":len(claims)},sort_keys=True))
     return 0
 

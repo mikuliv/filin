@@ -1,5 +1,64 @@
 {
   "absolute_local_paths_found": false,
+  "all_final_bundle_corruption_cases_rejected": true,
+  "final_bundle_corruption_case_count": 11,
+  "final_bundle_corruption_cases": [
+    {
+      "case": "changed_byte",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "removed_artifact",
+      "error_code": "artifact_missing",
+      "rejected": true
+    },
+    {
+      "case": "replaced_policy",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_prediction_manifest",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_event_set",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_hash_chain",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "corrupted_checkpoint",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "corrupted_spool",
+      "error_code": "artifact_size_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "path_traversal",
+      "error_code": "path_traversal",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_path",
+      "error_code": "duplicate_path",
+      "rejected": true
+    },
+    {
+      "case": "unknown_schema",
+      "error_code": "unknown_schema_version",
+      "rejected": true
+    }
+  ],
   "manifest_sha256": "49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda",
   "runtime_artifacts_in_git": false,
   "secrets_found": false,
