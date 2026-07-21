@@ -97,6 +97,9 @@ def verify_bundle(manifest_path: str | Path, detached_path: str | Path, *, allow
     ledger = manifest.get("claim_evidence")
     if not isinstance(ledger, list) or not ledger or any(not row.get("claim_id") or not row.get("evidence_sha256") for row in ledger):
         raise BundleIntegrityError("claim_evidence_invalid")
+    artifact_hashes = {row.get("sha256") for row in artifacts}
+    if any(row["evidence_sha256"] not in artifact_hashes for row in ledger):
+        raise BundleIntegrityError("claim_evidence_unbound")
     policy = manifest.get("readiness", {})
     if any(policy.get(key) is not False for key in ("production_ready", "backend_integration_ready", "shadow_mode_ready", "automatic_enforcement_ready")):
         raise BundleIntegrityError("unsafe_readiness_flag")
