@@ -49,6 +49,7 @@ runtime/logs/
 runtime/v0_3_14/
 runtime/v0_3_15/
 runtime/v0_3_15_*/
+runtime/pytest-*/
 
 # Zeek runtime
 conn.log

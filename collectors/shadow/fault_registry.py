@@ -52,6 +52,12 @@ _ROWS = [
     _scenario("crash_after_checkpoint_before_compaction", "crash", "checkpoint and spool coexist", "skip acknowledged record and compact", "no repeated semantic event"),
     _scenario("sink_restart", "sink_restart", "volatile transport interruption", "spool replay", "eventual reconciliation"),
     _scenario("exporter_restart", "exporter_restart", "in-memory queue loss", "spool recovery", "eventual reconciliation"),
+    _scenario("temporary_unavailable", "sink", "temporary unavailable", "bounded retry and delivery", "injection>0 and reconciled"),
+    _scenario("timeout_sequence", "sink", "timeout", "bounded retry and delivery", "injection>0 and reconciled"),
+    _scenario("rate_limited", "ack", "rate limited ACK", "Retry-After and delivery", "validated retryable ACK and reconciled"),
+    _scenario("connection_reset_after_send", "sink", "accepted then connection reset", "at-least-once retry and sink dedup", "duplicate ACK and reconciled"),
+    _scenario("restart_sink_before_drain", "sink_restart", "sink unavailable before drain", "new sink and replay spool", "pending before restart and reconciled after restart"),
+    _scenario("slow_consumer", "ack", "temporary slow-consumer rejection", "bounded retry and delivery", "validated retryable ACK and reconciled"),
 ]
 
 REGISTRY = {row.scenario_name: row for row in _ROWS}
