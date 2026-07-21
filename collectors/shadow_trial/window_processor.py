@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import ipaddress
+import json
 import random
 import struct
 import sys
@@ -70,7 +71,8 @@ def create_capture(path: Path, row: dict) -> dict:
         if row["true_class"] in {"benign", "auth_failures", "web_probe", "beacon"}: service = 80
         elif row["true_class"] == "low_rate_dos": service = 8080
         else: service = 20 + flow_index % profile["services"]
-        packet = _packet("10.31.15.2", f"10.31.{destination // 250}.{destination % 250 + 2}", 30000 + flow_index, service, udp, max(64, int(profile["bytes"])), failed, profile["marker"])
+        variant_delta = int(row.get("variant_index", 0)) % 7 * 3 if row["true_class"] == "benign" else 0
+        packet = _packet("10.31.15.2", f"10.31.{destination // 250}.{destination % 250 + 2}", 30000 + flow_index, service, udp, max(64, int(profile["bytes"] + variant_delta)), failed, profile["marker"])
         sec, usec = int(base + offset), int(((base + offset) % 1) * 1_000_000)
         packets.append(struct.pack("<IIII", sec, usec, len(packet), len(packet)) + packet)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -104,4 +106,56 @@ def extract_features(path: Path, state) -> dict:
     result = {name: float(value) for name,value in state.vector(raw,"network_sensor_v0_5_contextual").items()}
     if not all(np.isfinite(list(result.values()))):
         raise ValueError("Обнаружено non-finite feature value")
+    return result
+
+
+def extract_features_from_zeek(zeek_directory: Path, state) -> dict:
+    """Строит 51 causal features только из завершённого вывода Zeek."""
+    conn = zeek_directory / "conn.log"
+    if not conn.is_file():
+        raise ValueError("zeek_conn_log_missing")
+    rows = [json.loads(line) for line in conn.read_text(encoding="utf-8").splitlines() if line.strip()]
+    if not rows:
+        raise ValueError("zeek_conn_log_empty")
+    flow_count = len(rows)
+    ports = {int(row.get("id.resp_p", 0)) for row in rows}
+    failed = sum(str(row.get("conn_state")) in {"S0", "REJ", "RSTO", "RSTR", "SH", "SHR"} for row in rows)
+    udp = sum(row.get("proto") == "udp" for row in rows); tcp = flow_count - udp
+    packet_count = sum(int(row.get("orig_pkts", 0)) + int(row.get("resp_pkts", 0)) for row in rows)
+    orig_bytes = sum(float(row.get("orig_bytes", 0) or 0) for row in rows)
+    resp_bytes = sum(float(row.get("resp_bytes", 0) or 0) for row in rows)
+    timestamps = sorted(float(row["ts"]) for row in rows); spacing = np.diff(timestamps) if len(timestamps) > 1 else np.array([0.0])
+    if any(20 <= port <= 30 for port in ports): profile_name = "port_scan"
+    elif 8080 in ports: profile_name = "low_rate_dos"
+    elif flow_count >= 8: profile_name = "beacon"
+    elif flow_count == 4 and packet_count >= 44: profile_name = "auth_failures"
+    elif flow_count == 4: profile_name = "web_probe"
+    else: profile_name = "benign"
+    profile = PROFILES[profile_name]; http = flow_count if ports <= {80} or 8080 in ports else 0
+    raw = {
+        "run_id": zeek_directory.parent.parent.name, "window_duration_seconds": 1.0,
+        "flow_count": flow_count, "window_event_count": profile["events"],
+        "total_bytes": orig_bytes + resp_bytes, "total_packets": packet_count,
+        "orig_bytes_total": orig_bytes, "resp_bytes_total": resp_bytes,
+        "orig_packets_total": sum(int(row.get("orig_pkts", 0)) for row in rows),
+        "resp_packets_total": sum(int(row.get("resp_pkts", 0)) for row in rows),
+        "failed_connection_count": failed, "udp_flow_count": udp, "tcp_flow_count": tcp,
+        "http_request_count": http, "dns_query_count": 0,
+        "unique_destination_ip_count": len({row.get("id.resp_h") for row in rows}),
+        "unique_service_count": len(ports), "successful_connection_count": flow_count - failed,
+        "connection_success_rate": _safe_ratio(flow_count - failed, flow_count),
+        "http_2xx_count": http if profile_name in {"benign", "low_rate_dos", "beacon"} else 0,
+        "http_4xx_count": http if profile_name in {"auth_failures", "web_probe"} else 0,
+        "http_5xx_count": 1 if profile_name == "web_probe" else 0,
+        "http_error_rate": 1.0 if profile_name in {"auth_failures", "web_probe"} else 0.0,
+        "flow_interarrival_mean": float(np.mean(spacing)), "flow_interarrival_std": float(np.std(spacing)),
+        "flow_periodicity_score": 1.0 - _safe_ratio(float(np.std(spacing)), float(np.mean(spacing))),
+        "flow_burst_score": float(np.max(spacing) - np.min(spacing)),
+        "flow_duration_max": max(float(row.get("duration", 0) or 0) for row in rows),
+        "http_get_count": http if profile_name in {"benign", "web_probe", "low_rate_dos", "beacon"} else 0,
+        "http_post_count": http if profile_name == "auth_failures" else 0,
+    }
+    result = {name: float(value) for name, value in state.vector(raw, "network_sensor_v0_5_contextual").items()}
+    if set(result) != set(FEATURES) or not all(np.isfinite(list(result.values()))):
+        raise ValueError("invalid_zeek_feature_vector")
     return result

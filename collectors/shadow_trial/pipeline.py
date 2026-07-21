@@ -95,8 +95,9 @@ class ZeekSession:
             (output / "conn.log").write_text("", encoding="utf-8")
             return {"zeek_output_sha256": sha256_file(output / "conn.log"), "zeek_ms": (time.perf_counter() - started) * 1000, "containerized": False}
         worker = index % self.workers; job = self.root / "jobs" / str(worker) / f"{window_name}.job"
+        done = self.root / "done" / f"{window_name}.done"; done.unlink(missing_ok=True)
         job.write_text(f"/trial/captures/{capture.name}\n", encoding="utf-8", newline="\n")
-        done = self.root / "done" / f"{window_name}.done"; done.unlink(missing_ok=True); deadline = time.monotonic() + 60
+        deadline = time.monotonic() + 60
         while (not done.exists() or not done.read_text(encoding="utf-8").strip()) and time.monotonic() < deadline:
             time.sleep(.02)
         if not done.exists() or done.read_text(encoding="utf-8").strip() != "0":
