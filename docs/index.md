@@ -1,30 +1,23 @@
 # Документация проекта «Филин»
 
-## Обзор проекта
+## Статус
 
-- [Текущие возможности](current-capabilities.md)
 - [Текущий статус](status.md)
-- [История разработки](development-history.md)
-- [Выделение в отдельный репозиторий](repository-migration.md)
-
-## Архитектура и данные
-
-- [Архитектура](architecture.md)
-- [Происхождение данных](data-provenance.md)
-- [Лабораторная безопасность](safety-model.md)
-- [Глоссарий](glossary.md)
-
-## Признаки, datasets и эксперименты
-
-- [Профили признаков](../ml/features/README.md)
-- [Runtime datasets](../datasets/README.md)
-- [Эксперименты и метрики](experiments.md)
-- [Воспроизводимость](reproducibility.md)
-
-## Оценка и планирование
-
-- [Ограничения](limitations.md)
+- [Машиночитаемый реестр](status/project-status.yaml)
+- [Текущие возможности](current-capabilities.md)
 - [Roadmap](roadmap.md)
-- [Политика документации](documentation-policy.md)
-- [Приёмка runtime-целостности перед v0.3.8](audits/pre-v0.3.8-runtime-integrity-acceptance.md)
-- [Сторонние компоненты](third-party-components.md)
+
+## Эксперименты
+
+- [Индекс экспериментов](experiments.md)
+- [v0.3.14 и последующая errata](experiments/v0_3_14_errata.md)
+- [v0.3.15](experiments/v0_3_15.md)
+- [v0.3.15.1](experiments/v0_3_15_1.md)
+
+## Контракты и методология
+
+- [Контракты](contracts/index.md)
+- [Методология](methodology/index.md)
+- [Архитектура](architecture.md)
+- [Reproducibility](reproducibility.md)
+- [Limitations](limitations.md)

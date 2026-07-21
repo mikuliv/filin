@@ -1,99 +1,142 @@
 # Платформа «Филин»
 
-## Shadow-readiness v0.3.14
+Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
-Локальный passive integration audit завершён: contract `shadow_event_v1`, 935 semantic events, девять эквивалентных replay-профилей и 22 fault-сценария. Модель и backend не запускались для интеграции. Разрешён только v0.3.15 controlled passive trial; shadow/backend/production остаются выключены.
+## 1. Назначение
 
-## Prospective blind holdout v0.3.13
+«Филин» — исследовательская платформа для воспроизводимого анализа сетевых наблюдений в изолированной лаборатории. Она строит causal 51-feature представление, применяет замороженный классификатор и формирует пассивные события для последующего анализа.
 
-Независимая environmental-кампания завершена: 10/10 runs, 760 уникальных PCAP, 700 scored windows и 200 episodes. Frozen candidate v0.3.11 прошёл все gates без fit или tuning. Разрешён протокол v0.3.14, но shadow mode и backend integration остаются выключены. Подробности: [эксперимент v0.3.13](docs/experiments/v0_3_13.md).
+## 2. Текущий проверенный статус
 
-Последний завершённый научный этап — v0.3.12.2. Causal-order corrected frozen regression пройден; кандидат v0.3.11 разрешён для blind holdout v0.3.13, но не для shadow mode, backend или production. Авторитетный статус: [`docs/research-state.yaml`](docs/research-state.yaml).
+Последний завершённый этап — v0.3.15.1. Корректирующий аудит усилил passive exporter, но не подтвердил историческую готовность к v0.3.16: новый этап подготовки staging connector пока заблокирован. Production, shadow mode, backend integration и автоматические действия запрещены.
 
-## Текущий статус исследования
+## 3. Что представляет собой «Филин»
 
-Авторитетный источник: [`docs/research-state.yaml`](docs/research-state.yaml).
+Проект объединяет безопасный лабораторный стенд, capture и Zeek-обработку, построение признаков, frozen inference, stateful episode policy, passive event contract и локальный доказательный runtime. Это исследовательский код, а не готовое средство защиты.
 
-- Последний завершённый этап: v0.3.14.
-- Итог последнего этапа: frozen multi-benchmark regression завершена, но не пройдена из-за недостаточного evaluation coverage и episode gate.
-- Активная работа: этап v0.3.12.2 завершён; frozen candidate v0.3.11 не изменён и разрешён только для v0.3.13 blind holdout.
-- Следующий допустимый этап: новый training cycle на новых данных; v0.3.13 blind holdout не разрешён.
-- Интеграция с backend разрешена: нет.
-- Теневой режим разрешён: нет.
-- Готовность к промышленной эксплуатации: нет.
+## 4. Границы проекта
 
-Исторические метрики v0.3.1–v0.3.9 остаются неизменными. В v0.3.10 успешно
-пройдены integrity, closed-set, calibration, conformal, strong-path и episode
-gates, но training-only model-selection policy и pending/review gate не
-пройдены; backend, shadow mode и production остаются запрещены.
+Подтверждения относятся к контролируемым локальным сценариям. Проект не проходил внешнюю организационную validation, не подключён к действующей инфраструктуре и не имеет полномочий изменять сеть.
 
-В v0.3.12 кандидат `v0311:19176acb401be2d4` без fit и tuning оценён на двух совместимых frozen наборах: v0.3.9 (252 окна) и v0.3.10 (324 окна). Наборы v0.3.6 и v0.3.7 заблокированы из-за отсутствия готовой 51-признаковой таблицы, v0.3.8 — из-за расхождения 216 фактических и 252 ожидаемых строк. Regression не пройдена; shadow mode и backend integration не разрешены.
+## 5. Архитектура
 
-## Назначение
+Основные слои: `lab` для изолированных сценариев, `collectors` для capture и passive runtime, `ml` для frozen research pipeline, `tools` для аудита, `docs` для контрактов и статуса. Исторический `backend` не интегрирован с сенсором.
 
-«Филин» — исследовательская платформа для разработки и проверки методов интеллектуального мониторинга сетевого трафика и обнаружения лабораторных инцидентов информационной безопасности.
+## 6. Поток обработки
 
-## Реализованный pipeline
+Контролируемый трафик → PCAP → Zeek logs → causal feature window → frozen candidate → stateful decision → `shadow_event_v1` → durable spool → bounded priority queue → rate limiter → local sink → ACK → checkpoint → reconciliation.
 
-```mermaid
-flowchart LR
-    A[Безопасные сценарии] --> B[traffic-client]
-    B --> C[Пассивный capture]
-    C --> D[PCAP в Docker volume]
-    D --> E[Offline Zeek]
-    E --> F[Нормализованные sensor events]
-    F --> G[Корреляция по markers]
-    G --> H[network_sensor_v0_3]
-    H --> I[Зафиксированная ML-модель]
-    I --> J[Внешняя оценка]
-```
+## 7. Подсистема обнаружения
 
-## Компоненты
+Текущий frozen candidate создан на v0.3.11. v0.3.15.1 не выполняет fit, calibration fit, conformal fit, feature selection, threshold selection или новый inference исторических окон.
 
-- `lab/` — изолированный стенд, кампании, capture и Zeek;
-- `ml/features/` — схемы, builders и validators;
-- `ml/analysis/` — audits и диагностические анализы;
-- `ml/experiments/` — baseline и robustness evaluation;
-- `datasets/` — описание runtime datasets;
-- `docs/` — единая карта документации.
+## 8. Поддерживаемые классы наблюдаемого поведения
 
-## Текущая версия
+Лабораторный closed set включает benign, port scan, authentication failures, web probe, low-rate DoS и beacon-like behavior. Эти имена описывают классы синтетического стенда, а не подтверждённую атрибуцию реальных атак.
 
-v0.3.10 завершил отдельный minimal-promotion training/internal-validation cycle,
-но его frozen policy не пройдена. Он не разрешает backend integration, shadow
-mode или production deployment. Подробный текущий статус определяется только
-`docs/research-state.yaml`.
+## 9. Stateful-обработка эпизодов
 
-## Лабораторный стенд и сенсор
+Episode state различает benign, pending, review, alert и post-alert continuation. Deduplication подавляет повторные доставки по idempotency key; она не меняет frozen prediction или causal state.
 
-Capture выполняется пассивно в network namespace `traffic-client`; исходный PCAP хранится в Docker-managed volume и обрабатывается offline Zeek. Start/end markers задают sensor-aligned intervals и исключаются из model features.
+## 10. Passive event contract
 
-События `network_sensor_v0_3` формируются только из фактически захваченного сетевого трафика. Traffic-client events используются для контрольного сравнения и не являются источником Zeek-событий или сетевых признаков.
+[`shadow_event_v1`](docs/contracts/shadow-event-v1.md) задаёт allowlist полей, deterministic identity, hash и отсутствие action authority. Схема исторически неизменна.
 
-## Профили признаков
+## 11. Надёжность доставки
 
-`client_core_v0_2` и `client_extended_v0_2` описывают client observations. `network_sensor_v0_3` строится по Zeek flow, HTTP и доступным DNS observations. Packet/flow-признаки не подставляются в client profiles.
+Исправленный v0.3.15.1 runtime реализует единый at-least-once path: validation, canonical serialization, durable fsync spool, priority queue, token bucket, batch delivery, строгий ACK, bounded retry, atomic checkpoint, compaction и restart recovery. Exactly-once не заявляется; semantic deduplication выполняет локальный sink.
 
-## ML experiments
+## 12. Безопасность и fail-safe ограничения
 
-v0.3.1 сравнил client и независимый сетевой профиль на train/test runs; рекомендован `network_sensor_v0_3`. v0.3.2 оценил неизменную LogisticRegression с median imputer и StandardScaler на external robustness-runs. Интеграция в backend не начата.
+Runtime использует только локальные fixtures и mock sink. Любой неизвестный fault-сценарий завершается `unsupported`, malformed/unknown ACK не считается успехом, а непроверенная целостность блокирует resume и readiness.
 
-## Воспроизводимость и ограничения
+## 13. Текущий frozen candidate
 
-Команды, структура артефактов и проверки приведены в [документации](docs/index.md). Полученные результаты относятся к контролируемому лабораторному стенду и не подтверждают готовность модели к эксплуатации в производственной инфраструктуре.
+Candidate ID: `v0311:19176acb401be2d4`. Он был создан на v0.3.11 и не изменялся на v0.3.12–v0.3.15.1.
 
-## Структура каталога
+## 14. Последний независимый holdout
 
-См. [архитектуру](docs/architecture.md), [происхождение данных](docs/data-provenance.md), [эксперименты](docs/experiments.md) и [roadmap](docs/roadmap.md).
+v0.3.13 — независимый prospective environmental holdout. Его научный результат не отменён переоценкой runtime-утверждений v0.3.14/v0.3.15.
 
-## История выделения
+## 15. Последний runtime trial
 
-Платформа выделена в самостоятельный репозиторий из прежнего подкаталога. Технические детали и ограничения provenance приведены в [документе о миграции](docs/repository-migration.md).
+v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientific predictions сохранены. Аудит v0.3.15.1 установил, что исходная реализация delivery faults не доказывала полный integrated fault path, поэтому прежнее решение о переходе к v0.3.16 не подтверждено.
 
-## Controlled passive shadow trial v0.3.15
+## 16. Подтверждённые возможности
 
-Локальный непрерывный trial frozen candidate завершён на десяти изолированных sessions: 1520 canonical captures и 1440 online predictions. Passive delivery, restart/recovery и scientific gates пройдены; разрешён только аудит staging connector v0.3.16. Shadow mode, backend integration и production readiness остаются `false`.
+- локальная causal feature extraction и frozen inference;
+- independent holdout v0.3.13;
+- immutable bundle v0.3.15;
+- исправленный integrated passive exporter v0.3.15.1;
+- поведенческие fault, crash, resume, drop, privacy и performance tests;
+- source/sink reconciliation на локальных immutable событиях.
 
-## Технический аудит v0.3.12.1
+## 17. Неподтверждённые возможности
 
-Read-only аудит показал, что frozen detection-by-second `0.733333` воспроизводится из порядка записей immutable prediction, а не из causal order эпизодов. В причинном порядке alerts созданы 29/1/0 и 60/0/0 по окнам; state-machine extra delay и подавление первого alert равны нулю. Официальный отрицательный результат v0.3.12 и запрет v0.3.13, shadow mode и backend integration не изменены. Подробности: [аудит v0.3.12.1](docs/experiments/v0_3_12_1.md).
+- эксплуатационная точность в реальной организации;
+- production capture и online deployment;
+- backend или SIEM integration;
+- shadow mode с реальным получателем;
+- automatic enforcement;
+- внешняя security и privacy validation.
+
+## 18. Хронология этапов
+
+<!-- stage-history:start -->
+- v0.3.1 — базовая оценка.
+- v0.3.2 — robustness evaluation.
+- v0.3.3 — отрицательная проверка изменённой среды.
+- v0.3.4 — benign redesign.
+- v0.3.5 — frozen regression.
+- v0.3.6 — prospective holdout с отрицательной policy.
+- v0.3.7 — новый training cycle.
+- v0.3.8 — class-conditional uncertainty.
+- v0.3.9 — episode-first promotion.
+- v0.3.10 — minimal probabilistic cycle.
+- v0.3.10.1 — уточнение семантики pending.
+- v0.3.11 — текущий burden-aware frozen candidate.
+- v0.3.12 — frozen multi-benchmark regression.
+- v0.3.12.1 — causal-order audit.
+- v0.3.12.2 — corrected regression.
+- v0.3.13 — независимый environmental holdout.
+- v0.3.14 — component/contract audit с последующей переоценкой scope.
+- v0.3.15 — controlled local passive shadow trial.
+- v0.3.15.1 — corrective runtime evidence audit.
+<!-- stage-history:end -->
+
+## 19. Текущий этап v0.3.15.1
+
+Подробности приведены в [описании этапа](docs/experiments/v0_3_15_1.md), [errata v0.3.14](docs/experiments/v0_3_14_errata.md) и итоговом агрегированном отчёте `ml/reports/v0_3_15_1/v0_3_15_1_summary.md`.
+
+## 20. Следующий разрешённый этап
+
+v0.3.16 заблокирован. Сначала требуется новый заранее frozen local runtime trial, который использует исправленный exporter и создаёт собственную immutable behavioral evidence без обучения и production connection.
+
+## 21. Структура репозитория
+
+- `collectors/shadow` — event contract и integrated passive exporter;
+- `collectors/shadow_trial` — исторический trial pipeline v0.3.15;
+- `ml/experiments` — frozen protocols и stage runners;
+- `ml/reports` — отслеживаемые агрегированные evidence bundles отдельных этапов;
+- `runtime` — локальные неотслеживаемые артефакты;
+- `docs` — статус, методология и ограничения.
+
+## 22. Локальный запуск
+
+Корректирующий аудит запускается командой `python -m ml.experiments.v0_3_15_1.run_v0_3_15_1 --strict`. Он не использует внешнюю сеть и не выполняет model fit.
+
+## 23. Тестирование
+
+Основные команды: `python -m pytest ml/tests`, `python -m pytest collectors/shadow/tests`, `python -m pytest collectors/shadow_trial/tests`, `python -m pytest backend/tests`, а также compileall и validators из CI.
+
+## 24. Reproducibility и immutable artifacts
+
+Исторические frozen protocols, policy results и bundle manifests не переписываются. Исправления оформляются новым этапом, errata и claim-evidence ledger. Raw PCAP, predictions, events, spool, checkpoints и traces остаются вне Git.
+
+## 25. Политика данных и privacy
+
+События используют хэшированные идентификаторы и allowlist. Privacy audit сканирует canonical/serialized events, spool, retry journal, delivery logs, ACK, checkpoint, faults, performance и bundle reports. Raw payload, credentials, labels и feature vectors в passive telemetry запрещены.
+
+## 26. Ограничения и roadmap
+
+Текущие результаты лабораторные. v0.3.16 может быть рассмотрен только после положительной новой runtime evidence; ветка v0.4.x остаётся отдельным архитектурным направлением и не означает production readiness.

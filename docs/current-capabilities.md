@@ -1,55 +1,25 @@
-# Текущие возможности
+# Текущие подтверждённые возможности
 
-## v0.3.14
+Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
-Доступен локальный passive exporter `shadow_event_v1` с schema/privacy validation, deterministic identity, hash chain, bounded queue, checkpoint, spool, retry и mock sink. Он не подключён к backend или production и не имеет полномочий действия.
+## Проверено
 
-После v0.3.12.2 платформа умеет воспроизводимо оценивать frozen candidate в обязательном causal order на трёх строгих regression bundles. Это разрешает только v0.3.13 prospective blind holdout; shadow mode, backend integration и production запрещены.
+- frozen candidate v0.3.11 и неизменная 51-feature schema;
+- independent environmental holdout v0.3.13;
+- controlled local trial v0.3.15 с неизменным scientific bundle;
+- hash-integrity всех доступных файлов bundle v0.3.15;
+- corrected integrated at-least-once exporter v0.3.15.1;
+- строгий ACK contract, retry classification и drop reconciliation;
+- hash-verified resume с detached manifest lock и path confinement;
+- реальные worker/batch profiles с resource sampling во время нагрузки;
+- behavioral fault, crash, privacy, resume и topology tests.
 
-Авторитетный источник статуса — [`research-state.yaml`](research-state.yaml).
+## Переоценённый scope
 
-Последний завершённый исследовательский этап — v0.3.11. Его frozen policy
-внутренней валидации не пройдена. Backend integration, shadow mode и production
-deployment не разрешены.
+v0.3.14 подтверждает event contract и отдельные компоненты, но не доказывает full integrated fault readiness. Подробности: [errata v0.3.14](experiments/v0_3_14_errata.md).
 
-## Реализовано и проверяется
+Оригинальный v0.3.15 result сохранён, однако его точные runtime claims о fault injection, retry и recovery не прошли повторную behavioral атрибуцию к исходному execution path. Подробности: [аудит v0.3.15.1](experiments/v0_3_15_1.md).
 
-- изолированный Docker-стенд с внутренним allowlist;
-- per-execution capture с DNS для будущего internal-only smoke;
-- copy-aware marker intervals с независимым control evidence;
-- offline Zeek normalization и sensor aggregation;
-- единый исполняемый контракт `network_sensor_v0_6_integrity`;
-- application controller, удерживающий сетевое условие весь сценарий и
-  откатывающий его также при ошибке или timeout;
-- fail-closed predict-only guard для будущих frozen candidates;
-- runtime workflows HTTP, DNS, TCP и WebSocket с machine-readable аудитом;
-- типизированные SHA-256 evidence и fail-closed secure-artifact verifier.
+## Не разрешено
 
-Реализованы Mondrian conformal prediction, class-conditional kNN support и
-episode evidence и minimal probability-conformal promotion. Полный цикл v0.3.10 выполнен; его validation data не допускаются
-к fit, calibration, выбору thresholds или повторному predict.
-
-## Исторические результаты
-
-v0.3.1–v0.3.10 остаются неизменяемыми записями исполнения соответствующего кода.
-Новые validators, marker rules, feature formulas и runtime workflows не
-применялись задним числом. Ограничения формул и доказательств перечислены в
-[`limitations.md`](limitations.md) и post-v0.3.7 аудите.
-
-## Не реализовано и не разрешено
-
-- production capture и production validation;
-- backend ML integration и online inference;
-- shadow mode, active response и автоматическое блокирование;
-- подтверждённые MITRE ATT&CK, Sigma, SIEM и analyst-interface pipelines;
-- использование secure frozen candidate без успешной внешней проверки.
-
-Все результаты относятся к контролируемому лабораторному стенду и не
-подтверждают пригодность к эксплуатации в производственной инфраструктуре.
-
-## Burden-aware candidate v0.3.11
-
-Новый HGB/HGB candidate прошёл frozen internal validation: closed-set macro F1 1,0, attack episode recall 1,0, benign false-alert rate 0,0, unresolved pending 0,0 и duplicate suppression precision 1,0. Это разрешает только regression v0.3.12; production, backend и shadow mode остаются запрещёнными.
-# Статус после v0.3.12
-
-Платформа умеет воспроизводимо применять frozen candidate к совместимым 51-feature tables и формировать immutable regression evidence. Этап v0.3.12 не дал допуска к v0.3.13, shadow mode или backend integration.
+Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.16 заблокирован до нового evidence-bearing runtime trial.

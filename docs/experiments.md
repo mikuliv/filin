@@ -1,5 +1,13 @@
 # Эксперименты и метрики
 
+Актуальные поздние этапы:
+
+- [v0.3.14](experiments/v0_3_14.md) и [errata](experiments/v0_3_14_errata.md);
+- [v0.3.15](experiments/v0_3_15.md);
+- [v0.3.15.1](experiments/v0_3_15_1.md).
+
+Текущий машинно-читаемый статус находится в [`status/project-status.yaml`](status/project-status.yaml).
+
 ## Shadow-readiness v0.3.14
 
 Immutable prediction v0.3.13 преобразована в минимальные passive events без model execution. Девять replay profiles, 22 transport/storage faults и все safety gates пройдены. [Полный отчёт](experiments/v0_3_14.md).
