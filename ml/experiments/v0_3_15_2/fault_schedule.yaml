@@ -1,0 +1,422 @@
+schema_version: v03152_faults_v1
+faults:
+- fault_id: fault-01
+  fault_name: sink_timeout
+  session_id: prospective_overload_backpressure_001
+  causal_window: 12
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-02
+  fault_name: sink_unavailable_30s
+  session_id: prospective_overload_backpressure_002
+  causal_window: 14
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-03
+  fault_name: sink_unavailable_until_restart
+  session_id: prospective_ack_transport_fault_001
+  causal_window: 16
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-04
+  fault_name: rate_limit_429
+  session_id: prospective_ack_transport_fault_002
+  causal_window: 18
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-05
+  fault_name: connection_reset_mid_batch
+  session_id: prospective_crash_resume_001
+  causal_window: 20
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-06
+  fault_name: duplicate_delivery
+  session_id: prospective_crash_resume_002
+  causal_window: 22
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-07
+  fault_name: duplicate_ack
+  session_id: prospective_clock_integrity_001
+  causal_window: 24
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-08
+  fault_name: out_of_order_ack
+  session_id: prospective_clock_integrity_002
+  causal_window: 26
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-09
+  fault_name: malformed_ack
+  session_id: prospective_overload_backpressure_001
+  causal_window: 43
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: adversarial
+- fault_id: fault-10
+  fault_name: schema_rejection
+  session_id: prospective_overload_backpressure_002
+  causal_window: 45
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: false
+  corpus: adversarial
+- fault_id: fault-11
+  fault_name: spool_restart
+  session_id: prospective_ack_transport_fault_001
+  causal_window: 47
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-12
+  fault_name: exporter_crash_after_write_before_ack
+  session_id: prospective_ack_transport_fault_002
+  causal_window: 49
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-13
+  fault_name: exporter_crash_before_write
+  session_id: prospective_crash_resume_001
+  causal_window: 51
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-14
+  fault_name: queue_80_percent
+  session_id: prospective_crash_resume_002
+  causal_window: 53
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-15
+  fault_name: queue_95_percent
+  session_id: prospective_clock_integrity_001
+  causal_window: 55
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-16
+  fault_name: queue_full
+  session_id: prospective_clock_integrity_002
+  causal_window: 57
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-17
+  fault_name: storage_full_simulated
+  session_id: prospective_overload_backpressure_001
+  causal_window: 74
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-18
+  fault_name: clock_forward_jump
+  session_id: prospective_overload_backpressure_002
+  causal_window: 76
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-19
+  fault_name: clock_backward_jump
+  session_id: prospective_ack_transport_fault_001
+  causal_window: 78
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-20
+  fault_name: event_corruption
+  session_id: prospective_ack_transport_fault_002
+  causal_window: 80
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: adversarial
+- fault_id: fault-21
+  fault_name: event_removal
+  session_id: prospective_crash_resume_001
+  causal_window: 82
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-22
+  fault_name: event_reordering
+  session_id: prospective_crash_resume_002
+  causal_window: 84
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-23
+  fault_name: unknown_ack
+  session_id: prospective_clock_integrity_001
+  causal_window: 86
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: adversarial
+- fault_id: fault-24
+  fault_name: checkpoint_corruption
+  session_id: prospective_clock_integrity_002
+  causal_window: 88
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-25
+  fault_name: spool_corruption
+  session_id: prospective_overload_backpressure_001
+  causal_window: 105
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-26
+  fault_name: crash_after_ack_before_checkpoint
+  session_id: prospective_overload_backpressure_002
+  causal_window: 107
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-27
+  fault_name: crash_after_checkpoint_before_compaction
+  session_id: prospective_ack_transport_fault_001
+  causal_window: 109
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-28
+  fault_name: sink_restart
+  session_id: prospective_ack_transport_fault_002
+  causal_window: 111
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-29
+  fault_name: exporter_restart
+  session_id: prospective_crash_resume_001
+  causal_window: 113
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-30
+  fault_name: temporary_unavailable
+  session_id: prospective_crash_resume_002
+  causal_window: 115
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-31
+  fault_name: timeout_sequence
+  session_id: prospective_clock_integrity_001
+  causal_window: 117
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-32
+  fault_name: rate_limited
+  session_id: prospective_clock_integrity_002
+  causal_window: 119
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-33
+  fault_name: connection_reset_after_send
+  session_id: prospective_overload_backpressure_001
+  causal_window: 136
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-34
+  fault_name: restart_sink_before_drain
+  session_id: prospective_overload_backpressure_002
+  causal_window: 138
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
+- fault_id: fault-35
+  fault_name: slow_consumer
+  session_id: prospective_ack_transport_fault_001
+  causal_window: 140
+  runtime_boundary: integrated_exporter
+  expected_effect: отличающийся от healthy path наблюдаемый результат
+  expected_recovery: bounded recovery и итоговая reconciliation
+  maximum_attempts: 4
+  timeout_seconds: 30
+  affected_event_class: diagnostic_fixture
+  source_sink_equality_expected: true
+  corpus: canonical
