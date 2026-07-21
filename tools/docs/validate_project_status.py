@@ -14,9 +14,11 @@ CORE_DOCS = [ROOT / name for name in ("README.md", "docs/status.md", "docs/curre
 REQUIRED = CORE_DOCS + [
     ROOT / "docs/experiments/v0_3_14.md", ROOT / "docs/experiments/v0_3_14_errata.md",
     ROOT / "docs/experiments/v0_3_15.md", ROOT / "docs/experiments/v0_3_15_1.md",
+    ROOT / "docs/experiments/v0_3_15_2.md",
     ROOT / "docs/contracts/index.md", ROOT / "docs/methodology/index.md",
     ROOT / "ml/reports/v0_3_15_1/v0_3_14_claim_reassessment.json",
     ROOT / "ml/reports/v0_3_15_1/v0_3_15_revalidation.json",
+    ROOT / "ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json",
 ]
 
 
@@ -43,8 +45,8 @@ def validate() -> dict:
     errors = []
     status = yaml.safe_load(STATUS.read_text(encoding="utf-8"))
     expected = {
-        "current_completed_stage": "v0.3.15.1", "current_candidate": "v0.3.11",
-        "latest_independent_model_holdout": "v0.3.13", "latest_runtime_trial": "v0.3.15",
+        "current_completed_stage": "v0.3.15.2", "current_candidate": "v0.3.11",
+        "latest_independent_model_holdout": "v0.3.13", "latest_runtime_trial": "v0.3.15.2",
         "latest_corrective_audit": "v0.3.15.1", "production_ready": False, "shadow_mode_ready": False,
         "backend_integration_ready": False, "automatic_enforcement_ready": False,
     }
@@ -80,11 +82,15 @@ def validate() -> dict:
         errors.append("v0314_errata_link_missing")
     if (ROOT / "docs/experiments/v0_3_15.md").is_file() and "v0_3_15_1.md" not in (ROOT / "docs/experiments/v0_3_15.md").read_text(encoding="utf-8"):
         errors.append("v0315_revalidation_link_missing")
-    policy_path = ROOT / "ml/reports/v0_3_15_1/v0_3_15_1_policy_result.json"
+    policy_path = ROOT / "ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json"
     if policy_path.is_file():
         policy = json.loads(policy_path.read_text(encoding="utf-8"))
-        expected_next = "v0.3.16" if policy.get("candidate_ready_for_v0_3_16_staging_connector_readiness") else None
+        expected_next = "v0.3.16" if policy.get("candidate_ready_for_v0_3_16_staging_connector_readiness") else "v0.3.15.3"
         if status.get("next_allowed_stage") != expected_next: errors.append("next_stage_policy_mismatch")
+        if not policy.get("v03152_prospective_runtime_trial_passed") and status.get("blocked_stage") != "v0.3.16": errors.append("negative_trial_must_block_v0316")
+    if "v0.3.15.2" not in versions: errors.append("v03152_stage_missing")
+    if status.get("latest_corrective_audit") != "v0.3.15.1": errors.append("latest_corrective_audit_changed")
+    if status.get("current_candidate") != "v0.3.11": errors.append("frozen_candidate_changed")
     return {"valid": not errors, "error_count": len(errors), "errors": errors, "checked_stage_count": len(versions), "status_source": str(STATUS.relative_to(ROOT)).replace("\\", "/")}
 
 
