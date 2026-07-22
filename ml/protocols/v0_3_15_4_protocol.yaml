@@ -1,0 +1,171 @@
+schema_version: v03154_protocol_v1
+revision: 1
+stage: v0.3.15.4
+title_ru: "Контролируемая смешанная переработка сценариев, признаков и кандидата"
+status: frozen_before_development_campaign
+source_git_commit: 7b654e258726ba64c5c4a72e2d442238abb07832
+purpose: >-
+  Исправить подтверждённые scenario и feature defects, проверить frozen baseline
+  на новом development corpus, применить заранее фиксированный training gate и,
+  если требуется, создать новый composite candidate для будущего v0.3.15.5.
+historical_anchors:
+  v03152_bundle_sha256: 49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda
+  v03153_bundle_sha256: 20ad130d2a30a7a495c6a2b82e189e9c030a4ee1f03d84f661cd21909c88a3c2
+  v03153_policy_sha256: 5bc21a701b80826a2e85181e68a101b54d366274e60197030b4192ebb2d30992
+  baseline_candidate_id: v0311:19176acb401be2d4
+  baseline_artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  state_policy_implementation_sha256: 3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c
+  event_contract_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+confirmed_root_causes:
+  - scenario_generation_defect
+  - feature_extraction_defect
+  - conformal_abstention
+unresolved_hypotheses:
+  - residual_subtype_generalization_weakness
+  - calibration_amplification
+  - early_zeek_version_effect
+  - calibration_only_contribution
+scenario_taxonomy:
+  stable_codes: [auth_failures, beacon, low_rate_dos, port_scan, web_probe]
+  contract_version: observed_network_behavior_v2
+  labels_assert_observed_behavior_not_intent: true
+  auth_requires_service_response_and_negative_outcome: true
+  web_probe_requires_multiple_parsed_http_requests: true
+feature_contract:
+  schema_version: network_features_v2
+  feature_count: 51
+  preserve_order: true
+  provenance_types: [direct_observation, deterministic_derivation, explicit_missing, unsupported]
+  forbidden_provenance: [guessed_from_profile, guessed_from_label, guessed_from_scenario, inferred_from_future, inferred_from_hidden_generator_state]
+  application_semantics_require_matching_zeek_log: true
+feature_provenance:
+  sidecar_required_per_feature_per_row: true
+  label_fields_forbidden: true
+  raw_payload_forbidden: true
+  model_input: false
+  required_coverage: 1.0
+development_corpus:
+  session_count: 25
+  captures_per_session: 200
+  warmup_per_session: 10
+  scored_per_session: 190
+  total_captures: 5000
+  total_scored_windows: 4750
+  episode_count: 200
+  attack_episode_count: 100
+  benign_episode_count: 100
+  attack_episodes_per_class: 20
+  benign_variant_count: 50
+  pcap_policy: {new: true, unique_sha256: true, closed_before_processing: true, containerized_zeek: "7.0.5", fallback_allowed: false}
+sessions:
+  scenario_semantics: {ids: [dev_scenario_semantics_001, dev_scenario_semantics_002, dev_scenario_semantics_003, dev_scenario_semantics_004, dev_scenario_semantics_005], seeds: [20101, 20102, 20103, 20104, 20105]}
+  feature_provenance: {ids: [dev_feature_provenance_001, dev_feature_provenance_002, dev_feature_provenance_003, dev_feature_provenance_004, dev_feature_provenance_005], seeds: [20201, 20202, 20203, 20204, 20205]}
+  subtype_boundary: {ids: [dev_subtype_boundary_001, dev_subtype_boundary_002, dev_subtype_boundary_003, dev_subtype_boundary_004, dev_subtype_boundary_005], seeds: [20301, 20302, 20303, 20304, 20305]}
+  conformal_behavior: {ids: [dev_conformal_behavior_001, dev_conformal_behavior_002, dev_conformal_behavior_003, dev_conformal_behavior_004, dev_conformal_behavior_005], seeds: [20401, 20402, 20403, 20404, 20405]}
+  benign_hard_negatives: {ids: [dev_benign_hard_negatives_001, dev_benign_hard_negatives_002, dev_benign_hard_negatives_003, dev_benign_hard_negatives_004, dev_benign_hard_negatives_005], seeds: [20501, 20502, 20503, 20504, 20505]}
+split_policy:
+  unit: whole_session_id
+  training_session_suffixes: ["001", "002", "003"]
+  calibration_session_suffix: "004"
+  internal_audit_session_suffix: "005"
+  counts: {training: 15, calibration: 5, internal_audit: 5}
+  freeze_before_capture: true
+  audit_labels_locked_until_candidate_freeze: true
+  related_episode_windows_must_not_split: true
+  benign_variant_exact_copy_across_audit_forbidden: true
+baseline_variants:
+  A: frozen v0.3.11 weights and historical v1 preprocessing
+  B: frozen v0.3.11 weights and corrected v2 preprocessing as a new compatibility candidate
+  C: corrected scenarios and historical-compatible feature path
+  D: corrected scenarios and feature v2
+training_decision_gate:
+  set_true_if_any:
+    - v2 required and frozen weights fail compatibility gates
+    - corrected scenario and feature path retains subtype failures
+    - auth_failures recall below 0.90
+    - attack macro recall below 0.95
+    - attack macro F1 below 0.95
+    - corrected conformal requires a new candidate-linked calibration distribution
+    - historical composite candidate is incompatible with v2 semantics
+  set_false_only_if_all:
+    scenario_defects_fixed: true
+    v2_compatible_or_not_promoted: true
+    baseline_gates_passed: true
+    auth_failures_recall_min: 0.90
+    attack_macro_recall_min: 0.95
+    attack_macro_f1_min: 0.95
+    fpr_max: 0.02
+    attack_episode_recall_min: 0.95
+    detection_by_second_min: 0.95
+    conformal_empty_set_degradation_absent: true
+    composite_versionable_without_training: true
+candidate_search_space:
+  frozen_before_fit: true
+  model_family: HistGradientBoostingClassifier
+  maximum_configurations: 3
+  candidates:
+    A: {learning_rate: 0.08, max_iter: 120, max_leaf_nodes: 15, min_samples_leaf: 10, l2_regularization: 0.0, auth_sample_weight: 1.0, random_state: 3154}
+    B: {learning_rate: 0.08, max_iter: 120, max_leaf_nodes: 15, min_samples_leaf: 10, l2_regularization: 0.0, auth_sample_weight: 2.0, random_state: 3154}
+    C: {learning_rate: 0.05, max_iter: 160, max_leaf_nodes: 7, min_samples_leaf: 20, l2_regularization: 1.0, auth_sample_weight: 1.5, random_state: 3154}
+  neural_networks: forbidden
+  automl: forbidden
+  external_training_api: forbidden
+grouped_validation:
+  folds: 3
+  grouping: [session_id, episode_id, scenario_family, benign_variant_family]
+  fold_assignment_frozen_before_fit: true
+candidate_selection:
+  required_gates: {benign_recall_min: 0.98, fpr_max: 0.02, attack_macro_recall_min: 0.95, attack_macro_f1_min: 0.95, each_attack_recall_min: 0.90, auth_failures_recall_min: 0.90, attack_episode_recall_min: 0.95, episode_precision_min: 0.95, benign_episode_far_max: 0.05, detection_by_second_min: 0.95, cross_session_contamination: 0, cross_activity_contamination: 0}
+  lexicographic_order: [worst_class_recall_desc, attack_episode_recall_desc, conformal_empty_set_rate_asc, fpr_asc, macro_f1_desc, complexity_asc]
+calibration_conformal:
+  calibration_sessions_only: true
+  method: sigmoid
+  conformal_method: mondrian_class_conditional
+  alpha: 0.05
+  audit_split_forbidden: true
+  conformal_gates: {overall_coverage_min: 0.95, each_attack_coverage_min: 0.90, empty_set_rate_max: 0.05, wrong_only_rate_max: 0.0}
+state_policy:
+  revision_allowed: false
+  frozen_implementation_sha256: 3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c
+internal_audit:
+  one_inference_pass: true
+  unlock_after_candidate_freeze: true
+  tuning_after_unlock_forbidden: true
+  bootstrap_iterations: 5000
+  bootstrap_seed: 42
+  gates: {benign_recall_min: 0.98, fpr_max: 0.02, attack_macro_recall_min: 0.95, attack_macro_f1_min: 0.95, each_attack_recall_min: 0.90, auth_failures_recall_min: 0.90, attack_episode_recall_min: 0.95, episode_precision_min: 0.95, benign_episode_far_max: 0.05, detection_by_second_min: 0.95, overall_conformal_coverage_min: 0.95, empty_set_rate_max: 0.05}
+performance_policy:
+  profile: C
+  throughput_median_min_events_per_second: 10
+  capture_to_sink_p95_max_ms: 2000
+  capture_to_sink_p99_max_ms: 3000
+  peak_rss_max_mib: 512
+  normalized_cpu_average_max_percent: 75
+  normalized_cpu_p95_max_percent: 95
+  final_backlog: 0
+  sustained_backlog: 0
+  swap_growth: 0
+privacy_policy:
+  allowed_findings: 0
+  raw_ack_runtime_only: true
+  negative_fixtures_required: true
+instrumentation_policy:
+  latency_contract: passive_latency_trace_v1
+  cpu_contract: passive_cpu_sample_v1
+  ack_contract: synthetic_ack_evidence_v1
+  semantic_equivalence_required_before_campaign: true
+invalidation_rules:
+  before_first_capture: create a visible protocol revision and recalculate the hash
+  after_first_capture: invalidate campaign, preserve it, and use new session IDs and seeds
+  audit_access_before_lock: invalidate internal audit readiness
+  search_space_change_after_fit: invalidate candidate selection
+readiness_policy:
+  candidate_ready_for_v0_3_15_5_requires_all_internal_gates: true
+  candidate_ready_for_v0_3_16_staging_connector_readiness: false
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+  v0_3_16_prohibited: true
