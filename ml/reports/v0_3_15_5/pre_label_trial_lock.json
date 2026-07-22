@@ -1,0 +1,18 @@
+{
+  "baseline_prediction_manifest_sha256": "4425687c63d422bf571e559589ba943b1f6a413deede9cc2f33a9c09bd1634e8",
+  "baseline_unique_prediction_count": 0,
+  "blind_access_audit_sha256": "a52d96e02cbfba11f616a37ce938f74c1e84ba8ffc15fd5e01fde46aaf20d341",
+  "candidate_duplicate_prediction_count": 0,
+  "candidate_missing_prediction_count": 0,
+  "candidate_prediction_after_unlock_count": 0,
+  "candidate_prediction_manifest_sha256": "b5947ef98967126bda0dddd8eb48f55d11c7ac9a672fbb32bf74a6c797988484",
+  "candidate_repeated_inference_count": 0,
+  "candidate_unique_prediction_count": 3800,
+  "created_before_label_unlock": true,
+  "immutable_candidate_predictions_sha256": "2cb5ec66ae814c14be6d21c18cc0aabefc90f93f49c3203f0285da73de59edce",
+  "label_vault_commitment_sha256": "96a1d8aac6e84df7ec73490b5a6f9d1a9485eac41ffa34749d773ccbf5e35289",
+  "no_fit_audit_sha256": "4cf399a5403c049014fb047861d609ecdae015fd85847e97b2f3e2ecda42390a",
+  "prediction_hash_root": "8d31347be1b84b96eeb12fda1361eff2961e65222cc339813ccbb4af7ff830ab",
+  "ready_for_single_label_unlock": true,
+  "schema_version": "v03155_pre_label_trial_lock_v1"
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": "v03155_sessions_v1",
+  "sessions": [
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22101,
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "session_index": 0,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22102,
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "session_index": 1,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22103,
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "session_index": 2,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22104,
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "session_index": 3,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22201,
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "session_index": 4,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22202,
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "session_index": 5,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22203,
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "session_index": 6,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22204,
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "session_index": 7,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22301,
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "session_index": 8,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22302,
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "session_index": 9,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22303,
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "session_index": 10,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22304,
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "session_index": 11,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22401,
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "session_index": 12,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22402,
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "session_index": 13,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22403,
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "session_index": 14,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22404,
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "session_index": 15,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22501,
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "session_index": 16,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22502,
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "session_index": 17,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22503,
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "session_index": 18,
+      "warmup_count": 10
+    },
+    {
+      "capture_count": 200,
+      "scored_count": 190,
+      "seed": 22504,
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "session_index": 19,
+      "warmup_count": 10
+    }
+  ]
+}

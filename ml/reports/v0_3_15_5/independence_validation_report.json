@@ -1,0 +1,13 @@
+{
+  "capture_id_overlap_count": 0,
+  "episode_overlap_count": 0,
+  "exact_parameter_overlap_count": 0,
+  "independence_validation_passed": true,
+  "new_capture_count": 4000,
+  "pcap_hash_overlap_count": 0,
+  "schema_version": "v03155_independence_validation_v1",
+  "seed_overlap_count": 0,
+  "session_overlap_count": 0,
+  "unique_pcap_hash_count": 4000,
+  "variant_overlap_count": 0
+}

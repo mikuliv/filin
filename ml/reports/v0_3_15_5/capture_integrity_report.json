@@ -1,0 +1,11 @@
+{
+  "all_closed_before_processing": true,
+  "capture_count": 4000,
+  "capture_manifest_sha256": "d65a9fe60419981b4d1b559d37d2e21093ddb446e20cd209b071f17ed7d952cc",
+  "external_target_count": 0,
+  "fallback_count": 0,
+  "pcap_hash_overlap_count": 0,
+  "schema_version": "v03155_capture_integrity_v1",
+  "synthetic_only": true,
+  "unique_sha256_count": 4000
+}

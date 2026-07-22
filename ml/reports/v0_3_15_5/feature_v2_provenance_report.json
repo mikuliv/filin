@@ -1,0 +1,19 @@
+{
+  "allowed_provenance_counts": {
+    "deterministic_derivation": 117800,
+    "direct_observation": 76000
+  },
+  "feature_count": 51,
+  "feature_provenance_coverage": 1.0,
+  "feature_rows_sha256": "49990794011350d206fa00bf2fcc4e3825ff8900ffb6e4c6d9467f9895dc1e02",
+  "feature_schema": "network_features_v2",
+  "future_derived_feature_count": 0,
+  "guessed_feature_count": 0,
+  "hidden_state_derived_feature_count": 0,
+  "label_derived_feature_count": 0,
+  "provenance_record_count": 193800,
+  "provenance_sha256": "071ef2515be9404113f6473708803545c5627551f17ce058c118c60476224d68",
+  "row_count": 3800,
+  "schema_version": "v03155_feature_v2_provenance_v1",
+  "sidecar_used_as_model_input": false
+}

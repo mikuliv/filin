@@ -1,0 +1,11 @@
+{
+  "calibration_fit_call_count": 0,
+  "candidate_replacement_count": 0,
+  "conformal_fit_call_count": 0,
+  "feature_selection_call_count": 0,
+  "fit_call_count": 0,
+  "no_fit_audit_passed": true,
+  "partial_fit_call_count": 0,
+  "schema_version": "v03155_no_fit_audit_v1",
+  "threshold_selection_call_count": 0
+}

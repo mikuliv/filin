@@ -1,0 +1,11 @@
+{
+  "baseline_candidate_id": "v0311:19176acb401be2d4",
+  "duplicate_prediction_count": 0,
+  "inference_call_count": 0,
+  "missing_prediction_count": 0,
+  "passed": null,
+  "prediction_count": 0,
+  "schema_version": "v03155_baseline_prediction_manifest_v1",
+  "status": "not_applicable_baseline_ineligible",
+  "unique_prediction_count": 0
+}

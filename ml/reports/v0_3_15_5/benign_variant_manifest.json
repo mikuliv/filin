@@ -1,0 +1,1305 @@
+{
+  "assignments": [
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 19,
+        "response_mode": 0,
+        "variant_nonce": "c56a14eeaa1ab51d",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "b892842cb60fe1f545ae42f56574847a3f4e78fa4e5b61ac4b957f6c6305cda4",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "variant_id": "benign_holdout_01"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 29,
+        "response_mode": 0,
+        "variant_nonce": "3a376640b20557ee",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "010e6cf71b1d824bd173515e01e07e39bb6f45c96f37b833b80bbb43ebc4ad57",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "variant_id": "benign_holdout_11"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 39,
+        "response_mode": 0,
+        "variant_nonce": "1390d6ecac7803bb",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "37ee3ff3cd5b6ab3dfeea9f0b437b305079f57bcedacc0fdd20aa9cd86421cdd",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "variant_id": "benign_holdout_21"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 49,
+        "response_mode": 0,
+        "variant_nonce": "37d7eaf45588eef5",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "fc2cbbde50bc084d8a755b95bb1e85b45e5593020c4a9390c97af133a0f8a093",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "variant_id": "benign_holdout_31"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 59,
+        "response_mode": 0,
+        "variant_nonce": "ae1aec11a0ccc7c4",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "8d7a4beb0fd23ac9b4f62405707d91d18addf3461feaffe2115df26653898302",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_001",
+      "variant_id": "benign_holdout_41"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 20,
+        "response_mode": 1,
+        "variant_nonce": "7950d0ad512dc1c4",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "e2b5b4af250a3b4ecc131c48cd5870b4414386992f2368a442554466078e0b34",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "variant_id": "benign_holdout_02"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 30,
+        "response_mode": 1,
+        "variant_nonce": "ef641caa448ab6ad",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "f2d1c864a577cdd3625e3effe2f6cf070fb960cbe0ac4c381e15a0a8effa8d9a",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "variant_id": "benign_holdout_12"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 40,
+        "response_mode": 1,
+        "variant_nonce": "1d3dc944c72cfb5d",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "9b3719ee0d4e71fb0b38610983296bcc4ff17903e52de8dd0382e2b144de2def",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "variant_id": "benign_holdout_22"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 50,
+        "response_mode": 1,
+        "variant_nonce": "403506b32b53acf4",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "85c2946eeddae5ab409c7fdc84f0255c6a4fe2336a810e9a58bc391b309a40dd",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "variant_id": "benign_holdout_32"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 60,
+        "response_mode": 1,
+        "variant_nonce": "3244656c245889a9",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "cae9c7ba403986e0230bdc52694e8d2bad143861e5b5dbc7938b691cbe725cbc",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_002",
+      "variant_id": "benign_holdout_42"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 21,
+        "response_mode": 2,
+        "variant_nonce": "e14927ea79141f00",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "7ddcf60ece095118b9c02ffed0d9c231e40ec6e34320632aa75697b0e6adee96",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "variant_id": "benign_holdout_03"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 31,
+        "response_mode": 2,
+        "variant_nonce": "602243cbf1c2d71f",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "e723172a6ac7a16bdb4d16dab92cacf5d5d0b38fb421e4059b2f30adcd7e37ac",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "variant_id": "benign_holdout_13"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 41,
+        "response_mode": 2,
+        "variant_nonce": "ba2d0cbf9049b19b",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "c6d3d498fb354ac496010d47524f232a60fdb0f385320006d702a3c7e0e61b23",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "variant_id": "benign_holdout_23"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 51,
+        "response_mode": 2,
+        "variant_nonce": "76cd119d175fe4cb",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "d9b0b591a11e99411048a96974307a90bfd29716212841114701c8c65d8926fc",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "variant_id": "benign_holdout_33"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 61,
+        "response_mode": 2,
+        "variant_nonce": "81ad99cc49de6a9d",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "10cf2ce7c8a6547bd95c3f75ad41a3c392d3e14825853de3386c2e374deb4460",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_003",
+      "variant_id": "benign_holdout_43"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 22,
+        "response_mode": 3,
+        "variant_nonce": "b3c55ff9d7a019fc",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "a30eb03ebd0ceb0fc0197a32a03731a6f8d7596a4d203ffb708994a66fe34915",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "variant_id": "benign_holdout_04"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 32,
+        "response_mode": 3,
+        "variant_nonce": "2d8cdbbd066a5c91",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "e3cec472eb2f3ab83ab105a73d5ec470017ddb0de15eab74497cb54433348072",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "variant_id": "benign_holdout_14"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 42,
+        "response_mode": 3,
+        "variant_nonce": "e60da22cb15a46cd",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "5ae7c2bf208b1ba34dd714ddd3be1b3384adbe78108875fa5f6326e67ec218f2",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "variant_id": "benign_holdout_24"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 52,
+        "response_mode": 3,
+        "variant_nonce": "504bc389c3648640",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "891d4fb79d6f47c937684140a121cb57cdb7083b94dd59689da4e53e0378a332",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "variant_id": "benign_holdout_34"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 62,
+        "response_mode": 3,
+        "variant_nonce": "895344c198140601",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "bbe83895689d3f236de7809a21245db4952c51d81f4babf254388130d62c376b",
+      "session_group": "balanced",
+      "session_id": "holdout_balanced_004",
+      "variant_id": "benign_holdout_44"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 23,
+        "response_mode": 4,
+        "variant_nonce": "4bea8531c67fb47a",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "63d239c0c84970ec81470f2cfa2c41699b4355550b055ae8425e773b06356b96",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "variant_id": "benign_holdout_05"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 33,
+        "response_mode": 4,
+        "variant_nonce": "33c0bb9d8e30dcb0",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "8f62e63f9924d2b7305829da7ef9aa837b5f8b71be3ee2473c55a315ec0c1607",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "variant_id": "benign_holdout_15"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 43,
+        "response_mode": 4,
+        "variant_nonce": "0e7f27796c81d2d1",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "1059f75535581456462df774571fe185fbdf51f4928a2d2e1000d12e8c4d487e",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "variant_id": "benign_holdout_25"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 53,
+        "response_mode": 4,
+        "variant_nonce": "5e47a8f2a1f424ff",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "bdc8d01199ea40f9645bb13f31178bd309f1e5078f6d5f61e151e6104d40582d",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "variant_id": "benign_holdout_35"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 63,
+        "response_mode": 4,
+        "variant_nonce": "881d71c664039dd8",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "868dbb8a9c9c48557cade26f33f1c92def20c9696d214e61bf8e18290d5a5afc",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_001",
+      "variant_id": "benign_holdout_45"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 24,
+        "response_mode": 0,
+        "variant_nonce": "836fc5f03ef16286",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "127d1909c0afbc6be71cec3620eb425d5a89b4ac60ed0eba0a8ef2757c31575f",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "variant_id": "benign_holdout_06"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 34,
+        "response_mode": 0,
+        "variant_nonce": "6937861db052852b",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "cab65cfd11c1f231ed71baac5b2b2bb56180dd9620247f8dff0dcb1c747b5353",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "variant_id": "benign_holdout_16"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 44,
+        "response_mode": 0,
+        "variant_nonce": "aabd7fefcefd1dd1",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "804abf68880373c1893be66cbde64d1cb0fb5d3cd9325f9c742a3762b8b71682",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "variant_id": "benign_holdout_26"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 54,
+        "response_mode": 0,
+        "variant_nonce": "bbae0c2477871395",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "b81be1a194f1e5ee59a7d8286a5ec09f13461a9cff89c90490631f048129ca63",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "variant_id": "benign_holdout_36"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 64,
+        "response_mode": 0,
+        "variant_nonce": "44ddbdd49da2ef9c",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "876f29c168b19f29cda52537bc9b718ca46d23ddceeaedb9cdfd2ebef57f682d",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_002",
+      "variant_id": "benign_holdout_46"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 25,
+        "response_mode": 1,
+        "variant_nonce": "c572532345089045",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "60068cf0358f9183ee48b47ef2de6e801935d3eb92cf090bab80ae63f2fa7033",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "variant_id": "benign_holdout_07"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 35,
+        "response_mode": 1,
+        "variant_nonce": "68f4acbca0dd84bd",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "eaca64918f53ebde030dd54dcad58d63bfe83e86703407570b8925270d87fa90",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "variant_id": "benign_holdout_17"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 45,
+        "response_mode": 1,
+        "variant_nonce": "672136bb38b60863",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "b79ce71dd7c68c8c71d62c4ec5a76a51401b5e5647707918d5dd37c0f6351970",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "variant_id": "benign_holdout_27"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 55,
+        "response_mode": 1,
+        "variant_nonce": "e9322eb7bb64e7cb",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "1e5d7dfe6e1c6b25f68620e8bed4c695899cf839a3f87c0963682e015f104eee",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "variant_id": "benign_holdout_37"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 65,
+        "response_mode": 1,
+        "variant_nonce": "807d80873aa1114e",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "8c30341b96b2232a3ab05b93cdb30c2a6aad10c680ec8b5b25cb8570c2ec7e5f",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_003",
+      "variant_id": "benign_holdout_47"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 26,
+        "response_mode": 2,
+        "variant_nonce": "c6efdc7a39d5373c",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "29aec4d666df416fd15475ecf3cb72a767384f8b3a18e62f4df1edd62a709633",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "variant_id": "benign_holdout_08"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 36,
+        "response_mode": 2,
+        "variant_nonce": "74188a9d60b37cfd",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "5bd0c895a7b9cd13a1249c60944d13dd3d8fda4ee63edc726a1e72d4b85fdc47",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "variant_id": "benign_holdout_18"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 46,
+        "response_mode": 2,
+        "variant_nonce": "52ae53fc34f088f1",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "cf9f3ed86d8e7c40a9b7e06559d56761fe72656b80707d950ad63aa9b68bc684",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "variant_id": "benign_holdout_28"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 56,
+        "response_mode": 2,
+        "variant_nonce": "a659b03e6f91aa19",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "cae464fd78c1e9bbbf8a5009159ff33017425496e11ed8429a04ba28508c43b0",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "variant_id": "benign_holdout_38"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 66,
+        "response_mode": 2,
+        "variant_nonce": "d5574b091c43e0b5",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "d34a54308758d704574388442dcf577136db0b07ead8264acd2b4f086162905b",
+      "session_group": "auth_generalization",
+      "session_id": "holdout_auth_generalization_004",
+      "variant_id": "benign_holdout_48"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 27,
+        "response_mode": 3,
+        "variant_nonce": "c613aae7d3f6816f",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "8bfc50c56a3c411c98ecf2ed6ac21912c86cc05a40b528af5c7b97d64de8db34",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "variant_id": "benign_holdout_09"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 37,
+        "response_mode": 3,
+        "variant_nonce": "5b90a3d2e1bcd2d3",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "0639d32c639299dca3901197d0ffbee1dbe89829bec62fd916d18658ffa27e47",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "variant_id": "benign_holdout_19"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 47,
+        "response_mode": 3,
+        "variant_nonce": "7f705cf721acc505",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "dcedd27a67c8080a2e5a0ba6c5197bc334a5ce583668e9b63861b59c3e143738",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "variant_id": "benign_holdout_29"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 57,
+        "response_mode": 3,
+        "variant_nonce": "230d5237453eb4da",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "da86cad82b8273c566ce5d4386178a492c5cb2cd808c5985dbc68331c80580c8",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "variant_id": "benign_holdout_39"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 67,
+        "response_mode": 3,
+        "variant_nonce": "99358ca91efc843b",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "839a1a38d5a6a27a3833dbb7e1c76f44e121d9245fb1dad454824f2fa359ec27",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_001",
+      "variant_id": "benign_holdout_49"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 28,
+        "response_mode": 4,
+        "variant_nonce": "50780a6c90c6c5e4",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "f1eb4d0f8a670be6b73c0feda7a9276ecbba1346d65d2f25f2fcc919c408c8b7",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "variant_id": "benign_holdout_10"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 38,
+        "response_mode": 4,
+        "variant_nonce": "fdcdef2711c958d8",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "e2590089cfa6ea2e026abc1e3ebe57296c74fd7cb3a8be5925f6aeeec7fd03af",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "variant_id": "benign_holdout_20"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 48,
+        "response_mode": 4,
+        "variant_nonce": "57c1d273a51503d8",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "5cd18b71bd78a4d7f257951b7f37a54f019502973092c88fdc71273df6f3c470",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "variant_id": "benign_holdout_30"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 58,
+        "response_mode": 4,
+        "variant_nonce": "2f90c49208d5ff3a",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "e2662c2a36a067d1bf90d08ff56bb62b3490c2e89a3f94de65ba300b8d056e1d",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "variant_id": "benign_holdout_40"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 68,
+        "response_mode": 4,
+        "variant_nonce": "20b3bce062759dbf",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "02e8d791b7fa834ad9a716b7224d872c7c93e021fa56ba4af2e63db1753789ba",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_002",
+      "variant_id": "benign_holdout_50"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 26,
+        "response_mode": 1,
+        "variant_nonce": "8d67e9d470be6b00",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "9837cab48c213f1f3c09d23bbde171b20d2c39a4824ee1f396f655713f859eee",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "variant_id": "benign_holdout_01"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 36,
+        "response_mode": 1,
+        "variant_nonce": "da3bb3705c618cd7",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "d4418dd20978413a21f150bbc60e86d4c8888ac190c33f4fed20574a903a8332",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "variant_id": "benign_holdout_11"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 46,
+        "response_mode": 1,
+        "variant_nonce": "6647c69821358348",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "e06a206fd20c2abfaf3847deb5d9aab4c8ab96418ddd1f6a97110deceeeb8d3a",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "variant_id": "benign_holdout_21"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 56,
+        "response_mode": 1,
+        "variant_nonce": "870b028b7e72dd5c",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "9c85a4a01667905eccbbe84aa4ae041c7712ce4ab3b1f9a802a54beaca094274",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "variant_id": "benign_holdout_31"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 66,
+        "response_mode": 1,
+        "variant_nonce": "78b7af1a7b7fe866",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "2d5e536bc4cc9043d8e8a7e47107d8975a113dd94b40680cdc6459f1ed359ec5",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_003",
+      "variant_id": "benign_holdout_41"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 27,
+        "response_mode": 2,
+        "variant_nonce": "fe5ab5e8fd3bf12d",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "4508d871314b4ce7f8f4f4dd50803509a45e555c3e225cd32040f6a36ca2f65b",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "variant_id": "benign_holdout_02"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 37,
+        "response_mode": 2,
+        "variant_nonce": "f573830194a7d59a",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "996afd51362f386058dfd374fb3850840ebe09fee04867c6a05e0411fbc1f3cf",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "variant_id": "benign_holdout_12"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 47,
+        "response_mode": 2,
+        "variant_nonce": "88fda1dda63426c4",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "7a3c52552a71867c0c5f1eab49eb660dfc5a68dadc25430930363cc7e6cdaf88",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "variant_id": "benign_holdout_22"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 57,
+        "response_mode": 2,
+        "variant_nonce": "0e58a7e637cdc00d",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "cc680192f0f4f68c50f4aad4db5e1ae95bdc586ff6b31ddabd013454639da3ba",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "variant_id": "benign_holdout_32"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 67,
+        "response_mode": 2,
+        "variant_nonce": "8e67e458cabb9138",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "f80e32d0fd4e8d95f8c966f2ebedab1d14d320ef8b9f9142712b3f61e3546dad",
+      "session_group": "web_probe_generalization",
+      "session_id": "holdout_web_probe_generalization_004",
+      "variant_id": "benign_holdout_42"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 28,
+        "response_mode": 3,
+        "variant_nonce": "8d8a5f98eba9d94f",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "e3e2c1f5a58865e5f6ab3b747ed4156dc23d8130014002b7e27d18bf3c23653a",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "variant_id": "benign_holdout_03"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 38,
+        "response_mode": 3,
+        "variant_nonce": "8e7b2ba604da8561",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "1e67d6e34ae6a01bb329496017730c7f1a61a168a4cb9d518be74fbdb325ae95",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "variant_id": "benign_holdout_13"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 48,
+        "response_mode": 3,
+        "variant_nonce": "cc34ce4d12c3786b",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "ab5904a60bac1784b3960a1b1b6b1bba61e472f3657aeb4408e3e05ee6f5c992",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "variant_id": "benign_holdout_23"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 58,
+        "response_mode": 3,
+        "variant_nonce": "1d645b3d5ff92a0e",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "d82346f4dc0c180060c405da1a1d610243b88c82c29291ebdeca4e1035728e99",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "variant_id": "benign_holdout_33"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 68,
+        "response_mode": 3,
+        "variant_nonce": "cc6282448fe84f85",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "de77aa9b1374d0896f84040e93c8af8f7261b397031fc5f4264d4af9651f5bbd",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_001",
+      "variant_id": "benign_holdout_43"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 29,
+        "response_mode": 4,
+        "variant_nonce": "b27f23bfd12420bf",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "655473e0ab77161545d517ffe353d6232f037a123ad9afd93b86c5b3c1a0820e",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "variant_id": "benign_holdout_04"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 39,
+        "response_mode": 4,
+        "variant_nonce": "dd57c86737cffec1",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "3970b38eeb4d4cf478eb932c8a544460ead106f0035aa31498f7d09baf9d0650",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "variant_id": "benign_holdout_14"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 49,
+        "response_mode": 4,
+        "variant_nonce": "4167125052f66982",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "4d15f1e21e43950795e9a13b8f88a7e0a3a98f2fb2464225e5310bdb8e3b3994",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "variant_id": "benign_holdout_24"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 59,
+        "response_mode": 4,
+        "variant_nonce": "1b9ffc595fb41c4e",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "227cb5f7610b0244109945935a8d72ab918c93d18e90c9a725928bb0c1e6d690",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "variant_id": "benign_holdout_34"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 69,
+        "response_mode": 4,
+        "variant_nonce": "b005ff6fdcd30659",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "c783bbea7430a3235a827fceffc9d36d3fb5be8d55611c75c255fd7ec18d1e7c",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_002",
+      "variant_id": "benign_holdout_44"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 30,
+        "response_mode": 0,
+        "variant_nonce": "5b0653213cd5df1e",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "cb2bfaebbb575261bd6e8d71a951cfbc70f56a76d9bbcef4fd4980d886d166a2",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "variant_id": "benign_holdout_05"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 40,
+        "response_mode": 0,
+        "variant_nonce": "65c08425d21548c0",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "d92606f65dfe5006891b421fe806460463f9b98f718cd3d806f6af00bcf7a230",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "variant_id": "benign_holdout_15"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 50,
+        "response_mode": 0,
+        "variant_nonce": "040a98358c51dd9f",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "dd6a844c3624bd96168abfce6f720b4e25be1ecc66d4a240c58ec14322b1fa87",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "variant_id": "benign_holdout_25"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 60,
+        "response_mode": 0,
+        "variant_nonce": "f423393519ac97a0",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "612a6a6c2f53b050cc5970e58243bdfe3cd15af882f2d61e7186b27d1cc03835",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "variant_id": "benign_holdout_35"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 70,
+        "response_mode": 0,
+        "variant_nonce": "eafe77f3615fb1db",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "3671cde9fc6c8fa11c668979e6a2406d5c829c9a8feb8d0769897da23eba4d3c",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_003",
+      "variant_id": "benign_holdout_45"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 31,
+        "response_mode": 1,
+        "variant_nonce": "92830d1b03d50d43",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "c948c43169cb33f80c1e25c01154c57da40df1c6bc7ac6f817be4f29209fa3c6",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "variant_id": "benign_holdout_06"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 41,
+        "response_mode": 1,
+        "variant_nonce": "98b5a9c2e704fa8b",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "c4db515d45c5f6f523e182651c255fcdcce105dbce9fad3c29fbd224beb9dadb",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "variant_id": "benign_holdout_16"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 51,
+        "response_mode": 1,
+        "variant_nonce": "d0f23549b621339f",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "73a1ed312b65b9e800c718726c62c67b3bab54accfba94c689dedfb18ee4752d",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "variant_id": "benign_holdout_26"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 61,
+        "response_mode": 1,
+        "variant_nonce": "8862267a38c43645",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "67603aa27db285df3d7de90af1e1a0ab61e04efa49c5e3cc98f16d6402c3b3f7",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "variant_id": "benign_holdout_36"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 71,
+        "response_mode": 1,
+        "variant_nonce": "e982e322d079f757",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "1bb75becf6d8a227ca304c09f070f7f91a22d273b97ab1b290fd7dd4f8a8ea5e",
+      "session_group": "background_shift",
+      "session_id": "holdout_background_shift_004",
+      "variant_id": "benign_holdout_46"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 32,
+        "response_mode": 2,
+        "variant_nonce": "f376d51716f45041",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "47330f10f60e6fba62f2de0d623645ff15d5fd38588501cf19d26ef30a484f3c",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "variant_id": "benign_holdout_07"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 42,
+        "response_mode": 2,
+        "variant_nonce": "5a5afe9706054af8",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "00c8d31a241bc34b8c98bbd2a0042c674a96e2c28605b46b6284d8f6b7fe95de",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "variant_id": "benign_holdout_17"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 52,
+        "response_mode": 2,
+        "variant_nonce": "fca88e430bb8697d",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "bc7558fc9f0bc435e371171dcb544cd6d1f9e7158e48992d3a94aef8dca94c2e",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "variant_id": "benign_holdout_27"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 62,
+        "response_mode": 2,
+        "variant_nonce": "5259be5f6e63a8b9",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "5d4bda822bf60e30e760e769d21a93e54c760998646e2ac99dacaedb80919852",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "variant_id": "benign_holdout_37"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 72,
+        "response_mode": 2,
+        "variant_nonce": "6f1634d82a8df608",
+        "workflow": 10
+      },
+      "parameter_vector_sha256": "d4dba0b80ba89976fc232a35ddf8f7d6085004634d57518f5a8d4c87e9d9de1f",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_001",
+      "variant_id": "benign_holdout_47"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 33,
+        "response_mode": 3,
+        "variant_nonce": "0b7bfc36dd3c3dee",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "eb77b2fd8fa028a0863d94aca55149bd86e4ef13073d7f0cd17533c988cbdd68",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "variant_id": "benign_holdout_08"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 43,
+        "response_mode": 3,
+        "variant_nonce": "33d58e764438b685",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "f5ea8fea817e7615bfadc9469d4e29686516d6be934d9b9f52b0190d40f07bb4",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "variant_id": "benign_holdout_18"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 53,
+        "response_mode": 3,
+        "variant_nonce": "391bf57afbc80576",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "a98866cea8cc9f51a4106e481906e6a68de6317effabca289a8a5c0145aacd16",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "variant_id": "benign_holdout_28"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 63,
+        "response_mode": 3,
+        "variant_nonce": "aaefc60c900992a8",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "87a96fc5df253cd960d81a8808e5e788ad15ec9695f29b6adb952e85726f5810",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "variant_id": "benign_holdout_38"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 73,
+        "response_mode": 3,
+        "variant_nonce": "1939fc1e6870b6bd",
+        "workflow": 11
+      },
+      "parameter_vector_sha256": "ac243cfc2db4e3f861698b6bebdbf9402d97f1a89a4b17fed2ccf8e065ab95a8",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_002",
+      "variant_id": "benign_holdout_48"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 34,
+        "response_mode": 4,
+        "variant_nonce": "7d476a363fefcaa8",
+        "workflow": 8
+      },
+      "parameter_vector_sha256": "af8d0476b57cd6ffd35445bcb67869f5a8508b2826f10531b62d4376699828f3",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "variant_id": "benign_holdout_09"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 44,
+        "response_mode": 4,
+        "variant_nonce": "bd11371ffd31b526",
+        "workflow": 6
+      },
+      "parameter_vector_sha256": "5a535ecde3b8a461a1c611bd6bdc1de904864098b99438586e38c527d2b9e613",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "variant_id": "benign_holdout_19"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 54,
+        "response_mode": 4,
+        "variant_nonce": "16ae66502580012c",
+        "workflow": 4
+      },
+      "parameter_vector_sha256": "474b15fe2d778f7a4c8bc0e49639157ca6b0807f869e9d913b034763b789c60d",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "variant_id": "benign_holdout_29"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 3,
+        "pace_ms": 64,
+        "response_mode": 4,
+        "variant_nonce": "8cf263325d22b480",
+        "workflow": 2
+      },
+      "parameter_vector_sha256": "c8572616be6a00456430e76c61cb318a27cddf058b4b7331ac388c31fd0aab56",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "variant_id": "benign_holdout_39"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 1,
+        "pace_ms": 74,
+        "response_mode": 4,
+        "variant_nonce": "257d85cf2c0cf98e",
+        "workflow": 0
+      },
+      "parameter_vector_sha256": "857563cd5225ccf486be212579a5d7be3a3ab29b0e4c068874d867c2d3434712",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_003",
+      "variant_id": "benign_holdout_49"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 35,
+        "response_mode": 0,
+        "variant_nonce": "d074a7fb67b895b7",
+        "workflow": 9
+      },
+      "parameter_vector_sha256": "d8ab04991c4b56c929b03b728ce7e77ac057efec1a6edc31a89d8c2b95176fa0",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "variant_id": "benign_holdout_10"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 45,
+        "response_mode": 0,
+        "variant_nonce": "a0802bcacefb0aef",
+        "workflow": 7
+      },
+      "parameter_vector_sha256": "90ecb4534a38378d5a942b2819abe3788d4ed15b49af22504d90640cc51eff36",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "variant_id": "benign_holdout_20"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 55,
+        "response_mode": 0,
+        "variant_nonce": "535b5e0e3354cfe5",
+        "workflow": 5
+      },
+      "parameter_vector_sha256": "8643b2c5b75bf89d27da0d362a64d5410cde42a3f8436d22f8eb54c549f47271",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "variant_id": "benign_holdout_30"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 4,
+        "pace_ms": 65,
+        "response_mode": 0,
+        "variant_nonce": "f191fb9128100ad4",
+        "workflow": 3
+      },
+      "parameter_vector_sha256": "06e7b48c365de2e7f0cf1f2a2b0fb9060fa2cd906dbeda4ebe4c0b8ab489ea9b",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "variant_id": "benign_holdout_40"
+    },
+    {
+      "parameter_vector": {
+        "background_level": 2,
+        "pace_ms": 75,
+        "response_mode": 0,
+        "variant_nonce": "44446e17064ba4a7",
+        "workflow": 1
+      },
+      "parameter_vector_sha256": "9c981f6a37469c15dff3bdc20a004d6f42f519c1c66d90464addbd017dba1f19",
+      "session_group": "runtime_resilience",
+      "session_id": "holdout_runtime_resilience_004",
+      "variant_id": "benign_holdout_50"
+    }
+  ],
+  "schema_version": "v03155_benign_variants_v1"
+}

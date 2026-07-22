@@ -1,0 +1,12 @@
+{
+  "blind_access_audit_passed": true,
+  "candidate_selection_read_count": 0,
+  "episode_label_read_count": 0,
+  "historical_metric_read_count": 0,
+  "label_read_count": 0,
+  "policy_result_read_count": 0,
+  "post_label_artifact_read_count": 0,
+  "scenario_class_read_count": 0,
+  "schema_version": "v03155_blind_access_audit_v1",
+  "threshold_selection_read_count": 0
+}

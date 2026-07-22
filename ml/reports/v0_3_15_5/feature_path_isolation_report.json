@@ -1,0 +1,11 @@
+{
+  "baseline_feature_row_count": 0,
+  "baseline_path": "not_executed_baseline_ineligible",
+  "baseline_prediction_count": 0,
+  "candidate_first": true,
+  "candidate_path": "network_features_v2",
+  "feature_path_isolation_passed": true,
+  "schema_version": "v03155_feature_path_isolation_v1",
+  "shared_mutable_state": false,
+  "zeek_runs_per_capture": 1
+}
