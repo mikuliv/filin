@@ -20,6 +20,7 @@ jobs:
       - run: python -m pytest ml/tests/test_v03154_controlled_redevelopment.py -q
       - run: python -m pytest ml/tests/test_v03155_independent_holdout.py -q
       - run: python -m pytest ml/tests/test_v031551_runtime_recovery.py -q
+      - run: python -m pytest ml/tests/test_v0316_staging_transport.py -q
       - run: python -m unittest discover -s backend/tests -p "test_*.py"
       - run: python tools/docs/validate_project_status.py --strict
       - run: python tools/audit/validate_v03151_bundle.py --manifest ml/reports/v0_3_15_1/v0_3_15_1_bundle_manifest.yaml --detached ml/reports/v0_3_15_1/v0_3_15_1_bundle_manifest.sha256 --root .
@@ -32,4 +33,5 @@ jobs:
       - run: python tools/audit/validate_v03155_bundle.py --manifest ml/reports/v0_3_15_5/v0_3_15_5_bundle_manifest.yaml --detached ml/reports/v0_3_15_5/v0_3_15_5_bundle_manifest.sha256 --root .
       - run: python tools/docs/validate_v031551_summary.py --strict
       - run: python tools/audit/validate_v031551_bundle.py --manifest ml/reports/v0_3_15_5_1/v0_3_15_5_1_bundle_manifest.yaml --detached ml/reports/v0_3_15_5_1/v0_3_15_5_1_bundle_manifest.sha256 --root .
+      - run: python tools/audit/validate_v0316_bundle.py --manifest ml/reports/v0_3_16/v0_3_16_bundle_manifest.yaml --detached ml/reports/v0_3_16/v0_3_16_bundle_manifest.sha256 --root .
       - run: git diff --check

@@ -1,0 +1,1 @@
+"""Долговечный staging connector."""

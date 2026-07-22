@@ -1,0 +1,83 @@
+name: filin-v0316-staging
+services:
+  reference-receiver:
+    image: filin-staging-v0316:local
+    pull_policy: never
+    build: {context: .., dockerfile: staging/Dockerfile, network: none}
+    command: ["staging.reference_receiver.app"]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - receiver_data:/var/lib/filin
+      - ${FILIN_V0316_CERT_DIR:-../runtime/v0_3_16/tls}/receiver:/run/tls:ro
+    environment:
+      TLS_CERT: /run/tls/server.pem
+      TLS_KEY: /run/tls/server-key.pem
+      TLS_CLIENT_CA: /run/tls/client-ca.pem
+      RECEIVER_INSTANCE_ID: receiver_v0316_campaign
+    networks: [filin_connector_receiver_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+  staging-connector:
+    image: filin-staging-v0316:local
+    pull_policy: never
+    command: ["staging.connector.app"]
+    depends_on: [reference-receiver]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - connector_data:/var/lib/filin
+      - ${FILIN_V0316_CERT_DIR:-../runtime/v0_3_16/tls}/connector:/run/tls:ro
+    environment:
+      INGRESS_TLS_CERT: /run/tls/ingress-server.pem
+      INGRESS_TLS_KEY: /run/tls/ingress-server-key.pem
+      INGRESS_TLS_CLIENT_CA: /run/tls/ingress-client-ca.pem
+      DELIVERY_TLS_CERT: /run/tls/delivery-client.pem
+      DELIVERY_TLS_KEY: /run/tls/delivery-client-key.pem
+      DELIVERY_TLS_CA: /run/tls/delivery-server-ca.pem
+      CONNECTOR_INSTANCE_ID: connector_v0316_campaign
+    networks: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+  sensor-runtime:
+    image: filin-staging-v0316:local
+    pull_policy: never
+    command: ["staging.sensor_runtime", "/run/input/events.jsonl"]
+    depends_on: [staging-connector]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    environment:
+      TLS_CERT: /run/tls/client.pem
+      TLS_KEY: /run/tls/client-key.pem
+      TLS_CA: /run/tls/server-ca.pem
+      SENSOR_INSTANCE_ID: sensor_v0316_campaign
+      SENSOR_TRACE: /var/lib/filin/sensor_trace.jsonl
+    volumes:
+      - ${FILIN_V0316_CERT_DIR:-../runtime/v0_3_16/tls}/sensor:/run/tls:ro
+      - ${FILIN_V0316_INPUT_DIR:-../runtime/v0_3_16}:/run/input:ro
+      - sensor_data:/var/lib/filin
+    networks: [filin_sensor_connector_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 64
+    restart: "no"
+networks:
+  filin_sensor_connector_internal: {internal: true}
+  filin_connector_receiver_internal: {internal: true}
+volumes:
+  sensor_data: {}
+  connector_data: {}
+  receiver_data: {}
