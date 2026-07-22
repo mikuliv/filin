@@ -1,0 +1,111 @@
+schema_version: v03153_protocol_v1
+stage: v0.3.15.3
+title_ru: "Анализ научной регрессии и проектирование следующего цикла разработки и проверки"
+status: frozen_before_analysis
+source_git_commit: a1959cddd34a46da100b856d7361ec940edb0299
+purpose: >-
+  Установить доказуемые причины отрицательного научного результата v0.3.15.2,
+  отделить наблюдаемые факты от гипотез и подготовить следующий заранее
+  фиксируемый протокол без изменения исторических результатов.
+historical_anchors:
+  v03152_bundle_manifest_sha256: 49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda
+  v03152_policy_sha256: 87cd229d9032c648984038fd531eddab48d5c66fe3ca846cefbe092552505640
+  v03152_protocol_revision_2_sha256: 43f01cd9a745440bdc995ec1ebccf25fc4bddbc8e90fa6ee784c3411499f4750
+  campaign_commitment: 8e85e86b92cc084a2af2cedf4300567e187c4706a24efc41d963be8afb82f16f
+  immutable_prediction_manifest_sha256: da2a25fd527334616c07ade4d80d98c92d7f267cbb076a4a3cbc47732cc848dc
+  event_set_sha256: df39027afa459ccf3051635bbf6788e9a2ead39eeae552c79a5bc03330fa4c68
+  event_hash_chain_root: 6e2a5ad715c02264f84fb686bb0f1002f6e432431fd6d67001b7a989d76761f0
+  claim_evidence_ledger_sha256: 870d71fc919158506242f4c1ddfe2cc67e4959731df9d3a0bd5bf2316516ab46
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+analyzed_stages: [v0.3.11, v0.3.12, v0.3.12.1, v0.3.12.2, v0.3.13, v0.3.14, v0.3.15, v0.3.15.1, v0.3.15.2]
+allowed_evidence:
+  - tracked immutable historical artifacts and their manifests
+  - gitignored v0.3.15.2 runtime artifacts whose hashes match tracked evidence
+  - deterministic reconstruction explicitly marked reconstructable
+  - new synthetic diagnostic micro-fixtures in a diagnostic namespace
+prohibited_actions:
+  - fit, partial_fit, calibration fit, conformal fit or feature selection
+  - threshold, hyperparameter or state-policy search
+  - modification or reinterpretation of frozen v0.3.15.2 metrics
+  - reuse of v0.3.15.2 as an independent test or blind holdout
+  - backend writes, production connections, network blocking or automatic enforcement
+  - pull, merge, rebase, history rewrite or push
+root_cause_categories:
+  - scenario_label_mismatch
+  - scenario_generation_defect
+  - capture_generation_defect
+  - zeek_processing_mismatch
+  - feature_extraction_defect
+  - feature_semantics_change
+  - feature_distribution_shift
+  - gate_false_negative
+  - subtype_false_negative
+  - calibration_suppression
+  - conformal_abstention
+  - state_policy_suppression
+  - episode_mapping_error
+  - metrics_aggregation_error
+  - instrumentation_evidence_gap
+  - mixed_cause
+  - unknown
+confidence_rules:
+  confirmed: direct evidence, reproducible mechanism, no material counter-evidence, and artifact SHA-256
+  probable: evidence-consistent mechanism with indirect support and remaining alternatives
+  possible: plausible hypothesis with insufficient evidence
+  unknown: evidence does not support a narrower causal classification
+required_analyses:
+  - historical integrity and evidence inventory
+  - 120-episode decision-path ledger
+  - auth_failures and five-class scenario/label consistency
+  - Zeek compatibility and all 51 feature semantics
+  - available feature distributions and class-specific shifts
+  - model, calibration, conformal, state and episode decomposition
+  - failure clustering, CPU semantics and historical evidence gaps
+  - additive latency, ACK and CPU instrumentation equivalence
+  - root-cause and next-cycle decision matrices
+completeness_criteria:
+  episode_count: 120
+  attack_episode_trace_count: 60
+  every_missed_or_review_episode_classified: true
+  missing_evidence_explicit: true
+  causal_claims_have_evidence_confidence_counter_evidence: true
+  required_reports_and_valid_bundle_present: true
+stage_policy:
+  pass_means: complete, evidence-linked and honest analysis; unknown causes are permitted
+  fail_if:
+    - categorical causal claims lack supporting evidence
+    - historical v0.3.15.2 is modified or its negative result is rewritten
+    - required analysis, future instrumentation contract, tests or bundle is incomplete
+post_hoc_diagnostic_inference:
+  default_source: immutable stored predictions
+  allowed: [raw_score_reproduction, one_feature_perturbation, bounded_local_sensitivity, counterfactual_feature_inspection, class_score_decomposition]
+  namespace: diagnostic_only
+  may_affect_historical_metrics_or_readiness: false
+  threshold_search_count: 0
+  fit_call_count: 0
+  feature_selection_count: 0
+diagnostic_micro_fixtures:
+  deterministic: true
+  synthetic_only: true
+  raw_outputs_gitignored: true
+  use_for_candidate_quality: false
+  tracked_outputs: [description, hashes, aggregated_results]
+next_protocol_candidate_requirements:
+  status: proposed_not_frozen
+  new_independent_holdout_required: true
+  grouped_split_required: true
+  leakage_controls_required: true
+  frozen_v0311_retained_as_baseline: true
+  additive_latency_ack_cpu_instrumentation_required: true
+readiness_policy:
+  candidate_ready_for_v0_3_16_staging_connector_readiness: false
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  production_ready: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+conclusion_limits:
+  - Historical observations are not evidence of quality after any future change.
+  - Diagnostic counterfactuals are hypotheses and cannot replace frozen metrics.
+  - A new candidate or policy requires a new independent prospective holdout.
+  - v0.3.16 is prohibited regardless of this stage result.
