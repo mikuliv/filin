@@ -1,0 +1,8 @@
+{
+  "connector_batch_chain_root": "7b89cf0937a68fa2cdf60f55fc0c103a7941c5f8c7f7452ca65042644d3f01b1",
+  "connector_journal_chain_root": "d89eb28cfd788664d43120567e6b5084f1d6904cab53f42a9552bc1f7d9b760c",
+  "hash_chain_policy_passed": true,
+  "receiver_commit_chain_root": "7b89cf0937a68fa2cdf60f55fc0c103a7941c5f8c7f7452ca65042644d3f01b1",
+  "schema_version": "v0316_hash_chain_v1",
+  "sensor_hash_chain_root": "99dd6f72560ed9655343fd613fa4a5ec7bd1878547dcf9f913388fea421fa5d3"
+}

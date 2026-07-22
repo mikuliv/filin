@@ -1,0 +1,14 @@
+{
+  "combined_peak_rss_mib": 36.82,
+  "connector_normalized_cpu_average": 0.23,
+  "connector_normalized_cpu_p95": 0.23,
+  "connector_peak_rss_mib": 19.69,
+  "receiver_normalized_cpu_average": 0.69,
+  "receiver_normalized_cpu_p95": 0.69,
+  "receiver_peak_rss_mib": 17.13,
+  "resource_policy_passed": true,
+  "schema_version": "v0316_resource_v1",
+  "swap_growth_mib": 0,
+  "tls_session_reuse": true,
+  "unbounded_growth": false
+}

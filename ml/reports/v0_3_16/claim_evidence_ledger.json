@@ -1,0 +1,750 @@
+{
+  "claims": [
+    {
+      "claim_id": "V0316-C001",
+      "claim_text": "historical_integrity",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C002",
+      "claim_text": "candidate_identity",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C003",
+      "claim_text": "connector_separation",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C004",
+      "claim_text": "receiver_separation",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C005",
+      "claim_text": "backend_independence",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C006",
+      "claim_text": "network_isolation",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C007",
+      "claim_text": "no_published_ports",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C008",
+      "claim_text": "container_hardening",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C009",
+      "claim_text": "mutual_tls",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C010",
+      "claim_text": "tls_1_3",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C011",
+      "claim_text": "certificate_validation",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C012",
+      "claim_text": "certificate_rotation",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C013",
+      "claim_text": "connector_durable_ingress",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C014",
+      "claim_text": "receiver_durable_commit",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C015",
+      "claim_text": "ack_after_commit",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C016",
+      "claim_text": "idempotency",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C017",
+      "claim_text": "campaign_independence",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C018",
+      "claim_text": "no_fit",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C019",
+      "claim_text": "prediction_integrity",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C020",
+      "claim_text": "source_connector_receiver_equality",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C021",
+      "claim_text": "fault_campaign",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C022",
+      "claim_text": "crash_recovery",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C023",
+      "claim_text": "backpressure",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C024",
+      "claim_text": "hash_chains",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C025",
+      "claim_text": "end_to_end_latency",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C026",
+      "claim_text": "privacy",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C027",
+      "claim_text": "strict_resume",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "4b697be6b83f13835fecb351ac44a3b9f4b03ad9abdeaebe72f0bb980e71b09a"
+      ]
+    },
+    {
+      "claim_id": "V0316-C028",
+      "claim_text": "v0317_readiness",
+      "claim_type": "readiness_decision",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_16_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "7815a6a9ce07a66a97fc23f1692e4168ade90d1df73e4992d015587260bcef52"
+      ]
+    },
+    {
+      "claim_id": "V0316-C029",
+      "claim_text": "shadow_prohibition",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_16_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "7815a6a9ce07a66a97fc23f1692e4168ade90d1df73e4992d015587260bcef52"
+      ]
+    },
+    {
+      "claim_id": "V0316-C030",
+      "claim_text": "backend_prohibition",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_16_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "7815a6a9ce07a66a97fc23f1692e4168ade90d1df73e4992d015587260bcef52"
+      ]
+    },
+    {
+      "claim_id": "V0316-C031",
+      "claim_text": "production_prohibition",
+      "claim_type": "observed_fact",
+      "component_scope": "staging",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic staging trial",
+        "not shadow mode or external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_16.finalize_stage",
+      "producing_test": "ml/tests/test_v0316_staging_transport.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_16_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "7815a6a9ce07a66a97fc23f1692e4168ade90d1df73e4992d015587260bcef52"
+      ]
+    }
+  ],
+  "schema_version": "v0316_claim_ledger_v1",
+  "unsupported_positive_claim_count": 0
+}

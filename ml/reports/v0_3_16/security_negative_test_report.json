@@ -1,0 +1,91 @@
+{
+  "canonical_receiver_entry_count": 0,
+  "certificate_negative_tests_passed": true,
+  "failed_count": 0,
+  "passed_count": 16,
+  "schema_version": "v0316_security_negative_v1",
+  "security_negative_tests_passed": true,
+  "test_count": 16,
+  "tests": [
+    {
+      "injection_count": 1,
+      "name": "expired_certificate",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "not_yet_valid_certificate",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "untrusted_ca",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_san",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_eku",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "revoked_certificate",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "missing_client_certificate",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "plaintext",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "tls_downgrade",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "weak_cipher",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_batch_hash",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_event_hash",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_registry_commitment",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "wrong_candidate",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "partial_ack",
+      "rejected": true
+    },
+    {
+      "injection_count": 1,
+      "name": "idempotency_collision",
+      "rejected": true
+    }
+  ]
+}

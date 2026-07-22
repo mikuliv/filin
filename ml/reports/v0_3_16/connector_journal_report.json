@@ -1,0 +1,17 @@
+{
+  "ack_after_commit_passed": true,
+  "busy_timeout_ms": 5000,
+  "component": "connector",
+  "connector_checkpoint_count": 46,
+  "connector_commit_count": 46,
+  "connector_journal_event_count": 2280,
+  "durable_storage_passed": true,
+  "foreign_keys": true,
+  "receiver_ack_count": 46,
+  "receiver_batch_count": 46,
+  "receiver_commit_count": 46,
+  "receiver_event_count": 2280,
+  "schema_version": "v0316_storage_v1",
+  "sqlite_wal": true,
+  "synchronous": "FULL"
+}

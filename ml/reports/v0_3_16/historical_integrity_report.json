@@ -1,0 +1,12 @@
+{
+  "backend_tree_after": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_before": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_unchanged": true,
+  "candidate_identity_unchanged": true,
+  "candidate_registry_unchanged": true,
+  "historical_stages_unchanged": true,
+  "revision_1_evidence_used": false,
+  "revision_1_invalidated": true,
+  "schema_version": "v0316_historical_integrity_v1",
+  "shadow_event_v2_unchanged": true
+}

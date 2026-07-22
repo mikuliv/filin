@@ -1,0 +1,9 @@
+{
+  "backend_integration_allowed": false,
+  "candidate_ready_for_v0_3_17_controlled_local_shadow_rehearsal": true,
+  "next_allowed_stage": "v0.3.17",
+  "production_ready": false,
+  "schema_version": "v0316_promotion_v1",
+  "shadow_mode_allowed": false,
+  "stage_passed": true
+}

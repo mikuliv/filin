@@ -1,0 +1,8 @@
+{
+  "crash_points_tested": 7,
+  "crash_recovery_passed": true,
+  "pending_journal_replayed": true,
+  "restart_invariance_passed": true,
+  "schema_version": "v0316_crash_recovery_v1",
+  "wal_replay_passed": true
+}

@@ -1,6 +1,6 @@
 # Текущие подтверждённые возможности
 
-Статус v0.3.15.5.1: scientific evidence v0.3.15.5 сохранена без пересчёта, а runtime compatibility того же кандидата подтверждена на 2 400 новых captures и 2 280 label-free predictions/events. Staging-only readiness для v0.3.16 подтверждена; shadow mode, backend integration и production не подтверждены.
+Статус v0.3.16: неизменный кандидат прошёл локальный isolated staging transport trial. 2 280 label-free событий доставлены через durable connector в отдельный reference receiver; source/connector/receiver equality, 24/24 faults, TLS, latency, performance, privacy и resume gates пройдены. Reference receiver не является backend; shadow mode, backend integration и production не подтверждены.
 
 Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -20,6 +20,7 @@
 - behavioral fault, crash, privacy, resume и topology tests.
 - candidate-aware `shadow_event_v2`, frozen registry и compatibility matrix;
 - prospective runtime v0.3.15.5.1: 2 280/2 280 reconciled events и 12/12 fault-oracles.
+- isolated staging transport v0.3.16: 2 280/2 280 durable receiver events, 46 batch/commit/ACK/checkpoint и 24/24 fault-oracles.
 
 ## Переоценённый scope
 
@@ -33,4 +34,4 @@ v0.3.15.4 исправил подтверждённые scenario/feature defects
 
 ## Не разрешено
 
-Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.16 разрешён только как локальная staging-only разработка без подключения к существующему backend.
+Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.17 разрешён только как следующий локальный controlled rehearsal с синтетическим или воспроизводимым трафиком.

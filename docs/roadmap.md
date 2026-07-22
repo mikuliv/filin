@@ -1,6 +1,6 @@
 # Дорожная карта
 
-Статус v0.3.15.5.1: candidate-compatible contract и prospective runtime campaign пройдены. Composite promotion evidence положительна. Следующий допустимый этап — v0.3.16, только локальная staging-only разработка.
+Статус v0.3.16: isolated staging connector/reference receiver trial пройден. Следующий допустимый этап — v0.3.17, только локальный controlled rehearsal; это не разрешение shadow mode или backend integration.
 
 Источник текущего решения: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -31,11 +31,12 @@
 - v0.3.15.4 — completed controlled redevelopment; candidate ready only for v0.3.15.5 prospective evaluation.
 - v0.3.15.5 — completed independent holdout; scientific gates passed, runtime contract failed, candidate not promoted.
 - v0.3.15.5.1 — completed prospective runtime recovery; contract, registry, 12/12 faults и composite promotion passed.
+- v0.3.16 — completed isolated staging transport; 2 280/2 280 events, 24/24 faults и 59/59 gates passed.
 <!-- stage-history:end -->
 
 ## Ближайшая работа
 
-v0.3.16 разрешён только для разработки локального staging-only connector и reference receiver в изолированной среде.
+v0.3.17 разрешён только для локального controlled shadow rehearsal с синтетическим или воспроизводимым трафиком. Реальный shadow mode, backend integration и production остаются запрещены.
 
 ## v0.3.16
 

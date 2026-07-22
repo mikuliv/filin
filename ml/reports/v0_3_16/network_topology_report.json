@@ -1,0 +1,13 @@
+{
+  "direct_sensor_receiver_connection_blocked": true,
+  "docker_internal_networks_passed": true,
+  "external_route_count": 0,
+  "host_network_usage_count": 0,
+  "internal_network_count": 2,
+  "network_names": [
+    "filin_sensor_connector_internal",
+    "filin_connector_receiver_internal"
+  ],
+  "published_port_count": 0,
+  "schema_version": "v0316_topology_v1"
+}

@@ -1,0 +1,80 @@
+{
+  "ca_count": 2,
+  "certificate_count": 6,
+  "certificate_serials": [
+    3163001,
+    3163002,
+    3164001,
+    3164002,
+    3164003,
+    3164004
+  ],
+  "private_key_count_tracked": 0,
+  "private_key_git_count": 0,
+  "public_artifacts": [
+    {
+      "role": "ca-connector-receiver/ca.pem",
+      "sha256": "e0e8b7bbb1594ebd62c0d3c4dca18f30c4a65267337d11cda5693c1a22d196bb",
+      "size": 498
+    },
+    {
+      "role": "ca-sensor-connector/ca.pem",
+      "sha256": "bc3e872005c3b6032d8804977b221b280dead927ab3667c1a03e1e06796ac1e5",
+      "size": 494
+    },
+    {
+      "role": "connector/delivery-client-b.pem",
+      "sha256": "5df5a941d2216fd117b64813dba6fc0b2da27aae1d7e857e20cf8cf2fb602c8e",
+      "size": 572
+    },
+    {
+      "role": "connector/delivery-client.pem",
+      "sha256": "5506222ebf03e83d5d122ad1d1f11e3c8083902b265eb6b024381c37bf557154",
+      "size": 572
+    },
+    {
+      "role": "connector/delivery-server-ca.pem",
+      "sha256": "e0e8b7bbb1594ebd62c0d3c4dca18f30c4a65267337d11cda5693c1a22d196bb",
+      "size": 498
+    },
+    {
+      "role": "connector/ingress-client-ca.pem",
+      "sha256": "bc3e872005c3b6032d8804977b221b280dead927ab3667c1a03e1e06796ac1e5",
+      "size": 494
+    },
+    {
+      "role": "connector/ingress-server.pem",
+      "sha256": "b143ed6c5b401f624e69205fb36f5024cb3464e9c5d9a3ea96c0ff521a6a5590",
+      "size": 568
+    },
+    {
+      "role": "receiver/client-ca.pem",
+      "sha256": "e0e8b7bbb1594ebd62c0d3c4dca18f30c4a65267337d11cda5693c1a22d196bb",
+      "size": 498
+    },
+    {
+      "role": "receiver/server-b.pem",
+      "sha256": "94fa4aa6722c0fdcbe922bcd36d6864481fa43c584c0eecb35aee0f6d57fb86a",
+      "size": 564
+    },
+    {
+      "role": "receiver/server.pem",
+      "sha256": "9e1c9a67314547ac943619ccce0775c28f7904a16247a19598d0e4674e12a7fa",
+      "size": 560
+    },
+    {
+      "role": "sensor/client.pem",
+      "sha256": "a37c72dcf2663f184ac3b45f2ffd37b3f3f6e1beda44d1e2703ff869092fb683",
+      "size": 552
+    },
+    {
+      "role": "sensor/server-ca.pem",
+      "sha256": "bc3e872005c3b6032d8804977b221b280dead927ab3667c1a03e1e06796ac1e5",
+      "size": 494
+    }
+  ],
+  "public_fingerprint_count": 12,
+  "schema_version": "v0316_certificate_manifest_v1",
+  "synthetic_only": true,
+  "tls_version": "TLSv1.3"
+}

@@ -1,6 +1,6 @@
 # Платформа «Филин»
 
-> Статус v0.3.15.5.1: candidate-compatible runtime trial завершён положительно. Неизменная scientific evidence v0.3.15.5 и новая prospective runtime evidence образуют положительное composite promotion evidence для `v03154:65a3dd912d845bc1`. Разрешён только следующий локальный staging-only этап v0.3.16; shadow mode, backend integration и production запрещены.
+> Статус v0.3.16: изолированный staging transport trial завершён положительно для неизменного `v03154:65a3dd912d845bc1`. Разрешена только подготовка локального controlled rehearsal v0.3.17; shadow mode, backend integration и production запрещены.
 
 Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
@@ -10,7 +10,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.5.1. Новый `shadow_event_v2` отделяет структуру события от авторизации кандидата frozen registry. Двенадцать независимых runtime-сессий завершены, fault subset пройден 12/12. Следующий разрешённый этап — локальный staging-only v0.3.16. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.16. Три отдельных контейнера передали 2 280 неизменённых `shadow_event_v2` через две internal mTLS/TLS 1.3 сети; source/connector/receiver множества совпали, fault campaign пройдена 24/24. Следующий разрешённый этап — локальный controlled rehearsal v0.3.17. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 

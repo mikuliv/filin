@@ -16,6 +16,7 @@ REQUIRED = CORE_DOCS + [
     ROOT / "docs/experiments/v0_3_15.md", ROOT / "docs/experiments/v0_3_15_1.md",
     ROOT / "docs/experiments/v0_3_15_2.md",
     ROOT / "docs/experiments/v0_3_15_3.md", ROOT / "docs/experiments/v0_3_15_4.md", ROOT / "docs/experiments/v0_3_15_4_proposed.md", ROOT / "docs/experiments/v0_3_15_5.md", ROOT / "docs/experiments/v0_3_15_5_1.md",
+    ROOT / "docs/experiments/v0_3_16.md",
     ROOT / "docs/contracts/index.md", ROOT / "docs/methodology/index.md",
     ROOT / "ml/reports/v0_3_15_1/v0_3_14_claim_reassessment.json",
     ROOT / "ml/reports/v0_3_15_1/v0_3_15_revalidation.json",
@@ -24,6 +25,7 @@ REQUIRED = CORE_DOCS + [
     ROOT / "ml/reports/v0_3_15_4/v0_3_15_4_policy_result.json",
     ROOT / "ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json",
     ROOT / "ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json",
+    ROOT / "ml/reports/v0_3_16/v0_3_16_policy_result.json",
 ]
 
 
@@ -50,7 +52,7 @@ def validate() -> dict:
     errors = []
     status = yaml.safe_load(STATUS.read_text(encoding="utf-8"))
     expected = {
-        "current_completed_stage": "v0.3.15.5.1", "current_candidate": "v03154:65a3dd912d845bc1",
+        "current_completed_stage": "v0.3.16", "current_candidate": "v03154:65a3dd912d845bc1",
         "latest_independent_model_holdout": "v0.3.15.5", "latest_runtime_trial": "v0.3.15.5.1",
         "latest_corrective_audit": "v0.3.15.1", "latest_regression_analysis": "v0.3.15.3", "production_ready": False, "shadow_mode_ready": False,
         "backend_integration_ready": False, "automatic_enforcement_ready": False,
@@ -97,13 +99,16 @@ def validate() -> dict:
     policy153_path = ROOT / "ml/reports/v0_3_15_3/v0_3_15_3_policy_result.json"
     if policy153_path.is_file():
         policy153 = json.loads(policy153_path.read_text(encoding="utf-8"))
-        if status.get("next_allowed_stage") != "v0.3.16": errors.append("next_stage_policy_mismatch")
+        latest316 = ROOT / "ml/reports/v0_3_16/v0_3_16_policy_result.json"
+        expected_next = "v0.3.17" if latest316.is_file() and json.loads(latest316.read_text(encoding="utf-8")).get("v0316_stage_passed") else "v0.3.16"
+        if status.get("next_allowed_stage") != expected_next: errors.append("next_stage_policy_mismatch")
         if policy153.get("selected_next_cycle_track") != "Track E — mixed redevelopment": errors.append("selected_track_mismatch")
         if any(policy153.get(key) is not False for key in ("candidate_ready_for_v0_3_16_staging_connector_readiness", "candidate_ready_for_shadow_mode", "sensor_ready_for_backend_integration", "production_ready")): errors.append("v03153_readiness_mismatch")
     if "v0.3.15.3" not in versions: errors.append("v03153_stage_missing")
     if "v0.3.15.4" not in versions: errors.append("v03154_stage_missing")
     if "v0.3.15.5" not in versions: errors.append("v03155_stage_missing")
     if "v0.3.15.5.1" not in versions: errors.append("v031551_stage_missing")
+    if "v0.3.16" not in versions: errors.append("v0316_stage_missing")
     policy155_path = ROOT / "ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json"
     if policy155_path.is_file():
         policy155 = json.loads(policy155_path.read_text(encoding="utf-8"))

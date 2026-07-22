@@ -1,0 +1,9 @@
+{
+  "behavioral_test_cases_executed": 64,
+  "behavioral_test_cases_required": 56,
+  "behavioral_tests_passed": true,
+  "failed": 0,
+  "schema_version": "v0316_test_report_v1",
+  "skipped_mandatory": 0,
+  "status": "passed"
+}

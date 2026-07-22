@@ -1,0 +1,14 @@
+{
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "duplicate_prediction_count": 0,
+  "inference_call_count": 1,
+  "inference_seconds": 2.646154199999728,
+  "labels_not_used": true,
+  "missing_prediction_count": 0,
+  "ordered_prediction_hash_root": "c39bb95b4de82153f0574d956049c980396ddff91d79e6551f38d566fc827db3",
+  "prediction_count": 2280,
+  "prediction_manifest_sha256": "aca1b3fb70a90520439435b12b203ae882352187e5ff63550ed3d21eae22d781",
+  "repeated_inference_count": 0,
+  "schema_version": "v031551_prediction_manifest_v1",
+  "unique_prediction_count": 2280
+}

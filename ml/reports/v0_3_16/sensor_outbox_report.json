@@ -1,0 +1,7 @@
+{
+  "acknowledged_event_count": 2280,
+  "compaction_after_ack": true,
+  "durable_event_count": 2280,
+  "pending_event_count": 0,
+  "schema_version": "v0316_sensor_outbox_v1"
+}

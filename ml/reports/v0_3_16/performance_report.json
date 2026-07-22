@@ -1,0 +1,13 @@
+{
+  "connector_ingress_ack_p95_ms": 465.39336004999996,
+  "connector_to_receiver_p95_ms": 269.279179,
+  "end_to_end_latency_policy_passed": true,
+  "ordering_violation_count": 0,
+  "performance_policy_passed": true,
+  "receiver_durable_throughput": 201.57901450084051,
+  "schema_version": "v0316_performance_v1",
+  "sensor_to_receiver_p50_ms": 899.6396295,
+  "sensor_to_receiver_p95_ms": 1436.8175190499999,
+  "sensor_to_receiver_p99_ms": 1581.17267421,
+  "trace_count": 2280
+}

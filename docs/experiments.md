@@ -132,3 +132,7 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 ## v0.3.15.5.1
 
 [Candidate-compatible runtime recovery trial](experiments/v0_3_15_5_1.md) сохранил отрицательный overall result v0.3.15.5, создал `shadow_event_v2` и frozen registry, затем провёл 12 новых label-free runtime-сессий. Reconciliation 2 280/2 280 и faults 12/12 пройдены; candidate promoted только для допуска к локальному staging-only v0.3.16.
+
+## v0.3.16
+
+[Isolated staging connector and reference receiver](experiments/v0_3_16.md) завершил revision 2 на 12 новых сессиях. 2 280/2 280 событий прошли durable connector и отдельный reference receiver, faults 24/24 и все 59 gates пройдены. Разрешена только подготовка локального v0.3.17; shadow mode, backend и production запрещены.

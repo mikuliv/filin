@@ -1,0 +1,227 @@
+{
+  "fault_campaign_passed": true,
+  "fault_failed_count": 0,
+  "fault_passed_count": 24,
+  "fault_scenario_count": 24,
+  "fault_unsupported_count": 0,
+  "scenarios": [
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "receiver_unavailable",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connection_timeout",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connection_reset",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "http_429_retry_after",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "http_503",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "slow_receiver",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "malformed_ack",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "unknown_ack",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "expired_client_certificate",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "untrusted_certificate",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "wrong_receiver_san",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "missing_client_certificate",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "plaintext_attempt",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "certificate_rotation",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connector_crash_before_journal_commit",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connector_crash_after_journal_before_ingress_ack",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connector_crash_after_send_before_receiver_ack",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "receiver_crash_before_commit",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "receiver_crash_after_commit_before_ack",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "receiver_restart_wal",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "connector_restart_pending_journal",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "receiver_storage_temporarily_unavailable",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "duplicate_batch",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    },
+    {
+      "effect_observed": true,
+      "evidence": "behavioral fixture and durable storage snapshot",
+      "fault_name": "bounded_queue_overload",
+      "injection_count": 1,
+      "oracle": "bounded retry, durable replay, strict rejection or idempotent duplicate",
+      "passed": true,
+      "unsupported": false
+    }
+  ],
+  "schema_version": "v0316_fault_result_v1",
+  "unknown_fault_defaults_to_healthy": false
+}

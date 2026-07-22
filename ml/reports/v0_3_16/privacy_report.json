@@ -1,0 +1,8 @@
+{
+  "negative_fixture_detection_rate": 1.0,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 0,
+  "privacy_policy_passed": true,
+  "schema_version": "v0316_privacy_v1",
+  "secret_finding_count": 0
+}

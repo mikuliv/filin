@@ -1,0 +1,10 @@
+{
+  "batch_request_count": 46,
+  "batch_size_limit": 50,
+  "bounded_queue": true,
+  "observed_max_batch_size": 50,
+  "real_concurrency": true,
+  "schema_version": "v0316_batching_v1",
+  "token_bucket": true,
+  "worker_count": 2
+}

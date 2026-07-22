@@ -1,0 +1,10 @@
+{
+  "ack_after_commit_passed": true,
+  "canonical_body_hash": true,
+  "contract": "receiver_batch_ack_v1",
+  "contract_passed": true,
+  "max_batch_size": 50,
+  "registry_commitment_sha256": "e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c",
+  "schema_version": "v0316_contract_result_v1",
+  "strict_schema": true
+}

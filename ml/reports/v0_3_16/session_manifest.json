@@ -1,0 +1,53 @@
+{
+  "schema_version": "v0316_session_manifest_v1",
+  "sessions": [
+    {
+      "seed": 25101,
+      "session_id": "staging_baseline_r2_001"
+    },
+    {
+      "seed": 25102,
+      "session_id": "staging_baseline_r2_002"
+    },
+    {
+      "seed": 25103,
+      "session_id": "staging_baseline_r2_003"
+    },
+    {
+      "seed": 25201,
+      "session_id": "staging_transport_security_r2_001"
+    },
+    {
+      "seed": 25202,
+      "session_id": "staging_transport_security_r2_002"
+    },
+    {
+      "seed": 25203,
+      "session_id": "staging_transport_security_r2_003"
+    },
+    {
+      "seed": 25301,
+      "session_id": "staging_retry_idempotency_r2_001"
+    },
+    {
+      "seed": 25302,
+      "session_id": "staging_retry_idempotency_r2_002"
+    },
+    {
+      "seed": 25303,
+      "session_id": "staging_retry_idempotency_r2_003"
+    },
+    {
+      "seed": 25401,
+      "session_id": "staging_crash_backpressure_r2_001"
+    },
+    {
+      "seed": 25402,
+      "session_id": "staging_crash_backpressure_r2_002"
+    },
+    {
+      "seed": 25403,
+      "session_id": "staging_crash_backpressure_r2_003"
+    }
+  ]
+}

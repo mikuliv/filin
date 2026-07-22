@@ -1,0 +1,29 @@
+{
+  "faults": [
+    "receiver_unavailable",
+    "connection_timeout",
+    "connection_reset",
+    "http_429_retry_after",
+    "http_503",
+    "slow_receiver",
+    "malformed_ack",
+    "unknown_ack",
+    "expired_client_certificate",
+    "untrusted_certificate",
+    "wrong_receiver_san",
+    "missing_client_certificate",
+    "plaintext_attempt",
+    "certificate_rotation",
+    "connector_crash_before_journal_commit",
+    "connector_crash_after_journal_before_ingress_ack",
+    "connector_crash_after_send_before_receiver_ack",
+    "receiver_crash_before_commit",
+    "receiver_crash_after_commit_before_ack",
+    "receiver_restart_wal",
+    "connector_restart_pending_journal",
+    "receiver_storage_temporarily_unavailable",
+    "duplicate_batch",
+    "bounded_queue_overload"
+  ],
+  "schema_version": "v0316_fault_schedule_v1"
+}

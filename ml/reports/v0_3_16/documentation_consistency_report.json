@@ -1,0 +1,7 @@
+{
+  "all_links_exist": true,
+  "authoritative_source": "docs/status/project-status.yaml",
+  "false_production_claim_count": 0,
+  "schema_version": "v0316_docs_v1",
+  "semantic_documentation_validator_passed": true
+}

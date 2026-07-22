@@ -1,0 +1,10 @@
+{
+  "certificate_a_accepted_before_rotation": true,
+  "certificate_a_rejected_after_grace": true,
+  "certificate_b_accepted_after_rotation": true,
+  "certificate_rotation_passed": true,
+  "duplicate_event_delta": 0,
+  "identity_changed": false,
+  "pending_event_delta": 0,
+  "schema_version": "v0316_certificate_rotation_v1"
+}

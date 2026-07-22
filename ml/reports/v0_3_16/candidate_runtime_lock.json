@@ -1,0 +1,9 @@
+{
+  "candidate_artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "candidate_manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+  "candidate_registry_sha256": "31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d",
+  "event_contract_sha256": "38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149",
+  "integrity_passed": true,
+  "runtime_compatibility_sha256": "41a6ca83482c657aa7c9c0aec5881cb68234b2a7612cf534076c5e6c35af05ba"
+}

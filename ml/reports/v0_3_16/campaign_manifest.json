@@ -1,0 +1,10 @@
+{
+  "campaign_id": "filin_v0_3_16_staging_transport_r2",
+  "capture_count": 2400,
+  "revision": 2,
+  "schema_version": "v0316_campaign_manifest_v1",
+  "scored_count": 2280,
+  "session_count": 12,
+  "warmup_count": 120,
+  "zeek_containerized": true
+}

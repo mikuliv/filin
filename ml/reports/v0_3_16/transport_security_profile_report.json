@@ -1,0 +1,8 @@
+{
+  "mutual_tls": true,
+  "plaintext_rejected": true,
+  "profile": "staging_transport_security_v1",
+  "schema_version": "v0316_tls_v1",
+  "separate_ca_boundaries": true,
+  "tls_1_3_enforced": true
+}

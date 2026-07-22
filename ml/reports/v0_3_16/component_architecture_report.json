@@ -1,0 +1,11 @@
+{
+  "backend_endpoint_call_count": 0,
+  "backend_import_count": 0,
+  "component_architecture_passed": true,
+  "connector_component_separate": true,
+  "connector_receiver_backend_independent": true,
+  "receiver_component_separate": true,
+  "schema_version": "v0316_architecture_v1",
+  "sensor_component_separate": true,
+  "separate_container_count": 3
+}

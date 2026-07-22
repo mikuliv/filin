@@ -1,0 +1,7 @@
+{
+  "durable_ack_count": 46,
+  "event_count": 2280,
+  "rejected_event_count": 0,
+  "request_count": 46,
+  "schema_version": "v0316_ingress_runtime_v1"
+}

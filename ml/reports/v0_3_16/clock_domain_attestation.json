@@ -1,0 +1,9 @@
+{
+  "clock_domain_attestation_passed": true,
+  "monotonic_clock": true,
+  "ordering_violation_count": 0,
+  "same_host_boot_identity": true,
+  "schema_version": "v0316_clock_v1",
+  "timestamp_field_count": 14,
+  "trace_count": 2280
+}
