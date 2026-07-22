@@ -16,8 +16,11 @@ jobs:
       - run: python -m pytest collectors/shadow/tests -q
       - run: python -m pytest collectors/shadow_trial/tests -q
       - run: python -m pytest ml/tests/test_v03152_prospective_trial.py -q
+      - run: python -m pytest ml/tests/test_v03153_regression_analysis.py -q
       - run: python -m unittest discover -s backend/tests -p "test_*.py"
       - run: python tools/docs/validate_project_status.py --strict
       - run: python tools/audit/validate_v03151_bundle.py --manifest ml/reports/v0_3_15_1/v0_3_15_1_bundle_manifest.yaml --detached ml/reports/v0_3_15_1/v0_3_15_1_bundle_manifest.sha256 --root .
       - run: python tools/audit/validate_v03152_bundle.py --manifest ml/reports/v0_3_15_2/v0_3_15_2_bundle_manifest.yaml --detached ml/reports/v0_3_15_2/v0_3_15_2_bundle_manifest.sha256 --root .
+      - run: python tools/audit/validate_v03153_bundle.py --manifest ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.yaml --detached ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.sha256 --root .
+      - run: python tools/audit/validate_v03153_artifacts.py
       - run: git diff --check
