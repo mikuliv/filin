@@ -226,7 +226,7 @@ def test_all_compose_networks_are_internal() -> None:
 
 def test_operator_volume_is_read_only() -> None:
     compose = yaml.safe_load((ROOT / "rehearsal/docker-compose.v0_3_17.yml").read_text(encoding="utf-8"))
-    assert compose["services"]["operator-view"]["volumes"] == ["receiver_data:/run/receiver:ro"]
+    assert compose["services"]["operator-view"]["volumes"] == ["${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/receiver:/run/receiver:ro"]
 
 
 @pytest.mark.parametrize("method", ["POST", "PUT", "DELETE", "PATCH"])

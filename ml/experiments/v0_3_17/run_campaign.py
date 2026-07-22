@@ -589,10 +589,12 @@ def execute_run(run_index: int, run_spec: dict[str, Any], sessions: list[dict[st
     run_id = run_spec["run_id"]
     run_root = RUNTIME / run_id
     run_root.mkdir(parents=True, exist_ok=False)
+    for component in ("sensor", "connector", "receiver"):
+        (RUNTIME / "volumes" / component).mkdir(parents=True, exist_ok=True)
     (RUNTIME / "events.jsonl").write_text("", encoding="utf-8", newline="\n")
     run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index)])
     environment = compose_environment(run_index, run_spec)
-    compose(["down", "-v", "--remove-orphans"], environment, check=False)
+    compose(["down", "--remove-orphans"], environment, check=False)
     compose(["up", "-d", "--no-build"], environment)
     containers = wait_for_stack(environment)
     write_json(run_root / "container_instances.json", {"run_id": run_id, "containers": containers, "certificate_session_id": run_spec["certificate_session_id"]})
