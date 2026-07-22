@@ -1,0 +1,460 @@
+schema_version: v0317_protocol_v1
+stage: v0.3.17
+revision: 1
+status: frozen_before_first_rehearsal_event
+title: "Длительная контролируемая локальная репетиция теневого режима"
+source_head: 4cafc31fba365e886a6bf1411d7e384558197dc8
+source_origin_main: 4cafc31fba365e886a6bf1411d7e384558197dc8
+source_backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+
+purpose:
+  statement: >-
+    Проверить длительную техническую устойчивость неизменного кандидата и
+    изолированного staging transport stack при переменной синтетической нагрузке,
+    плановом обслуживании, перезапусках, backpressure и контролируемом давлении
+    на выделенные хранилища.
+  scientific_evaluation: false
+  real_shadow_mode: false
+  backend_integration: false
+  production_trial: false
+  external_validation: false
+
+historical_anchors:
+  aggregate_method: "SHA-256 от отсортированных строк '<repo_path> <file_sha256>\\n' для официальных tracked stage files"
+  v0_3_11: {sha256: 6a8484b83be9c2abdfd8a2afb6f5838e286f3523d0f21b32ce7bf1f9c44e3ae5, file_count: 77}
+  v0_3_12: {sha256: 20f2b643dbfb0cc4a490fe9f353288a1dbe77881f595f279e16c4e7018038d93, file_count: 82}
+  v0_3_12_1: {sha256: 209b190367ba3ee9aba11444f2b40968ce371834b8da99620d7672d7cea198c6, file_count: 29}
+  v0_3_12_2: {sha256: a62dc4274518eda85140aeca203fe06c7cc3d537ac21eb30ba40988d394b3232, file_count: 94}
+  v0_3_13: {sha256: 7ff3192ef6986bfb636aff99de4bc7e01c8de1d4f293a372088ea7ceac5f476b, file_count: 98}
+  v0_3_14: {sha256: b2e369edbfd6f81ae546d9b28ba4d3c5477a7b148fdd058e86a0d3e6efa5565f, file_count: 59}
+  v0_3_14_errata: {sha256: 1892eb1bd64ac116678e8b0318ecbdf85f8e3f890ff10eeaf2a2a030b8d442cb, file_count: 1}
+  v0_3_15: {sha256: 403ac32286c393b201cbaeb283f453fd6c0f95d5c1b38baa5bb40f231362aa8a, file_count: 68}
+  v0_3_15_1: {sha256: e5d4b028c67f6417078d907c754efc48b2f83e3c2e954db74d20fc4934e4910d, file_count: 33}
+  v0_3_15_2: {sha256: 5dc581eac7e9aafded352fbb1243ac75233935a65fd0b1b0d0c139f514a18b6b, file_count: 71}
+  v0_3_15_3: {sha256: eb30d00f4b82ea1e6b5195e30f812d650cff39128bef99638d29ed6d359f70e5, file_count: 40}
+  v0_3_15_4: {sha256: 9ca18e6a58a3f5f13c6fc05d8e979a60372988fc5910b261d7a7fe3afd674ec8, file_count: 92}
+  v0_3_15_5: {sha256: 509859cb9b8430c250574b77ff6d10d859c36ff69a54eb21cde92cffb80b0fdb, file_count: 82}
+  v0_3_15_5_1: {sha256: 8f4f2a3040d080c4573bd3c7ea599e8c1567dff88e0547c320393a4e6328fcba, file_count: 54}
+  v0_3_16_revisions_1_and_2: {sha256: 7a8f86236416f766041f67f4df715079af8fd24147ae386903c76545aa1f9194, file_count: 60}
+  v0_3_16_evidence_tree: 4d14f193d7b555fbddc8c5e7da88d258716f99cf
+  v0_3_16_bundle_sha256: 8df5e07c98db33e9b01387809ee68856fcbcf6588ba80d54b7ac0e88ad68709d
+  v0_3_16_policy_sha256: 7815a6a9ce07a66a97fc23f1692e4168ade90d1df73e4992d015587260bcef52
+
+candidate_identity:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  feature_count: 51
+  shadow_event_v1_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  shadow_event_v2_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+  registry_sha256: 31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d
+  registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
+  registry_commitment_sha256: e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c
+  fit_allowed: false
+  replacement_allowed: false
+
+components:
+  required: [traffic-source, sensor-runtime, staging-connector, reference-receiver, operator-view]
+  optional: [rehearsal-observer]
+  identity_rule: "Идентификаторы образов и source trees фиксируются pre-campaign code lock"
+  immutable_v0316_runtime_image: sha256:eacfc82e1a1641b410ab2477fd01f513c2f1c5ccf2c855b9e3425e6e3df971af
+  frozen_base_images:
+    python_3_11_slim: sha256:e031123e3d85762b141ad1cbc56452ba69c6e722ebf2f042cc0dc86c47c0d8b3
+    zeek_7_0_5: sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3
+  application_image_rule: "Локальная сборка без сети; digest обязателен в code lock до первого события"
+
+transport_contracts:
+  tls_profile: {name: staging_transport_security_v1, sha256: 8fee3f85af212ec30ccb6e804ff58512158c1ef1101001bc9a26d552dba42778, minimum: TLSv1.3, mutual_tls: true}
+  connector_ingress_v1: c3741598c83df86f89242340704061af758fdd641889c33ec757b0ead120b55a
+  connector_ingress_ack_v1: 5ae4900916f5feaeb7032dfff6e4a8caf76c7f4149bb2a0eb4108fa6fd00f752
+  staging_event_batch_v1: 76796e5241dda9387895099c5efa32e45499c516cd277164b7fa59528b5971dc
+  receiver_batch_ack_v1: bbe8b2ee49e82736cceddc0a875e8e85d3e86e9723c569c66a899fa6524f96ac
+  durability: sqlite_wal_full_ack_only_after_durable_commit
+  delivery: at_least_once_with_semantic_idempotency
+
+network_topology:
+  networks:
+    - {name: filin_sensor_connector_internal, internal: true}
+    - {name: filin_connector_receiver_internal, internal: true}
+    - {name: filin_receiver_operator_internal, internal: true}
+  attachments:
+    traffic-source: [filin_sensor_connector_internal]
+    sensor-runtime: [filin_sensor_connector_internal]
+    staging-connector: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+    reference-receiver: [filin_connector_receiver_internal, filin_receiver_operator_internal]
+    operator-view: [filin_receiver_operator_internal]
+  published_ports: 0
+  host_network: false
+  external_routes: 0
+  external_dns: false
+  backend_route: false
+
+campaign:
+  campaign_id: filin_v0_3_17_controlled_local_rehearsal_r1
+  runtime_namespace: v0317-r1
+  evidence_directory: runtime/v0_3_17
+  actual_wall_clock_required: true
+  total_minimum_seconds: 14400
+  run_duration_sum_minimum_seconds: 14400
+  time_acceleration_allowed: false
+  system_time_change_allowed: false
+  sleep_mock_allowed: false
+  timestamp_only_simulation_allowed: false
+  window_seconds: 1
+  minimum_closed_capture_windows: 14400
+  warmup_windows_per_run: 60
+  expected_warmup_windows: 180
+  exact_scored_count_predeclared: false
+  runs:
+    - {run_id: local_rehearsal_endurance_r2_001, role: nominal_endurance, seed: 27101, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-a, instance_namespace: v0317-a, evidence_root: run-a}
+    - {run_id: local_rehearsal_transition_r2_001, role: workload_transitions_and_maintenance, seed: 27201, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-b, instance_namespace: v0317-b, evidence_root: run-b}
+    - {run_id: local_rehearsal_recovery_r2_001, role: recovery_disk_pressure_and_backlog, seed: 27301, duration_seconds: 3600, minimum_continuous_seconds: 3600, certificate_session_id: cert-session-v0317-c, instance_namespace: v0317-c, evidence_root: run-c}
+  prescribed_seed_collision:
+    values: [24101, 24201, 24301]
+    collided_with: v0.3.16_revision_1
+    replacement_selected_before_freeze: true
+  sessions:
+    - {session_id: rehearsal_nominal_001, seed: 27111, run: local_rehearsal_endurance_r2_001}
+    - {session_id: rehearsal_nominal_002, seed: 27112, run: local_rehearsal_endurance_r2_001}
+    - {session_id: rehearsal_nominal_003, seed: 27113, run: local_rehearsal_endurance_r2_001}
+    - {session_id: rehearsal_background_shift_001, seed: 27114, run: local_rehearsal_endurance_r2_001}
+    - {session_id: rehearsal_background_shift_002, seed: 27211, run: local_rehearsal_transition_r2_001}
+    - {session_id: rehearsal_background_shift_003, seed: 27212, run: local_rehearsal_transition_r2_001}
+    - {session_id: rehearsal_burst_001, seed: 27213, run: local_rehearsal_transition_r2_001}
+    - {session_id: rehearsal_burst_002, seed: 27214, run: local_rehearsal_transition_r2_001}
+    - {session_id: rehearsal_maintenance_001, seed: 27311, run: local_rehearsal_transition_r2_001}
+    - {session_id: rehearsal_restart_001, seed: 27312, run: local_rehearsal_recovery_r2_001}
+    - {session_id: rehearsal_disk_pressure_001, seed: 27313, run: local_rehearsal_recovery_r2_001}
+    - {session_id: rehearsal_recovery_001, seed: 27314, run: local_rehearsal_recovery_r2_001}
+  required_zero_overlap: [run_id, session_id, seed, capture_id, pcap_sha256, prediction_id, event_id, runtime_instance_id, certificate_serial, exact_parameter_vector]
+
+traffic:
+  sources: [new_synthetic_traffic, new_rehearsal_pcap, deterministic_replay_of_new_rehearsal_pcap, internal_synthetic_services]
+  forbidden_sources: [v0.3.15.2, v0.3.15.4, v0.3.15.5, v0.3.15.5.1, v0.3.16, real_pcap, organization_traffic]
+  profiles: [stable_benign_background, variable_benign_background, periodic_service_polling, authentication_like_synthetic, web_navigation_and_probing_like_synthetic, service_discovery_like_synthetic, bounded_burst, quiet_idle]
+  scientific_labels: false
+  every_pcap_new_sha256: true
+  window_policy: {closed_before_processing: true, monotonic_sequence: true, capture_id: true, sha256: true, future_data: false, replacement: false}
+  load_levels:
+    idle: {events_per_second_min: 0, events_per_second_max: 1}
+    nominal: {events_per_second_min: 5, events_per_second_max: 15, scheduled: 10}
+    elevated: {events_per_second_min: 20, events_per_second_max: 50, scheduled_min: 20, scheduled_max: 50}
+    burst: {events_per_second_min: 100, scheduled: 100, maximum_interval_seconds: 120}
+  burst_is_dos: false
+  bounded_traffic_only: true
+
+workload_schedule:
+  run_a:
+    - {phase: warmup_and_settling, start_second: 0, end_second: 900, rate: nominal_5}
+    - {phase: nominal, start_second: 900, end_second: 4500, rate: nominal_10}
+    - {phase: low_activity, start_second: 4500, end_second: 5400, rate: idle_1}
+  run_b:
+    - {phase: warmup, start_second: 0, end_second: 60, rate: nominal_5}
+    - {phase: nominal, start_second: 60, end_second: 1200, rate: nominal_10}
+    - {phase: gradual_increase, start_second: 1200, end_second: 2400, rate: elevated_linear_20_to_50}
+    - {phase: burst, start_second: 2400, end_second: 2520, rate: burst_100}
+    - {phase: return_to_nominal, start_second: 2520, end_second: 3600, rate: nominal_10}
+    - {phase: maintenance, start_second: 3600, end_second: 5400, rate: nominal_10}
+  run_c:
+    - {phase: warmup, start_second: 0, end_second: 60, rate: nominal_5}
+    - {phase: receiver_slowdown, start_second: 60, end_second: 600, rate: elevated_20}
+    - {phase: bounded_backlog_growth, start_second: 600, end_second: 1200, rate: elevated_30}
+    - {phase: controlled_storage_pressure, start_second: 1200, end_second: 1800, rate: nominal_10}
+    - {phase: receiver_unavailability, start_second: 1800, end_second: 1950, rate: nominal_10}
+    - {phase: recovery, start_second: 1950, end_second: 2400, rate: elevated_50}
+    - {phase: backlog_drain, start_second: 2400, end_second: 3000, rate: nominal_10}
+    - {phase: compaction, start_second: 3000, end_second: 3300, rate: idle_1}
+    - {phase: strict_resume, start_second: 3300, end_second: 3600, rate: idle_1}
+
+maintenance_schedule:
+  fields: [operation_id, scheduled_run, scheduled_offset, preconditions, expected_temporary_effect, success_oracle, recovery_condition, evidence_artifact]
+  operations:
+    - {operation_id: rotate_sensor_connector_certificate, scheduled_run: run_b, scheduled_offset: 3300, preconditions: cert_a_active_and_b_prepared, expected_temporary_effect: tls_reconnect, success_oracle: cert_b_active_old_a_rejected_no_loss, recovery_condition: rollback_to_prepared_b, evidence_artifact: certificate_rotation_report.json}
+    - {operation_id: rotate_connector_receiver_certificate, scheduled_run: run_b, scheduled_offset: 3450, preconditions: cert_a_active_and_b_prepared, expected_temporary_effect: tls_reconnect, success_oracle: cert_b_active_old_a_rejected_no_loss, recovery_condition: rollback_to_prepared_b, evidence_artifact: certificate_rotation_report.json}
+    - {operation_id: connector_planned_restart, scheduled_run: run_b, scheduled_offset: 3900, preconditions: journal_checkpointed, expected_temporary_effect: bounded_backlog, success_oracle: resume_without_semantic_duplicate, recovery_condition: restart_from_checkpoint, evidence_artifact: restart_recovery_report.json}
+    - {operation_id: receiver_planned_restart, scheduled_run: run_b, scheduled_offset: 4200, preconditions: wal_checkpointed, expected_temporary_effect: bounded_backlog, success_oracle: resume_without_loss, recovery_condition: wal_recovery, evidence_artifact: restart_recovery_report.json}
+    - {operation_id: sensor_planned_restart, scheduled_run: run_b, scheduled_offset: 4500, preconditions: outbox_durable, expected_temporary_effect: input_pause, success_oracle: resume_without_reinference, recovery_condition: outbox_resume, evidence_artifact: restart_recovery_report.json}
+    - {operation_id: connector_receiver_simultaneous_restart, scheduled_run: run_b, scheduled_offset: 4800, preconditions: checkpoints_valid, expected_temporary_effect: bounded_backlog, success_oracle: causal_resume, recovery_condition: ordered_receiver_then_connector_start, evidence_artifact: restart_recovery_report.json}
+    - {operation_id: connector_journal_checkpoint, scheduled_run: run_c, scheduled_offset: 900, preconditions: journal_writable, expected_temporary_effect: none, success_oracle: checkpoint_valid, recovery_condition: preserve_unacknowledged, evidence_artifact: maintenance_execution_report.json}
+    - {operation_id: receiver_wal_checkpoint, scheduled_run: run_c, scheduled_offset: 1500, preconditions: receiver_writable, expected_temporary_effect: short_write_pause, success_oracle: checkpoint_valid, recovery_condition: wal_recovery, evidence_artifact: maintenance_execution_report.json}
+    - {operation_id: receiver_snapshot, scheduled_run: run_c, scheduled_offset: 1650, preconditions: commit_range_closed, expected_temporary_effect: none, success_oracle: snapshot_hash_valid, recovery_condition: discard_partial_snapshot, evidence_artifact: maintenance_execution_report.json}
+    - {operation_id: connector_journal_compaction, scheduled_run: run_c, scheduled_offset: 3060, preconditions: backlog_zero, expected_temporary_effect: short_checkpoint_pause, success_oracle: roots_and_event_sets_preserved, recovery_condition: restore_precompact_copy, evidence_artifact: compaction_report.json}
+    - {operation_id: operator_projection_snapshot, scheduled_run: run_b, scheduled_offset: 5100, preconditions: receiver_commit_range_closed, expected_temporary_effect: none, success_oracle: immutable_private_snapshot, recovery_condition: discard_partial_snapshot, evidence_artifact: operator_snapshot_manifest.json}
+    - {operation_id: log_rotation, scheduled_run: run_c, scheduled_offset: 3120, preconditions: sanitized_logs_open, expected_temporary_effect: none, success_oracle: chain_continuity, recovery_condition: reopen_current_log, evidence_artifact: maintenance_execution_report.json}
+    - {operation_id: metrics_snapshot, scheduled_run: run_c, scheduled_offset: 3240, preconditions: sampler_healthy, expected_temporary_effect: none, success_oracle: aggregate_hash_valid, recovery_condition: retry_snapshot_only, evidence_artifact: resource_trend_report.json}
+
+restart_schedule:
+  scenarios:
+    - {id: sensor_planned, run: run_b, offset: 4500}
+    - {id: connector_planned, run: run_b, offset: 3900}
+    - {id: receiver_planned, run: run_b, offset: 4200}
+    - {id: connector_receiver_simultaneous, run: run_b, offset: 4800}
+    - {id: connector_with_nonzero_backlog, run: run_c, offset: 1100}
+    - {id: receiver_postcommit_preack, run: run_c, offset: 2050}
+    - {id: connector_postjournal_preingress_ack, run: run_c, offset: 2150}
+  repeated_inference_allowed: false
+  semantic_duplicates_allowed: false
+
+certificate_rotation:
+  synthetic_only: true
+  grace_period_seconds: 60
+  sensor_to_connector: {run: run_b, offset: 3300, serial_a: 3171001, serial_b: 3171002}
+  connector_to_receiver: {run: run_b, offset: 3450, serial_a: 3172001, serial_b: 3172002}
+  old_a_rejected_after_grace: true
+  private_keys_in_logs: false
+
+disk_pressure:
+  isolated_runtime_volumes_only: true
+  volume_size_mib: 64
+  warning_percent: 70
+  critical_percent: 85
+  stop_percent: 92
+  connector_warning: {run: run_c, offset: 1250}
+  receiver_warning: {run: run_c, offset: 1450}
+  temporary_connector_write_rejection: {run: run_c, offset: 1700, duration_seconds: 15}
+  temporary_receiver_write_rejection: {run: run_c, offset: 1750, duration_seconds: 15}
+  cleanup_policy: remove_only_preallocated_pressure_fixture_after_hash_and_never_touch_host_files
+  readiness_false_at_critical: true
+  ack_before_durable_commit: false
+
+receiver_slowdown:
+  mild: {run: run_c, start_second: 60, end_second: 300, delay_ms: 50}
+  sustained: {run: run_c, start_second: 300, end_second: 600, delay_ms: 250}
+  unavailable: {run: run_c, start_second: 1800, end_second: 1950}
+  recovery_deadline_seconds_after_availability: 1050
+
+backlog_policy:
+  sensor_outbox_bounded_events: 200000
+  connector_queue_bounded_events: 200000
+  connector_journal_bounded_mib: 48
+  receiver_wal_bounded_mib: 48
+  memory_queue_bounded_events: 5000
+  durable_overflow_required: true
+  final_backlog: 0
+
+operator_view:
+  contract: operator_projection_v1
+  methods_allowed: [GET, HEAD]
+  methods_rejected: [POST, PUT, DELETE, PATCH]
+  source: read_only_receiver_snapshot
+  writable_database: false
+  receiver_write_credentials: false
+  action_controls: false
+  fields: [projection_contract_version, projection_id, generated_at, candidate_id, event_contract_version, source_event_id, event_type, event_timestamp, session_pseudonym, activity_pseudonym, state, confidence_band, conformal_disposition, continuity, receiver_commit_ref, delivery_status, evidence_refs]
+  forbidden_fields: [raw_ip, mac, hostname, username, email, credential, payload, feature_vector, label, scenario, private_key, absolute_path, trace, environment, attack_intent, mitre, free_model_text, block_recommendation]
+  snapshot_minimum_count: 24
+  maximum_periodic_snapshot_interval_seconds: 600
+  additional_snapshots: [before_maintenance, after_maintenance, backlog_peak, after_recovery]
+
+observability:
+  contract: rehearsal_observability_v1
+  sample_interval_seconds: 10
+  minimum_samples_per_continuous_component: 1440
+  raw_samples_location: runtime_only
+  allowed_metrics: [health, readiness, throughput, latency, queue_depth, backlog, retry_count, duplicate_delivery_count, journal_size, wal_size, cpu, normalized_cpu, rss, virtual_memory, file_descriptor_count, thread_count, process_count, storage_size, tls_connection_state, tls_reconnect_count, certificate_fingerprint_pseudonym, batch_size, error_count, event_set_counters, operator_projection_counters]
+  forbidden_values: [raw_event_payload, raw_feature_vector, label, credential, private_key, raw_ip, hostname, username, absolute_path, production_url]
+
+resource_policy:
+  trend_method: ordinary_least_squares_slope_after_first_900_seconds_with_restart_segments_reported_separately
+  sensor_peak_rss_mib_max: 256
+  connector_peak_rss_mib_max: 256
+  receiver_peak_rss_mib_max: 256
+  operator_peak_rss_mib_max: 256
+  combined_peak_rss_mib_max: 768
+  swap_growth_mib_max: 0
+  component_normalized_cpu_average_percent_max_exclusive: 75
+  component_normalized_cpu_p95_percent_max_exclusive: 95
+  required: {unbounded_memory_growth: false, unbounded_fd_growth: false, unbounded_thread_growth: false, unbounded_journal_growth: false, unbounded_wal_growth: false, compaction_effective: true, final_backlog: 0}
+
+latency_policy:
+  preserve_v0316_timestamps: true
+  additional_timestamp: operator_projection_created_monotonic_ns
+  breakdowns: [nominal, elevated, burst, maintenance, slowdown, backlog_recovery, post_restart]
+  healthy_gates:
+    receiver_durable_throughput_events_per_second_min: 10
+    sensor_to_receiver_durable_p95_ms_max: 2000
+    sensor_to_receiver_durable_p99_ms_max: 3000
+    connector_ingress_ack_p95_ms_max: 500
+    connector_to_receiver_durable_p95_ms_max: 1500
+    receiver_to_operator_projection_p95_ms_max: 600000
+
+availability_policy:
+  sensor_process_min: 0.99
+  connector_process_min: 0.99
+  receiver_process_min: 0.99
+  operator_view_min: 0.98
+  receiver_durable_min: 0.99
+  unexplained_outage_seconds_max: 0
+  final_unresolved_incident_count: 0
+  planned_maintenance_reported_separately: true
+
+fault_schedule:
+  count: 30
+  scenarios:
+    - [receiver_mild_slowdown, run_c, 60]
+    - [receiver_sustained_slowdown, run_c, 300]
+    - [receiver_unavailable, run_c, 1800]
+    - [connector_receiver_timeout, run_c, 650]
+    - [connection_reset, run_c, 700]
+    - [http_429, run_c, 750]
+    - [http_503, run_c, 800]
+    - [malformed_ack, run_b, 2700]
+    - [unknown_ack, run_b, 2760]
+    - [tls_reconnect, run_b, 3300]
+    - [sensor_certificate_rotation, run_b, 3300]
+    - [connector_certificate_rotation, run_b, 3450]
+    - [expired_old_certificate_rejected, run_b, 3510]
+    - [wrong_san_fixture, run_b, 3570]
+    - [untrusted_ca_fixture, run_b, 3630]
+    - [sensor_planned_restart, run_b, 4500]
+    - [connector_planned_restart, run_b, 3900]
+    - [receiver_planned_restart, run_b, 4200]
+    - [connector_receiver_restart, run_b, 4800]
+    - [connector_restart_with_backlog, run_c, 1100]
+    - [receiver_restart_postcommit_preack, run_c, 2050]
+    - [connector_restart_postjournal_preingress_ack, run_c, 2150]
+    - [connector_warning_pressure, run_c, 1250]
+    - [receiver_warning_pressure, run_c, 1450]
+    - [temporary_connector_write_rejection, run_c, 1700]
+    - [temporary_receiver_write_rejection, run_c, 1750]
+    - [wal_recovery, run_c, 1980]
+    - [journal_compaction, run_c, 3060]
+    - [log_rotation, run_c, 3120]
+    - [backlog_drain_after_recovery, run_c, 2400]
+  canonical_fixture_inclusion: false
+  required_passed_count: 30
+  failed_count_max: 0
+  unsupported_count_max: 0
+
+security_policy:
+  negative_tests: [plaintext_rejected, tls_1_2_rejected, missing_certificate_rejected, expired_certificate_rejected, wrong_san_rejected, untrusted_ca_rejected, revoked_fixture_rejected, wrong_registry_commitment_rejected, unknown_candidate_rejected, wrong_candidate_hash_rejected, event_contract_mismatch_rejected, body_hash_mismatch_rejected, oversized_request_rejected, extra_property_rejected, idempotency_collision_rejected, replay_idempotent, operator_post_rejected, operator_put_rejected, operator_delete_rejected, operator_write_volume_unavailable, raw_credential_projection_rejected, raw_feature_projection_rejected, label_projection_rejected, path_traversal_rejected]
+  canonical_fixture_inclusion: false
+  container_hardening: {non_root: true, read_only_root: true, no_new_privileges: true, cap_drop_all: true, privileged: false, docker_socket: false, host_filesystem: false, private_key_mode: "0600", pull_prohibited: true, resource_limits: true, healthchecks: true, frozen_restart_policy: true}
+
+privacy_policy:
+  finding_count_max: 0
+  secret_finding_count_max: 0
+  negative_fixture_detection_rate: 1.0
+  forbidden: [raw_ipv4, raw_ipv6, mac, hostname, username, email, password, api_key, bearer_token, authorization_header, cookie, url_query, raw_payload, credential, private_key, feature_vector, label, scenario_class, user_absolute_path, production_url, docker_socket, environment_secret]
+
+retention_and_compaction:
+  runtime_only: [pcap, zeek_logs, raw_feature_rows, raw_predictions, canonical_events, connector_journal, receiver_database, operator_snapshots, resource_samples, latency_traces, synthetic_private_keys]
+  tracked_allowed: [sanitized_aggregates, hashes, manifests, reports]
+  pcap_retention_until: bundle_finalization
+  acknowledged_connector_records_compacted: true
+  unacknowledged_records_preserved: true
+  receiver_durable_events_preserved: true
+  roots_event_sets_and_resume_preserved: true
+
+no_fit_policy:
+  required_zero_counters: [fit_call_count, partial_fit_call_count, calibration_fit_call_count, conformal_fit_call_count, feature_selection_call_count, threshold_selection_call_count, candidate_replacement_count]
+  labels_created: false
+  labels_used: false
+  scientific_metrics_recomputed: false
+  scientific_comparison_performed: false
+
+strict_resume_policy:
+  verify: [detached_bundle_hash, manifest_schema, paths, sizes, hashes, protocol_revision, code_lock, candidate_identity, image_digests, contracts, registry_commitment, traffic_schedule, maintenance_schedule, fault_schedule, certificate_manifests, prediction_manifest, source_event_set, connector_event_set, receiver_event_set, operator_projection_set, resource_time_series_hashes, latency_trace_hashes, chain_roots, checkpoints, receiver_database_digest, completion_marker]
+  forbidden_repeats: [capture, zeek, feature_extraction, inference, event_generation, maintenance_campaign, certificate_generation, bundle_finalization, acknowledged_event_delivery]
+  corruption_cases: [protocol, code_lock, candidate_anchor, image_digest, network_topology, traffic_schedule, maintenance_schedule, fault_schedule, certificate_manifest, prediction_manifest, sensor_event_set, connector_event_set, receiver_event_set, operator_projection_set, resource_trace_hash, latency_trace_hash, chain_root, connector_checkpoint, receiver_database_copy, path_traversal_duplicate_path_unknown_schema]
+  required_corruption_rejections: 20
+
+pass_fail_gates:
+  - protocol_frozen_before_campaign
+  - pre_campaign_code_lock_created
+  - historical_stages_unchanged
+  - candidate_unchanged
+  - contracts_unchanged
+  - registry_unchanged
+  - backend_unchanged
+  - architecture_separation_passed
+  - internal_network_topology_passed
+  - published_ports_zero
+  - external_routes_zero
+  - container_hardening_passed
+  - actual_wall_clock_duration_at_least_4_hours
+  - run_a_at_least_90_minutes
+  - run_b_at_least_90_minutes
+  - run_c_at_least_60_minutes
+  - campaign_independence_passed
+  - capture_windows_at_least_14400
+  - missing_windows_zero
+  - duplicate_windows_zero
+  - no_fit_audit_passed
+  - prediction_integrity_passed
+  - feature_provenance_passed
+  - event_continuity_passed
+  - candidate_state_identity_unchanged
+  - source_connector_receiver_event_sets_equal
+  - pending_events_zero
+  - semantic_duplicates_zero
+  - idempotency_collisions_zero
+  - unaccounted_drops_zero
+  - first_alert_loss_zero
+  - review_event_loss_zero
+  - operator_projection_correctness_passed
+  - operator_write_attempts_zero
+  - operator_snapshots_at_least_24
+  - maintenance_operations_passed
+  - certificate_rotations_passed
+  - restart_scenarios_passed
+  - disk_pressure_scenarios_passed
+  - backpressure_passed
+  - fault_campaign_passed
+  - security_negative_tests_passed
+  - hash_commit_chains_passed
+  - compaction_passed
+  - clock_domain_attestation_passed
+  - long_duration_latency_policy_passed
+  - throughput_policy_passed
+  - resource_policy_passed
+  - memory_leak_policy_passed
+  - fd_thread_leak_policy_passed
+  - availability_policy_passed
+  - privacy_policy_passed
+  - secret_scan_passed
+  - strict_resume_passed
+  - corruption_cases_rejected
+  - bundle_validator_passed
+  - artifact_exclusion_passed
+  - documentation_validator_passed
+  - external_network_attempts_zero
+  - production_attempts_zero
+  - backend_calls_zero
+  - backend_writes_zero
+  - automatic_actions_zero
+  - network_blocks_zero
+  - worktree_clean
+
+readiness_policy:
+  positive_flag: candidate_ready_for_v0_3_18_external_review_and_trial_design
+  positive_meaning: "Разрешена только подготовка отдельного архитектурного, юридического, privacy и operational design-review; само испытание не разрешено"
+  always_false: [candidate_ready_for_shadow_mode, sensor_ready_for_backend_integration, backend_integration_allowed, shadow_mode_allowed, production_ready, production_connection_allowed, automatic_enforcement_ready, external_validation_completed, real_organization_trial_allowed, real_traffic_capture_allowed, real_notifications_allowed]
+  negative_next_stage: corrective_v0.3.17.1_or_explicitly_justified_revision
+
+invalidation_rules:
+  error_before_first_event: preserve_revision_and_create_new_protocol_revision_before_start
+  error_after_first_event: invalidate_preserve_and_restart_with_new_session_ids_seeds_runtime_instance_ids_and_synthetic_certificates
+  code_change_after_first_event: invalidate_campaign_and_create_new_revision
+  historical_anchor_change: fail_closed
+  candidate_or_contract_change: fail_closed
+
+prohibitions:
+  historical_changes: true
+  candidate_changes: true
+  fit_or_selection: true
+  labels_or_scientific_metrics: true
+  backend_import_call_or_write: true
+  backend_endpoint: true
+  external_network: true
+  published_ports: true
+  real_credentials_certificates_domains_ips_or_traffic: true
+  attacks_or_dos: true
+  firewall_or_network_blocking: true
+  notifications_or_automatic_actions: true
+  real_shadow_mode: true
+  production: true
+  raw_runtime_artifacts_in_git: true
+  pull_merge_rebase_push: true
