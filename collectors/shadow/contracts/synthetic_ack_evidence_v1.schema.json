@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "synthetic_ack_evidence_v1",
+  "type": "object",
+  "required": ["schema_version", "event_id", "status", "wire_sha256", "wire_size", "privacy_scan_passed", "privacy_finding_types", "synthetic_sink", "raw_ack_git_inclusion_permitted"],
+  "properties": {
+    "schema_version": {"const": "synthetic_ack_evidence_v1"},
+    "event_id": {"type": "string", "minLength": 1},
+    "status": {"enum": ["accepted", "duplicate", "rejected_temporary", "rate_limited", "rejected_permanent", "malformed", "unknown", "authentication", "authorization"]},
+    "wire_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "wire_size": {"type": "integer", "minimum": 0},
+    "privacy_scan_passed": {"type": "boolean"},
+    "privacy_finding_types": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "raw_runtime_name": {"type": "string", "pattern": "^ack-[0-9a-f]{64}\\.wire$"},
+    "synthetic_sink": {"const": true},
+    "raw_ack_git_inclusion_permitted": {"const": false}
+  },
+  "additionalProperties": false
+}
