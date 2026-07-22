@@ -1,0 +1,161 @@
+schema_version: v031551_protocol_v1
+stage: v0.3.15.5.1
+title: candidate-compatible event contract and prospective runtime recovery trial
+status: frozen_before_first_capture
+revision: 1
+source_head: e48c3fd6579a12cefc6e37deb3e78d91803c6efb
+backend_tree_sha256: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+purpose: prove only runtime compatibility of the unchanged v03154 candidate
+blocking_defect: shadow_event_v1 hard-codes the historical v0311 candidate and rejects v03154 before spool
+scientific_evidence:
+  source_stage: v0.3.15.5
+  immutable: true
+  recompute_metrics: false
+  holdout_valid: true
+  overall_result_remains_false: true
+  accepted_subpolicies: [candidate_window, candidate_per_class, candidate_episode, candidate_stateful, candidate_calibration, candidate_conformal]
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract_id: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  state_policy_sha256: 3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c
+  campaign_allowlist: [v03154:65a3dd912d845bc1]
+contracts:
+  shadow_event_v1:
+    immutable: true
+    sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  shadow_event_v2:
+    version: shadow_event_v2
+    structural_validation_only: true
+    authorization_source: candidate_registry_v1
+  migration_from_v1: forbidden
+registry:
+  version: candidate_registry_v1
+  canonical_commitment_required: true
+validation_order:
+  - parse_json
+  - event_size
+  - v2_schema
+  - contract_version
+  - registry_commitment
+  - candidate_lookup
+  - candidate_status
+  - campaign_allowlist
+  - artifact_hash
+  - manifest_hash
+  - feature_contract
+  - preprocessing_hash
+  - calibration_hash
+  - conformal_hash
+  - state_policy_hash
+  - runtime_compatibility
+  - prediction_linkage
+  - privacy
+  - canonical_serialization
+  - event_hash
+  - durable_spool
+compatibility_matrix:
+  v0311_shadow_event_v1: accepted_historical
+  v03154_shadow_event_v2: accepted_current
+  v03154_shadow_event_v1: rejected
+  v0311_shadow_event_v2: rejected_not_allowlisted
+  unknown_shadow_event_v2: rejected
+campaign:
+  campaign_id: filin_v0_3_15_5_1_runtime_recovery
+  runtime_only_trial: true
+  labels_created: false
+  labels_not_used: true
+  session_groups: [runtime_contract_baseline, runtime_transport_faults, runtime_crash_resume, runtime_load_clock]
+  sessions_per_group: 3
+  sessions:
+    - {session_id: runtime_contract_baseline_001, seed: 23101}
+    - {session_id: runtime_contract_baseline_002, seed: 23102}
+    - {session_id: runtime_contract_baseline_003, seed: 23103}
+    - {session_id: runtime_transport_faults_001, seed: 23201}
+    - {session_id: runtime_transport_faults_002, seed: 23202}
+    - {session_id: runtime_transport_faults_003, seed: 23203}
+    - {session_id: runtime_crash_resume_001, seed: 23301}
+    - {session_id: runtime_crash_resume_002, seed: 23302}
+    - {session_id: runtime_crash_resume_003, seed: 23303}
+    - {session_id: runtime_load_clock_001, seed: 23401}
+    - {session_id: runtime_load_clock_002, seed: 23402}
+    - {session_id: runtime_load_clock_003, seed: 23403}
+  prescribed_seed_overlap_detected: [22101, 22102, 22103, 22201, 22202, 22203, 22301, 22302, 22303, 22401, 22402, 22403]
+  replacement_seeds_selected_before_first_capture: true
+  captures_per_session: 200
+  warmup_per_session: 10
+  scored_per_session: 190
+  total_captures: 2400
+  total_warmup: 120
+  total_scored: 2280
+  prospective_independence_required: true
+  zeek_container_required: true
+  fallback_allowed: false
+runtime:
+  profile: C
+  workers: 2
+  batch_size: 50
+  bounded_queue: true
+  token_bucket: true
+  durable_spool: true
+  fsync: true
+  atomic_checkpoint: true
+  strict_ack: true
+  delivery: at_least_once
+  sink: local_synthetic_mock
+  external_network_allowed: false
+faults:
+  names: [sink_timeout, temporary_unavailable, rate_limited, connection_reset_after_send, duplicate_ack, malformed_ack, unknown_ack, exporter_restart, sink_restart, crash_after_ack_before_checkpoint, queue_full, clock_backward_jump]
+  required_count: 12
+latency:
+  monotonic_timestamp_count: 11
+  negative_latency_allowed: false
+  ordering_violations_allowed: false
+performance_gates:
+  throughput_median_min_events_s: 10
+  capture_to_sink_p95_ms_max: 2000
+  capture_to_sink_p99_ms_max: 3000
+  final_backlog: 0
+  sustained_backlog: 0
+  peak_rss_mib_max: 512
+  swap_growth_mib: 0
+  normalized_cpu_average_percent_max_exclusive: 75
+  normalized_cpu_p95_percent_max_exclusive: 95
+  unbounded_growth_allowed: false
+no_fit:
+  fit_call_count: 0
+  partial_fit_call_count: 0
+  calibration_fit_call_count: 0
+  conformal_fit_call_count: 0
+  feature_selection_call_count: 0
+  threshold_selection_call_count: 0
+  candidate_replacement_count: 0
+privacy:
+  findings_allowed: 0
+  negative_fixture_detection_rate: 1.0
+  raw_runtime_artifacts_git_allowed: false
+resume:
+  strict_hash_verified: true
+  corruption_case_count: 12
+evidence_composition:
+  scientific_stage: v0.3.15.5
+  runtime_stage: v0.3.15.5.1
+  exact_candidate_identity_required: true
+promotion:
+  all_36_gates_required: true
+  next_allowed_stage_on_pass: v0.3.16
+  staging_connector_readiness_on_pass: true
+  shadow_mode_allowed: false
+  backend_integration_allowed: false
+  production_ready: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+non_goals: [scientific_recalculation, model_fit, calibration_fit, conformal_fit, feature_selection, threshold_selection, candidate_replacement, v1_change, v1_migration, backend_change, shadow_mode, production, external_network, automatic_actions, v0.3.16_implementation]
+invalidation:
+  protocol_change_before_capture: preserve_revision_and_create_new_revision
+  protocol_change_after_capture: invalidate_campaign_and_use_new_sessions_and_seeds
+  candidate_lock_mismatch: stop_campaign_and_report_integrity_failure
+  label_access: invalidate_campaign
+  any_fit_or_tuning: invalidate_campaign
