@@ -1,10 +1,10 @@
 schema_version: 2
 deprecated: true
 authoritative_source: status/project-status.yaml
-latest_completed_stage: v0.3.15.2
-latest_completed_result: corrective_runtime_remediation_passed_readiness_blocked
+latest_completed_stage: v0.3.15.4
+latest_completed_result: redevelopment_passed_candidate_ready_for_v03155_only
 active_stage: none
-next_allowed_stage: null
+next_allowed_stage: v0.3.15.5
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false

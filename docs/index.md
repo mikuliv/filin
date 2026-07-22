@@ -15,6 +15,7 @@
 - [v0.3.15.1](experiments/v0_3_15_1.md)
 - [v0.3.15.2](experiments/v0_3_15_2.md)
 - [v0.3.15.3](experiments/v0_3_15_3.md)
+- [v0.3.15.4](experiments/v0_3_15_4.md)
 - [Предлагаемый v0.3.15.4](experiments/v0_3_15_4_proposed.md)
 
 ## Контракты и методология

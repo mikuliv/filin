@@ -4,7 +4,7 @@
 
 ## Проверено
 
-- frozen candidate v0.3.11 и неизменная 51-feature schema;
+- development candidate v0.3.15.4, исторический frozen candidate v0.3.11 и versioned 51-feature schema v2;
 - independent environmental holdout v0.3.13;
 - controlled local trial v0.3.15 с неизменным scientific bundle;
 - hash-integrity всех доступных файлов bundle v0.3.15;
@@ -25,7 +25,7 @@ v0.3.14 подтверждает event contract и отдельные компо
 
 v0.3.15.2 не разрешает staging connector: frozen candidate не прошёл scientific gates, а performance/privacy evidence имеет перечисленные в [отчёте](experiments/v0_3_15_2.md) ограничения.
 
-v0.3.15.3 не исправляет этот результат: анализ подтверждает mixed scenario/feature/conformal cause и оставляет training necessity unresolved. Проект v0.3.15.4 не заморожен и не запускался.
+v0.3.15.4 исправил подтверждённые scenario/feature defects и разрешил training necessity созданием нового development candidate. Результат ограничен internal audit; независимый prospective holdout v0.3.15.5 ещё не выполнен.
 
 ## Не разрешено
 

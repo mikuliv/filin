@@ -16,7 +16,7 @@
 - v0.3.9 — completed episode-first cycle, negative policy.
 - v0.3.10 — completed minimal probabilistic cycle, negative policy.
 - v0.3.10.1 — completed corrective clarification.
-- v0.3.11 — completed training; current frozen candidate.
+- v0.3.11 — completed training; historical frozen candidate preserved.
 - v0.3.12 — completed regression, negative policy.
 - v0.3.12.1 — completed causal-order audit.
 - v0.3.12.2 — completed corrected regression.
@@ -26,12 +26,12 @@
 - v0.3.15.1 — completed corrective runtime evidence hardening.
 - v0.3.15.2 — completed negative prospective integrated runtime trial.
 - v0.3.15.3 — completed scientific regression analysis; mixed cause established.
-- v0.3.15.4 — следующий допустимый controlled mixed redevelopment; protocol proposed, not frozen.
+- v0.3.15.4 — completed controlled redevelopment; candidate ready only for v0.3.15.5 prospective evaluation.
 <!-- stage-history:end -->
 
 ## Ближайшая работа
 
-v0.3.16 имеет статус blocked. Сначала требуется v0.3.15.4 для раздельного исправления scenario/feature/conformal механизмов, затем новый независимый prospective runtime holdout v0.3.15.5 с полным ACK, latency, CPU и privacy evidence.
+v0.3.16 имеет статус blocked. Следующая работа — новый независимый prospective holdout v0.3.15.5 для candidate v0.3.15.4 с полным ACK, latency, CPU и privacy evidence.
 
 ## v0.3.16
 

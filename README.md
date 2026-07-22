@@ -8,7 +8,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.3. Runtime v0.3.15.2 технически подтвердил доставку 2 490 canonical events и 35 fault-oracles, но scientific portability frozen candidate не подтверждена. Анализ причин установил смешанный scenario/feature/conformal механизм и не изменил отрицательный исторический результат. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.15.4. Контролируемая переработка исправила наблюдаемые scenario/feature defects, создала новый development candidate и прошла закрытый internal audit. Следующий разрешённый этап — независимый prospective holdout v0.3.15.5. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -28,7 +28,7 @@
 
 ## 7. Подсистема обнаружения
 
-Текущий frozen candidate создан на v0.3.11. v0.3.15.1 не выполняет fit, calibration fit, conformal fit, feature selection, threshold selection или новый inference исторических окон.
+Текущий development candidate создан на v0.3.15.4. Исторический frozen candidate v0.3.11 и все исторические результаты сохранены неизменными.
 
 ## 8. Поддерживаемые классы наблюдаемого поведения
 
@@ -52,7 +52,7 @@ Runtime использует только локальные fixtures и mock si
 
 ## 13. Текущий frozen candidate
 
-Candidate ID: `v0311:19176acb401be2d4`. Он был создан на v0.3.11 и не изменялся на v0.3.12–v0.3.15.1.
+Candidate ID: `v03154:65a3dd912d845bc1`. Он прошёл только development/internal audit и требует нового prospective holdout v0.3.15.5. Исторический `v0311:19176acb401be2d4` не перезаписан.
 
 ## 14. Последний независимый holdout
 
@@ -104,15 +104,16 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.15.1 — corrective runtime evidence audit.
 - v0.3.15.2 — prospective integrated passive runtime trial с отрицательным итогом.
 - v0.3.15.3 — завершённый анализ научной регрессии и проект следующего цикла.
+- v0.3.15.4 — завершённая контролируемая смешанная переработка; candidate разрешён только для v0.3.15.5.
 <!-- stage-history:end -->
 
-## 19. Текущий этап v0.3.15.3
+## 19. Текущий этап v0.3.15.4
 
-Подробности приведены в [анализе регрессии](docs/experiments/v0_3_15_3.md), [описании prospective trial](docs/experiments/v0_3_15_2.md) и итоговом отчёте `ml/reports/v0_3_15_3/v0_3_15_3_summary.md`. Frozen candidate, independent holdout v0.3.13 и отрицательный результат v0.3.15.2 не переписаны.
+Подробности приведены в [описании v0.3.15.4](docs/experiments/v0_3_15_4.md) и итоговом отчёте `ml/reports/v0_3_15_4/v0_3_15_4_summary.md`. Исторический candidate, independent holdout v0.3.13 и отрицательный результат v0.3.15.2 не переписаны.
 
 ## 20. Следующий разрешённый этап
 
-v0.3.16 заблокирован. Следующий допустимый этап — выбранный Track E v0.3.15.4: controlled mixed redevelopment сценариев, feature semantics и decision policy. Его протокол пока имеет статус `proposed_not_frozen` и не запускался. После разработки обязателен новый независимый v0.3.15.5 prospective holdout.
+v0.3.16 заблокирован. Следующий допустимый этап — новый заранее замороженный независимый v0.3.15.5 prospective holdout для development candidate v0.3.15.4.
 
 ## 21. Структура репозитория
 

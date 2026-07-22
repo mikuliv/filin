@@ -7,6 +7,7 @@ from pathlib import PurePosixPath
 
 PROTECTED_SUFFIXES = {".pcap", ".pcapng", ".joblib", ".pkl", ".pickle", ".onnx"}
 PROTECTED_PREFIXES = ("lab/output/", "ml/artifacts/")
+TRACKED_MODEL_METADATA = {"ml/artifacts/v0_3_15_4/candidate_manifest.json"}
 TRACKED_RUNTIME_ALLOWLIST = {"runtime/.env.example", "runtime/docker-compose.demo.yml"}
 GENERATED_PARTS = {"__pycache__", ".pytest_cache", ".mypy_cache"}
 
@@ -16,7 +17,8 @@ def violations(paths: list[str]) -> list[str]:
     for raw in paths:
         path = PurePosixPath(raw.replace("\\", "/")); normalized = path.as_posix()
         runtime_artifact = normalized.startswith("runtime/") and normalized not in TRACKED_RUNTIME_ALLOWLIST
-        if path.suffix.casefold() in PROTECTED_SUFFIXES or normalized.startswith(PROTECTED_PREFIXES) or runtime_artifact or GENERATED_PARTS & set(path.parts):
+        protected_prefix = normalized.startswith(PROTECTED_PREFIXES) and normalized not in TRACKED_MODEL_METADATA
+        if path.suffix.casefold() in PROTECTED_SUFFIXES or protected_prefix or runtime_artifact or GENERATED_PARTS & set(path.parts):
             result.append(normalized)
     return sorted(result)
 
