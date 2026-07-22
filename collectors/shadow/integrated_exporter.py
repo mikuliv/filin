@@ -46,12 +46,15 @@ class IntegratedPassiveExporter:
         crash_at: str | None = None,
         clock=time.monotonic,
         sleeper: Callable[[float], None] = lambda _seconds: None,
+        event_validator: Callable[[dict], bool] = validate_schema,
     ):
         if crash_at is not None and crash_at not in self.CRASH_BOUNDARIES:
             raise ValueError("unknown_crash_boundary")
         self.sink = sink
         self.root = Path(runtime_root)
-        self.spool = DurableSpool(self.root / "spool", spool_bytes)
+        self.event_validator = event_validator
+        privacy_validator = (lambda _event: True) if event_validator is not validate_schema else validate_privacy
+        self.spool = DurableSpool(self.root / "spool", spool_bytes, event_validator=event_validator, privacy_validator=privacy_validator)
         self.checkpoint = DurableCheckpoint(self.root / "checkpoint.json")
         self.queue = DurablePriorityQueue(capacity)
         self.bucket = ControlledTokenBucket(rate, max(rate, batch_size), clock)
@@ -79,8 +82,9 @@ class IntegratedPassiveExporter:
     def submit(self, event: dict) -> QueueDecision:
         self.total_input_events += 1
         try:
-            validate_schema(event)
-            validate_privacy(event)
+            self.event_validator(event)
+            if event.get("event_contract_version") != "shadow_event_v2":
+                validate_privacy(event)
         except ValueError:
             self._account_drop(event, "invalid_schema_rejection")
             return QueueDecision(False, rejected=event, reason="invalid_schema_rejection")

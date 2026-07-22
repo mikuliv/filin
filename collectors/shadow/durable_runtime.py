@@ -43,23 +43,26 @@ class SpoolFull(RuntimeError):
 class DurableSpool:
     schema = "shadow_integrated_spool_v1"
 
-    def __init__(self, root: str | Path, maximum_bytes: int = 256 * 1024 * 1024):
+    def __init__(self, root: str | Path, maximum_bytes: int = 256 * 1024 * 1024, *, event_validator=validate_schema, privacy_validator=validate_privacy):
         self.root = Path(root)
         self.maximum_bytes = maximum_bytes
         self.root.mkdir(parents=True, exist_ok=True)
         self.peak_bytes = self.size_bytes
         self.quarantined = 0
+        self.event_validator = event_validator
+        self.privacy_validator = privacy_validator
 
     @property
     def size_bytes(self) -> int:
         return sum(item.stat().st_size for item in self.root.glob("*.event"))
 
     def path_for(self, event: dict) -> Path:
-        return self.root / f"{event['event_sequence']:08d}-{event['event_id']}.event"
+        sequence = event.get("event_sequence", event.get("runtime_ref", {}).get("source_sequence", 0))
+        return self.root / f"{sequence:08d}-{event['event_id']}.event"
 
     def append(self, event: dict) -> Path:
-        validate_schema(event)
-        validate_privacy(event)
+        self.event_validator(event)
+        self.privacy_validator(event)
         body = json.dumps(event, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
         wrapper = {"schema": self.schema, "sha256": hashlib.sha256(body).hexdigest(), "size": len(body), "event": event}
         payload = (json.dumps(wrapper, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
@@ -79,8 +82,8 @@ class DurableSpool:
             raise RuntimeIntegrityError("spool_parse_error") from exc
         if wrapper.get("schema") != self.schema or wrapper.get("size") != len(body) or wrapper.get("sha256") != hashlib.sha256(body).hexdigest():
             raise RuntimeIntegrityError("spool_integrity_error")
-        validate_schema(event)
-        validate_privacy(event)
+        self.event_validator(event)
+        self.privacy_validator(event)
         return event
 
     def recover(self) -> list[dict]:
@@ -126,7 +129,8 @@ class DurableCheckpoint:
 
     def commit(self, event: dict) -> None:
         self.acknowledged.add(event["idempotency_key"])
-        self.hash_chain_root = sha256(self.hash_chain_root + event["event_hash"])
+        event_hash = event.get("event_hash", sha256(canonical_bytes(event)))
+        self.hash_chain_root = sha256(self.hash_chain_root + event_hash)
         _durable_write(self.path, (json.dumps(self._payload(), sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8"))
 
 

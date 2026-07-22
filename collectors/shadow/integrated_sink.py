@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from .acknowledgement import make_ack
 from .schema_validator import validate
+from .canonical import canonical_bytes, sha256
 
 
 class TransportFailure(RuntimeError):
@@ -12,11 +13,12 @@ class TransportFailure(RuntimeError):
 
 
 class LocalIdempotentSink:
-    def __init__(self):
+    def __init__(self, event_validator=validate):
         self.events: dict[str, dict] = {}
         self.attempts = 0
         self.batch_calls = 0
         self.sequence = 0
+        self.event_validator = event_validator
 
     def send(self, event: dict) -> dict:
         return self.send_batch([event])[0]
@@ -26,10 +28,10 @@ class LocalIdempotentSink:
         acknowledgements = []
         for event in events:
             self.attempts += 1
-            validate(event)
+            self.event_validator(event)
             key = event["idempotency_key"]
             if key in self.events:
-                if self.events[key]["event_hash"] != event["event_hash"]:
+                if sha256(canonical_bytes(self.events[key])) != sha256(canonical_bytes(event)):
                     acknowledgements.append(make_ack(event, "rejected_permanent", "invalid_contract", sequence=self.sequence))
                 else:
                     acknowledgements.append(make_ack(event, "duplicate", sequence=self.sequence))
@@ -41,8 +43,8 @@ class LocalIdempotentSink:
 
 
 class FaultInjectingSink(LocalIdempotentSink):
-    def __init__(self, scenario: str, failures: int = 1):
-        super().__init__()
+    def __init__(self, scenario: str, failures: int = 1, event_validator=validate):
+        super().__init__(event_validator=event_validator)
         self.scenario = scenario
         self.failures = failures
         self.injection_count = 0
