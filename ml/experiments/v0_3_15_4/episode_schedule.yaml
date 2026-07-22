@@ -1,47 +1,47 @@
 schema_version: v03154_episodes_v1
 episodes:
-- episode_id: v03154:dev_scenario_semantics_001:01
-  session_id: dev_scenario_semantics_001
-  session_group: scenario_semantics
-  split: training
-  kind: attack
-  class: auth_failures
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: 06928e0bf8e124255e36
-- episode_id: v03154:dev_scenario_semantics_001:02
-  session_id: dev_scenario_semantics_001
+- episode_id: v03154:dev2_scenario_semantics_001:01
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 34
+  start_scored_window: 12
   length: 2
   benign_variant: null
-  generation_nonce: faf159a2222ea93ea6b3
-- episode_id: v03154:dev_scenario_semantics_001:03
-  session_id: dev_scenario_semantics_001
+  generation_nonce: a76b2404c9218835dbd5
+- episode_id: v03154:dev2_scenario_semantics_001:02
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: attack
   class: low_rate_dos
-  start_scored_window: 56
+  start_scored_window: 34
   length: 2
   benign_variant: null
-  generation_nonce: 0c9f6367f866caafe647
-- episode_id: v03154:dev_scenario_semantics_001:04
-  session_id: dev_scenario_semantics_001
+  generation_nonce: 77737b68cf64b1fe8bb1
+- episode_id: v03154:dev2_scenario_semantics_001:03
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: attack
   class: port_scan
+  start_scored_window: 56
+  length: 2
+  benign_variant: null
+  generation_nonce: 989b5207d53d15b69df1
+- episode_id: v03154:dev2_scenario_semantics_001:04
+  session_id: dev2_scenario_semantics_001
+  session_group: scenario_semantics
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 2
   benign_variant: null
-  generation_nonce: 3ecb99f2030cb32fa768
-- episode_id: v03154:dev_scenario_semantics_001:05
-  session_id: dev_scenario_semantics_001
+  generation_nonce: 4a6b8012ce3a55359763
+- episode_id: v03154:dev2_scenario_semantics_001:05
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -49,9 +49,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_01
-  generation_nonce: dda7fd809703f419564e
-- episode_id: v03154:dev_scenario_semantics_001:06
-  session_id: dev_scenario_semantics_001
+  generation_nonce: 06c9ef59e6407fe2d710
+- episode_id: v03154:dev2_scenario_semantics_001:06
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -59,9 +59,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_20
-  generation_nonce: bde317f5d269b95d70ce
-- episode_id: v03154:dev_scenario_semantics_001:07
-  session_id: dev_scenario_semantics_001
+  generation_nonce: 7e0e60cdd77fed1a28dc
+- episode_id: v03154:dev2_scenario_semantics_001:07
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -69,9 +69,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_26
-  generation_nonce: 956b3df996871df41f60
-- episode_id: v03154:dev_scenario_semantics_001:08
-  session_id: dev_scenario_semantics_001
+  generation_nonce: fc96d71f284917d18061
+- episode_id: v03154:dev2_scenario_semantics_001:08
+  session_id: dev2_scenario_semantics_001
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -79,49 +79,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_45
-  generation_nonce: 2c75ff21a9a0261985b0
-- episode_id: v03154:dev_scenario_semantics_002:01
-  session_id: dev_scenario_semantics_002
-  session_group: scenario_semantics
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: ca5507414e21cbc7f52b
-- episode_id: v03154:dev_scenario_semantics_002:02
-  session_id: dev_scenario_semantics_002
+  generation_nonce: 20c60c427f73718a4a4d
+- episode_id: v03154:dev2_scenario_semantics_002:01
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 34
-  length: 3
+  start_scored_window: 12
+  length: 2
   benign_variant: null
-  generation_nonce: bde003163986bdb87b2f
-- episode_id: v03154:dev_scenario_semantics_002:03
-  session_id: dev_scenario_semantics_002
-  session_group: scenario_semantics
-  split: training
-  kind: attack
-  class: beacon
-  start_scored_window: 56
-  length: 3
-  benign_variant: null
-  generation_nonce: fe3ec3540e0c1034b25d
-- episode_id: v03154:dev_scenario_semantics_002:04
-  session_id: dev_scenario_semantics_002
+  generation_nonce: c4fde49ed2a327da00ee
+- episode_id: v03154:dev2_scenario_semantics_002:02
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: attack
   class: low_rate_dos
+  start_scored_window: 34
+  length: 3
+  benign_variant: null
+  generation_nonce: 3aaf46ae71b3acbd2cac
+- episode_id: v03154:dev2_scenario_semantics_002:03
+  session_id: dev2_scenario_semantics_002
+  session_group: scenario_semantics
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: a4f8b97b746dbd3068a8
+- episode_id: v03154:dev2_scenario_semantics_002:04
+  session_id: dev2_scenario_semantics_002
+  session_group: scenario_semantics
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 3
   benign_variant: null
-  generation_nonce: 535809fa4ffba5c78983
-- episode_id: v03154:dev_scenario_semantics_002:05
-  session_id: dev_scenario_semantics_002
+  generation_nonce: bb44300bb213928b9965
+- episode_id: v03154:dev2_scenario_semantics_002:05
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -129,9 +129,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_02
-  generation_nonce: 39330b2d5b4418e22e33
-- episode_id: v03154:dev_scenario_semantics_002:06
-  session_id: dev_scenario_semantics_002
+  generation_nonce: 16c284424ecbc8fa833a
+- episode_id: v03154:dev2_scenario_semantics_002:06
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -139,9 +139,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_21
-  generation_nonce: 72fc144ca24ff3bfc0dc
-- episode_id: v03154:dev_scenario_semantics_002:07
-  session_id: dev_scenario_semantics_002
+  generation_nonce: 87be351b6e164daff8bf
+- episode_id: v03154:dev2_scenario_semantics_002:07
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -149,9 +149,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_27
-  generation_nonce: a6cd85251bc49d2bc8d6
-- episode_id: v03154:dev_scenario_semantics_002:08
-  session_id: dev_scenario_semantics_002
+  generation_nonce: e6d84406731b127573a6
+- episode_id: v03154:dev2_scenario_semantics_002:08
+  session_id: dev2_scenario_semantics_002
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -159,49 +159,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_46
-  generation_nonce: 134627fdbb6872589ca1
-- episode_id: v03154:dev_scenario_semantics_003:01
-  session_id: dev_scenario_semantics_003
-  session_group: scenario_semantics
-  split: training
-  kind: attack
-  class: port_scan
-  start_scored_window: 12
-  length: 3
-  benign_variant: null
-  generation_nonce: f31cb9435012d65e5c6d
-- episode_id: v03154:dev_scenario_semantics_003:02
-  session_id: dev_scenario_semantics_003
-  session_group: scenario_semantics
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 9abc21292c5fa617e9ce
-- episode_id: v03154:dev_scenario_semantics_003:03
-  session_id: dev_scenario_semantics_003
+  generation_nonce: 12cefee3fd6768c1d8ef
+- episode_id: v03154:dev2_scenario_semantics_003:01
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 56
-  length: 4
+  start_scored_window: 12
+  length: 3
   benign_variant: null
-  generation_nonce: 3f246615270df982f68d
-- episode_id: v03154:dev_scenario_semantics_003:04
-  session_id: dev_scenario_semantics_003
+  generation_nonce: 4adda2b588ca52ec39e2
+- episode_id: v03154:dev2_scenario_semantics_003:02
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: attack
   class: beacon
+  start_scored_window: 34
+  length: 3
+  benign_variant: null
+  generation_nonce: 48978d5c027c41fe3790
+- episode_id: v03154:dev2_scenario_semantics_003:03
+  session_id: dev2_scenario_semantics_003
+  session_group: scenario_semantics
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 4
+  benign_variant: null
+  generation_nonce: 029033012e2b8d5ae926
+- episode_id: v03154:dev2_scenario_semantics_003:04
+  session_id: dev2_scenario_semantics_003
+  session_group: scenario_semantics
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 4
   benign_variant: null
-  generation_nonce: 9294e5fdfb57813154d2
-- episode_id: v03154:dev_scenario_semantics_003:05
-  session_id: dev_scenario_semantics_003
+  generation_nonce: f8e4f2533e80eb1e15c0
+- episode_id: v03154:dev2_scenario_semantics_003:05
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -209,9 +209,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_03
-  generation_nonce: 4afcc3868454769032ea
-- episode_id: v03154:dev_scenario_semantics_003:06
-  session_id: dev_scenario_semantics_003
+  generation_nonce: e29982d26f65f1b0b87a
+- episode_id: v03154:dev2_scenario_semantics_003:06
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -219,9 +219,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_22
-  generation_nonce: fa41203fa4b323ff7070
-- episode_id: v03154:dev_scenario_semantics_003:07
-  session_id: dev_scenario_semantics_003
+  generation_nonce: 62911625ecd2edbd10f5
+- episode_id: v03154:dev2_scenario_semantics_003:07
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -229,9 +229,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_28
-  generation_nonce: a583e2eeee6a0c4e5a4c
-- episode_id: v03154:dev_scenario_semantics_003:08
-  session_id: dev_scenario_semantics_003
+  generation_nonce: 030e70b624fa83a32b96
+- episode_id: v03154:dev2_scenario_semantics_003:08
+  session_id: dev2_scenario_semantics_003
   session_group: scenario_semantics
   split: training
   kind: benign
@@ -239,49 +239,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_47
-  generation_nonce: c784e280eb5897f3d0dd
-- episode_id: v03154:dev_scenario_semantics_004:01
-  session_id: dev_scenario_semantics_004
-  session_group: scenario_semantics
-  split: calibration
-  kind: attack
-  class: low_rate_dos
-  start_scored_window: 12
-  length: 4
-  benign_variant: null
-  generation_nonce: 6dec7ec9d2a7edd19a3e
-- episode_id: v03154:dev_scenario_semantics_004:02
-  session_id: dev_scenario_semantics_004
-  session_group: scenario_semantics
-  split: calibration
-  kind: attack
-  class: port_scan
-  start_scored_window: 34
-  length: 4
-  benign_variant: null
-  generation_nonce: a22e5bc980d1bf47fc06
-- episode_id: v03154:dev_scenario_semantics_004:03
-  session_id: dev_scenario_semantics_004
-  session_group: scenario_semantics
-  split: calibration
-  kind: attack
-  class: web_probe
-  start_scored_window: 56
-  length: 4
-  benign_variant: null
-  generation_nonce: 10dbf68594ffb4f4d8a8
-- episode_id: v03154:dev_scenario_semantics_004:04
-  session_id: dev_scenario_semantics_004
+  generation_nonce: 0118409e6d062c3c17b2
+- episode_id: v03154:dev2_scenario_semantics_004:01
+  session_id: dev2_scenario_semantics_004
   session_group: scenario_semantics
   split: calibration
   kind: attack
   class: auth_failures
+  start_scored_window: 12
+  length: 4
+  benign_variant: null
+  generation_nonce: 4767e963e57f22f99ec2
+- episode_id: v03154:dev2_scenario_semantics_004:02
+  session_id: dev2_scenario_semantics_004
+  session_group: scenario_semantics
+  split: calibration
+  kind: attack
+  class: beacon
+  start_scored_window: 34
+  length: 4
+  benign_variant: null
+  generation_nonce: 080c44473e7b19bf4818
+- episode_id: v03154:dev2_scenario_semantics_004:03
+  session_id: dev2_scenario_semantics_004
+  session_group: scenario_semantics
+  split: calibration
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 56
+  length: 4
+  benign_variant: null
+  generation_nonce: 39af409b6da80c468179
+- episode_id: v03154:dev2_scenario_semantics_004:04
+  session_id: dev2_scenario_semantics_004
+  session_group: scenario_semantics
+  split: calibration
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: 967756a4df2dc5af50e0
-- episode_id: v03154:dev_scenario_semantics_004:05
-  session_id: dev_scenario_semantics_004
+  generation_nonce: 35d316e6681050fe93c5
+- episode_id: v03154:dev2_scenario_semantics_004:05
+  session_id: dev2_scenario_semantics_004
   session_group: scenario_semantics
   split: calibration
   kind: benign
@@ -289,9 +289,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_04
-  generation_nonce: 5da019b9fda5d5bb5486
-- episode_id: v03154:dev_scenario_semantics_004:06
-  session_id: dev_scenario_semantics_004
+  generation_nonce: 8493aa780064ff13bc90
+- episode_id: v03154:dev2_scenario_semantics_004:06
+  session_id: dev2_scenario_semantics_004
   session_group: scenario_semantics
   split: calibration
   kind: benign
@@ -299,9 +299,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_23
-  generation_nonce: d6b23c43e87c11cf1de8
-- episode_id: v03154:dev_scenario_semantics_004:07
-  session_id: dev_scenario_semantics_004
+  generation_nonce: de4e47506fe098bbe99a
+- episode_id: v03154:dev2_scenario_semantics_004:07
+  session_id: dev2_scenario_semantics_004
   session_group: scenario_semantics
   split: calibration
   kind: benign
@@ -309,9 +309,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_29
-  generation_nonce: 61e6fef9697eec1b9cf3
-- episode_id: v03154:dev_scenario_semantics_004:08
-  session_id: dev_scenario_semantics_004
+  generation_nonce: bb829bb0000a9bb3453d
+- episode_id: v03154:dev2_scenario_semantics_004:08
+  session_id: dev2_scenario_semantics_004
   session_group: scenario_semantics
   split: calibration
   kind: benign
@@ -319,49 +319,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_48
-  generation_nonce: 0592b6c7dc67846ef7fe
-- episode_id: v03154:dev_scenario_semantics_005:01
-  session_id: dev_scenario_semantics_005
+  generation_nonce: d60ef818bcf387e2a3eb
+- episode_id: v03154:dev2_scenario_semantics_005:01
+  session_id: dev2_scenario_semantics_005
+  session_group: scenario_semantics
+  split: internal_audit
+  kind: attack
+  class: auth_failures
+  start_scored_window: 12
+  length: 5
+  benign_variant: null
+  generation_nonce: 5ce5cce96b0f61a597e2
+- episode_id: v03154:dev2_scenario_semantics_005:02
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: attack
   class: beacon
-  start_scored_window: 12
+  start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: d0ba108ce50bc746c509
-- episode_id: v03154:dev_scenario_semantics_005:02
-  session_id: dev_scenario_semantics_005
+  generation_nonce: 857099cf5d9d38056e3a
+- episode_id: v03154:dev2_scenario_semantics_005:03
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: attack
   class: low_rate_dos
-  start_scored_window: 34
+  start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 27a063dc797345b42c2c
-- episode_id: v03154:dev_scenario_semantics_005:03
-  session_id: dev_scenario_semantics_005
+  generation_nonce: 02aae71d2ea71b14eb8f
+- episode_id: v03154:dev2_scenario_semantics_005:04
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: attack
   class: port_scan
-  start_scored_window: 56
-  length: 5
-  benign_variant: null
-  generation_nonce: 05ca754765304f6b3ee0
-- episode_id: v03154:dev_scenario_semantics_005:04
-  session_id: dev_scenario_semantics_005
-  session_group: scenario_semantics
-  split: internal_audit
-  kind: attack
-  class: web_probe
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: a669497a6785378c30cf
-- episode_id: v03154:dev_scenario_semantics_005:05
-  session_id: dev_scenario_semantics_005
+  generation_nonce: d65dc77c6d97b15419fd
+- episode_id: v03154:dev2_scenario_semantics_005:05
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: benign
@@ -369,9 +369,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_05
-  generation_nonce: 3ff2182818d12c4ed27a
-- episode_id: v03154:dev_scenario_semantics_005:06
-  session_id: dev_scenario_semantics_005
+  generation_nonce: ecac48e5bae255d9a957
+- episode_id: v03154:dev2_scenario_semantics_005:06
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: benign
@@ -379,9 +379,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_24
-  generation_nonce: 131417bd6f567080a313
-- episode_id: v03154:dev_scenario_semantics_005:07
-  session_id: dev_scenario_semantics_005
+  generation_nonce: d90a299ad88902dab0c8
+- episode_id: v03154:dev2_scenario_semantics_005:07
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: benign
@@ -389,9 +389,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_30
-  generation_nonce: b2fe25d5d8a48c7271cc
-- episode_id: v03154:dev_scenario_semantics_005:08
-  session_id: dev_scenario_semantics_005
+  generation_nonce: c27f305947a0048a11cb
+- episode_id: v03154:dev2_scenario_semantics_005:08
+  session_id: dev2_scenario_semantics_005
   session_group: scenario_semantics
   split: internal_audit
   kind: benign
@@ -399,9 +399,9 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_49
-  generation_nonce: c25f5a41ba681ecf4326
-- episode_id: v03154:dev_feature_provenance_001:01
-  session_id: dev_feature_provenance_001
+  generation_nonce: 8f9b89f48d8de92fda77
+- episode_id: v03154:dev2_feature_provenance_001:01
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: attack
@@ -409,39 +409,39 @@ episodes:
   start_scored_window: 12
   length: 2
   benign_variant: null
-  generation_nonce: e9c1cb2c7567cbb2d92f
-- episode_id: v03154:dev_feature_provenance_001:02
-  session_id: dev_feature_provenance_001
-  session_group: feature_provenance
-  split: training
-  kind: attack
-  class: beacon
-  start_scored_window: 34
-  length: 2
-  benign_variant: null
-  generation_nonce: d6b22cad38f4d9c91061
-- episode_id: v03154:dev_feature_provenance_001:03
-  session_id: dev_feature_provenance_001
+  generation_nonce: 72ceaf309ca43f6219e8
+- episode_id: v03154:dev2_feature_provenance_001:02
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: attack
   class: low_rate_dos
-  start_scored_window: 56
+  start_scored_window: 34
   length: 2
   benign_variant: null
-  generation_nonce: 6387663e51d9f1839626
-- episode_id: v03154:dev_feature_provenance_001:04
-  session_id: dev_feature_provenance_001
+  generation_nonce: 58df2479116ccc920671
+- episode_id: v03154:dev2_feature_provenance_001:03
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: attack
   class: port_scan
+  start_scored_window: 56
+  length: 2
+  benign_variant: null
+  generation_nonce: 044baed1d7af9f21f282
+- episode_id: v03154:dev2_feature_provenance_001:04
+  session_id: dev2_feature_provenance_001
+  session_group: feature_provenance
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 2
   benign_variant: null
-  generation_nonce: 986d4b3842f1b10c98b1
-- episode_id: v03154:dev_feature_provenance_001:05
-  session_id: dev_feature_provenance_001
+  generation_nonce: 1a56eafac272a2e5fd85
+- episode_id: v03154:dev2_feature_provenance_001:05
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: benign
@@ -449,9 +449,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_06
-  generation_nonce: fbf8a88f3abbdf227738
-- episode_id: v03154:dev_feature_provenance_001:06
-  session_id: dev_feature_provenance_001
+  generation_nonce: 5a4af9f972c9dba4d777
+- episode_id: v03154:dev2_feature_provenance_001:06
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: benign
@@ -459,9 +459,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_25
-  generation_nonce: 7776192d6bcf649c03f1
-- episode_id: v03154:dev_feature_provenance_001:07
-  session_id: dev_feature_provenance_001
+  generation_nonce: 9bfb9292c06095b2a46b
+- episode_id: v03154:dev2_feature_provenance_001:07
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: benign
@@ -469,9 +469,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_31
-  generation_nonce: 03efb814b666e41d9e02
-- episode_id: v03154:dev_feature_provenance_001:08
-  session_id: dev_feature_provenance_001
+  generation_nonce: 0d7a8b99158c9b3bb274
+- episode_id: v03154:dev2_feature_provenance_001:08
+  session_id: dev2_feature_provenance_001
   session_group: feature_provenance
   split: training
   kind: benign
@@ -479,49 +479,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_50
-  generation_nonce: 2a0d1a1e01b3e2b44470
-- episode_id: v03154:dev_feature_provenance_002:01
-  session_id: dev_feature_provenance_002
-  session_group: feature_provenance
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: cceac0547ffd33cc4911
-- episode_id: v03154:dev_feature_provenance_002:02
-  session_id: dev_feature_provenance_002
+  generation_nonce: 781c2615f50a6be6c286
+- episode_id: v03154:dev2_feature_provenance_002:01
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 34
+  start_scored_window: 12
   length: 3
   benign_variant: null
-  generation_nonce: 55f751b3522ef4704c88
-- episode_id: v03154:dev_feature_provenance_002:03
-  session_id: dev_feature_provenance_002
+  generation_nonce: 16260389d31cffb4e5db
+- episode_id: v03154:dev2_feature_provenance_002:02
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 56
-  length: 3
+  start_scored_window: 34
+  length: 2
   benign_variant: null
-  generation_nonce: a90c29b2ade832145ffe
-- episode_id: v03154:dev_feature_provenance_002:04
-  session_id: dev_feature_provenance_002
+  generation_nonce: a25635f3386620e89107
+- episode_id: v03154:dev2_feature_provenance_002:03
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: attack
-  class: low_rate_dos
+  class: port_scan
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: 26877854b97fe0fe95ab
+- episode_id: v03154:dev2_feature_provenance_002:04
+  session_id: dev2_feature_provenance_002
+  session_group: feature_provenance
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 3
   benign_variant: null
-  generation_nonce: efb72c337d21036ca225
-- episode_id: v03154:dev_feature_provenance_002:05
-  session_id: dev_feature_provenance_002
+  generation_nonce: 23ea8703cb58b6389ae2
+- episode_id: v03154:dev2_feature_provenance_002:05
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: benign
@@ -529,9 +529,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_01
-  generation_nonce: f8f893b404030fbc4a00
-- episode_id: v03154:dev_feature_provenance_002:06
-  session_id: dev_feature_provenance_002
+  generation_nonce: 1585557080860631c22d
+- episode_id: v03154:dev2_feature_provenance_002:06
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: benign
@@ -539,9 +539,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_07
-  generation_nonce: 4d0189a46db9846f84aa
-- episode_id: v03154:dev_feature_provenance_002:07
-  session_id: dev_feature_provenance_002
+  generation_nonce: 11dce876d20474e4258b
+- episode_id: v03154:dev2_feature_provenance_002:07
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: benign
@@ -549,9 +549,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_26
-  generation_nonce: 9f660e45d62b5b6f5b7e
-- episode_id: v03154:dev_feature_provenance_002:08
-  session_id: dev_feature_provenance_002
+  generation_nonce: 6464f5c2286913dac762
+- episode_id: v03154:dev2_feature_provenance_002:08
+  session_id: dev2_feature_provenance_002
   session_group: feature_provenance
   split: training
   kind: benign
@@ -559,49 +559,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_32
-  generation_nonce: 7ba1517dcbced9f8ce99
-- episode_id: v03154:dev_feature_provenance_003:01
-  session_id: dev_feature_provenance_003
-  session_group: feature_provenance
-  split: training
-  kind: attack
-  class: port_scan
-  start_scored_window: 12
-  length: 3
-  benign_variant: null
-  generation_nonce: ea93bd85dba5a5602455
-- episode_id: v03154:dev_feature_provenance_003:02
-  session_id: dev_feature_provenance_003
-  session_group: feature_provenance
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 62308a7c9a8c70870cdf
-- episode_id: v03154:dev_feature_provenance_003:03
-  session_id: dev_feature_provenance_003
+  generation_nonce: 597e3a6fb99dc31f39af
+- episode_id: v03154:dev2_feature_provenance_003:01
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 56
+  start_scored_window: 12
   length: 4
   benign_variant: null
-  generation_nonce: 4a07b342e7e7be14f58a
-- episode_id: v03154:dev_feature_provenance_003:04
-  session_id: dev_feature_provenance_003
+  generation_nonce: e19f6b1d29cf1c55ad45
+- episode_id: v03154:dev2_feature_provenance_003:02
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: attack
   class: beacon
+  start_scored_window: 34
+  length: 3
+  benign_variant: null
+  generation_nonce: 0d8b209f81c9aa1e42e4
+- episode_id: v03154:dev2_feature_provenance_003:03
+  session_id: dev2_feature_provenance_003
+  session_group: feature_provenance
+  split: training
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: 757f8aa1d27356c28c3f
+- episode_id: v03154:dev2_feature_provenance_003:04
+  session_id: dev2_feature_provenance_003
+  session_group: feature_provenance
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 4
   benign_variant: null
-  generation_nonce: baae5ba7257a74ba9b00
-- episode_id: v03154:dev_feature_provenance_003:05
-  session_id: dev_feature_provenance_003
+  generation_nonce: 98f6ede854c73fc2b700
+- episode_id: v03154:dev2_feature_provenance_003:05
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: benign
@@ -609,9 +609,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_02
-  generation_nonce: 5ed3e0c888b79915d60c
-- episode_id: v03154:dev_feature_provenance_003:06
-  session_id: dev_feature_provenance_003
+  generation_nonce: eaae2800708d1be956a1
+- episode_id: v03154:dev2_feature_provenance_003:06
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: benign
@@ -619,9 +619,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_08
-  generation_nonce: aa7fd1e5fd1f2b951352
-- episode_id: v03154:dev_feature_provenance_003:07
-  session_id: dev_feature_provenance_003
+  generation_nonce: 064cb1b005ebf70ac5a0
+- episode_id: v03154:dev2_feature_provenance_003:07
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: benign
@@ -629,9 +629,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_27
-  generation_nonce: f0039b5304d09823e0ef
-- episode_id: v03154:dev_feature_provenance_003:08
-  session_id: dev_feature_provenance_003
+  generation_nonce: 0a7180ee386119f83543
+- episode_id: v03154:dev2_feature_provenance_003:08
+  session_id: dev2_feature_provenance_003
   session_group: feature_provenance
   split: training
   kind: benign
@@ -639,49 +639,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_33
-  generation_nonce: 16b29d0d20d271bdc043
-- episode_id: v03154:dev_feature_provenance_004:01
-  session_id: dev_feature_provenance_004
-  session_group: feature_provenance
-  split: calibration
-  kind: attack
-  class: low_rate_dos
-  start_scored_window: 12
-  length: 4
-  benign_variant: null
-  generation_nonce: 863af746c900a821ee1d
-- episode_id: v03154:dev_feature_provenance_004:02
-  session_id: dev_feature_provenance_004
-  session_group: feature_provenance
-  split: calibration
-  kind: attack
-  class: port_scan
-  start_scored_window: 34
-  length: 4
-  benign_variant: null
-  generation_nonce: 0ab3e2f5e3cf5dfc7ca2
-- episode_id: v03154:dev_feature_provenance_004:03
-  session_id: dev_feature_provenance_004
-  session_group: feature_provenance
-  split: calibration
-  kind: attack
-  class: web_probe
-  start_scored_window: 56
-  length: 4
-  benign_variant: null
-  generation_nonce: 575fcb2e3088501c9a3f
-- episode_id: v03154:dev_feature_provenance_004:04
-  session_id: dev_feature_provenance_004
+  generation_nonce: e38c65ea4a54eadd1e3a
+- episode_id: v03154:dev2_feature_provenance_004:01
+  session_id: dev2_feature_provenance_004
   session_group: feature_provenance
   split: calibration
   kind: attack
   class: auth_failures
-  start_scored_window: 78
+  start_scored_window: 12
   length: 5
   benign_variant: null
-  generation_nonce: 0c75236ab51f94867823
-- episode_id: v03154:dev_feature_provenance_004:05
-  session_id: dev_feature_provenance_004
+  generation_nonce: eeae1d21620d02b0acac
+- episode_id: v03154:dev2_feature_provenance_004:02
+  session_id: dev2_feature_provenance_004
+  session_group: feature_provenance
+  split: calibration
+  kind: attack
+  class: beacon
+  start_scored_window: 34
+  length: 4
+  benign_variant: null
+  generation_nonce: fdc9f70d1fa1e904e957
+- episode_id: v03154:dev2_feature_provenance_004:03
+  session_id: dev2_feature_provenance_004
+  session_group: feature_provenance
+  split: calibration
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 56
+  length: 4
+  benign_variant: null
+  generation_nonce: 985c80e83b13c751b228
+- episode_id: v03154:dev2_feature_provenance_004:04
+  session_id: dev2_feature_provenance_004
+  session_group: feature_provenance
+  split: calibration
+  kind: attack
+  class: port_scan
+  start_scored_window: 78
+  length: 4
+  benign_variant: null
+  generation_nonce: 7294d167e577756d1202
+- episode_id: v03154:dev2_feature_provenance_004:05
+  session_id: dev2_feature_provenance_004
   session_group: feature_provenance
   split: calibration
   kind: benign
@@ -689,9 +689,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_03
-  generation_nonce: a31c08dfc2e3c9952097
-- episode_id: v03154:dev_feature_provenance_004:06
-  session_id: dev_feature_provenance_004
+  generation_nonce: 017ee9fafa279c420913
+- episode_id: v03154:dev2_feature_provenance_004:06
+  session_id: dev2_feature_provenance_004
   session_group: feature_provenance
   split: calibration
   kind: benign
@@ -699,9 +699,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_09
-  generation_nonce: e57c3621e2819360e534
-- episode_id: v03154:dev_feature_provenance_004:07
-  session_id: dev_feature_provenance_004
+  generation_nonce: 4533a7ad5311c1b4d96d
+- episode_id: v03154:dev2_feature_provenance_004:07
+  session_id: dev2_feature_provenance_004
   session_group: feature_provenance
   split: calibration
   kind: benign
@@ -709,9 +709,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_28
-  generation_nonce: 5a12da5d2733d22e5d45
-- episode_id: v03154:dev_feature_provenance_004:08
-  session_id: dev_feature_provenance_004
+  generation_nonce: eaa205aed4971a4146dc
+- episode_id: v03154:dev2_feature_provenance_004:08
+  session_id: dev2_feature_provenance_004
   session_group: feature_provenance
   split: calibration
   kind: benign
@@ -719,9 +719,9 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_34
-  generation_nonce: 2ee8fbb31cb64e951b30
-- episode_id: v03154:dev_feature_provenance_005:01
-  session_id: dev_feature_provenance_005
+  generation_nonce: c62b2b43dcaaee64b70e
+- episode_id: v03154:dev2_feature_provenance_005:01
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: attack
@@ -729,9 +729,9 @@ episodes:
   start_scored_window: 12
   length: 5
   benign_variant: null
-  generation_nonce: 11ee69bd1fe10b847cda
-- episode_id: v03154:dev_feature_provenance_005:02
-  session_id: dev_feature_provenance_005
+  generation_nonce: 4072bd9b0fca137a3ca3
+- episode_id: v03154:dev2_feature_provenance_005:02
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: attack
@@ -739,9 +739,9 @@ episodes:
   start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: ff254606d836aa18f7d2
-- episode_id: v03154:dev_feature_provenance_005:03
-  session_id: dev_feature_provenance_005
+  generation_nonce: 915ac6551ff641aa7dc8
+- episode_id: v03154:dev2_feature_provenance_005:03
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: attack
@@ -749,9 +749,9 @@ episodes:
   start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 7711dddf290a6846e74a
-- episode_id: v03154:dev_feature_provenance_005:04
-  session_id: dev_feature_provenance_005
+  generation_nonce: cae8db5e8ff1379713c8
+- episode_id: v03154:dev2_feature_provenance_005:04
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: attack
@@ -759,9 +759,9 @@ episodes:
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: 9430f8a3d7d53399c6ab
-- episode_id: v03154:dev_feature_provenance_005:05
-  session_id: dev_feature_provenance_005
+  generation_nonce: 6aaeb5f3ef6f01c37248
+- episode_id: v03154:dev2_feature_provenance_005:05
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: benign
@@ -769,9 +769,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_04
-  generation_nonce: ffca74f348697e2730b0
-- episode_id: v03154:dev_feature_provenance_005:06
-  session_id: dev_feature_provenance_005
+  generation_nonce: 803d718e9b6bf0ec0fe1
+- episode_id: v03154:dev2_feature_provenance_005:06
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: benign
@@ -779,9 +779,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_10
-  generation_nonce: 30d05a6d31f1590bf306
-- episode_id: v03154:dev_feature_provenance_005:07
-  session_id: dev_feature_provenance_005
+  generation_nonce: 6a4ce810fc30b35df883
+- episode_id: v03154:dev2_feature_provenance_005:07
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: benign
@@ -789,9 +789,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_29
-  generation_nonce: 4e16c995b4ce95f339a2
-- episode_id: v03154:dev_feature_provenance_005:08
-  session_id: dev_feature_provenance_005
+  generation_nonce: fc44d5fa3bec40717656
+- episode_id: v03154:dev2_feature_provenance_005:08
+  session_id: dev2_feature_provenance_005
   session_group: feature_provenance
   split: internal_audit
   kind: benign
@@ -799,9 +799,9 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_35
-  generation_nonce: 3aa690aa5b310846aff6
-- episode_id: v03154:dev_subtype_boundary_001:01
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 0357ca5c175c79fc9c9d
+- episode_id: v03154:dev2_subtype_boundary_001:01
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: attack
@@ -809,9 +809,9 @@ episodes:
   start_scored_window: 12
   length: 2
   benign_variant: null
-  generation_nonce: bea096d759efbd69ec1e
-- episode_id: v03154:dev_subtype_boundary_001:02
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 1d326021521294fc7b2e
+- episode_id: v03154:dev2_subtype_boundary_001:02
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: attack
@@ -819,29 +819,29 @@ episodes:
   start_scored_window: 34
   length: 2
   benign_variant: null
-  generation_nonce: e7b7bef039731132bde8
-- episode_id: v03154:dev_subtype_boundary_001:03
-  session_id: dev_subtype_boundary_001
-  session_group: subtype_boundary
-  split: training
-  kind: attack
-  class: low_rate_dos
-  start_scored_window: 56
-  length: 2
-  benign_variant: null
-  generation_nonce: bdf6c3d9a5288f5018d3
-- episode_id: v03154:dev_subtype_boundary_001:04
-  session_id: dev_subtype_boundary_001
+  generation_nonce: cca33465728766f3ccb5
+- episode_id: v03154:dev2_subtype_boundary_001:03
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: attack
   class: port_scan
+  start_scored_window: 56
+  length: 2
+  benign_variant: null
+  generation_nonce: 6be6f03dd68e898739dc
+- episode_id: v03154:dev2_subtype_boundary_001:04
+  session_id: dev2_subtype_boundary_001
+  session_group: subtype_boundary
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 2
   benign_variant: null
-  generation_nonce: e6a4d669ae61f6d85cb0
-- episode_id: v03154:dev_subtype_boundary_001:05
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 4214c4bb6940e2719fc5
+- episode_id: v03154:dev2_subtype_boundary_001:05
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -849,9 +849,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_05
-  generation_nonce: e6ebbe898e7603286ebe
-- episode_id: v03154:dev_subtype_boundary_001:06
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 86baa49cee3a8c967291
+- episode_id: v03154:dev2_subtype_boundary_001:06
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -859,9 +859,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_11
-  generation_nonce: b4723159a88df762ccb4
-- episode_id: v03154:dev_subtype_boundary_001:07
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 2a5235aaf065af5d4d10
+- episode_id: v03154:dev2_subtype_boundary_001:07
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -869,9 +869,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_30
-  generation_nonce: 518fd47fda1342be4ace
-- episode_id: v03154:dev_subtype_boundary_001:08
-  session_id: dev_subtype_boundary_001
+  generation_nonce: 5602d6f1b0e3f9a3690c
+- episode_id: v03154:dev2_subtype_boundary_001:08
+  session_id: dev2_subtype_boundary_001
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -879,49 +879,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_36
-  generation_nonce: 0525cc725ebb2a3dbd36
-- episode_id: v03154:dev_subtype_boundary_002:01
-  session_id: dev_subtype_boundary_002
-  session_group: subtype_boundary
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: 102d4dce836fd4beed02
-- episode_id: v03154:dev_subtype_boundary_002:02
-  session_id: dev_subtype_boundary_002
+  generation_nonce: 9f365857523b04e9fd14
+- episode_id: v03154:dev2_subtype_boundary_002:01
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 34
+  start_scored_window: 12
   length: 3
   benign_variant: null
-  generation_nonce: 1fc32b4596b778added8
-- episode_id: v03154:dev_subtype_boundary_002:03
-  session_id: dev_subtype_boundary_002
+  generation_nonce: 2f9f21aacac79b0d52e2
+- episode_id: v03154:dev2_subtype_boundary_002:02
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 56
+  start_scored_window: 34
   length: 3
   benign_variant: null
-  generation_nonce: 2236d67262c768771fb7
-- episode_id: v03154:dev_subtype_boundary_002:04
-  session_id: dev_subtype_boundary_002
+  generation_nonce: 5d714556d61fbe381ae0
+- episode_id: v03154:dev2_subtype_boundary_002:03
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: attack
   class: low_rate_dos
+  start_scored_window: 56
+  length: 2
+  benign_variant: null
+  generation_nonce: 4dfcff0c4baea9881c9b
+- episode_id: v03154:dev2_subtype_boundary_002:04
+  session_id: dev2_subtype_boundary_002
+  session_group: subtype_boundary
+  split: training
+  kind: attack
+  class: web_probe
   start_scored_window: 78
   length: 3
   benign_variant: null
-  generation_nonce: fc3a088c15666297b4b1
-- episode_id: v03154:dev_subtype_boundary_002:05
-  session_id: dev_subtype_boundary_002
+  generation_nonce: fa40f27c90be2aed71dd
+- episode_id: v03154:dev2_subtype_boundary_002:05
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -929,9 +929,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_06
-  generation_nonce: 9a0f38f87ca486c1e800
-- episode_id: v03154:dev_subtype_boundary_002:06
-  session_id: dev_subtype_boundary_002
+  generation_nonce: f256bf898c672cafa394
+- episode_id: v03154:dev2_subtype_boundary_002:06
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -939,9 +939,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_12
-  generation_nonce: b31f93a821c8c483581d
-- episode_id: v03154:dev_subtype_boundary_002:07
-  session_id: dev_subtype_boundary_002
+  generation_nonce: ae8ed033eadf1a8ed387
+- episode_id: v03154:dev2_subtype_boundary_002:07
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -949,9 +949,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_31
-  generation_nonce: cde26646d1f9ae43c7bb
-- episode_id: v03154:dev_subtype_boundary_002:08
-  session_id: dev_subtype_boundary_002
+  generation_nonce: e74b4dd08ef98c884bfc
+- episode_id: v03154:dev2_subtype_boundary_002:08
+  session_id: dev2_subtype_boundary_002
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -959,49 +959,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_37
-  generation_nonce: 6d845d0433d4ddfb201f
-- episode_id: v03154:dev_subtype_boundary_003:01
-  session_id: dev_subtype_boundary_003
-  session_group: subtype_boundary
-  split: training
-  kind: attack
-  class: port_scan
-  start_scored_window: 12
-  length: 3
-  benign_variant: null
-  generation_nonce: d1de0b44956e845c91da
-- episode_id: v03154:dev_subtype_boundary_003:02
-  session_id: dev_subtype_boundary_003
-  session_group: subtype_boundary
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 097b7f3e84b0201f112d
-- episode_id: v03154:dev_subtype_boundary_003:03
-  session_id: dev_subtype_boundary_003
+  generation_nonce: aafaf7394ae4dd159f3a
+- episode_id: v03154:dev2_subtype_boundary_003:01
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 56
+  start_scored_window: 12
   length: 4
   benign_variant: null
-  generation_nonce: c82c9b12ee0a2765d0f5
-- episode_id: v03154:dev_subtype_boundary_003:04
-  session_id: dev_subtype_boundary_003
+  generation_nonce: f35e8897995c3ec67b74
+- episode_id: v03154:dev2_subtype_boundary_003:02
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 78
+  start_scored_window: 34
   length: 4
   benign_variant: null
-  generation_nonce: 081b61194a2d74801703
-- episode_id: v03154:dev_subtype_boundary_003:05
-  session_id: dev_subtype_boundary_003
+  generation_nonce: b666a7915da6f218d185
+- episode_id: v03154:dev2_subtype_boundary_003:03
+  session_id: dev2_subtype_boundary_003
+  session_group: subtype_boundary
+  split: training
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: 92253918f2fd4748a2f6
+- episode_id: v03154:dev2_subtype_boundary_003:04
+  session_id: dev2_subtype_boundary_003
+  session_group: subtype_boundary
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 78
+  length: 3
+  benign_variant: null
+  generation_nonce: 9f65001ef5ec8e47ef3e
+- episode_id: v03154:dev2_subtype_boundary_003:05
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -1009,9 +1009,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_07
-  generation_nonce: 5453e7b284dfb65e31bf
-- episode_id: v03154:dev_subtype_boundary_003:06
-  session_id: dev_subtype_boundary_003
+  generation_nonce: eb33bc69e0eb9908bc98
+- episode_id: v03154:dev2_subtype_boundary_003:06
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -1019,9 +1019,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_13
-  generation_nonce: 8ca7efc74cb66122a807
-- episode_id: v03154:dev_subtype_boundary_003:07
-  session_id: dev_subtype_boundary_003
+  generation_nonce: 5e52d98c7c43fcc6fc44
+- episode_id: v03154:dev2_subtype_boundary_003:07
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -1029,9 +1029,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_32
-  generation_nonce: 967ae0c66d88620ee1f1
-- episode_id: v03154:dev_subtype_boundary_003:08
-  session_id: dev_subtype_boundary_003
+  generation_nonce: ed04f7aa3ab174d2d198
+- episode_id: v03154:dev2_subtype_boundary_003:08
+  session_id: dev2_subtype_boundary_003
   session_group: subtype_boundary
   split: training
   kind: benign
@@ -1039,49 +1039,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_38
-  generation_nonce: f8971588ed612b9a19e9
-- episode_id: v03154:dev_subtype_boundary_004:01
-  session_id: dev_subtype_boundary_004
+  generation_nonce: 1f3b14d5aef1d09147e8
+- episode_id: v03154:dev2_subtype_boundary_004:01
+  session_id: dev2_subtype_boundary_004
+  session_group: subtype_boundary
+  split: calibration
+  kind: attack
+  class: beacon
+  start_scored_window: 12
+  length: 5
+  benign_variant: null
+  generation_nonce: a2a86175bfec3ea1d04c
+- episode_id: v03154:dev2_subtype_boundary_004:02
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: attack
   class: low_rate_dos
-  start_scored_window: 12
+  start_scored_window: 34
   length: 4
   benign_variant: null
-  generation_nonce: c97a7bd9ca76d437b689
-- episode_id: v03154:dev_subtype_boundary_004:02
-  session_id: dev_subtype_boundary_004
+  generation_nonce: e706958a425590b22936
+- episode_id: v03154:dev2_subtype_boundary_004:03
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: attack
   class: port_scan
-  start_scored_window: 34
+  start_scored_window: 56
   length: 4
   benign_variant: null
-  generation_nonce: dc22c116d9f8d83dcb3b
-- episode_id: v03154:dev_subtype_boundary_004:03
-  session_id: dev_subtype_boundary_004
+  generation_nonce: 814391a0bc1dc41faa5d
+- episode_id: v03154:dev2_subtype_boundary_004:04
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: attack
   class: web_probe
-  start_scored_window: 56
+  start_scored_window: 78
   length: 4
   benign_variant: null
-  generation_nonce: bd57a9db4b8a15f98e45
-- episode_id: v03154:dev_subtype_boundary_004:04
-  session_id: dev_subtype_boundary_004
-  session_group: subtype_boundary
-  split: calibration
-  kind: attack
-  class: auth_failures
-  start_scored_window: 78
-  length: 5
-  benign_variant: null
-  generation_nonce: 43f8ad7a5b0a3d3196a5
-- episode_id: v03154:dev_subtype_boundary_004:05
-  session_id: dev_subtype_boundary_004
+  generation_nonce: 11e65b6283e0d5b3890a
+- episode_id: v03154:dev2_subtype_boundary_004:05
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: benign
@@ -1089,9 +1089,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_08
-  generation_nonce: cf806b8b7e71364c94d7
-- episode_id: v03154:dev_subtype_boundary_004:06
-  session_id: dev_subtype_boundary_004
+  generation_nonce: c660761cc6ec49c03f0b
+- episode_id: v03154:dev2_subtype_boundary_004:06
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: benign
@@ -1099,9 +1099,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_14
-  generation_nonce: 044e00f61b697ce9d494
-- episode_id: v03154:dev_subtype_boundary_004:07
-  session_id: dev_subtype_boundary_004
+  generation_nonce: f8115fcfadb8ede6ff77
+- episode_id: v03154:dev2_subtype_boundary_004:07
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: benign
@@ -1109,9 +1109,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_33
-  generation_nonce: 4694973e33676b8a2a66
-- episode_id: v03154:dev_subtype_boundary_004:08
-  session_id: dev_subtype_boundary_004
+  generation_nonce: c7ec53cb89d81c3b9384
+- episode_id: v03154:dev2_subtype_boundary_004:08
+  session_id: dev2_subtype_boundary_004
   session_group: subtype_boundary
   split: calibration
   kind: benign
@@ -1119,19 +1119,19 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_39
-  generation_nonce: 84f210731c4a1000da81
-- episode_id: v03154:dev_subtype_boundary_005:01
-  session_id: dev_subtype_boundary_005
+  generation_nonce: 4d3dbdee144ebb4e89f6
+- episode_id: v03154:dev2_subtype_boundary_005:01
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: attack
-  class: beacon
+  class: auth_failures
   start_scored_window: 12
   length: 5
   benign_variant: null
-  generation_nonce: 179d69189da51346568d
-- episode_id: v03154:dev_subtype_boundary_005:02
-  session_id: dev_subtype_boundary_005
+  generation_nonce: faffd17b994e40d1ff09
+- episode_id: v03154:dev2_subtype_boundary_005:02
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: attack
@@ -1139,9 +1139,9 @@ episodes:
   start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: e614fcf287256d47969b
-- episode_id: v03154:dev_subtype_boundary_005:03
-  session_id: dev_subtype_boundary_005
+  generation_nonce: aa0822deab9a5742ab66
+- episode_id: v03154:dev2_subtype_boundary_005:03
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: attack
@@ -1149,9 +1149,9 @@ episodes:
   start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 39f8c16c21c1485a9fa8
-- episode_id: v03154:dev_subtype_boundary_005:04
-  session_id: dev_subtype_boundary_005
+  generation_nonce: 9b83768dab14af88caee
+- episode_id: v03154:dev2_subtype_boundary_005:04
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: attack
@@ -1159,9 +1159,9 @@ episodes:
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: a47fbadb7b85bad1a162
-- episode_id: v03154:dev_subtype_boundary_005:05
-  session_id: dev_subtype_boundary_005
+  generation_nonce: f048fb5d878ea846f59c
+- episode_id: v03154:dev2_subtype_boundary_005:05
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: benign
@@ -1169,9 +1169,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_09
-  generation_nonce: efcdb631ff7f0c8b55e3
-- episode_id: v03154:dev_subtype_boundary_005:06
-  session_id: dev_subtype_boundary_005
+  generation_nonce: 3edfd651488e5437cb49
+- episode_id: v03154:dev2_subtype_boundary_005:06
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: benign
@@ -1179,9 +1179,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_15
-  generation_nonce: ea206d5c0919bec79d2d
-- episode_id: v03154:dev_subtype_boundary_005:07
-  session_id: dev_subtype_boundary_005
+  generation_nonce: b072863c15382c2bfae4
+- episode_id: v03154:dev2_subtype_boundary_005:07
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: benign
@@ -1189,9 +1189,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_34
-  generation_nonce: 270e238e3b715874ebd3
-- episode_id: v03154:dev_subtype_boundary_005:08
-  session_id: dev_subtype_boundary_005
+  generation_nonce: 0d980b7a42ad69e3c935
+- episode_id: v03154:dev2_subtype_boundary_005:08
+  session_id: dev2_subtype_boundary_005
   session_group: subtype_boundary
   split: internal_audit
   kind: benign
@@ -1199,9 +1199,9 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_40
-  generation_nonce: a1b7c41eee34858df917
-- episode_id: v03154:dev_conformal_behavior_001:01
-  session_id: dev_conformal_behavior_001
+  generation_nonce: 035cb207358bb47011de
+- episode_id: v03154:dev2_conformal_behavior_001:01
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: attack
@@ -1209,9 +1209,9 @@ episodes:
   start_scored_window: 12
   length: 2
   benign_variant: null
-  generation_nonce: 5ede3873d4a4b0adb29e
-- episode_id: v03154:dev_conformal_behavior_001:02
-  session_id: dev_conformal_behavior_001
+  generation_nonce: 2f53cb36fb7078454d94
+- episode_id: v03154:dev2_conformal_behavior_001:02
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: attack
@@ -1219,9 +1219,9 @@ episodes:
   start_scored_window: 34
   length: 2
   benign_variant: null
-  generation_nonce: ade9f7b6a1eb39b6a4d6
-- episode_id: v03154:dev_conformal_behavior_001:03
-  session_id: dev_conformal_behavior_001
+  generation_nonce: f77a44753aa88689465c
+- episode_id: v03154:dev2_conformal_behavior_001:03
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: attack
@@ -1229,19 +1229,19 @@ episodes:
   start_scored_window: 56
   length: 2
   benign_variant: null
-  generation_nonce: 4db9734640a5fa0e20f2
-- episode_id: v03154:dev_conformal_behavior_001:04
-  session_id: dev_conformal_behavior_001
+  generation_nonce: 564bdf39c563b8d4b4eb
+- episode_id: v03154:dev2_conformal_behavior_001:04
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: attack
-  class: port_scan
+  class: web_probe
   start_scored_window: 78
   length: 2
   benign_variant: null
-  generation_nonce: a07828ee43161ac62b41
-- episode_id: v03154:dev_conformal_behavior_001:05
-  session_id: dev_conformal_behavior_001
+  generation_nonce: 8b7790cd9f5b71369ac4
+- episode_id: v03154:dev2_conformal_behavior_001:05
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1249,9 +1249,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_10
-  generation_nonce: 0673c41ffdcda581058e
-- episode_id: v03154:dev_conformal_behavior_001:06
-  session_id: dev_conformal_behavior_001
+  generation_nonce: 2a205b8fd36bdf0aa9d3
+- episode_id: v03154:dev2_conformal_behavior_001:06
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1259,9 +1259,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_16
-  generation_nonce: bfda0ce1a47607c12aa1
-- episode_id: v03154:dev_conformal_behavior_001:07
-  session_id: dev_conformal_behavior_001
+  generation_nonce: aff4b96f8a4fd074a0f2
+- episode_id: v03154:dev2_conformal_behavior_001:07
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1269,9 +1269,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_35
-  generation_nonce: e8ffcafd8bd357d9359e
-- episode_id: v03154:dev_conformal_behavior_001:08
-  session_id: dev_conformal_behavior_001
+  generation_nonce: fc1313f656cbf2a81be4
+- episode_id: v03154:dev2_conformal_behavior_001:08
+  session_id: dev2_conformal_behavior_001
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1279,49 +1279,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_41
-  generation_nonce: 57d83229f20e2020becc
-- episode_id: v03154:dev_conformal_behavior_002:01
-  session_id: dev_conformal_behavior_002
-  session_group: conformal_behavior
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: c4e0876063b5776ba840
-- episode_id: v03154:dev_conformal_behavior_002:02
-  session_id: dev_conformal_behavior_002
+  generation_nonce: 720f2be7c882289216c9
+- episode_id: v03154:dev2_conformal_behavior_002:01
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 34
+  start_scored_window: 12
   length: 3
   benign_variant: null
-  generation_nonce: 2ba1dc172328a46a901c
-- episode_id: v03154:dev_conformal_behavior_002:03
-  session_id: dev_conformal_behavior_002
+  generation_nonce: 447a5ef0d42ace25afb7
+- episode_id: v03154:dev2_conformal_behavior_002:02
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 56
+  start_scored_window: 34
   length: 3
   benign_variant: null
-  generation_nonce: 1f89d326e359aab2946a
-- episode_id: v03154:dev_conformal_behavior_002:04
-  session_id: dev_conformal_behavior_002
+  generation_nonce: da5e47eab3dc71f84655
+- episode_id: v03154:dev2_conformal_behavior_002:03
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: attack
   class: low_rate_dos
-  start_scored_window: 78
+  start_scored_window: 56
   length: 3
   benign_variant: null
-  generation_nonce: cbca80aefebda7c5af30
-- episode_id: v03154:dev_conformal_behavior_002:05
-  session_id: dev_conformal_behavior_002
+  generation_nonce: c287e16268f3464533ee
+- episode_id: v03154:dev2_conformal_behavior_002:04
+  session_id: dev2_conformal_behavior_002
+  session_group: conformal_behavior
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 78
+  length: 2
+  benign_variant: null
+  generation_nonce: a1d9f1906c4ec62395f2
+- episode_id: v03154:dev2_conformal_behavior_002:05
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1329,9 +1329,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_11
-  generation_nonce: a552397964077829a4bd
-- episode_id: v03154:dev_conformal_behavior_002:06
-  session_id: dev_conformal_behavior_002
+  generation_nonce: a2345f2b1f8c5fd283eb
+- episode_id: v03154:dev2_conformal_behavior_002:06
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1339,9 +1339,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_17
-  generation_nonce: 35ee1ab483cc16d072ef
-- episode_id: v03154:dev_conformal_behavior_002:07
-  session_id: dev_conformal_behavior_002
+  generation_nonce: 70ed744f8eec901c0716
+- episode_id: v03154:dev2_conformal_behavior_002:07
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1349,9 +1349,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_36
-  generation_nonce: bb27f80c0309092ab37d
-- episode_id: v03154:dev_conformal_behavior_002:08
-  session_id: dev_conformal_behavior_002
+  generation_nonce: dafee9b0b6288748a32e
+- episode_id: v03154:dev2_conformal_behavior_002:08
+  session_id: dev2_conformal_behavior_002
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1359,49 +1359,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_42
-  generation_nonce: 03bf9aee11006768ee36
-- episode_id: v03154:dev_conformal_behavior_003:01
-  session_id: dev_conformal_behavior_003
-  session_group: conformal_behavior
-  split: training
-  kind: attack
-  class: port_scan
-  start_scored_window: 12
-  length: 3
-  benign_variant: null
-  generation_nonce: ef1a80d2b4238c55974d
-- episode_id: v03154:dev_conformal_behavior_003:02
-  session_id: dev_conformal_behavior_003
-  session_group: conformal_behavior
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 079607bf8cb2e864bcdc
-- episode_id: v03154:dev_conformal_behavior_003:03
-  session_id: dev_conformal_behavior_003
-  session_group: conformal_behavior
-  split: training
-  kind: attack
-  class: auth_failures
-  start_scored_window: 56
-  length: 4
-  benign_variant: null
-  generation_nonce: 09027ad8908ed2e6b015
-- episode_id: v03154:dev_conformal_behavior_003:04
-  session_id: dev_conformal_behavior_003
+  generation_nonce: 91b99850bbcbc1e0236a
+- episode_id: v03154:dev2_conformal_behavior_003:01
+  session_id: dev2_conformal_behavior_003
   session_group: conformal_behavior
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 78
+  start_scored_window: 12
   length: 4
   benign_variant: null
-  generation_nonce: 50308131131beee6de95
-- episode_id: v03154:dev_conformal_behavior_003:05
-  session_id: dev_conformal_behavior_003
+  generation_nonce: 2b69b2dd8d8e41c26785
+- episode_id: v03154:dev2_conformal_behavior_003:02
+  session_id: dev2_conformal_behavior_003
+  session_group: conformal_behavior
+  split: training
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 34
+  length: 4
+  benign_variant: null
+  generation_nonce: f99d90636acefbc7bd0a
+- episode_id: v03154:dev2_conformal_behavior_003:03
+  session_id: dev2_conformal_behavior_003
+  session_group: conformal_behavior
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: 5745b5406332155a131f
+- episode_id: v03154:dev2_conformal_behavior_003:04
+  session_id: dev2_conformal_behavior_003
+  session_group: conformal_behavior
+  split: training
+  kind: attack
+  class: web_probe
+  start_scored_window: 78
+  length: 3
+  benign_variant: null
+  generation_nonce: 8816e88d1dc51767c850
+- episode_id: v03154:dev2_conformal_behavior_003:05
+  session_id: dev2_conformal_behavior_003
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1409,9 +1409,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_12
-  generation_nonce: 744bfb00fbcebf9415c7
-- episode_id: v03154:dev_conformal_behavior_003:06
-  session_id: dev_conformal_behavior_003
+  generation_nonce: be75f17535289678b182
+- episode_id: v03154:dev2_conformal_behavior_003:06
+  session_id: dev2_conformal_behavior_003
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1419,9 +1419,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_18
-  generation_nonce: aed8f932ca475bc19979
-- episode_id: v03154:dev_conformal_behavior_003:07
-  session_id: dev_conformal_behavior_003
+  generation_nonce: 6ee73ff5b2917ee1f78d
+- episode_id: v03154:dev2_conformal_behavior_003:07
+  session_id: dev2_conformal_behavior_003
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1429,9 +1429,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_37
-  generation_nonce: 1b6df68950b1aa49adb6
-- episode_id: v03154:dev_conformal_behavior_003:08
-  session_id: dev_conformal_behavior_003
+  generation_nonce: 6b7c4362bf5bb3b9fa11
+- episode_id: v03154:dev2_conformal_behavior_003:08
+  session_id: dev2_conformal_behavior_003
   session_group: conformal_behavior
   split: training
   kind: benign
@@ -1439,49 +1439,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_43
-  generation_nonce: 462aede2e3090dcc247d
-- episode_id: v03154:dev_conformal_behavior_004:01
-  session_id: dev_conformal_behavior_004
-  session_group: conformal_behavior
-  split: calibration
-  kind: attack
-  class: low_rate_dos
-  start_scored_window: 12
-  length: 4
-  benign_variant: null
-  generation_nonce: b1372b841517edadee7f
-- episode_id: v03154:dev_conformal_behavior_004:02
-  session_id: dev_conformal_behavior_004
-  session_group: conformal_behavior
-  split: calibration
-  kind: attack
-  class: port_scan
-  start_scored_window: 34
-  length: 4
-  benign_variant: null
-  generation_nonce: 2f6f4d25c34afd8b4ff8
-- episode_id: v03154:dev_conformal_behavior_004:03
-  session_id: dev_conformal_behavior_004
-  session_group: conformal_behavior
-  split: calibration
-  kind: attack
-  class: web_probe
-  start_scored_window: 56
-  length: 4
-  benign_variant: null
-  generation_nonce: 083bc131bb974777b3ab
-- episode_id: v03154:dev_conformal_behavior_004:04
-  session_id: dev_conformal_behavior_004
+  generation_nonce: 965d0da9d3b07c718e14
+- episode_id: v03154:dev2_conformal_behavior_004:01
+  session_id: dev2_conformal_behavior_004
   session_group: conformal_behavior
   split: calibration
   kind: attack
   class: auth_failures
-  start_scored_window: 78
+  start_scored_window: 12
+  length: 4
+  benign_variant: null
+  generation_nonce: 3d0b1c8b32cbbf553f9c
+- episode_id: v03154:dev2_conformal_behavior_004:02
+  session_id: dev2_conformal_behavior_004
+  session_group: conformal_behavior
+  split: calibration
+  kind: attack
+  class: low_rate_dos
+  start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: baccdbe56078589efd2c
-- episode_id: v03154:dev_conformal_behavior_004:05
-  session_id: dev_conformal_behavior_004
+  generation_nonce: c33c1b2008424f14da73
+- episode_id: v03154:dev2_conformal_behavior_004:03
+  session_id: dev2_conformal_behavior_004
+  session_group: conformal_behavior
+  split: calibration
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 4
+  benign_variant: null
+  generation_nonce: aca0b012d980916bfead
+- episode_id: v03154:dev2_conformal_behavior_004:04
+  session_id: dev2_conformal_behavior_004
+  session_group: conformal_behavior
+  split: calibration
+  kind: attack
+  class: web_probe
+  start_scored_window: 78
+  length: 4
+  benign_variant: null
+  generation_nonce: 1d8553121e0e9c6ded12
+- episode_id: v03154:dev2_conformal_behavior_004:05
+  session_id: dev2_conformal_behavior_004
   session_group: conformal_behavior
   split: calibration
   kind: benign
@@ -1489,9 +1489,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_13
-  generation_nonce: 695c5fee999ec1416735
-- episode_id: v03154:dev_conformal_behavior_004:06
-  session_id: dev_conformal_behavior_004
+  generation_nonce: d0d8d290e2f68641fa2a
+- episode_id: v03154:dev2_conformal_behavior_004:06
+  session_id: dev2_conformal_behavior_004
   session_group: conformal_behavior
   split: calibration
   kind: benign
@@ -1499,9 +1499,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_19
-  generation_nonce: f844c1527935f36cea55
-- episode_id: v03154:dev_conformal_behavior_004:07
-  session_id: dev_conformal_behavior_004
+  generation_nonce: 1d8bb01c7bda7eda06bb
+- episode_id: v03154:dev2_conformal_behavior_004:07
+  session_id: dev2_conformal_behavior_004
   session_group: conformal_behavior
   split: calibration
   kind: benign
@@ -1509,9 +1509,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_38
-  generation_nonce: 53175bd87e4c89e7dd0e
-- episode_id: v03154:dev_conformal_behavior_004:08
-  session_id: dev_conformal_behavior_004
+  generation_nonce: 1028f08571546fe3fb1b
+- episode_id: v03154:dev2_conformal_behavior_004:08
+  session_id: dev2_conformal_behavior_004
   session_group: conformal_behavior
   split: calibration
   kind: benign
@@ -1519,29 +1519,29 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_44
-  generation_nonce: 03912a8dbd4ad5297820
-- episode_id: v03154:dev_conformal_behavior_005:01
-  session_id: dev_conformal_behavior_005
+  generation_nonce: ffd5e6a3b237ddfa80d3
+- episode_id: v03154:dev2_conformal_behavior_005:01
+  session_id: dev2_conformal_behavior_005
+  session_group: conformal_behavior
+  split: internal_audit
+  kind: attack
+  class: auth_failures
+  start_scored_window: 12
+  length: 5
+  benign_variant: null
+  generation_nonce: b8de8a382ac85370aa8b
+- episode_id: v03154:dev2_conformal_behavior_005:02
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: attack
   class: beacon
-  start_scored_window: 12
-  length: 5
-  benign_variant: null
-  generation_nonce: 97aa7e04cb422cdd6fd3
-- episode_id: v03154:dev_conformal_behavior_005:02
-  session_id: dev_conformal_behavior_005
-  session_group: conformal_behavior
-  split: internal_audit
-  kind: attack
-  class: low_rate_dos
   start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: db2e192b70a7c480c547
-- episode_id: v03154:dev_conformal_behavior_005:03
-  session_id: dev_conformal_behavior_005
+  generation_nonce: 45e055333ad8f38438d1
+- episode_id: v03154:dev2_conformal_behavior_005:03
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: attack
@@ -1549,9 +1549,9 @@ episodes:
   start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 9916b969c3915a0b26c6
-- episode_id: v03154:dev_conformal_behavior_005:04
-  session_id: dev_conformal_behavior_005
+  generation_nonce: 8c293994a60c0ae34592
+- episode_id: v03154:dev2_conformal_behavior_005:04
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: attack
@@ -1559,9 +1559,9 @@ episodes:
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: 8179e485646b5f345461
-- episode_id: v03154:dev_conformal_behavior_005:05
-  session_id: dev_conformal_behavior_005
+  generation_nonce: d31c9e3ab899e0a92ed1
+- episode_id: v03154:dev2_conformal_behavior_005:05
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: benign
@@ -1569,9 +1569,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_14
-  generation_nonce: aa64bfd1b929981a393f
-- episode_id: v03154:dev_conformal_behavior_005:06
-  session_id: dev_conformal_behavior_005
+  generation_nonce: 5737f53fba2fc2067c99
+- episode_id: v03154:dev2_conformal_behavior_005:06
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: benign
@@ -1579,9 +1579,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_20
-  generation_nonce: 6f5e01dc4aff1c58d04b
-- episode_id: v03154:dev_conformal_behavior_005:07
-  session_id: dev_conformal_behavior_005
+  generation_nonce: 38412fe25bbc989b579a
+- episode_id: v03154:dev2_conformal_behavior_005:07
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: benign
@@ -1589,9 +1589,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_39
-  generation_nonce: 928727ec37fce05242e2
-- episode_id: v03154:dev_conformal_behavior_005:08
-  session_id: dev_conformal_behavior_005
+  generation_nonce: 90505f7555675c5d2539
+- episode_id: v03154:dev2_conformal_behavior_005:08
+  session_id: dev2_conformal_behavior_005
   session_group: conformal_behavior
   split: internal_audit
   kind: benign
@@ -1599,9 +1599,9 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_45
-  generation_nonce: 203b96ae6abd8fd4180b
-- episode_id: v03154:dev_benign_hard_negatives_001:01
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: c107a79ca34af58948ca
+- episode_id: v03154:dev2_benign_hard_negatives_001:01
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: attack
@@ -1609,9 +1609,9 @@ episodes:
   start_scored_window: 12
   length: 2
   benign_variant: null
-  generation_nonce: f3a0260941c8abec8e4d
-- episode_id: v03154:dev_benign_hard_negatives_001:02
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: 37d5c5ab74dd50439099
+- episode_id: v03154:dev2_benign_hard_negatives_001:02
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: attack
@@ -1619,9 +1619,9 @@ episodes:
   start_scored_window: 34
   length: 2
   benign_variant: null
-  generation_nonce: 564d47045e330d0dc2ad
-- episode_id: v03154:dev_benign_hard_negatives_001:03
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: 5aae5688042c0674a4a9
+- episode_id: v03154:dev2_benign_hard_negatives_001:03
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: attack
@@ -1629,9 +1629,9 @@ episodes:
   start_scored_window: 56
   length: 2
   benign_variant: null
-  generation_nonce: 99a245da464f4e3a4ebb
-- episode_id: v03154:dev_benign_hard_negatives_001:04
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: f45d1db9261de57001d9
+- episode_id: v03154:dev2_benign_hard_negatives_001:04
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: attack
@@ -1639,9 +1639,9 @@ episodes:
   start_scored_window: 78
   length: 2
   benign_variant: null
-  generation_nonce: 985b2c559df556f29a39
-- episode_id: v03154:dev_benign_hard_negatives_001:05
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: 3a6ebb552b43a179314a
+- episode_id: v03154:dev2_benign_hard_negatives_001:05
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1649,9 +1649,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_15
-  generation_nonce: 1ea7e4ac1a4133aec290
-- episode_id: v03154:dev_benign_hard_negatives_001:06
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: ee2f36e5048a30e0d312
+- episode_id: v03154:dev2_benign_hard_negatives_001:06
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1659,9 +1659,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_21
-  generation_nonce: 7838c388ff5b296766e5
-- episode_id: v03154:dev_benign_hard_negatives_001:07
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: 26b978eb3b3cd07f7f95
+- episode_id: v03154:dev2_benign_hard_negatives_001:07
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1669,9 +1669,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_40
-  generation_nonce: 3bd8c6462029773d9ca4
-- episode_id: v03154:dev_benign_hard_negatives_001:08
-  session_id: dev_benign_hard_negatives_001
+  generation_nonce: 498801bf74cfd26a9d19
+- episode_id: v03154:dev2_benign_hard_negatives_001:08
+  session_id: dev2_benign_hard_negatives_001
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1679,49 +1679,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_46
-  generation_nonce: f23489d503abf65ba8d4
-- episode_id: v03154:dev_benign_hard_negatives_002:01
-  session_id: dev_benign_hard_negatives_002
-  session_group: benign_hard_negatives
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 12
-  length: 2
-  benign_variant: null
-  generation_nonce: a5306605ff6717fb10a6
-- episode_id: v03154:dev_benign_hard_negatives_002:02
-  session_id: dev_benign_hard_negatives_002
-  session_group: benign_hard_negatives
-  split: training
-  kind: attack
-  class: auth_failures
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 835edcbdeee2c2ffcdff
-- episode_id: v03154:dev_benign_hard_negatives_002:03
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: d9b6f63fc03a4ad28b19
+- episode_id: v03154:dev2_benign_hard_negatives_002:01
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: attack
   class: beacon
-  start_scored_window: 56
+  start_scored_window: 12
   length: 3
   benign_variant: null
-  generation_nonce: 0c0ead89e09891e228f5
-- episode_id: v03154:dev_benign_hard_negatives_002:04
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: 808b3ebec18ca6d382b3
+- episode_id: v03154:dev2_benign_hard_negatives_002:02
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: attack
   class: low_rate_dos
-  start_scored_window: 78
+  start_scored_window: 34
   length: 3
   benign_variant: null
-  generation_nonce: 68dbcf9ac1ef63b53c00
-- episode_id: v03154:dev_benign_hard_negatives_002:05
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: b0e797e3ff500810e6ef
+- episode_id: v03154:dev2_benign_hard_negatives_002:03
+  session_id: dev2_benign_hard_negatives_002
+  session_group: benign_hard_negatives
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 3
+  benign_variant: null
+  generation_nonce: 4410b76980533f34dd28
+- episode_id: v03154:dev2_benign_hard_negatives_002:04
+  session_id: dev2_benign_hard_negatives_002
+  session_group: benign_hard_negatives
+  split: training
+  kind: attack
+  class: web_probe
+  start_scored_window: 78
+  length: 2
+  benign_variant: null
+  generation_nonce: f0567037b25a5fa2eb9b
+- episode_id: v03154:dev2_benign_hard_negatives_002:05
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1729,9 +1729,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_16
-  generation_nonce: 9cf466dc99b30ac32278
-- episode_id: v03154:dev_benign_hard_negatives_002:06
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: ab88b44164303b3523c9
+- episode_id: v03154:dev2_benign_hard_negatives_002:06
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1739,9 +1739,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_22
-  generation_nonce: f58b276595e1da82c4cd
-- episode_id: v03154:dev_benign_hard_negatives_002:07
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: 39906a2d96a756a52211
+- episode_id: v03154:dev2_benign_hard_negatives_002:07
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1749,9 +1749,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_41
-  generation_nonce: 44098edbf8b081a8fa3e
-- episode_id: v03154:dev_benign_hard_negatives_002:08
-  session_id: dev_benign_hard_negatives_002
+  generation_nonce: b3665f5b880e3be5c47e
+- episode_id: v03154:dev2_benign_hard_negatives_002:08
+  session_id: dev2_benign_hard_negatives_002
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1759,49 +1759,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_47
-  generation_nonce: d858b4eeeac63724c170
-- episode_id: v03154:dev_benign_hard_negatives_003:01
-  session_id: dev_benign_hard_negatives_003
-  session_group: benign_hard_negatives
-  split: training
-  kind: attack
-  class: port_scan
-  start_scored_window: 12
-  length: 3
-  benign_variant: null
-  generation_nonce: 0e2c7524c500a64c0698
-- episode_id: v03154:dev_benign_hard_negatives_003:02
-  session_id: dev_benign_hard_negatives_003
-  session_group: benign_hard_negatives
-  split: training
-  kind: attack
-  class: web_probe
-  start_scored_window: 34
-  length: 3
-  benign_variant: null
-  generation_nonce: 51b280560bef8e14e1b4
-- episode_id: v03154:dev_benign_hard_negatives_003:03
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: acb264e3beb4e0a6919f
+- episode_id: v03154:dev2_benign_hard_negatives_003:01
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: attack
   class: auth_failures
-  start_scored_window: 56
-  length: 4
+  start_scored_window: 12
+  length: 3
   benign_variant: null
-  generation_nonce: 8a1a40f57eafbc3de30c
-- episode_id: v03154:dev_benign_hard_negatives_003:04
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: 3a9fd3ed97b0039abde9
+- episode_id: v03154:dev2_benign_hard_negatives_003:02
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: attack
-  class: beacon
-  start_scored_window: 78
+  class: low_rate_dos
+  start_scored_window: 34
   length: 4
   benign_variant: null
-  generation_nonce: 1b6f0644f1fa3e23dbf4
-- episode_id: v03154:dev_benign_hard_negatives_003:05
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: fa2ce474985bab463ae7
+- episode_id: v03154:dev2_benign_hard_negatives_003:03
+  session_id: dev2_benign_hard_negatives_003
+  session_group: benign_hard_negatives
+  split: training
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
+  length: 4
+  benign_variant: null
+  generation_nonce: 52d3803888854328367f
+- episode_id: v03154:dev2_benign_hard_negatives_003:04
+  session_id: dev2_benign_hard_negatives_003
+  session_group: benign_hard_negatives
+  split: training
+  kind: attack
+  class: web_probe
+  start_scored_window: 78
+  length: 3
+  benign_variant: null
+  generation_nonce: b726fab869eaa928cfba
+- episode_id: v03154:dev2_benign_hard_negatives_003:05
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1809,9 +1809,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_17
-  generation_nonce: ef62d448da144f37a65a
-- episode_id: v03154:dev_benign_hard_negatives_003:06
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: b89dfce5cf18dab91f8e
+- episode_id: v03154:dev2_benign_hard_negatives_003:06
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1819,9 +1819,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_23
-  generation_nonce: 8f0c33c2bcdf41a93dd0
-- episode_id: v03154:dev_benign_hard_negatives_003:07
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: be766678a736500bd52a
+- episode_id: v03154:dev2_benign_hard_negatives_003:07
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1829,9 +1829,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_42
-  generation_nonce: 6eee70dc5c078e86a957
-- episode_id: v03154:dev_benign_hard_negatives_003:08
-  session_id: dev_benign_hard_negatives_003
+  generation_nonce: c4ff174e598b06b6f2da
+- episode_id: v03154:dev2_benign_hard_negatives_003:08
+  session_id: dev2_benign_hard_negatives_003
   session_group: benign_hard_negatives
   split: training
   kind: benign
@@ -1839,49 +1839,49 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_48
-  generation_nonce: ea5b73877f96582c6237
-- episode_id: v03154:dev_benign_hard_negatives_004:01
-  session_id: dev_benign_hard_negatives_004
-  session_group: benign_hard_negatives
-  split: calibration
-  kind: attack
-  class: low_rate_dos
-  start_scored_window: 12
-  length: 4
-  benign_variant: null
-  generation_nonce: 12a6754e7ac2cf2ecc9c
-- episode_id: v03154:dev_benign_hard_negatives_004:02
-  session_id: dev_benign_hard_negatives_004
-  session_group: benign_hard_negatives
-  split: calibration
-  kind: attack
-  class: port_scan
-  start_scored_window: 34
-  length: 4
-  benign_variant: null
-  generation_nonce: 79aabeacb773f981e1a4
-- episode_id: v03154:dev_benign_hard_negatives_004:03
-  session_id: dev_benign_hard_negatives_004
-  session_group: benign_hard_negatives
-  split: calibration
-  kind: attack
-  class: web_probe
-  start_scored_window: 56
-  length: 4
-  benign_variant: null
-  generation_nonce: c6910026a8a4e0e29dca
-- episode_id: v03154:dev_benign_hard_negatives_004:04
-  session_id: dev_benign_hard_negatives_004
+  generation_nonce: 738986a9e9d87ecf5626
+- episode_id: v03154:dev2_benign_hard_negatives_004:01
+  session_id: dev2_benign_hard_negatives_004
   session_group: benign_hard_negatives
   split: calibration
   kind: attack
   class: auth_failures
-  start_scored_window: 78
+  start_scored_window: 12
+  length: 4
+  benign_variant: null
+  generation_nonce: fbea4f14123b98f34d93
+- episode_id: v03154:dev2_benign_hard_negatives_004:02
+  session_id: dev2_benign_hard_negatives_004
+  session_group: benign_hard_negatives
+  split: calibration
+  kind: attack
+  class: beacon
+  start_scored_window: 34
+  length: 4
+  benign_variant: null
+  generation_nonce: a42ad18bbcddab2d8e74
+- episode_id: v03154:dev2_benign_hard_negatives_004:03
+  session_id: dev2_benign_hard_negatives_004
+  session_group: benign_hard_negatives
+  split: calibration
+  kind: attack
+  class: port_scan
+  start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 7c16b3afb29c32ddc9a0
-- episode_id: v03154:dev_benign_hard_negatives_004:05
-  session_id: dev_benign_hard_negatives_004
+  generation_nonce: aa77ebaff77130e6a9cc
+- episode_id: v03154:dev2_benign_hard_negatives_004:04
+  session_id: dev2_benign_hard_negatives_004
+  session_group: benign_hard_negatives
+  split: calibration
+  kind: attack
+  class: web_probe
+  start_scored_window: 78
+  length: 4
+  benign_variant: null
+  generation_nonce: b7d8af05627be9b09a0c
+- episode_id: v03154:dev2_benign_hard_negatives_004:05
+  session_id: dev2_benign_hard_negatives_004
   session_group: benign_hard_negatives
   split: calibration
   kind: benign
@@ -1889,9 +1889,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_18
-  generation_nonce: 2e3d921cafdf770ae6b0
-- episode_id: v03154:dev_benign_hard_negatives_004:06
-  session_id: dev_benign_hard_negatives_004
+  generation_nonce: 990fda44cb2ab83dd6ff
+- episode_id: v03154:dev2_benign_hard_negatives_004:06
+  session_id: dev2_benign_hard_negatives_004
   session_group: benign_hard_negatives
   split: calibration
   kind: benign
@@ -1899,9 +1899,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_24
-  generation_nonce: dd524e4ba0d2eebfe16f
-- episode_id: v03154:dev_benign_hard_negatives_004:07
-  session_id: dev_benign_hard_negatives_004
+  generation_nonce: 1a6ebb0f0063eedf0092
+- episode_id: v03154:dev2_benign_hard_negatives_004:07
+  session_id: dev2_benign_hard_negatives_004
   session_group: benign_hard_negatives
   split: calibration
   kind: benign
@@ -1909,9 +1909,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_43
-  generation_nonce: 956787a175ed86fc0279
-- episode_id: v03154:dev_benign_hard_negatives_004:08
-  session_id: dev_benign_hard_negatives_004
+  generation_nonce: 39dff9b06d0d965cad5d
+- episode_id: v03154:dev2_benign_hard_negatives_004:08
+  session_id: dev2_benign_hard_negatives_004
   session_group: benign_hard_negatives
   split: calibration
   kind: benign
@@ -1919,39 +1919,39 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_49
-  generation_nonce: a462421f16a2f0a3eea4
-- episode_id: v03154:dev_benign_hard_negatives_005:01
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: a3fe03ea5a9bb9c2d0e9
+- episode_id: v03154:dev2_benign_hard_negatives_005:01
+  session_id: dev2_benign_hard_negatives_005
+  session_group: benign_hard_negatives
+  split: internal_audit
+  kind: attack
+  class: auth_failures
+  start_scored_window: 12
+  length: 5
+  benign_variant: null
+  generation_nonce: c0c5c99cdefe14361ea3
+- episode_id: v03154:dev2_benign_hard_negatives_005:02
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: attack
   class: beacon
-  start_scored_window: 12
+  start_scored_window: 34
   length: 5
   benign_variant: null
-  generation_nonce: 82abfe17f26f456435d2
-- episode_id: v03154:dev_benign_hard_negatives_005:02
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: cc2666f87a04b2607ec4
+- episode_id: v03154:dev2_benign_hard_negatives_005:03
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: attack
   class: low_rate_dos
-  start_scored_window: 34
-  length: 5
-  benign_variant: null
-  generation_nonce: b076c2ae11fe35a53eba
-- episode_id: v03154:dev_benign_hard_negatives_005:03
-  session_id: dev_benign_hard_negatives_005
-  session_group: benign_hard_negatives
-  split: internal_audit
-  kind: attack
-  class: port_scan
   start_scored_window: 56
   length: 5
   benign_variant: null
-  generation_nonce: 18f69bbc98d52df69235
-- episode_id: v03154:dev_benign_hard_negatives_005:04
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: 72ba53657a32a7eb489a
+- episode_id: v03154:dev2_benign_hard_negatives_005:04
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: attack
@@ -1959,9 +1959,9 @@ episodes:
   start_scored_window: 78
   length: 5
   benign_variant: null
-  generation_nonce: 58f131e29df1dcb02001
-- episode_id: v03154:dev_benign_hard_negatives_005:05
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: 788fba6e451da405175c
+- episode_id: v03154:dev2_benign_hard_negatives_005:05
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: benign
@@ -1969,9 +1969,9 @@ episodes:
   start_scored_window: 100
   length: 2
   benign_variant: hard_negative_19
-  generation_nonce: 08606e5f19bafe57691a
-- episode_id: v03154:dev_benign_hard_negatives_005:06
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: 48b4d0aa9ec5014d3610
+- episode_id: v03154:dev2_benign_hard_negatives_005:06
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: benign
@@ -1979,9 +1979,9 @@ episodes:
   start_scored_window: 122
   length: 3
   benign_variant: hard_negative_25
-  generation_nonce: 8d25ec7a8dd065f867fa
-- episode_id: v03154:dev_benign_hard_negatives_005:07
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: e309ea57bc0f1734f421
+- episode_id: v03154:dev2_benign_hard_negatives_005:07
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: benign
@@ -1989,9 +1989,9 @@ episodes:
   start_scored_window: 144
   length: 4
   benign_variant: hard_negative_44
-  generation_nonce: 7945ba929373c599618d
-- episode_id: v03154:dev_benign_hard_negatives_005:08
-  session_id: dev_benign_hard_negatives_005
+  generation_nonce: a069eea432f7b0f326ad
+- episode_id: v03154:dev2_benign_hard_negatives_005:08
+  session_id: dev2_benign_hard_negatives_005
   session_group: benign_hard_negatives
   split: internal_audit
   kind: benign
@@ -1999,4 +1999,4 @@ episodes:
   start_scored_window: 166
   length: 5
   benign_variant: hard_negative_50
-  generation_nonce: 494f82c80851a42c626d
+  generation_nonce: 57d298e21bf8830aaa0e

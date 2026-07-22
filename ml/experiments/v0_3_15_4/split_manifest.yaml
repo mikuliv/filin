@@ -1,53 +1,53 @@
 schema_version: v03154_split_v1
 unit: whole_session_id
 assignments:
-- session_id: dev_scenario_semantics_001
+- session_id: dev2_scenario_semantics_001
   split: training
-- session_id: dev_scenario_semantics_002
+- session_id: dev2_scenario_semantics_002
   split: training
-- session_id: dev_scenario_semantics_003
+- session_id: dev2_scenario_semantics_003
   split: training
-- session_id: dev_scenario_semantics_004
+- session_id: dev2_scenario_semantics_004
   split: calibration
-- session_id: dev_scenario_semantics_005
+- session_id: dev2_scenario_semantics_005
   split: internal_audit
-- session_id: dev_feature_provenance_001
+- session_id: dev2_feature_provenance_001
   split: training
-- session_id: dev_feature_provenance_002
+- session_id: dev2_feature_provenance_002
   split: training
-- session_id: dev_feature_provenance_003
+- session_id: dev2_feature_provenance_003
   split: training
-- session_id: dev_feature_provenance_004
+- session_id: dev2_feature_provenance_004
   split: calibration
-- session_id: dev_feature_provenance_005
+- session_id: dev2_feature_provenance_005
   split: internal_audit
-- session_id: dev_subtype_boundary_001
+- session_id: dev2_subtype_boundary_001
   split: training
-- session_id: dev_subtype_boundary_002
+- session_id: dev2_subtype_boundary_002
   split: training
-- session_id: dev_subtype_boundary_003
+- session_id: dev2_subtype_boundary_003
   split: training
-- session_id: dev_subtype_boundary_004
+- session_id: dev2_subtype_boundary_004
   split: calibration
-- session_id: dev_subtype_boundary_005
+- session_id: dev2_subtype_boundary_005
   split: internal_audit
-- session_id: dev_conformal_behavior_001
+- session_id: dev2_conformal_behavior_001
   split: training
-- session_id: dev_conformal_behavior_002
+- session_id: dev2_conformal_behavior_002
   split: training
-- session_id: dev_conformal_behavior_003
+- session_id: dev2_conformal_behavior_003
   split: training
-- session_id: dev_conformal_behavior_004
+- session_id: dev2_conformal_behavior_004
   split: calibration
-- session_id: dev_conformal_behavior_005
+- session_id: dev2_conformal_behavior_005
   split: internal_audit
-- session_id: dev_benign_hard_negatives_001
+- session_id: dev2_benign_hard_negatives_001
   split: training
-- session_id: dev_benign_hard_negatives_002
+- session_id: dev2_benign_hard_negatives_002
   split: training
-- session_id: dev_benign_hard_negatives_003
+- session_id: dev2_benign_hard_negatives_003
   split: training
-- session_id: dev_benign_hard_negatives_004
+- session_id: dev2_benign_hard_negatives_004
   split: calibration
-- session_id: dev_benign_hard_negatives_005
+- session_id: dev2_benign_hard_negatives_005
   split: internal_audit

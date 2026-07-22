@@ -1,8 +1,15 @@
 schema_version: v03154_protocol_v1
-revision: 1
+revision: 2
 stage: v0.3.15.4
 title_ru: "Контролируемая смешанная переработка сценариев, признаков и кандидата"
-status: frozen_before_development_campaign
+status: frozen_before_replacement_development_campaign
+revision_history:
+  - revision: 1
+    status: invalidated_preserved
+    reason: calibration split omitted beacon because the attack omission pattern was aligned with session suffix
+  - revision: 2
+    status: frozen_before_replacement_capture
+    correction: rotate the omitted attack class by both scenario group and session suffix
 source_git_commit: 7b654e258726ba64c5c4a72e2d442238abb07832
 purpose: >-
   Исправить подтверждённые scenario и feature defects, проверить frozen baseline
@@ -59,11 +66,11 @@ development_corpus:
   benign_variant_count: 50
   pcap_policy: {new: true, unique_sha256: true, closed_before_processing: true, containerized_zeek: "7.0.5", fallback_allowed: false}
 sessions:
-  scenario_semantics: {ids: [dev_scenario_semantics_001, dev_scenario_semantics_002, dev_scenario_semantics_003, dev_scenario_semantics_004, dev_scenario_semantics_005], seeds: [20101, 20102, 20103, 20104, 20105]}
-  feature_provenance: {ids: [dev_feature_provenance_001, dev_feature_provenance_002, dev_feature_provenance_003, dev_feature_provenance_004, dev_feature_provenance_005], seeds: [20201, 20202, 20203, 20204, 20205]}
-  subtype_boundary: {ids: [dev_subtype_boundary_001, dev_subtype_boundary_002, dev_subtype_boundary_003, dev_subtype_boundary_004, dev_subtype_boundary_005], seeds: [20301, 20302, 20303, 20304, 20305]}
-  conformal_behavior: {ids: [dev_conformal_behavior_001, dev_conformal_behavior_002, dev_conformal_behavior_003, dev_conformal_behavior_004, dev_conformal_behavior_005], seeds: [20401, 20402, 20403, 20404, 20405]}
-  benign_hard_negatives: {ids: [dev_benign_hard_negatives_001, dev_benign_hard_negatives_002, dev_benign_hard_negatives_003, dev_benign_hard_negatives_004, dev_benign_hard_negatives_005], seeds: [20501, 20502, 20503, 20504, 20505]}
+  scenario_semantics: {ids: [dev2_scenario_semantics_001, dev2_scenario_semantics_002, dev2_scenario_semantics_003, dev2_scenario_semantics_004, dev2_scenario_semantics_005], seeds: [21101, 21102, 21103, 21104, 21105]}
+  feature_provenance: {ids: [dev2_feature_provenance_001, dev2_feature_provenance_002, dev2_feature_provenance_003, dev2_feature_provenance_004, dev2_feature_provenance_005], seeds: [21201, 21202, 21203, 21204, 21205]}
+  subtype_boundary: {ids: [dev2_subtype_boundary_001, dev2_subtype_boundary_002, dev2_subtype_boundary_003, dev2_subtype_boundary_004, dev2_subtype_boundary_005], seeds: [21301, 21302, 21303, 21304, 21305]}
+  conformal_behavior: {ids: [dev2_conformal_behavior_001, dev2_conformal_behavior_002, dev2_conformal_behavior_003, dev2_conformal_behavior_004, dev2_conformal_behavior_005], seeds: [21401, 21402, 21403, 21404, 21405]}
+  benign_hard_negatives: {ids: [dev2_benign_hard_negatives_001, dev2_benign_hard_negatives_002, dev2_benign_hard_negatives_003, dev2_benign_hard_negatives_004, dev2_benign_hard_negatives_005], seeds: [21501, 21502, 21503, 21504, 21505]}
 split_policy:
   unit: whole_session_id
   training_session_suffixes: ["001", "002", "003"]

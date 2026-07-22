@@ -44,8 +44,8 @@ def build_sessions() -> list[dict]:
         for suffix in range(1, 6):
             split = "training" if suffix <= 3 else "calibration" if suffix == 4 else "internal_audit"
             rows.append({
-                "session_id": f"dev_{group}_{suffix:03d}", "group": group,
-                "seed": 20101 + group_index * 100 + suffix - 1,
+                "session_id": f"dev2_{group}_{suffix:03d}", "group": group,
+                "seed": 21101 + group_index * 100 + suffix - 1,
                 "session_index": len(rows), "split": split,
                 "capture_count": 200, "warmup_count": 10, "scored_count": 190,
             })
@@ -64,7 +64,9 @@ def build_episodes(sessions: list[dict]) -> list[dict]:
     starts = [12, 34, 56, 78, 100, 122, 144, 166]
     for session in sessions:
         index = session["session_index"]
-        attacks = [ATTACKS[(index * 4 + slot) % 5] for slot in range(4)]
+        group_index, suffix_index = index // 5, index % 5
+        omitted = (group_index + suffix_index) % 5
+        attacks = [attack for attack_index, attack in enumerate(ATTACKS) if attack_index != omitted]
         variants = sorted(by_session_benign[index])
         specifications = [("attack", value) for value in attacks] + [("benign", value) for value in variants]
         for slot, (kind, value) in enumerate(specifications):
@@ -127,7 +129,7 @@ def main() -> int:
     validate(sessions, episodes, vault)
     campaign = {
         "schema_version": "v03154_campaign_v1", "campaign_id": "filin_v0_3_15_4_controlled_redevelopment",
-        "protocol_revision": 1, "frozen_before_first_capture": True,
+        "protocol_revision": 2, "frozen_before_first_capture": True,
         "session_count": 25, "capture_count": 5000, "warmup_count": 250, "scored_count": 4750,
         "episode_count": 200, "attack_episode_count": 100, "benign_episode_count": 100,
         "containerized_zeek": "7.0.5", "fallback_allowed": False, "sessions": sessions,

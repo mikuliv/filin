@@ -1,0 +1,11 @@
+{
+  "schema_version": "v03154_campaign_invalidation_v1",
+  "campaign_revision": 1,
+  "invalidated": true,
+  "preserved_runtime_path": "runtime/v0_3_15_4_invalidated_r1",
+  "reason": "calibration split omitted beacon because attack omissions aligned with suffix",
+  "discovered_before_candidate_fit": true,
+  "fit_call_count": 0,
+  "audit_label_unlock_count": 0,
+  "replacement_requires_new_session_ids_and_seeds": true
+}
