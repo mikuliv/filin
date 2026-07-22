@@ -508,8 +508,8 @@ artifacts:
   git_inclusion_permitted: true
 - artifact_role: test_report
   relative_path: ml/reports/v0_3_16/test_report.json
-  size: 225
-  sha256: 4385678c3b09a0fdca32ccf58197009f2f9eb95fcf93e2bb6e841181d2db0b04
+  size: 330
+  sha256: 1133a7875a7dcf4f90693bdbf35564bc2cac44ba0dbf49efc9183b61679d4b52
   schema_version: v0316
   required: true
   creation_phase: finalization

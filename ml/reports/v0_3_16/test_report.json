@@ -3,6 +3,9 @@
   "behavioral_test_cases_required": 56,
   "behavioral_tests_passed": true,
   "failed": 0,
+  "full_regression_passed": true,
+  "full_regression_test_count": 1170,
+  "full_regression_warnings": 3,
   "schema_version": "v0316_test_report_v1",
   "skipped_mandatory": 0,
   "status": "passed"
