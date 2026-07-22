@@ -1,0 +1,27 @@
+schema_version: v03154_scenario_contracts_v2
+labels_assert_observed_behavior_not_intent: true
+classes:
+  benign:
+    required: [completed_tcp_exchange, non_malicious_observed_pattern]
+  auth_failures:
+    required: [parsed_http_post, synthetic_auth_service_response, explicit_negative_outcome, http_401]
+    reject_if: [failed_connection_count_only, missing_response, one_sided_exchange, hidden_generator_flag]
+  web_probe:
+    required: [multiple_parsed_http_requests, distinct_paths, observable_http_responses]
+    reject_if: [single_404_only, profile_marker, inferred_http, hidden_generator_flag]
+  beacon:
+    required: [multiple_completed_flows, observable_periodic_spacing]
+  low_rate_dos:
+    required: [multiple_completed_requests, sustained_observable_request_pressure]
+  port_scan:
+    required: [multiple_distinct_destination_ports, observable_unanswered_syns]
+network_policy:
+  synthetic_only: true
+  external_targets_allowed: false
+  address_space: 10.31.54.0/24
+  raw_credentials_allowed: false
+fixtures:
+  positive_auth: repeated POST /auth/login with synthetic credential_id and HTTP 401 outcome=denied
+  negative_auth: completed successful request and failed TCP connection without an auth response
+  positive_web_probe: at least four parsed requests to distinct paths
+  negative_web_probe: a single legitimate 404 request
