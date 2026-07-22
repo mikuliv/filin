@@ -1,0 +1,52 @@
+{
+  "causal_limits": [
+    "Raw gate/subtype scores unavailable: calibration suppression cannot be separated completely from raw-score behavior.",
+    "Raw ACK absent: historical privacy coverage cannot be established.",
+    "Exact latency trace absent: historical capture-to-sink latency cannot be calculated.",
+    "v0.3.11 feature rows absent: training/validation feature-distribution comparison is unavailable."
+  ],
+  "classes": {
+    "available_historical": [
+      "pcap",
+      "capture_manifest",
+      "zeek_logs",
+      "feature_rows",
+      "feature_schema",
+      "feature_diagnostics",
+      "immutable_predictions",
+      "gate_probabilities",
+      "subtype_probabilities",
+      "calibrated_probabilities",
+      "conformal_sets",
+      "state_transitions",
+      "activity_keys",
+      "episode_mappings",
+      "labels",
+      "scenario_definitions",
+      "scenario_parameters",
+      "generator_versions",
+      "per_window_metrics",
+      "per_episode_metrics",
+      "per_class_metrics",
+      "source_events",
+      "sink_events",
+      "runtime_checkpoints",
+      "fault_records",
+      "performance_samples",
+      "claim_evidence_ledger",
+      "v0313_holdout_features",
+      "v0315_features"
+    ],
+    "diagnostic_only_new": [],
+    "reconstructable_deterministic": [],
+    "unavailable": [
+      "gate_raw_scores",
+      "subtype_raw_scores",
+      "raw_ack_records",
+      "v0311_training_features",
+      "v0311_validation_features",
+      "exact_capture_to_sink_latency"
+    ]
+  },
+  "schema_version": "v03153_evidence_availability_v1"
+}

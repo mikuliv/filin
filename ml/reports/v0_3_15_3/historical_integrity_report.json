@@ -1,0 +1,461 @@
+{
+  "backend_tree": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_unchanged": true,
+  "expected_origin_main_in_task": "389e81e3ec25b7f04386b08e9b45c10c8fa72973",
+  "historical_paths": [
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "88808dca856c01d1f0155f28e992c784418a8856e12f8730ed29575661120e14",
+      "path": "ml/reports/v0_3_11",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "5aeecfd71da1fa738c1b0ed4193e0ca7065859f57fd1ee2e6b4be708d9a0ecdb",
+      "path": "ml/reports/v0_3_12",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "d677b3a19ca55be60dfdbce557ba29ebca6f9c19e7969bbea46917bf145a05ea",
+      "path": "ml/reports/v0_3_12_1",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "b137690f2e174d67fdc531e2a48de8cd26a655ae99991f866f21b5fd4d307130",
+      "path": "ml/reports/v0_3_12_2",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "1b91e0457f906010797a690deaf3c5653d07f27b13194cae2c46650825573935",
+      "path": "ml/reports/v0_3_13",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": null,
+      "limitation": "Local historical report is gitignored; its aggregate was recorded after protocol freeze and no analysis code writes this path.",
+      "local_aggregate_sha256": "f8226a1773a56d5daee32c3b101f1b9c721ee4c86d723e5838e212115cd82b5f",
+      "path": "ml/reports/v0_3_14",
+      "source_object": null,
+      "unchanged": true,
+      "versioned_in_source_commit": false
+    },
+    {
+      "current_object": "f737c3a79af0873ce87daecbad74a545f545eb6f",
+      "limitation": null,
+      "local_aggregate_sha256": "f2660ddf8a33ae57caf1ca23f38a02296eed25345b7786a67454fedf28799bea",
+      "path": "ml/reports/v0_3_15",
+      "source_object": "f737c3a79af0873ce87daecbad74a545f545eb6f",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "720ae78ec749f7fe40f07aae3cf8485b1799cd15",
+      "limitation": null,
+      "local_aggregate_sha256": "9c68a59c1afe03ec7c9a06c486892a469d47dae88b7ded59fd4b96a8733a60d1",
+      "path": "ml/reports/v0_3_15_1",
+      "source_object": "720ae78ec749f7fe40f07aae3cf8485b1799cd15",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "e8644cb01e340361160b73173cff2d5fc126d8a3",
+      "limitation": null,
+      "local_aggregate_sha256": "a947d50b52377c5e9550013ced27ab3e7d6d1fda07e7ef461926194afa9f2989",
+      "path": "ml/reports/v0_3_15_2",
+      "source_object": "e8644cb01e340361160b73173cff2d5fc126d8a3",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "1e97354bc2bf29e77f1f672d60d9686be96856dd",
+      "limitation": null,
+      "local_aggregate_sha256": "43f01cd9a745440bdc995ec1ebccf25fc4bddbc8e90fa6ee784c3411499f4750",
+      "path": "ml/protocols/v0_3_15_2_protocol.yaml",
+      "source_object": "1e97354bc2bf29e77f1f672d60d9686be96856dd",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "299d616d707764aff8f65787a8ab7aae972eabe9",
+      "limitation": null,
+      "local_aggregate_sha256": "e96b7085e751d11d8d085520c0fb5f2fd1062ea2999b0294b4dd1be8f6ea8f51",
+      "path": "ml/experiments/v0_3_15_2",
+      "source_object": "299d616d707764aff8f65787a8ab7aae972eabe9",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "175fee4966ef0e13833ef1a2b98067a2c2ce67f1",
+      "limitation": null,
+      "local_aggregate_sha256": "66ce264ab5bc4eaa0d4f90232b9d4699c66ca9df60f1e20acf907d1ba02e2490",
+      "path": "docs/experiments/v0_3_14.md",
+      "source_object": "175fee4966ef0e13833ef1a2b98067a2c2ce67f1",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    },
+    {
+      "current_object": "949a0d2786ed8844f178cbfd894d7ea9496fa603",
+      "limitation": null,
+      "local_aggregate_sha256": "80ac701f232dc2b3efb467596dab599200afc41ee1aad5c4eb7dc48b8e1fafc5",
+      "path": "docs/experiments/v0_3_14_errata.md",
+      "source_object": "949a0d2786ed8844f178cbfd894d7ea9496fa603",
+      "unchanged": true,
+      "versioned_in_source_commit": true
+    }
+  ],
+  "negative_result_preserved": true,
+  "origin_difference_documented": true,
+  "origin_main_observed_at_preflight": "a1959cddd34a46da100b856d7361ec940edb0299",
+  "previous_stage_hashes_unchanged": true,
+  "schema_version": "v03153_historical_integrity_v1",
+  "source_commit": "a1959cddd34a46da100b856d7361ec940edb0299",
+  "v03152_artifact_checks": [
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/ack_retry_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/blind_access_audit.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/bootstrap_intervals.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/calibration_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/campaign_manifest.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/capture_integrity_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/causal_invariance_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/checkpoint_evidence.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/ci_coverage_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/claim_evidence_ledger.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/clock_safety_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/completion_marker.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/conformal_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/continuous_availability_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/documentation_consistency_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/drift_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/drop_reconciliation_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/episode_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/episode_schedule_manifest.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/event_set_anchor.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/fault_execution_results.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/fault_schedule_manifest.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/hash_chain_anchor.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/historical_integrity_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/immutable_prediction_manifest.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/integrated_exporter_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/no_fit_audit.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/per_class_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/per_group_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/per_length_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/per_session_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/per_variant_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/performance_profiles_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/pre_label_trial_lock.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/preliminary_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/privacy_targets_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/protocol_lock.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/resource_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/restart_invariance_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/restart_recovery_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/resume_fixture_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/resume_integrity_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/runtime_configuration_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/session_manifest.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/source_sink_reconciliation_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/spool_index_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/stateful_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/test_report.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/v0_3_15_2_summary.md",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/reports/v0_3_15_2/window_metrics.json",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/protocols/v0_3_15_2_protocol.yaml",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "ml/experiments/v0_3_15_2/campaign.yaml",
+      "size_matches": true
+    },
+    {
+      "exists": true,
+      "hash_matches": true,
+      "path": "collectors/shadow/contracts/shadow_event_v1.schema.json",
+      "size_matches": true
+    }
+  ],
+  "v03152_artifact_count": 54,
+  "v03152_bundle_integrity_verified": true,
+  "v03152_detached_sha256": "49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda",
+  "v03152_manifest_actual_sha256": "49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda",
+  "v03152_manifest_expected_sha256": "49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda"
+}
