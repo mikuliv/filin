@@ -1,0 +1,47 @@
+{
+  "actual_resource_overload": "unresolved",
+  "cpu_measurement_semantics_defined": true,
+  "future_method": {
+    "aggregation": "p95 over non-warmup interval samples",
+    "allowed_range": "[0,100] after host normalization",
+    "meaning_of_100_percent": "all logical CPUs fully occupied",
+    "per_core_normalization": "divide raw process-tree percent by logical CPU count",
+    "process_tree_cpu": "sum parent and child deltas",
+    "sampling_interval_seconds": 1.0,
+    "system_wide_cpu": "host utilization in [0,100]",
+    "warmup": "exclude first sample and protocol-defined warmup"
+  },
+  "historical_api": {},
+  "historical_measured_value": {
+    "cpu_p95_percent": 103.0,
+    "policy_passed": false,
+    "profile": "C",
+    "threshold": "<95%"
+  },
+  "historical_performance_gate_rewritten": false,
+  "instrumentation_defect": "normalization and 100% meaning were not frozen explicitly",
+  "interpretation": "A process CPU value above 100% is possible when multiple cores are summed; the historical report did not preserve enough normalization detail to distinguish overload from unit ambiguity.",
+  "micro_benchmark_samples": [
+    {
+      "logical_cpu_count": 8,
+      "meaning_of_100_percent": "all logical CPUs fully occupied for the interval",
+      "process_tree_cpu_percent_per_host": 20.0,
+      "process_tree_cpu_percent_raw": 160.0,
+      "sampling_interval_seconds": 1.0,
+      "schema_version": "passive_cpu_sample_v1",
+      "system_cpu_percent": 25.0,
+      "warmup_sample": false
+    },
+    {
+      "logical_cpu_count": 8,
+      "meaning_of_100_percent": "all logical CPUs fully occupied for the interval",
+      "process_tree_cpu_percent_per_host": 75.0,
+      "process_tree_cpu_percent_raw": 600.0,
+      "sampling_interval_seconds": 1.0,
+      "schema_version": "passive_cpu_sample_v1",
+      "system_cpu_percent": 75.0,
+      "warmup_sample": false
+    }
+  ],
+  "schema_version": "v03153_cpu_measurement_semantics_v1"
+}

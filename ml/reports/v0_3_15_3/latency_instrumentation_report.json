@@ -1,0 +1,92 @@
+{
+  "batch_semantics_passed": true,
+  "clock_domain": "single process monotonic_ns",
+  "contract_fields": [
+    "capture_closed_monotonic_ns",
+    "zeek_completed_monotonic_ns",
+    "feature_ready_monotonic_ns",
+    "prediction_ready_monotonic_ns",
+    "event_created_monotonic_ns",
+    "spool_durable_monotonic_ns",
+    "queue_registered_monotonic_ns",
+    "send_started_monotonic_ns",
+    "ack_received_monotonic_ns",
+    "checkpoint_committed_monotonic_ns",
+    "sink_committed_monotonic_ns"
+  ],
+  "fixture_records": [
+    {
+      "capture_to_sink_ns": 10000000,
+      "clock": "monotonic_ns_single_process_domain",
+      "event_id": "diagnostic-event-001",
+      "non_negative": true,
+      "schema_version": "passive_latency_trace_v1",
+      "timestamps": {
+        "ack_received_monotonic_ns": 1008000000,
+        "capture_closed_monotonic_ns": 1000000000,
+        "checkpoint_committed_monotonic_ns": 1009000000,
+        "event_created_monotonic_ns": 1004000000,
+        "feature_ready_monotonic_ns": 1002000000,
+        "prediction_ready_monotonic_ns": 1003000000,
+        "queue_registered_monotonic_ns": 1006000000,
+        "send_started_monotonic_ns": 1007000000,
+        "sink_committed_monotonic_ns": 1010000000,
+        "spool_durable_monotonic_ns": 1005000000,
+        "zeek_completed_monotonic_ns": 1001000000
+      },
+      "trace_id": "diagnostic-trace-001"
+    },
+    {
+      "capture_to_sink_ns": 20000000,
+      "clock": "monotonic_ns_single_process_domain",
+      "event_id": "diagnostic-event-002",
+      "non_negative": true,
+      "schema_version": "passive_latency_trace_v1",
+      "timestamps": {
+        "ack_received_monotonic_ns": 1016000000,
+        "capture_closed_monotonic_ns": 1000000000,
+        "checkpoint_committed_monotonic_ns": 1018000000,
+        "event_created_monotonic_ns": 1008000000,
+        "feature_ready_monotonic_ns": 1004000000,
+        "prediction_ready_monotonic_ns": 1006000000,
+        "queue_registered_monotonic_ns": 1012000000,
+        "send_started_monotonic_ns": 1014000000,
+        "sink_committed_monotonic_ns": 1020000000,
+        "spool_durable_monotonic_ns": 1010000000,
+        "zeek_completed_monotonic_ns": 1002000000
+      },
+      "trace_id": "diagnostic-retry-001"
+    },
+    {
+      "capture_to_sink_ns": 30000000,
+      "clock": "monotonic_ns_single_process_domain",
+      "event_id": "diagnostic-event-003",
+      "non_negative": true,
+      "schema_version": "passive_latency_trace_v1",
+      "timestamps": {
+        "ack_received_monotonic_ns": 1024000000,
+        "capture_closed_monotonic_ns": 1000000000,
+        "checkpoint_committed_monotonic_ns": 1027000000,
+        "event_created_monotonic_ns": 1012000000,
+        "feature_ready_monotonic_ns": 1006000000,
+        "prediction_ready_monotonic_ns": 1009000000,
+        "queue_registered_monotonic_ns": 1018000000,
+        "send_started_monotonic_ns": 1021000000,
+        "sink_committed_monotonic_ns": 1030000000,
+        "spool_durable_monotonic_ns": 1015000000,
+        "zeek_completed_monotonic_ns": 1003000000
+      },
+      "trace_id": "diagnostic-restart-001"
+    }
+  ],
+  "historical_exact_latency_available": false,
+  "historical_latency_policy_passed": false,
+  "latency_instrumentation_ready": true,
+  "negative_latency_rejected": true,
+  "ordering_passed": true,
+  "restart_preservation_passed": true,
+  "retry_preservation_passed": true,
+  "schema_version": "v03153_latency_instrumentation_v1",
+  "semantic_payload_unchanged": true,
+  "source_sink_link_passed": true
+}

@@ -1,0 +1,31 @@
+{
+  "allowed_difference_fields": [
+    "diagnostic_records",
+    "latency_trace",
+    "resource_samples",
+    "ack_evidence"
+  ],
+  "compared_fields": [
+    "prediction_inputs",
+    "semantic_events",
+    "event_ids",
+    "idempotency_keys",
+    "state_transitions",
+    "sink_semantic_set",
+    "retry_decisions",
+    "drop_decisions"
+  ],
+  "field_equality": {
+    "drop_decisions": true,
+    "event_ids": true,
+    "idempotency_keys": true,
+    "prediction_inputs": true,
+    "retry_decisions": true,
+    "semantic_events": true,
+    "sink_semantic_set": true,
+    "state_transitions": true
+  },
+  "fixture_count": 1,
+  "instrumentation_equivalence_passed": true,
+  "schema_version": "v03153_instrumentation_equivalence_v1"
+}
