@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "artifact_sha256": "59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7",
+    "candidate_id": "v0311:19176acb401be2d4",
+    "comparator_eligible": false,
+    "feature_schema_sha256": "cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf",
+    "ineligibility_reason": "historical_extractor_guesses_application_profile_from_ports_and_flow_shape",
+    "inference_allowed": false,
+    "manifest_sha256": "ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c"
+  },
+  "baseline_inference_allowed": false,
+  "candidate": {
+    "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+    "candidate_id": "v03154:65a3dd912d845bc1",
+    "feature_contract": "network_features_v2",
+    "manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537"
+  },
+  "candidate_event_contract_sha256": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe",
+  "candidate_feature_contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "candidate_state_policy_sha256": "3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c",
+  "execution_order": [
+    "candidate",
+    "baseline_if_eligible"
+  ],
+  "locked_before_first_capture": true,
+  "schema_version": "v03155_candidate_pair_lock_v1"
+}

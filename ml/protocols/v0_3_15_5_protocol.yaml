@@ -1,0 +1,125 @@
+schema_version: v03155_protocol_v1
+stage: v0.3.15.5
+title: independent prospective comparative holdout
+status: frozen_before_first_capture
+revision: 1
+source_head: 6ddba2c835a53679285b6afddcef3b74cb28d430
+backend_tree_sha256: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract: network_features_v2
+baseline:
+  candidate_id: v0311:19176acb401be2d4
+  artifact_sha256: 59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7
+  manifest_sha256: ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c
+  feature_schema_sha256: cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf
+  comparator_eligible: false
+  ineligibility_reason: historical_extractor_guesses_application_profile_from_ports_and_flow_shape
+  inference_allowed: false
+campaign:
+  session_groups: [balanced, auth_generalization, web_probe_generalization, background_shift, runtime_resilience]
+  sessions_per_group: 4
+  captures_per_session: 200
+  warmup_per_session: 10
+  scored_per_session: 190
+  total_captures: 4000
+  total_warmup: 200
+  total_scored: 3800
+  episodes: {total: 200, attack: 100, benign: 100}
+  zeek_image: zeek/zeek:7.0.5
+  docker_network: filin-v03155-isolated
+  docker_network_internal: true
+  fallback_allowed: false
+  synthetic_only: true
+  external_network_allowed: false
+independence:
+  compared_stages: [v0.3.11, v0.3.13, v0.3.15, v0.3.15.2, v0.3.15.4]
+  required_zero_intersections: [session_id, seed, pcap_sha256, capture_id, episode_id, benign_variant_id, attack_variant_id, exact_parameter_vector]
+execution:
+  order: [candidate, baseline_if_eligible]
+  pcap_zeek_runs_per_capture: 1
+  candidate_feature_path: network_features_v2
+  baseline_feature_path: historical_v1_only
+  shared_mutable_state: false
+  activity_key_source: observable_destination_service_fingerprint
+  label_unlock_after_prediction_lock: true
+  candidate_prediction_count: 3800
+  baseline_prediction_count_if_ineligible: 0
+no_fit:
+  fit_call_count: 0
+  partial_fit_call_count: 0
+  calibration_fit_call_count: 0
+  conformal_fit_call_count: 0
+  feature_selection_call_count: 0
+  threshold_selection_call_count: 0
+  candidate_replacement_count: 0
+statistics:
+  bootstrap_iterations: 5000
+  bootstrap_seed: 42
+  bootstrap_unit: session_id
+  paired_primary_only_if_baseline_eligible: true
+  mcnemar: exact
+  episode_sign_test: exact
+absolute_gates:
+  benign_recall_min: 0.98
+  fpr_max: 0.02
+  attack_macro_recall_min: 0.95
+  attack_macro_f1_min: 0.95
+  each_attack_recall_min: 0.90
+  attack_episode_recall_min: 0.95
+  episode_alert_precision_min: 0.95
+  benign_episode_far_max: 0.05
+  detection_by_second_window_min: 0.95
+  unresolved_pending_rate: 0
+  first_alert_suppression: 0
+  eligible_but_not_emitted: 0
+  cross_contamination: 0
+conformal_gates:
+  overall_coverage_min: 0.95
+  each_attack_coverage_min: 0.90
+  empty_set_rate_max: 0.05
+  wrong_only_rate: 0
+comparative_noninferiority:
+  benign_recall_margin: 0.02
+  fpr_margin: 0.01
+  benign_episode_far_margin: 0.02
+  episode_precision_margin: 0.02
+runtime:
+  workers: 2
+  batch_size: 50
+  bounded_queue: true
+  token_bucket: true
+  durable_spool: true
+  atomic_checkpoint: true
+  delivery: at_least_once
+  sink: local_synthetic_mock
+  fault_scenarios: [sink_timeout, temporary_unavailable, rate_limited, connection_reset_after_send, duplicate_ack, malformed_ack, unknown_ack, exporter_restart, sink_restart, crash_after_ack_before_checkpoint, queue_full, clock_backward_jump]
+performance_gates:
+  throughput_median_min: 10
+  capture_to_sink_p95_ms_max: 2000
+  capture_to_sink_p99_ms_max: 3000
+  peak_rss_mib_max: 512
+  swap_growth_mib: 0
+  normalized_cpu_average_percent_max_exclusive: 75
+  normalized_cpu_p95_percent_max_exclusive: 95
+privacy:
+  positive_findings_required: 0
+  raw_runtime_artifacts_git_allowed: false
+promotion:
+  absolute_gates_can_promote_when_baseline_ineligible: true
+  comparative_superiority_required: false
+  next_allowed_stage_on_pass: v0.3.16
+  staging_connector_readiness_on_pass: true
+  shadow_mode_allowed: false
+  backend_integration_allowed: false
+  production_ready: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+invalidation:
+  protocol_change_before_capture: new_revision_required
+  protocol_change_after_capture: invalidate_campaign_and_use_new_sessions_and_seeds
+  any_label_access_before_lock: invalidate_campaign
+  any_fit_or_tuning: invalidate_campaign
+

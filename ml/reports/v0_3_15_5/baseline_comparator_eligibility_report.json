@@ -1,0 +1,21 @@
+{
+  "baseline_candidate_id": "v0311:19176acb401be2d4",
+  "baseline_comparator_eligible": false,
+  "baseline_feature_contract": "network_sensor_v0_5_contextual_control",
+  "evidence": [
+    "collectors/shadow_trial/window_processor.py:112",
+    "collectors/shadow_trial/window_processor.py:128-134"
+  ],
+  "exact_historical_path_available": true,
+  "limitations": [
+    "Historical PCAP extractor selects a profile from destination ports, flow count and packet count.",
+    "A v2 reinterpretation may not be substituted under the historical candidate ID."
+  ],
+  "schema_version": "v03155_baseline_eligibility_v1",
+  "uses_future_data": false,
+  "uses_generator_profile": true,
+  "uses_hidden_state": true,
+  "uses_label": false,
+  "uses_noncausal_order": false,
+  "uses_scenario_name": false
+}

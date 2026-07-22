@@ -1,0 +1,8 @@
+{
+  "label_vault_git_inclusion_permitted": false,
+  "label_vault_sha256": "d99815dc6a5c3531671268df2286557f1d0341ca50d5ccb8c7d9b7229f911376",
+  "record_count": 3800,
+  "schema_version": "v03155_label_vault_commitment_v1",
+  "sealed_before_first_capture": true,
+  "unlock_count": 0
+}

@@ -1,0 +1,19 @@
+{
+  "absolute_gate_promotion_branch_frozen": true,
+  "baseline_comparator_eligible": false,
+  "campaign_sha256": "15253f8e0cf504de223da4bdae86ded182076a3c922fd987517461ccdc22b994",
+  "candidate_pair_lock_sha256": "0531ea7c94452902d6d92dcf11212b519a23635b7b56e31090539e7d61b28608",
+  "first_capture_exists": false,
+  "frozen_before_first_capture": true,
+  "independence_manifest_sha256": "0efbe27b77f48b15251679ebc798ad08c483ca6fcb272cfc4a3bd093347c0cd6",
+  "label_vault_commitment_sha256": "96a1d8aac6e84df7ec73490b5a6f9d1a9485eac41ffa34749d773ccbf5e35289",
+  "protocol_sha256": "e01ffa01f48c2f70751388b55bdee46f17c00e92ff3a7a5476a623ece73b568c",
+  "schedule_hashes": {
+    "benign_variant_manifest.yaml": "100b7950818b0db177e51cdb03664286fc092cd73d6cd98dacb3ee2644a3d380",
+    "campaign.yaml": "15253f8e0cf504de223da4bdae86ded182076a3c922fd987517461ccdc22b994",
+    "episode_schedule.yaml": "f6238ba825a6c59f31b2509cd4e123f0cf6ce5326089af15821cf25550f79467",
+    "scenario_variant_manifest.yaml": "b5f048f7fdab7e48e04c866e926b46e712167375d2e16b68cd9351ea317c1be6",
+    "session_manifest.yaml": "fde4dbfd056bcdac66ebcff3ae7984afb3ec44e0384e77357391a37abe849b14"
+  },
+  "schema_version": "v03155_protocol_lock_v1"
+}
