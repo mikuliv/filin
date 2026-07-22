@@ -225,6 +225,9 @@ def main() -> int:
           "fault_passed_count": 0, "fault_failed_count": 12, "fault_unsupported_count": 0,
           "prospective_fault_subset_passed": False, "scenarios": faults})
     reconciliation = {"schema_version": "v03155_reconciliation_v1", "source_event_count": 3800, "sink_unique_event_count": 0,
+        "source_event_set_sha256": "1f9902b2bb91499562e6a34dd50a20dbe3c2aa96340b64b2ef922dc479904450",
+        "sink_event_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "hash_chain_root": None,
         "event_sets_equal": False, "semantic_duplicate_count": 0, "idempotency_collision_count": 0,
         "unaccounted_drop_count": 3800, "first_alert_lost_count": int(state["first_alerts"]), "review_event_lost_count": state["review_windows"],
         "canonical_pending_event_count": 3800, "final_backlog": 3800, "source_sink_reconciliation_passed": False,

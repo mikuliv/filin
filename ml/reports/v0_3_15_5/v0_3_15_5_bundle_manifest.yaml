@@ -266,7 +266,7 @@ artifacts:
 - role: claim_evidence_ledger
   relative_path: ml/reports/v0_3_15_5/claim_evidence_ledger.json
   size: 20285
-  sha256: d3fa4ddf787b0802a6777d8939b338a4179cd3da0e4e89fd0fad2f3716c967b6
+  sha256: f92268e16dbfc16d0a7a15e2d62b0c4e065e06ac6be9572dad31736c6f43b29c
   schema_version: v03155_bundle_entry_v1
   required: true
   creation_phase: after_label_unlock
@@ -655,8 +655,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: source_sink_reconciliation_report
   relative_path: ml/reports/v0_3_15_5/source_sink_reconciliation_report.json
-  size: 481
-  sha256: a90a52febc31cc9bf30b433c4247f9c3a689fd04683612db21fe25877809593c
+  size: 700
+  sha256: c93ab646707a0fee0b4ed811ad2814b0c87753544b88b1fab2e310f9accd5ae0
   schema_version: v03155_bundle_entry_v1
   required: true
   creation_phase: after_label_unlock

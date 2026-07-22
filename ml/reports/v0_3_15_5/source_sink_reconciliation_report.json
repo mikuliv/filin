@@ -4,12 +4,15 @@
   "failure_boundary": "candidate_event_schema_validation",
   "final_backlog": 3800,
   "first_alert_lost_count": 125,
+  "hash_chain_root": null,
   "idempotency_collision_count": 0,
   "review_event_lost_count": 0,
   "schema_version": "v03155_reconciliation_v1",
   "semantic_duplicate_count": 0,
+  "sink_event_set_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
   "sink_unique_event_count": 0,
   "source_event_count": 3800,
+  "source_event_set_sha256": "1f9902b2bb91499562e6a34dd50a20dbe3c2aa96340b64b2ef922dc479904450",
   "source_sink_reconciliation_passed": false,
   "unaccounted_drop_count": 3800
 }
