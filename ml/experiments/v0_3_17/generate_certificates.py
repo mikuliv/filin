@@ -74,11 +74,12 @@ def activate(root: Path, variant: str) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-index", type=int, required=True, choices=(1, 2, 3))
+    parser.add_argument("--revision", type=int, required=True, choices=(2,))
     args = parser.parse_args()
     root = RUNTIME / "tls" / f"run-{args.run_index}"
     if root.exists():
         raise RuntimeError(f"certificate_session_already_exists:{root}")
-    base = 3_171_000 + args.run_index * 100
+    base = 3_172_000 + args.run_index * 100
     for variant, offset in (("a", 0), ("b", 20)):
         link_set(root, "sensor-connector", variant, base + offset + 1)
         link_set(root, "connector-receiver", variant, base + offset + 41)
@@ -95,6 +96,7 @@ def main() -> int:
     manifest = {
         "schema_version": "v0317_certificate_session_v1",
         "run_index": args.run_index,
+        "revision": args.revision,
         "synthetic_only": True,
         "tls_version": "TLSv1.3",
         "variants": ["a", "b"],

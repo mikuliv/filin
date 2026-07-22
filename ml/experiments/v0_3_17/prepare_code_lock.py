@@ -9,7 +9,8 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[3]
-PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
+BASE_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
+PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
 REPORT = ROOT / "ml/reports/v0_3_17/pre_campaign_code_lock.json"
 
 
@@ -41,7 +42,8 @@ def source_files() -> list[Path]:
 
 
 def main() -> int:
-    protocol = yaml.safe_load(PROTOCOL.read_text(encoding="utf-8"))
+    from ml.experiments.v0_3_17.run_campaign import protocol as load_protocol
+    protocol = load_protocol()
     image = subprocess.check_output(["docker", "image", "inspect", "filin-rehearsal-v0317:local", "--format", "{{.Id}}"], text=True).strip()
     git_head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
     files = {path.relative_to(ROOT).as_posix(): sha(path) for path in source_files()}
@@ -62,6 +64,7 @@ def main() -> int:
         "stage": "v0.3.17",
         "git_head": git_head,
         "protocol_sha256": sha(PROTOCOL),
+        "base_protocol_sha256": sha(BASE_PROTOCOL),
         "candidate_identity": protocol["candidate_identity"],
         "component_image_digests": {
             "filin-rehearsal-v0317:local": image,

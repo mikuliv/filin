@@ -3,13 +3,15 @@ from __future__ import annotations
 import json
 import sqlite3
 import struct
+import time
 from pathlib import Path
 
 import pytest
 import yaml
 from jsonschema import Draft202012Validator
 
-from ml.experiments.v0_3_17.run_campaign import raw_features
+import ml.experiments.v0_3_17.run_campaign as campaign_module
+from ml.experiments.v0_3_17.run_campaign import LiveProcessor, protocol as load_protocol, raw_features
 from ml.experiments.v0_3_15_4.feature_v2 import FEATURES
 from ml.features.network_sensor_v0_5 import AssetState
 from rehearsal.connector_app import DurableDelivery
@@ -25,15 +27,15 @@ PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
 
 @pytest.fixture(scope="module")
 def protocol() -> dict:
-    return yaml.safe_load(PROTOCOL_PATH.read_text(encoding="utf-8"))
+    return load_protocol()
 
 
 @pytest.mark.parametrize(
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 1),
-        (("status",), "frozen_before_first_rehearsal_event"),
+        (("revision",), 2),
+        (("status",), "frozen_before_revision_2_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -244,3 +246,19 @@ def test_no_backend_import_in_rehearsal_sources() -> None:
 def test_no_published_ports_in_compose() -> None:
     compose = yaml.safe_load((ROOT / "rehearsal/docker-compose.v0_3_17.yml").read_text(encoding="utf-8"))
     assert all("ports" not in service for service in compose["services"].values())
+
+
+def test_batch_processor_exceeds_average_run_rate(tmp_path: Path, monkeypatch: pytest.MonkeyPatch, protocol: dict) -> None:
+    monkeypatch.setattr(campaign_module, "RUNTIME", tmp_path)
+    run = protocol["campaign"]["runs"][0]
+    sessions = [item for item in protocol["campaign"]["sessions"] if item["run"] == run["run_id"]]
+    (tmp_path / run["run_id"]).mkdir(parents=True)
+    processor = LiveProcessor(run, sessions)
+    receipt = {"scheduled_event_rate": 100, "capture_id": "cap_" + "1" * 64, "pcap_sha256": "2" * 64, "phase": "burst", "capture_wall_ns": 1_900_000_000_000_000_000}
+    started = time.perf_counter()
+    processor.process_receipt(receipt)
+    elapsed = time.perf_counter() - started
+    assert processor.window_count == 100
+    assert processor.warmup_count == 60
+    assert processor.event_count == 40
+    assert 100 / elapsed >= 20

@@ -37,7 +37,7 @@ def validate_manifest(value: dict, root: Path) -> list[str]:
     errors: list[str] = []
     if value.get("schema_version") != "v0317_bundle_manifest_v1":
         errors.append("schema_version")
-    if value.get("stage") != "v0.3.17" or value.get("revision") != 1:
+    if value.get("stage") != "v0.3.17" or value.get("revision") != 2:
         errors.append("stage_revision")
     seen: set[str] = set()
     for item in value.get("artifacts", []):
@@ -103,7 +103,7 @@ def corruption_tests(report: Path) -> dict:
     mutators = [
         lambda v: v.update(schema_version="unknown"),
         lambda v: v.update(stage="v0.3.16"),
-        lambda v: v.update(revision=2),
+        lambda v: v.update(revision=1),
         lambda v: v["artifacts"][0].update(sha256="0" * 64),
         lambda v: v["artifacts"][0].update(size=-1),
         lambda v: v["artifacts"][0].update(relative_path="../escape"),
@@ -146,4 +146,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

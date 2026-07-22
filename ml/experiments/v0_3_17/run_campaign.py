@@ -34,7 +34,8 @@ from rehearsal.common import append_jsonl, digest, file_sha256, read_json, read_
 ROOT = Path(__file__).resolve().parents[3]
 RUNTIME = ROOT / "runtime/v0_3_17"
 REPORT = ROOT / "ml/reports/v0_3_17"
-PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
+BASE_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
+PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
 LOCK_PATH = REPORT / "pre_campaign_code_lock.json"
 COMPOSE = ROOT / "rehearsal/docker-compose.v0_3_17.yml"
 ARTIFACT = ROOT / "runtime/v0_3_15_4/v03154_candidate.joblib"
@@ -57,7 +58,18 @@ def run_command(args: list[str], *, check: bool = True, environment: dict[str, s
 
 
 def protocol() -> dict[str, Any]:
-    return yaml.safe_load(PROTOCOL_PATH.read_text(encoding="utf-8"))
+    base = yaml.safe_load(BASE_PROTOCOL_PATH.read_text(encoding="utf-8"))
+    revision = yaml.safe_load(PROTOCOL_PATH.read_text(encoding="utf-8"))
+    if revision["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+        raise RuntimeError("revision_2_base_protocol_hash_mismatch")
+    base.update({key: revision[key] for key in ("revision", "status")})
+    base["campaign"].update(revision["campaign"])
+    base["certificate_rotation"].update({
+        "sensor_to_connector": {"run": "run_b", "offset": 3300, "serial_a": 3172201, "serial_b": 3172221},
+        "connector_to_receiver": {"run": "run_b", "offset": 3450, "serial_a": 3172241, "serial_b": 3172261},
+    })
+    base["protocol_revision"] = revision
+    return base
 
 
 def verify_code_lock() -> dict[str, Any]:
@@ -66,6 +78,8 @@ def verify_code_lock() -> dict[str, Any]:
     lock = read_json(LOCK_PATH)
     if lock["protocol_sha256"] != file_sha256(PROTOCOL_PATH):
         raise RuntimeError("protocol_changed_after_code_lock")
+    if lock["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+        raise RuntimeError("base_protocol_changed_after_code_lock")
     for relative, expected in lock["source_file_sha256"].items():
         path = ROOT / relative
         if not path.is_file() or file_sha256(path) != expected:
@@ -420,7 +434,7 @@ class LiveProcessor:
 
     def process_receipt(self, receipt: dict[str, Any]) -> None:
         rate = int(receipt["scheduled_event_rate"])
-        rows, metadata = [], []
+        rows, metadata, feature_records = [], [], []
         for ordinal in range(rate):
             session = self.sessions[(self.window_count + ordinal) % len(self.sessions)]
             logical = session["session_id"]
@@ -430,20 +444,21 @@ class LiveProcessor:
             row_sha = digest(vector)
             rows.append(vector)
             metadata.append((session, capture_id, row_id, row_sha, ordinal))
-            append_jsonl(self.run_root / "feature_rows.jsonl", [{
+            feature_records.append({
                 "feature_row_id": row_id,
                 "feature_row_sha256": row_sha,
                 "logical_session_id": logical,
                 "source_capture_id": capture_id,
                 "source_pcap_sha256": receipt["pcap_sha256"],
                 "features": vector,
-            }])
+            })
             self.provenance_values += 51
+        append_jsonl(self.run_root / "feature_rows.jsonl", feature_records)
         frame = pd.DataFrame(rows, columns=self.bundle["features"])
         probabilities, _, _ = joint_probabilities(self.bundle, frame)
         predicted = np.asarray(CLASSES)[np.argmax(probabilities, axis=1)]
         sets = conformal_sets(self.bundle, probabilities)
-        canonical_events = []
+        canonical_events, prediction_records = [], []
         for vector, probability, top_class, conformal, meta in zip(rows, probabilities, predicted, sets, metadata):
             session, capture_id, row_id, row_sha, ordinal = meta
             logical = session["session_id"]
@@ -469,7 +484,7 @@ class LiveProcessor:
                 "conformal_set": list(conformal),
             }
             prediction["prediction_sha256"] = digest(prediction)
-            append_jsonl(self.run_root / "predictions.jsonl", [prediction])
+            prediction_records.append(prediction)
             if prediction_id in self.prediction_ids:
                 raise RuntimeError("immutable_prediction_identity_duplicate")
             self.prediction_ids.add(prediction_id)
@@ -497,6 +512,7 @@ class LiveProcessor:
             self.previous[alias] = digest([self.previous.get(alias), event, alias])
             canonical_events.append(event)
             self.scored_count += 1
+        append_jsonl(self.run_root / "predictions.jsonl", prediction_records)
         if canonical_events:
             append_jsonl(self.run_root / "events.jsonl", canonical_events)
             append_jsonl(RUNTIME / "events.jsonl", canonical_events)
@@ -520,6 +536,7 @@ class LiveProcessor:
             "duplicate_window_count": 0,
             "out_of_order_window_count": 0,
             "repeated_inference_count": 0,
+            "processing_completed_monotonic_ns": time.monotonic_ns(),
             "hash_chain_roots": self.previous,
             "event_set_sha256": digest(sorted(self.event_ids)),
         }
@@ -592,7 +609,7 @@ def execute_run(run_index: int, run_spec: dict[str, Any], sessions: list[dict[st
     for component in ("sensor", "connector", "receiver"):
         (RUNTIME / "volumes" / component).mkdir(parents=True, exist_ok=True)
     (RUNTIME / "events.jsonl").write_text("", encoding="utf-8", newline="\n")
-    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index)])
+    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index), "--revision", "2"])
     environment = compose_environment(run_index, run_spec)
     compose(["down", "--remove-orphans"], environment, check=False)
     compose(["up", "-d", "--no-build"], environment)
@@ -651,6 +668,7 @@ def main() -> int:
         "started_at": utc_now(),
         "started_monotonic_ns": time.monotonic_ns(),
         "protocol_sha256": file_sha256(PROTOCOL_PATH),
+        "base_protocol_sha256": file_sha256(BASE_PROTOCOL_PATH),
         "code_lock_sha256": file_sha256(LOCK_PATH),
         "code_lock_git_head": lock["git_head"],
         "time_acceleration": False,
