@@ -1,0 +1,14 @@
+{
+  "audit_labels_read_count": 0,
+  "decision_before_first_fit": true,
+  "false_gate_permitted": false,
+  "fit_call_count_before_lock": 0,
+  "resolved": true,
+  "schema_version": "v03154_training_decision_v1",
+  "training_required": true,
+  "triggered_conditions": [
+    "feature_v2_required_and_frozen_weights_fail_compatibility_gate",
+    "historical_composite_candidate_incompatible_with_v2_semantics",
+    "corrected_conformal_requires_candidate_linked_calibration_distribution"
+  ]
+}

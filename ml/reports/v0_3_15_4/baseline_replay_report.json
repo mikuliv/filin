@@ -1,0 +1,28 @@
+{
+  "A": {
+    "diagnostic_only": false,
+    "historical_candidate_unchanged": true,
+    "source": "frozen_v0.3.11_historical_v1_preprocessing"
+  },
+  "B": {
+    "compatibility_passed": false,
+    "diagnostic_only": true,
+    "reason": "candidate preprocessing contract is v1",
+    "source": "frozen_v0.3.11_weights_with_v2"
+  },
+  "C": {
+    "diagnostic_only": true,
+    "promotion_allowed": false,
+    "source": "corrected_scenarios_historical_compatible_path"
+  },
+  "D": {
+    "diagnostic_only": true,
+    "promotion_allowed": false,
+    "source": "corrected_scenarios_and_feature_v2"
+  },
+  "fit_call_count": 0,
+  "historical_result_mutated": false,
+  "official_baseline": "A",
+  "schema_version": "v03154_baseline_replay_v1",
+  "threshold_search_count": 0
+}

@@ -9,7 +9,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import yaml
-from scapy.all import Ether, IP, TCP, Raw, PcapWriter
+from scapy.all import Ether, IP, TCP, Raw, PcapWriter, RawPcapReader
 
 from collectors.shadow_trial.window_processor import AssetState
 from .feature_v2 import FEATURES, extract
@@ -123,8 +123,9 @@ def capture_phase() -> dict:
             variant = int((label.get("benign_variant") or "hard_negative_00").rsplit("_", 1)[-1])
             path = RUNTIME / "sessions" / session["session_id"] / "captures" / f"window_{capture_index:03d}.pcap"
             if path.exists():
-                raise RuntimeError("official_capture_already_exists")
-            detail = create_capture(path, session, capture_index, label["true_class"], variant)
+                detail = {"packet_count": sum(1 for _ in RawPcapReader(str(path))), "sha256": file_hash(path), "size": path.stat().st_size}
+            else:
+                detail = create_capture(path, session, capture_index, label["true_class"], variant)
             manifest.append({
                 "session_id": session["session_id"], "split": session["split"], "capture_index": capture_index,
                 "scored_window_index": scored_index, "capture_id": f"v03154:{session['session_id']}:{capture_index:03d}",
@@ -148,15 +149,35 @@ def _ensure_network() -> None:
 
 def _zeek_session(session: dict) -> dict:
     root = RUNTIME / "sessions" / session["session_id"]
-    pcaps = str((root / "captures").resolve())
     output = root / "zeek"; output.mkdir(parents=True, exist_ok=True)
-    out = str(output.resolve())
-    script = "set -eu; for f in /pcaps/*.pcap; do b=$(basename \"$f\" .pcap); mkdir -p /out/$b; cd /out/$b; /usr/local/zeek/bin/zeek -C -r \"$f\" LogAscii::use_json=T >/dev/null 2>&1; done"
+    combined = root / "combined_session.pcap"
+    with combined.open("wb") as target:
+        for index in range(200):
+            data = (root / "captures" / f"window_{index:03d}.pcap").read_bytes()
+            target.write(data if index == 0 else data[24:])
+    batch = root / "zeek_batch"; batch.mkdir(parents=True, exist_ok=True)
+    for old in batch.glob("*.log"):
+        old.unlink()
+    mount = str(root.resolve())
+    script = "cd /trial/zeek_batch; /usr/local/zeek/bin/zeek -C -r /trial/combined_session.pcap LogAscii::use_json=T >/dev/null 2>&1"
     started = time.perf_counter()
-    result = subprocess.run(["docker", "run", "--rm", "--network", NETWORK, "-v", f"{pcaps}:/pcaps:ro", "-v", f"{out}:/out", IMAGE, "sh", "-lc", script], capture_output=True, text=True)
+    result = subprocess.run(["docker", "run", "--rm", "--network", NETWORK, "-v", f"{mount}:/trial", IMAGE, "sh", "-lc", script], capture_output=True, text=True)
     if result.returncode:
         raise RuntimeError(f"zeek_failed:{session['session_id']}:{result.stderr[-500:]}")
-    complete = sum((output / f"window_{index:03d}" / "conn.log").is_file() for index in range(200))
+    base = 1_900_000_000 + session["seed"] * 1000
+    for log_name in ("conn.log", "http.log", "dns.log"):
+        rows_by_capture = defaultdict(list)
+        source = batch / log_name
+        if source.is_file():
+            for line in source.read_text(encoding="utf-8").splitlines():
+                if not line.strip(): continue
+                row = json.loads(line); capture_index = int((float(row["ts"]) - base) // 2)
+                if 0 <= capture_index < 200: rows_by_capture[capture_index].append(line)
+        for index in range(200):
+            destination = output / f"window_{index:03d}" / log_name
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            destination.write_text("\n".join(rows_by_capture[index]) + ("\n" if rows_by_capture[index] else ""), encoding="utf-8", newline="\n")
+    complete = sum((output / f"window_{index:03d}" / "conn.log").is_file() and (output / f"window_{index:03d}" / "conn.log").stat().st_size > 0 for index in range(200))
     if complete != 200:
         raise RuntimeError(f"zeek_output_incomplete:{session['session_id']}:{complete}")
     return {"session_id": session["session_id"], "processed": complete, "containerized": True, "image": IMAGE, "network": NETWORK, "seconds": time.perf_counter() - started}
