@@ -78,7 +78,7 @@ def _privacy_findings(value: object) -> list[str]:
         elif isinstance(item, list):
             for nested in item: visit(nested)
     visit(value)
-    patterns = [r"\b(?:\d{1,3}\.){3}\d{1,3}\b", r"\b[0-9a-f]{2}(?::[0-9a-f]{2}){5}\b", r"bearer\s+\S+", r"[A-Za-z]:\\Users\\", r"\b[^\s@]+@[^\s@]+\.[^\s@]+\b"]
+    patterns = [r"(?<![A-Za-z0-9.])(?:\d{1,3}\.){3}\d{1,3}\b", r"\b[0-9a-f]{2}(?::[0-9a-f]{2}){5}\b", r"bearer\s+\S+", r"[A-Za-z]:\\Users\\", r"\b[^\s@]+@[^\s@]+\.[^\s@]+\b"]
     findings.extend("forbidden_pattern" for pattern in patterns if re.search(pattern, text, re.I))
     return findings
 

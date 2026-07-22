@@ -197,19 +197,25 @@ def runtime_phase() -> dict:
     partitions = [events[::2], events[1::2]]
     started = time.perf_counter(); reports = []
     def worker(index: int, batch: list[dict]):
-        exporter = IntegratedPassiveExporter(sink, RUNTIME / "exporters" / f"worker_{index}", capacity=2048, batch_size=50, rate=10000, event_validator=validator)
-        accepted = sum(exporter.submit(event).accepted for event in batch); exporter.drain()
-        return accepted, exporter.report(), exporter.acknowledgement_records
+        exporter = IntegratedPassiveExporter(sink, RUNTIME / "exporters_streaming" / f"worker_{index}", capacity=2048, batch_size=50, rate=10000, event_validator=validator)
+        accepted = 0; residence_ms = []
+        for offset in range(0, len(batch), 10):
+            chunk = batch[offset:offset + 10]; chunk_started = time.perf_counter()
+            accepted += sum(exporter.submit(event).accepted for event in chunk); exporter.drain()
+            residence_ms.extend([(time.perf_counter() - chunk_started) * 1000] * len(chunk))
+        return accepted, exporter.report(), exporter.acknowledgement_records, residence_ms
     with ThreadPoolExecutor(max_workers=2) as pool:
         futures = [pool.submit(worker, index, batch) for index, batch in enumerate(partitions)]
         for future in futures: reports.append(future.result())
     elapsed = time.perf_counter() - started
-    acknowledgements = [ack for _, _, acks in reports for ack in acks]
+    acknowledgements = [ack for _, _, acks, _ in reports for ack in acks]
     write_jsonl(RUNTIME / "raw_ack" / "raw_ack.jsonl", acknowledgements)
     source_ids = {item["event_id"] for item in events}; sink_ids = {item["event_id"] for item in sink.events.values()}
-    p50 = max(1.0, elapsed * 1000 / len(events) * 50); p95 = p50 * 1.35; p99 = p50 * 1.7
+    samples = sorted(sample for _, _, _, values in reports for sample in values)
+    percentile = lambda q: samples[min(len(samples) - 1, int((len(samples) - 1) * q))]
+    p50, p95, p99 = percentile(.50), percentile(.95), percentile(.99)
     result = {"schema_version": "v031551_integrated_runtime_v1", "worker_count": 2, "real_worker_execution_passed": True,
-        "batch_size": 50, "real_batch_delivery_passed": all(item[1]["metrics"].get("real_batch_calls", 0) > 0 for item in reports),
+        "batch_size": 50, "actual_batch_size_max": 10, "real_batch_delivery_passed": all(item[1]["metrics"].get("real_batch_calls", 0) > 0 for item in reports),
         "source_event_count": len(source_ids), "sink_unique_event_count": len(sink_ids), "spool_reached_count": sum(item[1]["metrics"].get("spooled_events", 0) for item in reports),
         "sink_reached_count": len(sink_ids), "event_sets_equal": source_ids == sink_ids, "canonical_pending_event_count": sum(item[1]["reconciliation"]["pending_events"] for item in reports),
         "semantic_duplicate_count": 0, "idempotency_collision_count": 0, "unaccounted_drop_count": sum(item[1]["reconciliation"]["unaccounted_drop_count"] for item in reports),

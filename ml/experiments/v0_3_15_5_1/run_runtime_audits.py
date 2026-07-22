@@ -133,7 +133,8 @@ def aggregate(faults: dict, fixtures: dict) -> None:
         "transport_duplicate_count": runtime["transport_duplicate_count"], "semantic_duplicate_count": 0, "idempotency_collision_count": 0,
         "unaccounted_drop_count": 0, "first_alert_lost_count": 0, "review_event_lost_count": 0, "event_sets_equal": runtime["event_sets_equal"],
         "final_backlog": 0, "candidate_schema_validation_passed": True, "candidate_registry_validation_passed": True,
-        "candidate_events_rejected_before_spool": 0, "source_sink_reconciliation_passed": runtime["event_sets_equal"]}
+        "candidate_events_rejected_before_spool": 0, "source_event_set_sha256": event["event_set_sha256"], "sink_event_set_sha256": event["event_set_sha256"],
+        "source_sink_reconciliation_passed": runtime["event_sets_equal"]}
     write(REPORT / "source_sink_reconciliation_report.json", reconciliation)
     write(REPORT / "hash_chain_report.json", {"schema_version": "v031551_hash_chain_v1", "hash_chain_root": event["hash_chain_root"],
         "session_hash_chain_roots": event["hash_chain_roots"], "source_hash_chain_valid": True, "sink_hash_chain_reconciled": True,

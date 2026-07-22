@@ -63,8 +63,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: claim_evidence_ledger
   path: ml/reports/v0_3_15_5_1/claim_evidence_ledger.json
-  size: 18383
-  sha256: 6631524fdc5e72600d7effb6f575ed22242d267da4e835f9bfc5c145396078aa
+  size: 18375
+  sha256: 1e7d472cac263cbc426a8113871ef7be03d40bc2038e40c14cf2e4ac9d50d368
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -147,8 +147,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: exact_latency_report
   path: ml/reports/v0_3_15_5_1/exact_latency_report.json
-  size: 1012
-  sha256: 29abf6ac6292373ed769c4dd7b79c957b44dd4b322c38d7a5394884dbb429187
+  size: 1033
+  sha256: 71514aa2bb6417b46da945551ba2b53678a72e1dcee6befb9fa04b12be274925
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -231,8 +231,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: integrated_runtime_report
   path: ml/reports/v0_3_15_5_1/integrated_runtime_report.json
-  size: 3558
-  sha256: 874543d3c996136821470a8b5ca3e844dacf0ba729803aff23d72ad660923163
+  size: 3605
+  sha256: e8080d8cb04d1de797cdaba42cc6882d24ef374f447e330f5aecb778b0f60812
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -267,8 +267,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: privacy_report
   path: ml/reports/v0_3_15_5_1/privacy_report.json
-  size: 334
-  sha256: 5e9d8e9a594df410c38f14624317891b02c3873baca175c3a299271e9c3002c4
+  size: 333
+  sha256: 897701bbe35a41f650946f6700387646fcb9ca3511775731720a2970984fa9b1
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -292,7 +292,7 @@ artifacts:
 - role: raw_ack_evidence_report
   path: ml/reports/v0_3_15_5_1/raw_ack_evidence_report.json
   size: 469
-  sha256: e991ab03a4edf400fb01a118ba3f810e1ba35abc61d6da63defdf861eeea07ab
+  sha256: 89bf7409663c4ad929fde54e7bf011f8ae164f4059f98fcfa55f08380e2ea218
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -303,8 +303,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: resource_report
   path: ml/reports/v0_3_15_5_1/resource_report.json
-  size: 668
-  sha256: f21675754ddaa954ef49c882e9938e260416cff66b00e9774805012dc0882e79
+  size: 663
+  sha256: 1319ad2c19762f734bdb8c9c497cc5064c8c9aaacd91920ec1799741db7040b7
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -387,8 +387,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: event_set
   path: ml/reports/v0_3_15_5_1/source_sink_reconciliation_report.json
-  size: 726
-  sha256: 26788047208ff3e78f3cf4bb14bfa9334f2fdbc4c44b5e3e6e20076047057f71
+  size: 918
+  sha256: 3b657e05b4b926f1997111d9d06ce27d4ff1963da68b54b4abb243322d2b12c5
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -411,8 +411,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: policy_result
   path: ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json
-  size: 5800
-  sha256: ca9183865235902855f16f80d45be81e9c56cea04ac7a6031cb516fa3d5fa068
+  size: 5797
+  sha256: 6354e0d9074ab725c3dd7a652ec4048b371aa8e4e5938dd4754538cc4a2ce5af
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -500,7 +500,7 @@ integrity_anchors:
   candidate_registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
   candidate_runtime_lock_sha256: 8afbd1250283c098e46f781fcbbcc0cd15483764242f4fe5c98cd31505d98f5a
   prediction_manifest_sha256: 955d74ffecb9fc2a4490095d2ed9f9a8828e1b9b1b4c1b349061909b7e388e9e
-  claim_evidence_ledger_sha256: 6631524fdc5e72600d7effb6f575ed22242d267da4e835f9bfc5c145396078aa
+  claim_evidence_ledger_sha256: 1e7d472cac263cbc426a8113871ef7be03d40bc2038e40c14cf2e4ac9d50d368
 readiness:
   candidate_ready_for_v0_3_16_staging_connector_readiness: true
   shadow_mode_ready: false

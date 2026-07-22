@@ -64,11 +64,12 @@ def reports() -> None:
     resume = strict_resume_fixture()
     identity_fields = ["candidate_id", "candidate_artifact_sha256", "candidate_manifest_sha256", "feature_contract_id", "feature_contract_sha256", "preprocessing_sha256", "calibration_sha256", "conformal_sha256", "class_mapping_sha256", "state_policy_sha256"]
     identity_equal = all(anchor[field] == lock[field] for field in identity_fields)
+    runtime_gates = runtime["integrated_runtime_passed"] and faults["fault_subset_passed"] and recon["source_sink_reconciliation_passed"] and latency["exact_latency_policy_passed"] and resource["performance_policy_passed"] and resource["resource_policy_passed"] and privacy["privacy_policy_passed"] and resume["strict_resume_passed"] and historical["historical_stages_unchanged"] and historical["backend_tree_unchanged"]
     composite = {"schema_version": "v031551_composite_promotion_v1", "scientific_stage": "v0.3.15.5", "runtime_stage": "v0.3.15.5.1",
         "scientific_runtime_candidate_identity_equal": identity_equal, "v03155_holdout_valid": anchor["scientific_holdout_valid"],
         "v03155_scientific_subpolicies_accepted": all(anchor[name] for name in ("candidate_window_policy_passed", "candidate_per_class_policy_passed", "candidate_episode_policy_passed", "candidate_stateful_policy_passed", "candidate_calibration_policy_passed", "candidate_conformal_policy_passed")),
-        "v03155_overall_result_remains_false": not anchor["v03155_overall_result"], "v031551_runtime_trial_passed": runtime["integrated_runtime_passed"] and faults["fault_subset_passed"] and recon["source_sink_reconciliation_passed"],
-        "composite_promotion_evidence_passed": identity_equal and runtime["integrated_runtime_passed"] and faults["fault_subset_passed"] and recon["source_sink_reconciliation_passed"],
+        "v03155_overall_result_remains_false": not anchor["v03155_overall_result"], "v031551_runtime_trial_passed": runtime_gates,
+        "composite_promotion_evidence_passed": identity_equal and runtime_gates,
         "baseline_comparator_eligible": False, "comparative_superiority_claimed": False}
     composite["candidate_v03154_promoted"] = composite["composite_promotion_evidence_passed"]
     write(REPORT / "composite_promotion_decision.json", composite)

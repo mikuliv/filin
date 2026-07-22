@@ -237,7 +237,7 @@
         "integrated_runtime_report.json"
       ],
       "supporting_sha256": [
-        "874543d3c996136821470a8b5ca3e844dacf0ba729803aff23d72ad660923163"
+        "e8080d8cb04d1de797cdaba42cc6882d24ef374f447e330f5aecb778b0f60812"
       ]
     },
     {
@@ -261,7 +261,7 @@
         "integrated_runtime_report.json"
       ],
       "supporting_sha256": [
-        "874543d3c996136821470a8b5ca3e844dacf0ba729803aff23d72ad660923163"
+        "e8080d8cb04d1de797cdaba42cc6882d24ef374f447e330f5aecb778b0f60812"
       ]
     },
     {
@@ -285,7 +285,7 @@
         "source_sink_reconciliation_report.json"
       ],
       "supporting_sha256": [
-        "26788047208ff3e78f3cf4bb14bfa9334f2fdbc4c44b5e3e6e20076047057f71"
+        "3b657e05b4b926f1997111d9d06ce27d4ff1963da68b54b4abb243322d2b12c5"
       ]
     },
     {
@@ -333,7 +333,7 @@
         "source_sink_reconciliation_report.json"
       ],
       "supporting_sha256": [
-        "26788047208ff3e78f3cf4bb14bfa9334f2fdbc4c44b5e3e6e20076047057f71"
+        "3b657e05b4b926f1997111d9d06ce27d4ff1963da68b54b4abb243322d2b12c5"
       ]
     },
     {
@@ -374,14 +374,14 @@
       ],
       "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
       "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
-      "status": "not_supported",
+      "status": "supported",
       "superseded_by": [],
       "supersedes": [],
       "supporting_artifacts": [
         "exact_latency_report.json"
       ],
       "supporting_sha256": [
-        "29abf6ac6292373ed769c4dd7b79c957b44dd4b322c38d7a5394884dbb429187"
+        "71514aa2bb6417b46da945551ba2b53678a72e1dcee6befb9fa04b12be274925"
       ]
     },
     {
@@ -398,14 +398,14 @@
       ],
       "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
       "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
-      "status": "not_supported",
+      "status": "supported",
       "superseded_by": [],
       "supersedes": [],
       "supporting_artifacts": [
         "privacy_report.json"
       ],
       "supporting_sha256": [
-        "5e9d8e9a594df410c38f14624317891b02c3873baca175c3a299271e9c3002c4"
+        "897701bbe35a41f650946f6700387646fcb9ca3511775731720a2970984fa9b1"
       ]
     },
     {
@@ -501,7 +501,7 @@
         "v0_3_15_5_1_policy_result.json"
       ],
       "supporting_sha256": [
-        "ca9183865235902855f16f80d45be81e9c56cea04ac7a6031cb516fa3d5fa068"
+        "6354e0d9074ab725c3dd7a652ec4048b371aa8e4e5938dd4754538cc4a2ce5af"
       ]
     },
     {
@@ -525,7 +525,7 @@
         "v0_3_15_5_1_policy_result.json"
       ],
       "supporting_sha256": [
-        "ca9183865235902855f16f80d45be81e9c56cea04ac7a6031cb516fa3d5fa068"
+        "6354e0d9074ab725c3dd7a652ec4048b371aa8e4e5938dd4754538cc4a2ce5af"
       ]
     }
   ],

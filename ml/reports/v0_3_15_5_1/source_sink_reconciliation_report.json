@@ -14,6 +14,8 @@
   "review_event_lost_count": 0,
   "schema_version": "v031551_reconciliation_v1",
   "semantic_duplicate_count": 0,
+  "sink_event_set_sha256": "e097d5107b8c40ed25d5b09b902a87f189e296df9d16912f0db30932c040ed6d",
+  "source_event_set_sha256": "e097d5107b8c40ed25d5b09b902a87f189e296df9d16912f0db30932c040ed6d",
   "source_sink_reconciliation_passed": true,
   "transport_attempt_count": 2280,
   "transport_duplicate_count": 0,
