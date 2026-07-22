@@ -1,0 +1,58 @@
+{
+  "calibration_suppression_status": "unresolved because raw uncalibrated scores were not persisted",
+  "cause_assessment": {
+    "auth_failures": "indicator of low confidence following wrong subtype and defective scenario; not sole cause",
+    "port_scan": "confirmed proximate conformal abstention after correct subtype",
+    "web_probe": "confirmed proximate conformal abstention after correct subtype"
+  },
+  "class_specific": {
+    "auth_failures": {
+      "empty_windows": 42,
+      "review_episodes": 12
+    },
+    "beacon": {
+      "empty_windows": 0,
+      "review_episodes": 0
+    },
+    "low_rate_dos": {
+      "empty_windows": 0,
+      "review_episodes": 0
+    },
+    "port_scan": {
+      "empty_windows": 42,
+      "review_episodes": 12
+    },
+    "web_probe": {
+      "empty_windows": 42,
+      "review_episodes": 12
+    }
+  },
+  "conformal_fit_call_count": 0,
+  "distribution_shift_possible": true,
+  "empty_set_count": 126,
+  "empty_set_rate": 0.05526315789473684,
+  "empty_set_review_mapping_exact": true,
+  "fit_call_count": 0,
+  "historical_metrics": {
+    "frozen_calibration_unchanged": true,
+    "gate": {
+      "Brier": 0.015396899757826186,
+      "ECE": 0.005332846372600345,
+      "log_loss": 0.03162869469539665
+    },
+    "joint": {
+      "Brier": 0.015396899757826186,
+      "ECE": 0.005332846372600345,
+      "log_loss": 0.03162869469539665
+    },
+    "subtype": {
+      "Brier": 0.015396899757826186,
+      "ECE": 0.005332846372600345,
+      "log_loss": 0.03162869469539665
+    }
+  },
+  "overall_conformal_coverage": 0.9447368421052632,
+  "review_window_count": 126,
+  "schema_version": "v03153_calibration_conformal_v1",
+  "threshold_search_count": 0
+}

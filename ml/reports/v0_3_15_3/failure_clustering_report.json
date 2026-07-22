@@ -1,0 +1,57 @@
+{
+  "cluster_count": 3,
+  "clusters": [
+    {
+      "alternative_explanations": [
+        "scenario-specific feature semantics"
+      ],
+      "characteristic_features": "class-specific shift report",
+      "classes": [
+        "port_scan",
+        "web_probe"
+      ],
+      "cluster_id": "correct_subtype_empty_conformal",
+      "decision_pattern": "correct subtype in every window, empty conformal set, review only",
+      "hypothesized_mechanism": "calibration/conformal mismatch or support shift",
+      "size": 24,
+      "supporting_evidence": [
+        "model_decision_funnel.json",
+        "calibration_conformal_analysis.json"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "candidate subtype generalization; cannot be tested with invalid scenario"
+      ],
+      "characteristic_features": "no observed authentication failure and inferred application fields",
+      "classes": [
+        "auth_failures"
+      ],
+      "cluster_id": "wrong_subtype_empty_conformal",
+      "decision_pattern": "gate attack, subtype web_probe, empty set, review only",
+      "hypothesized_mechanism": "mixed scenario and feature-extraction defect",
+      "size": 12,
+      "supporting_evidence": [
+        "auth_failures_episode_trace.json",
+        "feature_semantics_audit.json"
+      ]
+    },
+    {
+      "alternative_explanations": [],
+      "characteristic_features": "class signal preserved",
+      "classes": [
+        "beacon",
+        "low_rate_dos"
+      ],
+      "cluster_id": "detected_singleton",
+      "decision_pattern": "correct singleton conformal set and alert",
+      "hypothesized_mechanism": "no failure",
+      "size": 24,
+      "supporting_evidence": [
+        "failure_episode_ledger.json"
+      ]
+    }
+  ],
+  "exploratory_only": true,
+  "schema_version": "v03153_failure_clustering_v1"
+}
