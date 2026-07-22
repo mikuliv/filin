@@ -1,76 +1,76 @@
 {
   "audit_labels_locked": true,
   "calibration_sessions": [
-    "dev_scenario_semantics_004",
-    "dev_feature_provenance_004",
-    "dev_subtype_boundary_004",
-    "dev_conformal_behavior_004",
-    "dev_benign_hard_negatives_004"
+    "dev2_scenario_semantics_004",
+    "dev2_feature_provenance_004",
+    "dev2_subtype_boundary_004",
+    "dev2_conformal_behavior_004",
+    "dev2_benign_hard_negatives_004"
   ],
-  "campaign_lock_sha256": "e90635b504d73448eef09d3145d5e16be7c5ad43c68d3eb77734cbb406dd0edb",
+  "campaign_lock_sha256": "f34d39683193a7477c1909df24a46c0649201b32aa9eab462145415f8f784c51",
   "configuration_count": 3,
-  "feature_rows_sha256": "66db963b72e5f94e254d78a7c35c4621d6f2c2612d50191612dc1f7330b5bb09",
+  "feature_rows_sha256": "55137904802ca963db371c803d48ce01bc9802f7d0ea874355d58e9922aa9f06",
   "fit_call_count_before_lock": 0,
   "fold_assignment": [
     {
       "fold": 0,
-      "session_id": "dev_scenario_semantics_001"
+      "session_id": "dev2_scenario_semantics_001"
     },
     {
       "fold": 1,
-      "session_id": "dev_scenario_semantics_002"
+      "session_id": "dev2_scenario_semantics_002"
     },
     {
       "fold": 2,
-      "session_id": "dev_scenario_semantics_003"
+      "session_id": "dev2_scenario_semantics_003"
     },
     {
       "fold": 2,
-      "session_id": "dev_feature_provenance_001"
+      "session_id": "dev2_feature_provenance_001"
     },
     {
       "fold": 0,
-      "session_id": "dev_feature_provenance_002"
+      "session_id": "dev2_feature_provenance_002"
     },
     {
       "fold": 1,
-      "session_id": "dev_feature_provenance_003"
+      "session_id": "dev2_feature_provenance_003"
     },
     {
       "fold": 1,
-      "session_id": "dev_subtype_boundary_001"
+      "session_id": "dev2_subtype_boundary_001"
     },
     {
       "fold": 2,
-      "session_id": "dev_subtype_boundary_002"
+      "session_id": "dev2_subtype_boundary_002"
     },
     {
       "fold": 0,
-      "session_id": "dev_subtype_boundary_003"
+      "session_id": "dev2_subtype_boundary_003"
     },
     {
       "fold": 0,
-      "session_id": "dev_conformal_behavior_001"
+      "session_id": "dev2_conformal_behavior_001"
     },
     {
       "fold": 1,
-      "session_id": "dev_conformal_behavior_002"
+      "session_id": "dev2_conformal_behavior_002"
     },
     {
       "fold": 2,
-      "session_id": "dev_conformal_behavior_003"
+      "session_id": "dev2_conformal_behavior_003"
     },
     {
       "fold": 2,
-      "session_id": "dev_benign_hard_negatives_001"
+      "session_id": "dev2_benign_hard_negatives_001"
     },
     {
       "fold": 0,
-      "session_id": "dev_benign_hard_negatives_002"
+      "session_id": "dev2_benign_hard_negatives_002"
     },
     {
       "fold": 1,
-      "session_id": "dev_benign_hard_negatives_003"
+      "session_id": "dev2_benign_hard_negatives_003"
     }
   ],
   "fold_counts": {
@@ -81,14 +81,14 @@
   "frozen_before_first_fit": true,
   "group_unit": "whole_session_id",
   "internal_audit_sessions": [
-    "dev_scenario_semantics_005",
-    "dev_feature_provenance_005",
-    "dev_subtype_boundary_005",
-    "dev_conformal_behavior_005",
-    "dev_benign_hard_negatives_005"
+    "dev2_scenario_semantics_005",
+    "dev2_feature_provenance_005",
+    "dev2_subtype_boundary_005",
+    "dev2_conformal_behavior_005",
+    "dev2_benign_hard_negatives_005"
   ],
   "maximum_configuration_count": 3,
-  "protocol_sha256": "6fadb556fd698ec00e33f9f2741826284cd4ffb334681b82234b3c72ef90e639",
+  "protocol_sha256": "21239820c202a19d7f93867490853cf564ad7c49d26dbbaebc1dd51a2870b611",
   "schema_version": "v03154_training_lock_v1",
   "search_space": {
     "automl": "forbidden",
