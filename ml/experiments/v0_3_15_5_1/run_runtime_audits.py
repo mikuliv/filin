@@ -145,12 +145,14 @@ def aggregate(faults: dict, fixtures: dict) -> None:
         "retry_linkage_passed": True, "restart_linkage_passed": True, "batch_linkage_passed": True,
         "capture_to_sink_p50_ms": runtime["capture_to_sink_p50_ms"], "capture_to_sink_p95_ms": runtime["capture_to_sink_p95_ms"], "capture_to_sink_p99_ms": runtime["capture_to_sink_p99_ms"],
         "exporter_p50_ms": runtime["exporter_p50_ms"], "exporter_p95_ms": runtime["exporter_p95_ms"], "exporter_p99_ms": runtime["exporter_p99_ms"],
+        "latency_trace_count": runtime["latency_trace_count"], "latency_samples_sha256": runtime["latency_samples_sha256"],
         "exact_latency_policy_passed": runtime["capture_to_sink_p99_ms"] <= 3000})
     process = psutil.Process(); rss = process.memory_info().rss / 1024 / 1024; logical = psutil.cpu_count() or 1
     write(REPORT / "resource_report.json", {"schema_version": "v031551_resource_v1", "median_throughput_events_s": runtime["throughput_events_s"],
         "system_cpu_average_percent": psutil.cpu_percent(.1), "process_tree_cpu_average_percent": 0.0, "normalized_process_tree_cpu_average_percent": 0.0,
         "normalized_process_tree_cpu_p95_percent": 0.0, "logical_cpu_count": logical, "peak_rss_mib": rss, "swap_growth_mib": 0,
         "queue_peak": max(item["queue_peak"] for item in runtime["worker_reports"]), "spool_peak_bytes": max(item["spool_peak_bytes"] for item in runtime["worker_reports"]),
+        "cpu_sample_count": runtime["cpu_sample_count"], "cpu_samples_sha256": runtime["cpu_samples_sha256"],
         "backlog_peak": 2280, "final_backlog": 0, "sustained_backlog": 0, "unbounded_queue_growth": False, "unbounded_spool_growth": False,
         "unbounded_memory_growth": False, "performance_policy_passed": runtime["throughput_events_s"] >= 10 and runtime["capture_to_sink_p99_ms"] <= 3000,
         "resource_policy_passed": rss <= 512})

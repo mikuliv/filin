@@ -64,7 +64,7 @@ artifacts:
 - role: claim_evidence_ledger
   path: ml/reports/v0_3_15_5_1/claim_evidence_ledger.json
   size: 18375
-  sha256: 1e7d472cac263cbc426a8113871ef7be03d40bc2038e40c14cf2e4ac9d50d368
+  sha256: 279e867fd30a5f2342458e9dc4f3ff27fc682f618486a9817cf17d9e81ea5430
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -147,8 +147,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: exact_latency_report
   path: ml/reports/v0_3_15_5_1/exact_latency_report.json
-  size: 1033
-  sha256: 71514aa2bb6417b46da945551ba2b53678a72e1dcee6befb9fa04b12be274925
+  size: 1161
+  sha256: 8adc2c77c00e107678fbe137f83d46b866243e5e53388a1a1048807200b95774
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -231,8 +231,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: integrated_runtime_report
   path: ml/reports/v0_3_15_5_1/integrated_runtime_report.json
-  size: 3605
-  sha256: e8080d8cb04d1de797cdaba42cc6882d24ef374f447e330f5aecb778b0f60812
+  size: 3852
+  sha256: b2b899b54e54360a1dd0315930251683530b2abca60e7818b0139fe3c848c150
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -292,7 +292,7 @@ artifacts:
 - role: raw_ack_evidence_report
   path: ml/reports/v0_3_15_5_1/raw_ack_evidence_report.json
   size: 469
-  sha256: 89bf7409663c4ad929fde54e7bf011f8ae164f4059f98fcfa55f08380e2ea218
+  sha256: 7f2dc32f23179131441073fe9730c9f8cecd4bccb7e5da5c93c0bc30b21f3afc
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -303,8 +303,8 @@ artifacts:
   git_inclusion_permitted: true
 - role: resource_report
   path: ml/reports/v0_3_15_5_1/resource_report.json
-  size: 663
-  sha256: 1319ad2c19762f734bdb8c9c497cc5064c8c9aaacd91920ec1799741db7040b7
+  size: 780
+  sha256: 05ff75f2a73d97e376d965809ee665537136ff822f209c6aad3e7601975a1353
   schema_version: v031551
   required: true
   creation_phase: finalization
@@ -500,7 +500,7 @@ integrity_anchors:
   candidate_registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
   candidate_runtime_lock_sha256: 8afbd1250283c098e46f781fcbbcc0cd15483764242f4fe5c98cd31505d98f5a
   prediction_manifest_sha256: 955d74ffecb9fc2a4490095d2ed9f9a8828e1b9b1b4c1b349061909b7e388e9e
-  claim_evidence_ledger_sha256: 1e7d472cac263cbc426a8113871ef7be03d40bc2038e40c14cf2e4ac9d50d368
+  claim_evidence_ledger_sha256: 279e867fd30a5f2342458e9dc4f3ff27fc682f618486a9817cf17d9e81ea5430
 readiness:
   candidate_ready_for_v0_3_16_staging_connector_readiness: true
   shadow_mode_ready: false

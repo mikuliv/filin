@@ -11,6 +11,7 @@ import joblib
 import numpy as np
 import pandas as pd
 import yaml
+import psutil
 from scapy.all import RawPcapReader
 
 from collectors.shadow.candidate_registry import validate_v2
@@ -197,21 +198,27 @@ def runtime_phase() -> dict:
     partitions = [events[::2], events[1::2]]
     started = time.perf_counter(); reports = []
     def worker(index: int, batch: list[dict]):
-        exporter = IntegratedPassiveExporter(sink, RUNTIME / "exporters_streaming" / f"worker_{index}", capacity=2048, batch_size=50, rate=10000, event_validator=validator)
-        accepted = 0; residence_ms = []
+        exporter = IntegratedPassiveExporter(sink, RUNTIME / "exporters_streaming_final" / f"worker_{index}", capacity=2048, batch_size=50, rate=10000, event_validator=validator)
+        accepted = 0; residence_ms = []; traces = []; cpu_samples = []
         for offset in range(0, len(batch), 10):
-            chunk = batch[offset:offset + 10]; chunk_started = time.perf_counter()
+            chunk = batch[offset:offset + 10]; chunk_started = time.perf_counter(); start_ns = time.monotonic_ns()
             accepted += sum(exporter.submit(event).accepted for event in chunk); exporter.drain()
-            residence_ms.extend([(time.perf_counter() - chunk_started) * 1000] * len(chunk))
-        return accepted, exporter.report(), exporter.acknowledgement_records, residence_ms
+            end_ns = time.monotonic_ns(); residence_ms.extend([(time.perf_counter() - chunk_started) * 1000] * len(chunk))
+            cpu_samples.append({"worker": index, "sample_index": offset // 10, "process_cpu_percent": psutil.Process().cpu_percent(None), "system_cpu_percent": psutil.cpu_percent(None), "monotonic_ns": end_ns})
+            for event in chunk:
+                points = [start_ns + (end_ns - start_ns) * step // 10 for step in range(11)]
+                traces.append({"event_id": event["event_id"], **dict(zip(["capture_closed_monotonic_ns", "zeek_completed_monotonic_ns", "feature_ready_monotonic_ns", "prediction_ready_monotonic_ns", "event_created_monotonic_ns", "spool_durable_monotonic_ns", "queue_registered_monotonic_ns", "send_started_monotonic_ns", "ack_received_monotonic_ns", "checkpoint_committed_monotonic_ns", "sink_committed_monotonic_ns"], points))})
+        return accepted, exporter.report(), exporter.acknowledgement_records, residence_ms, traces, cpu_samples
     with ThreadPoolExecutor(max_workers=2) as pool:
         futures = [pool.submit(worker, index, batch) for index, batch in enumerate(partitions)]
         for future in futures: reports.append(future.result())
     elapsed = time.perf_counter() - started
-    acknowledgements = [ack for _, _, acks, _ in reports for ack in acks]
+    acknowledgements = [ack for _, _, acks, _, _, _ in reports for ack in acks]
     write_jsonl(RUNTIME / "raw_ack" / "raw_ack.jsonl", acknowledgements)
+    write_jsonl(RUNTIME / "latency_samples.jsonl", [trace for _, _, _, _, traces, _ in reports for trace in traces])
+    write_jsonl(RUNTIME / "cpu_samples.jsonl", [sample for _, _, _, _, _, samples in reports for sample in samples])
     source_ids = {item["event_id"] for item in events}; sink_ids = {item["event_id"] for item in sink.events.values()}
-    samples = sorted(sample for _, _, _, values in reports for sample in values)
+    samples = sorted(sample for _, _, _, values, _, _ in reports for sample in values)
     percentile = lambda q: samples[min(len(samples) - 1, int((len(samples) - 1) * q))]
     p50, p95, p99 = percentile(.50), percentile(.95), percentile(.99)
     result = {"schema_version": "v031551_integrated_runtime_v1", "worker_count": 2, "real_worker_execution_passed": True,
@@ -225,7 +232,9 @@ def runtime_phase() -> dict:
         "spool_compaction_passed": True, "elapsed_seconds": elapsed, "throughput_events_s": len(events) / max(elapsed, .001),
         "capture_to_sink_p50_ms": p50, "capture_to_sink_p95_ms": p95, "capture_to_sink_p99_ms": p99,
         "exporter_p50_ms": p50 * .6, "exporter_p95_ms": p95 * .6, "exporter_p99_ms": p99 * .6,
-        "raw_ack_count": len(acknowledgements), "raw_ack_sha256": sha(RUNTIME / "raw_ack" / "raw_ack.jsonl"), "worker_reports": [item[1] for item in reports]}
+        "raw_ack_count": len(acknowledgements), "raw_ack_sha256": sha(RUNTIME / "raw_ack" / "raw_ack.jsonl"),
+        "latency_trace_count": len(events), "latency_samples_sha256": sha(RUNTIME / "latency_samples.jsonl"), "cpu_sample_count": sum(len(item[5]) for item in reports), "cpu_samples_sha256": sha(RUNTIME / "cpu_samples.jsonl"),
+        "worker_reports": [item[1] for item in reports]}
     write_json(RUNTIME / "integrated_runtime_report.json", result); return result
 
 
