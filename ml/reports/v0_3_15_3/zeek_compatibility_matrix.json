@@ -1,0 +1,50 @@
+{
+  "evidence_limitation": "Earlier raw Zeek logs and exact versions are unavailable; only schema/manifests can be compared.",
+  "full_cross_stage_compatibility_claimed": false,
+  "matrix": [
+    {
+      "compatibility": "unresolved",
+      "raw_logs_available": false,
+      "schema_available": true,
+      "stage": "v0.3.11",
+      "version": null
+    },
+    {
+      "compatibility": "schema_only",
+      "raw_logs_available": false,
+      "schema_available": true,
+      "stage": "v0.3.13",
+      "version": null
+    },
+    {
+      "compatibility": "partial",
+      "raw_logs_available": true,
+      "schema_available": true,
+      "stage": "v0.3.15",
+      "version": null
+    },
+    {
+      "compatibility": "reference",
+      "raw_logs_available": true,
+      "schema_available": true,
+      "stage": "v0.3.15.2",
+      "version": "7.0.5"
+    }
+  ],
+  "schema_version": "v03153_zeek_compatibility_v1",
+  "v03152": {
+    "conn_state_semantics": "direct Zeek field; OTH prevalent in one-sided synthetic captures",
+    "enabled_analyzers": "default local image analyzers",
+    "field_ordering_dependency": false,
+    "log_rotation": "isolated directory per window",
+    "missing_field_handling": "explicit defaults",
+    "output_mode": "JSON",
+    "protocol_parsing": "raw conn parsed; application semantics partly inferred",
+    "scripts": [
+      "base Zeek processing with JSON output"
+    ],
+    "service_detection": "observed missing for synthetic auth traffic",
+    "timeout_behavior": "per-window completed processing",
+    "window_boundaries": "one closed PCAP per causal window"
+  }
+}

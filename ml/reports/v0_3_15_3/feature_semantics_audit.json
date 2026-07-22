@@ -1,0 +1,984 @@
+{
+  "causal_ordering_passed": true,
+  "confirmed_defect": "HTTP/application aggregates are assigned from inferred profile_name even when Zeek produced no corresponding application log.",
+  "dtype_check_passed": true,
+  "feature_count": 51,
+  "features": [
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "failed_connection_rate",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 0,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "udp_flow_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 1,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "tcp_flow_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 2,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "http_requests_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 3,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "dns_requests_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 4,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "events_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 5,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "flows_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 6,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "bytes_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 7,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "packets_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 8,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "orig_bytes_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 9,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "resp_bytes_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 10,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "failed_connections_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 11,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "unique_destinations_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 12,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "unique_services_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 13,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "response_bytes_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 14,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window",
+      "definition": "Window-normalized aggregate derived from completed Zeek conn observations.",
+      "dtype": "float64",
+      "feature_name": "orig_packet_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 15,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_flows_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 16,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "flows_per_second_to_rolling_median",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 17,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "robust_z_flows_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 18,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_events_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 19,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "events_per_second_to_rolling_median",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 20,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "robust_z_events_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 21,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_failed_connections_per_second",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 22,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "failed_connections_to_rolling_median",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 23,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "robust_z_failed_connections",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 24,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_bytes_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 25,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "bytes_per_flow_to_rolling_median",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 26,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_packets_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 27,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "packets_per_flow_to_rolling_median",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 28,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "delta_unique_destinations_per_flow",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 29,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "destination_set_jaccard_change",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 30,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "protocol_mix_l1_change",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 31,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "response_bytes_share_change",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 32,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "udp_flow_share_change",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 33,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "consecutive_high_failure_windows",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 34,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "consecutive_high_flow_windows",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 35,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "rolling_activity_slope",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 36,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "current window plus bounded prior history",
+      "definition": "Causal transformation using asset-local history up to the current closed window.",
+      "dtype": "float64",
+      "feature_name": "rolling_failure_slope",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 37,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "request_spacing_cv",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 38,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "periodicity_stability",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 39,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "long_lived_flow_persistence",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 40,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "success_response_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 41,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "failed_then_successful_connection_rate",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 42,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "retry_recovery_rate",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 43,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "target_responsiveness_ratio",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 44,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "connection_completion_rate",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 45,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "long_lived_flow_share",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 46,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "http_method_diversity",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 47,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "http_response_status_entropy",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 48,
+      "potential_failure_impact": "high_for_auth_failures",
+      "schema_equal": true,
+      "semantic_equal": false,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "response_direction_balance",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 49,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    },
+    {
+      "aggregation_window": "one closed causal window or bounded history",
+      "definition": "Contextual aggregate derived from completed connection/application summaries.",
+      "dtype": "float64",
+      "feature_name": "service_availability_recovery_evidence",
+      "missing_policy": "finite zero/default only where source field is absent",
+      "normalization": "per-flow, per-second, ratio or causal robust transform according to name",
+      "observed_shift": null,
+      "position": 50,
+      "potential_failure_impact": "not_established",
+      "schema_equal": true,
+      "semantic_equal": null,
+      "source_logs": [
+        "conn.log",
+        "http.log/dns.log when actually available"
+      ],
+      "training_semantics": "network_sensor_v0_5_contextual; raw training rows unavailable for direct verification",
+      "v03152_semantics": "extract_features_from_zeek and AssetState.vector"
+    }
+  ],
+  "finite_check_passed": true,
+  "future_leakage_detected": false,
+  "label_leakage_detected": false,
+  "ordered_features_match_frozen_candidate": true,
+  "schema_version": "v03153_feature_semantics_v1",
+  "semantic_consistency_status": "failed_for_scenario_inferred_application_fields",
+  "session_isolation_passed": true
+}
