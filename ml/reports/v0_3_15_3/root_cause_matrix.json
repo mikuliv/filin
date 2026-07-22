@@ -1,0 +1,109 @@
+{
+  "confirmed": [
+    "scenario_generation_defect: auth_failures and web_probe application intent is not present in raw Zeek evidence",
+    "feature_extraction_defect: application fields are inferred without corresponding logs",
+    "conformal_abstention: 126 empty sets map exactly to 126 review windows"
+  ],
+  "directions": [
+    {
+      "conditions_satisfied": true,
+      "confidence": "confirmed",
+      "evidence": [
+        "auth_failures_definition_comparison.json",
+        "scenario_label_consistency_report.json"
+      ],
+      "recommended_next_stage": "scenario and generator correction",
+      "rejected_alternatives": [
+        "gate false negative: gate attack count is complete"
+      ],
+      "track": "A_scenario_label_defect"
+    },
+    {
+      "conditions_satisfied": true,
+      "confidence": "confirmed",
+      "evidence": [
+        "feature_semantics_audit.json",
+        "auth_failures_feature_comparison.json"
+      ],
+      "recommended_next_stage": "feature pipeline correction and compatibility tests",
+      "rejected_alternatives": [
+        "pure Zeek version mismatch is unresolved, not established"
+      ],
+      "track": "B_zeek_feature_defect"
+    },
+    {
+      "conditions_satisfied": false,
+      "confidence": "possible",
+      "evidence": [
+        "model_decision_funnel.json"
+      ],
+      "recommended_next_stage": "reassess only after corrected development data",
+      "rejected_alternatives": [
+        "auth scenario and semantics are not valid enough to confirm model failure"
+      ],
+      "track": "C_model_generalization_failure"
+    },
+    {
+      "conditions_satisfied": true,
+      "confidence": "confirmed_as_proximate_for_port_scan_and_web_probe",
+      "evidence": [
+        "calibration_conformal_analysis.json"
+      ],
+      "recommended_next_stage": "controlled conformal/policy development after scenario correction",
+      "rejected_alternatives": [
+        "state policy did not block eligible events"
+      ],
+      "track": "D_calibration_conformal_failure"
+    },
+    {
+      "conditions_satisfied": false,
+      "confidence": "confirmed_absent_in_observed_path",
+      "evidence": [
+        "episode_state_decomposition.json"
+      ],
+      "recommended_next_stage": "none",
+      "rejected_alternatives": [
+        "eligible-but-not-emitted count is zero"
+      ],
+      "track": "E_stateful_policy_failure"
+    },
+    {
+      "conditions_satisfied": true,
+      "confidence": "confirmed",
+      "evidence": [
+        "root_cause_matrix.json",
+        "feature_semantics_audit.json",
+        "calibration_conformal_analysis.json"
+      ],
+      "recommended_next_stage": "v0.3.15.4 mixed controlled redevelopment followed by new v0.3.15.5 holdout",
+      "rejected_alternatives": [
+        "single-cause explanation does not cover both scenario and conformal paths"
+      ],
+      "track": "F_mixed_failure"
+    },
+    {
+      "conditions_satisfied": false,
+      "confidence": "confirmed_absent",
+      "evidence": [
+        "v0_3_15_2_policy_result.json"
+      ],
+      "recommended_next_stage": "not selected",
+      "rejected_alternatives": [
+        "scientific recall gates failed independently of evidence gaps"
+      ],
+      "track": "G_evidence_only_failure"
+    }
+  ],
+  "possible": [
+    "candidate subtype generalization may remain weak after scenario correction",
+    "calibration layer may amplify uncertainty; raw scores unavailable"
+  ],
+  "probable": [
+    "feature_distribution_shift contributes to conformal empty sets"
+  ],
+  "schema_version": "v03153_root_cause_matrix_v1",
+  "unknown": [
+    "cross-Zeek-version effect for stages whose exact versions/raw logs are absent",
+    "calibration-only suppression count"
+  ]
+}

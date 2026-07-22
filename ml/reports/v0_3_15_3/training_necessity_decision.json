@@ -1,0 +1,25 @@
+{
+  "calibration_revision_required": "unresolved",
+  "conformal_revision_required": "unresolved",
+  "criteria": {
+    "capture_correct": true,
+    "episode_mapping_correct": true,
+    "error_persists_at_gate_or_subtype": true,
+    "feature_extraction_correct": false,
+    "feature_ordering_correct": true,
+    "labels_correct": false,
+    "metrics_correct": true,
+    "scenario_definitions_correct": false,
+    "state_only_explanation_insufficient": true,
+    "zeek_semantics_correct": "partial"
+  },
+  "evidence_recollection_required": true,
+  "feature_revision_required": true,
+  "reason": "Confirmed scenario/feature defects and confirmed conformal abstention require separated fixes; model retraining cannot be confirmed until labels and observable semantics are corrected.",
+  "scenario_revision_required": true,
+  "schema_version": "v03153_training_necessity_v1",
+  "selected_next_cycle_track": "Track E — mixed redevelopment",
+  "state_policy_revision_required": false,
+  "technical_fix_required": true,
+  "training_required": "unresolved"
+}
