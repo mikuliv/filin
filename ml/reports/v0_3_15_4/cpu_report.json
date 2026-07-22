@@ -1,0 +1,17 @@
+{
+  "average_gate_percent": 75,
+  "contract": "passive_cpu_sample_v1",
+  "p95_gate_percent": 95,
+  "passed": true,
+  "peak_rss_mib": 169.453125,
+  "sample": {
+    "logical_cpu_count": 12,
+    "meaning_of_100_percent": "all logical CPUs fully occupied for the interval",
+    "process_tree_cpu_percent_per_host": 0.0,
+    "process_tree_cpu_percent_raw": 0.0,
+    "sampling_interval_seconds": 0.2,
+    "schema_version": "passive_cpu_sample_v1",
+    "system_cpu_percent": 53.6,
+    "warmup_sample": false
+  }
+}

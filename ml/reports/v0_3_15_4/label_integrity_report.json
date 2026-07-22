@@ -1,0 +1,9 @@
+{
+  "audit_label_read_count": 1,
+  "development_labels": 3800,
+  "label_access_before_lock_count": 0,
+  "labels_assert_observed_behavior": true,
+  "sealed_internal_audit_labels": 950,
+  "total_scored_labels": 4750,
+  "training_label_leak_count": 0
+}

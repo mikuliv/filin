@@ -1,0 +1,10 @@
+{
+  "all_monotonic": true,
+  "capture_to_sink_p95_ms": 0.2,
+  "capture_to_sink_p99_ms": 0.2,
+  "contract": "passive_latency_trace_v1",
+  "p95_gate_ms": 2000,
+  "p99_gate_ms": 3000,
+  "passed": true,
+  "stage_count": 11
+}

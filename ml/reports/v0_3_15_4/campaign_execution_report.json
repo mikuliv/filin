@@ -1,0 +1,15 @@
+{
+  "all_closed_before_processing": true,
+  "campaign_id": "filin_v0_3_15_4_controlled_redevelopment",
+  "capture_count": 5000,
+  "capture_manifest_sha256": "8125ed2162f9f106348f712d538b2a90de1034694b9f014a61c09f85ad09c0a1",
+  "external_target_count": 0,
+  "fallback_count": 0,
+  "revision": 2,
+  "scored_count": 4750,
+  "session_count": 25,
+  "synthetic_only": true,
+  "unique_sha256_count": 5000,
+  "warmup_count": 250,
+  "zeek_processed_count": 5000
+}

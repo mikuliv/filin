@@ -1,0 +1,40 @@
+{
+  "classes": [
+    {
+      "class": "benign",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 850
+    },
+    {
+      "class": "auth_failures",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 20
+    },
+    {
+      "class": "beacon",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 20
+    },
+    {
+      "class": "low_rate_dos",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 20
+    },
+    {
+      "class": "port_scan",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 20
+    },
+    {
+      "class": "web_probe",
+      "conformal_coverage": 1.0,
+      "recall": 1.0,
+      "support": 20
+    }
+  ]
+}

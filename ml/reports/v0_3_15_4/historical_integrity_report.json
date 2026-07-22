@@ -1,0 +1,9 @@
+{
+  "backend_tree_unchanged": true,
+  "baseline_candidate_artifact_sha256": "59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7",
+  "historical_negative_result_preserved": true,
+  "previous_stage_hashes_unchanged": true,
+  "v03152_bundle_sha256": "49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda",
+  "v03153_bundle_sha256": "20ad130d2a30a7a495c6a2b82e189e9c030a4ee1f03d84f661cd21909c88a3c2",
+  "v03153_policy_sha256": "5bc21a701b80826a2e85181e68a101b54d366274e60197030b4192ebb2d30992"
+}

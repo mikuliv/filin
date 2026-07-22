@@ -1,0 +1,6 @@
+{
+  "attack_episode_count": 100,
+  "benign_episode_count": 100,
+  "episode_count": 200,
+  "schedule_sha256": "0d428466089baa02351e44980cbb61eb088de86b504ddc83d7b05be578e04d49"
+}

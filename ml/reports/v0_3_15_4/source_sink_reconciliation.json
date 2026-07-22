@@ -1,0 +1,10 @@
+{
+  "event_sets_equal": true,
+  "first_alert_lost_count": 0,
+  "idempotency_collision_count": 0,
+  "pending_event_count": 0,
+  "semantic_duplicate_count": 0,
+  "sink_unique_event_count": 950,
+  "source_event_count": 950,
+  "unaccounted_drop_count": 0
+}

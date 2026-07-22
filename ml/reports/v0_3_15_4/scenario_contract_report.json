@@ -1,0 +1,43 @@
+{
+  "contract": {
+    "auth_requires_service_response_and_negative_outcome": true,
+    "contract_version": "observed_network_behavior_v2",
+    "labels_assert_observed_behavior_not_intent": true,
+    "stable_codes": [
+      "auth_failures",
+      "beacon",
+      "low_rate_dos",
+      "port_scan",
+      "web_probe"
+    ],
+    "web_probe_requires_multiple_parsed_http_requests": true
+  },
+  "observed_behavior_only": true,
+  "scenario_report": {
+    "auth_hidden_flag_count": 0,
+    "auth_missing_response_count": 0,
+    "auth_negative_fixture_rejected": true,
+    "auth_one_sided_count": 0,
+    "auth_positive_fixture_passed": true,
+    "contract": "observed_network_behavior_v2",
+    "labels_assert_observed_behavior": true,
+    "scored_window_counts": {
+      "auth_failures": 70,
+      "beacon": 70,
+      "benign": 4400,
+      "low_rate_dos": 70,
+      "port_scan": 70,
+      "web_probe": 70
+    },
+    "single_404_negative_fixture_rejected": true,
+    "web_probe_multiple_parsed_requests_min": 6,
+    "web_probe_positive_fixture_passed": true
+  },
+  "stable_codes": [
+    "auth_failures",
+    "beacon",
+    "low_rate_dos",
+    "port_scan",
+    "web_probe"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "explicit_negative_outcome": "denied",
+  "failed_zero_response_fixture_rejected": true,
+  "http_status": 401,
+  "one_sided_fixture_rejected": true,
+  "parsed_post_requests_per_positive_window": 5,
+  "positive_fixture_passed": true,
+  "raw_credentials_used": false,
+  "synthetic_service_response_present": true
+}

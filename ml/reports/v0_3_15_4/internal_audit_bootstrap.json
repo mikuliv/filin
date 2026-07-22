@@ -1,0 +1,13 @@
+{
+  "accuracy_ci95": [
+    1.0,
+    1.0
+  ],
+  "attack_macro_recall_ci95": [
+    1.0,
+    1.0
+  ],
+  "iterations": 5000,
+  "sampling_unit": "whole_session_id",
+  "seed": 42
+}

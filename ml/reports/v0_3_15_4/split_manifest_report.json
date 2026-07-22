@@ -1,0 +1,11 @@
+{
+  "assignments_sha256": "b67c2b477aeefac012691fa7db83c8fe400d531c83a28efae43b03472c59c1f2",
+  "counts": {
+    "calibration": 5,
+    "internal_audit": 5,
+    "training": 15
+  },
+  "frozen_before_capture": true,
+  "overlap_count": 0,
+  "unit": "whole_session_id"
+}

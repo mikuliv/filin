@@ -1,0 +1,23 @@
+{
+  "negative_fixture_count": 8,
+  "negative_fixtures_detected": {
+    "cookie": true,
+    "email": true,
+    "hostname": true,
+    "ip": true,
+    "local_user_path": true,
+    "password": true,
+    "token": true,
+    "url_query": true
+  },
+  "passed": true,
+  "positive_finding_count": 0,
+  "raw_payload_tracked": false,
+  "scanned_surfaces": [
+    "tracked reports",
+    "candidate manifest",
+    "event projection",
+    "ACK summary",
+    "documentation"
+  ]
+}

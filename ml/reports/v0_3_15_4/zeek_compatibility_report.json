@@ -1,0 +1,8 @@
+{
+  "containerized": true,
+  "fallback_count": 0,
+  "http_log_required_and_present": true,
+  "image": "zeek/zeek:7.0.5",
+  "isolated_internal_network": true,
+  "processed_capture_count": 5000
+}

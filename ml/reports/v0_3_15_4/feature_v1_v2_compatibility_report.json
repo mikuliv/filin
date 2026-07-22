@@ -1,0 +1,7 @@
+{
+  "exact_order_preserved": true,
+  "feature_count_preserved": true,
+  "frozen_v1_composite_promotable_on_v2": false,
+  "new_candidate_required": true,
+  "semantics_changed": true
+}

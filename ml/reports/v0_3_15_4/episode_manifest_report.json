@@ -1,0 +1,52 @@
+{
+  "all_variants_exactly_twice_across_distinct_groups": true,
+  "attack_class_counts": {
+    "auth_failures": 20,
+    "beacon": 20,
+    "low_rate_dos": 20,
+    "port_scan": 20,
+    "web_probe": 20
+  },
+  "attack_episode_count": 100,
+  "attack_length_counts": {
+    "auth_failures": {
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5
+    },
+    "beacon": {
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5
+    },
+    "low_rate_dos": {
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5
+    },
+    "port_scan": {
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5
+    },
+    "web_probe": {
+      "2": 5,
+      "3": 5,
+      "4": 5,
+      "5": 5
+    }
+  },
+  "benign_episode_count": 100,
+  "benign_length_counts": {
+    "2": 25,
+    "3": 25,
+    "4": 25,
+    "5": 25
+  },
+  "benign_variant_count": 50,
+  "episode_count": 200
+}

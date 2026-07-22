@@ -1,0 +1,38 @@
+{
+  "all_scientific_gates_passed": true,
+  "audit_inference_call_count": 1,
+  "audit_row_count": 950,
+  "gates": {
+    "attack_episode_recall": true,
+    "attack_macro_f1": true,
+    "attack_macro_recall": true,
+    "auth_failures_recall": true,
+    "benign_episode_far": true,
+    "benign_recall": true,
+    "conformal_coverage": true,
+    "conformal_empty_set": true,
+    "conformal_wrong_only": true,
+    "detection_by_second": true,
+    "each_attack_recall": true,
+    "episode_precision": true,
+    "fpr": true,
+    "state_clean": true
+  },
+  "inference_seconds": 2.33926799999972,
+  "metrics": {
+    "accuracy": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_recall": 1.0,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "worst_attack_recall": 1.0
+  }
+}

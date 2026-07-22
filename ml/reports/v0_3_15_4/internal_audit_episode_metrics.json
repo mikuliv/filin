@@ -1,0 +1,15 @@
+{
+  "attack_episode_count": 20,
+  "attack_episode_recall": 1.0,
+  "benign_episode_count": 20,
+  "benign_episode_false_alert_rate": 0.0,
+  "detection_by_second": 1.0,
+  "episode_precision": 1.0,
+  "state": {
+    "alert_count": 100,
+    "cross_activity_contamination": 0,
+    "cross_session_contamination": 0,
+    "pending_count_final": 0,
+    "suppression_error_count": 0
+  }
+}

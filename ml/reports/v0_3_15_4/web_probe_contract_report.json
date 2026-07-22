@@ -1,0 +1,7 @@
+{
+  "distinct_paths": 6,
+  "parsed_requests_per_positive_window": 6,
+  "profile_or_hidden_flag_used": false,
+  "responses_observed": true,
+  "single_404_fixture_rejected": true
+}

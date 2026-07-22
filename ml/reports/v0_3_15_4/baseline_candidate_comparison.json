@@ -1,0 +1,8 @@
+{
+  "baseline_id": "v0311:19176acb401be2d4",
+  "baseline_not_overwritten": true,
+  "future_prospective_evaluation_required": true,
+  "new_candidate_id": "v03154:65a3dd912d845bc1",
+  "new_candidate_internal_gates_passed": true,
+  "new_feature_contract": "network_features_v2"
+}

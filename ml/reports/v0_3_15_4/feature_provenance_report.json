@@ -1,0 +1,22 @@
+{
+  "allowed_provenance_counts": {
+    "deterministic_derivation": 147250,
+    "direct_observation": 95000
+  },
+  "application_semantics_without_matching_log_count": 0,
+  "coverage": 1.0,
+  "feature_count": 51,
+  "feature_rows_sha256": "55137904802ca963db371c803d48ce01bc9802f7d0ea874355d58e9922aa9f06",
+  "feature_schema": "network_features_v2",
+  "future_inference_count": 0,
+  "guessed_from_label_count": 0,
+  "guessed_from_profile_count": 0,
+  "guessed_from_scenario_count": 0,
+  "hidden_state_inference_count": 0,
+  "label_field_count": 0,
+  "provenance_record_count": 242250,
+  "provenance_sha256": "0cbccd58ecde364e10b4600a78333e85fe446584f3fe69873bd5723eea1bcfd3",
+  "raw_payload_count": 0,
+  "row_count": 4750,
+  "sidecar_used_as_model_input": false
+}

@@ -1,0 +1,20 @@
+{
+  "claims": [
+    {
+      "claim": "redevelopment campaign completed",
+      "evidence": "internal_audit_metrics.json",
+      "supported": true
+    },
+    {
+      "claim": "candidate may enter v0.3.15.5 prospective evaluation",
+      "evidence": "v0_3_15_4_policy_result.json",
+      "supported": true
+    },
+    {
+      "claim": "v0.3.16 is allowed",
+      "evidence": "v0_3_15_4_policy_result.json",
+      "supported": false
+    }
+  ],
+  "unsupported_positive_claim_count": 0
+}

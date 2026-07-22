@@ -1,0 +1,133 @@
+{
+  "audit_labels_locked": true,
+  "calibration_sessions": [
+    "dev2_scenario_semantics_004",
+    "dev2_feature_provenance_004",
+    "dev2_subtype_boundary_004",
+    "dev2_conformal_behavior_004",
+    "dev2_benign_hard_negatives_004"
+  ],
+  "campaign_lock_sha256": "f34d39683193a7477c1909df24a46c0649201b32aa9eab462145415f8f784c51",
+  "configuration_count": 3,
+  "feature_rows_sha256": "55137904802ca963db371c803d48ce01bc9802f7d0ea874355d58e9922aa9f06",
+  "fit_call_count_before_lock": 0,
+  "fit_started_after_lock": true,
+  "fold_assignment": [
+    {
+      "fold": 0,
+      "session_id": "dev2_scenario_semantics_001"
+    },
+    {
+      "fold": 1,
+      "session_id": "dev2_scenario_semantics_002"
+    },
+    {
+      "fold": 2,
+      "session_id": "dev2_scenario_semantics_003"
+    },
+    {
+      "fold": 2,
+      "session_id": "dev2_feature_provenance_001"
+    },
+    {
+      "fold": 0,
+      "session_id": "dev2_feature_provenance_002"
+    },
+    {
+      "fold": 1,
+      "session_id": "dev2_feature_provenance_003"
+    },
+    {
+      "fold": 1,
+      "session_id": "dev2_subtype_boundary_001"
+    },
+    {
+      "fold": 2,
+      "session_id": "dev2_subtype_boundary_002"
+    },
+    {
+      "fold": 0,
+      "session_id": "dev2_subtype_boundary_003"
+    },
+    {
+      "fold": 0,
+      "session_id": "dev2_conformal_behavior_001"
+    },
+    {
+      "fold": 1,
+      "session_id": "dev2_conformal_behavior_002"
+    },
+    {
+      "fold": 2,
+      "session_id": "dev2_conformal_behavior_003"
+    },
+    {
+      "fold": 2,
+      "session_id": "dev2_benign_hard_negatives_001"
+    },
+    {
+      "fold": 0,
+      "session_id": "dev2_benign_hard_negatives_002"
+    },
+    {
+      "fold": 1,
+      "session_id": "dev2_benign_hard_negatives_003"
+    }
+  ],
+  "fold_counts": {
+    "0": 5,
+    "1": 5,
+    "2": 5
+  },
+  "frozen_before_first_fit": true,
+  "group_unit": "whole_session_id",
+  "internal_audit_sessions": [
+    "dev2_scenario_semantics_005",
+    "dev2_feature_provenance_005",
+    "dev2_subtype_boundary_005",
+    "dev2_conformal_behavior_005",
+    "dev2_benign_hard_negatives_005"
+  ],
+  "maximum_configuration_count": 3,
+  "protocol_sha256": "21239820c202a19d7f93867490853cf564ad7c49d26dbbaebc1dd51a2870b611",
+  "schema_version": "v03154_training_lock_v1",
+  "search_space": {
+    "automl": "forbidden",
+    "candidates": {
+      "A": {
+        "auth_sample_weight": 1.0,
+        "l2_regularization": 0.0,
+        "learning_rate": 0.08,
+        "max_iter": 120,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 10,
+        "random_state": 3154
+      },
+      "B": {
+        "auth_sample_weight": 2.0,
+        "l2_regularization": 0.0,
+        "learning_rate": 0.08,
+        "max_iter": 120,
+        "max_leaf_nodes": 15,
+        "min_samples_leaf": 10,
+        "random_state": 3154
+      },
+      "C": {
+        "auth_sample_weight": 1.5,
+        "l2_regularization": 1.0,
+        "learning_rate": 0.05,
+        "max_iter": 160,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 20,
+        "random_state": 3154
+      }
+    },
+    "external_training_api": "forbidden",
+    "frozen_before_fit": true,
+    "maximum_configurations": 3,
+    "model_family": "HistGradientBoostingClassifier",
+    "neural_networks": "forbidden"
+  },
+  "training_decision_sha256": "ed19ac6aa5ca98757c8e1a607faa7557e8d0bf06d6fe7df10a53f99d4c99e7ad",
+  "training_lock_sha256": "b75eedb8877b430df1f695cb5fd7b5102456353bd54b4c3f1561451273899db3"
+}

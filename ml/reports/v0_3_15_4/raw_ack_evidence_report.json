@@ -1,0 +1,8 @@
+{
+  "accepted": true,
+  "contract": "synthetic_ack_evidence_v1",
+  "privacy_scan_passed": true,
+  "raw_ack_git_inclusion_permitted": false,
+  "raw_runtime_only": true,
+  "synthetic_sink": true
+}

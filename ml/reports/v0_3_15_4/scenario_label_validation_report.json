@@ -1,0 +1,7 @@
+{
+  "invalid_auth_count": 0,
+  "invalid_web_probe_count": 0,
+  "label_count": 4750,
+  "observed_behavior_contract": true,
+  "validator_passed": true
+}

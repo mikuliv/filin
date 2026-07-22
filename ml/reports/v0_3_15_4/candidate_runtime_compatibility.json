@@ -1,0 +1,9 @@
+{
+  "candidate_manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+  "class_count": 6,
+  "event_contract_hash_matches": true,
+  "feature_count": 51,
+  "raw_model_tracked": false,
+  "runtime_artifact_hash_verified": true,
+  "state_policy_hash_matches": true
+}

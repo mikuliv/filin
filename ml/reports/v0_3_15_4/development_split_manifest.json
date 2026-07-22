@@ -1,0 +1,111 @@
+{
+  "assignments": [
+    {
+      "session_id": "dev2_scenario_semantics_001",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_scenario_semantics_002",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_scenario_semantics_003",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_scenario_semantics_004",
+      "split": "calibration"
+    },
+    {
+      "session_id": "dev2_scenario_semantics_005",
+      "split": "internal_audit"
+    },
+    {
+      "session_id": "dev2_feature_provenance_001",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_feature_provenance_002",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_feature_provenance_003",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_feature_provenance_004",
+      "split": "calibration"
+    },
+    {
+      "session_id": "dev2_feature_provenance_005",
+      "split": "internal_audit"
+    },
+    {
+      "session_id": "dev2_subtype_boundary_001",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_subtype_boundary_002",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_subtype_boundary_003",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_subtype_boundary_004",
+      "split": "calibration"
+    },
+    {
+      "session_id": "dev2_subtype_boundary_005",
+      "split": "internal_audit"
+    },
+    {
+      "session_id": "dev2_conformal_behavior_001",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_conformal_behavior_002",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_conformal_behavior_003",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_conformal_behavior_004",
+      "split": "calibration"
+    },
+    {
+      "session_id": "dev2_conformal_behavior_005",
+      "split": "internal_audit"
+    },
+    {
+      "session_id": "dev2_benign_hard_negatives_001",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_benign_hard_negatives_002",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_benign_hard_negatives_003",
+      "split": "training"
+    },
+    {
+      "session_id": "dev2_benign_hard_negatives_004",
+      "split": "calibration"
+    },
+    {
+      "session_id": "dev2_benign_hard_negatives_005",
+      "split": "internal_audit"
+    }
+  ],
+  "counts": {
+    "calibration": 5,
+    "internal_audit": 5,
+    "training": 15
+  },
+  "overlap_count": 0,
+  "unit": "whole_session_id"
+}

@@ -1,0 +1,8 @@
+{
+  "audit_inference_call_count": 1,
+  "audit_label_read_count": 1,
+  "candidate_changed_after_unlock": false,
+  "repeated_inference_count": 0,
+  "tuning_after_unlock_count": 0,
+  "unlocked_after_pre_audit_lock": true
+}

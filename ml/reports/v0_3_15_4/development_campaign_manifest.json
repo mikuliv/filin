@@ -1,0 +1,9 @@
+{
+  "campaign_id": "filin_v0_3_15_4_controlled_redevelopment",
+  "capture_count": 5000,
+  "capture_manifest_sha256": "8125ed2162f9f106348f712d538b2a90de1034694b9f014a61c09f85ad09c0a1",
+  "revision": 2,
+  "scored_count": 4750,
+  "session_count": 25,
+  "warmup_count": 250
+}

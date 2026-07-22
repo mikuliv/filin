@@ -1,0 +1,7 @@
+{
+  "application_semantics_require_matching_log": true,
+  "contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "exact_order_preserved": true,
+  "feature_count": 51,
+  "schema_version": "network_features_v2"
+}

@@ -1,0 +1,7 @@
+{
+  "candidate_decisions_changed_by_instrumentation": false,
+  "cpu_normalized": true,
+  "latency_stage_count": 11,
+  "raw_synthetic_ack_contract": true,
+  "semantic_equivalence_passed": true
+}
