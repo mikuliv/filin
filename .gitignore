@@ -49,6 +49,8 @@ runtime/logs/
 runtime/v0_3_14/
 runtime/v0_3_15/
 runtime/v0_3_15_*/
+runtime/v0_3_16/
+runtime/v0_3_16_invalidated_r1/
 runtime/pytest-*/
 
 # Zeek runtime

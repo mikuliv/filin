@@ -1,0 +1,79 @@
+schema_version: v0316_protocol_v1
+stage: v0.3.16
+revision: 2
+status: frozen_before_revision_2_first_capture
+supersedes: ml/protocols/v0_3_16_protocol.yaml
+revision_1_campaign_status: invalidated_before_connector_journal_commit
+revision_1_failure_code: registry_commitment_anchor_mismatch
+revision_1_evidence_eligible: false
+source_head: 46ebd86811e0526d0d6bea7670975b776bbdbe58
+backend_tree_sha256: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+unchanged_design:
+  purpose: isolated staging connector and non-backend reference receiver
+  architecture: [sensor-runtime, staging-connector, reference-receiver]
+  trust_boundaries: [sensor_to_connector, connector_to_receiver]
+  topology: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+  contracts: [connector_ingress_v1, connector_ingress_ack_v1, staging_event_batch_v1, receiver_batch_ack_v1]
+  transport_security: staging_transport_security_v1
+  tls_version: TLSv1.3
+  mutual_tls: true
+  durability: sqlite_wal_full_ack_after_commit
+  delivery: at_least_once_bounded_retry_two_workers_batch_50
+  fault_schedule_count: 24
+  security_negative_count: 16
+  corruption_case_count: 16
+  performance_gates_unchanged: true
+  readiness_logic_unchanged: true
+verified_identity_anchors:
+  candidate_id: v03154:65a3dd912d845bc1
+  candidate_artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  candidate_manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  shadow_event_v1_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  shadow_event_v2_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+  candidate_registry_sha256: 31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d
+  candidate_registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
+  candidate_registry_commitment_sha256: e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c
+campaign:
+  campaign_id: filin_v0_3_16_staging_transport_r2
+  captures_per_session: 200
+  warmup_per_session: 10
+  scored_per_session: 190
+  total_captures: 2400
+  total_scored: 2280
+  sessions:
+    - {session_id: staging_baseline_r2_001, seed: 25101}
+    - {session_id: staging_baseline_r2_002, seed: 25102}
+    - {session_id: staging_baseline_r2_003, seed: 25103}
+    - {session_id: staging_transport_security_r2_001, seed: 25201}
+    - {session_id: staging_transport_security_r2_002, seed: 25202}
+    - {session_id: staging_transport_security_r2_003, seed: 25203}
+    - {session_id: staging_retry_idempotency_r2_001, seed: 25301}
+    - {session_id: staging_retry_idempotency_r2_002, seed: 25302}
+    - {session_id: staging_retry_idempotency_r2_003, seed: 25303}
+    - {session_id: staging_crash_backpressure_r2_001, seed: 25401}
+    - {session_id: staging_crash_backpressure_r2_002, seed: 25402}
+    - {session_id: staging_crash_backpressure_r2_003, seed: 25403}
+  runtime_instance_namespace: v0316-r2
+  evidence_directory: runtime/v0_3_16
+  invalidated_revision_1_directory: runtime/v0_3_16_invalidated_r1
+certificate_serials:
+  sensor_client: 3163001
+  connector_ingress_server: 3163002
+  connector_delivery_client_a: 3164001
+  connector_delivery_client_b: 3164002
+  receiver_server_a: 3164003
+  receiver_server_b: 3164004
+prohibitions:
+  historical_change: true
+  candidate_change: true
+  event_contract_change: true
+  backend_change: true
+  external_network: true
+  published_ports: true
+  shadow_mode: true
+  production: true
+  automatic_actions: true
+invalidation:
+  any_revision_2_anchor_mismatch: stop_and_invalidate
+  any_post_capture_protocol_change: new_revision_sessions_seeds_certificates_runtime_ids
