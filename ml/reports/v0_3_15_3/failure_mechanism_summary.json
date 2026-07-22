@@ -1,0 +1,20 @@
+{
+  "attack_episode_count": 60,
+  "benign_false_alert_count": 0,
+  "benign_review_count": 0,
+  "by_failure_mechanism": {
+    "correct_subtype_then_conformal_empty": 24,
+    "correctly_detected": 24,
+    "subtype_wrong_then_conformal_empty": 12
+  },
+  "by_root_cause": {
+    "conformal_abstention": 24,
+    "mixed_cause": 12,
+    "unknown": 24
+  },
+  "detected_episode_count": 24,
+  "episode_count": 120,
+  "missed_episode_count": 0,
+  "review_only_episode_count": 36,
+  "schema_version": "v03153_failure_mechanism_v1"
+}

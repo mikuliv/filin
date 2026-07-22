@@ -1,0 +1,24 @@
+{
+  "attack_window_count": 210,
+  "correct_attack_window_count": 168,
+  "correct_window_episode_without_alert_count": 24,
+  "diagnostic_only": true,
+  "episodes_with_correct_window_prediction": 48,
+  "hypothetical_diagnostic_episode_recall": {
+    "current_full_policy": 0.4,
+    "raw_frozen_class_decision": 0.8,
+    "state_gate_disabled_conformal_kept": 0.4,
+    "state_gate_kept_conformal_disabled": 0.8
+  },
+  "official_v03152_metrics_unchanged": true,
+  "review_reasons": {
+    "review_required:novel": 126
+  },
+  "review_window_count": 126,
+  "schema_version": "v03153_episode_state_decomposition_v1",
+  "transition_matrix": {
+    "correct+empty->review": 84,
+    "correct+singleton->alert_or_continuation": 84,
+    "wrong+empty->review": 42
+  }
+}

@@ -1,0 +1,269 @@
+{
+  "by_class": {
+    "auth_failures": {
+      "acceptable_conformal_set": 0,
+      "alert_eligible": 0,
+      "alert_emitted_windows": 0,
+      "attack_labeled_windows": 42,
+      "correct_subtype": 0,
+      "gate_attack": 42
+    },
+    "beacon": {
+      "acceptable_conformal_set": 42,
+      "alert_eligible": 42,
+      "alert_emitted_windows": 15,
+      "attack_labeled_windows": 42,
+      "correct_subtype": 42,
+      "gate_attack": 42
+    },
+    "benign": {
+      "acceptable_conformal_set": 0,
+      "alert_eligible": 0,
+      "alert_emitted_windows": 0,
+      "attack_labeled_windows": 0,
+      "correct_subtype": 0,
+      "gate_attack": 0
+    },
+    "low_rate_dos": {
+      "acceptable_conformal_set": 42,
+      "alert_eligible": 42,
+      "alert_emitted_windows": 15,
+      "attack_labeled_windows": 42,
+      "correct_subtype": 42,
+      "gate_attack": 42
+    },
+    "port_scan": {
+      "acceptable_conformal_set": 0,
+      "alert_eligible": 0,
+      "alert_emitted_windows": 0,
+      "attack_labeled_windows": 42,
+      "correct_subtype": 42,
+      "gate_attack": 42
+    },
+    "web_probe": {
+      "acceptable_conformal_set": 0,
+      "alert_eligible": 0,
+      "alert_emitted_windows": 0,
+      "attack_labeled_windows": 42,
+      "correct_subtype": 42,
+      "gate_attack": 42
+    }
+  },
+  "by_episode_length": {
+    "2": {
+      "acceptable_conformal_set": 12,
+      "alert_eligible": 12,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 30,
+      "correct_subtype": 24,
+      "gate_attack": 30
+    },
+    "3": {
+      "acceptable_conformal_set": 18,
+      "alert_eligible": 18,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 45,
+      "correct_subtype": 36,
+      "gate_attack": 45
+    },
+    "4": {
+      "acceptable_conformal_set": 24,
+      "alert_eligible": 24,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 60,
+      "correct_subtype": 48,
+      "gate_attack": 60
+    },
+    "5": {
+      "acceptable_conformal_set": 30,
+      "alert_eligible": 30,
+      "alert_emitted_windows": 12,
+      "attack_labeled_windows": 75,
+      "correct_subtype": 60,
+      "gate_attack": 75
+    }
+  },
+  "by_group": {
+    "prospective_ack_transport_fault": {
+      "acceptable_conformal_set": 18,
+      "alert_eligible": 18,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 45,
+      "correct_subtype": 36,
+      "gate_attack": 45
+    },
+    "prospective_baseline_endurance": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    },
+    "prospective_burst_jitter": {
+      "acceptable_conformal_set": 18,
+      "alert_eligible": 18,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 45,
+      "correct_subtype": 36,
+      "gate_attack": 45
+    },
+    "prospective_clock_integrity": {
+      "acceptable_conformal_set": 18,
+      "alert_eligible": 18,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 45,
+      "correct_subtype": 36,
+      "gate_attack": 45
+    },
+    "prospective_crash_resume": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    },
+    "prospective_overload_backpressure": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    }
+  },
+  "by_session": {
+    "prospective_ack_transport_fault_001": {
+      "acceptable_conformal_set": 8,
+      "alert_eligible": 8,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 20,
+      "correct_subtype": 16,
+      "gate_attack": 20
+    },
+    "prospective_ack_transport_fault_002": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    },
+    "prospective_baseline_endurance_001": {
+      "acceptable_conformal_set": 4,
+      "alert_eligible": 4,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 10,
+      "correct_subtype": 8,
+      "gate_attack": 10
+    },
+    "prospective_baseline_endurance_002": {
+      "acceptable_conformal_set": 6,
+      "alert_eligible": 6,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 15,
+      "correct_subtype": 12,
+      "gate_attack": 15
+    },
+    "prospective_burst_jitter_001": {
+      "acceptable_conformal_set": 8,
+      "alert_eligible": 8,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 20,
+      "correct_subtype": 16,
+      "gate_attack": 20
+    },
+    "prospective_burst_jitter_002": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    },
+    "prospective_clock_integrity_001": {
+      "acceptable_conformal_set": 8,
+      "alert_eligible": 8,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 20,
+      "correct_subtype": 16,
+      "gate_attack": 20
+    },
+    "prospective_clock_integrity_002": {
+      "acceptable_conformal_set": 10,
+      "alert_eligible": 10,
+      "alert_emitted_windows": 4,
+      "attack_labeled_windows": 25,
+      "correct_subtype": 20,
+      "gate_attack": 25
+    },
+    "prospective_crash_resume_001": {
+      "acceptable_conformal_set": 4,
+      "alert_eligible": 4,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 10,
+      "correct_subtype": 8,
+      "gate_attack": 10
+    },
+    "prospective_crash_resume_002": {
+      "acceptable_conformal_set": 6,
+      "alert_eligible": 6,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 15,
+      "correct_subtype": 12,
+      "gate_attack": 15
+    },
+    "prospective_overload_backpressure_001": {
+      "acceptable_conformal_set": 4,
+      "alert_eligible": 4,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 10,
+      "correct_subtype": 8,
+      "gate_attack": 10
+    },
+    "prospective_overload_backpressure_002": {
+      "acceptable_conformal_set": 6,
+      "alert_eligible": 6,
+      "alert_emitted_windows": 2,
+      "attack_labeled_windows": 15,
+      "correct_subtype": 12,
+      "gate_attack": 15
+    }
+  },
+  "by_window_position": {
+    "continuation": {
+      "acceptable_conformal_set": 60,
+      "alert_eligible": 60,
+      "alert_emitted_windows": 6,
+      "attack_labeled_windows": 150,
+      "correct_subtype": 120,
+      "gate_attack": 150
+    },
+    "first": {
+      "acceptable_conformal_set": 24,
+      "alert_eligible": 24,
+      "alert_emitted_windows": 24,
+      "attack_labeled_windows": 60,
+      "correct_subtype": 48,
+      "gate_attack": 60
+    }
+  },
+  "calibration_suppression_count": 0,
+  "calibration_suppression_status": "unresolved_missing_raw_scores",
+  "conformal_abstention_count": 126,
+  "episode_mapping_error_count": 0,
+  "gate_false_negative_count": 0,
+  "metrics_aggregation_error_count": 0,
+  "overall": {
+    "acceptable_conformal_set": 84,
+    "alert_eligible": 84,
+    "alert_emitted_windows": 30,
+    "attack_labeled_windows": 210,
+    "correct_subtype": 168,
+    "gate_attack": 210
+  },
+  "schema_version": "v03153_model_decision_funnel_v1",
+  "state_policy_suppression_count": 0,
+  "subtype_false_negative_count": 42
+}
