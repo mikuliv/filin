@@ -93,3 +93,6 @@ regression, backend integration и shadow mode не разрешены.
 ## v0.3.15.5
 
 Независимый controlled synthetic holdout завершён: scientific gates пройдены, runtime contract gate не пройден, candidate не promoted.
+## v0.3.15.5.1
+
+Этап добавил candidate-aware `shadow_event_v2` и frozen candidate registry, не изменяя historical `shadow_event_v1`. Двенадцать новых prospective runtime-сессий подтвердили 2 280/2 280 доставленных событий, 12/12 fault-oracles и строгий resume. Scientific результат v0.3.15.5 не пересчитывался и остаётся overall negative; promotion основана на композиции его отдельных scientific subpolicies с новой runtime evidence.

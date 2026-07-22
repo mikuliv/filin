@@ -1,6 +1,7 @@
 # Индекс контрактов
 
 - [Passive event contract `shadow_event_v1`](shadow-event-v1.md)
+- [Candidate-aware event contract `shadow_event_v2`](shadow-event-v2.md)
 - [Разрыв между shadow runtime и backend](shadow-backend-gap-analysis.md)
 - [Controlled shadow trial runtime](shadow-trial-runtime.md)
 

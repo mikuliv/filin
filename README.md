@@ -1,6 +1,6 @@
 # Платформа «Филин»
 
-> Статус v0.3.15.5: independent controlled synthetic holdout завершён. Scientific gates кандидата v0.3.15.4 пройдены, но promotion отклонён: frozen `shadow_event_v1` допускает только historical candidate ID и не принимает `v03154:65a3dd912d845bc1`. v0.3.16, shadow mode, backend integration и production остаются запрещены; следующий допустимый этап — corrective v0.3.15.5.1.
+> Статус v0.3.15.5.1: candidate-compatible runtime trial завершён положительно. Неизменная scientific evidence v0.3.15.5 и новая prospective runtime evidence образуют положительное composite promotion evidence для `v03154:65a3dd912d845bc1`. Разрешён только следующий локальный staging-only этап v0.3.16; shadow mode, backend integration и production запрещены.
 
 Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
@@ -10,7 +10,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.5. Контролируемая переработка исправила наблюдаемые scenario/feature defects, создала новый development candidate и прошла закрытый internal audit. Следующий разрешённый этап — corrective v0.3.15.5.1. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.15.5.1. Новый `shadow_event_v2` отделяет структуру события от авторизации кандидата frozen registry. Двенадцать независимых runtime-сессий завершены, fault subset пройден 12/12. Следующий разрешённый этап — локальный staging-only v0.3.16. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -26,7 +26,7 @@
 
 ## 6. Поток обработки
 
-Контролируемый трафик → PCAP → Zeek logs → causal feature window → frozen candidate → stateful decision → `shadow_event_v1` → durable spool → bounded priority queue → rate limiter → local sink → ACK → checkpoint → reconciliation.
+Контролируемый трафик → PCAP → Zeek logs → causal feature window → frozen candidate → stateful decision → `shadow_event_v2` → registry validation → durable spool → bounded priority queue → rate limiter → local sink → ACK → checkpoint → reconciliation.
 
 ## 7. Подсистема обнаружения
 
@@ -42,7 +42,7 @@ Episode state различает benign, pending, review, alert и post-alert co
 
 ## 10. Passive event contract
 
-[`shadow_event_v1`](docs/contracts/shadow-event-v1.md) задаёт allowlist полей, deterministic identity, hash и отсутствие action authority. Схема исторически неизменна.
+[`shadow_event_v1`](docs/contracts/shadow-event-v1.md) остаётся исторически неизменным. Новый [`shadow_event_v2`](docs/contracts/shadow-event-v2.md) задаёт candidate-aware структурный контракт; авторизация выполняется отдельным frozen registry.
 
 ## 11. Надёжность доставки
 
@@ -54,7 +54,7 @@ Runtime использует только локальные fixtures и mock si
 
 ## 13. Текущий frozen candidate
 
-Candidate ID: `v03154:65a3dd912d845bc1`. Он прошёл только development/internal audit и требует нового prospective holdout v0.3.15.5. Исторический `v0311:19176acb401be2d4` не перезаписан.
+Candidate ID: `v03154:65a3dd912d845bc1`. Его scientific subpolicies подтверждены valid holdout v0.3.15.5, а runtime compatibility — отдельным v0.3.15.5.1. Исторический `v0311:19176acb401be2d4` не перезаписан.
 
 ## 14. Последний независимый holdout
 

@@ -1,6 +1,6 @@
 # Текущие подтверждённые возможности
 
-Статус v0.3.15.5: scientific качество development-кандидата подтверждено на 3 800 новых scored окнах. Frozen passive event schema несовместима с candidate ID v03154, поэтому runtime delivery, staging connector readiness, shadow mode, backend integration и production не подтверждены.
+Статус v0.3.15.5.1: scientific evidence v0.3.15.5 сохранена без пересчёта, а runtime compatibility того же кандидата подтверждена на 2 400 новых captures и 2 280 label-free predictions/events. Staging-only readiness для v0.3.16 подтверждена; shadow mode, backend integration и production не подтверждены.
 
 Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -18,6 +18,8 @@
 - hash-verified resume с detached manifest lock и path confinement;
 - реальные worker/batch profiles с resource sampling во время нагрузки;
 - behavioral fault, crash, privacy, resume и topology tests.
+- candidate-aware `shadow_event_v2`, frozen registry и compatibility matrix;
+- prospective runtime v0.3.15.5.1: 2 280/2 280 reconciled events и 12/12 fault-oracles.
 
 ## Переоценённый scope
 
@@ -31,4 +33,4 @@ v0.3.15.4 исправил подтверждённые scenario/feature defects
 
 ## Не разрешено
 
-Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.16 заблокирован до нового evidence-bearing runtime trial.
+Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.16 разрешён только как локальная staging-only разработка без подключения к существующему backend.

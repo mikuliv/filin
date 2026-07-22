@@ -128,3 +128,7 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 ## v0.3.15.5
 
 Независимый controlled synthetic holdout завершён: scientific gates пройдены, runtime contract gate не пройден, candidate не promoted.
+
+## v0.3.15.5.1
+
+[Candidate-compatible runtime recovery trial](experiments/v0_3_15_5_1.md) сохранил отрицательный overall result v0.3.15.5, создал `shadow_event_v2` и frozen registry, затем провёл 12 новых label-free runtime-сессий. Reconciliation 2 280/2 280 и faults 12/12 пройдены; candidate promoted только для допуска к локальному staging-only v0.3.16.

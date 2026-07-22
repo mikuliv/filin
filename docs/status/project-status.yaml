@@ -1,18 +1,19 @@
 schema_version: filin_project_status_v1
 project_name: Филин
-current_completed_stage: v0.3.15.5
+current_completed_stage: v0.3.15.5.1
 current_corrective_stage: v0.3.15.1
-current_candidate: v0.3.15.4
+current_candidate: v03154:65a3dd912d845bc1
 latest_training_stage: v0.3.15.4
 latest_independent_model_holdout: v0.3.15.5
-latest_runtime_trial: v0.3.15.5
+latest_runtime_trial: v0.3.15.5.1
 latest_corrective_audit: v0.3.15.1
 latest_regression_analysis: v0.3.15.3
 latest_redevelopment_stage: v0.3.15.4
-next_allowed_stage: v0.3.15.5.1
-blocked_stage: v0.3.16
-next_required_work: 'Corrective v0.3.15.5.1: candidate-compatible event contract и
-  новая runtime campaign; v0.3.16 запрещён'
+next_allowed_stage: v0.3.16
+blocked_stage: null
+next_required_work: 'v0.3.16: только локальная разработка staging-only connector и reference receiver в изолированной среде'
+candidate_promoted: true
+candidate_ready_for_v0_3_16_staging_connector_readiness: true
 production_ready: false
 shadow_mode_ready: false
 backend_integration_ready: false
@@ -278,3 +279,14 @@ stages:
     v03154; v0.3.16 запрещён
   superseded_claims: []
   next_stage: v0.3.15.5.1
+- version: v0.3.15.5.1
+  title: Candidate-compatible event contract и prospective runtime recovery
+  category: runtime_trial
+  chronological_order: 24
+  status: completed
+  result: runtime_passed_composite_promotion_passed
+  primary_report: docs/experiments/v0_3_15_5_1.md
+  policy_result: ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json
+  limitations: Только локальный synthetic runtime trial; shadow, backend, production и external validation запрещены
+  superseded_claims: []
+  next_stage: v0.3.16
