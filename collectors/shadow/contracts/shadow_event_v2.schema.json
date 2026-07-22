@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://contracts/shadow_event_v2",
+  "title": "Candidate-aware passive runtime event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_contract_version", "event_id", "event_type", "event_timestamp", "causal_order", "activity_key", "idempotency_key", "candidate_ref", "prediction_ref", "runtime_ref", "payload"],
+  "properties": {
+    "schema_version": {"const": "shadow_event_v2"},
+    "event_contract_version": {"const": "shadow_event_v2"},
+    "event_id": {"$ref": "#/$defs/event_id"},
+    "event_type": {"enum": ["decision_observation", "alert_emitted", "alert_continuation", "review_requested", "health_event", "drop_summary", "permanent_rejection_summary"]},
+    "event_timestamp": {"type": "string", "format": "date-time", "maxLength": 40},
+    "causal_order": {"type": "integer", "minimum": 0},
+    "activity_key": {"$ref": "#/$defs/sha256"},
+    "idempotency_key": {"$ref": "#/$defs/sha256"},
+    "candidate_ref": {"$ref": "#/$defs/candidate_ref"},
+    "prediction_ref": {"$ref": "#/$defs/prediction_ref"},
+    "runtime_ref": {"$ref": "#/$defs/runtime_ref"},
+    "payload": {"$ref": "#/$defs/payload"}
+  },
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "event_id": {"type": "string", "pattern": "^evt_[0-9a-f]{64}$"},
+    "prediction_id": {"type": "string", "pattern": "^pred_[0-9a-f]{64}$"},
+    "candidate_id": {"type": "string", "pattern": "^v[0-9]+:[0-9a-f]{16}$"},
+    "candidate_ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["candidate_id", "artifact_sha256", "manifest_sha256", "feature_contract_id", "feature_contract_sha256", "preprocessing_sha256", "calibration_sha256", "conformal_sha256", "state_policy_sha256", "registry_commitment_sha256"],
+      "properties": {
+        "candidate_id": {"$ref": "#/$defs/candidate_id"}, "artifact_sha256": {"$ref": "#/$defs/sha256"},
+        "manifest_sha256": {"$ref": "#/$defs/sha256"}, "feature_contract_id": {"type": "string", "pattern": "^[a-z][a-z0-9_]{2,63}$"},
+        "feature_contract_sha256": {"$ref": "#/$defs/sha256"}, "preprocessing_sha256": {"$ref": "#/$defs/sha256"},
+        "calibration_sha256": {"$ref": "#/$defs/sha256"}, "conformal_sha256": {"$ref": "#/$defs/sha256"},
+        "state_policy_sha256": {"$ref": "#/$defs/sha256"}, "registry_commitment_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "prediction_ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["prediction_id", "prediction_sha256", "source_capture_id", "source_capture_sha256", "feature_row_id", "feature_row_sha256"],
+      "properties": {
+        "prediction_id": {"$ref": "#/$defs/prediction_id"}, "prediction_sha256": {"$ref": "#/$defs/sha256"},
+        "source_capture_id": {"type": "string", "pattern": "^cap_[0-9a-f]{64}$"}, "source_capture_sha256": {"$ref": "#/$defs/sha256"},
+        "feature_row_id": {"type": "string", "pattern": "^row_[0-9a-f]{64}$"}, "feature_row_sha256": {"$ref": "#/$defs/sha256"}
+      }
+    },
+    "runtime_ref": {
+      "type": "object", "additionalProperties": false,
+      "required": ["session_id", "runtime_instance_id", "source_sequence", "hash_chain_previous", "runtime_contract_version"],
+      "properties": {
+        "session_id": {"type": "string", "pattern": "^runtime_(contract_baseline|transport_faults|crash_resume|load_clock)_00[1-3]$"},
+        "runtime_instance_id": {"type": "string", "pattern": "^rti_[0-9a-f]{64}$"}, "source_sequence": {"type": "integer", "minimum": 0},
+        "hash_chain_previous": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/sha256"}]}, "runtime_contract_version": {"const": "passive_runtime_v031551"}
+      }
+    },
+    "payload": {
+      "type": "object", "additionalProperties": false, "maxProperties": 6,
+      "properties": {
+        "state": {"type": ["string", "null"], "maxLength": 64}, "alert_class": {"type": ["string", "null"], "enum": ["auth_failures", "beacon", "low_rate_dos", "port_scan", "web_probe", null]},
+        "reason_code": {"type": ["string", "null"], "pattern": "^[a-z0-9_]{1,64}$"}, "continuation_count": {"type": ["integer", "null"], "minimum": 1},
+        "component_status": {"type": ["string", "null"], "enum": ["healthy", "degraded", "unavailable", "critical", null]},
+        "count": {"type": ["integer", "null"], "minimum": 0}
+      }
+    }
+  }
+}
