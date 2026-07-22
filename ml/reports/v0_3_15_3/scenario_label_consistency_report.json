@@ -1,0 +1,154 @@
+{
+  "all_labels_consistent": false,
+  "class_count": 5,
+  "classes": [
+    {
+      "class": "auth_failures",
+      "counter_evidence": [
+        "Application intent is not directly observable from connection metadata."
+      ],
+      "declared_behavior": "Повторяющиеся наблюдаемые отказы аутентификации",
+      "generator_parameters": "collectors/shadow_trial/window_processor.py:PROFILES",
+      "label_consistent": false,
+      "limitations": [
+        "scenario_generation_defect"
+      ],
+      "observable_network_behavior": "Односторонние TCP payloads на 80 без ответа/HTTP",
+      "observed_features": {
+        "failed_connection_rate": {
+          "maximum": 0.0,
+          "mean": 0.0,
+          "minimum": 0.0
+        },
+        "http_response_status_entropy": {
+          "maximum": 0.3333333333333333,
+          "mean": 0.3333333333333333,
+          "minimum": 0.3333333333333333
+        }
+      },
+      "optional_features": [],
+      "recommended_observed_behavior_name": "one_sided_tcp_activity",
+      "required_features": [
+        "failed_connection_rate",
+        "http_response_status_entropy"
+      ]
+    },
+    {
+      "class": "beacon",
+      "counter_evidence": [],
+      "declared_behavior": "Периодические соединения",
+      "generator_parameters": "collectors/shadow_trial/window_processor.py:PROFILES",
+      "label_consistent": true,
+      "limitations": [],
+      "observable_network_behavior": "Восемь периодически разнесённых flows",
+      "observed_features": {
+        "periodicity_stability": {
+          "maximum": 1.0,
+          "mean": 0.780417459716792,
+          "minimum": -0.15634651007645672
+        },
+        "request_spacing_cv": {
+          "maximum": 2.842257470009308e-06,
+          "mean": 2.842257470009308e-06,
+          "minimum": 2.842257470009308e-06
+        }
+      },
+      "optional_features": [],
+      "recommended_observed_behavior_name": "beacon",
+      "required_features": [
+        "periodicity_stability",
+        "request_spacing_cv"
+      ]
+    },
+    {
+      "class": "low_rate_dos",
+      "counter_evidence": [
+        "Application intent is not directly observable from connection metadata."
+      ],
+      "declared_behavior": "Низкоинтенсивная нагрузка на сервис",
+      "generator_parameters": "collectors/shadow_trial/window_processor.py:PROFILES",
+      "label_consistent": true,
+      "limitations": [
+        "semantic_intent_limitation"
+      ],
+      "observable_network_behavior": "Десять burst flows на 8080; намерение DoS не наблюдаемо",
+      "observed_features": {
+        "events_per_second": {
+          "maximum": 31.0,
+          "mean": 31.0,
+          "minimum": 31.0
+        },
+        "flows_per_second": {
+          "maximum": 10.0,
+          "mean": 10.0,
+          "minimum": 10.0
+        }
+      },
+      "optional_features": [],
+      "recommended_observed_behavior_name": "repeated_service_traffic",
+      "required_features": [
+        "flows_per_second",
+        "events_per_second"
+      ]
+    },
+    {
+      "class": "port_scan",
+      "counter_evidence": [],
+      "declared_behavior": "Обращения к нескольким service ports",
+      "generator_parameters": "collectors/shadow_trial/window_processor.py:PROFILES",
+      "label_consistent": true,
+      "limitations": [],
+      "observable_network_behavior": "Четыре односторонних flows к разным ports",
+      "observed_features": {
+        "failed_connection_rate": {
+          "maximum": 0.75,
+          "mean": 0.75,
+          "minimum": 0.75
+        },
+        "unique_services_per_flow": {
+          "maximum": 1.0,
+          "mean": 1.0,
+          "minimum": 1.0
+        }
+      },
+      "optional_features": [],
+      "recommended_observed_behavior_name": "port_scan",
+      "required_features": [
+        "unique_services_per_flow",
+        "failed_connection_rate"
+      ]
+    },
+    {
+      "class": "web_probe",
+      "counter_evidence": [
+        "Application intent is not directly observable from connection metadata."
+      ],
+      "declared_behavior": "Разнообразные HTTP probes",
+      "generator_parameters": "collectors/shadow_trial/window_processor.py:PROFILES",
+      "label_consistent": false,
+      "limitations": [
+        "scenario_generation_defect"
+      ],
+      "observable_network_behavior": "Односторонние payloads на 80 без валидированного HTTP parser output",
+      "observed_features": {
+        "http_method_diversity": {
+          "maximum": 0.5,
+          "mean": 0.5,
+          "minimum": 0.5
+        },
+        "http_response_status_entropy": {
+          "maximum": 0.6666666666666666,
+          "mean": 0.6666666666666666,
+          "minimum": 0.6666666666666666
+        }
+      },
+      "optional_features": [],
+      "recommended_observed_behavior_name": "port_80_one_sided_activity",
+      "required_features": [
+        "http_method_diversity",
+        "http_response_status_entropy"
+      ]
+    }
+  ],
+  "schema_version": "v03153_scenario_label_consistency_v1"
+}

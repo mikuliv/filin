@@ -1,0 +1,30 @@
+{
+  "generator_difference_confirmed": true,
+  "label_matches_observable_network_behavior": false,
+  "network_service_authentication_protocol_present": false,
+  "observable_authentication_failure_present": false,
+  "schema_version": "v03153_auth_definition_comparison_v1",
+  "stages": [
+    {
+      "definition": "Класс из training campaign; raw scenario generator и feature rows отсутствуют.",
+      "evidence_status": "limited",
+      "stage": "v0.3.11"
+    },
+    {
+      "definition": "Independent holdout содержит auth_failures labels и immutable features.",
+      "evidence_status": "features_available_raw_generator_unavailable",
+      "stage": "v0.3.13"
+    },
+    {
+      "definition": "Controlled runtime profile использовал сценарный класс auth_failures.",
+      "evidence_status": "runtime_features_available",
+      "stage": "v0.3.15"
+    },
+    {
+      "definition": "PROFILES задаёт failed=0 и создаёт односторонние TCP payloads на port 80; наблюдаемый факт отказа аутентификации отсутствует.",
+      "evidence_status": "direct_source_and_raw_zeek",
+      "stage": "v0.3.15.2"
+    }
+  ],
+  "v03152_failed_flow_parameter": 0
+}

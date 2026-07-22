@@ -1,0 +1,2535 @@
+{
+  "episode_count": 12,
+  "episodes": [
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "2dc7ff1fe2a400f48f9cb46e15a117fb887fdd97bebf7f3254488a886f492a7a",
+        "e007c5d8c4d83fc1e063fc1a495ce432b4de92bca30be9adfb0724bc584dad47"
+      ],
+      "conformal_sets": [
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_baseline_endurance_001:attack:auth_failures",
+      "episode_length": 2,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "db610a56e98a0267fc31d7a46d4623e612dadeb45f49793369f0aa57458e8c08",
+        "02e506ab39fa476ac8b757c6ad2cbd860fcaa5acfe802fba49fe17ff1993eeef"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "72df331e6fb86ca60b2d75a702f42d04ea18aa7304e8409773e244fbd2fbec3c"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "67add7404fa0aa9042563412a0bb570ec00a4d0f03593ee0a026e514c4b9cf19"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "df0224418d88be21b5b25efdf3b1bef8069efb7d106139e27fb3f5a41f0d5085",
+        "6ada662ec2faa42a9006c210c5843c8edea695d0c228d72e9b4e977e351230dd"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_baseline_endurance",
+      "session_id": "prospective_baseline_endurance_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "72df331e6fb86ca60b2d75a702f42d04ea18aa7304e8409773e244fbd2fbec3c"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "67add7404fa0aa9042563412a0bb570ec00a4d0f03593ee0a026e514c4b9cf19"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "72df331e6fb86ca60b2d75a702f42d04ea18aa7304e8409773e244fbd2fbec3c",
+        "67add7404fa0aa9042563412a0bb570ec00a4d0f03593ee0a026e514c4b9cf19"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "b836e63e47d47df023cd00912908eb2202be3b5186d5e41d42a885af051db2f9",
+        "f2379c0fa185ca77b9227dbc46b2ee2b38ce131f95cda05b471b01881f96bcdb",
+        "5d73490ce7b1b5fbff4c44d74c0cb34d22ba698bb889d7060c3eaab70fbe60b4"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_baseline_endurance_002:attack:auth_failures",
+      "episode_length": 3,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "3585eba45006f3963c38885b1f846abc597ed881f82c515f25e40dc7b49a1fc9",
+        "b72b00f416360dfceae16ef6d657a3eff5e4c3308b441fc49c15f83e121c4b0b",
+        "a0292ac7502f7a1a5e499fd25d7d4f8d4f778191af86fe4a58f4b79b5a3481c8"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "1b319db54e62be4b8c094b9e6a45704ed111cba92669ee14ff33f89392b3f37f"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "e04a2b7c187ea27e8aabaa64fafd0b04631d0424937bc5562ea33c94ed36bf57"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "897a6a610769a442668d8c966717932b1c3fd4e743d533c8d5f58616da23ebf9"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "368db3841e98b52eb3c00e2023129c4b1cec99876bf78bfc09a86df40e6dc984",
+        "d8754ec97753776259c0fd4ad9a9108b7dd94a699d60c81848061826fc7ea2e9",
+        "bb1bdfb2958a128e870ea0616d2c2058ebfb36d5c481f43de009ddaae1a71f9c"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_baseline_endurance",
+      "session_id": "prospective_baseline_endurance_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "1b319db54e62be4b8c094b9e6a45704ed111cba92669ee14ff33f89392b3f37f"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "e04a2b7c187ea27e8aabaa64fafd0b04631d0424937bc5562ea33c94ed36bf57"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "897a6a610769a442668d8c966717932b1c3fd4e743d533c8d5f58616da23ebf9"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "1b319db54e62be4b8c094b9e6a45704ed111cba92669ee14ff33f89392b3f37f",
+        "e04a2b7c187ea27e8aabaa64fafd0b04631d0424937bc5562ea33c94ed36bf57",
+        "897a6a610769a442668d8c966717932b1c3fd4e743d533c8d5f58616da23ebf9"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "299db9c75da55bfd124c0a1d1b620c35583dfcf6ec2e2e54d03bee67d45589c1",
+        "1603aefb80d1753967e660b8c2a04c8d51bd55426b833edd839b368d9e39f21e",
+        "0b43ea954734e186ef1f9943e4ed21238ae5e58f8d7efa79cc26c11491858234",
+        "071d0b07b6d701a913076e873bd80b258888ef78d92f0f588aff80d586a4cd09"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_burst_jitter_001:attack:auth_failures",
+      "episode_length": 4,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "28df0b34664230c3056e2fa029c54ffdbe41327768457fdba00908e89c99c97f",
+        "eabbe56f9356481ace7adf0174ec7a0b8539b5e2459932c68022b0eb38411152",
+        "8aa22293bb0ba181dc8e29209e15a9579b5f6b678e02e1651da98cdf223b10cb",
+        "f9435e8b98c6f64e127192a69a507863069c1abe0b5e7b292152292ce1ea9a93"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "13795a5d81f298ff6cd0feeda4ae843a40b01e0eb1077a3d14ff788028bcf5ac"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "906e15c2be61b65ed1505c62ed4cd171757f86bb0c18b5da3c8326578d5c076e"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "93b56e1d7490ea9708d14cdd56ae64343654a7a3a04ba0b99450eaccc1fa4384"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "a4904a73ec897c2a5e515befadc99bfa26768e075afd9484edea4c99172e78cb"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "4fbd207c77d55d8634c6e62836f333f024e976a6f19a2fc05adb76606c54a705",
+        "35f34720e8c0933ad6a43fa364a6d9e0afdcc6f0558b5e5314c231918932f3bf",
+        "24cb235301ab1b3d387c47b84cc3c7fab9d835be44554354d8b848f79708b907",
+        "8d0ab807e0f743d8aa17b07effb813a8a6b8d8bf444172ee434afd6bdec109d6"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_burst_jitter",
+      "session_id": "prospective_burst_jitter_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "13795a5d81f298ff6cd0feeda4ae843a40b01e0eb1077a3d14ff788028bcf5ac"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "906e15c2be61b65ed1505c62ed4cd171757f86bb0c18b5da3c8326578d5c076e"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "93b56e1d7490ea9708d14cdd56ae64343654a7a3a04ba0b99450eaccc1fa4384"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "a4904a73ec897c2a5e515befadc99bfa26768e075afd9484edea4c99172e78cb"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "13795a5d81f298ff6cd0feeda4ae843a40b01e0eb1077a3d14ff788028bcf5ac",
+        "906e15c2be61b65ed1505c62ed4cd171757f86bb0c18b5da3c8326578d5c076e",
+        "93b56e1d7490ea9708d14cdd56ae64343654a7a3a04ba0b99450eaccc1fa4384",
+        "a4904a73ec897c2a5e515befadc99bfa26768e075afd9484edea4c99172e78cb"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "4ff57d4a8375e7214aa15811886670ab26db60020adde24dd26d6817c6de7f13",
+        "4e3c1d319df54e74488ebe5155483dc6e970371365dc1ed6bdfe7c5562163444",
+        "dbe9546c0b2e4ab50aa602f1ec5363ee2a5cb5a60e7a1e14e9b5f96a7f3abc82",
+        "b2f45b8965b6ab437a7b54b27ad74f23f345f0fbed0dd9f354a389cc53a52f58",
+        "9020d576c5134c21228d9e8780bb880b135ba1c3d695e0b9ffe2c89fe265aea8"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_burst_jitter_002:attack:auth_failures",
+      "episode_length": 5,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "aa99f4464b8283f0aba7fd16834f94c01e9dbd5fc1726571d7735d8a5c972073",
+        "2c505e3beae5750e93868047f9319b99f38171d63d86c81cd03af6968a427152",
+        "ead49c989f141dc041d10e30323250cff423cb114765e5885c383a0c98be6898",
+        "73e892a71e9ee4796315cbcbfa1ab57939471fad5eff16eeed2ddf04301dc948",
+        "cb927ad29cb96cfe24ca152409a79b8e7aed955deccbc97e656f764bc676d700"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "49885a5246fcb44459aa0135f32526113d2d8d57fd9d6c4c6f9639afc35e7111"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "ed740878ac2ff8175da374d94d15cab673f6dd81448e284ddba9ac3c8f8a2cd2"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "321a372d36a7177e52261028fc2a3487eb8ecc6f69e1209b835d1fcae0870bce"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "d71182ec5bc1f3638b9c4cc3a3acbbc0e4d4da31beb0ff1fb18dec121876ad9b"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "290e73e29794eea3904f6b77eb70a8b98c618857db39c6d13d9d6195ec0a5822"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "51434524eadf1616ca821ea802b9ebf14efcb0a4f0cfb1144ef7cacdcfa69396",
+        "bbbf88a60f616255f684f90241bc9a1daeaf49468964d3968825184fbc6fe0d3",
+        "71c34bd3c12ee3457f453bd9a4f4439094ec4ab1ef52cb9454bf0f77d89120c5",
+        "b1d62967ca2821a728f4fdd5453c8b88aeb7c739f8600d98d6b593574d6fe2bd",
+        "0006a05819d4e249578d42bf96668a0d45842c144b1b6d7851078dd61dd5155c"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_burst_jitter",
+      "session_id": "prospective_burst_jitter_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "49885a5246fcb44459aa0135f32526113d2d8d57fd9d6c4c6f9639afc35e7111"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "ed740878ac2ff8175da374d94d15cab673f6dd81448e284ddba9ac3c8f8a2cd2"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "321a372d36a7177e52261028fc2a3487eb8ecc6f69e1209b835d1fcae0870bce"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "d71182ec5bc1f3638b9c4cc3a3acbbc0e4d4da31beb0ff1fb18dec121876ad9b"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "290e73e29794eea3904f6b77eb70a8b98c618857db39c6d13d9d6195ec0a5822"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "49885a5246fcb44459aa0135f32526113d2d8d57fd9d6c4c6f9639afc35e7111",
+        "ed740878ac2ff8175da374d94d15cab673f6dd81448e284ddba9ac3c8f8a2cd2",
+        "321a372d36a7177e52261028fc2a3487eb8ecc6f69e1209b835d1fcae0870bce",
+        "d71182ec5bc1f3638b9c4cc3a3acbbc0e4d4da31beb0ff1fb18dec121876ad9b",
+        "290e73e29794eea3904f6b77eb70a8b98c618857db39c6d13d9d6195ec0a5822"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "38e0afc0bafed7c491d3825ced7887eabfa76e33e6632bf788218c941d1ef6b7",
+        "cf64b530a2b6bb2c9e958184eee67474bfced2cea2e25a2d4b75c2f1ce6823bd"
+      ],
+      "conformal_sets": [
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_overload_backpressure_001:attack:auth_failures",
+      "episode_length": 2,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "f51898c27aa9025dfdbf470fef7028eb866f2170b2283aa93af24f9837b4b3e2",
+        "8c35ca9bb75a980682f6ba28691b784d58743bf442210257f19821168451e2ee"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "03d5afdd8596d5f08a688a2b9cc807c8e1896ec77b66f81bca2ee459349f7e04"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "e66424e5576a6a6ab7157136ef29f140a041d170ecb8bd83bec9bbb0cb45a12d"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "11bae694e68f7cfd2f29ab5af4248c40aebd14f82d0bea64e9e0190ce4871e2f",
+        "07fc0c43ca5a3d9ffbb0c258f2677bdca1abdffe359e7419633f870ae8c26a42"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_overload_backpressure",
+      "session_id": "prospective_overload_backpressure_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "03d5afdd8596d5f08a688a2b9cc807c8e1896ec77b66f81bca2ee459349f7e04"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "e66424e5576a6a6ab7157136ef29f140a041d170ecb8bd83bec9bbb0cb45a12d"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "03d5afdd8596d5f08a688a2b9cc807c8e1896ec77b66f81bca2ee459349f7e04",
+        "e66424e5576a6a6ab7157136ef29f140a041d170ecb8bd83bec9bbb0cb45a12d"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "6e5299db16ec4c1ac58eba15da02ea49faf547b14715ba4cf39c4b9dd7e07d3c",
+        "95b252850e6aac25ae38da481464a9ea646065cc7b287390c0f8bf9bce8acdfe",
+        "715a4dd2bb709467e862fbaa854fbfdc61881358ed5f60fed9f61f7d286a5e01"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_overload_backpressure_002:attack:auth_failures",
+      "episode_length": 3,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "a31eecde59b9efd706bfc2136e81b41927f55c80d1878a1fb7515c1a82106eb9",
+        "d22ce43a97865230c4a75c5b96e38df5c58227efa69710464204d6da8af1b130",
+        "4527718845a312f5c039ba586b9413bc5d12d292dc642588e01eaea7ba1e8404"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "bff7368cff0eaa5e536f09b686e6014602b5fa060d9e353b9510f3cb275c0c0d"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "c83aaf63b211cf0234514e5c5c3e3797b700098afb45309c5361ddc73a661860"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "483782f55e4c621fb3e506690fa7047468ccb128890df5017d899c0d9a0bd075"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "80ec5784916d7d9682122535921686d57a8597629c8f023f7f1386707776773e",
+        "e302dbe69a6109809e6ad45ceba7c3c38aa24eabb113c0897afd55e66fbaa15d",
+        "a57116991c47360161865fc30f92969327cdbe8618ef1f01486dd848a9f18ff1"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_overload_backpressure",
+      "session_id": "prospective_overload_backpressure_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "bff7368cff0eaa5e536f09b686e6014602b5fa060d9e353b9510f3cb275c0c0d"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "c83aaf63b211cf0234514e5c5c3e3797b700098afb45309c5361ddc73a661860"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "483782f55e4c621fb3e506690fa7047468ccb128890df5017d899c0d9a0bd075"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "bff7368cff0eaa5e536f09b686e6014602b5fa060d9e353b9510f3cb275c0c0d",
+        "c83aaf63b211cf0234514e5c5c3e3797b700098afb45309c5361ddc73a661860",
+        "483782f55e4c621fb3e506690fa7047468ccb128890df5017d899c0d9a0bd075"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "996635529dac8a6bac87025af47b702e319303475a721e114b278dc8dd97b8c2",
+        "c148327459907b6b65fb6b55464d164988bcf25709cdd8797342bc935ce2f001",
+        "2e736797000501b1f2e52d05071cbe00df01ebf1689862ee3758806c73962e61",
+        "d643d0901383fcadc929af35b91d8b0c6e182fb23d8e6641c0721b76af73f9b9"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_ack_transport_fault_001:attack:auth_failures",
+      "episode_length": 4,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "e331c23a55283d6077b3f314237ecf3bdec4fb5968667f44e72b06bdf2e2fefb",
+        "af0f3df29d042dbcc25bde51b82cd566ee0d146f802ee2693025d15385f4b5cb",
+        "a1542c1ec1ef8a81aafc65ee27d50e81564a02ad334813f3dcb2946cfced61d6",
+        "16bff92feac4fd60d1a155b5bd5bd43af2eefedb1857e748bfe21d74ccb1df30"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "5acdea51d62c250a1073854099e8aa9800684b7b9191a0bce202ed391fb56663"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "6cc015b5ed9ec87513b423b7335636895714d43d6b50b02e6c3534c74a126ea1"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "d878edff335651d033ad5fe1e8bbaae3a5296f70ae36c9e2c27b53a164183289"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "8a67c7c2787338aa66d47607629e79f43ff9dcac2ffeead388030fe61db92080"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "b0dcc5c9b9e431c4c9e5a1c7be6e930b00f6b609c4f5f01c1259dc9186679e86",
+        "d59525352762b680c0f41e9a3907850b560025fde98b9d548ad494ce89ef2b74",
+        "47d7b7391d0fd57bcf2e9889a74c28aac7cd7259202005d3e56812ee0bdde381",
+        "3da7e9f7ec42433c071458e9cff62e00acc6845cb28db38a980a9be867ad4024"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_ack_transport_fault",
+      "session_id": "prospective_ack_transport_fault_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "5acdea51d62c250a1073854099e8aa9800684b7b9191a0bce202ed391fb56663"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "6cc015b5ed9ec87513b423b7335636895714d43d6b50b02e6c3534c74a126ea1"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "d878edff335651d033ad5fe1e8bbaae3a5296f70ae36c9e2c27b53a164183289"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "8a67c7c2787338aa66d47607629e79f43ff9dcac2ffeead388030fe61db92080"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "5acdea51d62c250a1073854099e8aa9800684b7b9191a0bce202ed391fb56663",
+        "6cc015b5ed9ec87513b423b7335636895714d43d6b50b02e6c3534c74a126ea1",
+        "d878edff335651d033ad5fe1e8bbaae3a5296f70ae36c9e2c27b53a164183289",
+        "8a67c7c2787338aa66d47607629e79f43ff9dcac2ffeead388030fe61db92080"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "9ed80585f2c3f27f1ebf939e4666c56e1d44aab854f02500ce36220ea45f8f55",
+        "ad5086ec867ef5a39a0b4ea79f4007991dc7f63c87c8bfe2aa94e3f7384d3494",
+        "9db5e32ef292f4e708be9d040f9f6e1ce519acec5f15ebe25ffad12b80182f88",
+        "8938f0b1df7a8fa329bbd4684f8b9e6c645cd5a85e2ae4b92a1c8be96b5af5d0",
+        "8085f7ca0fdaef22b6c503ea96449c81e8e309f5566e6126311b75e0dd9d8792"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_ack_transport_fault_002:attack:auth_failures",
+      "episode_length": 5,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "4fa2dc660e8fb3ac50181f775934a13dd7e92ad5ef59f6b96aac4c31a1b87bff",
+        "b445371d46d87cfd96d02918c43102b518d314bea3affb7f3211efb4066e5367",
+        "b2a3c5a96675c70be3d121525492d7f19a7fb47e5ce3c77052a78a899cea9ac1",
+        "3c58b98da6eb83fe443b3a0a0374eb2047f8a0a153d4a74b1ff500b916ce04a2",
+        "debfe4ce426e6efa22f5bdf95b7a8039ee0a3121d4e25a24676dd1218ed35cc1"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "2040d2a33ba5bfa19ce009a0a0ed9644d775a1e0281244246e655bd2e2d90c70"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "eab99b218de0e8a52421231e3d44ebc8730bb393aa681a798c5dd6732efffae3"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "5222a8ec4010d320a872f62eb1c7af95bd460e15c5399edbdf2331620ec30f1d"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "1b7f9553589c51efd3ecaeb14d091548cadbdd48eccc919ff16832bac9a7f48a"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "35adbc8225c6b2ba3687f6fdc6007acc46f8b55ef28b78ddb405e8a8ba9c8288"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "72202c5111552372499f0e8895f63c3de99f7f1640ac25836f1c1a054feac056",
+        "dec07bf89f5ed9876167f01e33243dbfaad8d0ca7634cb8531991bc611ef17aa",
+        "592db1677a5e14698039d1db26e4796bbfa6a056b8da4048ea7f70f67cd08d67",
+        "3e1603d86eed200c15a72b882bd0566c46a7c18ff94732f9e6908b38da33b1fe",
+        "9c023b4599feafc5c44ea93303c1190d59f8d831b91df505e46af66080adf637"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_ack_transport_fault",
+      "session_id": "prospective_ack_transport_fault_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "2040d2a33ba5bfa19ce009a0a0ed9644d775a1e0281244246e655bd2e2d90c70"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "eab99b218de0e8a52421231e3d44ebc8730bb393aa681a798c5dd6732efffae3"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "5222a8ec4010d320a872f62eb1c7af95bd460e15c5399edbdf2331620ec30f1d"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "1b7f9553589c51efd3ecaeb14d091548cadbdd48eccc919ff16832bac9a7f48a"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "35adbc8225c6b2ba3687f6fdc6007acc46f8b55ef28b78ddb405e8a8ba9c8288"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "2040d2a33ba5bfa19ce009a0a0ed9644d775a1e0281244246e655bd2e2d90c70",
+        "eab99b218de0e8a52421231e3d44ebc8730bb393aa681a798c5dd6732efffae3",
+        "5222a8ec4010d320a872f62eb1c7af95bd460e15c5399edbdf2331620ec30f1d",
+        "1b7f9553589c51efd3ecaeb14d091548cadbdd48eccc919ff16832bac9a7f48a",
+        "35adbc8225c6b2ba3687f6fdc6007acc46f8b55ef28b78ddb405e8a8ba9c8288"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "3beb54bc9e7b7359a89239e6ef6738cce7295eb49fc53957a5e9c023b5ab6868",
+        "83a8b91d830085c8c53c3cc686c7420316570712ed1e3a70b91609fbf141f6a5"
+      ],
+      "conformal_sets": [
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_crash_resume_001:attack:auth_failures",
+      "episode_length": 2,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "1cc16f168afdc6736210eb2991206f7de503d7d1fc3b79cc1c862b4721df2e8a",
+        "404eeb2f3de330c59910d343430891a71489b1d23aec478038e76240bf5ada8e"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "5456779246f119841f7984c26fde0a66d0a9a936c226df0ba6f87e5f89b8d355"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "60b47d064b0567521da50b81e0a27b2fba866da8a1da912f0e43d2d4a1d6f22e"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "e7bebcdb6106cd5d0bb8cdf180ddc17acc8dbe6488d24069d0e7bab2d47e54fe",
+        "8581d0e5865bce8e962aa4279315ea01bd69e54d4f09ebbd64788a50505478d8"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_crash_resume",
+      "session_id": "prospective_crash_resume_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "5456779246f119841f7984c26fde0a66d0a9a936c226df0ba6f87e5f89b8d355"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "60b47d064b0567521da50b81e0a27b2fba866da8a1da912f0e43d2d4a1d6f22e"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "5456779246f119841f7984c26fde0a66d0a9a936c226df0ba6f87e5f89b8d355",
+        "60b47d064b0567521da50b81e0a27b2fba866da8a1da912f0e43d2d4a1d6f22e"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "eb10ad322a1ca5519587cd06dca647c1c25e931a94cb012e2f91d5cc22e45d7d",
+        "f90dcd5644e2e2a10feb3d61adce9a8c97354ce939b724038f441915b84a2fad",
+        "4029f41f8ce1c0a9b3d46269cb3990927af261447650eea376499a0c3b9871d4"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_crash_resume_002:attack:auth_failures",
+      "episode_length": 3,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "2503c110c860a9fcbc98c6aae32e76ea17a60c484f79228830c21631220a0f0c",
+        "fb423ae653241ec2de37a7f5f8a963421b701a05b14ee1b458953396bbf2bed6",
+        "7b030e6ee890c3cb29823d1455e83829e47bdff409f19080b5eb5ef07fe6fa48"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "c30590167a3c99841ee2de075df560e8cda117da6201ec3883380c4a2fb7083c"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "e9ab899935dbed811ca14124048e871476c24f54320165f0fde303a99362f3dc"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "8c38bc243473600b97e1a3ed2194f6652055d8442fe16976b9855ea1a8dc5a49"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "b4db8cffd83975e9410292700bfd2b56e9eab95ddb04fea779dd1fb12b6ebf20",
+        "c594376a1fc74d5975d3989f665a56a51239d42951f1f9c1a80df505a5a82eb5",
+        "db3746dd025d50b0110c75db7494763ce2327e0fadd9925f67d7a62956d0f3c9"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_crash_resume",
+      "session_id": "prospective_crash_resume_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "c30590167a3c99841ee2de075df560e8cda117da6201ec3883380c4a2fb7083c"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "e9ab899935dbed811ca14124048e871476c24f54320165f0fde303a99362f3dc"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "8c38bc243473600b97e1a3ed2194f6652055d8442fe16976b9855ea1a8dc5a49"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "c30590167a3c99841ee2de075df560e8cda117da6201ec3883380c4a2fb7083c",
+        "e9ab899935dbed811ca14124048e871476c24f54320165f0fde303a99362f3dc",
+        "8c38bc243473600b97e1a3ed2194f6652055d8442fe16976b9855ea1a8dc5a49"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "912bd075fd55de1f144955b10eff54136170b651984b53bb7d05d1a7de613450",
+        "7cb547d0effab5eadf054bcfc8bc2f5c1deadb0816dbad7b28aaac5663eb1354",
+        "3d2001fec6489eacf6c9fcdb6520f4c1ab6eb4b8bed0aed1176d6298dd63ecc4",
+        "4945319064eaa69592f589d46f7e04d17fb14bb11c06dcf387c18d2b95eabdfc"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_clock_integrity_001:attack:auth_failures",
+      "episode_length": 4,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "7e1fa8994393c4ab425eb33cd776c67eacece25457362f3af45d3cd26b811903",
+        "972d5e682121c0409a966b0c8cb39a2734d925c4474f20303fb1561521ce5d56",
+        "6cdcc651a09a39e3ddca647bcd205a014d3b39603d7bef78a56eebcd7c60b81c",
+        "1124d1064be2e282729044ecdd93eea442c9d05e6622f3c35f53a7830db6370f"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "93ee926f7e2b804b81b2c9a7be2d98bfe77feafec65586f49ae5c624eb62d3ac"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "5c316a8de3a6e581cda4ccb8141d72232b5b95777f2338112005c1fe8e9e458c"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "81cbc463da3df6456637f29e740d49a09ee05e9f5114732d3cb169f0d2da8f7f"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "d1063f105576ff055d59c358ba4d9b16deecc58463786c23d7be45b761bab113"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "621bc20803175a45980e581d30264d39a24eb7ed7ca3a3fabb9aa4d4a4dd0458",
+        "5437be043cdb5a2f219cb9b9ad9a67df48718039d6c1ea3f71552fb6133c854f",
+        "c612e4a42ca6653691306d04113a07c778a82ddae19f346442555918a42fe3ee",
+        "ab2015f08aa25488c254083c1094ec23f708f36ef62e6641c9a88e1236d69340"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_clock_integrity",
+      "session_id": "prospective_clock_integrity_001",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "93ee926f7e2b804b81b2c9a7be2d98bfe77feafec65586f49ae5c624eb62d3ac"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "5c316a8de3a6e581cda4ccb8141d72232b5b95777f2338112005c1fe8e9e458c"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "81cbc463da3df6456637f29e740d49a09ee05e9f5114732d3cb169f0d2da8f7f"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "d1063f105576ff055d59c358ba4d9b16deecc58463786c23d7be45b761bab113"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "93ee926f7e2b804b81b2c9a7be2d98bfe77feafec65586f49ae5c624eb62d3ac",
+        "5c316a8de3a6e581cda4ccb8141d72232b5b95777f2338112005c1fe8e9e458c",
+        "81cbc463da3df6456637f29e740d49a09ee05e9f5114732d3cb169f0d2da8f7f",
+        "d1063f105576ff055d59c358ba4d9b16deecc58463786c23d7be45b761bab113"
+      ]
+    },
+    {
+      "alert_emitted": false,
+      "attack_class": "auth_failures",
+      "benign_variant": null,
+      "calibrated_outputs": [
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        },
+        {
+          "auth_failures": 0.18458937658721533,
+          "beacon": 0.18378417876740405,
+          "benign": 0.00020758141029364463,
+          "low_rate_dos": 0.18460008069075956,
+          "port_scan": 0.1845874038989605,
+          "web_probe": 0.2622313786453669
+        }
+      ],
+      "capture_hashes": [
+        "b5bf79a5a06173fe9daa166f9f9645fd4ad8a17847dcdbfff857d6a124a02df5",
+        "36f030c04d1cf41240a7105225449d647f3559dcc900f9696a6eb1ba836f006b",
+        "c9f9b124c27119bba74aa74a8ceb6a5417304fb41c0954a9cb399c97586032bc",
+        "bbc42fe2f61aac71f00b5959f4632133123179bd1f4f30127382b478f8635c06",
+        "d60c63080ed217b7b82d1ffbb966aadf36d58cb18636884ab573ec02bb766848"
+      ],
+      "conformal_sets": [
+        [],
+        [],
+        [],
+        [],
+        []
+      ],
+      "counter_evidence": [
+        "Gate classified every attack window as attack; state emitted every eligible first alert."
+      ],
+      "episode_id": "prospective_clock_integrity_002:attack:auth_failures",
+      "episode_length": 5,
+      "failure_mechanism": "subtype_wrong_then_conformal_empty",
+      "feature_row_ids": [
+        "415158c47a4f194b38e1e16977e3be44b4fe97f6d9e6a81b9819aa143b035504",
+        "c1eae7d7bb1471e56d3d72944cc3a4dac386b54a485d451a31d9db6930f45ac4",
+        "8e445792012911f8dcf021d11b9e3cf20eb52b5691a710ab68f8fb6bfa89e0e3",
+        "0f28274fd4b82ed497497effa1cfb33178c45eaf426d049798cb337b37d13724",
+        "737ac6a2061f74f4f97b4f06d6ffb5af198c10ce141f356b06d26ee86067a190"
+      ],
+      "final_outcome": "review_only",
+      "first_alert_window": null,
+      "gate_outputs": [
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "135cc3ce248bf0e2c904f367af38a0531a35c41e037a859ffff3ffe41d3bc5e8"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "f894634fea3b763cf2795a8d72c0d0d6218cc1e4a62d7578d0bb14f4c8b606f2"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "7d3373d0f09f09420e2824d4ef4d7d145b1743a363fd27d0787d1ef4cecd3631"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "3c23c2ae7de5d1b103b7d578d3420dc038d74660746b5cc65f040442be3a3ee4"
+        },
+        {
+          "calibrated_probability": 0.9992228489009979,
+          "decision": "attack",
+          "raw_score": null,
+          "window_id": "241d30bd766fe47b6b5bc7a0ffdc8013f5949fc39ed02c730e7546f3b3055044"
+        }
+      ],
+      "label": "attack",
+      "limitations": [
+        "Raw uncalibrated gate and subtype scores were not persisted."
+      ],
+      "prediction_ids": [
+        "4d98cf1735bd116df1d7df87aee4cbe769148636279f9edd39066be086e070a4",
+        "ef0eee094b6d61fcb94831f16759cea54ef364b16232b82e6581e63383a850f0",
+        "b7e6c38ba8f8c1bbaeebfd768b1796b711339df3935e1f628cb5fcbab30b7fb8",
+        "839ef1aaaa07ba414f4e3ab76e98870e46027543683c33625ea81f8c67379a22",
+        "c50586bfb4e396c0fdc94dc7f66dd052df73dd322a3835240f4a12b80e6938cc"
+      ],
+      "review_reasons": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "root_cause_category": "mixed_cause",
+      "root_cause_confidence": "confirmed",
+      "session_group": "prospective_clock_integrity",
+      "session_id": "prospective_clock_integrity_002",
+      "state_transitions": [
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel",
+        "review_required:novel"
+      ],
+      "subtype_outputs": [
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "135cc3ce248bf0e2c904f367af38a0531a35c41e037a859ffff3ffe41d3bc5e8"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "f894634fea3b763cf2795a8d72c0d0d6218cc1e4a62d7578d0bb14f4c8b606f2"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "7d3373d0f09f09420e2824d4ef4d7d145b1743a363fd27d0787d1ef4cecd3631"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "3c23c2ae7de5d1b103b7d578d3420dc038d74660746b5cc65f040442be3a3ee4"
+        },
+        {
+          "calibrated_probabilities": {
+            "auth_failures": 0.18458937658721533,
+            "beacon": 0.18378417876740405,
+            "benign": 0.00020758141029364463,
+            "low_rate_dos": 0.18460008069075956,
+            "port_scan": 0.1845874038989605,
+            "web_probe": 0.2622313786453669
+          },
+          "predicted_subtype": "web_probe",
+          "raw_scores": null,
+          "window_id": "241d30bd766fe47b6b5bc7a0ffdc8013f5949fc39ed02c730e7546f3b3055044"
+        }
+      ],
+      "supporting_evidence": [
+        "runtime/v0_3_15_2/immutable_predictions.json",
+        "runtime/v0_3_15_2/label_vault.json",
+        "runtime/v0_3_15_2/feature_rows.jsonl"
+      ],
+      "window_ids": [
+        "135cc3ce248bf0e2c904f367af38a0531a35c41e037a859ffff3ffe41d3bc5e8",
+        "f894634fea3b763cf2795a8d72c0d0d6218cc1e4a62d7578d0bb14f4c8b606f2",
+        "7d3373d0f09f09420e2824d4ef4d7d145b1743a363fd27d0787d1ef4cecd3631",
+        "3c23c2ae7de5d1b103b7d578d3420dc038d74660746b5cc65f040442be3a3ee4",
+        "241d30bd766fe47b6b5bc7a0ffdc8013f5949fc39ed02c730e7546f3b3055044"
+      ]
+    }
+  ],
+  "raw_conn_windows": [
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "72df331e6fb86ca60b2d75a702f42d04ea18aa7304e8409773e244fbd2fbec3c"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "67add7404fa0aa9042563412a0bb570ec00a4d0f03593ee0a026e514c4b9cf19"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "1b319db54e62be4b8c094b9e6a45704ed111cba92669ee14ff33f89392b3f37f"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "e04a2b7c187ea27e8aabaa64fafd0b04631d0424937bc5562ea33c94ed36bf57"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "897a6a610769a442668d8c966717932b1c3fd4e743d533c8d5f58616da23ebf9"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "13795a5d81f298ff6cd0feeda4ae843a40b01e0eb1077a3d14ff788028bcf5ac"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "906e15c2be61b65ed1505c62ed4cd171757f86bb0c18b5da3c8326578d5c076e"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "93b56e1d7490ea9708d14cdd56ae64343654a7a3a04ba0b99450eaccc1fa4384"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "a4904a73ec897c2a5e515befadc99bfa26768e075afd9484edea4c99172e78cb"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "49885a5246fcb44459aa0135f32526113d2d8d57fd9d6c4c6f9639afc35e7111"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "ed740878ac2ff8175da374d94d15cab673f6dd81448e284ddba9ac3c8f8a2cd2"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "321a372d36a7177e52261028fc2a3487eb8ecc6f69e1209b835d1fcae0870bce"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "d71182ec5bc1f3638b9c4cc3a3acbbc0e4d4da31beb0ff1fb18dec121876ad9b"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "290e73e29794eea3904f6b77eb70a8b98c618857db39c6d13d9d6195ec0a5822"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "03d5afdd8596d5f08a688a2b9cc807c8e1896ec77b66f81bca2ee459349f7e04"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "e66424e5576a6a6ab7157136ef29f140a041d170ecb8bd83bec9bbb0cb45a12d"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "bff7368cff0eaa5e536f09b686e6014602b5fa060d9e353b9510f3cb275c0c0d"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "c83aaf63b211cf0234514e5c5c3e3797b700098afb45309c5361ddc73a661860"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "483782f55e4c621fb3e506690fa7047468ccb128890df5017d899c0d9a0bd075"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "5acdea51d62c250a1073854099e8aa9800684b7b9191a0bce202ed391fb56663"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "6cc015b5ed9ec87513b423b7335636895714d43d6b50b02e6c3534c74a126ea1"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "d878edff335651d033ad5fe1e8bbaae3a5296f70ae36c9e2c27b53a164183289"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "8a67c7c2787338aa66d47607629e79f43ff9dcac2ffeead388030fe61db92080"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "2040d2a33ba5bfa19ce009a0a0ed9644d775a1e0281244246e655bd2e2d90c70"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "eab99b218de0e8a52421231e3d44ebc8730bb393aa681a798c5dd6732efffae3"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "5222a8ec4010d320a872f62eb1c7af95bd460e15c5399edbdf2331620ec30f1d"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "1b7f9553589c51efd3ecaeb14d091548cadbdd48eccc919ff16832bac9a7f48a"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "35adbc8225c6b2ba3687f6fdc6007acc46f8b55ef28b78ddb405e8a8ba9c8288"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "5456779246f119841f7984c26fde0a66d0a9a936c226df0ba6f87e5f89b8d355"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "60b47d064b0567521da50b81e0a27b2fba866da8a1da912f0e43d2d4a1d6f22e"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "c30590167a3c99841ee2de075df560e8cda117da6201ec3883380c4a2fb7083c"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "e9ab899935dbed811ca14124048e871476c24f54320165f0fde303a99362f3dc"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "8c38bc243473600b97e1a3ed2194f6652055d8442fe16976b9855ea1a8dc5a49"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "93ee926f7e2b804b81b2c9a7be2d98bfe77feafec65586f49ae5c624eb62d3ac"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "5c316a8de3a6e581cda4ccb8141d72232b5b95777f2338112005c1fe8e9e458c"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "81cbc463da3df6456637f29e740d49a09ee05e9f5114732d3cb169f0d2da8f7f"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "d1063f105576ff055d59c358ba4d9b16deecc58463786c23d7be45b761bab113"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "135cc3ce248bf0e2c904f367af38a0531a35c41e037a859ffff3ffe41d3bc5e8"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "f894634fea3b763cf2795a8d72c0d0d6218cc1e4a62d7578d0bb14f4c8b606f2"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "7d3373d0f09f09420e2824d4ef4d7d145b1743a363fd27d0787d1ef4cecd3631"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "3c23c2ae7de5d1b103b7d578d3420dc038d74660746b5cc65f040442be3a3ee4"
+    },
+    {
+      "conn_states": {
+        "OTH": 4
+      },
+      "flow_count": 4,
+      "http_log_present": false,
+      "response_byte_count": 0.0,
+      "response_packet_count": 0,
+      "services": {
+        "missing": 4
+      },
+      "window_id": "241d30bd766fe47b6b5bc7a0ffdc8013f5949fc39ed02c730e7546f3b3055044"
+    }
+  ],
+  "schema_version": "v03153_auth_episode_trace_v1",
+  "window_count": 42
+}
