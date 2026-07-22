@@ -1,5 +1,7 @@
 # Дорожная карта
 
+Статус v0.3.15.5: promotion отклонён из-за frozen event-contract mismatch. Следующий допустимый этап — v0.3.15.5.1: заранее замороженная candidate-compatible коррекция контракта и новая runtime campaign. Текущий holdout нельзя повторно использовать для подбора; v0.3.16 остаётся заблокирован.
+
 Источник текущего решения: [`status/project-status.yaml`](status/project-status.yaml).
 
 ## Хронология
@@ -27,6 +29,7 @@
 - v0.3.15.2 — completed negative prospective integrated runtime trial.
 - v0.3.15.3 — completed scientific regression analysis; mixed cause established.
 - v0.3.15.4 — completed controlled redevelopment; candidate ready only for v0.3.15.5 prospective evaluation.
+- v0.3.15.5 — completed independent holdout; scientific gates passed, runtime contract failed, candidate not promoted.
 <!-- stage-history:end -->
 
 ## Ближайшая работа

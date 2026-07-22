@@ -1,5 +1,7 @@
 # Платформа «Филин»
 
+> Статус v0.3.15.5: independent controlled synthetic holdout завершён. Scientific gates кандидата v0.3.15.4 пройдены, но promotion отклонён: frozen `shadow_event_v1` допускает только historical candidate ID и не принимает `v03154:65a3dd912d845bc1`. v0.3.16, shadow mode, backend integration и production остаются запрещены; следующий допустимый этап — corrective v0.3.15.5.1.
+
 Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
 ## 1. Назначение
@@ -8,7 +10,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.4. Контролируемая переработка исправила наблюдаемые scenario/feature defects, создала новый development candidate и прошла закрытый internal audit. Следующий разрешённый этап — независимый prospective holdout v0.3.15.5. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.15.5. Контролируемая переработка исправила наблюдаемые scenario/feature defects, создала новый development candidate и прошла закрытый internal audit. Следующий разрешённый этап — corrective v0.3.15.5.1. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -105,6 +107,7 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.15.2 — prospective integrated passive runtime trial с отрицательным итогом.
 - v0.3.15.3 — завершённый анализ научной регрессии и проект следующего цикла.
 - v0.3.15.4 — завершённая контролируемая смешанная переработка; candidate разрешён только для v0.3.15.5.
+- v0.3.15.5 — completed independent holdout; scientific gates passed, runtime contract failed, candidate not promoted.
 <!-- stage-history:end -->
 
 ## 19. Текущий этап v0.3.15.4

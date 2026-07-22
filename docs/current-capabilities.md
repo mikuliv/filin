@@ -1,5 +1,7 @@
 # Текущие подтверждённые возможности
 
+Статус v0.3.15.5: scientific качество development-кандидата подтверждено на 3 800 новых scored окнах. Frozen passive event schema несовместима с candidate ID v03154, поэтому runtime delivery, staging connector readiness, shadow mode, backend integration и production не подтверждены.
+
 Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
 ## Проверено

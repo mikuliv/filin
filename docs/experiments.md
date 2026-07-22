@@ -123,3 +123,8 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 # v0.3.15
 
 [Local controlled passive shadow trial](experiments/v0_3_15.md) выполнил 10 последовательных sessions и подтвердил непрерывную обработку 1520 captures, 1440 online predictions, passive delivery и restart recovery без production-интеграции.
+
+
+## v0.3.15.5
+
+Независимый controlled synthetic holdout завершён: scientific gates пройдены, runtime contract gate не пройден, candidate не promoted.

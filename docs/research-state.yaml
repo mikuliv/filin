@@ -1,14 +1,15 @@
 schema_version: 2
 deprecated: true
 authoritative_source: status/project-status.yaml
-latest_completed_stage: v0.3.15.4
-latest_completed_result: redevelopment_passed_candidate_ready_for_v03155_only
+latest_completed_stage: v0.3.15.5
+latest_completed_result: scientific_passed_runtime_contract_failed_not_promoted
 active_stage: none
-next_allowed_stage: v0.3.15.5
+next_allowed_stage: v0.3.15.5.1
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false
-historical_stage_summary: {source: status/project-status.yaml}
+historical_stage_summary:
+  source: status/project-status.yaml
 protected_artifact_policy:
   runtime_artifacts_tracked: false
   model_artifacts_tracked: false

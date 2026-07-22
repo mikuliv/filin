@@ -1,15 +1,17 @@
 # Текущий статус проекта
 
+Статус v0.3.15.5: этап completed, holdout валиден, абсолютные scientific gates пройдены. Кандидат не promoted из-за несовместимости frozen event contract с candidate ID v03154. Следующий допустимый этап — v0.3.15.5.1; v0.3.16 запрещён.
+
 Единственный машинно-читаемый источник: [`status/project-status.yaml`](status/project-status.yaml).
 
 - Текущий development candidate: v0.3.15.4 (`v03154:65a3dd912d845bc1`).
 - Последний independent model holdout: v0.3.13.
 - Последний runtime trial: v0.3.15.
 - Последний corrective audit: v0.3.15.1.
-- Текущий завершённый этап: v0.3.15.4.
+- Текущий завершённый этап: v0.3.15.5.
 - Последний runtime trial: v0.3.15.2, результат отрицательный.
 - Последний regression analysis: v0.3.15.3, анализ успешно завершён.
-- Следующий разрешённый этап: независимый prospective holdout v0.3.15.5.
+- Следующий разрешённый этап: corrective v0.3.15.5.1.
 - Заблокированный план: v0.3.16 staging connector readiness.
 - Production, shadow mode, backend integration и automatic enforcement: запрещены.
 - External validation: не выполнена.

@@ -1,42 +1,280 @@
 schema_version: filin_project_status_v1
 project_name: Филин
-current_completed_stage: v0.3.15.4
+current_completed_stage: v0.3.15.5
 current_corrective_stage: v0.3.15.1
 current_candidate: v0.3.15.4
 latest_training_stage: v0.3.15.4
-latest_independent_model_holdout: v0.3.13
-latest_runtime_trial: v0.3.15.2
+latest_independent_model_holdout: v0.3.15.5
+latest_runtime_trial: v0.3.15.5
 latest_corrective_audit: v0.3.15.1
 latest_regression_analysis: v0.3.15.3
 latest_redevelopment_stage: v0.3.15.4
-next_allowed_stage: v0.3.15.5
+next_allowed_stage: v0.3.15.5.1
 blocked_stage: v0.3.16
-next_required_work: Новый заранее замороженный независимый prospective holdout v0.3.15.5; development-результаты v0.3.15.4 не являются holdout evidence
+next_required_work: 'Corrective v0.3.15.5.1: candidate-compatible event contract и
+  новая runtime campaign; v0.3.16 запрещён'
 production_ready: false
 shadow_mode_ready: false
 backend_integration_ready: false
 automatic_enforcement_ready: false
 external_validation_completed: false
 stages:
-  - {version: v0.3.1, title: Базовая оценка, category: evaluation, chronological_order: 1, status: completed, result: historical, primary_report: docs/experiments.md, policy_result: null, limitations: Контролируемая лабораторная среда, superseded_claims: [], next_stage: v0.3.2}
-  - {version: v0.3.2, title: Проверка устойчивости, category: evaluation, chronological_order: 2, status: completed, result: historical, primary_report: docs/experiments.md, policy_result: null, limitations: Контролируемые сдвиги, superseded_claims: [], next_stage: v0.3.3}
-  - {version: v0.3.3, title: Проверка изменённой среды, category: evaluation, chronological_order: 3, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Исторический отрицательный результат, superseded_claims: [], next_stage: v0.3.4}
-  - {version: v0.3.4, title: Переработка benign-представления, category: training, chronological_order: 4, status: completed, result: historical, primary_report: docs/v0_3_4-design.md, policy_result: null, limitations: Не production validation, superseded_claims: [], next_stage: v0.3.5}
-  - {version: v0.3.5, title: Frozen regression evaluation, category: regression, chronological_order: 5, status: completed, result: historical, primary_report: docs/experiments.md, policy_result: null, limitations: Известный benchmark, superseded_claims: [], next_stage: v0.3.6}
-  - {version: v0.3.6, title: Prospective holdout, category: holdout, chronological_order: 6, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Ограниченная среда, superseded_claims: [], next_stage: v0.3.7}
-  - {version: v0.3.7, title: Иерархический training cycle, category: training, chronological_order: 7, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Internal validation, superseded_claims: [], next_stage: v0.3.8}
-  - {version: v0.3.8, title: Class-conditional uncertainty, category: training, chronological_order: 8, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Некоторые gates не пройдены, superseded_claims: [], next_stage: v0.3.9}
-  - {version: v0.3.9, title: Episode-first promotion, category: training, chronological_order: 9, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Episode policy не пройдена, superseded_claims: [], next_stage: v0.3.10}
-  - {version: v0.3.10, title: Minimal probability-conformal cycle, category: training, chronological_order: 10, status: completed, result: negative, primary_report: docs/experiments.md, policy_result: null, limitations: Pending policy не пройдена, superseded_claims: [], next_stage: v0.3.10.1}
-  - {version: v0.3.10.1, title: Аудит семантики pending, category: corrective, chronological_order: 11, status: completed, result: clarification, primary_report: docs/experiments.md, policy_result: null, limitations: Frozen result не переписан, superseded_claims: [], next_stage: v0.3.11}
-  - {version: v0.3.11, title: Burden-aware candidate, category: training, chronological_order: 12, status: completed, result: passed, primary_report: docs/experiments/v0_3_11.md, policy_result: ml/reports/v0_3_11/v0_3_11_policy_result.json, limitations: Internal validation, superseded_claims: [], next_stage: v0.3.12}
-  - {version: v0.3.12, title: Frozen multi-benchmark regression, category: regression, chronological_order: 13, status: completed, result: negative, primary_report: docs/experiments/v0_3_12.md, policy_result: ml/reports/v0_3_12/v0_3_12_policy_result.json, limitations: Coverage и episode gate, superseded_claims: [], next_stage: v0.3.12.1}
-  - {version: v0.3.12.1, title: Аудит causal ordering, category: corrective, chronological_order: 14, status: completed, result: clarification, primary_report: docs/experiments/v0_3_12_1.md, policy_result: ml/reports/v0_3_12_1/v0_3_12_1_policy_result.json, limitations: Историческая policy сохранена, superseded_claims: [], next_stage: v0.3.12.2}
-  - {version: v0.3.12.2, title: Causal-order corrected regression, category: regression, chronological_order: 15, status: completed, result: passed, primary_report: docs/experiments/v0_3_12_2.md, policy_result: ml/reports/v0_3_12_2/v0_3_12_2_policy_result.json, limitations: Frozen regression, superseded_claims: [], next_stage: v0.3.13}
-  - {version: v0.3.13, title: Prospective environmental holdout, category: holdout, chronological_order: 16, status: completed, result: passed, primary_report: docs/experiments/v0_3_13.md, policy_result: ml/reports/v0_3_13/v0_3_13_policy_result.json, limitations: Локальная лабораторная инфраструктура, superseded_claims: [], next_stage: v0.3.14}
-  - {version: v0.3.14, title: Passive component and contract audit, category: runtime_audit, chronological_order: 17, status: completed_reassessed, result: limited_scope, primary_report: docs/experiments/v0_3_14.md, policy_result: ml/reports/v0_3_14/v0_3_14_policy_result.json, limitations: Full integrated fault readiness не доказана, superseded_claims: [full_integrated_fault_readiness], next_stage: v0.3.15}
-  - {version: v0.3.15, title: Controlled local passive shadow trial, category: runtime_trial, chronological_order: 18, status: completed_reassessed, result: scientific_result_preserved_runtime_claims_not_revalidated, primary_report: docs/experiments/v0_3_15.md, policy_result: ml/reports/v0_3_15/v0_3_15_policy_result.json, limitations: Исторические runtime fault claims имеют недостаточную behavioral evidence, superseded_claims: [v0316_readiness], next_stage: v0.3.15.1}
-  - {version: v0.3.15.1, title: Passive runtime evidence hardening, category: corrective, chronological_order: 19, status: completed, result: remediation_passed_readiness_blocked, primary_report: docs/experiments/v0_3_15_1.md, policy_result: ml/reports/v0_3_15_1/v0_3_15_1_policy_result.json, limitations: Требуется новый frozen runtime trial; внешняя validation отсутствует, superseded_claims: [], next_stage: null}
-  - {version: v0.3.15.2, title: Prospective integrated passive runtime trial, category: runtime_trial, chronological_order: 20, status: completed, result: negative_scientific_and_evidence_policy, primary_report: docs/experiments/v0_3_15_2.md, policy_result: ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json, limitations: Scientific gates не пройдены; raw ACK privacy surface и точная capture-to-sink latency не сохранены; CPU p95 выше frozen порога, superseded_claims: [], next_stage: v0.3.15.3}
-  - {version: v0.3.15.3, title: Анализ научной регрессии и проект следующего цикла, category: regression_analysis, chronological_order: 21, status: completed, result: analysis_passed_mixed_cause, primary_report: docs/experiments/v0_3_15_3.md, policy_result: ml/reports/v0_3_15_3/v0_3_15_3_policy_result.json, limitations: Training necessity unresolved; v0.3.11 feature rows и historical raw scores отсутствуют; v0.3.16 остаётся заблокирован, superseded_claims: [], next_stage: v0.3.15.4}
-  - {version: v0.3.15.4, title: Контролируемая смешанная переработка, category: training, chronological_order: 22, status: completed, result: redevelopment_passed_candidate_ready_for_v03155_only, primary_report: docs/experiments/v0_3_15_4.md, policy_result: ml/reports/v0_3_15_4/v0_3_15_4_policy_result.json, limitations: Development corpus; независимый prospective holdout ещё не выполнен; v0.3.16 запрещён, superseded_claims: [], next_stage: v0.3.15.5}
+- version: v0.3.1
+  title: Базовая оценка
+  category: evaluation
+  chronological_order: 1
+  status: completed
+  result: historical
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Контролируемая лабораторная среда
+  superseded_claims: []
+  next_stage: v0.3.2
+- version: v0.3.2
+  title: Проверка устойчивости
+  category: evaluation
+  chronological_order: 2
+  status: completed
+  result: historical
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Контролируемые сдвиги
+  superseded_claims: []
+  next_stage: v0.3.3
+- version: v0.3.3
+  title: Проверка изменённой среды
+  category: evaluation
+  chronological_order: 3
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Исторический отрицательный результат
+  superseded_claims: []
+  next_stage: v0.3.4
+- version: v0.3.4
+  title: Переработка benign-представления
+  category: training
+  chronological_order: 4
+  status: completed
+  result: historical
+  primary_report: docs/v0_3_4-design.md
+  policy_result: null
+  limitations: Не production validation
+  superseded_claims: []
+  next_stage: v0.3.5
+- version: v0.3.5
+  title: Frozen regression evaluation
+  category: regression
+  chronological_order: 5
+  status: completed
+  result: historical
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Известный benchmark
+  superseded_claims: []
+  next_stage: v0.3.6
+- version: v0.3.6
+  title: Prospective holdout
+  category: holdout
+  chronological_order: 6
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Ограниченная среда
+  superseded_claims: []
+  next_stage: v0.3.7
+- version: v0.3.7
+  title: Иерархический training cycle
+  category: training
+  chronological_order: 7
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Internal validation
+  superseded_claims: []
+  next_stage: v0.3.8
+- version: v0.3.8
+  title: Class-conditional uncertainty
+  category: training
+  chronological_order: 8
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Некоторые gates не пройдены
+  superseded_claims: []
+  next_stage: v0.3.9
+- version: v0.3.9
+  title: Episode-first promotion
+  category: training
+  chronological_order: 9
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Episode policy не пройдена
+  superseded_claims: []
+  next_stage: v0.3.10
+- version: v0.3.10
+  title: Minimal probability-conformal cycle
+  category: training
+  chronological_order: 10
+  status: completed
+  result: negative
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Pending policy не пройдена
+  superseded_claims: []
+  next_stage: v0.3.10.1
+- version: v0.3.10.1
+  title: Аудит семантики pending
+  category: corrective
+  chronological_order: 11
+  status: completed
+  result: clarification
+  primary_report: docs/experiments.md
+  policy_result: null
+  limitations: Frozen result не переписан
+  superseded_claims: []
+  next_stage: v0.3.11
+- version: v0.3.11
+  title: Burden-aware candidate
+  category: training
+  chronological_order: 12
+  status: completed
+  result: passed
+  primary_report: docs/experiments/v0_3_11.md
+  policy_result: ml/reports/v0_3_11/v0_3_11_policy_result.json
+  limitations: Internal validation
+  superseded_claims: []
+  next_stage: v0.3.12
+- version: v0.3.12
+  title: Frozen multi-benchmark regression
+  category: regression
+  chronological_order: 13
+  status: completed
+  result: negative
+  primary_report: docs/experiments/v0_3_12.md
+  policy_result: ml/reports/v0_3_12/v0_3_12_policy_result.json
+  limitations: Coverage и episode gate
+  superseded_claims: []
+  next_stage: v0.3.12.1
+- version: v0.3.12.1
+  title: Аудит causal ordering
+  category: corrective
+  chronological_order: 14
+  status: completed
+  result: clarification
+  primary_report: docs/experiments/v0_3_12_1.md
+  policy_result: ml/reports/v0_3_12_1/v0_3_12_1_policy_result.json
+  limitations: Историческая policy сохранена
+  superseded_claims: []
+  next_stage: v0.3.12.2
+- version: v0.3.12.2
+  title: Causal-order corrected regression
+  category: regression
+  chronological_order: 15
+  status: completed
+  result: passed
+  primary_report: docs/experiments/v0_3_12_2.md
+  policy_result: ml/reports/v0_3_12_2/v0_3_12_2_policy_result.json
+  limitations: Frozen regression
+  superseded_claims: []
+  next_stage: v0.3.13
+- version: v0.3.13
+  title: Prospective environmental holdout
+  category: holdout
+  chronological_order: 16
+  status: completed
+  result: passed
+  primary_report: docs/experiments/v0_3_13.md
+  policy_result: ml/reports/v0_3_13/v0_3_13_policy_result.json
+  limitations: Локальная лабораторная инфраструктура
+  superseded_claims: []
+  next_stage: v0.3.14
+- version: v0.3.14
+  title: Passive component and contract audit
+  category: runtime_audit
+  chronological_order: 17
+  status: completed_reassessed
+  result: limited_scope
+  primary_report: docs/experiments/v0_3_14.md
+  policy_result: ml/reports/v0_3_14/v0_3_14_policy_result.json
+  limitations: Full integrated fault readiness не доказана
+  superseded_claims:
+  - full_integrated_fault_readiness
+  next_stage: v0.3.15
+- version: v0.3.15
+  title: Controlled local passive shadow trial
+  category: runtime_trial
+  chronological_order: 18
+  status: completed_reassessed
+  result: scientific_result_preserved_runtime_claims_not_revalidated
+  primary_report: docs/experiments/v0_3_15.md
+  policy_result: ml/reports/v0_3_15/v0_3_15_policy_result.json
+  limitations: Исторические runtime fault claims имеют недостаточную behavioral evidence
+  superseded_claims:
+  - v0316_readiness
+  next_stage: v0.3.15.1
+- version: v0.3.15.1
+  title: Passive runtime evidence hardening
+  category: corrective
+  chronological_order: 19
+  status: completed
+  result: remediation_passed_readiness_blocked
+  primary_report: docs/experiments/v0_3_15_1.md
+  policy_result: ml/reports/v0_3_15_1/v0_3_15_1_policy_result.json
+  limitations: Требуется новый frozen runtime trial; внешняя validation отсутствует
+  superseded_claims: []
+  next_stage: null
+- version: v0.3.15.2
+  title: Prospective integrated passive runtime trial
+  category: runtime_trial
+  chronological_order: 20
+  status: completed
+  result: negative_scientific_and_evidence_policy
+  primary_report: docs/experiments/v0_3_15_2.md
+  policy_result: ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json
+  limitations: Scientific gates не пройдены; raw ACK privacy surface и точная capture-to-sink
+    latency не сохранены; CPU p95 выше frozen порога
+  superseded_claims: []
+  next_stage: v0.3.15.3
+- version: v0.3.15.3
+  title: Анализ научной регрессии и проект следующего цикла
+  category: regression_analysis
+  chronological_order: 21
+  status: completed
+  result: analysis_passed_mixed_cause
+  primary_report: docs/experiments/v0_3_15_3.md
+  policy_result: ml/reports/v0_3_15_3/v0_3_15_3_policy_result.json
+  limitations: Training necessity unresolved; v0.3.11 feature rows и historical raw
+    scores отсутствуют; v0.3.16 остаётся заблокирован
+  superseded_claims: []
+  next_stage: v0.3.15.4
+- version: v0.3.15.4
+  title: Контролируемая смешанная переработка
+  category: training
+  chronological_order: 22
+  status: completed
+  result: redevelopment_passed_candidate_ready_for_v03155_only
+  primary_report: docs/experiments/v0_3_15_4.md
+  policy_result: ml/reports/v0_3_15_4/v0_3_15_4_policy_result.json
+  limitations: Development corpus; независимый prospective holdout ещё не выполнен;
+    v0.3.16 запрещён
+  superseded_claims: []
+  next_stage: v0.3.15.5
+- version: v0.3.15.5
+  title: Независимый перспективный сравнительный holdout
+  category: holdout
+  chronological_order: 23
+  status: completed
+  result: scientific_passed_runtime_contract_failed_not_promoted
+  primary_report: docs/experiments/v0_3_15_5.md
+  policy_result: ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json
+  limitations: Historical baseline ineligible; frozen event contract отклоняет candidate
+    v03154; v0.3.16 запрещён
+  superseded_claims: []
+  next_stage: v0.3.15.5.1

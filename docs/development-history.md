@@ -88,3 +88,8 @@ regression, backend integration и shadow mode не разрешены.
 # v0.3.15
 
 Добавлен локальный continuous shadow orchestration layer: canonical capture, containerized Zeek, frozen 51-feature extraction, online inference, causal state, `shadow_event_v1`, local sink, fault/restart recovery, blind post-hoc metrics и immutable shadow trial bundle.
+
+
+## v0.3.15.5
+
+Независимый controlled synthetic holdout завершён: scientific gates пройдены, runtime contract gate не пройден, candidate не promoted.
