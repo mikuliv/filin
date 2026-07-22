@@ -52,6 +52,8 @@ runtime/v0_3_15_*/
 runtime/v0_3_16/
 runtime/v0_3_16_invalidated_r1/
 runtime/v0_3_17/
+runtime/v0_3_17_invalidated_r1/
+runtime/v0_3_17_invalidated_r1_tail/
 runtime/pytest-*/
 
 # Zeek runtime

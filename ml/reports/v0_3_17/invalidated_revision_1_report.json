@@ -1,0 +1,29 @@
+{
+  "schema_version": "v0317_invalidation_v1",
+  "stage": "v0.3.17",
+  "revision": 1,
+  "campaign_id": "filin_v0_3_17_controlled_local_rehearsal_r1",
+  "status": "invalidated_after_first_rehearsal_event",
+  "failure_code": "sustained_processing_lag_from_per_row_durable_raw_trace_writes",
+  "capture_segment_count_at_stop": 1512,
+  "scheduled_logical_window_count_at_stop": 10620,
+  "processed_canonical_event_count_at_stop": 9710,
+  "receiver_durable_event_count_at_stop": 9220,
+  "processor_lag_window_count": 910,
+  "transport_lag_event_count": 490,
+  "root_cause": "Raw feature и prediction rows синхронно fsync выполнялись по одной строке вместо одной batch-записи на закрытый capture-сегмент.",
+  "historical_data_rewritten": false,
+  "evidence_eligible": false,
+  "preserved_runtime_directories": [
+    "runtime/v0_3_17_invalidated_r1",
+    "runtime/v0_3_17_invalidated_r1_tail"
+  ],
+  "required_replacement": {
+    "new_protocol_revision": 2,
+    "new_run_ids": true,
+    "new_session_ids": true,
+    "new_seeds": true,
+    "new_runtime_instance_ids": true,
+    "new_synthetic_certificates": true
+  }
+}
