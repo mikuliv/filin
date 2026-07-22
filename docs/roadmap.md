@@ -25,12 +25,13 @@
 - v0.3.15 — completed local passive trial; runtime claims subsequently reassessed.
 - v0.3.15.1 — completed corrective runtime evidence hardening.
 - v0.3.15.2 — completed negative prospective integrated runtime trial.
-- v0.3.15.3 — следующий допустимый разбор scientific regression и проектирование нового protocol.
+- v0.3.15.3 — completed scientific regression analysis; mixed cause established.
+- v0.3.15.4 — следующий допустимый controlled mixed redevelopment; protocol proposed, not frozen.
 <!-- stage-history:end -->
 
 ## Ближайшая работа
 
-v0.3.16 имеет статус blocked. До него требуется отдельный заранее frozen локальный runtime trial исправленного exporter. Он должен использовать immutable events или новые безопасные controlled observations без fit и дать полную behavioral evidence для fault, recovery, ACK, resume и performance.
+v0.3.16 имеет статус blocked. Сначала требуется v0.3.15.4 для раздельного исправления scenario/feature/conformal механизмов, затем новый независимый prospective runtime holdout v0.3.15.5 с полным ACK, latency, CPU и privacy evidence.
 
 ## v0.3.16
 

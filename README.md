@@ -8,7 +8,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.15.2. Новый prospective trial подтвердил доставку 2 490 canonical events и 35 fault-oracles, но не прошёл frozen scientific, performance-evidence и privacy-evidence gates. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
+Последний завершённый этап — v0.3.15.3. Runtime v0.3.15.2 технически подтвердил доставку 2 490 canonical events и 35 fault-oracles, но scientific portability frozen candidate не подтверждена. Анализ причин установил смешанный scenario/feature/conformal механизм и не изменил отрицательный исторический результат. Подготовка v0.3.16 заблокирована. Production, shadow mode, backend integration и автоматические действия запрещены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -103,15 +103,16 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.15 — controlled local passive shadow trial.
 - v0.3.15.1 — corrective runtime evidence audit.
 - v0.3.15.2 — prospective integrated passive runtime trial с отрицательным итогом.
+- v0.3.15.3 — завершённый анализ научной регрессии и проект следующего цикла.
 <!-- stage-history:end -->
 
-## 19. Текущий этап v0.3.15.2
+## 19. Текущий этап v0.3.15.3
 
-Подробности приведены в [описании prospective trial](docs/experiments/v0_3_15_2.md), [корректирующем аудите](docs/experiments/v0_3_15_1.md) и итоговом отчёте `ml/reports/v0_3_15_2/v0_3_15_2_summary.md`. Frozen candidate и independent holdout v0.3.13 не переписаны.
+Подробности приведены в [анализе регрессии](docs/experiments/v0_3_15_3.md), [описании prospective trial](docs/experiments/v0_3_15_2.md) и итоговом отчёте `ml/reports/v0_3_15_3/v0_3_15_3_summary.md`. Frozen candidate, independent holdout v0.3.13 и отрицательный результат v0.3.15.2 не переписаны.
 
 ## 20. Следующий разрешённый этап
 
-v0.3.16 заблокирован. Следующий допустимый этап v0.3.15.3 должен разобрать scientific regression (`auth_failures` recall 0, attack episode recall 0,40) и определить новый protocol. Результат v0.3.15.2 запрещено исправлять переобучением задним числом.
+v0.3.16 заблокирован. Следующий допустимый этап — выбранный Track E v0.3.15.4: controlled mixed redevelopment сценариев, feature semantics и decision policy. Его протокол пока имеет статус `proposed_not_frozen` и не запускался. После разработки обязателен новый независимый v0.3.15.5 prospective holdout.
 
 ## 21. Структура репозитория
 

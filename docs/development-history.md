@@ -4,6 +4,8 @@
 
 Актуализация v0.3.15.2: prospective trial выполнен на новых PCAP и исправленном runtime. Техническая доставка reconciled, но scientific и часть evidence gates не пройдены; v0.3.16 остаётся заблокирован.
 
+Актуализация v0.3.15.3: завершён evidence-linked анализ 120 эпизодов. Подтверждён mixed scenario/feature/conformal cause, training necessity оставлена unresolved, реализованы additive ACK/latency/CPU evidence contracts и подготовлен незапущенный проект v0.3.15.4. Frozen v0.3.15.2 и запрет v0.3.16 сохранены.
+
 ## v0.3.14
 
 Добавлены passive event schema, canonical identities, hash chains, local sinks, bounded priority queue, checksum spool, checkpoint/retry/rate limit, privacy/fail-safe/backend audits, deterministic replay и fault/load campaigns.
