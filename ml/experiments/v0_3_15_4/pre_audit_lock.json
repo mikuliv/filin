@@ -1,0 +1,18 @@
+{
+  "audit_inference_call_count": 0,
+  "audit_labels_read_count": 0,
+  "calibration_report_sha256": "675919e8d8ab55dac7d2b53cb41387d4b67ec0617d748ecfb100f504861581e9",
+  "candidate_artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "candidate_manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+  "conformal_report_sha256": "afa916d620ea810511e84a11a2b22a5ac416c8803dc622fc4c7ce684c11e7783",
+  "feature_rows_sha256": "55137904802ca963db371c803d48ce01bc9802f7d0ea874355d58e9922aa9f06",
+  "ready_to_unlock_once": true,
+  "schema_version": "v03154_pre_audit_lock_v1",
+  "sealed_audit_labels_sha256": "9971a5a15b9bf4009c897a2f10d8f0e6195085b905024defe7c42af86e98e292",
+  "selection_report_sha256": "deb2e7c68d870e3fe4eeda5dfbc8dc9269079a74126bbd5bb8200cf5e2201d36",
+  "state_policy_frozen": true,
+  "thresholds_frozen": true,
+  "training_lock_sha256": "b75eedb8877b430df1f695cb5fd7b5102456353bd54b4c3f1561451273899db3",
+  "tuning_after_unlock_allowed": false
+}

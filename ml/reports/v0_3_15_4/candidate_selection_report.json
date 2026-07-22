@@ -1,0 +1,39 @@
+{
+  "all_required_gates_passed": true,
+  "audit_labels_read_count": 0,
+  "selected": "C",
+  "selected_metrics": {
+    "accuracy": 1.0,
+    "attack_episode_count": 60,
+    "attack_episode_recall": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_episode_count": 60,
+    "benign_episode_false_alert_rate": 0.0,
+    "benign_recall": 1.0,
+    "candidate": "C",
+    "configuration": {
+      "auth_sample_weight": 1.5,
+      "l2_regularization": 1.0,
+      "learning_rate": 0.05,
+      "max_iter": 160,
+      "max_leaf_nodes": 7,
+      "min_samples_leaf": 20,
+      "random_state": 3154
+    },
+    "detection_by_second": 1.0,
+    "episode_precision": 1.0,
+    "fold_count": 3,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "required_gates_passed": true,
+    "worst_attack_recall": 1.0
+  }
+}

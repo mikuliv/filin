@@ -1,0 +1,22 @@
+{
+  "alpha": 0.05,
+  "audit_row_count": 0,
+  "coverage": 1.0,
+  "empty_set_rate": 0.0,
+  "method": "mondrian_class_conditional",
+  "sessions_only": [
+    "dev2_scenario_semantics_004",
+    "dev2_feature_provenance_004",
+    "dev2_subtype_boundary_004",
+    "dev2_conformal_behavior_004",
+    "dev2_benign_hard_negatives_004"
+  ],
+  "thresholds": {
+    "auth_failures": 0.995219886086232,
+    "beacon": 0.9942564519106221,
+    "benign": 0.999942237057039,
+    "low_rate_dos": 0.9942564519106221,
+    "port_scan": 0.9942564519106223,
+    "web_probe": 0.9942564519106221
+  }
+}

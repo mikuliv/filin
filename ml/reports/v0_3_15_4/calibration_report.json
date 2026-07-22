@@ -1,0 +1,28 @@
+{
+  "audit_row_count": 0,
+  "fit_row_count": 950,
+  "method": "sigmoid",
+  "metrics": {
+    "accuracy": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_recall": 1.0,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "worst_attack_recall": 1.0
+  },
+  "sessions_only": [
+    "dev2_scenario_semantics_004",
+    "dev2_feature_provenance_004",
+    "dev2_subtype_boundary_004",
+    "dev2_conformal_behavior_004",
+    "dev2_benign_hard_negatives_004"
+  ]
+}
