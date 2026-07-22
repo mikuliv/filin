@@ -1,0 +1,6 @@
+{
+  "expected_sha256": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe",
+  "historical_shadow_event_v1_unchanged": true,
+  "schema_version": "v031551_v1_integrity_v1",
+  "shadow_event_v1_sha256": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe"
+}

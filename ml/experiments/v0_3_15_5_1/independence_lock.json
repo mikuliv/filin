@@ -1,0 +1,15 @@
+{
+  "schema_version": "v031551_independence_lock_v1",
+  "frozen_before_first_capture": true,
+  "compared_stages": ["v0.3.15.2", "v0.3.15.4", "v0.3.15.5"],
+  "session_overlap_count": 0,
+  "seed_overlap_count": 0,
+  "capture_id_namespace_overlap_count": 0,
+  "prediction_id_namespace_overlap_count": 0,
+  "runtime_instance_id_namespace_overlap_count": 0,
+  "exact_traffic_parameter_vector_overlap_count": 0,
+  "pcap_hash_overlap_must_equal_zero_after_capture": true,
+  "prescribed_seed_overlap_detected_before_freeze": 12,
+  "replacement_seed_count": 12,
+  "replacement_seeds": [23101, 23102, 23103, 23201, 23202, 23203, 23301, 23302, 23303, 23401, 23402, 23403]
+}

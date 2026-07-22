@@ -1,0 +1,150 @@
+{
+  "faults": [
+    {
+      "causal_position": 20,
+      "expected_effect": "timeout",
+      "injector": "sink",
+      "maximum_attempts": 4,
+      "name": "sink_timeout",
+      "oracle": "retry_and_reconcile",
+      "recovery_condition": "delivered_after_bounded_retry",
+      "session_id": "runtime_transport_faults_001",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 70,
+      "expected_effect": "temporary_unavailable",
+      "injector": "sink",
+      "maximum_attempts": 4,
+      "name": "temporary_unavailable",
+      "oracle": "retry_and_reconcile",
+      "recovery_condition": "delivered_after_bounded_retry",
+      "session_id": "runtime_transport_faults_001",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 120,
+      "expected_effect": "rate_limited",
+      "injector": "ack",
+      "maximum_attempts": 4,
+      "name": "rate_limited",
+      "oracle": "retry_after_and_reconcile",
+      "recovery_condition": "delivered_after_bounded_retry",
+      "session_id": "runtime_transport_faults_001",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 20,
+      "expected_effect": "accepted_then_reset",
+      "injector": "sink",
+      "maximum_attempts": 4,
+      "name": "connection_reset_after_send",
+      "oracle": "duplicate_ack_and_reconcile",
+      "recovery_condition": "sink_deduplicates_retry",
+      "session_id": "runtime_transport_faults_002",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 70,
+      "expected_effect": "duplicate_ack",
+      "injector": "ack",
+      "maximum_attempts": 4,
+      "name": "duplicate_ack",
+      "oracle": "strict_ack_accepts_duplicate",
+      "recovery_condition": "checkpoint_committed",
+      "session_id": "runtime_transport_faults_002",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 120,
+      "expected_effect": "malformed_ack",
+      "injector": "ack",
+      "maximum_attempts": 4,
+      "name": "malformed_ack",
+      "oracle": "fail_closed_before_checkpoint",
+      "recovery_condition": "valid_retry_ack",
+      "session_id": "runtime_transport_faults_002",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 20,
+      "expected_effect": "unknown_ack",
+      "injector": "ack",
+      "maximum_attempts": 4,
+      "name": "unknown_ack",
+      "oracle": "fail_closed_before_checkpoint",
+      "recovery_condition": "valid_retry_ack",
+      "session_id": "runtime_transport_faults_003",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 60,
+      "expected_effect": "in_memory_queue_loss",
+      "injector": "exporter_restart",
+      "maximum_attempts": 4,
+      "name": "exporter_restart",
+      "oracle": "spool_recovery",
+      "recovery_condition": "eventual_reconciliation",
+      "session_id": "runtime_crash_resume_001",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 60,
+      "expected_effect": "transport_interruption",
+      "injector": "sink_restart",
+      "maximum_attempts": 4,
+      "name": "sink_restart",
+      "oracle": "spool_replay",
+      "recovery_condition": "eventual_reconciliation",
+      "session_id": "runtime_crash_resume_002",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 60,
+      "expected_effect": "acknowledged_without_checkpoint",
+      "injector": "crash",
+      "maximum_attempts": 4,
+      "name": "crash_after_ack_before_checkpoint",
+      "oracle": "duplicate_ack_and_reconcile",
+      "recovery_condition": "sink_deduplicates_replay",
+      "session_id": "runtime_crash_resume_003",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 100,
+      "expected_effect": "bounded_rejection_or_eviction",
+      "injector": "queue",
+      "maximum_attempts": 4,
+      "name": "queue_full",
+      "oracle": "exact_drop_accounting",
+      "recovery_condition": "no_unaccounted_drop",
+      "session_id": "runtime_load_clock_001",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    },
+    {
+      "causal_position": 100,
+      "expected_effect": "negative_elapsed_clamped",
+      "injector": "clock",
+      "maximum_attempts": 4,
+      "name": "clock_backward_jump",
+      "oracle": "no_token_creation",
+      "recovery_condition": "continued_delivery",
+      "session_id": "runtime_load_clock_002",
+      "timeout_seconds": 10,
+      "trigger": "first_eligible_runtime_operation"
+    }
+  ],
+  "frozen_before_first_capture": true,
+  "schema_version": "v031551_fault_schedule_v1"
+}

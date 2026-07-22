@@ -1,0 +1,37 @@
+{
+  "compatibility_matrix_passed": true,
+  "rows": [
+    {
+      "candidate": "v0311:19176acb401be2d4",
+      "contract": "shadow_event_v1",
+      "expected": "accepted_historical",
+      "passed": true
+    },
+    {
+      "candidate": "v03154:65a3dd912d845bc1",
+      "contract": "shadow_event_v2",
+      "expected": "accepted_current",
+      "passed": true
+    },
+    {
+      "candidate": "v03154:65a3dd912d845bc1",
+      "contract": "shadow_event_v1",
+      "expected": "rejected",
+      "passed": true
+    },
+    {
+      "candidate": "v0311:19176acb401be2d4",
+      "contract": "shadow_event_v2",
+      "expected": "rejected_not_allowlisted",
+      "passed": true
+    },
+    {
+      "candidate": "v99999:0000000000000000",
+      "contract": "shadow_event_v2",
+      "expected": "rejected_unknown",
+      "passed": true
+    }
+  ],
+  "schema_version": "v031551_compatibility_matrix_v1",
+  "silent_migration_allowed": false
+}

@@ -1,0 +1,16 @@
+{
+  "actual_preflight_divergence": {
+    "ahead": 0,
+    "behind": 0
+  },
+  "actual_preflight_origin_main": "e48c3fd6579a12cefc6e37deb3e78d91803c6efb",
+  "campaign_sha256": "c3687efe72e2c58aba6c5021c18d8cf82d785e35b5bc88d747645b6aecbcd8e8",
+  "fault_schedule_sha256": "0df9a3a94f747c57cec9564754e5b58247ac0a23a5928fad609a505c38fda1fb",
+  "first_capture_exists": false,
+  "frozen_before_first_capture": true,
+  "independence_lock_sha256": "0ffe2a62ac78739ec8332fd33afff882369f90695dbad152cf1bdf2cee16a2ff",
+  "protocol_sha256": "9d3810d6537cc58a4c6bc823fc8e38d44f87fac3d086ce0dc8ab3eceedbbc330",
+  "remote_integration_performed": false,
+  "schema_version": "v031551_protocol_lock_v1",
+  "source_head": "e48c3fd6579a12cefc6e37deb3e78d91803c6efb"
+}

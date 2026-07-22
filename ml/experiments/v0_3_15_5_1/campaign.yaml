@@ -1,0 +1,22 @@
+schema_version: v031551_campaign_v1
+campaign_id: filin_v0_3_15_5_1_runtime_recovery
+frozen_before_first_capture: true
+runtime_only_trial: true
+labels_created: false
+labels_not_used: true
+captures_per_session: 200
+warmup_per_session: 10
+scored_per_session: 190
+sessions:
+  - {session_id: runtime_contract_baseline_001, session_group: runtime_contract_baseline, seed: 23101}
+  - {session_id: runtime_contract_baseline_002, session_group: runtime_contract_baseline, seed: 23102}
+  - {session_id: runtime_contract_baseline_003, session_group: runtime_contract_baseline, seed: 23103}
+  - {session_id: runtime_transport_faults_001, session_group: runtime_transport_faults, seed: 23201}
+  - {session_id: runtime_transport_faults_002, session_group: runtime_transport_faults, seed: 23202}
+  - {session_id: runtime_transport_faults_003, session_group: runtime_transport_faults, seed: 23203}
+  - {session_id: runtime_crash_resume_001, session_group: runtime_crash_resume, seed: 23301}
+  - {session_id: runtime_crash_resume_002, session_group: runtime_crash_resume, seed: 23302}
+  - {session_id: runtime_crash_resume_003, session_group: runtime_crash_resume, seed: 23303}
+  - {session_id: runtime_load_clock_001, session_group: runtime_load_clock, seed: 23401}
+  - {session_id: runtime_load_clock_002, session_group: runtime_load_clock, seed: 23402}
+  - {session_id: runtime_load_clock_003, session_group: runtime_load_clock, seed: 23403}

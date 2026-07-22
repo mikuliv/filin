@@ -1,0 +1,20 @@
+{
+  "calibration_sha256": "675919e8d8ab55dac7d2b53cb41387d4b67ec0617d748ecfb100f504861581e9",
+  "candidate_artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "candidate_manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+  "candidate_registry_commitment_sha256": "e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c",
+  "candidate_registry_sha256": "31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d",
+  "class_mapping_sha256": "70e15208eba3ab328d7b15cccaaeccc887e86f2ec0e2c271388ef079aef574a3",
+  "conformal_sha256": "afa916d620ea810511e84a11a2b22a5ac416c8803dc622fc4c7ce684c11e7783",
+  "event_contract_sha256": "38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149",
+  "event_contract_version": "shadow_event_v2",
+  "feature_contract_id": "network_features_v2",
+  "feature_contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "integrity_passed": true,
+  "locked_before_first_capture": true,
+  "preprocessing_sha256": "8708ef96aef5b3479f237c91f6aa7a045655a841a2e8c9139766e5f41a59aaa7",
+  "runtime_compatibility_sha256": "41a6ca83482c657aa7c9c0aec5881cb68234b2a7612cf534076c5e6c35af05ba",
+  "schema_version": "v031551_candidate_runtime_lock_v1",
+  "state_policy_sha256": "3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c"
+}

@@ -1,0 +1,7 @@
+{
+  "schema_passed": true,
+  "schema_version": "v031551_v2_contract_report_v1",
+  "shadow_event_v2_created": true,
+  "shadow_event_v2_sha256": "38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149",
+  "structural_validation_separate_from_candidate_authorization": true
+}

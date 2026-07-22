@@ -1,0 +1,65 @@
+{
+  "schema_version": "v031551_session_manifest_v1",
+  "sessions": [
+    {
+      "seed": 23101,
+      "session_group": "runtime_contract_baseline",
+      "session_id": "runtime_contract_baseline_001"
+    },
+    {
+      "seed": 23102,
+      "session_group": "runtime_contract_baseline",
+      "session_id": "runtime_contract_baseline_002"
+    },
+    {
+      "seed": 23103,
+      "session_group": "runtime_contract_baseline",
+      "session_id": "runtime_contract_baseline_003"
+    },
+    {
+      "seed": 23201,
+      "session_group": "runtime_transport_faults",
+      "session_id": "runtime_transport_faults_001"
+    },
+    {
+      "seed": 23202,
+      "session_group": "runtime_transport_faults",
+      "session_id": "runtime_transport_faults_002"
+    },
+    {
+      "seed": 23203,
+      "session_group": "runtime_transport_faults",
+      "session_id": "runtime_transport_faults_003"
+    },
+    {
+      "seed": 23301,
+      "session_group": "runtime_crash_resume",
+      "session_id": "runtime_crash_resume_001"
+    },
+    {
+      "seed": 23302,
+      "session_group": "runtime_crash_resume",
+      "session_id": "runtime_crash_resume_002"
+    },
+    {
+      "seed": 23303,
+      "session_group": "runtime_crash_resume",
+      "session_id": "runtime_crash_resume_003"
+    },
+    {
+      "seed": 23401,
+      "session_group": "runtime_load_clock",
+      "session_id": "runtime_load_clock_001"
+    },
+    {
+      "seed": 23402,
+      "session_group": "runtime_load_clock",
+      "session_id": "runtime_load_clock_002"
+    },
+    {
+      "seed": 23403,
+      "session_group": "runtime_load_clock",
+      "session_id": "runtime_load_clock_003"
+    }
+  ]
+}
