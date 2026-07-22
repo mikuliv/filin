@@ -1,0 +1,12 @@
+{
+  "feature_vectors_in_events": 0,
+  "labels_in_events": 0,
+  "negative_fixture_count": 8,
+  "negative_fixture_detection_rate": 1.0,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 1,
+  "privacy_policy_passed": false,
+  "raw_ack_runtime_only": true,
+  "schema_version": "v031551_privacy_v1",
+  "target_count": 18
+}

@@ -1,0 +1,101 @@
+{
+  "contract_fixture_passed": true,
+  "fixtures_excluded_from_canonical_reconciliation": true,
+  "negative_fixture_count": 10,
+  "negative_rejected_count": 10,
+  "negatives": [
+    {
+      "actual_error_code": "candidate_not_registered",
+      "expected_error_code": "candidate_not_registered",
+      "fixture": "unknown_candidate",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "candidate_artifact_hash_mismatch",
+      "expected_error_code": "candidate_artifact_hash_mismatch",
+      "fixture": "wrong_artifact_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "candidate_manifest_hash_mismatch",
+      "expected_error_code": "candidate_manifest_hash_mismatch",
+      "fixture": "wrong_manifest_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "feature_contract_mismatch",
+      "expected_error_code": "feature_contract_mismatch",
+      "fixture": "wrong_feature_contract",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "preprocessing_hash_mismatch",
+      "expected_error_code": "preprocessing_hash_mismatch",
+      "fixture": "wrong_preprocessing_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "calibration_hash_mismatch",
+      "expected_error_code": "calibration_hash_mismatch",
+      "fixture": "wrong_calibration_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "conformal_hash_mismatch",
+      "expected_error_code": "conformal_hash_mismatch",
+      "fixture": "wrong_conformal_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "state_policy_hash_mismatch",
+      "expected_error_code": "state_policy_hash_mismatch",
+      "fixture": "wrong_state_policy_hash",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "registry_commitment_mismatch",
+      "expected_error_code": "registry_commitment_mismatch",
+      "fixture": "wrong_registry_commitment",
+      "rejected": true
+    },
+    {
+      "actual_error_code": "prediction_linkage_mismatch",
+      "expected_error_code": "prediction_linkage_mismatch",
+      "fixture": "invalid_prediction_linkage",
+      "rejected": true
+    }
+  ],
+  "positive_fixture_count": 7,
+  "positive_passed_count": 7,
+  "positives": [
+    {
+      "accepted": true,
+      "event_type": "decision_observation"
+    },
+    {
+      "accepted": true,
+      "event_type": "alert_emitted"
+    },
+    {
+      "accepted": true,
+      "event_type": "alert_continuation"
+    },
+    {
+      "accepted": true,
+      "event_type": "review_requested"
+    },
+    {
+      "accepted": true,
+      "event_type": "health_event"
+    },
+    {
+      "accepted": true,
+      "event_type": "drop_summary"
+    },
+    {
+      "accepted": true,
+      "event_type": "permanent_rejection_summary"
+    }
+  ],
+  "schema_version": "v031551_contract_fixtures_v1"
+}

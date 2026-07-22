@@ -1,0 +1,18 @@
+{
+  "allowed_provenance_counts": {
+    "deterministic_derivation": 70680,
+    "direct_observation": 45600
+  },
+  "feature_contract_id": "network_features_v2",
+  "feature_count": 51,
+  "feature_provenance_coverage": 1.0,
+  "feature_rows_sha256": "59a53fb450a7ec6ce1b4605a35a7b00a1368db40d8fc1f88a12115751782a828",
+  "future_derived_feature_count": 0,
+  "guessed_feature_count": 0,
+  "hidden_state_derived_feature_count": 0,
+  "label_derived_feature_count": 0,
+  "provenance_record_count": 116280,
+  "provenance_sha256": "df9c61de5624d0ab3b6b5c8ddd1a419803b34f95ae356cfbcde21ba1b013c0d8",
+  "row_count": 2280,
+  "schema_version": "v031551_feature_provenance_v1"
+}

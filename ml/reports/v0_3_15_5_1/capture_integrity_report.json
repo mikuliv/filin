@@ -1,0 +1,10 @@
+{
+  "all_closed_before_processing": true,
+  "capture_count": 2400,
+  "capture_integrity_passed": true,
+  "capture_manifest_sha256": "c4c8aab1c4fe3515d39ccc0baf44b3c56a0adbc65967ec0e86ec220f2e66e0f7",
+  "fallback_count": 0,
+  "pcap_overlap_count": 0,
+  "schema_version": "v031551_capture_integrity_v1",
+  "unique_pcap_count": 2400
+}

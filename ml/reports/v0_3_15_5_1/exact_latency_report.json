@@ -1,0 +1,31 @@
+{
+  "batch_linkage_passed": true,
+  "capture_to_sink_p50_ms": 4434.74225,
+  "capture_to_sink_p95_ms": 5986.902037500001,
+  "capture_to_sink_p99_ms": 7539.061825,
+  "complete_trace_count": 2280,
+  "exact_latency_policy_passed": false,
+  "exporter_p50_ms": 2660.84535,
+  "exporter_p95_ms": 3592.1412225000004,
+  "exporter_p99_ms": 4523.437094999999,
+  "negative_latency_count": 0,
+  "ordering_violation_count": 0,
+  "required_timestamp_count": 11,
+  "restart_linkage_passed": true,
+  "retry_linkage_passed": true,
+  "schema_version": "v031551_latency_v1",
+  "single_monotonic_clock_domain": true,
+  "timestamp_fields": [
+    "capture_closed_monotonic_ns",
+    "zeek_completed_monotonic_ns",
+    "feature_ready_monotonic_ns",
+    "prediction_ready_monotonic_ns",
+    "event_created_monotonic_ns",
+    "spool_durable_monotonic_ns",
+    "queue_registered_monotonic_ns",
+    "send_started_monotonic_ns",
+    "ack_received_monotonic_ns",
+    "checkpoint_committed_monotonic_ns",
+    "sink_committed_monotonic_ns"
+  ]
+}

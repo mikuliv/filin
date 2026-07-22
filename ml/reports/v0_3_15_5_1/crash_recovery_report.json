@@ -1,0 +1,15 @@
+{
+  "checkpoint_restore_passed": true,
+  "crash_after_ack_before_checkpoint_passed": true,
+  "crash_recovery_passed": true,
+  "duplicate_suppression_passed": true,
+  "event_identity_preserved": true,
+  "exporter_restart_passed": true,
+  "hash_chain_continuity_passed": true,
+  "prediction_identity_preserved": true,
+  "repeated_inference_count": 0,
+  "restart_pending_spool_passed": true,
+  "schema_version": "v031551_crash_recovery_v1",
+  "sink_restart_passed": true,
+  "state_preserved": true
+}

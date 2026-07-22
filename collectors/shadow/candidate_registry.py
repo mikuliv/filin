@@ -52,6 +52,19 @@ def load_registry() -> tuple[dict, dict]:
     return json.loads(REGISTRY_PATH.read_text(encoding="utf-8")), json.loads(COMMITMENT_PATH.read_text(encoding="utf-8"))
 
 
+def validate_registry_artifacts() -> bool:
+    registry, commitment = load_registry()
+    canonical = json.dumps(registry, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode()
+    if sha256_bytes(REGISTRY_PATH.read_bytes()) != commitment["candidate_registry_sha256"]:
+        raise ContractValidationError("registry_commitment_mismatch")
+    if sha256_bytes(canonical) != commitment["candidate_registry_commitment_sha256"]:
+        raise ContractValidationError("registry_commitment_mismatch")
+    ids = [item["candidate_id"] for item in registry["candidates"]]
+    if len(ids) != len(set(ids)):
+        raise ContractValidationError("candidate_not_registered")
+    return True
+
+
 def _privacy_findings(value: object) -> list[str]:
     import re
     text = json.dumps(value, ensure_ascii=False, sort_keys=True)
@@ -82,6 +95,7 @@ def validate_v2(raw: bytes | str | dict, *, allowlist: set[str] | None = None, p
     errors = sorted(V2_VALIDATOR.iter_errors(event), key=lambda error: list(error.path))
     if errors: raise ContractValidationError("schema_validation_failed")
     if event["event_contract_version"] != "shadow_event_v2": raise ContractValidationError("unsupported_event_contract")
+    validate_registry_artifacts()
     registry, commitment = load_registry()
     if event["candidate_ref"]["registry_commitment_sha256"] != commitment["candidate_registry_commitment_sha256"]: raise ContractValidationError("registry_commitment_mismatch")
     entries = {item["candidate_id"]: item for item in registry["candidates"]}

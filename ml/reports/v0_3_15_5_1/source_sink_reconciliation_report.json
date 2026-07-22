@@ -1,0 +1,21 @@
+{
+  "candidate_events_rejected_before_spool": 0,
+  "candidate_registry_validation_passed": true,
+  "candidate_schema_validation_passed": true,
+  "canonical_accounted_drop_count": 0,
+  "canonical_pending_event_count": 0,
+  "canonical_permanent_rejection_count": 0,
+  "canonical_sink_unique_event_count": 2280,
+  "canonical_source_event_count": 2280,
+  "event_sets_equal": true,
+  "final_backlog": 0,
+  "first_alert_lost_count": 0,
+  "idempotency_collision_count": 0,
+  "review_event_lost_count": 0,
+  "schema_version": "v031551_reconciliation_v1",
+  "semantic_duplicate_count": 0,
+  "source_sink_reconciliation_passed": true,
+  "transport_attempt_count": 2280,
+  "transport_duplicate_count": 0,
+  "unaccounted_drop_count": 0
+}

@@ -1,0 +1,15 @@
+{
+  "atomic_checkpoint": true,
+  "batch_size": 50,
+  "bounded_queue": true,
+  "delivery_semantics": "at-least-once",
+  "durable_spool": true,
+  "external_network_allowed": false,
+  "integrated_runtime_passed": true,
+  "local_mock_sink": true,
+  "profile": "C",
+  "schema_version": "v031551_runtime_config_v1",
+  "strict_ack": true,
+  "token_bucket": true,
+  "workers": 2
+}
