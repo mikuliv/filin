@@ -1,0 +1,254 @@
+{
+  "claim_count": 10,
+  "claims": [
+    {
+      "alternative_explanations": [],
+      "claim_id": "historical_preserved",
+      "claim_text": "v0.3.15.2 and backend objects are unchanged",
+      "claim_type": "observed_fact",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/historical_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "911aab548c5ffaf548ce790e80ef89cb440fd0463689e108b432371c9b8b2504"
+      ]
+    },
+    {
+      "alternative_explanations": [],
+      "claim_id": "episode_coverage",
+      "claim_text": "All 120 scheduled episodes have full decision-path records",
+      "claim_type": "observed_fact",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/failure_episode_ledger.json"
+      ],
+      "supporting_sha256": [
+        "9a7458262261ebd13632b67c67c437a22e3e4276e7d6fa84ff889be4beb6d1f8"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "Subtype generalization remains possible"
+      ],
+      "claim_id": "auth_scenario_defect",
+      "claim_text": "auth_failures capture does not contain an observable authentication failure",
+      "claim_type": "confirmed_root_cause",
+      "confidence": "confirmed",
+      "counter_evidence": [
+        "Gate marks all windows attack"
+      ],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "No application authentication protocol was generated"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/auth_failures_definition_comparison.json",
+        "ml/reports/v0_3_15_3/auth_failures_feature_comparison.json"
+      ],
+      "supporting_sha256": [
+        "88c39df518ffe45dd9ef19ab6037552887f46508ceab2df8f2ae18ae3110d5ef",
+        "da8ca153fe411eef0a9b39704b8a6ce9d644204adb07c9299d5e49c56ff4ab52"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "Synthetic profile intentionally encoded class"
+      ],
+      "claim_id": "feature_extraction_defect",
+      "claim_text": "Application semantics are inferred without matching Zeek application logs",
+      "claim_type": "confirmed_root_cause",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "This invalidates semantic equivalence, not historical file integrity"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/feature_semantics_audit.json"
+      ],
+      "supporting_sha256": [
+        "6216969e17409f71bb7ca4210ab9e0158ed3411ee9cd70c7c8891c71e06cb464"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "Distribution or calibration mismatch"
+      ],
+      "claim_id": "conformal_abstention",
+      "claim_text": "126 empty sets map exactly to 126 attack review windows",
+      "claim_type": "confirmed_root_cause",
+      "confidence": "confirmed",
+      "counter_evidence": [
+        "For auth it follows a wrong subtype"
+      ],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "Raw scores unavailable"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/calibration_conformal_analysis.json",
+        "ml/reports/v0_3_15_3/model_decision_funnel.json"
+      ],
+      "supporting_sha256": [
+        "900c775d0c849e8318f567a6edfc9bfdc7b2658cd572d81d222423a0c2077ce5",
+        "09e62d500ee6d61a1ae8eae7ccd61d300276928009c99e4ff66f7b6b56f51877"
+      ]
+    },
+    {
+      "alternative_explanations": [],
+      "claim_id": "state_not_primary",
+      "claim_text": "State policy did not suppress any conformal-eligible attack event",
+      "claim_type": "diagnostic_result",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "Post-hoc diagnostic only"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/episode_state_decomposition.json"
+      ],
+      "supporting_sha256": [
+        "d64423da2a050b03e5e3aa031e60c88e66c11dec5e5f7c4ff003af3c0a94deb1"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "A model weakness may remain"
+      ],
+      "claim_id": "training_unresolved",
+      "claim_text": "Training necessity cannot be confirmed before scenario and feature correction",
+      "claim_type": "recommended_action",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "Corrected development evidence required"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/training_necessity_decision.json"
+      ],
+      "supporting_sha256": [
+        "dfab2bc518e1801a18b2bd4e7e88fd5ad447ffe0bce821e19508c1afd2460e25"
+      ]
+    },
+    {
+      "alternative_explanations": [],
+      "claim_id": "instrumentation_ready",
+      "claim_text": "Future ACK, latency and CPU evidence contracts are additive and tested",
+      "claim_type": "diagnostic_result",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "Synthetic fixtures only"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/instrumentation_equivalence_report.json",
+        "ml/reports/v0_3_15_3/raw_ack_evidence_report.json",
+        "ml/reports/v0_3_15_3/latency_instrumentation_report.json"
+      ],
+      "supporting_sha256": [
+        "5735471bf54b66351eaf17d6e15c3f877c2151fd3c941779028492a6c15dbde2",
+        "341f95b3579da69bfc048c177e62da8206c4a0b83b3b96e089b8b48583aa3fd9",
+        "8588ea2d3ca13505d187a70c7440d10885ca071a76ba90323cfd4109c709b19d"
+      ]
+    },
+    {
+      "alternative_explanations": [],
+      "claim_id": "historical_evidence_gaps",
+      "claim_text": "Historical exact latency and raw ACK evidence remain unavailable",
+      "claim_type": "evidence_limitation",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "Cannot repair v0.3.15.2 retroactively"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/evidence_availability_matrix.json"
+      ],
+      "supporting_sha256": [
+        "496d69c00b717e1a0f5bac822ceffb3de563101028f5a86e46c7e2f01858d1bd"
+      ]
+    },
+    {
+      "alternative_explanations": [
+        "Track A/C if later evidence removes one mechanism"
+      ],
+      "claim_id": "next_track",
+      "claim_text": "Mixed redevelopment is the selected next-cycle track",
+      "claim_type": "recommended_action",
+      "confidence": "confirmed",
+      "counter_evidence": [],
+      "historical_or_diagnostic": "diagnostic",
+      "limitations": [
+        "v0.3.15.4 remains proposed"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_3.analysis",
+      "producing_test": "ml/tests/test_v03153_regression_analysis.py",
+      "status": "supported",
+      "superseded_by": null,
+      "supersedes": null,
+      "supporting_artifacts": [
+        "ml/reports/v0_3_15_3/next_cycle_decision_matrix.json"
+      ],
+      "supporting_sha256": [
+        "4c953f4845c0c0c7fc386a5c38eec98a7a6fce188ecdb9dc97588a5576496626"
+      ]
+    }
+  ],
+  "schema_version": "v03153_claim_ledger_v1"
+}

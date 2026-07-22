@@ -1,0 +1,25 @@
+{
+  "behavioral_tests_passed": true,
+  "compileall": {
+    "backend": true,
+    "collectors": true,
+    "lab": true,
+    "ml": true,
+    "tools": true
+  },
+  "compileall_passed": true,
+  "failed_count": 0,
+  "passed_count": 941,
+  "schema_version": "v03153_test_report_v1",
+  "skipped_count": 0,
+  "stage_specific_passed_tests": 23,
+  "stage_specific_required_tests": 23,
+  "status": "final",
+  "suites": {
+    "backend_tests": 1,
+    "collectors_shadow_tests": 137,
+    "collectors_shadow_trial_tests": 69,
+    "ml_tests": 734
+  },
+  "warning_count": 3
+}

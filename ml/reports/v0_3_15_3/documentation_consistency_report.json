@@ -1,0 +1,13 @@
+{
+  "blocked_stage": "v0.3.16",
+  "current_completed_stage": "v0.3.15.3",
+  "documentation_validator_passed": true,
+  "historical_limitations_preserved": true,
+  "latest_regression_analysis": "v0.3.15.3",
+  "latest_runtime_trial": "v0.3.15.2",
+  "links_verified": true,
+  "next_allowed_stage": "v0.3.15.4",
+  "schema_version": "v03153_documentation_v1",
+  "semantic_documentation_validator_passed": true,
+  "status_source": "docs/status/project-status.yaml"
+}
