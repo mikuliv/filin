@@ -1,0 +1,77 @@
+schema_version: v03154_protocol_candidate_v1
+stage: v0.3.15.4
+status: proposed_not_frozen
+selected_track: Track E — mixed redevelopment
+problem_statement: Correct observable scenario definitions and feature extraction,
+  then develop decision policy without treating v0.3.15.2 as an independent test.
+confirmed_root_causes:
+- 'scenario_generation_defect: auth_failures and web_probe application intent is not
+  present in raw Zeek evidence'
+- 'feature_extraction_defect: application fields are inferred without corresponding
+  logs'
+- 'conformal_abstention: 126 empty sets map exactly to 126 review windows'
+unresolved_causes:
+- cross-Zeek-version effect for stages whose exact versions/raw logs are absent
+- calibration-only suppression count
+- candidate subtype generalization may remain weak after scenario correction
+- calibration layer may amplify uncertainty; raw scores unavailable
+development_data:
+- v0.3.15.2 error-analysis copy only
+- new grouped development scenarios
+prohibited_test_reuse:
+- v0.3.15.2 as test or blind holdout
+- v0.3.13 as tuning data without a separately frozen status change
+development_plan:
+  scenario: observable behavior labels and valid application/transport fixtures
+  feature_pipeline: derive fields only from actual Zeek logs and explicit missingness
+  training: decision deferred until corrected-data diagnostic gate
+  calibration: development/calibration partition only
+  conformal: class-conditional development partition only
+  state_policy: versioned and separated from model changes
+data_split:
+- development/training
+- calibration/validation
+- closed holdout
+leakage_controls:
+- no holdout access for feature, threshold, calibration, conformal, state or candidate
+  selection
+grouping_rules:
+- split by episode, session and scenario family
+- never split related windows
+baseline_comparison: frozen v0.3.11 on the same future holdout
+new_candidate_naming: v03154:<artifact_sha256_prefix>
+required_new_holdout:
+  new_sessions: true
+  new_seeds: true
+  new_captures: true
+  new_scenarios: true
+  new_predictions: true
+  new_labels: true
+  new_frozen_protocol: true
+instrumentation_requirements:
+- passive_latency_trace_v1
+- passive_cpu_sample_v1
+- synthetic_ack_evidence_v1
+privacy_requirements:
+- raw ACK runtime-only
+- pre-sanitization hash and scan
+- negative fixtures
+runtime_requirements:
+- additive instrumentation equivalence
+- no backend or production connection
+scientific_gates: freeze before data collection; include aggregate and per-class window
+  metrics
+per_class_gates: freeze minimum recall/F1 for five observable behavior classes
+episode_gates: freeze recall, precision, FAR and second-window detection
+evidence_gates:
+- exact capture-to-sink trace
+- normalized CPU semantics
+- raw synthetic ACK evidence and privacy scan
+invalidation_rules:
+- holdout access before prediction
+- fit or policy selection on holdout
+- missing required evidence
+- scenario/label mismatch
+readiness_policy:
+  v0.3.16_allowed: false
+  requires_future_positive_v0.3.15.5: true
