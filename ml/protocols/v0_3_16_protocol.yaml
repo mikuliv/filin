@@ -1,0 +1,230 @@
+schema_version: v0316_protocol_v1
+stage: v0.3.16
+title: isolated staging connector and reference receiver
+status: frozen_before_implementation_and_first_capture
+revision: 1
+source_head: 9b65d13c3861128dcc0432b11ee8c46794f12431
+source_origin_main_observed: 9b65d13c3861128dcc0432b11ee8c46794f12431
+backend_tree_sha256: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+purpose: prove isolated durable transport of unchanged shadow_event_v2 events through a staging connector to a non-backend reference receiver
+scientific_evidence:
+  independent_holdout: v0.3.15.5
+  independent_holdout_overall_result: false
+  runtime_trial: v0.3.15.5.1
+  runtime_trial_result: true
+  immutable: true
+  recompute_metrics: false
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract_id: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  event_contract: shadow_event_v2
+  event_contract_sha256: 38c7cab290641b3876220b06891b9a85db8a961765d65887cb8396ec1aaa8149
+  historical_event_contract_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  registry_sha256: 31aa0dc0900c8a699e73ce8760bfdf4b99377e8403fd0a96b34e823170d8dc9d
+  registry_commitment_sha256: e0058993cb47fc2fc3487e41900346832532767b148b55cfa8ef4eb26349f24c
+  campaign_allowlist: [v03154:65a3dd912d845bc1]
+  replacement_allowed: false
+architecture:
+  components: [sensor-runtime, staging-connector, reference-receiver]
+  separate_processes: true
+  separate_containers: true
+  reference_receiver_is_backend: false
+  backend_imports_allowed: false
+  backend_configuration_allowed: false
+  backend_writes_allowed: false
+  production_simulation_allowed: false
+  trust_boundaries: [sensor_to_connector, connector_to_receiver]
+topology:
+  sensor_connector_network: filin_sensor_connector_internal
+  connector_receiver_network: filin_connector_receiver_internal
+  networks_internal: true
+  sensor_networks: [filin_sensor_connector_internal]
+  connector_networks: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+  receiver_networks: [filin_connector_receiver_internal]
+  published_ports: []
+  host_network: false
+  external_dns: false
+  external_routes: false
+container_profile:
+  python_image: python@sha256:e031123e3d85762b141ad1cbc56452ba69c6e722ebf2f042cc0dc86c47c0d8b3
+  zeek_image: zeek/zeek@sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3
+  pull_policy: never
+  non_root: true
+  read_only_rootfs: true
+  no_new_privileges: true
+  capability_drop: [ALL]
+  tmpfs_required: true
+  separate_volumes: true
+  resource_limits_required: true
+  privileged: false
+  docker_socket: false
+  host_filesystem_mounts: false
+transport_security:
+  profile: staging_transport_security_v1
+  protocol: TLSv1.3
+  mutual_tls: true
+  sensor_connector_ca: sensor_connector_test_ca
+  connector_receiver_ca: connector_receiver_test_ca
+  synthetic_certificates_only: true
+  san_eku_fingerprint_validation: true
+  certificate_serials:
+    sensor_client_a: 3161001
+    connector_ingress_server_a: 3161002
+    connector_delivery_client_a: 3162001
+    connector_delivery_client_b: 3162002
+    receiver_server_a: 3162003
+    receiver_server_b: 3162004
+  rotation: connector_delivery_client_a_to_b
+  rotation_grace_seconds: 2
+  old_certificate_rejected_after_grace: true
+  private_material_git_allowed: false
+connector_ingress:
+  contract: connector_ingress_v1
+  method: POST
+  path: /staging-connector/v1/events
+  max_events: 50
+  compression_allowed: false
+  additional_properties_allowed: false
+  one_candidate_per_request: true
+  event_contract: shadow_event_v2
+  body_sha256_required: true
+  ack_contract: connector_ingress_ack_v1
+  ack_only_after_durable_journal_commit: true
+  journal:
+    engine: sqlite
+    wal: true
+    synchronous: FULL
+    foreign_keys: true
+    unique_event_id: true
+    canonical_event_bytes: true
+    fsync_before_ack: true
+delivery:
+  contract: staging_event_batch_v1
+  method: POST
+  path: /reference-receiver/v1/event-batches
+  max_events: 50
+  workers: 2
+  batch_size: 50
+  bounded_priority_queue: true
+  token_bucket: true
+  retry_bounded: true
+  delivery: at_least_once
+  checkpoint_only_after_strict_durable_receiver_ack: true
+  compaction_only_after_strict_durable_receiver_ack: true
+  previous_batch_commitment_required: true
+receiver:
+  ack_contract: receiver_batch_ack_v1
+  ack_only_after_durable_commit: true
+  storage:
+    engine: sqlite
+    wal: true
+    synchronous: FULL
+    foreign_keys: true
+    busy_timeout_ms: 5000
+    tables: [receiver_events, batches, commits, acks, rejections, registry_snapshots]
+    unique_event_id: true
+    unique_idempotency_key: true
+  validation_order: [mtls, batch_schema, request_body_sha256, registry_commitment, event_contract_v2, registry_lookup, candidate_allowlist, event_sha256, prediction_linkage, privacy, idempotency, durable_transaction, commit_sha256, ack_after_commit]
+  health_path: /health
+  readiness_path: /ready
+  readiness_requires: [registry, journal, database, valid_tls_certificate]
+campaign:
+  campaign_id: filin_v0_3_16_staging_transport
+  label_free: true
+  sessions:
+    - {session_id: staging_baseline_001, seed: 24101}
+    - {session_id: staging_baseline_002, seed: 24102}
+    - {session_id: staging_baseline_003, seed: 24103}
+    - {session_id: staging_transport_security_001, seed: 24201}
+    - {session_id: staging_transport_security_002, seed: 24202}
+    - {session_id: staging_transport_security_003, seed: 24203}
+    - {session_id: staging_retry_idempotency_001, seed: 24301}
+    - {session_id: staging_retry_idempotency_002, seed: 24302}
+    - {session_id: staging_retry_idempotency_003, seed: 24303}
+    - {session_id: staging_crash_backpressure_001, seed: 24401}
+    - {session_id: staging_crash_backpressure_002, seed: 24402}
+    - {session_id: staging_crash_backpressure_003, seed: 24403}
+  prescribed_seed_overlap: [23101, 23102, 23103, 23201, 23202, 23203, 23301, 23302, 23303, 23401, 23402, 23403]
+  replacement_seeds_selected_before_first_capture: true
+  captures_per_session: 200
+  warmup_per_session: 10
+  scored_per_session: 190
+  total_captures: 2400
+  total_warmup: 120
+  total_scored: 2280
+  feature_values_expected: 116280
+  zeek_container_required: true
+  fallback_allowed: false
+  independence_against: [v0.3.15.2, v0.3.15.4, v0.3.15.5, v0.3.15.5.1]
+  required_zero_overlap: [session_id, seed, capture_id, pcap_sha256, prediction_id, event_id, connector_instance_id, receiver_instance_id, certificate_serial, exact_parameters]
+fault_schedule:
+  required_count: 24
+  names: [receiver_unavailable, connection_timeout, connection_reset, http_429_retry_after, http_503, slow_receiver, malformed_ack, unknown_ack, expired_client_certificate, untrusted_certificate, wrong_receiver_san, missing_client_certificate, plaintext_attempt, certificate_rotation, connector_crash_before_journal_commit, connector_crash_after_journal_before_ingress_ack, connector_crash_after_send_before_receiver_ack, receiver_crash_before_commit, receiver_crash_after_commit_before_ack, receiver_restart_wal, connector_restart_pending_journal, receiver_storage_temporarily_unavailable, duplicate_batch, bounded_queue_overload]
+storage_faults: [volume_unavailable, disk_full_simulation, wal_replay, database_lock, interrupted_transaction, corruption_copy, connector_restart, receiver_restart]
+security_negative_tests: [expired_certificate, not_yet_valid_certificate, untrusted_ca, wrong_san, wrong_eku, revoked_certificate, missing_client_certificate, plaintext, tls_downgrade, weak_cipher, wrong_batch_hash, wrong_event_hash, wrong_registry_commitment, wrong_candidate, partial_ack, idempotency_collision]
+timestamps:
+  monotonic_fields: [sensor_event_created, sensor_outbox_durable, connector_request_started, connector_ingress_received, connector_journal_durable, connector_ingress_ack_sent, connector_batch_created, connector_send_started, receiver_received, receiver_validation_completed, receiver_commit_completed, receiver_ack_sent, connector_ack_received, connector_checkpoint_committed]
+  clock_attestation_required: true
+performance_gates:
+  receiver_durable_throughput_median_min_events_s: 10
+  sensor_to_receiver_p95_ms_max: 2000
+  sensor_to_receiver_p99_ms_max: 3000
+  connector_ingress_ack_p95_ms_max: 500
+  connector_to_receiver_p95_ms_max: 1500
+  final_backlog: 0
+  sustained_backlog: 0
+  connector_peak_rss_mib_max: 256
+  receiver_peak_rss_mib_max: 256
+  combined_peak_rss_mib_max: 512
+  swap_growth_mib: 0
+  normalized_cpu_average_percent_max_exclusive: 75
+  normalized_cpu_p95_percent_max_exclusive: 95
+  unbounded_growth_allowed: false
+  tls_session_reuse_required: true
+no_fit:
+  fit_call_count: 0
+  partial_fit_call_count: 0
+  calibration_fit_call_count: 0
+  conformal_fit_call_count: 0
+  feature_selection_call_count: 0
+  threshold_selection_call_count: 0
+  candidate_replacement_count: 0
+privacy:
+  findings_allowed: 0
+  secrets_allowed: 0
+  negative_fixture_detection_rate: 1.0
+  raw_runtime_artifacts_git_allowed: false
+reconciliation:
+  expected_event_count: 2280
+  equal_sets: [sensor_source, connector_durable, connector_acknowledged, receiver_durable]
+  pending_allowed: 0
+  collisions_allowed: 0
+  unaccounted_allowed: 0
+resume:
+  strict_hash_verification: true
+  corruption_case_count: 16
+  restart_invariance_required: true
+promotion:
+  all_59_gates_required: true
+  next_allowed_stage_on_pass: v0.3.17
+  candidate_ready_for_v0_3_17_controlled_local_shadow_rehearsal_on_pass: true
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  backend_integration_allowed: false
+  shadow_mode_allowed: false
+  production_ready: false
+  production_connection_allowed: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+  real_organization_trial_allowed: false
+prohibitions: [model_fit, partial_fit, calibration_fit, conformal_fit, feature_selection, threshold_selection, candidate_replacement, historical_stage_change, shadow_event_v1_change, shadow_event_v2_change, registry_change, backend_change, backend_import, backend_write, external_network, host_network, published_port, production_connection, real_credentials, real_certificate, automatic_action, network_block, attack, denial_of_service]
+invalidation:
+  protocol_change_after_freeze: invalidate_and_create_new_revision_sessions_seeds_certificates_and_runtime_ids
+  capture_before_protocol_commit: invalidate_campaign
+  candidate_or_registry_mismatch: stop_and_report_integrity_failure
+  label_access: invalidate_campaign
+  any_fit_or_tuning: invalidate_campaign
+  external_network_attempt: fail_stage
