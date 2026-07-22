@@ -1,0 +1,146 @@
+name: filin-v0317-rehearsal
+services:
+  traffic-source:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    build: {context: .., dockerfile: rehearsal/Dockerfile, network: none}
+    command: ["rehearsal.traffic_source", "--control", "/run/rehearsal/control.json", "--runtime", "/run/rehearsal"]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}:/run/rehearsal:rw
+    networks: [filin_sensor_connector_internal]
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 32
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from pathlib import Path; assert Path('/run/rehearsal').is_dir()"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  reference-receiver:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["staging.reference_receiver.app", "--db", "/var/lib/filin/receiver.sqlite"]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - receiver_data:/var/lib/filin
+      - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/receiver:/run/tls:ro
+    environment:
+      TLS_CERT: /run/tls/server.pem
+      TLS_KEY: /run/tls/server-key.pem
+      TLS_CLIENT_CA: /run/tls/client-ca.pem
+      RECEIVER_INSTANCE_ID: ${FILIN_V0317_RECEIVER_INSTANCE_ID:-receiver-v0317}
+    networks: [filin_connector_receiver_internal, filin_receiver_operator_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from pathlib import Path; assert Path('/var/lib/filin/receiver.sqlite').is_file()"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  staging-connector:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.connector_app", "--db", "/var/lib/filin/connector.sqlite"]
+    depends_on: [reference-receiver]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - connector_data:/var/lib/filin
+      - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/connector:/run/tls:ro
+    environment:
+      INGRESS_TLS_CERT: /run/tls/ingress-server.pem
+      INGRESS_TLS_KEY: /run/tls/ingress-server-key.pem
+      INGRESS_TLS_CLIENT_CA: /run/tls/ingress-client-ca.pem
+      DELIVERY_TLS_CERT: /run/tls/delivery-client.pem
+      DELIVERY_TLS_KEY: /run/tls/delivery-client-key.pem
+      DELIVERY_TLS_CA: /run/tls/delivery-server-ca.pem
+      CONNECTOR_INSTANCE_ID: ${FILIN_V0317_CONNECTOR_INSTANCE_ID:-connector-v0317}
+    networks: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from pathlib import Path; assert Path('/var/lib/filin/connector.sqlite').is_file()"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  sensor-runtime:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.sensor_daemon", "--events", "/run/input/events.jsonl"]
+    depends_on: [staging-connector]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}:/run/input:ro
+      - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/sensor:/run/tls:ro
+      - sensor_data:/var/lib/filin
+    environment:
+      TLS_CERT: /run/tls/client.pem
+      TLS_KEY: /run/tls/client-key.pem
+      TLS_CA: /run/tls/server-ca.pem
+      SENSOR_INSTANCE_ID: ${FILIN_V0317_SENSOR_INSTANCE_ID:-sensor-v0317}
+    networks: [filin_sensor_connector_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 64
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "from pathlib import Path; assert Path('/run/input').is_dir()"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  operator-view:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.operator_view", "--receiver-db", "/run/receiver/receiver.sqlite"]
+    depends_on: [reference-receiver]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - receiver_data:/run/receiver:ro
+    networks: [filin_receiver_operator_internal]
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 32
+    restart: "no"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; assert urllib.request.urlopen('http://127.0.0.1:7080/health', timeout=2).status == 200"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+networks:
+  filin_sensor_connector_internal: {internal: true}
+  filin_connector_receiver_internal: {internal: true}
+  filin_receiver_operator_internal: {internal: true}
+volumes:
+  sensor_data: {}
+  connector_data: {}
+  receiver_data: {}

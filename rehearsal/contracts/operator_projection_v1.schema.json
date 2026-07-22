@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://contracts/operator_projection_v1",
+  "title": "Санитарная read-only проекция события для локальной репетиции",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["projection_contract_version", "projection_id", "generated_at", "candidate_id", "event_contract_version", "source_event_id", "event_type", "event_timestamp", "session_pseudonym", "activity_pseudonym", "state", "confidence_band", "conformal_disposition", "continuity", "receiver_commit_ref", "delivery_status", "evidence_refs"],
+  "properties": {
+    "projection_contract_version": {"const": "operator_projection_v1"},
+    "projection_id": {"type": "string", "pattern": "^opr_[0-9a-f]{64}$"},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "candidate_id": {"const": "v03154:65a3dd912d845bc1"},
+    "event_contract_version": {"const": "shadow_event_v2"},
+    "source_event_id": {"type": "string", "pattern": "^evt_[0-9a-f]{64}$"},
+    "event_type": {"enum": ["decision_observation", "alert_emitted", "alert_continuation", "review_requested", "health_event", "drop_summary", "permanent_rejection_summary"]},
+    "event_timestamp": {"type": "string", "format": "date-time"},
+    "session_pseudonym": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "activity_pseudonym": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "state": {"type": ["string", "null"], "maxLength": 64},
+    "confidence_band": {"type": "string", "maxLength": 64},
+    "conformal_disposition": {"type": "string", "maxLength": 64},
+    "continuity": {"type": "object", "additionalProperties": false, "required": ["causal_order", "previous"], "properties": {"causal_order": {"type": "integer", "minimum": 0}, "previous": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}}},
+    "receiver_commit_ref": {"type": "string", "pattern": "^rrc_[0-9a-f]{32}$"},
+    "delivery_status": {"const": "durable"},
+    "evidence_refs": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "string"}}
+  }
+}
