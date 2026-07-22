@@ -1,0 +1,17 @@
+{
+  "backend_test_count": 1,
+  "behavioral_tests_passed": true,
+  "collectors_shadow_test_count": 137,
+  "collectors_shadow_trial_test_count": 69,
+  "compileall_backend_passed": true,
+  "compileall_collectors_passed": true,
+  "compileall_lab_passed": true,
+  "compileall_ml_passed": true,
+  "compileall_tools_passed": true,
+  "failed": 0,
+  "ml_test_count": 900,
+  "schema_version": "v031551_test_report_v1",
+  "skipped_mandatory": 0,
+  "status": "passed",
+  "total_test_count": 1107
+}

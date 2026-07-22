@@ -1,0 +1,534 @@
+{
+  "claims": [
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C001",
+      "claim_text": "v1_unchanged",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "shadow_event_v1_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "9fbacae53d3605dd9012ed478a5acf94ea8e2fbf7dbbd821405e23572b278496"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C002",
+      "claim_text": "v2_created",
+      "claim_type": "contract_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "shadow_event_v2_contract_report.json"
+      ],
+      "supporting_sha256": [
+        "fb3de7f68fa1e2bb810c1ac0c8bfd6760ba203db7daccb1d549af91202d18a08"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C003",
+      "claim_text": "registry_frozen",
+      "claim_type": "registry_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "candidate_registry_commitment.json"
+      ],
+      "supporting_sha256": [
+        "d5e0dd310e895fc89af3e37e15743ff750b6ec3c127752a348c76b6e4883cba9"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C004",
+      "claim_text": "candidate_identity_verified",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "candidate_runtime_lock.json"
+      ],
+      "supporting_sha256": [
+        "8afbd1250283c098e46f781fcbbcc0cd15483764242f4fe5c98cd31505d98f5a"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C005",
+      "claim_text": "compatibility_matrix",
+      "claim_type": "contract_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "compatibility_matrix.json"
+      ],
+      "supporting_sha256": [
+        "95c1d556998fa6d086ac3acdcfbb41b1776de9e15cae7cb0726e2441a244e9e6"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C006",
+      "claim_text": "scientific_anchor_verified",
+      "claim_type": "evidence_composition",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "scientific_evidence_anchor.json"
+      ],
+      "supporting_sha256": [
+        "7c536f16b2ff9770c72f99e1a334847a973d646aa10e4098543742e3367980cc"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C007",
+      "claim_text": "campaign_independence",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "capture_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "91f53a3107b0686a63d8112c68bf645259a6bebdf1dbcd65ba0f6be6c5790aaf"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C008",
+      "claim_text": "no_fit",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "no_fit_audit.json"
+      ],
+      "supporting_sha256": [
+        "517012ef5d72da2b7d62f666c1d9983b05ffb4d94d64038a578bbf1550aff0ef"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C009",
+      "claim_text": "prediction_integrity",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "prediction_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "955d74ffecb9fc2a4490095d2ed9f9a8828e1b9b1b4c1b349061909b7e388e9e"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C010",
+      "claim_text": "candidate_events_accepted",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "integrated_runtime_report.json"
+      ],
+      "supporting_sha256": [
+        "874543d3c996136821470a8b5ca3e844dacf0ba729803aff23d72ad660923163"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C011",
+      "claim_text": "spool_reached",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "integrated_runtime_report.json"
+      ],
+      "supporting_sha256": [
+        "874543d3c996136821470a8b5ca3e844dacf0ba729803aff23d72ad660923163"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C012",
+      "claim_text": "sink_reached",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "source_sink_reconciliation_report.json"
+      ],
+      "supporting_sha256": [
+        "26788047208ff3e78f3cf4bb14bfa9334f2fdbc4c44b5e3e6e20076047057f71"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C013",
+      "claim_text": "fault_subset",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "fault_execution_results.json"
+      ],
+      "supporting_sha256": [
+        "f451e632668fa0cc06c027effa0d7cd6a0a2ce70aaae5623f35f7914620898ef"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C014",
+      "claim_text": "reconciliation",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "source_sink_reconciliation_report.json"
+      ],
+      "supporting_sha256": [
+        "26788047208ff3e78f3cf4bb14bfa9334f2fdbc4c44b5e3e6e20076047057f71"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C015",
+      "claim_text": "hash_chain",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "hash_chain_report.json"
+      ],
+      "supporting_sha256": [
+        "5f27dbcb340b26ebb8a9f87d72ff0bd1d5c9ae861459ec7da1bfced1393de16a"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C016",
+      "claim_text": "exact_latency",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "not_supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "exact_latency_report.json"
+      ],
+      "supporting_sha256": [
+        "29abf6ac6292373ed769c4dd7b79c957b44dd4b322c38d7a5394884dbb429187"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C017",
+      "claim_text": "privacy",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "not_supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "privacy_report.json"
+      ],
+      "supporting_sha256": [
+        "5e9d8e9a594df410c38f14624317891b02c3873baca175c3a299271e9c3002c4"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C018",
+      "claim_text": "strict_resume",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "resume_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "6031a84e108aca37e562748aebffc6a3180eee512775a192d4651420010ff3f4"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C019",
+      "claim_text": "composite_promotion_evidence",
+      "claim_type": "evidence_composition",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "composite_promotion_decision.json"
+      ],
+      "supporting_sha256": [
+        "3306fb0d5392ea4f815def5361411b940a7a218c70897b10be26142ef6c8f418"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C020",
+      "claim_text": "candidate_promotion",
+      "claim_type": "promotion_decision",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "composite_promotion_decision.json"
+      ],
+      "supporting_sha256": [
+        "3306fb0d5392ea4f815def5361411b940a7a218c70897b10be26142ef6c8f418"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C021",
+      "claim_text": "v0316_readiness",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_15_5_1_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "ca9183865235902855f16f80d45be81e9c56cea04ac7a6031cb516fa3d5fa068"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V031551-C022",
+      "claim_text": "shadow_backend_production_prohibition",
+      "claim_type": "limitation",
+      "confidence": "high",
+      "counter_evidence": [],
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled local synthetic runtime trial",
+        "not external validation"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5_1.finalize_stage",
+      "producing_test": "ml/tests/test_v031551_runtime_recovery.py",
+      "status": "supported",
+      "superseded_by": [],
+      "supersedes": [],
+      "supporting_artifacts": [
+        "v0_3_15_5_1_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "ca9183865235902855f16f80d45be81e9c56cea04ac7a6031cb516fa3d5fa068"
+      ]
+    }
+  ],
+  "schema_version": "v031551_claim_ledger_v1",
+  "unsupported_positive_claim_count": 0
+}

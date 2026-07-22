@@ -1,0 +1,14 @@
+{
+  "baseline_comparator_eligible": false,
+  "candidate_v03154_promoted": true,
+  "comparative_superiority_claimed": false,
+  "composite_promotion_evidence_passed": true,
+  "runtime_stage": "v0.3.15.5.1",
+  "schema_version": "v031551_composite_promotion_v1",
+  "scientific_runtime_candidate_identity_equal": true,
+  "scientific_stage": "v0.3.15.5",
+  "v031551_runtime_trial_passed": true,
+  "v03155_holdout_valid": true,
+  "v03155_overall_result_remains_false": true,
+  "v03155_scientific_subpolicies_accepted": true
+}

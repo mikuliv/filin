@@ -1,0 +1,82 @@
+{
+  "acknowledged_events_resent_count": 0,
+  "checkpoint_integrity_passed": true,
+  "corrupted_bundle_rejected": true,
+  "corruption_case_count": 12,
+  "corruption_rejected_count": 12,
+  "negative_cases": [
+    {
+      "case": "changed_artifact",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "removed_artifact",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_v2_schema",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "replaced_registry",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "replaced_registry_commitment",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "replaced_candidate_manifest",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_prediction_manifest",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_event_set",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "changed_hash_chain_root",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "corrupted_checkpoint",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "path_traversal",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_path_or_unknown_schema",
+      "error_code": "hash_or_structure_mismatch",
+      "rejected": true
+    }
+  ],
+  "repeated_bundle_finalization_count": 0,
+  "repeated_capture_count": 0,
+  "repeated_event_generation_count": 0,
+  "repeated_fault_campaign_count": 0,
+  "repeated_feature_extraction_count": 0,
+  "repeated_inference_after_resume_count": 0,
+  "repeated_metrics_finalization_count": 0,
+  "repeated_zeek_count": 0,
+  "schema_version": "v031551_resume_v1",
+  "spool_integrity_passed": true,
+  "strict_resume_hash_verification_passed": true,
+  "strict_resume_passed": true,
+  "verified_artifact_count": 13
+}
