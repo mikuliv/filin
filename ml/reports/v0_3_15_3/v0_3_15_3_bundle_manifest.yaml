@@ -1,0 +1,497 @@
+schema_version: v03153_bundle_v1
+stage: v0.3.15.3
+artifact_count: 39
+artifacts:
+- role: ack_contract
+  path: collectors/shadow/contracts/synthetic_ack_evidence_v1.schema.json
+  size: 1092
+  sha256: 36c26a3031b05c836cd24b986ca6e58fb71d6f89c0c0c3d92d7460932e75ed7d
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: instrumentation_code
+  path: collectors/shadow/diagnostic_evidence.py
+  size: 6020
+  sha256: 9658fa1a70943b76ea1c8b396a1b3662da4935941bc04e4d72f9ceb3bf571bc7
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: experiment_doc
+  path: docs/experiments/v0_3_15_3.md
+  size: 3714
+  sha256: 94e59593e833e3e18e111b0b262002319e646e464f5c43bf37515a190b1f9314
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: proposed_doc
+  path: docs/experiments/v0_3_15_4_proposed.md
+  size: 1069
+  sha256: cde6e2316dbc48e255a88b6ec44a1fa175bb0d0b8ec802862c812e8ac6def7a2
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: protocol
+  path: ml/protocols/v0_3_15_3_protocol.yaml
+  size: 5758
+  sha256: 27da8d5a438fab4d0ea54edd06ee349946666eb305120cb183c242f365cb8841
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: proposed_protocol
+  path: ml/protocols/v0_3_15_4_protocol_candidate.yaml
+  size: 3095
+  sha256: 499f3be01eed50dc7f9d54dd77aca1994d5abd609f35924ab10b26aa727dde7d
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: auth_definition
+  path: ml/reports/v0_3_15_3/auth_failures_definition_comparison.json
+  size: 1298
+  sha256: 88c39df518ffe45dd9ef19ab6037552887f46508ceab2df8f2ae18ae3110d5ef
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - auth_scenario_defect
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: auth_trace
+  path: ml/reports/v0_3_15_3/auth_failures_episode_trace.json
+  size: 91639
+  sha256: d49ede6f7dd48221c8f4d11a2675882ea14cc5778f481c5ed95dce2b24adf993
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: auth_features
+  path: ml/reports/v0_3_15_3/auth_failures_feature_comparison.json
+  size: 2048
+  sha256: da8ca153fe411eef0a9b39704b8a6ce9d644204adb07c9299d5e49c56ff4ab52
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - auth_scenario_defect
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: auth_report
+  path: ml/reports/v0_3_15_3/auth_failures_root_cause_report.md
+  size: 1804
+  sha256: 355a49a95b5e6f1b795015e2b7463dfd0bf81b7a00d4448be38909a5a94754cf
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: calibration_conformal
+  path: ml/reports/v0_3_15_3/calibration_conformal_analysis.json
+  size: 1743
+  sha256: 900c775d0c849e8318f567a6edfc9bfdc7b2658cd572d81d222423a0c2077ce5
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - conformal_abstention
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: claim_ledger
+  path: ml/reports/v0_3_15_3/claim_evidence_ledger.json
+  size: 9763
+  sha256: 108521c9eea81eebcaa35beea030dbd4c4f2ecad36c1f24940d734e4fd1f4272
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: class_shift
+  path: ml/reports/v0_3_15_3/class_specific_shift_report.json
+  size: 893664
+  sha256: e19c421c3ffc6f689932c212798a0edca83f0a59cf2dfe3be29ec7dd288f4c6a
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: cpu_semantics
+  path: ml/reports/v0_3_15_3/cpu_measurement_semantics_report.json
+  size: 1997
+  sha256: 6886a709c6b51ff45f9c25f670c0acd557ea8e56a7f7595db34f2d651d33ea4c
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: documentation_consistency
+  path: ml/reports/v0_3_15_3/documentation_consistency_report.json
+  size: 473
+  sha256: b866281c75b32244bbd0b9329918b3c0e369099010e82d1922aa3761dfe1b637
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: episode_state
+  path: ml/reports/v0_3_15_3/episode_state_decomposition.json
+  size: 778
+  sha256: d64423da2a050b03e5e3aa031e60c88e66c11dec5e5f7c4ff003af3c0a94deb1
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - state_not_primary
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: evidence_matrix
+  path: ml/reports/v0_3_15_3/evidence_availability_matrix.json
+  size: 1625
+  sha256: 496d69c00b717e1a0f5bac822ceffb3de563101028f5a86e46c7e2f01858d1bd
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - historical_evidence_gaps
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: evidence_inventory
+  path: ml/reports/v0_3_15_3/evidence_inventory.json
+  size: 25410
+  sha256: 39f45248bd4de0ef54d56c09b52545e858c8a2e2164f7fda8ed89c11e65f7cf5
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: failure_clusters
+  path: ml/reports/v0_3_15_3/failure_clustering_report.json
+  size: 1879
+  sha256: f4406b0bf948c0b8fe41296cd1cb4c77b37e179f9539c77e18ddc8cdc730a8cd
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: episode_ledger
+  path: ml/reports/v0_3_15_3/failure_episode_ledger.json
+  size: 760223
+  sha256: 9a7458262261ebd13632b67c67c437a22e3e4276e7d6fa84ff889be4beb6d1f8
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - episode_coverage
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: failure_mechanisms
+  path: ml/reports/v0_3_15_3/failure_mechanism_summary.json
+  size: 540
+  sha256: a87444186d95e0b38f8b32430ecc8001d076422a1cdc7e321be0abeb9b28b863
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: feature_distribution
+  path: ml/reports/v0_3_15_3/feature_distribution_comparison.json
+  size: 1504566
+  sha256: c01d7b9620cfef64a5aff93b82c811e0a06c963fb093ea8bc76c5186e21b7b24
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: feature_semantics
+  path: ml/reports/v0_3_15_3/feature_semantics_audit.json
+  size: 47473
+  sha256: 6216969e17409f71bb7ca4210ab9e0158ed3411ee9cd70c7c8891c71e06cb464
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - feature_extraction_defect
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: historical_integrity
+  path: ml/reports/v0_3_15_3/historical_integrity_report.json
+  size: 14957
+  sha256: 911aab548c5ffaf548ce790e80ef89cb440fd0463689e108b432371c9b8b2504
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - historical_preserved
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: instrumentation_equivalence
+  path: ml/reports/v0_3_15_3/instrumentation_equivalence_report.json
+  size: 760
+  sha256: 5735471bf54b66351eaf17d6e15c3f877c2151fd3c941779028492a6c15dbde2
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - instrumentation_ready
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: latency_instrumentation
+  path: ml/reports/v0_3_15_3/latency_instrumentation_report.json
+  size: 3608
+  sha256: 8588ea2d3ca13505d187a70c7440d10885ca071a76ba90323cfd4109c709b19d
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - instrumentation_ready
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: decision_funnel
+  path: ml/reports/v0_3_15_3/model_decision_funnel.json
+  size: 7765
+  sha256: 09e62d500ee6d61a1ae8eae7ccd61d300276928009c99e4ff66f7b6b56f51877
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - conformal_abstention
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: next_cycle_matrix
+  path: ml/reports/v0_3_15_3/next_cycle_decision_matrix.json
+  size: 3140
+  sha256: 4c953f4845c0c0c7fc386a5c38eec98a7a6fce188ecdb9dc97588a5576496626
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - next_track
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: ack_evidence
+  path: ml/reports/v0_3_15_3/raw_ack_evidence_report.json
+  size: 5374
+  sha256: 341f95b3579da69bfc048c177e62da8206c4a0b83b3b96e089b8b48583aa3fd9
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - instrumentation_ready
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: root_cause_matrix
+  path: ml/reports/v0_3_15_3/root_cause_matrix.json
+  size: 3827
+  sha256: 94bc1ac26570686448ec9d2b3cb92fc562118b7782c779063632cb8a103f5943
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: scenario_consistency
+  path: ml/reports/v0_3_15_3/scenario_label_consistency_report.json
+  size: 5388
+  sha256: 55b2107348eb12eaca1eb061054d9a6811753f4840eb756954efc0928f1b3116
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: test_report
+  path: ml/reports/v0_3_15_3/test_report.json
+  size: 581
+  sha256: a50973024c4b538d686601efc81d391ff8dff4688ad70a98b6105559d52d6f7b
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: training_decision
+  path: ml/reports/v0_3_15_3/training_necessity_decision.json
+  size: 1076
+  sha256: dfab2bc518e1801a18b2bd4e7e88fd5ad447ffe0bce821e19508c1afd2460e25
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids:
+  - training_unresolved
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: policy_result
+  path: ml/reports/v0_3_15_3/v0_3_15_3_policy_result.json
+  size: 3552
+  sha256: 5bc21a701b80826a2e85181e68a101b54d366274e60197030b4192ebb2d30992
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: summary
+  path: ml/reports/v0_3_15_3/v0_3_15_3_summary.md
+  size: 2922
+  sha256: 85de46f2654df5d2d43d90da4cb8ba85400a2d691bd410568151fdcb756fed8e
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: zeek_compatibility
+  path: ml/reports/v0_3_15_3/zeek_compatibility_matrix.json
+  size: 1647
+  sha256: 5c7c49459d35dc5365a85594aad1a5f54cf0746f22931d5914688375cb6556ef
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: python -m ml.experiments.v0_3_15_3.analysis
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: behavioral_tests
+  path: ml/tests/test_v03153_regression_analysis.py
+  size: 6467
+  sha256: 9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: artifact_validator
+  path: tools/audit/validate_v03153_artifacts.py
+  size: 1054
+  sha256: 1e7ad5e57a7e6a45cd96baf6f1b44229cc481a98ffa5a1803252099df6ce4f3a
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+- role: bundle_validator
+  path: tools/audit/validate_v03153_bundle.py
+  size: 4034
+  sha256: c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c
+  schema_version: v03153_artifact_v1
+  required: true
+  producing_command: repository implementation
+  claim_ids: []
+  historical_or_diagnostic: diagnostic
+  contains_sensitive_data: false
+  git_inclusion_permitted: true
+required_roles:
+- ack_contract
+- ack_evidence
+- artifact_validator
+- auth_definition
+- auth_features
+- auth_report
+- auth_trace
+- behavioral_tests
+- bundle_validator
+- calibration_conformal
+- claim_ledger
+- class_shift
+- cpu_semantics
+- decision_funnel
+- documentation_consistency
+- episode_ledger
+- episode_state
+- evidence_inventory
+- evidence_matrix
+- experiment_doc
+- failure_clusters
+- failure_mechanisms
+- feature_distribution
+- feature_semantics
+- historical_integrity
+- instrumentation_code
+- instrumentation_equivalence
+- latency_instrumentation
+- next_cycle_matrix
+- policy_result
+- proposed_doc
+- proposed_protocol
+- protocol
+- root_cause_matrix
+- scenario_consistency
+- summary
+- test_report
+- training_decision
+- zeek_compatibility
+historical_anchors:
+  v03152_bundle_manifest_sha256: 49e13eceb44873f593844b07d86215b36dffd96be7ebbbb75a004c08bad8dcda
+  v03152_policy_sha256: 87cd229d9032c648984038fd531eddab48d5c66fe3ca846cefbe092552505640
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+readiness:
+  v0.3.16: false
+  shadow_mode: false
+  backend_integration: false
+  production: false
+  automatic_enforcement: false
