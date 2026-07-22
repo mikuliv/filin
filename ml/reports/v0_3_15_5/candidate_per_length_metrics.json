@@ -1,0 +1,21 @@
+{
+  "groups": {
+    "2": {
+      "detected_rate": 0.5,
+      "episode_count": 50
+    },
+    "3": {
+      "detected_rate": 0.5,
+      "episode_count": 50
+    },
+    "4": {
+      "detected_rate": 0.5,
+      "episode_count": 50
+    },
+    "5": {
+      "detected_rate": 0.5,
+      "episode_count": 50
+    }
+  },
+  "schema_version": "v03155_breakdown_v1"
+}

@@ -1,0 +1,10 @@
+{
+  "capture_to_sink_p95_ms": null,
+  "capture_to_sink_p99_ms": null,
+  "complete_trace_count": 0,
+  "exact_latency_policy_passed": false,
+  "ordering_violation_count": 0,
+  "reason": "no candidate-valid event reached sink",
+  "required_timestamp_count": 11,
+  "schema_version": "v03155_latency_v1"
+}

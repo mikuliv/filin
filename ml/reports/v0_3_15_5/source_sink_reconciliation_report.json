@@ -1,0 +1,15 @@
+{
+  "canonical_pending_event_count": 3800,
+  "event_sets_equal": false,
+  "failure_boundary": "candidate_event_schema_validation",
+  "final_backlog": 3800,
+  "first_alert_lost_count": 125,
+  "idempotency_collision_count": 0,
+  "review_event_lost_count": 0,
+  "schema_version": "v03155_reconciliation_v1",
+  "semantic_duplicate_count": 0,
+  "sink_unique_event_count": 0,
+  "source_event_count": 3800,
+  "source_sink_reconciliation_passed": false,
+  "unaccounted_drop_count": 3800
+}

@@ -1,0 +1,14 @@
+{
+  "absolute_user_paths_in_tracked_artifacts": 0,
+  "environment_secrets_in_tracked_artifacts": 0,
+  "feature_vectors_in_events": 0,
+  "labels_in_events": 0,
+  "negative_fixture_count": 8,
+  "negative_fixtures_all_detected": true,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 0,
+  "privacy_policy_passed": true,
+  "raw_ack_runtime_only": true,
+  "schema_version": "v03155_privacy_v1",
+  "target_count": 18
+}

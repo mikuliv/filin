@@ -1,0 +1,14 @@
+{
+  "continuations": 225,
+  "cross_activity_contamination": 0,
+  "cross_candidate_contamination": 0,
+  "cross_session_contamination": 0,
+  "duplicate_suppression": 225,
+  "eligible_but_not_emitted": 0,
+  "first_alert_suppression": 0,
+  "first_alerts": 125,
+  "pending_windows": 0,
+  "review_windows": 0,
+  "schema_version": "v03155_stateful_metrics_v1",
+  "unresolved_pending": 0
+}

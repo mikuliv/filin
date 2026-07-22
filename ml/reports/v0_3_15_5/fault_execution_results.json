@@ -1,0 +1,130 @@
+{
+  "fault_failed_count": 12,
+  "fault_passed_count": 0,
+  "fault_scenario_count": 12,
+  "fault_unsupported_count": 0,
+  "prospective_fault_subset_passed": false,
+  "scenarios": [
+    {
+      "evidence_sha256": "324bf4133312b0e956eca2486eece4854662843246df564175ae00ebd0139066",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "sink_timeout",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "a4957404edd4d4685afd11fcfae4949ce5101bcd4b630cc431d419e72ba6c11d",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "temporary_unavailable",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "1d07cd9f207c63fbd622fd3efc7564f99292dfae2a9824a09d2b12af3ead2111",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "rate_limited",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "04162dda74e7a02c0d3b074388572d80dabb1aa1ffb993bb1f12bf9101f682be",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "connection_reset_after_send",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "99222908300fabd986b08e2a01f771669b0fd636c44f8597b5b9c1a097eeb018",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "duplicate_ack",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "1976f8d1dac04f1c1307a1ffd10fff43bd3c854976ed238abf969a8ce446f0e7",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "malformed_ack",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "f005e4ebcb04fa8611d73601cd6fe43cf447b00d8fca9f6a127d393c12924c66",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "unknown_ack",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "93960386a00e47d7b45317870fde8a5fce467be23121e87d1d5882e74d62d114",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "exporter_restart",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "56b9b0156daf359eaf707b6ebd5eaf7099dbef7d083bda6a190ff1972a17761c",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "sink_restart",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "aaa42313321cd19d6d79d1394f25e71358813de568e20ee822ac37aa8084f870",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "crash_after_ack_before_checkpoint",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "07ddce638d316022bfe8e81532cec697210ec381f2bc96fb9897762c6db46024",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "queue_full",
+      "unsupported": false
+    },
+    {
+      "evidence_sha256": "c44376d53df6d0d184a1932fa7f3ad90bc6d3e6a281efaa01e4acdbb7eedfb1f",
+      "injection_count": 0,
+      "observable_effect": "blocked_before_injector_by_candidate_schema",
+      "oracle": "candidate event must pass frozen schema",
+      "passed": false,
+      "recovery": "requires a new compatible frozen event contract before a new campaign",
+      "scenario_name": "clock_backward_jump",
+      "unsupported": false
+    }
+  ],
+  "schema_version": "v03155_fault_results_v1"
+}

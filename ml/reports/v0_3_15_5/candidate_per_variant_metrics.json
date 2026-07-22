@@ -1,0 +1,605 @@
+{
+  "groups": {
+    "auth_failures_holdout_01": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_02": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_03": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_04": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_05": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_06": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_07": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_08": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_09": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_10": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_11": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_12": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_13": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_14": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_15": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_16": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_17": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_18": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_19": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "auth_failures_holdout_20": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_01": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_02": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_03": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_04": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_05": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_06": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_07": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_08": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_09": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_10": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_11": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_12": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_13": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_14": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_15": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_16": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_17": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_18": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_19": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "beacon_holdout_20": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "benign_holdout_01": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_02": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_03": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_04": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_05": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_06": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_07": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_08": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_09": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_10": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_11": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_12": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_13": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_14": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_15": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_16": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_17": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_18": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_19": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_20": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_21": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_22": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_23": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_24": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_25": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_26": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_27": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_28": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_29": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_30": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_31": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_32": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_33": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_34": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_35": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_36": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_37": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_38": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_39": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_40": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_41": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_42": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_43": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_44": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_45": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_46": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_47": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_48": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_49": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "benign_holdout_50": {
+      "detected_rate": 0.0,
+      "episode_count": 2
+    },
+    "low_rate_dos_holdout_01": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_02": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_03": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_04": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_05": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_06": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_07": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_08": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_09": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_10": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_11": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_12": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_13": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_14": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_15": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_16": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_17": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_18": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_19": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "low_rate_dos_holdout_20": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_01": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_02": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_03": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_04": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_05": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_06": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_07": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_08": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_09": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_10": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_11": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_12": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_13": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_14": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_15": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_16": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_17": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_18": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_19": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "port_scan_holdout_20": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_01": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_02": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_03": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_04": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_05": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_06": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_07": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_08": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_09": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_10": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_11": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_12": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_13": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_14": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_15": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_16": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_17": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_18": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_19": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    },
+    "web_probe_holdout_20": {
+      "detected_rate": 1.0,
+      "episode_count": 1
+    }
+  },
+  "schema_version": "v03155_breakdown_v1"
+}

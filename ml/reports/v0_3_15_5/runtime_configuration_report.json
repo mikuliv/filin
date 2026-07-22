@@ -1,0 +1,23 @@
+{
+  "atomic_checkpoint": true,
+  "automatic_action_attempt_count": 0,
+  "backend_write_attempt_count": 0,
+  "batch_size": 50,
+  "candidate_event_schema_error": "schema_validation_failed:'v0311:19176acb401be2d4' was expected",
+  "candidate_event_validation_passed": false,
+  "contract_candidate_const": "v0311:19176acb401be2d4",
+  "delivery_semantics": "at-least-once",
+  "durable_spool": true,
+  "external_network_attempt_count": 0,
+  "frozen_event_contract_sha256": "cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe",
+  "integrated_runtime_passed": false,
+  "local_mock_only": true,
+  "network_block_attempt_count": 0,
+  "production_connection_attempt_count": 0,
+  "profile": "C",
+  "queue_capacity": 2048,
+  "schema_version": "v03155_runtime_configuration_v1",
+  "tested_candidate_id": "v03154:65a3dd912d845bc1",
+  "token_bucket": true,
+  "workers": 2
+}

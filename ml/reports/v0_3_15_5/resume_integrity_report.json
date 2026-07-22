@@ -1,0 +1,67 @@
+{
+  "corrupted_bundle_rejected": true,
+  "corruption_case_count": 11,
+  "corruption_cases": [
+    {
+      "case": "changed_artifact",
+      "rejected": true
+    },
+    {
+      "case": "deleted_artifact",
+      "rejected": true
+    },
+    {
+      "case": "substituted_candidate_manifest",
+      "rejected": true
+    },
+    {
+      "case": "substituted_prediction_manifest",
+      "rejected": true
+    },
+    {
+      "case": "changed_event_set",
+      "rejected": true
+    },
+    {
+      "case": "changed_hash_chain_root",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_checkpoint",
+      "rejected": true
+    },
+    {
+      "case": "corrupt_spool",
+      "rejected": true
+    },
+    {
+      "case": "path_traversal",
+      "rejected": true
+    },
+    {
+      "case": "duplicate_path",
+      "rejected": true
+    },
+    {
+      "case": "unknown_schema",
+      "rejected": true
+    }
+  ],
+  "corruption_rejected_count": 11,
+  "positive_resume_repeated_bootstrap_count": 0,
+  "positive_resume_repeated_bundle_finalization_count": 0,
+  "positive_resume_repeated_feature_extraction_count": 0,
+  "positive_resume_repeated_inference_count": 0,
+  "positive_resume_repeated_label_unlock_count": 0,
+  "positive_resume_repeated_metrics_finalization_count": 0,
+  "schema_version": "v03155_resume_v1",
+  "strict_resume_hash_verification_passed": true,
+  "strict_resume_passed": true,
+  "verified_anchors": {
+    "campaign": true,
+    "candidate_artifact": true,
+    "candidate_manifest": true,
+    "immutable_predictions": true,
+    "protocol": true
+  }
+}

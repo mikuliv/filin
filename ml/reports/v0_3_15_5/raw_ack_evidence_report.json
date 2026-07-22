@@ -1,0 +1,16 @@
+{
+  "all_linked": true,
+  "privacy_finding_count": 0,
+  "raw_ack_evidence_passed": true,
+  "raw_runtime_only": true,
+  "record_count": 6,
+  "schema_version": "v03155_raw_ack_v1",
+  "statuses": [
+    "accepted",
+    "duplicate",
+    "rejected_temporary",
+    "rate_limited",
+    "malformed",
+    "unknown"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "failure_reason": "candidate events rejected before delivery throughput measurement",
+  "final_backlog": 3800,
+  "logical_cpu_count": 12,
+  "normalized_process_tree_cpu_average_percent": 0.0,
+  "normalized_process_tree_cpu_p95_percent": 0.0,
+  "peak_rss_mib": 161.33203125,
+  "performance_policy_passed": false,
+  "process_tree_cpu_raw_percent": 0.0,
+  "queue_peak": 0,
+  "resource_policy_passed": true,
+  "schema_version": "v03155_resource_v1",
+  "spool_peak_bytes": 0,
+  "swap_growth_mib": 0,
+  "system_cpu_percent": 25.0
+}

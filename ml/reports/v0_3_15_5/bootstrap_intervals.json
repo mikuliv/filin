@@ -1,0 +1,80 @@
+{
+  "fixed_class_macro_separate": true,
+  "intervals": {
+    "attack_episode_recall": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "attack_macro_f1": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "attack_macro_recall": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "auth_failures_recall": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "benign_episode_far": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "estimate": 0.0
+    },
+    "conformal_coverage": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "detection_by_second_window": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "empty_set_rate": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "estimate": 0.0
+    },
+    "episode_alert_precision": {
+      "ci95": [
+        1.0,
+        1.0
+      ],
+      "estimate": 1.0
+    },
+    "fpr": {
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "estimate": 0.0
+    }
+  },
+  "iterations": 5000,
+  "observed_class_macro_separate": true,
+  "sampling_unit": "session_id",
+  "schema_version": "v03155_bootstrap_v1",
+  "seed": 42
+}

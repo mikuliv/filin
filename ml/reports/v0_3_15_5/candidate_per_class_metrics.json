@@ -1,0 +1,41 @@
+{
+  "classes": {
+    "auth_failures": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 70
+    },
+    "beacon": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 70
+    },
+    "benign": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 3450
+    },
+    "low_rate_dos": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 70
+    },
+    "port_scan": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 70
+    },
+    "web_probe": {
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "support": 70
+    }
+  },
+  "schema_version": "v03155_per_class_v1"
+}

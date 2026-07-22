@@ -1,0 +1,9 @@
+{
+  "all_links_exist": true,
+  "authoritative_source": "docs/status/project-status.yaml",
+  "historical_limitations_preserved": true,
+  "negative_promotion_consistent": true,
+  "numeric_version_sorting_passed": true,
+  "schema_version": "v03155_docs_v1",
+  "semantic_documentation_validator_passed": true
+}

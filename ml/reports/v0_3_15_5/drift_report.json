@@ -1,0 +1,419 @@
+{
+  "class_specific_shift_completed": true,
+  "feature_metrics": [
+    {
+      "feature": "bytes_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.4788061078915932,
+      "psi": 23.994060732558896,
+      "wasserstein": 3.82354385964912
+    },
+    {
+      "feature": "bytes_per_flow_to_rolling_median",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.001376072313819889,
+      "psi": 0.011137032841406193,
+      "wasserstein": 385263157.9001709
+    },
+    {
+      "feature": "connection_completion_rate",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.003684210526315788
+    },
+    {
+      "feature": "consecutive_high_failure_windows",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9605263157894737,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.018421052631578783
+    },
+    {
+      "feature": "consecutive_high_flow_windows",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0002952422610696184,
+      "psi": 0.0023631417010866024,
+      "wasserstein": 0.02873684210526317
+    },
+    {
+      "feature": "delta_bytes_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9157894736842105,
+      "jensen_shannon": 0.00010489989089814332,
+      "psi": 0.0008400014978771304,
+      "wasserstein": 0.720701754385972
+    },
+    {
+      "feature": "delta_events_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9263157894736842,
+      "jensen_shannon": 0.00010489989089814332,
+      "psi": 0.0008400014978771304,
+      "wasserstein": 0.0884210526315794
+    },
+    {
+      "feature": "delta_failed_connections_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9894736842105263,
+      "jensen_shannon": 2.9439392654493908e-05,
+      "psi": 0.00023600125566662088,
+      "wasserstein": 0.016842105263158276
+    },
+    {
+      "feature": "delta_flows_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9263157894736842,
+      "jensen_shannon": 0.00010489989089814332,
+      "psi": 0.0008400014978771304,
+      "wasserstein": 0.05263157894736861
+    },
+    {
+      "feature": "delta_packets_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9894736842105263,
+      "jensen_shannon": 2.9439392654493908e-05,
+      "psi": 0.00023600125566662088,
+      "wasserstein": 0.014736842105263492
+    },
+    {
+      "feature": "delta_unique_destinations_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9263157894736842,
+      "jensen_shannon": 0.00010489989089814332,
+      "psi": 0.0008400014978771304,
+      "wasserstein": 0.007802005012531322
+    },
+    {
+      "feature": "destination_set_jaccard_change",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9263157894736842,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.007802005012531337
+    },
+    {
+      "feature": "dns_requests_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "events_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.438205885238488,
+      "psi": 4.566597465853025,
+      "wasserstein": 1.860842105263157
+    },
+    {
+      "feature": "events_per_second_to_rolling_median",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0027957547791320997,
+      "psi": 0.19269516448106463,
+      "wasserstein": 0.059277303553000225
+    },
+    {
+      "feature": "failed_connection_rate",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9815789473684211,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0036842105263157343
+    },
+    {
+      "feature": "failed_connections_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9815789473684211,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.029473684210525875
+    },
+    {
+      "feature": "failed_connections_to_rolling_median",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9815789473684211,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 16842105.26552619
+    },
+    {
+      "feature": "failed_then_successful_connection_rate",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "flows_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.438205885238488,
+      "psi": 4.566597465853025,
+      "wasserstein": 0.9451578947368416
+    },
+    {
+      "feature": "flows_per_second_to_rolling_median",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0013591348729319194,
+      "psi": 0.011001297731301395,
+      "wasserstein": 0.06554928363689984
+    },
+    {
+      "feature": "http_method_diversity",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.001842105263157894
+    },
+    {
+      "feature": "http_requests_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.003684210526315788
+    },
+    {
+      "feature": "http_response_status_entropy",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0012280701754385959
+    },
+    {
+      "feature": "long_lived_flow_persistence",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "long_lived_flow_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "orig_bytes_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.48342448805813326,
+      "psi": 24.05080890190501,
+      "wasserstein": 3.251438596491226
+    },
+    {
+      "feature": "orig_packet_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0018421052631578672
+    },
+    {
+      "feature": "packets_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.025789473684210515
+    },
+    {
+      "feature": "packets_per_flow_to_rolling_median",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 8.163689295472866e-05,
+      "psi": 0.0006544319612220379,
+      "wasserstein": 0.014736842105263626
+    },
+    {
+      "feature": "periodicity_stability",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 1.7983784245404651e-07
+    },
+    {
+      "feature": "protocol_mix_l1_change",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "request_spacing_cv",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.8873684210526316,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 3.1477131429182673e-07
+    },
+    {
+      "feature": "resp_bytes_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.00019570244904613347,
+      "psi": 0.0015673533233595102,
+      "wasserstein": 0.5721052631578939
+    },
+    {
+      "feature": "response_bytes_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.4765472218883579,
+      "psi": 14.357228865440492,
+      "wasserstein": 0.008508788887952184
+    },
+    {
+      "feature": "response_bytes_share_change",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9157894736842105,
+      "jensen_shannon": 8.10688479972576e-05,
+      "psi": 0.0006489089024679822,
+      "wasserstein": 0.0014809656961391414
+    },
+    {
+      "feature": "response_direction_balance",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.4834244880582467,
+      "psi": 24.05080890191068,
+      "wasserstein": 0.015830998889102367
+    },
+    {
+      "feature": "retry_recovery_rate",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.018421052631578946,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.003684210526315788
+    },
+    {
+      "feature": "robust_z_events_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.7881578947368421,
+      "jensen_shannon": 0.00044017491430533353,
+      "psi": 0.003530033432408534,
+      "wasserstein": 155157894.74475846
+    },
+    {
+      "feature": "robust_z_failed_connections",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9697368421052631,
+      "jensen_shannon": 8.916519513383313e-05,
+      "psi": 0.0007147799085323723,
+      "wasserstein": 29473684.21212367
+    },
+    {
+      "feature": "robust_z_flows_per_second",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.7881578947368421,
+      "jensen_shannon": 0.00044017491430533353,
+      "psi": 0.003530033432408534,
+      "wasserstein": 92315789.48160064
+    },
+    {
+      "feature": "rolling_activity_slope",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.48421790303571527,
+      "psi": 6.935252689279879,
+      "wasserstein": 0.03844210526315797
+    },
+    {
+      "feature": "rolling_failure_slope",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.9605263157894737,
+      "jensen_shannon": 0.0001194597849707936,
+      "psi": 0.0009576227511508366,
+      "wasserstein": 0.014315789473684183
+    },
+    {
+      "feature": "service_availability_recovery_evidence",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "success_response_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.05526315789473684,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.01105263157894737
+    },
+    {
+      "feature": "target_responsiveness_ratio",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.03684210526315789,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.007368421052631576
+    },
+    {
+      "feature": "tcp_flow_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "udp_flow_share",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "udp_flow_share_change",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 1.0,
+      "jensen_shannon": 0.0,
+      "psi": 0.0,
+      "wasserstein": 0.0
+    },
+    {
+      "feature": "unique_destinations_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.0005590056397261448,
+      "psi": 0.004480558339919593,
+      "wasserstein": 0.1457149122807018
+    },
+    {
+      "feature": "unique_services_per_flow",
+      "holdout_missing_rate": 0.0,
+      "holdout_zero_rate": 0.0,
+      "jensen_shannon": 0.46549361424443636,
+      "psi": 5.027215215489372,
+      "wasserstein": 0.14617543859649124
+    }
+  ],
+  "holdout_rows": 3800,
+  "post_label_only": true,
+  "reference_rows": 4750,
+  "schema_version": "v03155_drift_v1",
+  "session_group_shift_completed": true,
+  "used_for_tuning": false
+}

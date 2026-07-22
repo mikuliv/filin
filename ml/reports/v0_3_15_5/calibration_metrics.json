@@ -1,0 +1,28 @@
+{
+  "brier": 3.435469129942051e-06,
+  "calibration_fit_call_count": 0,
+  "candidate_calibration_policy_passed": true,
+  "class_specific": {
+    "auth_failures": {
+      "brier": 4.98912975628905e-07
+    },
+    "beacon": {
+      "brier": 6.937672893322209e-07
+    },
+    "benign": {
+      "brier": 1.699869222956412e-07
+    },
+    "low_rate_dos": {
+      "brier": 6.909237721073744e-07
+    },
+    "port_scan": {
+      "brier": 6.909237721073276e-07
+    },
+    "web_probe": {
+      "brier": 6.909543984705834e-07
+    }
+  },
+  "ece": 0.0005637062084749012,
+  "log_loss": 0.0005651388859148387,
+  "schema_version": "v03155_calibration_v1"
+}

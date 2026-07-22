@@ -1,0 +1,19 @@
+{
+  "schema_version": "v03155_test_report_v1",
+  "behavioral_test_count": 78,
+  "full_repository_test_count": 1061,
+  "ml_test_count": 854,
+  "shadow_test_count": 137,
+  "shadow_trial_test_count": 69,
+  "backend_test_count": 1,
+  "behavioral_failed_count": 0,
+  "behavioral_skipped_count": 0,
+  "behavioral_tests_passed": true,
+  "compileall_passed": true,
+  "ci_stage_tests_enabled": true,
+  "semantic_documentation_validator_passed": true,
+  "bundle_validator_passed": true,
+  "artifact_exclusion_validator_passed": true,
+  "backend_smoke_passed": true,
+  "full_suite_results_recorded_after_bundle_creation": true
+}

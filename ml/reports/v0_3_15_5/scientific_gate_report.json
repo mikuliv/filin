@@ -1,0 +1,20 @@
+{
+  "all_absolute_scientific_gates_passed": true,
+  "candidate_episode_policy_passed": true,
+  "candidate_per_class_policy_passed": true,
+  "candidate_stateful_policy_passed": true,
+  "candidate_window_policy_passed": true,
+  "gates": {
+    "attack_episode_recall": true,
+    "attack_macro_f1": true,
+    "attack_macro_recall": true,
+    "benign_episode_far": true,
+    "benign_recall": true,
+    "detection_by_second_window": true,
+    "each_attack_recall": true,
+    "episode_alert_precision": true,
+    "fpr": true,
+    "stateful": true
+  },
+  "schema_version": "v03155_scientific_gates_v1"
+}

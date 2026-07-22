@@ -1,0 +1,10 @@
+{
+  "feature_extraction_after_unlock_count": 0,
+  "inference_after_unlock_count": 0,
+  "schema_version": "v03155_label_unlock_v1",
+  "session_regeneration_after_unlock_count": 0,
+  "state_change_after_unlock_count": 0,
+  "tuning_after_unlock_count": 0,
+  "unlock_count": 1,
+  "unlocked_after_pre_label_lock": true
+}

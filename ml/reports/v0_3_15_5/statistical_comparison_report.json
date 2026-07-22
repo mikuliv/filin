@@ -1,0 +1,10 @@
+{
+  "baseline_comparator_eligible": false,
+  "limitation": "Historical PCAP feature path guesses generator profile from traffic shape.",
+  "paired_comparison_completed": false,
+  "paired_comparison_primary": false,
+  "passed": null,
+  "schema_version": "v03155_comparison_v1",
+  "status": "not_applicable_baseline_ineligible",
+  "superiority_claimed": false
+}

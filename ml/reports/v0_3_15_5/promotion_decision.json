@@ -1,0 +1,18 @@
+{
+  "baseline_comparator_eligible": false,
+  "blocking_defects": [
+    {
+      "evidence": "runtime_configuration_report.json",
+      "id": "event_contract_candidate_id_mismatch"
+    }
+  ],
+  "candidate_ready_for_v0_3_16_staging_connector_readiness": false,
+  "candidate_v03154_promoted": false,
+  "integrated_runtime_passed": false,
+  "next_allowed_stage": "v0.3.15.5.1",
+  "paired_comparison_required": false,
+  "promotion_decision": "not_promoted",
+  "schema_version": "v03155_promotion_v1",
+  "scientific_absolute_gates_passed": true,
+  "superiority_claimed": false
+}

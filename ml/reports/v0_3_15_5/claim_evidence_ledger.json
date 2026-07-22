@@ -1,0 +1,568 @@
+{
+  "claims": [
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C001",
+      "claim_text": "protocol_frozen",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "protocol_lock.json"
+      ],
+      "supporting_sha256": [
+        "0c546fd88902f114b8fafa8a6c3941c82391203429d2aabf158647e06fc74132"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C002",
+      "claim_text": "campaign_frozen",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "campaign_manifest.json"
+      ],
+      "supporting_sha256": [
+        "40de1864aa090be1d02ca7ab83c5ab4fef69fea12a6d1efe9ced37dcf1272b7f"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C003",
+      "claim_text": "independence_passed",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "independence_validation_report.json"
+      ],
+      "supporting_sha256": [
+        "00d64d23d67844af3de2e520a15b93a3ae933f2ec1da1dedf3e1e8bbf4ed6618"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C004",
+      "claim_text": "baseline_ineligible",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "baseline_comparator_eligibility_report.json"
+      ],
+      "supporting_sha256": [
+        "6bf96963c542fd9569d2df454871ef3ae56d9ec2e7f90dd9b2c8c033a34c63b6"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C005",
+      "claim_text": "candidate_integrity",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "candidate_pair_lock.json"
+      ],
+      "supporting_sha256": [
+        "0531ea7c94452902d6d92dcf11212b519a23635b7b56e31090539e7d61b28608"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C006",
+      "claim_text": "no_fit",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "no_fit_audit.json"
+      ],
+      "supporting_sha256": [
+        "4cf399a5403c049014fb047861d609ecdae015fd85847e97b2f3e2ecda42390a"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C007",
+      "claim_text": "blind_separation",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "blind_access_audit.json"
+      ],
+      "supporting_sha256": [
+        "a52d96e02cbfba11f616a37ce938f74c1e84ba8ffc15fd5e01fde46aaf20d341"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C008",
+      "claim_text": "capture_complete",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "capture_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "c85ac6785c3a15a7110380cd03c3cdfd5ad03fb19e471f38dc7ad650d0effef0"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C009",
+      "claim_text": "feature_provenance",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "feature_v2_provenance_report.json"
+      ],
+      "supporting_sha256": [
+        "4823b8efb0b90cb23cf709e5f6e9cff86c0c3f6fe2ee7a0f114b89f4321351de"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C010",
+      "claim_text": "prediction_unique",
+      "claim_type": "integrity_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "candidate_prediction_manifest.json"
+      ],
+      "supporting_sha256": [
+        "b5947ef98967126bda0dddd8eb48f55d11c7ac9a672fbb32bf74a6c797988484"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C011",
+      "claim_text": "absolute_scientific_gates",
+      "claim_type": "scientific_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "scientific_gate_report.json"
+      ],
+      "supporting_sha256": [
+        "436ce97e78b9eb4e388cd507d6164bc94988a7966e2ddd2434497789bcaf673e"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C012",
+      "claim_text": "auth_failures_result",
+      "claim_type": "scientific_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "candidate_per_class_metrics.json"
+      ],
+      "supporting_sha256": [
+        "0386eb4f514dcc2a6113d6394f47bab8615f5c3f3cf73e4e0d437af39a2a2a4a"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C013",
+      "claim_text": "conformal_result",
+      "claim_type": "scientific_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "conformal_metrics.json"
+      ],
+      "supporting_sha256": [
+        "726f67f200e435bf5fea5edd28d492ffafb5cc0ac69e01f1de4e3bd31786ed4b"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C014",
+      "claim_text": "comparative_unavailable",
+      "claim_type": "scientific_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "statistical_comparison_report.json"
+      ],
+      "supporting_sha256": [
+        "1e6eff0df6af9bc168d0f29cffba6f0696ee47363fc0cda259712506cce9a677"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C015",
+      "claim_text": "noninferiority_unavailable",
+      "claim_type": "scientific_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "comparative_noninferiority_report.json"
+      ],
+      "supporting_sha256": [
+        "1e6eff0df6af9bc168d0f29cffba6f0696ee47363fc0cda259712506cce9a677"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C016",
+      "claim_text": "runtime_reconciliation",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [
+        "frozen event contract candidate-id mismatch"
+      ],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "not_supported",
+      "supporting_artifacts": [
+        "source_sink_reconciliation_report.json"
+      ],
+      "supporting_sha256": [
+        "a90a52febc31cc9bf30b433c4247f9c3a689fd04683612db21fe25877809593c"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C017",
+      "claim_text": "faults",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [
+        "frozen event contract candidate-id mismatch"
+      ],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "not_supported",
+      "supporting_artifacts": [
+        "fault_execution_results.json"
+      ],
+      "supporting_sha256": [
+        "cc343b761e6e2d9137ec138a1590bf158deb6cd10cf52ec956fff3a089bb032d"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C018",
+      "claim_text": "exact_latency",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [
+        "frozen event contract candidate-id mismatch"
+      ],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "not_supported",
+      "supporting_artifacts": [
+        "exact_latency_report.json"
+      ],
+      "supporting_sha256": [
+        "98dbc490f3376d306221d3b1d3d7f1d3781b7e485b543c1729285828bbcb34a1"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C019",
+      "claim_text": "privacy",
+      "claim_type": "runtime_result",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "privacy_report.json"
+      ],
+      "supporting_sha256": [
+        "72715154f90ddf991a5e4c06f669e02ccca898180eae8ed010f4699705177f49"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C020",
+      "claim_text": "strict_resume",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "resume_integrity_report.json"
+      ],
+      "supporting_sha256": [
+        "199185e0ccc23425aa83c617254e792736d0520d7b4d5ba7a50e8eeca5695a88"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C021",
+      "claim_text": "candidate_promotion",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [
+        "frozen event contract candidate-id mismatch"
+      ],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "not_supported",
+      "supporting_artifacts": [
+        "promotion_decision.json"
+      ],
+      "supporting_sha256": [
+        "e61fbc1b44889ec7fcd12ea5ba43af69d576a4cd8304c74af6988bcfe36719be"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C022",
+      "claim_text": "v0316_readiness",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [
+        "frozen event contract candidate-id mismatch"
+      ],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "not_supported",
+      "supporting_artifacts": [
+        "promotion_decision.json"
+      ],
+      "supporting_sha256": [
+        "e61fbc1b44889ec7fcd12ea5ba43af69d576a4cd8304c74af6988bcfe36719be"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C023",
+      "claim_text": "production_prohibition",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "v0_3_15_5_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "4b57c4a4b37bc23c8f635723cbd80761f751e6dc0cfb6dbe03f04f9ce4fa7f05"
+      ]
+    },
+    {
+      "candidate_scope": "v03154:65a3dd912d845bc1",
+      "claim_id": "V03155-C024",
+      "claim_text": "backend_prohibition",
+      "claim_type": "readiness_decision",
+      "confidence": "high",
+      "counter_evidence": [],
+      "created_before_or_after_label_unlock": "after",
+      "historical_or_prospective": "prospective",
+      "limitations": [
+        "controlled synthetic holdout",
+        "baseline comparator ineligible"
+      ],
+      "producing_command": "python -m ml.experiments.v0_3_15_5.finalize_stage",
+      "producing_test": "ml/tests/test_v03155_independent_holdout.py",
+      "status": "supported",
+      "supporting_artifacts": [
+        "v0_3_15_5_policy_result.json"
+      ],
+      "supporting_sha256": [
+        "4b57c4a4b37bc23c8f635723cbd80761f751e6dc0cfb6dbe03f04f9ce4fa7f05"
+      ]
+    }
+  ],
+  "schema_version": "v03155_claim_ledger_v1",
+  "unsupported_positive_claim_count": 0
+}
