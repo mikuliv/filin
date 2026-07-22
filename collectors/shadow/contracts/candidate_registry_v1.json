@@ -1,0 +1,41 @@
+{
+  "schema_version": "candidate_registry_v1",
+  "candidates": [
+    {
+      "candidate_id": "v0311:19176acb401be2d4",
+      "status": "historical",
+      "artifact_sha256": "59d2cd75f3f09f5f8976fa2a56417ad10205986f696a3bef5a4fbaba52ff09b7",
+      "manifest_sha256": "ad8ff7ea42a28847dcf0fc92b76c176d3f0dda0e874bd865dfa4ea3f6fcf888c",
+      "feature_contract_id": "network_features_v1",
+      "feature_contract_sha256": "cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf",
+      "preprocessing_sha256": "cee39edf14f6f68c794eac17379d8855e45370bd849baca9ad2c785435f01fbf",
+      "calibration_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "conformal_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "class_mapping_sha256": "30de937ce3b9db0f2f9ad13877b81ab80b0e286d08a2533e47894c48146f1589",
+      "state_policy_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "supported_event_contract_versions": ["shadow_event_v1"],
+      "runtime_compatibility_contract_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "valid_from_stage": "v0.3.11",
+      "revoked": false,
+      "revocation_reason": null
+    },
+    {
+      "candidate_id": "v03154:65a3dd912d845bc1",
+      "status": "active_for_local_runtime_trial",
+      "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+      "manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+      "feature_contract_id": "network_features_v2",
+      "feature_contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+      "preprocessing_sha256": "8708ef96aef5b3479f237c91f6aa7a045655a841a2e8c9139766e5f41a59aaa7",
+      "calibration_sha256": "675919e8d8ab55dac7d2b53cb41387d4b67ec0617d748ecfb100f504861581e9",
+      "conformal_sha256": "afa916d620ea810511e84a11a2b22a5ac416c8803dc622fc4c7ce684c11e7783",
+      "class_mapping_sha256": "70e15208eba3ab328d7b15cccaaeccc887e86f2ec0e2c271388ef079aef574a3",
+      "state_policy_sha256": "3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c",
+      "supported_event_contract_versions": ["shadow_event_v2"],
+      "runtime_compatibility_contract_sha256": "41a6ca83482c657aa7c9c0aec5881cb68234b2a7612cf534076c5e6c35af05ba",
+      "valid_from_stage": "v0.3.15.5.1",
+      "revoked": false,
+      "revocation_reason": null
+    }
+  ]
+}

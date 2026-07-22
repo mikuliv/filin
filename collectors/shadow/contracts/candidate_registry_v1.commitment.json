@@ -1,0 +1,8 @@
+{
+  "schema_version": "candidate_registry_commitment_v1",
+  "candidate_registry_path": "collectors/shadow/contracts/candidate_registry_v1.json",
+  "candidate_registry_sha256": "31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d",
+  "canonicalization": "utf8-json-sort-keys-compact",
+  "candidate_registry_commitment_sha256": "e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c",
+  "frozen_before_first_capture": true
+}

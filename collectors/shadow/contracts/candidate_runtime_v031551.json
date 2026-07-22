@@ -1,0 +1,11 @@
+{
+  "schema_version": "candidate_runtime_compatibility_v1",
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "event_contract_version": "shadow_event_v2",
+  "runtime_contract_version": "passive_runtime_v031551",
+  "feature_count": 51,
+  "worker_count": 2,
+  "batch_size": 50,
+  "delivery_semantics": "at-least-once",
+  "sink_scope": "local_synthetic_mock"
+}
