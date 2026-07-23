@@ -15,7 +15,8 @@ REVISION_3_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r3.yaml"
 REVISION_4_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r4.yaml"
 REVISION_5_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
 REVISION_6_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r6.yaml"
-PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r7.yaml"
+REVISION_7_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r7.yaml"
+PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r8.yaml"
 REPORT = ROOT / "ml/reports/v0_3_17/pre_campaign_code_lock.json"
 
 
@@ -75,6 +76,7 @@ def main() -> int:
         "revision_4_protocol_sha256": sha(REVISION_4_PROTOCOL),
         "revision_5_protocol_sha256": sha(REVISION_5_PROTOCOL),
         "revision_6_protocol_sha256": sha(REVISION_6_PROTOCOL),
+        "revision_7_protocol_sha256": sha(REVISION_7_PROTOCOL),
         "candidate_identity": protocol["candidate_identity"],
         "component_image_digests": {
             "filin-rehearsal-v0317:local": image,

@@ -40,7 +40,8 @@ REVISION_3_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r3.yaml"
 REVISION_4_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r4.yaml"
 REVISION_5_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
 REVISION_6_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r6.yaml"
-PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r7.yaml"
+REVISION_7_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r7.yaml"
+PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r8.yaml"
 LOCK_PATH = REPORT / "pre_campaign_code_lock.json"
 COMPOSE = ROOT / "rehearsal/docker-compose.v0_3_17.yml"
 ARTIFACT = ROOT / "runtime/v0_3_15_4/v03154_candidate.joblib"
@@ -69,6 +70,7 @@ def protocol() -> dict[str, Any]:
     revision_4 = yaml.safe_load(REVISION_4_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision_5 = yaml.safe_load(REVISION_5_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision_6 = yaml.safe_load(REVISION_6_PROTOCOL_PATH.read_text(encoding="utf-8"))
+    revision_7 = yaml.safe_load(REVISION_7_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision = yaml.safe_load(PROTOCOL_PATH.read_text(encoding="utf-8"))
     if revision_2["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
         raise RuntimeError("revision_2_base_protocol_hash_mismatch")
@@ -88,21 +90,26 @@ def protocol() -> dict[str, Any]:
         raise RuntimeError("revision_6_base_protocol_hash_mismatch")
     if revision_6["parent_protocol_sha256"] != file_sha256(REVISION_5_PROTOCOL_PATH):
         raise RuntimeError("revision_6_parent_protocol_hash_mismatch")
-    if revision["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+    if revision_7["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
         raise RuntimeError("revision_7_base_protocol_hash_mismatch")
-    if revision["parent_protocol_sha256"] != file_sha256(REVISION_6_PROTOCOL_PATH):
+    if revision_7["parent_protocol_sha256"] != file_sha256(REVISION_6_PROTOCOL_PATH):
         raise RuntimeError("revision_7_parent_protocol_hash_mismatch")
+    if revision["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+        raise RuntimeError("revision_8_base_protocol_hash_mismatch")
+    if revision["parent_protocol_sha256"] != file_sha256(REVISION_7_PROTOCOL_PATH):
+        raise RuntimeError("revision_8_parent_protocol_hash_mismatch")
     base.update({key: revision[key] for key in ("revision", "status")})
     base["campaign"].update(revision["campaign"])
     base["certificate_rotation"].update({
-        "sensor_to_connector": {"run": "run_b", "offset": 3300, "serial_a": 3177201, "serial_b": 3177221},
-        "connector_to_receiver": {"run": "run_b", "offset": 3450, "serial_a": 3177241, "serial_b": 3177261},
+        "sensor_to_connector": {"run": "run_b", "offset": 3300, "serial_a": 3178201, "serial_b": 3178221},
+        "connector_to_receiver": {"run": "run_b", "offset": 3450, "serial_a": 3178241, "serial_b": 3178261},
     })
     base["revision_2_protocol"] = revision_2
     base["revision_3_protocol"] = revision_3
     base["revision_4_protocol"] = revision_4
     base["revision_5_protocol"] = revision_5
-    base["parent_protocol_revision"] = revision_6
+    base["revision_6_protocol"] = revision_6
+    base["parent_protocol_revision"] = revision_7
     base["protocol_revision"] = revision
     return base
 
@@ -125,6 +132,8 @@ def verify_code_lock() -> dict[str, Any]:
         raise RuntimeError("revision_5_protocol_changed_after_code_lock")
     if lock["revision_6_protocol_sha256"] != file_sha256(REVISION_6_PROTOCOL_PATH):
         raise RuntimeError("revision_6_protocol_changed_after_code_lock")
+    if lock["revision_7_protocol_sha256"] != file_sha256(REVISION_7_PROTOCOL_PATH):
+        raise RuntimeError("revision_7_protocol_changed_after_code_lock")
     for relative, expected in lock["source_file_sha256"].items():
         path = ROOT / relative
         if not path.is_file() or file_sha256(path) != expected:
@@ -139,7 +148,7 @@ def compose_environment(run_index: int, run_spec: dict[str, Any]) -> dict[str, s
     environment = dict(os.environ)
     environment.update({
         "FILIN_V0317_RUNTIME_DIR": str(RUNTIME),
-        "FILIN_V0317_VOLUME_DIR": str(RUNTIME / run_spec["run_id"] / "volumes"),
+        "FILIN_V0317_VOLUME_NAMESPACE": f"filin-v0317-{run_spec['instance_namespace']}",
         "FILIN_V0317_CERT_DIR": str(RUNTIME / "tls" / f"run-{run_index}" / "active"),
         "FILIN_V0317_SENSOR_INSTANCE_ID": f"sensor-{run_spec['instance_namespace']}",
         "FILIN_V0317_CONNECTOR_INSTANCE_ID": f"connector-{run_spec['instance_namespace']}",
@@ -358,7 +367,29 @@ class MaintenanceWorker(threading.Thread):
             self.snapshot_index += 1
 
     def _restart(self, services: list[str]) -> bool:
-        return compose(["restart", *services], self.environment, check=False).returncode == 0
+        compose(["stop", "-t", "2", *services], self.environment, check=False)
+        started = compose(["up", "-d", "--no-deps", *services], self.environment, check=False)
+        if started.returncode:
+            return False
+        deadline = time.monotonic() + 60
+        while time.monotonic() < deadline:
+            ready = True
+            for service in services:
+                container = compose(["ps", "-q", service], self.environment, check=False).stdout.strip()
+                if not container:
+                    ready = False
+                    break
+                state = run_command(
+                    ["docker", "inspect", container, "--format", "{{.State.Status}} {{if .State.Health}}{{.State.Health.Status}}{{else}}none{{end}}"],
+                    check=False,
+                ).stdout.strip()
+                if not state.startswith("running ") or state.endswith("unhealthy"):
+                    ready = False
+                    break
+            if ready:
+                return True
+            self.stop.wait(1)
+        return False
 
     def _rotate(self, link: str) -> bool:
         tls = RUNTIME / "tls" / f"run-{self.run_index}"
@@ -378,7 +409,10 @@ class MaintenanceWorker(threading.Thread):
         for source_dir, target_dir, prefixes in mappings:
             for path in source_dir.iterdir():
                 if any(path.name.startswith(prefix) for prefix in prefixes):
-                    shutil.copy2(path, target_dir / path.name)
+                    target = target_dir / path.name
+                    temporary = target.with_name(f".{target.name}.next")
+                    shutil.copy2(path, temporary)
+                    os.replace(temporary, target)
         return self._restart(services)
 
     def _pressure(self, service: str, mib: int) -> bool:
@@ -670,11 +704,9 @@ def execute_run(run_index: int, run_spec: dict[str, Any], sessions: list[dict[st
     run_id = run_spec["run_id"]
     run_root = RUNTIME / run_id
     run_root.mkdir(parents=True, exist_ok=False)
-    for component in ("sensor", "connector", "receiver"):
-        (run_root / "volumes" / component).mkdir(parents=True, exist_ok=True)
     (RUNTIME / "events.jsonl").write_text("", encoding="utf-8", newline="\n")
     clear_stale_source_markers()
-    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index), "--revision", "7"])
+    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index), "--revision", "8"])
     environment = compose_environment(run_index, run_spec)
     compose(["down", "--remove-orphans"], environment, check=False)
     compose(["up", "-d", "--no-build"], environment)
@@ -739,6 +771,7 @@ def main() -> int:
         "revision_4_protocol_sha256": file_sha256(REVISION_4_PROTOCOL_PATH),
         "revision_5_protocol_sha256": file_sha256(REVISION_5_PROTOCOL_PATH),
         "revision_6_protocol_sha256": file_sha256(REVISION_6_PROTOCOL_PATH),
+        "revision_7_protocol_sha256": file_sha256(REVISION_7_PROTOCOL_PATH),
         "code_lock_sha256": file_sha256(LOCK_PATH),
         "code_lock_git_head": lock["git_head"],
         "time_acceleration": False,

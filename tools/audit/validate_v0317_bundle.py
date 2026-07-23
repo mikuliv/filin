@@ -37,7 +37,7 @@ def validate_manifest(value: dict, root: Path) -> list[str]:
     errors: list[str] = []
     if value.get("schema_version") != "v0317_bundle_manifest_v1":
         errors.append("schema_version")
-    if value.get("stage") != "v0.3.17" or value.get("revision") != 7:
+    if value.get("stage") != "v0.3.17" or value.get("revision") != 8:
         errors.append("stage_revision")
     seen: set[str] = set()
     for item in value.get("artifacts", []):

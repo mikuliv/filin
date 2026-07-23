@@ -4,6 +4,7 @@ import json
 import ssl
 import sqlite3
 import struct
+import threading
 import time
 from pathlib import Path
 
@@ -37,8 +38,8 @@ def protocol() -> dict:
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 7),
-        (("status",), "frozen_before_revision_7_first_rehearsal_event"),
+        (("revision",), 8),
+        (("status",), "frozen_before_revision_8_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -79,9 +80,9 @@ def test_runs_receive_distinct_durable_volume_roots(protocol: dict) -> None:
     first_environment = campaign_module.compose_environment(1, first)
     second_environment = campaign_module.compose_environment(2, second)
     assert first_environment["FILIN_V0317_RUNTIME_DIR"] == second_environment["FILIN_V0317_RUNTIME_DIR"]
-    assert first_environment["FILIN_V0317_VOLUME_DIR"] != second_environment["FILIN_V0317_VOLUME_DIR"]
-    assert first_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{first['run_id']}\\volumes")
-    assert second_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{second['run_id']}\\volumes")
+    assert first_environment["FILIN_V0317_VOLUME_NAMESPACE"] != second_environment["FILIN_V0317_VOLUME_NAMESPACE"]
+    assert first_environment["FILIN_V0317_VOLUME_NAMESPACE"].endswith(first["instance_namespace"])
+    assert second_environment["FILIN_V0317_VOLUME_NAMESPACE"].endswith(second["instance_namespace"])
 
 
 def test_stale_source_control_is_removed_before_next_run(tmp_path: Path) -> None:
@@ -93,6 +94,50 @@ def test_stale_source_control_is_removed_before_next_run(tmp_path: Path) -> None
     assert not (tmp_path / "control.json").exists()
     assert not (tmp_path / "source_last_completion.json").exists()
     assert unrelated.is_file()
+
+
+def test_maintenance_restart_uses_stop_up_and_health_check(monkeypatch: pytest.MonkeyPatch) -> None:
+    calls = []
+
+    def fake_compose(args, environment, check=True):
+        calls.append(args)
+        stdout = "container-id\n" if args[:2] == ["ps", "-q"] else ""
+        return type("Result", (), {"returncode": 0, "stdout": stdout})()
+
+    def fake_run_command(args, **kwargs):
+        assert args[:2] == ["docker", "inspect"]
+        return type("Result", (), {"returncode": 0, "stdout": "running healthy\n"})()
+
+    monkeypatch.setattr(campaign_module, "compose", fake_compose)
+    monkeypatch.setattr(campaign_module, "run_command", fake_run_command)
+    worker = campaign_module.MaintenanceWorker(2, "run", 0, {}, threading.Event())
+    assert worker._restart(["reference-receiver", "staging-connector"])
+    assert calls[0] == ["stop", "-t", "2", "reference-receiver", "staging-connector"]
+    assert calls[1] == ["up", "-d", "--no-deps", "reference-receiver", "staging-connector"]
+
+
+def test_certificate_rotation_replaces_active_files(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> None:
+    tls = tmp_path / "tls" / "run-2"
+    for variant in ("active", "b"):
+        for component in ("connector", "receiver"):
+            (tls / variant / component).mkdir(parents=True)
+    replacements = {
+        "connector/delivery-client.pem": b"new-client",
+        "connector/delivery-server-ca.pem": b"new-ca",
+        "receiver/server.pem": b"new-server",
+        "receiver/client-ca.pem": b"new-client-ca",
+    }
+    for relative, body in replacements.items():
+        source = tls / "b" / relative
+        source.write_bytes(body)
+        (tls / "active" / relative).write_bytes(b"old")
+    monkeypatch.setattr(campaign_module, "RUNTIME", tmp_path)
+    worker = campaign_module.MaintenanceWorker(2, "run", 0, {}, threading.Event())
+    monkeypatch.setattr(worker, "_restart", lambda services: True)
+    assert worker._rotate("connector-receiver")
+    for relative, body in replacements.items():
+        assert (tls / "active" / relative).read_bytes() == body
+        assert not (tls / "active" / relative).with_name(f".{Path(relative).name}.next").exists()
 
 
 def test_sessions_are_unique(protocol: dict) -> None:
@@ -361,7 +406,8 @@ def test_all_compose_networks_are_internal() -> None:
 
 def test_operator_volume_is_read_only() -> None:
     compose = yaml.safe_load((ROOT / "rehearsal/docker-compose.v0_3_17.yml").read_text(encoding="utf-8"))
-    assert compose["services"]["operator-view"]["volumes"] == ["${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/receiver:/run/receiver:ro"]
+    assert compose["services"]["operator-view"]["volumes"] == ["receiver-data:/run/receiver:ro"]
+    assert compose["volumes"]["receiver-data"]["name"] == "${FILIN_V0317_VOLUME_NAMESPACE:-filin-v0317-local}-receiver"
 
 
 @pytest.mark.parametrize("method", ["POST", "PUT", "DELETE", "PATCH"])
