@@ -56,7 +56,9 @@ runtime/v0_3_17_invalidated_r1/
 runtime/v0_3_17_invalidated_r1_tail/
 runtime/v0_3_17_invalidated_r2/
 runtime/v0_3_17_invalidated_r3/
+runtime/v0_3_17_invalidated_r4_smoke/
 runtime/v0_3_17_smoke_r3/
+runtime/v0_3_17_smoke_r4_invalid_host_sqlite_access/
 runtime/pytest-*/
 
 # Zeek runtime

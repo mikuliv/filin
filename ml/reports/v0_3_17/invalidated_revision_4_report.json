@@ -1,0 +1,19 @@
+{
+  "campaign_status": "invalidated_during_pre_campaign_live_smoke",
+  "connector_durable_event_count": 14000,
+  "evidence_eligible": false,
+  "failure_code": "unindexed_pending_scan_and_shared_trace_wal_growth",
+  "first_segment_drain_seconds": 30,
+  "first_segment_duration_seconds": 1200,
+  "first_segment_receiver_durable_event_count": 12000,
+  "first_segment_source_event_count": 12000,
+  "invalidated_runtime_directories": [
+    "runtime/v0_3_17_invalidated_r4_smoke"
+  ],
+  "official_campaign_started": false,
+  "protocol_revision": 4,
+  "receiver_durable_event_count": 14000,
+  "schema_version": "v0317_invalidated_revision_report_v1",
+  "source_event_count": 15000,
+  "transport_lag_event_count": 1000
+}
