@@ -38,7 +38,8 @@ BASE_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
 REVISION_2_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
 REVISION_3_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r3.yaml"
 REVISION_4_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r4.yaml"
-PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
+REVISION_5_PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
+PROTOCOL_PATH = ROOT / "ml/protocols/v0_3_17_protocol_r6.yaml"
 LOCK_PATH = REPORT / "pre_campaign_code_lock.json"
 COMPOSE = ROOT / "rehearsal/docker-compose.v0_3_17.yml"
 ARTIFACT = ROOT / "runtime/v0_3_15_4/v03154_candidate.joblib"
@@ -65,6 +66,7 @@ def protocol() -> dict[str, Any]:
     revision_2 = yaml.safe_load(REVISION_2_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision_3 = yaml.safe_load(REVISION_3_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision_4 = yaml.safe_load(REVISION_4_PROTOCOL_PATH.read_text(encoding="utf-8"))
+    revision_5 = yaml.safe_load(REVISION_5_PROTOCOL_PATH.read_text(encoding="utf-8"))
     revision = yaml.safe_load(PROTOCOL_PATH.read_text(encoding="utf-8"))
     if revision_2["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
         raise RuntimeError("revision_2_base_protocol_hash_mismatch")
@@ -76,19 +78,24 @@ def protocol() -> dict[str, Any]:
         raise RuntimeError("revision_4_base_protocol_hash_mismatch")
     if revision_4["parent_protocol_sha256"] != file_sha256(REVISION_3_PROTOCOL_PATH):
         raise RuntimeError("revision_4_parent_protocol_hash_mismatch")
-    if revision["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+    if revision_5["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
         raise RuntimeError("revision_5_base_protocol_hash_mismatch")
-    if revision["parent_protocol_sha256"] != file_sha256(REVISION_4_PROTOCOL_PATH):
+    if revision_5["parent_protocol_sha256"] != file_sha256(REVISION_4_PROTOCOL_PATH):
         raise RuntimeError("revision_5_parent_protocol_hash_mismatch")
+    if revision["base_protocol_sha256"] != file_sha256(BASE_PROTOCOL_PATH):
+        raise RuntimeError("revision_6_base_protocol_hash_mismatch")
+    if revision["parent_protocol_sha256"] != file_sha256(REVISION_5_PROTOCOL_PATH):
+        raise RuntimeError("revision_6_parent_protocol_hash_mismatch")
     base.update({key: revision[key] for key in ("revision", "status")})
     base["campaign"].update(revision["campaign"])
     base["certificate_rotation"].update({
-        "sensor_to_connector": {"run": "run_b", "offset": 3300, "serial_a": 3175201, "serial_b": 3175221},
-        "connector_to_receiver": {"run": "run_b", "offset": 3450, "serial_a": 3175241, "serial_b": 3175261},
+        "sensor_to_connector": {"run": "run_b", "offset": 3300, "serial_a": 3176201, "serial_b": 3176221},
+        "connector_to_receiver": {"run": "run_b", "offset": 3450, "serial_a": 3176241, "serial_b": 3176261},
     })
     base["revision_2_protocol"] = revision_2
     base["revision_3_protocol"] = revision_3
-    base["parent_protocol_revision"] = revision_4
+    base["revision_4_protocol"] = revision_4
+    base["parent_protocol_revision"] = revision_5
     base["protocol_revision"] = revision
     return base
 
@@ -107,6 +114,8 @@ def verify_code_lock() -> dict[str, Any]:
         raise RuntimeError("revision_3_protocol_changed_after_code_lock")
     if lock["revision_4_protocol_sha256"] != file_sha256(REVISION_4_PROTOCOL_PATH):
         raise RuntimeError("revision_4_protocol_changed_after_code_lock")
+    if lock["revision_5_protocol_sha256"] != file_sha256(REVISION_5_PROTOCOL_PATH):
+        raise RuntimeError("revision_5_protocol_changed_after_code_lock")
     for relative, expected in lock["source_file_sha256"].items():
         path = ROOT / relative
         if not path.is_file() or file_sha256(path) != expected:
@@ -121,6 +130,7 @@ def compose_environment(run_index: int, run_spec: dict[str, Any]) -> dict[str, s
     environment = dict(os.environ)
     environment.update({
         "FILIN_V0317_RUNTIME_DIR": str(RUNTIME),
+        "FILIN_V0317_VOLUME_DIR": str(RUNTIME / run_spec["run_id"] / "volumes"),
         "FILIN_V0317_CERT_DIR": str(RUNTIME / "tls" / f"run-{run_index}" / "active"),
         "FILIN_V0317_SENSOR_INSTANCE_ID": f"sensor-{run_spec['instance_namespace']}",
         "FILIN_V0317_CONNECTOR_INSTANCE_ID": f"connector-{run_spec['instance_namespace']}",
@@ -647,9 +657,9 @@ def execute_run(run_index: int, run_spec: dict[str, Any], sessions: list[dict[st
     run_root = RUNTIME / run_id
     run_root.mkdir(parents=True, exist_ok=False)
     for component in ("sensor", "connector", "receiver"):
-        (RUNTIME / "volumes" / component).mkdir(parents=True, exist_ok=True)
+        (run_root / "volumes" / component).mkdir(parents=True, exist_ok=True)
     (RUNTIME / "events.jsonl").write_text("", encoding="utf-8", newline="\n")
-    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index), "--revision", "5"])
+    run_command(["python", "-m", "ml.experiments.v0_3_17.generate_certificates", "--run-index", str(run_index), "--revision", "6"])
     environment = compose_environment(run_index, run_spec)
     compose(["down", "--remove-orphans"], environment, check=False)
     compose(["up", "-d", "--no-build"], environment)
@@ -712,6 +722,7 @@ def main() -> int:
         "revision_2_protocol_sha256": file_sha256(REVISION_2_PROTOCOL_PATH),
         "revision_3_protocol_sha256": file_sha256(REVISION_3_PROTOCOL_PATH),
         "revision_4_protocol_sha256": file_sha256(REVISION_4_PROTOCOL_PATH),
+        "revision_5_protocol_sha256": file_sha256(REVISION_5_PROTOCOL_PATH),
         "code_lock_sha256": file_sha256(LOCK_PATH),
         "code_lock_git_head": lock["git_head"],
         "time_acceleration": False,

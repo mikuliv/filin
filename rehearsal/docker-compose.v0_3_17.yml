@@ -33,7 +33,7 @@ services:
     cap_drop: [ALL]
     tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
     volumes:
-      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/receiver:/var/lib/filin:rw
+      - ${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/receiver:/var/lib/filin:rw
       - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/receiver:/run/tls:ro
     environment:
       TLS_CERT: /run/tls/server.pem
@@ -62,7 +62,7 @@ services:
     cap_drop: [ALL]
     tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
     volumes:
-      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/connector:/var/lib/filin:rw
+      - ${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/connector:/var/lib/filin:rw
       - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/connector:/run/tls:ro
     environment:
       INGRESS_TLS_CERT: /run/tls/ingress-server.pem
@@ -96,7 +96,7 @@ services:
     volumes:
       - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}:/run/input:ro
       - ${FILIN_V0317_CERT_DIR:-../runtime/v0_3_17/tls/active}/sensor:/run/tls:ro
-      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/sensor:/var/lib/filin:rw
+      - ${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/sensor:/var/lib/filin:rw
     environment:
       TLS_CERT: /run/tls/client.pem
       TLS_KEY: /run/tls/client-key.pem
@@ -124,7 +124,7 @@ services:
     cap_drop: [ALL]
     tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
     volumes:
-      - ${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/receiver:/run/receiver:ro
+      - ${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/receiver:/run/receiver:ro
     networks: [filin_receiver_operator_internal]
     mem_limit: 256m
     cpus: 0.5

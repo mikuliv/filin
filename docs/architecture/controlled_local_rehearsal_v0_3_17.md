@@ -12,6 +12,8 @@
 
 В итоговой protocol revision 5 обе mTLS/TLS 1.3 границы повторно используют последовательные HTTP/1.1 соединения с переподключением после ошибки. Pending pump обращается к durable journal через индекс `(delivery_status, journal_durable_ns, event_id)`. Санитарные observability trace connector и receiver записываются в отдельные локальные SQLite WAL-файлы; они не участвуют в contractual commit или ACK. Основные journal, checkpoint и receiver storage сохраняют прежние схемы и `FULL` durability. Перед offline snapshot выполняется явный WAL checkpoint всех четырёх локальных баз.
 
+Итоговая revision 6 закрепляет физическую независимость runs: общий campaign-каталог содержит только входной append-only поток, control и сертификаты, а каждый run монтирует собственный `<run_id>/volumes` для sensor checkpoint, connector journal и receiver storage. После завершения run его volumes больше не подключаются к последующим runs; offline snapshots остаются внутри корня соответствующего run.
+
 `reference-receiver` валидирует immutable batch contract и registry commitment, выполняет durable SQLite transaction, обеспечивает idempotency и возвращает ACK только после commit.
 
 `operator-view` подключает receiver volume только read-only, открывает SQLite через `mode=ro`, публикует только `operator_projection_v1`, поддерживает `GET`/`HEAD` и возвращает `405 read_only` для любых write methods. Writable database, receiver write credentials и action controls отсутствуют.

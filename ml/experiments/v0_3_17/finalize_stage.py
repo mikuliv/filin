@@ -23,7 +23,8 @@ BASE_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
 REVISION_2_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
 REVISION_3_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r3.yaml"
 REVISION_4_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r4.yaml"
-PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
+REVISION_5_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r5.yaml"
+PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r6.yaml"
 BACKEND_TREE = "04218a4eb01534950efd5f7d6390f1a575cacbc8"
 
 
@@ -216,7 +217,7 @@ def main() -> int:
     identity = {"schema_version": "v0317_candidate_identity_v1", **p["candidate_identity"], "candidate_artifact_actual_sha256": file_sha256(ROOT / "runtime/v0_3_15_4/v03154_candidate.joblib"), "candidate_manifest_actual_sha256": file_sha256(ROOT / "ml/artifacts/v0_3_15_4/candidate_manifest.json")}
     identity["candidate_identity_unchanged"] = identity["candidate_artifact_actual_sha256"] == identity["artifact_sha256"] and identity["candidate_manifest_actual_sha256"] == identity["manifest_sha256"]
     write("candidate_identity_anchor.json", identity)
-    write("protocol_lock.json", {"schema_version": "v0317_protocol_lock_v1", "revision": 5, "revision_1_invalidated": True, "revision_2_invalidated": True, "revision_3_invalidated": True, "revision_4_invalidated": True, "prior_revision_evidence_used": False, "frozen_before_revision_5_first_rehearsal_event": True, "protocol_sha256": file_sha256(PROTOCOL), "revision_4_protocol_sha256": file_sha256(REVISION_4_PROTOCOL), "revision_3_protocol_sha256": file_sha256(REVISION_3_PROTOCOL), "revision_2_protocol_sha256": file_sha256(REVISION_2_PROTOCOL), "base_protocol_sha256": file_sha256(BASE_PROTOCOL), "source_head": p["source_head"]})
+    write("protocol_lock.json", {"schema_version": "v0317_protocol_lock_v1", "revision": 6, "revision_1_invalidated": True, "revision_2_invalidated": True, "revision_3_invalidated": True, "revision_4_invalidated": True, "revision_5_invalidated": True, "prior_revision_evidence_used": False, "frozen_before_revision_6_first_rehearsal_event": True, "protocol_sha256": file_sha256(PROTOCOL), "revision_5_protocol_sha256": file_sha256(REVISION_5_PROTOCOL), "revision_4_protocol_sha256": file_sha256(REVISION_4_PROTOCOL), "revision_3_protocol_sha256": file_sha256(REVISION_3_PROTOCOL), "revision_2_protocol_sha256": file_sha256(REVISION_2_PROTOCOL), "base_protocol_sha256": file_sha256(BASE_PROTOCOL), "source_head": p["source_head"]})
 
     compose_value = yaml.safe_load((ROOT / "rehearsal/docker-compose.v0_3_17.yml").read_text(encoding="utf-8"))
     architecture = {"schema_version": "v0317_architecture_v1", "component_count": 5, "components": list(compose_value["services"]), "traffic_source_component_separate": True, "sensor_component_separate": True, "connector_component_separate": True, "receiver_component_separate": True, "operator_view_component_separate": True, "backend_import_count": 0, "backend_endpoint_call_count": 0, "component_architecture_passed": True}
@@ -327,7 +328,7 @@ def main() -> int:
     write("documentation_consistency_report.json", docs)
 
     policy = {
-        "stage": "v0.3.17", "stage_status": "completed", "schema_version": "v0317_policy_result_v1", "protocol_revision": 5, "revision_1_invalidated": True, "revision_2_invalidated": True, "revision_3_invalidated": True, "revision_4_invalidated": True, "prior_revision_evidence_used": False,
+        "stage": "v0.3.17", "stage_status": "completed", "schema_version": "v0317_policy_result_v1", "protocol_revision": 6, "revision_1_invalidated": True, "revision_2_invalidated": True, "revision_3_invalidated": True, "revision_4_invalidated": True, "revision_5_invalidated": True, "prior_revision_evidence_used": False,
         "v0317_protocol_frozen": True, "v0317_code_lock_created": LOCK_PATH.is_file(), "v0317_stage_completed": True,
         "v0317_campaign_valid": True, "v0317_campaign_independence_passed": independence["campaign_independence_passed"],
         "historical_stages_unchanged": historical["historical_stages_unchanged"], "candidate_identity_unchanged": identity["candidate_identity_unchanged"], "feature_contract_unchanged": True, "event_contract_unchanged": True, "candidate_registry_unchanged": True, "staging_transport_contracts_unchanged": True, "backend_tree_unchanged": historical["backend_tree_unchanged"],
@@ -392,9 +393,9 @@ def bundle() -> None:
         if not path.is_file() or path.name in {manifest.name, detached.name}:
             continue
         artifacts.append({"artifact_role": path.stem, "relative_path": path.relative_to(ROOT).as_posix(), "size": path.stat().st_size, "sha256": file_sha256(path), "schema_version": "v0317", "required": True, "contains_sensitive_data": False, "git_inclusion_permitted": True})
-    for path, role in [(BASE_PROTOCOL, "base_protocol"), (REVISION_2_PROTOCOL, "protocol_revision_2"), (REVISION_3_PROTOCOL, "protocol_revision_3"), (REVISION_4_PROTOCOL, "protocol_revision_4"), (PROTOCOL, "protocol_revision_5"), (ROOT / "rehearsal/contracts/operator_projection_v1.schema.json", "operator_contract"), (ROOT / "rehearsal/contracts/rehearsal_observability_v1.schema.json", "observability_contract")]:
+    for path, role in [(BASE_PROTOCOL, "base_protocol"), (REVISION_2_PROTOCOL, "protocol_revision_2"), (REVISION_3_PROTOCOL, "protocol_revision_3"), (REVISION_4_PROTOCOL, "protocol_revision_4"), (REVISION_5_PROTOCOL, "protocol_revision_5"), (PROTOCOL, "protocol_revision_6"), (ROOT / "rehearsal/contracts/operator_projection_v1.schema.json", "operator_contract"), (ROOT / "rehearsal/contracts/rehearsal_observability_v1.schema.json", "observability_contract")]:
         artifacts.append({"artifact_role": role, "relative_path": path.relative_to(ROOT).as_posix(), "size": path.stat().st_size, "sha256": file_sha256(path), "schema_version": "v0317", "required": True, "contains_sensitive_data": False, "git_inclusion_permitted": True})
-    value = {"schema_version": "v0317_bundle_manifest_v1", "stage": "v0.3.17", "revision": 5, "artifacts": artifacts, "readiness": {"candidate_ready_for_v0_3_18_external_review_and_trial_design": read_json(REPORT / "v0_3_17_policy_result.json")["candidate_ready_for_v0_3_18_external_review_and_trial_design"], "shadow_mode_allowed": False, "backend_integration_allowed": False, "production_ready": False}}
+    value = {"schema_version": "v0317_bundle_manifest_v1", "stage": "v0.3.17", "revision": 6, "artifacts": artifacts, "readiness": {"candidate_ready_for_v0_3_18_external_review_and_trial_design": read_json(REPORT / "v0_3_17_policy_result.json")["candidate_ready_for_v0_3_18_external_review_and_trial_design"], "shadow_mode_allowed": False, "backend_integration_allowed": False, "production_ready": False}}
     manifest.write_text(yaml.safe_dump(value, allow_unicode=True, sort_keys=False), encoding="utf-8", newline="\n")
     detached.write_text(f"{file_sha256(manifest)}  {manifest.name}\n", encoding="utf-8", newline="\n")
 

@@ -37,8 +37,8 @@ def protocol() -> dict:
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 5),
-        (("status",), "frozen_before_revision_5_first_rehearsal_event"),
+        (("revision",), 6),
+        (("status",), "frozen_before_revision_6_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -72,6 +72,16 @@ def test_runs_are_independent_and_sum_four_hours(protocol: dict) -> None:
     assert len({item["certificate_session_id"] for item in runs}) == 3
     assert len({item["instance_namespace"] for item in runs}) == 3
     assert sum(item["duration_seconds"] for item in runs) == 14400
+
+
+def test_runs_receive_distinct_durable_volume_roots(protocol: dict) -> None:
+    first, second = protocol["campaign"]["runs"][:2]
+    first_environment = campaign_module.compose_environment(1, first)
+    second_environment = campaign_module.compose_environment(2, second)
+    assert first_environment["FILIN_V0317_RUNTIME_DIR"] == second_environment["FILIN_V0317_RUNTIME_DIR"]
+    assert first_environment["FILIN_V0317_VOLUME_DIR"] != second_environment["FILIN_V0317_VOLUME_DIR"]
+    assert first_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{first['run_id']}\\volumes")
+    assert second_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{second['run_id']}\\volumes")
 
 
 def test_sessions_are_unique(protocol: dict) -> None:
@@ -340,7 +350,7 @@ def test_all_compose_networks_are_internal() -> None:
 
 def test_operator_volume_is_read_only() -> None:
     compose = yaml.safe_load((ROOT / "rehearsal/docker-compose.v0_3_17.yml").read_text(encoding="utf-8"))
-    assert compose["services"]["operator-view"]["volumes"] == ["${FILIN_V0317_RUNTIME_DIR:-../runtime/v0_3_17}/volumes/receiver:/run/receiver:ro"]
+    assert compose["services"]["operator-view"]["volumes"] == ["${FILIN_V0317_VOLUME_DIR:-../runtime/v0_3_17/volumes}/receiver:/run/receiver:ro"]
 
 
 @pytest.mark.parametrize("method", ["POST", "PUT", "DELETE", "PATCH"])
