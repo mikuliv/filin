@@ -1,0 +1,100 @@
+schema_version: v0317_protocol_revision_v1
+stage: v0.3.17
+revision: 4
+status: frozen_before_revision_4_first_rehearsal_event
+base_protocol: ml/protocols/v0_3_17_protocol.yaml
+base_protocol_sha256: f2b206eea8bea282158a1970885137fa1794813c5e99d75c61f1e04ee56153d4
+parent_protocol: ml/protocols/v0_3_17_protocol_r3.yaml
+parent_protocol_sha256: 1870c32bcb831275b886fe9215eca589b76a16a4bfa4c30d0af52f1ae7406572
+supersedes_revision: 3
+revision_1_campaign_status: invalidated_after_first_rehearsal_event
+revision_2_campaign_status: invalidated_after_first_rehearsal_event
+revision_3_campaign_status: invalidated_after_first_rehearsal_event
+revision_1_evidence_eligible: false
+revision_2_evidence_eligible: false
+revision_3_evidence_eligible: false
+revision_3_failure_code: connector_per_request_tls_delivery_degraded_live_small_batch_throughput
+revision_reason: >-
+  Revision 3 завершила все 5 400 фактических секунд первого endurance run и
+  закрыла 5 400 capture-сегментов, но не смогла опустошить transport backlog
+  за замороженные 600 секунд. Source создал 41 340 canonical events, а durable
+  connector и receiver сохранили по 24 420. Sensor→connector уже использовал
+  постоянное TLS-соединение. Диагностика показала, что connector→receiver
+  продолжал создавать новое TLS-соединение на каждый live batch; при росте
+  журнала и конкуренции trace/checkpoint операций медианная доставка batch
+  выросла с 134,4 ms в первые десять минут до 5 102,3 ms в интервале
+  80–90 минут. Кампания сохранена и не используется как evidence. Revision 4
+  переводит вторую mTLS-границу на постоянные последовательные соединения
+  каждого frozen delivery worker. Candidate, features, contracts, schedules,
+  durations, faults, gates и readiness не меняются.
+unchanged_from_base:
+  - purpose
+  - historical_anchors
+  - candidate_identity
+  - component_architecture
+  - container_images
+  - transport_contracts
+  - network_topology
+  - actual_wall_clock_durations
+  - traffic_profiles
+  - workload_schedule
+  - load_levels
+  - maintenance_schedule
+  - restart_schedule
+  - disk_pressure_schedule
+  - receiver_slowdown_schedule
+  - backlog_policy
+  - operator_view_contract
+  - observability_contract
+  - resource_and_latency_thresholds
+  - privacy_and_security_policy
+  - retention_and_compaction
+  - no_fit_policy
+  - strict_resume_policy
+  - pass_fail_gates
+  - readiness_policy
+  - prohibitions
+campaign:
+  campaign_id: filin_v0_3_17_controlled_local_rehearsal_r4
+  runtime_namespace: v0317-r4
+  evidence_directory: runtime/v0_3_17
+  invalidated_revision_1_directories:
+    - runtime/v0_3_17_invalidated_r1
+    - runtime/v0_3_17_invalidated_r1_tail
+  invalidated_revision_2_directories:
+    - runtime/v0_3_17_invalidated_r2
+  invalidated_revision_3_directories:
+    - runtime/v0_3_17_invalidated_r3
+  runs:
+    - {run_id: local_rehearsal_endurance_r5_001, role: nominal_endurance, seed: 30101, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r4-a, instance_namespace: v0317-r4-a, evidence_root: run-r4-a}
+    - {run_id: local_rehearsal_transition_r5_001, role: workload_transitions_and_maintenance, seed: 30201, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r4-b, instance_namespace: v0317-r4-b, evidence_root: run-r4-b}
+    - {run_id: local_rehearsal_recovery_r5_001, role: recovery_disk_pressure_and_backlog, seed: 30301, duration_seconds: 3600, minimum_continuous_seconds: 3600, certificate_session_id: cert-session-v0317-r4-c, instance_namespace: v0317-r4-c, evidence_root: run-r4-c}
+  sessions:
+    - {session_id: rehearsal_nominal_r4_001, seed: 30111, run: local_rehearsal_endurance_r5_001}
+    - {session_id: rehearsal_nominal_r4_002, seed: 30112, run: local_rehearsal_endurance_r5_001}
+    - {session_id: rehearsal_nominal_r4_003, seed: 30113, run: local_rehearsal_endurance_r5_001}
+    - {session_id: rehearsal_background_shift_r4_001, seed: 30114, run: local_rehearsal_endurance_r5_001}
+    - {session_id: rehearsal_background_shift_r4_002, seed: 30211, run: local_rehearsal_transition_r5_001}
+    - {session_id: rehearsal_background_shift_r4_003, seed: 30212, run: local_rehearsal_transition_r5_001}
+    - {session_id: rehearsal_burst_r4_001, seed: 30213, run: local_rehearsal_transition_r5_001}
+    - {session_id: rehearsal_burst_r4_002, seed: 30214, run: local_rehearsal_transition_r5_001}
+    - {session_id: rehearsal_maintenance_r4_001, seed: 30311, run: local_rehearsal_transition_r5_001}
+    - {session_id: rehearsal_restart_r4_001, seed: 30312, run: local_rehearsal_recovery_r5_001}
+    - {session_id: rehearsal_disk_pressure_r4_001, seed: 30313, run: local_rehearsal_recovery_r5_001}
+    - {session_id: rehearsal_recovery_r4_001, seed: 30314, run: local_rehearsal_recovery_r5_001}
+certificate_serial_namespace: 3174xxx
+transport_correction:
+  scope: connector_to_receiver_connection_lifecycle_only
+  protocol: mTLS_over_TLS_1_3
+  connection_mode: persistent_sequential_http_1_1_per_delivery_worker
+  delivery_worker_count_unchanged: 2
+  reconnect_after_error: true
+  checkpoint_only_after_durable_ack: true
+  request_batch_ack_and_storage_contracts_unchanged: true
+invalidation:
+  revision_1_preserved: true
+  revision_2_preserved: true
+  revision_3_preserved: true
+  prior_revision_data_used_for_revision_4_evidence: false
+  revision_4_error_before_first_event: preserve_and_create_new_revision
+  revision_4_error_after_first_event: invalidate_and_use_new_ids_seeds_runtime_ids_and_certificates
