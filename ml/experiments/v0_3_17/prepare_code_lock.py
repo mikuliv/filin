@@ -10,7 +10,8 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[3]
 BASE_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol.yaml"
-PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
+REVISION_2_PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r2.yaml"
+PROTOCOL = ROOT / "ml/protocols/v0_3_17_protocol_r3.yaml"
 REPORT = ROOT / "ml/reports/v0_3_17/pre_campaign_code_lock.json"
 
 
@@ -65,6 +66,7 @@ def main() -> int:
         "git_head": git_head,
         "protocol_sha256": sha(PROTOCOL),
         "base_protocol_sha256": sha(BASE_PROTOCOL),
+        "revision_2_protocol_sha256": sha(REVISION_2_PROTOCOL),
         "candidate_identity": protocol["candidate_identity"],
         "component_image_digests": {
             "filin-rehearsal-v0317:local": image,

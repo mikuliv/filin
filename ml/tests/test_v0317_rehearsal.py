@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import ssl
 import sqlite3
 import struct
 import time
@@ -16,7 +17,7 @@ from ml.experiments.v0_3_15_4.feature_v2 import FEATURES
 from ml.features.network_sensor_v0_5 import AssetState
 from rehearsal.connector_app import DurableDelivery
 from rehearsal.operator_view import FIELDS, project
-from rehearsal.sensor_daemon import _lines_from
+from rehearsal.sensor_daemon import PersistentIngressClient, _lines_from
 from rehearsal.traffic_source import scheduled_rate, write_pcap
 from staging.storage import ConnectorJournal, ReceiverStore
 
@@ -34,8 +35,8 @@ def protocol() -> dict:
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 2),
-        (("status",), "frozen_before_revision_2_first_rehearsal_event"),
+        (("revision",), 3),
+        (("status",), "frozen_before_revision_3_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -76,6 +77,43 @@ def test_sessions_are_unique(protocol: dict) -> None:
     assert len(sessions) == 12
     assert len({item["session_id"] for item in sessions}) == 12
     assert len({item["seed"] for item in sessions}) == 12
+
+
+def test_sensor_reuses_persistent_tls_connection() -> None:
+    created = []
+
+    class Response:
+        status = 200
+
+        @staticmethod
+        def read() -> bytes:
+            return b'{"durable":true}'
+
+    class Connection:
+        def __init__(self, *args: object, **kwargs: object) -> None:
+            self.requests = []
+            created.append(self)
+
+        def request(self, *args: object, **kwargs: object) -> None:
+            self.requests.append((args, kwargs))
+
+        @staticmethod
+        def getresponse() -> Response:
+            return Response()
+
+        @staticmethod
+        def close() -> None:
+            return None
+
+    client = PersistentIngressClient(
+        "https://staging-connector:8443/staging-connector/v1/events",
+        ssl.create_default_context(),
+        connection_factory=Connection,
+    )
+    assert client.send(b"{}") == {"durable": True}
+    assert client.send(b"{}") == {"durable": True}
+    assert len(created) == 1
+    assert len(created[0].requests) == 2
 
 
 @pytest.mark.parametrize(

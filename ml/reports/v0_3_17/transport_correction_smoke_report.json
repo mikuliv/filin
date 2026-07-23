@@ -1,0 +1,21 @@
+{
+  "backend_call_count": 0,
+  "backend_write_count": 0,
+  "component_image_digest": "sha256:4da32f87d1e2a3947711e91d996651c802287b0499ca66e3b33b06f689bf15f1",
+  "connector_durable_event_count": 2500,
+  "elapsed_seconds_including_stack_startup": 86.014,
+  "evidence_eligible": false,
+  "external_network_attempt_count": 0,
+  "internal_network_count": 3,
+  "operator_post_status": 405,
+  "operator_read_only_passed": true,
+  "protocol_revision_under_test": 3,
+  "receiver_durable_event_count": 2500,
+  "schema_version": "v0317_transport_correction_smoke_v1",
+  "sensor_connector_receiver_sets_equal": true,
+  "synthetic_fixture_event_count": 2500,
+  "throughput_events_per_second_including_stack_startup": 29.065,
+  "throughput_gate_minimum": 10.0,
+  "throughput_gate_passed": true,
+  "transport_mode": "persistent_sequential_http_1_1_over_mtls_tls_1_3"
+}

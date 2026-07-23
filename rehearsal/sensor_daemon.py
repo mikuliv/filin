@@ -1,17 +1,74 @@
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
+import ssl
 import time
-import urllib.error
-import urllib.request
 from pathlib import Path
+from typing import Callable
+from urllib.parse import urlsplit
 
 from rehearsal.common import append_jsonl, digest, read_json, write_json
 from staging.contracts import canonical_bytes
 from staging.contracts.models import REGISTRY_COMMITMENT
 from staging.http_runtime import client_context
+
+
+class PersistentIngressClient:
+    def __init__(
+        self,
+        endpoint: str,
+        context: ssl.SSLContext,
+        timeout: float = 10,
+        connection_factory: Callable[..., http.client.HTTPSConnection] = http.client.HTTPSConnection,
+    ) -> None:
+        parsed = urlsplit(endpoint)
+        if parsed.scheme != "https" or not parsed.hostname:
+            raise ValueError("sensor_ingress_endpoint_must_be_https")
+        self.host = parsed.hostname
+        self.port = parsed.port or 443
+        self.path = parsed.path or "/"
+        if parsed.query:
+            self.path += f"?{parsed.query}"
+        self.context = context
+        self.timeout = timeout
+        self.connection_factory = connection_factory
+        self.connection: http.client.HTTPSConnection | None = None
+
+    def close(self) -> None:
+        if self.connection is not None:
+            self.connection.close()
+            self.connection = None
+
+    def send(self, body: bytes) -> dict:
+        if self.connection is None:
+            self.connection = self.connection_factory(
+                self.host,
+                self.port,
+                context=self.context,
+                timeout=self.timeout,
+            )
+        try:
+            self.connection.request(
+                "POST",
+                self.path,
+                body=body,
+                headers={
+                    "Content-Type": "application/json",
+                    "Content-Length": str(len(body)),
+                    "Connection": "keep-alive",
+                },
+            )
+            response = self.connection.getresponse()
+            payload = response.read()
+            if response.status != 200:
+                raise RuntimeError(f"connector_ingress_http_status:{response.status}")
+            return json.loads(payload)
+        except (OSError, http.client.HTTPException, RuntimeError, json.JSONDecodeError):
+            self.close()
+            raise
 
 
 def _lines_from(path: Path, offset: int, limit: int) -> tuple[list[dict], int]:
@@ -39,6 +96,7 @@ def main() -> int:
     parser.add_argument("--batch-size", type=int, default=50)
     args = parser.parse_args()
     context = client_context(os.environ["TLS_CERT"], os.environ["TLS_KEY"], os.environ["TLS_CA"])
+    client = PersistentIngressClient(args.endpoint, context)
     instance = os.environ.get("SENSOR_INSTANCE_ID", "sensor-v0317")
     offset = int(read_json(args.checkpoint).get("byte_offset", 0)) if args.checkpoint.is_file() else 0
     while True:
@@ -62,16 +120,15 @@ def main() -> int:
             "events": events,
         }
         body["request_body_sha256"] = digest(body)
-        request = urllib.request.Request(args.endpoint, data=canonical_bytes(body), headers={"Content-Type": "application/json"}, method="POST")
         try:
-            with urllib.request.urlopen(request, context=context, timeout=10) as response:
-                ack = json.loads(response.read())
+            ack = client.send(canonical_bytes(body))
             accounted = len(ack.get("accepted_event_ids", [])) + len(ack.get("duplicate_event_ids", []))
             if not ack.get("durable") or accounted != len(events):
                 raise RuntimeError("connector_ingress_ack_invalid")
             offset = next_offset
             write_json(args.checkpoint, {"byte_offset": offset, "last_request_id": request_id, "last_ack_monotonic_ns": time.monotonic_ns()})
-        except (OSError, urllib.error.URLError, RuntimeError, json.JSONDecodeError):
+        except (OSError, http.client.HTTPException, RuntimeError, json.JSONDecodeError):
+            client.close()
             time.sleep(0.2)
 
 
