@@ -37,8 +37,8 @@ def protocol() -> dict:
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 6),
-        (("status",), "frozen_before_revision_6_first_rehearsal_event"),
+        (("revision",), 7),
+        (("status",), "frozen_before_revision_7_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -82,6 +82,17 @@ def test_runs_receive_distinct_durable_volume_roots(protocol: dict) -> None:
     assert first_environment["FILIN_V0317_VOLUME_DIR"] != second_environment["FILIN_V0317_VOLUME_DIR"]
     assert first_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{first['run_id']}\\volumes")
     assert second_environment["FILIN_V0317_VOLUME_DIR"].endswith(f"{second['run_id']}\\volumes")
+
+
+def test_stale_source_control_is_removed_before_next_run(tmp_path: Path) -> None:
+    for name in ("control.json", "source_last_completion.json"):
+        (tmp_path / name).write_text('{"run_id":"prior"}\n', encoding="utf-8")
+    unrelated = tmp_path / "campaign_start_attestation.json"
+    unrelated.write_text("{}\n", encoding="utf-8")
+    campaign_module.clear_stale_source_markers(tmp_path)
+    assert not (tmp_path / "control.json").exists()
+    assert not (tmp_path / "source_last_completion.json").exists()
+    assert unrelated.is_file()
 
 
 def test_sessions_are_unique(protocol: dict) -> None:

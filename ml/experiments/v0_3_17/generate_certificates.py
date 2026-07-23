@@ -74,7 +74,7 @@ def activate(root: Path, variant: str) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-index", type=int, required=True, choices=(1, 2, 3))
-    parser.add_argument("--revision", type=int, required=True, choices=(6,))
+    parser.add_argument("--revision", type=int, required=True, choices=(7,))
     args = parser.parse_args()
     root = RUNTIME / "tls" / f"run-{args.run_index}"
     if root.exists():
