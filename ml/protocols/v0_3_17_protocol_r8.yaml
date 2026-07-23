@@ -1,0 +1,119 @@
+schema_version: v0317_protocol_revision_v1
+stage: v0.3.17
+revision: 8
+status: frozen_before_revision_8_first_rehearsal_event
+base_protocol: ml/protocols/v0_3_17_protocol.yaml
+base_protocol_sha256: f2b206eea8bea282158a1970885137fa1794813c5e99d75c61f1e04ee56153d4
+parent_protocol: ml/protocols/v0_3_17_protocol_r7.yaml
+parent_protocol_sha256: 3105896d824f874b5c01aef5bd7f7d1c4bf1cbbd6183e569c2a49c24ceaa5714
+supersedes_revision: 7
+revision_1_campaign_status: invalidated_after_first_rehearsal_event
+revision_2_campaign_status: invalidated_after_first_rehearsal_event
+revision_3_campaign_status: invalidated_after_first_rehearsal_event
+revision_4_campaign_status: invalidated_during_pre_campaign_live_smoke
+revision_5_campaign_status: invalidated_at_independent_run_boundary
+revision_6_campaign_status: invalidated_during_run_boundary_transition
+revision_7_campaign_status: invalidated_during_run_b_maintenance
+revision_1_evidence_eligible: false
+revision_2_evidence_eligible: false
+revision_3_evidence_eligible: false
+revision_4_evidence_eligible: false
+revision_5_evidence_eligible: false
+revision_6_evidence_eligible: false
+revision_7_evidence_eligible: false
+revision_7_failure_code: certificate_rotation_restart_failed_and_transition_backlog_unbounded
+revision_reason: >-
+  Revision 7 успешно завершила независимый endurance run за 5 400,000 фактических
+  секунд с 41 340 canonical events без потерь. Во втором run первая ротация
+  сертификата прошла, но вторая оставила reference receiver остановленным с
+  exit code 137 и была записана как failed. Одновременно Windows bind-mounted
+  SQLite FULL durability не обеспечила drain frozen transition workload:
+  при остановке source/connector/receiver содержали 74 320/43 271/38 271 событий.
+  Кампания сохранена и исключена из evidence. Revision 8 заменяет только
+  физический носитель per-run durable storage на отдельные локальные Docker
+  named volumes, сохраняет offline snapshots в run evidence root, выполняет
+  атомарную замену synthetic certificate files и гарантированный stop/up с
+  health verification. Candidate, features, schemas, durability, schedules,
+  durations, faults, gates и readiness не меняются.
+unchanged_from_base:
+  - purpose
+  - historical_anchors
+  - candidate_identity
+  - component_architecture
+  - container_images
+  - transport_contracts
+  - network_topology
+  - actual_wall_clock_durations
+  - traffic_profiles
+  - workload_schedule
+  - load_levels
+  - maintenance_schedule
+  - restart_schedule
+  - disk_pressure_schedule
+  - receiver_slowdown_schedule
+  - backlog_policy
+  - operator_view_contract
+  - observability_contract
+  - resource_and_latency_thresholds
+  - privacy_and_security_policy
+  - retention_and_compaction
+  - no_fit_policy
+  - strict_resume_policy
+  - pass_fail_gates
+  - readiness_policy
+  - prohibitions
+campaign:
+  campaign_id: filin_v0_3_17_controlled_local_rehearsal_r8
+  runtime_namespace: v0317-r8
+  evidence_directory: runtime/v0_3_17
+  invalidated_revision_1_directories:
+    - runtime/v0_3_17_invalidated_r1
+    - runtime/v0_3_17_invalidated_r1_tail
+  invalidated_revision_2_directories:
+    - runtime/v0_3_17_invalidated_r2
+  invalidated_revision_3_directories:
+    - runtime/v0_3_17_invalidated_r3
+  invalidated_revision_4_directories:
+    - runtime/v0_3_17_invalidated_r4_smoke
+  invalidated_revision_5_directories:
+    - runtime/v0_3_17_invalidated_r5
+  invalidated_revision_6_directories:
+    - runtime/v0_3_17_invalidated_r6
+  invalidated_revision_7_directories:
+    - runtime/v0_3_17_invalidated_r7
+  runs:
+    - {run_id: local_rehearsal_endurance_r9_001, role: nominal_endurance, seed: 34101, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r8-a, instance_namespace: v0317-r8-a, evidence_root: run-r8-a}
+    - {run_id: local_rehearsal_transition_r9_001, role: workload_transitions_and_maintenance, seed: 34201, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r8-b, instance_namespace: v0317-r8-b, evidence_root: run-r8-b}
+    - {run_id: local_rehearsal_recovery_r9_001, role: recovery_disk_pressure_and_backlog, seed: 34301, duration_seconds: 3600, minimum_continuous_seconds: 3600, certificate_session_id: cert-session-v0317-r8-c, instance_namespace: v0317-r8-c, evidence_root: run-r8-c}
+  sessions:
+    - {session_id: rehearsal_nominal_r8_001, seed: 34111, run: local_rehearsal_endurance_r9_001}
+    - {session_id: rehearsal_nominal_r8_002, seed: 34112, run: local_rehearsal_endurance_r9_001}
+    - {session_id: rehearsal_nominal_r8_003, seed: 34113, run: local_rehearsal_endurance_r9_001}
+    - {session_id: rehearsal_background_shift_r8_001, seed: 34114, run: local_rehearsal_endurance_r9_001}
+    - {session_id: rehearsal_background_shift_r8_002, seed: 34211, run: local_rehearsal_transition_r9_001}
+    - {session_id: rehearsal_background_shift_r8_003, seed: 34212, run: local_rehearsal_transition_r9_001}
+    - {session_id: rehearsal_burst_r8_001, seed: 34213, run: local_rehearsal_transition_r9_001}
+    - {session_id: rehearsal_burst_r8_002, seed: 34214, run: local_rehearsal_transition_r9_001}
+    - {session_id: rehearsal_maintenance_r8_001, seed: 34311, run: local_rehearsal_transition_r9_001}
+    - {session_id: rehearsal_restart_r8_001, seed: 34312, run: local_rehearsal_recovery_r9_001}
+    - {session_id: rehearsal_disk_pressure_r8_001, seed: 34313, run: local_rehearsal_recovery_r9_001}
+    - {session_id: rehearsal_recovery_r8_001, seed: 34314, run: local_rehearsal_recovery_r9_001}
+certificate_serial_namespace: 3178xxx
+runtime_isolation:
+  shared_campaign_input_directory: runtime/v0_3_17
+  per_run_durable_volume_kind: local_docker_named_volume
+  per_run_volume_namespace: filin-v0317-<instance_namespace>-<component>
+  sensor_connector_receiver_volume_reuse_across_runs: false
+  prior_run_storage_mounted_in_later_run: false
+  stale_control_removed_before_source_start: true
+  stale_source_completion_removed_before_source_start: true
+  offline_snapshots_within_run_root: true
+certificate_rotation:
+  active_file_replacement_atomic: true
+  restart_sequence: stop_then_up
+  post_restart_health_verification: true
+invalidation:
+  revisions_1_through_7_preserved: true
+  prior_revision_data_used_for_revision_8_evidence: false
+  revision_8_error_before_first_event: preserve_and_create_new_revision
+  revision_8_error_after_first_event: invalidate_and_use_new_ids_seeds_runtime_ids_and_certificates

@@ -1,0 +1,27 @@
+{
+  "campaign_id": "filin_v0_3_17_controlled_local_rehearsal_r7",
+  "campaign_status": "invalidated_during_run_b_maintenance",
+  "evidence_eligible": false,
+  "failure_code": "certificate_rotation_restart_failed_and_transition_backlog_unbounded",
+  "invalidated_runtime_directories": [
+    "runtime/v0_3_17_invalidated_r7"
+  ],
+  "protocol_revision": 7,
+  "run_a_actual_duration_seconds": 5400.000109793,
+  "run_a_canonical_event_count": 41340,
+  "run_a_capture_segment_count": 5400,
+  "run_a_completed": true,
+  "run_a_duplicate_window_count": 0,
+  "run_a_missing_window_count": 0,
+  "run_a_out_of_order_window_count": 0,
+  "run_a_repeated_inference_count": 0,
+  "run_b_capture_count_at_stop": 3401,
+  "run_b_source_event_count_at_stop": 74320,
+  "run_b_connector_event_count_at_stop": 43271,
+  "run_b_receiver_event_count_at_stop": 38271,
+  "run_b_connector_pending_event_count_at_stop": 5000,
+  "run_b_first_certificate_rotation_passed": true,
+  "run_b_second_certificate_rotation_passed": false,
+  "run_b_receiver_exit_code": 137,
+  "schema_version": "v0317_invalidated_revision_report_v1"
+}

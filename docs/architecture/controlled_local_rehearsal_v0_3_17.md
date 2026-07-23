@@ -39,3 +39,13 @@ Raw PCAP, features, predictions, events, journals, databases, snapshots, resourc
 `control.json` и marker предыдущего завершения. Новый control становится видимым
 только после готовности нового стека с отдельным `<run_id>/volumes`. Это не даёт
 источнику повторно выполнить расписание предыдущего run на переходной границе.
+# Durable storage и maintenance в revision 8
+
+Sensor, connector и receiver каждого run используют отдельные локальные Docker
+named volumes. Они не переиспользуются между runs. После reconciliation
+оркестратор выполняет WAL checkpoint и копирует main/trace databases в
+`<run_id>/offline_storage`, после чего следующий run получает новые volumes.
+
+Synthetic certificate files заменяются через временный файл и атомарный rename.
+Перезапуск выполняется как ограниченный `stop`, затем `up --no-deps`, после чего
+оркестратор ждёт running/healthy состояния всех затронутых компонентов.
