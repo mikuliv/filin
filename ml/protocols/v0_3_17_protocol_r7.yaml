@@ -1,0 +1,108 @@
+schema_version: v0317_protocol_revision_v1
+stage: v0.3.17
+revision: 7
+status: frozen_before_revision_7_first_rehearsal_event
+base_protocol: ml/protocols/v0_3_17_protocol.yaml
+base_protocol_sha256: f2b206eea8bea282158a1970885137fa1794813c5e99d75c61f1e04ee56153d4
+parent_protocol: ml/protocols/v0_3_17_protocol_r6.yaml
+parent_protocol_sha256: 7f4487e8425e4337426973de0bbdab2ae3906eb2e05f7704bbb996d43f9dc86a
+supersedes_revision: 6
+revision_1_campaign_status: invalidated_after_first_rehearsal_event
+revision_2_campaign_status: invalidated_after_first_rehearsal_event
+revision_3_campaign_status: invalidated_after_first_rehearsal_event
+revision_4_campaign_status: invalidated_during_pre_campaign_live_smoke
+revision_5_campaign_status: invalidated_at_independent_run_boundary
+revision_6_campaign_status: invalidated_during_run_boundary_transition
+revision_1_evidence_eligible: false
+revision_2_evidence_eligible: false
+revision_3_evidence_eligible: false
+revision_4_evidence_eligible: false
+revision_5_evidence_eligible: false
+revision_6_evidence_eligible: false
+revision_6_failure_code: stale_control_replayed_prior_run
+revision_reason: >-
+  Revision 6 успешно завершила первый endurance run за 5 400,000 фактических секунд:
+  5 400 capture-сегментов, 41 400 окон и 41 340 canonical events без потерь.
+  Durable volumes второго run были пустыми и физически независимыми. Однако при
+  переходе свежий контейнер traffic-source прочитал оставшийся campaign control
+  первого run до публикации нового control и начал повторно дописывать capture
+  первого run. Кампания остановлена до первого capture второго run, сохранена и
+  полностью исключена из evidence. Revision 7 удаляет устаревшие control и
+  source completion markers до запуска следующего контейнера traffic-source.
+  Candidate, features, transport/storage/event contracts, schedules, durations,
+  faults, gates и readiness не меняются.
+unchanged_from_base:
+  - purpose
+  - historical_anchors
+  - candidate_identity
+  - component_architecture
+  - container_images
+  - transport_contracts
+  - network_topology
+  - actual_wall_clock_durations
+  - traffic_profiles
+  - workload_schedule
+  - load_levels
+  - maintenance_schedule
+  - restart_schedule
+  - disk_pressure_schedule
+  - receiver_slowdown_schedule
+  - backlog_policy
+  - operator_view_contract
+  - observability_contract
+  - resource_and_latency_thresholds
+  - privacy_and_security_policy
+  - retention_and_compaction
+  - no_fit_policy
+  - strict_resume_policy
+  - pass_fail_gates
+  - readiness_policy
+  - prohibitions
+campaign:
+  campaign_id: filin_v0_3_17_controlled_local_rehearsal_r7
+  runtime_namespace: v0317-r7
+  evidence_directory: runtime/v0_3_17
+  invalidated_revision_1_directories:
+    - runtime/v0_3_17_invalidated_r1
+    - runtime/v0_3_17_invalidated_r1_tail
+  invalidated_revision_2_directories:
+    - runtime/v0_3_17_invalidated_r2
+  invalidated_revision_3_directories:
+    - runtime/v0_3_17_invalidated_r3
+  invalidated_revision_4_directories:
+    - runtime/v0_3_17_invalidated_r4_smoke
+  invalidated_revision_5_directories:
+    - runtime/v0_3_17_invalidated_r5
+  invalidated_revision_6_directories:
+    - runtime/v0_3_17_invalidated_r6
+  runs:
+    - {run_id: local_rehearsal_endurance_r8_001, role: nominal_endurance, seed: 33101, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r7-a, instance_namespace: v0317-r7-a, evidence_root: run-r7-a}
+    - {run_id: local_rehearsal_transition_r8_001, role: workload_transitions_and_maintenance, seed: 33201, duration_seconds: 5400, minimum_continuous_seconds: 5400, certificate_session_id: cert-session-v0317-r7-b, instance_namespace: v0317-r7-b, evidence_root: run-r7-b}
+    - {run_id: local_rehearsal_recovery_r8_001, role: recovery_disk_pressure_and_backlog, seed: 33301, duration_seconds: 3600, minimum_continuous_seconds: 3600, certificate_session_id: cert-session-v0317-r7-c, instance_namespace: v0317-r7-c, evidence_root: run-r7-c}
+  sessions:
+    - {session_id: rehearsal_nominal_r7_001, seed: 33111, run: local_rehearsal_endurance_r8_001}
+    - {session_id: rehearsal_nominal_r7_002, seed: 33112, run: local_rehearsal_endurance_r8_001}
+    - {session_id: rehearsal_nominal_r7_003, seed: 33113, run: local_rehearsal_endurance_r8_001}
+    - {session_id: rehearsal_background_shift_r7_001, seed: 33114, run: local_rehearsal_endurance_r8_001}
+    - {session_id: rehearsal_background_shift_r7_002, seed: 33211, run: local_rehearsal_transition_r8_001}
+    - {session_id: rehearsal_background_shift_r7_003, seed: 33212, run: local_rehearsal_transition_r8_001}
+    - {session_id: rehearsal_burst_r7_001, seed: 33213, run: local_rehearsal_transition_r8_001}
+    - {session_id: rehearsal_burst_r7_002, seed: 33214, run: local_rehearsal_transition_r8_001}
+    - {session_id: rehearsal_maintenance_r7_001, seed: 33311, run: local_rehearsal_transition_r8_001}
+    - {session_id: rehearsal_restart_r7_001, seed: 33312, run: local_rehearsal_recovery_r8_001}
+    - {session_id: rehearsal_disk_pressure_r7_001, seed: 33313, run: local_rehearsal_recovery_r8_001}
+    - {session_id: rehearsal_recovery_r7_001, seed: 33314, run: local_rehearsal_recovery_r8_001}
+certificate_serial_namespace: 3177xxx
+runtime_isolation:
+  shared_campaign_input_directory: runtime/v0_3_17
+  per_run_volume_root: runtime/v0_3_17/<run_id>/volumes
+  sensor_connector_receiver_volume_reuse_across_runs: false
+  prior_run_storage_mounted_in_later_run: false
+  stale_control_removed_before_source_start: true
+  stale_source_completion_removed_before_source_start: true
+  offline_snapshots_within_run_root: true
+invalidation:
+  revisions_1_through_6_preserved: true
+  prior_revision_data_used_for_revision_7_evidence: false
+  revision_7_error_before_first_event: preserve_and_create_new_revision
+  revision_7_error_after_first_event: invalidate_and_use_new_ids_seeds_runtime_ids_and_certificates

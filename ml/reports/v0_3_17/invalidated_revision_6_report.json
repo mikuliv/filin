@@ -1,0 +1,19 @@
+{
+  "campaign_id": "filin_v0_3_17_controlled_local_rehearsal_r6",
+  "campaign_status": "invalidated_during_run_boundary_transition",
+  "evidence_eligible": false,
+  "failure_code": "stale_control_replayed_prior_run",
+  "invalidated_runtime_directories": [
+    "runtime/v0_3_17_invalidated_r6"
+  ],
+  "protocol_revision": 6,
+  "run_a_actual_duration_seconds": 5400.000053057,
+  "run_a_canonical_event_count_before_contamination": 41340,
+  "run_a_capture_segment_count_before_contamination": 5400,
+  "run_a_capture_receipt_count_at_stop": 5634,
+  "run_a_completed_before_transition": true,
+  "run_a_second_source_started_at": "2026-07-23T14:01:34.274825+00:00",
+  "run_b_capture_count_before_stop": 0,
+  "run_b_receiver_preexisting_event_count": 0,
+  "schema_version": "v0317_invalidated_revision_report_v1"
+}
