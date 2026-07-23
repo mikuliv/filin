@@ -1,0 +1,26 @@
+{
+  "campaign_id": "filin_v0_3_17_controlled_local_rehearsal_r2",
+  "campaign_status": "invalidated_after_first_rehearsal_event",
+  "capture_packet_count": 13630,
+  "capture_window_count": 1813,
+  "connector_durable_event_count": 12710,
+  "evidence_eligible": false,
+  "failure_code": "sensor_per_request_tls_connection_throughput_below_nominal_gate",
+  "feature_row_count": 13510,
+  "first_capture_wall_ns": 1784747090906807425,
+  "invalidated_runtime_directories": [
+    "runtime/v0_3_17_invalidated_r2"
+  ],
+  "last_capture_wall_ns": 1784748996251504560,
+  "monotonic_capture_span_seconds": 1811.987515394,
+  "prediction_count": 13510,
+  "processing_lag_event_count": 0,
+  "protocol_revision": 2,
+  "receiver_durable_event_count": 12710,
+  "resource_sample_count": 894,
+  "run_id": "local_rehearsal_endurance_r3_001",
+  "schema_version": "v0317_invalidated_revision_report_v1",
+  "source_canonical_event_count": 13450,
+  "transport_lag_event_count": 740,
+  "wall_capture_span_seconds": 1905.344697135
+}
