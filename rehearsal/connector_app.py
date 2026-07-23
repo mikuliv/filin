@@ -1,25 +1,25 @@
 from __future__ import annotations
 
 import argparse
+import http.client
 import json
 import os
 import queue
 import threading
 import time
-import urllib.error
-import urllib.request
 from pathlib import Path
 
+from rehearsal.persistent_https import PersistentJsonClient
+from rehearsal.storage import RehearsalConnectorJournal
 from staging.contracts import canonical_bytes, digest, validate_ingress, validate_receiver_ack
 from staging.contracts.models import REGISTRY_COMMITMENT
 from staging.http_runtime import client_context, serve, server_context
-from staging.storage import ConnectorJournal
 
 
 class DurableDelivery:
     """Bounded sender that continuously rehydrates pending durable journal rows."""
 
-    def __init__(self, journal: ConnectorJournal, endpoint: str, instance_id: str) -> None:
+    def __init__(self, journal: RehearsalConnectorJournal, endpoint: str, instance_id: str) -> None:
         self.journal, self.endpoint, self.instance_id = journal, endpoint, instance_id
         self.queue: queue.Queue[list[dict]] = queue.Queue(maxsize=200)
         self.context = client_context(os.environ["DELIVERY_TLS_CERT"], os.environ["DELIVERY_TLS_KEY"], os.environ["DELIVERY_TLS_CA"])
@@ -72,23 +72,23 @@ class DurableDelivery:
             return batch
 
     def _worker(self, worker: int) -> None:
+        client = PersistentJsonClient(self.endpoint, self.context)
         while True:
             events = self.queue.get()
             delivered = False
             for attempt in range(1, 6):
                 batch = self._batch(events, worker, attempt)
-                request = urllib.request.Request(self.endpoint, data=canonical_bytes(batch), headers={"Content-Type": "application/json"}, method="POST")
                 try:
                     self.journal.trace(events, "connector_send_started")
-                    with urllib.request.urlopen(request, context=self.context, timeout=min(5, attempt + 1)) as response:
-                        ack = json.loads(response.read())
+                    ack = client.send(canonical_bytes(batch))
                     self.journal.trace(events, "connector_ack_received")
                     validate_receiver_ack(ack, batch)
                     checkpoint = self.journal.checkpoint(batch, ack)
                     self.journal.trace(events, "connector_checkpoint_committed", checkpoint)
                     delivered = True
                     break
-                except (OSError, urllib.error.URLError, ValueError, json.JSONDecodeError):
+                except (OSError, http.client.HTTPException, RuntimeError, ValueError, json.JSONDecodeError):
+                    client.close()
                     self.metrics["retry_count"] += 1
                     time.sleep(min(0.5, 0.05 * (2**attempt)))
             if delivered:
@@ -111,7 +111,7 @@ def main() -> int:
     parser.add_argument("--receiver", default="https://reference-receiver:9443/reference-receiver/v1/event-batches")
     args = parser.parse_args()
     instance = os.environ.get("CONNECTOR_INSTANCE_ID", "connector-v0317")
-    journal = ConnectorJournal(args.db)
+    journal = RehearsalConnectorJournal(args.db)
     delivery = DurableDelivery(journal, args.receiver, instance)
 
     def ingress(value):

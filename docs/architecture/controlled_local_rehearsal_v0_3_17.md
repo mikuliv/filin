@@ -10,6 +10,8 @@
 
 `staging-connector` валидирует неизменные ingress/event contracts, выполняет SQLite WAL `FULL` commit до ACK и доставляет batches в `reference-receiver`. Bounded queue содержит до 200 batches; durable pending pump восстанавливает незавершённые записи после restart и исключает повторный inference.
 
+В итоговой protocol revision 5 обе mTLS/TLS 1.3 границы повторно используют последовательные HTTP/1.1 соединения с переподключением после ошибки. Pending pump обращается к durable journal через индекс `(delivery_status, journal_durable_ns, event_id)`. Санитарные observability trace connector и receiver записываются в отдельные локальные SQLite WAL-файлы; они не участвуют в contractual commit или ACK. Основные journal, checkpoint и receiver storage сохраняют прежние схемы и `FULL` durability. Перед offline snapshot выполняется явный WAL checkpoint всех четырёх локальных баз.
+
 `reference-receiver` валидирует immutable batch contract и registry commitment, выполняет durable SQLite transaction, обеспечивает idempotency и возвращает ACK только после commit.
 
 `operator-view` подключает receiver volume только read-only, открывает SQLite через `mode=ro`, публикует только `operator_projection_v1`, поддерживает `GET`/`HEAD` и возвращает `405 read_only` для любых write methods. Writable database, receiver write credentials и action controls отсутствуют.
@@ -29,4 +31,3 @@ Published ports, host network, внешние routes, внешняя DNS и back
 Все контейнеры запускаются как UID/GID `65532`, с read-only root filesystem, `no-new-privileges`, `cap_drop: ALL`, без privileged mode, Docker socket и host filesystem. Writable области ограничены отдельными runtime bind/volumes и `/tmp` tmpfs. Каждый компонент имеет memory/CPU/PID limits, frozen `restart: no` и healthcheck. Синтетические private keys находятся только в gitignored runtime и имеют требуемый режим `0600` на поддерживающей его файловой системе.
 
 Raw PCAP, features, predictions, events, journals, databases, snapshots, resource и latency traces не входят в Git. В evidence bundle допускаются только санитарные aggregates, manifests, hashes и причинно связанные отчёты.
-

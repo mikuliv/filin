@@ -17,7 +17,9 @@ from ml.experiments.v0_3_15_4.feature_v2 import FEATURES
 from ml.features.network_sensor_v0_5 import AssetState
 from rehearsal.connector_app import DurableDelivery
 from rehearsal.operator_view import FIELDS, project
-from rehearsal.sensor_daemon import PersistentIngressClient, _lines_from
+from rehearsal.persistent_https import PersistentJsonClient
+from rehearsal.sensor_daemon import _lines_from
+from rehearsal.storage import RehearsalConnectorJournal, RehearsalReceiverStore
 from rehearsal.traffic_source import scheduled_rate, write_pcap
 from staging.storage import ConnectorJournal, ReceiverStore
 
@@ -35,8 +37,8 @@ def protocol() -> dict:
     ("path", "expected"),
     [
         (("stage",), "v0.3.17"),
-        (("revision",), 3),
-        (("status",), "frozen_before_revision_3_first_rehearsal_event"),
+        (("revision",), 5),
+        (("status",), "frozen_before_revision_5_first_rehearsal_event"),
         (("campaign", "total_minimum_seconds"), 14400),
         (("campaign", "minimum_closed_capture_windows"), 14400),
         (("campaign", "warmup_windows_per_run"), 60),
@@ -105,7 +107,7 @@ def test_sensor_reuses_persistent_tls_connection() -> None:
         def close() -> None:
             return None
 
-    client = PersistentIngressClient(
+    client = PersistentJsonClient(
         "https://staging-connector:8443/staging-connector/v1/events",
         ssl.create_default_context(),
         connection_factory=Connection,
@@ -114,6 +116,78 @@ def test_sensor_reuses_persistent_tls_connection() -> None:
     assert client.send(b"{}") == {"durable": True}
     assert len(created) == 1
     assert len(created[0].requests) == 2
+
+
+def test_persistent_tls_client_reconnects_after_transport_error() -> None:
+    created = []
+
+    class Response:
+        status = 200
+
+        @staticmethod
+        def read() -> bytes:
+            return b'{"durable":true}'
+
+    class Connection:
+        def __init__(self, *args: object, **kwargs: object) -> None:
+            self.fail = len(created) == 0
+            created.append(self)
+
+        def request(self, *args: object, **kwargs: object) -> None:
+            if self.fail:
+                raise ConnectionResetError("planned")
+
+        @staticmethod
+        def getresponse() -> Response:
+            return Response()
+
+        @staticmethod
+        def close() -> None:
+            return None
+
+    client = PersistentJsonClient(
+        "https://reference-receiver:9443/reference-receiver/v1/event-batches",
+        ssl.create_default_context(),
+        connection_factory=Connection,
+    )
+    with pytest.raises(ConnectionResetError, match="planned"):
+        client.send(b"{}")
+    assert client.connection is None
+    assert client.send(b"{}") == {"durable": True}
+    assert len(created) == 2
+
+
+def test_rehearsal_pending_query_uses_frozen_order_index(tmp_path: Path) -> None:
+    journal = RehearsalConnectorJournal(tmp_path / "connector.sqlite")
+    indexes = {
+        row[1]
+        for row in journal.db.execute("pragma index_list('journal_events')")
+    }
+    plan = " ".join(
+        str(value)
+        for row in journal.db.execute(
+            "explain query plan "
+            "select canonical_event from journal_events "
+            "where delivery_status='pending' "
+            "order by journal_durable_ns,event_id limit 50"
+        )
+        for value in row
+    )
+    assert "idx_journal_pending_order" in indexes
+    assert "idx_journal_pending_order" in plan
+
+
+def test_rehearsal_observability_uses_separate_wal_files(tmp_path: Path) -> None:
+    connector = RehearsalConnectorJournal(tmp_path / "connector.sqlite")
+    receiver = RehearsalReceiverStore(tmp_path / "receiver.sqlite", "receiver-test")
+    connector.trace([{"event_id": "evt_a"}], "connector_ingress_received", 1)
+    receiver.trace([{"event_id": "evt_a"}], "receiver_received", 2)
+    assert connector.trace_path.name == "connector-trace.sqlite"
+    assert receiver.trace_path.name == "receiver-trace.sqlite"
+    assert connector.trace_db.execute("select count(*) from trace").fetchone()[0] == 1
+    assert receiver.trace_db.execute("select count(*) from trace").fetchone()[0] == 1
+    assert connector.db.execute("select count(*) from trace").fetchone()[0] == 0
+    assert receiver.db.execute("select count(*) from trace").fetchone()[0] == 0
 
 
 @pytest.mark.parametrize(

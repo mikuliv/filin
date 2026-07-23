@@ -26,7 +26,7 @@ services:
   reference-receiver:
     image: filin-rehearsal-v0317:local
     pull_policy: never
-    command: ["staging.reference_receiver.app", "--db", "/var/lib/filin/receiver.sqlite"]
+    command: ["rehearsal.reference_receiver_app", "--db", "/var/lib/filin/receiver.sqlite", "--trace-db", "/var/lib/filin/receiver-trace.sqlite"]
     user: "65532:65532"
     read_only: true
     security_opt: ["no-new-privileges:true"]
