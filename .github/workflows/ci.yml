@@ -41,4 +41,5 @@ jobs:
       - run: python tools/audit/validate_v0317_artifact_exclusion.py
       - run: python tools/audit/validate_v03171_artifact_exclusion.py
       - run: python tools/audit/validate_v03171_bundle.py
+      - run: python tools/audit/validate_v03171_docs.py
       - run: git diff --check
