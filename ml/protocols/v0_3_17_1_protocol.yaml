@@ -1,0 +1,240 @@
+schema_version: v03171_protocol_v1
+stage: v0.3.17.1
+revision: 1
+status: frozen_before_corrections_and_first_prospective_event
+title: Корректирующий аудит доказательств, временных трасс и производительности
+
+source:
+  head: 43922e06050f53c91b9195af63c5d55325904eca
+  origin_main: 43922e06050f53c91b9195af63c5d55325904eca
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+  branch: main
+  divergence:
+    origin_only: 0
+    main_only: 0
+
+storage:
+  storage_profile_id: samsung_860_evo_ntfs_v03171
+  workspace_token: ${FILIN_WORKSPACE}
+  runtime_token: ${FILIN_RUNTIME_ROOT}
+  repository_on_target_ssd: true
+  runtime_on_target_ssd: true
+  source_workspace_preserved: true
+  migration_verified: true
+  environment_changed_since_v0_3_17: true
+  performance_results_directly_comparable_to_v0_3_17: false
+  absolute_paths_in_tracked_artifacts: false
+
+immutable_v0_3_17:
+  status: completed
+  result: rehearsal_completed_policy_failed
+  policy_sha256: b938830c82a64ac7583f950c3aae2acdf37d7a72b1155ccbb02f1a14dc39ae43
+  bundle_manifest_sha256: 30f9f906d6cdcea3fb55be639345b45454f3d8f3dd5753975e40d301dd576663
+  summary_sha256: d127a14eae958876c6c132d029aae91065ce02eac859524b1695d7ed73f80eb1
+  modification_allowed: false
+  positive_reinterpretation_allowed: false
+
+candidate_identity:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  shadow_event_v1_sha256: cc6df6cf93e5dabeafe147ebeb232d04f7a82805e8ddb8409987f44b5cca08fe
+  shadow_event_v2_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+  registry_sha256: 31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d
+  registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
+  fit_allowed: false
+  replacement_allowed: false
+
+known_findings:
+  historical_anchor_mismatch_count: 10
+  linear_timestamp_violation_count: 69806
+  transport_duplicate_count: 436080
+  sensor_to_receiver_p95_ms: 5311.11
+  sensor_to_receiver_p99_ms: 18174.05
+  connector_ingress_ack_p95_ms: 3824.57
+  receiver_throughput_events_per_second: 13.99
+  composite_performance_policy_passed: false
+  corruption_case_count: 20
+  corruption_rejected_count: 18
+  bundle_validator_passed: false
+  finalizer_error: "NameError: LOCK_PATH is not defined"
+
+historical_anchors:
+  aggregate_method: "SHA-256 от отсортированных строк '<repo_path> <file_sha256>\\n'"
+  expected_mismatch_count: 10
+  required_resolved_count: 10
+  unresolved_allowed: 0
+  expected:
+    v0_3_11: 6a8484b83be9c2abdfd8a2afb6f5838e286f3523d0f21b32ce7bf1f9c44e3ae5
+    v0_3_12: 20f2b643dbfb0cc4a490fe9f353288a1dbe77881f595f279e16c4e7018038d93
+    v0_3_12_1: 209b190367ba3ee9aba11444f2b40968ce371834b8da99620d7672d7cea198c6
+    v0_3_12_2: a62dc4274518eda85140aeca203fe06c7cc3d537ac21eb30ba40988d394b3232
+    v0_3_13: 7ff3192ef6986bfb636aff99de4bc7e01c8de1d4f293a372088ea7ceac5f476b
+    v0_3_14: b2e369edbfd6f81ae546d9b28ba4d3c5477a7b148fdd058e86a0d3e6efa5565f
+    v0_3_14_errata: 1892eb1bd64ac116678e8b0318ecbdf85f8e3f890ff10eeaf2a2a030b8d442cb
+    v0_3_15: 403ac32286c393b201cbaeb283f453fd6c0f95d5c1b38baa5bb40f231362aa8a
+    v0_3_15_1: e5d4b028c67f6417078d907c754efc48b2f83e3c2e954db74d20fc4934e4910d
+    v0_3_15_2: 5dc581eac7e9aafded352fbb1243ac75233935a65fd0b1b0d0c139f514a18b6b
+    v0_3_15_3: eb30d00f4b82ea1e6b5195e30f812d650cff39128bef99638d29ed6d359f70e5
+    v0_3_15_4: 9ca18e6a58a3f5f13c6fc05d8e979a60372988fc5910b261d7a7fe3afd674ec8
+    v0_3_15_5: 509859cb9b8430c250574b77ff6d10d859c36ff69a54eb21cde92cffb80b0fdb
+    v0_3_15_5_1: 8f4f2a3040d080c4573bd3c7ea599e8c1567dff88e0547c320393a4e6328fcba
+    v0_3_16_revisions_1_and_2: 7a8f86236416f766041f67f4df715079af8fd24147ae386903c76545aa1f9194
+
+forensic_phases:
+  - migration_and_historical_preservation
+  - historical_anchor_root_cause
+  - clock_domain_and_trace_linkage
+  - transport_duplicate_semantics
+  - latency_and_composite_performance
+  - corruption_suite
+  - finalizer_and_bundle_validation
+  - deterministic_gate
+  - prospective_execution_decision
+
+change_decision_gate:
+  initial_change_classification: T+I
+  tooling_changed: true
+  instrumentation_changed: true
+  runtime_delivery_path_changed: false
+  instrumentation_changes_delivery_timing_or_ordering: false
+  full_endurance_rerun_required: false
+  ambiguous_change_is_runtime: true
+  reclassification_required_before_trial: true
+
+allowed_corrections:
+  - anchor_validator
+  - report_generation
+  - metric_aggregation
+  - corruption_fixtures
+  - bundle_validator
+  - finalizer
+  - timing_instrumentation_v2
+  - path_abstraction
+  - project_specific_bind_mounts
+  - deterministic_tests
+  - documentation
+
+prohibitions:
+  candidate_change: true
+  fit_or_selection: true
+  feature_contract_change: true
+  event_contract_change: true
+  state_policy_change: true
+  frozen_threshold_change: true
+  historical_evidence_change: true
+  timestamp_sorting_as_correction: true
+  backend_change: true
+  external_network: true
+  real_traffic: true
+  real_shadow_mode: true
+  production: true
+  automatic_enforcement: true
+  automatic_four_hour_trial: true
+  push_pull_merge_rebase: true
+
+timing_contract:
+  required_version: runtime_timing_trace_v2
+  required_fields:
+    - trace_contract_version
+    - event_id
+    - trace_id
+    - attempt_id
+    - batch_id
+    - component_id
+    - process_instance_id
+    - container_boot_id
+    - clock_domain_id
+    - timestamp_name
+    - monotonic_ns
+    - wall_clock_ns
+    - parent_trace_ref
+  compatible_clock_domain_required_for_latency: true
+
+deterministic_gate:
+  required:
+    - anchor_regression
+    - historical_hash_preservation
+    - clock_domain_fixtures
+    - multi_container_boot_fixtures
+    - retry_ack_linkage
+    - restart_trace_linkage
+    - duplicate_counter_semantics
+    - latency_aggregation
+    - composite_throughput_policy
+    - corruption_20_of_20
+    - finalizer_clean_and_resume
+    - bundle_validator
+    - strict_resume
+    - artifact_exclusion
+    - privacy
+    - secret_scan
+    - documentation_validator
+  targeted_trial_allowed_before_pass: false
+
+performance_gates:
+  receiver_durable_throughput_events_per_second_min: 10
+  sensor_to_receiver_p95_ms_max: 2000
+  sensor_to_receiver_p99_ms_max: 3000
+  connector_ingress_ack_p95_ms_max: 500
+  connector_to_receiver_p95_ms_max: 1500
+  prospective_ssd_profile: true
+  direct_v0_3_17_comparison_allowed: false
+
+corruption_gates:
+  case_count: 20
+  rejected_count_required: 20
+  canonical_v0_3_17_bundle_mutation_allowed: false
+
+finalization_gates:
+  finalizer_nameerror_fixed: true
+  clean_finalization_passed: true
+  repeated_invocation_passed: true
+  resume_passed: true
+  missing_malformed_foreign_lock_rejected: true
+  interrupted_finalization_passed: true
+  path_confinement_passed: true
+  recovery_finalization_required: false
+  bundle_validator_passed: true
+  strict_resume_passed: true
+
+prospective_trial:
+  required_if_runtime_delivery_path_unchanged: true
+  total_duration_seconds: 2700
+  labels_allowed: false
+  scientific_metrics_allowed: false
+  runs:
+    - role: timing_nominal
+      duration_seconds: 900
+    - role: retries_and_restart
+      duration_seconds: 900
+    - role: backlog_and_recovery
+      duration_seconds: 900
+  new_identity_namespace_required: true
+  v0_3_17_events_as_input_allowed: false
+
+runtime_change_rule:
+  technical_preflight_duration_seconds_min: 600
+  technical_preflight_duration_seconds_max: 900
+  full_endurance_rerun_required: true
+  automatic_full_endurance_allowed: false
+  readiness_after_preflight: false
+
+readiness_policy:
+  positive_flag: candidate_ready_for_v0_3_18_external_review_and_trial_design
+  positive_meaning: Разрешена только подготовка design review
+  positive_requires_runtime_delivery_path_unchanged: true
+  always_false:
+    - candidate_ready_for_shadow_mode
+    - sensor_ready_for_backend_integration
+    - backend_integration_allowed
+    - shadow_mode_allowed
+    - production_ready
+    - production_connection_allowed
+    - automatic_enforcement_ready
+    - external_validation_completed
+    - real_organization_trial_allowed
+    - real_traffic_capture_allowed
+    - real_notifications_allowed
