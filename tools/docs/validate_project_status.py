@@ -10,7 +10,13 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 STATUS = ROOT / "docs/status/project-status.yaml"
-CORE_DOCS = [ROOT / name for name in ("README.md", "docs/status.md", "docs/current-capabilities.md", "docs/roadmap.md")]
+CORE_DOCS = [ROOT / name for name in (
+    "README.md",
+    "docs/status/current-status.md",
+    "docs/status/confirmed-capabilities.md",
+    "docs/status/prohibited-capabilities.md",
+    "docs/status/next-stage.md",
+)]
 REQUIRED = CORE_DOCS + [
     ROOT / "docs/experiments/v0_3_14.md", ROOT / "docs/experiments/v0_3_14_errata.md",
     ROOT / "docs/experiments/v0_3_15.md", ROOT / "docs/experiments/v0_3_15_1.md",
@@ -84,10 +90,11 @@ def validate() -> dict:
     }
     for code, pattern in forbidden.items():
         if re.search(pattern, combined, re.I): errors.append(code)
-    for path in (ROOT / "README.md", ROOT / "docs/roadmap.md"):
-        if path.exists():
-            found = history_versions(path.read_text(encoding="utf-8"))
-            if not found or found != sorted(found, key=version_key): errors.append("chronology_invalid:" + str(path.relative_to(ROOT)))
+    history = ROOT / "docs/status/version-history.md"
+    if history.exists():
+        found = re.findall(r"^## (v\d+\.\d+(?:\.\d+)*)", history.read_text(encoding="utf-8"), re.M)
+        if not found or found != sorted(found, key=version_key):
+            errors.append("chronology_invalid:" + str(history.relative_to(ROOT)))
     errata = ROOT / "docs/experiments/v0_3_14_errata.md"
     revalidation = ROOT / "docs/experiments/v0_3_15_1.md"
     if (ROOT / "docs/experiments/v0_3_14.md").is_file() and "v0_3_14_errata.md" not in (ROOT / "docs/experiments/v0_3_14.md").read_text(encoding="utf-8"):

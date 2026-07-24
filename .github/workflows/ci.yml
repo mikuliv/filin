@@ -9,6 +9,7 @@ jobs:
         with: {python-version: '3.11'}
       - run: python -m pip install -r backend/requirements.txt -r ml/requirements.txt
       - run: python tools/docs/validate_documentation.py --strict
+      - run: python tools/docs/validate_documentation_maintenance.py --strict
       - run: python tools/check_release_images.py --compose lab/docker/docker-compose.lab.yml --release
       - run: python tools/audit/check_repository_artifacts.py
       - run: python -m compileall tools ml collectors backend lab rehearsal

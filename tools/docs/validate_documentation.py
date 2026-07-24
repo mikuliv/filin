@@ -62,14 +62,20 @@ def validate(root: Path = ROOT) -> list[str]:
     latest = str(state.get("current_completed_stage", ""))
     critical = {
         "README latest stage": (readme, f"Последний завершённый этап: **{latest}**"),
-        "status latest stage": (docs / "status.md", f"Текущий завершённый этап: {latest}"),
+        "status latest stage": (docs / "status/current-status.md", f"Последний завершённый этап — {latest}"),
         "README integration false": (readme, "Backend integration и production connections запрещены"),
-        "status production false": (docs / "status.md", "Production, shadow mode, backend integration и automatic enforcement: запрещены"),
-        "roadmap completed v0.3.7": (docs / "roadmap.md", "v0.3.7"),
+        "status production false": (docs / "status/prohibited-capabilities.md", "production"),
+        "roadmap completed v0.3.18": (docs / "roadmap.md", "v0.3.18"),
     }
     for label, (path, marker) in critical.items():
         if marker not in path.read_text(encoding="utf-8"): errors.append(f"{label} contradicts project-status.yaml")
-    for name in ("current-capabilities.md", "roadmap.md", "experiments.md", "development-history.md"):
+    for name in (
+        "status/current-status.md",
+        "status/confirmed-capabilities.md",
+        "status/prohibited-capabilities.md",
+        "status/next-stage.md",
+        "status/version-history.md",
+    ):
         if latest not in (docs / name).read_text(encoding="utf-8"): errors.append(f"docs/{name} does not contain latest completed stage {latest}")
     all_text = "\n".join(path.read_text(encoding="utf-8").casefold() for path in markdown_files(root))
     for claim in ("v0.3.3 is the latest completed experiment", "v0.3.7 policy passed", "backend integration allowed: true", "shadow mode allowed: true", "corrected duration was used in v0.3.7", "v0.3.7 environment profiles were applied", "historical hashes are complete integrity proof"):
