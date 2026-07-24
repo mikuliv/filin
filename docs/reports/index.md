@@ -1,5 +1,8 @@
-# Индекс отчётов
+# Индекс итоговых отчётов
 
-- [Итоговый отчёт v0.3.16](../../ml/reports/v0_3_16/v0_3_16_summary.md)
-- [Policy result v0.3.16](../../ml/reports/v0_3_16/v0_3_16_policy_result.json)
-- [Evidence bundle v0.3.16](../../ml/reports/v0_3_16/v0_3_16_bundle_manifest.yaml)
+Aggregate reports хранятся по версиям в `ml/reports`. Используйте
+[индекс evidence](../../ml/reports/index.md), а затем summary и policy нужного
+этапа.
+
+Raw PCAP, labels, predictions, databases, journals и timing traces не входят в
+tracked reports.
