@@ -1,10 +1,13 @@
 {
   "schema_version": "v03171_finalizer_lock_v1",
   "stage": "v0.3.17.1",
-  "source_head": "74b9d97c3a5842e3593c866d03669431fe1594f0",
+  "lock_revision": 2,
+  "revision_1_invalidated": true,
+  "revision_1_invalidation_reason": "Добавлены обязательные отдельные restart и recovery latency buckets до официального trial.",
+  "source_head": "e999f8a409cdd55f436ad8dd0156e3f8e25ac955",
   "recovery_mode": false,
   "deterministic_gate_passed": true,
-  "deterministic_test_count": 1278,
+  "deterministic_test_count": 1283,
   "compileall_target_count": 6,
   "runtime_delivery_path_changed": false,
   "locked_artifacts": [
@@ -14,7 +17,7 @@
     },
     {
       "path": "ml/experiments/v0_3_17_1/targeted_trial.py",
-      "sha256": "9ce0eb02e5445bc37a077246a45906632fccdd5298059f031ffb78b223a061aa"
+      "sha256": "f53456a3c97a34232e5f10adc4425336ab6ec5011855a959f20a7a97343e2cf7"
     },
     {
       "path": "ml/protocols/v0_3_17_1_protocol.yaml",
