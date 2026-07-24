@@ -148,6 +148,22 @@ def write_test_report(test_count: int, warnings: int, duration: float) -> dict[s
                 "warning_count": 3,
                 "resolved": True,
             },
+            {
+                "passed_test_count": 1285,
+                "failed_test_count": 1,
+                "warning_count": 3,
+                "root_cause": (
+                    "После изменения изоляции процессов и сертификатов code lock "
+                    "закономерно отклонил устаревшую revision 2."
+                ),
+                "resolved": True,
+            },
+            {
+                "passed_test_count": 1286,
+                "failed_test_count": 0,
+                "warning_count": 3,
+                "resolved": True,
+            },
         ],
         "initial_environmental_error": {
             "type": "project_temp_not_applied",
@@ -204,7 +220,7 @@ def _augment_audit_reports(trial: dict[str, Any]) -> None:
 
 def _augment_trial_manifest() -> None:
     manifest = read("targeted_trial_manifest.json")
-    manifest["protocol_lock_revision"] = 2
+    manifest["protocol_lock_revision"] = 3
     manifest["prior_nonofficial_attempts"] = [
         {
             "attempt": "smoke_revision_1",
@@ -224,6 +240,21 @@ def _augment_trial_manifest() -> None:
         {
             "attempt": "smoke_revision_2",
             "purpose": "seven_bucket_regression_check",
+            "official_evidence_used": False,
+        },
+        {
+            "attempt": "partial_revision_2",
+            "status": "invalidated_and_stopped",
+            "reason": (
+                "Изоляция runner не подтверждала уникальные фактические PID и "
+                "случайные seed каждого запуска."
+            ),
+            "official_evidence_used": False,
+            "duration_claimed": False,
+        },
+        {
+            "attempt": "smoke_revision_3",
+            "purpose": "process_and_certificate_isolation_check",
             "official_evidence_used": False,
         },
     ]
