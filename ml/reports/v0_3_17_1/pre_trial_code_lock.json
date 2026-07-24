@@ -1,13 +1,15 @@
 {
   "schema_version": "v03171_finalizer_lock_v1",
   "stage": "v0.3.17.1",
-  "lock_revision": 2,
+  "lock_revision": 3,
   "revision_1_invalidated": true,
   "revision_1_invalidation_reason": "Добавлены обязательные отдельные restart и recovery latency buckets до официального trial.",
-  "source_head": "e999f8a409cdd55f436ad8dd0156e3f8e25ac955",
+  "revision_2_invalidated": true,
+  "revision_2_invalidation_reason": "Каждый run переведён в отдельный OS process с новым seed и runtime-only X.509 fixtures.",
+  "source_head": "9ea61b0951c5896a67ee7040a404222b9905864f",
   "recovery_mode": false,
   "deterministic_gate_passed": true,
-  "deterministic_test_count": 1283,
+  "deterministic_test_count": 1286,
   "compileall_target_count": 6,
   "runtime_delivery_path_changed": false,
   "locked_artifacts": [
@@ -17,7 +19,7 @@
     },
     {
       "path": "ml/experiments/v0_3_17_1/targeted_trial.py",
-      "sha256": "f53456a3c97a34232e5f10adc4425336ab6ec5011855a959f20a7a97343e2cf7"
+      "sha256": "a0ae75b26e8d9a90c9d220925c58c33e687fe0e1f0e1707d511fa77b18d594f9"
     },
     {
       "path": "ml/protocols/v0_3_17_1_protocol.yaml",
