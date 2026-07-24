@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import multiprocessing
 import os
 import secrets
 import sqlite3
@@ -89,6 +90,44 @@ def _connection(path: Path) -> sqlite3.Connection:
         "event_id TEXT PRIMARY KEY, status TEXT NOT NULL, committed_ns INTEGER NOT NULL)"
     )
     return db
+
+
+def _certificate_fixtures(run_dir: Path, namespace: str) -> list[str]:
+    target = run_dir / "certificate_fixtures"
+    target.mkdir()
+    environment = dict(os.environ)
+    environment["OPENSSL_CONF"] = "NUL" if os.name == "nt" else "/dev/null"
+    fingerprints = []
+    for variant in ("a", "b"):
+        key = target / f"{variant}-key.pem"
+        certificate = target / f"{variant}.pem"
+        subprocess.run(
+            ["openssl", "genpkey", "-algorithm", "ED25519", "-out", str(key)],
+            check=True,
+            capture_output=True,
+            env=environment,
+        )
+        subprocess.run(
+            [
+                "openssl",
+                "req",
+                "-x509",
+                "-new",
+                "-key",
+                str(key),
+                "-out",
+                str(certificate),
+                "-days",
+                "1",
+                "-subj",
+                f"/CN={namespace}-{variant}",
+            ],
+            check=True,
+            capture_output=True,
+            env=environment,
+        )
+        fingerprints.append(_sha(certificate))
+    return fingerprints
 
 
 def _trace_row(
@@ -319,6 +358,7 @@ def run_one(
     modes_path = run_dir / "event_modes.jsonl"
     connector = _connection(run_dir / "connector.sqlite")
     receiver = _connection(run_dir / "receiver.sqlite")
+    certificate_fingerprints = _certificate_fixtures(run_dir, namespace)
     pid = os.getpid()
     process = f"pid-{pid}"
     clock = f"windows-qpc-{token}"
@@ -401,6 +441,10 @@ def run_one(
         "clock_domain_id": clock,
         "container_runtime_used": False,
         "local_isolation_instance_count": len(boots),
+        "container_boot_ids": sorted(boots.values()),
+        "certificate_fixture_count": len(certificate_fingerprints),
+        "certificate_fingerprints": certificate_fingerprints,
+        "certificate_private_keys_runtime_only": True,
         "actual_duration_seconds": completed - started,
         "started_wall_clock_ns": started_wall,
         "completed_wall_clock_ns": time.time_ns(),
@@ -433,6 +477,33 @@ def _load_modes(paths: list[Path]) -> dict[str, str]:
                 row = json.loads(line)
                 result[row["event_id"]] = row["mode"]
     return result
+
+
+def _run_worker(
+    runtime: str,
+    run_kind: str,
+    default_mode: str,
+    seed: int,
+    duration_seconds: float,
+    rate: float,
+    output: multiprocessing.Queue,
+) -> None:
+    try:
+        output.put(
+            {
+                "result": run_one(
+                    Path(runtime),
+                    run_kind,
+                    default_mode,
+                    seed,
+                    duration_seconds,
+                    rate,
+                )
+            }
+        )
+    except Exception as error:
+        output.put({"error": f"{type(error).__name__}:{error}"})
+        raise
 
 
 def aggregate(runtime: Path, run_results: list[dict[str, Any]]) -> dict[str, Any]:
@@ -562,10 +633,37 @@ def aggregate(runtime: Path, run_results: list[dict[str, Any]]) -> dict[str, Any
 def orchestrate(duration_seconds: float, rate: float) -> dict[str, Any]:
     runtime = _runtime_root()
     campaign_namespace = f"v03171-{secrets.token_hex(10)}"
-    run_results = [
-        run_one(runtime, kind, mode, seed, duration_seconds, rate)
-        for kind, mode, seed in RUN_SPECS
-    ]
+    context = multiprocessing.get_context("spawn")
+    run_results = []
+    for kind, mode, base_seed in RUN_SPECS:
+        seed = base_seed + secrets.randbelow(1_000_000)
+        output = context.Queue()
+        process = context.Process(
+            target=_run_worker,
+            args=(
+                str(runtime),
+                kind,
+                mode,
+                seed,
+                duration_seconds,
+                rate,
+                output,
+            ),
+            name=f"v03171-{kind}",
+        )
+        process.start()
+        process.join()
+        message = output.get(timeout=5)
+        output.close()
+        if process.exitcode != 0 or "error" in message:
+            raise RuntimeError(
+                f"targeted_run_failed:{kind}:{process.exitcode}:{message.get('error')}"
+            )
+        run_results.append(message["result"])
+    if len({run["process_id"] for run in run_results}) != len(run_results):
+        raise RuntimeError("run_process_ids_not_unique")
+    if len({run["seed"] for run in run_results}) != len(run_results):
+        raise RuntimeError("run_seeds_not_unique")
     manifest = {
         "schema_version": "v03171_targeted_trial_manifest_v1",
         "stage": "v0.3.17.1",
@@ -588,7 +686,11 @@ def orchestrate(duration_seconds: float, rate: float) -> dict[str, Any]:
                     "bundle_namespace",
                     "run_kind",
                     "clock_domain_id",
+                    "process_id",
+                    "container_boot_ids",
                     "container_runtime_used",
+                    "certificate_fixture_count",
+                    "certificate_fingerprints",
                 )
             }
             for run in run_results
