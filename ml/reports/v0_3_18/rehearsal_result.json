@@ -1,0 +1,155 @@
+{
+  "candidate_commitment_sha256": "e41225793270dd083c2a50d86392eec1420d9430861d8ac268802277b1aef99b",
+  "chronology_validation_passed": true,
+  "duration_seconds": 0.0648559999972349,
+  "episode_count": 18,
+  "evaluator_commitment_sha256": "298ada3dc5941fcec0ae23a38b48ddc26a29d6078e06ea2a8fe10cba8667d3b0",
+  "evaluator_determinism_passed": true,
+  "label_commitment_sha256": "a800571882d53e27d6e7b5c5910871a15d01e8a9a74e2c8d799ba6039eacbfaa",
+  "label_commitment_workflow_passed": true,
+  "label_reveal_workflow_passed": true,
+  "metrics": {
+    "abstention_count": 2,
+    "abstention_rate": 0.1111111111111111,
+    "aggregation_level": "episode",
+    "balanced_accuracy": 0.9444444444444445,
+    "class_taxonomy": [
+      "benign",
+      "auth_failures",
+      "beacon",
+      "low_rate_dos",
+      "port_scan",
+      "web_probe"
+    ],
+    "confusion_matrix": {
+      "auth_failures": {
+        "auth_failures": 2,
+        "beacon": 0,
+        "benign": 0,
+        "low_rate_dos": 0,
+        "port_scan": 0,
+        "web_probe": 0
+      },
+      "beacon": {
+        "auth_failures": 0,
+        "beacon": 3,
+        "benign": 0,
+        "low_rate_dos": 0,
+        "port_scan": 0,
+        "web_probe": 0
+      },
+      "benign": {
+        "auth_failures": 0,
+        "beacon": 0,
+        "benign": 2,
+        "low_rate_dos": 0,
+        "port_scan": 0,
+        "web_probe": 0
+      },
+      "low_rate_dos": {
+        "auth_failures": 0,
+        "beacon": 0,
+        "benign": 0,
+        "low_rate_dos": 3,
+        "port_scan": 0,
+        "web_probe": 0
+      },
+      "port_scan": {
+        "auth_failures": 0,
+        "beacon": 0,
+        "benign": 1,
+        "low_rate_dos": 0,
+        "port_scan": 2,
+        "web_probe": 0
+      },
+      "web_probe": {
+        "auth_failures": 0,
+        "beacon": 0,
+        "benign": 0,
+        "low_rate_dos": 0,
+        "port_scan": 0,
+        "web_probe": 3
+      }
+    },
+    "coverage": 0.8888888888888888,
+    "coverage_interval_95": [
+      0.672002348698212,
+      0.9689804773543876
+    ],
+    "dataset_composition": {
+      "episode_count": 18,
+      "per_class": {
+        "auth_failures": 3,
+        "beacon": 3,
+        "benign": 3,
+        "low_rate_dos": 3,
+        "port_scan": 3,
+        "web_probe": 3
+      }
+    },
+    "duplicate_prediction_count": 0,
+    "evaluator_version": "frozen_external_evaluator_v1",
+    "false_negative_attack_as_benign_count": 1,
+    "false_positive_benign_as_attack_count": 0,
+    "invalid_prediction_count": 0,
+    "macro_f1": 0.9333333333333332,
+    "missing_prediction_count": 0,
+    "per_class": {
+      "auth_failures": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 3
+      },
+      "beacon": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 3
+      },
+      "benign": {
+        "f1": 0.8,
+        "precision": 0.6666666666666666,
+        "recall": 1.0,
+        "support": 3
+      },
+      "low_rate_dos": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 3
+      },
+      "port_scan": {
+        "f1": 0.8,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "support": 3
+      },
+      "web_probe": {
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 3
+      }
+    },
+    "protocol_rehearsal_only": true,
+    "scientific_evidence": false,
+    "selective_accuracy": 0.9375,
+    "selective_accuracy_interval_95": [
+      0.7167126242970107,
+      0.9888806552353576
+    ],
+    "weighted_f1": 0.9333333333333333
+  },
+  "package_root_commitment": "347e956388d78d723b6c2ba33a6090934d13028d179ff09e66af67f51269278f",
+  "package_verification_passed": true,
+  "prediction_commitment_sha256": "27fd627a636d37c86b83432ca51fd8f48146e4729f51579b9b117b7b67cb40b7",
+  "prediction_commitment_workflow_passed": true,
+  "protocol_rehearsal_only": true,
+  "rehearsal_id": "v0318-synthetic-rehearsal-001",
+  "schema_version": "v0318_rehearsal_result_v1",
+  "scientific_evidence": false,
+  "stage": "v0.3.18",
+  "synthetic_rehearsal_completed": true,
+  "synthetic_rehearsal_passed": true
+}

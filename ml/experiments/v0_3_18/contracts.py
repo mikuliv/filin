@@ -32,6 +32,7 @@ CLASSES = (
     "web_probe",
 )
 HEX = {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+GIT_OBJECT = {"type": "string", "pattern": "^[0-9a-f]{40}$"}
 IDENTIFIER = {"type": "string", "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$"}
 
 
@@ -148,8 +149,8 @@ SCHEMAS: dict[str, dict[str, Any]] = {
             "artifact_sha256": HEX, "manifest_sha256": HEX,
             "candidate_registry_commitment": HEX, "feature_contract_sha256": HEX,
             "event_contract_sha256": HEX, "state_policy_sha256": HEX,
-            "timing_contract_sha256": HEX, "inference_code_commit": HEX,
-            "backend_tree_hash": HEX, "fit_allowed": {"const": False},
+            "timing_contract_sha256": HEX, "inference_code_commit": GIT_OBJECT,
+            "backend_tree_hash": GIT_OBJECT, "fit_allowed": {"const": False},
             "threshold_change_allowed": {"const": False},
             "calibration_change_allowed": {"const": False},
             "feature_change_allowed": {"const": False},

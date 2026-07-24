@@ -8,7 +8,7 @@
       "type": "string"
     },
     "backend_tree_hash": {
-      "pattern": "^[0-9a-f]{64}$",
+      "pattern": "^[0-9a-f]{40}$",
       "type": "string"
     },
     "calibration_change_allowed": {
@@ -36,7 +36,7 @@
       "const": false
     },
     "inference_code_commit": {
-      "pattern": "^[0-9a-f]{64}$",
+      "pattern": "^[0-9a-f]{40}$",
       "type": "string"
     },
     "manifest_sha256": {

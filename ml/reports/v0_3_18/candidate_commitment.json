@@ -1,0 +1,17 @@
+{
+  "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+  "backend_tree_hash": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "calibration_change_allowed": false,
+  "candidate_id": "v03154:65a3dd912d845bc1",
+  "candidate_registry_commitment": "e00589bd0bcdec8cc8d1a1147905977a7434594d21f7369dc4b71166e4d6f24c",
+  "event_contract_sha256": "38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149",
+  "feature_change_allowed": false,
+  "feature_contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "fit_allowed": false,
+  "inference_code_commit": "36e041704c9d581e9ae9b464ff75a3e393c066a6",
+  "manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537",
+  "schema_version": "candidate_commitment_v1",
+  "state_policy_sha256": "3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c",
+  "threshold_change_allowed": false,
+  "timing_contract_sha256": "a9091f0cb98b34d18d006eafeb57e22b18febb434d7556e1e1fc40de898df4ad"
+}

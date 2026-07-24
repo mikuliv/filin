@@ -1,0 +1,15 @@
+{
+  "dataset_id": "synthetic-holdout-v0318-001",
+  "deterministic_rehearsal_predictor_used": true,
+  "external_data_usage_mode": "synthetic_protocol_rehearsal",
+  "package_namespace": "v0318-review-package-001",
+  "real_external_data_used": false,
+  "real_labels_used": false,
+  "real_model_used": false,
+  "real_organization_involved": false,
+  "rehearsal_id": "v0318-synthetic-rehearsal-001",
+  "role_namespace_count": 7,
+  "schema_version": "v0318_rehearsal_manifest_v1",
+  "stage": "v0.3.18",
+  "synthetic_seed": 3182026
+}

@@ -1,0 +1,290 @@
+{
+  "all_negative_scenarios_rejected": true,
+  "failed_count": 0,
+  "rejected_count": 40,
+  "results": [
+    {
+      "case_id": "NEG-001",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "label_reveal_before_prediction_freeze"
+    },
+    {
+      "case_id": "NEG-002",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_dataset_manifest"
+    },
+    {
+      "case_id": "NEG-003",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_label_commitment"
+    },
+    {
+      "case_id": "NEG-004",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_candidate_artifact_hash"
+    },
+    {
+      "case_id": "NEG-005",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_feature_contract_hash"
+    },
+    {
+      "case_id": "NEG-006",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_evaluator_hash"
+    },
+    {
+      "case_id": "NEG-007",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "duplicate_prediction_id"
+    },
+    {
+      "case_id": "NEG-008",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "missing_prediction"
+    },
+    {
+      "case_id": "NEG-009",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "prediction_unknown_episode"
+    },
+    {
+      "case_id": "NEG-010",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "label_unknown_episode"
+    },
+    {
+      "case_id": "NEG-011",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "duplicate_label"
+    },
+    {
+      "case_id": "NEG-012",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "unsupported_class"
+    },
+    {
+      "case_id": "NEG-013",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "invalid_abstention"
+    },
+    {
+      "case_id": "NEG-014",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "nan_metric_input"
+    },
+    {
+      "case_id": "NEG-015",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "infinity_metric_input"
+    },
+    {
+      "case_id": "NEG-016",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "non_canonical_json"
+    },
+    {
+      "case_id": "NEG-017",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "duplicate_json_key"
+    },
+    {
+      "case_id": "NEG-018",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "absolute_windows_path"
+    },
+    {
+      "case_id": "NEG-019",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "absolute_unix_path"
+    },
+    {
+      "case_id": "NEG-020",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "path_traversal"
+    },
+    {
+      "case_id": "NEG-021",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "symlink_in_package"
+    },
+    {
+      "case_id": "NEG-022",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "extra_undeclared_file"
+    },
+    {
+      "case_id": "NEG-023",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "missing_declared_file"
+    },
+    {
+      "case_id": "NEG-024",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "corrupted_file"
+    },
+    {
+      "case_id": "NEG-025",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "wrong_role_attestation"
+    },
+    {
+      "case_id": "NEG-026",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "conflicting_roles"
+    },
+    {
+      "case_id": "NEG-027",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "chronology_reversal"
+    },
+    {
+      "case_id": "NEG-028",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "replayed_commitment"
+    },
+    {
+      "case_id": "NEG-029",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "dataset_overlap_fixture"
+    },
+    {
+      "case_id": "NEG-030",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "privacy_finding_fixture"
+    },
+    {
+      "case_id": "NEG-031",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "secret_finding_fixture"
+    },
+    {
+      "case_id": "NEG-032",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "external_route_fixture"
+    },
+    {
+      "case_id": "NEG-033",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "backend_call_fixture"
+    },
+    {
+      "case_id": "NEG-034",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "post_label_prediction_replacement"
+    },
+    {
+      "case_id": "NEG-035",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "evaluator_nondeterminism"
+    },
+    {
+      "case_id": "NEG-036",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "changed_metric_policy"
+    },
+    {
+      "case_id": "NEG-037",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "insufficient_sample_plan"
+    },
+    {
+      "case_id": "NEG-038",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "unauthorized_second_evaluation"
+    },
+    {
+      "case_id": "NEG-039",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "wrong_parent_commitment"
+    },
+    {
+      "case_id": "NEG-040",
+      "expected": "rejection_or_invalidation",
+      "observed": "rejected",
+      "passed": true,
+      "scenario": "corrupted_final_bundle"
+    }
+  ],
+  "scenario_count": 40,
+  "schema_version": "v0318_negative_scenario_report_v1",
+  "stage": "v0.3.18"
+}

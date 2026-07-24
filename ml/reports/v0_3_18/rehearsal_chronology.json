@@ -1,0 +1,110 @@
+{
+  "events": [
+    {
+      "event": "dataset_commitment",
+      "occurred_at_ns": 1000000,
+      "role_attestation": "ebd5d399b53709da23130769b083a75ae7339217b92644346c6294b8e77a31a2",
+      "sequence": 1
+    },
+    {
+      "commitment": "f1af2b33677c5e88e6d45d9974e56d03e4c245f8bc4c7663145d5f2be01d2bca",
+      "event": "label_commitment",
+      "occurred_at_ns": 2000000,
+      "role_attestation": "c2f97e507b7e1b55dd7e33634b5e8adb714c39128ddd9eede4f84c11edbbd018",
+      "sequence": 2
+    },
+    {
+      "commitment": "1cff90a42960dc30e80fbba14749d1031e46fb44485a0d58047aac37cc69433c",
+      "event": "candidate_commitment",
+      "occurred_at_ns": 3000000,
+      "role_attestation": "2bb134fa9554bd851a83eda8378eaf8c217fec52ddc78ff89f66eba579847b1e",
+      "sequence": 3
+    },
+    {
+      "commitment": "57f643db87223bcb12a2f07b3b12f57a175d54d2340dc362054b263205e2dc69",
+      "event": "evaluator_commitment",
+      "occurred_at_ns": 4000000,
+      "role_attestation": "49310c73ef1b0a2fe11580e2445d3a87dcde510f334bc6ee85117910f897293e",
+      "sequence": 4
+    },
+    {
+      "commitment": "857d05c0692d5e9221188bcb3657b8a82addf75600c6cc45d73f91b8f5a748f0",
+      "event": "blind_input_handoff",
+      "occurred_at_ns": 5000000,
+      "role_attestation": "bd5a35e0149d8e43ee3acf075cc93eb3c2ca6fba99471718aed23b33a4f91a98",
+      "sequence": 5
+    },
+    {
+      "commitment": "375cda3fad7d72a6653e04d27afee14bbce75ea8f834da6a652513674c0b83a3",
+      "event": "frozen_inference",
+      "occurred_at_ns": 6000000,
+      "role_attestation": "b62539de5e90d2e97662d4ec89b9a8ef1563041637c6bed8612047d1e0413a82",
+      "sequence": 6
+    },
+    {
+      "commitment": "c7c32cc6ba5c92c2fd9cd0490087fcacf43118f6eced537c7e30b5eddaa383e5",
+      "event": "prediction_validation",
+      "occurred_at_ns": 7000000,
+      "role_attestation": "bda878debd31efac8d28cf8dad807ce304807a6f8ff1892f3153649e70216cbe",
+      "sequence": 7
+    },
+    {
+      "commitment": "48fb0b0cc4b38b9fc768152f5090d6c309a64fd6f9a8e97728f70a1f0855dc49",
+      "event": "prediction_commitment",
+      "occurred_at_ns": 8000000,
+      "role_attestation": "3380e91e9d321e15bc4bb11b98a6a0a3cced21286ef89fe294424c68492e0bf7",
+      "sequence": 8
+    },
+    {
+      "commitment": "e65ca43fa1e7ba4b276a7bc71fc0487c282caef978a9aa6f309e61c6f60c9c3f",
+      "event": "label_reveal",
+      "occurred_at_ns": 9000000,
+      "role_attestation": "e91307c76eddb1ad066c14507126beed5f7f29f62cb339e8da21a6f8dbf3b09e",
+      "sequence": 9
+    },
+    {
+      "commitment": "22ca2f191093433f7a9d71dfe2b38d0131dd1b685ce63c83d6bcbacb1861fc48",
+      "event": "label_commitment_verification",
+      "occurred_at_ns": 10000000,
+      "role_attestation": "637bd578e89030779f620b402287f176e5d8a14a995af46840b12fd7814a8a9f",
+      "sequence": 10
+    },
+    {
+      "commitment": "1df899d2e260999c508e57f0bde8d776bc03387d06e1f23edcccbba8f23b629d",
+      "event": "frozen_evaluation",
+      "occurred_at_ns": 11000000,
+      "role_attestation": "f598ca03673d621ad5955ef2fc5c1fbe26f6329df2d2840604c651923333bdc5",
+      "sequence": 11
+    },
+    {
+      "commitment": "dfeb4aac1161b4e5837f4825d9425e6462c051ed4e3b309d58000c6f9eace85e",
+      "event": "result_bundle",
+      "occurred_at_ns": 12000000,
+      "role_attestation": "83b7c6ed2a27baeb5862df44306c916b56d4f7501f6699e79d42ff8c7c4ba0b6",
+      "sequence": 12
+    },
+    {
+      "commitment": "f67aeec3f27ca06108f579f68796032b7f626760e1e406539aae780f4f1b2d91",
+      "event": "external_review",
+      "occurred_at_ns": 13000000,
+      "role_attestation": "c9c3941335ca0cc593db660260769fced102f16c2ed8d6a949c3afb7514570dc",
+      "sequence": 13
+    },
+    {
+      "commitment": "cb742b9a33bddefe716c9a80ef021ab6c46c948f328f9f35f4cff7a6ccf45b77",
+      "event": "result_approval",
+      "occurred_at_ns": 14000000,
+      "role_attestation": "a17232163954094baa03a155bbfa80f68d90d8d87740ca4e822c0b536c301ec6",
+      "sequence": 14
+    },
+    {
+      "commitment": "5832bf43e4a4f4c528c32769ae0257b7f99e0a39903b4590a0c98226dbeabd68",
+      "event": "finalization",
+      "occurred_at_ns": 15000000,
+      "role_attestation": "80b68c1add922d5761324f3e56eafb33e011cfaecd721197b7377884122860a9",
+      "sequence": 15
+    }
+  ],
+  "rehearsal_id": "v0318-synthetic-rehearsal-001",
+  "schema_version": "external_trial_chronology_v1"
+}
