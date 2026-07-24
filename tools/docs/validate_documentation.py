@@ -61,9 +61,9 @@ def validate(root: Path = ROOT) -> list[str]:
         errors.append("research-state.yaml is not an explicit compatibility pointer")
     latest = str(state.get("current_completed_stage", ""))
     critical = {
-        "README latest stage": (readme, f"Последний завершённый этап — {latest}"),
+        "README latest stage": (readme, f"Последний завершённый этап: **{latest}**"),
         "status latest stage": (docs / "status.md", f"Текущий завершённый этап: {latest}"),
-        "README integration false": (readme, "shadow mode, backend integration и production запрещены"),
+        "README integration false": (readme, "Backend integration и production connections запрещены"),
         "status production false": (docs / "status.md", "Production, shadow mode, backend integration и automatic enforcement: запрещены"),
         "roadmap completed v0.3.7": (docs / "roadmap.md", "v0.3.7"),
     }

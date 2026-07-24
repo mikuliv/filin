@@ -1,153 +1,308 @@
 # Платформа «Филин»
 
-> Статус v0.3.18: пакет независимой внешней проверки спроектирован и прошёл synthetic protocol rehearsal. Реальные внешние данные не использовались. Разрешён только review пакета v0.3.19; внешний trial, shadow mode, backend integration и production запрещены.
+Исследовательская платформа воспроизводимого анализа сетевых наблюдений.
 
-Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
+> **Текущий статус**
+>
+> - Последний завершённый этап: **v0.3.18**.
+> - Результат этапа: **completed / passed**.
+> - Следующий допустимый этап: **v0.3.19 — package review**.
+> - Фактический external trial пока запрещён.
+> - Production readiness не заявляется.
 
-## 1. Назначение
+Machine-readable источник статуса:
+[`docs/status/project-status.yaml`](docs/status/project-status.yaml).
 
-«Филин» — исследовательская платформа для воспроизводимого анализа сетевых наблюдений в изолированной лаборатории. Она строит causal 51-feature представление, применяет замороженный классификатор и формирует пассивные события для последующего анализа.
+## О проекте
 
-## 2. Текущий проверенный статус
+«Филин» исследует, как строить проверяемый анализ сетевых наблюдений без
+смешивания обучения, оценки и runtime-доказательств. Платформа преобразует
+контролируемый сетевой трафик в causal features, применяет замороженный
+кандидат, формирует stateful episode decisions и выпускает пассивные события.
 
-Последний завершённый этап — v0.3.18. Заморожены blind holdout, role, dataset provenance, commitments, metric/sample/stop policies; подготовлены deterministic evaluator, package builder и standalone verifier. Локальная synthetic rehearsal прошла полный workflow, а 40/40 отрицательных сценариев были отклонены. Это проверка протокола, а не научная external validation.
+Исследовательская задача включает не только predictive behavior. Для каждого
+этапа фиксируются contracts, identities, protocols, test gates и evidence.
+Отрицательные результаты сохраняются, а исправления оформляются новой revision
+или отдельным corrective stage.
 
-## 3. Что представляет собой «Филин»
+Causal features используют только сведения, доступные к моменту prediction.
+Frozen inference не допускает fit, calibration или threshold selection во
+время evaluation. Evidence bundles связывают claims с проверяемыми manifests и
+hash commitments.
 
-Проект объединяет безопасный лабораторный стенд, capture и Zeek-обработку, построение признаков, frozen inference, stateful episode policy, passive event contract и локальный доказательный runtime. Это исследовательский код, а не готовое средство защиты.
+Проект не является готовым средством защиты, production-сервисом, SIEM или
+системой автоматического блокирования. Подтверждённый scope ограничен локальными
+лабораторными и synthetic испытаниями.
 
-## 4. Границы проекта
+## Ключевые свойства
 
-Подтверждения относятся к контролируемым локальным сценариям. Проект не проходил внешнюю организационную validation, не подключён к действующей инфраструктуре и не имеет полномочий изменять сеть.
+- воспроизводимый pipeline от PCAP до evidence reconciliation;
+- причинное 51-признаковое представление;
+- frozen candidate с machine-readable identity;
+- stateful processing на уровне episodes;
+- versioned passive event contracts;
+- durable at-least-once delivery;
+- разделение scientific и runtime gates;
+- immutable stage artifacts и evidence bundles;
+- group-aware independent holdout methodology;
+- blind commitments и external review package;
+- fail-safe validators для manifests, paths, privacy и chronology.
 
-## 5. Архитектура
+## Архитектура
 
-Основные слои: `lab` для изолированных сценариев, `collectors` для capture и passive runtime, `ml` для frozen research pipeline, `tools` для аудита, `docs` для контрактов и статуса. Исторический `backend` не интегрирован с сенсором.
+```text
+Контролируемый трафик
+→ PCAP
+→ Zeek
+→ causal feature window
+→ frozen candidate
+→ stateful decision
+→ passive event
+→ durable delivery
+→ local verified sink
+→ evidence reconciliation
+```
 
-## 6. Поток обработки
+PCAP обрабатывается Zeek, после чего feature builder формирует causal window.
+Frozen candidate создаёт prediction, а stateful слой связывает observations в
+episode и применяет замороженную policy. Passive event проходит versioned
+contract и доставляется в локальный reference receiver.
 
-Контролируемый трафик → PCAP → Zeek logs → causal feature window → frozen candidate → stateful decision → `shadow_event_v2` → registry validation → durable spool → bounded priority queue → rate limiter → local sink → ACK → checkpoint → reconciliation.
+Reference receiver подтверждает delivery protocol, но не является production
+backend. Подробности приведены в
+[архитектурном обзоре](docs/architecture/overview.md) и
+[описании data flow](docs/architecture/data-flow.md).
 
-## 7. Подсистема обнаружения
+## Проверенный scope
 
-Текущий development candidate создан на v0.3.15.4. Исторический frozen candidate v0.3.11 и все исторические результаты сохранены неизменными.
+В пределах конкретных stage protocols подтверждены:
 
-## 8. Поддерживаемые классы наблюдаемого поведения
+- локальные лабораторные сценарии;
+- synthetic closed sets;
+- causal feature extraction;
+- frozen inference;
+- stateful episode processing;
+- passive event validation;
+- local passive runtime;
+- staging transport и durable receiver;
+- длительная controlled local campaign;
+- corrective timing и performance validation;
+- external review protocol rehearsal;
+- package builder и standalone verifier.
 
-Лабораторный closed set включает benign, port scan, authentication failures, web probe, low-rate DoS и beacon-like behavior. Эти имена описывают классы синтетического стенда, а не подтверждённую атрибуцию реальных атак.
+Каждое утверждение имеет ограничение и evidence reference в
+[confirmed capabilities](docs/status/confirmed-capabilities.md).
 
-## 9. Stateful-обработка эпизодов
+## Что не подтверждено
 
-Episode state различает benign, pending, review, alert и post-alert continuation. Deduplication подавляет повторные доставки по idempotency key; она не меняет frozen prediction или causal state.
+Проект не подтверждает:
 
-## 10. Passive event contract
-
-[`shadow_event_v1`](docs/contracts/shadow-event-v1.md) остаётся исторически неизменным. Новый [`shadow_event_v2`](docs/contracts/shadow-event-v2.md) задаёт candidate-aware структурный контракт; авторизация выполняется отдельным frozen registry.
-
-## 11. Надёжность доставки
-
-Исправленный v0.3.15.1 runtime реализует единый at-least-once path: validation, canonical serialization, durable fsync spool, priority queue, token bucket, batch delivery, строгий ACK, bounded retry, atomic checkpoint, compaction и restart recovery. Exactly-once не заявляется; semantic deduplication выполняет локальный sink.
-
-## 12. Безопасность и fail-safe ограничения
-
-Runtime использует только локальные fixtures и mock sink. Любой неизвестный fault-сценарий завершается `unsupported`, malformed/unknown ACK не считается успехом, а непроверенная целостность блокирует resume и readiness.
-
-## 13. Текущий frozen candidate
-
-Candidate ID: `v03154:65a3dd912d845bc1`. Его scientific subpolicies подтверждены valid holdout v0.3.15.5, а runtime compatibility — отдельным v0.3.15.5.1. Исторический `v0311:19176acb401be2d4` не перезаписан.
-
-## 14. Последний независимый holdout
-
-v0.3.13 — независимый prospective environmental holdout. Его научный результат не отменён переоценкой runtime-утверждений v0.3.14/v0.3.15.
-
-## 15. Последний runtime trial
-
-v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientific predictions сохранены. Аудит v0.3.15.1 установил, что исходная реализация delivery faults не доказывала полный integrated fault path, поэтому прежнее решение о переходе к v0.3.16 не подтверждено.
-
-## 16. Подтверждённые возможности
-
-- локальная causal feature extraction и frozen inference;
-- independent holdout v0.3.13;
-- immutable bundle v0.3.15;
-- исправленный integrated passive exporter v0.3.15.1;
-- поведенческие fault, crash, resume, drop, privacy и performance tests;
-- source/sink reconciliation на локальных immutable событиях.
-
-## 17. Неподтверждённые возможности
-
-- эксплуатационная точность в реальной организации;
-- production capture и online deployment;
+- accuracy на данных реальной организации;
+- фактический external blind trial;
+- production traffic capture;
+- real shadow mode;
 - backend или SIEM integration;
-- shadow mode с реальным получателем;
+- production deployment;
 - automatic enforcement;
-- внешняя security и privacy validation.
+- network blocking;
+- реальные notifications;
+- независимую external security/privacy validation.
 
-## 18. Хронология этапов
+Полный список запретов находится в
+[prohibited capabilities](docs/status/prohibited-capabilities.md).
 
-<!-- stage-history:start -->
-- v0.3.1 — базовая оценка.
-- v0.3.2 — robustness evaluation.
-- v0.3.3 — отрицательная проверка изменённой среды.
-- v0.3.4 — benign redesign.
-- v0.3.5 — frozen regression.
-- v0.3.6 — prospective holdout с отрицательной policy.
-- v0.3.7 — новый training cycle.
-- v0.3.8 — class-conditional uncertainty.
-- v0.3.9 — episode-first promotion.
-- v0.3.10 — minimal probabilistic cycle.
-- v0.3.10.1 — уточнение семантики pending.
-- v0.3.11 — текущий burden-aware frozen candidate.
-- v0.3.12 — frozen multi-benchmark regression.
-- v0.3.12.1 — causal-order audit.
-- v0.3.12.2 — corrected regression.
-- v0.3.13 — независимый environmental holdout.
-- v0.3.14 — component/contract audit с последующей переоценкой scope.
-- v0.3.15 — controlled local passive shadow trial.
-- v0.3.15.1 — corrective runtime evidence audit.
-- v0.3.15.2 — prospective integrated passive runtime trial с отрицательным итогом.
-- v0.3.15.3 — завершённый анализ научной регрессии и проект следующего цикла.
-- v0.3.15.4 — завершённая контролируемая смешанная переработка; candidate разрешён только для v0.3.15.5.
-- v0.3.15.5 — completed independent holdout; scientific gates passed, runtime contract failed, candidate not promoted.
-- v0.3.15.5.1 — completed prospective runtime recovery; composite promotion passed только для локального staging.
-- v0.3.16 — completed isolated staging transport; 2 280/2 280 events и 59/59 gates passed.
-- v0.3.17 — completed controlled local rehearsal; 4 часа wall-clock, 201 420 reconciled events, общий policy result отрицательный.
-- v0.3.17.1 — completed corrective audit; 45-минутный targeted trial и все corrective gates пройдены.
-- v0.3.18 — completed external review design; synthetic blind rehearsal и 40/40 negative scenarios пройдены.
-<!-- stage-history:end -->
+## Текущий frozen candidate
 
-## 19. Текущий этап v0.3.18
+**Candidate ID:** `v03154:65a3dd912d845bc1`
 
-Подробности приведены в [описании v0.3.18](docs/experiments/v0_3_18.md), [пакете reviewer](docs/external_review/README.md) и итоговом отчёте `ml/reports/v0_3_18/v0_3_18_summary.md`. Результаты v0.3.17 и v0.3.17.1 сохранены.
+Candidate создан в v0.3.15.4 на development corpus. Independent scientific
+holdout выполнен в v0.3.15.5, а runtime-compatible event path подтверждён
+последующими этапами.
 
-## 20. Следующий разрешённый этап
+Это development/research candidate. Его успешные лабораторные gates не означают
+production readiness.
 
-Следующий допустимый этап — только независимый package review и согласование trial plan v0.3.19. Он не разрешает фактический внешний trial, shadow mode, backend integration, production или automatic enforcement.
+Machine-readable identity:
 
-## 21. Структура репозитория
+- [candidate registry](collectors/shadow/contracts/candidate_registry_v1.json);
+- [candidate manifest](ml/artifacts/v0_3_15_4/candidate_manifest.json);
+- [feature contract](ml/experiments/v0_3_15_4/feature_contract_v2.yaml);
+- [event contract](collectors/shadow/contracts/shadow_event_v2.schema.json).
 
-- `collectors/shadow` — event contract и integrated passive exporter;
-- `collectors/shadow_trial` — исторический trial pipeline v0.3.15;
-- `ml/experiments` — frozen protocols и stage runners;
-- `ml/reports` — отслеживаемые агрегированные evidence bundles отдельных этапов;
-- `runtime` — локальные неотслеживаемые артефакты;
-- `docs` — статус, методология и ограничения.
+## Последние ключевые этапы
 
-## 22. Локальный запуск
+### v0.3.15.4
 
-Корректирующий аудит запускается командой `python -m ml.experiments.v0_3_15_1.run_v0_3_15_1 --strict`. Он не использует внешнюю сеть и не выполняет model fit.
+Контролируемая смешанная переработка сформировала current development candidate.
+Результат разрешал только следующий independent holdout.
 
-## 23. Тестирование
+### v0.3.15.5
 
-Основные команды: `python -m pytest ml/tests`, `python -m pytest collectors/shadow/tests`, `python -m pytest collectors/shadow_trial/tests`, `python -m pytest backend/tests`, а также compileall и validators из CI.
+Independent scientific holdout прошёл predictive gates, но исходный runtime
+event contract оказался несовместим. Candidate не был немедленно promoted.
 
-## 24. Reproducibility и immutable artifacts
+### v0.3.15.5.1
 
-Исторические frozen protocols, policy results и bundle manifests не переписываются. Исправления оформляются новым этапом, errata и claim-evidence ledger. Raw PCAP, predictions, events, spool, checkpoints и traces остаются вне Git.
+Candidate-compatible event contract и prospective runtime recovery подтвердили
+локальную runtime compatibility без backend или production claims.
 
-## 25. Политика данных и privacy
+### v0.3.16
 
-События используют хэшированные идентификаторы и allowlist. Privacy audit сканирует canonical/serialized events, spool, retry journal, delivery logs, ACK, checkpoint, faults, performance и bundle reports. Raw payload, credentials, labels и feature vectors в passive telemetry запрещены.
+Изолированный staging connector и reference receiver подтвердили durable
+transport. Reference receiver остался проверочным sink, а не backend.
 
-## 26. Ограничения и roadmap
+### v0.3.17
 
-Текущие результаты лабораторные. Положительный corrective evidence разрешает только рассмотрение дизайна v0.3.18; ветка v0.4.x остаётся отдельным архитектурным направлением и не означает production readiness.
+Валидная четырёхчасовая local campaign завершилась с отрицательным overall
+policy result из-за evidence, timing, performance и corruption gates.
+
+### v0.3.17.1
+
+Corrective stage классифицировал historical findings, исправил evidence tooling
+и прошёл targeted trial без изменения delivery path.
+
+### v0.3.18
+
+Подготовлены external review protocol, blind commitments, role separation,
+deterministic evaluator, package builder и standalone verifier. Synthetic
+rehearsal прошла, 40/40 negative scenarios отклонены.
+
+Полная неизменённая хронология находится в
+[version history](docs/status/version-history.md).
+
+## Внешняя проверка
+
+v0.3.18 подготовил процесс для будущей независимой проверки:
+
+- frozen external review protocol;
+- dataset, label, candidate, evaluator и prediction commitments;
+- разделение ролей;
+- blind label reveal;
+- deterministic metric evaluation;
+- package allowlist и manifest tree;
+- standalone verification без Git, сети и backend;
+- synthetic protocol rehearsal;
+- 40/40 rejected negative scenarios.
+
+В rehearsal использовался deterministic predictor, а не реальная модель.
+Реальные внешние данные и labels не использовались:
+`scientific_evidence=false`.
+
+Подробнее: [external review package](docs/external_review/README.md).
+
+## Структура репозитория
+
+- `collectors/` — collectors, runtime adapters и passive event contracts;
+- `datasets/` — tracked descriptions и metadata без raw datasets;
+- `docs/` — текущая, исследовательская и историческая документация;
+- `external_review/` — JSON Schemas external review contracts;
+- `lab/` — локальные synthetic scenarios и isolation materials;
+- `ml/` — feature code, candidate metadata, experiments и aggregate reports;
+- `rehearsal/` — stage-specific runtime contracts и configuration;
+- `runtime/` — generated local artifacts, исключённые из Git;
+- `staging/` — изолированный transport, не являющийся backend;
+- `backend/` — отдельный backend-код без current sensor integration;
+- `tools/` — validators, builders и audit utilities.
+
+Подробная карта: [repository layout](docs/getting-started/repository-layout.md).
+
+## Быстрый старт
+
+Проект не предоставляет одну команду для production-запуска всей системы.
+Безопасный старт ограничен подготовкой окружения и проверками.
+
+### Подготовка окружения
+
+```powershell
+python -m pip install -r ml/requirements.txt -r backend/requirements.txt
+```
+
+### Запуск тестов
+
+```powershell
+python -m pytest -q
+```
+
+### Проверка документации
+
+```powershell
+python tools/docs/validate_documentation.py --strict
+python tools/docs/validate_project_status.py --strict
+python tools/docs/validate_documentation_maintenance.py --strict
+```
+
+### Просмотр текущего статуса
+
+Откройте [current status](docs/status/current-status.md) и
+[`project-status.yaml`](docs/status/project-status.yaml).
+
+Команды real capture, external trial и длительных runners намеренно не входят в
+quick start. Руководство по проверкам:
+[testing](docs/getting-started/testing.md).
+
+## Документация
+
+- [Навигационный индекс](docs/index.md)
+- [Текущий статус](docs/status/current-status.md)
+- [Архитектура](docs/architecture/overview.md)
+- [Методология](docs/research/methodology.md)
+- [Контракты](docs/contracts/index.md)
+- [Протоколы](docs/protocols/index.md)
+- [Итоговые отчёты](docs/reports/index.md)
+- [Внешняя проверка](docs/external_review/README.md)
+- [История этапов](docs/status/version-history.md)
+- [Ограничения](docs/architecture/limitations.md)
+- [Стиль и терминология](docs/contributing/documentation-style.md)
+
+## Безопасность и ограничения
+
+Испытания выполняются в локальной изоляции на synthetic fixtures. Current
+runtime не имеет полномочий на automatic action, blocking или notification.
+Backend integration и production connections запрещены.
+
+Validators отклоняют unknown files, path traversal, commitment mismatch,
+chronology violations и privacy/secret findings. Raw PCAP, model binaries,
+labels, predictions, databases, WAL, journals и timing traces не добавляются в
+Git.
+
+## Воспроизводимость
+
+Каждый завершённый stage сохраняет protocols, policy results, manifests,
+detached hashes, test reports и claim-evidence ledgers. Historical artifacts не
+переписываются для улучшения текущего narrative.
+
+Если обнаружена ошибка, создаётся новая revision, corrective stage или
+отдельное errata. Negative result остаётся доступным вместе с evidence.
+
+Подробнее: [reproducibility](docs/research/reproducibility.md).
+
+## Тестирование
+
+Последний полный regression result зафиксирован при завершении v0.3.18:
+
+- `1309 passed`;
+- `0 failed`;
+- `0 skipped`;
+- `3 warnings`;
+- compileall `6/6`.
+
+Это исторический результат конкретного завершённого stage. Он не обновляется
+автоматически после каждого commit.
+
+## Статус и roadmap
+
+v0.3.18 завершён с положительным design/rehearsal result. Разрешён только
+v0.3.19: независимый review external package и согласование trial plan.
+
+Фактический external trial потребует отдельного решения. Долгосрочная v0.4.x
+ветка рассматривает evidence reconstruction и incident hypothesis layer, но не
+является автоматическим следующим шагом или production-веткой.
+
+См. [roadmap](docs/roadmap.md) и
+[next stage](docs/status/next-stage.md).
+
+## Лицензирование
+
+Правовой режим распространения проекта пока не оформлен отдельной лицензией.
+До появления `LICENSE` стандартные разрешения open-source лицензии не
+заявляются.
