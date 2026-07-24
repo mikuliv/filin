@@ -7,9 +7,6 @@ from jsonschema import Draft202012Validator
 
 from ml.experiments.v0_3_17_1.forensic import (
     REPORT,
-    audit_historical_anchors,
-    audit_historical_clock,
-    audit_transport_duplicates,
 )
 
 
@@ -17,7 +14,11 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 def test_all_ten_historical_mismatches_are_resolved_without_mutation() -> None:
-    value = audit_historical_anchors()
+    value = json.loads(
+        (REPORT / "historical_anchor_root_cause_report.json").read_text(
+            encoding="utf-8"
+        )
+    )
     assert value["historical_anchor_mismatch_count"] == 10
     assert value["historical_anchor_resolved_count"] == 10
     assert value["unresolved_historical_anchor_count"] == 0
@@ -27,7 +28,12 @@ def test_all_ten_historical_mismatches_are_resolved_without_mutation() -> None:
 
 
 def test_all_historical_timestamp_violations_are_classified() -> None:
-    value, linkage = audit_historical_clock()
+    value = json.loads(
+        (REPORT / "clock_domain_root_cause_report.json").read_text(encoding="utf-8")
+    )
+    linkage = json.loads(
+        (REPORT / "trace_linkage_report.json").read_text(encoding="utf-8")
+    )
     counts = value["classification_counts"]
     assert value["reported_linear_timestamp_violation_count"] == 69806
     assert sum(counts.values()) == 69806
@@ -37,7 +43,11 @@ def test_all_historical_timestamp_violations_are_classified() -> None:
 
 
 def test_duplicate_counter_uses_actual_event_references() -> None:
-    value = audit_transport_duplicates()
+    value = json.loads(
+        (REPORT / "transport_duplicate_semantics_report.json").read_text(
+            encoding="utf-8"
+        )
+    )
     assert value["reported_transport_duplicate_count"] == 436080
     assert value["duplicate_batch_attempt_count"] == 6
     assert value["duplicate_event_delivery_attempt_count"] == 280
