@@ -1,0 +1,56 @@
+{
+  "clean_finalization_passed": true,
+  "finalizer_nameerror_fixed": true,
+  "recovery_finalization_required": false,
+  "scenario_count": 9,
+  "scenario_passed_count": 9,
+  "scenarios": [
+    {
+      "expected": "success",
+      "passed": true,
+      "scenario": "clean_finalization"
+    },
+    {
+      "expected": "idempotent",
+      "passed": true,
+      "scenario": "repeated_invocation"
+    },
+    {
+      "expected": "no rewrite",
+      "passed": true,
+      "scenario": "already_finalized_bundle"
+    },
+    {
+      "expected": "lock_missing",
+      "passed": true,
+      "scenario": "missing_lock"
+    },
+    {
+      "expected": "lock_malformed",
+      "passed": true,
+      "scenario": "malformed_lock"
+    },
+    {
+      "expected": "lock_stage",
+      "passed": true,
+      "scenario": "other_stage_lock"
+    },
+    {
+      "expected": "atomic recovery",
+      "passed": true,
+      "scenario": "interrupted_finalization"
+    },
+    {
+      "expected": "path_confinement",
+      "passed": true,
+      "scenario": "path_confinement"
+    },
+    {
+      "expected": "recovery_mode_forbidden",
+      "passed": true,
+      "scenario": "no_recovery_mode"
+    }
+  ],
+  "schema_version": "v03171_finalizer_regression_v1",
+  "stage": "v0.3.17.1"
+}
