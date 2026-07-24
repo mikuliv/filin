@@ -14,6 +14,8 @@ SCANNED_PREFIXES = (
     "ml/reports/v0_3_17_1/",
     "ml/protocols/v0_3_17_1_protocol.yaml",
     "docs/experiments/v0_3_17_1.md",
+    "docs/contracts/runtime_timing_trace_v2.md",
+    "ml/reports/index.md",
     "rehearsal/contracts/runtime_timing_trace_v2.schema.json",
     "rehearsal/docker-compose.v0_3_17_1.yml",
     "tools/audit/validate_v03171",

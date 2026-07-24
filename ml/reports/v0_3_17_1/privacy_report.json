@@ -1,0 +1,11 @@
+{
+  "findings": [],
+  "negative_fixture_count": 3,
+  "negative_fixture_detection_rate": 1.0,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 0,
+  "privacy_policy_passed": true,
+  "schema_version": "v03171_privacy_report_v1",
+  "stage": "v0.3.17.1",
+  "target_count": 30
+}
