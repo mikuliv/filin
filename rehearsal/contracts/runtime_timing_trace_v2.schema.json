@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "runtime_timing_trace_v2",
+  "title": "Контракт временной трассы runtime v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "trace_contract_version",
+    "event_id",
+    "trace_id",
+    "attempt_id",
+    "batch_id",
+    "component_id",
+    "process_instance_id",
+    "container_boot_id",
+    "clock_domain_id",
+    "timestamp_name",
+    "monotonic_ns",
+    "wall_clock_ns",
+    "parent_trace_ref"
+  ],
+  "properties": {
+    "trace_contract_version": {"const": "runtime_timing_trace_v2"},
+    "event_id": {"type": "string", "minLength": 1},
+    "trace_id": {"type": "string", "minLength": 1},
+    "attempt_id": {"type": ["string", "null"], "minLength": 1},
+    "batch_id": {"type": ["string", "null"], "minLength": 1},
+    "component_id": {"type": "string", "minLength": 1},
+    "process_instance_id": {"type": "string", "minLength": 1},
+    "container_boot_id": {"type": "string", "minLength": 1},
+    "clock_domain_id": {"type": "string", "minLength": 1},
+    "timestamp_name": {
+      "enum": [
+        "capture_close",
+        "prediction_complete",
+        "event_creation",
+        "sensor_outbox_durable",
+        "connector_ingress_receive",
+        "connector_journal_durable",
+        "ingress_ack",
+        "batch_scheduled",
+        "send_started",
+        "receiver_received",
+        "receiver_durable_commit",
+        "receiver_ack",
+        "connector_checkpoint"
+      ]
+    },
+    "monotonic_ns": {"type": "integer", "minimum": 0},
+    "wall_clock_ns": {"type": "integer", "minimum": 0},
+    "parent_trace_ref": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "classification_counts": {
+    "ACK_linked_to_wrong_attempt": 0,
+    "counter_wrap_or_reset": 0,
+    "field_order_error": 640,
+    "invalid_trace_fixture": 69166,
+    "mixed_clock_domain": 0,
+    "retry_attempt_mismatch": 0,
+    "serialization_error": 0,
+    "stale_timestamp_reuse": 0,
+    "unknown": 0,
+    "wrong_boot_identity": 0
+  },
+  "clock_root_cause_analysis_completed": true,
+  "historical_clock_domain_attestation_passed": false,
+  "historical_stage": "v0.3.17",
+  "pair_counts": {
+    "connector_ingress_ack_sent>connector_send_started": 69476,
+    "connector_ingress_received>connector_journal_durable": 410,
+    "receiver_validation_completed>receiver_commit_completed": 280
+  },
+  "raw_trace_count": 201370,
+  "raw_trace_modified": false,
+  "raw_trace_sha256": "f38f002050fe646c0979cbca1343eb6e621ac3c9e2b7906089f54ce1848d5980",
+  "reported_linear_timestamp_violation_count": 69806,
+  "root_causes": [
+    {
+      "finding": "Ingress ACK and delivery send are concurrent descendants of the durable journal commit; no causal order exists between them.",
+      "type": "invalid_trace_fixture"
+    },
+    {
+      "finding": "journal_durable_ns and committed_ns were sampled before their transactions completed but labelled as completion timestamps.",
+      "type": "field_order_error"
+    },
+    {
+      "finding": "The v0.3.17 flattened trace omitted clock-domain, process, boot, attempt, batch and parent-link identities, so cross-process latency cannot be attested retrospectively.",
+      "type": "missing_clock_attestation"
+    }
+  ],
+  "schema_version": "v03171_clock_domain_root_cause_v1",
+  "stage": "v0.3.17.1",
+  "violation_pair_occurrence_count": 70166
+}
