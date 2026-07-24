@@ -29,11 +29,11 @@ notifications, automatic enforcement и network blocking запрещены.
 2. [Известные ограничения](known_limitations.md).
 3. [Архитектура процесса](architecture.md).
 4. [Руководство reviewer](reviewer_guide.md).
-5. Ролевое руководство конкретного участника.
+5. [Ролевое руководство конкретного участника](#ролевые-руководства).
 6. [Приём данных](data_acceptance_policy.md),
    [метрики](metric_policy.md) и [stop conditions](stop_conditions.md).
 7. [Воспроизводимость](reproducibility_guide.md).
-8. Правовые, transfer, retention и publication checklists.
+8. [Правовые, transfer, retention и publication checklists](#policies-и-checklists).
 
 ## Что передавать на первом контакте
 
