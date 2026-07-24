@@ -5,6 +5,10 @@ readiness из [`project-status.yaml`](status/project-status.yaml).
 
 Последний завершённый этап — v0.3.18 (`completed`, `passed`).
 
+Исторический этап v0.3.1 — базовая оценка завершён.
+Этап v0.3.2 — проверка устойчивости зафиксированной модели также завершён;
+полная хронология вынесена в отдельный version history.
+
 ## Current authorized next step
 
 Разрешён только **v0.3.19 — independent external package review and trial-plan

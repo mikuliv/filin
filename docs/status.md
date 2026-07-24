@@ -8,3 +8,10 @@
 
 Этот файл сохранён как compatibility redirect и не является вторым
 authoritative status.
+
+Исторические compatibility-маркеры для прежних проверок:
+
+- MITRE ATT&CK mapping | Запланировано;
+- Backend model integration | Не начато.
+
+Их актуальная трактовка приведена в документе запрещённых возможностей.
