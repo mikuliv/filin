@@ -9,5 +9,8 @@
 - [Staging event batch v1](staging_event_batch_v1.md)
 - [ACK reference receiver v1](receiver_batch_ack_v1.md)
 - [Временная трасса runtime v2](runtime_timing_trace_v2.md)
+- JSON Schemas external review v0.3.18 находятся в `external_review/contracts/`:
+  dataset identity/provenance, role attestation, holdout, candidate/evaluator,
+  prediction, label reveal, chronology и evaluation result.
 
 v0.3.15.1 не добавляет production receiver. Его ACK contract и integrated exporter применяются только к локальному passive runtime.
