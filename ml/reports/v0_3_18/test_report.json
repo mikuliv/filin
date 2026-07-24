@@ -1,0 +1,24 @@
+{
+  "ci_requires_ssd": false,
+  "ci_runs_long_trial": false,
+  "ci_uses_real_data": false,
+  "ci_uses_sanitized_fixtures": true,
+  "compileall": {
+    "failed_target_count": 0,
+    "passed_target_count": 6
+  },
+  "final_full_suite": {
+    "duration_seconds": 137.94,
+    "failed_test_count": 0,
+    "passed_test_count": 1309,
+    "skipped_test_count": 0,
+    "warning_count": 3
+  },
+  "initial_v0318_command_error": {
+    "cause": "PowerShell не расширил wildcard пути pytest.",
+    "resolved_by_explicit_collection": true,
+    "tests_executed": 0
+  },
+  "schema_version": "v0318_test_report_v1",
+  "stage": "v0.3.18"
+}

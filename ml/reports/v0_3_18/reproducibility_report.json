@@ -1,0 +1,10 @@
+{
+  "evaluator_determinism_passed": true,
+  "external_package_root_commitment": "47712bc1288ea049737b7794d35693d934b7e0e7e061fb01cb23c166bbc814fa",
+  "locked_artifacts_unchanged": true,
+  "protocol_sha256": "e09389793e41b71a9d5ed6f1cfedb7dc137f7d6c7c37ac2c8f2c1fe6dce3e6d6",
+  "reproducibility_verifier_passed": true,
+  "schema_version": "v0318_reproducibility_report_v1",
+  "standalone_verifier_passed": true,
+  "strict_resume_passed": true
+}

@@ -1,0 +1,155 @@
+schema_version: v0318_bundle_manifest_v1
+stage: v0.3.18
+artifacts:
+- path: docs/experiments/v0_3_18.md
+  size: 2748
+  sha256: 4fdceb4b3bc7980a6e4a49e33828f50dd975e6a5068000b044fb3b95a5218b29
+- path: external_review/contracts/blind_holdout_commitment_v1.schema.json
+  size: 858
+  sha256: 5c7379dc5c259a59bc33a3e16f0bd1e8d4e1f20847ac1797e431288381183c52
+- path: external_review/contracts/blind_holdout_manifest_v1.schema.json
+  size: 1012
+  sha256: 187a8a779f9d68d6efd2e40178b34dac6160cf80660a532ad30a4b0961a2d0bb
+- path: external_review/contracts/candidate_commitment_v1.schema.json
+  size: 1922
+  sha256: 15443ab6267b9c36a78b70a8dce738b459de8aa54f8f81f06764b57fb674658b
+- path: external_review/contracts/evaluator_commitment_v1.schema.json
+  size: 1163
+  sha256: b77ea36e048055f4a3e6756d90462b6441ae868c384854e1f7c71a704ffbdfc5
+- path: external_review/contracts/external_dataset_identity_v1.schema.json
+  size: 2477
+  sha256: 4b7d3e84c46bffd0d99d9209ffd57808bc92949a1d97d4f575f7f8b819f0c7d4
+- path: external_review/contracts/external_dataset_provenance_v1.schema.json
+  size: 1281
+  sha256: 0bd213d44e90d86e8c5a15c7cb1a7f2db4d6411615944c902a65efa99a29427a
+- path: external_review/contracts/external_evaluation_result_v1.schema.json
+  size: 988
+  sha256: 1efe8df2ef4e30ea844228216bf0152d72fa56464cf4b6e236811e90d878dd0c
+- path: external_review/contracts/external_trial_chronology_v1.schema.json
+  size: 1378
+  sha256: 70ed850298cdc9ce297bae6e6437d846d856b39622633b94b9f45d761352606c
+- path: external_review/contracts/external_trial_role_attestation_v1.schema.json
+  size: 1321
+  sha256: 5381b97c4551c702122dd7b03b2de5001bb9db27cc90c3b4d292d902776a4fb9
+- path: external_review/contracts/label_commitment_v1.schema.json
+  size: 776
+  sha256: 707703ae572c2156d4707654b5b112333ab32887c4e21775b740c4ebf3cded2b
+- path: external_review/contracts/label_reveal_v1.schema.json
+  size: 1465
+  sha256: 6bc46dd534834f019598a7a560a7b7b8c67dea43e1b73ab6e35ddb42ad7baf1c
+- path: external_review/contracts/prediction_commitment_v1.schema.json
+  size: 691
+  sha256: 0681091798e1f9e3206a3aea8d6f3ddbb976ed248a049bc7fcdf278092cd57ee
+- path: external_review/contracts/prediction_submission_v1.schema.json
+  size: 1391
+  sha256: d92585b498235d047b0d5c4503e9b4c8c0de756c06d15cc0c7ecbde9239d7ff3
+- path: ml/protocols/v0_3_18_external_review_protocol.yaml
+  size: 7000
+  sha256: e09389793e41b71a9d5ed6f1cfedb7dc137f7d6c7c37ac2c8f2c1fe6dce3e6d6
+- path: ml/reports/v0_3_18/artifact_exclusion_report.json
+  size: 195
+  sha256: 074bb6487faa5f6cdab386bedb69d08c2514f926bedee0464602684d9736e946
+- path: ml/reports/v0_3_18/blind_holdout_protocol.json
+  size: 811
+  sha256: 67c06fc46242f34ad7a8df5c42c194620d28befc9aaab2a61e37dfa5eb6c9e15
+- path: ml/reports/v0_3_18/candidate_commitment.json
+  size: 1030
+  sha256: 7bb291ffce8ac52cb1960bcd7980ca9817e81a0bd6d00f16c921b4f3cd4dfb46
+- path: ml/reports/v0_3_18/claim_evidence_ledger.json
+  size: 3463
+  sha256: 8bff5c452c1d2b16311560045133ddcbbdb57c9b39691b1214d3dd8d7bfcc37e
+- path: ml/reports/v0_3_18/contamination_policy.json
+  size: 885
+  sha256: 8220a970defa2fc5a8a513d1b7f1195891f006a9fd8a1b2dd3791e0d3539586e
+- path: ml/reports/v0_3_18/data_acceptance_policy.json
+  size: 1767
+  sha256: 3f89c843774bd2550f2b48da78ed8ea23ef452923736a60d86b6d0e93b563176
+- path: ml/reports/v0_3_18/evaluator_commitment.json
+  size: 542
+  sha256: 41cc4146def9b70f98642c4da18017f6cd8d83134d410e64ce9f1150c5d56ef1
+- path: ml/reports/v0_3_18/external_review_package_manifest.sha256
+  size: 104
+  sha256: 139df503eca10f691a13d2319eefb2dfabb37d579faf183b1e44a2d75ebafd59
+- path: ml/reports/v0_3_18/external_review_package_manifest.yaml
+  size: 5691
+  sha256: 5ace734ef09b1ce26ec9915442a81331a0f87b5be234f1d87220e9cd6cca3e2d
+- path: ml/reports/v0_3_18/metric_policy.json
+  size: 1463
+  sha256: 8a9bbfeb32b928c63ef75f9e4013d0bd91cfe9409a1ac900c941bc50ee8df343
+- path: ml/reports/v0_3_18/negative_scenario_report.json
+  size: 7522
+  sha256: 50d848a64f617b9902e5cfdead07ddbacf7b97aa293ca436488f2c5690d95bcd
+- path: ml/reports/v0_3_18/package_build_report.json
+  size: 287
+  sha256: 934068dffae5b0e472c0da9085b22304b4199f26909b9f2b8ae33f97e98c73b1
+- path: ml/reports/v0_3_18/package_verification_report.json
+  size: 331
+  sha256: 94c8f6d024feaff69bd6a7b23e7611ed8ed993771cf8f7a9b71bcd76a9487306
+- path: ml/reports/v0_3_18/privacy_report.json
+  size: 249
+  sha256: f5b9fc4b5415ee2f75c8a2c9124b9f7a3395057c854ea903415822c1c920cc05
+- path: ml/reports/v0_3_18/readiness_decision.json
+  size: 491
+  sha256: d3fd13a9b63637983c812cd644b6cde23028e1b3a191626786e404d3693b3aeb
+- path: ml/reports/v0_3_18/rehearsal_chronology.json
+  size: 4317
+  sha256: 3471c9f209ba7bb50202fdf53ddec7e828adb16aa3d45074b93cf7b56359caae
+- path: ml/reports/v0_3_18/rehearsal_manifest.json
+  size: 527
+  sha256: 70d75626af0ef4e6e9e43fc061d16ca8cddd18d5a128ba029db4deb94b602be3
+- path: ml/reports/v0_3_18/rehearsal_result.json
+  size: 4146
+  sha256: 374ffc101e92eed8558daae02b0edc7117bae68e51090e882c1894b0f9754078
+- path: ml/reports/v0_3_18/reproducibility_report.json
+  size: 444
+  sha256: 83c3c1fe8ecc9521e94410ee1243487e14ccdfce96d58b35cc8391305e680b00
+- path: ml/reports/v0_3_18/role_separation_matrix.json
+  size: 6290
+  sha256: de38970c7665b9076be9d77a0f7f801b87748e05063dcee12662a858a102670f
+- path: ml/reports/v0_3_18/sample_sufficiency_policy.json
+  size: 1192
+  sha256: 3d2ebe3055e659247034858c29aa2afcace60a27f509a3e9cb005b8d86fe97e5
+- path: ml/reports/v0_3_18/secret_scan_report.json
+  size: 276
+  sha256: 97d98e777979e02a0a4057027e4dd352396750432da91a6d9e4b87763935134d
+- path: ml/reports/v0_3_18/stop_conditions.json
+  size: 1259
+  sha256: a6e78c77ec85d417d55c47c3f0515decc51b72a5b5b55ceb449aa97562a44e1c
+- path: ml/reports/v0_3_18/test_report.json
+  size: 634
+  sha256: b3dcc42926adad865d435077edd63995552a9493c8d83ef6e1fd338f7d20399e
+- path: ml/reports/v0_3_18/v0_3_18_policy_result.json
+  size: 2863
+  sha256: 5487fd126f8eb7865d303e577c19685af6bb8dfe430a302488d903a7893b8f7e
+- path: ml/reports/v0_3_18/v0_3_18_summary.md
+  size: 1066
+  sha256: 8d3738dd626a2a05155857fb6a32c98b3eb83f0b56ab4f6879ed29af789a0632
+required_reports:
+- ml/reports/v0_3_18/v0_3_18_summary.md
+- ml/reports/v0_3_18/v0_3_18_policy_result.json
+- ml/reports/v0_3_18/external_review_package_manifest.yaml
+- ml/reports/v0_3_18/external_review_package_manifest.sha256
+- ml/reports/v0_3_18/package_build_report.json
+- ml/reports/v0_3_18/package_verification_report.json
+- ml/reports/v0_3_18/role_separation_matrix.json
+- ml/reports/v0_3_18/data_acceptance_policy.json
+- ml/reports/v0_3_18/contamination_policy.json
+- ml/reports/v0_3_18/blind_holdout_protocol.json
+- ml/reports/v0_3_18/metric_policy.json
+- ml/reports/v0_3_18/sample_sufficiency_policy.json
+- ml/reports/v0_3_18/stop_conditions.json
+- ml/reports/v0_3_18/candidate_commitment.json
+- ml/reports/v0_3_18/evaluator_commitment.json
+- ml/reports/v0_3_18/rehearsal_manifest.json
+- ml/reports/v0_3_18/rehearsal_chronology.json
+- ml/reports/v0_3_18/rehearsal_result.json
+- ml/reports/v0_3_18/negative_scenario_report.json
+- ml/reports/v0_3_18/privacy_report.json
+- ml/reports/v0_3_18/secret_scan_report.json
+- ml/reports/v0_3_18/artifact_exclusion_report.json
+- ml/reports/v0_3_18/reproducibility_report.json
+- ml/reports/v0_3_18/readiness_decision.json
+- ml/reports/v0_3_18/claim_evidence_ledger.json
+- ml/reports/v0_3_18/test_report.json
+raw_runtime_included: false
+absolute_local_paths_included: false

@@ -1,0 +1,116 @@
+schema_version: v0318_external_review_package_manifest_v1
+stage: v0.3.18
+package_role: review_and_reproducibility
+package_version: v0.3.18
+candidate_commitment: e41225793270dd083c2a50d86392eec1420d9430861d8ac268802277b1aef99b
+protocol_commitment: e09389793e41b71a9d5ed6f1cfedb7dc137f7d6c7c37ac2c8f2c1fe6dce3e6d6
+evaluator_commitment: 298ada3dc5941fcec0ae23a38b48ddc26a29d6078e06ea2a8fe10cba8667d3b0
+root_commitment: 47712bc1288ea049737b7794d35693d934b7e0e7e061fb01cb23c166bbc814fa
+file_count: 35
+files:
+- path: docs/external_review/README.md
+  sha256: 3c7dd4913130d2bc70e1509b039cfe825353c8f7e8a04078e3de2370d5cbe684
+  size: 1183
+- path: docs/external_review/architecture.md
+  sha256: fdd9b3ff60fcf22eed6a33ffa6bc7c866946c8baf681ecc8c5dd4056c92edd55
+  size: 856
+- path: docs/external_review/confirmed_scope.md
+  sha256: 15e84c153f5856bd423eec8509206df7f17823caa6f104e9a72c4fe98230027a
+  size: 614
+- path: docs/external_review/data_acceptance_policy.md
+  sha256: 5f1250a514669989a1f75040544d2259de910b80ee8c61b7c4bc19e7e0446d68
+  size: 710
+- path: docs/external_review/data_provider_guide.md
+  sha256: f31a3a7ca15dce648621d15f7c0f3e17a7bef084f2db19fef7d09df86111469d
+  size: 558
+- path: docs/external_review/data_transfer_requirements.md
+  sha256: 3c12e3fee563fcd34a5db981bdd02a9a530f1f99869e1914e965940e349bc8e5
+  size: 462
+- path: docs/external_review/evaluator_guide.md
+  sha256: 85c5a59ea9c00ad6e5e6819d7ef77c5dd1e0cd972287f99676a9ebea5c8ebe0c
+  size: 530
+- path: docs/external_review/known_limitations.md
+  sha256: b7b3f722c167967624aeabfbc39fd58cb64f49c3447f1b65700550439ccfc293
+  size: 952
+- path: docs/external_review/label_custodian_guide.md
+  sha256: 6e3c4d8b873b3df17545abdc9368997961269beef65df7631f0e7259b5458889
+  size: 448
+- path: docs/external_review/legal_requirements_checklist.md
+  sha256: fdfac8bfe118a3db21b3c5721e3d9bc6c26b81018b3bae345de1d6ac4d38ae82
+  size: 1357
+- path: docs/external_review/metric_policy.md
+  sha256: 27e4c020b6ffcfe4c7c6d976822cf093b8728d4487755ac52e8af6b5d90ef73d
+  size: 703
+- path: docs/external_review/publication_requirements.md
+  sha256: 1507dea1560531eebbd03e9c5ffdd55fe7fc08b49c9a6479ae983439e1ac6392
+  size: 459
+- path: docs/external_review/reproducibility_guide.md
+  sha256: addd7de89ff540fb0ce114547a344402344d52c23f6163c60a5122c23d0c7d31
+  size: 752
+- path: docs/external_review/result_approver_guide.md
+  sha256: f90663a7c744a673486604e06956d612116cd60ab59ab8e182ac0b081912a379
+  size: 469
+- path: docs/external_review/retention_and_deletion_requirements.md
+  sha256: 279d21888189ab3aa6d8d2ee208ea24f51abb268b450aa13e2a1211b8aed23f9
+  size: 547
+- path: docs/external_review/reviewer_guide.md
+  sha256: 9204fea4dbac8b3c6bc0770d2803bb207fc79e870257018e359f0cc4b9ac4486
+  size: 806
+- path: docs/external_review/stop_conditions.md
+  sha256: 208d0327bb31273106daf7469e37bb00ecca609fa0244557e2c1d00d841f3e67
+  size: 614
+- path: docs/external_review/trial_operator_guide.md
+  sha256: 0ec3fc2c13680c5ce642911a5ae79adc8bb813230d70d00bbbfa3a9b2a198f3c
+  size: 585
+- path: external_review/contracts/blind_holdout_commitment_v1.schema.json
+  sha256: 5c7379dc5c259a59bc33a3e16f0bd1e8d4e1f20847ac1797e431288381183c52
+  size: 858
+- path: external_review/contracts/blind_holdout_manifest_v1.schema.json
+  sha256: 187a8a779f9d68d6efd2e40178b34dac6160cf80660a532ad30a4b0961a2d0bb
+  size: 1012
+- path: external_review/contracts/candidate_commitment_v1.schema.json
+  sha256: 15443ab6267b9c36a78b70a8dce738b459de8aa54f8f81f06764b57fb674658b
+  size: 1922
+- path: external_review/contracts/evaluator_commitment_v1.schema.json
+  sha256: b77ea36e048055f4a3e6756d90462b6441ae868c384854e1f7c71a704ffbdfc5
+  size: 1163
+- path: external_review/contracts/external_dataset_identity_v1.schema.json
+  sha256: 4b7d3e84c46bffd0d99d9209ffd57808bc92949a1d97d4f575f7f8b819f0c7d4
+  size: 2477
+- path: external_review/contracts/external_dataset_provenance_v1.schema.json
+  sha256: 0bd213d44e90d86e8c5a15c7cb1a7f2db4d6411615944c902a65efa99a29427a
+  size: 1281
+- path: external_review/contracts/external_evaluation_result_v1.schema.json
+  sha256: 1efe8df2ef4e30ea844228216bf0152d72fa56464cf4b6e236811e90d878dd0c
+  size: 988
+- path: external_review/contracts/external_trial_chronology_v1.schema.json
+  sha256: 70ed850298cdc9ce297bae6e6437d846d856b39622633b94b9f45d761352606c
+  size: 1378
+- path: external_review/contracts/external_trial_role_attestation_v1.schema.json
+  sha256: 5381b97c4551c702122dd7b03b2de5001bb9db27cc90c3b4d292d902776a4fb9
+  size: 1321
+- path: external_review/contracts/label_commitment_v1.schema.json
+  sha256: 707703ae572c2156d4707654b5b112333ab32887c4e21775b740c4ebf3cded2b
+  size: 776
+- path: external_review/contracts/label_reveal_v1.schema.json
+  sha256: 6bc46dd534834f019598a7a560a7b7b8c67dea43e1b73ab6e35ddb42ad7baf1c
+  size: 1465
+- path: external_review/contracts/prediction_commitment_v1.schema.json
+  sha256: 0681091798e1f9e3206a3aea8d6f3ddbb976ed248a049bc7fcdf278092cd57ee
+  size: 691
+- path: external_review/contracts/prediction_submission_v1.schema.json
+  sha256: d92585b498235d047b0d5c4503e9b4c8c0de756c06d15cc0c7ecbde9239d7ff3
+  size: 1391
+- path: ml/protocols/v0_3_18_external_review_protocol.yaml
+  sha256: e09389793e41b71a9d5ed6f1cfedb7dc137f7d6c7c37ac2c8f2c1fe6dce3e6d6
+  size: 7000
+- path: tools/external_review/canonical_commitment.py
+  sha256: 849eec34e4e891c3683e347b640e49e9522af8ea933df1d9cef1a113ba8bd291
+  size: 5749
+- path: tools/external_review/frozen_evaluator.py
+  sha256: 8486b39f8475cd14a0ae4dd55702e75ed15714a441cd8b6ac0eec7e4ad5579cb
+  size: 5508
+- path: tools/external_review/verify_external_review_package.py
+  sha256: a0671b5ccf1eb8846ebc8951b6b0edd66403acb1e5cfe2e9fe6914a46486ad1d
+  size: 5885
+archive_tracked: false

@@ -1,0 +1,90 @@
+{
+  "claims": [
+    {
+      "claim_id": "protocol",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "Протокол заморожен до rehearsal.",
+      "evidence_hashes": [
+        "e09389793e41b71a9d5ed6f1cfedb7dc137f7d6c7c37ac2c8f2c1fe6dce3e6d6"
+      ],
+      "evidence_refs": [
+        "ml/protocols/v0_3_18_external_review_protocol.yaml"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    },
+    {
+      "claim_id": "frozen",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "Candidate и contracts не изменены.",
+      "evidence_hashes": [
+        "83c3c1fe8ecc9521e94410ee1243487e14ccdfce96d58b35cc8391305e680b00"
+      ],
+      "evidence_refs": [
+        "ml/reports/v0_3_18/reproducibility_report.json"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    },
+    {
+      "claim_id": "rehearsal",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "Synthetic blind workflow пройден без научного claim.",
+      "evidence_hashes": [
+        "374ffc101e92eed8558daae02b0edc7117bae68e51090e882c1894b0f9754078"
+      ],
+      "evidence_refs": [
+        "ml/reports/v0_3_18/rehearsal_result.json"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    },
+    {
+      "claim_id": "negative",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "Все 40 обязательных отрицательных сценариев отклонены.",
+      "evidence_hashes": [
+        "50d848a64f617b9902e5cfdead07ddbacf7b97aa293ca436488f2c5690d95bcd"
+      ],
+      "evidence_refs": [
+        "ml/reports/v0_3_18/negative_scenario_report.json"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    },
+    {
+      "claim_id": "package",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "External review package собран и проверен standalone verifier.",
+      "evidence_hashes": [
+        "94c8f6d024feaff69bd6a7b23e7611ed8ed993771cf8f7a9b71bcd76a9487306"
+      ],
+      "evidence_refs": [
+        "ml/reports/v0_3_18/package_verification_report.json"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    },
+    {
+      "claim_id": "readiness",
+      "claim_scope": "v0.3.18 protocol design",
+      "claim_text": "Разрешён только package review v0.3.19.",
+      "evidence_hashes": [
+        "d3fd13a9b63637983c812cd644b6cde23028e1b3a191626786e404d3693b3aeb"
+      ],
+      "evidence_refs": [
+        "ml/reports/v0_3_18/readiness_decision.json"
+      ],
+      "limitations": "Не является научной внешней validation.",
+      "status": "supported",
+      "verification_method": "sha256_and_semantic_validator"
+    }
+  ],
+  "schema_version": "v0318_claim_evidence_ledger_v1",
+  "stage": "v0.3.18"
+}

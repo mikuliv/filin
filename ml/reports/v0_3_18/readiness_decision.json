@@ -1,0 +1,12 @@
+{
+  "backend_integration_allowed": false,
+  "candidate_ready_for_v0_3_19_external_package_review": true,
+  "external_trial_execution_allowed": false,
+  "external_validation_completed": false,
+  "meaning": "Разрешён только независимый review пакета и согласование trial plan.",
+  "next_allowed_stage": "v0.3.19",
+  "production_ready": false,
+  "schema_version": "v0318_readiness_decision_v1",
+  "shadow_mode_allowed": false,
+  "stage": "v0.3.18"
+}

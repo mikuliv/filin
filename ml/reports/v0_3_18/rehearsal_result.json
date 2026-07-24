@@ -1,7 +1,7 @@
 {
   "candidate_commitment_sha256": "e41225793270dd083c2a50d86392eec1420d9430861d8ac268802277b1aef99b",
   "chronology_validation_passed": true,
-  "duration_seconds": 0.0648559999972349,
+  "duration_seconds": 0.11778159999812488,
   "episode_count": 18,
   "evaluator_commitment_sha256": "298ada3dc5941fcec0ae23a38b48ddc26a29d6078e06ea2a8fe10cba8667d3b0",
   "evaluator_determinism_passed": true,
@@ -141,7 +141,7 @@
     ],
     "weighted_f1": 0.9333333333333333
   },
-  "package_root_commitment": "347e956388d78d723b6c2ba33a6090934d13028d179ff09e66af67f51269278f",
+  "package_root_commitment": "47712bc1288ea049737b7794d35693d934b7e0e7e061fb01cb23c166bbc814fa",
   "package_verification_passed": true,
   "prediction_commitment_sha256": "27fd627a636d37c86b83432ca51fd8f48146e4729f51579b9b117b7b67cb40b7",
   "prediction_commitment_workflow_passed": true,

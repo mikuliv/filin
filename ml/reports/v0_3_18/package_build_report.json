@@ -1,8 +1,8 @@
 {
   "archive_created": false,
-  "file_count": 17,
+  "file_count": 35,
   "package_build_passed": true,
-  "root_commitment": "347e956388d78d723b6c2ba33a6090934d13028d179ff09e66af67f51269278f",
+  "root_commitment": "47712bc1288ea049737b7794d35693d934b7e0e7e061fb01cb23c166bbc814fa",
   "schema_version": "v0318_package_build_report_v1",
   "source_allowlist_used": true,
   "symlinks_allowed": false
