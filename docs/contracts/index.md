@@ -8,5 +8,6 @@
 - [ACK ingress connector v1](connector_ingress_ack_v1.md)
 - [Staging event batch v1](staging_event_batch_v1.md)
 - [ACK reference receiver v1](receiver_batch_ack_v1.md)
+- [Временная трасса runtime v2](runtime_timing_trace_v2.md)
 
 v0.3.15.1 не добавляет production receiver. Его ACK contract и integrated exporter применяются только к локальному passive runtime.
