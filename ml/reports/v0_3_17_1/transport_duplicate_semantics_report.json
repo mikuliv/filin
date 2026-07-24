@@ -1,0 +1,48 @@
+{
+  "accepted_event_count": 201420,
+  "actual_event_delivery_attempt_count": 201700,
+  "at_least_once_semantics_changed": false,
+  "batch_capacity_reference_count": 637500,
+  "counter_double_counting_count": 435800,
+  "duplicate_ACK_count": 0,
+  "duplicate_batch_attempt_count": 6,
+  "duplicate_event_delivery_attempt_count": 280,
+  "faulty_formula": "transport_attempt_count * 50 - unique_source_event_count",
+  "faulty_formula_reproduced": true,
+  "historical_stage": "v0.3.17",
+  "receiver_duplicate_status_count": 280,
+  "rejected_event_count": 0,
+  "reported_transport_duplicate_count": 436080,
+  "retry_event_reference_count": 280,
+  "root_cause": "The aggregator treated every unused position in a nominal 50-event batch as a duplicate. Only receiver duplicate statuses are delivery duplicates; retry references and duplicate statuses are two views of the same 280 event attempts and must not be added together.",
+  "runs": [
+    {
+      "accepted_event_count": 41340,
+      "batch_attempt_count": 5386,
+      "event_delivery_attempt_count": 41340,
+      "receiver_duplicate_status_count": 0,
+      "rejected_event_count": 0,
+      "run_id": "local_rehearsal_endurance_r9_001"
+    },
+    {
+      "accepted_event_count": 94440,
+      "batch_attempt_count": 4027,
+      "event_delivery_attempt_count": 94690,
+      "receiver_duplicate_status_count": 250,
+      "rejected_event_count": 0,
+      "run_id": "local_rehearsal_transition_r9_001"
+    },
+    {
+      "accepted_event_count": 65640,
+      "batch_attempt_count": 3337,
+      "event_delivery_attempt_count": 65670,
+      "receiver_duplicate_status_count": 30,
+      "rejected_event_count": 0,
+      "run_id": "local_rehearsal_recovery_r9_001"
+    }
+  ],
+  "schema_version": "v03171_transport_duplicate_semantics_v1",
+  "semantic_duplicate_count": 0,
+  "stage": "v0.3.17.1",
+  "transport_duplicate_semantics_resolved": true
+}
