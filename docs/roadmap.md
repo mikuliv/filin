@@ -1,6 +1,6 @@
 # Дорожная карта
 
-Статус v0.3.17: четырёхчасовая controlled local rehearsal завершена с отрицательным policy result. Следующий допустимый этап — corrective v0.3.17.1; v0.3.18, shadow mode и backend integration не разрешены.
+Статус v0.3.17.1: корректирующий аудит и 45-минутный targeted trial завершены с положительным policy result. Разрешён только design review v0.3.18; shadow mode и backend integration не разрешены.
 
 Источник текущего решения: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -33,11 +33,12 @@
 - v0.3.15.5.1 — completed prospective runtime recovery; contract, registry, 12/12 faults и composite promotion passed.
 - v0.3.16 — completed isolated staging transport; 2 280/2 280 events, 24/24 faults и 59/59 gates passed.
 - v0.3.17 — completed controlled local rehearsal; 4 часа wall-clock и 201 420 reconciled events, но historical-anchor, clock/latency, performance и corruption/bundle gates failed.
+- v0.3.17.1 — completed corrective audit; historical causes resolved, timing/performance evidence and 45-minute targeted trial passed.
 <!-- stage-history:end -->
 
 ## Ближайшая работа
 
-Разрешён только corrective v0.3.17.1 для устранения выявленных дефектов evidence/clock/latency/corruption validation. Реальный shadow mode, v0.3.18, backend integration и production остаются запрещены.
+Разрешён только design review v0.3.18. Реальный trial, shadow mode, backend integration и production остаются запрещены.
 
 ## v0.3.16
 

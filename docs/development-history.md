@@ -108,3 +108,7 @@ policy result. Три независимых запуска обработали
 и 201 420 canonical events без потерь и итогового backlog. Historical-anchor,
 clock/latency, composite performance и corruption/bundle gates не пройдены;
 v0.3.18 заблокирован, следующий допустимый этап — corrective v0.3.17.1.
+
+## v0.3.17.1
+
+Выполнен корректирующий аудит historical anchors, clock-domain semantics, transport duplicate counters, latency evidence, corruption suite и finalizer. Исторические результаты v0.3.17 сохранены неизменными. Targeted prospective trial revision 3 завершил три независимых 15-минутных запуска, согласовал 33 753 события и прошёл frozen gates. Следующий допустимый этап — только design review v0.3.18.

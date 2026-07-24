@@ -140,3 +140,7 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 ## v0.3.17
 
 [Длительная controlled local rehearsal](experiments/v0_3_17.md) завершила revision 8 тремя независимыми запусками общей фактической длительностью `14400.000` секунды. Захвачено `201600` закрытых синтетических окон, source/connector/receiver согласовали `201420` canonical events, итоговый backlog равен нулю. Общий результат отрицательный: historical-anchor, clock/latency, performance и corruption/bundle gates не пройдены. Разрешён только corrective v0.3.17.1; v0.3.18, shadow mode, backend и production запрещены.
+
+## v0.3.17.1
+
+[Корректирующий аудит](experiments/v0_3_17_1.md) классифицировал historical evidence без переписывания v0.3.17, ввёл причинно-упорядоченный timing trace v2 и исправил corruption/finalizer validation. Три новых label-free запуска общей длительностью `2700.025` секунды согласовали `33753` события; trace violations, потери, semantic duplicates и final backlog равны нулю, frozen performance policy пройдена. Разрешён только design review v0.3.18.

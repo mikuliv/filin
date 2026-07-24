@@ -63,7 +63,7 @@ def validate(root: Path = ROOT) -> list[str]:
     critical = {
         "README latest stage": (readme, f"Последний завершённый этап — {latest}"),
         "status latest stage": (docs / "status.md", f"Текущий завершённый этап: {latest}"),
-        "README integration false": (readme, "Production, shadow mode, backend integration, v0.3.18 и автоматические действия запрещены"),
+        "README integration false": (readme, "shadow mode, backend integration и production запрещены"),
         "status production false": (docs / "status.md", "Production, shadow mode, backend integration и automatic enforcement: запрещены"),
         "roadmap completed v0.3.7": (docs / "roadmap.md", "v0.3.7"),
     }

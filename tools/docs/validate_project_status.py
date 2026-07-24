@@ -17,6 +17,7 @@ REQUIRED = CORE_DOCS + [
     ROOT / "docs/experiments/v0_3_15_2.md",
     ROOT / "docs/experiments/v0_3_15_3.md", ROOT / "docs/experiments/v0_3_15_4.md", ROOT / "docs/experiments/v0_3_15_4_proposed.md", ROOT / "docs/experiments/v0_3_15_5.md", ROOT / "docs/experiments/v0_3_15_5_1.md",
     ROOT / "docs/experiments/v0_3_16.md", ROOT / "docs/experiments/v0_3_17.md",
+    ROOT / "docs/experiments/v0_3_17_1.md",
     ROOT / "docs/contracts/index.md", ROOT / "docs/methodology/index.md",
     ROOT / "ml/reports/v0_3_15_1/v0_3_14_claim_reassessment.json",
     ROOT / "ml/reports/v0_3_15_1/v0_3_15_revalidation.json",
@@ -27,6 +28,7 @@ REQUIRED = CORE_DOCS + [
     ROOT / "ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json",
     ROOT / "ml/reports/v0_3_16/v0_3_16_policy_result.json",
     ROOT / "ml/reports/v0_3_17/v0_3_17_policy_result.json",
+    ROOT / "ml/reports/v0_3_17_1/v0_3_17_1_policy_result.json",
 ]
 
 
@@ -53,9 +55,9 @@ def validate() -> dict:
     errors = []
     status = yaml.safe_load(STATUS.read_text(encoding="utf-8"))
     expected = {
-        "current_completed_stage": "v0.3.17", "current_candidate": "v03154:65a3dd912d845bc1",
+        "current_completed_stage": "v0.3.17.1", "current_candidate": "v03154:65a3dd912d845bc1",
         "latest_independent_model_holdout": "v0.3.15.5", "latest_runtime_trial": "v0.3.15.5.1",
-        "latest_corrective_audit": "v0.3.15.1", "latest_regression_analysis": "v0.3.15.3", "production_ready": False, "shadow_mode_ready": False,
+        "latest_corrective_audit": "v0.3.17.1", "latest_regression_analysis": "v0.3.15.3", "production_ready": False, "shadow_mode_ready": False,
         "backend_integration_ready": False, "automatic_enforcement_ready": False,
     }
     for key, value in expected.items():
@@ -102,7 +104,10 @@ def validate() -> dict:
         policy153 = json.loads(policy153_path.read_text(encoding="utf-8"))
         latest316 = ROOT / "ml/reports/v0_3_16/v0_3_16_policy_result.json"
         latest317 = ROOT / "ml/reports/v0_3_17/v0_3_17_policy_result.json"
-        if latest317.is_file():
+        latest3171 = ROOT / "ml/reports/v0_3_17_1/v0_3_17_1_policy_result.json"
+        if latest3171.is_file() and json.loads(latest3171.read_text(encoding="utf-8")).get("candidate_ready_for_v0_3_18_external_review_and_trial_design"):
+            expected_next = "v0.3.18"
+        elif latest317.is_file():
             expected_next = "v0.3.17.1"
         else:
             expected_next = "v0.3.17" if latest316.is_file() and json.loads(latest316.read_text(encoding="utf-8")).get("v0316_stage_passed") else "v0.3.16"
@@ -115,12 +120,13 @@ def validate() -> dict:
     if "v0.3.15.5.1" not in versions: errors.append("v031551_stage_missing")
     if "v0.3.16" not in versions: errors.append("v0316_stage_missing")
     if "v0.3.17" not in versions: errors.append("v0317_stage_missing")
+    if "v0.3.17.1" not in versions: errors.append("v03171_stage_missing")
     policy155_path = ROOT / "ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json"
     if policy155_path.is_file():
         policy155 = json.loads(policy155_path.read_text(encoding="utf-8"))
         if policy155.get("candidate_v03154_promoted") or policy155.get("candidate_ready_for_v0_3_16_staging_connector_readiness"):
             errors.append("v03155_negative_promotion_mismatch")
-    if status.get("latest_corrective_audit") != "v0.3.15.1": errors.append("latest_corrective_audit_changed")
+    if status.get("latest_corrective_audit") != "v0.3.17.1": errors.append("latest_corrective_audit_mismatch")
     if status.get("current_candidate") != "v03154:65a3dd912d845bc1": errors.append("current_candidate_mismatch")
     return {"valid": not errors, "error_count": len(errors), "errors": errors, "checked_stage_count": len(versions), "status_source": str(STATUS.relative_to(ROOT)).replace("\\", "/")}
 

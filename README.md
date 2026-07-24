@@ -1,6 +1,6 @@
 # Платформа «Филин»
 
-> Статус v0.3.17: четырёхчасовая контролируемая локальная репетиция завершена с отрицательным policy result. Целостность доставки подтверждена, но historical-anchor, clock/latency, performance и corruption/bundle gates не пройдены. Следующий допустимый этап — только corrective v0.3.17.1; shadow mode, backend integration, v0.3.18 и production запрещены.
+> Статус v0.3.17.1: корректирующий аудит завершён с положительным policy result. Отрицательный исторический итог v0.3.17 сохранён неизменным. Разрешён только design review v0.3.18; shadow mode, backend integration и production запрещены.
 
 Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
@@ -10,7 +10,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.17. Три независимых запуска продолжались `14400.000` секунды, обработали `201600` синтетических окон и сформировали `201420` canonical events; множества source/connector/receiver совпали, итоговый backlog равен нулю. Однако stage policy не пройдена: зафиксированы ошибки historical-anchor audit и clock-order semantics, превышены frozen healthy/nominal latency gates, а corruption suite отверг только 18/20 вариантов. Следующий допустимый этап — corrective v0.3.17.1. Production, shadow mode, backend integration, v0.3.18 и автоматические действия запрещены.
+Последний завершённый этап — v0.3.17.1. Корректирующий аудит классифицировал все 10 historical-anchor mismatches и 69 806 исторических нарушений порядка, исправил timing/attempt instrumentation, corruption validator и finalizer. Новый label-free trial из трёх независимых 15-минутных запусков продолжался `2700.025` секунды, согласовал `33753` события без потерь и прошёл frozen latency/performance gates. Candidate, contracts, state policy, backend и исторический v0.3.17 не изменены.
 
 ## 3. Что представляет собой «Филин»
 
@@ -111,15 +111,16 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.15.5.1 — completed prospective runtime recovery; composite promotion passed только для локального staging.
 - v0.3.16 — completed isolated staging transport; 2 280/2 280 events и 59/59 gates passed.
 - v0.3.17 — completed controlled local rehearsal; 4 часа wall-clock, 201 420 reconciled events, общий policy result отрицательный.
+- v0.3.17.1 — completed corrective audit; 45-минутный targeted trial и все corrective gates пройдены.
 <!-- stage-history:end -->
 
-## 19. Текущий этап v0.3.17
+## 19. Текущий этап v0.3.17.1
 
-Подробности приведены в [описании v0.3.17](docs/experiments/v0_3_17.md) и итоговом отчёте `ml/reports/v0_3_17/v0_3_17_summary.md`. Candidate, contracts, independent holdout, staging evidence и historical stages не переписаны.
+Подробности приведены в [описании v0.3.17.1](docs/experiments/v0_3_17_1.md) и итоговом отчёте `ml/reports/v0_3_17_1/v0_3_17_1_summary.md`. Результат v0.3.17 остаётся отрицательным и не переоценён.
 
 ## 20. Следующий разрешённый этап
 
-Следующий допустимый этап — corrective v0.3.17.1 для исправления historical-anchor audit, clock/latency semantics, performance и corruption validation. v0.3.18 заблокирован.
+Следующий допустимый этап — только design review v0.3.18. Он не разрешает реальный trial, shadow mode, backend integration, production или automatic enforcement.
 
 ## 21. Структура репозитория
 
@@ -148,4 +149,4 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 
 ## 26. Ограничения и roadmap
 
-Текущие результаты лабораторные. v0.3.18 может быть рассмотрен только после положительного corrective evidence; ветка v0.4.x остаётся отдельным архитектурным направлением и не означает production readiness.
+Текущие результаты лабораторные. Положительный corrective evidence разрешает только рассмотрение дизайна v0.3.18; ветка v0.4.x остаётся отдельным архитектурным направлением и не означает production readiness.
