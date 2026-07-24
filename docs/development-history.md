@@ -100,3 +100,11 @@ regression, backend integration и shadow mode не разрешены.
 ## v0.3.16
 
 Добавлены отдельные sensor, durable staging connector и reference receiver в двух internal Docker-сетях без опубликованных портов. Revision 1 fail-closed отклонён из-за ошибочного registry anchor; revision 2 использовал новые IDs, seeds и сертификаты. Кампания завершила 2 400 capture, 2 280 predictions/events, 46 durable batch/ACK и 24/24 faults без изменения backend, кандидата или научных метрик.
+
+## v0.3.17
+
+Четырёхчасовая контролируемая локальная репетиция завершена с отрицательным
+policy result. Три независимых запуска обработали 201 600 синтетических окон
+и 201 420 canonical events без потерь и итогового backlog. Historical-anchor,
+clock/latency, composite performance и corruption/bundle gates не пройдены;
+v0.3.18 заблокирован, следующий допустимый этап — corrective v0.3.17.1.
