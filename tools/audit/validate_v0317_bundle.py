@@ -39,8 +39,12 @@ def validate_manifest(value: dict, root: Path) -> list[str]:
         errors.append("schema_version")
     if value.get("stage") != "v0.3.17" or value.get("revision") != 8:
         errors.append("stage_revision")
+    artifacts = value.get("artifacts")
+    if not isinstance(artifacts, list) or not artifacts:
+        errors.append("artifacts_required")
+        artifacts = []
     seen: set[str] = set()
-    for item in value.get("artifacts", []):
+    for item in artifacts:
         relative = item.get("relative_path", "")
         pure = PurePosixPath(relative)
         if not relative or pure.is_absolute() or ".." in pure.parts or "\\" in relative:
