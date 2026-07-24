@@ -224,13 +224,22 @@ def finalize(
         }
         for path in paths
     ]
+    readiness_path = report / "readiness_decision.json"
+    design_ready = False
+    if readiness_path.is_file():
+        design_ready = bool(
+            json.loads(readiness_path.read_text(encoding="utf-8")).get(
+                "candidate_ready_for_v0_3_18_external_review_and_trial_design",
+                False,
+            )
+        )
     value = {
         "schema_version": "v03171_bundle_manifest_v1",
         "stage": "v0.3.17.1",
         "recovery_finalization_required": False,
         "artifacts": artifacts,
         "readiness": {
-            "candidate_ready_for_v0_3_18_external_review_and_trial_design": False,
+            "candidate_ready_for_v0_3_18_external_review_and_trial_design": design_ready,
             "candidate_ready_for_shadow_mode": False,
             "backend_integration_allowed": False,
             "shadow_mode_allowed": False,
