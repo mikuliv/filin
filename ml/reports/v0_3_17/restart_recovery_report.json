@@ -1,0 +1,10 @@
+{
+  "causal_order_violation_count": 0,
+  "event_loss_count": 0,
+  "repeated_inference_count": 0,
+  "restart_recovery_passed": true,
+  "restart_scenario_count": 7,
+  "restart_scenario_passed_count": 7,
+  "schema_version": "v0317_restart_recovery_v1",
+  "semantic_duplicate_count": 0
+}

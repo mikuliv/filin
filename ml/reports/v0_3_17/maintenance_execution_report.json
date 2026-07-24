@@ -1,0 +1,263 @@
+{
+  "maintenance_chain_root": "0f8dfe393146328fdefc47c3e78cb19895fec92df4cb2d2c7d8fc94be53b137f",
+  "maintenance_operation_count": 23,
+  "maintenance_operation_passed_count": 23,
+  "maintenance_schedule_passed": true,
+  "records": [
+    {
+      "actual_offset_seconds": 3300.8753854,
+      "chain_sha256": "0c3a335bfc6ea556844b9d5a8083ee4a1b1522e9e1575347ec4f59d74073cb26",
+      "completed_monotonic_ns": 45976190105500,
+      "evidence": "actual_container_operation",
+      "operation_id": "rotate_sensor_connector_certificate",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 3300,
+      "started_monotonic_ns": 45959173591300
+    },
+    {
+      "actual_offset_seconds": 3450.7967636,
+      "chain_sha256": "08728c66652da3d3cb08f2c96cad0789fd606f5c3ae2ec9a17191d409d58fb80",
+      "completed_monotonic_ns": 46131044377900,
+      "evidence": "actual_container_operation",
+      "operation_id": "rotate_connector_receiver_certificate",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 3450,
+      "started_monotonic_ns": 46109094969500
+    },
+    {
+      "actual_offset_seconds": 3901.0652418,
+      "chain_sha256": "79f6f96031d4cd4f3c5f72fde016572bca1301c63b6e0e29f2ac8db53d123503",
+      "completed_monotonic_ns": 46575558219600,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_planned_restart",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 3900,
+      "started_monotonic_ns": 46559363447700
+    },
+    {
+      "actual_offset_seconds": 4201.6896464,
+      "chain_sha256": "d9653f41a370d8af4140f4cf48730147df85c780acc6ea6a0e92e94061f80d33",
+      "completed_monotonic_ns": 46890934514300,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_planned_restart",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 4200,
+      "started_monotonic_ns": 46859987852300
+    },
+    {
+      "actual_offset_seconds": 4502.2823031,
+      "chain_sha256": "708f11cea6647737e95a64f242d1cb7d765fc9676162a9bdf8aca27fb7b366e7",
+      "completed_monotonic_ns": 47179320974400,
+      "evidence": "actual_container_operation",
+      "operation_id": "sensor_planned_restart",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 4500,
+      "started_monotonic_ns": 47160580509000
+    },
+    {
+      "actual_offset_seconds": 4801.383337,
+      "chain_sha256": "3ca6d52821a8cc57e374ac441a81802ecb36e8e8ce7480a9c8292db5e69fdf1a",
+      "completed_monotonic_ns": 47481494414400,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_receiver_simultaneous_restart",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 4800,
+      "started_monotonic_ns": 47459681542900
+    },
+    {
+      "actual_offset_seconds": 5101.1569527,
+      "chain_sha256": "587ae2c14c432be3ee89c0bc3c978709855302cd2e679bf2284845ba94f3665b",
+      "completed_monotonic_ns": 47759455164900,
+      "evidence": "actual_container_operation",
+      "operation_id": "operator_projection_snapshot",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 5100,
+      "started_monotonic_ns": 47759455158600
+    },
+    {
+      "actual_offset_seconds": 901.6859569,
+      "chain_sha256": "a9c8a119a593b5f97e12cf403a24aaf45326d380ee696364803ac285a86e4b3d",
+      "completed_monotonic_ns": 49315319406100,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_journal_checkpoint",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 900,
+      "started_monotonic_ns": 49315319400800
+    },
+    {
+      "actual_offset_seconds": 1100.8210292,
+      "chain_sha256": "6560f63a18713717463268cc92c2e5e49f60225848f370b6de4bca2aa45caf2c",
+      "completed_monotonic_ns": 49525088771500,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_restart_with_backlog",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1100,
+      "started_monotonic_ns": 49514454473100
+    },
+    {
+      "actual_offset_seconds": 1251.3400426,
+      "chain_sha256": "c1bbd7a476a669a76eeef8f28a0028ae8b84d65a5eca7f27bfcdf09976efdfcf",
+      "completed_monotonic_ns": 49665482155900,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_warning_pressure",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1250,
+      "started_monotonic_ns": 49664973486500
+    },
+    {
+      "actual_offset_seconds": 1451.9753725,
+      "chain_sha256": "e8bb68f6ae12676a88da2f811131608d66238011b7dfc5ed2bf1d235ccf63f9e",
+      "completed_monotonic_ns": 49866133766600,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_warning_pressure",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1450,
+      "started_monotonic_ns": 49865608816400
+    },
+    {
+      "actual_offset_seconds": 1500.8250996,
+      "chain_sha256": "40a5a6f6bf7ab8b4c4b5c14dbdff3c9595611ec13683c2364d310e9db549a9d9",
+      "completed_monotonic_ns": 49914458548000,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_wal_checkpoint",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1500,
+      "started_monotonic_ns": 49914458543500
+    },
+    {
+      "actual_offset_seconds": 1650.8598083,
+      "chain_sha256": "8db3e095410c8d72a1b14a82fcfd7627a9361e3c825c690b0356faa90207f73e",
+      "completed_monotonic_ns": 50064493256600,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_snapshot",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1650,
+      "started_monotonic_ns": 50064493252200
+    },
+    {
+      "actual_offset_seconds": 1700.9426164,
+      "chain_sha256": "a15c634e3d7ff1d2a28e312ad6a8bf7a7c2496ce709fcef9e5f4e76536f802dc",
+      "completed_monotonic_ns": 50124502237400,
+      "evidence": "actual_container_operation",
+      "operation_id": "temporary_connector_write_rejection",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1700,
+      "started_monotonic_ns": 50114576060300
+    },
+    {
+      "actual_offset_seconds": 1750.9196895,
+      "chain_sha256": "ffffda6c5b7bc42653f2acab77a592644ede386edd2988977c1236815f0ee357",
+      "completed_monotonic_ns": 50174066855200,
+      "evidence": "actual_container_operation",
+      "operation_id": "temporary_receiver_write_rejection",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1750,
+      "started_monotonic_ns": 50164553133400
+    },
+    {
+      "actual_offset_seconds": 1801.5206759,
+      "chain_sha256": "19e1ebbaeb7f54194b5623e03ac4bf7a11d5cc5312c54b71e8863956bf2c0aa0",
+      "completed_monotonic_ns": 50231599534500,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_unavailability_start",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1800,
+      "started_monotonic_ns": 50215154119800
+    },
+    {
+      "actual_offset_seconds": 1950.8299196,
+      "chain_sha256": "5798adaa8fc168dadb7a68e6b5a4d78c0c6f58214da366015189e71135d53a3c",
+      "completed_monotonic_ns": 50366429948600,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_recovery",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 1950,
+      "started_monotonic_ns": 50364463363500
+    },
+    {
+      "actual_offset_seconds": 2051.4975377,
+      "chain_sha256": "c20e34ef9c8d720131a2cd558e3b2867ddd2319e79406121b9c9836bb6c3a313",
+      "completed_monotonic_ns": 50480641249600,
+      "evidence": "actual_container_operation",
+      "operation_id": "receiver_restart_postcommit_preack",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 2050,
+      "started_monotonic_ns": 50465130981600
+    },
+    {
+      "actual_offset_seconds": 2151.7175305,
+      "chain_sha256": "de55f485965ef22a38f0f2ed04fd3e330ed09cdde7598528715e7e50583a9ed1",
+      "completed_monotonic_ns": 50580988806400,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_restart_postjournal_preingress_ack",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 2150,
+      "started_monotonic_ns": 50565350974400
+    },
+    {
+      "actual_offset_seconds": 2401.7734516,
+      "chain_sha256": "f032420d0ea8f0b9491c764585077e33783290aac221b4e7b42aea6db9ee6151",
+      "completed_monotonic_ns": 50815406897700,
+      "evidence": "actual_container_operation",
+      "operation_id": "backlog_drain_after_recovery",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 2400,
+      "started_monotonic_ns": 50815406895500
+    },
+    {
+      "actual_offset_seconds": 3060.9954893,
+      "chain_sha256": "f87f979f8960be0e674d4d57e7bc33d19bc8dcfbc0957a3d792a316dc3833ee8",
+      "completed_monotonic_ns": 51475036783000,
+      "evidence": "actual_container_operation",
+      "operation_id": "connector_journal_compaction",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 3060,
+      "started_monotonic_ns": 51474628933200
+    },
+    {
+      "actual_offset_seconds": 3120.8822026,
+      "chain_sha256": "3146a0a3822c8e90ce9ca532a193bc73e8761dbfcb1f31f2fca2b06cc3e159d9",
+      "completed_monotonic_ns": 51534965233300,
+      "evidence": "actual_container_operation",
+      "operation_id": "log_rotation",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 3120,
+      "started_monotonic_ns": 51534515646500
+    },
+    {
+      "actual_offset_seconds": 3240.8151223,
+      "chain_sha256": "0f8dfe393146328fdefc47c3e78cb19895fec92df4cb2d2c7d8fc94be53b137f",
+      "completed_monotonic_ns": 51654448570400,
+      "evidence": "actual_container_operation",
+      "operation_id": "metrics_snapshot",
+      "passed": true,
+      "run_id": "local_rehearsal_recovery_r9_001",
+      "scheduled_offset_seconds": 3240,
+      "started_monotonic_ns": 51654448566200
+    }
+  ],
+  "required_schedule_operation_count": 13,
+  "schema_version": "v0317_maintenance_execution_v1"
+}

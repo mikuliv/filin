@@ -1,0 +1,19 @@
+{
+  "backend_endpoint_call_count": 0,
+  "backend_import_count": 0,
+  "component_architecture_passed": true,
+  "component_count": 5,
+  "components": [
+    "traffic-source",
+    "reference-receiver",
+    "staging-connector",
+    "sensor-runtime",
+    "operator-view"
+  ],
+  "connector_component_separate": true,
+  "operator_view_component_separate": true,
+  "receiver_component_separate": true,
+  "schema_version": "v0317_architecture_v1",
+  "sensor_component_separate": true,
+  "traffic_source_component_separate": true
+}

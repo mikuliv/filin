@@ -1,0 +1,12 @@
+{
+  "activity_count": 476,
+  "causal_order_violation_count": 0,
+  "cross_activity_contamination_count": 0,
+  "cross_session_contamination_count": 0,
+  "event_continuity_passed": true,
+  "first_alert_lost_count": 0,
+  "missing_sequence_count": 0,
+  "review_event_lost_count": 0,
+  "schema_version": "v0317_event_continuity_v1",
+  "semantic_duplicate_count": 0
+}

@@ -1,0 +1,1678 @@
+{
+  "maximum_periodic_interval_seconds": 600,
+  "operator_snapshot_chain_root": "9cf8b170910bfb1e5e1933cbcb9c0011a13f8ff88b046c4e505b62b381c37513",
+  "schema_version": "v0317_operator_snapshot_manifest_v1",
+  "snapshot_count": 73,
+  "snapshots": [
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 0,
+      "generated_at": "2026-07-23T17:11:00.010437+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "f1f40bd8e6193cad8be0a5c5e68ec431a55508a2da518e83a312a245d8f60bb6",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_43844a76bdbff93a263fafac0902ed8011ef410e63a866f9dc47b12db779db4b",
+      "source_commit_range": []
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T17:20:59.995303+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ad902dbce925500ab06cf7ef113f3367492d8db0d699e958256d0696d2f4fcdf",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_c31da1a15349cef8dd323c8e19875a264cf9b7966e7ea4abd380fe48b51941ff",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T17:30:59.988389+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "3574292cb7560c5f6be411e94ba5414766f39c781b54f3b59cd265de5a458eb5",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_be0a4649ac11513d2b83158ddfe76a8435ca2d6a267a7676e541bb7d6819d971",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T17:41:00.039518+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "78b03df4e91a826b7d9df5ad52c4f82ed1dbec603b54aba82d7ed9d5fafeff01",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_125ababac295ad0923bda2bf196cc097f164e6bc3e4529af34e86e62192fec13",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T17:50:59.953230+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "dffec604a2592f91367577ebcd28bfb2fd561865219d56a8538c48f02709676b",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_4148e2aad6700451b1d9a9957fbd5f825bc81f9e362759c186c776887d8dea7e",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:00:59.959808+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "a91379745d086cdbfab76dbe74e106bdccb98815f58b3703534a6a39432e4f3f",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_d1f0a5a3b4101cb7b0374a7d127c3b70f8a6d36cabf2d3bb86251388076149d9",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:11:00.014351+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "0249332c6a2a3a0d1da87c4957c5bde33c5536d6a63fa2f2a31f7f8a9e77ca59",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_8a74694a34e26b5b6bb7781bc01a2027845f4a0ebcaf312fcc1d4eee6a37fa27",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:21:00.015462+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "91f33e7f5b10c0a3db5a029643c170f5d50f15a3f396ef02febf69474cd25009",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_5254e809a83327993f17f8b432b3ed8d39550096504668a667307a813ff0cd52",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:30:59.921955+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "b55119c741f2648492f977b5c9c754b931b8a3883ef019d303ac45a3b26b1795",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_2ca484701b10404b893929f9ed39800e9f806518599fb32e90f679b8fe2d2642",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:45:31.835305+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "c7c7b3c868106ea74f4f4a166830157753076833e8272bd389131d53e63e3939",
+      "reason": "after_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_4ed4769f3b482ddb3c43711fbd2c7ebc85d9a310a4302a77dd15f633d97977fe",
+      "source_commit_range": [
+        "rrc_be46ebeea93d7901a1cf2fadfb3f4559",
+        "rrc_034196515029d51f3fe68d5281da1b60"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 0,
+      "generated_at": "2026-07-23T18:46:48.316837+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "f1f40bd8e6193cad8be0a5c5e68ec431a55508a2da518e83a312a245d8f60bb6",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_f4afc9e801ecf236df3e1ecca483ea138591dd144d6310483c0f1eebf4b7a62e",
+      "source_commit_range": []
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T18:56:48.453764+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "0a1621375dc25c616dee858d9075b2ce3213fc74384e6f9dc2992bf3cb82d2d8",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_e394e9a41fa4643e6cdca82f506cbe2ce60af5ee52c5fedc8a3fe4fed5dd2737",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:06:48.384557+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "6a93420f7c26a6579e4224ef6fd59eb92750053aad6653aaa89c3c3fe2c58365",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_849af4d805c7384e990fde282992c33f0379e432b2700c5344f91e4ee7934c7d",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:16:48.586103+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "3004828d8cac2cc5064db3c8be8003432559c3caae51faadf4510c6d4f231567",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_5a4f16f1206314b31f7c96d00720249bd815749c46e3f72f0b4c76df6258f432",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:26:48.364769+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "c6ea389d419789a26ec36f5ec2ba57041919b173f6035e4d185d556486f385b3",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_f06aa1fa146922ce59d11bb024c4434106f1888d9fe9159d989d87f3d84cbb23",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:36:48.359820+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ad20d7db206078301716f2433af5c9e4b43c56a1e799e02899642f04062a20a3",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_c34150c5419fa3cf3cc42eef3d6e24ce9d2acbd5af0b62b335274a2bd87016ef",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:41:48.419162+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "3e70120da23999dd4b587bfcc80427b8e8d327a4050032bfaf7882dc39f58c80",
+      "reason": "before_rotate_sensor_connector_certificate",
+      "review_count": 0,
+      "snapshot_id": "ops_c82a2d4b395011ad6ce1b6ef9f66d99ad5ebf78284e43a8229d9c13d1972e944",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:42:06.636908+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "8e8bf08837dae90fe5a63b77757c9636e395ea47617aeda165e59f3c5d5f75ed",
+      "reason": "after_rotate_sensor_connector_certificate",
+      "review_count": 0,
+      "snapshot_id": "ops_d2fab0ce645aecfe21fe0e50779b681dcc81c708a7e43d32c3031fec5ab9a5bd",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:44:18.331253+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "75dfd6be4d7082a2da56707338f20b11c7f0b3f7f423074d7e1a4bcac256327d",
+      "reason": "before_rotate_connector_receiver_certificate",
+      "review_count": 0,
+      "snapshot_id": "ops_17132a669b11e5a03c89fad5b214b74a10a507d7f5322e2efe6b2964d835e029",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:44:42.929854+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "fd91cdea31a8675717961a3a80805737450142efa5a16e0cacf0d7570f64cd06",
+      "reason": "after_rotate_connector_receiver_certificate",
+      "review_count": 0,
+      "snapshot_id": "ops_c9d93bb405a8c8914c0cc65f9852d514ca05d75c1b5f1bdf62c0514981a67e26",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:46:48.404472+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "b851faaa678f6197185fa302a4c747691137dfa1226dbe3d78405235791b501e",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_3a127b8f42f82e7223288fc8508a8260cfde2e8fe56dcd335e3af627037e92b7",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:51:48.532870+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "4575be8ae833be013d5b5017bfb798c5ab1a30aab075bc5e429a229f7d25e428",
+      "reason": "before_connector_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_cabccef67bad042bcc63c9540e1d814a9fd5a3be6bdb803c03b66e475f571444",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:52:06.133731+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "14a5293578b3edf7d8998aec169ffcfeee2b4306792f88d8ed420107cb26d735",
+      "reason": "after_connector_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_3b604bdd224dc34c821ddeba09c6d10d6420f801e404d6584e9345ce9e64155d",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:56:48.961999+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "3fd262a00c27740633c624f9e68374cfb2ffcd634182ee24305a2e725d309fc0",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_796f62434ce5680c07fbbaa0c10b42764cd8f93519d3bbcf6a20647581c4f14f",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:56:49.107893+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "f264931a91c8d363aeebec4880c0ed42fad0e839a1935e9a429f05df12bda837",
+      "reason": "before_receiver_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_4432865bd4cb2ca75f99549293b4ef158b2a0d8d9a6d8ad8261bee616682929f",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T19:57:21.477637+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ae04ec88ca6f64bc44dfc903eb6e31e4236b4ae6f8d9f5aaf966ed1db0e8ce6d",
+      "reason": "after_receiver_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_a39bb8b8e3a1e0796a5a872fd8b5d65cdc8685dc7bbcf3d618d11e4d0a9d0b2c",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:01:48.374621+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "46cf296e8e91e14ecf52d75ea7fb4f04e9ba2ebecad900c410851b4f42df479f",
+      "reason": "before_sensor_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_d26b09d2d7d0ae6032106f34bc1833210c18edae13af9029a146a7672d05c115",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:02:09.577575+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "8c16c5bf37f264a5fa55859aaec8f1f2b5ad853a65bbfe16b1c3554b1c349da4",
+      "reason": "after_sensor_planned_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_adf5b09ee38ac58151de7cbf77b536863b86b37a7b95f03a9c720647a43e4305",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:06:48.819783+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "1df036641ea30c03d1e36c919e05a1afa837679d82b15b685561667ffbe01451",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_5e069c575baf09510ff443da4d9c93a9a426fb32d52c3e5534e6bf0e6943fbdc",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:06:48.937066+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "1a92484da0cd16ca3bf2b98bf1b97a60f55a65f2b0366c1f84d077d9f5431106",
+      "reason": "before_connector_receiver_simultaneous_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_1cb4cab54ce42a40ddd9816f9e47d4c130e01f42f1a0a4da0c56323f6060cdfe",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:07:12.057360+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "31b61d59c001a344b5b7bd18f52f19775d0fe6c9dec20e90dbe87a6162b3aece",
+      "reason": "after_connector_receiver_simultaneous_restart",
+      "review_count": 0,
+      "snapshot_id": "ops_58e532c8eb4579c8bcdeb6fd4062fba1c5ccdf6ba2cb36320b793847d72c2923",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:11:48.486944+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "edca7be385903de142f2a0f454aabfeadcaae574525371becb53a198ccede42b",
+      "reason": "before_operator_projection_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_7f9fd8f9ea663bfd14f2f1d753cc7d1e805749465623c2626f2d088db46c9467",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:11:50.001452+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "d309285a65db779cd5ff3c78e948be72068c3769666f97c6d27bfda1009c34f2",
+      "reason": "after_operator_projection_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_68795265513841991ca723b69d9a85cb15e5bb80a832bfcfc21a4fa262f606e4",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:21:08.912163+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "e47edef8dd786c7dd3375f3a33b64f1413c125dc5ab107c39bf0096ca8e318e3",
+      "reason": "after_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_ba233faccf4f76b0a2dce38e30d13e9983876f68d8d9d78d0d983b5f645fa3c8",
+      "source_commit_range": [
+        "rrc_991edce895c06fd5ea4ab74fa43a5400",
+        "rrc_8b28627067ca3e4ea98ca1289ce06f54"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 0,
+      "generated_at": "2026-07-23T20:22:43.775372+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "f1f40bd8e6193cad8be0a5c5e68ec431a55508a2da518e83a312a245d8f60bb6",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_270b3c0ae9e859ba0ba9fffd136ad06902a62571125dee3b680f7ff9949e0066",
+      "source_commit_range": []
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:32:43.783786+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "b72f82b25000ec1869ed1b62516b3ee539c406cfb938e0d36f6fbf5f9aa98ab6",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_dbf9d9273ae3c45ca89991be1baa214206183c357d8d0820bb6f82510082e143",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:37:44.119431+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "4b9ec799d0ffccfbb1007fbace73a1c3729dde064db3590394ebff55ed4c08b8",
+      "reason": "before_connector_journal_checkpoint",
+      "review_count": 0,
+      "snapshot_id": "ops_b39d9f38661f7914e5c1c827487d2e4cebdc5b905a7a493ceb804ac649bc4f91",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:37:45.934141+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "77c854ae3f757472e3a68c315e8c15c43fcd5b7e08c80cae15dce225b182cfb6",
+      "reason": "after_connector_journal_checkpoint",
+      "review_count": 0,
+      "snapshot_id": "ops_3ba332245afa4f0ec8405c08b1739c9fb759462f4d04c0d7810bec94e89df293",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:41:03.660696+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "8fadd86b09d94d86b8b2bd86b348d19f67d1bc1679272c7fd3376fa515fcd46f",
+      "reason": "before_connector_restart_with_backlog",
+      "review_count": 0,
+      "snapshot_id": "ops_97a84fdccc8f03349a5492516e5a124c59711a45649194d6ecf6cae8d7feee3b",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:41:15.227938+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "2191d38595cf12c30a6f6e20d23c29cee9b23900248e0eaaaa253daba90d6dcc",
+      "reason": "after_connector_restart_with_backlog",
+      "review_count": 0,
+      "snapshot_id": "ops_d6d427f8b68cfca29086e79cf452618a9c1ec081a654da38bbf954b0a170e008",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:42:43.675847+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "8115399d3588e96bfd2c6ca2d581d31730816dfa54bb8d7463b65a7b45322274",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_bc0900a29b7bdaff1dc8eaec1134bea1fd043b3cc8d9bff8b5ffe91cf55dbfb8",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:43:33.797087+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "d05affb2894a1ac6e83aec60fd666024b690c3c80ae6135e1dffde4acd4efafb",
+      "reason": "before_connector_warning_pressure",
+      "review_count": 0,
+      "snapshot_id": "ops_999f50bb86e1876f9bd8c6cfab0f7265215a9985b481c44f6ee57a5c308f58da",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:43:35.830012+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "4196e3fb82a7ebf5b22062a9d489c741e60a2f55e1068c40e27c04b6b4b4b00f",
+      "reason": "after_connector_warning_pressure",
+      "review_count": 0,
+      "snapshot_id": "ops_11da55260e3009fe91861bbea9c24753355a55e6877030a70784a76f9de0cd7f",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:46:53.755168+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "5f39507600ff7141c52769882379040511b77f66df57b89209e91dbd1b69bb4b",
+      "reason": "before_receiver_warning_pressure",
+      "review_count": 0,
+      "snapshot_id": "ops_ab1d703e462c6e14a13216f07a73bcd30f9a2a458961361d96f8983b277730f6",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:46:56.390023+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "11b3b8aa9734f424c4164f50ccb3a92b25a27bbf972d6f5f7e579b0569cf48b6",
+      "reason": "after_receiver_warning_pressure",
+      "review_count": 0,
+      "snapshot_id": "ops_7d379ce4e208db17db26b23fe617d714d22dd8edb7abddd6e1bd76f234c18e3f",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:47:43.714613+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "cb2afa064cb0fac6c684be0538cca6992b3cbb9efff309c3a93af92294f88cd3",
+      "reason": "before_receiver_wal_checkpoint",
+      "review_count": 0,
+      "snapshot_id": "ops_c7ffbe3db582ff82acb67cb7280ba8483fa1908ea76afd80605a0de2f1becee7",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:47:44.603677+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "cf138d075128366ff4687fcd5e5eb1412e10a73cb7ad09c9f6c47ea582c97def",
+      "reason": "after_receiver_wal_checkpoint",
+      "review_count": 0,
+      "snapshot_id": "ops_1a32be562a29d30dc1f92fcf2946d42334d21e257806b805d71680d4c6066597",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:50:13.746558+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "89fe68d021b3acb6feeb356e84345ec0b2a080834a1462d89bc51a4fd19418d0",
+      "reason": "before_receiver_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_099a71151ac80340b640d0b3cbb37e47f39c38dc20e1124761fa8c56bbfe597e",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:50:14.616312+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "74d475087d3ac5c10f3f72587f92718b35ee24a6fc8477eaece63151f1da7a2f",
+      "reason": "after_receiver_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_a1ea14351071587299ede869453c7ad217208f9a5e343e0a1141c225fe905662",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:51:03.796195+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ed6988418fbddd5880013c934007b3d0b648fdc9759013d41f189e3d07375a09",
+      "reason": "before_temporary_connector_write_rejection",
+      "review_count": 0,
+      "snapshot_id": "ops_d77ac55be7a330c240c087b1b09f6a87d7ebcd28dc279bf11459b0522ff530e0",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:51:14.649313+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "c58885262a197ff56803e3b472107959bbd3e2cdcb8aaab732b95bb296e5c7c7",
+      "reason": "after_temporary_connector_write_rejection",
+      "review_count": 0,
+      "snapshot_id": "ops_bfe45f7ea3d21b839dbf5932823c2325cf974046fa793d8fe2bc801ba735e6e1",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:51:53.778671+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "6a834be97f08481636a987f521e776b801ac0abd18f89d80cee1fdcfa946bfdd",
+      "reason": "before_temporary_receiver_write_rejection",
+      "review_count": 0,
+      "snapshot_id": "ops_9b23217f7505c0d842b10810c3dfe1bb349dce04e984e81f710f02a37c8e5df6",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:52:04.242871+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "bfb495044d8f86005614b2f607408a3383ed911b2731fb0207f7ad1d1b129d71",
+      "reason": "after_temporary_receiver_write_rejection",
+      "review_count": 0,
+      "snapshot_id": "ops_430544a33d35feb74db77a32904d0d1e17b28dea49b9715cb74fd550538e906f",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:52:44.396360+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "92dc277eefbdf4a1aa5256f5c678737f1399eebfd64b61a777b89dd2590d28ec",
+      "reason": "before_receiver_unavailability_start",
+      "review_count": 0,
+      "snapshot_id": "ops_a9dd40ae88bc12c883b33df413e7743093121e079ca7ecb5752783443ada0400",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:52:44.536575+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ff327e60a2e46b9aa1ee457ecfcbecde803890d29347ced2c31087df7134ba41",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_1a7eccdc0cf0e61ae38fd8527e4a039f5b3aa14db356cb509c6505a444fb6440",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:53:01.995846+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "1781af694937ac9ccdbe2ba4e10618513b1ba8f764ea122b582df96f4a1d6c1e",
+      "reason": "after_receiver_unavailability_start",
+      "review_count": 0,
+      "snapshot_id": "ops_dd7cd7d46715eab7e66915f05a442163e8aee9de004bf236528e3cc887876e82",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:55:13.717177+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "988c23892780ae7828c553cdb28aed36bc776a9bdd1c8e723c95c5434eb0eb7b",
+      "reason": "before_receiver_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_4104e404f39fc26aeed36d23f6d0f23fa08ef57c3b89433c25a2ba33d8b8f0a4",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:55:16.524989+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "6cb77a804398fac776ef0bedb51aaa73fb9d1c239a9d32e6daf2fc2d6e533a83",
+      "reason": "after_receiver_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_3439d485c8acba9ca263fd57c87dd434f56e3cd6cac1a4af84ae70379f7e4ec0",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:56:54.388060+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "9ec5c715007c1faf1f8f85f860a7c2739e5450ccf5d78bc42ab80abada263889",
+      "reason": "before_receiver_restart_postcommit_preack",
+      "review_count": 0,
+      "snapshot_id": "ops_3fcc75a06d957f1ca8342669e4e1ed7e718ff9ebc43a94db0c775a2465bc8ede",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:57:11.403401+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "ec758691a962f92356a5f1f8added6726e93507cd6607955a5976bb6d924ce1c",
+      "reason": "after_receiver_restart_postcommit_preack",
+      "review_count": 0,
+      "snapshot_id": "ops_04c4942cdc13e68040106257e0619d2a928f70fce46c1fdbcb4f9a8344525957",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:58:34.382869+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "2372d0936b8640c1bba9e00581a6b274769134b178330f7e24e3ba210f611efe",
+      "reason": "before_connector_restart_postjournal_preingress_ack",
+      "review_count": 0,
+      "snapshot_id": "ops_f98f67b8bb0336196396c2f6ec9761ab080e576ae1af290b9befba25f3e5919d",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T20:58:51.296501+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "a635cf197c69c985895d8ca135d3642f8da1b321f7d4ddaede56db8f8c82ed77",
+      "reason": "after_connector_restart_postjournal_preingress_ack",
+      "review_count": 0,
+      "snapshot_id": "ops_11af42e226f67eea14f36ca4adbd1f9c442cd8aa1a7b0b83fdd84488e1c5b0f6",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:02:44.522413+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "0997b65a5dbf48f0f53d3d91c65e8c9f6d9136b759a3e22e6523fb0446f4a358",
+      "reason": "before_backlog_drain_after_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_92532b0a72de9f28dc545e0f5376f29e4022141c256b9b6001e94c49aad3cbe7",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:02:44.563693+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "78e620599ee69db27d55dda58fd950cf5f3f9abd3b39a4e0d651e77fbc7a79a9",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_3f555d1ade1999562d2e5a4026d6a225ba195a13e213d4453b5430070a57d3aa",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:02:45.661281+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "b593414d7f7d533e6a6d1b41e72c845c7d1d6524d2546496a1102f743eeab5ea",
+      "reason": "after_backlog_drain_after_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_0ae846dc660301a9f58edf82ae8a6c3004d52a285b2019b9aa827e159baa82cf",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:12:43.723558+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "4e2b9309ebe67271970ad7b644226c7f8b7df454f96ff2f15b8414d7b9def838",
+      "reason": "periodic",
+      "review_count": 0,
+      "snapshot_id": "ops_45bdcf2992353b6ee2648cf0c6aeb77e9114cb74363c0e0cff7b07e0920b86c2",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:13:43.761694+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "4657e29e21ba916b830114b8c4957d7c0bfffc50ed50b5a3b7772d605a5b737d",
+      "reason": "before_connector_journal_compaction",
+      "review_count": 0,
+      "snapshot_id": "ops_8e20ab89ba8b14838fab93c72baab9273767f57880640f44612b871054bf8675",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:13:45.298985+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "e37b64838cbc0038b5c40b7df4a6aaf0211200e59018e25fd0e91f162ee25b9f",
+      "reason": "after_connector_journal_compaction",
+      "review_count": 0,
+      "snapshot_id": "ops_4909f0d1e99d543e36090ee64e78236b54f068f8a934cf58d517817646601613",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:14:43.755235+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "5526fbe2d75733ea0ccf22c4a3811e840aaf144e47dae566b158021feea79e06",
+      "reason": "before_log_rotation",
+      "review_count": 0,
+      "snapshot_id": "ops_8805d432a7aa729a1e0ce91bda12132a5217355f633739f3add6e19b3cdf57d2",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:14:45.178855+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "6cf385aa9c851f20d7c0910dd73734781b1e8498176c21b2eecdcb4cd9765654",
+      "reason": "after_log_rotation",
+      "review_count": 0,
+      "snapshot_id": "ops_6429206eabcf43fb597349edc7324218137c2265107a06c746660e86235d4b98",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:16:43.704405+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "14ea8916e2e55bccc18a8437d8b8dd89e21e057c8c783288f4abac098cf34a45",
+      "reason": "before_metrics_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_9dff020d36e2e647fb23088ca8e496852c54d4ade3b4bb27dfc5353a4f978a49",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:16:44.605899+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "c484a18fa4592bdb2118e7cdade7a223df0d8e39da897a36ef5e93fd335a024c",
+      "reason": "after_metrics_snapshot",
+      "review_count": 0,
+      "snapshot_id": "ops_2f6c80ec4010b7cc5f23bbe0ca345a3b3c600c05834cba346f58ce0629890dab",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    },
+    {
+      "alert_count": 0,
+      "backlog_summary": {
+        "reported": 0
+      },
+      "continuation_count": 0,
+      "event_count": 1000,
+      "generated_at": "2026-07-23T21:25:46.817663+00:00",
+      "health_summary": {
+        "operator_read_only": true,
+        "query_succeeded": true
+      },
+      "privacy_scan_result": "passed",
+      "projection_contract_version": "operator_projection_v1",
+      "projection_sha256": "6b9bd7f519037e080ba40ee0e7ef48f7654f0449d9d358db212303bc7669507c",
+      "reason": "after_recovery",
+      "review_count": 0,
+      "snapshot_id": "ops_d533f5a48419557243c5b725f94ed0653f85512fb9270178a864f4845867bf0e",
+      "source_commit_range": [
+        "rrc_14a5c70e76fd005ea73e135b64e31565",
+        "rrc_c6188d5ec15628c3ccba8b0dda50dfeb"
+      ]
+    }
+  ]
+}

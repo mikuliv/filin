@@ -1,0 +1,8 @@
+{
+  "forbidden_claim_count": 0,
+  "required_document_count": 5,
+  "required_documents_present": true,
+  "schema_version": "v0317_documentation_consistency_v1",
+  "semantic_documentation_validator_passed": true,
+  "status_files_consistent": true
+}

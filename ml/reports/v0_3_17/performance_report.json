@@ -1,0 +1,16 @@
+{
+  "connector_ingress_ack_p95_ms": 3824.57204955,
+  "connector_to_receiver_p95_ms": 202.964688,
+  "final_backlog": 0,
+  "ordering_violation_count": 69806,
+  "performance_policy_passed": false,
+  "processing_lag_policy_passed": true,
+  "receiver_durable_throughput": 13.987499717266006,
+  "receiver_to_operator_projection_p95_ms": 600000.0,
+  "schema_version": "v0317_performance_v1",
+  "sensor_to_receiver_p50_ms": 324.1088815,
+  "sensor_to_receiver_p95_ms": 5311.11062555,
+  "sensor_to_receiver_p99_ms": 18174.04717931,
+  "sustained_unexplained_backlog": 0,
+  "trace_count": 201370
+}

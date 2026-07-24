@@ -1,0 +1,13 @@
+{
+  "availability_policy_passed": true,
+  "connector_process_availability": 0.9985294117647059,
+  "final_unresolved_incident_count": 0,
+  "operator_view_availability": 1.0,
+  "planned_maintenance_excluded": true,
+  "receiver_durable_availability": 1.0,
+  "receiver_process_availability": 1.0,
+  "receiver_process_availability_raw": 0.9882352941176471,
+  "schema_version": "v0317_availability_v1",
+  "sensor_process_availability": 0.9992647058823529,
+  "unexplained_outage_duration_seconds": 0
+}

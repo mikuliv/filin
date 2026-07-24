@@ -1,0 +1,13 @@
+{
+  "delete_rejected": true,
+  "get_allowed": true,
+  "head_allowed": true,
+  "operator_view_read_only_passed": true,
+  "operator_write_attempt_count": 0,
+  "patch_rejected": true,
+  "post_rejected": true,
+  "put_rejected": true,
+  "receiver_write_credentials": false,
+  "schema_version": "v0317_operator_read_only_v1",
+  "writable_database": false
+}

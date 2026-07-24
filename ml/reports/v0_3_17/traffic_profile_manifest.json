@@ -1,0 +1,15 @@
+{
+  "profile_count": 8,
+  "profiles": [
+    "stable_benign_background",
+    "variable_benign_background",
+    "periodic_service_polling",
+    "authentication_like_synthetic",
+    "web_navigation_and_probing_like_synthetic",
+    "service_discovery_like_synthetic",
+    "bounded_burst",
+    "quiet_idle"
+  ],
+  "schema_version": "v0317_traffic_profiles_v1",
+  "scientific_labels": false
+}

@@ -1,0 +1,16 @@
+{
+  "calibration_fit_call_count": 0,
+  "candidate_replacement_count": 0,
+  "conformal_fit_call_count": 0,
+  "feature_selection_call_count": 0,
+  "fit_call_count": 0,
+  "labels_created": false,
+  "labels_used": false,
+  "no_fit_audit_passed": true,
+  "partial_fit_call_count": 0,
+  "runtime_only_trial": true,
+  "schema_version": "v0317_no_fit_v1",
+  "scientific_comparison_performed": false,
+  "scientific_metrics_recomputed": false,
+  "threshold_selection_call_count": 0
+}

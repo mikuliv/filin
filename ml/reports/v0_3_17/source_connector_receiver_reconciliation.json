@@ -1,0 +1,23 @@
+{
+  "connector_durable_event_count": 201420,
+  "connector_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "connector_pending_event_count": 0,
+  "connector_receiver_acknowledged_count": 201420,
+  "final_backlog": 0,
+  "first_alert_lost_count": 0,
+  "idempotency_collision_count": 0,
+  "receiver_durable_unique_event_count": 201420,
+  "receiver_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "receiver_pending_transaction_count": 0,
+  "review_event_lost_count": 0,
+  "schema_version": "v0317_reconciliation_v1",
+  "semantic_duplicate_count": 0,
+  "sensor_connector_acknowledged_count": 201420,
+  "sensor_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "sensor_pending_event_count": 0,
+  "sensor_source_event_count": 201420,
+  "source_connector_receiver_sets_equal": true,
+  "transport_attempt_count": 12750,
+  "transport_duplicate_count": 436080,
+  "unaccounted_drop_count": 0
+}

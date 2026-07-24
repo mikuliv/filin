@@ -1,0 +1,14 @@
+{
+  "backlog_recovery_interval_seconds_max": 1050,
+  "backpressure_policy_passed": true,
+  "connector_journal_durable": true,
+  "connector_queue_bounded": true,
+  "final_backlog": 0,
+  "modes": [
+    "mild_slowdown",
+    "sustained_slowdown",
+    "temporary_unavailability"
+  ],
+  "schema_version": "v0317_backpressure_v1",
+  "sensor_outbox_bounded": true
+}

@@ -1,0 +1,15 @@
+{
+  "all_internal": true,
+  "backend_route_count": 0,
+  "external_route_count": 0,
+  "host_network_usage_count": 0,
+  "internal_network_count": 3,
+  "network_names": [
+    "filin_sensor_connector_internal",
+    "filin_connector_receiver_internal",
+    "filin_receiver_operator_internal"
+  ],
+  "network_topology_passed": true,
+  "published_port_count": 0,
+  "schema_version": "v0317_topology_v1"
+}

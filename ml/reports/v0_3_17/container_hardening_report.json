@@ -1,0 +1,14 @@
+{
+  "capabilities_dropped_all": true,
+  "components_checked": 5,
+  "container_hardening_passed": true,
+  "docker_socket": false,
+  "healthchecks": true,
+  "host_filesystem": false,
+  "no_new_privileges": true,
+  "non_root": true,
+  "privileged": false,
+  "read_only_rootfs": true,
+  "resource_limits": true,
+  "schema_version": "v0317_hardening_v1"
+}

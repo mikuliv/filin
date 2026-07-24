@@ -1,0 +1,32 @@
+{
+  "certificate_rotation_count": 2,
+  "certificate_rotation_passed": true,
+  "old_certificate_rejected_after_grace_count": 2,
+  "pending_event_loss_count": 0,
+  "rotations": [
+    {
+      "actual_offset_seconds": 3300.8753854,
+      "chain_sha256": "0c3a335bfc6ea556844b9d5a8083ee4a1b1522e9e1575347ec4f59d74073cb26",
+      "completed_monotonic_ns": 45976190105500,
+      "evidence": "actual_container_operation",
+      "operation_id": "rotate_sensor_connector_certificate",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 3300,
+      "started_monotonic_ns": 45959173591300
+    },
+    {
+      "actual_offset_seconds": 3450.7967636,
+      "chain_sha256": "08728c66652da3d3cb08f2c96cad0789fd606f5c3ae2ec9a17191d409d58fb80",
+      "completed_monotonic_ns": 46131044377900,
+      "evidence": "actual_container_operation",
+      "operation_id": "rotate_connector_receiver_certificate",
+      "passed": true,
+      "run_id": "local_rehearsal_transition_r9_001",
+      "scheduled_offset_seconds": 3450,
+      "started_monotonic_ns": 46109094969500
+    }
+  ],
+  "schema_version": "v0317_certificate_rotation_v1",
+  "semantic_duplicate_count": 0
+}

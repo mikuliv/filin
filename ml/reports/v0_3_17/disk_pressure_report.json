@@ -1,0 +1,12 @@
+{
+  "ack_before_durable_commit_count": 0,
+  "critical_percent": 85,
+  "disk_pressure_policy_passed": true,
+  "host_fill_attempt_count": 0,
+  "isolated_volume_size_mib": 64,
+  "scenario_count": 4,
+  "schema_version": "v0317_disk_pressure_v1",
+  "silent_drop_count": 0,
+  "stop_percent": 92,
+  "warning_percent": 70
+}

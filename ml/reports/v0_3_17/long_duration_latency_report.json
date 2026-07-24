@@ -1,0 +1,22 @@
+{
+  "breakdowns": [
+    "nominal",
+    "elevated",
+    "burst",
+    "maintenance",
+    "slowdown",
+    "backlog_recovery",
+    "post_restart"
+  ],
+  "connector_ingress_ack_p95_ms": 3824.57204955,
+  "connector_to_receiver_p95_ms": 202.964688,
+  "latency_trace_manifest_sha256": "f38f002050fe646c0979cbca1343eb6e621ac3c9e2b7906089f54ce1848d5980",
+  "long_duration_latency_policy_passed": false,
+  "ordering_violation_count": 69806,
+  "receiver_to_operator_projection_p95_ms": 600000.0,
+  "schema_version": "v0317_long_duration_latency_v1",
+  "sensor_to_receiver_p50_ms": 324.1088815,
+  "sensor_to_receiver_p95_ms": 5311.11062555,
+  "sensor_to_receiver_p99_ms": 18174.04717931,
+  "trace_count": 201370
+}

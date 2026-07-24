@@ -1,0 +1,17 @@
+{
+  "automatic_enforcement_ready": false,
+  "backend_integration_allowed": false,
+  "candidate_ready_for_shadow_mode": false,
+  "candidate_ready_for_v0_3_18_external_review_and_trial_design": false,
+  "external_validation_completed": false,
+  "meaning": "Разрешена только подготовка отдельного design-review; испытание не разрешено",
+  "production_connection_allowed": false,
+  "production_ready": false,
+  "real_notifications_allowed": false,
+  "real_organization_trial_allowed": false,
+  "real_traffic_capture_allowed": false,
+  "schema_version": "v0317_readiness_v1",
+  "sensor_ready_for_backend_integration": false,
+  "shadow_mode_allowed": false,
+  "stage_passed": false
+}

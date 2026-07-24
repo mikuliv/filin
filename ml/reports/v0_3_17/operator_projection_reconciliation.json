@@ -1,0 +1,11 @@
+{
+  "operator_ghost_event_count": 0,
+  "operator_order_violation_count": 0,
+  "operator_projectable_event_count": 201420,
+  "operator_projected_unique_event_count": 201420,
+  "operator_projection_policy_passed": true,
+  "operator_projection_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "operator_state_mismatch_count": 0,
+  "operator_unexplained_missing_event_count": 0,
+  "schema_version": "v0317_operator_reconciliation_v1"
+}

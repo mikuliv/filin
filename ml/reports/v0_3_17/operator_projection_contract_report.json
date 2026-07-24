@@ -1,0 +1,10 @@
+{
+  "contract_validation_error_count": 0,
+  "contract_version": "operator_projection_v1",
+  "field_count": 17,
+  "forbidden_field_count": 18,
+  "operator_projection_contract_passed": true,
+  "privacy_filter_passed": true,
+  "schema_version": "v0317_operator_contract_v1",
+  "strict_additional_properties": false
+}

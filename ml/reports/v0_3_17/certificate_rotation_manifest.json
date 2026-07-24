@@ -1,0 +1,488 @@
+{
+  "rotation_schedule": {
+    "connector_to_receiver": {
+      "offset": 3450,
+      "run": "run_b",
+      "serial_a": 3178241,
+      "serial_b": 3178261
+    },
+    "grace_period_seconds": 60,
+    "old_a_rejected_after_grace": true,
+    "private_keys_in_logs": false,
+    "sensor_to_connector": {
+      "offset": 3300,
+      "run": "run_b",
+      "serial_a": 3178201,
+      "serial_b": 3178221
+    },
+    "synthetic_only": true
+  },
+  "schema_version": "v0317_certificate_rotation_manifest_v1",
+  "sessions": [
+    {
+      "private_key_count_tracked": 0,
+      "private_key_mode": "0600",
+      "public_artifacts": [
+        {
+          "relative_path": "a/connector/delivery-client.pem",
+          "sha256": "d51f8bfaf7dadd9ed6837b54d6835fdef3bc425e75382525e4488595c6053797",
+          "size": 576
+        },
+        {
+          "relative_path": "a/connector/delivery-server-ca.pem",
+          "sha256": "c6ed91cbd1146950ad1f19998f9645ac36d82879a64b7a2ee14b9258562a5022",
+          "size": 506
+        },
+        {
+          "relative_path": "a/connector/ingress-client-ca.pem",
+          "sha256": "e342d2d6f337f01263de590c8f96f9cfd9b9700c609abdf3b2a8496875579b68",
+          "size": 502
+        },
+        {
+          "relative_path": "a/connector/ingress-server.pem",
+          "sha256": "ed8a14698c953355ddd69a8f787cd2ef0fcf21ee6a300d2ef616502486701425",
+          "size": 572
+        },
+        {
+          "relative_path": "a/receiver/client-ca.pem",
+          "sha256": "c6ed91cbd1146950ad1f19998f9645ac36d82879a64b7a2ee14b9258562a5022",
+          "size": 506
+        },
+        {
+          "relative_path": "a/receiver/server.pem",
+          "sha256": "e7bfa65d6567509220166c34e5ea926f797b12e3d75823b2b9237e8a3522a8db",
+          "size": 564
+        },
+        {
+          "relative_path": "a/sensor/client.pem",
+          "sha256": "38716047bb6bf818f562c78c93c03ab95c977c631bcb269f17db5d3234efde0b",
+          "size": 556
+        },
+        {
+          "relative_path": "a/sensor/server-ca.pem",
+          "sha256": "e342d2d6f337f01263de590c8f96f9cfd9b9700c609abdf3b2a8496875579b68",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/delivery-client.pem",
+          "sha256": "d51f8bfaf7dadd9ed6837b54d6835fdef3bc425e75382525e4488595c6053797",
+          "size": 576
+        },
+        {
+          "relative_path": "active/connector/delivery-server-ca.pem",
+          "sha256": "c6ed91cbd1146950ad1f19998f9645ac36d82879a64b7a2ee14b9258562a5022",
+          "size": 506
+        },
+        {
+          "relative_path": "active/connector/ingress-client-ca.pem",
+          "sha256": "e342d2d6f337f01263de590c8f96f9cfd9b9700c609abdf3b2a8496875579b68",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/ingress-server.pem",
+          "sha256": "ed8a14698c953355ddd69a8f787cd2ef0fcf21ee6a300d2ef616502486701425",
+          "size": 572
+        },
+        {
+          "relative_path": "active/receiver/client-ca.pem",
+          "sha256": "c6ed91cbd1146950ad1f19998f9645ac36d82879a64b7a2ee14b9258562a5022",
+          "size": 506
+        },
+        {
+          "relative_path": "active/receiver/server.pem",
+          "sha256": "e7bfa65d6567509220166c34e5ea926f797b12e3d75823b2b9237e8a3522a8db",
+          "size": 564
+        },
+        {
+          "relative_path": "active/sensor/client.pem",
+          "sha256": "38716047bb6bf818f562c78c93c03ab95c977c631bcb269f17db5d3234efde0b",
+          "size": 556
+        },
+        {
+          "relative_path": "active/sensor/server-ca.pem",
+          "sha256": "e342d2d6f337f01263de590c8f96f9cfd9b9700c609abdf3b2a8496875579b68",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/delivery-client.pem",
+          "sha256": "4ba1e086b09e90807d8ef8245f783b0ebaf473dfbfbdbb0a92d6b73b4644a5be",
+          "size": 576
+        },
+        {
+          "relative_path": "b/connector/delivery-server-ca.pem",
+          "sha256": "63b665c9f1a39eae8f93e833ef1a21f93912b600370951d40220157fb86071e3",
+          "size": 506
+        },
+        {
+          "relative_path": "b/connector/ingress-client-ca.pem",
+          "sha256": "ed8cf4c9b7a9a9d9617b37c3796636f12826f1ad3e8a539f7f0ff6323fe63594",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/ingress-server.pem",
+          "sha256": "bef2cb8ab4fdae1727d403040130c6698f59c34a1e72a0f7c209bca371fcf201",
+          "size": 572
+        },
+        {
+          "relative_path": "b/receiver/client-ca.pem",
+          "sha256": "63b665c9f1a39eae8f93e833ef1a21f93912b600370951d40220157fb86071e3",
+          "size": 506
+        },
+        {
+          "relative_path": "b/receiver/server.pem",
+          "sha256": "29ddbbc7c2021a162bd04cb5efe403685eb8eefbcda7c4ae857266109e3c72aa",
+          "size": 564
+        },
+        {
+          "relative_path": "b/sensor/client.pem",
+          "sha256": "6c84b4d90d3ac7269c213754cd78d3c7c59584f456a893214fef554c18ad234f",
+          "size": 556
+        },
+        {
+          "relative_path": "b/sensor/server-ca.pem",
+          "sha256": "ed8cf4c9b7a9a9d9617b37c3796636f12826f1ad3e8a539f7f0ff6323fe63594",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-connector-receiver-a/ca.pem",
+          "sha256": "c6ed91cbd1146950ad1f19998f9645ac36d82879a64b7a2ee14b9258562a5022",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-connector-receiver-b/ca.pem",
+          "sha256": "63b665c9f1a39eae8f93e833ef1a21f93912b600370951d40220157fb86071e3",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-sensor-connector-a/ca.pem",
+          "sha256": "e342d2d6f337f01263de590c8f96f9cfd9b9700c609abdf3b2a8496875579b68",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-sensor-connector-b/ca.pem",
+          "sha256": "ed8cf4c9b7a9a9d9617b37c3796636f12826f1ad3e8a539f7f0ff6323fe63594",
+          "size": 502
+        }
+      ],
+      "revision": 8,
+      "run_index": 1,
+      "schema_version": "v0317_certificate_session_v1",
+      "synthetic_only": true,
+      "tls_version": "TLSv1.3",
+      "variants": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "private_key_count_tracked": 0,
+      "private_key_mode": "0600",
+      "public_artifacts": [
+        {
+          "relative_path": "a/connector/delivery-client.pem",
+          "sha256": "38f84699ccb3aa0cd5c369c3ebe7cede843bcea072141e67b13828f60240ebbd",
+          "size": 576
+        },
+        {
+          "relative_path": "a/connector/delivery-server-ca.pem",
+          "sha256": "aee8243a16973cdc6e9183a098ab645623cf506561fe19e87b5c6e50e8bb2e4d",
+          "size": 506
+        },
+        {
+          "relative_path": "a/connector/ingress-client-ca.pem",
+          "sha256": "56eb42667ee2744aec36147dda0b954c92d4a47864eb3834b559d50ad6eb1808",
+          "size": 502
+        },
+        {
+          "relative_path": "a/connector/ingress-server.pem",
+          "sha256": "e624c2567d107e5c7805b48c95025570d23e5d02a3f8eb429107d7beebacf9fb",
+          "size": 572
+        },
+        {
+          "relative_path": "a/receiver/client-ca.pem",
+          "sha256": "aee8243a16973cdc6e9183a098ab645623cf506561fe19e87b5c6e50e8bb2e4d",
+          "size": 506
+        },
+        {
+          "relative_path": "a/receiver/server.pem",
+          "sha256": "c810e5ac86cce66acea79da3a64fd9ebb6a34211f14a7ed6f7fbc8386c969cc7",
+          "size": 564
+        },
+        {
+          "relative_path": "a/sensor/client.pem",
+          "sha256": "bd1d2e90cf11280a7241b61f06889fd22e4ed635fb210fa5a1f9539a5b14545b",
+          "size": 556
+        },
+        {
+          "relative_path": "a/sensor/server-ca.pem",
+          "sha256": "56eb42667ee2744aec36147dda0b954c92d4a47864eb3834b559d50ad6eb1808",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/delivery-client.pem",
+          "sha256": "38f84699ccb3aa0cd5c369c3ebe7cede843bcea072141e67b13828f60240ebbd",
+          "size": 576
+        },
+        {
+          "relative_path": "active/connector/delivery-server-ca.pem",
+          "sha256": "aee8243a16973cdc6e9183a098ab645623cf506561fe19e87b5c6e50e8bb2e4d",
+          "size": 506
+        },
+        {
+          "relative_path": "active/connector/ingress-client-ca.pem",
+          "sha256": "56eb42667ee2744aec36147dda0b954c92d4a47864eb3834b559d50ad6eb1808",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/ingress-server.pem",
+          "sha256": "e624c2567d107e5c7805b48c95025570d23e5d02a3f8eb429107d7beebacf9fb",
+          "size": 572
+        },
+        {
+          "relative_path": "active/receiver/client-ca.pem",
+          "sha256": "aee8243a16973cdc6e9183a098ab645623cf506561fe19e87b5c6e50e8bb2e4d",
+          "size": 506
+        },
+        {
+          "relative_path": "active/receiver/server.pem",
+          "sha256": "c810e5ac86cce66acea79da3a64fd9ebb6a34211f14a7ed6f7fbc8386c969cc7",
+          "size": 564
+        },
+        {
+          "relative_path": "active/sensor/client.pem",
+          "sha256": "bd1d2e90cf11280a7241b61f06889fd22e4ed635fb210fa5a1f9539a5b14545b",
+          "size": 556
+        },
+        {
+          "relative_path": "active/sensor/server-ca.pem",
+          "sha256": "56eb42667ee2744aec36147dda0b954c92d4a47864eb3834b559d50ad6eb1808",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/delivery-client.pem",
+          "sha256": "9a488f89ef946eb0ea4c0dc260344c31009a046d8686d74b9980f7d599823f08",
+          "size": 576
+        },
+        {
+          "relative_path": "b/connector/delivery-server-ca.pem",
+          "sha256": "8df23603715594e20fb8986146090e119acab265d143864597260046282eab92",
+          "size": 506
+        },
+        {
+          "relative_path": "b/connector/ingress-client-ca.pem",
+          "sha256": "c0863aa5dc2b51b851303bf3ad4ca6e2fee153027082d8a1b82d7f3213cea933",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/ingress-server.pem",
+          "sha256": "5a5ea309e3914b3b02ca4fd8e286a66593535d30828d8ad2d006bd6dd91f51f5",
+          "size": 572
+        },
+        {
+          "relative_path": "b/receiver/client-ca.pem",
+          "sha256": "8df23603715594e20fb8986146090e119acab265d143864597260046282eab92",
+          "size": 506
+        },
+        {
+          "relative_path": "b/receiver/server.pem",
+          "sha256": "c44159f963c977661ce2fc86b8640eb2c9d52d421594aeb0bb3acaafc687b8c4",
+          "size": 564
+        },
+        {
+          "relative_path": "b/sensor/client.pem",
+          "sha256": "17ba0ac3182cde4d3a731541a5cd4fcc0b226abbf77a58afe4499a1cc6894a51",
+          "size": 556
+        },
+        {
+          "relative_path": "b/sensor/server-ca.pem",
+          "sha256": "c0863aa5dc2b51b851303bf3ad4ca6e2fee153027082d8a1b82d7f3213cea933",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-connector-receiver-a/ca.pem",
+          "sha256": "aee8243a16973cdc6e9183a098ab645623cf506561fe19e87b5c6e50e8bb2e4d",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-connector-receiver-b/ca.pem",
+          "sha256": "8df23603715594e20fb8986146090e119acab265d143864597260046282eab92",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-sensor-connector-a/ca.pem",
+          "sha256": "56eb42667ee2744aec36147dda0b954c92d4a47864eb3834b559d50ad6eb1808",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-sensor-connector-b/ca.pem",
+          "sha256": "c0863aa5dc2b51b851303bf3ad4ca6e2fee153027082d8a1b82d7f3213cea933",
+          "size": 502
+        }
+      ],
+      "revision": 8,
+      "run_index": 2,
+      "schema_version": "v0317_certificate_session_v1",
+      "synthetic_only": true,
+      "tls_version": "TLSv1.3",
+      "variants": [
+        "a",
+        "b"
+      ]
+    },
+    {
+      "private_key_count_tracked": 0,
+      "private_key_mode": "0600",
+      "public_artifacts": [
+        {
+          "relative_path": "a/connector/delivery-client.pem",
+          "sha256": "73f9d12853361e8aa7e9beb20a10b6e14be6897f3168147a9ecd12d4eeaefc47",
+          "size": 576
+        },
+        {
+          "relative_path": "a/connector/delivery-server-ca.pem",
+          "sha256": "8bffca4631f2bca13efb3ea62f99ab75d79ac1ff309d6ee0cb4642344790b46d",
+          "size": 506
+        },
+        {
+          "relative_path": "a/connector/ingress-client-ca.pem",
+          "sha256": "b386e237e3952af83dec9b181d6d146724b48e10cae4a1dc796216c09ea77958",
+          "size": 502
+        },
+        {
+          "relative_path": "a/connector/ingress-server.pem",
+          "sha256": "124ea46926e9bf1f6e6a272a4456c16d4a285bd998e5075ad028b4a1aa0d5226",
+          "size": 572
+        },
+        {
+          "relative_path": "a/receiver/client-ca.pem",
+          "sha256": "8bffca4631f2bca13efb3ea62f99ab75d79ac1ff309d6ee0cb4642344790b46d",
+          "size": 506
+        },
+        {
+          "relative_path": "a/receiver/server.pem",
+          "sha256": "083b147402755f55900dd7340b22d3c2eca65788f26f30f940f81e6a439eebec",
+          "size": 564
+        },
+        {
+          "relative_path": "a/sensor/client.pem",
+          "sha256": "f0d824f71787cb7683696df519de185937859f9d820bdbf30960cd4912a2c23b",
+          "size": 556
+        },
+        {
+          "relative_path": "a/sensor/server-ca.pem",
+          "sha256": "b386e237e3952af83dec9b181d6d146724b48e10cae4a1dc796216c09ea77958",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/delivery-client.pem",
+          "sha256": "73f9d12853361e8aa7e9beb20a10b6e14be6897f3168147a9ecd12d4eeaefc47",
+          "size": 576
+        },
+        {
+          "relative_path": "active/connector/delivery-server-ca.pem",
+          "sha256": "8bffca4631f2bca13efb3ea62f99ab75d79ac1ff309d6ee0cb4642344790b46d",
+          "size": 506
+        },
+        {
+          "relative_path": "active/connector/ingress-client-ca.pem",
+          "sha256": "b386e237e3952af83dec9b181d6d146724b48e10cae4a1dc796216c09ea77958",
+          "size": 502
+        },
+        {
+          "relative_path": "active/connector/ingress-server.pem",
+          "sha256": "124ea46926e9bf1f6e6a272a4456c16d4a285bd998e5075ad028b4a1aa0d5226",
+          "size": 572
+        },
+        {
+          "relative_path": "active/receiver/client-ca.pem",
+          "sha256": "8bffca4631f2bca13efb3ea62f99ab75d79ac1ff309d6ee0cb4642344790b46d",
+          "size": 506
+        },
+        {
+          "relative_path": "active/receiver/server.pem",
+          "sha256": "083b147402755f55900dd7340b22d3c2eca65788f26f30f940f81e6a439eebec",
+          "size": 564
+        },
+        {
+          "relative_path": "active/sensor/client.pem",
+          "sha256": "f0d824f71787cb7683696df519de185937859f9d820bdbf30960cd4912a2c23b",
+          "size": 556
+        },
+        {
+          "relative_path": "active/sensor/server-ca.pem",
+          "sha256": "b386e237e3952af83dec9b181d6d146724b48e10cae4a1dc796216c09ea77958",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/delivery-client.pem",
+          "sha256": "7f1213413b7d1dd6d0158aeb424d2a1a04d794d0abe592ee4e200b88295bd351",
+          "size": 576
+        },
+        {
+          "relative_path": "b/connector/delivery-server-ca.pem",
+          "sha256": "25067b5e9229eb8f16b9bee82929c6fc9d49fae8ce55f390cf70a75b943f96b4",
+          "size": 506
+        },
+        {
+          "relative_path": "b/connector/ingress-client-ca.pem",
+          "sha256": "dde2dbf91ae5528c324806c71bee180b45424294f83b0fa0b7b9a8819ac75525",
+          "size": 502
+        },
+        {
+          "relative_path": "b/connector/ingress-server.pem",
+          "sha256": "08d280f3544ef0ff550cb0437ba01226abc33045ff9d5ac00dad7b39f006761c",
+          "size": 572
+        },
+        {
+          "relative_path": "b/receiver/client-ca.pem",
+          "sha256": "25067b5e9229eb8f16b9bee82929c6fc9d49fae8ce55f390cf70a75b943f96b4",
+          "size": 506
+        },
+        {
+          "relative_path": "b/receiver/server.pem",
+          "sha256": "cb408ad868f5eff783e9c547721795e71b3737c876f890e6ffaf2195663b8eaa",
+          "size": 564
+        },
+        {
+          "relative_path": "b/sensor/client.pem",
+          "sha256": "7f036b9e71257d0aefaebccd7544816e62fb46f7f4b094070b6aeeff4bc6bef4",
+          "size": 556
+        },
+        {
+          "relative_path": "b/sensor/server-ca.pem",
+          "sha256": "dde2dbf91ae5528c324806c71bee180b45424294f83b0fa0b7b9a8819ac75525",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-connector-receiver-a/ca.pem",
+          "sha256": "8bffca4631f2bca13efb3ea62f99ab75d79ac1ff309d6ee0cb4642344790b46d",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-connector-receiver-b/ca.pem",
+          "sha256": "25067b5e9229eb8f16b9bee82929c6fc9d49fae8ce55f390cf70a75b943f96b4",
+          "size": 506
+        },
+        {
+          "relative_path": "ca-sensor-connector-a/ca.pem",
+          "sha256": "b386e237e3952af83dec9b181d6d146724b48e10cae4a1dc796216c09ea77958",
+          "size": 502
+        },
+        {
+          "relative_path": "ca-sensor-connector-b/ca.pem",
+          "sha256": "dde2dbf91ae5528c324806c71bee180b45424294f83b0fa0b7b9a8819ac75525",
+          "size": 502
+        }
+      ],
+      "revision": 8,
+      "run_index": 3,
+      "schema_version": "v0317_certificate_session_v1",
+      "synthetic_only": true,
+      "tls_version": "TLSv1.3",
+      "variants": [
+        "a",
+        "b"
+      ]
+    }
+  ]
+}

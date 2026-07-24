@@ -1,0 +1,280 @@
+{
+  "fault_campaign_passed": true,
+  "fault_failed_count": 0,
+  "fault_passed_count": 30,
+  "fault_scenario_count": 30,
+  "fault_unsupported_count": 0,
+  "scenarios": [
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 60,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "receiver_mild_slowdown",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 300,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "receiver_sustained_slowdown",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1800,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "receiver_unavailable",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 650,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "connector_receiver_timeout",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 700,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "connection_reset",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 750,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "http_429",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 800,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "http_503",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 2700,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "malformed_ack",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 2760,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "unknown_ack",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3300,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "tls_reconnect",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3300,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "sensor_certificate_rotation",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3450,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "connector_certificate_rotation",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3510,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "expired_old_certificate_rejected",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3570,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "wrong_san_fixture",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3630,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "untrusted_ca_fixture",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 4500,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "sensor_planned_restart",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3900,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "connector_planned_restart",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 4200,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "receiver_planned_restart",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 4800,
+      "passed": true,
+      "run": "run_b",
+      "scenario": "connector_receiver_restart",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1100,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "connector_restart_with_backlog",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 2050,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "receiver_restart_postcommit_preack",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 2150,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "connector_restart_postjournal_preingress_ack",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1250,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "connector_warning_pressure",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1450,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "receiver_warning_pressure",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1700,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "temporary_connector_write_rejection",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1750,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "temporary_receiver_write_rejection",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 1980,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "wal_recovery",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3060,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "journal_compaction",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 3120,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "log_rotation",
+      "unsupported": false
+    },
+    {
+      "evidence": "actual scheduled operation or isolated behavioral fixture",
+      "executed": true,
+      "offset": 2400,
+      "passed": true,
+      "run": "run_c",
+      "scenario": "backlog_drain_after_recovery",
+      "unsupported": false
+    }
+  ],
+  "schema_version": "v0317_fault_execution_v1"
+}

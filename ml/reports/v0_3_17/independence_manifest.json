@@ -1,0 +1,13 @@
+{
+  "campaign_independence_passed": true,
+  "capture_id_overlap_count": 0,
+  "certificate_serial_overlap_count": 0,
+  "event_id_overlap_count": 0,
+  "pcap_overlap_count": 0,
+  "prediction_id_overlap_count": 0,
+  "run_id_overlap_count": 0,
+  "runtime_instance_overlap_count": 0,
+  "schema_version": "v0317_independence_v1",
+  "seed_overlap_count": 0,
+  "session_id_overlap_count": 0
+}

@@ -1,0 +1,114 @@
+{
+  "backend_tree_after": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_before": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
+  "backend_tree_unchanged": true,
+  "historical_stages_unchanged": false,
+  "schema_version": "v0317_historical_integrity_v1",
+  "stages": [
+    {
+      "after_sha256": "6a8484b83be9c2abdfd8a2afb6f5838e286f3523d0f21b32ce7bf1f9c44e3ae5",
+      "before_sha256": "6a8484b83be9c2abdfd8a2afb6f5838e286f3523d0f21b32ce7bf1f9c44e3ae5",
+      "file_count": 77,
+      "stage": "v0_3_11",
+      "unchanged": true
+    },
+    {
+      "after_sha256": "80a77dc996cc98249f9df87aa8f05986758a10d0911f77d8f3ddeec406358c10",
+      "before_sha256": "20f2b643dbfb0cc4a490fe9f353288a1dbe77881f595f279e16c4e7018038d93",
+      "file_count": 82,
+      "stage": "v0_3_12",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "241a211e2f4318156c1121c5967e250489dcb9a4cb0d4f196f62ef1f0f7139f5",
+      "before_sha256": "209b190367ba3ee9aba11444f2b40968ce371834b8da99620d7672d7cea198c6",
+      "file_count": 29,
+      "stage": "v0_3_12_1",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "4dcddb1f7d7ac2f57e64a20c0c3646cec0afa095cf39623df98e141686630f0f",
+      "before_sha256": "a62dc4274518eda85140aeca203fe06c7cc3d537ac21eb30ba40988d394b3232",
+      "file_count": 94,
+      "stage": "v0_3_12_2",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "7ff3192ef6986bfb636aff99de4bc7e01c8de1d4f293a372088ea7ceac5f476b",
+      "before_sha256": "7ff3192ef6986bfb636aff99de4bc7e01c8de1d4f293a372088ea7ceac5f476b",
+      "file_count": 98,
+      "stage": "v0_3_13",
+      "unchanged": true
+    },
+    {
+      "after_sha256": "a3a6c27b346f5569308d495d0ec4cc830a4a8774ffe6f205326f96d34fbc2a71",
+      "before_sha256": "b2e369edbfd6f81ae546d9b28ba4d3c5477a7b148fdd058e86a0d3e6efa5565f",
+      "file_count": 59,
+      "stage": "v0_3_14",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "403ac32286c393b201cbaeb283f453fd6c0f95d5c1b38baa5bb40f231362aa8a",
+      "before_sha256": "403ac32286c393b201cbaeb283f453fd6c0f95d5c1b38baa5bb40f231362aa8a",
+      "file_count": 68,
+      "stage": "v0_3_15",
+      "unchanged": true
+    },
+    {
+      "after_sha256": "e5d4b028c67f6417078d907c754efc48b2f83e3c2e954db74d20fc4934e4910d",
+      "before_sha256": "e5d4b028c67f6417078d907c754efc48b2f83e3c2e954db74d20fc4934e4910d",
+      "file_count": 33,
+      "stage": "v0_3_15_1",
+      "unchanged": true
+    },
+    {
+      "after_sha256": "6ac5189d20ab2443f633be738ec322a2b91a90e96e25c6cb04f3a7faa74522eb",
+      "before_sha256": "5dc581eac7e9aafded352fbb1243ac75233935a65fd0b1b0d0c139f514a18b6b",
+      "file_count": 71,
+      "stage": "v0_3_15_2",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "cc70364aff6046543f1b8d6a1c4407831ec4751449d795f966f44460f6642c92",
+      "before_sha256": "eb30d00f4b82ea1e6b5195e30f812d650cff39128bef99638d29ed6d359f70e5",
+      "file_count": 40,
+      "stage": "v0_3_15_3",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "9b60e808e1148aec9c765d65e59b082e392dd2cfe1a48a64c29cb999b388844b",
+      "before_sha256": "9ca18e6a58a3f5f13c6fc05d8e979a60372988fc5910b261d7a7fe3afd674ec8",
+      "file_count": 92,
+      "stage": "v0_3_15_4",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "e018e59803a374a2a518784d203af291e30ddbf0ae74bc07139764fad1a9bd79",
+      "before_sha256": "509859cb9b8430c250574b77ff6d10d859c36ff69a54eb21cde92cffb80b0fdb",
+      "file_count": 82,
+      "stage": "v0_3_15_5",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "6c41a5c67a464d29a4de4c7c7bb2f8ebdd439d33ef9c55e305712be460db388c",
+      "before_sha256": "8f4f2a3040d080c4573bd3c7ea599e8c1567dff88e0547c320393a4e6328fcba",
+      "file_count": 54,
+      "stage": "v0_3_15_5_1",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "f57ea565b81aa3528ae9474c10f3d745d78651a1e32df67653226ddff58c3dff",
+      "before_sha256": "7a8f86236416f766041f67f4df715079af8fd24147ae386903c76545aa1f9194",
+      "file_count": 60,
+      "stage": "v0_3_16",
+      "unchanged": false
+    },
+    {
+      "after_sha256": "1892eb1bd64ac116678e8b0318ecbdf85f8e3f890ff10eeaf2a2a030b8d442cb",
+      "before_sha256": "1892eb1bd64ac116678e8b0318ecbdf85f8e3f890ff10eeaf2a2a030b8d442cb",
+      "file_count": 1,
+      "stage": "v0_3_14_errata",
+      "unchanged": true
+    }
+  ]
+}

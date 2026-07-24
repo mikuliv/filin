@@ -1,0 +1,22 @@
+{
+  "base_protocol_sha256": "f2b206eea8bea282158a1970885137fa1794813c5e99d75c61f1e04ee56153d4",
+  "frozen_before_revision_8_first_rehearsal_event": true,
+  "prior_revision_evidence_used": false,
+  "protocol_sha256": "0c8c331484c6c954b101680d2798e2c703810b5282bfaf4a33dbddd6fb3a1d59",
+  "revision": 8,
+  "revision_1_invalidated": true,
+  "revision_2_invalidated": true,
+  "revision_2_protocol_sha256": "dbcd3336bab3553fc9bcfeafb4457762af226548fbece4fcb843423615ca4520",
+  "revision_3_invalidated": true,
+  "revision_3_protocol_sha256": "1870c32bcb831275b886fe9215eca589b76a16a4bfa4c30d0af52f1ae7406572",
+  "revision_4_invalidated": true,
+  "revision_4_protocol_sha256": "a72f339df03720dc027ca188fffcda58e1f5a03e11da9c32554cd770d28df4ff",
+  "revision_5_invalidated": true,
+  "revision_5_protocol_sha256": "61b04f1b5e48b91e60c3dd0794185acae78b17ba249823170c6886ee13054062",
+  "revision_6_invalidated": true,
+  "revision_6_protocol_sha256": "7f4487e8425e4337426973de0bbdab2ae3906eb2e05f7704bbb996d43f9dc86a",
+  "revision_7_invalidated": true,
+  "revision_7_protocol_sha256": "3105896d824f874b5c01aef5bd7f7d1c4bf1cbbd6183e569c2a49c24ceaa5714",
+  "schema_version": "v0317_protocol_lock_v1",
+  "source_head": "4cafc31fba365e886a6bf1411d7e384558197dc8"
+}

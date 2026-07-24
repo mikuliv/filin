@@ -1,0 +1,99 @@
+{
+  "claim_count": 7,
+  "claims": [
+    {
+      "claim": "duration",
+      "claim_id": "v0317-duration",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/campaign_manifest.json",
+          "sha256": "84a68285f4a24bc80ecd02c480d652edc7d10374c571672e0853e191960b390a"
+        },
+        {
+          "path": "ml/reports/v0_3_17/clock_domain_attestation.json",
+          "sha256": "c255f5fb6a298a01a78583ec1bee46fa20675b3065a274457c7cc9079eb0dbeb"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "reconciliation",
+      "claim_id": "v0317-reconciliation",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/source_connector_receiver_reconciliation.json",
+          "sha256": "538c73c98b09d1ea6922e74542482a0566553f1a0a3e2ca84a3310209119b1bf"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "operator",
+      "claim_id": "v0317-operator",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/operator_projection_reconciliation.json",
+          "sha256": "955c3ae5d3432cd8e8c7677a53f4f595ee4b830e899f71e7ce2c863ed8e1e31a"
+        },
+        {
+          "path": "ml/reports/v0_3_17/operator_view_read_only_report.json",
+          "sha256": "6a0ef377c91cf37878575e5744b6786a384298e60ca11755e7de43a48ac796e2"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "maintenance",
+      "claim_id": "v0317-maintenance",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/maintenance_execution_report.json",
+          "sha256": "7c1b4f1337bcf34fef914bdaecd781ce7d7fc21b7c73166551d5089aa64235c1"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "resources",
+      "claim_id": "v0317-resources",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/resource_trend_report.json",
+          "sha256": "1f38c30fde10ba4f63877c50e19f29abd20d88049836b975e75f414a9c5ed8ad"
+        },
+        {
+          "path": "ml/reports/v0_3_17/memory_leak_analysis.json",
+          "sha256": "cf64a93dd6b8715f370d66b7da0aa3d06ddcd1d8f93449eaea0dff3931355905"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "privacy",
+      "claim_id": "v0317-privacy",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/privacy_report.json",
+          "sha256": "c5e346d75ba2327e4458b9f5b0ebda692cecd6bad3d7c148f015aa950949879f"
+        },
+        {
+          "path": "ml/reports/v0_3_17/secret_scan_report.json",
+          "sha256": "a1fcfcf2594bf28e07fbcf3446361f130d5ad9a7c55011624a4105c0902885a0"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    },
+    {
+      "claim": "readiness",
+      "claim_id": "v0317-readiness",
+      "evidence": [
+        {
+          "path": "ml/reports/v0_3_17/readiness_decision.json",
+          "sha256": "ad957036220f020b92c38d42f438fa2cfa7745e5b2f0ebf54ff291903276dc20"
+        }
+      ],
+      "policy_result_used_as_self_evidence": false
+    }
+  ],
+  "schema_version": "v0317_claim_evidence_v1"
+}

@@ -1,0 +1,9 @@
+{
+  "negative_fixture_detection_rate": 1.0,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 0,
+  "privacy_policy_passed": true,
+  "schema_version": "v0317_privacy_v1",
+  "synthetic_reserved_network_identifiers_confined_to_runtime_pcap": true,
+  "target_count": 17
+}

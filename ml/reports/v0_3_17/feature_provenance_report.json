@@ -1,0 +1,13 @@
+{
+  "feature_contract_id": "network_features_v2",
+  "feature_count": 51,
+  "feature_provenance_coverage": 1.0,
+  "feature_provenance_passed": true,
+  "future_derived_feature_count": 0,
+  "guessed_feature_count": 0,
+  "hidden_state_derived_feature_count": 0,
+  "label_derived_feature_count": 0,
+  "provenance_record_count": 10272420,
+  "schema_version": "v0317_feature_provenance_v1",
+  "scored_window_count": 201420
+}

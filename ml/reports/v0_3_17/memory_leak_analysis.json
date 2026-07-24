@@ -1,0 +1,13 @@
+{
+  "compaction_effective": true,
+  "fd_thread_leak_policy_passed": true,
+  "final_backlog": 0,
+  "memory_leak_policy_passed": true,
+  "schema_version": "v0317_leak_analysis_v1",
+  "trend_method": "ordinary_least_squares_slope_after_first_900_seconds_with_restart_segments_reported_separately",
+  "unbounded_fd_growth": false,
+  "unbounded_journal_growth": false,
+  "unbounded_memory_growth": false,
+  "unbounded_thread_growth": false,
+  "unbounded_wal_growth": false
+}

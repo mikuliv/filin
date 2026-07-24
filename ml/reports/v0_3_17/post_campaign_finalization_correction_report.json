@@ -1,0 +1,31 @@
+{
+  "schema_version": "v0317_post_campaign_finalization_correction_v1",
+  "stage": "v0.3.17",
+  "protocol_revision": 8,
+  "campaign_data_modified": false,
+  "frozen_campaign_code_modified": false,
+  "finalizer_failure": {
+    "exception": "NameError",
+    "missing_name": "LOCK_PATH",
+    "source_line": 334,
+    "recovery": "Модуль импортирован без изменения исходного файла; LOCK_PATH задан как ml/reports/v0_3_17/pre_campaign_code_lock.json перед вызовом main()."
+  },
+  "strict_bundle_validation": {
+    "passed": false,
+    "structural_errors": [],
+    "corruption_case_count": 20,
+    "corruption_rejected_count": 18,
+    "unrejected_cases": [
+      15,
+      16
+    ]
+  },
+  "corrected_claims": {
+    "corrupted_bundle_rejected": false,
+    "bundle_validator_passed": false,
+    "v0317_stage_passed": false,
+    "candidate_ready_for_v0_3_18_external_review_and_trial_design": false
+  },
+  "next_allowed_stage": "v0.3.17.1",
+  "readiness_expansion_allowed": false
+}

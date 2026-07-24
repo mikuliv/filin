@@ -1,0 +1,129 @@
+{
+  "canonical_fixture_inclusion_count": 0,
+  "cases": [
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "plaintext_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "tls_1_2_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "missing_certificate_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "expired_certificate_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "wrong_san_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "untrusted_ca_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "revoked_fixture_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "wrong_registry_commitment_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "unknown_candidate_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "wrong_candidate_hash_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "event_contract_mismatch_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "body_hash_mismatch_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "oversized_request_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "extra_property_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "idempotency_collision_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "replay_idempotent",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "operator_post_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "operator_put_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "operator_delete_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "operator_write_volume_unavailable",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "raw_credential_projection_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "raw_feature_projection_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "label_projection_rejected",
+      "rejected": true
+    },
+    {
+      "canonical_event_inclusion_count": 0,
+      "case": "path_traversal_rejected",
+      "rejected": true
+    }
+  ],
+  "schema_version": "v0317_security_negative_v1",
+  "security_negative_case_count": 24,
+  "security_negative_rejected_count": 24,
+  "security_negative_tests_passed": true
+}

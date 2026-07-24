@@ -1,0 +1,14 @@
+{
+  "all_roots_non_null": true,
+  "chain_continuity_passed": true,
+  "compaction_invariance_passed": true,
+  "connector_batch_chain_root": "5c1efeb7985ba654609dc040818b56c02b43e6db209087f520d978dcc94a7a16",
+  "connector_journal_chain_root": "0a3fe8202aeafc745e1b5a96f5596cca0c6d3536cb9fa2b6337b9da12741869e",
+  "hash_chain_policy_passed": true,
+  "maintenance_chain_root": "0f8dfe393146328fdefc47c3e78cb19895fec92df4cb2d2c7d8fc94be53b137f",
+  "operator_snapshot_chain_root": "9cf8b170910bfb1e5e1933cbcb9c0011a13f8ff88b046c4e505b62b381c37513",
+  "receiver_commit_chain_root": "98b70dd540179b48abc0073c71a553b6029dae350d0fd3104e9f223207567dc7",
+  "restart_invariance_passed": true,
+  "schema_version": "v0317_hash_chains_v1",
+  "sensor_hash_chain_root": "07713f4a1217960bd72e89ba3af5fe951aaf827a5cacebb4a85c7ee697788b46"
+}

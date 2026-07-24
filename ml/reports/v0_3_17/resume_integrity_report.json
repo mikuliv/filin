@@ -1,0 +1,17 @@
+{
+  "acknowledged_event_resend_count": 0,
+  "corrupted_bundle_rejected": false,
+  "corruption_case_count": 20,
+  "corruption_rejected_count": 18,
+  "repeated_bundle_finalization_count": 0,
+  "repeated_capture_count": 0,
+  "repeated_certificate_generation_count": 0,
+  "repeated_event_generation_count": 0,
+  "repeated_feature_extraction_count": 0,
+  "repeated_inference_count": 0,
+  "repeated_maintenance_count": 0,
+  "repeated_zeek_count": 0,
+  "schema_version": "v0317_resume_integrity_v1",
+  "strict_resume_hash_verification_passed": true,
+  "strict_resume_passed": true
+}

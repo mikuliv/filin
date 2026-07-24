@@ -1,0 +1,66 @@
+{
+  "schema_version": "v0317_session_manifest_v1",
+  "session_count": 12,
+  "sessions": [
+    {
+      "run": "local_rehearsal_endurance_r9_001",
+      "seed": 34111,
+      "session_id": "rehearsal_nominal_r8_001"
+    },
+    {
+      "run": "local_rehearsal_endurance_r9_001",
+      "seed": 34112,
+      "session_id": "rehearsal_nominal_r8_002"
+    },
+    {
+      "run": "local_rehearsal_endurance_r9_001",
+      "seed": 34113,
+      "session_id": "rehearsal_nominal_r8_003"
+    },
+    {
+      "run": "local_rehearsal_endurance_r9_001",
+      "seed": 34114,
+      "session_id": "rehearsal_background_shift_r8_001"
+    },
+    {
+      "run": "local_rehearsal_transition_r9_001",
+      "seed": 34211,
+      "session_id": "rehearsal_background_shift_r8_002"
+    },
+    {
+      "run": "local_rehearsal_transition_r9_001",
+      "seed": 34212,
+      "session_id": "rehearsal_background_shift_r8_003"
+    },
+    {
+      "run": "local_rehearsal_transition_r9_001",
+      "seed": 34213,
+      "session_id": "rehearsal_burst_r8_001"
+    },
+    {
+      "run": "local_rehearsal_transition_r9_001",
+      "seed": 34214,
+      "session_id": "rehearsal_burst_r8_002"
+    },
+    {
+      "run": "local_rehearsal_transition_r9_001",
+      "seed": 34311,
+      "session_id": "rehearsal_maintenance_r8_001"
+    },
+    {
+      "run": "local_rehearsal_recovery_r9_001",
+      "seed": 34312,
+      "session_id": "rehearsal_restart_r8_001"
+    },
+    {
+      "run": "local_rehearsal_recovery_r9_001",
+      "seed": 34313,
+      "session_id": "rehearsal_disk_pressure_r8_001"
+    },
+    {
+      "run": "local_rehearsal_recovery_r9_001",
+      "seed": 34314,
+      "session_id": "rehearsal_recovery_r8_001"
+    }
+  ]
+}

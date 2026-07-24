@@ -1,0 +1,11 @@
+{
+  "acknowledged_records_compacted": true,
+  "compaction_effective": true,
+  "compaction_passed": true,
+  "event_set_equality_preserved": true,
+  "hash_chain_roots_preserved": true,
+  "receiver_durable_events_preserved": true,
+  "schema_version": "v0317_compaction_v1",
+  "strict_resume_preserved": true,
+  "unacknowledged_records_preserved": true
+}

@@ -1,0 +1,11 @@
+{
+  "duplicate_prediction_count": 0,
+  "missing_prediction_count": 0,
+  "prediction_count": 201600,
+  "prediction_identity_mismatch_count": 0,
+  "prediction_integrity_passed": true,
+  "prediction_manifest_sha256": "05977958ad229c67326349a8223630738a79fce67c85c12808def5e1dc443bc1",
+  "repeated_inference_count": 0,
+  "schema_version": "v0317_prediction_integrity_v1",
+  "unique_prediction_count": 201600
+}

@@ -1,0 +1,9 @@
+{
+  "behavioral_tests_passed": true,
+  "ci_stage_tests_enabled": true,
+  "compileall_passed": true,
+  "pytest_stderr_tail": "",
+  "pytest_stdout_tail": "........................................................................ [ 93%]\n.....                                                                    [100%]\n77 passed in 6.88s\n",
+  "schema_version": "v0317_verification_v1",
+  "test_count": 77
+}

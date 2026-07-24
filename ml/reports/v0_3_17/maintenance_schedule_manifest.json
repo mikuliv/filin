@@ -1,0 +1,146 @@
+{
+  "fields": [
+    "operation_id",
+    "scheduled_run",
+    "scheduled_offset",
+    "preconditions",
+    "expected_temporary_effect",
+    "success_oracle",
+    "recovery_condition",
+    "evidence_artifact"
+  ],
+  "operations": [
+    {
+      "evidence_artifact": "certificate_rotation_report.json",
+      "expected_temporary_effect": "tls_reconnect",
+      "operation_id": "rotate_sensor_connector_certificate",
+      "preconditions": "cert_a_active_and_b_prepared",
+      "recovery_condition": "rollback_to_prepared_b",
+      "scheduled_offset": 3300,
+      "scheduled_run": "run_b",
+      "success_oracle": "cert_b_active_old_a_rejected_no_loss"
+    },
+    {
+      "evidence_artifact": "certificate_rotation_report.json",
+      "expected_temporary_effect": "tls_reconnect",
+      "operation_id": "rotate_connector_receiver_certificate",
+      "preconditions": "cert_a_active_and_b_prepared",
+      "recovery_condition": "rollback_to_prepared_b",
+      "scheduled_offset": 3450,
+      "scheduled_run": "run_b",
+      "success_oracle": "cert_b_active_old_a_rejected_no_loss"
+    },
+    {
+      "evidence_artifact": "restart_recovery_report.json",
+      "expected_temporary_effect": "bounded_backlog",
+      "operation_id": "connector_planned_restart",
+      "preconditions": "journal_checkpointed",
+      "recovery_condition": "restart_from_checkpoint",
+      "scheduled_offset": 3900,
+      "scheduled_run": "run_b",
+      "success_oracle": "resume_without_semantic_duplicate"
+    },
+    {
+      "evidence_artifact": "restart_recovery_report.json",
+      "expected_temporary_effect": "bounded_backlog",
+      "operation_id": "receiver_planned_restart",
+      "preconditions": "wal_checkpointed",
+      "recovery_condition": "wal_recovery",
+      "scheduled_offset": 4200,
+      "scheduled_run": "run_b",
+      "success_oracle": "resume_without_loss"
+    },
+    {
+      "evidence_artifact": "restart_recovery_report.json",
+      "expected_temporary_effect": "input_pause",
+      "operation_id": "sensor_planned_restart",
+      "preconditions": "outbox_durable",
+      "recovery_condition": "outbox_resume",
+      "scheduled_offset": 4500,
+      "scheduled_run": "run_b",
+      "success_oracle": "resume_without_reinference"
+    },
+    {
+      "evidence_artifact": "restart_recovery_report.json",
+      "expected_temporary_effect": "bounded_backlog",
+      "operation_id": "connector_receiver_simultaneous_restart",
+      "preconditions": "checkpoints_valid",
+      "recovery_condition": "ordered_receiver_then_connector_start",
+      "scheduled_offset": 4800,
+      "scheduled_run": "run_b",
+      "success_oracle": "causal_resume"
+    },
+    {
+      "evidence_artifact": "maintenance_execution_report.json",
+      "expected_temporary_effect": "none",
+      "operation_id": "connector_journal_checkpoint",
+      "preconditions": "journal_writable",
+      "recovery_condition": "preserve_unacknowledged",
+      "scheduled_offset": 900,
+      "scheduled_run": "run_c",
+      "success_oracle": "checkpoint_valid"
+    },
+    {
+      "evidence_artifact": "maintenance_execution_report.json",
+      "expected_temporary_effect": "short_write_pause",
+      "operation_id": "receiver_wal_checkpoint",
+      "preconditions": "receiver_writable",
+      "recovery_condition": "wal_recovery",
+      "scheduled_offset": 1500,
+      "scheduled_run": "run_c",
+      "success_oracle": "checkpoint_valid"
+    },
+    {
+      "evidence_artifact": "maintenance_execution_report.json",
+      "expected_temporary_effect": "none",
+      "operation_id": "receiver_snapshot",
+      "preconditions": "commit_range_closed",
+      "recovery_condition": "discard_partial_snapshot",
+      "scheduled_offset": 1650,
+      "scheduled_run": "run_c",
+      "success_oracle": "snapshot_hash_valid"
+    },
+    {
+      "evidence_artifact": "compaction_report.json",
+      "expected_temporary_effect": "short_checkpoint_pause",
+      "operation_id": "connector_journal_compaction",
+      "preconditions": "backlog_zero",
+      "recovery_condition": "restore_precompact_copy",
+      "scheduled_offset": 3060,
+      "scheduled_run": "run_c",
+      "success_oracle": "roots_and_event_sets_preserved"
+    },
+    {
+      "evidence_artifact": "operator_snapshot_manifest.json",
+      "expected_temporary_effect": "none",
+      "operation_id": "operator_projection_snapshot",
+      "preconditions": "receiver_commit_range_closed",
+      "recovery_condition": "discard_partial_snapshot",
+      "scheduled_offset": 5100,
+      "scheduled_run": "run_b",
+      "success_oracle": "immutable_private_snapshot"
+    },
+    {
+      "evidence_artifact": "maintenance_execution_report.json",
+      "expected_temporary_effect": "none",
+      "operation_id": "log_rotation",
+      "preconditions": "sanitized_logs_open",
+      "recovery_condition": "reopen_current_log",
+      "scheduled_offset": 3120,
+      "scheduled_run": "run_c",
+      "success_oracle": "chain_continuity"
+    },
+    {
+      "evidence_artifact": "resource_trend_report.json",
+      "expected_temporary_effect": "none",
+      "operation_id": "metrics_snapshot",
+      "preconditions": "sampler_healthy",
+      "recovery_condition": "retry_snapshot_only",
+      "scheduled_offset": 3240,
+      "scheduled_run": "run_c",
+      "success_oracle": "aggregate_hash_valid"
+    }
+  ],
+  "schedule_sha256": "1c9c77332e05443f41bfd50c0fb6c881f5b5cfa426c893dcc0342401652c728b",
+  "schema_version": "v0317_maintenance_schedule_v1"
+}

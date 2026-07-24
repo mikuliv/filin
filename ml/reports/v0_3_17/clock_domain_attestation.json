@@ -1,0 +1,12 @@
+{
+  "clock_domain_attestation_passed": false,
+  "monotonic_clock_used": true,
+  "ordering_violation_count": 69806,
+  "run_count": 3,
+  "schema_version": "v0317_clock_attestation_v1",
+  "sleep_mocked": false,
+  "system_time_changed": false,
+  "time_acceleration": false,
+  "timestamp_only_simulation": false,
+  "wall_clock_used": true
+}

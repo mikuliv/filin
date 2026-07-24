@@ -1,0 +1,120 @@
+{
+  "schedule": {
+    "run_a": [
+      {
+        "end_second": 900,
+        "phase": "warmup_and_settling",
+        "rate": "nominal_5",
+        "start_second": 0
+      },
+      {
+        "end_second": 4500,
+        "phase": "nominal",
+        "rate": "nominal_10",
+        "start_second": 900
+      },
+      {
+        "end_second": 5400,
+        "phase": "low_activity",
+        "rate": "idle_1",
+        "start_second": 4500
+      }
+    ],
+    "run_b": [
+      {
+        "end_second": 60,
+        "phase": "warmup",
+        "rate": "nominal_5",
+        "start_second": 0
+      },
+      {
+        "end_second": 1200,
+        "phase": "nominal",
+        "rate": "nominal_10",
+        "start_second": 60
+      },
+      {
+        "end_second": 2400,
+        "phase": "gradual_increase",
+        "rate": "elevated_linear_20_to_50",
+        "start_second": 1200
+      },
+      {
+        "end_second": 2520,
+        "phase": "burst",
+        "rate": "burst_100",
+        "start_second": 2400
+      },
+      {
+        "end_second": 3600,
+        "phase": "return_to_nominal",
+        "rate": "nominal_10",
+        "start_second": 2520
+      },
+      {
+        "end_second": 5400,
+        "phase": "maintenance",
+        "rate": "nominal_10",
+        "start_second": 3600
+      }
+    ],
+    "run_c": [
+      {
+        "end_second": 60,
+        "phase": "warmup",
+        "rate": "nominal_5",
+        "start_second": 0
+      },
+      {
+        "end_second": 600,
+        "phase": "receiver_slowdown",
+        "rate": "elevated_20",
+        "start_second": 60
+      },
+      {
+        "end_second": 1200,
+        "phase": "bounded_backlog_growth",
+        "rate": "elevated_30",
+        "start_second": 600
+      },
+      {
+        "end_second": 1800,
+        "phase": "controlled_storage_pressure",
+        "rate": "nominal_10",
+        "start_second": 1200
+      },
+      {
+        "end_second": 1950,
+        "phase": "receiver_unavailability",
+        "rate": "nominal_10",
+        "start_second": 1800
+      },
+      {
+        "end_second": 2400,
+        "phase": "recovery",
+        "rate": "elevated_50",
+        "start_second": 1950
+      },
+      {
+        "end_second": 3000,
+        "phase": "backlog_drain",
+        "rate": "nominal_10",
+        "start_second": 2400
+      },
+      {
+        "end_second": 3300,
+        "phase": "compaction",
+        "rate": "idle_1",
+        "start_second": 3000
+      },
+      {
+        "end_second": 3600,
+        "phase": "strict_resume",
+        "rate": "idle_1",
+        "start_second": 3300
+      }
+    ]
+  },
+  "schedule_sha256": "4b1fb9ab8a37f5f9d28b305d7d5641c6a5bd3ad721b0fbafd047a22b56b2c496",
+  "schema_version": "v0317_workload_schedule_v1"
+}

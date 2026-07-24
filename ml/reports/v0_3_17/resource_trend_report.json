@@ -1,0 +1,61 @@
+{
+  "combined_peak_rss_mib": 320.14999771118164,
+  "components": {
+    "operator-view": {
+      "cpu_average_percent": 2.067095588235294,
+      "cpu_p95_percent": 18.6105,
+      "health_sample_ratio": 1.0,
+      "readiness_sample_ratio": 1.0,
+      "rss_p95_mib": 23.620999860763547,
+      "rss_peak_mib": 40.709999084472656,
+      "sample_count": 1360,
+      "time_series_sha256": "34c5117bb4b8248508ee172c6474f521e171ee703db29e919701dea42777c0c7"
+    },
+    "reference-receiver": {
+      "cpu_average_percent": 1.479970588235294,
+      "cpu_p95_percent": 9.291499999999997,
+      "health_sample_ratio": 0.9882352941176471,
+      "readiness_sample_ratio": 0.9882352941176471,
+      "rss_p95_mib": 65.46149911880492,
+      "rss_peak_mib": 73.41999912261963,
+      "sample_count": 1360,
+      "time_series_sha256": "df9e498ffdd7bdf70d9808b2f6f14ea1bfaa6d9c430e399dcb0506440b4a9999"
+    },
+    "sensor-runtime": {
+      "cpu_average_percent": 1.5804338235294118,
+      "cpu_p95_percent": 9.620499999999998,
+      "health_sample_ratio": 0.9992647058823529,
+      "readiness_sample_ratio": 0.9992647058823529,
+      "rss_p95_mib": 18.399999618530273,
+      "rss_peak_mib": 24.81999969482422,
+      "sample_count": 1360,
+      "time_series_sha256": "a8c7dc059da17bd79b07d459f82ae5af81fa027dccc40538e05ed6ce15920537"
+    },
+    "staging-connector": {
+      "cpu_average_percent": 1.572205882352941,
+      "cpu_p95_percent": 8.92,
+      "health_sample_ratio": 0.9985294117647059,
+      "readiness_sample_ratio": 0.9985294117647059,
+      "rss_p95_mib": 75.79999971389769,
+      "rss_peak_mib": 181.19999980926514,
+      "sample_count": 1360,
+      "time_series_sha256": "6ccfe75c568a9193e34a04fb078c959e6eced26b954653bdc2da4f14f3330385"
+    },
+    "traffic-source": {
+      "cpu_average_percent": 1.200294117647059,
+      "cpu_p95_percent": 9.200999999999999,
+      "health_sample_ratio": 1.0,
+      "readiness_sample_ratio": 1.0,
+      "rss_p95_mib": 15.169999122619629,
+      "rss_peak_mib": 23.449999809265137,
+      "sample_count": 1360,
+      "time_series_sha256": "42852fd25211273707e95c0b89a12b98c07f37d30d49ae498c72de3d75e1d9c5"
+    }
+  },
+  "resource_policy_passed": true,
+  "resource_trace_manifest_sha256": "b2814a295ef3a3a0ff7f369ee083d5fa1a8deff3b0c0d2fd8ef71a98d7773660",
+  "sample_interval_seconds": 10,
+  "schema_version": "v0317_resource_trend_v1",
+  "swap_growth_mib": 0,
+  "total_sample_count": 6800
+}

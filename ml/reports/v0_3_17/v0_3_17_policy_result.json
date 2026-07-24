@@ -1,0 +1,475 @@
+{
+  "actual_wall_clock_duration_seconds": 14400.000291072,
+  "all_internal": true,
+  "artifact_exclusion_validator_passed": true,
+  "automatic_action_attempt_count": 0,
+  "automatic_enforcement_ready": false,
+  "availability_policy_passed": true,
+  "backend_endpoint_call_count": 0,
+  "backend_import_count": 0,
+  "backend_integration_allowed": false,
+  "backend_route_count": 0,
+  "backend_tree_unchanged": true,
+  "backend_write_attempt_count": 0,
+  "backpressure_policy_passed": true,
+  "behavioral_tests_passed": true,
+  "bundle_validator_passed": false,
+  "calibration_fit_call_count": 0,
+  "candidate_identity_unchanged": true,
+  "candidate_ready_for_shadow_mode": false,
+  "candidate_ready_for_v0_3_18_external_review_and_trial_design": false,
+  "candidate_registry_unchanged": true,
+  "candidate_replacement_count": 0,
+  "captured_window_count": 201600,
+  "causal_order_violation_count": 0,
+  "certificate_rotation_count": 2,
+  "certificate_rotation_passed": true,
+  "ci_stage_tests_enabled": true,
+  "clock_domain_attestation_passed": false,
+  "combined_peak_rss_mib": 320.14999771118164,
+  "compaction_effective": true,
+  "component_architecture_passed": true,
+  "component_count": 5,
+  "components": [
+    "traffic-source",
+    "reference-receiver",
+    "staging-connector",
+    "sensor-runtime",
+    "operator-view"
+  ],
+  "conformal_fit_call_count": 0,
+  "connector_batch_chain_root": "5c1efeb7985ba654609dc040818b56c02b43e6db209087f520d978dcc94a7a16",
+  "connector_component_separate": true,
+  "connector_durable_event_count": 201420,
+  "connector_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "connector_ingress_ack_p95_ms": 3824.57204955,
+  "connector_journal_chain_root": "0a3fe8202aeafc745e1b5a96f5596cca0c6d3536cb9fa2b6337b9da12741869e",
+  "connector_peak_rss_mib": 181.19999980926514,
+  "connector_pending_event_count": 0,
+  "connector_process_availability": 0.9985294117647059,
+  "connector_receiver_acknowledged_count": 201420,
+  "connector_to_receiver_p95_ms": 202.964688,
+  "container_hardening_passed": true,
+  "corrupted_bundle_rejected": false,
+  "corruption_case_count": 20,
+  "corruption_rejected_count": 18,
+  "cross_activity_contamination_count": 0,
+  "cross_session_contamination_count": 0,
+  "disk_pressure_policy_passed": true,
+  "duplicate_prediction_count": 0,
+  "duplicate_window_count": 0,
+  "event_continuity_passed": true,
+  "event_contract_unchanged": true,
+  "external_network_attempt_count": 0,
+  "external_route_count": 0,
+  "external_validation_completed": false,
+  "fault_campaign_passed": true,
+  "fault_failed_count": 0,
+  "fault_passed_count": 30,
+  "fault_scenario_count": 30,
+  "fault_unsupported_count": 0,
+  "feature_contract_unchanged": true,
+  "feature_provenance_coverage": 1.0,
+  "feature_selection_call_count": 0,
+  "final_backlog": 0,
+  "first_alert_lost_count": 0,
+  "fit_call_count": 0,
+  "future_derived_feature_count": 0,
+  "gate_results": [
+    {
+      "gate": "protocol_frozen_before_campaign",
+      "passed": true
+    },
+    {
+      "gate": "pre_campaign_code_lock_created",
+      "passed": true
+    },
+    {
+      "gate": "historical_stages_unchanged",
+      "passed": false
+    },
+    {
+      "gate": "candidate_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "contracts_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "registry_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "backend_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "architecture_separation_passed",
+      "passed": true
+    },
+    {
+      "gate": "internal_network_topology_passed",
+      "passed": true
+    },
+    {
+      "gate": "published_ports_zero",
+      "passed": true
+    },
+    {
+      "gate": "external_routes_zero",
+      "passed": true
+    },
+    {
+      "gate": "container_hardening_passed",
+      "passed": true
+    },
+    {
+      "gate": "actual_wall_clock_duration_at_least_4_hours",
+      "passed": true
+    },
+    {
+      "gate": "run_a_at_least_90_minutes",
+      "passed": true
+    },
+    {
+      "gate": "run_b_at_least_90_minutes",
+      "passed": true
+    },
+    {
+      "gate": "run_c_at_least_60_minutes",
+      "passed": true
+    },
+    {
+      "gate": "campaign_independence_passed",
+      "passed": true
+    },
+    {
+      "gate": "capture_windows_at_least_14400",
+      "passed": true
+    },
+    {
+      "gate": "missing_windows_zero",
+      "passed": true
+    },
+    {
+      "gate": "duplicate_windows_zero",
+      "passed": true
+    },
+    {
+      "gate": "no_fit_audit_passed",
+      "passed": true
+    },
+    {
+      "gate": "prediction_integrity_passed",
+      "passed": true
+    },
+    {
+      "gate": "feature_provenance_passed",
+      "passed": true
+    },
+    {
+      "gate": "event_continuity_passed",
+      "passed": true
+    },
+    {
+      "gate": "candidate_state_identity_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "source_connector_receiver_event_sets_equal",
+      "passed": true
+    },
+    {
+      "gate": "pending_events_zero",
+      "passed": true
+    },
+    {
+      "gate": "semantic_duplicates_zero",
+      "passed": true
+    },
+    {
+      "gate": "idempotency_collisions_zero",
+      "passed": true
+    },
+    {
+      "gate": "unaccounted_drops_zero",
+      "passed": true
+    },
+    {
+      "gate": "first_alert_loss_zero",
+      "passed": true
+    },
+    {
+      "gate": "review_event_loss_zero",
+      "passed": true
+    },
+    {
+      "gate": "operator_projection_correctness_passed",
+      "passed": true
+    },
+    {
+      "gate": "operator_write_attempts_zero",
+      "passed": true
+    },
+    {
+      "gate": "operator_snapshots_at_least_24",
+      "passed": true
+    },
+    {
+      "gate": "maintenance_operations_passed",
+      "passed": true
+    },
+    {
+      "gate": "certificate_rotations_passed",
+      "passed": true
+    },
+    {
+      "gate": "restart_scenarios_passed",
+      "passed": true
+    },
+    {
+      "gate": "disk_pressure_scenarios_passed",
+      "passed": true
+    },
+    {
+      "gate": "backpressure_passed",
+      "passed": true
+    },
+    {
+      "gate": "fault_campaign_passed",
+      "passed": true
+    },
+    {
+      "gate": "security_negative_tests_passed",
+      "passed": true
+    },
+    {
+      "gate": "hash_commit_chains_passed",
+      "passed": true
+    },
+    {
+      "gate": "compaction_passed",
+      "passed": true
+    },
+    {
+      "gate": "clock_domain_attestation_passed",
+      "passed": false
+    },
+    {
+      "gate": "long_duration_latency_policy_passed",
+      "passed": false
+    },
+    {
+      "gate": "throughput_policy_passed",
+      "passed": false
+    },
+    {
+      "gate": "resource_policy_passed",
+      "passed": true
+    },
+    {
+      "gate": "memory_leak_policy_passed",
+      "passed": true
+    },
+    {
+      "gate": "fd_thread_leak_policy_passed",
+      "passed": true
+    },
+    {
+      "gate": "availability_policy_passed",
+      "passed": true
+    },
+    {
+      "gate": "privacy_policy_passed",
+      "passed": true
+    },
+    {
+      "gate": "secret_scan_passed",
+      "passed": true
+    },
+    {
+      "gate": "strict_resume_passed",
+      "passed": true
+    },
+    {
+      "gate": "corruption_cases_rejected",
+      "passed": false
+    },
+    {
+      "gate": "bundle_validator_passed",
+      "passed": false
+    },
+    {
+      "gate": "artifact_exclusion_passed",
+      "passed": true
+    },
+    {
+      "gate": "documentation_validator_passed",
+      "passed": true
+    },
+    {
+      "gate": "external_network_attempts_zero",
+      "passed": true
+    },
+    {
+      "gate": "production_attempts_zero",
+      "passed": true
+    },
+    {
+      "gate": "backend_calls_zero",
+      "passed": true
+    },
+    {
+      "gate": "backend_writes_zero",
+      "passed": true
+    },
+    {
+      "gate": "automatic_actions_zero",
+      "passed": true
+    },
+    {
+      "gate": "network_blocks_zero",
+      "passed": true
+    },
+    {
+      "gate": "worktree_clean",
+      "passed": true
+    }
+  ],
+  "guessed_feature_count": 0,
+  "hash_chain_policy_passed": true,
+  "hidden_state_derived_feature_count": 0,
+  "historical_stages_unchanged": false,
+  "host_network_usage_count": 0,
+  "idempotency_collision_count": 0,
+  "internal_network_count": 3,
+  "label_derived_feature_count": 0,
+  "labels_created": false,
+  "labels_used": false,
+  "long_duration_latency_policy_passed": false,
+  "maintenance_chain_root": "0f8dfe393146328fdefc47c3e78cb19895fec92df4cb2d2c7d8fc94be53b137f",
+  "maintenance_operation_count": 23,
+  "maintenance_operation_passed_count": 23,
+  "maintenance_schedule_passed": true,
+  "missing_prediction_count": 0,
+  "missing_window_count": 0,
+  "negative_fixture_detection_rate": 1.0,
+  "network_block_attempt_count": 0,
+  "network_names": [
+    "filin_sensor_connector_internal",
+    "filin_connector_receiver_internal",
+    "filin_receiver_operator_internal"
+  ],
+  "network_topology_passed": true,
+  "no_fit_audit_passed": true,
+  "operator_ghost_event_count": 0,
+  "operator_order_violation_count": 0,
+  "operator_peak_rss_mib": 40.709999084472656,
+  "operator_projectable_event_count": 201420,
+  "operator_projected_unique_event_count": 201420,
+  "operator_projection_policy_passed": true,
+  "operator_projection_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "operator_snapshot_chain_root": "9cf8b170910bfb1e5e1933cbcb9c0011a13f8ff88b046c4e505b62b381c37513",
+  "operator_snapshot_count": 73,
+  "operator_state_mismatch_count": 0,
+  "operator_unexplained_missing_event_count": 0,
+  "operator_view_availability": 1.0,
+  "operator_view_component_separate": true,
+  "operator_view_read_only_passed": true,
+  "out_of_order_window_count": 0,
+  "partial_fit_call_count": 0,
+  "performance_policy_passed": false,
+  "prediction_identity_mismatch_count": 0,
+  "prior_revision_evidence_used": false,
+  "privacy_all_targets_scanned": true,
+  "privacy_finding_count": 0,
+  "privacy_policy_passed": true,
+  "processed_window_count": 201600,
+  "processing_lag_policy_passed": true,
+  "production_connection_allowed": false,
+  "production_connection_attempt_count": 0,
+  "production_ready": false,
+  "protocol_revision": 8,
+  "published_port_count": 0,
+  "real_notifications_allowed": false,
+  "real_organization_trial_allowed": false,
+  "real_traffic_capture_allowed": false,
+  "receiver_commit_chain_root": "98b70dd540179b48abc0073c71a553b6029dae350d0fd3104e9f223207567dc7",
+  "receiver_component_separate": true,
+  "receiver_durable_availability": 1.0,
+  "receiver_durable_throughput": 13.987499717266006,
+  "receiver_durable_unique_event_count": 201420,
+  "receiver_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "receiver_peak_rss_mib": 73.41999912261963,
+  "receiver_pending_transaction_count": 0,
+  "receiver_process_availability": 1.0,
+  "receiver_to_operator_projection_p95_ms": 600000.0,
+  "repeated_inference_count": 0,
+  "resource_policy_passed": true,
+  "restart_scenario_count": 7,
+  "restart_scenario_passed_count": 7,
+  "review_event_lost_count": 0,
+  "revision_1_invalidated": true,
+  "revision_2_invalidated": true,
+  "revision_3_invalidated": true,
+  "revision_4_invalidated": true,
+  "revision_5_invalidated": true,
+  "revision_6_invalidated": true,
+  "revision_7_invalidated": true,
+  "run_a_duration_seconds": 5400.000125598,
+  "run_b_duration_seconds": 5400.000042415,
+  "run_c_duration_seconds": 3600.000123059,
+  "run_count": 3,
+  "runtime_only_trial": true,
+  "scheduled_window_count": 201600,
+  "schema_version": "v0317_policy_result_v1",
+  "scientific_comparison_performed": false,
+  "scientific_metrics_recomputed": false,
+  "scored_window_count": 201420,
+  "secret_finding_count": 0,
+  "security_negative_case_count": 24,
+  "security_negative_rejected_count": 24,
+  "security_negative_tests_passed": true,
+  "semantic_documentation_validator_passed": true,
+  "semantic_duplicate_count": 0,
+  "sensor_component_separate": true,
+  "sensor_connector_acknowledged_count": 201420,
+  "sensor_event_set_sha256": "89106562c66252644e59d9001cb046388f72e39b0c431f653a31f9e49ded0769",
+  "sensor_hash_chain_root": "07713f4a1217960bd72e89ba3af5fe951aaf827a5cacebb4a85c7ee697788b46",
+  "sensor_peak_rss_mib": 24.81999969482422,
+  "sensor_pending_event_count": 0,
+  "sensor_process_availability": 0.9992647058823529,
+  "sensor_ready_for_backend_integration": false,
+  "sensor_source_event_count": 201420,
+  "sensor_to_receiver_p95_ms": 5311.11062555,
+  "sensor_to_receiver_p99_ms": 18174.04717931,
+  "shadow_mode_allowed": false,
+  "source_connector_receiver_sets_equal": true,
+  "stage": "v0.3.17",
+  "stage_status": "completed",
+  "staging_transport_contracts_unchanged": true,
+  "strict_resume_hash_verification_passed": true,
+  "strict_resume_passed": true,
+  "swap_growth_mib": 0,
+  "threshold_selection_call_count": 0,
+  "traffic_session_count": 12,
+  "traffic_source_component_separate": true,
+  "transport_attempt_count": 12750,
+  "transport_duplicate_count": 436080,
+  "unaccounted_drop_count": 0,
+  "unbounded_fd_growth": false,
+  "unbounded_journal_growth": false,
+  "unbounded_memory_growth": false,
+  "unbounded_thread_growth": false,
+  "unbounded_wal_growth": false,
+  "unexplained_outage_duration_seconds": 0,
+  "unique_prediction_count": 201600,
+  "v0317_campaign_independence_passed": true,
+  "v0317_campaign_valid": true,
+  "v0317_code_lock_created": true,
+  "v0317_protocol_frozen": true,
+  "v0317_stage_completed": true,
+  "v0317_stage_passed": false,
+  "warmup_window_count": 180
+}
