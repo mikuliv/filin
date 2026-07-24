@@ -1,0 +1,27 @@
+{
+  "benchmark_scope": "project_scoped_non_product_metric",
+  "direct_hdd_comparison_performed": false,
+  "maximum_temporary_bytes": 1073741824,
+  "prospective_ssd_profile": true,
+  "schema_version": "v03171_storage_benchmark_v1",
+  "sequential_read_mib_per_second": 1220.857,
+  "sequential_sha256": "a212c8b389fcee7469a2a4d6d012606c7fb592104aa67de661dde616fbb8c45c",
+  "sequential_write_mib_per_second": 418.497,
+  "small_file_aggregate_sha256": "1aab873db17aa9bcfa81d92a4a95aaf629f6188c9b2aa7bfb676f02c3467d26c",
+  "small_file_count": 1000,
+  "small_files_per_second": 2449.153,
+  "sqlite_transaction_count": 250,
+  "sqlite_transactions_per_second": 1044.816,
+  "sqlite_wal_checkpoint_result": [
+    0,
+    0,
+    0
+  ],
+  "sqlite_wal_checkpoint_seconds": 0.004391,
+  "stage": "v0.3.17.1",
+  "storage_profile_id": "samsung_860_evo_ntfs_v03171",
+  "sync_write_count": 256,
+  "sync_writes_per_second": 1026.387,
+  "temporary_artifacts_removed": true,
+  "temporary_bytes_requested": 134217728
+}

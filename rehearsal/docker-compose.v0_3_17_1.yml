@@ -1,0 +1,118 @@
+name: filin-v03171-corrective
+services:
+  traffic-source:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    build: {context: .., dockerfile: rehearsal/Dockerfile, network: none}
+    command: ["rehearsal.traffic_source", "--control", "/run/rehearsal/control.json", "--runtime", "/run/rehearsal"]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V03171_TRIAL_DIR:?FILIN_V03171_TRIAL_DIR is required}:/run/rehearsal:rw
+    networks: [filin_sensor_connector_internal]
+    mem_limit: 128m
+    cpus: 0.5
+    pids_limit: 32
+    restart: "no"
+
+  reference-receiver:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.reference_receiver_app", "--db", "/var/lib/filin/receiver.sqlite", "--trace-db", "/var/lib/filin/receiver-trace.sqlite"]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V03171_RECEIVER_DIR:?FILIN_V03171_RECEIVER_DIR is required}:/var/lib/filin:rw
+      - ${FILIN_V03171_CERT_DIR:?FILIN_V03171_CERT_DIR is required}/receiver:/run/tls:ro
+    environment:
+      TLS_CERT: /run/tls/server.pem
+      TLS_KEY: /run/tls/server-key.pem
+      TLS_CLIENT_CA: /run/tls/client-ca.pem
+      RECEIVER_INSTANCE_ID: ${FILIN_V03171_RECEIVER_INSTANCE_ID:?FILIN_V03171_RECEIVER_INSTANCE_ID is required}
+    networks: [filin_connector_receiver_internal, filin_receiver_operator_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+
+  staging-connector:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.connector_app", "--db", "/var/lib/filin/connector.sqlite"]
+    depends_on: [reference-receiver]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V03171_CONNECTOR_DIR:?FILIN_V03171_CONNECTOR_DIR is required}:/var/lib/filin:rw
+      - ${FILIN_V03171_CERT_DIR:?FILIN_V03171_CERT_DIR is required}/connector:/run/tls:ro
+    environment:
+      INGRESS_TLS_CERT: /run/tls/ingress-server.pem
+      INGRESS_TLS_KEY: /run/tls/ingress-server-key.pem
+      INGRESS_TLS_CLIENT_CA: /run/tls/ingress-client-ca.pem
+      DELIVERY_TLS_CERT: /run/tls/delivery-client.pem
+      DELIVERY_TLS_KEY: /run/tls/delivery-client-key.pem
+      DELIVERY_TLS_CA: /run/tls/delivery-server-ca.pem
+      CONNECTOR_INSTANCE_ID: ${FILIN_V03171_CONNECTOR_INSTANCE_ID:?FILIN_V03171_CONNECTOR_INSTANCE_ID is required}
+    networks: [filin_sensor_connector_internal, filin_connector_receiver_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 128
+    restart: "no"
+
+  sensor-runtime:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.sensor_daemon", "--events", "/run/input/events.jsonl"]
+    depends_on: [staging-connector]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V03171_TRIAL_DIR:?FILIN_V03171_TRIAL_DIR is required}:/run/input:ro
+      - ${FILIN_V03171_CERT_DIR:?FILIN_V03171_CERT_DIR is required}/sensor:/run/tls:ro
+      - ${FILIN_V03171_SENSOR_DIR:?FILIN_V03171_SENSOR_DIR is required}:/var/lib/filin:rw
+    environment:
+      TLS_CERT: /run/tls/client.pem
+      TLS_KEY: /run/tls/client-key.pem
+      TLS_CA: /run/tls/server-ca.pem
+      SENSOR_INSTANCE_ID: ${FILIN_V03171_SENSOR_INSTANCE_ID:?FILIN_V03171_SENSOR_INSTANCE_ID is required}
+    networks: [filin_sensor_connector_internal]
+    mem_limit: 256m
+    cpus: 1.0
+    pids_limit: 64
+    restart: "no"
+
+  operator-view:
+    image: filin-rehearsal-v0317:local
+    pull_policy: never
+    command: ["rehearsal.operator_view", "--receiver-db", "/run/receiver/receiver.sqlite"]
+    depends_on: [reference-receiver]
+    user: "65532:65532"
+    read_only: true
+    security_opt: ["no-new-privileges:true"]
+    cap_drop: [ALL]
+    tmpfs: ["/tmp:rw,noexec,nosuid,size=16m"]
+    volumes:
+      - ${FILIN_V03171_RECEIVER_DIR:?FILIN_V03171_RECEIVER_DIR is required}:/run/receiver:ro
+    networks: [filin_receiver_operator_internal]
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 32
+    restart: "no"
+
+networks:
+  filin_sensor_connector_internal: {internal: true}
+  filin_connector_receiver_internal: {internal: true}
+  filin_receiver_operator_internal: {internal: true}
+
