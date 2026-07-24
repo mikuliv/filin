@@ -1,6 +1,6 @@
 # Текущий статус проекта
 
-Статус v0.3.17.1: корректирующий аудит завершён с положительным policy result. Исторический v0.3.17 остаётся завершённым с отрицательным результатом и не переоценён.
+Статус v0.3.18: external review package спроектирован, собран и прошёл synthetic protocol rehearsal. Реальная external validation не выполнялась.
 
 Единственный машинно-читаемый источник: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -8,11 +8,11 @@
 - Последний independent model holdout: v0.3.15.5.
 - Последний runtime trial: v0.3.15.5.1.
 - Последний corrective audit: v0.3.17.1.
-- Текущий завершённый этап: v0.3.17.1, положительный корректирующий результат.
+- Текущий завершённый этап: v0.3.18, design and rehearsal passed.
 - Последний regression analysis: v0.3.15.3, анализ успешно завершён.
 - Последний staging transport trial: v0.3.16.
 - Последняя controlled local rehearsal: v0.3.17.
-- Следующий разрешённый этап: только design review v0.3.18.
+- Следующий разрешённый этап: только package review и trial-plan agreement v0.3.19.
 - Production, shadow mode, backend integration и automatic enforcement: запрещены.
 - External validation: не выполнена.
 

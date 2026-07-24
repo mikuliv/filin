@@ -144,3 +144,7 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 ## v0.3.17.1
 
 [Корректирующий аудит](experiments/v0_3_17_1.md) классифицировал historical evidence без переписывания v0.3.17, ввёл причинно-упорядоченный timing trace v2 и исправил corruption/finalizer validation. Три новых label-free запуска общей длительностью `2700.025` секунды согласовали `33753` события; trace violations, потери, semantic duplicates и final backlog равны нулю, frozen performance policy пройдена. Разрешён только design review v0.3.18.
+
+## v0.3.18
+
+[Проектирование независимой внешней проверки](experiments/v0_3_18.md) заморозило blind workflow, role/data/commitment contracts, metrics, sample review и stop conditions. Synthetic rehearsal с deterministic predictor прошла commitments, label reveal, evaluator и standalone package verification; 40/40 negative scenarios отклонены. Реальные данные и labels не использовались, поэтому scientific external validation не выполнена. Разрешён только package review v0.3.19.

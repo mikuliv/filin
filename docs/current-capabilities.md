@@ -1,6 +1,6 @@
 # Текущие подтверждённые возможности
 
-Статус v0.3.17.1: корректирующий аудит завершён. Все 10 historical-anchor mismatches разрешены без изменения исторических файлов, причины 69 806 timestamp violations классифицированы, новый timing contract валиден, а 45-минутный prospective trial прошёл timing, reconciliation, performance, corruption, finalization и resume gates. v0.3.17 остаётся отрицательным.
+Статус v0.3.18: подготовлен воспроизводимый external review package с frozen protocol, role/data contracts, blind commitments, evaluator и standalone verifier. Synthetic rehearsal прошла полный workflow; это не scientific external validation.
 
 Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -23,6 +23,7 @@
 - isolated staging transport v0.3.16: 2 280/2 280 durable receiver events, 46 batch/commit/ACK/checkpoint и 24/24 fault-oracles.
 - controlled local rehearsal v0.3.17: 4 часа wall-clock, 201 600 окон и 201 420 согласованных canonical events; stage policy не пройдена.
 - corrective audit v0.3.17.1: 45 минут, 33 753 согласованных события, нулевые prospective trace violations и пройденная performance policy.
+- external review design v0.3.18: synthetic blind workflow, deterministic evaluator, standalone package verification и 40/40 отклонённых negative scenarios.
 
 ## Переоценённый scope
 
@@ -36,4 +37,4 @@ v0.3.15.4 исправил подтверждённые scenario/feature defects
 
 ## Не разрешено
 
-Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. Следующий допустимый этап — только design review v0.3.18.
+Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. Следующий допустимый этап — только независимый package review v0.3.19; фактический внешний trial запрещён.

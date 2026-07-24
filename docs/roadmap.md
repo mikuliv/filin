@@ -1,6 +1,6 @@
 # Дорожная карта
 
-Статус v0.3.17.1: корректирующий аудит и 45-минутный targeted trial завершены с положительным policy result. Разрешён только design review v0.3.18; shadow mode и backend integration не разрешены.
+Статус v0.3.18: external review package и synthetic blind rehearsal завершены положительно. Разрешён только независимый review пакета v0.3.19; внешний trial, shadow mode и backend integration не разрешены.
 
 Источник текущего решения: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -34,11 +34,12 @@
 - v0.3.16 — completed isolated staging transport; 2 280/2 280 events, 24/24 faults и 59/59 gates passed.
 - v0.3.17 — completed controlled local rehearsal; 4 часа wall-clock и 201 420 reconciled events, но historical-anchor, clock/latency, performance и corruption/bundle gates failed.
 - v0.3.17.1 — completed corrective audit; historical causes resolved, timing/performance evidence and 45-minute targeted trial passed.
+- v0.3.18 — completed external review design; package verifier, synthetic workflow и 40 negative scenarios passed.
 <!-- stage-history:end -->
 
 ## Ближайшая работа
 
-Разрешён только design review v0.3.18. Реальный trial, shadow mode, backend integration и production остаются запрещены.
+Разрешён только package review и согласование trial plan v0.3.19. Реальный trial, shadow mode, backend integration и production остаются запрещены.
 
 ## v0.3.16
 

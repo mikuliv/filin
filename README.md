@@ -1,6 +1,6 @@
 # Платформа «Филин»
 
-> Статус v0.3.17.1: корректирующий аудит завершён с положительным policy result. Отрицательный исторический итог v0.3.17 сохранён неизменным. Разрешён только design review v0.3.18; shadow mode, backend integration и production запрещены.
+> Статус v0.3.18: пакет независимой внешней проверки спроектирован и прошёл synthetic protocol rehearsal. Реальные внешние данные не использовались. Разрешён только review пакета v0.3.19; внешний trial, shadow mode, backend integration и production запрещены.
 
 Машиночитаемый источник статуса: [`docs/status/project-status.yaml`](docs/status/project-status.yaml). Общий индекс: [`docs/index.md`](docs/index.md).
 
@@ -10,7 +10,7 @@
 
 ## 2. Текущий проверенный статус
 
-Последний завершённый этап — v0.3.17.1. Корректирующий аудит классифицировал все 10 historical-anchor mismatches и 69 806 исторических нарушений порядка, исправил timing/attempt instrumentation, corruption validator и finalizer. Новый label-free trial из трёх независимых 15-минутных запусков продолжался `2700.025` секунды, согласовал `33753` события без потерь и прошёл frozen latency/performance gates. Candidate, contracts, state policy, backend и исторический v0.3.17 не изменены.
+Последний завершённый этап — v0.3.18. Заморожены blind holdout, role, dataset provenance, commitments, metric/sample/stop policies; подготовлены deterministic evaluator, package builder и standalone verifier. Локальная synthetic rehearsal прошла полный workflow, а 40/40 отрицательных сценариев были отклонены. Это проверка протокола, а не научная external validation.
 
 ## 3. Что представляет собой «Филин»
 
@@ -112,15 +112,16 @@ v0.3.15 — controlled local passive shadow trial. Immutable bundle и scientifi
 - v0.3.16 — completed isolated staging transport; 2 280/2 280 events и 59/59 gates passed.
 - v0.3.17 — completed controlled local rehearsal; 4 часа wall-clock, 201 420 reconciled events, общий policy result отрицательный.
 - v0.3.17.1 — completed corrective audit; 45-минутный targeted trial и все corrective gates пройдены.
+- v0.3.18 — completed external review design; synthetic blind rehearsal и 40/40 negative scenarios пройдены.
 <!-- stage-history:end -->
 
-## 19. Текущий этап v0.3.17.1
+## 19. Текущий этап v0.3.18
 
-Подробности приведены в [описании v0.3.17.1](docs/experiments/v0_3_17_1.md) и итоговом отчёте `ml/reports/v0_3_17_1/v0_3_17_1_summary.md`. Результат v0.3.17 остаётся отрицательным и не переоценён.
+Подробности приведены в [описании v0.3.18](docs/experiments/v0_3_18.md), [пакете reviewer](docs/external_review/README.md) и итоговом отчёте `ml/reports/v0_3_18/v0_3_18_summary.md`. Результаты v0.3.17 и v0.3.17.1 сохранены.
 
 ## 20. Следующий разрешённый этап
 
-Следующий допустимый этап — только design review v0.3.18. Он не разрешает реальный trial, shadow mode, backend integration, production или automatic enforcement.
+Следующий допустимый этап — только независимый package review и согласование trial plan v0.3.19. Он не разрешает фактический внешний trial, shadow mode, backend integration, production или automatic enforcement.
 
 ## 21. Структура репозитория
 

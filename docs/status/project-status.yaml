@@ -1,6 +1,6 @@
 schema_version: filin_project_status_v1
 project_name: Филин
-current_completed_stage: v0.3.17.1
+current_completed_stage: v0.3.18
 current_corrective_stage: v0.3.17.1
 current_candidate: v03154:65a3dd912d845bc1
 latest_training_stage: v0.3.15.4
@@ -11,13 +11,14 @@ latest_controlled_local_rehearsal: v0.3.17
 latest_corrective_audit: v0.3.17.1
 latest_regression_analysis: v0.3.15.3
 latest_redevelopment_stage: v0.3.15.4
-next_allowed_stage: v0.3.18
+next_allowed_stage: v0.3.19
 blocked_stage: null
-next_required_work: 'v0.3.18: только внешний review доказательств и проектирование отдельного trial; реальные подключения и shadow mode не разрешены'
+next_required_work: 'v0.3.19: только независимый review внешнего пакета и согласование trial plan; фактический внешний trial не разрешён'
 candidate_promoted: true
 candidate_ready_for_v0_3_16_staging_connector_readiness: true
 candidate_ready_for_v0_3_17_controlled_local_shadow_rehearsal: true
 candidate_ready_for_v0_3_18_external_review_and_trial_design: true
+candidate_ready_for_v0_3_19_external_package_review: true
 production_ready: false
 shadow_mode_ready: false
 backend_integration_ready: false
@@ -327,3 +328,14 @@ stages:
   limitations: Разрешён только design review v0.3.18; shadow mode, backend integration, production, внешние подключения, реальные уведомления и automatic enforcement запрещены
   superseded_claims: []
   next_stage: v0.3.18
+- version: v0.3.18
+  title: Проектирование независимой внешней проверки и слепого испытания
+  category: external_review_design
+  chronological_order: 28
+  status: completed
+  result: design_and_synthetic_rehearsal_passed
+  primary_report: docs/experiments/v0_3_18.md
+  policy_result: ml/reports/v0_3_18/v0_3_18_policy_result.json
+  limitations: Реальные внешние данные и labels не использовались; scientific external validation не выполнена; разрешён только package review v0.3.19
+  superseded_claims: []
+  next_stage: v0.3.19

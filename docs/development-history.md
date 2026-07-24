@@ -112,3 +112,11 @@ v0.3.18 заблокирован, следующий допустимый эта
 ## v0.3.17.1
 
 Выполнен корректирующий аудит historical anchors, clock-domain semantics, transport duplicate counters, latency evidence, corruption suite и finalizer. Исторические результаты v0.3.17 сохранены неизменными. Targeted prospective trial revision 3 завершил три независимых 15-минутных запуска, согласовал 33 753 события и прошёл frozen gates. Следующий допустимый этап — только design review v0.3.18.
+
+## v0.3.18
+
+Подготовлен frozen protocol независимой external evaluation, разделены роли и
+режимы данных, реализованы canonical commitments, deterministic evaluator,
+package builder и standalone verifier. Synthetic rehearsal не использовала
+реальную модель или внешние данные и не создаёт scientific claim. Следующий
+допустимый этап — package review v0.3.19.
