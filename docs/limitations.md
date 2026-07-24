@@ -90,7 +90,7 @@ features, но из-за ошибочного пути сохранил пуст
 prediction не повторялась и данные не менялись. Audit сохраняет оба SHA-256 и
 флаг `capture_evidence_completed_after_prediction=true`. Поэтому доказательство
 порядка для PCAP-hash evidence слабее, чем для dataset/feature lock.
-# Ограничения v0.3.10
+## Ограничения v0.3.10
 
 Internal validation остаётся контролируемым локальным экспериментом и сама по себе не разрешает shadow mode. Старые v0.3.6–v0.3.9 datasets не используются для fit или tuning; после успешной policy они могут быть открыты только неизменному candidate на отдельном regression-этапе v0.3.11. Полностью новая prospective holdout всё равно потребуется после regression.
 
@@ -104,21 +104,21 @@ Pending и review не считаются правильным benign. Diagnosti
 определение метрики, TTL или thresholds по validation запрещено. Continuous
 support остаётся несогласованным с HGB: top-1 `0.311728`, top-2 `0.663580`,
 binary conflict `0.941358`; поэтому он остаётся только диагностическим.
-# Ограничения аудита v0.3.10.1
+## Ограничения аудита v0.3.10.1
 
 Диагностическая переклассификация не является новой validation и не разрешает post-hoc изменение thresholds. Deduplicated continuation уже обнаруженного эпизода не означает analyst review или пропущенную детекцию. RTX 5060 Ti не используется frozen HGB/NumPy/Python pipeline; GPU-смена требует нового научного протокола.
 
-# Ограничения v0.3.11
+## Ограничения v0.3.11
 
 Положительная внутренняя validation v0.3.11 относится только к synthetic traffic контролируемого Docker-стенда. Она не является blind holdout, production validation или доказательством переносимости. Policy evaluator на короткой 12-policy проверке дал speedup 1,23× вместо инженерной цели 4×; CPU average/median targets также не пройдены. Из-за Windows/Docker race пять validation runs пришлось безопасно возобновить с одним Docker worker. Эти ограничения не меняют probabilities или scientific pass/fail, но требуют v0.3.12 regression и последующей v0.3.13 blind holdout до обсуждения shadow mode.
-# Ограничения regression v0.3.12
+## Ограничения regression v0.3.12
 
 v0.3.12 не подтверждает переносимость на все исторические условия: три из пяти benchmark нельзя было оценить без нарушения frozen-data contract. Положительные результаты v0.3.9/v0.3.10 не компенсируют отсутствие coverage; readiness к blind holdout, shadow mode и backend integration остаётся отрицательной.
 
-# Ограничения аудита v0.3.12.1
+## Ограничения аудита v0.3.12.1
 
 Аудит использует только frozen records и не предлагает thresholds по историческим строкам. Исправленная causal интерпретация latency не является пересчётом официального gate. Rebuildable PCAP/Zeek источники v0.3.6/v0.3.7 не эквивалентны отсутствующей frozen feature table.
 
-# Ограничения v0.3.15
+## Ограничения v0.3.15
 
 Положительный результат относится к одному локальному стенду и безопасным детерминированным traffic profiles. Он не подтверждает generalization на реальной сети, production transport, operator workflow, governance, retention или automatic response. Trial rows не разрешено использовать для tuning frozen candidate.

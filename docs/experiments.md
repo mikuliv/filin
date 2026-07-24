@@ -91,7 +91,7 @@ benign recall — `1.000000`, FPR — `0.000000`; strong-evidence precision —
 разрыв: review rate `0.416667`, attack episode recall `0.700000`, detection by
 second window `0.666667`, unresolved rate `0.300000`, support top-2 rate
 `0.607143`. Frozen policy не пройдена, validation не использовалась для tuning.
-# v0.3.10: minimal probability-conformal promotion
+## v0.3.10: minimal probability-conformal promotion
 
 После отрицательного результата v0.3.9 открыт новый изолированный training/internal-validation cycle. Он сохраняет HGB/HGB, 51 contextual feature, grouped OOF calibration и Mondrian conformal, но удаляет k-NN support, signed accumulation, decay и active lifecycle из promotion path. Support остаётся diagnostic-only.
 
@@ -105,22 +105,22 @@ precision/recall, attack episode recall и episode alert precision равны
 Attack pending rate `0.666667` и overall pending rate `0.370370` превысили
 frozen limits, а training-only model-selection policy не была пройдена.
 Поэтому итог отрицательный и regression v0.3.11 не разрешена.
-# Технический аудит v0.3.10.1
+## Технический аудит v0.3.10.1
 
 Post-hoc аудит использует только immutable validation predictions/transitions и сохранённые grouped OOF records v0.3.10. Он не выполняет fit, calibration, tuning или новую генерацию predictions. Аудит разделяет pre-alert pending, alert emission, post-alert continuation, duplicate suppression и unresolved pending и повторяет метрики всех 101 training policies. Официальный отрицательный результат v0.3.10 не изменён.
 
-# v0.3.11: burden-aware promotion
+## v0.3.11: burden-aware promotion
 
 Новый независимый цикл завершён положительно: 12 training и 6 prospective validation runs, 792 и 396 уникальных captures соответственно. Frozen HGB/HGB candidate использует 51 причинный признак, grouped OOF calibration, Mondrian conformal и раздельные pre-alert/post-alert состояния. Все scientific и integrity policies пройдены; следующий разрешённый этап — v0.3.12 frozen regression. Подробный протокол: [эксперимент v0.3.11](experiments/v0_3_11.md).
-# Frozen multi-benchmark regression v0.3.12
+## Frozen multi-benchmark regression v0.3.12
 
 Этап v0.3.12 завершён без fit и tuning. Из пяти зарегистрированных benchmark core-evaluable оказались только v0.3.9 и v0.3.10; v0.3.6/v0.3.7 не имеют frozen 51-feature table, а v0.3.8 имеет count mismatch 216/252. На двух допустимых наборах macro F1 равна `0.990734` и `1.0`, но evaluation coverage и detection-by-second-window gate не пройдены. Подробности: [отчёт v0.3.12](experiments/v0_3_12.md).
 
-# Технический аудит v0.3.12.1
+## Технический аудит v0.3.12.1
 
 Post-hoc аудит отделил frozen record-order latency от causal alert emission, объяснил 216/252 для v0.3.8 и классифицировал восстановимость v0.3.6/v0.3.7. [Протокол и выводы](experiments/v0_3_12_1.md) не меняют научный результат v0.3.12.
 
-# v0.3.15
+## v0.3.15
 
 [Local controlled passive shadow trial](experiments/v0_3_15.md) выполнил 10 последовательных sessions и подтвердил непрерывную обработку 1520 captures, 1440 online predictions, passive delivery и restart recovery без production-интеграции.
 

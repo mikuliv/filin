@@ -31,6 +31,6 @@ episode false-alert rate `0.0`. Frozen policy всё же не пройдена 
 training-selection failure и pending rates `0.370370/0.666667`. Fit-call count
 на validation равен `0`; regression, shadow mode и backend integration
 запрещены.
-# Post-hoc аудит v0.3.10.1
+## Post-hoc аудит v0.3.10.1
 
 Frozen v0.3.10 остаётся отрицательным. Технический аудит отдельно подтвердил структурную недостижимость legacy pending gate для трёхоконного успешно обнаруженного эпизода и предложил future-only таксономию; никакие protocol, policy, candidate, manifest или immutable predictions не редактировались.

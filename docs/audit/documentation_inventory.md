@@ -22,7 +22,7 @@
 
 ## Документы
 
-| path | category | audience | current/history | authoritative | immutable | duplicate_of | outdated | broken | action |
+| path | category | audience | current_or_historical | authoritative | evidence_immutable | duplicate_of | outdated | broken_links | recommended_action |
 |---|---|---|---|---:|---:|---|---:|---:|---|
 | `README.md` | root_entry | новый технический читатель | current | yes | no | `—` | yes | 0 | rewrite |
 | `backend/README.md` | subsystem_readme | разработчик подсистемы | current | no | no | `—` | no | 0 | keep |

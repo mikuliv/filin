@@ -72,7 +72,7 @@ Validation runner требует frozen candidate, а evaluation — допол�
 - Validation collection требует frozen candidate; prediction требует immutable lock.
 
 Background и routes не зависят от labels. Rate limits, internal DNS allowlist и target responsiveness проверяются до принятия run.
-# v0.3.10
+## v0.3.10
 
 `v0_3_10_training.yaml` задаёт 12 runs по четырём environment groups. `v0_3_10_internal_validation.yaml` задаёт шесть новых runs по трём prospective groups. Validation runner требует frozen candidate. Каждый успешный run обязан создать 60 непустых уникальных PCAP в canonical `captures/`, 54 scored rows и 18 episodes.
 

@@ -33,13 +33,13 @@ Published ports, host network, внешние routes, внешняя DNS и back
 Все контейнеры запускаются как UID/GID `65532`, с read-only root filesystem, `no-new-privileges`, `cap_drop: ALL`, без privileged mode, Docker socket и host filesystem. Writable области ограничены отдельными runtime bind/volumes и `/tmp` tmpfs. Каждый компонент имеет memory/CPU/PID limits, frozen `restart: no` и healthcheck. Синтетические private keys находятся только в gitignored runtime и имеют требуемый режим `0600` на поддерживающей его файловой системе.
 
 Raw PCAP, features, predictions, events, journals, databases, snapshots, resource и latency traces не входят в Git. В evidence bundle допускаются только санитарные aggregates, manifests, hashes и причинно связанные отчёты.
-# Уточнение границы runs в revision 7
+## Уточнение границы runs в revision 7
 
 До запуска нового контейнера источника оркестратор удаляет общий устаревший
 `control.json` и marker предыдущего завершения. Новый control становится видимым
 только после готовности нового стека с отдельным `<run_id>/volumes`. Это не даёт
 источнику повторно выполнить расписание предыдущего run на переходной границе.
-# Durable storage и maintenance в revision 8
+## Durable storage и maintenance в revision 8
 
 Sensor, connector и receiver каждого run используют отдельные локальные Docker
 named volumes. Они не переиспользуются между runs. После reconciliation

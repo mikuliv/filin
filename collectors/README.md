@@ -1,5 +1,26 @@
-# Collectors
+# Сборщики событий
 
-`collectors/shadow` реализует локальный passive contract `shadow_event_v1`: deterministic event generation, schema/privacy validation, bounded queue, checkpoint, checksum spool, retry и mock sinks. Внешние и production connections отсутствуют; события не имеют action authority.
+Каталог содержит локальные источники и транспорт пассивных событий. Компоненты
+нормализуют наблюдения, проверяют контракты, поддерживают ограниченную очередь,
+контрольные точки и повторную доставку в тестовые приёмники.
 
-`collectors/shadow_trial` связывает этот контракт с последовательным capture/Zeek/feature/frozen-inference pipeline v0.3.15. Каждый scored window получает immutable row ID, causal state transition, passive events, sink acknowledgement и atomic checkpoint до завершения session.
+## Состав
+
+- `csv_collector/` — чтение подготовленных CSV-наблюдений;
+- `suricata_collector/` — адаптер событий Suricata;
+- `zeek_collector/` — адаптер журналов Zeek;
+- `shadow/` — локальный пассивный контракт `shadow_event_v1`;
+- `shadow_trial/` — воспроизводимый capture-to-delivery контур завершённых
+  локальных испытаний.
+
+## Границы
+
+Сборщики не подключены к production, backend или внешней организации. События
+не обладают полномочием выполнять действия, отправлять реальные уведомления
+или применять автоматические меры.
+
+## Документация
+
+См. [поток данных](../docs/architecture/data-flow.md),
+[пассивные события](../docs/architecture/passive-events.md) и
+[ограничения](../docs/status/prohibited-capabilities.md).
