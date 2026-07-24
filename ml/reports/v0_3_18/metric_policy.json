@@ -1,0 +1,49 @@
+{
+  "abstention_is_correct": false,
+  "class_taxonomy": [
+    "benign",
+    "auth_failures",
+    "beacon",
+    "low_rate_dos",
+    "port_scan",
+    "web_probe"
+  ],
+  "false_negative_policy": "report_per_class_attack_as_benign_count",
+  "false_positive_policy": "report_per_class_and_benign_as_attack_count",
+  "metrics": [
+    "confusion_matrix",
+    "per_class_precision",
+    "per_class_recall",
+    "per_class_f1",
+    "macro_f1",
+    "weighted_f1",
+    "balanced_accuracy",
+    "abstention_count",
+    "abstention_rate",
+    "coverage",
+    "selective_accuracy",
+    "missing_prediction_count",
+    "duplicate_prediction_count",
+    "invalid_prediction_count",
+    "episode_level_metrics",
+    "uncertainty_intervals",
+    "dataset_composition"
+  ],
+  "missing_prediction_default_class": null,
+  "policy_complete_for_protocol_rehearsal": true,
+  "policy_complete_for_real_trial_execution": false,
+  "post_hoc_averaging_selection_allowed": false,
+  "post_hoc_threshold_selection_allowed": false,
+  "post_reveal_class_merge_allowed": false,
+  "protocol_rehearsal_only": true,
+  "schema_version": "v0318_metric_policy_v1",
+  "scientific_evidence": false,
+  "stage": "v0.3.18",
+  "status": "frozen",
+  "threshold_resolution_rule": "must_be_agreed_before_holdout_commitment",
+  "unresolved_external_acceptance_thresholds": [
+    "organization_specific_false_positive_limit",
+    "organization_specific_false_negative_limit",
+    "minimum_external_macro_f1"
+  ]
+}

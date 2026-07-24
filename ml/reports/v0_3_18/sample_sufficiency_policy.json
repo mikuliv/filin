@@ -1,0 +1,42 @@
+{
+  "approval_required_before_holdout_commitment": true,
+  "decision_table": [
+    {
+      "condition": "missing_required_field",
+      "decision": "reject_sample_plan"
+    },
+    {
+      "condition": "single_episode_many_rows",
+      "decision": "insufficient"
+    },
+    {
+      "condition": "unsupported_class_present",
+      "decision": "review_and_freeze_handling_before_commitment"
+    },
+    {
+      "condition": "confidence_interval_plan_absent",
+      "decision": "reject_sample_plan"
+    },
+    {
+      "condition": "all_context_specific_minima_approved",
+      "decision": "sample_plan_eligible"
+    }
+  ],
+  "reason": "Контекст внешнего источника ещё не согласован.",
+  "required_review_fields": [
+    "total_episodes",
+    "episodes_per_class",
+    "independent_capture_origins",
+    "independent_time_ranges",
+    "organization_or_environment_sources",
+    "node_diversity",
+    "class_imbalance",
+    "confidence_interval_width",
+    "abstention_coverage",
+    "unsupported_classes"
+  ],
+  "schema_version": "v0318_sample_sufficiency_policy_v1",
+  "stage": "v0.3.18",
+  "status": "frozen",
+  "universal_numeric_minimum_defined": false
+}

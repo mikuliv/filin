@@ -1,0 +1,229 @@
+{
+  "real_trial_requires_distinct_actors": true,
+  "role_attestation_contract": "external_trial_role_attestation_v1",
+  "role_conflict_count": 0,
+  "roles": {
+    "data_provider": {
+      "allowed_actions": [
+        "prepare_holdout",
+        "prepare_dataset_manifest",
+        "attest_provenance"
+      ],
+      "approve_result": false,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "trial_operator",
+        "independent_evaluator",
+        "result_approver"
+      ],
+      "data_access": [
+        "inputs",
+        "dataset_manifest"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "external_reviewer": {
+      "allowed_actions": [
+        "verify_manifests",
+        "verify_hashes",
+        "verify_roles",
+        "verify_chronology"
+      ],
+      "approve_result": false,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "project_owner",
+        "trial_operator",
+        "result_approver"
+      ],
+      "data_access": [
+        "review_package",
+        "reproducibility_package",
+        "aggregate_results"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "independent_evaluator": {
+      "allowed_actions": [
+        "verify_reveal",
+        "calculate_frozen_metrics",
+        "build_result"
+      ],
+      "approve_result": false,
+      "calculate_metrics": true,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "project_owner",
+        "data_provider",
+        "trial_operator",
+        "label_custodian",
+        "result_approver"
+      ],
+      "data_access": [
+        "frozen_predictions",
+        "revealed_labels",
+        "metric_policy"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "label_custodian": {
+      "allowed_actions": [
+        "create_label_commitment",
+        "reveal_labels_after_prediction_freeze"
+      ],
+      "approve_result": false,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "trial_operator",
+        "independent_evaluator",
+        "result_approver"
+      ],
+      "data_access": [
+        "labels",
+        "label_commitment"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": true,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "project_owner": {
+      "allowed_actions": [
+        "approve_protocol_before_freeze",
+        "provide_candidate_identity"
+      ],
+      "approve_result": false,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "label_custodian",
+        "independent_evaluator",
+        "external_reviewer",
+        "result_approver"
+      ],
+      "data_access": [
+        "protocol",
+        "candidate_commitment",
+        "aggregate_results"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "result_approver": {
+      "allowed_actions": [
+        "record_pass_fail_or_invalidation",
+        "finalize_result"
+      ],
+      "approve_result": true,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "project_owner",
+        "data_provider",
+        "trial_operator",
+        "label_custodian",
+        "independent_evaluator",
+        "external_reviewer"
+      ],
+      "data_access": [
+        "review_findings",
+        "aggregate_results",
+        "chronology"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": false,
+      "run_inference": false
+    },
+    "trial_operator": {
+      "allowed_actions": [
+        "receive_blind_inputs",
+        "run_frozen_inference",
+        "freeze_predictions"
+      ],
+      "approve_result": false,
+      "calculate_metrics": false,
+      "change_protocol": false,
+      "conflicting_roles": [
+        "label_custodian",
+        "independent_evaluator",
+        "result_approver"
+      ],
+      "data_access": [
+        "inputs",
+        "candidate_runtime",
+        "prediction_namespace"
+      ],
+      "forbidden_actions": [
+        "change_candidate",
+        "change_protocol_after_freeze",
+        "change_thresholds",
+        "external_network",
+        "backend_call",
+        "automatic_action"
+      ],
+      "labels_access_before_prediction_freeze": false,
+      "predictions_access_before_prediction_freeze": true,
+      "run_inference": true
+    }
+  },
+  "schema_version": "v0318_role_separation_matrix_v1",
+  "stage": "v0.3.18",
+  "synthetic_rehearsal_namespaces_roles_separately": true
+}

@@ -1,0 +1,70 @@
+{
+  "allowed_usage_modes": [
+    "frozen_external_evaluation",
+    "authorized_development",
+    "synthetic_protocol_rehearsal"
+  ],
+  "independence_grouping": [
+    "episode",
+    "time_range",
+    "network_node",
+    "environment",
+    "organization",
+    "capture_origin"
+  ],
+  "minimum_technical_quality": {
+    "class_taxonomy_mapped_before_commitment": true,
+    "nonempty_episode_manifest": true,
+    "parseable_pcap": true,
+    "stable_capture_origin": true,
+    "timestamps_present": true
+  },
+  "rejected_input_conditions": [
+    "unsupported_format",
+    "missing_provenance",
+    "unclear_usage_right",
+    "credential_finding",
+    "prohibited_payload",
+    "privacy_clearance_failed",
+    "malware_clearance_failed",
+    "manifest_mismatch",
+    "detected_overlap",
+    "unapproved_sample_plan"
+  ],
+  "required": [
+    "dataset_owner_pseudonym",
+    "legal_basis_placeholder",
+    "external_data_usage_mode",
+    "capture_period",
+    "source_environment_identity",
+    "network_node_grouping",
+    "episode_grouping",
+    "class_taxonomy",
+    "label_provenance",
+    "label_creation_method",
+    "anonymization_status",
+    "payload_handling",
+    "credential_exposure_check",
+    "personal_data_check",
+    "malware_check",
+    "encryption_status",
+    "transfer_method",
+    "retention_period_placeholder",
+    "deletion_requirements",
+    "publication_restrictions",
+    "overlap_attestation"
+  ],
+  "row_random_split_proves_independence": false,
+  "schema_version": "v0318_data_acceptance_policy_v1",
+  "stage": "v0.3.18",
+  "status": "frozen",
+  "supported_input_forms": [
+    "pcap"
+  ],
+  "unsupported_without_separate_implementation": [
+    "netflow",
+    "csv_features",
+    "raw_event_rows"
+  ],
+  "usage_modes_mutually_exclusive": true
+}

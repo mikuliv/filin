@@ -1,0 +1,32 @@
+{
+  "checks": [
+    "exact_file_hash",
+    "normalized_capture_hash",
+    "episode_identity",
+    "session_fingerprint",
+    "time_overlap",
+    "node_overlap",
+    "organization_overlap",
+    "scenario_seed_overlap",
+    "scenario_template_overlap",
+    "duplicated_label_source"
+  ],
+  "detected_overlap_action": "trial_invalidated",
+  "different_filename_proves_independence": false,
+  "full_independence_claim_without_all_checks": false,
+  "reference_sets": [
+    "training",
+    "calibration",
+    "conformal",
+    "threshold_selection",
+    "internal_regression_fixtures",
+    "previous_prospective_holdouts",
+    "development_pcap",
+    "generated_scenario_seeds",
+    "known_scenario_templates"
+  ],
+  "schema_version": "v0318_contamination_policy_v1",
+  "stage": "v0.3.18",
+  "status": "frozen",
+  "unverifiable_check_result": "limitation_and_provider_attestation_required"
+}

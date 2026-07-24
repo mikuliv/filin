@@ -1,0 +1,29 @@
+{
+  "canonicalization": "utf8_json_sorted_keys_compact",
+  "digest_algorithm": "sha256",
+  "hash_commitment_is_signature": false,
+  "label_reveal_requires_prediction_commitment": true,
+  "post_reveal_prediction_change_allowed": false,
+  "schema_version": "v0318_blind_holdout_protocol_v1",
+  "stage": "v0.3.18",
+  "status": "frozen",
+  "steps": [
+    "dataset_manifest",
+    "label_commitment",
+    "holdout_commitment",
+    "candidate_commitment",
+    "evaluator_commitment",
+    "blind_input_handoff",
+    "frozen_inference",
+    "prediction_validation",
+    "prediction_commitment",
+    "label_reveal",
+    "label_commitment_verification",
+    "frozen_evaluation",
+    "result_bundle",
+    "external_review",
+    "result_approval",
+    "finalization"
+  ],
+  "unauthorized_second_evaluation_allowed": false
+}
