@@ -71,7 +71,10 @@ def safety_reports() -> tuple[dict[str, Any], dict[str, Any]]:
     privacy_findings: list[str] = []
     secret_findings: list[str] = []
     drive_path = re.compile(r"(?i)\b[A-Z]:[\\/]")
-    secret = re.compile(r"(?i)(BEGIN [A-Z ]*PRIVATE KEY|password\s*=|api[_-]?key\s*=|secret\s*=)")
+    secret = re.compile(
+        r"(?i)(-----BEGIN [A-Z ]*PRIVATE KEY-----|"
+        r"(?:password|api[_-]?key|secret)\s*=\s*['\"][A-Za-z0-9+/=_-]{12,}['\"])"
+    )
     for relative in targets:
         path = ROOT / relative
         if not path.is_file() or path.stat().st_size > 2 * 1024 * 1024:
@@ -231,17 +234,44 @@ def complete(test_count: int, failed: int, skipped: int, warnings: int, duration
         "production_connection_attempt_count": 0, "backend_endpoint_call_count": 0,
         "backend_write_attempt_count": 0, "automatic_action_attempt_count": 0,
         "network_block_attempt_count": 0, "real_notification_attempt_count": 0,
-        "candidate_ready_for_v0_3_19_external_package_review": True,
+        "candidate_ready_for_v0_3_19_external_package_review": False,
         "external_trial_execution_allowed": False, "candidate_ready_for_shadow_mode": False,
         "backend_integration_allowed": False, "shadow_mode_allowed": False,
         "production_ready": False, "real_organization_trial_allowed": False,
         "real_traffic_capture_allowed": False, "real_notifications_allowed": False,
         "automatic_enforcement_ready": False, "worktree_clean": True, "push_performed": False,
     }
+    stage_gates = [
+        backend_unchanged,
+        all(identities.values()),
+        policy["external_review_package_complete"],
+        policy["external_review_package_verified"],
+        policy["standalone_verifier_passed"],
+        policy["role_conflict_count"] == 0,
+        policy["label_commitment_workflow_passed"],
+        policy["prediction_commitment_workflow_passed"],
+        policy["label_reveal_workflow_passed"],
+        policy["chronology_validation_passed"],
+        policy["synthetic_rehearsal_passed"],
+        policy["synthetic_rehearsal_scientific_evidence"] is False,
+        policy["real_external_data_used"] is False,
+        policy["real_labels_used"] is False,
+        policy["real_organization_involved"] is False,
+        policy["negative_scenario_count"] == policy["negative_scenario_rejected_count"],
+        policy["negative_scenario_failed_count"] == 0,
+        policy["strict_resume_passed"],
+        policy["privacy_policy_passed"],
+        policy["secret_scan_passed"],
+        policy["artifact_exclusion_passed"],
+        policy["documentation_validator_passed"],
+        test_count > 0 and failed == 0 and skipped == 0,
+    ]
+    policy["v0318_stage_passed"] = all(stage_gates)
+    policy["candidate_ready_for_v0_3_19_external_package_review"] = policy["v0318_stage_passed"]
     write_json("v0_3_18_policy_result.json", policy)
     readiness = {
         "schema_version": "v0318_readiness_decision_v1", "stage": "v0.3.18",
-        "candidate_ready_for_v0_3_19_external_package_review": True,
+        "candidate_ready_for_v0_3_19_external_package_review": policy["v0318_stage_passed"],
         "meaning": "Разрешён только независимый review пакета и согласование trial plan.",
         "external_trial_execution_allowed": False, "external_validation_completed": False,
         "shadow_mode_allowed": False, "backend_integration_allowed": False,
@@ -291,6 +321,18 @@ commitment: `{package_manifest['root_commitment']}`.
     write_bundle()
     initial = bundle_validate()
     policy["bundle_validator_passed"] = initial["bundle_validator_passed"]
+    policy["v0318_stage_passed"] = (
+        policy["v0318_stage_passed"] and initial["bundle_validator_passed"]
+    )
+    policy["candidate_ready_for_v0_3_19_external_package_review"] = policy[
+        "v0318_stage_passed"
+    ]
+    readiness["candidate_ready_for_v0_3_19_external_package_review"] = policy[
+        "v0318_stage_passed"
+    ]
+    if not policy["v0318_stage_passed"]:
+        readiness["next_allowed_stage"] = None
+    write_json("readiness_decision.json", readiness)
     write_json("v0_3_18_policy_result.json", policy)
     write_bundle()
     final = bundle_validate()
