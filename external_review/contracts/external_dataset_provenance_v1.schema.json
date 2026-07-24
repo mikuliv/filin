@@ -1,0 +1,55 @@
+{
+  "$id": "https://filin.invalid/contracts/external_dataset_provenance_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "capture_origin": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "dataset_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "grouping": {
+      "items": {
+        "enum": [
+          "episode",
+          "time_range",
+          "network_node",
+          "environment",
+          "organization",
+          "capture_origin"
+        ]
+      },
+      "minItems": 6,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "label_provenance": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "provider_attestation": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "external_dataset_provenance_v1"
+    },
+    "source_environment": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "capture_origin",
+    "source_environment",
+    "grouping",
+    "label_provenance"
+  ],
+  "title": "external_dataset_provenance_v1",
+  "type": "object"
+}

@@ -1,0 +1,80 @@
+{
+  "$id": "https://filin.invalid/contracts/candidate_commitment_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "artifact_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "backend_tree_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "calibration_change_allowed": {
+      "const": false
+    },
+    "candidate_id": {
+      "const": "v03154:65a3dd912d845bc1"
+    },
+    "candidate_registry_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "event_contract_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "feature_change_allowed": {
+      "const": false
+    },
+    "feature_contract_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "fit_allowed": {
+      "const": false
+    },
+    "inference_code_commit": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "candidate_commitment_v1"
+    },
+    "state_policy_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "threshold_change_allowed": {
+      "const": false
+    },
+    "timing_contract_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "candidate_id",
+    "artifact_sha256",
+    "manifest_sha256",
+    "candidate_registry_commitment",
+    "feature_contract_sha256",
+    "event_contract_sha256",
+    "state_policy_sha256",
+    "timing_contract_sha256",
+    "inference_code_commit",
+    "backend_tree_hash",
+    "fit_allowed",
+    "threshold_change_allowed",
+    "calibration_change_allowed",
+    "feature_change_allowed"
+  ],
+  "title": "candidate_commitment_v1",
+  "type": "object"
+}

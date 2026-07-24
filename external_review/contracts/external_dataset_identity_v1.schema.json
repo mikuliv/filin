@@ -1,0 +1,105 @@
+{
+  "$id": "https://filin.invalid/contracts/external_dataset_identity_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "capture_period": {
+      "additionalProperties": false,
+      "properties": {
+        "end": {
+          "type": "string"
+        },
+        "start": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "start",
+        "end"
+      ],
+      "type": "object"
+    },
+    "creation_timestamp": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "dataset_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "environment_pseudonym": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "episode_manifest_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "external_data_usage_mode": {
+      "enum": [
+        "frozen_external_evaluation",
+        "authorized_development",
+        "synthetic_protocol_rehearsal"
+      ]
+    },
+    "file_count": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "file_manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "label_manifest_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "organization_pseudonym": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "overlap_attestation": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "privacy_attestation": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "provider_role_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "retention_policy_ref": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "external_dataset_identity_v1"
+    },
+    "total_bytes": {
+      "minimum": 1,
+      "type": "integer"
+    }
+  },
+  "required": [
+    "schema_version",
+    "dataset_id",
+    "external_data_usage_mode",
+    "provider_role_id",
+    "creation_timestamp",
+    "capture_period",
+    "environment_pseudonym",
+    "organization_pseudonym",
+    "file_count",
+    "total_bytes",
+    "file_manifest_sha256",
+    "label_manifest_commitment",
+    "episode_manifest_commitment",
+    "privacy_attestation",
+    "overlap_attestation",
+    "retention_policy_ref"
+  ],
+  "title": "external_dataset_identity_v1",
+  "type": "object"
+}

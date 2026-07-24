@@ -1,0 +1,42 @@
+{
+  "$id": "https://filin.invalid/contracts/external_evaluation_result_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "label_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "metrics": {
+      "type": "object"
+    },
+    "prediction_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "protocol_rehearsal_only": {
+      "const": true
+    },
+    "rehearsal_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "external_evaluation_result_v1"
+    },
+    "scientific_evidence": {
+      "const": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "rehearsal_id",
+    "prediction_commitment",
+    "label_commitment",
+    "metrics",
+    "protocol_rehearsal_only",
+    "scientific_evidence"
+  ],
+  "title": "external_evaluation_result_v1",
+  "type": "object"
+}

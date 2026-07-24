@@ -1,0 +1,56 @@
+{
+  "$id": "https://filin.invalid/contracts/external_trial_role_attestation_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "actor_pseudonym": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "attestation_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "namespace": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "occurred_at_ns": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "parent_commitment": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "role": {
+      "enum": [
+        "project_owner",
+        "data_provider",
+        "trial_operator",
+        "label_custodian",
+        "independent_evaluator",
+        "external_reviewer",
+        "result_approver"
+      ]
+    },
+    "schema_version": {
+      "const": "external_trial_role_attestation_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "attestation_id",
+    "role",
+    "actor_pseudonym",
+    "namespace",
+    "action",
+    "occurred_at_ns"
+  ],
+  "title": "external_trial_role_attestation_v1",
+  "type": "object"
+}

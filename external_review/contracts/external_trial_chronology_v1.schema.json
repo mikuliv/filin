@@ -1,0 +1,57 @@
+{
+  "$id": "https://filin.invalid/contracts/external_trial_chronology_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "events": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "commitment": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "event": {
+            "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+            "type": "string"
+          },
+          "occurred_at_ns": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "role_attestation": {
+            "pattern": "^[0-9a-f]{64}$",
+            "type": "string"
+          },
+          "sequence": {
+            "minimum": 1,
+            "type": "integer"
+          }
+        },
+        "required": [
+          "sequence",
+          "event",
+          "occurred_at_ns",
+          "role_attestation"
+        ],
+        "type": "object"
+      },
+      "minItems": 8,
+      "type": "array"
+    },
+    "rehearsal_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "external_trial_chronology_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "rehearsal_id",
+    "events"
+  ],
+  "title": "external_trial_chronology_v1",
+  "type": "object"
+}

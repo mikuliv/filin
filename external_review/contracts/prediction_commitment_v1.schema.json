@@ -1,0 +1,30 @@
+{
+  "$id": "https://filin.invalid/contracts/prediction_commitment_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "committed_at_ns": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "prediction_count": {
+      "minimum": 1,
+      "type": "integer"
+    },
+    "schema_version": {
+      "const": "prediction_commitment_v1"
+    },
+    "submission_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version",
+    "submission_sha256",
+    "prediction_count",
+    "committed_at_ns"
+  ],
+  "title": "prediction_commitment_v1",
+  "type": "object"
+}

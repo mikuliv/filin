@@ -1,0 +1,35 @@
+{
+  "$id": "https://filin.invalid/contracts/blind_holdout_commitment_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "committed_at_ns": {
+      "minimum": 0,
+      "type": "integer"
+    },
+    "dataset_manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "holdout_id": {
+      "pattern": "^[a-z0-9][a-z0-9_.:-]{2,127}$",
+      "type": "string"
+    },
+    "label_commitment_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "blind_holdout_commitment_v1"
+    }
+  },
+  "required": [
+    "schema_version",
+    "holdout_id",
+    "dataset_manifest_sha256",
+    "label_commitment_sha256",
+    "committed_at_ns"
+  ],
+  "title": "blind_holdout_commitment_v1",
+  "type": "object"
+}
