@@ -6,3 +6,5 @@
   отрицательной controlled local rehearsal v0.3.17.
 - `v0_3_17_1_protocol.yaml` — frozen corrective protocol для anchor, timing,
   performance, corruption и finalization audit.
+- `v0_3_18_external_review_protocol.yaml` — frozen protocol независимого review,
+  blind holdout workflow и synthetic protocol rehearsal.

@@ -1,0 +1,202 @@
+schema_version: v0318_external_review_protocol_v1
+stage: v0.3.18
+status: frozen_before_workflow_implementation
+title: Проектирование независимой внешней проверки и слепого испытания
+source:
+  starting_head: 36e041704c9d581e9ae9b464ff75a3e393c066a6
+  backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+  branch: main
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  registry_sha256: 31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d
+  registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
+  feature_contract_id: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  event_contract_id: shadow_event_v2
+  event_contract_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+  state_policy_sha256: 3b1acd1a066b278a75c2edc5152c64ee2dd962fee21bd7b43acffb567e4a700c
+  timing_contract_id: runtime_timing_trace_v2
+  timing_contract_sha256: a9091f0cb98b34d18d006eafeb57e22b18febb434d7556e1e1fc40de898df4ad
+  fit_allowed: false
+  threshold_change_allowed: false
+  calibration_change_allowed: false
+  feature_change_allowed: false
+historical_status:
+  v0_3_17:
+    status: completed
+    result: failed
+    immutable: true
+  v0_3_17_1:
+    status: completed
+    result: passed
+    delivery_path_changed: false
+purpose:
+  - подготовить независимый review замороженного кандидата
+  - определить blind holdout и commitment workflow до получения внешних данных
+  - предоставить standalone verifier и воспроизводимую synthetic rehearsal
+scope:
+  external_data_usage_mode: synthetic_protocol_rehearsal
+  real_external_data_used: false
+  real_labels_used: false
+  real_organization_involved: false
+non_goals:
+  - scientific_external_validation
+  - real_external_trial
+  - shadow_mode
+  - backend_integration
+  - production
+  - model_or_threshold_change
+data_usage_modes:
+  frozen_external_evaluation:
+    purpose: независимая проверка текущего frozen candidate
+    labels_visible_before_prediction_freeze: false
+    development_use_allowed: false
+  authorized_development:
+    purpose: разработка следующей candidate lineage
+    independent_holdout_claim_allowed: false
+  synthetic_protocol_rehearsal:
+    purpose: проверка workflow без научных утверждений
+    allowed_in_v0_3_18: true
+  mutually_exclusive: true
+roles:
+  required:
+    - project_owner
+    - data_provider
+    - trial_operator
+    - label_custodian
+    - independent_evaluator
+    - external_reviewer
+    - result_approver
+  attestation_contract: external_trial_role_attestation_v1
+blind_workflow:
+  - dataset_manifest
+  - label_commitment
+  - holdout_commitment
+  - candidate_commitment
+  - evaluator_commitment
+  - blind_input_handoff
+  - frozen_inference
+  - prediction_validation
+  - prediction_commitment
+  - label_reveal
+  - reveal_verification
+  - frozen_evaluation
+  - result_bundle
+  - independent_review
+  - result_approval
+  - finalization
+commitments:
+  canonicalization: utf8_json_sorted_keys_compact
+  digest: sha256
+  duplicate_json_keys_allowed: false
+  non_finite_numbers_allowed: false
+  hash_commitment_is_signature: false
+data_acceptance:
+  supported_input: pcap
+  row_random_split_proves_independence: false
+  required_grouping:
+    - episode
+    - time_range
+    - network_node
+    - environment
+    - organization
+    - capture_origin
+  provenance_required: true
+  privacy_and_secret_clearance_required: true
+contamination:
+  exact_hash_check: true
+  normalized_capture_check: true
+  episode_and_session_check: true
+  time_node_organization_check: true
+  seed_and_template_check: true
+  unverifiable_overlap_requires_provider_attestation: true
+prediction_freeze:
+  required_before_label_reveal: true
+  replacement_after_reveal_allowed: false
+metric_policy:
+  post_hoc_threshold_selection_allowed: false
+  required_outputs:
+    - confusion_matrix
+    - per_class_precision_recall_f1
+    - macro_f1
+    - weighted_f1
+    - balanced_accuracy
+    - abstention_rate
+    - coverage
+    - selective_accuracy
+    - missing_duplicate_invalid_counts
+    - episode_metrics
+    - uncertainty_intervals
+  rehearsal_scientific_evidence: false
+uncertainty_and_abstention:
+  frozen_candidate_output_semantics_required: true
+  abstention_is_correct_prediction: false
+  missing_prediction_default_class_allowed: false
+sample_sufficiency:
+  sample_plan_approval_required_before_holdout_commitment: true
+  episode_and_origin_counts_required: true
+  universal_post_hoc_minimum_allowed: false
+stop_and_invalidation:
+  negative_results_preserved: true
+  unauthorized_retry_after_reveal: invalidated
+  mandatory_conditions:
+    - early_label_reveal
+    - frozen_identity_change
+    - detected_overlap
+    - commitment_mismatch
+    - missing_provenance
+    - privacy_or_secret_finding
+    - external_route_or_backend_call
+    - role_or_chronology_violation
+    - insufficient_sample_plan
+    - evaluator_nondeterminism
+    - incomplete_prediction_set
+evidence_requirements:
+  - role_attestations
+  - dataset_and_parent_commitments
+  - chronology
+  - deterministic_evaluator_result
+  - package_manifest_and_root_commitment
+  - negative_scenario_report
+package:
+  levels:
+    - review_overview
+    - reproducibility_package
+    - runtime_only_trial_execution_package
+  source_allowlist_required: true
+  standalone_verifier_required: true
+  archives_tracked_in_git: false
+rehearsal:
+  usage_mode: synthetic_protocol_rehearsal
+  deterministic_predictor_allowed: true
+  real_model_required: false
+  scientific_evidence: false
+  negative_scenario_count_min: 40
+pass_fail_gates:
+  protocol_frozen_before_rehearsal: true
+  frozen_identities_unchanged: true
+  package_complete_and_verified: true
+  commitments_and_chronology_valid: true
+  synthetic_rehearsal_passed: true
+  all_negative_scenarios_rejected: true
+  privacy_secret_artifact_docs_passed: true
+  fit_and_selection_calls: 0
+  external_backend_production_action_calls: 0
+readiness:
+  positive_flag: candidate_ready_for_v0_3_19_external_package_review
+  positive_meaning: разрешён только независимый review пакета и согласование trial plan
+  external_trial_execution_allowed: false
+prohibitions:
+  candidate_ready_for_shadow_mode: false
+  sensor_ready_for_backend_integration: false
+  backend_integration_allowed: false
+  shadow_mode_allowed: false
+  production_ready: false
+  production_connection_allowed: false
+  automatic_enforcement_ready: false
+  external_validation_completed: false
+  real_organization_trial_allowed: false
+  real_traffic_capture_allowed: false
+  real_notifications_allowed: false
