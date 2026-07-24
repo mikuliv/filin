@@ -1,0 +1,13 @@
+{
+  "connector_durable_event_count": 33753,
+  "duplicate_event_delivery_attempt_count": 22,
+  "final_backlog": 0,
+  "idempotency_collision_count": 0,
+  "pending_event_count": 0,
+  "receiver_durable_unique_event_count": 33753,
+  "schema_version": "v03171_reconciliation_v1",
+  "semantic_duplicate_count": 0,
+  "sensor_source_event_count": 33753,
+  "source_connector_receiver_sets_equal": true,
+  "unaccounted_drop_count": 0
+}

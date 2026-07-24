@@ -1,0 +1,20 @@
+{
+  "connector_ingress_ack_p95_ms": 1.5542099999999999,
+  "connector_to_receiver_p95_ms": 1.32791,
+  "historical_composite_failed_due_to_invalid_latency_and_clock_attestation": true,
+  "historical_performance_policy_was_composite": true,
+  "historical_receiver_throughput_events_per_second": 13.987499717266006,
+  "historical_throughput_numeric_gate_passed": true,
+  "latency_measurement_valid": true,
+  "latency_policy_passed": true,
+  "performance_policy_passed": true,
+  "performance_results_directly_comparable_to_v0_3_17": false,
+  "prospective_ssd_profile": true,
+  "receiver_durable_throughput": 12.500993211929131,
+  "schema_version": "v03171_performance_policy_v1",
+  "sensor_to_receiver_p95_ms": 2.8295,
+  "sensor_to_receiver_p99_ms": 5.691833999999992,
+  "stage": "v0.3.17.1",
+  "throughput_gate_passed": true,
+  "throughput_threshold": 10.0
+}

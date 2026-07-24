@@ -1,0 +1,66 @@
+{
+  "all_required_suites_passed": true,
+  "ci_runs_45_minute_trial": false,
+  "ci_uses_abstract_storage_profile": true,
+  "compileall": {
+    "failed_target_count": 0,
+    "passed_target_count": 6,
+    "targets": [
+      "ml",
+      "collectors",
+      "tools",
+      "lab",
+      "staging",
+      "backend"
+    ]
+  },
+  "final_full_suite": {
+    "collected_test_count": 1286,
+    "duration_seconds": 173.71,
+    "failed_test_count": 0,
+    "passed_test_count": 1286,
+    "skipped_test_count": 0,
+    "warning_count": 3
+  },
+  "initial_environmental_error": {
+    "affected_test_count": 6,
+    "counted_as_final_test_failure": false,
+    "resolved_by_project_scoped_temp": true,
+    "type": "project_temp_not_applied"
+  },
+  "prior_attempts": [
+    {
+      "failed_test_count": 4,
+      "passed_test_count": 1274,
+      "resolved": true,
+      "root_cause": "Рассинхронизация status validators после v0.3.17."
+    },
+    {
+      "failed_test_count": 0,
+      "passed_test_count": 1278,
+      "resolved": true,
+      "warning_count": 3
+    },
+    {
+      "failed_test_count": 0,
+      "passed_test_count": 1283,
+      "resolved": true,
+      "warning_count": 3
+    },
+    {
+      "failed_test_count": 1,
+      "passed_test_count": 1285,
+      "resolved": true,
+      "root_cause": "После изменения изоляции процессов и сертификатов code lock закономерно отклонил устаревшую revision 2.",
+      "warning_count": 3
+    },
+    {
+      "failed_test_count": 0,
+      "passed_test_count": 1286,
+      "resolved": true,
+      "warning_count": 3
+    }
+  ],
+  "schema_version": "v03171_test_report_v1",
+  "stage": "v0.3.17.1"
+}

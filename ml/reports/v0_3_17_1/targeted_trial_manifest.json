@@ -1,0 +1,110 @@
+{
+  "campaign_namespace": "v03171-832f17ec2cb6af5933a9",
+  "full_endurance_rerun_required": false,
+  "prior_nonofficial_attempts": [
+    {
+      "attempt": "smoke_revision_1",
+      "official_evidence_used": false,
+      "purpose": "runner_startup_check"
+    },
+    {
+      "attempt": "partial_revision_1",
+      "duration_claimed": false,
+      "official_evidence_used": false,
+      "reason": "Latency breakdown did not expose separate restart and recovery buckets.",
+      "status": "invalidated_and_stopped"
+    },
+    {
+      "attempt": "smoke_revision_2",
+      "official_evidence_used": false,
+      "purpose": "seven_bucket_regression_check"
+    },
+    {
+      "attempt": "partial_revision_2",
+      "duration_claimed": false,
+      "official_evidence_used": false,
+      "reason": "Изоляция runner не подтверждала уникальные фактические PID и случайные seed каждого запуска.",
+      "status": "invalidated_and_stopped"
+    },
+    {
+      "attempt": "smoke_revision_3",
+      "official_evidence_used": false,
+      "purpose": "process_and_certificate_isolation_check"
+    }
+  ],
+  "protocol_lock_revision": 3,
+  "requested_run_duration_seconds": 900.0,
+  "requested_total_duration_seconds": 2700.0,
+  "run_count": 3,
+  "runs": [
+    {
+      "bundle_namespace": "v03171-154ddc530bf11db6",
+      "certificate_fingerprints": [
+        "32e1dad2112e9e14dab252582c8082a97cc901755a00db933cfacfe6d362ea52",
+        "d8faf14809bcb8a5f03bb3fe1c6dba490ebadf3632fdedfa3225d8008a3e4af1"
+      ],
+      "certificate_fixture_count": 2,
+      "clock_domain_id": "windows-qpc-154ddc530bf11db6",
+      "container_boot_ids": [
+        "local-isolation-reference-receiver-2246b8b47dd3",
+        "local-isolation-sensor-runtime-8eccd0e2226a",
+        "local-isolation-staging-connector-d0dcdac4b010",
+        "local-isolation-traffic-source-593f9b81a8e2"
+      ],
+      "container_runtime_used": false,
+      "process_id": 42616,
+      "run_id": "v03171_timing_nominal_154ddc530bf11db6",
+      "run_kind": "timing_nominal",
+      "seed": 575862,
+      "session_id": "session_86fa52105569f51be3497c1d"
+    },
+    {
+      "bundle_namespace": "v03171-95bb70bc90a0b030",
+      "certificate_fingerprints": [
+        "f16589f32411c6ecd6933aebb464bf5a05d2947c6d4c446cf2619cd5d4f16610",
+        "d788922eeac84992ac2aace1cb9cb95412e2c464e1a9303e42da90227eaadb87"
+      ],
+      "certificate_fixture_count": 2,
+      "clock_domain_id": "windows-qpc-95bb70bc90a0b030",
+      "container_boot_ids": [
+        "local-isolation-reference-receiver-3050633344be",
+        "local-isolation-sensor-runtime-0fad250d8b11",
+        "local-isolation-staging-connector-a28b9ef91ca7",
+        "local-isolation-traffic-source-b070c635afa5"
+      ],
+      "container_runtime_used": false,
+      "process_id": 37048,
+      "run_id": "v03171_retries_and_restart_95bb70bc90a0b030",
+      "run_kind": "retries_and_restart",
+      "seed": 940246,
+      "session_id": "session_5b1357ecd4a52c23b70fc398"
+    },
+    {
+      "bundle_namespace": "v03171-17a819fe67e09deb",
+      "certificate_fingerprints": [
+        "90136b3aa9bdaea2bc4439e443db3d074aedd27a75fe345d4c89d030ae8ffd04",
+        "4a4ad9bba0bea1946f95734d26a29da6a86bc5c07d5f2aba78705d9d538c1bf6"
+      ],
+      "certificate_fixture_count": 2,
+      "clock_domain_id": "windows-qpc-17a819fe67e09deb",
+      "container_boot_ids": [
+        "local-isolation-reference-receiver-7db198f0400c",
+        "local-isolation-sensor-runtime-53873f9d0beb",
+        "local-isolation-staging-connector-5808b059dd98",
+        "local-isolation-traffic-source-090ddf78aa94"
+      ],
+      "container_runtime_used": false,
+      "process_id": 45448,
+      "run_id": "v03171_backlog_and_recovery_17a819fe67e09deb",
+      "run_kind": "backlog_and_recovery",
+      "seed": 645600,
+      "session_id": "session_1f6f587a28c132835d7eb554"
+    }
+  ],
+  "runtime_delivery_path_changed": false,
+  "schema_version": "v03171_targeted_trial_manifest_v1",
+  "scientific_accuracy_metrics_computed": false,
+  "stage": "v0.3.17.1",
+  "storage_profile_id": "samsung-860-evo-ntfs-v03171",
+  "trial_label_free": true
+}

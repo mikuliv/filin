@@ -19,6 +19,8 @@
     "connector_ingress_received>connector_journal_durable": 410,
     "receiver_validation_completed>receiver_commit_completed": 280
   },
+  "prospective_clock_domain_attestation_passed": true,
+  "prospective_linear_timestamp_violation_count": 0,
   "raw_trace_count": 201370,
   "raw_trace_modified": false,
   "raw_trace_sha256": "f38f002050fe646c0979cbca1343eb6e621ac3c9e2b7906089f54ce1848d5980",

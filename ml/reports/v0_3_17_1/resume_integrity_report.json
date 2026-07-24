@@ -1,0 +1,87 @@
+{
+  "acknowledged_event_resend_count": 0,
+  "candidate_identity_unchanged": true,
+  "code_lock": {
+    "artifacts": [
+      {
+        "actual_sha256": "8adc838f6af05ae071368a6362e13d7741116eaca9249e946dae4298c3de1af0",
+        "expected_sha256": "8adc838f6af05ae071368a6362e13d7741116eaca9249e946dae4298c3de1af0",
+        "path": "ml/experiments/v0_3_17_1/timing.py",
+        "unchanged": true
+      },
+      {
+        "actual_sha256": "a0ae75b26e8d9a90c9d220925c58c33e687fe0e1f0e1707d511fa77b18d594f9",
+        "expected_sha256": "a0ae75b26e8d9a90c9d220925c58c33e687fe0e1f0e1707d511fa77b18d594f9",
+        "path": "ml/experiments/v0_3_17_1/targeted_trial.py",
+        "unchanged": true
+      },
+      {
+        "actual_sha256": "f0f8211b342eb4d5d04196349b05d7e87b3e92530dc764f0afab5293a0012ac8",
+        "expected_sha256": "f0f8211b342eb4d5d04196349b05d7e87b3e92530dc764f0afab5293a0012ac8",
+        "path": "ml/protocols/v0_3_17_1_protocol.yaml",
+        "unchanged": true
+      },
+      {
+        "actual_sha256": "a9091f0cb98b34d18d006eafeb57e22b18febb434d7556e1e1fc40de898df4ad",
+        "expected_sha256": "a9091f0cb98b34d18d006eafeb57e22b18febb434d7556e1e1fc40de898df4ad",
+        "path": "rehearsal/contracts/runtime_timing_trace_v2.schema.json",
+        "unchanged": true
+      }
+    ],
+    "lock_revision": 3,
+    "locked_artifact_count": 4,
+    "locked_artifacts_unchanged": true
+  },
+  "database_reconciliation": [
+    {
+      "connector_event_count": 11251,
+      "expected_event_count": 11251,
+      "receiver_event_count": 11251,
+      "run_id": "v03171_timing_nominal_154ddc530bf11db6",
+      "sets_reconciled_by_count": true
+    },
+    {
+      "connector_event_count": 11251,
+      "expected_event_count": 11251,
+      "receiver_event_count": 11251,
+      "run_id": "v03171_retries_and_restart_95bb70bc90a0b030",
+      "sets_reconciled_by_count": true
+    },
+    {
+      "connector_event_count": 11251,
+      "expected_event_count": 11251,
+      "receiver_event_count": 11251,
+      "run_id": "v03171_backlog_and_recovery_17a819fe67e09deb",
+      "sets_reconciled_by_count": true
+    }
+  ],
+  "repeated_bundle_finalization_count": 0,
+  "repeated_capture_count": 0,
+  "repeated_event_generation_count": 0,
+  "repeated_feature_extraction_count": 0,
+  "repeated_inference_count": 0,
+  "schema_version": "v03171_resume_integrity_v1",
+  "stage": "v0.3.17.1",
+  "strict_resume_hash_verification_passed": true,
+  "strict_resume_passed": true,
+  "trace_hash_verification": [
+    {
+      "actual_sha256": "91d657a097449af621d0c8a4857efe97cb54f1157abcb31b7c1ba65435209a2f",
+      "expected_sha256": "91d657a097449af621d0c8a4857efe97cb54f1157abcb31b7c1ba65435209a2f",
+      "run_id": "v03171_timing_nominal_154ddc530bf11db6",
+      "unchanged": true
+    },
+    {
+      "actual_sha256": "0c3de6c63757a9ef81d86d00f2f579ae553d94bafa35a8c8e374f428f344465c",
+      "expected_sha256": "0c3de6c63757a9ef81d86d00f2f579ae553d94bafa35a8c8e374f428f344465c",
+      "run_id": "v03171_retries_and_restart_95bb70bc90a0b030",
+      "unchanged": true
+    },
+    {
+      "actual_sha256": "71fe4de4074e376e82d8aba9469a60fb68564732f54dbc082ef8a9d8ccf1534b",
+      "expected_sha256": "71fe4de4074e376e82d8aba9469a60fb68564732f54dbc082ef8a9d8ccf1534b",
+      "run_id": "v03171_backlog_and_recovery_17a819fe67e09deb",
+      "unchanged": true
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "automatic_action_attempt_count": 0,
+  "automatic_enforcement_ready": false,
+  "backend_integration_allowed": false,
+  "backend_tree_unchanged": true,
+  "backend_write_attempt_count": 0,
+  "bundle_validator_passed": true,
+  "candidate_identity_unchanged": true,
+  "candidate_ready_for_shadow_mode": false,
+  "candidate_ready_for_v0_3_18_external_review_and_trial_design": true,
+  "clean_finalization_passed": true,
+  "clock_domain_attestation_passed": true,
+  "clock_root_cause_analysis_completed": true,
+  "connector_ingress_ack_p95_ms": 1.5542099999999999,
+  "connector_to_receiver_p95_ms": 1.32791,
+  "corruption_case_count": 20,
+  "corruption_rejected_count": 20,
+  "corruption_suite_passed": true,
+  "counter_double_counting_count": 0,
+  "docker_project_bind_mounts_on_target_ssd": true,
+  "duplicate_batch_attempt_count": 6,
+  "duplicate_event_delivery_attempt_count": 280,
+  "environment_changed_since_v0_3_17": true,
+  "event_contract_unchanged": true,
+  "external_network_attempt_count": 0,
+  "external_validation_completed": false,
+  "feature_contract_unchanged": true,
+  "finalizer_nameerror_fixed": true,
+  "full_endurance_rerun_required": false,
+  "gate_results": [
+    {
+      "gate": "ssd_migration_verified",
+      "passed": true
+    },
+    {
+      "gate": "heavy_runtime_on_ssd",
+      "passed": true
+    },
+    {
+      "gate": "source_workspace_preserved",
+      "passed": true
+    },
+    {
+      "gate": "git_integrity",
+      "passed": true
+    },
+    {
+      "gate": "historical_v0317_unchanged",
+      "passed": true
+    },
+    {
+      "gate": "historical_anchors_resolved",
+      "passed": true
+    },
+    {
+      "gate": "clock_root_cause_completed",
+      "passed": true
+    },
+    {
+      "gate": "prospective_clock_attestation",
+      "passed": true
+    },
+    {
+      "gate": "trace_linkage",
+      "passed": true
+    },
+    {
+      "gate": "transport_duplicate_semantics",
+      "passed": true
+    },
+    {
+      "gate": "counter_double_counting_absent",
+      "passed": true
+    },
+    {
+      "gate": "latency_measurement_valid",
+      "passed": true
+    },
+    {
+      "gate": "performance_policy",
+      "passed": true
+    },
+    {
+      "gate": "corruption_suite",
+      "passed": true
+    },
+    {
+      "gate": "clean_finalization",
+      "passed": true
+    },
+    {
+      "gate": "bundle_validator",
+      "passed": true
+    },
+    {
+      "gate": "strict_resume",
+      "passed": true
+    },
+    {
+      "gate": "candidate_identity",
+      "passed": true
+    },
+    {
+      "gate": "state_policy",
+      "passed": true
+    },
+    {
+      "gate": "backend_tree",
+      "passed": true
+    },
+    {
+      "gate": "targeted_trial",
+      "passed": true
+    },
+    {
+      "gate": "reconciliation",
+      "passed": true
+    },
+    {
+      "gate": "privacy_and_secret",
+      "passed": true
+    },
+    {
+      "gate": "tests",
+      "passed": true
+    },
+    {
+      "gate": "external_actions_absent",
+      "passed": true
+    }
+  ],
+  "heavy_io_paths_on_target_ssd": true,
+  "historical_anchor_mismatch_count": 10,
+  "historical_anchor_resolved_count": 10,
+  "historical_counter_overcount_count": 435800,
+  "historical_integrity_policy_passed": true,
+  "historical_v0317_unchanged": true,
+  "instrumentation_changed": true,
+  "latency_measurement_valid": true,
+  "linear_timestamp_violation_count": 0,
+  "network_block_attempt_count": 0,
+  "performance_policy_passed": true,
+  "production_connection_allowed": false,
+  "production_connection_attempt_count": 0,
+  "production_ready": false,
+  "real_notifications_allowed": false,
+  "real_organization_trial_allowed": false,
+  "real_traffic_capture_allowed": false,
+  "recovery_finalization_required": false,
+  "repository_on_target_ssd": true,
+  "runtime_delivery_path_changed": false,
+  "runtime_on_target_ssd": true,
+  "schema_version": "v03171_policy_result_v1",
+  "sensor_ready_for_backend_integration": false,
+  "sensor_to_receiver_p95_ms": 2.8295,
+  "sensor_to_receiver_p99_ms": 5.691833999999992,
+  "shadow_mode_allowed": false,
+  "source_workspace_preserved": true,
+  "ssd_migration_completed": true,
+  "ssd_migration_required": true,
+  "ssd_migration_verified": true,
+  "stage": "v0.3.17.1",
+  "stage_status": "completed",
+  "stale_timestamp_reuse_count": 0,
+  "state_policy_unchanged": true,
+  "storage_profile_id": "samsung_860_evo_ntfs_v03171",
+  "strict_resume_passed": true,
+  "targeted_trial_completed": true,
+  "targeted_trial_duration_seconds": 2700.0254642,
+  "targeted_trial_passed": true,
+  "targeted_trial_required": true,
+  "tooling_changed": true,
+  "trace_linkage_error_count": 0,
+  "transport_duplicate_semantics_resolved": true,
+  "unresolved_historical_anchor_count": 0,
+  "v03171_stage_passed": true,
+  "wrong_attempt_ack_link_count": 0
+}

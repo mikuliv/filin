@@ -11,8 +11,13 @@
   "historical_trace_count": 201370,
   "historical_unknown_due_to_missing_linkage_count": 201370,
   "historical_wrong_attempt_ACK_link_count": 0,
+  "prospective_stale_timestamp_reuse_count": 0,
   "prospective_trace_contract": "runtime_timing_trace_v2",
+  "prospective_trace_linkage_error_count": 0,
+  "prospective_trace_linkage_passed": true,
   "prospective_trace_linkage_required": true,
+  "prospective_trace_row_count": 438899,
+  "prospective_wrong_attempt_ACK_link_count": 0,
   "schema_version": "v03171_trace_linkage_v1",
   "trace_contract_path": "rehearsal/contracts/runtime_timing_trace_v2.schema.json"
 }
