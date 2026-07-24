@@ -1,12 +1,14 @@
 schema_version: 2
 deprecated: true
 authoritative_source: status/project-status.yaml
-latest_completed_stage: v0.3.16
-latest_completed_result: staging_transport_passed
+latest_completed_stage: v0.3.17
+latest_completed_result: controlled_local_rehearsal_failed
 active_stage: none
-next_allowed_stage: v0.3.17
+next_allowed_stage: v0.3.17.1
 latest_staging_transport_trial: v0.3.16
+latest_controlled_local_rehearsal: v0.3.17
 candidate_ready_for_v0_3_17_controlled_local_shadow_rehearsal: true
+candidate_ready_for_v0_3_18_external_review_and_trial_design: false
 backend_integration_allowed: false
 shadow_mode_allowed: false
 production_ready: false

@@ -136,3 +136,7 @@ Post-hoc аудит отделил frozen record-order latency от causal alert
 ## v0.3.16
 
 [Isolated staging connector and reference receiver](experiments/v0_3_16.md) завершил revision 2 на 12 новых сессиях. 2 280/2 280 событий прошли durable connector и отдельный reference receiver, faults 24/24 и все 59 gates пройдены. Разрешена только подготовка локального v0.3.17; shadow mode, backend и production запрещены.
+
+## v0.3.17
+
+[Длительная controlled local rehearsal](experiments/v0_3_17.md) завершила revision 8 тремя независимыми запусками общей фактической длительностью `14400.000` секунды. Захвачено `201600` закрытых синтетических окон, source/connector/receiver согласовали `201420` canonical events, итоговый backlog равен нулю. Общий результат отрицательный: historical-anchor, clock/latency, performance и corruption/bundle gates не пройдены. Разрешён только corrective v0.3.17.1; v0.3.18, shadow mode, backend и production запрещены.

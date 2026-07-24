@@ -1,6 +1,6 @@
 # Текущий статус проекта
 
-Статус v0.3.16: isolated staging connector и reference receiver завершены положительно. Revision 1 корректно инвалидирован из-за ошибочного anchor; revision 2 передал 2 280/2 280 событий через две internal mTLS/TLS 1.3 границы и прошёл 24/24 faults. Разрешён только локальный controlled rehearsal v0.3.17.
+Статус v0.3.17: четырёхчасовая controlled local rehearsal завершена, но policy result отрицательный. Доставка `201420` canonical events согласована между source, connector и receiver, backlog устранён, однако historical-anchor, clock/latency, performance и corruption/bundle gates не пройдены. Разрешён только corrective v0.3.17.1.
 
 Единственный машинно-читаемый источник: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -8,10 +8,11 @@
 - Последний independent model holdout: v0.3.15.5.
 - Последний runtime trial: v0.3.15.5.1.
 - Последний corrective audit: v0.3.15.1.
-- Текущий завершённый этап: v0.3.16.
+- Текущий завершённый этап: v0.3.17, отрицательный результат.
 - Последний regression analysis: v0.3.15.3, анализ успешно завершён.
 - Последний staging transport trial: v0.3.16.
-- Следующий разрешённый этап: v0.3.17 controlled local shadow rehearsal.
+- Последняя controlled local rehearsal: v0.3.17.
+- Следующий разрешённый этап: corrective v0.3.17.1.
 - Production, shadow mode, backend integration и automatic enforcement: запрещены.
 - External validation: не выполнена.
 

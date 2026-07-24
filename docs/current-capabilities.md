@@ -1,6 +1,6 @@
 # Текущие подтверждённые возможности
 
-Статус v0.3.16: неизменный кандидат прошёл локальный isolated staging transport trial. 2 280 label-free событий доставлены через durable connector в отдельный reference receiver; source/connector/receiver equality, 24/24 faults, TLS, latency, performance, privacy и resume gates пройдены. Reference receiver не является backend; shadow mode, backend integration и production не подтверждены.
+Статус v0.3.17: неизменный кандидат и staging transport прошли четырёхчасовую локальную репетицию без потери canonical events и с нулевым итоговым backlog, но общий policy result отрицательный. Historical-anchor, clock/latency, performance и corruption/bundle gates не пройдены. Reference receiver не является backend; shadow mode, backend integration, v0.3.18 и production не подтверждены.
 
 Источник статуса: [`status/project-status.yaml`](status/project-status.yaml).
 
@@ -21,6 +21,7 @@
 - candidate-aware `shadow_event_v2`, frozen registry и compatibility matrix;
 - prospective runtime v0.3.15.5.1: 2 280/2 280 reconciled events и 12/12 fault-oracles.
 - isolated staging transport v0.3.16: 2 280/2 280 durable receiver events, 46 batch/commit/ACK/checkpoint и 24/24 fault-oracles.
+- controlled local rehearsal v0.3.17: 4 часа wall-clock, 201 600 окон и 201 420 согласованных canonical events; stage policy не пройдена.
 
 ## Переоценённый scope
 
@@ -34,4 +35,4 @@ v0.3.15.4 исправил подтверждённые scenario/feature defects
 
 ## Не разрешено
 
-Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. v0.3.17 разрешён только как следующий локальный controlled rehearsal с синтетическим или воспроизводимым трафиком.
+Production, backend integration, shadow mode, automatic enforcement и внешние сетевые получатели запрещены. Следующий допустимый этап — только corrective v0.3.17.1; v0.3.18 не разрешён.
