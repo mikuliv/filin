@@ -2,7 +2,11 @@ from __future__ import annotations
 
 import time
 
-from ml.experiments.v0_3_17_1.targeted_trial import COMPONENTS, _trace_row
+from ml.experiments.v0_3_17_1.targeted_trial import (
+    COMPONENTS,
+    _trace_row,
+    classify_mode,
+)
 from ml.experiments.v0_3_17_1.timing import (
     PHASES,
     latency_breakdown,
@@ -86,3 +90,24 @@ def test_latency_aggregation_uses_healthy_chain() -> None:
     assert value["healthy_event_count"] == 1
     assert value["fault_event_count"] == 0
     assert value["sensor_to_receiver_p95_ms"] == 8.0
+
+
+def test_all_required_latency_modes_are_explicit() -> None:
+    values = {
+        classify_mode("timing_nominal", 0.1, 1, retry=False, slowdown=False),
+        classify_mode("timing_nominal", 0.1, 10, retry=False, slowdown=False),
+        classify_mode("timing_nominal", 0.1, 20, retry=False, slowdown=False),
+        classify_mode("retries_and_restart", 0.2, 1, retry=True, slowdown=False),
+        classify_mode("retries_and_restart", 0.51, 1, retry=False, slowdown=False),
+        classify_mode("backlog_and_recovery", 0.45, 1, retry=False, slowdown=True),
+        classify_mode("backlog_and_recovery", 0.55, 1, retry=False, slowdown=False),
+    }
+    assert values == {
+        "healthy_nominal",
+        "elevated",
+        "burst",
+        "retry",
+        "restart",
+        "slowdown",
+        "recovery",
+    }

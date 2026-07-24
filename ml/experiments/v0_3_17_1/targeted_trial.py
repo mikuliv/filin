@@ -44,6 +44,29 @@ COMPONENTS = {
 }
 
 
+def classify_mode(
+    run_kind: str,
+    fraction: float,
+    sequence: int,
+    *,
+    retry: bool,
+    slowdown: bool,
+) -> str:
+    if retry:
+        return "retry"
+    if run_kind == "retries_and_restart" and 0.5 <= fraction < 0.55:
+        return "restart"
+    if slowdown:
+        return "slowdown"
+    if run_kind == "backlog_and_recovery" and 0.5 <= fraction < 0.6:
+        return "recovery"
+    if run_kind == "timing_nominal" and sequence % 20 == 0:
+        return "burst"
+    if run_kind == "timing_nominal" and sequence % 10 == 0:
+        return "elevated"
+    return "healthy_nominal"
+
+
 def _sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
@@ -327,7 +350,7 @@ def run_one(
                 )
                 restart_count = 1
                 certificate_reconnect_count = 1
-            event_id, mode, rows, retry_count, duplicate_count = _event(
+            event_id, _, rows, retry_count, duplicate_count = _event(
                 connector,
                 receiver,
                 namespace=namespace,
@@ -339,10 +362,13 @@ def run_one(
                 retry=retry,
                 slowdown=slowdown,
             )
-            if default_mode == "healthy_nominal" and sequence % 20 == 0:
-                mode = "burst"
-            elif default_mode == "healthy_nominal" and sequence % 10 == 0:
-                mode = "elevated"
+            mode = classify_mode(
+                run_kind,
+                now_fraction,
+                sequence,
+                retry=retry,
+                slowdown=slowdown,
+            )
             traces.writelines(
                 json.dumps(row, sort_keys=True, separators=(",", ":")) + "\n"
                 for row in rows
