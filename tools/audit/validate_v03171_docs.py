@@ -62,7 +62,11 @@ def validate() -> dict:
     if status_path.is_file() and policy_path.is_file():
         status = yaml.safe_load(status_path.read_text(encoding="utf-8"))
         policy = json.loads(policy_path.read_text(encoding="utf-8"))
-        if status.get("current_completed_stage") != "v0.3.17.1":
+        current = tuple(
+            int(part)
+            for part in str(status.get("current_completed_stage", "v0.0.0")).removeprefix("v").split(".")
+        )
+        if current < (0, 3, 17, 1):
             errors.append("status_current_stage")
         if (
             status.get(
