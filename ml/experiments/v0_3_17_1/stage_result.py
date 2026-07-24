@@ -202,6 +202,34 @@ def _augment_audit_reports(trial: dict[str, Any]) -> None:
     write("transport_duplicate_semantics_report.json", duplicate)
 
 
+def _augment_trial_manifest() -> None:
+    manifest = read("targeted_trial_manifest.json")
+    manifest["protocol_lock_revision"] = 2
+    manifest["prior_nonofficial_attempts"] = [
+        {
+            "attempt": "smoke_revision_1",
+            "purpose": "runner_startup_check",
+            "official_evidence_used": False,
+        },
+        {
+            "attempt": "partial_revision_1",
+            "status": "invalidated_and_stopped",
+            "reason": (
+                "Latency breakdown did not expose separate restart and recovery "
+                "buckets."
+            ),
+            "official_evidence_used": False,
+            "duration_claimed": False,
+        },
+        {
+            "attempt": "smoke_revision_2",
+            "purpose": "seven_bucket_regression_check",
+            "official_evidence_used": False,
+        },
+    ]
+    write("targeted_trial_manifest.json", manifest)
+
+
 def generate_policy(bundle_validator_passed: bool) -> dict[str, Any]:
     storage = read("storage_profile.json")
     migration = read("ssd_migration_verification_report.json")
@@ -556,6 +584,7 @@ def write_claim_ledger() -> dict[str, Any]:
 def complete(test_count: int, warnings: int, duration: float) -> dict[str, Any]:
     write_test_report(test_count, warnings, duration)
     trial = read("targeted_trial_results.json")
+    _augment_trial_manifest()
     _augment_audit_reports(trial)
     policy = generate_policy(bundle_validator_passed=False)
     write_summary(policy)
