@@ -9,3 +9,5 @@
 - Package verifier проверяет целостность и процесс, но не доказывает
   репрезентативность dataset.
 - Shadow mode, backend integration и production запрещены.
+
+Для локальной репетиции обязательно: `scientific_evidence=false`.
