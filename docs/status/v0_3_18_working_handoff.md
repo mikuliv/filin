@@ -16,14 +16,18 @@
 
 1. Предварительная Git-проверка.
 2. Заморозка протокола до реализации workflow.
+3. Contracts ролей, dataset identity/provenance и blind commitments.
+4. Frozen data acceptance, contamination, metric, sufficiency и stop policies.
+5. Package builder, standalone verifier, evaluator и chronology validation.
+6. Synthetic blind rehearsal и 40 обязательных отрицательных сценариев.
+7. External review documentation, CI и authoritative status.
+8. Полный regression gate: `1309 passed`, `0 failed`, `0 skipped`,
+   `3 warnings`; compileall `6/6`.
 
 ## Незавершённые фазы
 
-1. Contracts ролей, dataset identity/provenance и commitments.
-2. Metric, sufficiency, stop и legal policies.
-3. Builder, standalone verifier, evaluator и chronology.
-4. Synthetic rehearsal и 40 отрицательных сценариев.
-5. Документация, тесты, CI, evidence bundle и authoritative status.
+1. Финальная пересборка evidence bundle с фактическим test report.
+2. Финальная Git integrity и clean-worktree проверка.
 
 ## Замороженные материалы
 
@@ -38,11 +42,33 @@
 
 ## Следующие действия
 
-Создать versioned JSON Schemas, canonical commitment utility и semantic
-validators. Затем выполнить их unit tests и обновить этот журнал.
+Запустить `ml.experiments.v0_3_18.stage_result` с итоговыми параметрами тестов,
+добавить только aggregate reports и выполнить все bundle/privacy/docs
+validators. После evidence commit проверить clean worktree, backend tree и
+`git fsck --full`.
+
+## Созданные contracts и tools
+
+- 13 JSON Schemas в `external_review/contracts`;
+- canonical commitment utility;
+- deterministic package builder и standalone verifier;
+- frozen external evaluator;
+- semantic contract и chronology validators;
+- bundle, artifact-exclusion и documentation validators.
+
+## Результат rehearsal
+
+- rehearsal ID: `v0318-synthetic-rehearsal-001`;
+- usage mode: `synthetic_protocol_rehearsal`;
+- реальная модель: не использовалась;
+- реальные внешние данные и labels: не использовались;
+- commitment и label reveal workflow: пройдены;
+- evaluator determinism: пройден;
+- negative scenarios: `40/40` отклонены;
+- package verification: пройдена.
 
 ## Сохраняющиеся запреты
 
 Реальные данные, внешние подключения, backend, production, fit, threshold
 selection, уведомления и automatic actions запрещены. Текущий stage status:
-`in_progress`; stage passed не установлен.
+`completed`; readiness ограничена только package review v0.3.19.
