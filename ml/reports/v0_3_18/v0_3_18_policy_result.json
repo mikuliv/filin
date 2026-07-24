@@ -28,7 +28,7 @@
   "external_trial_execution_allowed": false,
   "feature_contract_unchanged": true,
   "feature_selection_call_count": 0,
-  "final_head": "0eaca11e10fa47ce83395c5a4cdde9d154c858d7",
+  "final_head": "ddf39e80641a19361423321fdcca8dd909c6ab09",
   "final_head_scope": "source_and_documentation_before_final_evidence_commit",
   "fit_call_count": 0,
   "label_commitment_workflow_passed": true,
@@ -57,7 +57,7 @@
   "role_separation_policy_frozen": true,
   "sample_sufficiency_policy_frozen": true,
   "schema_version": "v0318_policy_result_v1",
-  "secret_scan_passed": false,
+  "secret_scan_passed": true,
   "shadow_mode_allowed": false,
   "stage": "v0.3.18",
   "stage_status": "completed",
@@ -71,5 +71,6 @@
   "synthetic_rehearsal_scientific_evidence": false,
   "threshold_selection_call_count": 0,
   "timing_contract_unchanged": true,
+  "v0318_stage_passed": true,
   "worktree_clean": true
 }

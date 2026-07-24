@@ -33,7 +33,7 @@
       "claim_scope": "v0.3.18 protocol design",
       "claim_text": "Synthetic blind workflow пройден без научного claim.",
       "evidence_hashes": [
-        "374ffc101e92eed8558daae02b0edc7117bae68e51090e882c1894b0f9754078"
+        "3f96ad2a2fc8d17058b28b19c080d2df1273beef3a9544620f7df1b96cfb5a73"
       ],
       "evidence_refs": [
         "ml/reports/v0_3_18/rehearsal_result.json"

@@ -1,7 +1,7 @@
 {
   "candidate_commitment_sha256": "e41225793270dd083c2a50d86392eec1420d9430861d8ac268802277b1aef99b",
   "chronology_validation_passed": true,
-  "duration_seconds": 0.11778159999812488,
+  "duration_seconds": 0.0983632999996189,
   "episode_count": 18,
   "evaluator_commitment_sha256": "298ada3dc5941fcec0ae23a38b48ddc26a29d6078e06ea2a8fe10cba8667d3b0",
   "evaluator_determinism_passed": true,
