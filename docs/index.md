@@ -52,6 +52,7 @@
 - [Следующий этап](status/next-stage.md) — scope v0.3.19.
 - [Version history](status/version-history.md) — полная история результатов.
 - [Roadmap](roadmap.md) — разрешённый шаг и долгосрочные направления.
+- [Временная реконструкция v0.4.1](research/temporal-reconstruction.md) — отношения, граф и ограничения.
 - [`v0_4_track.yaml`](status/v0_4_track.yaml) — отдельное состояние
   параллельной исследовательской линии.
 

@@ -1,0 +1,37 @@
+stage: v0.4.1
+protocol_revision: 1
+starting_head: 8313fa1f6046178d93a1b0a74cc2bd77fa45fbc2
+active_branch: main
+v0_4_0_implementation_commit: 8313fa1f6046178d93a1b0a74cc2bd77fa45fbc2
+v0_4_0_manifest_sha256: a673621264e9915b16cccbf55b773a8ffd1cee12681eda5a85d154173c0eed3a
+v0_4_0_protocol_sha256: 6a31aa9924f7d3ee236a3990cc70fb73e08d3cb4c54d9966e3e38d64d88bddb4
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract_id: network_features_v2
+  shadow_event_v2_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+purpose: deterministic_temporal_and_structural_relation_reconstruction_on_synthetic_passive_events
+allowed_inputs: [incident_reconstruction_bundle_v1, shadow_event_v2, frozen_grouping_rules]
+forbidden_inputs: [model_binary, training_data, real_organization_data, backend_response, delivery_order_as_chronology]
+time_model:
+  domains: [network_observation, observed_interval, model_result_formation, passive_event_formation, component_reception, durable_persistence, delivery_acknowledgement, card_build]
+  precision: [second, millisecond, microsecond, interval_only, unknown]
+  uncertainty_rule: source_precision_and_attestation_only
+temporal_relations: [strictly_before, strictly_after, overlaps, contains, during, equal_interval, simultaneous_within_precision, meets, indeterminate]
+forbidden_relations: [causes, caused_by, leads_to, consequence_of, attacker_action, compromise_result]
+structural_rules: [same_episode, same_observed_subject, same_source_endpoint, same_destination_endpoint, same_service, same_activity_key, same_passive_event, duplicate_observation, shared_evidence, candidate_cross_episode_association, unrelated_within_available_evidence, indeterminate]
+grouping_rule: explicit_structural_basis_required
+gap_rule: missing_or_conflicting_information_is_recorded_not_invented
+canonicalization: utf8_sorted_keys_compact_sha256
+determinism: [file_order, event_order, json_key_order, unordered_array_order, delivery_order, duplicate_delivery, local_path, timezone, locale, username, run_time, restart_count]
+positive_scenario_count: 24
+negative_scenario_minimum: 50
+official_seed_namespace: v041-r1-seed-41000-41099
+completion_gates: [all_schemas_valid, positive_campaign_passed, negative_campaign_passed, no_strict_cycles, no_causal_relations, standalone_verifier_passed, full_regression_passed]
+invalidation_conditions: [protocol_changed_after_campaign, candidate_changed, v0_4_0_changed, unresolved_reference, hidden_conflict, nondeterministic_result, forbidden_runtime_call]
+confirmed_capability: deterministic_temporal_and_structural_relation_layer_for_synthetic_laboratory_materials
+prohibited_claims: [real_root_cause_established, compromise_proven, industrial_correlation_ready, production_ready, automatic_response_allowed]
+next_allowed_stage: v0.4.2
+mainline_next_allowed_stage: v0.3.19
+prohibited_capabilities: [external_trial, real_data, backend_integration, production, real_notifications, automatic_response, automatic_blocking]

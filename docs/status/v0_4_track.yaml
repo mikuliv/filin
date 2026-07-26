@@ -1,15 +1,17 @@
 schema_version: filin_parallel_research_track_v1
 track: parallel_research
 track_id: v0.4.x
-latest_completed_stage: v0.4.0
+latest_completed_stage: v0.4.1
 current_stage: null
-allowed_next_stage: v0.4.1
+allowed_next_stage: v0.4.2
 relationship_to_v0_3: consumes_immutable_v0_3_passive_events_without_replacing_v0_3_19
 mainline_latest_completed_stage: v0.3.18
 mainline_next_allowed_stage: v0.3.19
 candidate_id: v03154:65a3dd912d845bc1
 stage_result: passed
-confirmed_capability: deterministic_verifiable_incident_card_building_on_synthetic_laboratory_events
+confirmed_capability: deterministic_temporal_and_structural_relation_reconstruction_on_synthetic_laboratory_events
+laboratory_only: true
+candidate_unchanged: true
 prohibited_capabilities:
   external_trial_execution: true
   real_organization_data: true
