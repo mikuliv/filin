@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/evidence_reference_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evidence_id", "source_type", "source_id", "source_schema_version", "source_sha256", "observed_interval", "locator_token", "scope_description", "limitations"],
+  "properties": {
+    "schema_version": {"const": "evidence_reference_v1"},
+    "evidence_id": {"type": "string", "pattern": "^evr_[0-9a-f]{64}$"},
+    "source_type": {"enum": ["passive_event", "synthetic_internal_record"]},
+    "source_id": {"type": "string", "minLength": 1, "maxLength": 160},
+    "source_schema_version": {"type": "string", "minLength": 1, "maxLength": 64},
+    "source_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "observed_interval": {"$ref": "#/$defs/interval"},
+    "locator_token": {"type": "string", "pattern": "^[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)*$", "maxLength": 240},
+    "scope_description": {"type": "string", "minLength": 1, "maxLength": 500},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}, "uniqueItems": true}
+  },
+  "$defs": {"interval": {"type": "object", "additionalProperties": false, "required": ["start", "end"], "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": ["string", "null"], "format": "date-time"}}}}
+}

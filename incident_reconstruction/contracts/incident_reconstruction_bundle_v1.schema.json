@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/incident_reconstruction_bundle_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest", "passive_events", "evidence_references", "incident_card", "build_journal", "builder_version", "checksums", "verification_result", "reproducibility"],
+  "properties": {
+    "schema_version": {"const": "incident_reconstruction_bundle_v1"},
+    "manifest": {"type": "object", "additionalProperties": false, "required": ["bundle_id", "files", "semantic_result_sha256"], "properties": {"bundle_id": {"type": "string", "pattern": "^bundle_[0-9a-f]{64}$"}, "files": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "pattern": "^[a-zA-Z0-9_.-]+(?:/[a-zA-Z0-9_.-]+)*$"}, "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}}, "semantic_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}},
+    "passive_events": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "evidence_references": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/evidence_reference_v1"}},
+    "incident_card": {"$ref": "filin://incident-reconstruction/incident_card_v1"},
+    "build_journal": {"type": "object", "additionalProperties": false, "required": ["run_id", "semantic_result_sha256", "steps"], "properties": {"run_id": {"type": "string", "pattern": "^v040_[a-z0-9_]{3,80}$"}, "semantic_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "steps": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 100}}}},
+    "builder_version": {"const": "v0.4.0-r1"},
+    "checksums": {"type": "object", "additionalProperties": {"type": "string", "pattern": "^[0-9a-f]{64}$"}},
+    "verification_result": {"enum": ["pending", "passed"]},
+    "reproducibility": {"type": "object", "additionalProperties": false, "required": ["canonical_json", "deterministic_rebuild", "git_required", "network_required", "model_required", "backend_required"], "properties": {"canonical_json": {"const": "utf8_sorted_keys_compact"}, "deterministic_rebuild": {"type": "boolean"}, "git_required": {"const": false}, "network_required": {"const": false}, "model_required": {"const": false}, "backend_required": {"const": false}}}
+  }
+}

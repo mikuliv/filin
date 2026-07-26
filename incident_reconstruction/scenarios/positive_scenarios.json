@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0_4_0_positive_scenarios_v1",
+  "seed_namespace": "v040-r1",
+  "scenario_ids": [
+    "normal_network_behavior", "authentication_failures", "beacon_activity",
+    "low_rate_dos", "port_scan", "web_probe", "multi_event_episode",
+    "equal_timestamps", "out_of_order_input", "duplicate_delivery",
+    "restart_recovery", "incomplete_evidence"
+  ]
+}

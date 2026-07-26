@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/analyst_recommendation_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "recommendation_id", "text", "basis_fact_ids", "priority", "requires_human_approval", "execution_status"],
+  "properties": {
+    "schema_version": {"const": "analyst_recommendation_v1"},
+    "recommendation_id": {"type": "string", "pattern": "^rec_[0-9a-f]{64}$"},
+    "text": {"type": "string", "minLength": 1, "maxLength": 500},
+    "basis_fact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^fact_[0-9a-f]{64}$"}},
+    "priority": {"enum": ["low", "medium", "high"]},
+    "requires_human_approval": {"const": true},
+    "execution_status": {"const": "not_executed"}
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/incident_hypothesis_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "hypothesis_id", "title", "description", "status", "supporting_fact_ids", "contradicting_fact_ids", "missing_evidence", "alternative_hypothesis_ids", "confirmation_conditions", "refutation_conditions", "support_basis", "limitations"],
+  "properties": {
+    "schema_version": {"const": "incident_hypothesis_v1"},
+    "hypothesis_id": {"type": "string", "pattern": "^hyp_[0-9a-f]{64}$"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 200},
+    "description": {"type": "string", "minLength": 1, "maxLength": 1000},
+    "status": {"enum": ["possible", "partially_supported", "supported_within_available_evidence", "contradicted", "insufficient_data"]},
+    "supporting_fact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^fact_[0-9a-f]{64}$"}},
+    "contradicting_fact_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^fact_[0-9a-f]{64}$"}},
+    "missing_evidence": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}, "uniqueItems": true},
+    "alternative_hypothesis_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^hyp_[0-9a-f]{64}$"}},
+    "confirmation_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "refutation_conditions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "support_basis": {"enum": ["transparent_rule_single_event", "transparent_rule_multiple_events", "insufficient_evidence_rule"]},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 300}, "uniqueItems": true}
+  }
+}

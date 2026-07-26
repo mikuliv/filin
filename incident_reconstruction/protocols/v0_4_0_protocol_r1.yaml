@@ -1,0 +1,94 @@
+schema_version: v0_4_0_protocol_v1
+stage: v0.4.0
+revision: 1
+status: frozen_before_official_synthetic_run
+starting_head: 7012115b21549f2fec071581d51f57210b7c5d1c
+purpose: deterministic_verifiable_incident_reconstruction_from_passive_events
+relationship_to_v0_3: parallel_research_line_consuming_immutable_shadow_event_v2
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  feature_contract_id: network_features_v2
+  event_contract_id: shadow_event_v2
+  event_contract_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+boundaries:
+  model_loading_allowed: false
+  fit_allowed: false
+  calibration_fit_allowed: false
+  threshold_selection_allowed: false
+  backend_access_allowed: false
+  external_network_allowed: false
+  automatic_actions_allowed: false
+  real_data_allowed: false
+allowed_sources:
+  - schema_valid_shadow_event_v2
+  - synthetic_internal_evidence_reference
+forbidden_sources:
+  - scenario_label_as_observation
+  - model_artifact
+  - training_code
+  - backend
+  - external_network
+entities:
+  - evidence_reference_v1
+  - observed_fact_v1
+  - timeline_item_v1
+  - incident_hypothesis_v1
+  - mitre_mapping_v1
+  - analyst_recommendation_v1
+  - incident_card_v1
+  - incident_reconstruction_bundle_v1
+determinism:
+  canonical_json: utf8_sorted_keys_compact
+  digest: sha256
+  stable_content_derived_ids: true
+  current_time_in_semantic_result: false
+  absolute_paths_allowed: false
+  equal_timestamps_imply_causality: false
+positive_scenarios:
+  minimum_count: 12
+  required:
+    - normal_network_behavior
+    - authentication_failures
+    - beacon_activity
+    - low_rate_dos
+    - port_scan
+    - web_probe
+    - multi_event_episode
+    - equal_timestamps
+    - out_of_order_input
+    - duplicate_delivery
+    - restart_recovery
+    - incomplete_evidence
+negative_scenarios:
+  minimum_count: 30
+completion_gates:
+  - schemas_valid
+  - positive_scenarios_passed
+  - negative_scenarios_rejected
+  - evidence_references_resolved
+  - facts_sourced
+  - hypotheses_separated_from_facts
+  - contradictions_preserved
+  - deterministic_rebuild_passed
+  - standalone_verifier_passed
+  - privacy_secret_artifact_docs_passed
+  - full_regression_passed
+invalidation_conditions:
+  - frozen_candidate_changed
+  - v0_3_contract_changed
+  - backend_changed
+  - protocol_changed_after_official_run
+  - unsupported_fact_accepted
+  - unresolved_evidence_reference_accepted
+  - hidden_contradiction
+  - nondeterministic_semantic_result
+next_allowed_stage: v0.4.1
+prohibited_claims:
+  - real_incident_investigation_completed
+  - host_compromise_confirmed
+  - hypothesis_proven
+  - external_trial_completed
+  - production_ready
+  - automatic_response_ready

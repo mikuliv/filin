@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/timeline_item_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "timeline_item_id", "start_time", "end_time", "fact_ids", "event_ids", "ordering_basis", "time_precision", "temporal_uncertainties"],
+  "properties": {
+    "schema_version": {"const": "timeline_item_v1"},
+    "timeline_item_id": {"type": "string", "pattern": "^tli_[0-9a-f]{64}$"},
+    "start_time": {"type": "string", "format": "date-time"},
+    "end_time": {"type": ["string", "null"], "format": "date-time"},
+    "fact_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^fact_[0-9a-f]{64}$"}},
+    "event_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^evt_[0-9a-f]{64}$"}},
+    "ordering_basis": {"const": "timestamp_then_event_id_without_causal_inference"},
+    "time_precision": {"enum": ["exact_source_timestamp", "approximate_source_interval"]},
+    "temporal_uncertainties": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}, "uniqueItems": true}
+  }
+}

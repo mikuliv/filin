@@ -40,6 +40,8 @@
   semantics.
 - [Воспроизводимость](research/reproducibility.md) — immutable evidence и Git
   HEAD terminology.
+- [Реконструкция инцидента](research/incident-reconstruction.md) — отдельная
+  параллельная линия v0.4.x на неизменённых пассивных событиях.
 
 ## Текущий статус
 
@@ -50,6 +52,8 @@
 - [Следующий этап](status/next-stage.md) — scope v0.3.19.
 - [Version history](status/version-history.md) — полная история результатов.
 - [Roadmap](roadmap.md) — разрешённый шаг и долгосрочные направления.
+- [`v0_4_track.yaml`](status/v0_4_track.yaml) — отдельное состояние
+  параллельной исследовательской линии.
 
 ## Контракты
 

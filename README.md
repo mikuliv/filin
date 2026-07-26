@@ -289,9 +289,10 @@ detached hashes, test reports и claim-evidence ledgers. Historical artifacts н
 v0.3.18 завершён с положительным design/rehearsal result. Разрешён только
 v0.3.19: независимый review external package и согласование trial plan.
 
-Фактический external trial потребует отдельного решения. Долгосрочная v0.4.x
-ветка рассматривает evidence reconstruction и incident hypothesis layer, но не
-является автоматическим следующим шагом или production-веткой.
+Фактическое внешнее испытание потребует отдельного решения. Параллельный v0.4.0
+создал проверяемую реконструкцию на неизменённых синтетических событиях v0.3;
+он не заменяет v0.3.19 и не является production-веткой. Следующий шаг этой
+линии ограничен v0.4.1.
 
 См. [roadmap](docs/roadmap.md) и
 [next stage](docs/status/next-stage.md).

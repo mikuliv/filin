@@ -1,0 +1,12 @@
+{
+  "schema_version": "v0_4_0_test_report_v1",
+  "targeted_test_count": 60,
+  "targeted_passed": 60,
+  "full_pytest_passed": 1373,
+  "full_pytest_failed": 0,
+  "full_pytest_skipped": 0,
+  "full_pytest_warnings": 3,
+  "compileall_passed": true,
+  "documentation_validation_passed": true,
+  "status_validation_passed": true
+}

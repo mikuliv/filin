@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://incident-reconstruction/incident_card_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "card_id", "formed_at", "formation_mode", "laboratory_run_id", "candidate_id", "candidate_artifact_sha256", "feature_contract_id", "event_contract_sha256", "source_event_ids", "evidence_references", "observed_facts", "timeline", "hypotheses", "alternative_hypotheses", "contradicting_information", "missing_information", "mitre_mappings", "recommendations", "general_limitations", "safety_declarations", "card_sha256"],
+  "properties": {
+    "schema_version": {"const": "incident_card_v1"},
+    "card_id": {"type": "string", "pattern": "^card_[0-9a-f]{64}$"},
+    "formed_at": {"type": "string", "format": "date-time"},
+    "formation_mode": {"const": "deterministic_synthetic_laboratory"},
+    "laboratory_run_id": {"type": "string", "pattern": "^v040_[a-z0-9_]{3,80}$"},
+    "candidate_id": {"const": "v03154:65a3dd912d845bc1"},
+    "candidate_artifact_sha256": {"const": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87"},
+    "feature_contract_id": {"const": "network_features_v2"},
+    "event_contract_sha256": {"const": "38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149"},
+    "source_event_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^evt_[0-9a-f]{64}$"}},
+    "evidence_references": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/evidence_reference_v1"}},
+    "observed_facts": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/observed_fact_v1"}},
+    "timeline": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/timeline_item_v1"}},
+    "hypotheses": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/incident_hypothesis_v1"}},
+    "alternative_hypotheses": {"type": "array", "minItems": 1, "items": {"$ref": "filin://incident-reconstruction/incident_hypothesis_v1"}},
+    "contradicting_information": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "missing_information": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "mitre_mappings": {"type": "array", "items": {"$ref": "filin://incident-reconstruction/mitre_mapping_v1"}},
+    "recommendations": {"type": "array", "items": {"$ref": "filin://incident-reconstruction/analyst_recommendation_v1"}},
+    "general_limitations": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 300}},
+    "safety_declarations": {"type": "object", "additionalProperties": false, "required": ["laboratory_environment", "synthetic_data", "automatic_actions_performed", "host_compromise_automatically_confirmed", "human_analysis_required"], "properties": {"laboratory_environment": {"const": true}, "synthetic_data": {"const": true}, "automatic_actions_performed": {"const": false}, "host_compromise_automatically_confirmed": {"const": false}, "human_analysis_required": {"const": true}}},
+    "card_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": "v0_4_0_claim_evidence_ledger_v1",
+  "claims": [
+    {"claim_id": "v040_contracts", "claim": "Созданы строгие контракты восьми сущностей.", "supporting_paths": ["incident_reconstruction/contracts"]},
+    {"claim_id": "v040_builder", "claim": "Смысловая карточка строится детерминированно.", "supporting_paths": ["incident_reconstruction/builder.py", "ml/tests/test_v040_incident_reconstruction.py"]},
+    {"claim_id": "v040_positive", "claim": "Положительные сценарии прошли 12 из 12.", "supporting_paths": ["ml/reports/v0_4_0/synthetic_campaign_result.json"]},
+    {"claim_id": "v040_negative", "claim": "Нарушения отклонены 38 из 38.", "supporting_paths": ["ml/reports/v0_4_0/synthetic_campaign_result.json"]},
+    {"claim_id": "v040_standalone", "claim": "Комплект проверяется без Git, сети, модели и backend.", "supporting_paths": ["tools/incident_reconstruction/verify_bundle.py", "ml/reports/v0_4_0/standalone_verification_result.json"]},
+    {"claim_id": "v040_limits", "claim": "Результат ограничен синтетической лабораторной средой.", "supporting_paths": ["ml/reports/v0_4_0/known_limitations.md"]}
+  ]
+}

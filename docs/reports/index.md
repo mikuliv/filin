@@ -6,3 +6,7 @@ Aggregate reports хранятся по версиям в `ml/reports`. Испо
 
 Raw PCAP, labels, predictions, databases, journals и timing traces не входят в
 tracked reports.
+
+Параллельная линия v0.4.x имеет отдельный комплект:
+[итог v0.4.0](../../ml/reports/v0_4_0/v0_4_0_summary.md) и
+[машиночитаемый результат](../../ml/reports/v0_4_0/v0_4_0_policy_result.json).

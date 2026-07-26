@@ -1,0 +1,6 @@
+{
+  "schema_version": "v0_4_0_negative_scenarios_v1",
+  "scenario_count": 38,
+  "source": "incident_reconstruction.scenarios.negative_cases",
+  "rule": "Каждый сценарий выполняет отдельное нарушение и проходит только при точном совпадении кода отклонения."
+}
