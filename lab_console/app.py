@@ -22,7 +22,7 @@ from .presentation.case_views import case_catalog, case_page
 from .review import ReviewService
 from .security import SessionStore
 
-PAGES = TITLE
+PAGES = {key: value for key, value in TITLE.items() if key != "cases"}
 
 
 def create_app(settings: Settings | None = None, database_path: Path | None = None) -> FastAPI:
@@ -80,7 +80,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         if not auth:
             db.audit("login", "local", "rejected"); raise HTTPException(401, "invalid_local_token")
         sid, _ = auth; db.audit("login", "local", "success")
-        response = RedirectResponse("/", 303)
+        response = RedirectResponse("/ui/cases", 303)
         response.set_cookie("filin_session", sid, httponly=True, samesite="strict", secure=False, max_age=settings.session_ttl_seconds, path="/")
         return response
 
@@ -99,7 +99,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     async def page(request: Request, page: str):
         if page == "cases":
             context = {**present_page("incidents", reviews, runner, ui_catalog), **case_catalog(cases, reviews)}
-            context.update({"request": request, "csrf": request.state.session.csrf, "title": "Каталог лабораторных карточек", "breadcrumbs": ["Филин", "Карточки инцидентов"]})
+            context.update({"request": request, "csrf": request.state.session.csrf, "page": "cases", "title": "Каталог лабораторных карточек", "breadcrumbs": ["Филин", "Лабораторные карточки"]})
             return templates.TemplateResponse(request, "pages/case_catalog.html", context)
         if page not in PAGES: raise HTTPException(404)
         context = present_page(page, reviews, runner, ui_catalog)
@@ -117,7 +117,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     @app.get("/ui/cases", response_class=HTMLResponse)
     async def case_catalog_page(request: Request):
         context = {**present_page("incidents", reviews, runner, ui_catalog), **case_catalog(cases, reviews)}
-        context.update({"request":request,"csrf":request.state.session.csrf,"title":"Каталог лабораторных карточек","breadcrumbs":["Филин","Карточки инцидентов"]})
+        context.update({"request":request,"csrf":request.state.session.csrf,"page":"cases","title":"Каталог лабораторных карточек","breadcrumbs":["Филин","Лабораторные карточки"]})
         return templates.TemplateResponse(request, "pages/case_catalog.html", context)
 
     @app.get("/ui/cases/{case_token}/{section}", response_class=HTMLResponse)
@@ -125,7 +125,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         try: value = case_page(cases, reviews, case_token, section)
         except KeyError: raise HTTPException(404)
         context = {**present_page("incidents", reviews, runner, ui_catalog), **value}
-        context.update({"request":request,"csrf":request.state.session.csrf,"title":value["section_title"],"breadcrumbs":["Филин","Карточки",value["descriptor"]["display_name"],value["section_title"]]})
+        context.update({"request":request,"csrf":request.state.session.csrf,"page":"cases","title":value["section_title"],"breadcrumbs":["Филин","Лабораторные карточки",value["descriptor"]["display_name"],value["section_title"]]})
         return templates.TemplateResponse(request, "pages/case_section.html", context)
 
     @app.get("/api/console/v1/health")

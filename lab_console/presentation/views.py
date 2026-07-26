@@ -10,12 +10,13 @@ from .common import load_json, load_text, now_label, pct, raw, short, source
 
 NAVIGATION = [
     {"label": "Обзор", "items": [("dashboard", "Главная"), ("stages", "Этапы проекта")]},
-    {"label": "Анализ", "items": [("models", "Модели"), ("metrics", "Результаты модели"), ("incidents", "Карточки инцидентов")]},
+    {"label": "Анализ", "items": [("models", "Модели"), ("metrics", "Результаты модели"), ("cases", "Лабораторные карточки")]},
     {"label": "Исследование", "items": [("timeline", "Временная шкала"), ("graph", "Граф реконструкции"), ("hypotheses", "Гипотезы"), ("comparisons", "Матрица сопоставлений"), ("questions", "Вопросы специалисту"), ("reviews", "Ручное рассмотрение")]},
     {"label": "Управление", "items": [("tasks", "Задачи"), ("tests", "Тесты"), ("logs", "Журналы"), ("bundles", "Комплекты"), ("system", "Состояние системы")]},
 ]
 
 TITLE = {key: label for group in NAVIGATION for key, label in group["items"]}
+TITLE["incidents"] = "Архивная карточка"
 HYP_NAMES = {
     "possible_reconnaissance": "Возможная разведка", "network_diagnostics": "Сетевая диагностика",
     "insufficient_data": "Недостаточно данных", "configuration_error": "Ошибка конфигурации",

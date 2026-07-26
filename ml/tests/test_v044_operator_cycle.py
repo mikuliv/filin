@@ -28,7 +28,7 @@ def client(tmp_path):
     app = create_app(Settings(token="v044-local-token", runtime_dir=tmp_path), tmp_path / "console.sqlite3")
     with TestClient(app) as value:
         response = value.post("/login", content="token=v044-local-token", headers={"content-type":"application/x-www-form-urlencoded"}, follow_redirects=False)
-        assert response.status_code == 303
+        assert response.status_code == 303 and response.headers["location"] == "/ui/cases"
         page = value.get("/")
         value.csrf = page.text.split('data-csrf="',1)[1].split('"',1)[0]
         yield value
@@ -67,7 +67,9 @@ def test_exact_contract_count():
 
 
 def test_catalog_pages_and_all_sections_are_rendered(client, registry):
-    listing = client.get("/ui/cases"); assert listing.status_code == 200 and len(__import__("bs4").BeautifulSoup(listing.text,"html.parser").select(".case-card")) == 12
+    listing = client.get("/ui/cases"); document=__import__("bs4").BeautifulSoup(listing.text,"html.parser")
+    assert listing.status_code == 200 and len(document.select(".case-card")) == 12
+    assert document.select_one('[data-nav="cases"][aria-current="page"]')
     for section in ("overview","facts","timeline","graph","gaps","hypotheses","comparisons","questions","review","export"):
         response = client.get(f"/ui/cases/normal/{section}")
         assert response.status_code == 200 and "Окончательное определение" in response.text
