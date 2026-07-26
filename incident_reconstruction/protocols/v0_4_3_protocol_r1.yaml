@@ -1,0 +1,37 @@
+schema_version: v0_4_3_protocol_v1
+stage: v0.4.3
+protocol_revision: 1
+frozen: true
+active_branch: main
+starting_head: b02b832213d04322502b1586e2afff61dd9dee35
+predecessor:
+  implementation_commit: b02b832213d04322502b1586e2afff61dd9dee35
+  manifest_sha256: b149a1d6c9353e06020f80c99d8e1765a54e441a7354dd60f837909220ef9784
+  semantic_sha256: 3e0f3066e2bc9b56154a43745865b7e97fe80fe74594f2a9a1bea483d1f8b0fd
+  rule_catalog_sha256: fb5535e4143c77630c1b1dd49b7c379cbbbfb2e5f9bea28aaaa78f99dc9d37d2
+candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  identity_must_remain_unchanged: true
+backend:
+  expected_tree_sha: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+purpose: Локальная лабораторная консоль и расширенная проверяемая карточка инцидента.
+boundaries:
+  laboratory_only: true
+  bind_host: 127.0.0.1
+  default_port: 8043
+  authentication_required: true
+  external_network_forbidden: true
+  public_deployment_forbidden: true
+  production_backend_forbidden: true
+  source_artifact_mutation_forbidden: true
+  automatic_action_forbidden: true
+sources: [v0.4.0 incident card, v0.4.1 temporal reconstruction, v0.4.2 hypothesis analysis]
+review_model: separate_overlay_without_final_determination
+task_model: frozen_allowlist_argv_without_shell
+storage: runtime/lab_console/console.sqlite3
+positive_scenario_minimum: 50
+negative_scenario_minimum: 120
+success_gate: all_scenarios_tests_verifiers_integrity_and_documentation_pass
+next_allowed_stage: v0.4.4
+mainline_next_allowed_stage: v0.3.19
+prohibited_claims: [production_ready, compromise_confirmed, causal_proof, external_validation_complete]

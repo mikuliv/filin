@@ -65,6 +65,7 @@ runtime/v0_3_17_smoke_r4_invalid_host_sqlite_access/
 runtime/v0_3_17_smoke_r5/
 runtime/v0_3_17_smoke_r8/
 runtime/pytest-*/
+runtime/lab_console/
 
 # Zeek runtime
 conn.log

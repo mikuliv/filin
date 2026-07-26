@@ -13,3 +13,5 @@ tracked reports.
 Продолжение: [итог v0.4.1](../../ml/reports/v0_4_1/v0_4_1_summary.md) и
 [машиночитаемый результат v0.4.1](../../ml/reports/v0_4_1/v0_4_1_policy_result.json).
 Следующий комплект: [итог v0.4.2](../../ml/reports/v0_4_2/v0_4_2_summary.md) и [результат политики](../../ml/reports/v0_4_2/v0_4_2_policy_result.json).
+
+Лабораторная консоль: [итог v0.4.3](../../ml/reports/v0_4_3/v0_4_3_summary.md), [результат политики](../../ml/reports/v0_4_3/v0_4_3_policy_result.json) и [manifest](../../ml/reports/v0_4_3/v0_4_3_bundle_manifest.json).

@@ -1,0 +1,105 @@
+schema_version: allowed_tasks_catalog_v1
+frozen_for_stage: v0.4.3
+tasks:
+  - task_id: verify_console
+    display_name: Проверить лабораторную консоль
+    category: Проверка этапа
+    description: Автономная проверка конфигурации, контрактов, путей и целостности.
+    argv: [python, tools/lab_console/verify_console.py]
+    working_directory_token: repository_root
+    timeout_seconds: 120
+    allowed_exit_codes: [0]
+    requires_confirmation: false
+    mutates_tracked_files: false
+    exclusive_group: console_verifier
+    maximum_parallel_runs: 1
+    log_limit_bytes: 1000000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT, TEMP, TMP]
+    enabled: true
+    safety_notes: Только чтение tracked-файлов; runtime используется для SQLite.
+  - task_id: verify_v040_bundle
+    display_name: Проверить комплект v0.4.0
+    category: Проверка комплектов
+    description: Проверка замороженного комплекта карточки инцидента.
+    argv: [python, tools/incident_reconstruction/verify_bundle.py, ml/reports/v0_4_0/representative_reconstruction_bundle.json]
+    working_directory_token: repository_root
+    timeout_seconds: 60
+    allowed_exit_codes: [0]
+    requires_confirmation: true
+    mutates_tracked_files: false
+    exclusive_group: bundle_verifier
+    maximum_parallel_runs: 1
+    log_limit_bytes: 500000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT, TEMP, TMP]
+    enabled: true
+    safety_notes: Не изменяет комплект.
+  - task_id: verify_v041_bundle
+    display_name: Проверить комплект v0.4.1
+    category: Проверка комплектов
+    description: Проверка временной реконструкции.
+    argv: [python, tools/incident_reconstruction/verify_temporal_bundle.py, ml/reports/v0_4_1/representative_temporal_bundle.json]
+    working_directory_token: repository_root
+    timeout_seconds: 60
+    allowed_exit_codes: [0]
+    requires_confirmation: true
+    mutates_tracked_files: false
+    exclusive_group: bundle_verifier
+    maximum_parallel_runs: 1
+    log_limit_bytes: 500000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT, TEMP, TMP]
+    enabled: true
+    safety_notes: Не изменяет комплект.
+  - task_id: verify_v042_bundle
+    display_name: Проверить комплект v0.4.2
+    category: Проверка комплектов
+    description: Проверка комплекта конкурирующих гипотез.
+    argv: [python, tools/incident_reconstruction/verify_hypothesis_bundle.py, ml/reports/v0_4_2/representative_hypothesis_bundle.json]
+    working_directory_token: repository_root
+    timeout_seconds: 60
+    allowed_exit_codes: [0]
+    requires_confirmation: true
+    mutates_tracked_files: false
+    exclusive_group: bundle_verifier
+    maximum_parallel_runs: 1
+    log_limit_bytes: 500000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT, TEMP, TMP]
+    enabled: true
+    safety_notes: Не изменяет комплект.
+  - task_id: git_status
+    display_name: Проверить состояние Git
+    category: Диагностика
+    description: Показывает ветку и краткое состояние дерева.
+    argv: [git, status, --short, --branch]
+    working_directory_token: repository_root
+    timeout_seconds: 15
+    allowed_exit_codes: [0]
+    requires_confirmation: false
+    mutates_tracked_files: false
+    exclusive_group: null
+    maximum_parallel_runs: 2
+    log_limit_bytes: 100000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT]
+    enabled: true
+    safety_notes: Команда только читает состояние Git.
+  - task_id: targeted_console_tests
+    display_name: Выполнить целевые тесты консоли
+    category: Тесты
+    description: Запускает только тесты v0.4.3 без pytest cache.
+    argv: [python, -m, pytest, -q, -p, no:cacheprovider, ml/tests/test_v043_lab_console.py]
+    working_directory_token: repository_root
+    timeout_seconds: 180
+    allowed_exit_codes: [0]
+    requires_confirmation: true
+    mutates_tracked_files: false
+    exclusive_group: pytest
+    maximum_parallel_runs: 1
+    log_limit_bytes: 1000000
+    artifact_patterns: []
+    environment_allowlist: [SYSTEMROOT, TEMP, TMP]
+    enabled: true
+    safety_notes: Тесты используют временную runtime-базу.

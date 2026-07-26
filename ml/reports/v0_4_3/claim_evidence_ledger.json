@@ -1,0 +1,1 @@
+{"claims":[{"claim":"local_console_verified","evidence":"standalone_verification_result.json"},{"claim":"manual_review_is_separate","evidence":"representative_manual_review.json"},{"claim":"no_production_readiness","evidence":"v0_4_3_policy_result.json"}],"schema_version":"v0_4_3_claim_evidence_ledger_v1"}

@@ -1,0 +1,51 @@
+from __future__ import annotations
+
+import json
+import sqlite3
+from contextlib import contextmanager
+from datetime import datetime, timezone
+from pathlib import Path
+from typing import Any, Iterator
+
+MIGRATIONS = (
+    """CREATE TABLE IF NOT EXISTS schema_migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY, card_id TEXT NOT NULL, source_sha256 TEXT NOT NULL, status TEXT NOT NULL, payload TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS task_runs(id TEXT PRIMARY KEY, task_id TEXT NOT NULL, status TEXT NOT NULL, pid INTEGER, exit_code INTEGER, catalog_sha256 TEXT NOT NULL, head TEXT NOT NULL, tree_state TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT, log_path TEXT NOT NULL, error TEXT);
+    CREATE TABLE IF NOT EXISTS audit_events(id INTEGER PRIMARY KEY AUTOINCREMENT, occurred_at TEXT NOT NULL, action TEXT NOT NULL, object_id TEXT NOT NULL, outcome TEXT NOT NULL, detail TEXT NOT NULL);""",
+)
+
+
+def now() -> str:
+    return datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
+
+
+class Database:
+    def __init__(self, path: Path) -> None:
+        self.path = path
+
+    @contextmanager
+    def connect(self) -> Iterator[sqlite3.Connection]:
+        self.path.parent.mkdir(parents=True, exist_ok=True)
+        con = sqlite3.connect(self.path, timeout=5)
+        con.row_factory = sqlite3.Row
+        try:
+            yield con
+            con.commit()
+        finally:
+            con.close()
+
+    def migrate(self) -> None:
+        with self.connect() as con:
+            for version, sql in enumerate(MIGRATIONS, 1):
+                con.executescript(sql)
+                con.execute("INSERT OR IGNORE INTO schema_migrations VALUES(?,?)", (version, now()))
+
+    def audit(self, action: str, object_id: str, outcome: str, detail: dict[str, Any] | None = None) -> int:
+        with self.connect() as con:
+            cur = con.execute("INSERT INTO audit_events(occurred_at,action,object_id,outcome,detail) VALUES(?,?,?,?,?)",
+                              (now(), action, object_id, outcome, json.dumps(detail or {}, ensure_ascii=False, sort_keys=True)))
+            return int(cur.lastrowid)
+
+    def audits(self, limit: int = 100) -> list[dict[str, Any]]:
+        with self.connect() as con:
+            return [dict(row) for row in con.execute("SELECT * FROM audit_events ORDER BY id DESC LIMIT ?", (min(limit, 500),))]

@@ -1,0 +1,1 @@
+"use strict";document.addEventListener("DOMContentLoaded",()=>{const b=document.querySelector("#logout");if(b)b.addEventListener("click",async()=>{await fetch("/api/console/v1/logout",{method:"POST",headers:{"Content-Type":"application/json","X-CSRF-Token":b.dataset.csrf},body:"{}"});location.href="/login"})});
