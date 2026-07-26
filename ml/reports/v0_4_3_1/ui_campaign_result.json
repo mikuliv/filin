@@ -1,0 +1,504 @@
+{
+  "schema_version": "v0_4_3_1_campaign_result_v1",
+  "stage": "v0.4.3.1",
+  "positive_scenario_count": 58,
+  "positive_scenario_passed_count": 58,
+  "negative_scenario_count": 65,
+  "negative_scenario_rejected_count": 65,
+  "positive": [
+    {
+      "scenario_id": "pos_001_dashboard_cards",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_002_mainline_stage_track",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_003_laboratory_stage_track",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_004_model_summary",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_005_model_metrics",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_006_class_metrics",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_007_bundle_table",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_008_artifact_filter",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_009_incident_list",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_010_incident_overview",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_011_fact_table",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_012_visual_timeline",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_013_uncertainty_range",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_014_timeline_layers",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_015_timeline_zoom",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_016_visual_graph",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_017_graph_nodes",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_018_graph_edges",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_019_graph_filtering",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_020_graph_search",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_021_graph_node_selection",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_022_six_hypothesis_cards",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_023_no_winner",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_024_comparison_matrix_6x6",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_025_comparison_cell_detail",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_026_analyst_questions",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_027_review_overlay",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_028_task_cards",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_029_task_history",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_030_live_log",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_031_test_summary",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_032_system_status",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_033_raw_json_panel",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_034_raw_json_closed",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_035_raw_json_copy",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_036_raw_json_search",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_037_responsive_1920x1080",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_038_responsive_1366x768",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_039_effective_125_percent",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_040_no_horizontal_page_overflow",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_041_sidebar_collapse",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_042_table_local_overflow",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_043_cards_wrap",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_044_graph_available_area",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_045_keyboard_navigation",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_046_active_navigation",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_047_error_state",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_048_missing_state",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_049_hash_mismatch_state",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_050_no_external_assets",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_051_deterministic_presentation",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_052_xss_escaping",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_053_authorization_preserved",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_054_csrf_preserved",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_055_task_catalog_preserved",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_056_backend_preserved",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_057_predecessor_preserved",
+      "passed": true
+    },
+    {
+      "scenario_id": "pos_058_real_browser_smoke",
+      "passed": true
+    }
+  ],
+  "negative": [
+    {
+      "scenario_id": "neg_001_page_is_single_pre",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_002_shared_project_status_on_models",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_003_shared_project_status_on_metrics",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_004_timeline_without_visual",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_005_graph_without_visual",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_006_hypotheses_as_json",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_007_comparisons_as_json",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_008_raw_json_open_by_default",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_009_raw_json_is_primary_content",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_010_hidden_hash_mismatch",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_011_hypothesis_declared_winner",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_012_causal_arrow",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_013_metric_without_source",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_014_production_wording",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_015_page_horizontal_overflow_1366",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_016_external_cdn",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_017_external_font",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_018_external_script",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_019_inline_unsafe_script",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_020_unescaped_xss",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_021_authorization_removed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_022_csrf_removed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_023_arbitrary_file_read",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_024_arbitrary_command",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_025_shell_task",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_026_mutating_task",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_027_frozen_artifact_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_028_backend_tree_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_029_candidate_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_030_feature_contract_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_031_event_contract_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_032_task_catalog_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_033_v043_manifest_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_034_v043_semantic_change",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_035_forced_determination",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_036_confirmed_compromise_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_037_unsupported_causality",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_038_network_request",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_039_public_bind",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_040_reverse_proxy",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_041_secret_in_url",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_042_secret_in_log",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_043_model_upload",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_044_model_download",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_045_model_fit",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_046_calibration_fit",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_047_threshold_selection",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_048_feature_selection",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_049_automatic_response",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_050_real_notification",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_051_incident_source_mutation",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_052_review_mutates_source",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_053_matrix_is_ranking",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_054_matrix_missing_diagonal",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_055_matrix_wrong_size",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_056_hypothesis_count_wrong",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_057_dashboard_card_count_too_low",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_058_navigation_missing_section",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_059_inactive_navigation_highlight",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_060_timeline_missing_uncertainty",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_061_graph_missing_legend",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_062_graph_missing_properties",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_063_task_without_confirmation",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_064_raw_json_unformatted",
+      "rejected": true
+    },
+    {
+      "scenario_id": "neg_065_raw_json_unbounded",
+      "rejected": true
+    }
+  ]
+}

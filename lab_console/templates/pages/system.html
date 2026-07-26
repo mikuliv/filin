@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-intro"><div><p class="eyebrow">Локальная диагностика</p><h2>Состояние системы</h2><p>Технические сведения не передаются внешним сервисам и не включают абсолютные пути в экспорт.</p></div><span class="hero-status"><span class="status-dot"></span>Локальная среда готова</span></section>
+<section class="system-grid">{% for key,value in items.items() %}<article><span class="system-icon">{{ key[:1]|upper }}</span><div><span>{{ {'python':'Python','platform':'Платформа','git':'Git','head':'HEAD','tree':'Рабочее дерево','runtime':'Runtime','sqlite':'SQLite','tasks':'Разрешённые задачи','runs':'Запуски','free_gb':'Свободное место, ГБ','cache':'Кэш'}.get(key,key) }}</span><strong class="{{ 'mono' if key in ['head','runtime'] }}">{{ value }}</strong></div><span class="check-icon ok">✓</span></article>{% endfor %}</section>
+{% include "partials/raw.html" %}{% endblock %}

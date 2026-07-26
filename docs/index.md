@@ -55,6 +55,7 @@
 - [Временная реконструкция v0.4.1](research/temporal-reconstruction.md) — отношения, граф и ограничения.
 - [Конкурирующие гипотезы v0.4.2](research/competing-hypotheses.md) — правила, профили и сопоставления.
 - [Локальная лабораторная консоль v0.4.3](research/laboratory-console.md) — архитектура, безопасность и разрешённые задачи.
+- [Визуальный интерфейс консоли v0.4.3.1](research/laboratory-console-ui.md) — presentation layer, специализированные страницы и адаптивная приёмка.
 - [Ручное рассмотрение v0.4.3](research/manual-incident-review.md) — отдельный review-overlay без изменения frozen artifacts.
 - [Запуск консоли](getting-started/laboratory-console.md) — localhost, токен и автономная проверка.
 - [`v0_4_track.yaml`](status/v0_4_track.yaml) — отдельное состояние

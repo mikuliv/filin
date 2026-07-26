@@ -1,0 +1,234 @@
+[
+  {
+    "scenario_id": "pos_001_dashboard_cards",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_002_mainline_stage_track",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_003_laboratory_stage_track",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_004_model_summary",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_005_model_metrics",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_006_class_metrics",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_007_bundle_table",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_008_artifact_filter",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_009_incident_list",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_010_incident_overview",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_011_fact_table",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_012_visual_timeline",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_013_uncertainty_range",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_014_timeline_layers",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_015_timeline_zoom",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_016_visual_graph",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_017_graph_nodes",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_018_graph_edges",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_019_graph_filtering",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_020_graph_search",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_021_graph_node_selection",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_022_six_hypothesis_cards",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_023_no_winner",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_024_comparison_matrix_6x6",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_025_comparison_cell_detail",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_026_analyst_questions",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_027_review_overlay",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_028_task_cards",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_029_task_history",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_030_live_log",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_031_test_summary",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_032_system_status",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_033_raw_json_panel",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_034_raw_json_closed",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_035_raw_json_copy",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_036_raw_json_search",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_037_responsive_1920x1080",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_038_responsive_1366x768",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_039_effective_125_percent",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_040_no_horizontal_page_overflow",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_041_sidebar_collapse",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_042_table_local_overflow",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_043_cards_wrap",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_044_graph_available_area",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_045_keyboard_navigation",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_046_active_navigation",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_047_error_state",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_048_missing_state",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_049_hash_mismatch_state",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_050_no_external_assets",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_051_deterministic_presentation",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_052_xss_escaping",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_053_authorization_preserved",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_054_csrf_preserved",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_055_task_catalog_preserved",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_056_backend_preserved",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_057_predecessor_preserved",
+    "passed": true
+  },
+  {
+    "scenario_id": "pos_058_real_browser_smoke",
+    "passed": true
+  }
+]

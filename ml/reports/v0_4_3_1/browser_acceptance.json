@@ -1,0 +1,148 @@
+{
+  "schema_version": "v0_4_3_1_browser_acceptance_v1",
+  "engine": "Codex in-app browser",
+  "authenticated_local_session": true,
+  "screen_count": 16,
+  "screenshots": [
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/01-dashboard-1920x1080.jpg",
+      "width": 1905,
+      "height": 1072,
+      "sha256": "03492578318a39f1afef31c18fa34626ab094b399a37f8a42055ca6e9bcad2f0",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/02-dashboard-1366x768.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "ad2daa754212c0bbfc416d7069f55ddcfb02ad8860da8a74bc1f0b6c3619d1e1",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/03-stages.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "73b15f5798ed12908a9af04b9a883b4972e13006074b344deddaf969c7d75314",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/04-model.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "ad35cfb759caa2f902af0a4c22e80675985d3e5b9c2c5dada0dae3abbcd2c757",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/05-metrics.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "50d223ade090e3950a4b6f6ebc3867a396247140719faa646f0d0b875cba2bc1",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/06-bundles.jpg",
+      "width": 1366,
+      "height": 768,
+      "sha256": "a4cfdfec4480112a8eb5b663f697dc6b7da137e5f4e9e6a914e817e9d3b0d9fa",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/07-incidents.jpg",
+      "width": 1366,
+      "height": 768,
+      "sha256": "ba8237978d71e942850e6dc11e33c4691dcf579bdc1806cd5960343241c95b49",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/08-incident-overview.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "a6dc756abfec34c5963485b6adad7af348ccc66846c94100a9259afff8e81d63",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/09-timeline.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "dd17d29fedc4cc4540715893869f04eda268bc72431a00e5f7e5387179467859",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/10-graph.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "4042ba9f9513e1cbfddbecd038e29dfa57bdf9be54238d48cb5283f950a03249",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/11-hypotheses.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "48315f29380d588fb8656dac80f6c2f2fae7bac14f5608099f9610f4698cb26e",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/12-comparison-matrix.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "5cb3bcc5ccdd124b3b2542008e7295318aa1180910487c67c1f3c2e81751905e",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/13-questions.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "8d521e5c74e00e3f57e4e0c3fe856c57b3c7caec8b45a05238f7c597f32810dd",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/14-tasks.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "bb20748e72df9d6468c458683a65b46bc5cc11c602c069bba448f408859fec5c",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/15-tests.jpg",
+      "width": 1351,
+      "height": 760,
+      "sha256": "0267b01a80941e221dd9fc0103109ee4a4e95403316212c5bae4b69b9f08bc40",
+      "source": "real_running_console"
+    },
+    {
+      "file": "runtime/lab_console/v0_4_3_1/screenshots/16-system.jpg",
+      "width": 1366,
+      "height": 768,
+      "sha256": "a7a53c53e34b086ccfb143bf7421d50852033e36d273afe07404ac9c48892cd2",
+      "source": "real_running_console"
+    }
+  ],
+  "viewports": [
+    {
+      "width": 1920,
+      "height": 1080,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1366,
+      "height": 768,
+      "horizontal_overflow": false
+    },
+    {
+      "width": 1093,
+      "height": 614,
+      "meaning": "effective CSS area for 1366x768 at 125%",
+      "horizontal_overflow": false
+    }
+  ],
+  "unique_view_models_verified": 14,
+  "raw_panels_closed_by_default": true,
+  "interactions": {
+    "stage_filter": true,
+    "timeline_layer_filter": true,
+    "matrix_cell_detail": true,
+    "graph_node_selection": true,
+    "raw_panel_toggle": true,
+    "sidebar_collapse": true
+  }
+}

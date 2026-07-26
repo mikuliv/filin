@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import json
 from pathlib import Path
 from urllib.parse import parse_qs
 
@@ -16,16 +15,12 @@ from .database import Database
 from .files import read_safe
 from .jobs import TaskCatalog, TaskRunner
 from .models import ReviewCheck, ReviewCreate, ReviewDecision, ReviewNote, TaskStart
+from .presentation import NAVIGATION, present_page
+from .presentation.views import TITLE, incident as present_incident
 from .review import ReviewService
 from .security import SessionStore
 
-PAGES = {
-    "dashboard": "Главная панель", "stages": "Этапы проекта", "models": "Модели",
-    "metrics": "Результаты модели", "bundles": "Комплекты и артефакты", "incidents": "Карточки инцидентов",
-    "timeline": "Временная шкала", "graph": "Граф реконструкции", "hypotheses": "Конкурирующие гипотезы",
-    "comparisons": "Матрица сопоставлений", "questions": "Вопросы специалисту", "reviews": "Ручное рассмотрение",
-    "tasks": "Запуски и задачи", "tests": "Тесты", "logs": "Журналы", "system": "Состояние системы",
-}
+PAGES = TITLE
 
 
 def create_app(settings: Settings | None = None, database_path: Path | None = None) -> FastAPI:
@@ -35,7 +30,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     runner = TaskRunner(catalog, db, runtime, settings.max_parallel_tasks)
     reviews = ReviewService(db); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
-    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.3", docs_url=None, redoc_url=None)
+    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.3.1", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
     app.state.settings, app.state.db, app.state.catalog, app.state.runner = settings, db, catalog, runner
@@ -92,13 +87,24 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
 
     @app.get("/", response_class=HTMLResponse)
     async def dashboard(request: Request):
-        return templates.TemplateResponse(request, "page.html", _context(request, "dashboard", project_status()))
+        context = present_page("dashboard", reviews, runner, catalog)
+        context.update({"request": request, "csrf": request.state.session.csrf})
+        return templates.TemplateResponse(request, "pages/dashboard.html", context)
 
     @app.get("/ui/{page}", response_class=HTMLResponse)
     async def page(request: Request, page: str):
         if page not in PAGES: raise HTTPException(404)
-        data = _page_data(page, reviews, runner, catalog)
-        return templates.TemplateResponse(request, "page.html", _context(request, page, data))
+        context = present_page(page, reviews, runner, catalog)
+        context.update({"request": request, "csrf": request.state.session.csrf})
+        return templates.TemplateResponse(request, f"pages/{page}.html", context)
+
+    @app.get("/ui/incidents/{card_token}", response_class=HTMLResponse)
+    async def incident_detail(request: Request, card_token: str):
+        if card_token != "representative":
+            raise HTTPException(404)
+        context = {**present_page("incidents", reviews, runner, catalog), **present_incident("overview")}
+        context.update({"request": request, "csrf": request.state.session.csrf, "title": "Обзор карточки", "breadcrumbs": ["Филин", "Карточки инцидентов", "Обзор"]})
+        return templates.TemplateResponse(request, "pages/incident_detail.html", context)
 
     @app.get("/api/console/v1/health")
     async def health(): return {"schema_version": "console_health_v1", "status": "ok", "laboratory_only": True}
@@ -165,19 +171,6 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     @app.get("/api/console/v1/files/{file_token}")
     async def file_view(file_token: str): return read_safe(file_token, settings.max_view_bytes)
     return app
-
-
-def _context(request: Request, page: str, data):
-    return {"request": request, "title": PAGES[page], "page": page, "pages": PAGES, "data": json.dumps(data, ensure_ascii=False, indent=2, default=str), "csrf": request.state.session.csrf}
-
-
-def _page_data(page, reviews, runner, catalog):
-    if page == "reviews": return reviews.list()
-    if page in {"tasks", "logs"}: return {"tasks": list(catalog.tasks.values()), "runs": runner.list()}
-    if page == "incidents": return build_incident_card_v2()
-    if page in {"timeline", "graph", "hypotheses", "comparisons", "questions"}: return build_console_view().get(page)
-    if page == "bundles": return [_bundle(f"v04{n}") for n in range(3)]
-    return project_status()
 
 
 def _bundle(token):

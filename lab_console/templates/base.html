@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ title }} — Филин</title>
+  <link rel="stylesheet" href="/static/console.css">
+</head>
+<body data-page="{{ page }}" data-view-model="{{ view_model }}">
+  <a class="skip-link" href="#content">К содержанию</a>
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><span class="brand-mark">Ф</span><div><strong>Филин</strong><small>Лабораторная консоль</small></div></div>
+    <div class="local-state"><span class="status-dot"></span>Локальный режим</div>
+    <nav aria-label="Основная навигация">
+      {% for group in navigation %}
+      <section class="nav-group"><h2>{{ group.label }}</h2>
+        {% for key,label in group['items'] %}
+        <a href="{{ '/' if key == 'dashboard' else '/ui/' + key }}" class="nav-link" {% if key == page %}aria-current="page"{% endif %} data-nav="{{ key }}"><span class="nav-icon">{{ label[:1] }}</span><span>{{ label }}</span></a>
+        {% endfor %}
+      </section>
+      {% endfor %}
+    </nav>
+  </aside>
+  <div class="shell">
+    <header class="topbar">
+      <button class="icon-button sidebar-toggle" type="button" aria-label="Свернуть боковую панель" aria-controls="sidebar">☰</button>
+      <div class="page-heading"><div class="breadcrumbs">{% for item in breadcrumbs %}<span>{{ item }}</span>{% endfor %}</div><h1>{{ title }}</h1></div>
+      <div class="top-meta"><span class="mode-badge">Лабораторный режим · не production</span><span class="mono" title="v03154:65a3dd912d845bc1">{{ candidate_short }}</span><span>{{ branch }}</span><span class="state-{{ 'ok' if tree_state == 'clean' else 'warn' }}">{{ 'дерево чистое' if tree_state == 'clean' else 'дерево изменено' }}</span><time>{{ updated_at }}</time><button class="icon-button refresh-button" type="button" title="Обновить">↻</button><button id="logout" class="button secondary" type="button" data-csrf="{{ csrf }}">Выйти</button></div>
+    </header>
+    <main id="content" tabindex="-1">
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+  <script src="/static/console.js" defer></script>
+</body>
+</html>

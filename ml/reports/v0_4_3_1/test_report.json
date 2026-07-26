@@ -1,0 +1,8 @@
+{
+  "schema_version": "v0_4_3_1_test_report_v1",
+  "targeted_passed": 92,
+  "full_passed": 1683,
+  "failed": 0,
+  "warnings": 3,
+  "generated_at": "2026-07-26T14:39:20.087725+00:00"
+}
