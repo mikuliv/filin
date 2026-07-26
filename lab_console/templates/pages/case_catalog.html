@@ -1,0 +1,18 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-intro"><div><p class="eyebrow">v0.4.4 · {{ case_count }} независимых случаев</p><h2>Каталог лабораторных карточек</h2><p>Выберите синтетический случай и пройдите полный операторский цикл. Порядок карточек не означает уровень опасности.</p></div><div class="status-banner good">✓ Каталог проверен · <span class="mono">{{ catalog_sha256[:12] }}…</span></div></section>
+<section class="panel catalog-controls" data-case-filters>
+  <label>Класс<select data-case-filter="class"><option value="">Все классы</option>{% for value in classes %}<option value="{{ value }}">{{ value }}</option>{% endfor %}</select></label>
+  <label>Сложность<select data-case-filter="difficulty"><option value="">Любая</option>{% for value in difficulties %}<option value="{{ value }}">{{ value }}</option>{% endfor %}</select></label>
+  <label>Разрывы<select data-case-filter="gaps"><option value="">Все</option><option value="yes">Есть</option><option value="no">Нет</option></select></label>
+  <label>Review<select data-case-filter="review"><option value="">Любой</option><option value="not_started">Не начат</option><option value="in_review">В работе</option><option value="reviewed_without_determination">Завершён без определения</option></select></label>
+  <label>Сортировка<select data-case-sort><option value="name">По названию</option><option value="difficulty">По сложности</option><option value="gaps">По числу разрывов</option><option value="hypotheses">По числу гипотез</option><option value="reviewed">По дате рассмотрения</option></select></label>
+</section>
+<section class="case-grid" data-case-grid>{% for card in cards %}
+<article class="case-card" data-case-card data-class="{{ card.behavior_class }}" data-difficulty="{{ card.difficulty }}" data-gaps="{{ 'yes' if card.gap_count else 'no' }}" data-review="{{ card.review_status }}" data-name="{{ card.display_name }}" data-gap-count="{{ card.gap_count }}" data-hypothesis-count="{{ card.hypothesis_count }}" data-reviewed="{{ card.last_reviewed_at }}">
+  <header><span class="case-icon">{{ card.display_name[:1] }}</span><div><span class="state-pill neutral">{{ card.difficulty }}</span><h3>{{ card.display_name }}</h3><p>{{ card.short_description }}</p></div></header>
+  <dl class="case-metrics"><div><dt>Факты</dt><dd>{{ card.fact_count }}</dd></div><div><dt>Временные</dt><dd>{{ card.temporal_count }}</dd></div><div><dt>Структурные</dt><dd>{{ card.structural_count }}</dd></div><div><dt>Гипотезы</dt><dd>{{ card.hypothesis_count }}</dd></div><div><dt>Разрывы</dt><dd>{{ card.gap_count }}</dd></div><div><dt>Вопросы</dt><dd>{{ card.question_count }}</dd></div></dl>
+  <div class="case-meta"><span>Класс: {{ card.behavior_class }}</span><span class="integrity-ok">✓ целостность</span><span>Review: {{ card.review_status }}</span><span>Последнее: {{ card.last_reviewed_at }}</span></div>
+  <footer><span>{{ card.review_count }} сессий</span><a class="button" href="/ui/cases/{{ card.card_token }}/overview">Открыть карточку</a></footer>
+</article>{% endfor %}</section>
+<div class="empty-state" data-case-empty hidden><strong>Карточки не найдены</strong><p>Измените фильтры каталога.</p></div>
+{% endblock %}

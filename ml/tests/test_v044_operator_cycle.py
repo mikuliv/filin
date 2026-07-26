@@ -1,0 +1,140 @@
+from __future__ import annotations
+
+import json
+from pathlib import Path
+
+import pytest
+from fastapi.testclient import TestClient
+from jsonschema import Draft202012Validator
+
+from lab_console.app import create_app
+from lab_console.cases import CaseRegistry, build_all_cases
+from lab_console.cases.validation import validate_case, validate_catalog, validate_review_export
+from lab_console.config import Settings
+from lab_console.database import Database
+from lab_console.review import REQUIRED_CHECKS, WORKFLOW_STEPS, ReviewService
+from tools.lab_console.run_v044_campaign import NEGATIVE_FAMILIES, negative_scenarios, positive_scenarios
+
+
+ROOT = Path(__file__).resolve().parents[2]
+
+
+@pytest.fixture()
+def registry(): return CaseRegistry()
+
+
+@pytest.fixture()
+def client(tmp_path):
+    app = create_app(Settings(token="v044-local-token", runtime_dir=tmp_path), tmp_path / "console.sqlite3")
+    with TestClient(app) as value:
+        response = value.post("/login", content="token=v044-local-token", headers={"content-type":"application/x-www-form-urlencoded"}, follow_redirects=False)
+        assert response.status_code == 303
+        page = value.get("/")
+        value.csrf = page.text.split('data-csrf="',1)[1].split('"',1)[0]
+        yield value
+
+
+def test_catalog_has_twelve_independent_valid_cases(registry):
+    records = [registry.get(token) for token in registry.tokens]
+    validate_catalog(records)
+    assert len(records) == 12
+    assert len({x["console_view"]["card_id"] for x in records}) == 12
+    assert len({x["semantic_sha256"] for x in records}) == 12
+
+
+def test_case_build_is_deterministic_and_uses_new_seed_namespace():
+    left, right = build_all_cases(), build_all_cases()
+    assert [x["semantic_sha256"] for x in left] == [x["semantic_sha256"] for x in right]
+    assert {x["reproducibility"]["seed_namespace"] for x in left} == {"v044-r1-seed-64000-64199"}
+
+
+@pytest.mark.parametrize("token", CaseRegistry().tokens)
+def test_every_case_has_complete_operator_views(registry, token):
+    record = registry.get(token); validate_case(record); view = record["console_view"]
+    assert view["card"]["observed_facts"] and view["timeline"] and view["graph"]["nodes"]
+    assert view["gaps"] and len(view["hypotheses"]) >= 2 and view["comparisons"] and view["questions"]
+    assert len(view["timeline_modes"]) == 3 and len(view["graph"]["modes"]) == 7
+    assert view["safety"]["no_final_determination"] and view["safety"]["no_automatic_action"]
+
+
+@pytest.mark.parametrize("schema_path", sorted((ROOT / "lab_console/contracts/v0_4_4").glob("*.schema.json")))
+def test_all_twenty_contracts_are_valid(schema_path):
+    Draft202012Validator.check_schema(json.loads(schema_path.read_text(encoding="utf-8")))
+
+
+def test_exact_contract_count():
+    assert len(list((ROOT / "lab_console/contracts/v0_4_4").glob("*.schema.json"))) == 20
+
+
+def test_catalog_pages_and_all_sections_are_rendered(client, registry):
+    listing = client.get("/ui/cases"); assert listing.status_code == 200 and len(__import__("bs4").BeautifulSoup(listing.text,"html.parser").select(".case-card")) == 12
+    for section in ("overview","facts","timeline","graph","gaps","hypotheses","comparisons","questions","review","export"):
+        response = client.get(f"/ui/cases/normal/{section}")
+        assert response.status_code == 200 and "Окончательное определение" in response.text
+
+
+def test_case_api_rejects_unknown_and_exposes_all_parts(client):
+    assert client.get("/api/console/v1/cases/unknown").status_code == 404
+    assert len(client.get("/api/console/v1/cases").json()) == 12
+    for part in ("card","timeline","graph","gaps","hypotheses","comparisons","questions","workflow"):
+        assert client.get(f"/api/console/v1/cases/normal/{part}").status_code == 200
+
+
+def test_api_review_full_cycle_persists_and_is_immutable(client, registry):
+    case = registry.get("normal"); view = case["console_view"]
+    body = {"case_id":case["descriptor"]["case_id"],"card_id":view["card_id"],"source_bundle_sha256":case["manifest_sha256"],"source_semantic_sha256":case["semantic_sha256"]}
+    headers={"x-csrf-token":client.csrf}; response=client.post("/api/console/v1/cases/normal/reviews",json=body,headers=headers)
+    assert response.status_code == 200; review_id=response.json()["review_session_id"]
+    for check in REQUIRED_CHECKS:
+        assert client.post(f"/api/console/v1/reviews/{review_id}/checks",json={"item_id":check,"checked":True},headers=headers).status_code == 200
+    progress={"current_step":"questions","completed_step_ids":list(WORKFLOW_STEPS[:-1]),"unresolved_item_ids":[view["questions"][0]["analyst_question_id"]]}
+    assert client.patch(f"/api/console/v1/reviews/{review_id}/progress",json=progress,headers=headers).status_code == 200
+    gap=view["gaps"][0]["gap_id"]
+    assert client.post(f"/api/console/v1/reviews/{review_id}/gaps/{gap}/state",json={"state":"unresolved"},headers=headers).status_code == 200
+    assert client.post(f"/api/console/v1/reviews/{review_id}/notes",json={"text":"Проверено вручную; требуются дополнительные сведения."},headers=headers).status_code == 200
+    complete={"operator_summary":"Окончательное определение отсутствует.","next_manual_step":"Получить независимые сведения.","limitations":["Лабораторный пример."]}
+    assert client.post(f"/api/console/v1/reviews/{review_id}/complete",json=complete,headers=headers).status_code == 200
+    exported=client.post(f"/api/console/v1/reviews/{review_id}/export",json={},headers=headers).json(); validate_review_export(exported)
+    assert client.post(f"/api/console/v1/reviews/{review_id}/notes",json={"text":"Нельзя"},headers=headers).status_code == 400
+    assert len(client.get(f"/api/console/v1/reviews/{review_id}/history").json()) >= 17
+
+
+def test_review_survives_service_restart_and_export_is_deterministic(tmp_path, registry):
+    path=tmp_path/"reviews.sqlite3"; db=Database(path); db.migrate(); service=ReviewService(db); case=registry.get("auth")
+    review=service.create(case["console_view"]["card_id"],case["manifest_sha256"],case["descriptor"]["case_id"],case["semantic_sha256"])
+    service.add_note(review["review_session_id"],"Черновик сохраняется после перезапуска.")
+    restarted=ReviewService(Database(path)); resumed=restarted.active_for_card(case["console_view"]["card_id"])
+    assert resumed and resumed["notes"][0]["text"].startswith("Черновик")
+    assert restarted.export(review["review_session_id"]) == restarted.export(review["review_session_id"])
+
+
+def test_source_identity_mismatch_and_security_are_rejected(client, registry):
+    case=registry.get("normal"); view=case["console_view"]
+    body={"case_id":case["descriptor"]["case_id"],"card_id":view["card_id"],"source_bundle_sha256":"0"*64,"source_semantic_sha256":case["semantic_sha256"]}
+    assert client.post("/api/console/v1/cases/normal/reviews",json=body,headers={"x-csrf-token":client.csrf}).status_code == 400
+    assert client.post("/api/console/v1/cases/normal/reviews",json=body).status_code == 403
+    assert client.post("/api/console/v1/cases/normal/reviews",content="{}",headers={"x-csrf-token":client.csrf}).status_code == 415
+    assert client.post("/api/console/v1/reviews",json={"card_id":"card_without_source"},headers={"x-csrf-token":client.csrf}).status_code == 400
+
+
+def test_oracle_is_not_in_runtime_or_case_payload(registry):
+    encoded=json.dumps([registry.get(t) for t in registry.tokens],ensure_ascii=False).lower()
+    assert "scenario_label" not in encoded and '"oracle"' not in encoded and "expected_winner" not in encoded
+    runtime=ROOT/"runtime/lab_console"
+    assert not any("oracle" in p.name.lower() for p in runtime.rglob("*") if p.is_file()) if runtime.exists() else True
+
+
+def test_positive_campaign_has_at_least_eighty_real_checks(registry):
+    rows=positive_scenarios([registry.get(t) for t in registry.tokens])
+    assert len(rows) == 84 and all(row["passed"] for row in rows)
+
+
+@pytest.mark.parametrize("family", NEGATIVE_FAMILIES)
+def test_five_variants_of_every_negative_family_are_rejected(registry, family):
+    rows=[row for row in negative_scenarios(registry.get("normal")) if row["violation"] == family]
+    assert len(rows) == 5 and all(row["rejected"] for row in rows)
+
+
+def test_negative_campaign_has_one_hundred_twenty_real_rejections(registry):
+    rows=negative_scenarios(registry.get("normal"))
+    assert len(rows) == 120 and all(row["rejected"] and row["reason"] != "accepted" for row in rows)

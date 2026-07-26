@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/v0_4_4_console_state_v1.schema.json",
+  "title": "v0_4_4_console_state_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_count",
+    "active_review_count",
+    "laboratory_only"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "v0_4_4_console_state_v1"
+    },
+    "case_count": {
+      "type": "integer",
+      "minimum": 8
+    },
+    "active_review_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "laboratory_only": {
+      "const": true
+    }
+  }
+}

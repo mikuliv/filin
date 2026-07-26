@@ -74,6 +74,7 @@
 
 - [Индекс reports](reports/index.md) — aggregate evidence по версиям.
 - [Эксперименты](experiments.md) — chronological research overview.
+- [Операторский цикл лабораторных карточек](getting-started/reviewing-laboratory-cards.md) — работа с 12 случаями v0.4.4.
 
 ## Внешняя проверка
 

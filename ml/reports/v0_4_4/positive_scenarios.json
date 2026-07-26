@@ -1,0 +1,506 @@
+[
+  {
+    "case_id": "lab_normal_activity",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-001"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-002"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-003"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-004"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-005"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-006"
+  },
+  {
+    "case_id": "lab_normal_activity",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-007"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-008"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-009"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-010"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-011"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-012"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-013"
+  },
+  {
+    "case_id": "lab_auth_failures",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-014"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-015"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-016"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-017"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-018"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-019"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-020"
+  },
+  {
+    "case_id": "lab_beacon_activity",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-021"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-022"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-023"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-024"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-025"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-026"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-027"
+  },
+  {
+    "case_id": "lab_low_rate_load",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-028"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-029"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-030"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-031"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-032"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-033"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-034"
+  },
+  {
+    "case_id": "lab_port_scan",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-035"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-036"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-037"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-038"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-039"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-040"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-041"
+  },
+  {
+    "case_id": "lab_web_probe",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-042"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-043"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-044"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-045"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-046"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-047"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-048"
+  },
+  {
+    "case_id": "lab_mixed_multi_episode",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-049"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-050"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-051"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-052"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-053"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-054"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-055"
+  },
+  {
+    "case_id": "lab_incomplete_conflicting",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-056"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-057"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-058"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-059"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-060"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-061"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-062"
+  },
+  {
+    "case_id": "lab_late_delivery",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-063"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-064"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-065"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-066"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-067"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-068"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-069"
+  },
+  {
+    "case_id": "lab_clock_domains",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-070"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-071"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-072"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-073"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-074"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-075"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-076"
+  },
+  {
+    "case_id": "lab_duplicate_delivery",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-077"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "schema",
+    "passed": true,
+    "scenario_id": "POS-078"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "identity",
+    "passed": true,
+    "scenario_id": "POS-079"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "source_chain",
+    "passed": true,
+    "scenario_id": "POS-080"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "timeline",
+    "passed": true,
+    "scenario_id": "POS-081"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "graph",
+    "passed": true,
+    "scenario_id": "POS-082"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "analysis",
+    "passed": true,
+    "scenario_id": "POS-083"
+  },
+  {
+    "case_id": "lab_equal_hypotheses",
+    "check": "safety",
+    "passed": true,
+    "scenario_id": "POS-084"
+  }
+]

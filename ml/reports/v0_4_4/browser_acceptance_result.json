@@ -1,0 +1,181 @@
+{
+  "browser": "Codex in-app browser",
+  "cases": [
+    {
+      "case_token": "normal",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    },
+    {
+      "case_token": "auth",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    },
+    {
+      "case_token": "beacon",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    },
+    {
+      "case_token": "port-scan",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    },
+    {
+      "case_token": "incomplete",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    },
+    {
+      "case_token": "mixed",
+      "export_safe": true,
+      "passed": true,
+      "restart_resume_passed": true,
+      "source_sha_unchanged": true,
+      "step_count": 23
+    }
+  ],
+  "checks": {
+    "catalog_count": 12,
+    "checklist_items": 13,
+    "comparison_explanation": true,
+    "console_error_count_after_fix": 0,
+    "filter_visible_count": 1,
+    "gap_impact": true,
+    "graph_edge": true,
+    "graph_node": true,
+    "graph_path": true,
+    "timeline_modes": 3
+  },
+  "local_url": "http://127.0.0.1:8043",
+  "passed": true,
+  "schema_version": "v0_4_4_browser_acceptance_v1",
+  "screenshots": [
+    {
+      "bytes": 326175,
+      "path": "runtime/lab_console/v044-browser/screenshots/01-case-catalog.png",
+      "sha256": "a41ef1d3a7a8570a4aac8f15b1bec16ea4a35d874f344c57bcc6a69ef58e469a"
+    },
+    {
+      "bytes": 80569,
+      "path": "runtime/lab_console/v044-browser/screenshots/02-catalog-filter-normal.png",
+      "sha256": "28294f22f0fbc4df857e47cda9fa53464b2d5fa1b31495b0b7231dcd8c3c4b8b"
+    },
+    {
+      "bytes": 24739,
+      "path": "runtime/lab_console/v044-browser/screenshots/03-overview-normal.png",
+      "sha256": "81427ddbef6baadc2cbe54d3ac5ac0f876439bc54f8de21a116741b17101691c"
+    },
+    {
+      "bytes": 132412,
+      "path": "runtime/lab_console/v044-browser/screenshots/04-timeline-observation.png",
+      "sha256": "9d32eeaf60888b0a0373e26b363ee2b23078cf9fc1357627d8a4295b4648f101"
+    },
+    {
+      "bytes": 30589,
+      "path": "runtime/lab_console/v044-browser/screenshots/05-timeline-delivery.png",
+      "sha256": "7dedb729e88e998a835304fd9f9fde8159a69fdb84451bc165f19c2e6b67d609"
+    },
+    {
+      "bytes": 268689,
+      "path": "runtime/lab_console/v044-browser/screenshots/06-gap-impact.png",
+      "sha256": "34ce0b1c5c5fb28eeb54a23ca95896f2a4af0d24fde9089061a9e8843924c92f"
+    },
+    {
+      "bytes": 143209,
+      "path": "runtime/lab_console/v044-browser/screenshots/07-graph-overview.png",
+      "sha256": "c9898def23349418f35387d33d9760754cfbeea2c00af37dc5b585e6818ec646"
+    },
+    {
+      "bytes": 152437,
+      "path": "runtime/lab_console/v044-browser/screenshots/08-graph-focused-node.png",
+      "sha256": "df9eaaad116cc79d519de51f6c39a11303c31e015b663b18b079c073fcd6d5da"
+    },
+    {
+      "bytes": 154522,
+      "path": "runtime/lab_console/v044-browser/screenshots/09-graph-path.png",
+      "sha256": "ceffefec8173d5e5086e3cb3c56de2f72dcc18fd062483827cfb6d23e371715f"
+    },
+    {
+      "bytes": 126992,
+      "path": "runtime/lab_console/v044-browser/screenshots/10-hypothesis-cards.png",
+      "sha256": "b7c596a931725546f6b35cb43cca6306c51f8f1ff87f1251ddcee31bba2e7256"
+    },
+    {
+      "bytes": 167225,
+      "path": "runtime/lab_console/v044-browser/screenshots/11-comparison-explanation.png",
+      "sha256": "addc1bef939768a0dfc6c12de6b9922844b40f487223954a3e066179a1202618"
+    },
+    {
+      "bytes": 164577,
+      "path": "runtime/lab_console/v044-browser/screenshots/12-analyst-questions.png",
+      "sha256": "fb559ddeca30cbb8bfa75dd9c775328be378482f7557aaf97102dd818e143be7"
+    },
+    {
+      "bytes": 171846,
+      "path": "runtime/lab_console/v044-browser/screenshots/13-review-checklist.png",
+      "sha256": "ea9c2a7a788cd5beb89a440190d631252c5190d5376cc4e25588b2c969fc30ce"
+    },
+    {
+      "bytes": 180780,
+      "path": "runtime/lab_console/v044-browser/screenshots/14-review-saved-state.png",
+      "sha256": "fc23a6c0d3eddbdf1a619158a7fe320e8f585614b2a95af8c5aaa0dea982a94b"
+    },
+    {
+      "bytes": 182084,
+      "path": "runtime/lab_console/v044-browser/screenshots/15-review-completion.png",
+      "sha256": "c639dcd1bb0d21b941074ae34df896f6c49b9424154023917161f78c01eaa4d5"
+    },
+    {
+      "bytes": 160318,
+      "path": "runtime/lab_console/v044-browser/screenshots/16-export-summary.png",
+      "sha256": "36517c5242d0d91c217ecd87cc58ab14281a748111f26c6c515e9615dff208cb"
+    },
+    {
+      "bytes": 119832,
+      "path": "runtime/lab_console/v044-browser/screenshots/overview-auth.png",
+      "sha256": "f17f31a5fb78c79db0efb3f23a0f463341b1bc34235e4b5b21e8eef633e62bd1"
+    },
+    {
+      "bytes": 25324,
+      "path": "runtime/lab_console/v044-browser/screenshots/overview-beacon.png",
+      "sha256": "c60084dd4c5375b9a270dd493a81842dd6d4c95eceb5bc82637742f4bda213f2"
+    },
+    {
+      "bytes": 25152,
+      "path": "runtime/lab_console/v044-browser/screenshots/overview-incomplete.png",
+      "sha256": "38b1b1ca846deca7b919dea136fc23c236c14edc20c036b8a8a19ea15315095f"
+    },
+    {
+      "bytes": 25231,
+      "path": "runtime/lab_console/v044-browser/screenshots/overview-mixed.png",
+      "sha256": "1bbde76c99ec1bcf5fd2ec64869aa074ced83f9d82c3cd1641092b561fac8c63"
+    },
+    {
+      "bytes": 114090,
+      "path": "runtime/lab_console/v044-browser/screenshots/overview-port-scan.png",
+      "sha256": "0e8fbd6803b4802f5cc79c0865ec42bf3de73742b3b030b6865b9c248f93ddc2"
+    }
+  ],
+  "visual_findings": [
+    "Перекрытий основных элементов не обнаружено.",
+    "Guided workflow читаем на широком экране.",
+    "Safety-ограничения видимы на каждом разделе.",
+    "Граф требует горизонтальной прокрутки только на узком экране."
+  ]
+}

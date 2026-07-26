@@ -1,0 +1,355 @@
+schema_version: laboratory_case_catalog_v1
+frozen_for_stage: v0.4.4
+seed_namespace: v044-r1-seed-64000-64199
+cases:
+- token: normal
+  case_id: lab_normal_activity
+  display_name: Нормальная сетевая активность
+  short_description: Обычный разрешённый обмен без искусственного подозрительного
+    вывода.
+  behavior_class: normal
+  difficulty: basic
+  tags:
+  - normal
+  - baseline
+  source_scenario_id: v044_lab_normal_activity
+  card_token: normal
+  card_id: card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5
+  source_bundle_ids:
+  - bundle_bcd4cf208a65c1b215d2672e8046698618fd113adc04bb914f8b7531a437cfb0
+  - trc_628be9582bde220f57765ba079523fb6319d972669fd825bd9283d39e4d7458e
+  - analysis_9e0548d75f2001ab76733a0445b635530845d5f05affa7c4fbc3c3e59b0c0190
+  manifest_sha256: 5e53331f724800e83afe0c33bd256dcbbe07654503882cc252dca834c58e7733
+  semantic_sha256: 96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476
+  expected_fact_count: 4
+  expected_temporal_relation_count: 12
+  expected_fact_relation_count: 6
+  expected_gap_count: 4
+  expected_hypothesis_count: 2
+  expected_question_count: 4
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: auth
+  case_id: lab_auth_failures
+  display_name: Серия ошибок аутентификации
+  short_description: Повторяющиеся ошибки входа с административными и подозрительными
+    альтернативами.
+  behavior_class: auth_failures
+  difficulty: intermediate
+  tags:
+  - authentication
+  - alternatives
+  source_scenario_id: v044_lab_auth_failures
+  card_token: auth
+  card_id: card_22494cd5926728b36de2ae4f98f6a1150ab911463e9b3a34f85f72717f1c1450
+  source_bundle_ids:
+  - bundle_f8d5cf4e9066f3e47f7532cd4451240fbe9234b34ff6c0f1cced47d02a3643a2
+  - trc_00ecdb6ab7179e5ce0543be3bbf0f684047555d382d8c55c567a95a5bbcfdbfc
+  - analysis_fe4905800fd2dc5248ad26479f0d2a4a8eeae3f5ed083188b93199b26b902984
+  manifest_sha256: 7043da81e225e653bdc68a035353941afb8fb2754d13dbdfdfc13cd2db6b0d12
+  semantic_sha256: aec656ef98a7cc15a37d5bac365c14cf9aa56fdebb8856c064a1cdf34483a0fa
+  expected_fact_count: 9
+  expected_temporal_relation_count: 72
+  expected_fact_relation_count: 36
+  expected_gap_count: 9
+  expected_hypothesis_count: 5
+  expected_question_count: 9
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: beacon
+  case_id: lab_beacon_activity
+  display_name: Периодическая маячковая активность
+  short_description: Периодические соединения, допускающие служебное и подозрительное
+    объяснение.
+  behavior_class: beacon
+  difficulty: advanced
+  tags:
+  - periodic
+  - alternatives
+  source_scenario_id: v044_lab_beacon_activity
+  card_token: beacon
+  card_id: card_c1b05416478ad9b07b70b6db3fa2dd7c69cc17a613bb50df88bfe8a342958246
+  source_bundle_ids:
+  - bundle_9d074181a6198f8262b4757bae1c03a91a6479eff65faee1e4f2eb94c0940603
+  - trc_079cbd47dc904cfac74c727150b9f5cf2caaab20a8ff6df6886f87a60158ec8e
+  - analysis_d9f5cc3def996506c1cd8eff2840c85ebf5d07cd07f34ae9d1a2f8fa8cb411da
+  manifest_sha256: 47a7b0909f0d950036426bc1d01d7f2263bd36fd0ebd000b4b0102f906684787
+  semantic_sha256: d458fead3ff30eaddfd594b72d1b509f0db3cfbc5978406a1b0f4b18a56faf27
+  expected_fact_count: 9
+  expected_temporal_relation_count: 72
+  expected_fact_relation_count: 36
+  expected_gap_count: 9
+  expected_hypothesis_count: 6
+  expected_question_count: 9
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: low-load
+  case_id: lab_low_rate_load
+  display_name: Низкоинтенсивная нагрузка на сервис
+  short_description: Редкие запросы и технические альтернативы без вывода об атаке.
+  behavior_class: low_rate_dos
+  difficulty: intermediate
+  tags:
+  - service
+  - low-rate
+  source_scenario_id: v044_lab_low_rate_load
+  card_token: low-load
+  card_id: card_c3b29087a1c08e804b952214617f76e2e9ac46add0a6bb196eb66197a3a8dfb7
+  source_bundle_ids:
+  - bundle_0b0c23ab85e5a0c532ca9e17cec7bfcdc1f4b1734ba65c12cb56b82ab613cdab
+  - trc_1a0f424db16359580b7cf65e196135222c5054d4c1589ef413d42142ef541192
+  - analysis_df31db6052b95e9d1c10048a4256848ffb4c21af092527d4af9d07e69e97e8a4
+  manifest_sha256: 684c05560dadd866218eee54b8f2b682f11e67fe2ed4a0e64b2f26e9ac0fe276
+  semantic_sha256: 4f677c39b5895fe26c2f88f222b53e02b570e7c7e1574d09adc75bd39d7897ea
+  expected_fact_count: 9
+  expected_temporal_relation_count: 72
+  expected_fact_relation_count: 36
+  expected_gap_count: 9
+  expected_hypothesis_count: 6
+  expected_question_count: 9
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: port-scan
+  case_id: lab_port_scan
+  display_name: Сканирование портов
+  short_description: Наблюдения, совместимые с инвентаризацией или разведкой.
+  behavior_class: port_scan
+  difficulty: intermediate
+  tags:
+  - ports
+  - inventory
+  source_scenario_id: v044_lab_port_scan
+  card_token: port-scan
+  card_id: card_e6faf04a069afabbaa5cb9c8156106670d8dd4632975783a9f9550194eb4b590
+  source_bundle_ids:
+  - bundle_ac13777941d58fd3b4f76c3200125e2bce83f34c9408de43a86cff58554fec3c
+  - trc_5a2ae5749923b2fbff7e43374805b8b8909699e5e4866678d899e6028c02194d
+  - analysis_6f08ebc98bc3f4027a5e972996cef50aa5ab53534998c89289a1aa55a777a6b9
+  manifest_sha256: bb6a03c3261c2ccf3fcc40a3a0db0b47510c76bf4c1bc97bcabc0ddb199a3f0d
+  semantic_sha256: 9114548829cb195994d86952c764dfd63fda4be1688c407fb70efaf2494f86f5
+  expected_fact_count: 6
+  expected_temporal_relation_count: 30
+  expected_fact_relation_count: 15
+  expected_gap_count: 6
+  expected_hypothesis_count: 6
+  expected_question_count: 6
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: web-probe
+  case_id: lab_web_probe
+  display_name: Разведочные веб-запросы
+  short_description: Веб-запросы с мониторинговой и разведочной альтернативами.
+  behavior_class: web_probe
+  difficulty: advanced
+  tags:
+  - web
+  - monitoring
+  source_scenario_id: v044_lab_web_probe
+  card_token: web-probe
+  card_id: card_baddc7bf2b4adc600190a33062bb8c94c01317ea4f1a8a811b07b3231c8f6bcf
+  source_bundle_ids:
+  - bundle_526b5fc9ab519297fb0676015f02c4a46f4d79e4a1d1314b2d5d7d9b37968c2e
+  - trc_1ddd13a2d2c38908dbfb399c42aec1930de482e0ce005951e67f0e6ededbaf4a
+  - analysis_b5a48516854d944f412dbc537216df95308f5e5e9acd4d730157bde6530a3502
+  manifest_sha256: 688e01eb363c2cbba7e2b3993baf19a5accd2aab3fc7919627ffe10162db4680
+  semantic_sha256: 96c59bf454f71657cefea626c56642f352a09778de8c9e4d7e39e7ffab3921c6
+  expected_fact_count: 9
+  expected_temporal_relation_count: 72
+  expected_fact_relation_count: 36
+  expected_gap_count: 9
+  expected_hypothesis_count: 6
+  expected_question_count: 9
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: mixed
+  case_id: lab_mixed_multi_episode
+  display_name: Смешанный многоэпизодный случай
+  short_description: Несколько классов наблюдений в двух лабораторных эпизодах.
+  behavior_class: mixed
+  difficulty: expert
+  tags:
+  - multi-episode
+  - mixed
+  source_scenario_id: v044_lab_mixed_multi_episode
+  card_token: mixed
+  card_id: card_67bd27eaea8626a0738726543e8c23316cb4cfad15401c713fc055a22df0e815
+  source_bundle_ids:
+  - bundle_b85b942922942b5e20e427418fa97f5efe727e7b9b14630803b77a0fb2ceaccf
+  - trc_1f026f71389537863904cc0c5fdc3fb82c003d7ddaa33a67cade4aa69bda5cfb
+  - analysis_45ea2896ced87c1ca608a9feeb428d68800ef612b3c370c26b6bc5b57d2e7dd6
+  manifest_sha256: 5c2c3576a2815e13168b192ce6587759c8a9e856ede43b1a45b23bd480c49a1b
+  semantic_sha256: 783b17ec01a967e05a66027c01dba5af133e8ce9ad14978c1e1be0a090bcc560
+  expected_fact_count: 12
+  expected_temporal_relation_count: 132
+  expected_fact_relation_count: 66
+  expected_gap_count: 12
+  expected_hypothesis_count: 6
+  expected_question_count: 12
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: incomplete
+  case_id: lab_incomplete_conflicting
+  display_name: Неполные и противоречащие сведения
+  short_description: Неполный комплект с противоречием состояния источника.
+  behavior_class: incomplete_evidence
+  difficulty: expert
+  tags:
+  - incomplete
+  - conflict
+  source_scenario_id: v044_lab_incomplete_conflicting
+  card_token: incomplete
+  card_id: card_9f996a593c6df2bd6ef17693fd0deb4db553b8f2f309cd0abcb26adc8d29c5fc
+  source_bundle_ids:
+  - bundle_83843b7cebb2f115002050152dc00dbc71cb7f6c7aa4209bb3b6433b26afb3ad
+  - trc_a818137e59c70ed14f5e5428c69e798f629c4493a3c9e9db81a1d660f9ecbe5a
+  - analysis_b463b6129911383f82daeb4e179a23198a6303353705d9ca65e8bd0a210ab626
+  manifest_sha256: 9a50725b27c63422716aeb6af802c8d4533bc6c1e8bf8f4bfd5b23d42f26e93f
+  semantic_sha256: e52194fd8e54a82907502c06e3355e01045344e60c43fe9f97203cdf25c64541
+  expected_fact_count: 7
+  expected_temporal_relation_count: 42
+  expected_fact_relation_count: 21
+  expected_gap_count: 7
+  expected_hypothesis_count: 5
+  expected_question_count: 7
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: late
+  case_id: lab_late_delivery
+  display_name: Поздняя доставка событий
+  short_description: Порядок доставки отличается от времени наблюдения.
+  behavior_class: delivery_anomaly
+  difficulty: advanced
+  tags:
+  - late-delivery
+  - time
+  source_scenario_id: v044_lab_late_delivery
+  card_token: late
+  card_id: card_88f0a93450da64b3965fda34066b0bc98c476ade5b3cdd19ad9e45ebfcdf12f9
+  source_bundle_ids:
+  - bundle_e258d5f3f5f9da3790b91fb079b8357c923e0d3c348599e59b82d5a93c20d14e
+  - trc_0a2232455034f82ade48040054a32e0923b856a625c7e0ea76bb827123d6abb3
+  - analysis_c76b4d7cd2d6b2b76253070ece55a3f4d11c64c9dbf8066818192b29160a0da0
+  manifest_sha256: 45b79a6344b1f0a2cbb0ca29b4b3d980735c79df904b6ec4ec0f1e63d7f0d93c
+  semantic_sha256: 86fda2e6f91620c5c5b5da48c9af1dc30860c0d0f33aae7d8dd6760444df3f70
+  expected_fact_count: 9
+  expected_temporal_relation_count: 72
+  expected_fact_relation_count: 36
+  expected_gap_count: 9
+  expected_hypothesis_count: 6
+  expected_question_count: 9
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: clocks
+  case_id: lab_clock_domains
+  display_name: Несколько доменов часов
+  short_description: Сопоставление отметок из несогласованных источников времени.
+  behavior_class: clock_domain_mismatch
+  difficulty: expert
+  tags:
+  - clock-domain
+  - uncertainty
+  source_scenario_id: v044_lab_clock_domains
+  card_token: clocks
+  card_id: card_4ca290c2a1ab28e410455828db2b0a14ae8a387ddb0b7f22fd422a92fe1d60ff
+  source_bundle_ids:
+  - bundle_3552241841c8d3d94c87738b73c0e007e4bbc5bd1965954de54bffb54966929b
+  - trc_c51f0c0b5822492721e634c339d488b85dd8a1726835dfc0cad84d238980e309
+  - analysis_32fea2318032d69e515d6bc91772a451ae9a094223206ed29fed656c0a31fe69
+  manifest_sha256: 2229bfbc8999c67b31c92b87a0843c8246c0be4769965a3d1652ed9c471b2baf
+  semantic_sha256: b9eafcd8ecf5d8bb7c8526a733bcac962d50bd61e087cbd2ea9d6e1f78ccf5c2
+  expected_fact_count: 6
+  expected_temporal_relation_count: 30
+  expected_fact_relation_count: 15
+  expected_gap_count: 6
+  expected_hypothesis_count: 6
+  expected_question_count: 6
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: duplicate
+  case_id: lab_duplicate_delivery
+  display_name: Повторная доставка
+  short_description: Повтор события дедуплицируется и не создаёт отдельный факт.
+  behavior_class: duplicate_delivery
+  difficulty: intermediate
+  tags:
+  - duplicate
+  - idempotency
+  source_scenario_id: v044_lab_duplicate_delivery
+  card_token: duplicate
+  card_id: card_465b7af0cadd23c0f013f458193275f4221ba1ed3c1d4e161648c6762dc80fec
+  source_bundle_ids:
+  - bundle_029a55072e3f94a2d02c2ea69b1428845ad0b7b33b2e38d583de425221e3b4a5
+  - trc_14870384058bdb7362533908fc53cd5e3cc9be4892224aeca9dcfc27fc2beed3
+  - analysis_4b73c940adb5b4d7e0a1de6c82d521a123e33fda3a0fa36d77f37a44ce8124a3
+  manifest_sha256: bf08e5e7f0c3b0b37aa9b87b05fb6955bf10a3a089c0d69a00443dd72e3a2e12
+  semantic_sha256: 3625e80bdbd05f984631d339b8a8c18a3952b0b447aa398fe19e11657cc6a1b0
+  expected_fact_count: 6
+  expected_temporal_relation_count: 30
+  expected_fact_relation_count: 15
+  expected_gap_count: 6
+  expected_hypothesis_count: 6
+  expected_question_count: 6
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.
+- token: equal
+  case_id: lab_equal_hypotheses
+  display_name: Равноподдержанные гипотезы
+  short_description: Несколько объяснений имеют равную поддержку в доступных сведениях.
+  behavior_class: equal_support
+  difficulty: expert
+  tags:
+  - hypotheses
+  - equal-support
+  source_scenario_id: v044_lab_equal_hypotheses
+  card_token: equal
+  card_id: card_540e16bf1f664d859248650c0a9b5295acea90f53e475b522c879e5d4b73945c
+  source_bundle_ids:
+  - bundle_c9afcd97c73bf27ff497402acfd846462ae5289a9eba20a2ab71f8805600b194
+  - trc_2f2cab524f9d509769faaa7ef8a97c610a92a95f81791b25a2c1514318a8f10a
+  - analysis_cf5a0468736bd59fb3e8ebbb27bbc810b50953950ffcad39bcd158127e7024d4
+  manifest_sha256: f5c9037171b7e59eeb7a246455d55b872ad9ad3529f4459cdddfafc2f36b7126
+  semantic_sha256: a3ce5452c66bc45c3ca2f87835f4dd819f455ca3cff4bf46c9a72ad72866e1cc
+  expected_fact_count: 6
+  expected_temporal_relation_count: 30
+  expected_fact_relation_count: 15
+  expected_gap_count: 6
+  expected_hypothesis_count: 6
+  expected_question_count: 6
+  expected_review_steps: 9
+  laboratory_only: true
+  enabled: true
+  limitations:
+  - Синтетический лабораторный случай; не подтверждает атаку.

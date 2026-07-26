@@ -1,0 +1,22 @@
+{
+  "compileall_passed": true,
+  "documentation_validation_passed": true,
+  "full_pytest": {
+    "duration": "287.40s",
+    "failed": 0,
+    "passed": 1750,
+    "warnings": 3
+  },
+  "predecessor_regression": {
+    "failed": 0,
+    "passed": 92,
+    "warnings": 0
+  },
+  "project_status_validation_passed": true,
+  "schema_version": "v0_4_4_test_report_v1",
+  "targeted_v044": {
+    "failed": 0,
+    "passed": 67,
+    "warnings": 0
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/timeline_item_explanation_v1.schema.json",
+  "title": "timeline_item_explanation_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "timeline_item_id",
+    "observation_time",
+    "delivery_time",
+    "clock_domain",
+    "explanation"
+  ],
+  "properties": {
+    "timeline_item_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "observation_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "delivery_time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "clock_domain": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "explanation": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "not": {
+        "pattern": "[<>]"
+      }
+    }
+  }
+}

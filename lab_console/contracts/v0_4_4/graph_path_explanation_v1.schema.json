@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/graph_path_explanation_v1.schema.json",
+  "title": "graph_path_explanation_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "path_id",
+    "node_ids",
+    "causal"
+  ],
+  "properties": {
+    "path_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "node_ids": {
+      "type": "array",
+      "minItems": 2,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+      }
+    },
+    "causal": {
+      "const": false
+    }
+  }
+}

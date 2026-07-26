@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/laboratory_case_catalog_v1.schema.json",
+  "title": "laboratory_case_catalog_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "cases"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "laboratory_case_catalog_v1"
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 8,
+      "items": {
+        "type": "object"
+      }
+    }
+  }
+}

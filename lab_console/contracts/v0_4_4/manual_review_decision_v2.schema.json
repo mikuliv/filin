@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/manual_review_decision_v2.schema.json",
+  "title": "manual_review_decision_v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "no_final_determination",
+    "no_automatic_action",
+    "operator_summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "manual_review_decision_v2"
+    },
+    "no_final_determination": {
+      "const": true
+    },
+    "no_automatic_action": {
+      "const": true
+    },
+    "operator_summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "not": {
+        "pattern": "[<>]"
+      }
+    }
+  }
+}

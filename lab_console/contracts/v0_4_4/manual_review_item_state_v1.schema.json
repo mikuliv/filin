@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/manual_review_item_state_v1.schema.json",
+  "title": "manual_review_item_state_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "entity_type",
+    "entity_id",
+    "state"
+  ],
+  "properties": {
+    "entity_type": {
+      "enum": [
+        "fact",
+        "relation",
+        "gap",
+        "hypothesis",
+        "comparison",
+        "question"
+      ]
+    },
+    "entity_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "state": {
+      "enum": [
+        "not_reviewed",
+        "reviewed",
+        "additional_evidence_required",
+        "unresolved",
+        "not_resolvable_in_current_scope",
+        "not_applicable"
+      ]
+    }
+  }
+}

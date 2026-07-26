@@ -1,0 +1,842 @@
+[
+  {
+    "reason": "unknown_case_schema",
+    "rejected": true,
+    "scenario_id": "NEG-001",
+    "variant": 1,
+    "violation": "unknown_schema"
+  },
+  {
+    "reason": "unknown_case_schema",
+    "rejected": true,
+    "scenario_id": "NEG-002",
+    "variant": 2,
+    "violation": "unknown_schema"
+  },
+  {
+    "reason": "unknown_case_schema",
+    "rejected": true,
+    "scenario_id": "NEG-003",
+    "variant": 3,
+    "violation": "unknown_schema"
+  },
+  {
+    "reason": "unknown_case_schema",
+    "rejected": true,
+    "scenario_id": "NEG-004",
+    "variant": 4,
+    "violation": "unknown_schema"
+  },
+  {
+    "reason": "unknown_case_schema",
+    "rejected": true,
+    "scenario_id": "NEG-005",
+    "variant": 5,
+    "violation": "unknown_schema"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-006",
+    "variant": 1,
+    "violation": "missing_case_id"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-007",
+    "variant": 2,
+    "violation": "missing_case_id"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-008",
+    "variant": 3,
+    "violation": "missing_case_id"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-009",
+    "variant": 4,
+    "violation": "missing_case_id"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-010",
+    "variant": 5,
+    "violation": "missing_case_id"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-011",
+    "variant": 1,
+    "violation": "missing_token"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-012",
+    "variant": 2,
+    "violation": "missing_token"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-013",
+    "variant": 3,
+    "violation": "missing_token"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-014",
+    "variant": 4,
+    "violation": "missing_token"
+  },
+  {
+    "reason": "missing_case_identity",
+    "rejected": true,
+    "scenario_id": "NEG-015",
+    "variant": 5,
+    "violation": "missing_token"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-016",
+    "variant": 1,
+    "violation": "missing_source_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-017",
+    "variant": 2,
+    "violation": "missing_source_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-018",
+    "variant": 3,
+    "violation": "missing_source_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-019",
+    "variant": 4,
+    "violation": "missing_source_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-020",
+    "variant": 5,
+    "violation": "missing_source_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-021",
+    "variant": 1,
+    "violation": "missing_temporal_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-022",
+    "variant": 2,
+    "violation": "missing_temporal_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-023",
+    "variant": 3,
+    "violation": "missing_temporal_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-024",
+    "variant": 4,
+    "violation": "missing_temporal_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-025",
+    "variant": 5,
+    "violation": "missing_temporal_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-026",
+    "variant": 1,
+    "violation": "missing_hypothesis_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-027",
+    "variant": 2,
+    "violation": "missing_hypothesis_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-028",
+    "variant": 3,
+    "violation": "missing_hypothesis_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-029",
+    "variant": 4,
+    "violation": "missing_hypothesis_bundle"
+  },
+  {
+    "reason": "missing_source_bundle",
+    "rejected": true,
+    "scenario_id": "NEG-030",
+    "variant": 5,
+    "violation": "missing_hypothesis_bundle"
+  },
+  {
+    "reason": "manifest_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-031",
+    "variant": 1,
+    "violation": "bad_manifest_sha"
+  },
+  {
+    "reason": "manifest_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-032",
+    "variant": 2,
+    "violation": "bad_manifest_sha"
+  },
+  {
+    "reason": "manifest_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-033",
+    "variant": 3,
+    "violation": "bad_manifest_sha"
+  },
+  {
+    "reason": "manifest_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-034",
+    "variant": 4,
+    "violation": "bad_manifest_sha"
+  },
+  {
+    "reason": "manifest_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-035",
+    "variant": 5,
+    "violation": "bad_manifest_sha"
+  },
+  {
+    "reason": "semantic_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-036",
+    "variant": 1,
+    "violation": "bad_semantic_sha"
+  },
+  {
+    "reason": "semantic_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-037",
+    "variant": 2,
+    "violation": "bad_semantic_sha"
+  },
+  {
+    "reason": "semantic_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-038",
+    "variant": 3,
+    "violation": "bad_semantic_sha"
+  },
+  {
+    "reason": "semantic_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-039",
+    "variant": 4,
+    "violation": "bad_semantic_sha"
+  },
+  {
+    "reason": "semantic_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-040",
+    "variant": 5,
+    "violation": "bad_semantic_sha"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-041",
+    "variant": 1,
+    "violation": "semantic_content_edit"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-042",
+    "variant": 2,
+    "violation": "semantic_content_edit"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-043",
+    "variant": 3,
+    "violation": "semantic_content_edit"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-044",
+    "variant": 4,
+    "violation": "semantic_content_edit"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-045",
+    "variant": 5,
+    "violation": "semantic_content_edit"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-046",
+    "variant": 1,
+    "violation": "card_identity_mismatch"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-047",
+    "variant": 2,
+    "violation": "card_identity_mismatch"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-048",
+    "variant": 3,
+    "violation": "card_identity_mismatch"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-049",
+    "variant": 4,
+    "violation": "card_identity_mismatch"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-050",
+    "variant": 5,
+    "violation": "card_identity_mismatch"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-051",
+    "variant": 1,
+    "violation": "scenario_label_leak"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-052",
+    "variant": 2,
+    "violation": "scenario_label_leak"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-053",
+    "variant": 3,
+    "violation": "scenario_label_leak"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-054",
+    "variant": 4,
+    "violation": "scenario_label_leak"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-055",
+    "variant": 5,
+    "violation": "scenario_label_leak"
+  },
+  {
+    "reason": "test_oracle_runtime_leak",
+    "rejected": true,
+    "scenario_id": "NEG-056",
+    "variant": 1,
+    "violation": "oracle_leak"
+  },
+  {
+    "reason": "test_oracle_runtime_leak",
+    "rejected": true,
+    "scenario_id": "NEG-057",
+    "variant": 2,
+    "violation": "oracle_leak"
+  },
+  {
+    "reason": "test_oracle_runtime_leak",
+    "rejected": true,
+    "scenario_id": "NEG-058",
+    "variant": 3,
+    "violation": "oracle_leak"
+  },
+  {
+    "reason": "test_oracle_runtime_leak",
+    "rejected": true,
+    "scenario_id": "NEG-059",
+    "variant": 4,
+    "violation": "oracle_leak"
+  },
+  {
+    "reason": "test_oracle_runtime_leak",
+    "rejected": true,
+    "scenario_id": "NEG-060",
+    "variant": 5,
+    "violation": "oracle_leak"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-061",
+    "variant": 1,
+    "violation": "winner_hypothesis"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-062",
+    "variant": 2,
+    "violation": "winner_hypothesis"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-063",
+    "variant": 3,
+    "violation": "winner_hypothesis"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-064",
+    "variant": 4,
+    "violation": "winner_hypothesis"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-065",
+    "variant": 5,
+    "violation": "winner_hypothesis"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-066",
+    "variant": 1,
+    "violation": "ranked_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-067",
+    "variant": 2,
+    "violation": "ranked_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-068",
+    "variant": 3,
+    "violation": "ranked_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-069",
+    "variant": 4,
+    "violation": "ranked_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-070",
+    "variant": 5,
+    "violation": "ranked_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-071",
+    "variant": 1,
+    "violation": "scored_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-072",
+    "variant": 2,
+    "violation": "scored_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-073",
+    "variant": 3,
+    "violation": "scored_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-074",
+    "variant": 4,
+    "violation": "scored_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-075",
+    "variant": 5,
+    "violation": "scored_comparison"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-076",
+    "variant": 1,
+    "violation": "causal_edge"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-077",
+    "variant": 2,
+    "violation": "causal_edge"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-078",
+    "variant": 3,
+    "violation": "causal_edge"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-079",
+    "variant": 4,
+    "violation": "causal_edge"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-080",
+    "variant": 5,
+    "violation": "causal_edge"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-081",
+    "variant": 1,
+    "violation": "automatic_action"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-082",
+    "variant": 2,
+    "violation": "automatic_action"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-083",
+    "variant": 3,
+    "violation": "automatic_action"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-084",
+    "variant": 4,
+    "violation": "automatic_action"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-085",
+    "variant": 5,
+    "violation": "automatic_action"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-086",
+    "variant": 1,
+    "violation": "final_determination"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-087",
+    "variant": 2,
+    "violation": "final_determination"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-088",
+    "variant": 3,
+    "violation": "final_determination"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-089",
+    "variant": 4,
+    "violation": "final_determination"
+  },
+  {
+    "reason": "semantic_content_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-090",
+    "variant": 5,
+    "violation": "final_determination"
+  },
+  {
+    "reason": "duplicate_card_id",
+    "rejected": true,
+    "scenario_id": "NEG-091",
+    "variant": 1,
+    "violation": "duplicate_card_id"
+  },
+  {
+    "reason": "duplicate_card_id",
+    "rejected": true,
+    "scenario_id": "NEG-092",
+    "variant": 2,
+    "violation": "duplicate_card_id"
+  },
+  {
+    "reason": "duplicate_card_id",
+    "rejected": true,
+    "scenario_id": "NEG-093",
+    "variant": 3,
+    "violation": "duplicate_card_id"
+  },
+  {
+    "reason": "duplicate_card_id",
+    "rejected": true,
+    "scenario_id": "NEG-094",
+    "variant": 4,
+    "violation": "duplicate_card_id"
+  },
+  {
+    "reason": "duplicate_card_id",
+    "rejected": true,
+    "scenario_id": "NEG-095",
+    "variant": 5,
+    "violation": "duplicate_card_id"
+  },
+  {
+    "reason": "duplicate_semantic_sha",
+    "rejected": true,
+    "scenario_id": "NEG-096",
+    "variant": 1,
+    "violation": "duplicate_semantic_sha"
+  },
+  {
+    "reason": "duplicate_semantic_sha",
+    "rejected": true,
+    "scenario_id": "NEG-097",
+    "variant": 2,
+    "violation": "duplicate_semantic_sha"
+  },
+  {
+    "reason": "duplicate_semantic_sha",
+    "rejected": true,
+    "scenario_id": "NEG-098",
+    "variant": 3,
+    "violation": "duplicate_semantic_sha"
+  },
+  {
+    "reason": "duplicate_semantic_sha",
+    "rejected": true,
+    "scenario_id": "NEG-099",
+    "variant": 4,
+    "violation": "duplicate_semantic_sha"
+  },
+  {
+    "reason": "duplicate_semantic_sha",
+    "rejected": true,
+    "scenario_id": "NEG-100",
+    "variant": 5,
+    "violation": "duplicate_semantic_sha"
+  },
+  {
+    "reason": "duplicate_case_token",
+    "rejected": true,
+    "scenario_id": "NEG-101",
+    "variant": 1,
+    "violation": "duplicate_case_token"
+  },
+  {
+    "reason": "duplicate_case_token",
+    "rejected": true,
+    "scenario_id": "NEG-102",
+    "variant": 2,
+    "violation": "duplicate_case_token"
+  },
+  {
+    "reason": "duplicate_case_token",
+    "rejected": true,
+    "scenario_id": "NEG-103",
+    "variant": 3,
+    "violation": "duplicate_case_token"
+  },
+  {
+    "reason": "duplicate_case_token",
+    "rejected": true,
+    "scenario_id": "NEG-104",
+    "variant": 4,
+    "violation": "duplicate_case_token"
+  },
+  {
+    "reason": "duplicate_case_token",
+    "rejected": true,
+    "scenario_id": "NEG-105",
+    "variant": 5,
+    "violation": "duplicate_case_token"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-106",
+    "variant": 1,
+    "violation": "raw_pcap_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-107",
+    "variant": 2,
+    "violation": "raw_pcap_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-108",
+    "variant": 3,
+    "violation": "raw_pcap_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-109",
+    "variant": 4,
+    "violation": "raw_pcap_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-110",
+    "variant": 5,
+    "violation": "raw_pcap_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-111",
+    "variant": 1,
+    "violation": "secret_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-112",
+    "variant": 2,
+    "violation": "secret_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-113",
+    "variant": 3,
+    "violation": "secret_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-114",
+    "variant": 4,
+    "violation": "secret_export"
+  },
+  {
+    "reason": "unsafe_review_export",
+    "rejected": true,
+    "scenario_id": "NEG-115",
+    "variant": 5,
+    "violation": "secret_export"
+  },
+  {
+    "reason": "review_export_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-116",
+    "variant": 1,
+    "violation": "bad_export_sha"
+  },
+  {
+    "reason": "review_export_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-117",
+    "variant": 2,
+    "violation": "bad_export_sha"
+  },
+  {
+    "reason": "review_export_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-118",
+    "variant": 3,
+    "violation": "bad_export_sha"
+  },
+  {
+    "reason": "review_export_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-119",
+    "variant": 4,
+    "violation": "bad_export_sha"
+  },
+  {
+    "reason": "review_export_sha_mismatch",
+    "rejected": true,
+    "scenario_id": "NEG-120",
+    "variant": 5,
+    "violation": "bad_export_sha"
+  }
+]

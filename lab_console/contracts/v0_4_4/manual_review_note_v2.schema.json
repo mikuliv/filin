@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/manual_review_note_v2.schema.json",
+  "title": "manual_review_note_v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "note_id",
+    "revision",
+    "text",
+    "is_evidence"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "manual_review_note_v2"
+    },
+    "note_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "text": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "not": {
+        "pattern": "[<>]"
+      }
+    },
+    "is_evidence": {
+      "const": false
+    }
+  }
+}

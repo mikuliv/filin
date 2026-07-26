@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/comparison_cell_explanation_v1.schema.json",
+  "title": "comparison_cell_explanation_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "comparison_id",
+    "left_hypothesis_id",
+    "right_hypothesis_id",
+    "comparison_result",
+    "is_ranking"
+  ],
+  "properties": {
+    "comparison_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "left_hypothesis_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "right_hypothesis_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "comparison_result": {
+      "enum": [
+        "equally_supported",
+        "better_supported",
+        "less_supported",
+        "incomparable",
+        "insufficient_data",
+        "not_comparable"
+      ]
+    },
+    "is_ranking": {
+      "const": false
+    }
+  }
+}

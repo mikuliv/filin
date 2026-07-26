@@ -10,13 +10,15 @@ from fastapi.templating import Jinja2Templates
 
 from .adapters import load_source, project_status
 from .cards import build_console_view, build_incident_card_v2
+from .cases import CaseRegistry
 from .config import Settings, load_settings
 from .database import Database
 from .files import read_safe
 from .jobs import TaskCatalog, TaskRunner
-from .models import ReviewCheck, ReviewCreate, ReviewDecision, ReviewNote, TaskStart
+from .models import ReviewCheck, ReviewComplete, ReviewCreate, ReviewDecision, ReviewItemState, ReviewNote, ReviewProgress, TaskStart
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
+from .presentation.case_views import case_catalog, case_page
 from .review import ReviewService
 from .security import SessionStore
 
@@ -27,13 +29,15 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     settings = settings or load_settings()
     runtime = settings.runtime_dir
     db = Database(database_path or runtime / "console.sqlite3"); db.migrate()
-    catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
+    task_catalog_path = Path(__file__).parent / "jobs" / "allowed_tasks_v2.yaml"
+    catalog = TaskCatalog(task_catalog_path if task_catalog_path.is_file() else Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
+    ui_catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     runner = TaskRunner(catalog, db, runtime, settings.max_parallel_tasks)
-    reviews = ReviewService(db); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
-    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.3.1", docs_url=None, redoc_url=None)
+    reviews = ReviewService(db); cases = CaseRegistry(); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
+    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.4", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
-    app.state.settings, app.state.db, app.state.catalog, app.state.runner = settings, db, catalog, runner
+    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews = settings, db, catalog, runner, cases, reviews
 
     @app.exception_handler(ValueError)
     async def value_error_handler(_request: Request, exc: ValueError):
@@ -87,14 +91,18 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
 
     @app.get("/", response_class=HTMLResponse)
     async def dashboard(request: Request):
-        context = present_page("dashboard", reviews, runner, catalog)
+        context = present_page("dashboard", reviews, runner, ui_catalog)
         context.update({"request": request, "csrf": request.state.session.csrf})
         return templates.TemplateResponse(request, "pages/dashboard.html", context)
 
     @app.get("/ui/{page}", response_class=HTMLResponse)
     async def page(request: Request, page: str):
+        if page == "cases":
+            context = {**present_page("incidents", reviews, runner, ui_catalog), **case_catalog(cases, reviews)}
+            context.update({"request": request, "csrf": request.state.session.csrf, "title": "Каталог лабораторных карточек", "breadcrumbs": ["Филин", "Карточки инцидентов"]})
+            return templates.TemplateResponse(request, "pages/case_catalog.html", context)
         if page not in PAGES: raise HTTPException(404)
-        context = present_page(page, reviews, runner, catalog)
+        context = present_page(page, reviews, runner, ui_catalog)
         context.update({"request": request, "csrf": request.state.session.csrf})
         return templates.TemplateResponse(request, f"pages/{page}.html", context)
 
@@ -102,9 +110,23 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     async def incident_detail(request: Request, card_token: str):
         if card_token != "representative":
             raise HTTPException(404)
-        context = {**present_page("incidents", reviews, runner, catalog), **present_incident("overview")}
+        context = {**present_page("incidents", reviews, runner, ui_catalog), **present_incident("overview")}
         context.update({"request": request, "csrf": request.state.session.csrf, "title": "Обзор карточки", "breadcrumbs": ["Филин", "Карточки инцидентов", "Обзор"]})
         return templates.TemplateResponse(request, "pages/incident_detail.html", context)
+
+    @app.get("/ui/cases", response_class=HTMLResponse)
+    async def case_catalog_page(request: Request):
+        context = {**present_page("incidents", reviews, runner, ui_catalog), **case_catalog(cases, reviews)}
+        context.update({"request":request,"csrf":request.state.session.csrf,"title":"Каталог лабораторных карточек","breadcrumbs":["Филин","Карточки инцидентов"]})
+        return templates.TemplateResponse(request, "pages/case_catalog.html", context)
+
+    @app.get("/ui/cases/{case_token}/{section}", response_class=HTMLResponse)
+    async def case_section_page(request: Request, case_token: str, section: str):
+        try: value = case_page(cases, reviews, case_token, section)
+        except KeyError: raise HTTPException(404)
+        context = {**present_page("incidents", reviews, runner, ui_catalog), **value}
+        context.update({"request":request,"csrf":request.state.session.csrf,"title":value["section_title"],"breadcrumbs":["Филин","Карточки",value["descriptor"]["display_name"],value["section_title"]]})
+        return templates.TemplateResponse(request, "pages/case_section.html", context)
 
     @app.get("/api/console/v1/health")
     async def health(): return {"schema_version": "console_health_v1", "status": "ok", "laboratory_only": True}
@@ -130,7 +152,7 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         if bundle_token not in mapping: raise HTTPException(404)
         return runner.run(mapping[bundle_token], confirmed=True)
     @app.get("/api/console/v1/incident-cards")
-    async def cards(): return [{"card_token": "representative", **build_incident_card_v2()}]
+    async def cards(): return cases.list()
     @app.get("/api/console/v1/incident-cards/{card_token}")
     async def card(card_token: str): return _card_part(card_token, "card")
     @app.get("/api/console/v1/incident-cards/{card_token}/{part}")
@@ -140,7 +162,10 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     @app.get("/api/console/v1/reviews")
     async def review_list(): return reviews.list()
     @app.post("/api/console/v1/reviews")
-    async def review_create(body: ReviewCreate): return reviews.create(body.card_id, body.source_sha256)
+    async def review_create(body: ReviewCreate):
+        sha = body.source_bundle_sha256 or body.source_sha256
+        if not sha: raise ValueError("missing_source_sha256")
+        return reviews.create(body.card_id, sha, body.case_id, body.source_semantic_sha256 or sha)
     @app.get("/api/console/v1/reviews/{review_id}")
     async def review_get(review_id: str):
         value = reviews.get(review_id)
@@ -151,7 +176,83 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     @app.post("/api/console/v1/reviews/{review_id}/notes")
     async def review_note(review_id: str, body: ReviewNote): return reviews.add_note(review_id, body.text)
     @app.post("/api/console/v1/reviews/{review_id}/decision")
-    async def review_decision(review_id: str, body: ReviewDecision): return reviews.decide(review_id, body.status, body.limitations, body.next_manual_step)
+    async def review_decision(review_id: str, body: ReviewDecision): return reviews.decide(review_id, body.status, body.limitations, body.next_manual_step, body.operator_summary)
+
+    @app.get("/api/console/v1/cases")
+    async def case_list_api(): return cases.list()
+    @app.get("/api/console/v1/cases/{case_token}")
+    async def case_get_api(case_token: str): return cases.get(case_token)["descriptor"]
+    @app.get("/api/console/v1/cases/{case_token}/{part}")
+    async def case_part_api(case_token: str, part: str):
+        bundle = cases.get(case_token); view = bundle["console_view"]
+        mapping = {"card":view["card"],"timeline":view["timeline"],"graph":view["graph"],"gaps":view["gaps"],"hypotheses":view["hypotheses"],"comparisons":view["comparisons"],"questions":view["questions"],
+                   "workflow":{"schema_version":"operator_workflow_v1","steps":["overview","facts","timeline","graph","gaps","hypotheses","comparisons","questions","decision"],"mandatory":True}}
+        if part not in mapping: raise HTTPException(404)
+        return mapping[part]
+
+    @app.post("/api/console/v1/cases/{case_token}/reviews")
+    async def case_review_create(case_token: str, body: ReviewCreate):
+        bundle = cases.get(case_token); view = bundle["console_view"]
+        if body.case_id != bundle["descriptor"]["case_id"] or body.card_id != view["card_id"] or body.source_bundle_sha256 != bundle["manifest_sha256"] or body.source_semantic_sha256 != bundle["semantic_sha256"]:
+            raise ValueError("review_source_identity_mismatch")
+        return reviews.create(view["card_id"], bundle["manifest_sha256"], body.case_id, bundle["semantic_sha256"])
+
+    @app.patch("/api/console/v1/reviews/{review_id}/progress")
+    async def review_progress(review_id: str, body: ReviewProgress): return reviews.update_progress(review_id, body.current_step, body.completed_step_ids, body.unresolved_item_ids)
+
+    def _validate_entity(entity_type: str, token: str) -> None:
+        fields = {"fact":"observed_facts","relation":None,"gap":"gaps","hypothesis":"hypotheses","comparison":"comparisons","question":"questions"}
+        for case_token in cases.tokens:
+            view = cases.get(case_token)["console_view"]
+            if entity_type == "fact" and any(x["fact_id"] == token for x in view["card"]["observed_facts"]): return
+            if entity_type == "relation" and any(x["id"] == token for x in view["graph"]["edges"]): return
+            id_keys = {"gap":"gap_id","hypothesis":"hypothesis_id","comparison":"comparison_id","question":"analyst_question_id"}
+            if entity_type in id_keys and any(x[id_keys[entity_type]] == token for x in view[fields[entity_type]]): return
+        raise KeyError("unknown_entity_token")
+
+    async def _item_state(review_id: str, entity_type: str, token: str, body: ReviewItemState):
+        _validate_entity(entity_type, token); return reviews.set_item_state(review_id, entity_type, token, body.state)
+
+    @app.post("/api/console/v1/reviews/{review_id}/facts/{token}/state")
+    async def fact_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"fact",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/relations/{token}/state")
+    async def relation_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"relation",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/gaps/{token}/state")
+    async def gap_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"gap",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/hypotheses/{token}/state")
+    async def hypothesis_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"hypothesis",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/comparisons/{token}/state")
+    async def comparison_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"comparison",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/questions/{token}/state")
+    async def question_state(review_id: str, token: str, body: ReviewItemState): return await _item_state(review_id,"question",token,body)
+    @app.post("/api/console/v1/reviews/{review_id}/complete")
+    async def review_complete(review_id: str, body: ReviewComplete): return reviews.complete(review_id, body.operator_summary, body.next_manual_step, body.limitations)
+    @app.post("/api/console/v1/reviews/{review_id}/export")
+    async def review_export(review_id: str): return reviews.export(review_id)
+    @app.get("/api/console/v1/reviews/{review_id}/history")
+    async def review_history(review_id: str): return reviews.history(review_id)
+
+    @app.get("/api/console/v1/entities/{entity_token}/links")
+    async def entity_links(entity_token: str):
+        for case_token in cases.tokens:
+            view = cases.get(case_token)["console_view"]
+            haystack = [x["fact_id"] for x in view["card"]["observed_facts"]] + [x["gap_id"] for x in view["gaps"]] + [x["hypothesis_id"] for x in view["hypotheses"]]
+            if entity_token in haystack: return {"entity_token":entity_token,"case_token":case_token,"links":[f"/ui/cases/{case_token}/timeline?focus={entity_token}",f"/ui/cases/{case_token}/graph?focus={entity_token}"]}
+        raise HTTPException(404)
+    @app.get("/api/console/v1/relations/{relation_token}/explanation")
+    async def relation_explanation(relation_token: str):
+        _validate_entity("relation", relation_token)
+        for case_token in cases.tokens:
+            edge = next((x for x in cases.get(case_token)["console_view"]["graph"]["edges"] if x["id"] == relation_token), None)
+            if edge: return {"schema_version":"graph_entity_explanation_v1",**edge,"plain_name":"Структурное или временное отношение; не причинность."}
+        raise HTTPException(404)
+    @app.get("/api/console/v1/comparisons/{comparison_token}/explanation")
+    async def comparison_explanation(comparison_token: str):
+        _validate_entity("comparison", comparison_token)
+        for case_token in cases.tokens:
+            item = next((x for x in cases.get(case_token)["console_view"]["comparisons"] if x["comparison_id"] == comparison_token), None)
+            if item: return item
+        raise HTTPException(404)
     @app.get("/api/console/v1/tasks")
     async def tasks(): return list(catalog.tasks.values())
     @app.post("/api/console/v1/tasks/{task_id}/runs")

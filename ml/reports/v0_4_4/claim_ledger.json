@@ -1,0 +1,40 @@
+{
+  "claims": [
+    {
+      "claim": "12 независимых карточек имеют уникальные card_id и semantic SHA",
+      "claim_id": "CLM-044-01",
+      "verified": true
+    },
+    {
+      "claim": "Review сохраняется после перезапуска и имеет версионную историю",
+      "claim_id": "CLM-044-02",
+      "verified": true
+    },
+    {
+      "claim": "Экспорт детерминирован и не меняет source SHA",
+      "claim_id": "CLM-044-03",
+      "verified": true
+    },
+    {
+      "claim": "84 положительных сценария пройдены",
+      "claim_id": "CLM-044-04",
+      "verified": true
+    },
+    {
+      "claim": "120 отрицательных сценариев отклонены",
+      "claim_id": "CLM-044-05",
+      "verified": true
+    },
+    {
+      "claim": "Шесть обязательных карточек прошли браузерную приёмку",
+      "claim_id": "CLM-044-06",
+      "verified": true
+    },
+    {
+      "claim": "Причинные рёбра и автоматические действия отсутствуют",
+      "claim_id": "CLM-044-07",
+      "verified": true
+    }
+  ],
+  "schema_version": "v0_4_4_claim_ledger_v1"
+}

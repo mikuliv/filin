@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/laboratory_case_bundle_v1.schema.json",
+  "title": "laboratory_case_bundle_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "manifest_sha256",
+    "semantic_sha256",
+    "reproducibility"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "laboratory_case_bundle_v1"
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "semantic_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reproducibility": {
+      "type": "object"
+    }
+  }
+}

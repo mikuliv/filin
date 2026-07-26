@@ -17,6 +17,8 @@ python -m lab_console --host 127.0.0.1 --port 8043
 - `/ui/bundles` — комплекты, manifests и артефакты;
 - `/ui/incidents` — список карточек;
 - `/ui/incidents/representative` — обзор представительской карточки;
+- `/ui/cases` — каталог 12 независимых лабораторных карточек v0.4.4;
+- `/ui/cases/{token}/{section}` — guided workflow, review и экспорт выбранного случая;
 - `/ui/timeline`, `/ui/graph`, `/ui/hypotheses`, `/ui/comparisons` — временная и структурная реконструкция;
 - `/ui/questions`, `/ui/reviews` — вопросы специалисту и локальный review-overlay;
 - `/ui/tasks`, `/ui/logs` — разрешённые задачи и их журналы;
@@ -39,6 +41,7 @@ python -m lab_console --host 127.0.0.1 --port 8043
 
 ```powershell
 python tools/lab_console/verify_console.py
+python tools/lab_console/verify_v044.py
 python -m pytest -q -p no:cacheprovider ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_ui.py
 ```
 
@@ -47,6 +50,8 @@ python -m pytest -q -p no:cacheprovider ml/tests/test_v043_lab_console.py ml/tes
 Реальные снимки находятся в `runtime/lab_console/v0_4_3_1/screenshots`: две главные страницы (1920×1080 и 1366×768), этапы, модель, показатели, комплекты, список и обзор карточки, timeline, graph, гипотезы, матрица, вопросы, задачи, тесты и состояние системы.
 
 Runtime, logs, cache, exports и скриншоты исключены из Git. Их удаление сбрасывает только локальные данные консоли и не затрагивает frozen evidence bundles.
+
+Скриншоты приёмки v0.4.4 находятся в `runtime/lab_console/v044-browser/screenshots`. Полный порядок работы описан в [инструкции по рассмотрению карточек](reviewing-laboratory-cards.md).
 
 ## Ограничения
 

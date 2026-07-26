@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/laboratory_case_descriptor_v1.schema.json",
+  "title": "laboratory_case_descriptor_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "case_id",
+    "display_name",
+    "behavior_class",
+    "difficulty",
+    "laboratory_only"
+  ],
+  "properties": {
+    "case_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "display_name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 4000,
+      "not": {
+        "pattern": "[<>]"
+      }
+    },
+    "behavior_class": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "difficulty": {
+      "enum": [
+        "basic",
+        "intermediate",
+        "advanced",
+        "expert"
+      ]
+    },
+    "laboratory_only": {
+      "const": true
+    }
+  }
+}

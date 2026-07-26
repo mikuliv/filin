@@ -1,0 +1,74 @@
+stage: v0.4.4
+protocol_revision: 1
+protocol_status: frozen_before_official_campaign
+active_branch: main
+starting_head: 8f11e1418be1831a64f5e451b3015f6c92fe15d4
+v0_4_3_1_implementation_commit: 8f11e1418be1831a64f5e451b3015f6c92fe15d4
+references:
+  v0_4_3_manifest_sha256: a71a42c09918ea2f8efa01afe26ba9c943cd25eb0faaaf5c2acbaf2a4b0a443e
+  v0_4_3_semantic_sha256: 516691ae260bbafad4222e2c7b59f5602c033cf3fbb3a2da77ddbaabc0d3d361
+  v0_4_3_task_catalog_sha256: 4275dd239d53f568c04d48bc7a3eeb1ea74f2da2dd9f27fcc96ce40e1e3021d4
+  v0_4_3_1_manifest_sha256: null
+  v0_4_3_1_semantic_sha256: null
+  v0_4_3_1_evidence_tree_sha: 5b8216189db9107a2da71b82e2cfa1823b25a1c9
+  backend_tree_sha: 04218a4eb01534950efd5f7d6390f1a575cacbc8
+  candidate_id: v03154:65a3dd912d845bc1
+  candidate_artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+purpose: deterministic_laboratory_case_catalog_and_complete_operator_review_cycle
+case_catalog:
+  schema: laboratory_case_catalog_v1
+  path: lab_console/cases/laboratory_case_catalog_v1.yaml
+  minimum_cases: 8
+  official_cases: 12
+  seed_namespace: v044-r1-seed-64000-64199
+  previous_seed_namespaces_prohibited: [v041-r1-seed-41000-41099, v041-r2-seed-42000-42099, v042-r1-seed-52000-52199]
+generation:
+  chain: [synthetic_passive_events, incident_reconstruction_bundle_v1, temporal_reconstruction_bundle_v1, hypothesis_analysis_bundle_v1, incident_card_v2, console_incident_view]
+  canonical_json: utf8_sorted_keys_compact
+  network_required: false
+  backend_required: false
+  model_runtime_required: false
+test_oracle:
+  test_only_path: lab_console/cases/oracles
+  runtime_influence_allowed: false
+  evidence_use_allowed: false
+operator_workflow:
+  steps: [overview, facts, timeline, graph, gaps, hypotheses, comparisons, questions, decision]
+  draft_persistence: sqlite_overlay
+  restart_recovery_required: true
+  completion_requires_all_checks: true
+manual_review:
+  schema: manual_review_session_v2
+  source_artifact_mutation_allowed: false
+  no_final_determination: true
+  no_automatic_action: true
+  completed_session_mutable: false
+gap_rules:
+  manual_states: [not_reviewed, reviewed, additional_evidence_required, unresolved, not_resolvable_in_current_scope]
+  resolved_without_new_evidence_allowed: false
+timeline_rules:
+  modes: [observation, delivery, comparison]
+  default_mode: observation
+  causality_from_order_allowed: false
+graph_rules:
+  modes: [simplified, facts, facts_temporal, facts_structural, gaps, hypotheses, full]
+  default_mode: simplified
+  causal_edges_allowed: false
+comparison_rules:
+  ranking_allowed: false
+  cross_question_allowed: false
+  cross_scope_allowed: false
+  each_cell_explained: true
+cross_links:
+  stable_tokens_required: true
+  arbitrary_ids_allowed: false
+determinism:
+  case_rebuild_required: true
+  semantic_export_required: true
+positive_scenario_minimum: 80
+negative_scenario_minimum: 120
+completion_criteria: all_cases_reviews_scenarios_browser_tests_integrity_and_documentation_pass
+next_allowed_stage: v0.4.5
+mainline_next_allowed_stage: v0.3.19
+forbidden_capabilities: [real_data, external_trial, production, public_deployment, remote_access, backend_integration, siem_integration, real_notifications, automatic_response, automatic_blocking, model_training, model_replacement, feature_change, threshold_change, arbitrary_command, arbitrary_file_upload]
+forbidden_claims: [attack_confirmed, compromise_confirmed, malicious_actor_confirmed, causality_confirmed, production_ready]

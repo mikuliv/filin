@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/reconstruction_gap_view_v1.schema.json",
+  "title": "reconstruction_gap_view_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "gap_id",
+    "gap_type",
+    "affected_entity_ids",
+    "manual_state"
+  ],
+  "properties": {
+    "gap_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "gap_type": {
+      "enum": [
+        "missing_event",
+        "missing_interval_boundary",
+        "clock_domain_mismatch",
+        "insufficient_precision",
+        "unresolved_duplicate",
+        "broken_reference",
+        "unexplained_sequence_gap",
+        "conflicting_timestamp",
+        "incomplete_episode",
+        "incomplete_evidence"
+      ]
+    },
+    "affected_entity_ids": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+      }
+    },
+    "manual_state": {
+      "not": {
+        "const": "resolved"
+      }
+    }
+  }
+}

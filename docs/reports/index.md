@@ -17,3 +17,5 @@ tracked reports.
 Лабораторная консоль: [итог v0.4.3](../../ml/reports/v0_4_3/v0_4_3_summary.md), [результат политики](../../ml/reports/v0_4_3/v0_4_3_policy_result.json) и [manifest](../../ml/reports/v0_4_3/v0_4_3_bundle_manifest.json).
 
 Визуальная коррекция консоли: [эксперимент v0.4.3.1](../experiments/v0_4_3_1.md) и [приёмочный отчёт](../../ml/reports/v0_4_3_1/ui_acceptance_report.md).
+
+Операторский цикл: [итог v0.4.4](../../ml/reports/v0_4_4/summary.md), [операторская приёмка](../../ml/reports/v0_4_4/operator_acceptance_report.md), [результат политики](../../ml/reports/v0_4_4/v0_4_4_policy_result.json) и [manifest](../../ml/reports/v0_4_4/v0_4_4_bundle_manifest.json).

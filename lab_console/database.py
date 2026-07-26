@@ -11,7 +11,10 @@ MIGRATIONS = (
     """CREATE TABLE IF NOT EXISTS schema_migrations(version INTEGER PRIMARY KEY, applied_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS reviews(id TEXT PRIMARY KEY, card_id TEXT NOT NULL, source_sha256 TEXT NOT NULL, status TEXT NOT NULL, payload TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS task_runs(id TEXT PRIMARY KEY, task_id TEXT NOT NULL, status TEXT NOT NULL, pid INTEGER, exit_code INTEGER, catalog_sha256 TEXT NOT NULL, head TEXT NOT NULL, tree_state TEXT NOT NULL, started_at TEXT NOT NULL, finished_at TEXT, log_path TEXT NOT NULL, error TEXT);
-    CREATE TABLE IF NOT EXISTS audit_events(id INTEGER PRIMARY KEY AUTOINCREMENT, occurred_at TEXT NOT NULL, action TEXT NOT NULL, object_id TEXT NOT NULL, outcome TEXT NOT NULL, detail TEXT NOT NULL);""",
+    CREATE TABLE IF NOT EXISTS audit_events(id INTEGER PRIMARY KEY AUTOINCREMENT, occurred_at TEXT NOT NULL, action TEXT NOT NULL, object_id TEXT NOT NULL, outcome TEXT NOT NULL, detail TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload TEXT NOT NULL, UNIQUE(review_id,version));
+    CREATE INDEX IF NOT EXISTS idx_reviews_card_status ON reviews(card_id,status);
+    CREATE INDEX IF NOT EXISTS idx_review_versions_review ON review_versions(review_id,version);""",
 )
 
 

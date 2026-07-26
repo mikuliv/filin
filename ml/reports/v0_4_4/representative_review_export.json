@@ -1,0 +1,88 @@
+{
+  "audit_summary": {
+    "event_count": 19
+  },
+  "card_id": "card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5",
+  "case_id": "lab_normal_activity",
+  "completed_steps": [
+    "overview",
+    "facts",
+    "timeline",
+    "graph",
+    "gaps",
+    "hypotheses",
+    "comparisons",
+    "questions",
+    "decision"
+  ],
+  "decision": {
+    "additional_evidence_required": true,
+    "limitations": [
+      "Синтетический лабораторный случай."
+    ],
+    "next_manual_step": "Получить независимые первичные сведения.",
+    "no_automatic_action": true,
+    "no_final_determination": true,
+    "operator_summary": "Ручное рассмотрение завершено без окончательного определения.",
+    "reviewed_sections": [
+      "overview",
+      "facts",
+      "timeline",
+      "graph",
+      "gaps",
+      "hypotheses",
+      "comparisons",
+      "questions",
+      "decision"
+    ],
+    "schema_version": "manual_review_decision_v2",
+    "unresolved_items": [
+      "aq_1b59f7bed704561799c6dd849fbb7da6e4526cb0ac53617e43280c56c9b70adc",
+      "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+    ]
+  },
+  "export_sha256": "c5570833fef62a41bcfaaae705b2458c6054205b067ba787b6ed79332583b655",
+  "limitations": [
+    "Синтетический лабораторный случай."
+  ],
+  "manifest": {
+    "file_count": 1,
+    "schema_version": "manual_review_export_manifest_v1",
+    "semantic_sha256": "f08d437e13d4e6a76418b1dd8fa7035f34be9ca097d0723140b180ad59875ae7"
+  },
+  "no_automatic_action": true,
+  "no_final_determination": true,
+  "notes": [
+    {
+      "is_evidence": false,
+      "note_id": "note_6b0b8511117e470db16ff7a68941cc36",
+      "revision": 1,
+      "text": "Лабораторная ручная проверка случая normal; вывод не является окончательным определением."
+    }
+  ],
+  "review_session_id": "review_789ee98af3ef4b39aeb499da9cfaeee5",
+  "reviewed_entities": {
+    "reviewed_comparison_ids": [],
+    "reviewed_fact_ids": [],
+    "reviewed_gap_ids": [
+      "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+    ],
+    "reviewed_hypothesis_ids": [],
+    "reviewed_question_ids": [
+      "aq_1b59f7bed704561799c6dd849fbb7da6e4526cb0ac53617e43280c56c9b70adc"
+    ],
+    "reviewed_relation_ids": []
+  },
+  "safety": {
+    "secrets_included": false,
+    "source_artifacts_modified": false,
+    "test_oracle_included": false
+  },
+  "schema_version": "manual_review_export_v2",
+  "source_bundle_sha256": "5e53331f724800e83afe0c33bd256dcbbe07654503882cc252dca834c58e7733",
+  "source_semantic_sha256": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476",
+  "unresolved_items": [
+    "aq_1b59f7bed704561799c6dd849fbb7da6e4526cb0ac53617e43280c56c9b70adc",
+    "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+  ]
+}

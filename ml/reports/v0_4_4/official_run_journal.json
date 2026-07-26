@@ -1,0 +1,22 @@
+{
+  "backend_used": false,
+  "network_used": false,
+  "protocol_revision": 1,
+  "push_performed": false,
+  "schema_version": "v0_4_4_official_run_journal_v1",
+  "steps": [
+    "preflight",
+    "case_build",
+    "contract_validation",
+    "positive_campaign",
+    "negative_campaign",
+    "browser_acceptance",
+    "review_restart",
+    "review_completion",
+    "safe_export",
+    "standalone_verification",
+    "full_pytest",
+    "documentation",
+    "commit"
+  ]
+}

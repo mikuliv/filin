@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/manual_review_export_v2.schema.json",
+  "title": "manual_review_export_v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "case_id",
+    "card_id",
+    "source_bundle_sha256",
+    "source_semantic_sha256",
+    "no_final_determination",
+    "no_automatic_action",
+    "export_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "manual_review_export_v2"
+    },
+    "case_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "card_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "source_bundle_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_semantic_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "no_final_determination": {
+      "const": true
+    },
+    "no_automatic_action": {
+      "const": true
+    },
+    "export_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    }
+  }
+}

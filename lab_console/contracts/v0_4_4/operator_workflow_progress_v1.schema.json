@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/contracts/v0_4_4/operator_workflow_progress_v1.schema.json",
+  "title": "operator_workflow_progress_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "review_session_id",
+    "current_step",
+    "completed_step_ids",
+    "completion_allowed"
+  ],
+  "properties": {
+    "review_session_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "current_step": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+    },
+    "completed_step_ids": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[A-Za-z0-9_.:-]{1,180}$"
+      }
+    },
+    "completion_allowed": {
+      "type": "boolean"
+    }
+  }
+}
