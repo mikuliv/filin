@@ -128,11 +128,16 @@ document.addEventListener("DOMContentLoaded", () => {
     panel.innerHTML = `<p class="eyebrow">Почему элемент расположен здесь</p><h3>${value.timeline_item_id}</h3><p>Наблюдение: ${value.observation_time}<br>Доставка: ${value.delivery_time}<br>Clock domain: ${value.clock_domain}<br>Точность: ${value.precision}<br>Основание порядка: ${value.ordering_basis}</p><p class="limitation">Порядок не доказывает причинность.</p>`;
   }));
 
-  all("[data-graph-modes] button").forEach(button => button.addEventListener("click", () => {
+  const applyCaseGraphMode = button => {
     all("[data-graph-modes] button").forEach(x => x.classList.remove("active")); button.classList.add("active");
     const visible = { simplified:["fact","gap"], facts:["fact"], facts_temporal:["fact","event"], facts_structural:["fact","group"], gaps:["fact","gap"], hypotheses:["fact","gap","hypothesis"], full:["fact","event","group","gap","hypothesis"] }[button.dataset.mode];
-    all("[data-node]").forEach(node => { const value=JSON.parse(node.dataset.node); node.style.display=visible.includes(value.type)?"":"none"; });
-  }));
+    const visibleIds = new Set();
+    all("[data-node]").forEach(node => { const value=JSON.parse(node.dataset.node); const shown=visible.includes(value.type); node.style.display=shown?"":"none"; if(shown) visibleIds.add(value.id); });
+    all("[data-edge]").forEach(edge => { const value=JSON.parse(edge.dataset.edge); edge.style.display=visibleIds.has(value.left)&&visibleIds.has(value.right)?"":"none"; });
+  };
+  all("[data-graph-modes] button").forEach(button => button.addEventListener("click", () => applyCaseGraphMode(button)));
+  const initialGraphMode = one("[data-graph-modes] button.active");
+  if (initialGraphMode) applyCaseGraphMode(initialGraphMode);
   const selectGraph = target => {
     const value = JSON.parse(target.dataset.node || target.dataset.edge); const isNode = Boolean(target.dataset.node);
     all("[data-node],[data-edge]").forEach(x => { x.classList.remove("selected"); x.classList.add("dim"); }); target.classList.remove("dim"); target.classList.add("selected");
@@ -153,7 +158,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   all("[data-node],[data-edge]").forEach(target => { target.addEventListener("click",()=>selectGraph(target)); target.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" ")selectGraph(target);}); });
   all("[data-gap-show]").forEach(button => button.addEventListener("click", () => { const impact=one("[data-gap-impact]",button.closest("[data-gap-card]")); impact.hidden=!impact.hidden; button.textContent=impact.hidden?"Показать влияние":"Скрыть влияние"; }));
-  all("[data-v044-comparison]").forEach(button => button.addEventListener("click", () => { const value=JSON.parse(button.dataset.v044Comparison); one("[data-comparison-detail]").innerHTML=`<p class="eyebrow">Сопоставление</p><h3>${value.comparison_result}</h3><p>${value.comparison_basis}</p><p class="limitation">${(value.limitations||[]).join("; ")}</p><pre>${JSON.stringify(value,null,2)}</pre>`; }));
+  all("[data-v044-comparison]").forEach(button => button.addEventListener("click", () => {
+    const value=JSON.parse(button.dataset.v044Comparison);
+    one("[data-comparison-detail]").innerHTML=`<p class="eyebrow">Объяснение ячейки</p><h3>${value.result_label}</h3><p class="comparison-pair"><strong>${value.left_ref}</strong> ${value.left_name}<br><strong>${value.right_ref}</strong> ${value.right_name}</p><p class="comparison-result">${value.result_explanation}</p><dl><div><dt>Основание</dt><dd>${value.basis_label}</dd></div><div><dt>Ограничение</dt><dd>${(value.limitations||["Не является окончательным выводом."]).join("; ")}</dd></div></dl><details><summary>Технические сведения</summary><div><b>Правило:</b> ${value.comparison_basis}<br><b>ID:</b> ${value.comparison_id}</div></details>`;
+  }));
   one("[data-differences-only]")?.addEventListener("change", event => all("[data-v044-comparison]").forEach(button => { button.closest("td").style.opacity=event.target.checked && JSON.parse(button.dataset.v044Comparison).comparison_result==="equally_supported"?".18":"1"; }));
 
   all("[data-review-check]").forEach(input => input.addEventListener("change", async () => { try { await api(`/api/console/v1/reviews/${input.dataset.reviewId}/checks`,"POST",{item_id:input.dataset.itemId,checked:input.checked},input.dataset.csrf); } catch(error) { input.checked=!input.checked; alert(error.message); } }));

@@ -75,6 +75,32 @@ def test_catalog_pages_and_all_sections_are_rendered(client, registry):
         assert response.status_code == 200 and "Окончательное определение" in response.text
 
 
+def test_operator_views_explain_comparisons_and_keep_layout_safe(client):
+    from bs4 import BeautifulSoup
+
+    overview = BeautifulSoup(client.get("/ui/cases/normal/overview").text, "html.parser")
+    assert len(overview.select(".stats-grid.four > article")) == 4
+
+    gaps = BeautifulSoup(client.get("/ui/cases/normal/gaps").text, "html.parser")
+    assert gaps.select(".gap-grid > .gap-card")
+    assert all("fact_" not in item.get_text(" ", strip=True) for item in gaps.select(".gap-card dd"))
+
+    comparisons = BeautifulSoup(client.get("/ui/cases/normal/comparisons").text, "html.parser")
+    guide = comparisons.select_one(".matrix-guide")
+    assert guide and "Равная опора" in guide.get_text(" ", strip=True)
+    assert comparisons.select("[data-v044-comparison]")
+    assert "Та же гипотеза" in comparisons.get_text(" ", strip=True)
+
+    css = (ROOT / "lab_console/static/console.css").read_text(encoding="utf-8")
+    javascript = (ROOT / "lab_console/static/console.js").read_text(encoding="utf-8")
+    base = (ROOT / "lab_console/templates/base.html").read_text(encoding="utf-8")
+    assert ".stats-grid.four" in css and ".gap-grid>.gap-card" in css
+    assert "visibleIds.has(value.left)&&visibleIds.has(value.right)" in javascript
+    assert "result_explanation" in javascript and '<p class="comparison-result">' in javascript
+    assert "<summary>Технические сведения</summary>" in javascript
+    assert "console.css?v=044-ui-fix-1" in base and "console.js?v=044-ui-fix-1" in base
+
+
 def test_case_api_rejects_unknown_and_exposes_all_parts(client):
     assert client.get("/api/console/v1/cases/unknown").status_code == 404
     assert len(client.get("/api/console/v1/cases").json()) == 12
