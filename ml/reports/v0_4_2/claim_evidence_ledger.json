@@ -1,0 +1,1 @@
+{"schema_version":"v0_4_2_claim_evidence_ledger_v1","claims":[{"claim":"competing_hypotheses_without_forced_winner","evidence":["synthetic_campaign_result.json","representative_hypothesis_analysis.json"]},{"claim":"standalone_verification","evidence":["standalone_verification_result.json"]},{"claim":"historical_materials_unchanged","evidence":["v0_4_2_policy_result.json"]}]}

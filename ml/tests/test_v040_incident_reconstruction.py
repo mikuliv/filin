@@ -108,9 +108,9 @@ def test_official_campaign_evidence_is_complete() -> None:
 def test_parallel_track_does_not_replace_mainline() -> None:
     status = yaml.safe_load((ROOT / "docs/status/v0_4_track.yaml").read_text(encoding="utf-8"))
     assert status["track"] == "parallel_research"
-    assert status["latest_completed_stage"] in {"v0.4.0", "v0.4.1"}
+    assert status["latest_completed_stage"] in {"v0.4.0", "v0.4.1", "v0.4.2"}
     assert status["mainline_next_allowed_stage"] == "v0.3.19"
-    assert status["allowed_next_stage"] in {"v0.4.1", "v0.4.2"}
+    assert status["allowed_next_stage"] in {"v0.4.1", "v0.4.2", "v0.4.3"}
 
 
 def test_policy_result_preserves_all_boundaries() -> None:

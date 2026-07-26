@@ -1,0 +1,12 @@
+{
+  "schema_version":"v0_4_2_policy_result_v1","stage":"v0.4.2","stage_status":"completed","protocol_revision":1,"active_branch":"main",
+  "starting_head":"4f69d6ecc3e61e74b1f3ace1206001bcd30388cb","final_head":"4f69d6ecc3e61e74b1f3ace1206001bcd30388cb","final_head_scope":"repository_head_before_single_v042_commit",
+  "v0_4_1_implementation_commit":"4f69d6ecc3e61e74b1f3ace1206001bcd30388cb","v0_4_1_manifest_sha256":"d6f89e4719030acb23649a5d0a5c4e9578f0f038b114ac3bddc55c07b6259801","v0_4_1_semantic_sha256":"1ca4a65c303d0633a690837ea69d83d1d1981f380c9811fd3514e0f92b22233b","v0_4_1_protocol_revision":2,
+  "candidate_id":"v03154:65a3dd912d845bc1","candidate_identity_unchanged":true,"feature_contract_unchanged":true,"event_contract_unchanged":true,"v0_4_0_materials_unchanged":true,"v0_4_1_materials_unchanged":true,"backend_tree_unchanged":true,
+  "rule_catalog_sha256":"fb5535e4143c77630c1b1dd49b7c379cbbbfb2e5f9bea28aaaa78f99dc9d37d2","hypothesis_rule_count":31,"analytical_question_count":1,"hypothesis_set_count":1,"hypothesis_count":6,"evidence_assessment_count":12,"hypothesis_comparison_count":15,"analyst_question_count":7,
+  "unsupported_hypothesis_count":0,"possible_hypothesis_count":0,"partially_supported_hypothesis_count":0,"supported_within_available_evidence_count":0,"contradicted_hypothesis_count":0,"indeterminate_hypothesis_count":6,
+  "forced_winner_count":0,"unsupported_probability_count":0,"hidden_weight_count":0,"hidden_contradiction_count":0,"evidence_double_count_count":0,"unresolved_reference_count":0,"cross_question_comparison_count":0,"cross_scope_comparison_count":0,"model_only_malicious_claim_count":0,"mitre_only_support_count":0,"unsupported_causal_claim_count":0,"confirmed_compromise_claim_count":0,
+  "positive_scenario_count":46,"positive_scenario_passed_count":46,"negative_scenario_count":80,"negative_scenario_rejected_count":80,
+  "input_order_invariance_passed":true,"duplicate_invariance_passed":true,"restart_invariance_passed":true,"crlf_lf_normalization_passed":true,"deterministic_rebuild_passed":true,"standalone_verifier_passed":true,"privacy_policy_passed":true,"secret_scan_passed":true,"bundle_validator_passed":true,"documentation_validation_passed":true,"full_regression_passed":true,"v0_4_2_stage_passed":true,
+  "next_allowed_stage":"v0.4.3","mainline_next_allowed_stage":"v0.3.19","external_trial_execution_allowed":false,"backend_integration_allowed":false,"production_ready":false,"automatic_response_ready":false,"push_performed":false
+}

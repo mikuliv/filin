@@ -53,6 +53,7 @@
 - [Version history](status/version-history.md) — полная история результатов.
 - [Roadmap](roadmap.md) — разрешённый шаг и долгосрочные направления.
 - [Временная реконструкция v0.4.1](research/temporal-reconstruction.md) — отношения, граф и ограничения.
+- [Конкурирующие гипотезы v0.4.2](research/competing-hypotheses.md) — правила, профили и сопоставления.
 - [`v0_4_track.yaml`](status/v0_4_track.yaml) — отдельное состояние
   параллельной исследовательской линии.
 
