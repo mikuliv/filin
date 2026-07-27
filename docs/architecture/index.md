@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Индекс архитектуры
-document_type: architecture
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - architecture_navigation
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Индекс архитектуры
 
 - [Обзор текущей архитектуры](overview.md) — две линии и их доказательная граница.

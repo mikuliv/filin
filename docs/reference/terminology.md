@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Терминология документации
-document_type: reference
-audience:
-  - contributor
-lifecycle: current
-authoritative_for:
-  - terminology_policy
-source_of_truth:
-  - docs/reference/glossary.md
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Терминология документации
 
 Русское понятное название используется первым, а technical identifier сохраняется

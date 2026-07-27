@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Сопровождение документации
-document_type: guide
-audience:
-  - contributor
-lifecycle: current
-authoritative_for:
-  - documentation_maintenance_process
-source_of_truth:
-  - tools/docs
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Сопровождение документации
 
 ## Порядок

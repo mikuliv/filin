@@ -1,18 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Добавление контракта
-document_type: guide
-audience:
-  - contributor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - versioned_schemas
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Добавление контракта
 
 1. Выберите versioned schema ID и owner subsystem.

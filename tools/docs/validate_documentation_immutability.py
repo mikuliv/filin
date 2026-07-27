@@ -3,7 +3,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.docs.documentation_v2 import ROOT, build_protected_set, sha256
 
@@ -30,7 +34,7 @@ def validate(root: Path = ROOT) -> list[str]:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(); parser.add_argument("--root", type=Path, default=ROOT); args = parser.parse_args()
+    parser = argparse.ArgumentParser(); parser.add_argument("--root", type=Path, default=ROOT); parser.add_argument("--strict", action="store_true"); args = parser.parse_args()
     errors = validate(args.root.resolve())
     print(json.dumps({"valid": not errors, "errors": errors}, ensure_ascii=False, indent=2))
     return int(bool(errors))

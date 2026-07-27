@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Индекс экспериментальных этапов
-document_type: history
-audience:
-  - researcher
-  - auditor
-lifecycle: current
-authoritative_for:
-  - experiment_navigation
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Индекс экспериментальных этапов
 
 Эта страница даёт краткую навигацию. Полные metrics, gates и limitations остаются

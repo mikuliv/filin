@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Линия текущего кандидата
-document_type: reference
-audience:
-  - researcher
-  - auditor
-lifecycle: current
-authoritative_for:
-  - candidate_lineage_summary
-source_of_truth:
-  - collectors/shadow/contracts/candidate_registry_v1.json
-  - ml/artifacts/v0_3_15_4/candidate_manifest.json
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Линия текущего кандидата
 
 ## Идентичность

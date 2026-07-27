@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Неопределённость и отказ от решения
-document_type: reference
-audience:
-  - researcher
-  - operator
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - candidate_manifest
-  - hypothesis_contracts
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Неопределённость и отказ от решения
 
 ## На уровне модели

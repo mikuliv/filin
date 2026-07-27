@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Индекс контрактов
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: generated
-authoritative_for:
-  - contract_index
-source_of_truth:
-  - repository schemas
-last_reviewed_stage: v0.4.4
-generated: true
-evidence_immutable: false
----
-
 # Индекс контрактов
 
 > Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:

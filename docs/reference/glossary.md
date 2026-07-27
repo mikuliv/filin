@@ -1,22 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Глоссарий
-document_type: reference
-audience:
-  - newcomer
-  - developer
-  - operator
-  - auditor
-lifecycle: current
-authoritative_for:
-  - project_glossary
-source_of_truth:
-  - versioned_contracts
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Глоссарий
 
 ## Данные

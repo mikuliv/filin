@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Историческая документация
-document_type: history
-audience:
-  - auditor
-  - researcher
-lifecycle: current
-authoritative_for:
-  - history_navigation
-source_of_truth:
-  - frozen_reports
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Историческая документация
 
 - [Хронология этапов](stage-timeline.md).

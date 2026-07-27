@@ -1,21 +1,9 @@
----
-doc_schema: filin_document_v2
-title: Итоговый отчёт Documentation Maintenance v2
-document_type: audit
-audience:
-  - auditor
-  - contributor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/audit/documentation_inventory_v2.json
-  - docs/audit/documentation_validation_result_v2.json
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Итоговый отчёт Documentation Maintenance v2
+
+> Rendering correction v2.1: видимый YAML front matter удалён из 91
+> пользовательского документа из-за отображения GitHub. Канонические metadata
+> сохранены в [inventory JSON](documentation_inventory_v2.json); подробности — в
+> [отчёте v2.1](documentation_rendering_correction_v2_1.md).
 
 ## Опорные значения
 
@@ -29,12 +17,13 @@ evidence_immutable: false
 
 ## Объём
 
-Числа сверены с [inventory JSON](documentation_inventory_v2.json). Исходно в
-репозитории было **218** tracked Markdown-документов; после обслуживания учтён
-**261** документ: **43** созданы, **49** переписаны, **15** оставлены как redirects.
-Из них **176** current, **85** historical, **6** generated и **61** Markdown-файл
-входит в protected set. Обновлены корневой README и **16** subsystem README.
-После проверки ссылок осталось **0** broken links и **0** broken anchors.
+Исходно перед v2 в репозитории было **218** tracked Markdown-документов; сам v2
+довёл набор до 261 документа. После rendering correction v2.1 актуальный
+[inventory JSON](documentation_inventory_v2.json) учитывает **262** документа:
+**1** создан в v2.1, **76** переписаны удалением front matter, **15** являются
+redirects. Из них **177** current, **85** historical, **6** generated и **61**
+Markdown-файл входит в protected set. После проверки осталось **0** broken links
+и **0** broken anchors.
 
 ## Устранённые противоречия
 
@@ -54,7 +43,7 @@ Machine-readable результаты находятся в [validation JSON](do
 immutability, positive/negative campaigns и технические прогоны.
 
 - Documentation Maintenance v2: **103/103** positive и **86/86** negative;
-- полный `pytest`: **1754 passed**, **0 failed**, 3 предупреждения sklearn;
+- полный `pytest` после v2.1: **1756 passed**, **0 failed**, 3 предупреждения sklearn;
 - documentation tests: **15 passed**;
 - console regression: **161 passed**;
 - v0.4.4 verifier: **84** positive и **120** negative cases;

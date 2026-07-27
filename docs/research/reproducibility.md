@@ -1,23 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Воспроизводимость
-document_type: reference
-audience:
-  - researcher
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - reproducibility_overview
-source_of_truth:
-  - bundle_manifests
-  - detached_sha
-  - claim_ledgers
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Воспроизводимость
 
 ## Идентичность

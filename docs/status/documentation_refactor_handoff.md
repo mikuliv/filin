@@ -1,11 +1,3 @@
----
-documentation_refactor_completed: true
-baseline_head: c81873c72a0586bb81ba72bd035d67f75e7a20a5
-head_at_final_report_preparation: 700bac964cc725f9142fe0c2d8367202b9001715
-backend_tree: 04218a4eb01534950efd5f7d6390f1a575cacbc8
-push_performed: false
----
-
 # Handoff переработки документации
 
 ## Состояние

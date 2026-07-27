@@ -1,22 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Текущие и исторические компоненты
-document_type: architecture
-audience:
-  - newcomer
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - current_historical_boundary
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Текущие и исторические компоненты
 
 ## Текущие

@@ -1,18 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Добавление этапа
-document_type: guide
-audience:
-  - contributor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - frozen_protocol_policy
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Добавление этапа
 
 1. Убедитесь, что stage разрешён machine-readable status.

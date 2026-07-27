@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Аудит документации
-document_type: audit
-audience:
-  - auditor
-  - contributor
-lifecycle: current
-authoritative_for:
-  - documentation_audit_navigation
-source_of_truth:
-  - tools/docs
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Аудит документации
 
 ## Documentation Maintenance v2

@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Каталог компонентов
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - component_directory
-source_of_truth:
-  - repository_tree
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Каталог компонентов
 
 | Компонент | README | Контракты | Тестирование |

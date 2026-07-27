@@ -1,23 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Архитектура после v0.4.4
-document_type: architecture
-audience:
-  - newcomer
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - current_architecture_overview
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-  - collectors/shadow/contracts/candidate_registry_v1.json
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Архитектура после v0.4.4
 
 Текущая архитектура состоит из связанной основной линии `v0.3.x` и лабораторной

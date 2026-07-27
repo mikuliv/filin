@@ -1,18 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Точка входа разработчика
-document_type: guide
-audience:
-  - developer
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/reference/component-directory.md
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Точка входа разработчика
 
 1. Прочитайте [границу current/historical](../architecture/current-vs-historical.md).

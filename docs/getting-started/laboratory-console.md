@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Запуск лабораторной консоли
-document_type: guide
-audience:
-  - operator
-  - developer
-lifecycle: current
-authoritative_for:
-  - console_launch_guide
-source_of_truth:
-  - lab_console/__main__.py
-  - lab_console/app.py
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Запуск лабораторной консоли
 
 ## Безопасная область

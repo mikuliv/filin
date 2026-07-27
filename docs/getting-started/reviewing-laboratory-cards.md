@@ -1,21 +1,6 @@
----
-doc_schema: filin_document_v2
-title: Рассмотрение лабораторных карточек
-document_type: guide
-audience:
-  - operator
-lifecycle: current
-authoritative_for:
-  - operator_card_guide
-source_of_truth:
-  - lab_console/contracts/v0_4_4
-  - incident_reconstruction/contracts
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Рассмотрение лабораторных карточек
+
+Руководство относится к завершённой лабораторной поставке `v0.4.4`.
 
 ## Каталог и обзор
 

@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Устранение неполадок
-document_type: guide
-audience:
-  - developer
-  - operator
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - lab_console
-  - tools/docs
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Устранение неполадок
 
 ## Консоль не открывается

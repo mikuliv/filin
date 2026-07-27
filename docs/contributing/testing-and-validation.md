@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Проверка документации
-document_type: guide
-audience:
-  - contributor
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - tools/docs
-  - ml/tests/test_documentation_maintenance.py
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Проверка документации
 
 ## Основной проход

@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Индекс ML и reconstruction protocols
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: generated
-authoritative_for:
-  - ml_protocol_index
-source_of_truth:
-  - ml/protocols
-  - incident_reconstruction/protocols
-last_reviewed_stage: v0.4.4
-generated: true
-evidence_immutable: false
----
-
 # Индекс ML и reconstruction protocols
 
 > Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:

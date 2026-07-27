@@ -10,11 +10,6 @@ from tools.docs.documentation_v2 import ROOT, build_protected_set, inventory_row
 
 def render_inventory(rows: list[dict], summary: dict[str, int]) -> str:
     lines = [
-        "---", "doc_schema: filin_document_v2", "title: Инвентаризация документации v2",
-        "document_type: audit", "audience:", "  - auditor", "lifecycle: generated",
-        "authoritative_for: []", "source_of_truth:", "  - git ls-files '*.md'",
-        "  - docs/audit/documentation_inventory_v2.json", "last_reviewed_stage: v0.4.4",
-        "generated: true", "evidence_immutable: false", "---", "",
         "# Инвентаризация документации v2", "",
         "> Генератор: `tools/docs/build_documentation_inventory.py`. Команда: "
         "`python -m tools.docs.build_documentation_inventory`. Генерируемую область вручную не редактировать.", "",

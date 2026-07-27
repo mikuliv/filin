@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Исторические ограничения
-document_type: history
-audience:
-  - auditor
-  - researcher
-lifecycle: historical
-authoritative_for: []
-source_of_truth:
-  - historical_policy_results
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Исторические ограничения
 
 Исторические stages фиксировали environment mismatch, insufficient coverage,

@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Структура репозитория
-document_type: reference
-audience:
-  - newcomer
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - repository_layout
-source_of_truth:
-  - repository_tree
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Структура репозитория
 
 | Каталог | Назначение | Хранение | Статус | Основная проверка | Что запрещено |

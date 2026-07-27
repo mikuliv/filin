@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Миграция документационных путей v2
-document_type: audit
-audience:
-  - auditor
-  - contributor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - git_history
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Миграция документационных путей v2
 
 | Старый путь | Канонический путь | Причина | Совместимость | Redirect | Links | Evidence impact |

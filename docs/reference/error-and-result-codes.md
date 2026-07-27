@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Коды ошибок и результатов
-document_type: reference
-audience:
-  - developer
-  - operator
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - versioned_contracts
-  - tools/docs/validate_documentation_v2.py
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Коды ошибок и результатов
 
 ## Документация

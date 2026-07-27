@@ -1,22 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Сквозной поток данных
-document_type: architecture
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - end_to_end_data_flow
-source_of_truth:
-  - collectors
-  - incident_reconstruction
-  - lab_console
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Сквозной поток данных
 
 ## Последовательность

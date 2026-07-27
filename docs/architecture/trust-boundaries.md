@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Границы доверия
-document_type: architecture
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - trust_boundaries
-source_of_truth:
-  - versioned_contracts
-  - frozen_manifests
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Границы доверия
 
 ## Поток данных

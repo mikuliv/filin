@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: История лабораторной линии v0.4.x
-document_type: history
-audience:
-  - researcher
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # История лабораторной линии v0.4.x
 
 | Этап | Добавлено | Результат | Ограничение |

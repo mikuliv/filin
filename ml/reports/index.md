@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Индекс ML и laboratory reports
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: generated
-authoritative_for:
-  - ml_report_index
-source_of_truth:
-  - ml/reports
-last_reviewed_stage: v0.4.4
-generated: true
-evidence_immutable: false
----
-
 # Индекс ML и laboratory reports
 
 > Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:

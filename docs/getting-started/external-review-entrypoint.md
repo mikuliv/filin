@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Точка входа независимого эксперта
-document_type: guide
-audience:
-  - external_reviewer
-lifecycle: current
-authoritative_for:
-  - external_review_entrypoint
-source_of_truth:
-  - ml/reports/v0_3_18/external_review_package_manifest.yaml
-  - docs/status/project-status.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Точка входа независимого эксперта
 
 ## Что подготовлено

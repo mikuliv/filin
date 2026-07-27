@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Архитектура лабораторной консоли
-document_type: architecture
-audience:
-  - developer
-  - operator
-lifecycle: current
-authoritative_for:
-  - lab_console_architecture
-source_of_truth:
-  - lab_console
-  - lab_console/contracts
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Архитектура лабораторной консоли
 
 ## Контуры

@@ -4,24 +4,28 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
 import yaml
 
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
 from tools.docs.documentation_v2 import (
     ABSOLUTE_RE, BACKEND_TREE, CANDIDATE_ID, HEADING_RE, INITIAL_HEAD, REQUIRED_CURRENT_DOCS,
     REQUIRED_ROOTS, REQUIRED_SUBSYSTEM_READMES, ROOT, SECRET_RES, build_protected_set,
-    front_matter, github_anchors, inventory_rows, link_findings, local_links, run_git,
-    sha256, tracked_markdown,
+    document_metadata, front_matter, github_anchors, git_blob_sha, inventory_registry,
+    link_findings, local_links, run_git, sha256, tracked_markdown,
 )
 
 
-REQUIRED_FRONT_MATTER = {
-    "doc_schema", "title", "document_type", "audience", "lifecycle",
+REQUIRED_INVENTORY_METADATA = {
+    "doc_schema", "title", "document_type", "audience", "lifecycle_status",
     "authoritative_for", "source_of_truth", "last_reviewed_stage", "generated",
-    "evidence_immutable",
+    "evidence_immutable", "actual_action", "sha256_after",
 }
 MERMAID_START = ("flowchart", "graph", "sequenceDiagram", "stateDiagram", "classDiagram", "erDiagram", "journey", "gantt", "pie", "mindmap", "timeline")
 
@@ -34,7 +38,7 @@ def current_mutable(path: Path, protected: set[str], root: Path) -> bool:
     relative = path.relative_to(root).as_posix()
     if relative in protected:
         return False
-    metadata = front_matter(path)
+    metadata = document_metadata(path, root)
     return metadata.get("lifecycle") in {"current", "generated", "redirect"} or relative.endswith("README.md")
 
 
@@ -68,14 +72,15 @@ def validate_redirects(markdown: list[Path], root: Path) -> list[str]:
     targets: dict[str, str] = {}
     errors: list[str] = []
     for path in markdown:
-        meta = front_matter(path)
+        meta = document_metadata(path, root)
         if meta.get("lifecycle") != "redirect":
             continue
         relative = path.relative_to(root).as_posix()
         target = meta.get("redirect_target")
         if not isinstance(target, str) or not target:
             errors.append(error("redirect_target_missing", relative)); continue
-        resolved = (path.parent / target).resolve()
+        root_relative = (root / target).resolve()
+        resolved = root_relative if root_relative.is_file() else (path.parent / target).resolve()
         try:
             target_relative = resolved.relative_to(root.resolve()).as_posix()
         except ValueError:
@@ -159,16 +164,39 @@ def validate_inventory(root: Path, markdown: list[Path]) -> list[str]:
     path = root / "docs/audit/documentation_inventory_v2.json"
     if not path.is_file(): return ["inventory_missing"]
     value = json.loads(path.read_text(encoding="utf-8"))
-    recorded = {row["path"] for row in value.get("documents", [])}
+    rows = value.get("documents", [])
+    recorded_rows = {row["path"]: row for row in rows if isinstance(row, dict) and isinstance(row.get("path"), str)}
+    recorded = set(recorded_rows)
     actual = {p.relative_to(root).as_posix() for p in markdown}
     errors = []
     if recorded != actual: errors.append("inventory_stale")
-    required = {"path", "title", "category", "audience", "lifecycle_status", "current_or_historical", "authoritative", "generated", "evidence_immutable", "protected_by_manifest", "source_of_truth", "duplicate_of", "supersedes", "superseded_by", "redirect_target", "last_relevant_stage", "current_stage_mentioned", "stale_status", "stale_architecture", "stale_command", "terminology_findings", "broken_links", "broken_anchors", "incoming_link_count", "outgoing_link_count", "recommended_action", "actual_action", "sha256_before", "sha256_after"}
-    for row in value.get("documents", []):
+    required = {"path", "title", "category", "audience", "lifecycle_status", "current_or_historical", "authoritative", "generated", "evidence_immutable", "protected_by_manifest", "source_of_truth", "duplicate_of", "supersedes", "superseded_by", "redirect_target", "last_relevant_stage", "current_stage_mentioned", "stale_status", "stale_architecture", "stale_command", "terminology_findings", "broken_links", "broken_anchors", "incoming_link_count", "outgoing_link_count", "recommended_action", "actual_action", "sha256_before", "sha256_after"} | REQUIRED_INVENTORY_METADATA
+    protected = {row["path"] for row in build_protected_set(root)}
+    allowed_lifecycle = {"current", "historical", "redirect", "generated", "frozen"}
+    for row in rows:
         missing = required - set(row)
         if missing: errors.append(error("inventory_fields_missing", row.get("path", "?"), ",".join(sorted(missing))))
-        target = root / row.get("path", "")
-        if target.is_file() and row.get("path") != "docs/audit/documentation_inventory_v2.md" and row.get("sha256_after") != sha256(target): errors.append(error("inventory_sha_stale", row.get("path", "")))
+        relative = row.get("path", "")
+        target = root / relative
+        if relative not in actual: continue
+        if row.get("doc_schema") != "filin_document_v2": errors.append(error("inventory_schema_mismatch", relative))
+        if row.get("lifecycle_status") not in allowed_lifecycle: errors.append(error("invalid_lifecycle", relative))
+        if bool(row.get("evidence_immutable")) != (relative in protected): errors.append(error("inventory_immutability_mismatch", relative))
+        if bool(row.get("authoritative")) != bool(row.get("authoritative_for")): errors.append(error("inventory_authority_mismatch", relative))
+        if target.is_file() and row.get("title") != next((title.strip() for level, title in HEADING_RE.findall(target.read_text(encoding="utf-8")) if len(level) == 1), target.stem):
+            errors.append(error("inventory_title_mismatch", relative))
+        if target.is_file() and relative != "docs/audit/documentation_inventory_v2.md" and row.get("sha256_after") != sha256(target): errors.append(error("inventory_sha_stale", relative))
+        before = git_blob_sha(relative, root=root)
+        after = sha256(target) if target.is_file() else None
+        expected_action = "created" if before is None else "unchanged" if before == after else "rewritten"
+        if row.get("lifecycle_status") == "redirect" and expected_action != "unchanged": expected_action = "redirected"
+        if relative != "docs/audit/documentation_inventory_v2.md" and row.get("actual_action") != expected_action:
+            errors.append(error("inventory_action_stale", relative))
+        for source in row.get("source_of_truth", []) or []:
+            if not isinstance(source, str) or not source or source.startswith(("git ", "http://", "https://")):
+                continue
+            source_path = source.split("#", 1)[0]
+            if "/" in source_path and not (root / source_path).exists(): errors.append(error("source_of_truth_missing", relative, source))
     return errors
 
 
@@ -177,6 +205,7 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
     markdown = tracked_markdown(root)
     protected_rows = build_protected_set(root)
     protected = {row["path"] for row in protected_rows}
+    registry = inventory_registry(root)
     errors: list[str] = []
     warnings: list[str] = []
 
@@ -200,18 +229,19 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
             if destination and destination.exists():
                 try: incoming[destination.relative_to(root).as_posix()] += 1
                 except ValueError: pass
-        if relative in REQUIRED_CURRENT_DOCS and relative not in protected:
-            meta = front_matter(path)
-            missing = REQUIRED_FRONT_MATTER - set(meta)
-            if missing: errors.append(error("missing_front_matter", relative, ",".join(sorted(missing))))
-            if meta.get("doc_schema") != "filin_document_v2": errors.append(error("front_matter_schema", relative))
+        text = path.read_text(encoding="utf-8")
+        if relative not in protected and front_matter(path):
+            errors.append(error("visible_yaml_front_matter", relative))
+        if re.search(r"(?im)^\|[^\n]*\bdoc_schema\b[^\n]*\|", text):
+            errors.append(error("visible_metadata_table", relative))
+        if relative in REQUIRED_CURRENT_DOCS and relative not in registry:
+            errors.append(error("metadata_missing_inventory", relative))
         if current_mutable(path, protected, root):
-            text = path.read_text(encoding="utf-8")
             if ABSOLUTE_RE.search(text): errors.append(error("absolute_local_path", relative))
             for pattern in SECRET_RES:
                 if pattern.search(text): errors.append(error("possible_secret", relative))
             lower = text.casefold()
-            if re.search(r"\b\d{3,5}\s+passed\b", lower) and not relative.startswith("docs/audit/"):
+            if re.search(r"\b\d{3,5}\s+passed\b", lower) and not (relative.startswith("docs/audit/") or relative.endswith("handoff.md")):
                 errors.append(error("stale_test_count", relative))
             if any(phrase in lower for phrase in ("v0.4.x планируется", "v0.4.x является планируемой архитектурой")):
                 errors.append(error("stale_v04_planned_claim", relative))
@@ -219,14 +249,13 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
                 errors.append(error("prohibited_readiness_claim", relative))
 
     for relative in REQUIRED_CURRENT_DOCS:
-        meta = front_matter(root / relative)
+        meta = document_metadata(root / relative, root)
         if meta.get("lifecycle") == "current" and relative not in {"README.md", "docs/index.md"} and incoming[relative] == 0:
             errors.append(error("orphan_current_document", relative))
 
     authority: defaultdict[str, list[str]] = defaultdict(list)
-    for path in markdown:
-        relative = path.relative_to(root).as_posix()
-        for domain in front_matter(path).get("authoritative_for", []) or []:
+    for relative, row in registry.items():
+        for domain in row.get("authoritative_for", []) or []:
             authority[str(domain)].append(relative)
     for domain, paths in authority.items():
         if len(paths) > 1: errors.append(error("duplicate_authoritative_document", domain, ",".join(paths)))

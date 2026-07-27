@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Дорожная карта
-document_type: status
-audience:
-  - newcomer
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Дорожная карта
 
 ## Основная линия

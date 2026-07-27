@@ -1,23 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Лабораторная реконструкция и анализ
-document_type: architecture
-audience:
-  - developer
-  - operator
-  - auditor
-lifecycle: current
-authoritative_for:
-  - v0_4_architecture
-source_of_truth:
-  - docs/status/v0_4_track.yaml
-  - incident_reconstruction/contracts
-  - lab_console/contracts
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Лабораторная реконструкция и анализ
 
 ## Состав

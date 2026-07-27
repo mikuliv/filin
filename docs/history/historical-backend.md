@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Исторический backend prototype
-document_type: history
-audience:
-  - developer
-  - auditor
-lifecycle: historical
-authoritative_for: []
-source_of_truth:
-  - backend
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Исторический backend prototype
 
 `backend/` — ранний демонстрационный API и набор incident endpoints. Он полезен для

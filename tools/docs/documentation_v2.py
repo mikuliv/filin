@@ -14,7 +14,7 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[2]
-INITIAL_HEAD = "e97224a3f01a40cad83f88a35df922344088dd24"
+INITIAL_HEAD = "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63"
 V044_HEAD = "80680bf8e890742e1c82929d7a2e8cd099a1b1ad"
 V044_MANIFEST = "bffe219e711c55a2154c242737c583a710f35934690b10545eabb39f35081d30"
 V044_SEMANTIC = "f8756b4d255f0e3a337c5d8b1543112eef2524eae2f006aaa18acd083166bcdb"
@@ -241,6 +241,58 @@ def front_matter(path: Path) -> dict[str, Any]:
     return value if isinstance(value, dict) else {}
 
 
+def inventory_registry(root: Path = ROOT) -> dict[str, dict[str, Any]]:
+    """Возвращает канонические metadata документов из inventory v2."""
+    path = root / "docs/audit/documentation_inventory_v2.json"
+    if not path.is_file():
+        return {}
+    value = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        row["path"]: row for row in value.get("documents", [])
+        if isinstance(row, dict) and isinstance(row.get("path"), str)
+    }
+
+
+def _inferred_document_type(relative: str) -> str:
+    if relative.startswith("docs/audit/"):
+        return "audit"
+    if relative.startswith("docs/getting-started/"):
+        return "guide"
+    if relative.startswith("docs/history/") or relative.startswith("docs/experiments/"):
+        return "history"
+    if relative.startswith("docs/reference/"):
+        return "reference"
+    if relative.endswith("README.md") or relative in {"README.md", "docs/index.md"}:
+        return "overview"
+    return "reference"
+
+
+def document_metadata(path: Path, root: Path = ROOT) -> dict[str, Any]:
+    """Читает metadata из inventory; front matter используется лишь при миграции."""
+    relative = path.relative_to(root).as_posix()
+    legacy = front_matter(path)
+    if legacy:
+        return legacy
+    row = inventory_registry(root).get(relative, {})
+    lifecycle = row.get("lifecycle_status", "")
+    return {
+        "doc_schema": row.get("doc_schema", "filin_document_v2"),
+        "title": row.get("title", title_for(path)),
+        "document_type": row.get("document_type", _inferred_document_type(relative)),
+        "audience": row.get("audience", ["developer"]),
+        "lifecycle": lifecycle or ("frozen" if row.get("evidence_immutable") else "current"),
+        "authoritative_for": row.get("authoritative_for", []),
+        "source_of_truth": row.get("source_of_truth", []),
+        "last_reviewed_stage": row.get("last_reviewed_stage", row.get("last_relevant_stage", stage_from_path(relative))),
+        "generated": bool(row.get("generated", False)),
+        "evidence_immutable": bool(row.get("evidence_immutable", False)),
+        "duplicate_of": row.get("duplicate_of", ""),
+        "supersedes": row.get("supersedes", []),
+        "superseded_by": row.get("superseded_by", ""),
+        "redirect_target": row.get("redirect_target", ""),
+    }
+
+
 def title_for(path: Path) -> str:
     match = HEADING_RE.search(path.read_text(encoding="utf-8"))
     return match.group(2).strip() if match else path.stem
@@ -335,7 +387,7 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
         relative = path.relative_to(root).as_posix()
         text = path.read_text(encoding="utf-8")
         lower = text.casefold()
-        metadata = front_matter(path)
+        metadata = document_metadata(path, root)
         is_protected = relative in protected
         category = category_for(relative, metadata, is_protected)
         lifecycle = "frozen" if is_protected else metadata.get("lifecycle", "historical" if category == "Историческое описание" else "current")
@@ -356,14 +408,19 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
             actual_action = "redirected"
         rows.append({
             "path": relative, "title": title_for(path), "category": category,
+            "doc_schema": metadata.get("doc_schema", "filin_document_v2"),
+            "document_type": metadata.get("document_type", _inferred_document_type(relative)),
             "audience": metadata.get("audience", ["auditor"] if is_protected else ["developer"]),
             "lifecycle_status": lifecycle,
             "current_or_historical": "historical" if lifecycle in {"historical", "frozen"} else "current",
-            "authoritative": bool(metadata.get("authoritative_for")), "generated": bool(metadata.get("generated")),
+            "authoritative": bool(metadata.get("authoritative_for")),
+            "authoritative_for": metadata.get("authoritative_for", []),
+            "generated": bool(metadata.get("generated")),
             "evidence_immutable": is_protected, "protected_by_manifest": is_protected,
             "source_of_truth": metadata.get("source_of_truth", protected.get(relative, {}).get("protecting_manifests", [])),
             "duplicate_of": metadata.get("duplicate_of", ""), "supersedes": metadata.get("supersedes", []),
             "superseded_by": metadata.get("superseded_by", ""), "redirect_target": redirect_target,
+            "last_reviewed_stage": metadata.get("last_reviewed_stage", stage_from_path(relative)),
             "last_relevant_stage": metadata.get("last_reviewed_stage", stage_from_path(relative)),
             "current_stage_mentioned": "v0.4.4" if "v0.4.4" in text else "v0.3.18" if "v0.3.18" in text else "",
             "stale_status": stale_status, "stale_architecture": stale_architecture, "stale_command": stale_command,

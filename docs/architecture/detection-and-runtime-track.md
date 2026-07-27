@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Основная линия обнаружения и runtime
-document_type: architecture
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - v0_3_architecture
-source_of_truth:
-  - docs/status/project-status.yaml
-  - collectors/shadow/contracts/candidate_registry_v1.json
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Основная линия обнаружения и runtime
 
 ## Входы

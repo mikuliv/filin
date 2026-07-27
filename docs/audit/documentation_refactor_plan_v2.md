@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: План переработки документации v2
-document_type: audit
-audience:
-  - auditor
-  - contributor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - documentation_maintenance_v2_specification
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # План переработки документации v2
 
 ## Опорное состояние

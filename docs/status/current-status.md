@@ -1,43 +1,21 @@
----
-doc_schema: filin_document_v2
-title: Текущий статус проекта
-document_type: status
-audience:
-  - newcomer
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - human_readable_project_status
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
-latest_completed_stage: v0.3.18
-latest_stage_status: completed
-latest_stage_result: passed
-next_allowed_stage: v0.3.19
-next_stage_scope: external_package_review_only
-external_trial_execution_allowed: false
-shadow_mode_allowed: false
-backend_integration_allowed: false
-production_ready: false
-automatic_enforcement_ready: false
-real_external_data_used_in_v0_3_18: false
-synthetic_rehearsal_scientific_evidence: false
----
-
 # Текущий статус проекта
 
 Machine-readable реестры имеют приоритет над этой сводкой. Проект ведёт две
 доказательно разделённые линии.
 
-| Линия | Последний этап | Результат | Следующий этап | Ограничение |
-|---|---|---|---|---|
-| Основная `v0.3.x` | `v0.3.18` | Frozen external-review package подготовлен; синтетическая репетиция процедуры пройдена | `v0.3.19` — только независимая проверка пакета и согласование плана будущего испытания | Реальные внешние данные, метки и организация не участвовали; фактическое испытание не разрешено |
-| Лабораторная `v0.4.x` | `v0.4.4` | Сохраняемый операторский цикл подтверждён на 12 независимых синтетических карточках | `v0.4.5` — отдельный заранее определённый лабораторный этап | Внешняя применимость, production, backend и автоматические действия не подтверждены |
+## Основная линия `v0.3.x`
+
+- последний этап: `v0.3.18`;
+- результат: подготовлен frozen external-review package, синтетическая репетиция пройдена;
+- следующий этап: `v0.3.19`, только независимая проверка пакета и согласование плана;
+- ограничение: реальные внешние данные и организация не участвовали, испытание не разрешено.
+
+## Лабораторная линия `v0.4.x`
+
+- последний этап: `v0.4.4`;
+- результат: операторский цикл подтверждён на 12 синтетических карточках;
+- следующий этап: отдельный заранее определённый `v0.4.5`;
+- ограничение: внешняя применимость, production, backend и автоматические действия не подтверждены.
 
 ## Общие якоря
 

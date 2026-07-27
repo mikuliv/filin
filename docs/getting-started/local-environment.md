@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Локальное окружение
-document_type: guide
-audience:
-  - developer
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - requirements.txt
-  - pyproject.toml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Локальное окружение
 
 ## Требования

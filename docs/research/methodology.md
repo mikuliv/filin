@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Исследовательская методология
-document_type: reference
-audience:
-  - researcher
-  - auditor
-lifecycle: current
-authoritative_for:
-  - research_methodology_summary
-source_of_truth:
-  - frozen_protocols
-  - policy_results
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Исследовательская методология
 
 ## Принципы

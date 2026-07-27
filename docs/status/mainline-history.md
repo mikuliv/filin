@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: История основной линии v0.3.x
-document_type: history
-audience:
-  - researcher
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/status/project-status.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # История основной линии v0.3.x
 
 | Период | Этапы | Результат | Ключевое ограничение |

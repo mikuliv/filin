@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Коррекции и отрицательные результаты
-document_type: history
-audience:
-  - auditor
-  - researcher
-lifecycle: historical
-authoritative_for: []
-source_of_truth:
-  - stage_policy_results
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Коррекции и отрицательные результаты
 
 ## Сохранение отрицательных итогов

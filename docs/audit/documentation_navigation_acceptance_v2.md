@@ -1,18 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Навигационная приёмка документации v2
-document_type: audit
-audience:
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/index.md
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Навигационная приёмка документации v2
 
 ## Новый технический читатель

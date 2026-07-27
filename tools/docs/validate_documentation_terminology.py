@@ -1,9 +1,15 @@
 """Проверяет запрещённые semantic substitutions в current narrative."""
 from __future__ import annotations
 
+import argparse
 import json
+import sys
+from pathlib import Path
 
-from tools.docs.documentation_v2 import ROOT, build_protected_set, front_matter, tracked_markdown
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from tools.docs.documentation_v2 import ROOT, build_protected_set, document_metadata, tracked_markdown
 
 
 FORBIDDEN = {
@@ -19,7 +25,7 @@ def validate() -> list[str]:
     protected={x["path"] for x in build_protected_set(ROOT)}; errors=[]
     exemptions={"docs/status/prohibited-capabilities.md","docs/reference/terminology.md"}
     for path in tracked_markdown(ROOT):
-        rel=path.relative_to(ROOT).as_posix(); meta=front_matter(path)
+        rel=path.relative_to(ROOT).as_posix(); meta=document_metadata(path, ROOT)
         if rel in protected or rel in exemptions or meta.get("lifecycle") not in {"current","generated"}: continue
         lower=path.read_text(encoding="utf-8").casefold()
         for phrase,code in FORBIDDEN.items():
@@ -28,6 +34,7 @@ def validate() -> list[str]:
 
 
 def main() -> int:
+    parser = argparse.ArgumentParser(); parser.add_argument("--strict", action="store_true"); parser.parse_args()
     errors=validate(); print(json.dumps({"valid":not errors,"errors":errors},ensure_ascii=False,indent=2)); return int(bool(errors))
 
 

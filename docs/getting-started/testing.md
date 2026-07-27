@@ -1,22 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Руководство по тестированию
-document_type: guide
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - testing_guide
-source_of_truth:
-  - pyproject.toml
-  - ml/tests
-  - tools
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Руководство по тестированию
 
 ## Общее правило

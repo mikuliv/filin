@@ -1,24 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Текущие ограничения платформы
-document_type: architecture
-audience:
-  - newcomer
-  - developer
-  - operator
-  - auditor
-lifecycle: current
-authoritative_for:
-  - current_platform_limitations
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-  - stage_policy_results
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Текущие ограничения платформы
 
 ## Доказательная область

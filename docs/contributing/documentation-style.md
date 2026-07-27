@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Единый стандарт документации
-document_type: guide
-audience:
-  - contributor
-lifecycle: current
-authoritative_for:
-  - documentation_style
-source_of_truth:
-  - tools/docs/validate_documentation_v2.py
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Единый стандарт документации
 
 ## Язык и терминология

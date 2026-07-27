@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Хранилища и артефакты
-document_type: architecture
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - artifact_storage_map
-source_of_truth:
-  - repository_tree
-  - bundle_manifests
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Хранилища и артефакты
 
 ## Tracked и frozen

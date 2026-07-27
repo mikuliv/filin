@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Принципы оценки
-document_type: reference
-audience:
-  - researcher
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - frozen_protocols
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Принципы оценки
 
 ## До запуска

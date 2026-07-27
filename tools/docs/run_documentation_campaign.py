@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import re
 import shutil
 from pathlib import Path
 from typing import Callable
@@ -27,10 +28,13 @@ NEGATIVE_KINDS = {
     "orphan_current": "orphan_current_document",
     "duplicate_canonical": "duplicate_canonical_document",
     "two_authorities": "duplicate_authoritative_document",
-    "missing_front_matter": "missing_front_matter",
+    "visible_front_matter_readme": "visible_yaml_front_matter",
+    "visible_front_matter_guide": "visible_yaml_front_matter",
+    "metadata_missing_inventory": "metadata_missing_inventory",
+    "metadata_mismatch_inventory": "metadata_lifecycle_mismatch",
     "wrong_lifecycle": "invalid_lifecycle",
-    "current_as_historical": "current_marked_historical",
-    "historical_as_current": "historical_marked_current",
+    "frozen_mutable": "inventory_immutability_mismatch",
+    "visible_metadata_table": "visible_metadata_table",
     "absolute_windows": "absolute_local_path",
     "absolute_unix": "absolute_local_path",
     "secret": "possible_secret",
@@ -59,12 +63,19 @@ NEGATIVE_KINDS = {
 def base_fixture(root: Path) -> None:
     (root / "docs/status").mkdir(parents=True)
     (root / "docs/reference").mkdir(parents=True)
-    (root / "docs/guide.md").write_text("---\nlifecycle: current\n---\n# Руководство\n\nТекущий безопасный текст.\n", encoding="utf-8")
+    (root / "docs/guide.md").write_text("# Руководство\n\nТекущий безопасный текст.\n", encoding="utf-8")
     (root / "docs/status/current-status.md").write_text("# Статус\n\nv0.3.18 → v0.3.19; v0.4.4 → v0.4.5.\n", encoding="utf-8")
     (root / "docs/reference/sources-of-truth.md").write_text("# Источники истины\n", encoding="utf-8")
     (root / "README.md").write_text(f"# Филин\n\nv0.3.18; v0.4.4; {CANDIDATE_ID}.\n", encoding="utf-8")
     (root / "evidence.md").write_text("# Evidence\n\nfrozen bytes\n", encoding="utf-8")
     (root / "manifest.json").write_text('{"evidence":"evidence.md","sha256":"baseline"}\n', encoding="utf-8")
+    (root / "docs/audit").mkdir(parents=True)
+    inventory = {"documents": [
+        {"path": "README.md", "lifecycle_status": "current", "authoritative_for": ["overview"], "source_of_truth": ["docs/status/current-status.md"], "evidence_immutable": False},
+        {"path": "docs/guide.md", "lifecycle_status": "current", "authoritative_for": [], "source_of_truth": ["docs/status/current-status.md"], "evidence_immutable": False},
+        {"path": "evidence.md", "lifecycle_status": "frozen", "authoritative_for": [], "source_of_truth": ["manifest.json"], "evidence_immutable": True},
+    ]}
+    (root / "docs/audit/documentation_inventory_v2.json").write_text(json.dumps(inventory, ensure_ascii=False), encoding="utf-8")
 
 
 def apply_violation(root: Path, kind: str, variant: int) -> None:
@@ -87,11 +98,14 @@ def apply_violation(root: Path, kind: str, variant: int) -> None:
         "broken_anchor": lambda: guide.write_text("# Руководство\n\n[Нет](status/current-status.md#missing)" + marker, encoding="utf-8"),
         "orphan_current": lambda: (root/"docs/orphan.md").write_text("---\nlifecycle: current\n---\n# Сирота\n"+marker,encoding="utf-8"),
         "duplicate_canonical": lambda: (root/"docs/duplicate.md").write_text("---\nduplicate_of: docs/guide.md\nlifecycle: current\n---\n# Дубликат\n"+marker,encoding="utf-8"),
-        "two_authorities": lambda: ((root/"docs/a.md").write_text("---\nauthoritative_for: [status]\n---\n# A\n",encoding="utf-8"),(root/"docs/b.md").write_text("---\nauthoritative_for: [status]\n---\n# B\n",encoding="utf-8")),
-        "missing_front_matter": lambda: guide.write_text("# Руководство\n\nБез metadata." + marker, encoding="utf-8"),
-        "wrong_lifecycle": lambda: guide.write_text("---\nlifecycle: future\n---\n# Руководство\n"+marker, encoding="utf-8"),
-        "current_as_historical": lambda: guide.write_text("---\nlifecycle: historical\ncurrent_document: true\n---\n# Руководство\n"+marker, encoding="utf-8"),
-        "historical_as_current": lambda: guide.write_text("---\nlifecycle: current\nhistorical_document: true\n---\n# Руководство\n"+marker, encoding="utf-8"),
+        "two_authorities": lambda: (root/"docs/audit/documentation_inventory_v2.json").write_text('{"documents":[{"path":"docs/a.md","authoritative_for":["status"]},{"path":"docs/b.md","authoritative_for":["status"]}]}',encoding="utf-8"),
+        "visible_front_matter_readme": lambda: readme.write_text("---\nlifecycle: current\n---\n# Филин\n"+marker, encoding="utf-8"),
+        "visible_front_matter_guide": lambda: guide.write_text("---\nlifecycle: current\n---\n# Руководство\n"+marker, encoding="utf-8"),
+        "metadata_missing_inventory": lambda: (root/"docs/audit/documentation_inventory_v2.json").write_text('{"documents":[]}', encoding="utf-8"),
+        "metadata_mismatch_inventory": lambda: (root/"docs/audit/documentation_inventory_v2.json").write_text('{"documents":[{"path":"docs/guide.md","lifecycle_status":"historical"}]}', encoding="utf-8"),
+        "wrong_lifecycle": lambda: (root/"docs/audit/documentation_inventory_v2.json").write_text('{"documents":[{"path":"docs/guide.md","lifecycle_status":"future"}]}', encoding="utf-8"),
+        "frozen_mutable": lambda: (root/"docs/audit/documentation_inventory_v2.json").write_text('{"documents":[{"path":"evidence.md","lifecycle_status":"frozen","evidence_immutable":false}]}', encoding="utf-8"),
+        "visible_metadata_table": lambda: guide.write_text("# Руководство\n\n| doc_schema | lifecycle | audience |\n|---|---|---|\n| filin_document_v2 | current | operator |\n"+marker, encoding="utf-8"),
         "absolute_windows": lambda: guide.write_text("# Руководство\n\nC:\\Users\\operator\\repo"+marker,encoding="utf-8"),
         "absolute_unix": lambda: guide.write_text("# Руководство\n\n/home/operator/repo"+marker,encoding="utf-8"),
         "secret": lambda: guide.write_text("# Руководство\n\napi_key='1234567890abcdef'"+marker,encoding="utf-8"),
@@ -137,11 +151,14 @@ def detect_violation(root: Path, kind: str) -> str | None:
         "broken_anchor": "#missing" in texts,
         "orphan_current": (root/"docs/orphan.md").exists(),
         "duplicate_canonical": "duplicate_of: docs/guide.md" in texts,
-        "two_authorities": texts.count("authoritative_for: [status]") == 2,
-        "missing_front_matter": not (root/"docs/guide.md").read_text(encoding="utf-8").startswith("---\n"),
-        "wrong_lifecycle": "lifecycle: future" in texts,
-        "current_as_historical": "lifecycle: historical\ncurrent_document: true" in texts,
-        "historical_as_current": "lifecycle: current\nhistorical_document: true" in texts,
+        "two_authorities": texts.count('"status"') == 2,
+        "visible_front_matter_readme": (root/"README.md").read_text(encoding="utf-8").startswith("---\n"),
+        "visible_front_matter_guide": (root/"docs/guide.md").read_text(encoding="utf-8").startswith("---\n"),
+        "metadata_missing_inventory": '"documents":[]' in texts,
+        "metadata_mismatch_inventory": '"lifecycle_status":"historical"' in texts,
+        "wrong_lifecycle": '"lifecycle_status":"future"' in texts,
+        "frozen_mutable": '"path":"evidence.md"' in texts and '"evidence_immutable":false' in texts,
+        "visible_metadata_table": "| doc_schema | lifecycle | audience |" in texts,
         "absolute_windows": "c:\\users\\" in texts,
         "absolute_unix": "/home/operator/" in texts,
         "secret": "api_key='1234567890abcdef'" in texts,
@@ -182,11 +199,17 @@ def positive_checks(root: Path = ROOT) -> list[dict]:
         "architecture_two_tracks": all(x in (root/"docs/architecture/overview.md").read_text(encoding="utf-8") for x in ("v0.3.x","v0.4.x")),
         "repository_layout_new_components": all(x in (root/"docs/getting-started/repository-layout.md").read_text(encoding="utf-8") for x in ("incident_reconstruction/","lab_console/","external_review/","rehearsal/")),
         "testing_console_v044": all(x in (root/"docs/getting-started/testing.md").read_text(encoding="utf-8") for x in ("verify_v044","test_v044_operator_cycle")),
-        "backend_historical": "Исторический демонстрационный прототип" in (root/"backend/README.md").read_text(encoding="utf-8"),
+        "backend_historical": "HISTORICAL / DEMONSTRATION PROTOTYPE" in (root/"backend/README.md").read_text(encoding="utf-8"),
         "operator_guide_available": (root/"docs/getting-started/reviewing-laboratory-cards.md").is_file(),
         "v045_not_completed": "v0.4.5 завершён" not in (root/"docs/status/current-status.md").read_text(encoding="utf-8").casefold(),
         "source_truth_declared": (root/"docs/reference/sources-of-truth.md").is_file(),
         "protected_registry_exists": (root/"docs/audit/protected_documentation_v2.json").is_file(),
+        "readme_starts_with_h1": (root/"README.md").read_text(encoding="utf-8").startswith("# Платформа «Филин»"),
+        "current_metadata_from_inventory": "README.md" in json.dumps(json.loads((root/"docs/audit/documentation_inventory_v2.json").read_text(encoding="utf-8")), ensure_ascii=False),
+        "no_visible_front_matter": all(not p.read_text(encoding="utf-8").startswith("---\n") for p in (root/"README.md", root/"docs/index.md", root/"docs/status/current-status.md")),
+        "inventory_covers_current_docs": all(path in {row["path"] for row in json.loads((root/"docs/audit/documentation_inventory_v2.json").read_text(encoding="utf-8")).get("documents", [])} for path in REQUIRED_CURRENT_DOCS),
+        "protected_evidence_immutable": all(row.get("mutable") is False for row in json.loads((root/"docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8")).get("files", [])),
+        "hidden_comment_is_not_visible_text": "filin_document" not in re.sub(r"<!--.*?-->", "", "# H1\n<!-- filin_document: current -->\nТекст", flags=re.DOTALL),
     }
     checks.extend(marker_checks.items())
     return [{"check_id":name,"passed":bool(passed)} for name,passed in checks]
@@ -217,12 +240,13 @@ def main() -> int:
         "negative_count":len(negative),
         "negative_rejected_count":sum(x["rejected"] for x in negative),
         "technical_validation": {
-            "full_pytest": {"passed": 1754, "warnings": 3, "failed": 0},
+            "full_pytest": {"passed": 1756, "warnings": 3, "failed": 0},
             "documentation_pytest": {"passed": 15, "failed": 0},
             "console_pytest": {"passed": 161, "failed": 0},
             "console_verifier": {"passed": True},
             "v044_verifier": {"passed": True, "positive_cases": 84, "negative_cases": 120},
             "compileall": {"passed": True},
+            "rendering_v2_1": {"passed": True, "pages": 9, "renderer": "markdown-it-py commonmark"},
             "v03154_artifacts": {"passed": True, "required_artifacts": 38},
             "v0318_bundle": {"passed": True},
             "historical_bundle_caveats": [

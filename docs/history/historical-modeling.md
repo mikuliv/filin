@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Историческое моделирование
-document_type: history
-audience:
-  - researcher
-  - auditor
-lifecycle: historical
-authoritative_for: []
-source_of_truth:
-  - historical_experiment_reports
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Историческое моделирование
 
 Ранние планы описывали возможные feature profiles, training cycles и validation

@@ -1,23 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Запрещённые возможности и утверждения
-document_type: status
-audience:
-  - developer
-  - operator
-  - auditor
-  - external_reviewer
-lifecycle: current
-authoritative_for:
-  - prohibited_capabilities
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Запрещённые возможности и утверждения
 
 До отдельного положительного frozen-результата запрещено описывать или использовать

@@ -1,23 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Подтверждённые возможности
-document_type: status
-audience:
-  - developer
-  - auditor
-  - operator
-lifecycle: current
-authoritative_for:
-  - capability_summary
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-  - ml/reports
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Подтверждённые возможности
 
 Каждая возможность ограничена этапом и областью проверки. Наличие строки не

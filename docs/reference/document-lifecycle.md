@@ -1,20 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Жизненный цикл документов
-document_type: reference
-audience:
-  - contributor
-  - auditor
-lifecycle: current
-authoritative_for:
-  - document_lifecycle
-source_of_truth:
-  - docs/contributing/documentation-style.md
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Жизненный цикл документов
 
 | lifecycle | Значение | Разрешённое изменение |
@@ -25,8 +8,10 @@ evidence_immutable: false
 | `generated` | представление реестра/дерева | только через generator |
 | frozen | bytes входят в protected set | изменение запрещено |
 
-Current canonical docs используют `filin_document_v2` front matter. Frozen files
-не получают front matter задним числом; metadata хранится в inventory.
+Metadata всех tracked Markdown хранится в каноническом
+[`documentation_inventory_v2.json`](../audit/documentation_inventory_v2.json).
+Человекочитаемые страницы начинаются с H1 и не показывают служебный YAML front matter.
+Frozen files не получают metadata внутри собственных неизменяемых bytes.
 
 Перед перемещением проверяются incoming links и manifests. Старый путь сохраняется
 redirect, если он публичен, исторически упомянут или contractually referenced.

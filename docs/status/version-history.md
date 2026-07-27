@@ -1,21 +1,3 @@
----
-doc_schema: filin_document_v2
-title: История версий
-document_type: history
-audience:
-  - newcomer
-  - auditor
-lifecycle: current
-authoritative_for:
-  - version_history_navigation
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # История версий
 
 ## Основная линия v0.3.x

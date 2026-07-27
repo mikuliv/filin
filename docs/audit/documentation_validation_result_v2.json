@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_campaign_v2",
-  "positive_count": 103,
-  "positive_passed_count": 103,
-  "negative_count": 86,
-  "negative_rejected_count": 86,
+  "positive_count": 109,
+  "positive_passed_count": 109,
+  "negative_count": 92,
+  "negative_rejected_count": 92,
   "technical_validation": {
     "full_pytest": {
-      "passed": 1754,
+      "passed": 1756,
       "warnings": 3,
       "failed": 0
     },
@@ -28,6 +28,11 @@
     },
     "compileall": {
       "passed": true
+    },
+    "rendering_v2_1": {
+      "passed": true,
+      "pages": 9,
+      "renderer": "markdown-it-py commonmark"
     },
     "v03154_artifacts": {
       "passed": true,
@@ -453,6 +458,30 @@
     {
       "check_id": "protected_registry_exists",
       "passed": true
+    },
+    {
+      "check_id": "readme_starts_with_h1",
+      "passed": true
+    },
+    {
+      "check_id": "current_metadata_from_inventory",
+      "passed": true
+    },
+    {
+      "check_id": "no_visible_front_matter",
+      "passed": true
+    },
+    {
+      "check_id": "inventory_covers_current_docs",
+      "passed": true
+    },
+    {
+      "check_id": "protected_evidence_immutable",
+      "passed": true
+    },
+    {
+      "check_id": "hidden_comment_is_not_visible_text",
+      "passed": true
     }
   ],
   "negative": [
@@ -695,17 +724,59 @@
       "rejected": true
     },
     {
-      "scenario_id": "missing_front_matter_01",
-      "violation": "missing_front_matter",
-      "expected_error": "missing_front_matter",
-      "actual_error": "missing_front_matter",
+      "scenario_id": "visible_front_matter_readme_01",
+      "violation": "visible_front_matter_readme",
+      "expected_error": "visible_yaml_front_matter",
+      "actual_error": "visible_yaml_front_matter",
       "rejected": true
     },
     {
-      "scenario_id": "missing_front_matter_02",
-      "violation": "missing_front_matter",
-      "expected_error": "missing_front_matter",
-      "actual_error": "missing_front_matter",
+      "scenario_id": "visible_front_matter_readme_02",
+      "violation": "visible_front_matter_readme",
+      "expected_error": "visible_yaml_front_matter",
+      "actual_error": "visible_yaml_front_matter",
+      "rejected": true
+    },
+    {
+      "scenario_id": "visible_front_matter_guide_01",
+      "violation": "visible_front_matter_guide",
+      "expected_error": "visible_yaml_front_matter",
+      "actual_error": "visible_yaml_front_matter",
+      "rejected": true
+    },
+    {
+      "scenario_id": "visible_front_matter_guide_02",
+      "violation": "visible_front_matter_guide",
+      "expected_error": "visible_yaml_front_matter",
+      "actual_error": "visible_yaml_front_matter",
+      "rejected": true
+    },
+    {
+      "scenario_id": "metadata_missing_inventory_01",
+      "violation": "metadata_missing_inventory",
+      "expected_error": "metadata_missing_inventory",
+      "actual_error": "metadata_missing_inventory",
+      "rejected": true
+    },
+    {
+      "scenario_id": "metadata_missing_inventory_02",
+      "violation": "metadata_missing_inventory",
+      "expected_error": "metadata_missing_inventory",
+      "actual_error": "metadata_missing_inventory",
+      "rejected": true
+    },
+    {
+      "scenario_id": "metadata_mismatch_inventory_01",
+      "violation": "metadata_mismatch_inventory",
+      "expected_error": "metadata_lifecycle_mismatch",
+      "actual_error": "metadata_lifecycle_mismatch",
+      "rejected": true
+    },
+    {
+      "scenario_id": "metadata_mismatch_inventory_02",
+      "violation": "metadata_mismatch_inventory",
+      "expected_error": "metadata_lifecycle_mismatch",
+      "actual_error": "metadata_lifecycle_mismatch",
       "rejected": true
     },
     {
@@ -723,31 +794,31 @@
       "rejected": true
     },
     {
-      "scenario_id": "current_as_historical_01",
-      "violation": "current_as_historical",
-      "expected_error": "current_marked_historical",
-      "actual_error": "current_marked_historical",
+      "scenario_id": "frozen_mutable_01",
+      "violation": "frozen_mutable",
+      "expected_error": "inventory_immutability_mismatch",
+      "actual_error": "inventory_immutability_mismatch",
       "rejected": true
     },
     {
-      "scenario_id": "current_as_historical_02",
-      "violation": "current_as_historical",
-      "expected_error": "current_marked_historical",
-      "actual_error": "current_marked_historical",
+      "scenario_id": "frozen_mutable_02",
+      "violation": "frozen_mutable",
+      "expected_error": "inventory_immutability_mismatch",
+      "actual_error": "inventory_immutability_mismatch",
       "rejected": true
     },
     {
-      "scenario_id": "historical_as_current_01",
-      "violation": "historical_as_current",
-      "expected_error": "historical_marked_current",
-      "actual_error": "historical_marked_current",
+      "scenario_id": "visible_metadata_table_01",
+      "violation": "visible_metadata_table",
+      "expected_error": "visible_metadata_table",
+      "actual_error": "visible_metadata_table",
       "rejected": true
     },
     {
-      "scenario_id": "historical_as_current_02",
-      "violation": "historical_as_current",
-      "expected_error": "historical_marked_current",
-      "actual_error": "historical_marked_current",
+      "scenario_id": "visible_metadata_table_02",
+      "violation": "visible_metadata_table",
+      "expected_error": "visible_metadata_table",
+      "actual_error": "visible_metadata_table",
       "rejected": true
     },
     {

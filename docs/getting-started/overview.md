@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Обзор для нового читателя
-document_type: overview
-audience:
-  - newcomer
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - docs/status/current-status.md
-  - docs/architecture/overview.md
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Обзор для нового читателя
 
 ## Назначение

@@ -1,22 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Справочник команд
-document_type: reference
-audience:
-  - developer
-  - auditor
-  - operator
-lifecycle: current
-authoritative_for:
-  - safe_command_registry
-source_of_truth:
-  - tools
-  - pyproject.toml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Справочник команд
 
 Все команды выполняются из корня репозитория, если не указано иное.

@@ -1,24 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Документация платформы «Филин»
-document_type: overview
-audience:
-  - newcomer
-  - developer
-  - operator
-  - auditor
-  - external_reviewer
-lifecycle: current
-authoritative_for:
-  - documentation_navigation
-source_of_truth:
-  - docs/status/project-status.yaml
-  - docs/status/v0_4_track.yaml
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Документация платформы «Филин»
 
 Эта страница — каноническая навигация по текущему устройству проекта. Исторические

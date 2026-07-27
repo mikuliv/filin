@@ -1,19 +1,3 @@
----
-doc_schema: filin_document_v2
-title: Типы артефактов
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: current
-authoritative_for: []
-source_of_truth:
-  - bundle_manifests
-last_reviewed_stage: v0.4.4
-generated: false
-evidence_immutable: false
----
-
 # Типы артефактов
 
 - **protocol** — заранее зафиксированные scope, inputs, gates и запреты;
