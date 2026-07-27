@@ -2,6 +2,8 @@
   "schema_version": "filin_distribution_profile_v1",
   "id": "laboratory-source",
   "status": "approved",
+  "release_status": "approved",
+  "release_ready": true,
   "includes": ["project_owned_source", "project_owned_documentation", "external_reference_declarations"],
   "excludes": ["container_images", "pcap", "models", "datasets", "runtime_databases", "secrets", "review_required"],
   "contains_images": false,

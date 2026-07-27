@@ -2,5 +2,7 @@
   "schema_version": "filin_distribution_profile_v1",
   "id": "model-package",
   "status": "separate_license_required",
+  "release_status": "separate_license_required",
+  "release_ready": false,
   "required_evidence": ["provenance", "creator", "training_data_scope", "privacy_review", "license", "redistribution_right"]
 }

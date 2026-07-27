@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 289,
+    "document_count": 291,
     "protected_count": 61,
-    "current_count": 204,
+    "current_count": 206,
     "historical_count": 85,
     "generated_count": 6,
-    "created_count": 28,
+    "created_count": 30,
     "rewritten_count": 77,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -167,7 +167,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "0fe7f410fe003836ac3365d2df512075b3c0b20e25037c87f850f535081f78dd"
+      "sha256_after": "008ca1cadce9db265793bc24cc30952741531af67bc4f357c5a5fadd22c17c3b"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -204,7 +204,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "98811256d0a2e02183383faae285525a2342f7933be2ed7145c154b406a7c445"
+      "sha256_after": "25d20374ef6545900cfea038da8592d37479d8adc270cdc592569de9b41f2677"
     },
     {
       "path": "TRADEMARKS.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "6c4f7ef90320f3d71fb2c8c0ee519c4d942155f3a85da61545b6447492af110e"
+      "sha256_after": "85d639aa38164c51980c8217245f869d4472dd9788eb60d22436abe8bb0b0245"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1822,11 +1822,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 8,
-      "outgoing_link_count": 91,
+      "outgoing_link_count": 92,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3baa92ef57bde83caffd8e77888ae4bfd1a3239d6af043f3cf055b8969effc48",
-      "sha256_after": "3cc83418716a7d8e018996e2c69108265fa98f0723a5273623255503db34c81d"
+      "sha256_after": "7ed37016a502a154ba70b7a6a75c7bc0e85c8b14e602b4f95d67ac735f6ef081"
     },
     {
       "path": "docs/contracts/operator_projection_v1.md",
@@ -5289,7 +5289,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "92ef7dfb546ce3df5a1018c6e4ac5fc1e0c8024fb7775c5e225ee808dead4a9e"
+      "sha256_after": "552798816cf86e5891e8a760a01dd5973d71eda4f20914078a3305fefbf9360d"
     },
     {
       "path": "docs/licensing/container-distribution-policy.md",
@@ -5511,7 +5511,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "0ee1e81dcf92fdfc89fafe48493bcce91b69787d5f21c7d1551d19a1675049ac"
+      "sha256_after": "2631053c65d5ff2a88dc214271c283d617d97b93a0108423b5c18a9c2cb27658"
     },
     {
       "path": "docs/licensing/file-provenance-audit.md",
@@ -5729,11 +5729,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 2,
-      "outgoing_link_count": 8,
+      "outgoing_link_count": 10,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "8952a3e17c7c83e314bd9dad390db02211e4e1d86764ff03931c9cdd29e6dc8f"
+      "sha256_after": "de9def3fb32cdf88899f4afc86cb67cc8f04fb841bbfd7a685ad1fa9af1d834c"
     },
     {
       "path": "docs/licensing/known-limitations.md",
@@ -5770,7 +5770,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "6937f710a111f5334b8b1d5176950f951b7adf11a4a3a6762f55bc4cb97dc51f"
+      "sha256_after": "9326028593b05c41ecf3ffaa3bef5a7a0f315238cbe3164540f44db020b173e0"
     },
     {
       "path": "docs/licensing/license-scope.md",
@@ -5807,7 +5807,44 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5e7e8c4fae94aa33e79999b9041ed5ec0d583a3c0c9ac31c3b483fe855737330"
+      "sha256_after": "524519dacd451081e761c76c3646c1ef2605d955fa7d72bbf0f9f331e0e8add7"
+    },
+    {
+      "path": "docs/licensing/licensing-maintenance-v1-1.md",
+      "title": "Licensing Maintenance v1.1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "72cac7e4a5fd0fe9f6b1f553848afbc4afd86142bab8591154fc9e0e8bb2f7ad"
     },
     {
       "path": "docs/licensing/models-and-data.md",
@@ -5955,7 +5992,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "06512f5357f25c23473f0972e7384e7b20c203c0ef0cdc9377986fc04d0d4093"
+      "sha256_after": "4df53f10e0555542a70409dee9fb7b310a943b9b4ec00d08df938dcd55f4fe64"
     },
     {
       "path": "docs/licensing/static-assets-audit.md",
@@ -6030,6 +6067,43 @@
       "actual_action": "created",
       "sha256_before": null,
       "sha256_after": "c1b04e8099e9968ef4b8a6a7a3908026af9c171214747b366270f2717edae598"
+    },
+    {
+      "path": "docs/licensing/upstream-standard-texts.md",
+      "title": "Официальные upstream standard texts",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "7bec00e4203ded917317e7a08d760fb6b9d3fdd63a99f865e1d4979b30dc45d9"
     },
     {
       "path": "docs/limitations.md",

@@ -17,6 +17,33 @@ BASELINE = "4948af7434c8e7b38731d8df8aae0b3360f2badf"
 CANDIDATE = "65a3dd912d845bc1"
 BACKEND_TREE = "04218a4eb01534950efd5f7d6390f1a575cacbc8"
 
+UPSTREAM_STANDARD_TEXTS: dict[str, dict[str, str]] = {
+    "LICENSE": {
+        "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+        "document_kind": "standard_license_text", "upstream_name": "Mozilla Public License 2.0",
+        "upstream_copyright_holder": "Mozilla Foundation and contributors",
+        "license_expression": "MPL-2.0", "upstream_reference": "https://www.mozilla.org/MPL/2.0/",
+    },
+    "LICENSES/MPL-2.0.txt": {
+        "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+        "document_kind": "standard_license_text", "upstream_name": "Mozilla Public License 2.0",
+        "upstream_copyright_holder": "Mozilla Foundation and contributors",
+        "license_expression": "MPL-2.0", "upstream_reference": "https://www.mozilla.org/MPL/2.0/",
+    },
+    "LICENSES/CC-BY-4.0.txt": {
+        "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+        "document_kind": "standard_license_text", "upstream_name": "Creative Commons Attribution 4.0 International",
+        "upstream_copyright_holder": "Creative Commons",
+        "license_expression": "CC-BY-4.0", "upstream_reference": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    },
+    "DCO.txt": {
+        "sha256": "c33e3ea46847ac93235d1a6a7f7f58502514f75c1a374759d29015d681dd4129",
+        "document_kind": "contributor_certificate_text", "upstream_name": "Developer Certificate of Origin 1.1",
+        "upstream_copyright_holder": "The Linux Foundation and contributors",
+        "license_expression": "LicenseRef-DCO-1.1", "upstream_reference": "https://developercertificate.org/",
+    },
+}
+
 CODE_SUFFIXES = {".py", ".js", ".css", ".html", ".yml", ".yaml", ".json", ".toml", ".conf", ".example"}
 DOC_SUFFIXES = {".md", ".rst"}
 MODEL_SUFFIXES = {".onnx", ".pt", ".pth", ".joblib", ".pkl", ".pickle", ".safetensors", ".h5"}
@@ -83,12 +110,16 @@ def classify(path: str) -> dict[str, Any]:
     name = Path(p).name
     frozen = p in protected_paths()
     generated = is_generated(p)
-    if p in {"LICENSE", "LICENSES/MPL-2.0.txt"}:
-        return record("license_text", "upstream_license", "Mozilla Foundation", "MPL-2.0", frozen, False, generated, ["source-core", "laboratory-source"])
-    if p == "LICENSES/CC-BY-4.0.txt":
-        return record("license_text", "upstream_license", "Creative Commons", "CC-BY-4.0", frozen, False, generated, ["source-core", "laboratory-source"])
-    if p == "DCO.txt":
-        return record("policy_text", "upstream_license", "Developer Certificate of Origin", "LicenseRef-DCO-1.1", frozen, True, generated, ["source-core", "laboratory-source"])
+    if p in UPSTREAM_STANDARD_TEXTS:
+        meta = UPSTREAM_STANDARD_TEXTS[p]
+        file_type = "policy_text" if p == "DCO.txt" else "license_text"
+        return record(file_type, "upstream_license", meta["upstream_copyright_holder"],
+                      meta["license_expression"], frozen, True, generated,
+                      ["source-core", "laboratory-source"], ownership="upstream_standard_text",
+                      extra={"project_authored": False, "upstream_standard_text": True,
+                             "included_for_compliance": True, "text_modification_allowed": False,
+                             "document_kind": meta["document_kind"], "upstream_name": meta["upstream_name"],
+                             "upstream_reference": meta["upstream_reference"]})
     if SECRET_RE.search(p):
         return record("secret_or_runtime", "excluded_unresolved", "", "LicenseRef-Excluded-Secret", frozen, False, generated, [], True)
     if suffix in MODEL_SUFFIXES:
@@ -105,11 +136,17 @@ def classify(path: str) -> dict[str, Any]:
 
 
 def record(file_type: str, assignment: str, holder: str, license_expression: str, frozen: bool,
-           third_party: bool, generated: bool, profiles: list[str], review: bool = False) -> dict[str, Any]:
-    return {"file_type": file_type, "ownership": "third_party" if third_party else "project_owned",
+           third_party: bool, generated: bool, profiles: list[str], review: bool = False,
+           ownership: str | None = None, extra: dict[str, Any] | None = None) -> dict[str, Any]:
+    payload = {"file_type": file_type, "ownership": ownership or ("third_party_component" if third_party else "project_owned"),
             "copyright_holder": holder, "license_expression": license_expression,
             "assignment_source": assignment, "frozen": frozen, "third_party": third_party,
-            "generated": generated, "distribution_profiles": profiles, "review_required": review}
+            "generated": generated, "project_authored": not third_party,
+            "upstream_standard_text": False, "included_for_compliance": False,
+            "text_modification_allowed": not frozen and not third_party,
+            "distribution_profiles": profiles, "review_required": review}
+    payload.update(extra or {})
+    return payload
 
 
 def result(tool: str, errors: Iterable[dict[str, Any] | str], details: dict[str, Any] | None = None) -> dict[str, Any]:

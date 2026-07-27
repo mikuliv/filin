@@ -1,0 +1,585 @@
+{
+  "schema_version": "filin_licensing_campaign_v1_1",
+  "positive": {
+    "count": 28,
+    "passed": 28,
+    "scenarios": [
+      {
+        "id": 1,
+        "name": "upstream:LICENSE",
+        "passed": true
+      },
+      {
+        "id": 2,
+        "name": "upstream:LICENSES/MPL-2.0.txt",
+        "passed": true
+      },
+      {
+        "id": 3,
+        "name": "upstream:LICENSES/CC-BY-4.0.txt",
+        "passed": true
+      },
+      {
+        "id": 4,
+        "name": "upstream:DCO.txt",
+        "passed": true
+      },
+      {
+        "id": 5,
+        "name": "no_upstream_project_owned",
+        "passed": true
+      },
+      {
+        "id": 6,
+        "name": "upstream_third_party",
+        "passed": true
+      },
+      {
+        "id": 7,
+        "name": "upstream_assignment_source",
+        "passed": true
+      },
+      {
+        "id": 8,
+        "name": "mpl_text_unchanged",
+        "passed": true
+      },
+      {
+        "id": 9,
+        "name": "cc_text_unchanged",
+        "passed": true
+      },
+      {
+        "id": 10,
+        "name": "dco_text_unchanged",
+        "passed": true
+      },
+      {
+        "id": 11,
+        "name": "mpl_copies_identical",
+        "passed": true
+      },
+      {
+        "id": 12,
+        "name": "reuse_mpl_unambiguous",
+        "passed": true
+      },
+      {
+        "id": 13,
+        "name": "reuse_cc_unambiguous",
+        "passed": true
+      },
+      {
+        "id": 14,
+        "name": "reuse_dco_unambiguous",
+        "passed": true
+      },
+      {
+        "id": 15,
+        "name": "manifest_complete",
+        "passed": true
+      },
+      {
+        "id": 16,
+        "name": "manifest_self_hash",
+        "passed": true
+      },
+      {
+        "id": 17,
+        "name": "classification_conflicts_zero",
+        "passed": true
+      },
+      {
+        "id": 18,
+        "name": "source_core_ready",
+        "passed": true
+      },
+      {
+        "id": 19,
+        "name": "laboratory_source_ready",
+        "passed": true
+      },
+      {
+        "id": 20,
+        "name": "offline_bundle_not_ready",
+        "passed": true
+      },
+      {
+        "id": 21,
+        "name": "model_separate_license",
+        "passed": true
+      },
+      {
+        "id": 22,
+        "name": "dataset_separate_license",
+        "passed": true
+      },
+      {
+        "id": 23,
+        "name": "not_all_profiles_ready",
+        "passed": true
+      },
+      {
+        "id": 24,
+        "name": "readiness_scope",
+        "passed": true
+      },
+      {
+        "id": 25,
+        "name": "readme_scope",
+        "passed": true
+      },
+      {
+        "id": 26,
+        "name": "protected_count",
+        "passed": true
+      },
+      {
+        "id": 27,
+        "name": "candidate_unchanged",
+        "passed": true
+      },
+      {
+        "id": 28,
+        "name": "backend_baseline",
+        "passed": true
+      }
+    ]
+  },
+  "negative": {
+    "count": 39,
+    "passed": 39,
+    "scenarios": [
+      {
+        "id": 1,
+        "name": "license_project_owned",
+        "expected_code": "license_project_owned",
+        "detected_codes": [
+          "license_project_owned"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 2,
+        "name": "mpl_third_party_false",
+        "expected_code": "mpl_third_party_false",
+        "detected_codes": [
+          "mpl_third_party_false"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 3,
+        "name": "cc_third_party_false",
+        "expected_code": "cc_third_party_false",
+        "detected_codes": [
+          "cc_third_party_false"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 4,
+        "name": "dco_project_owned",
+        "expected_code": "dco_project_owned",
+        "detected_codes": [
+          "dco_project_owned"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 5,
+        "name": "upstream_assignment_source_invalid",
+        "expected_code": "upstream_assignment_source_invalid",
+        "detected_codes": [
+          "upstream_assignment_source_invalid"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 6,
+        "name": "unknown_upstream_standard_text",
+        "expected_code": "unknown_upstream_standard_text",
+        "detected_codes": [
+          "unknown_upstream_standard_text"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 7,
+        "name": "spdx_header_inside_official_text",
+        "expected_code": "spdx_header_inside_official_text",
+        "detected_codes": [
+          "spdx_header_inside_official_text"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 8,
+        "name": "mpl_line_removed",
+        "expected_code": "mpl_line_removed",
+        "detected_codes": [
+          "mpl_line_removed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 9,
+        "name": "cc_text_shortened",
+        "expected_code": "cc_text_shortened",
+        "detected_codes": [
+          "cc_text_shortened"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 10,
+        "name": "custom_mpl_restriction",
+        "expected_code": "custom_mpl_restriction",
+        "detected_codes": [
+          "custom_mpl_restriction"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 11,
+        "name": "root_mpl_copy_mismatch",
+        "expected_code": "root_mpl_copy_mismatch",
+        "detected_codes": [
+          "root_mpl_copy_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 12,
+        "name": "reuse_upstream_assignment_ambiguous",
+        "expected_code": "reuse_upstream_assignment_ambiguous",
+        "detected_codes": [
+          "reuse_upstream_assignment_ambiguous"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 13,
+        "name": "upstream_holder_missing",
+        "expected_code": "upstream_holder_missing",
+        "detected_codes": [
+          "upstream_holder_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 14,
+        "name": "project_holder_claimed_for_mpl",
+        "expected_code": "project_holder_claimed_for_mpl",
+        "detected_codes": [
+          "project_holder_claimed_for_mpl"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 15,
+        "name": "project_holder_claimed_for_cc",
+        "expected_code": "project_holder_claimed_for_cc",
+        "detected_codes": [
+          "project_holder_claimed_for_cc"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 16,
+        "name": "release_ready_scope_missing",
+        "expected_code": "release_ready_scope_missing",
+        "detected_codes": [
+          "release_ready_scope_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 17,
+        "name": "all_distribution_profiles_ready_invalid",
+        "expected_code": "all_distribution_profiles_ready_invalid",
+        "detected_codes": [
+          "all_distribution_profiles_ready_invalid"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 18,
+        "name": "offline_bundle_approved",
+        "expected_code": "offline_bundle_approved",
+        "detected_codes": [
+          "offline_bundle_approved"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 19,
+        "name": "model_package_approved",
+        "expected_code": "model_package_approved",
+        "detected_codes": [
+          "model_package_approved"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 20,
+        "name": "dataset_package_approved",
+        "expected_code": "dataset_package_approved",
+        "detected_codes": [
+          "dataset_package_approved"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 21,
+        "name": "model_binary_in_source_core",
+        "expected_code": "model_binary_in_source_core",
+        "detected_codes": [
+          "model_binary_in_source_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 22,
+        "name": "dataset_in_source_core",
+        "expected_code": "dataset_in_source_core",
+        "detected_codes": [
+          "dataset_in_source_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 23,
+        "name": "suricata_image_in_core",
+        "expected_code": "suricata_image_in_core",
+        "detected_codes": [
+          "suricata_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 24,
+        "name": "elastic_image_in_core",
+        "expected_code": "elastic_image_in_core",
+        "detected_codes": [
+          "elastic_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 25,
+        "name": "profile_missing_from_validation",
+        "expected_code": "profile_missing_from_validation",
+        "detected_codes": [
+          "profile_missing_from_validation"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 26,
+        "name": "repository_manifest_file_missing",
+        "expected_code": "repository_manifest_file_missing",
+        "detected_codes": [
+          "repository_manifest_file_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 27,
+        "name": "repository_manifest_self_hash_invalid",
+        "expected_code": "repository_manifest_self_hash_invalid",
+        "detected_codes": [
+          "repository_manifest_self_hash_invalid"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 28,
+        "name": "protected_file_changed",
+        "expected_code": "protected_file_changed",
+        "detected_codes": [
+          "protected_file_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 29,
+        "name": "candidate_changed",
+        "expected_code": "candidate_changed",
+        "detected_codes": [
+          "candidate_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 30,
+        "name": "backend_tree_changed",
+        "expected_code": "backend_tree_changed",
+        "detected_codes": [
+          "backend_tree_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 31,
+        "name": "v0319_changed",
+        "expected_code": "v0319_changed",
+        "detected_codes": [
+          "v0319_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 32,
+        "name": "v045_changed",
+        "expected_code": "v045_changed",
+        "detected_codes": [
+          "v045_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 33,
+        "name": "push_attempt",
+        "expected_code": "push_attempt",
+        "detected_codes": [
+          "push_attempt"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 34,
+        "name": "official_mpl_modified",
+        "expected_code": "official_mpl_modified",
+        "detected_codes": [
+          "official_mpl_modified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 35,
+        "name": "official_cc_modified",
+        "expected_code": "official_cc_modified",
+        "detected_codes": [
+          "official_cc_modified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 36,
+        "name": "official_dco_modified",
+        "expected_code": "official_dco_modified",
+        "detected_codes": [
+          "official_dco_modified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 37,
+        "name": "upstream_project_authored",
+        "expected_code": "upstream_project_authored",
+        "detected_codes": [
+          "upstream_project_authored"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 38,
+        "name": "upstream_modification_allowed",
+        "expected_code": "upstream_modification_allowed",
+        "detected_codes": [
+          "upstream_modification_allowed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 39,
+        "name": "upstream_compliance_marker_missing",
+        "expected_code": "upstream_compliance_marker_missing",
+        "detected_codes": [
+          "upstream_compliance_marker_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      }
+    ]
+  },
+  "main_worktree_mutated_by_negative_campaign": false
+}

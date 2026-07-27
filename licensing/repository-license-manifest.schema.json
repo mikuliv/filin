@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://filin.local/schemas/repository-license-manifest-v1-1.json",
+  "title": "Filin repository license manifest v1.1",
+  "type": "object",
+  "required": ["schema_version", "manifest_schema", "self_hash_mode", "summary", "files"],
+  "properties": {
+    "schema_version": {"const": "filin_repository_license_manifest_v1_1"},
+    "manifest_schema": {"const": "licensing/repository-license-manifest.schema.json"},
+    "self_hash_mode": {"const": "canonical_json_with_self_sha_set_to_SELF"},
+    "summary": {
+      "type": "object",
+      "required": ["tracked_file_count", "unassigned_file_count", "unknown_license_file_count", "review_required_file_count", "classification_conflict_count", "upstream_standard_text_count"]
+    },
+    "files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "file_type", "ownership", "copyright_holder", "license_expression", "assignment_source", "frozen", "third_party", "generated", "project_authored", "upstream_standard_text", "included_for_compliance", "text_modification_allowed", "distribution_profiles", "review_required"],
+        "properties": {
+          "ownership": {"enum": ["project_owned", "upstream_standard_text", "third_party_component", "generated_project_file", "separate_license_artifact"]},
+          "assignment_source": {"enum": ["file_spdx_header", "reuse_toml", "third_party_notice", "upstream_license", "generated_policy", "excluded_unresolved"]},
+          "project_authored": {"type": "boolean"},
+          "upstream_standard_text": {"type": "boolean"},
+          "included_for_compliance": {"type": "boolean"},
+          "text_modification_allowed": {"type": "boolean"}
+        }
+      }
+    }
+  }
+}

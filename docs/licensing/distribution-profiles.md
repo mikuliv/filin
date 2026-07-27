@@ -8,3 +8,4 @@
 
 Профили являются allow/deny policy, а не готовыми архивами. Строгий validator запрещает review-required и исключённые типы в approved-профилях.
 
+Машинная область результата: `release_ready_scope=approved_source_profiles_only`. Одобрены ровно два профиля — `source-core` и `laboratory-source`; остальные три не готовы. `all_distribution_profiles_ready=false`.

@@ -9,6 +9,11 @@
       "error_count": 0
     },
     {
+      "name": "validate_upstream_standard_texts",
+      "passed": true,
+      "error_count": 0
+    },
+    {
       "name": "validate_license_files",
       "passed": true,
       "error_count": 0
@@ -57,13 +62,43 @@
       "name": "licensing_campaign",
       "passed": true,
       "error_count": 0
+    },
+    {
+      "name": "licensing_campaign_v1_1",
+      "passed": true,
+      "error_count": 0
     }
   ],
   "unassigned_file_count": 0,
   "unknown_license_file_count": 0,
   "review_required_file_count": 0,
+  "classification_conflict_count": 0,
+  "upstream_standard_text_count": 4,
+  "upstream_standard_text_classification_passed": true,
+  "official_license_text_changed_count": 0,
+  "official_license_text_hash_validation_passed": true,
+  "license_text_project_owned_conflict_count": 0,
   "broad_license_application_passed": true,
   "release_ready": true,
+  "release_ready_scope": "approved_source_profiles_only",
+  "approved_release_profiles": [
+    "source-core",
+    "laboratory-source"
+  ],
+  "unapproved_release_profiles": [
+    "offline-third-party-bundle",
+    "model-package",
+    "dataset-package"
+  ],
+  "approved_release_profile_count": 2,
+  "unapproved_release_profile_count": 3,
+  "all_distribution_profiles_ready": false,
+  "repository_source_release_ready": true,
+  "laboratory_source_release_ready": true,
+  "source_core_release_ready": true,
+  "offline_third_party_bundle_ready": false,
+  "model_package_ready": false,
+  "dataset_package_ready": false,
   "legal_opinion": false,
   "network_required": false,
   "docker_pull_required": false

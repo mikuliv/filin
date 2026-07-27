@@ -36,10 +36,12 @@ def build_manifest()->dict:
     for path in files_for_build(): rows.append({"path":path,"sha256":sha256(ROOT/path),**classify(path)})
     rows.append({"path":MANIFEST,"sha256":"SELF",**classify(MANIFEST)})
     rows.sort(key=lambda x:x["path"])
+    conflicts=sum(bool(x.get("upstream_standard_text")) and (x.get("ownership")!="upstream_standard_text" or not x.get("third_party") or x.get("project_authored")) for x in rows)
     summary={"tracked_file_count":len(rows),"assigned_file_count":len(rows),"unassigned_file_count":0,
              "unknown_license_file_count":sum(x["license_expression"] in {"","NOASSERTION"} for x in rows),
-             "review_required_file_count":sum(bool(x["review_required"]) for x in rows)}
-    payload={"schema_version":"filin_repository_license_manifest_v1","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
+             "review_required_file_count":sum(bool(x["review_required"]) for x in rows),
+             "classification_conflict_count":conflicts,"upstream_standard_text_count":sum(bool(x.get("upstream_standard_text")) for x in rows)}
+    payload={"schema_version":"filin_repository_license_manifest_v1_1","manifest_schema":"licensing/repository-license-manifest.schema.json","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
     digest=self_digest(payload)
     next(x for x in rows if x["path"]==MANIFEST)["sha256"]=digest
     dump(MANIFEST,payload); return payload
@@ -51,7 +53,7 @@ def spdx_header(name:str,namespace:str)->dict:
 
 def build_sbom(manifest:dict)->None:
     repo=spdx_header("Filin repository source inventory","https://filin.local/spdx/repository/4948af7")
-    repo["files"]=[{"fileName":"./"+r["path"],"SPDXID":"SPDXRef-File-"+hashlib.sha256(r["path"].encode()).hexdigest()[:16],"checksums":[{"algorithm":"SHA256","checksumValue":r["sha256"]}],"licenseConcluded":r["license_expression"],"licenseInfoInFiles":[r["license_expression"]],"copyrightText":r["copyright_holder"] or "NOASSERTION"} for r in manifest["files"]]
+    repo["files"]=[{"fileName":"./"+r["path"],"SPDXID":"SPDXRef-File-"+hashlib.sha256(r["path"].encode()).hexdigest()[:16],"checksums":[{"algorithm":"SHA256","checksumValue":r["sha256"]}],"fileTypes":["TEXT"] if r["file_type"] in {"license_text","policy_text","documentation"} else ["SOURCE"],"licenseConcluded":r["license_expression"],"licenseInfoInFiles":[r["license_expression"]],"copyrightText":r["copyright_holder"] or "NOASSERTION","comment":json.dumps({"ownership":r["ownership"],"upstream_standard_text":r.get("upstream_standard_text",False),"project_authored":r.get("project_authored",False)},ensure_ascii=False)} for r in manifest["files"]]
     dump("sbom/repository.spdx.json",repo)
     deps=load("docs/licensing/python-dependencies-resolved.json") if (ROOT/"docs/licensing/python-dependencies-resolved.json").exists() else {"packages":[]}
     py=spdx_header("Filin local Python dependency inventory","https://filin.local/spdx/python/2026-07-27")
@@ -73,15 +75,16 @@ def build_notices()->None:
     lines += [f"| {p['name']} | {p['version']} | `{p['license_expression']}` | нет, устанавливается отдельно |" for p in deps]
     lines += ["","## Container references","","| reference | license | availability | distribution |","|---|---|---|---|" ]
     lines += [f"| `{x['reference']}` | `{x['license_expression']}` | {x['verification']} | excluded; reference only |" for x in containers]
-    lines += ["","## Особые компоненты","","Suricata (GPL-2.0-only), Elastic stack (Elastic-License-2.0), Zeek, Docker Desktop, base images и системные пакеты не являются собственным кодом «Филина» и исключены из source distribution.",""]
+    lines += ["","## Официальные standard texts","","MPL-2.0, CC BY 4.0 и DCO 1.1 включены неизменёнными как `upstream_standard_text`; это не собственные произведения проекта.","","## Особые компоненты","","Suricata (GPL-2.0-only), Elastic stack (Elastic-License-2.0), Zeek, Docker Desktop, base images и системные пакеты не являются собственным кодом «Филина» и исключены из source distribution.",""]
     (ROOT/"THIRD_PARTY_NOTICES.md").write_text("\n".join(lines),encoding="utf-8")
 
 
 def main()->int:
-    parser(__doc__).parse_args(); build_frozen(); build_notices(); manifest=build_manifest(); build_sbom(manifest)
+    parser(__doc__).parse_args(); build_frozen(); build_notices(); manifest=build_manifest()
+    from .validate_upstream_standard_texts import write_registry
+    write_registry(ROOT, manifest); manifest=build_manifest(); build_sbom(manifest)
     # Rebuild after generated SBOM/notices exist so the manifest covers final worktree.
     manifest=build_manifest(); print(json.dumps(manifest["summary"],ensure_ascii=False,indent=2)); return 0
 
 
 if __name__=="__main__":raise SystemExit(main())
-

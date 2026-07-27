@@ -27,3 +27,17 @@ def test_license_inventory_is_not_a_frozen_evidence_manifest():
  rows=build_protected_set()
  assert rows
  assert all("licensing/repository-license-manifest.json" not in row.get("protecting_manifests",[]) for row in rows)
+
+def test_upstream_standard_texts_have_distinct_ownership():
+ from tools.licensing.common import UPSTREAM_STANDARD_TEXTS, classify
+ for path in UPSTREAM_STANDARD_TEXTS:
+  row=classify(path)
+  assert row["ownership"]=="upstream_standard_text"
+  assert row["third_party"] is True
+  assert row["project_authored"] is False
+  assert row["included_for_compliance"] is True
+
+def test_v11_campaign_minimums():
+ from tools.licensing.run_licensing_campaign_v1_1 import NEGATIVE_RULES, positive_scenarios
+ assert len(NEGATIVE_RULES)>=35
+ assert len(positive_scenarios())>=25

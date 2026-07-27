@@ -13,11 +13,13 @@ def validate(root=ROOT):
   except Exception:errors.append({"code":"distribution_profile_invalid_json","profile":name});continue
   if data.get("id")!=name:errors.append({"code":"distribution_profile_id_mismatch","profile":name})
   if data.get("status")!=status:errors.append({"code":"distribution_profile_status_invalid","profile":name})
+  if data.get("release_status")!=status:errors.append({"code":"distribution_profile_release_status_invalid","profile":name})
+  expected_ready=status=="approved"
+  if data.get("release_ready") is not expected_ready:errors.append({"code":"distribution_profile_readiness_invalid","profile":name})
   if status=="approved":
    if data.get("contains_images") is not False:errors.append({"code":"image_in_approved_source_profile","profile":name})
    if not FORBIDDEN.issubset(set(data.get("excludes",[]))):errors.append({"code":"approved_profile_exclusion_missing","profile":name})
  return errors
 def main():
- a=parser(__doc__).parse_args();e=validate(a.root);return finish("validate_distribution_profiles",e,{"profile_count":len(EXPECTED),"profiles":EXPECTED},a.strict)
+ a=parser(__doc__).parse_args();e=validate(a.root);return finish("validate_distribution_profiles",e,{"profile_count":len(EXPECTED),"approved_profile_count":2,"unapproved_profile_count":3,"all_distribution_profiles_ready":False,"profiles":EXPECTED},a.strict)
 if __name__=="__main__":raise SystemExit(main())
-

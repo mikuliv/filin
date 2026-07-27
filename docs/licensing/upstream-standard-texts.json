@@ -1,0 +1,95 @@
+{
+  "schema_version": "filin_upstream_standard_texts_v1_1",
+  "count": 4,
+  "official_license_text_changed_count": 0,
+  "texts": [
+    {
+      "path": "LICENSE",
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "expected_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "document_kind": "standard_license_text",
+      "upstream_name": "Mozilla Public License 2.0",
+      "upstream_copyright_holder": "Mozilla Foundation and contributors",
+      "upstream_reference": "https://www.mozilla.org/MPL/2.0/",
+      "license_expression": "MPL-2.0",
+      "ownership": "upstream_standard_text",
+      "third_party": true,
+      "project_authored": false,
+      "upstream_standard_text": true,
+      "assignment_source": "upstream_license",
+      "text_modified": false,
+      "included_for_compliance": true,
+      "text_modification_allowed": false,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ]
+    },
+    {
+      "path": "LICENSES/MPL-2.0.txt",
+      "sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "expected_sha256": "3f3d9e0024b1921b067d6f7f88deb4a60cbe7a78e76c64e3f1d7fc3b779b9d04",
+      "document_kind": "standard_license_text",
+      "upstream_name": "Mozilla Public License 2.0",
+      "upstream_copyright_holder": "Mozilla Foundation and contributors",
+      "upstream_reference": "https://www.mozilla.org/MPL/2.0/",
+      "license_expression": "MPL-2.0",
+      "ownership": "upstream_standard_text",
+      "third_party": true,
+      "project_authored": false,
+      "upstream_standard_text": true,
+      "assignment_source": "upstream_license",
+      "text_modified": false,
+      "included_for_compliance": true,
+      "text_modification_allowed": false,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ]
+    },
+    {
+      "path": "LICENSES/CC-BY-4.0.txt",
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "expected_sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411",
+      "document_kind": "standard_license_text",
+      "upstream_name": "Creative Commons Attribution 4.0 International",
+      "upstream_copyright_holder": "Creative Commons",
+      "upstream_reference": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "license_expression": "CC-BY-4.0",
+      "ownership": "upstream_standard_text",
+      "third_party": true,
+      "project_authored": false,
+      "upstream_standard_text": true,
+      "assignment_source": "upstream_license",
+      "text_modified": false,
+      "included_for_compliance": true,
+      "text_modification_allowed": false,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ]
+    },
+    {
+      "path": "DCO.txt",
+      "sha256": "c33e3ea46847ac93235d1a6a7f7f58502514f75c1a374759d29015d681dd4129",
+      "expected_sha256": "c33e3ea46847ac93235d1a6a7f7f58502514f75c1a374759d29015d681dd4129",
+      "document_kind": "contributor_certificate_text",
+      "upstream_name": "Developer Certificate of Origin 1.1",
+      "upstream_copyright_holder": "The Linux Foundation and contributors",
+      "upstream_reference": "https://developercertificate.org/",
+      "license_expression": "LicenseRef-DCO-1.1",
+      "ownership": "upstream_standard_text",
+      "third_party": true,
+      "project_authored": false,
+      "upstream_standard_text": true,
+      "assignment_source": "upstream_license",
+      "text_modified": false,
+      "included_for_compliance": true,
+      "text_modification_allowed": false,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ]
+    }
+  ]
+}

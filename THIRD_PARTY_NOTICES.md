@@ -75,6 +75,10 @@
 | `filin-staging-v0316:local` | `NOASSERTION` | not_available_offline | excluded; reference only |
 | `filin-staging-v0316:local` | `NOASSERTION` | not_available_offline | excluded; reference only |
 
+## Официальные standard texts
+
+MPL-2.0, CC BY 4.0 и DCO 1.1 включены неизменёнными как `upstream_standard_text`; это не собственные произведения проекта.
+
 ## Особые компоненты
 
 Suricata (GPL-2.0-only), Elastic stack (Elastic-License-2.0), Zeek, Docker Desktop, base images и системные пакеты не являются собственным кодом «Филина» и исключены из source distribution.
