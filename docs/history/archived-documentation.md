@@ -1,15 +1,26 @@
-# Архивная документация
+---
+doc_schema: filin_document_v2
+title: Архивированная документация
+document_type: history
+audience:
+  - auditor
+lifecycle: historical
+authoritative_for: []
+source_of_truth:
+  - git_history
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Документы ниже сохранены ради истории, но не являются текущими точками входа.
+# Архивированная документация
 
-| Устаревший документ | Причина | Актуальный документ | Исходник сохранён | Evidence |
-|---|---|---|---:|---:|
-| `docs/status.md` | прежняя копия current status | `docs/status/current-status.md` | да, redirect note | нет |
-| `docs/current-capabilities.md` | смешивал confirmed и prohibited claims | `docs/status/confirmed-capabilities.md` | да, redirect note | нет |
-| `docs/architecture.md` | монолитное historical/current описание | `docs/architecture/overview.md` | да, redirect note | нет |
-| `docs/reproducibility.md` | прежний overview | `docs/research/reproducibility.md` | да, redirect note | нет |
-| `docs/development-history.md` | прежняя краткая timeline | `docs/status/version-history.md` | да, redirect note | нет |
-| stage-specific README | относится к своей revision | соответствующий stage report | да | возможно |
+Stage-specific files в `docs/experiments/`, `ml/reports/` и `ml/protocols/`
+сохраняют исторический контекст и frozen evidence. Они могут использовать прежнюю
+терминологию и не считаются current status.
 
-Frozen protocols, reports, manifests и claim-evidence ledgers не архивируются
-редакционным изменением и остаются immutable.
+Compatibility redirects оставляют старые публичные paths рабочими. Карта замен
+находится в [migration report](../audit/documentation_path_migration_v2.md).
+
+Не исправляйте frozen document ради современного языка: создайте errata или новый
+канонический обзор.

@@ -1,20 +1,41 @@
-# Начало работы с проектом
+---
+doc_schema: filin_document_v2
+title: Обзор для нового читателя
+document_type: overview
+audience:
+  - newcomer
+lifecycle: current
+authoritative_for: []
+source_of_truth:
+  - docs/status/current-status.md
+  - docs/architecture/overview.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-«Филин» — исследовательская платформа анализа сетевых наблюдений. Основной
-пользовательский маршрут начинается с [корневого README](../../README.md), затем
-переходит к [текущему статусу](../status/current-status.md) и
-[архитектуре](../architecture/overview.md).
+# Обзор для нового читателя
 
-Проект не имеет единого универсального production entrypoint. Отдельные
-исследовательские и runtime-компоненты запускаются только в рамках
-соответствующих versioned protocols. Реальный capture, внешняя сеть, backend и
-automatic actions не входят в быстрый старт.
+## Назначение
 
-Перед изменением кода:
+«Филин» исследует воспроизводимый путь от сетевого наблюдения до безопасного
+ручного аналитического рассмотрения. Платформа сочетает зафиксированную модель,
+пассивный локальный runtime, проверяемую реконструкцию и лабораторную консоль.
 
-1. Прочитайте machine-readable [project status](../status/project-status.yaml).
-2. Определите, относится ли изменение к current implementation или history.
-3. Выполните подходящие unit tests.
-4. Запустите документационные и artifact validators.
+## Две линии
 
-Для общей проверки используйте [руководство по тестированию](testing.md).
+Основная линия `v0.3.x` отвечает за данные, признаки, кандидата, runtime и внешнюю
+процедуру. Лабораторная `v0.4.x` потребляет неизменные события и строит факты,
+отношения, gaps, hypotheses и карточки. Завершены соответственно `v0.3.18` и
+`v0.4.4`; следующие допустимые этапы — `v0.3.19` и `v0.4.5`.
+
+## Что читать дальше
+
+1. [Текущий статус](../status/current-status.md).
+2. [Архитектура](../architecture/overview.md).
+3. [Подтверждённые возможности](../status/confirmed-capabilities.md).
+4. [Ограничения](../architecture/limitations.md).
+5. [Глоссарий](../reference/glossary.md).
+
+Ключевая формулировка: лабораторная работоспособность подтверждена, внешняя
+применимость пока не подтверждена.

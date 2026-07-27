@@ -1,27 +1,39 @@
-# Лабораторный стенд
+# Лабораторная среда
 
-`lab/` содержит изолированную инфраструктуру воспроизводимых локальных
-кампаний: сценарии, окружение, захват, обработку Zeek, контрольные маркеры и
-получение агрегированных наблюдений.
+## Назначение
 
-## Состав
+Изолированные scenarios, environments, sensors, campaigns, holdouts и robustness checks.
 
-- `campaigns/` — исторические manifests и runners кампаний;
-- `docker/` — локальные сервисы и compose-конфигурация стенда;
-- `environment/` — описание и проверки окружения;
-- `sensor/` — захват, обработка и корреляция;
-- `holdout/`, `robustness/`, `training/` — разделённые режимы исследований;
-- `background/` — контролируемый фоновый трафик.
+## Статус
 
-PCAP, журналы Zeek, datasets, predictions и модели являются тяжёлыми runtime
-artifacts и не предназначены для Git.
+`experimental` и `laboratory-only`.
 
-## Границы
+## Место в архитектуре
 
-Стенд не моделирует production-сеть, не разрешает внешний trial и не
-подключён к backend. Завершённые результаты трактуются только в пределах
-зафиксированных протоколов соответствующих этапов.
+Среда создаёт контролируемые inputs основной линии и не является внешней площадкой.
 
-См. [локальное окружение](../docs/getting-started/local-environment.md),
-[воспроизводимость](../docs/research/reproducibility.md) и
-[ограничения архитектуры](../docs/architecture/limitations.md).
+## Основные каталоги
+
+`environment/`, `sensor/`, `campaigns/`, `holdout/`, `robustness/`, `training/`, `docker/`.
+
+## Разрешённые входы и выходы
+
+Только synthetic сценарии и локальные fixtures. Outputs пишутся в разрешённый runtime.
+
+## Границы и запреты
+
+Запрещены выход из изоляции, production traffic и трактовка rehearsal как external trial.
+
+## Безопасный запуск
+
+Запускайте только command, указанный frozen protocol конкретного stage.
+
+## Тестирование
+
+```powershell
+python -m pytest ml/tests -q
+```
+
+## Источники истины
+
+Frozen protocols, policy results и [research methodology](../docs/research/methodology.md).

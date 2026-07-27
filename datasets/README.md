@@ -1,33 +1,34 @@
-# Runtime datasets
+# Datasets
 
 ## Назначение
 
-Описание воспроизводимо формируемых feature datasets проекта «Филин».
+Правила происхождения, описания и controlled references для исследовательских наборов.
 
-## Что реализовано
+## Статус
 
-Поддерживаются `client_core_v0_2`, `client_extended_v0_2` и `network_sensor_v0_3`. Основной размер sensor window — 60 секунд; фактические короткие executions могут образовывать одну активную строку.
+`current reference`; raw sensitive data не является частью Git repository.
 
-## Входные данные и выходные данные
+## Место в архитектуре
 
-Client datasets строятся из client observations. Sensor datasets строятся из correlated Zeek observations. CSV, PCAP, JSONL, indexes и runtime reports не коммитятся.
+Dataset metadata поддерживает experiment protocols и feature generation основной линии.
 
-## Metadata и признаки
+## Основные файлы
 
-Metadata содержит provenance, role, execution/window и label fields. Model features исключают label, IDs, campaign/robustness metadata, marker fields, raw IP/hostname/URI/port identifier и Zeek UID.
+Описания sources, splits, labels и provenance; точный состав определяется stage protocol.
 
-## Labels и роли
+## Разрешённые входы и выходы
 
-Labels: `benign`, `port_scan`, `auth_failures`, `web_probe`, `low_rate_dos`, `beacon_simulation`. Train, test и robustness roles разделены audit-ами; hashes включаются в indexes.
+Только synthetic/controlled inputs с documented provenance. Output — metadata и
+локальные runtime artifacts, разрешённые protocol.
 
-## Проверки
+## Границы и запреты
 
-Отсутствие runtime dataset в Git не означает отсутствие поддержки профиля. Datasets формируются воспроизводимым campaign pipeline и проверяются по индексам и SHA-256.
+Запрещены personal data, secrets, неизвестные licenses и коммит raw captures.
 
-## Ограничения
+## Безопасный запуск и тестирование
 
-Datasets описывают controlled laboratory observations и не являются production corpus.
+Используйте tests конкретной ML campaign; отдельного production importer нет.
 
-## Связанные документы
+## Источники истины
 
-[Происхождение данных](../docs/data-provenance.md), [profiles](../ml/features/README.md), [эксперименты](../docs/experiments.md).
+[Data provenance](../docs/data-provenance.md) и frozen protocols соответствующего stage.

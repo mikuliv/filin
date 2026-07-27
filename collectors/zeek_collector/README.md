@@ -1,12 +1,27 @@
-# Zeek Collector
+# Zeek collector
 
-Заготовка collector для событий Zeek. Модуль предназначен для первичной нормализации записей `conn.log`, `dns.log`, `http.log` и `ssh.log` в единый словарь сетевого события.
+## Назначение и статус
 
-## Входные данные
+Текущий лабораторный collector для предусмотренных Zeek logs.
 
-- запись Zeek, предварительно разобранная в словарь;
-- тип лога: `conn`, `dns`, `http` или `ssh`.
+## Место в архитектуре
 
-## Выходные данные
+Формирует observations, из которых строится `network_features_v2`.
 
-Нормализованный словарь с полями времени, источника, цели, портов, протокола, длительности, байтов и исходной записи в поле `raw`.
+## Основные файлы, входы и выходы
+
+Parser и normalization code принимают controlled Zeek fixtures и возвращают typed records.
+
+## Границы и запреты
+
+Не является production sensor agent; неизвестные schemas должны отклоняться.
+
+## Безопасный запуск и тестирование
+
+```powershell
+python -m pytest collectors/zeek_collector -q
+```
+
+## Источники истины
+
+Code, tests и [collectors overview](../README.md).

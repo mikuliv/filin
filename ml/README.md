@@ -1,32 +1,42 @@
-# ML-подсистема
+# Подсистема ML
 
-Каталог объединяет подготовку признаков, исследовательские циклы, frozen
-evaluation, решения и проверяемые отчёты проекта.
+## Назначение
 
-## Основные разделы
+Features, candidate artifacts, inference/decision policies, experiments, protocols и reports.
 
-- `features/` — профили, построение и проверка признаков;
-- `training/` — загрузка данных и контроль разделения выборок;
-- `decision/` — вероятностные и эпизодные правила решения;
-- `experiments/` — реализации исторических исследовательских этапов;
-- `audits/` — корректирующие и семантические аудиты;
-- `reports/` — агрегированные отчёты и неизменяемые evidence-материалы;
-- `tests/` — регрессионные и контрактные проверки.
+## Статус
 
-Текущий frozen candidate — `v03154:65a3dd912d845bc1`. Последний завершённый
-этап — v0.3.18 (`completed`, `passed`); он подготовил пакет независимой
-проверки и использовал только синтетическую репетицию протокола. Реальные
-внешние данные и научная внешняя валидация отсутствуют.
+`current` для frozen candidate/runtime contracts и `historical/frozen` для завершённых stages.
 
-## Границы
+## Место в архитектуре
 
-Модель, калибровка, conformal-параметры, пороги и candidate не изменяются в
-рамках текущего documentation maintenance. Интеграция с backend, shadow mode,
-production и автоматическое применение решений запрещены.
+Формирует model decision основной линии. `v0.4.x` потребляет output, но не меняет модель.
 
-## Проверка
+## Основные каталоги
 
-Полный набор тестов запускается командой `python -m pytest`. Инструкции и
-границы воспроизводимости приведены в
-[руководстве по тестированию](../docs/getting-started/testing.md) и
-[исследовательской методологии](../docs/research/methodology.md).
+`features/`, `training/`, `decision/`, `analysis/`, `artifacts/`, `experiments/`,
+`protocols/`, `reports/`, `tests/`.
+
+## Разрешённые входы
+
+Versioned feature rows и datasets, разрешённые frozen protocol.
+
+## Выходы
+
+Candidate artifacts, predictions, policies, manifests и evidence reports.
+
+## Границы и запреты
+
+Запрещены silent retraining, holdout adaptation и изменение frozen reports.
+
+## Безопасный запуск и тестирование
+
+```powershell
+python -m pytest ml/tests -q
+```
+
+## Источники истины
+
+Candidate `v03154:65a3dd912d845bc1`,
+`artifacts/v0_3_15_4/candidate_manifest.json`, [protocol index](protocols/index.md) и
+[report index](reports/index.md).

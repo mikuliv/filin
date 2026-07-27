@@ -1,26 +1,40 @@
-# Сборщики событий
+# Collectors
 
-Каталог содержит локальные источники и транспорт пассивных событий. Компоненты
-нормализуют наблюдения, проверяют контракты, поддерживают ограниченную очередь,
-контрольные точки и повторную доставку в тестовые приёмники.
+## Назначение
 
-## Состав
+Сбор и нормализация CSV, Zeek и Suricata observations, а также passive shadow runtime.
 
-- `csv_collector/` — чтение подготовленных CSV-наблюдений;
-- `suricata_collector/` — адаптер событий Suricata;
-- `zeek_collector/` — адаптер журналов Zeek;
-- `shadow/` — локальный пассивный контракт `shadow_event_v1`;
-- `shadow_trial/` — воспроизводимый capture-to-delivery контур завершённых
-  локальных испытаний.
+## Статус
 
-## Границы
+`current`, laboratory-scoped.
 
-Сборщики не подключены к production, backend или внешней организации. События
-не обладают полномочием выполнять действия, отправлять реальные уведомления
-или применять автоматические меры.
+## Место в архитектуре
 
-## Документация
+Компонент формирует вход feature pipeline и `shadow_event_v2` основной линии.
 
-См. [поток данных](../docs/architecture/data-flow.md),
-[пассивные события](../docs/architecture/passive-events.md) и
-[ограничения](../docs/status/prohibited-capabilities.md).
+## Основные каталоги
+
+`csv_collector/`, `zeek_collector/`, `suricata_collector/`, `shadow/` и `shadow_trial/`.
+
+## Разрешённые входы
+
+Контролируемые fixtures и formats, предусмотренные versioned contracts.
+
+## Выходы
+
+Нормализованные records, feature inputs и passive events с candidate identity.
+
+## Границы и запреты
+
+Production capture, скрытая отправка наружу и неизвестный candidate запрещены.
+
+## Безопасный запуск и тестирование
+
+```powershell
+python -m pytest collectors -q
+```
+
+## Источники истины
+
+`collectors/shadow/contracts/candidate_registry_v1.json`, collector schemas и
+[detection/runtime architecture](../docs/architecture/detection-and-runtime-track.md).

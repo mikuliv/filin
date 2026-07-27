@@ -1,309 +1,201 @@
+---
+doc_schema: filin_document_v2
+title: Платформа «Филин»
+document_type: overview
+audience:
+  - newcomer
+  - developer
+  - operator
+  - auditor
+lifecycle: current
+authoritative_for:
+  - project_entrypoint
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Платформа «Филин»
 
-Исследовательская платформа воспроизводимого анализа сетевых наблюдений.
+«Филин» — исследовательская платформа для воспроизводимого анализа сетевых событий:
+от контролируемого сетевого трафика и зафиксированной модели до проверяемой
+реконструкции, конкурирующих гипотез и ручного рассмотрения карточки оператором.
 
-> **Текущий статус**
->
-> - Последний завершённый этап: **v0.3.18**.
-> - Результат этапа: **completed / passed**.
-> - Следующий допустимый этап: **v0.3.19 — package review**.
-> - Фактический external trial пока запрещён.
-> - Production readiness не заявляется.
+> **Граница применимости:** лабораторная работоспособность подтверждена, внешняя
+> применимость пока не подтверждена. Платформа не является SIEM, не подтверждает
+> компрометацию и не выполняет автоматические действия.
 
-Machine-readable источник статуса:
-[`docs/status/project-status.yaml`](docs/status/project-status.yaml).
+## Текущий статус
 
-Параллельная лабораторная линия завершила **v0.4.4**: доступны 12 независимых
-синтетических карточек и сохраняемый операторский цикл без окончательного
-определения и автоматических действий. Основная линия и следующий разрешённый
-этап v0.3.19 не изменены. См. [инструкцию оператора](docs/getting-started/reviewing-laboratory-cards.md).
+Проект ведёт две логически независимые линии. Лабораторная линия использует
+неизменяемые выходы основной, но не заменяет внешнюю проверку.
 
-## О проекте
+| Линия | Завершённый этап | Подтверждённый результат | Следующий допустимый этап |
+|---|---|---|---|
+| Основная `v0.3.x` | `v0.3.18` | Подготовлен и синтетически отрепетирован frozen-пакет внешней проверки | `v0.3.19`: независимая проверка пакета и согласование плана испытания |
+| Лабораторная `v0.4.x` | `v0.4.4` | Сохраняемый операторский цикл для 12 независимых синтетических карточек | `v0.4.5`: новый, заранее определённый лабораторный этап |
 
-«Филин» исследует, как строить проверяемый анализ сетевых наблюдений без
-смешивания обучения, оценки и runtime-доказательств. Платформа преобразует
-контролируемый сетевой трафик в causal features, применяет замороженный
-кандидат, формирует stateful episode decisions и выпускает пассивные события.
+Авторитетные machine-readable источники: [основная линия](docs/status/project-status.yaml)
+и [лабораторная линия](docs/status/v0_4_track.yaml). Человекочитаемая сводка находится
+в [текущем статусе](docs/status/current-status.md).
 
-Causal features используют только сведения, доступные к моменту prediction.
-Frozen inference не допускает fit, calibration или threshold selection во
-время evaluation. Evidence bundles связывают claims с проверяемыми manifests и
-hash commitments.
+## Что действительно реализовано
 
-Проект не является готовым средством защиты, production-сервисом, SIEM или
-системой автоматического блокирования. Подтверждённый scope ограничен локальными
-лабораторными и synthetic испытаниями.
+- причинное 51-признаковое представление сетевого потока;
+- зафиксированный кандидат `v03154:65a3dd912d845bc1`;
+- воспроизводимый frozen inference и эпизодное решение в проверенной лабораторной области;
+- пассивное событие `shadow_event_v2` и локальная надёжная доставка;
+- преобразование подтверждающих материалов в наблюдаемые факты;
+- временные и структурные отношения без утверждения причинности;
+- явные разрывы реконструкции и группы корреляции;
+- конкурирующие гипотезы без принудительного выбора победителя;
+- карточка инцидента v2 и каталог из 12 синтетических лабораторных случаев;
+- локальная лабораторная консоль с сохраняемым ручным рассмотрением;
+- детерминированный экспорт решения оператора без изменения frozen evidence.
 
-## Ключевые свойства
+Полная матрица подтверждений и ограничений: [подтверждённые возможности](docs/status/confirmed-capabilities.md).
 
-- воспроизводимый pipeline от PCAP до evidence reconciliation;
-- причинное 51-признаковое представление;
-- frozen candidate с machine-readable identity;
-- stateful processing на уровне episodes;
-- versioned passive event contracts;
-- durable at-least-once delivery;
-- разделение scientific и runtime gates;
-- immutable stage artifacts и evidence bundles;
-- group-aware independent holdout methodology;
-- blind commitments и external review package;
-- fail-safe validators для manifests, paths, privacy и chronology.
+## Сквозная архитектура
 
-## Архитектура
-
-```text
-Контролируемый трафик
-→ PCAP
-→ Zeek
-→ causal feature window
-→ frozen candidate
-→ stateful decision
-→ passive event
-→ durable delivery
-→ local verified sink
-→ evidence reconciliation
+```mermaid
+flowchart LR
+    A["Контролируемый трафик"] --> B["PCAP"]
+    B --> C["Zeek"]
+    C --> D["Причинные признаки"]
+    D --> E["Зафиксированный кандидат"]
+    E --> F["Решение эпизода"]
+    F --> G["Пассивное событие"]
+    G --> H["Проверяемая реконструкция"]
+    H --> I["Временные и структурные отношения"]
+    I --> J["Конкурирующие гипотезы"]
+    J --> K["Карточка v2"]
+    K --> L["Локальная консоль"]
+    L --> M["Ручное рассмотрение"]
 ```
 
-PCAP обрабатывается Zeek, после чего feature builder формирует causal window.
-Frozen candidate создаёт prediction, а stateful слой связывает observations в
-episode и применяет замороженную policy. Passive event проходит versioned
-contract и доставляется в локальный reference receiver.
+Линия `v0.3.x` заканчивается проверенным локальным приёмом пассивного события и
+подготовкой внешней процедуры. Линия `v0.4.x` начинается с неизменяемого пассивного
+события и строит над ним лабораторную реконструкцию. Она не переобучает модель,
+не меняет кандидата и не повышает его внешний статус.
 
-Reference receiver подтверждает delivery protocol, но не является production
-backend. Подробности приведены в
-[архитектурном обзоре](docs/architecture/overview.md) и
-[описании data flow](docs/architecture/data-flow.md).
+Подробнее: [архитектурный обзор](docs/architecture/overview.md) и
+[сквозной поток данных](docs/architecture/end-to-end-data-flow.md).
 
-## Проверенный scope
+## Текущий кандидат
 
-В пределах конкретных stage protocols подтверждены:
+| Поле | Значение |
+|---|---|
+| Candidate ID | `v03154:65a3dd912d845bc1` |
+| Контракт признаков | `network_features_v2` |
+| Manifest | `ml/artifacts/v0_3_15_4/candidate_manifest.json` |
+| Registry | `collectors/shadow/contracts/candidate_registry_v1.json` |
+| Внешняя проверка | не завершена |
+| Промышленная готовность | отсутствует |
 
-- локальные лабораторные сценарии;
-- synthetic closed sets;
-- causal feature extraction;
-- frozen inference;
-- stateful episode processing;
-- passive event validation;
-- local passive runtime;
-- staging transport и durable receiver;
-- длительная controlled local campaign;
-- corrective timing и performance validation;
-- external review protocol rehearsal;
-- package builder и standalone verifier.
+История получения и проверок: [линия кандидата](docs/research/candidate-lineage.md).
 
-Каждое утверждение имеет ограничение и evidence reference в
-[confirmed capabilities](docs/status/confirmed-capabilities.md).
+## Быстрый безопасный старт
 
-## Что не подтверждено
-
-Проект не подтверждает:
-
-- accuracy на данных реальной организации;
-- фактический external blind trial;
-- production traffic capture;
-- real shadow mode;
-- backend или SIEM integration;
-- production deployment;
-- automatic enforcement;
-- network blocking;
-- реальные notifications;
-- независимую external security/privacy validation.
-
-Полный список запретов находится в
-[prohibited capabilities](docs/status/prohibited-capabilities.md).
-
-## Текущий frozen candidate
-
-**Candidate ID:** `v03154:65a3dd912d845bc1`
-
-Candidate создан в v0.3.15.4 на development corpus. Independent scientific
-holdout выполнен в v0.3.15.5, а runtime-compatible event path подтверждён
-последующими этапами.
-
-Это development/research candidate. Его успешные лабораторные gates не означают
-production readiness.
-
-Machine-readable identity:
-
-- [candidate registry](collectors/shadow/contracts/candidate_registry_v1.json);
-- [candidate manifest](ml/artifacts/v0_3_15_4/candidate_manifest.json);
-- [feature contract](ml/experiments/v0_3_15_4/feature_contract_v2.yaml);
-- [event contract](collectors/shadow/contracts/shadow_event_v2.schema.json).
-
-## Последние ключевые этапы
-
-### v0.3.15.4
-
-Контролируемая смешанная переработка сформировала current development candidate.
-Результат разрешал только следующий independent holdout.
-
-### v0.3.15.5
-
-Independent scientific holdout прошёл predictive gates, но исходный runtime
-event contract оказался несовместим. Candidate не был немедленно promoted.
-
-### v0.3.15.5.1
-
-Candidate-compatible event contract и prospective runtime recovery подтвердили
-локальную runtime compatibility без backend или production claims.
-
-### v0.3.16
-
-Изолированный staging connector и reference receiver подтвердили durable
-transport. Reference receiver остался проверочным sink, а не backend.
-
-### v0.3.17
-
-Валидная четырёхчасовая local campaign завершилась с отрицательным overall
-policy result из-за evidence, timing, performance и corruption gates.
-
-### v0.3.17.1
-
-Corrective stage классифицировал historical findings, исправил evidence tooling
-и прошёл targeted trial без изменения delivery path.
-
-### v0.3.18
-
-Подготовлены external review protocol, blind commitments, role separation,
-deterministic evaluator, package builder и standalone verifier. Synthetic
-rehearsal прошла, 40/40 negative scenarios отклонены.
-
-Полная неизменённая хронология находится в
-[version history](docs/status/version-history.md).
-
-## Внешняя проверка
-
-v0.3.18 подготовил процесс для будущей независимой проверки:
-
-- frozen external review protocol;
-- dataset, label, candidate, evaluator и prediction commitments;
-- разделение ролей;
-- blind label reveal;
-- deterministic metric evaluation;
-- package allowlist и manifest tree;
-- standalone verification без Git, сети и backend;
-- synthetic protocol rehearsal;
-- 40/40 rejected negative scenarios.
-
-В rehearsal использовался deterministic predictor, а не реальная модель.
-Реальные внешние данные и labels не использовались:
-`scientific_evidence=false`.
-
-Подробнее: [external review package](docs/external_review/README.md).
-
-## Структура репозитория
-
-- `collectors/` — collectors, runtime adapters и passive event contracts;
-- `datasets/` — tracked descriptions и metadata без raw datasets;
-- `docs/` — текущая, исследовательская и историческая документация;
-- `external_review/` — JSON Schemas external review contracts;
-- `lab/` — локальные synthetic scenarios и isolation materials;
-- `ml/` — feature code, candidate metadata, experiments и aggregate reports;
-- `rehearsal/` — stage-specific runtime contracts и configuration;
-- `runtime/` — generated local artifacts, исключённые из Git;
-- `staging/` — изолированный transport, не являющийся backend;
-- `backend/` — отдельный backend-код без current sensor integration;
-- `tools/` — validators, builders и audit utilities.
-
-Подробная карта: [repository layout](docs/getting-started/repository-layout.md).
-
-## Быстрый старт
-
-Проект не предоставляет одну команду для production-запуска всей системы.
-Безопасный старт ограничен подготовкой окружения и проверками.
+Команды выполняются из корня репозитория и не требуют внешних данных.
 
 ### Подготовка окружения
 
 ```powershell
-python -m pip install -r ml/requirements.txt -r backend/requirements.txt
+python -m pip install -r requirements.txt
 ```
 
-### Запуск тестов
+Установка изменяет только выбранное Python-окружение. Сетевой доступ может
+потребоваться для загрузки отсутствующих зависимостей.
+
+### Полная проверка
 
 ```powershell
 python -m pytest -q
 ```
 
-### Проверка документации
+Ожидается `0 failed`. Фактическое количество `passed` фиксируется только в отчёте
+конкретного запуска.
+
+### Лабораторная консоль
 
 ```powershell
-python tools/docs/validate_documentation.py --strict
-python tools/docs/validate_project_status.py --strict
-python tools/docs/validate_documentation_maintenance.py --strict
+$env:FILIN_CONSOLE_TOKEN = "локальный-одноразовый-токен"
+python -m lab_console --host 127.0.0.1 --port 8043
 ```
 
-### Просмотр текущего статуса
+Откройте `http://127.0.0.1:8043/ui/cases`. Консоль принимает только localhost,
+не предоставляет публичный сервис и пишет операторский overlay в `runtime/lab_console/`.
 
-Откройте [current status](docs/status/current-status.md) и
-[`project-status.yaml`](docs/status/project-status.yaml).
+### Проверка карточек и операторского цикла
 
-Команды real capture, external trial и длительных runners намеренно не входят в
-quick start. Руководство по проверкам:
-[testing](docs/getting-started/testing.md).
+```powershell
+python -m tools.lab_console.verify_v044
+```
 
-## Документация
+Команда проверяет frozen комплект v0.4.4 и не запускает новый исследовательский цикл.
+Подробности: [руководство по консоли](docs/getting-started/laboratory-console.md),
+[работа с карточками](docs/getting-started/reviewing-laboratory-cards.md) и
+[справочник команд](docs/reference/command-reference.md).
 
-- [Навигационный индекс](docs/index.md)
-- [Текущий статус](docs/status/current-status.md)
-- [Архитектура](docs/architecture/overview.md)
-- [Методология](docs/research/methodology.md)
-- [Контракты](docs/contracts/index.md)
-- [Протоколы](docs/protocols/index.md)
-- [Итоговые отчёты](docs/reports/index.md)
-- [Внешняя проверка](docs/external_review/README.md)
-- [История этапов](docs/status/version-history.md)
-- [Ограничения](docs/architecture/limitations.md)
-- [Стиль и терминология](docs/contributing/documentation-style.md)
+## Основные каталоги
 
-## Безопасность и ограничения
+| Каталог | Назначение | Статус |
+|---|---|---|
+| `collectors/` | сбор событий, candidate registry и пассивный runtime | текущий |
+| `ml/` | признаки, кандидат, протоколы, кампании и frozen reports | текущий и исторический evidence |
+| `staging/` | изолированный эталонный приёмник событий | текущий лабораторный runtime |
+| `rehearsal/` | контролируемая локальная репетиция | текущий лабораторный инструмент |
+| `incident_reconstruction/` | факты, отношения, разрывы, гипотезы и карточки | текущий лабораторный компонент |
+| `lab_console/` | локальный интерфейс и операторский overlay | текущий лабораторный компонент |
+| `external_review/` | исполняемые контракты внешней процедуры | frozen/ограниченный |
+| `backend/` | ранний демонстрационный прототип | исторический, не в текущем пути |
+| `docs/` | текущая навигация, статус, справочники и история | текущий документационный слой |
+| `runtime/` | локальные изменяемые результаты запусков | не является evidence по умолчанию |
 
-Испытания выполняются в локальной изоляции на synthetic fixtures. Current
-runtime не имеет полномочий на automatic action, blocking или notification.
-Backend integration и production connections запрещены.
+Полная карта: [структура репозитория](docs/getting-started/repository-layout.md).
 
-Validators отклоняют unknown files, path traversal, commitment mismatch,
-chronology violations и privacy/secret findings. Raw PCAP, model binaries,
-labels, predictions, databases, WAL, journals и timing traces не добавляются в
-Git.
+## Маршруты для читателей
 
-## Воспроизводимость
+- **Новый читатель:** [обзор](docs/getting-started/overview.md) →
+  [статус](docs/status/current-status.md) → [архитектура](docs/architecture/overview.md).
+- **Разработчик:** [точка входа](docs/getting-started/developer-entrypoint.md) →
+  [компоненты](docs/reference/component-directory.md) → [тестирование](docs/getting-started/testing.md).
+- **Оператор:** [запуск консоли](docs/getting-started/laboratory-console.md) →
+  [рассмотрение карточки](docs/getting-started/reviewing-laboratory-cards.md).
+- **Аудитор:** [источники истины](docs/reference/sources-of-truth.md) →
+  [протоколы](docs/protocols/index.md) → [отчёты](docs/reports/index.md).
+- **Независимый эксперт:** [точка входа](docs/getting-started/external-review-entrypoint.md) →
+  [современная навигация](external_review/README.md).
 
-Каждый завершённый stage сохраняет protocols, policy results, manifests,
-detached hashes, test reports и claim-evidence ledgers. Historical artifacts не
-переписываются для улучшения текущего narrative.
+Полный документационный портал: [docs/index.md](docs/index.md).
 
-Если обнаружена ошибка, создаётся новая revision, corrective stage или
-отдельное errata. Negative result остаётся доступным вместе с evidence.
+## Главные ограничения
 
-Подробнее: [reproducibility](docs/research/reproducibility.md).
+- использованы контролируемые и синтетические среды; внешняя применимость не доказана;
+- `v0.3.18` подготовил процедуру, но не провёл реальное внешнее испытание;
+- `v0.4.4` подтверждает операторский цикл только на 12 предусмотренных случаях;
+- гипотеза, путь графа и временное предшествование не являются установленным фактом или причиной;
+- `better_supported` означает только более сильную опору в доступных сведениях;
+- заметки оператора и состояние review не становятся подтверждающим материалом;
+- запрещены публичный доступ, промышленная интеграция, реальные уведомления, блокирование и автоматический ответ;
+- исторический `backend/` не входит в проверенный путь платформы.
 
-## Тестирование
+Канонические страницы: [текущие ограничения](docs/architecture/limitations.md) и
+[запрещённые возможности](docs/status/prohibited-capabilities.md).
 
-Последний полный regression result зафиксирован при завершении v0.3.18:
+## Целостность и история
 
-- `1309 passed`;
-- `0 failed`;
-- `0 skipped`;
-- `3 warnings`;
-- compileall `6/6`.
+Frozen protocols, manifests, detached SHA и claim-evidence ledgers не редактируются
+задним числом. Современная документация ссылается на них и отделяет подтверждённое
+от исторического. Иерархия источников истины описана в
+[справочнике](docs/reference/sources-of-truth.md), а полная история — в
+[хронологии этапов](docs/history/stage-timeline.md).
 
-Это исторический результат конкретного завершённого stage. Он не обновляется
-автоматически после каждого commit.
+## Лицензирование и безопасность
 
-## Статус и roadmap
-
-v0.3.18 завершён с положительным design/rehearsal result. Разрешён только
-v0.3.19: независимый review external package и согласование trial plan.
-
-Фактическое внешнее испытание потребует отдельного решения. Лабораторная линия
-v0.4.x развивается в `main`, но логически отделена от основной линии. Этап
-v0.4.1 добавил проверяемую временную и структурную реконструкцию только для
-неизменённых синтетических passive events. Единая Git-ветка не объединяет
-научные результаты: v0.4.1 не заменяет v0.3.19 и внешнюю проверку модели.
-Этап v0.4.2 формирует конкурирующие гипотезы только из проверенного результата v0.4.1; гипотезы не являются установленными фактами и не заменяют внешнюю проверку модели. Следующий шаг лабораторной линии ограничен v0.4.3.
-
-Этап v0.4.3 добавил отдельную локальную лабораторную консоль и `incident_card_v2`. Она работает только на localhost, развивается в `main`, не использует исторический `backend`, не изменяет модель и frozen artifacts. Ручное рассмотрение хранится отдельным overlay, а запуск ограничен замороженным каталогом безопасных задач. Публичное размещение и production-применение запрещены. [Инструкция запуска](docs/getting-started/laboratory-console.md).
-
-Корректирующий этап v0.4.3.1 добавил полноценный визуальный операторский интерфейс: dashboard, отдельные представления модели и показателей, этапы, комплекты, timeline, SVG-граф, шесть нейтральных гипотез и матрицу 6×6. Backend и frozen-материалы v0.4.3 сохранены неизменными. [Описание интерфейса](docs/research/laboratory-console-ui.md).
-
-См. [roadmap](docs/roadmap.md) и
-[next stage](docs/status/next-stage.md).
+Перед распространением проверьте [лицензии зависимостей](docs/dependency-licenses.md),
+[модель безопасности](docs/safety-model.md) и правила конкретного frozen package.
+Документация не является юридическим заключением или разрешением на испытание.

@@ -1,13 +1,42 @@
-# Candidate lineage
+---
+doc_schema: filin_document_v2
+title: Линия текущего кандидата
+document_type: reference
+audience:
+  - researcher
+  - auditor
+lifecycle: current
+authoritative_for:
+  - candidate_lineage_summary
+source_of_truth:
+  - collectors/shadow/contracts/candidate_registry_v1.json
+  - ml/artifacts/v0_3_15_4/candidate_manifest.json
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Candidate lineage связывает artifact, manifest, feature contract, state policy,
-calibration/conformal metadata и event compatibility.
+# Линия текущего кандидата
 
-Current frozen candidate — `v03154:65a3dd912d845bc1`. Он создан на development
-этапе v0.3.15.4, проверен independent scientific holdout v0.3.15.5 и получил
-runtime-compatible event path в v0.3.15.5.1.
+## Идентичность
 
-External dataset в режиме `authorized_development` должен создавать новую
-lineage. Он не может одновременно подтверждать current candidate как blind
-holdout. Registry и candidate manifest являются machine-readable источниками
-identity.
+- Candidate ID: `v03154:65a3dd912d845bc1`.
+- Artifact SHA-256: `65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87`.
+- Feature contract: `network_features_v2`.
+- Manifest: `ml/artifacts/v0_3_15_4/candidate_manifest.json`.
+- Registry: `collectors/shadow/contracts/candidate_registry_v1.json`.
+
+## Происхождение
+
+Кандидат создан в контролируемой redevelopment campaign `v0.3.15.4`, прошёл
+заранее зафиксированный prospective holdout `v0.3.15.5`, затем совместимый
+runtime recovery `v0.3.15.5.1`. Последующие staging, rehearsal, external package
+и `v0.4.x` не переобучали и не заменяли его.
+
+## Ограничение статуса
+
+Candidate promoted внутри локальной исследовательской линии, но внешняя validation
+не завершена. Он не разрешён для production, real shadow mode или automatic action.
+
+Machine-readable identity имеет приоритет над этой страницей. Проверяйте оба
+источника и [основной status registry](../status/project-status.yaml).

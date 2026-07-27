@@ -97,6 +97,10 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
 
     @app.get("/ui/{page}", response_class=HTMLResponse)
     async def page(request: Request, page: str):
+        if page == "documentation":
+            context = present_page("dashboard", reviews, runner, ui_catalog)
+            context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
+            return templates.TemplateResponse(request, "pages/documentation.html", context)
         if page == "cases":
             context = {**present_page("incidents", reviews, runner, ui_catalog), **case_catalog(cases, reviews)}
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "cases", "title": "Каталог лабораторных карточек", "breadcrumbs": ["Филин", "Лабораторные карточки"]})

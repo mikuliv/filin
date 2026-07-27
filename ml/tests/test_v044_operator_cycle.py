@@ -98,7 +98,14 @@ def test_operator_views_explain_comparisons_and_keep_layout_safe(client):
     assert "visibleIds.has(value.left)&&visibleIds.has(value.right)" in javascript
     assert "result_explanation" in javascript and '<p class="comparison-result">' in javascript
     assert "<summary>Технические сведения</summary>" in javascript
-    assert "console.css?v=044-ui-fix-1" in base and "console.js?v=044-ui-fix-1" in base
+    assert "console.css?v=documentation-v2" in base and "console.js?v=documentation-v2" in base
+
+
+def test_operator_documentation_is_available_without_external_resources(client):
+    response = client.get("/ui/documentation")
+    assert response.status_code == 200
+    assert "Равная опора" in response.text
+    assert "https://" not in response.text and "http://" not in response.text
 
 
 def test_case_api_rejects_unknown_and_exposes_all_parts(client):

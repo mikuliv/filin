@@ -1,58 +1,39 @@
-# Roadmap
+---
+doc_schema: filin_document_v2
+title: Дорожная карта
+document_type: status
+audience:
+  - newcomer
+  - developer
+  - auditor
+lifecycle: current
+authoritative_for: []
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Roadmap описывает разрешённые направления, но не обещает сроки и не расширяет
-readiness из [`project-status.yaml`](status/project-status.yaml).
+# Дорожная карта
 
-Последний завершённый этап — v0.3.18 (`completed`, `passed`).
+## Основная линия
 
-Исторический этап v0.3.1 — базовая оценка завершён.
-Этап v0.3.2 — проверка устойчивости зафиксированной модели также завершён;
-полная хронология вынесена в отдельный version history.
+- завершён `v0.3.18`;
+- разрешён `v0.3.19`: independent package review и agreement будущего trial plan;
+- real external trial, production integration и shadow mode пока запрещены.
 
-## Current authorized next step
+## Лабораторная линия
 
-Разрешён только **v0.3.19 — independent external package review and trial-plan
-agreement**.
+- завершён `v0.4.4`;
+- допустим `v0.4.5` как новый заранее определённый laboratory stage;
+- `v0.4.5` не реализован и не должен описываться как completed.
 
-В этот scope входят:
+## Правило продвижения
 
-- независимая проверка protocols, contracts и commitments;
-- проверка deterministic evaluator, builder и standalone verifier;
-- обсуждение organizational role separation;
-- согласование будущего sample plan и acceptance criteria;
-- подготовка проекта data agreement.
+Каждый следующий stage требует frozen protocol, неизменяемых identity anchors,
+отдельного evidence bundle и policy result. Documentation maintenance не является
+research stage и не меняет эти разрешения.
 
-## Not yet authorized
-
-Не разрешены:
-
-- real external blind trial;
-- real organization trial;
-- real traffic capture;
-- shadow mode;
-- backend integration;
-- production connection;
-- real notifications;
-- automatic enforcement и network blocking.
-
-Фактический trial требует отдельного решения после v0.3.19.
-
-## Параллельная исследовательская линия v0.4.x
-
-v0.4.1 завершён отдельно от основной линии. На синтетических лабораторных
-passive events реализованы нормализация времени, временные и структурные
-отношения, группы корреляции, разрывы и проверяемый граф. Работа ведётся в
-`main`, но единая Git-ветка не объединяет научные результаты и не меняет
-следующий основной этап v0.3.19.
-
-v0.4.2 завершил формирование и сопоставление конкурирующих гипотез без принудительного победителя. Следующий допустимый шаг — только v0.4.3: расширенная проверяемая карточка с протоколом ручного рассмотрения.
-
-v0.4.3 завершил локальную лабораторную консоль, расширенную карточку и отдельный протокол ручного рассмотрения. Следующий допустимый лабораторный шаг — только v0.4.4: управление лабораторными запусками, сравнение кандидатов и формализованный операторский цикл. Основная линия по-прежнему допускает только v0.3.19.
-
-Корректирующий этап v0.4.3.1 завершил полноценный визуальный интерфейс поверх неизменённой консоли v0.4.3. После визуальной приёмки допустим v0.4.4; статусы основной линии не изменены.
-
-v0.4.4 завершил каталог из 12 независимых синтетических карточек, guided workflow, сохраняемый manual review, безопасный экспорт и браузерную приёмку шести случаев. Следующий допустимый лабораторный этап — только v0.4.5. Основная линия по-прежнему допускает только v0.3.19.
-Состояние хранится отдельно в [`v0_4_track.yaml`](status/v0_4_track.yaml).
-
-Полная история результатов находится в
-[version history](status/version-history.md).
+Каноническая сводка: [следующие этапы](status/next-stage.md).

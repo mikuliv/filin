@@ -1,18 +1,51 @@
+---
+doc_schema: filin_document_v2
+title: Исследовательская методология
+document_type: reference
+audience:
+  - researcher
+  - auditor
+lifecycle: current
+authoritative_for:
+  - research_methodology_summary
+source_of_truth:
+  - frozen_protocols
+  - policy_results
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Исследовательская методология
 
-Методология разделяет development, frozen evaluation и runtime validation.
-Данные, использованные для fit, calibration, conformal logic или threshold
-selection, не могут одновременно подтверждать независимый результат.
+## Принципы
 
-Основные правила:
+Каждый значимый этап начинается с versioned protocol и заранее определённых gates.
+Inputs, candidate identity, split, metrics и prohibited adaptations фиксируются до
+оценки. Итог сохраняется независимо от того, положительный он или отрицательный.
 
-- features используют только causal information;
-- candidate и критерии замораживаются до evaluation;
-- split выполняется по episodes, времени, nodes, environments и origins;
-- scientific metrics и runtime gates оцениваются раздельно;
-- отрицательные результаты и invalidated revisions сохраняются;
-- claims ограничиваются scope конкретного evidence bundle.
+## Разделение development и evaluation
 
-Blind external evaluation дополнительно требует dataset, label, candidate,
-evaluator и prediction commitments. v0.3.18 проверил этот protocol только на
-synthetic fixtures.
+Training/development data не используются как независимое подтверждение. Frozen
+holdout и prospective campaign запрещают скрытый выбор thresholds, features или
+candidate по результату. Отсутствующие исходные данные ограничивают claim, а не
+заменяются реконструкцией.
+
+## Неопределённость
+
+Conformal prediction, abstention и competing hypotheses сохраняют неопределённость.
+Forced winner запрещён там, где evidence не различает варианты.
+
+## Воспроизводимость
+
+Artifacts связываются через manifests, SHA-256, semantic SHA, claim ledgers и
+deterministic generators. Human-readable summary не переписывает policy result.
+
+## Две линии
+
+`v0.3.x` оценивает model/runtime/external procedure. `v0.4.x` оценивает лабораторную
+reconstruction и operator workflow над неизменными событиями. Положительный
+результат одной линии не расширяет scope другой.
+
+См. [принципы оценки](evaluation-principles.md),
+[воспроизводимость](reproducibility.md) и [источники истины](../reference/sources-of-truth.md).

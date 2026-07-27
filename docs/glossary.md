@@ -1,25 +1,20 @@
-# Глоссарий
+---
+doc_schema: filin_document_v2
+title: Глоссарий — перенесено
+document_type: redirect
+audience:
+  - newcomer
+lifecycle: redirect
+authoritative_for: []
+source_of_truth:
+  - docs/reference/glossary.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+redirect_target: reference/glossary.md
+---
 
-| Термин | Значение |
-| --- | --- |
-| execution | Одно фактическое выполнение лабораторного сценария. |
-| run | Набор 13 executions, выполненный с одним seed и ролью campaign. |
-| campaign | Набор связанных независимых runs. |
-| train/test/robustness run | Run для выбора модели, внешней оценки или проверки frozen модели. |
-| marker | Реальный start/end HTTP-запрос для временной привязки sensor observations. |
-| sensor interval | Half-open интервал между парой markers. |
-| client observation | Наблюдение traffic-client, не являющееся Zeek observation. |
-| sensor observation | Событие, созданное из PCAP и Zeek logs. |
-| feature profile | Зафиксированный список model features и metadata rules. |
-| window | Агрегация observations в интервале одного execution. |
-| PCAP | Фактически захваченный пакетный трафик. |
-| normalized event | Событие в едином формате до aggregation. |
-| assigned/background/excluded/ambiguous/unassigned | Результаты marker-aware корреляции событий. |
-| provenance | Проверяемая цепочка происхождения артефакта и его hash. |
-| split audit | Проверка отсутствия пересечений между ролями datasets. |
-| frozen model | Модель, которую в robustness evaluation не обучают заново. |
-| pooled evaluation | Метрики по объединённым строкам набора. |
-| macro average | Среднее метрики по классам с равным весом классов. |
-| attack macro recall | Macro recall только по attack-классам. |
-| balanced accuracy | Средний recall по классам. |
-| robustness shift | Контролируемое изменение topology, background, temporal или combined. |
+# Глоссарий — перенесено
+
+Текущий глоссарий находится в [справочном разделе](reference/glossary.md).
+Этот совместимый путь не является отдельным источником терминологии или статуса.

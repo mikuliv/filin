@@ -1,11 +1,27 @@
-# Suricata Collector
+# Suricata collector
 
-Заготовка collector для Suricata EVE JSON. Модуль предназначен для первичной нормализации событий `eve.json`, включая alert, flow, HTTP и DNS-поля.
+## Назначение и статус
 
-## Входные данные
+Лабораторный adapter для предусмотренных Suricata records; не текущий production path.
 
-- одна запись Suricata EVE JSON, предварительно разобранная в словарь.
+## Место в архитектуре
 
-## Выходные данные
+Поддерживает controlled comparison/fixtures рядом с основным Zeek flow.
 
-Нормализованный словарь с полями времени, источника, цели, портов, протокола, типа события, признаков alert/http/dns и исходной записи в поле `raw`.
+## Основные файлы, входы и выходы
+
+Parser принимает versioned synthetic records и выдаёт нормализованное представление.
+
+## Границы и запреты
+
+Alert Suricata не считается доказательством атаки и не разрешает automatic response.
+
+## Безопасный запуск и тестирование
+
+```powershell
+python -m pytest collectors/suricata_collector -q
+```
+
+## Источники истины
+
+Code, tests и [collectors overview](../README.md).

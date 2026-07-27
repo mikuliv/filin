@@ -1,19 +1,39 @@
+---
+doc_schema: filin_document_v2
+title: Структура репозитория
+document_type: reference
+audience:
+  - newcomer
+  - developer
+  - auditor
+lifecycle: current
+authoritative_for:
+  - repository_layout
+source_of_truth:
+  - repository_tree
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Структура репозитория
 
-| Каталог | Назначение | Хранение | Статус и проверки |
-|---|---|---|---|
-| `backend/` | Отдельный исторический backend-код | tracked | Не интегрирован с current sensor/runtime path |
-| `collectors/` | Collectors и passive event contracts | tracked | Unit и contract tests |
-| `datasets/` | Описания и metadata наборов | tracked частично | Raw datasets в Git не добавляются |
-| `docs/` | Текущая, историческая и review-документация | tracked | Documentation validators |
-| `examples/` | Безопасные примеры | tracked | Не являются production configuration |
-| `external_review/` | JSON Schemas внешней проверки | tracked | v0.3.18 contract tests |
-| `lab/` | Локальные synthetic scenarios | tracked | Лабораторный scope |
-| `ml/` | Features, candidates, experiments и reports | tracked частично | Model artifacts и raw runtime исключены |
-| `rehearsal/` | Изолированные runtime contracts/configuration | tracked | Stage-specific validators |
-| `runtime/` | Локальные generated artifacts | runtime-only | Не добавляется в Git |
-| `staging/` | Изолированный staging transport | tracked | Не является backend |
-| `tools/` | Validators, builders и audit utilities | tracked | Unit/CI checks |
+| Каталог | Назначение | Хранение | Статус | Основная проверка | Что запрещено |
+|---|---|---|---|---|---|
+| `backend/` | ранний API prototype | tracked | исторический | historical unit tests | считать текущим backend |
+| `collectors/` | ingest, Zeek/Suricata/CSV, shadow runtime | tracked | текущий | collector tests | production capture без этапа |
+| `datasets/` | правила и описания наборов | tracked metadata | текущий reference | provenance checks | коммитить чувствительные raw data |
+| `docs/` | текущая документация, статус, история | tracked | текущий | documentation v2 validator | менять frozen evidence |
+| `examples/` | безопасные примеры | tracked | справочный | example tests | реальные identifiers и secrets |
+| `external_review/` | executable contracts внешней процедуры | tracked/frozen | ограниченный | package validator | запускать trial автоматически |
+| `incident_reconstruction/` | facts, relations, gaps, hypotheses, cards | tracked | текущий лабораторный | v0.4 verifier | трактовать graph как causal proof |
+| `lab/` | локальные стенды и сценарии | tracked | исследовательский | lab tests | выход из изоляции |
+| `lab_console/` | localhost UI и operator overlay | tracked + runtime | текущий лабораторный | console verifier | публичный bind и automatic action |
+| `ml/` | features, artifacts, protocols, reports | tracked/frozen | текущий и исторический | pytest и bundle validators | переписывать frozen reports |
+| `rehearsal/` | локальная контролируемая репетиция | tracked + runtime | текущий лабораторный | rehearsal tests | считать внешним trial |
+| `runtime/` | базы, логи, temp reports | runtime-only | изменяемый | cleanup/validators | считать evidence по умолчанию |
+| `staging/` | reference receiver и transport | tracked + runtime | текущий лабораторный | staging tests | называть production backend |
+| `tools/` | generators, validators, verifiers | tracked | текущий | tool-specific tests | обходить frozen policy |
 
-Historical experiments и reports сохраняются для аудита. Их наличие не означает,
-что они описывают текущую рекомендуемую команду или текущий статус.
+README каждого компонента определяет входы, выходы и безопасные команды. Полный
+каталог: [component-directory](../reference/component-directory.md).

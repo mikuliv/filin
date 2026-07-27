@@ -1,21 +1,65 @@
-# Индекс итоговых отчётов
+---
+doc_schema: filin_document_v2
+title: Отчёты и evidence bundles
+document_type: reference
+audience:
+  - developer
+  - auditor
+lifecycle: generated
+authoritative_for:
+  - report_index
+source_of_truth:
+  - ml/reports
+last_reviewed_stage: v0.4.4
+generated: true
+evidence_immutable: false
+---
 
-Aggregate reports хранятся по версиям в `ml/reports`. Используйте
-[индекс evidence](../../ml/reports/index.md), а затем summary и policy нужного
-этапа.
+# Отчёты и evidence bundles
 
-Raw PCAP, labels, predictions, databases, journals и timing traces не входят в
-tracked reports.
+> Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:
+> `python -m tools.docs.build_documentation_indexes`. Генерируемую область вручную не редактировать.
 
-Параллельная линия v0.4.x имеет отдельный комплект:
-[итог v0.4.0](../../ml/reports/v0_4_0/v0_4_0_summary.md) и
-[машиночитаемый результат](../../ml/reports/v0_4_0/v0_4_0_policy_result.json).
-Продолжение: [итог v0.4.1](../../ml/reports/v0_4_1/v0_4_1_summary.md) и
-[машиночитаемый результат v0.4.1](../../ml/reports/v0_4_1/v0_4_1_policy_result.json).
-Следующий комплект: [итог v0.4.2](../../ml/reports/v0_4_2/v0_4_2_summary.md) и [результат политики](../../ml/reports/v0_4_2/v0_4_2_policy_result.json).
+<!-- generated:start -->
 
-Лабораторная консоль: [итог v0.4.3](../../ml/reports/v0_4_3/v0_4_3_summary.md), [результат политики](../../ml/reports/v0_4_3/v0_4_3_policy_result.json) и [manifest](../../ml/reports/v0_4_3/v0_4_3_bundle_manifest.json).
+## Этапы v0.3.x и v0.4.x
 
-Визуальная коррекция консоли: [эксперимент v0.4.3.1](../experiments/v0_4_3_1.md) и [приёмочный отчёт](../../ml/reports/v0_4_3_1/ui_acceptance_report.md).
+| Этап | Итог | Policy | Manifest | Semantic SHA | Ограничения | Статус |
+|---|---|---|---|---|---|---|
+| `v0.3.10` | [summary](../../ml/reports/v0_3_10/v0_3_10_summary.md) | [policy](../../ml/reports/v0_3_10/v0_3_10_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.10.1` | [summary](../../ml/reports/v0_3_10_1/v0_3_10_1_summary.md) | — | — | — | — | frozen stage result |
+| `v0.3.11` | [summary](../../ml/reports/v0_3_11/resource_summary.json) | [policy](../../ml/reports/v0_3_11/v0_3_11_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.11.attempt.incomplete` | — | — | — | — | — | frozen stage result |
+| `v0.3.12` | [summary](../../ml/reports/v0_3_12/drift_summary.json) | [policy](../../ml/reports/v0_3_12/v0_3_12_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.12.1` | [summary](../../ml/reports/v0_3_12_1/combined_delay_summary.json) | — | — | — | — | frozen stage result |
+| `v0.3.12.2` | [summary](../../ml/reports/v0_3_12_2/drift_summary.json) | [policy](../../ml/reports/v0_3_12_2/v0_3_12_2_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.13` | [summary](../../ml/reports/v0_3_13/drift_summary.json) | [policy](../../ml/reports/v0_3_13/v0_3_13_policy_result.json) | [manifest](../../ml/reports/v0_3_13/regression_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.14` | [summary](../../ml/reports/v0_3_14/resource_summary.json) | [policy](../../ml/reports/v0_3_14/v0_3_14_policy_result.json) | [manifest](../../ml/reports/v0_3_14/shadow_readiness_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15` | [summary](../../ml/reports/v0_3_15/drift_summary.json) | [policy](../../ml/reports/v0_3_15/v0_3_15_policy_result.json) | [manifest](../../ml/reports/v0_3_15/shadow_trial_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.1` | [summary](../../ml/reports/v0_3_15_1/v0_3_15_1_summary.md) | [policy](../../ml/reports/v0_3_15_1/v0_3_15_1_policy_result.json) | [manifest](../../ml/reports/v0_3_15_1/v0_3_15_1_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.2` | [summary](../../ml/reports/v0_3_15_2/v0_3_15_2_summary.md) | [policy](../../ml/reports/v0_3_15_2/v0_3_15_2_policy_result.json) | [manifest](../../ml/reports/v0_3_15_2/v0_3_15_2_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.3` | [summary](../../ml/reports/v0_3_15_3/failure_mechanism_summary.json) | [policy](../../ml/reports/v0_3_15_3/v0_3_15_3_policy_result.json) | [manifest](../../ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.4` | [summary](../../ml/reports/v0_3_15_4/v0_3_15_4_summary.md) | [policy](../../ml/reports/v0_3_15_4/v0_3_15_4_policy_result.json) | [manifest](../../ml/reports/v0_3_15_4/v0_3_15_4_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.5` | [summary](../../ml/reports/v0_3_15_5/v0_3_15_5_summary.md) | [policy](../../ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json) | [manifest](../../ml/reports/v0_3_15_5/v0_3_15_5_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.15.5.1` | [summary](../../ml/reports/v0_3_15_5_1/v0_3_15_5_1_summary.md) | [policy](../../ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json) | [manifest](../../ml/reports/v0_3_15_5_1/v0_3_15_5_1_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.16` | [summary](../../ml/reports/v0_3_16/v0_3_16_summary.md) | [policy](../../ml/reports/v0_3_16/v0_3_16_policy_result.json) | [manifest](../../ml/reports/v0_3_16/v0_3_16_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.17` | [summary](../../ml/reports/v0_3_17/v0_3_17_summary.md) | [policy](../../ml/reports/v0_3_17/v0_3_17_policy_result.json) | [manifest](../../ml/reports/v0_3_17/v0_3_17_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.17.1` | [summary](../../ml/reports/v0_3_17_1/v0_3_17_1_summary.md) | [policy](../../ml/reports/v0_3_17_1/v0_3_17_1_policy_result.json) | [manifest](../../ml/reports/v0_3_17_1/v0_3_17_1_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.18` | [summary](../../ml/reports/v0_3_18/v0_3_18_summary.md) | [policy](../../ml/reports/v0_3_18/v0_3_18_policy_result.json) | [manifest](../../ml/reports/v0_3_18/v0_3_18_bundle_manifest.yaml) | — | — | frozen stage result |
+| `v0.3.3` | [summary](../../ml/reports/v0_3_3/decision_contributions_summary.md) | — | — | — | — | frozen stage result |
+| `v0.3.4` | — | [policy](../../ml/reports/v0_3_4/v0_3_4_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.5` | [summary](../../ml/reports/v0_3_5/v0_3_5_summary.md) | [policy](../../ml/reports/v0_3_5/v0_3_5_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.6` | [summary](../../ml/reports/v0_3_6/v0_3_6_summary.md) | [policy](../../ml/reports/v0_3_6/v0_3_6_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.7` | [summary](../../ml/reports/v0_3_7/v0_3_7_summary.md) | [policy](../../ml/reports/v0_3_7/v0_3_7_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.8` | [summary](../../ml/reports/v0_3_8/v0_3_8_summary.md) | [policy](../../ml/reports/v0_3_8/v0_3_8_policy_result.json) | — | — | — | frozen stage result |
+| `v0.3.9` | [summary](../../ml/reports/v0_3_9/v0_3_9_summary.md) | [policy](../../ml/reports/v0_3_9/v0_3_9_policy_result.json) | — | — | — | frozen stage result |
+| `v0.4.0` | [summary](../../ml/reports/v0_4_0/v0_4_0_summary.md) | [policy](../../ml/reports/v0_4_0/v0_4_0_policy_result.json) | [manifest](../../ml/reports/v0_4_0/v0_4_0_bundle_manifest.json) | — | [limitations](../../ml/reports/v0_4_0/known_limitations.md) | frozen stage result |
+| `v0.4.1` | [summary](../../ml/reports/v0_4_1/v0_4_1_summary.md) | [policy](../../ml/reports/v0_4_1/v0_4_1_policy_result.json) | [manifest](../../ml/reports/v0_4_1/v0_4_1_bundle_manifest.json) | — | [limitations](../../ml/reports/v0_4_1/known_limitations.md) | frozen stage result |
+| `v0.4.2` | [summary](../../ml/reports/v0_4_2/v0_4_2_summary.md) | [policy](../../ml/reports/v0_4_2/v0_4_2_policy_result.json) | [manifest](../../ml/reports/v0_4_2/v0_4_2_bundle_manifest.json) | — | [limitations](../../ml/reports/v0_4_2/known_limitations.md) | frozen stage result |
+| `v0.4.3` | [summary](../../ml/reports/v0_4_3/v0_4_3_summary.md) | [policy](../../ml/reports/v0_4_3/v0_4_3_policy_result.json) | [manifest](../../ml/reports/v0_4_3/v0_4_3_bundle_manifest.json) | — | [limitations](../../ml/reports/v0_4_3/known_limitations.md) | frozen stage result |
+| `v0.4.3.1` | — | [policy](../../ml/reports/v0_4_3_1/v0_4_3_1_policy_result.json) | — | — | — | frozen stage result |
+| `v0.4.4` | [summary](../../ml/reports/v0_4_4/summary.md) | [policy](../../ml/reports/v0_4_4/v0_4_4_policy_result.json) | [manifest](../../ml/reports/v0_4_4/v0_4_4_bundle_manifest.json) | [semantic SHA](../../ml/reports/v0_4_4/v0_4_4_semantic.sha256) | [limitations](../../ml/reports/v0_4_4/known_limitations.md) | frozen stage result |
 
-Операторский цикл: [итог v0.4.4](../../ml/reports/v0_4_4/summary.md), [операторская приёмка](../../ml/reports/v0_4_4/operator_acceptance_report.md), [результат политики](../../ml/reports/v0_4_4/v0_4_4_policy_result.json) и [manifest](../../ml/reports/v0_4_4/v0_4_4_bundle_manifest.json).
+Точный result определяется policy. Отсутствие отдельного summary не меняет machine-readable evidence.
+
+<!-- generated:end -->

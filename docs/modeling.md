@@ -1,45 +1,21 @@
-# Моделирование
+---
+doc_schema: filin_document_v2
+title: Моделирование — исторический путь
+document_type: redirect
+audience:
+  - researcher
+lifecycle: redirect
+authoritative_for: []
+source_of_truth:
+  - docs/history/historical-modeling.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+redirect_target: history/historical-modeling.md
+---
 
-Старый ML-пайплайн нужно переработать так, чтобы оценка модели была воспроизводимой и честной.
+# Моделирование — исторический путь
 
-## Правильный порядок
-
-1. Загрузить и очистить данные.
-2. Зафиксировать схему признаков: список признаков, типы, порядок колонок и правила заполнения пропусков.
-3. Выполнить train/test split до балансировки и масштабирования.
-4. Применять SMOTE только к train-части.
-5. Выполнять scaler fit только на train-части.
-6. Применять scaler transform к train и test.
-7. Обучать модели только на train.
-8. Оценивать качество на test, который не участвовал в SMOTE и fit scaler.
-
-## Модели для сравнения
-
-- MLP;
-- RandomForest;
-- XGBoost или LightGBM;
-- AutoEncoder для поиска аномалий.
-
-## Метрики
-
-Для каждой модели нужно считать:
-
-- Accuracy;
-- Precision;
-- Recall;
-- F1;
-- ROC-AUC;
-- матрица ошибок.
-
-Accuracy не должна быть единственной метрикой, потому что в задачах ИБ важны дисбаланс классов, пропуски атак и ложные срабатывания.
-
-## Экспорт
-
-При экспорте модели нужно сохранять вместе:
-
-- модель;
-- scaler;
-- схема признаков;
-- mapping классов;
-- версию датасета;
-- параметры обучения.
+Прежний planning document заменён [историческим обзором](history/historical-modeling.md).
+Текущее описание кандидата находится в [candidate lineage](research/candidate-lineage.md).
+Этот путь не является авторитетным источником статуса.

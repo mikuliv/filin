@@ -1,0 +1,45 @@
+---
+doc_schema: filin_document_v2
+title: Лабораторная реконструкция и анализ
+document_type: architecture
+audience:
+  - developer
+  - operator
+  - auditor
+lifecycle: current
+authoritative_for:
+  - v0_4_architecture
+source_of_truth:
+  - docs/status/v0_4_track.yaml
+  - incident_reconstruction/contracts
+  - lab_console/contracts
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
+# Лабораторная реконструкция и анализ
+
+## Состав
+
+`incident_reconstruction/` валидирует source bundle, создаёт наблюдаемые факты,
+temporal/structural relations, gaps, correlation groups, competing hypotheses и
+incident card v2. `lab_console/` предоставляет локальные представления и отдельный
+SQLite overlay ручного рассмотрения.
+
+## Семантические границы
+
+- факт обязан ссылаться на подтверждающий материал;
+- отсутствие сведений представляется разрывом, а не отрицательным фактом;
+- relation описывает проверяемую связь, но не автоматически причинность;
+- hypothesis остаётся объяснением даже при лучшей поддержке;
+- равная опора не означает одинаковость или истинность обеих гипотез;
+- manual review фиксирует работу оператора, но не меняет evidence.
+
+## Этапы
+
+`v0.4.0` ввёл реконструкцию и карточку, `v0.4.1` — временную модель, `v0.4.2` —
+структурные отношения и гипотезы, `v0.4.3` — локальную консоль, `v0.4.3.1` —
+переработанный интерфейс, `v0.4.4` — каталог и сохраняемый операторский цикл.
+
+Следующий `v0.4.5` не реализован. См. [историю лабораторной линии](../status/laboratory-track-history.md).

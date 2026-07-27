@@ -1,8 +1,20 @@
-# Перенаправление: возможности
+---
+doc_schema: filin_document_v2
+title: Возможности — перенесено
+document_type: redirect
+audience:
+  - newcomer
+lifecycle: redirect
+authoritative_for: []
+source_of_truth:
+  - docs/status/confirmed-capabilities.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+redirect_target: status/confirmed-capabilities.md
+---
 
-Подтверждённые claims находятся в
-[`status/confirmed-capabilities.md`](status/confirmed-capabilities.md), а
-запрещённые и неподтверждённые возможности — в
-[`status/prohibited-capabilities.md`](status/prohibited-capabilities.md).
+# Возможности — перенесено
 
-Файл сохранён для совместимости старых ссылок.
+Актуальная матрица находится в [подтверждённых возможностях](status/confirmed-capabilities.md).
+Этот совместимый путь не расширяет capability.

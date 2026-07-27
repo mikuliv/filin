@@ -1,0 +1,1062 @@
+{
+  "schema_version": "filin_documentation_campaign_v2",
+  "positive_count": 103,
+  "positive_passed_count": 103,
+  "negative_count": 86,
+  "negative_rejected_count": 86,
+  "technical_validation": {
+    "full_pytest": {
+      "passed": 1754,
+      "warnings": 3,
+      "failed": 0
+    },
+    "documentation_pytest": {
+      "passed": 15,
+      "failed": 0
+    },
+    "console_pytest": {
+      "passed": 161,
+      "failed": 0
+    },
+    "console_verifier": {
+      "passed": true
+    },
+    "v044_verifier": {
+      "passed": true,
+      "positive_cases": 84,
+      "negative_cases": 120
+    },
+    "compileall": {
+      "passed": true
+    },
+    "v03154_artifacts": {
+      "passed": true,
+      "required_artifacts": 38
+    },
+    "v0318_bundle": {
+      "passed": true
+    },
+    "historical_bundle_caveats": [
+      "v0.3.15.4 strict bundle reports the later-mutated current project status file.",
+      "v0.4.0-v0.4.2 strict bundles report shared documentation/status files evolved by later stages."
+    ]
+  },
+  "positive": [
+    {
+      "check_id": "required_document:README.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/overview.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/local-environment.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/repository-layout.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/testing.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/laboratory-console.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/reviewing-laboratory-cards.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/developer-entrypoint.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/auditor-entrypoint.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/external-review-entrypoint.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/getting-started/troubleshooting.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/overview.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/end-to-end-data-flow.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/detection-and-runtime-track.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/reconstruction-and-analysis-track.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/laboratory-console.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/component-map.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/trust-boundaries.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/storage-and-artifacts.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/current-vs-historical.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/architecture/limitations.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/methodology.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/causal-features.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/candidate-lineage.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/evaluation-principles.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/uncertainty-and-abstention.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/reproducibility.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/incident-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/temporal-reconstruction.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/competing-hypotheses.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/manual-incident-review.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/laboratory-case-catalog.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/research/operator-incident-workflow.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/current-status.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/confirmed-capabilities.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/prohibited-capabilities.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/next-stage.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/version-history.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/mainline-history.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/status/laboratory-track-history.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/sources-of-truth.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/glossary.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/terminology.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/document-lifecycle.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/component-directory.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/command-reference.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/status-values.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/artifact-types.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reference/error-and-result-codes.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contracts/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/protocols/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/reports/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/index.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/stage-timeline.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/corrections-and-negative-results.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/historical-backend.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/historical-modeling.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/historical-mitre-and-sigma.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/archived-documentation.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/history/historical-limitations.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/documentation-style.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/documentation-maintenance.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/testing-and-validation.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/adding-a-stage.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/adding-a-contract.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/adding-a-report.md",
+      "passed": true
+    },
+    {
+      "check_id": "required_document:docs/contributing/adding-a-subsystem-readme.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:backend/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:collectors/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:datasets/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:lab/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:ml/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:staging/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:rehearsal/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:incident_reconstruction/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:lab_console/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "subsystem_readme:tools/README.md",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:backend",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:collectors",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:datasets",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:docs",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:examples",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:external_review",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:incident_reconstruction",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:lab",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:lab_console",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:ml",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:rehearsal",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:runtime",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:staging",
+      "passed": true
+    },
+    {
+      "check_id": "repository_root:tools",
+      "passed": true
+    },
+    {
+      "check_id": "readme_two_tracks",
+      "passed": true
+    },
+    {
+      "check_id": "current_status_two_tracks",
+      "passed": true
+    },
+    {
+      "check_id": "architecture_two_tracks",
+      "passed": true
+    },
+    {
+      "check_id": "repository_layout_new_components",
+      "passed": true
+    },
+    {
+      "check_id": "testing_console_v044",
+      "passed": true
+    },
+    {
+      "check_id": "backend_historical",
+      "passed": true
+    },
+    {
+      "check_id": "operator_guide_available",
+      "passed": true
+    },
+    {
+      "check_id": "v045_not_completed",
+      "passed": true
+    },
+    {
+      "check_id": "source_truth_declared",
+      "passed": true
+    },
+    {
+      "check_id": "protected_registry_exists",
+      "passed": true
+    }
+  ],
+  "negative": [
+    {
+      "scenario_id": "v04_planned_01",
+      "violation": "v04_planned",
+      "expected_error": "stale_v04_planned_claim",
+      "actual_error": "stale_v04_planned_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "v04_planned_02",
+      "violation": "v04_planned",
+      "expected_error": "stale_v04_planned_claim",
+      "actual_error": "stale_v04_planned_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_v044_01",
+      "violation": "missing_v044",
+      "expected_error": "v044_missing",
+      "actual_error": "v044_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_v044_02",
+      "violation": "missing_v044",
+      "expected_error": "v044_missing",
+      "actual_error": "v044_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "v045_completed_01",
+      "violation": "v045_completed",
+      "expected_error": "v045_false_completion_claim",
+      "actual_error": "v045_false_completion_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "v045_completed_02",
+      "violation": "v045_completed",
+      "expected_error": "v045_false_completion_claim",
+      "actual_error": "v045_false_completion_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "backend_current_01",
+      "violation": "backend_current",
+      "expected_error": "historical_backend_as_current",
+      "actual_error": "historical_backend_as_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "backend_current_02",
+      "violation": "backend_current",
+      "expected_error": "historical_backend_as_current",
+      "actual_error": "historical_backend_as_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_endpoint_current_01",
+      "violation": "historical_endpoint_current",
+      "expected_error": "historical_endpoint_as_current",
+      "actual_error": "historical_endpoint_as_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_endpoint_current_02",
+      "violation": "historical_endpoint_current",
+      "expected_error": "historical_endpoint_as_current",
+      "actual_error": "historical_endpoint_as_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "project_status_substituted_01",
+      "violation": "project_status_substituted",
+      "expected_error": "project_status_not_authoritative",
+      "actual_error": "project_status_not_authoritative",
+      "rejected": true
+    },
+    {
+      "scenario_id": "project_status_substituted_02",
+      "violation": "project_status_substituted",
+      "expected_error": "project_status_not_authoritative",
+      "actual_error": "project_status_not_authoritative",
+      "rejected": true
+    },
+    {
+      "scenario_id": "track_readme_conflict_01",
+      "violation": "track_readme_conflict",
+      "expected_error": "laboratory_track_conflict",
+      "actual_error": "laboratory_track_conflict",
+      "rejected": true
+    },
+    {
+      "scenario_id": "track_readme_conflict_02",
+      "violation": "track_readme_conflict",
+      "expected_error": "laboratory_track_conflict",
+      "actual_error": "laboratory_track_conflict",
+      "rejected": true
+    },
+    {
+      "scenario_id": "candidate_changed_01",
+      "violation": "candidate_changed",
+      "expected_error": "candidate_identity_mismatch",
+      "actual_error": "candidate_identity_mismatch",
+      "rejected": true
+    },
+    {
+      "scenario_id": "candidate_changed_02",
+      "violation": "candidate_changed",
+      "expected_error": "candidate_identity_mismatch",
+      "actual_error": "candidate_identity_mismatch",
+      "rejected": true
+    },
+    {
+      "scenario_id": "frozen_changed_01",
+      "violation": "frozen_changed",
+      "expected_error": "protected_file_changed",
+      "actual_error": "protected_file_changed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "frozen_changed_02",
+      "violation": "frozen_changed",
+      "expected_error": "protected_file_changed",
+      "actual_error": "protected_file_changed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "manifest_changed_01",
+      "violation": "manifest_changed",
+      "expected_error": "protected_manifest_changed",
+      "actual_error": "protected_manifest_changed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "manifest_changed_02",
+      "violation": "manifest_changed",
+      "expected_error": "protected_manifest_changed",
+      "actual_error": "protected_manifest_changed",
+      "rejected": true
+    },
+    {
+      "scenario_id": "evidence_deleted_01",
+      "violation": "evidence_deleted",
+      "expected_error": "protected_file_missing",
+      "actual_error": "protected_file_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "evidence_deleted_02",
+      "violation": "evidence_deleted",
+      "expected_error": "protected_file_missing",
+      "actual_error": "protected_file_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "redirect_cycle_01",
+      "violation": "redirect_cycle",
+      "expected_error": "redirect_cycle",
+      "actual_error": "redirect_cycle",
+      "rejected": true
+    },
+    {
+      "scenario_id": "redirect_cycle_02",
+      "violation": "redirect_cycle",
+      "expected_error": "redirect_cycle",
+      "actual_error": "redirect_cycle",
+      "rejected": true
+    },
+    {
+      "scenario_id": "broken_link_01",
+      "violation": "broken_link",
+      "expected_error": "broken_link",
+      "actual_error": "broken_link",
+      "rejected": true
+    },
+    {
+      "scenario_id": "broken_link_02",
+      "violation": "broken_link",
+      "expected_error": "broken_link",
+      "actual_error": "broken_link",
+      "rejected": true
+    },
+    {
+      "scenario_id": "broken_anchor_01",
+      "violation": "broken_anchor",
+      "expected_error": "broken_anchor",
+      "actual_error": "broken_anchor",
+      "rejected": true
+    },
+    {
+      "scenario_id": "broken_anchor_02",
+      "violation": "broken_anchor",
+      "expected_error": "broken_anchor",
+      "actual_error": "broken_anchor",
+      "rejected": true
+    },
+    {
+      "scenario_id": "orphan_current_01",
+      "violation": "orphan_current",
+      "expected_error": "orphan_current_document",
+      "actual_error": "orphan_current_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "orphan_current_02",
+      "violation": "orphan_current",
+      "expected_error": "orphan_current_document",
+      "actual_error": "orphan_current_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "duplicate_canonical_01",
+      "violation": "duplicate_canonical",
+      "expected_error": "duplicate_canonical_document",
+      "actual_error": "duplicate_canonical_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "duplicate_canonical_02",
+      "violation": "duplicate_canonical",
+      "expected_error": "duplicate_canonical_document",
+      "actual_error": "duplicate_canonical_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "two_authorities_01",
+      "violation": "two_authorities",
+      "expected_error": "duplicate_authoritative_document",
+      "actual_error": "duplicate_authoritative_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "two_authorities_02",
+      "violation": "two_authorities",
+      "expected_error": "duplicate_authoritative_document",
+      "actual_error": "duplicate_authoritative_document",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_front_matter_01",
+      "violation": "missing_front_matter",
+      "expected_error": "missing_front_matter",
+      "actual_error": "missing_front_matter",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_front_matter_02",
+      "violation": "missing_front_matter",
+      "expected_error": "missing_front_matter",
+      "actual_error": "missing_front_matter",
+      "rejected": true
+    },
+    {
+      "scenario_id": "wrong_lifecycle_01",
+      "violation": "wrong_lifecycle",
+      "expected_error": "invalid_lifecycle",
+      "actual_error": "invalid_lifecycle",
+      "rejected": true
+    },
+    {
+      "scenario_id": "wrong_lifecycle_02",
+      "violation": "wrong_lifecycle",
+      "expected_error": "invalid_lifecycle",
+      "actual_error": "invalid_lifecycle",
+      "rejected": true
+    },
+    {
+      "scenario_id": "current_as_historical_01",
+      "violation": "current_as_historical",
+      "expected_error": "current_marked_historical",
+      "actual_error": "current_marked_historical",
+      "rejected": true
+    },
+    {
+      "scenario_id": "current_as_historical_02",
+      "violation": "current_as_historical",
+      "expected_error": "current_marked_historical",
+      "actual_error": "current_marked_historical",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_as_current_01",
+      "violation": "historical_as_current",
+      "expected_error": "historical_marked_current",
+      "actual_error": "historical_marked_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_as_current_02",
+      "violation": "historical_as_current",
+      "expected_error": "historical_marked_current",
+      "actual_error": "historical_marked_current",
+      "rejected": true
+    },
+    {
+      "scenario_id": "absolute_windows_01",
+      "violation": "absolute_windows",
+      "expected_error": "absolute_local_path",
+      "actual_error": "absolute_local_path",
+      "rejected": true
+    },
+    {
+      "scenario_id": "absolute_windows_02",
+      "violation": "absolute_windows",
+      "expected_error": "absolute_local_path",
+      "actual_error": "absolute_local_path",
+      "rejected": true
+    },
+    {
+      "scenario_id": "absolute_unix_01",
+      "violation": "absolute_unix",
+      "expected_error": "absolute_local_path",
+      "actual_error": "absolute_local_path",
+      "rejected": true
+    },
+    {
+      "scenario_id": "absolute_unix_02",
+      "violation": "absolute_unix",
+      "expected_error": "absolute_local_path",
+      "actual_error": "absolute_local_path",
+      "rejected": true
+    },
+    {
+      "scenario_id": "secret_01",
+      "violation": "secret",
+      "expected_error": "possible_secret",
+      "actual_error": "possible_secret",
+      "rejected": true
+    },
+    {
+      "scenario_id": "secret_02",
+      "violation": "secret",
+      "expected_error": "possible_secret",
+      "actual_error": "possible_secret",
+      "rejected": true
+    },
+    {
+      "scenario_id": "personal_data_01",
+      "violation": "personal_data",
+      "expected_error": "personal_data",
+      "actual_error": "personal_data",
+      "rejected": true
+    },
+    {
+      "scenario_id": "personal_data_02",
+      "violation": "personal_data",
+      "expected_error": "personal_data",
+      "actual_error": "personal_data",
+      "rejected": true
+    },
+    {
+      "scenario_id": "production_claim_01",
+      "violation": "production_claim",
+      "expected_error": "prohibited_readiness_claim",
+      "actual_error": "prohibited_readiness_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "production_claim_02",
+      "violation": "production_claim",
+      "expected_error": "prohibited_readiness_claim",
+      "actual_error": "prohibited_readiness_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "real_trial_claim_01",
+      "violation": "real_trial_claim",
+      "expected_error": "real_trial_false_claim",
+      "actual_error": "real_trial_false_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "real_trial_claim_02",
+      "violation": "real_trial_claim",
+      "expected_error": "real_trial_false_claim",
+      "actual_error": "real_trial_false_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "automatic_response_claim_01",
+      "violation": "automatic_response_claim",
+      "expected_error": "automatic_response_claim",
+      "actual_error": "automatic_response_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "automatic_response_claim_02",
+      "violation": "automatic_response_claim",
+      "expected_error": "automatic_response_claim",
+      "actual_error": "automatic_response_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "hypothesis_as_fact_01",
+      "violation": "hypothesis_as_fact",
+      "expected_error": "hypothesis_as_fact",
+      "actual_error": "hypothesis_as_fact",
+      "rejected": true
+    },
+    {
+      "scenario_id": "hypothesis_as_fact_02",
+      "violation": "hypothesis_as_fact",
+      "expected_error": "hypothesis_as_fact",
+      "actual_error": "hypothesis_as_fact",
+      "rejected": true
+    },
+    {
+      "scenario_id": "causal_graph_claim_01",
+      "violation": "causal_graph_claim",
+      "expected_error": "causal_graph_claim",
+      "actual_error": "causal_graph_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "causal_graph_claim_02",
+      "violation": "causal_graph_claim",
+      "expected_error": "causal_graph_claim",
+      "actual_error": "causal_graph_claim",
+      "rejected": true
+    },
+    {
+      "scenario_id": "stale_test_count_01",
+      "violation": "stale_test_count",
+      "expected_error": "stale_test_count",
+      "actual_error": "stale_test_count",
+      "rejected": true
+    },
+    {
+      "scenario_id": "stale_test_count_02",
+      "violation": "stale_test_count",
+      "expected_error": "stale_test_count",
+      "actual_error": "stale_test_count",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_layout_01",
+      "violation": "incomplete_layout",
+      "expected_error": "repository_layout_incomplete",
+      "actual_error": "repository_layout_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_layout_02",
+      "violation": "incomplete_layout",
+      "expected_error": "repository_layout_incomplete",
+      "actual_error": "repository_layout_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_contract_index_01",
+      "violation": "incomplete_contract_index",
+      "expected_error": "contract_index_incomplete",
+      "actual_error": "contract_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_contract_index_02",
+      "violation": "incomplete_contract_index",
+      "expected_error": "contract_index_incomplete",
+      "actual_error": "contract_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_protocol_index_01",
+      "violation": "incomplete_protocol_index",
+      "expected_error": "protocol_index_incomplete",
+      "actual_error": "protocol_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_protocol_index_02",
+      "violation": "incomplete_protocol_index",
+      "expected_error": "protocol_index_incomplete",
+      "actual_error": "protocol_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_report_index_01",
+      "violation": "incomplete_report_index",
+      "expected_error": "report_index_incomplete",
+      "actual_error": "report_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "incomplete_report_index_02",
+      "violation": "incomplete_report_index",
+      "expected_error": "report_index_incomplete",
+      "actual_error": "report_index_incomplete",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_subsystem_readme_01",
+      "violation": "missing_subsystem_readme",
+      "expected_error": "subsystem_readme_missing",
+      "actual_error": "subsystem_readme_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_subsystem_readme_02",
+      "violation": "missing_subsystem_readme",
+      "expected_error": "subsystem_readme_missing",
+      "actual_error": "subsystem_readme_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "english_narrative_01",
+      "violation": "english_narrative",
+      "expected_error": "english_narrative",
+      "actual_error": "english_narrative",
+      "rejected": true
+    },
+    {
+      "scenario_id": "english_narrative_02",
+      "violation": "english_narrative",
+      "expected_error": "english_narrative",
+      "actual_error": "english_narrative",
+      "rejected": true
+    },
+    {
+      "scenario_id": "redirect_old_capability_01",
+      "violation": "redirect_old_capability",
+      "expected_error": "redirect_old_capability_marker",
+      "actual_error": "redirect_old_capability_marker",
+      "rejected": true
+    },
+    {
+      "scenario_id": "redirect_old_capability_02",
+      "violation": "redirect_old_capability",
+      "expected_error": "redirect_old_capability_marker",
+      "actual_error": "redirect_old_capability_marker",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_command_01",
+      "violation": "historical_command",
+      "expected_error": "current_guide_historical_command",
+      "actual_error": "current_guide_historical_command",
+      "rejected": true
+    },
+    {
+      "scenario_id": "historical_command_02",
+      "violation": "historical_command",
+      "expected_error": "current_guide_historical_command",
+      "actual_error": "current_guide_historical_command",
+      "rejected": true
+    },
+    {
+      "scenario_id": "unknown_api_01",
+      "violation": "unknown_api",
+      "expected_error": "documented_api_route_missing",
+      "actual_error": "documented_api_route_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "unknown_api_02",
+      "violation": "unknown_api",
+      "expected_error": "documented_api_route_missing",
+      "actual_error": "documented_api_route_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_command_path_01",
+      "violation": "missing_command_path",
+      "expected_error": "command_module_missing",
+      "actual_error": "command_module_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_command_path_02",
+      "violation": "missing_command_path",
+      "expected_error": "command_module_missing",
+      "actual_error": "command_module_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_v044_guide_01",
+      "violation": "missing_v044_guide",
+      "expected_error": "v044_operator_guide_missing",
+      "actual_error": "v044_operator_guide_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_v044_guide_02",
+      "violation": "missing_v044_guide",
+      "expected_error": "v044_operator_guide_missing",
+      "actual_error": "v044_operator_guide_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_source_truth_01",
+      "violation": "missing_source_truth",
+      "expected_error": "source_of_truth_missing",
+      "actual_error": "source_of_truth_missing",
+      "rejected": true
+    },
+    {
+      "scenario_id": "missing_source_truth_02",
+      "violation": "missing_source_truth",
+      "expected_error": "source_of_truth_missing",
+      "actual_error": "source_of_truth_missing",
+      "rejected": true
+    }
+  ]
+}

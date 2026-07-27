@@ -1,22 +1,50 @@
-# Воспроизводимость и evidence
+---
+doc_schema: filin_document_v2
+title: Воспроизводимость
+document_type: reference
+audience:
+  - researcher
+  - developer
+  - auditor
+lifecycle: current
+authoritative_for:
+  - reproducibility_overview
+source_of_truth:
+  - bundle_manifests
+  - detached_sha
+  - claim_ledgers
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Воспроизводимость строится на versioned protocols, deterministic serialization,
-hash commitments, manifests, validators, test reports и claim-evidence ledgers.
-Historical bundle не переписывается: исправление выпускается новой revision или
-corrective stage.
+# Воспроизводимость
 
-## Термины Git HEAD
+## Идентичность
 
-- `validated_source_head` — commit кода и документации, относительно которого
-  выполнены validators.
-- `final_evidence_commit` — commit, добавляющий итоговые reports и manifests.
-- `final_repository_head` — фактический HEAD после всех последующих
-  maintenance-коммитов.
+Candidate, contract, protocol, source bundle и results связываются SHA-256. Semantic
+SHA фиксирует значимое содержимое там, где presentation bytes могут различаться.
 
-Поле `final_head` в policy v0.3.18 имеет scope
-`source_and_documentation_before_final_evidence_commit`. Поэтому оно является
-validated source HEAD, а не окончательным HEAD всей истории репозитория.
+## Детерминизм
 
-Raw PCAP, labels, predictions, databases и traces остаются runtime-only. Tracked
-evidence содержит aggregate reports и hashes, достаточные для заявленного
-validation scope.
+Seed namespaces, canonical JSON, stable ordering и versioned generators должны
+давать одинаковые artifacts для одинакового input. Runtime timestamps и temp paths
+не включаются в semantic identity без необходимости.
+
+## Проверяемая цепочка
+
+1. protocol определяет запуск;
+2. run journal фиксирует выполнение;
+3. policy result фиксирует итог;
+4. manifest перечисляет artifacts;
+5. detached SHA фиксирует manifest;
+6. claim ledger связывает assertions с evidence;
+7. reproduction guide даёт безопасную команду проверки.
+
+## Ограничение
+
+Воспроизводимость лабораторного результата не равна external validity. Frozen file
+нельзя исправлять задним числом; используются errata и новый обзор.
+
+Индексы: [protocols](../protocols/index.md), [reports](../reports/index.md) и
+[protected documentation](../audit/protected_documentation_v2.json).

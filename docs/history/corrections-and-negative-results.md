@@ -1,17 +1,36 @@
-# Корректировки и отрицательные результаты
+---
+doc_schema: filin_document_v2
+title: Коррекции и отрицательные результаты
+document_type: history
+audience:
+  - auditor
+  - researcher
+lifecycle: historical
+authoritative_for: []
+source_of_truth:
+  - stage_policy_results
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-История проекта содержит отрицательные и уточнённые результаты:
+# Коррекции и отрицательные результаты
 
-- v0.3.12 не прошёл coverage/episode gates;
-- v0.3.12.1 выявил causal-order limitation;
-- v0.3.12.2 выполнил новую corrected regression;
-- claims v0.3.14 и v0.3.15 были ограничены после evidence audit;
-- v0.3.15.2 завершился отрицательно по scientific и evidence policy;
-- v0.3.15.5 прошёл scientific gates, но не прошёл исходный runtime contract;
-- v0.3.17 завершил валидную campaign, но overall policy failed;
-- v0.3.17.1 исправил evidence tooling отдельным corrective stage;
-- v0.3.18 проверил protocol, а не scientific external accuracy.
+## Сохранение отрицательных итогов
 
-Ни один отрицательный результат не удаляется и не переименовывается в
-положительный задним числом. Полная хронология находится в
-[version history](../status/version-history.md).
+Environment shift, coverage, episode, runtime, privacy, performance и integrity
+gates неоднократно не проходили. Эти results сохранены в исходных policy files и
+не отменяются последующими успешными stages.
+
+## Corrective stages
+
+`v0.3.10.1`, `v0.3.12.1`, `v0.3.15.1`, `v0.3.15.3` и `v0.3.17.1` уточнили
+semantics, evidence или procedures. Correction создаёт новый artifact и не меняет
+исторический hash.
+
+## Ограничение claims
+
+Поздний audit может признать прежний readiness claim неподтверждённым. В этом случае
+historical report остаётся, а current status использует более узкую формулировку.
+
+Для точных итогов откройте [reports index](../reports/index.md).

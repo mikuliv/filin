@@ -1,47 +1,67 @@
+---
+doc_schema: filin_document_v2
+title: Подтверждённые возможности
+document_type: status
+audience:
+  - developer
+  - auditor
+  - operator
+lifecycle: current
+authoritative_for:
+  - capability_summary
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+  - ml/reports
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Подтверждённые возможности
 
-Каждое утверждение ниже ограничено evidence scope указанного этапа.
+Каждая возможность ограничена этапом и областью проверки. Наличие строки не
+означает внешнюю или промышленную готовность.
 
-## Causal feature extraction
+## Научные и модельные результаты
 
-- Scope: 51-признаковое causal representation.
-- Supporting stage: v0.3.15.4 и последующие candidate evaluations.
-- Limitation: лабораторные datasets и frozen contract.
-- Evidence: [candidate lineage](../research/candidate-lineage.md).
+| capability_id | Возможность | Этап | Подтверждено | Не подтверждено | Evidence |
+|---|---|---|---|---|---|
+| `causal_feature_contract` | Причинное 51-признаковое представление | `v0.3.15.4` | Воспроизводимая форма входа `network_features_v2` | Переносимость на произвольную сеть | [отчёт](../../ml/reports/v0_3_15_4/v0_3_15_4_summary.md) |
+| `frozen_inference` | Зафиксированный inference | `v0.3.15.4–v0.3.15.5.1` | Неизменяемые artifact, mapping, preprocessing и policies | Будущее качество на внешних данных | [manifest](../../ml/artifacts/v0_3_15_4/candidate_manifest.json) |
+| `laboratory_class_recognition` | Распознавание предусмотренных классов | `v0.3.15.5` | Scientific gates frozen holdout в заданной области | Общая внешняя точность | [policy](../../ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json) |
+| `episode_decision` | Эпизодное решение и отказ от forced winner | `v0.3.15.5.1` | Детерминированная локальная политика | Истинность класса и реальное реагирование | [policy](../../ml/reports/v0_3_15_5_1/v0_3_15_5_1_policy_result.json) |
 
-## Frozen scientific evaluation
+## Инженерный runtime основной линии
 
-- Scope: independent holdout для current development candidate.
-- Supporting stage: v0.3.15.5.
-- Limitation: не real organization trial.
-- Evidence: [описание v0.3.15.5](../experiments/v0_3_15_5.md).
+| capability_id | Возможность | Этап | Подтверждено | Не подтверждено | Evidence |
+|---|---|---|---|---|---|
+| `passive_event_v2` | Пассивное событие | `v0.3.15.5.1` | Candidate-compatible `shadow_event_v2` | Реальный shadow mode | [контракт](../contracts/shadow-event-v2.md) |
+| `local_reliable_delivery` | Надёжная локальная доставка | `v0.3.16–v0.3.17.1` | Изолированный staging transport и проверяемый receiver | Production backend | [policy](../../ml/reports/v0_3_16/v0_3_16_policy_result.json) |
+| `external_review_package` | Frozen комплект внешней процедуры | `v0.3.18` | Комплект, роли и синтетическая репетиция | Само внешнее испытание | [manifest](../../ml/reports/v0_3_18/external_review_package_manifest.yaml) |
 
-## Passive runtime и staging delivery
+## Лабораторная реконструкция v0.4
 
-- Scope: local passive events, at-least-once delivery и verified receiver.
-- Supporting stages: v0.3.15.5.1 и v0.3.16.
-- Limitation: reference receiver не является backend.
-- Evidence: [delivery runtime](../architecture/delivery-runtime.md).
+| capability_id | Возможность | Этап | Подтверждено | Не подтверждено | Evidence |
+|---|---|---|---|---|---|
+| `observable_facts` | Наблюдаемые факты из ссылок на evidence | `v0.4.0` | Детерминированная лабораторная проекция | Независимое криминалистическое заключение | [описание](../research/incident-reconstruction.md) |
+| `temporal_reconstruction` | Временная реконструкция | `v0.4.1` | Порядок, интервалы и неопределённость | Причинная связь | [protocol](../../incident_reconstruction/protocols/v0_4_1_protocol_r2.yaml) |
+| `structural_relations` | Структурные отношения и группы | `v0.4.2` | Проверяемые некаузальные связи | Действия злоумышленника | [protocol](../../incident_reconstruction/protocols/v0_4_2_protocol_r1.yaml) |
+| `reconstruction_gaps` | Явные разрывы реконструкции | `v0.4.1–v0.4.4` | Недостающие сведения представлены отдельно от фактов | Автоматическое устранение разрыва | [ограничения](../../ml/reports/v0_4_4/known_limitations.md) |
+| `competing_hypotheses` | Конкурирующие гипотезы | `v0.4.2` | Несколько объяснений и отсутствие forced winner | Истинность лучшей гипотезы | [описание](../research/competing-hypotheses.md) |
+| `incident_card_v2` | Карточка v2 | `v0.4.3` | Детерминированная сборка лабораторной карточки | Заключение о компрометации | [контракты](../contracts/index.md) |
 
-## Длительная local campaign
+## Консоль и операторский цикл
 
-- Scope: четыре часа synthetic local workload.
-- Supporting stage: v0.3.17.
-- Limitation: stage policy завершилась отрицательно; результат сохранён.
-- Evidence: [v0.3.17](../experiments/v0_3_17.md).
+| capability_id | Возможность | Этап | Подтверждено | Не подтверждено | Evidence |
+|---|---|---|---|---|---|
+| `local_console` | Локальная консоль | `v0.4.3` | localhost, token auth, read-only source data | Публичный сервис или SIEM | [описание](../architecture/laboratory-console.md) |
+| `laboratory_case_catalog` | 12 независимых карточек | `v0.4.4` | Уникальные card ID и semantic SHA | Покрытие реальных инцидентов | [manifest](../../ml/reports/v0_4_4/v0_4_4_bundle_manifest.json) |
+| `persistent_operator_cycle` | Сохраняемый операторский цикл | `v0.4.4` | SQLite overlay, progress, notes и decision | Разрешение автоматических действий | [policy](../../ml/reports/v0_4_4/v0_4_4_policy_result.json) |
+| `manual_review_overlay` | Ручное рассмотрение без изменения evidence | `v0.4.4` | Source artifacts остаются read-only | Превращение заметки в evidence | [acceptance](../../ml/reports/v0_4_4/operator_acceptance_report.md) |
+| `deterministic_review_export` | Детерминированный экспорт | `v0.4.4` | Повторяемый export одного состояния | Внешняя юридическая или научная валидность | [reproduction](../../ml/reports/v0_4_4/reproduction.md) |
 
-## Corrective timing validation
+## Общее ограничение
 
-- Scope: anchors, timing instrumentation, corruption/finalization и targeted
-  trial.
-- Supporting stage: v0.3.17.1.
-- Limitation: не external trial.
-- Evidence: [v0.3.17.1](../experiments/v0_3_17_1.md).
-
-## External review protocol
-
-- Scope: contracts, commitments, evaluator, package verifier и synthetic
-  rehearsal.
-- Supporting stage: v0.3.18.
-- Limitation: real data/model не использовались; scientific evidence=false.
-- Evidence: [external review overview](../external_review/README.md).
+Все перечисленные возможности подтверждены только в своей лабораторной области.
+Запреты собраны на [канонической странице](prohibited-capabilities.md).

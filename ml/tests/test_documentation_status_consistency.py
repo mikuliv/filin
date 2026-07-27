@@ -6,13 +6,19 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class DocumentationStatusConsistencyTests(unittest.TestCase):
-    def test_completed_versions_are_not_future_work(self):
-        roadmap = (ROOT / "docs" / "roadmap.md").read_text(encoding="utf-8")
-        self.assertIn("v0.3.1 — базовая оценка", roadmap)
-        self.assertIn("v0.3.2 — проверка устойчивости зафиксированной модели", roadmap)
+    def test_roadmap_preserves_both_track_boundaries(self):
+        roadmap = (ROOT / "docs/roadmap.md").read_text(encoding="utf-8")
+        for marker in ("v0.3.18", "v0.3.19", "v0.4.4", "v0.4.5"):
+            self.assertIn(marker, roadmap)
+        self.assertIn("не реализован", roadmap)
         self.assertNotIn("sensor_ready_for_backend_integration=true", roadmap)
 
-    def test_future_components_are_marked_as_planned(self):
-        status = (ROOT / "docs" / "status.md").read_text(encoding="utf-8")
-        self.assertIn("MITRE ATT&CK mapping | Запланировано", status)
-        self.assertIn("Backend model integration | Не начато", status)
+    def test_historical_prototypes_are_not_planned_current_capabilities(self):
+        boundary = (ROOT / "docs/architecture/current-vs-historical.md").read_text(encoding="utf-8")
+        self.assertIn("статический MITRE prototype", boundary)
+        self.assertIn("backend/", boundary)
+        self.assertIn("Исторические или демонстрационные", boundary)
+
+
+if __name__ == "__main__":
+    unittest.main()

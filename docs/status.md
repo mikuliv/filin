@@ -1,17 +1,20 @@
-# Перенаправление: текущий статус
+---
+doc_schema: filin_document_v2
+title: Статус — перенесено
+document_type: redirect
+audience:
+  - newcomer
+lifecycle: redirect
+authoritative_for: []
+source_of_truth:
+  - docs/status/current-status.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+redirect_target: status/current-status.md
+---
 
-Текущий завершённый этап: v0.3.18.
+# Статус — перенесено
 
-Единый human-readable статус перенесён в
-[`status/current-status.md`](status/current-status.md). Machine-readable
-источник остаётся [`status/project-status.yaml`](status/project-status.yaml).
-
-Этот файл сохранён как compatibility redirect и не является вторым
-authoritative status.
-
-Исторические compatibility-маркеры для прежних проверок:
-
-- MITRE ATT&CK mapping | Запланировано;
-- Backend model integration | Не начато.
-
-Их актуальная трактовка приведена в документе запрещённых возможностей.
+Сводка двух линий находится в [текущем статусе](status/current-status.md).
+Machine-readable источники указаны там; этот путь не авторитетен.

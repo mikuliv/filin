@@ -1,105 +1,126 @@
+---
+doc_schema: filin_document_v2
+title: Документация платформы «Филин»
+document_type: overview
+audience:
+  - newcomer
+  - developer
+  - operator
+  - auditor
+  - external_reviewer
+lifecycle: current
+authoritative_for:
+  - documentation_navigation
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Документация платформы «Филин»
 
-Этот индекс — основная навигационная точка. Machine-readable статус хранится в
-[`status/project-status.yaml`](status/project-status.yaml), а краткое объяснение
-— в [current status](status/current-status.md).
+Эта страница — каноническая навигация по текущему устройству проекта. Исторические
+отчёты и frozen evidence доступны через отдельные индексы и не подменяют текущий статус.
 
-## Начало работы
+## Новый технический читатель
 
-- [Обзор](getting-started/overview.md) — безопасный маршрут нового читателя.
-- [Локальное окружение](getting-started/local-environment.md) — зависимости и
-  границы runtime.
-- [Тестирование](getting-started/testing.md) — unit, regression, documentation
-  и bundle gates.
-- [Структура репозитория](getting-started/repository-layout.md) — назначение
-  tracked и runtime-only каталогов.
+1. [Что такое «Филин»](getting-started/overview.md).
+2. [Текущий статус двух линий](status/current-status.md).
+3. [Архитектура после v0.4.4](architecture/overview.md).
+4. [Подтверждённые возможности](status/confirmed-capabilities.md).
+5. [Текущие ограничения](architecture/limitations.md).
+6. [Следующие допустимые этапы](status/next-stage.md).
+
+## Разработчик
+
+1. [Точка входа разработчика](getting-started/developer-entrypoint.md).
+2. [Структура репозитория](getting-started/repository-layout.md).
+3. [Локальное окружение](getting-started/local-environment.md).
+4. [Справочник команд](reference/command-reference.md).
+5. [Тестирование](getting-started/testing.md).
+6. [Каталог компонентов](reference/component-directory.md).
+7. [Контракты](contracts/index.md).
+8. [Правила изменений](contributing/documentation-maintenance.md).
+
+## Оператор лабораторной консоли
+
+1. [Запуск и вход](getting-started/laboratory-console.md).
+2. [Каталог и обзор карточки](getting-started/reviewing-laboratory-cards.md#каталог-и-обзор).
+3. [Временная шкала](getting-started/reviewing-laboratory-cards.md#временная-шкала).
+4. [Граф](getting-started/reviewing-laboratory-cards.md#граф-реконструкции).
+5. [Разрывы](getting-started/reviewing-laboratory-cards.md#разрывы-реконструкции).
+6. [Гипотезы и матрица](getting-started/reviewing-laboratory-cards.md#гипотезы-и-матрица).
+7. [Ручное рассмотрение](getting-started/reviewing-laboratory-cards.md#ручное-рассмотрение).
+8. [Экспорт](getting-started/reviewing-laboratory-cards.md#экспорт).
+
+## Аудитор
+
+1. [Иерархия источников истины](reference/sources-of-truth.md).
+2. [Точка входа аудитора](getting-started/auditor-entrypoint.md).
+3. [Статус основной линии](status/project-status.yaml) и
+   [лабораторной линии](status/v0_4_track.yaml).
+4. [Frozen protocols](protocols/index.md).
+5. [Итоговые отчёты и evidence bundles](reports/index.md).
+6. [Контракты](contracts/index.md).
+7. [Воспроизводимость](research/reproducibility.md).
+8. [Коррекции и отрицательные результаты](history/corrections-and-negative-results.md).
+9. [Инвентаризация документации](audit/documentation_inventory_v2.md).
+10. [Protected set](audit/protected_documentation_v2.json).
+
+## Независимый эксперт
+
+1. [Граница v0.3.19](getting-started/external-review-entrypoint.md).
+2. [Навигация по внешнему комплекту](../external_review/README.md).
+3. [Подтверждённая область](status/confirmed-capabilities.md).
+4. [Известные ограничения](architecture/limitations.md).
+5. [Роли и порядок первого контакта](getting-started/external-review-entrypoint.md#роли).
+6. [Frozen package v0.3.18](reports/index.md).
 
 ## Архитектура
 
-- [Обзор](architecture/overview.md) — current pipeline и простая схема.
-- [Поток данных](architecture/data-flow.md) — путь observations и evidence.
-- [Detection pipeline](architecture/detection-pipeline.md) — causal features и
-  frozen inference.
-- [Stateful processing](architecture/stateful-processing.md) — episode semantics.
-- [Passive events](architecture/passive-events.md) — versioned события без
-  полномочий на воздействие.
-- [Delivery runtime](architecture/delivery-runtime.md) — staging transport и
-  local verified sink.
-- [Trust boundaries](architecture/trust-boundaries.md) — изоляция ролей,
-  labels, runtime и evidence.
-- [Ограничения](architecture/limitations.md) — неподтверждённые возможности.
+- [Индекс архитектуры](architecture/index.md).
+- [Сквозной поток данных](architecture/end-to-end-data-flow.md).
+- [Основная линия detection/runtime](architecture/detection-and-runtime-track.md).
+- [Лабораторная реконструкция и анализ](architecture/reconstruction-and-analysis-track.md).
+- [Лабораторная консоль](architecture/laboratory-console.md).
+- [Компонентная карта](architecture/component-map.md).
+- [Границы доверия](architecture/trust-boundaries.md).
+- [Хранилища и артефакты](architecture/storage-and-artifacts.md).
+- [Текущие и исторические компоненты](architecture/current-vs-historical.md).
 
 ## Исследовательская методология
 
-- [Методология](research/methodology.md) — development/evaluation separation.
-- [Causal features](research/causal-features.md) — причинные ограничения.
-- [Candidate lineage](research/candidate-lineage.md) — current frozen identity.
-- [Принципы оценки](research/evaluation-principles.md) — scientific и runtime
-  gates.
-- [Uncertainty и abstention](research/uncertainty-and-abstention.md) — coverage
-  semantics.
-- [Воспроизводимость](research/reproducibility.md) — immutable evidence и Git
-  HEAD terminology.
-- [Реконструкция инцидента](research/incident-reconstruction.md) — отдельная
-  параллельная линия v0.4.x на неизменённых пассивных событиях.
+- [Методология](research/methodology.md).
+- [Причинные признаки](research/causal-features.md).
+- [Линия кандидата](research/candidate-lineage.md).
+- [Принципы оценки](research/evaluation-principles.md).
+- [Неопределённость и отказ от решения](research/uncertainty-and-abstention.md).
+- [Реконструкция инцидента](research/incident-reconstruction.md).
+- [Временная реконструкция](research/temporal-reconstruction.md).
+- [Конкурирующие гипотезы](research/competing-hypotheses.md).
+- [Ручное рассмотрение](research/manual-incident-review.md).
+- [Каталог лабораторных случаев](research/laboratory-case-catalog.md).
+- [Операторский цикл](research/operator-incident-workflow.md).
 
-## Текущий статус
+## Справочники
 
-- [Current status](status/current-status.md) — единый human-readable статус.
-- [Confirmed capabilities](status/confirmed-capabilities.md) — только
-  evidence-backed claims.
-- [Prohibited capabilities](status/prohibited-capabilities.md) — явные запреты.
-- [Следующий этап](status/next-stage.md) — scope v0.3.19.
-- [Version history](status/version-history.md) — полная история результатов.
-- [Roadmap](roadmap.md) — разрешённый шаг и долгосрочные направления.
-- [Временная реконструкция v0.4.1](research/temporal-reconstruction.md) — отношения, граф и ограничения.
-- [Конкурирующие гипотезы v0.4.2](research/competing-hypotheses.md) — правила, профили и сопоставления.
-- [Локальная лабораторная консоль v0.4.3](research/laboratory-console.md) — архитектура, безопасность и разрешённые задачи.
-- [Визуальный интерфейс консоли v0.4.3.1](research/laboratory-console-ui.md) — presentation layer, специализированные страницы и адаптивная приёмка.
-- [Ручное рассмотрение v0.4.3](research/manual-incident-review.md) — отдельный review-overlay без изменения frozen artifacts.
-- [Запуск консоли](getting-started/laboratory-console.md) — localhost, токен и автономная проверка.
-- [`v0_4_track.yaml`](status/v0_4_track.yaml) — отдельное состояние
-  параллельной исследовательской линии.
+- [Глоссарий](reference/glossary.md) и [терминология](reference/terminology.md).
+- [Жизненный цикл документов](reference/document-lifecycle.md).
+- [Типы артефактов](reference/artifact-types.md).
+- [Статусы](reference/status-values.md).
+- [Коды результатов и ошибок](reference/error-and-result-codes.md).
+- [Полная история версий](status/version-history.md).
+- [Исторический архив](history/index.md).
 
-## Контракты
+## Сопровождение документации
 
-- [Индекс contracts](contracts/index.md) — passive event, delivery, timing и
-  external-review contracts.
-
-## Экспериментальные протоколы
-
-- [Индекс protocols](protocols/index.md) — навигация к frozen stage protocols.
-
-## Итоговые отчёты
-
-- [Индекс reports](reports/index.md) — aggregate evidence по версиям.
-- [Эксперименты](experiments.md) — chronological research overview.
-- [Операторский цикл лабораторных карточек](getting-started/reviewing-laboratory-cards.md) — работа с 12 случаями v0.4.4.
-
-## Внешняя проверка
-
-- [External review overview](external_review/README.md) — design-only package
-  v0.3.18.
-- [Reviewer guide](external_review/reviewer_guide.md) — порядок независимой
-  проверки.
-- [Known limitations](external_review/known_limitations.md) — границы package.
-
-## История и корректировки
-
-- [Stage timeline](history/stage-timeline.md) — укрупнённая последовательность.
-- [Корректировки и отрицательные результаты](history/corrections-and-negative-results.md)
-  — сохранённые failures и reassessments.
-- [Архивная документация](history/archived-documentation.md) — superseded
-  overview и redirect notes.
-- [Historical audits](audits/) — сохранённые integrity материалы.
-
-## Разработка документации
-
-- [Стиль и терминология](contributing/documentation-style.md) — единые термины и
-  правила claims.
-- [Testing and validation](contributing/testing-and-validation.md) — обязательные
-  documentation gates.
-- [Инвентаризация](audit/documentation_inventory.md) — исходное состояние
-  maintenance pass.
-- [Итоговый отчёт переработки](audit/documentation_refactor_report.md) —
-  результаты и ограничения.
+- [Единый стиль](contributing/documentation-style.md).
+- [Maintenance-процесс](contributing/documentation-maintenance.md).
+- [Проверка документации](contributing/testing-and-validation.md).
+- [Добавление этапа](contributing/adding-a-stage.md).
+- [Добавление контракта](contributing/adding-a-contract.md).
+- [Добавление отчёта](contributing/adding-a-report.md).
+- [README подсистемы](contributing/adding-a-subsystem-readme.md).
+- [Audit-материалы текущей переработки](audit/index.md).

@@ -1,29 +1,26 @@
-# Загрузка и оценка ML-данных
+# Обучение модели
 
-## Назначение
+## Назначение и статус
 
-Загрузка datasets, контроль train/test separation и подготовка данных для экспериментов.
+Исторические и controlled training utilities. Текущий candidate уже frozen.
 
-## Что реализовано
+## Место в архитектуре
 
-Loaders проверяют profile consistency, ordered feature list, hashes и исключают metadata из `X`.
+Training создаёт candidate только в специально разрешённом development stage;
+обычный runtime и `v0.4.x` этот слой не вызывают.
 
-## Входные данные и выходные данные
+## Входы и выходы
 
-Вход — проверенные runtime datasets. Выход — in-memory matrices и experiment reports.
+Versioned development datasets → candidate artifacts и training reports.
 
-## Запуск
+## Границы и запреты
 
-CLI и параметры конкретных scripts проверяйте через `--help`.
+Hidden retraining, holdout reuse и запуск нового cycle без protocol запрещены.
 
-## Проверки
+## Безопасный запуск и тестирование
 
-Для v0.3.1 model selection разрешён только на train-runs. Для v0.3.2 frozen model применяется к robustness data без retraining.
+Нет общего quick-start training command. Используйте frozen protocol отдельного stage.
 
-## Ограничения
+## Источники истины
 
-Этот каталог не выполняет backend integration и не является online inference service.
-
-## Связанные документы
-
-[Эксперименты](../../docs/experiments.md), [воспроизводимость](../../docs/reproducibility.md).
+[Candidate lineage](../../docs/research/candidate-lineage.md) и historical experiment reports.

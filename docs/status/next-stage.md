@@ -1,18 +1,40 @@
-# Следующий допустимый этап
+---
+doc_schema: filin_document_v2
+title: Следующие допустимые этапы
+document_type: status
+audience:
+  - developer
+  - auditor
+  - external_reviewer
+lifecycle: current
+authoritative_for:
+  - next_stage_summary
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Последний завершённый этап — v0.3.18. Этот документ описывает только
-разрешённую границу следующей работы и не меняет его результат.
+# Следующие допустимые этапы
 
-## Разрешено
+## Основная линия: v0.3.19
 
-v0.3.19 ограничен независимым review external package и согласованием trial
-plan. Reviewer может проверить protocols, contracts, commitments, evaluator,
-package builder, verifier и организационные requirements.
+Разрешена только независимая экспертная проверка frozen package v0.3.18 и
+согласование плана возможного будущего испытания. Передача реальных данных,
+подключение к инфраструктуре и фактическое испытание требуют отдельного решения.
 
-## Не разрешено
+## Лабораторная линия: v0.4.5
 
-v0.3.19 не запускает real blind holdout, не принимает реальные данные и не
-подключает project runtime к внешней организации, backend или production.
+Разрешён только новый заранее определённый лабораторный этап. `v0.4.5` не
+реализован и не начат. Он не может изменять frozen evidence предшествующих этапов
+или подменять основную линию `v0.3.19`.
 
-Фактический external trial потребует отдельного решения после review, frozen
-trial plan, legal agreements и утверждённого sample plan.
+## Неизменяемая граница
+
+Documentation Maintenance v2 не является ни `v0.3.19`, ни `v0.4.5`. Этот проход
+не изменяет кандидата, модель, runtime contracts, научные результаты или разрешения.
+
+Проверяемые источники: [project-status.yaml](project-status.yaml) и
+[v0_4_track.yaml](v0_4_track.yaml).

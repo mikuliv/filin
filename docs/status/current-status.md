@@ -1,5 +1,20 @@
 ---
-status_schema: filin_current_status_v1
+doc_schema: filin_document_v2
+title: Текущий статус проекта
+document_type: status
+audience:
+  - newcomer
+  - developer
+  - auditor
+lifecycle: current
+authoritative_for:
+  - human_readable_project_status
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
 latest_completed_stage: v0.3.18
 latest_stage_status: completed
 latest_stage_result: passed
@@ -14,35 +29,50 @@ real_external_data_used_in_v0_3_18: false
 synthetic_rehearsal_scientific_evidence: false
 ---
 
-# Текущий статус
+# Текущий статус проекта
 
-Machine-readable источник — [`project-status.yaml`](project-status.yaml).
+Machine-readable реестры имеют приоритет над этой сводкой. Проект ведёт две
+доказательно разделённые линии.
 
-Последний завершённый этап — v0.3.18, статус `completed / passed`. Этап
-подготовил external review package и проверил protocol на synthetic fixtures.
-Это не научная external validation.
+| Линия | Последний этап | Результат | Следующий этап | Ограничение |
+|---|---|---|---|---|
+| Основная `v0.3.x` | `v0.3.18` | Frozen external-review package подготовлен; синтетическая репетиция процедуры пройдена | `v0.3.19` — только независимая проверка пакета и согласование плана будущего испытания | Реальные внешние данные, метки и организация не участвовали; фактическое испытание не разрешено |
+| Лабораторная `v0.4.x` | `v0.4.4` | Сохраняемый операторский цикл подтверждён на 12 независимых синтетических карточках | `v0.4.5` — отдельный заранее определённый лабораторный этап | Внешняя применимость, production, backend и автоматические действия не подтверждены |
 
-## Candidate
+## Общие якоря
 
-Current frozen candidate: `v03154:65a3dd912d845bc1`. Registry и manifest
-доступны в `collectors/shadow/contracts` и `ml/artifacts/v0_3_15_4`.
+- кандидат: `v03154:65a3dd912d845bc1`;
+- contract признаков: `network_features_v2`;
+- внешний статус модели: не подтверждён;
+- промышленная готовность: `false`;
+- пассивный режим в реальной инфраструктуре: `false`;
+- автоматическое воздействие: `false`.
 
-## Подтверждённый scope
+## Связь линий
 
-Подтверждены laboratory causal extraction, frozen inference, stateful episode
-processing, passive event contracts, local durable delivery, длительная local
-campaign, corrective timing validation и synthetic external-review rehearsal.
+`v0.4.x` потребляет неизменяемые пассивные события основной линии и строит над
+ними лабораторные факты, отношения, разрывы, гипотезы и операторскую карточку.
+Эта линия не меняет модель, не заменяет `v0.3.19` и не является внешней научной
+проверкой кандидата.
 
-## Readiness
+## Точное толкование v0.3.18
 
-Разрешён только v0.3.19 — независимый review external package и согласование
-trial plan. External trial execution, shadow mode, backend integration,
-production и automatic enforcement запрещены.
+Этап завершил проектирование процедуры, контракты ролей, frozen package и
+синтетическую репетицию. Он не проводил слепое испытание на данных независимой
+организации. Разрешён только следующий организационно-проверочный шаг `v0.3.19`.
 
-## Evidence
+## Точное толкование v0.4.4
 
-- [Summary v0.3.18](../../ml/reports/v0_3_18/v0_3_18_summary.md)
-- [Policy v0.3.18](../../ml/reports/v0_3_18/v0_3_18_policy_result.json)
-- [Описание этапа](../experiments/v0_3_18.md)
-- [Confirmed capabilities](confirmed-capabilities.md)
-- [Prohibited capabilities](prohibited-capabilities.md)
+Этап подтвердил локальный каталог из 12 случаев, объяснимые представления
+timeline/graph/gaps/hypotheses, сохраняемое ручное рассмотрение и детерминированный
+экспорт. Результат относится только к предусмотренным синтетическим лабораторным
+случаям и не устанавливает истинность гипотез.
+
+## Источники
+
+- [project-status.yaml](project-status.yaml) — основная линия;
+- [v0_4_track.yaml](v0_4_track.yaml) — лабораторная линия;
+- [источники истины](../reference/sources-of-truth.md);
+- [следующие этапы](next-stage.md);
+- [подтверждённые возможности](confirmed-capabilities.md);
+- [запрещённые возможности](prohibited-capabilities.md).

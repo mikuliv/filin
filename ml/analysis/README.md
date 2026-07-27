@@ -1,33 +1,25 @@
-# Анализы и audits
+# Анализ результатов
 
-## Назначение
+## Назначение и статус
 
-Проверка capture, correlation, aggregation, feature availability, provenance, split и диагностик экспериментов.
+Research utilities для frozen metrics, comparisons и diagnostic reports.
 
-## Что реализовано
+## Место в архитектуре
 
-Audits проверяют PCAP/Zeek integrity, marker-aware assignments, profile/validator rules, feature consistency и разделение campaign roles.
+Используются после campaign и не входят в online inference path.
 
-## Основные файлы
+## Входы и выходы
 
-Здесь находятся v0.2 window audits, v0.3 sensor audits и v0.3.2 analyses robustness evaluation.
+Входы — versioned predictions/labels в разрешённом scope; outputs — reports и metrics.
 
-## Входные данные и выходные данные
+## Границы и запреты
 
-Вход — runtime campaign artifacts; output — JSON/Markdown reports в `ml/reports/`, не коммитятся.
+Post-hoc analysis не может менять frozen gate или candidate identity.
 
-## Запуск
+## Безопасный запуск и тестирование
 
-Параметры конкретного audit проверяются через `python <script> --help`.
+Используйте только stage-specific reproduction command и соответствующие tests.
 
-## Проверки
+## Источники истины
 
-Агрегация пересчитывается из тех же functions, что используют builders; `NaN` не подменяется нулём.
-
-## Ограничения
-
-Audit success подтверждает техническую целостность лабораторного pipeline, а не промышленную готовность.
-
-## Связанные документы
-
-[Архитектура](../../docs/architecture.md), [ограничения](../../docs/limitations.md).
+Frozen protocol, policy result и [evaluation principles](../../docs/research/evaluation-principles.md).

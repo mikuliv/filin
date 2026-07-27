@@ -1,37 +1,124 @@
-# Архитектура платформы
+---
+doc_schema: filin_document_v2
+title: Архитектура после v0.4.4
+document_type: architecture
+audience:
+  - newcomer
+  - developer
+  - auditor
+lifecycle: current
+authoritative_for:
+  - current_architecture_overview
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+  - collectors/shadow/contracts/candidate_registry_v1.json
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-## Текущая реализация
+# Архитектура после v0.4.4
+
+Текущая архитектура состоит из связанной основной линии `v0.3.x` и лабораторной
+линии `v0.4.x`. Их связь техническая, но подтверждения и следующие этапы раздельны.
+
+## Компонентная схема
+
+```mermaid
+flowchart TB
+    subgraph MAIN["Основная линия v0.3.x"]
+        Z["Zeek и collectors"] --> F["network_features_v2"]
+        F --> M["Frozen candidate"]
+        M --> E["shadow_event_v2"]
+        E --> S["Локальный staging transport"]
+        S --> R["Эталонный receiver"]
+    end
+    subgraph LAB["Лабораторная линия v0.4.x"]
+        E --> IR["incident_reconstruction"]
+        IR --> C["Карточка v2"]
+        C --> LC["lab_console"]
+        LC --> O["Ручное рассмотрение и экспорт"]
+    end
+```
+
+## Основная линия v0.3.x
+
+```text
+контролируемый трафик → PCAP → Zeek → причинные признаки
+→ зафиксированный кандидат → эпизодное решение → пассивное событие
+→ локальная доставка → проверенный приёмник
+```
+
+Линия фиксирует происхождение кандидата, научные проверки, локальный runtime,
+транспорт и процедуру будущей внешней проверки. Её текущая граница — `v0.3.18`;
+следующий разрешённый шаг `v0.3.19` не является самим испытанием.
+
+## Лабораторная линия v0.4.x
+
+```text
+пассивное событие → подтверждающие материалы → наблюдаемые факты
+→ временная реконструкция → структурные отношения → разрывы → граф
+→ конкурирующие гипотезы → карточка v2 → локальная консоль
+→ ручное рассмотрение → безопасный экспорт
+```
+
+Завершён `v0.4.4`. Реализованы 12 синтетических случаев и сохраняемый операторский
+цикл. Линия не меняет candidate artifact, preprocessing, calibration, conformal
+policy или event contract.
+
+## Поток подтверждающих материалов
 
 ```mermaid
 flowchart LR
-    A["Контролируемый трафик"] --> B["PCAP"]
-    B --> C["Zeek"]
-    C --> D["Causal feature window"]
-    D --> E["Frozen candidate"]
-    E --> F["Stateful decision"]
-    F --> G["Passive event"]
-    G --> H["Durable delivery"]
-    H --> I["Local verified sink"]
-    I --> J["Evidence reconciliation"]
+    A["Ссылка на исходный материал"] --> B["Проверка целостности"]
+    B --> C["Наблюдаемый факт"]
+    C --> D["Отношение или разрыв"]
+    D --> E["Гипотеза"]
+    E --> F["Карточка"]
+    F --> G["Read-only представление"]
+    G --> H["Операторский overlay"]
 ```
 
-Pipeline отделяет наблюдение, feature extraction, frozen inference, stateful
-decision и пассивную доставку. Candidate не изменяется во время evaluation.
-Passive event не содержит полномочий на блокирование или автоматическое
-воздействие.
+Операторские заметки, отметки и решение сохраняются отдельно. Они не становятся
+evidence и не изменяют source bundle или semantic SHA.
 
-## Проверенное поведение
+## Операторский цикл
 
-Подтверждены лабораторные causal features, frozen inference, episode processing,
-versioned event contracts, local durable delivery, reconciliation и
-evidence-bundle validation в scope соответствующих этапов.
+```mermaid
+flowchart LR
+    A["Каталог"] --> B["Факты"]
+    B --> C["Временная шкала"]
+    C --> D["Граф"]
+    D --> E["Разрывы"]
+    E --> F["Гипотезы и матрица"]
+    F --> G["Вопросы"]
+    G --> H["Ручное рассмотрение"]
+    H --> I["Детерминированный экспорт"]
+```
 
-## Исторический контекст
+## Жизненный цикл артефакта
 
-Исторические backend и ранние runtime implementations описаны в stage reports.
-Они не объединяются с current pipeline задним числом.
+```mermaid
+stateDiagram-v2
+    [*] --> Generated: детерминированная сборка
+    Generated --> Validated: schema и campaign
+    Validated --> Frozen: manifest и detached SHA
+    Frozen --> Presented: read-only console view
+    Presented --> Reviewed: SQLite overlay
+    Reviewed --> Exported: ручное решение
+    Frozen --> Frozen: исходные байты неизменны
+```
 
-## Планируемое
+## Важные отрицания
 
-Evidence reconstruction и incident hypothesis layer относятся к отдельной
-долгосрочной ветке v0.4.x. Они не являются частью current implementation.
+- `v0.4.x` не изменяет модель и не заменяет внешнюю проверку;
+- консоль не является backend или SIEM;
+- исторический `backend/` не входит в текущий путь;
+- temporal precedence не означает причинность;
+- graph path не означает причинную цепочку;
+- гипотеза и `better_supported` не означают установленную истину;
+- operator notes не являются подтверждающими материалами.
+
+Следующие страницы: [поток данных](end-to-end-data-flow.md),
+[границы доверия](trust-boundaries.md) и [ограничения](limitations.md).

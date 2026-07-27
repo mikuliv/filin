@@ -1,27 +1,21 @@
-# Процесс обработки инцидента
+---
+doc_schema: filin_document_v2
+title: Incident workflow — исторический путь
+document_type: redirect
+audience:
+  - developer
+lifecycle: redirect
+authoritative_for: []
+source_of_truth:
+  - docs/history/historical-backend.md
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+redirect_target: history/historical-backend.md
+---
 
-Карточка инцидента в Филин создается из нормализованного сетевого события.
+# Incident workflow — исторический путь
 
-## Этапы
-
-1. Backend принимает событие через `POST /api/v1/incidents`.
-2. Сервис инференса извлекает признаки и возвращает prediction.
-3. Модуль риска нормализует уровень риска.
-4. Модуль сопоставления MITRE добавляет осторожные ATT&CK-кандидаты.
-5. Генератор Sigma формирует черновик правила.
-6. Repository сохраняет карточку инцидента.
-7. Аналитик проверяет событие, MITRE-кандидатов, Sigma-кандидат и результаты лабораторной проверки.
-
-## Поля карточки
-
-- `incident_id`;
-- `created_at`;
-- `source`;
-- `prediction`;
-- `risk_level`;
-- `mitre_candidates`;
-- `sigma_rule`;
-- `status`;
-- `analyst_notes`.
-
-Статусы прототипа: `new`, `in_review`, `closed`. Значения оставлены на английском как технический контракт API.
+Ранний backend workflow описан в [историческом обзоре](history/historical-backend.md).
+Текущий операторский цикл находится в [руководстве](research/operator-incident-workflow.md).
+Этот путь не описывает current execution path.

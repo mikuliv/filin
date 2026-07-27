@@ -1,58 +1,53 @@
+---
+doc_schema: filin_document_v2
+title: Запуск лабораторной консоли
+document_type: guide
+audience:
+  - operator
+  - developer
+lifecycle: current
+authoritative_for:
+  - console_launch_guide
+source_of_truth:
+  - lab_console/__main__.py
+  - lab_console/app.py
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Запуск лабораторной консоли
 
-Из корня репозитория установите зависимости из `lab_console/requirements.txt`, задайте случайный локальный токен и запустите сервер:
+## Безопасная область
+
+Консоль предназначена только для localhost и синтетического каталога v0.4.4.
+Она не является SIEM, production backend или средством автоматического реагирования.
+
+## Запуск
 
 ```powershell
-$env:FILIN_CONSOLE_TOKEN = "локальный-длинный-случайный-токен"
+$env:FILIN_CONSOLE_TOKEN = "локальный-одноразовый-токен"
 python -m lab_console --host 127.0.0.1 --port 8043
 ```
 
-Откройте `http://127.0.0.1:8043` и введите тот же токен. Токен не включается в URL, Git или журналы. Не используйте `0.0.0.0`, reverse proxy или публичный хостинг.
+Откройте `http://127.0.0.1:8043/ui/cases`, вставьте token и завершите login.
+Не публикуйте token и не изменяйте host на внешний интерфейс.
 
-## Карта страниц
+## Что записывается
 
-- `/` — dashboard состояния проекта;
-- `/ui/stages` — основная и лабораторная линии этапов;
-- `/ui/models`, `/ui/metrics` — frozen-кандидат, показатели и классы;
-- `/ui/bundles` — комплекты, manifests и артефакты;
-- `/ui/incidents` — список карточек;
-- `/ui/incidents/representative` — обзор представительской карточки;
-- `/ui/cases` — каталог 12 независимых лабораторных карточек v0.4.4;
-- `/ui/cases/{token}/{section}` — guided workflow, review и экспорт выбранного случая;
-- `/ui/timeline`, `/ui/graph`, `/ui/hypotheses`, `/ui/comparisons` — временная и структурная реконструкция;
-- `/ui/questions`, `/ui/reviews` — вопросы специалисту и локальный review-overlay;
-- `/ui/tasks`, `/ui/logs` — разрешённые задачи и их журналы;
-- `/ui/tests`, `/ui/system` — результаты проверок и состояние среды.
+SQLite overlay в `runtime/lab_console/` содержит session progress, item states,
+notes и decision. Source bundles читаются без изменения. Token не сохраняется в Git.
 
-На каждой странице блок «Исходные данные» закрыт по умолчанию и является дополнительным техническим представлением.
+## Страницы
 
-## Ручная проверка
+Каталог ведёт к overview, facts, timeline, graph, gaps, hypotheses, comparisons,
+questions, review и export. Справка доступна в интерфейсе и в
+[руководстве по карточкам](reviewing-laboratory-cards.md).
 
-1. Убедитесь, что активный пункт sidebar соответствует странице и sidebar сворачивается.
-2. Проверьте dashboard и отсутствие горизонтальной прокрутки при 1920×1080 и 1366×768.
-3. Отфильтруйте этапы по линиям и откройте сведения о комплекте.
-4. На timeline отключите один слой и измените масштаб.
-5. На графе выберите узел, примените поиск и фильтр типов.
-6. В матрице выберите недиагональную ячейку и прочитайте объяснение.
-7. Откройте raw-панель, проверьте поиск и копирование.
-8. Убедитесь, что интерфейс нигде не объявляет production-готовность, причинность, компрометацию или победившую гипотезу.
-
-Автономная проверка и целевые тесты:
+## Проверка
 
 ```powershell
-python tools/lab_console/verify_console.py
-python tools/lab_console/verify_v044.py
-python -m pytest -q -p no:cacheprovider ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_ui.py
+python -m tools.lab_console.verify_v044
 ```
 
-## Приёмочные скриншоты
-
-Реальные снимки находятся в `runtime/lab_console/v0_4_3_1/screenshots`: две главные страницы (1920×1080 и 1366×768), этапы, модель, показатели, комплекты, список и обзор карточки, timeline, graph, гипотезы, матрица, вопросы, задачи, тесты и состояние системы.
-
-Runtime, logs, cache, exports и скриншоты исключены из Git. Их удаление сбрасывает только локальные данные консоли и не затрагивает frozen evidence bundles.
-
-Скриншоты приёмки v0.4.4 находятся в `runtime/lab_console/v044-browser/screenshots`. Полный порядок работы описан в [инструкции по рассмотрению карточек](reviewing-laboratory-cards.md).
-
-## Ограничения
-
-Это локальный лабораторный read-only интерфейс, а не production/SIEM. Он не принимает реальные сетевые данные, не обучает модель, не устанавливает причинность или факт компрометации и не выполняет автоматическое реагирование.
+Архитектура и API описаны в [README компонента](../../lab_console/README.md).

@@ -1,15 +1,40 @@
-# Неопределённость и abstention
+---
+doc_schema: filin_document_v2
+title: Неопределённость и отказ от решения
+document_type: reference
+audience:
+  - researcher
+  - operator
+lifecycle: current
+authoritative_for: []
+source_of_truth:
+  - candidate_manifest
+  - hypothesis_contracts
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
 
-Abstention — отказ candidate от содержательного class decision в пределах
-замороженной uncertainty policy. Он не считается правильным ответом.
+# Неопределённость и отказ от решения
 
-Evaluation обязана показывать:
+## На уровне модели
 
-- abstention count и rate;
-- coverage;
-- selective accuracy только на covered episodes;
-- missing, duplicate и invalid predictions;
-- class-conditional behavior и uncertainty intervals.
+Calibration и conformal set выражают ограниченную uncertainty в frozen evaluation
+scope. State policy может отказаться от определённого класса. Это безопаснее, чем
+принудительно выбирать label, но не гарантирует внешний coverage.
 
-Missing prediction не преобразуется в benign или другой класс без заранее
-замороженного правила.
+## На уровне реконструкции
+
+Unknown interval boundaries, clock differences и missing evidence представлены
+явными gaps. Они не превращаются в synthetic facts.
+
+## На уровне гипотез
+
+Несколько hypotheses могут иметь равную опору или быть incomparable. Матрица
+показывает row-versus-column comparison, а не probability ranking. Результат
+`equally_supported` не означает истинность обеих гипотез.
+
+## На уровне оператора
+
+Допустимый итог review — отсутствие окончательного определения и запрос нового
+первичного материала. Такой итог не считается failure интерфейса.

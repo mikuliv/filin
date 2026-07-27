@@ -1,14 +1,37 @@
+---
+doc_schema: filin_document_v2
+title: Хронология этапов
+document_type: history
+audience:
+  - auditor
+  - researcher
+lifecycle: historical
+authoritative_for: []
+source_of_truth:
+  - docs/status/project-status.yaml
+  - docs/status/v0_4_track.yaml
+last_reviewed_stage: v0.4.4
+generated: false
+evidence_immutable: false
+---
+
 # Хронология этапов
 
-Краткая timeline:
+## Основная линия
 
-1. v0.3.1–v0.3.10.1 — ранние evaluation/training и корректировки semantics.
-2. v0.3.11–v0.3.13 — candidate, regression и prospective holdout.
-3. v0.3.14–v0.3.15.3 — passive runtime, trial и evidence reassessment.
-4. v0.3.15.4–v0.3.15.5.1 — current candidate lineage и runtime recovery.
-5. v0.3.16–v0.3.17.1 — staging transport, endurance campaign и corrective
-   timing audit.
-6. v0.3.18 — external review design и synthetic protocol rehearsal.
+`v0.3.1–v0.3.15.3` сформировали и многократно корректировали model/evaluation/runtime
+основания. `v0.3.15.4` создал текущего кандидата; `v0.3.15.5–v0.3.17.1` проверили
+holdout, runtime, transport и rehearsal. `v0.3.18` подготовил external-review package.
 
-Статус, результат, limitation и evidence каждого этапа перечислены в
-[полной истории](../status/version-history.md).
+## Лабораторная линия
+
+После появления стабильного passive event stages `v0.4.0–v0.4.4` построили
+reconstruction, temporal/structural model, hypotheses, console и operator cycle.
+
+## Текущая граница
+
+Основная линия ожидает `v0.3.19`, лабораторная — `v0.4.5`. Ни один этап не начат
+этим документационным проходом.
+
+Подробные таблицы: [v0.3.x](../status/mainline-history.md) и
+[v0.4.x](../status/laboratory-track-history.md).

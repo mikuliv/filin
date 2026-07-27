@@ -1,16 +1,123 @@
+---
+doc_schema: filin_document_v2
+title: Индекс контрактов
+document_type: reference
+audience:
+  - developer
+  - auditor
+lifecycle: generated
+authoritative_for:
+  - contract_index
+source_of_truth:
+  - repository schemas
+last_reviewed_stage: v0.4.4
+generated: true
+evidence_immutable: false
+---
+
 # Индекс контрактов
 
-- [Passive event contract `shadow_event_v1`](shadow-event-v1.md)
-- [Candidate-aware event contract `shadow_event_v2`](shadow-event-v2.md)
-- [Разрыв между shadow runtime и backend](shadow-backend-gap-analysis.md)
-- [Controlled shadow trial runtime](shadow-trial-runtime.md)
-- [Ingress connector v1](connector_ingress_v1.md)
-- [ACK ingress connector v1](connector_ingress_ack_v1.md)
-- [Staging event batch v1](staging_event_batch_v1.md)
-- [ACK reference receiver v1](receiver_batch_ack_v1.md)
-- [Временная трасса runtime v2](runtime_timing_trace_v2.md)
-- JSON Schemas external review v0.3.18 находятся в `external_review/contracts/`:
-  dataset identity/provenance, role attestation, holdout, candidate/evaluator,
-  prediction, label reveal, chronology и evaluation result.
+> Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:
+> `python -m tools.docs.build_documentation_indexes`. Генерируемую область вручную не редактировать.
 
-v0.3.15.1 не добавляет production receiver. Его ACK contract и integrated exporter применяются только к локальному passive runtime.
+<!-- generated:start -->
+
+## Все versioned schemas
+
+| Schema ID | Version/этап | Подсистема | Статус | Путь | Consumer/замена |
+|---|---|---|---|---|---|
+| `filin://contracts/shadow_event_v1` | `unknown` | `collectors` | versioned/исторический | [`collectors/shadow/contracts/shadow_event_v1.schema.json`](../../collectors/shadow/contracts/shadow_event_v1.schema.json) | collector/runtime |
+| `filin://contracts/shadow_event_v2` | `unknown` | `collectors` | текущий | [`collectors/shadow/contracts/shadow_event_v2.schema.json`](../../collectors/shadow/contracts/shadow_event_v2.schema.json) | collector/runtime |
+| `synthetic_ack_evidence_v1` | `unknown` | `collectors` | versioned/исторический | [`collectors/shadow/contracts/synthetic_ack_evidence_v1.schema.json`](../../collectors/shadow/contracts/synthetic_ack_evidence_v1.schema.json) | collector/runtime |
+| `https://filin.invalid/contracts/blind_holdout_commitment_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/blind_holdout_commitment_v1.schema.json`](../../external_review/contracts/blind_holdout_commitment_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/blind_holdout_manifest_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/blind_holdout_manifest_v1.schema.json`](../../external_review/contracts/blind_holdout_manifest_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/candidate_commitment_v1.schema.json` | `candidate` | `external_review` | versioned/исторический | [`external_review/contracts/candidate_commitment_v1.schema.json`](../../external_review/contracts/candidate_commitment_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/evaluator_commitment_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/evaluator_commitment_v1.schema.json`](../../external_review/contracts/evaluator_commitment_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/external_dataset_identity_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/external_dataset_identity_v1.schema.json`](../../external_review/contracts/external_dataset_identity_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/external_dataset_provenance_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/external_dataset_provenance_v1.schema.json`](../../external_review/contracts/external_dataset_provenance_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/external_evaluation_result_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/external_evaluation_result_v1.schema.json`](../../external_review/contracts/external_evaluation_result_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/external_trial_chronology_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/external_trial_chronology_v1.schema.json`](../../external_review/contracts/external_trial_chronology_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/external_trial_role_attestation_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/external_trial_role_attestation_v1.schema.json`](../../external_review/contracts/external_trial_role_attestation_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/label_commitment_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/label_commitment_v1.schema.json`](../../external_review/contracts/label_commitment_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/label_reveal_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/label_reveal_v1.schema.json`](../../external_review/contracts/label_reveal_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/prediction_commitment_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/prediction_commitment_v1.schema.json`](../../external_review/contracts/prediction_commitment_v1.schema.json) | external procedure |
+| `https://filin.invalid/contracts/prediction_submission_v1.schema.json` | `unknown` | `external_review` | versioned/исторический | [`external_review/contracts/prediction_submission_v1.schema.json`](../../external_review/contracts/prediction_submission_v1.schema.json) | external procedure |
+| `filin://incident-reconstruction/analyst_recommendation_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/analyst_recommendation_v1.schema.json`](../../incident_reconstruction/contracts/analyst_recommendation_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/evidence_reference_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/evidence_reference_v1.schema.json`](../../incident_reconstruction/contracts/evidence_reference_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/incident_card_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/incident_card_v1.schema.json`](../../incident_reconstruction/contracts/incident_card_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/incident_hypothesis_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/incident_hypothesis_v1.schema.json`](../../incident_reconstruction/contracts/incident_hypothesis_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/incident_reconstruction_bundle_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/incident_reconstruction_bundle_v1.schema.json`](../../incident_reconstruction/contracts/incident_reconstruction_bundle_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/mitre_mapping_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/mitre_mapping_v1.schema.json`](../../incident_reconstruction/contracts/mitre_mapping_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/observed_fact_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/observed_fact_v1.schema.json`](../../incident_reconstruction/contracts/observed_fact_v1.schema.json) | reconstruction |
+| `filin://incident-reconstruction/timeline_item_v1` | `unknown` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/timeline_item_v1.schema.json`](../../incident_reconstruction/contracts/timeline_item_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/correlation_group_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/correlation_group_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/correlation_group_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/fact_relation_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/fact_relation_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/fact_relation_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/normalized_time_interval_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/normalized_time_interval_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/normalized_time_interval_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/normalized_time_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/normalized_time_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/normalized_time_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/reconstruction_gap_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/reconstruction_gap_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/reconstruction_gap_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/reconstruction_graph_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/reconstruction_graph_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/reconstruction_graph_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/relation_explanation_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/relation_explanation_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/relation_explanation_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/temporal_reconstruction_bundle_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/temporal_reconstruction_bundle_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/temporal_reconstruction_bundle_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/temporal_reconstruction_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/temporal_reconstruction_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/temporal_reconstruction_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/temporal_relation_v1` | `v0.4.1` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_1/temporal_relation_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_1/temporal_relation_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/analyst_question_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/analyst_question_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/analyst_question_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/analytical_question_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/analytical_question_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/analytical_question_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/evidential_profile_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/evidential_profile_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/evidential_profile_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_analysis_bundle_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_analysis_bundle_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_analysis_bundle_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_analysis_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_analysis_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_analysis_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_assessment_record_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_assessment_record_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_assessment_record_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_comparison_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_comparison_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_comparison_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_evidence_assessment_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_evidence_assessment_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_evidence_assessment_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_explanation_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_explanation_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_explanation_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_rule_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_rule_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_rule_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_scope_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_scope_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_scope_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/hypothesis_set_v1` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/hypothesis_set_v1.schema.json`](../../incident_reconstruction/contracts/v0_4_2/hypothesis_set_v1.schema.json) | reconstruction |
+| `https://filin.local/contracts/v0_4_2/incident_hypothesis_v2` | `v0.4.2` | `incident_reconstruction` | versioned/исторический | [`incident_reconstruction/contracts/v0_4_2/incident_hypothesis_v2.schema.json`](../../incident_reconstruction/contracts/v0_4_2/incident_hypothesis_v2.schema.json) | reconstruction |
+| `urn:filin:allowed_task_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/allowed_task_v1.schema.json`](../../lab_console/contracts/v0_4_3/allowed_task_v1.schema.json) | console/API |
+| `urn:filin:console_audit_event_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_audit_event_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_audit_event_v1.schema.json) | console/API |
+| `urn:filin:console_bundle_summary_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_bundle_summary_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_bundle_summary_v1.schema.json) | console/API |
+| `urn:filin:console_export_bundle_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_export_bundle_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_export_bundle_v1.schema.json) | console/API |
+| `urn:filin:console_health_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_health_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_health_v1.schema.json) | console/API |
+| `urn:filin:console_incident_view_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_incident_view_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_incident_view_v1.schema.json) | console/API |
+| `urn:filin:console_model_summary_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_model_summary_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_model_summary_v1.schema.json) | console/API |
+| `urn:filin:console_project_status_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_project_status_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_project_status_v1.schema.json) | console/API |
+| `urn:filin:console_stage_summary_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/console_stage_summary_v1.schema.json`](../../lab_console/contracts/v0_4_3/console_stage_summary_v1.schema.json) | console/API |
+| `urn:filin:incident_card_v2` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/incident_card_v2.schema.json`](../../lab_console/contracts/v0_4_3/incident_card_v2.schema.json) | console/API |
+| `urn:filin:manual_review_check_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/manual_review_check_v1.schema.json`](../../lab_console/contracts/v0_4_3/manual_review_check_v1.schema.json) | console/API |
+| `urn:filin:manual_review_decision_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/manual_review_decision_v1.schema.json`](../../lab_console/contracts/v0_4_3/manual_review_decision_v1.schema.json) | console/API |
+| `urn:filin:manual_review_note_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/manual_review_note_v1.schema.json`](../../lab_console/contracts/v0_4_3/manual_review_note_v1.schema.json) | console/API |
+| `urn:filin:manual_review_session_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/manual_review_session_v1.schema.json`](../../lab_console/contracts/v0_4_3/manual_review_session_v1.schema.json) | console/API |
+| `urn:filin:task_log_record_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/task_log_record_v1.schema.json`](../../lab_console/contracts/v0_4_3/task_log_record_v1.schema.json) | console/API |
+| `urn:filin:task_run_v1` | `v0.4.3` | `lab_console` | versioned/исторический | [`lab_console/contracts/v0_4_3/task_run_v1.schema.json`](../../lab_console/contracts/v0_4_3/task_run_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/comparison_cell_explanation_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/comparison_cell_explanation_v1.schema.json`](../../lab_console/contracts/v0_4_4/comparison_cell_explanation_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/graph_entity_explanation_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/graph_entity_explanation_v1.schema.json`](../../lab_console/contracts/v0_4_4/graph_entity_explanation_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/graph_path_explanation_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/graph_path_explanation_v1.schema.json`](../../lab_console/contracts/v0_4_4/graph_path_explanation_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/hypothesis_operator_view_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/hypothesis_operator_view_v1.schema.json`](../../lab_console/contracts/v0_4_4/hypothesis_operator_view_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/laboratory_case_bundle_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/laboratory_case_bundle_v1.schema.json`](../../lab_console/contracts/v0_4_4/laboratory_case_bundle_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/laboratory_case_catalog_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/laboratory_case_catalog_v1.schema.json`](../../lab_console/contracts/v0_4_4/laboratory_case_catalog_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/laboratory_case_descriptor_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/laboratory_case_descriptor_v1.schema.json`](../../lab_console/contracts/v0_4_4/laboratory_case_descriptor_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/laboratory_case_expected_structure_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/laboratory_case_expected_structure_v1.schema.json`](../../lab_console/contracts/v0_4_4/laboratory_case_expected_structure_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/laboratory_case_summary_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/laboratory_case_summary_v1.schema.json`](../../lab_console/contracts/v0_4_4/laboratory_case_summary_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/manual_review_decision_v2.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/manual_review_decision_v2.schema.json`](../../lab_console/contracts/v0_4_4/manual_review_decision_v2.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/manual_review_export_v2.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/manual_review_export_v2.schema.json`](../../lab_console/contracts/v0_4_4/manual_review_export_v2.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/manual_review_item_state_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/manual_review_item_state_v1.schema.json`](../../lab_console/contracts/v0_4_4/manual_review_item_state_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/manual_review_note_v2.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/manual_review_note_v2.schema.json`](../../lab_console/contracts/v0_4_4/manual_review_note_v2.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/manual_review_session_v2.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/manual_review_session_v2.schema.json`](../../lab_console/contracts/v0_4_4/manual_review_session_v2.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/operator_workflow_progress_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/operator_workflow_progress_v1.schema.json`](../../lab_console/contracts/v0_4_4/operator_workflow_progress_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/operator_workflow_step_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/operator_workflow_step_v1.schema.json`](../../lab_console/contracts/v0_4_4/operator_workflow_step_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/operator_workflow_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/operator_workflow_v1.schema.json`](../../lab_console/contracts/v0_4_4/operator_workflow_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/reconstruction_gap_view_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/reconstruction_gap_view_v1.schema.json`](../../lab_console/contracts/v0_4_4/reconstruction_gap_view_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/timeline_item_explanation_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/timeline_item_explanation_v1.schema.json`](../../lab_console/contracts/v0_4_4/timeline_item_explanation_v1.schema.json) | console/API |
+| `https://filin.local/contracts/v0_4_4/v0_4_4_console_state_v1.schema.json` | `v0.4.4` | `lab_console` | текущий | [`lab_console/contracts/v0_4_4/v0_4_4_console_state_v1.schema.json`](../../lab_console/contracts/v0_4_4/v0_4_4_console_state_v1.schema.json) | console/API |
+| `artifact_manifest.schema` | `v0.3.4` | `ml` | versioned/исторический | [`ml/experiments/v0_3_4/artifact_manifest.schema.yaml`](../../ml/experiments/v0_3_4/artifact_manifest.schema.yaml) | tests/tools |
+| `filin://contracts/operator_projection_v1` | `unknown` | `rehearsal` | versioned/исторический | [`rehearsal/contracts/operator_projection_v1.schema.json`](../../rehearsal/contracts/operator_projection_v1.schema.json) | rehearsal |
+| `filin://contracts/rehearsal_observability_v1` | `unknown` | `rehearsal` | versioned/исторический | [`rehearsal/contracts/rehearsal_observability_v1.schema.json`](../../rehearsal/contracts/rehearsal_observability_v1.schema.json) | rehearsal |
+| `runtime_timing_trace_v2` | `unknown` | `rehearsal` | versioned/исторический | [`rehearsal/contracts/runtime_timing_trace_v2.schema.json`](../../rehearsal/contracts/runtime_timing_trace_v2.schema.json) | rehearsal |
+| `connector_ingress_ack_v1` | `unknown` | `staging` | versioned/исторический | [`staging/contracts/connector_ingress_ack_v1.schema.json`](../../staging/contracts/connector_ingress_ack_v1.schema.json) | receiver |
+| `connector_ingress_v1` | `unknown` | `staging` | versioned/исторический | [`staging/contracts/connector_ingress_v1.schema.json`](../../staging/contracts/connector_ingress_v1.schema.json) | receiver |
+| `receiver_batch_ack_v1` | `unknown` | `staging` | versioned/исторический | [`staging/contracts/receiver_batch_ack_v1.schema.json`](../../staging/contracts/receiver_batch_ack_v1.schema.json) | receiver |
+| `staging_event_batch_v1` | `unknown` | `staging` | versioned/исторический | [`staging/contracts/staging_event_batch_v1.schema.json`](../../staging/contracts/staging_event_batch_v1.schema.json) | receiver |
+
+Индекс включает incident reconstruction, temporal reconstruction, hypothesis analysis, lab console, operator workflow, laboratory cases и manual review v2.
+
+<!-- generated:end -->
