@@ -103,3 +103,10 @@
 - [Добавление отчёта](contributing/adding-a-report.md).
 - [README подсистемы](contributing/adding-a-subsystem-readme.md).
 - [Audit-материалы текущей переработки](audit/index.md).
+
+## Лицензирование и распространение
+
+- [Центр лицензионной документации](licensing/index.md).
+- [Профили распространяемого состава](licensing/distribution-profiles.md).
+- [Сторонние компоненты](licensing/third-party-components.md).
+- [Контрольный список релиза](licensing/release-checklist.md).

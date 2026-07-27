@@ -1,0 +1,70 @@
+{
+  "schema_version": "filin_license_validation_result_v1",
+  "passed": true,
+  "errors": [],
+  "checks": [
+    {
+      "name": "audit_git_authors",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_license_files",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_reuse_mapping",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_distribution_profiles",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_frozen_license_mapping",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_dependency_licenses",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_container_policy",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_contribution_policy",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_manifest",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "validate_third_party_notices",
+      "passed": true,
+      "error_count": 0
+    },
+    {
+      "name": "licensing_campaign",
+      "passed": true,
+      "error_count": 0
+    }
+  ],
+  "unassigned_file_count": 0,
+  "unknown_license_file_count": 0,
+  "review_required_file_count": 0,
+  "broad_license_application_passed": true,
+  "release_ready": true,
+  "legal_opinion": false,
+  "network_required": false,
+  "docker_pull_required": false
+}

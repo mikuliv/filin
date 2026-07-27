@@ -1,0 +1,7 @@
+{
+  "schema_version": "filin_distribution_profile_v1",
+  "id": "offline-third-party-bundle",
+  "status": "not_approved",
+  "reason": "Requires per-image license, source, notice and redistribution review",
+  "contains_images": false
+}

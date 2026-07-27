@@ -1,0 +1,11 @@
+{
+  "schema_version": "filin_license_policy_v1",
+  "copyright_holder": "Руслан Покатилов",
+  "code_license": "MPL-2.0",
+  "documentation_license": "CC-BY-4.0",
+  "models_and_datasets": "separate_license_required",
+  "third_party": "upstream_terms_preserved",
+  "trademarks_in_code_license": false,
+  "legal_opinion": false,
+  "patent_clearance": false
+}

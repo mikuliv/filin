@@ -1,0 +1,221 @@
+{
+  "schema_version": "filin_python_declarations_v1",
+  "declarations": [
+    {
+      "path": "backend/requirements-v0_3_4.txt",
+      "line": 3,
+      "declaration": "fastapi==0.129.0",
+      "name": "fastapi",
+      "constraint": "==0.129.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements-v0_3_4.txt",
+      "line": 4,
+      "declaration": "uvicorn[standard]==0.41.0",
+      "name": "uvicorn",
+      "constraint": "==0.41.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements-v0_3_4.txt",
+      "line": 5,
+      "declaration": "pydantic==2.12.2",
+      "name": "pydantic",
+      "constraint": "==2.12.2",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements-v0_3_4.txt",
+      "line": 6,
+      "declaration": "PyYAML==6.0.3",
+      "name": "pyyaml",
+      "constraint": "==6.0.3",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "line": 1,
+      "declaration": "fastapi>=0.111,<1.0",
+      "name": "fastapi",
+      "constraint": ">=0.111,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "line": 2,
+      "declaration": "uvicorn[standard]>=0.30,<1.0",
+      "name": "uvicorn",
+      "constraint": ">=0.30,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "line": 3,
+      "declaration": "pydantic>=2.7,<3.0",
+      "name": "pydantic",
+      "constraint": ">=2.7,<3.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "backend/requirements.txt",
+      "line": 4,
+      "declaration": "pyyaml>=6.0,<7.0",
+      "name": "pyyaml",
+      "constraint": ">=6.0,<7.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/control-api/requirements.txt",
+      "line": 1,
+      "declaration": "fastapi>=0.111,<1.0",
+      "name": "fastapi",
+      "constraint": ">=0.111,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/control-api/requirements.txt",
+      "line": 2,
+      "declaration": "uvicorn[standard]>=0.30,<1.0",
+      "name": "uvicorn",
+      "constraint": ">=0.30,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/target-api/requirements.txt",
+      "line": 1,
+      "declaration": "fastapi>=0.111,<1.0",
+      "name": "fastapi",
+      "constraint": ">=0.111,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/target-api/requirements.txt",
+      "line": 2,
+      "declaration": "uvicorn[standard]>=0.30,<1.0",
+      "name": "uvicorn",
+      "constraint": ">=0.30,<1.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/traffic-client/requirements.txt",
+      "line": 1,
+      "declaration": "requests>=2.32,<3.0",
+      "name": "requests",
+      "constraint": ">=2.32,<3.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab/docker/services/traffic-client/requirements.txt",
+      "line": 2,
+      "declaration": "pyyaml>=6.0,<7.0",
+      "name": "pyyaml",
+      "constraint": ">=6.0,<7.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab_console/requirements.txt",
+      "line": 1,
+      "declaration": "fastapi>=0.115,<1",
+      "name": "fastapi",
+      "constraint": ">=0.115,<1",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab_console/requirements.txt",
+      "line": 2,
+      "declaration": "uvicorn>=0.30,<1",
+      "name": "uvicorn",
+      "constraint": ">=0.30,<1",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab_console/requirements.txt",
+      "line": 3,
+      "declaration": "pydantic>=2.10,<3",
+      "name": "pydantic",
+      "constraint": ">=2.10,<3",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab_console/requirements.txt",
+      "line": 4,
+      "declaration": "jinja2>=3.1,<4",
+      "name": "jinja2",
+      "constraint": ">=3.1,<4",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "lab_console/requirements.txt",
+      "line": 5,
+      "declaration": "PyYAML>=6,<7",
+      "name": "pyyaml",
+      "constraint": ">=6,<7",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements-v0_3_4.txt",
+      "line": 3,
+      "declaration": "numpy==2.2.6",
+      "name": "numpy",
+      "constraint": "==2.2.6",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements-v0_3_4.txt",
+      "line": 4,
+      "declaration": "pandas==3.0.0",
+      "name": "pandas",
+      "constraint": "==3.0.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements-v0_3_4.txt",
+      "line": 5,
+      "declaration": "scikit-learn==1.8.0",
+      "name": "scikit-learn",
+      "constraint": "==1.8.0",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements-v0_3_4.txt",
+      "line": 6,
+      "declaration": "joblib==1.5.3",
+      "name": "joblib",
+      "constraint": "==1.5.3",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements-v0_3_4.txt",
+      "line": 7,
+      "declaration": "PyYAML==6.0.3",
+      "name": "pyyaml",
+      "constraint": "==6.0.3",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements.txt",
+      "line": 1,
+      "declaration": "pandas>=2,<3",
+      "name": "pandas",
+      "constraint": ">=2,<3",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements.txt",
+      "line": 2,
+      "declaration": "scikit-learn>=1.4,<2",
+      "name": "scikit-learn",
+      "constraint": ">=1.4,<2",
+      "pinned_or_bounded": true
+    },
+    {
+      "path": "ml/requirements.txt",
+      "line": 3,
+      "declaration": "joblib>=1.3,<2",
+      "name": "joblib",
+      "constraint": ">=1.3,<2",
+      "pinned_or_bounded": true
+    }
+  ]
+}

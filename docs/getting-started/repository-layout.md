@@ -19,3 +19,5 @@
 
 README каждого компонента определяет входы, выходы и безопасные команды. Полный
 каталог: [component-directory](../reference/component-directory.md).
+
+Лицензионные данные размещены в `LICENSES/`, `docs/licensing/`, `licensing/`, `distribution/profiles/` и `sbom/`. Генераторы и validators находятся в `tools/licensing/`; frozen-файлы получают назначение через `REUSE.toml` без изменения байтов.

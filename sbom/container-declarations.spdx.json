@@ -1,0 +1,367 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "Filin container declaration inventory",
+  "documentNamespace": "https://filin.local/spdx/containers/2026-07-27",
+  "creationInfo": {
+    "created": "2026-07-27T00:00:00Z",
+    "creators": [
+      "Tool: tools.licensing.build_license_manifest"
+    ]
+  },
+  "packages": [
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-29d901659cee0f2a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "zeek/zeek:latest",
+      "SPDXID": "SPDXRef-Container-6c4d15467c88f99f",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "${FILIN_TRAFFIC_CLIENT_IMAGE:-filin-traffic-client:0.1}",
+      "SPDXID": "SPDXRef-Container-8ba586af7b299df5",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-traffic-client:0.1",
+      "SPDXID": "SPDXRef-Container-50a9a0345312346a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-traffic-client:0.1",
+      "SPDXID": "SPDXRef-Container-6a0afa72e8a19b46",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-traffic-client:0.1",
+      "SPDXID": "SPDXRef-Container-9187fa8bb1f2d186",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "zeek/zeek:7.0.5",
+      "SPDXID": "SPDXRef-Container-41d03de2a770f60f",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "jasonish/suricata:7.0.8",
+      "SPDXID": "SPDXRef-Container-c4040c906842ed04",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-only",
+      "licenseDeclared": "GPL-2.0-only",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "elastic/filebeat:8.15.0",
+      "SPDXID": "SPDXRef-Container-e2773fe8fbf50c66",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "elasticsearch:8.15.0",
+      "SPDXID": "SPDXRef-Container-d6162cf4480797e0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "kibana:8.15.0",
+      "SPDXID": "SPDXRef-Container-98690a84056b47f5",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": true, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-b0ce2fa340c8c6f8",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-a95b3b57dad9a2f1",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-4eda46456f349fd5",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-16bdcfbf12efdd7a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "nginx:1.27-alpine",
+      "SPDXID": "SPDXRef-Container-8bd00b47364c8862",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-2-Clause",
+      "licenseDeclared": "BSD-2-Clause",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python:3.11-slim",
+      "SPDXID": "SPDXRef-Container-0671168dfb15a480",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python@sha256:e031123e3d85762b141ad1cbc56452ba69c6e722ebf2f042cc0dc86c47c0d8b3",
+      "SPDXID": "SPDXRef-Container-81cae94de4adbc4a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-1dffcc5f034568c8",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-240a76352b57130f",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-d33030d58b14139d",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-dbb5c067e5debaed",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-b12ae2a7126d0a1b",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-7ff9c5250d6727f9",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-adc6776686e940db",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-ebca98adafb8d23f",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-e61e65537c8fa0ad",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-rehearsal-v0317:local",
+      "SPDXID": "SPDXRef-Container-452fc43d57f2aa9a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "python@sha256:e031123e3d85762b141ad1cbc56452ba69c6e722ebf2f042cc0dc86c47c0d8b3",
+      "SPDXID": "SPDXRef-Container-bfe97460ce4ca45d",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "PSF-2.0",
+      "licenseDeclared": "PSF-2.0",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-staging-v0316:local",
+      "SPDXID": "SPDXRef-Container-a2b4ce9d6264320a",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-staging-v0316:local",
+      "SPDXID": "SPDXRef-Container-ebbe0385df04d317",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    },
+    {
+      "name": "filin-staging-v0316:local",
+      "SPDXID": "SPDXRef-Container-04af564aa25c21bc",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "NOASSERTION",
+      "licenseDeclared": "NOASSERTION",
+      "copyrightText": "NOASSERTION",
+      "primaryPackagePurpose": "CONTAINER",
+      "comment": "{\"optional\": false, \"included\": false, \"verification\": \"not_available_offline\"}"
+    }
+  ]
+}

@@ -24,3 +24,7 @@ Code не может задним числом изменить историче
 [Текущий статус](../status/current-status.md) сводит две линии, а
 [подтверждённые возможности](../status/confirmed-capabilities.md) связывают capability
 с evidence. Они должны проходить строгую consistency validation.
+
+## Лицензионные источники истины
+
+Для назначения лицензии приоритет имеют `REUSE.toml` и `licensing/repository-license-manifest.json`; для границ выпуска — `distribution/profiles/*.json`; для результата проверки — `docs/licensing/license-validation-result.json`. Текстовые страницы объясняют эти источники, но не расширяют разрешённый состав.

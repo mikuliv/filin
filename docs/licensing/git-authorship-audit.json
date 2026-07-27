@@ -1,0 +1,43 @@
+{
+  "scope": "git log --all",
+  "commit_count": 415,
+  "unique_commit_count": 415,
+  "first_commit": "73968c29caf54f4a5cb1a7bb4a63c0b2a134008a",
+  "last_commit": "4948af7434c8e7b38731d8df8aae0b3360f2badf",
+  "authors": [
+    {
+      "name": "mikuliv",
+      "email": "64185192+mikuliv@users.noreply.github.com",
+      "count": 2,
+      "mapped_to": "Руслан Покатилов",
+      "review_required": false
+    },
+    {
+      "name": "mikuliv",
+      "email": "ruslan.pockatilov@gmail.com",
+      "count": 413,
+      "mapped_to": "Руслан Покатилов",
+      "review_required": false
+    }
+  ],
+  "committers": [
+    {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "count": 2,
+      "mapped_to": "GitHub web automation",
+      "authorship": false,
+      "review_required": false
+    },
+    {
+      "name": "mikuliv",
+      "email": "ruslan.pockatilov@gmail.com",
+      "count": 413,
+      "mapped_to": "Руслан Покатилов",
+      "authorship": true,
+      "review_required": false
+    }
+  ],
+  "coauthors": [],
+  "review_required": false
+}

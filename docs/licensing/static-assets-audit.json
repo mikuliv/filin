@@ -1,0 +1,28 @@
+{
+  "asset_count": 2,
+  "image_count": 0,
+  "font_count": 0,
+  "review_required_count": 0,
+  "assets": [
+    {
+      "path": "lab_console/static/console.css",
+      "sha256": "a2e9446bf450bfb225ccee6062f2bff0296cba68c7c38fb89e4e7a0ed81c610a",
+      "asset_type": "css",
+      "size": 42510,
+      "embedded_markers": [],
+      "minified": true,
+      "distribution_allowed": true,
+      "review_required": false
+    },
+    {
+      "path": "lab_console/static/console.js",
+      "sha256": "38b5736af9f06959ba8600dca82210eafaffb79b23255ef9f53be8bfdb547aee",
+      "asset_type": "js",
+      "size": 18447,
+      "embedded_markers": [],
+      "minified": false,
+      "distribution_allowed": true,
+      "review_required": false
+    }
+  ]
+}

@@ -160,8 +160,11 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
     names = tracked_files(root, include_untracked=False)
     source_names = [
         name for name in names
-        if any(token in Path(name).name.casefold() for token in ("manifest", "ledger", "protocol"))
-        or Path(name).suffix.casefold() == ".sha256"
+        if not name.startswith(("licensing/", "docs/licensing/", "tools/licensing/", "sbom/"))
+        and (
+            any(token in Path(name).name.casefold() for token in ("manifest", "ledger", "protocol"))
+            or Path(name).suffix.casefold() == ".sha256"
+        )
     ]
     protected: dict[str, dict[str, Any]] = {}
     changed_paths = set(run_git("diff", "--name-only", INITIAL_HEAD, root=root).splitlines())

@@ -15,3 +15,5 @@
 | Tools | [tools](../../tools/README.md) | tool-specific CLI | documentation/bundle validators |
 
 Архитектурные связи приведены в [component map](../architecture/component-map.md).
+
+Лицензионный контур: [tools/licensing](../../tools/licensing) формирует provenance, dependency/container registries, repository manifest, notices, SBOM и проверяет distribution profiles полностью offline.

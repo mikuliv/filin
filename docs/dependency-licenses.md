@@ -47,3 +47,7 @@ Compose также объявляет `elastic/filebeat:8.15.0`, `elasticsearch:
 3. Сохранить third-party notices, licenses и source-offer obligations там, где они применимы.
 4. Решить, будет ли распространяться Compose stack с Suricata/Elastic images или они останутся development-only references.
 5. Проверить условия Docker Desktop для организации: [официальные условия](https://docs.docker.com/subscription/desktop-license/).
+
+## Актуальная машинная инвентаризация
+
+Python declarations и локальное resolved-окружение находятся в `docs/licensing/python-dependencies-*.json`; контейнерные ссылки — в `docs/licensing/container-images.json`; объединённые уведомления — в `THIRD_PARTY_NOTICES.md`. Эти реестры создаются без сети и не заявляют включение packages или image layers в source distribution.

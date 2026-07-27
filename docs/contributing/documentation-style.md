@@ -85,3 +85,5 @@ next-stage только после policy result. Frozen reports задним ч
 python -m tools.docs.build_documentation_inventory
 python -m tools.docs.validate_documentation_v2 --strict
 ```
+
+Для нового документа также проверьте лицензионный scope: документация обычно получает CC-BY-4.0 через `REUSE.toml`, а вставки сторонних схем, изображений и текста требуют отдельного provenance и исходной лицензии. Frozen evidence нельзя менять ради SPDX header.

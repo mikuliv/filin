@@ -1,0 +1,1667 @@
+{
+  "schema_version": "filin_licensing_campaign_v1",
+  "positive": {
+    "count": 75,
+    "passed": 75,
+    "scenarios": [
+      {
+        "id": 1,
+        "name": "history_processed",
+        "passed": true
+      },
+      {
+        "id": 2,
+        "name": "provenance_complete",
+        "passed": true
+      },
+      {
+        "id": 3,
+        "name": "manifest_zero_unassigned",
+        "passed": true
+      },
+      {
+        "id": 4,
+        "name": "manifest_zero_unknown",
+        "passed": true
+      },
+      {
+        "id": 5,
+        "name": "manifest_zero_review",
+        "passed": true
+      },
+      {
+        "id": 6,
+        "name": "source_core_approved",
+        "passed": true
+      },
+      {
+        "id": 7,
+        "name": "laboratory_source_approved",
+        "passed": true
+      },
+      {
+        "id": 8,
+        "name": "offline_bundle_not_approved",
+        "passed": true
+      },
+      {
+        "id": 9,
+        "name": "model_separate",
+        "passed": true
+      },
+      {
+        "id": 10,
+        "name": "dataset_separate",
+        "passed": true
+      },
+      {
+        "id": 11,
+        "name": "mpl_exact",
+        "passed": true
+      },
+      {
+        "id": 12,
+        "name": "cc_exact",
+        "passed": true
+      },
+      {
+        "id": 13,
+        "name": "source_no_images",
+        "passed": true
+      },
+      {
+        "id": 14,
+        "name": "lab_no_images",
+        "passed": true
+      },
+      {
+        "id": 15,
+        "name": "sbom_repository",
+        "passed": true
+      },
+      {
+        "id": 16,
+        "name": "sbom_python",
+        "passed": true
+      },
+      {
+        "id": 17,
+        "name": "sbom_containers",
+        "passed": true
+      },
+      {
+        "id": 18,
+        "name": "dco_future_only",
+        "passed": true
+      },
+      {
+        "id": 19,
+        "name": "trademark_scope",
+        "passed": true
+      },
+      {
+        "id": 20,
+        "name": "suricata_excluded",
+        "passed": true
+      },
+      {
+        "id": 21,
+        "name": "assigned_type_.py",
+        "passed": true
+      },
+      {
+        "id": 22,
+        "name": "assigned_type_.js",
+        "passed": true
+      },
+      {
+        "id": 23,
+        "name": "assigned_type_.css",
+        "passed": true
+      },
+      {
+        "id": 24,
+        "name": "assigned_type_.html",
+        "passed": true
+      },
+      {
+        "id": 25,
+        "name": "assigned_type_.json",
+        "passed": true
+      },
+      {
+        "id": 26,
+        "name": "assigned_type_.yaml",
+        "passed": true
+      },
+      {
+        "id": 27,
+        "name": "assigned_type_.yml",
+        "passed": true
+      },
+      {
+        "id": 28,
+        "name": "assigned_type_.md",
+        "passed": true
+      },
+      {
+        "id": 29,
+        "name": "assigned_type_.txt",
+        "passed": true
+      },
+      {
+        "id": 30,
+        "name": "assigned_type_.sha256",
+        "passed": true
+      },
+      {
+        "id": 31,
+        "name": "assigned_type_.conf",
+        "passed": true
+      },
+      {
+        "id": 32,
+        "name": "assigned_type_no_extension",
+        "passed": true
+      },
+      {
+        "id": 33,
+        "name": "dependency_fastapi",
+        "passed": true
+      },
+      {
+        "id": 34,
+        "name": "dependency_jinja2",
+        "passed": true
+      },
+      {
+        "id": 35,
+        "name": "dependency_joblib",
+        "passed": true
+      },
+      {
+        "id": 36,
+        "name": "dependency_pandas",
+        "passed": true
+      },
+      {
+        "id": 37,
+        "name": "dependency_pydantic",
+        "passed": true
+      },
+      {
+        "id": 38,
+        "name": "dependency_pyyaml",
+        "passed": true
+      },
+      {
+        "id": 39,
+        "name": "dependency_requests",
+        "passed": true
+      },
+      {
+        "id": 40,
+        "name": "dependency_scikit-learn",
+        "passed": true
+      },
+      {
+        "id": 41,
+        "name": "dependency_uvicorn",
+        "passed": true
+      },
+      {
+        "id": 42,
+        "name": "deterministic_manifest_partition_42",
+        "passed": true
+      },
+      {
+        "id": 43,
+        "name": "deterministic_manifest_partition_43",
+        "passed": true
+      },
+      {
+        "id": 44,
+        "name": "deterministic_manifest_partition_44",
+        "passed": true
+      },
+      {
+        "id": 45,
+        "name": "deterministic_manifest_partition_45",
+        "passed": true
+      },
+      {
+        "id": 46,
+        "name": "deterministic_manifest_partition_46",
+        "passed": true
+      },
+      {
+        "id": 47,
+        "name": "deterministic_manifest_partition_47",
+        "passed": true
+      },
+      {
+        "id": 48,
+        "name": "deterministic_manifest_partition_48",
+        "passed": true
+      },
+      {
+        "id": 49,
+        "name": "deterministic_manifest_partition_49",
+        "passed": true
+      },
+      {
+        "id": 50,
+        "name": "deterministic_manifest_partition_50",
+        "passed": true
+      },
+      {
+        "id": 51,
+        "name": "deterministic_manifest_partition_51",
+        "passed": true
+      },
+      {
+        "id": 52,
+        "name": "deterministic_manifest_partition_52",
+        "passed": true
+      },
+      {
+        "id": 53,
+        "name": "deterministic_manifest_partition_53",
+        "passed": true
+      },
+      {
+        "id": 54,
+        "name": "deterministic_manifest_partition_54",
+        "passed": true
+      },
+      {
+        "id": 55,
+        "name": "deterministic_manifest_partition_55",
+        "passed": true
+      },
+      {
+        "id": 56,
+        "name": "deterministic_manifest_partition_56",
+        "passed": true
+      },
+      {
+        "id": 57,
+        "name": "deterministic_manifest_partition_57",
+        "passed": true
+      },
+      {
+        "id": 58,
+        "name": "deterministic_manifest_partition_58",
+        "passed": true
+      },
+      {
+        "id": 59,
+        "name": "deterministic_manifest_partition_59",
+        "passed": true
+      },
+      {
+        "id": 60,
+        "name": "deterministic_manifest_partition_60",
+        "passed": true
+      },
+      {
+        "id": 61,
+        "name": "deterministic_manifest_partition_61",
+        "passed": true
+      },
+      {
+        "id": 62,
+        "name": "deterministic_manifest_partition_62",
+        "passed": true
+      },
+      {
+        "id": 63,
+        "name": "deterministic_manifest_partition_63",
+        "passed": true
+      },
+      {
+        "id": 64,
+        "name": "deterministic_manifest_partition_64",
+        "passed": true
+      },
+      {
+        "id": 65,
+        "name": "deterministic_manifest_partition_65",
+        "passed": true
+      },
+      {
+        "id": 66,
+        "name": "deterministic_manifest_partition_66",
+        "passed": true
+      },
+      {
+        "id": 67,
+        "name": "deterministic_manifest_partition_67",
+        "passed": true
+      },
+      {
+        "id": 68,
+        "name": "deterministic_manifest_partition_68",
+        "passed": true
+      },
+      {
+        "id": 69,
+        "name": "deterministic_manifest_partition_69",
+        "passed": true
+      },
+      {
+        "id": 70,
+        "name": "deterministic_manifest_partition_70",
+        "passed": true
+      },
+      {
+        "id": 71,
+        "name": "deterministic_manifest_partition_71",
+        "passed": true
+      },
+      {
+        "id": 72,
+        "name": "deterministic_manifest_partition_72",
+        "passed": true
+      },
+      {
+        "id": 73,
+        "name": "deterministic_manifest_partition_73",
+        "passed": true
+      },
+      {
+        "id": 74,
+        "name": "deterministic_manifest_partition_74",
+        "passed": true
+      },
+      {
+        "id": 75,
+        "name": "deterministic_manifest_partition_75",
+        "passed": true
+      }
+    ]
+  },
+  "negative": {
+    "count": 116,
+    "passed": 116,
+    "scenarios": [
+      {
+        "id": 1,
+        "name": "unknown_author",
+        "expected_code": "unknown_author",
+        "detected_codes": [
+          "unknown_author"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 2,
+        "name": "unknown_committer",
+        "expected_code": "unknown_committer",
+        "detected_codes": [
+          "unknown_committer"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 3,
+        "name": "unknown_coauthor",
+        "expected_code": "unknown_coauthor",
+        "detected_codes": [
+          "unknown_coauthor"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 4,
+        "name": "unmapped_email",
+        "expected_code": "unmapped_email",
+        "detected_codes": [
+          "unmapped_email"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 5,
+        "name": "foreign_copyright",
+        "expected_code": "foreign_copyright",
+        "detected_codes": [
+          "foreign_copyright"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 6,
+        "name": "foreign_license_header",
+        "expected_code": "foreign_license_header",
+        "detected_codes": [
+          "foreign_license_header"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 7,
+        "name": "external_url_without_provenance",
+        "expected_code": "external_url_without_provenance",
+        "detected_codes": [
+          "external_url_without_provenance"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 8,
+        "name": "file_provenance_missing",
+        "expected_code": "file_provenance_missing",
+        "detected_codes": [
+          "file_provenance_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 9,
+        "name": "minified_js_without_source",
+        "expected_code": "minified_js_without_source",
+        "detected_codes": [
+          "minified_js_without_source"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 10,
+        "name": "external_source_map",
+        "expected_code": "external_source_map",
+        "detected_codes": [
+          "external_source_map"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 11,
+        "name": "foreign_css_banner",
+        "expected_code": "foreign_css_banner",
+        "detected_codes": [
+          "foreign_css_banner"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 12,
+        "name": "foreign_svg_copyright",
+        "expected_code": "foreign_svg_copyright",
+        "detected_codes": [
+          "foreign_svg_copyright"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 13,
+        "name": "png_foreign_author_metadata",
+        "expected_code": "png_foreign_author_metadata",
+        "detected_codes": [
+          "png_foreign_author_metadata"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 14,
+        "name": "font_license_unknown",
+        "expected_code": "font_license_unknown",
+        "detected_codes": [
+          "font_license_unknown"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 15,
+        "name": "file_without_license_assignment",
+        "expected_code": "file_without_license_assignment",
+        "detected_codes": [
+          "file_without_license_assignment"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 16,
+        "name": "reuse_rule_conflict",
+        "expected_code": "reuse_rule_conflict",
+        "detected_codes": [
+          "reuse_rule_conflict"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 17,
+        "name": "frozen_spdx_header_byte_change",
+        "expected_code": "frozen_spdx_header_byte_change",
+        "detected_codes": [
+          "frozen_spdx_header_byte_change"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 18,
+        "name": "frozen_sha_mismatch",
+        "expected_code": "frozen_sha_mismatch",
+        "detected_codes": [
+          "frozen_sha_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 19,
+        "name": "foreign_file_relicensed_mpl",
+        "expected_code": "foreign_file_relicensed_mpl",
+        "detected_codes": [
+          "foreign_file_relicensed_mpl"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 20,
+        "name": "unknown_image_relicensed_cc",
+        "expected_code": "unknown_image_relicensed_cc",
+        "detected_codes": [
+          "unknown_image_relicensed_cc"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 21,
+        "name": "model_relicensed_mpl",
+        "expected_code": "model_relicensed_mpl",
+        "detected_codes": [
+          "model_relicensed_mpl"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 22,
+        "name": "dataset_relicensed_cc",
+        "expected_code": "dataset_relicensed_cc",
+        "detected_codes": [
+          "dataset_relicensed_cc"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 23,
+        "name": "pcap_in_source_core",
+        "expected_code": "pcap_in_source_core",
+        "detected_codes": [
+          "pcap_in_source_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 24,
+        "name": "runtime_db_in_source_core",
+        "expected_code": "runtime_db_in_source_core",
+        "detected_codes": [
+          "runtime_db_in_source_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 25,
+        "name": "secret_in_distribution",
+        "expected_code": "secret_in_distribution",
+        "detected_codes": [
+          "secret_in_distribution"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 26,
+        "name": "env_in_distribution",
+        "expected_code": "env_in_distribution",
+        "detected_codes": [
+          "env_in_distribution"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 27,
+        "name": "private_key_in_distribution",
+        "expected_code": "private_key_in_distribution",
+        "detected_codes": [
+          "private_key_in_distribution"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 28,
+        "name": "absolute_local_path",
+        "expected_code": "absolute_local_path",
+        "detected_codes": [
+          "absolute_local_path"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 29,
+        "name": "unknown_python_license",
+        "expected_code": "unknown_python_license",
+        "detected_codes": [
+          "unknown_python_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 30,
+        "name": "ambiguous_python_license",
+        "expected_code": "ambiguous_python_license",
+        "detected_codes": [
+          "ambiguous_python_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 31,
+        "name": "direct_dependency_without_version",
+        "expected_code": "direct_dependency_without_version",
+        "detected_codes": [
+          "direct_dependency_without_version"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 32,
+        "name": "import_without_declaration",
+        "expected_code": "import_without_declaration",
+        "detected_codes": [
+          "import_without_declaration"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 33,
+        "name": "declared_dependency_not_installed",
+        "expected_code": "declared_dependency_not_installed",
+        "detected_codes": [
+          "declared_dependency_not_installed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 34,
+        "name": "incompatible_dependency_license",
+        "expected_code": "incompatible_dependency_license",
+        "detected_codes": [
+          "incompatible_dependency_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 35,
+        "name": "notice_missing",
+        "expected_code": "notice_missing",
+        "detected_codes": [
+          "notice_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 36,
+        "name": "license_file_missing",
+        "expected_code": "license_file_missing",
+        "detected_codes": [
+          "license_file_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 37,
+        "name": "official_mpl_modified",
+        "expected_code": "official_mpl_modified",
+        "detected_codes": [
+          "official_mpl_modified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 38,
+        "name": "official_cc_modified",
+        "expected_code": "official_cc_modified",
+        "detected_codes": [
+          "official_cc_modified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 39,
+        "name": "license_text_shortened",
+        "expected_code": "license_text_shortened",
+        "detected_codes": [
+          "license_text_shortened"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 40,
+        "name": "custom_mpl_restriction",
+        "expected_code": "custom_mpl_restriction",
+        "detected_codes": [
+          "custom_mpl_restriction"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 41,
+        "name": "suricata_image_in_core",
+        "expected_code": "suricata_image_in_core",
+        "detected_codes": [
+          "suricata_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 42,
+        "name": "suricata_bundle_without_gpl_source",
+        "expected_code": "suricata_bundle_without_gpl_source",
+        "detected_codes": [
+          "suricata_bundle_without_gpl_source"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 43,
+        "name": "elasticsearch_image_in_core",
+        "expected_code": "elasticsearch_image_in_core",
+        "detected_codes": [
+          "elasticsearch_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 44,
+        "name": "kibana_image_in_core",
+        "expected_code": "kibana_image_in_core",
+        "detected_codes": [
+          "kibana_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 45,
+        "name": "filebeat_image_in_core",
+        "expected_code": "filebeat_image_in_core",
+        "detected_codes": [
+          "filebeat_image_in_core"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 46,
+        "name": "elastic_claimed_mpl",
+        "expected_code": "elastic_claimed_mpl",
+        "detected_codes": [
+          "elastic_claimed_mpl"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 47,
+        "name": "suricata_claimed_mpl",
+        "expected_code": "suricata_claimed_mpl",
+        "detected_codes": [
+          "suricata_claimed_mpl"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 48,
+        "name": "zeek_claimed_owned",
+        "expected_code": "zeek_claimed_owned",
+        "detected_codes": [
+          "zeek_claimed_owned"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 49,
+        "name": "docker_desktop_in_distribution",
+        "expected_code": "docker_desktop_in_distribution",
+        "detected_codes": [
+          "docker_desktop_in_distribution"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 50,
+        "name": "from_latest",
+        "expected_code": "from_latest",
+        "detected_codes": [
+          "from_latest"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 51,
+        "name": "image_latest",
+        "expected_code": "image_latest",
+        "detected_codes": [
+          "image_latest"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 52,
+        "name": "image_without_tag",
+        "expected_code": "image_without_tag",
+        "detected_codes": [
+          "image_without_tag"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 53,
+        "name": "action_main",
+        "expected_code": "action_main",
+        "detected_codes": [
+          "action_main"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 54,
+        "name": "docker_pull_latest",
+        "expected_code": "docker_pull_latest",
+        "detected_codes": [
+          "docker_pull_latest"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 55,
+        "name": "unavailable_image_claimed_scanned",
+        "expected_code": "unavailable_image_claimed_scanned",
+        "detected_codes": [
+          "unavailable_image_claimed_scanned"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 56,
+        "name": "unavailable_image_claimed_verified",
+        "expected_code": "unavailable_image_claimed_verified",
+        "detected_codes": [
+          "unavailable_image_claimed_verified"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 57,
+        "name": "unknown_base_image",
+        "expected_code": "unknown_base_image",
+        "detected_codes": [
+          "unknown_base_image"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 58,
+        "name": "unknown_apt_license",
+        "expected_code": "unknown_apt_license",
+        "detected_codes": [
+          "unknown_apt_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 59,
+        "name": "notice_without_version",
+        "expected_code": "notice_without_version",
+        "detected_codes": [
+          "notice_without_version"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 60,
+        "name": "notice_without_upstream",
+        "expected_code": "notice_without_upstream",
+        "detected_codes": [
+          "notice_without_upstream"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 61,
+        "name": "sbom_license_missing",
+        "expected_code": "sbom_license_missing",
+        "detected_codes": [
+          "sbom_license_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 62,
+        "name": "sbom_absolute_path",
+        "expected_code": "sbom_absolute_path",
+        "detected_codes": [
+          "sbom_absolute_path"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 63,
+        "name": "sbom_secret",
+        "expected_code": "sbom_secret",
+        "detected_codes": [
+          "sbom_secret"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 64,
+        "name": "repository_manifest_file_missing",
+        "expected_code": "repository_manifest_file_missing",
+        "detected_codes": [
+          "repository_manifest_file_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 65,
+        "name": "repository_manifest_extra_file",
+        "expected_code": "repository_manifest_extra_file",
+        "detected_codes": [
+          "repository_manifest_extra_file"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 66,
+        "name": "repository_manifest_sha_mismatch",
+        "expected_code": "repository_manifest_sha_mismatch",
+        "detected_codes": [
+          "repository_manifest_sha_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 67,
+        "name": "repository_manifest_duplicate_path",
+        "expected_code": "repository_manifest_duplicate_path",
+        "detected_codes": [
+          "repository_manifest_duplicate_path"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 68,
+        "name": "repository_manifest_license_conflict",
+        "expected_code": "repository_manifest_license_conflict",
+        "detected_codes": [
+          "repository_manifest_license_conflict"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 69,
+        "name": "review_required_in_approved_release",
+        "expected_code": "review_required_in_approved_release",
+        "detected_codes": [
+          "review_required_in_approved_release"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 70,
+        "name": "offline_bundle_approved",
+        "expected_code": "offline_bundle_approved",
+        "detected_codes": [
+          "offline_bundle_approved"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 71,
+        "name": "model_package_without_license",
+        "expected_code": "model_package_without_license",
+        "detected_codes": [
+          "model_package_without_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 72,
+        "name": "dataset_package_without_license",
+        "expected_code": "dataset_package_without_license",
+        "detected_codes": [
+          "dataset_package_without_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 73,
+        "name": "candidate_changed",
+        "expected_code": "candidate_changed",
+        "detected_codes": [
+          "candidate_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 74,
+        "name": "backend_tree_changed",
+        "expected_code": "backend_tree_changed",
+        "detected_codes": [
+          "backend_tree_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 75,
+        "name": "protected_file_changed",
+        "expected_code": "protected_file_changed",
+        "detected_codes": [
+          "protected_file_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 76,
+        "name": "protected_manifest_changed",
+        "expected_code": "protected_manifest_changed",
+        "detected_codes": [
+          "protected_manifest_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 77,
+        "name": "policy_result_changed",
+        "expected_code": "policy_result_changed",
+        "detected_codes": [
+          "policy_result_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 78,
+        "name": "v0319_changed",
+        "expected_code": "v0319_changed",
+        "detected_codes": [
+          "v0319_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 79,
+        "name": "v045_changed",
+        "expected_code": "v045_changed",
+        "detected_codes": [
+          "v045_changed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 80,
+        "name": "git_history_rewrite",
+        "expected_code": "git_history_rewrite",
+        "detected_codes": [
+          "git_history_rewrite"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 81,
+        "name": "push_attempt",
+        "expected_code": "push_attempt",
+        "detected_codes": [
+          "push_attempt"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 82,
+        "name": "network_pull_during_validation",
+        "expected_code": "network_pull_during_validation",
+        "detected_codes": [
+          "network_pull_during_validation"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 83,
+        "name": "automatic_image_download",
+        "expected_code": "automatic_image_download",
+        "detected_codes": [
+          "automatic_image_download"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 84,
+        "name": "foreign_copyright_removed",
+        "expected_code": "foreign_copyright_removed",
+        "detected_codes": [
+          "foreign_copyright_removed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 85,
+        "name": "notice_removed",
+        "expected_code": "notice_removed",
+        "detected_codes": [
+          "notice_removed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 86,
+        "name": "false_patent_clearance",
+        "expected_code": "false_patent_clearance",
+        "detected_codes": [
+          "false_patent_clearance"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 87,
+        "name": "false_legal_opinion",
+        "expected_code": "false_legal_opinion",
+        "detected_codes": [
+          "false_legal_opinion"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 88,
+        "name": "false_registered_trademark",
+        "expected_code": "false_registered_trademark",
+        "detected_codes": [
+          "false_registered_trademark"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 89,
+        "name": "contribution_without_provenance",
+        "expected_code": "contribution_without_provenance",
+        "detected_codes": [
+          "contribution_without_provenance"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 90,
+        "name": "third_party_contribution_without_license",
+        "expected_code": "third_party_contribution_without_license",
+        "detected_codes": [
+          "third_party_contribution_without_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 91,
+        "name": "model_contribution_without_license",
+        "expected_code": "model_contribution_without_license",
+        "detected_codes": [
+          "model_contribution_without_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 92,
+        "name": "dataset_contribution_without_license",
+        "expected_code": "dataset_contribution_without_license",
+        "detected_codes": [
+          "dataset_contribution_without_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 93,
+        "name": "mutable_image_not_recorded",
+        "expected_code": "mutable_image_not_recorded",
+        "detected_codes": [
+          "mutable_image_not_recorded"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 94,
+        "name": "action_without_ref",
+        "expected_code": "action_without_ref",
+        "detected_codes": [
+          "action_without_ref"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 95,
+        "name": "secret_in_sbom",
+        "expected_code": "secret_in_sbom",
+        "detected_codes": [
+          "secret_in_sbom"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 96,
+        "name": "review_count_mismatch",
+        "expected_code": "review_count_mismatch",
+        "detected_codes": [
+          "review_count_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 97,
+        "name": "unassigned_count_mismatch",
+        "expected_code": "unassigned_count_mismatch",
+        "detected_codes": [
+          "unassigned_count_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 98,
+        "name": "unknown_count_mismatch",
+        "expected_code": "unknown_count_mismatch",
+        "detected_codes": [
+          "unknown_count_mismatch"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 99,
+        "name": "dco_retroactive",
+        "expected_code": "dco_retroactive",
+        "detected_codes": [
+          "dco_retroactive"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 100,
+        "name": "signed_off_missing",
+        "expected_code": "signed_off_missing",
+        "detected_codes": [
+          "signed_off_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 101,
+        "name": "personal_data_in_dataset",
+        "expected_code": "personal_data_in_dataset",
+        "detected_codes": [
+          "personal_data_in_dataset"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 102,
+        "name": "organization_pcap",
+        "expected_code": "organization_pcap",
+        "detected_codes": [
+          "organization_pcap"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 103,
+        "name": "runtime_artifact_tracked",
+        "expected_code": "runtime_artifact_tracked",
+        "detected_codes": [
+          "runtime_artifact_tracked"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 104,
+        "name": "model_binary_tracked",
+        "expected_code": "model_binary_tracked",
+        "detected_codes": [
+          "model_binary_tracked"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 105,
+        "name": "dataset_without_privacy_review",
+        "expected_code": "dataset_without_privacy_review",
+        "detected_codes": [
+          "dataset_without_privacy_review"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 106,
+        "name": "container_license_noassertion_in_bundle",
+        "expected_code": "container_license_noassertion_in_bundle",
+        "detected_codes": [
+          "container_license_noassertion_in_bundle"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 107,
+        "name": "frozen_mapping_missing",
+        "expected_code": "frozen_mapping_missing",
+        "detected_codes": [
+          "frozen_mapping_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 108,
+        "name": "reuse_default_coverage_missing",
+        "expected_code": "reuse_default_coverage_missing",
+        "detected_codes": [
+          "reuse_default_coverage_missing"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 109,
+        "name": "documentation_mpl_override",
+        "expected_code": "documentation_mpl_override",
+        "detected_codes": [
+          "documentation_mpl_override"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 110,
+        "name": "source_cc_override",
+        "expected_code": "source_cc_override",
+        "detected_codes": [
+          "source_cc_override"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 111,
+        "name": "trademark_in_code_license",
+        "expected_code": "trademark_in_code_license",
+        "detected_codes": [
+          "trademark_in_code_license"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 112,
+        "name": "image_bundle_contains_layers",
+        "expected_code": "image_bundle_contains_layers",
+        "detected_codes": [
+          "image_bundle_contains_layers"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 113,
+        "name": "user_pulled_claim_false",
+        "expected_code": "user_pulled_claim_false",
+        "detected_codes": [
+          "user_pulled_claim_false"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 114,
+        "name": "docker_pull_performed",
+        "expected_code": "docker_pull_performed",
+        "detected_codes": [
+          "docker_pull_performed"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 115,
+        "name": "validation_mutates_frozen",
+        "expected_code": "validation_mutates_frozen",
+        "detected_codes": [
+          "validation_mutates_frozen"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      },
+      {
+        "id": 116,
+        "name": "validation_uses_absolute_output",
+        "expected_code": "validation_uses_absolute_output",
+        "detected_codes": [
+          "validation_uses_absolute_output"
+        ],
+        "passed": true,
+        "temporary_copy": true,
+        "violation_created": true
+      }
+    ]
+  },
+  "main_worktree_mutated_by_negative_campaign": false
+}

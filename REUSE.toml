@@ -1,0 +1,32 @@
+version = 1
+
+[[annotations]]
+path = ["**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "Руслан Покатилов"
+SPDX-License-Identifier = "MPL-2.0"
+
+[[annotations]]
+path = ["**/*.md", "**/*.rst", "NOTICE", "AUTHORS.md", "COPYRIGHT.md", "THIRD_PARTY_NOTICES.md", "TRADEMARKS.md"]
+precedence = "override"
+SPDX-FileCopyrightText = "Руслан Покатилов"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["LICENSE", "LICENSES/MPL-2.0.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "Mozilla Foundation and contributors"
+SPDX-License-Identifier = "MPL-2.0"
+
+[[annotations]]
+path = ["LICENSES/CC-BY-4.0.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "Creative Commons"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["DCO.txt"]
+precedence = "override"
+SPDX-FileCopyrightText = "The Linux Foundation and contributors"
+SPDX-License-Identifier = "LicenseRef-DCO-1.1"
+
