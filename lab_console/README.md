@@ -6,7 +6,7 @@
 
 ## Статус
 
-`current`, `laboratory-only`, этапы `v0.4.3–v0.4.6`.
+`current`, `laboratory-only`, этапы `v0.4.3–v0.4.7`.
 
 ## Место в архитектуре
 
@@ -72,3 +72,6 @@ python -m pytest ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_u
 ## Предложения кандидатов v0.4.6
 
 Раздел «Предложения кандидатов» реализует guided wizard, frozen split/recipe, безопасный in-process runner, восстановление, fingerprint, reproducibility, screening, сравнение v0.4.5, admission gate и версионируемое review. Model binary остаётся только в runtime. Register, activate, promote, upload и arbitrary-command маршруты отсутствуют.
+## Слепые проверки v0.4.7
+
+Раздел `/ui/blind-validations` показывает каталог и 25 представлений blind workflow. Мутации API требуют отдельного `X-Blind-Role-Token`; GET не раскрывает raw labels или prediction rows. Регистрация, promotion, повторный inference после unlock и загрузка model/dataset отсутствуют.

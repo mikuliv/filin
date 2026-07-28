@@ -22,8 +22,12 @@ from .models import (CandidateProposalCreate, CandidateProposalReviewComplete,
                      LaboratoryRunExecute, LaboratoryRunRecovery, ReviewCheck,
                      ReviewComplete, ReviewCreate, ReviewDecision, ReviewItemState,
                      ReviewNote, ReviewProgress, RunComparisonCreate, TaskStart,
-                     ProposalTrainingRecovery, ProposalTrainingStart)
+                     ProposalTrainingRecovery, ProposalTrainingStart,
+                     BlindValidationCreate, BlindInferenceStart, BlindInferenceRecovery,
+                     BlindValidationReviewProgress, BlindValidationReviewNote,
+                     BlindValidationReviewComplete)
 from .candidate_proposals import CandidateProposalService
+from .blind_validations import BlindValidationService
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
@@ -31,7 +35,7 @@ from .presentation.case_views import case_catalog, case_page
 from .review import ReviewService
 from .security import SessionStore
 
-PAGES = {key: value for key, value in TITLE.items() if key not in {"cases", "lab-runs", "run-comparisons", "candidate-proposals", "candidate-versions"}}
+PAGES = {key: value for key, value in TITLE.items() if key not in {"cases", "lab-runs", "run-comparisons", "candidate-proposals", "candidate-versions", "blind-validations"}}
 
 
 def create_app(settings: Settings | None = None, database_path: Path | None = None) -> FastAPI:
@@ -42,12 +46,12 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     catalog = TaskCatalog(task_catalog_path if task_catalog_path.is_file() else Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     ui_catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     runner = TaskRunner(catalog, db, runtime, settings.max_parallel_tasks)
-    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); proposals = CandidateProposalService(db, runtime); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
-    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.6", docs_url=None, redoc_url=None)
+    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); proposals = CandidateProposalService(db, runtime); blind_validations = BlindValidationService(db, runtime); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
+    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.7", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
     templates.env.filters["json_ru"] = lambda value: json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True)
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
-    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals = settings, db, catalog, runner, cases, reviews, lab_runs, proposals
+    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals, app.state.blind_validations = settings, db, catalog, runner, cases, reviews, lab_runs, proposals, blind_validations
 
     @app.exception_handler(ValueError)
     async def value_error_handler(_request: Request, exc: ValueError):
@@ -121,6 +125,11 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                        "title": "Предложения кандидатов", "breadcrumbs": ["Филин", "Предложения кандидатов"], "proposals": proposals.list(),
                        "data_catalog": proposals.data_catalog(), "splits": proposals.splits(), "recipes": proposals.recipes(), "criteria": proposals.admission_criteria()}
             return templates.TemplateResponse(request, "pages/candidate_proposals.html", context)
+        if page == "blind-validations":
+            context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf,
+                       "page": page, "title": "Слепые лабораторные проверки", "breadcrumbs": ["Филин", "Слепые лабораторные проверки"],
+                       "validations": blind_validations.list(), "roles": blind_validations.roles()}
+            return templates.TemplateResponse(request, "pages/blind_validations.html", context)
         if page == "documentation":
             context = present_page("dashboard", reviews, runner, ui_catalog)
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
@@ -221,8 +230,148 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                    "proposal": proposal, "proposal_review": review}
         return templates.TemplateResponse(request, "pages/candidate_proposal_review.html", context)
 
+    blind_views = [
+        ("overview", "Обзор"), ("control-packs", "Контрольные наборы"), ("commitments", "Commitments"),
+        ("roles", "Роли и доступ"), ("blindness", "Blindness gate"), ("prediction-plans", "Prediction plans"),
+        ("active-inference", "Inference active"), ("proposal-inference", "Inference proposal"),
+        ("prediction-commitments", "Prediction commitments"), ("label-unlock", "Label unlock"),
+        ("evaluation", "Evaluation"), ("comparability", "Comparability"), ("metrics", "Metrics"),
+        ("classes", "Classes"), ("episodes", "Episodes"), ("abstentions", "Abstentions"),
+        ("reconstruction", "Reconstruction"), ("cards", "Cards"), ("gaps", "Gaps"),
+        ("hypotheses", "Hypotheses"), ("differences", "Differences"), ("acceptance-gate", "Acceptance gate"),
+        ("manual-review", "Manual review"), ("export", "Export"), ("limitations", "Limitations"),
+    ]
+
+    @app.get("/ui/blind-validations/{validation_token}", response_class=HTMLResponse)
+    @app.get("/ui/blind-validations/{validation_token}/{view}", response_class=HTMLResponse)
+    async def blind_validation_detail_page(request: Request, validation_token: str, view: str = "overview"):
+        if view not in dict(blind_views): raise HTTPException(404)
+        try: validation = blind_validations.get(validation_token)
+        except (KeyError, ValueError): raise HTTPException(404)
+        evaluation = validation.get("evaluation") or {}
+        comparison = validation.get("comparison") or {}
+        participants = evaluation.get("participants", {})
+        view_data = {
+            "overview": {k: validation.get(k) for k in ("validation_lineage_id", "proposal_id", "active_candidate_id", "status", "protocol_revision", "independence_assessment", "final_decision")},
+            "control-packs": validation.get("control_pack"), "commitments": {"label": validation.get("label_commitment"), "predictions": validation.get("prediction_commitments")},
+            "roles": validation.get("role_assignments"), "blindness": {"overlap": validation.get("overlap_assessment"), "blindness": validation.get("blindness_gate")},
+            "prediction-plans": validation.get("prediction_plan"), "active-inference": [x for x in validation.get("inference_runs", []) if x.get("participant") == "active_candidate"],
+            "proposal-inference": [x for x in validation.get("inference_runs", []) if x.get("participant") == "proposal"],
+            "prediction-commitments": validation.get("prediction_commitments"), "label-unlock": {"status": validation.get("label_status"), "unlock": validation.get("label_unlock")},
+            "evaluation": evaluation, "comparability": comparison.get("comparability"), "metrics": participants,
+            "classes": {k: v.get("class_metrics", []) for k, v in participants.items()},
+            "episodes": {k: {m: v.get(m) for m in ("episode_recall", "episode_precision", "detection_delay_seconds")} for k, v in participants.items()},
+            "abstentions": {k: {m: v.get(m) for m in ("abstention_rate", "missing_predictions", "duplicate_predictions", "invalid_predictions")} for k, v in participants.items()},
+            "reconstruction": comparison.get("reconstruction_differences"), "cards": comparison.get("card_differences"),
+            "gaps": comparison.get("gap_differences"), "hypotheses": comparison.get("hypothesis_differences"),
+            "differences": comparison, "acceptance-gate": validation.get("acceptance_result") or validation.get("acceptance_definition"),
+            "manual-review": {"review_id": validation.get("review_id"), "final_decision": validation.get("final_decision")},
+            "export": {"available": bool(validation.get("review_id")), "runtime_only": True, "contains_model_or_dataset": False},
+            "limitations": validation.get("limitations"),
+        }[view]
+        context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf,
+                   "page": "blind-validations", "title": "Слепая лабораторная проверка",
+                   "breadcrumbs": ["Филин", "Слепые проверки", validation_token], "validation": validation,
+                   "blind_views": blind_views, "blind_view": view, "blind_view_title": dict(blind_views)[view], "blind_view_data": view_data}
+        return templates.TemplateResponse(request, "pages/blind_validation_detail.html", context)
+
+    @app.get("/ui/blind-validation-reviews/{review_id}", response_class=HTMLResponse)
+    async def blind_validation_review_page(request: Request, review_id: str):
+        try:
+            review = blind_validations.review(review_id)
+            validation = blind_validations.get(review["validation_token"])
+        except (KeyError, ValueError): raise HTTPException(404)
+        context = {**present_page("reviews", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf,
+                   "page": "blind-validations", "title": "Ручное рассмотрение слепой проверки",
+                   "breadcrumbs": ["Филин", "Слепые проверки", "Ручное рассмотрение"],
+                   "blind_review": review, "validation": validation}
+        return templates.TemplateResponse(request, "pages/blind_validation_review.html", context)
+
     @app.get("/api/console/v1/health")
     async def health(): return {"schema_version": "console_health_v1", "status": "ok", "laboratory_only": True}
+
+    def blind_auth(request: Request, roles: set[str], operation: str) -> str:
+        return blind_validations.authorize(request.headers.get("x-blind-role-token"), roles, operation)
+
+    @app.get("/api/console/v1/blind-validations")
+    async def blind_validation_catalog(): return blind_validations.list()
+    @app.get("/api/console/v1/blind-validations/control-packs")
+    async def blind_control_pack_catalog(): return blind_validations.control_packs()
+    @app.get("/api/console/v1/blind-validations/roles")
+    async def blind_role_catalog(): return blind_validations.roles()
+    @app.post("/api/console/v1/blind-validations")
+    async def blind_validation_create(request: Request, body: BlindValidationCreate):
+        blind_auth(request, {"control_data_custodian"}, "create_control_pack")
+        if not body.confirmed: raise ValueError("confirmation_required")
+        return blind_validations.create()
+    @app.get("/api/console/v1/blind-validations/{validation_token}")
+    async def blind_validation_get(validation_token: str): return blind_validations.get(validation_token)
+    @app.get("/api/console/v1/blind-validations/{validation_token}/protocol")
+    async def blind_validation_protocol(validation_token: str): return blind_validations.protocol(validation_token)
+    @app.get("/api/console/v1/blind-validations/{validation_token}/control-pack")
+    async def blind_validation_control_pack(validation_token: str): return blind_validations.get(validation_token)["control_pack"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/commitments")
+    async def blind_validation_commitments(validation_token: str):
+        value = blind_validations.get(validation_token)
+        return {"label_commitment": value["label_commitment"], "prediction_commitments": value["prediction_commitments"]}
+    @app.get("/api/console/v1/blind-validations/{validation_token}/blindness")
+    async def blind_validation_blindness(validation_token: str): return blind_validations.get(validation_token)["blindness_gate"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/prediction-plan")
+    async def blind_validation_prediction_plan(validation_token: str): return blind_validations.get(validation_token)["prediction_plan"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/predictions")
+    async def blind_validation_predictions(validation_token: str):
+        value = blind_validations.get(validation_token)
+        return {"inference_runs": value["inference_runs"], "prediction_commitments": value["prediction_commitments"], "prediction_rows_exposed": False}
+    @app.get("/api/console/v1/blind-validations/{validation_token}/label-status")
+    async def blind_validation_label_status(validation_token: str): return blind_validations.get(validation_token)["label_status"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/evaluation")
+    async def blind_validation_evaluation(validation_token: str): return blind_validations.get(validation_token)["evaluation"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/comparison")
+    async def blind_validation_comparison(validation_token: str): return blind_validations.get(validation_token)["comparison"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/gate")
+    async def blind_validation_gate(validation_token: str): return blind_validations.get(validation_token)["acceptance_result"]
+    @app.get("/api/console/v1/blind-validations/{validation_token}/review")
+    async def blind_validation_review_get(validation_token: str):
+        value = blind_validations.get(validation_token)
+        return blind_validations.review(value["review_id"]) if value.get("review_id") else None
+
+    @app.post("/api/console/v1/blind-validations/{validation_token}/validate")
+    async def blind_validation_validate(request: Request, validation_token: str): blind_auth(request, {"control_data_custodian"}, "create_control_pack"); return blind_validations.validate(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/commit-control-pack")
+    async def blind_validation_commit_control(request: Request, validation_token: str): blind_auth(request, {"control_data_custodian"}, "commit_labels"); return blind_validations.get(validation_token)["label_commitment"]
+    @app.post("/api/console/v1/blind-validations/{validation_token}/check-overlap")
+    async def blind_validation_overlap(request: Request, validation_token: str): blind_auth(request, {"control_data_custodian"}, "create_control_pack"); return blind_validations.check_overlap(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/check-blindness")
+    async def blind_validation_check_blindness(request: Request, validation_token: str): blind_auth(request, {"inference_operator"}, "check_blindness"); return blind_validations.check_blindness(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/freeze-plan")
+    async def blind_validation_freeze_plan(request: Request, validation_token: str): blind_auth(request, {"inference_operator"}, "freeze_plan"); return blind_validations.freeze_plan(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/run-active")
+    async def blind_validation_run_active(request: Request, validation_token: str, body: BlindInferenceStart): blind_auth(request, {"inference_operator"}, "run_active"); return blind_validations.run_active(validation_token, interrupt=body.interrupt)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/run-proposal")
+    async def blind_validation_run_proposal(request: Request, validation_token: str, body: BlindInferenceStart): blind_auth(request, {"inference_operator"}, "run_proposal"); return blind_validations.run_proposal(validation_token, interrupt=body.interrupt)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/recover-run")
+    async def blind_validation_recover(request: Request, validation_token: str, body: BlindInferenceRecovery): blind_auth(request, {"inference_operator"}, "recover_run"); return blind_validations.recover_run(validation_token, body.execution_id)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/freeze-predictions")
+    async def blind_validation_freeze_predictions(request: Request, validation_token: str): blind_auth(request, {"inference_operator"}, "freeze_predictions"); return blind_validations.freeze_predictions(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/authorize-label-unlock")
+    async def blind_validation_authorize_unlock(request: Request, validation_token: str): blind_auth(request, {"control_data_custodian"}, "authorize_unlock"); return blind_validations.authorize_label_unlock(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/unlock-labels")
+    async def blind_validation_unlock(request: Request, validation_token: str): blind_auth(request, {"evaluation_operator"}, "unlock_labels"); return blind_validations.unlock_labels(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/evaluate")
+    async def blind_validation_evaluate(request: Request, validation_token: str): blind_auth(request, {"evaluation_operator"}, "evaluate"); return blind_validations.evaluate(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/compare")
+    async def blind_validation_compare(request: Request, validation_token: str): blind_auth(request, {"evaluation_operator"}, "compare"); return blind_validations.compare(validation_token)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/reviews")
+    async def blind_validation_review_create(request: Request, validation_token: str): blind_auth(request, {"validation_reviewer"}, "review"); return blind_validations.create_review(validation_token)
+    @app.patch("/api/console/v1/blind-validation-reviews/{review_id}/progress")
+    async def blind_validation_review_progress(request: Request, review_id: str, body: BlindValidationReviewProgress): blind_auth(request, {"validation_reviewer"}, "review"); return blind_validations.update_review(review_id, completed_steps=body.completed_steps)
+    @app.post("/api/console/v1/blind-validation-reviews/{review_id}/notes")
+    async def blind_validation_review_note(request: Request, review_id: str, body: BlindValidationReviewNote): blind_auth(request, {"validation_reviewer"}, "review"); return blind_validations.update_review(review_id, note=body.text)
+    @app.post("/api/console/v1/blind-validation-reviews/{review_id}/decision")
+    @app.post("/api/console/v1/blind-validation-reviews/{review_id}/complete")
+    async def blind_validation_review_complete(request: Request, review_id: str, body: BlindValidationReviewComplete): blind_auth(request, {"validation_reviewer"}, "decide"); return blind_validations.complete_review(review_id, body.decision, body.reviewer_summary)
+    @app.post("/api/console/v1/blind-validations/{validation_token}/export")
+    async def blind_validation_export(request: Request, validation_token: str): blind_auth(request, {"validation_reviewer"}, "export"); return blind_validations.export(validation_token)
 
     @app.get("/api/console/v1/candidate-proposals")
     async def candidate_proposal_catalog(): return proposals.list()

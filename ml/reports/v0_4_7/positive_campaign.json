@@ -1,0 +1,982 @@
+[
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-001"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-002"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-003"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-004"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-005"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-006"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-007"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-008"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-009"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-010"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-011"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-012"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-013"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-014"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-015"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-016"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-017"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-018"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-019"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-020"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-021"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-022"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-023"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-024"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-025"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-026"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-027"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-028"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-029"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-030"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-031"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-032"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-033"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-034"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-035"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-036"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-037"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-038"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-039"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-040"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-041"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-042"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-043"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-044"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-045"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-046"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-047"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-048"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-049"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-050"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-051"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-052"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-053"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-054"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-055"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-056"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-057"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-058"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-059"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-060"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-061"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-062"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-063"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-064"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-065"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-066"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-067"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-068"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-069"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-070"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-071"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-072"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-073"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-074"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-075"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-076"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-077"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-078"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-079"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-080"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-081"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-082"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-083"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-084"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-085"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-086"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-087"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-088"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-089"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-090"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-091"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-092"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-093"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-094"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-095"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-096"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-097"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-098"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-099"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-100"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-101"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-102"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-103"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-104"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-105"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-106"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-107"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-108"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-109"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-110"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-111"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-112"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-113"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-114"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-115"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-116"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-117"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-118"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-119"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-120"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-121"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-122"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-123"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-124"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-125"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-126"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-127"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-128"
+  },
+  {
+    "accepted": true,
+    "check": "review_resumed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-129"
+  },
+  {
+    "accepted": true,
+    "check": "candidate_registry_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-130"
+  },
+  {
+    "accepted": true,
+    "check": "active_candidate_unchanged",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-131"
+  },
+  {
+    "accepted": true,
+    "check": "network_disabled",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-132"
+  },
+  {
+    "accepted": true,
+    "check": "protocol_frozen",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-133"
+  },
+  {
+    "accepted": true,
+    "check": "control_pack_independent",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-134"
+  },
+  {
+    "accepted": true,
+    "check": "overlap_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-135"
+  },
+  {
+    "accepted": true,
+    "check": "blindness_gate_passed",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-136"
+  },
+  {
+    "accepted": true,
+    "check": "label_commitment_valid",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-137"
+  },
+  {
+    "accepted": true,
+    "check": "predictions_frozen_before_unlock",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-138"
+  },
+  {
+    "accepted": true,
+    "check": "evaluation_rebuild_deterministic",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-139"
+  },
+  {
+    "accepted": true,
+    "check": "comparability",
+    "executed": true,
+    "passed": true,
+    "scenario_id": "v047-pos-140"
+  }
+]

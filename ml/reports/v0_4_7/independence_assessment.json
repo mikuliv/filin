@@ -1,0 +1,7 @@
+{
+  "independent_human_claim_allowed": false,
+  "independent_reviewer_count": 0,
+  "review_independence_status": "role_separated_blind",
+  "same_human_may_operate_separated_roles": true,
+  "schema_version": "blind_validation_independence_assessment_v1"
+}

@@ -1,0 +1,37 @@
+{
+  "browser": {
+    "accepted_views": 32,
+    "passed": true
+  },
+  "compileall": true,
+  "documentation": true,
+  "full_pytest": {
+    "duration_seconds": 555.34,
+    "failed": 0,
+    "passed": 1802,
+    "warnings": 3
+  },
+  "known_warnings": [
+    "3 sklearn classification warnings inherited from v0.3.6/v0.3.7 tests"
+  ],
+  "licensing": true,
+  "negative_campaign": {
+    "rejected": 240,
+    "total": 240
+  },
+  "positive_campaign": {
+    "passed": 140,
+    "total": 140
+  },
+  "previous_verifiers": [
+    "verify_console",
+    "verify_v044",
+    "verify_v045",
+    "verify_v046"
+  ],
+  "schema_version": "v0_4_7_test_summary_v1",
+  "v0_4_7_tests": {
+    "failed": 0,
+    "passed": 10
+  }
+}

@@ -10,5 +10,6 @@
 | `v0.4.4` | 12 cases и persistent operator workflow | positive/negative campaign и deterministic export | external applicability не проверена |
 | `v0.4.5` | frozen run plans, restart recovery и comparability gate | 12 запусков, 8 сравнений, 26 browser checks | сравнение не выбирает и не продвигает кандидата |
 | `v0.4.6` | frozen training proposal, semantic fingerprint и admission gate | два byte-identical обучения, screening, сравнение и ручной admission | proposal не является кандидатом и не меняет registry |
+| `v0.4.7` | role-separated blind validation | labels закрыты до двух prediction commitments; evaluation воспроизводима | procedure passed, proposal `failed_validation`, independent human отсутствует |
 
 Следующий допустимый лабораторный этап — только подготовительный `v0.4.7`. Линия не заменяет основной следующий этап `v0.3.19`.

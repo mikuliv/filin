@@ -101,7 +101,7 @@ def test_operator_views_explain_comparisons_and_keep_layout_safe(client):
     assert "result_explanation" in javascript and '<p class="comparison-result">' in javascript
     assert "Почему такой результат" in javascript and "evidence_summary" in javascript
     assert "<summary>Технические сведения</summary>" in javascript
-    assert "console.css?v=v045-run-catalog" in base and "console.js?v=v045-run-catalog" in base
+    assert "console.css?v=v047-blind-validation" in base and "console.js?v=v047-blind-validation" in base
 
 
 def test_timeline_modes_reposition_events_and_graph_selection_can_be_cleared(client):

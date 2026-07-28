@@ -1,0 +1,57 @@
+{
+  "checks": [
+    {
+      "name": "label_path_denied",
+      "status": "passed"
+    },
+    {
+      "name": "label_token_denied",
+      "status": "passed"
+    },
+    {
+      "name": "test_oracle_absent",
+      "status": "passed"
+    },
+    {
+      "name": "filenames_opaque",
+      "status": "passed"
+    },
+    {
+      "name": "scenario_tokens_opaque",
+      "status": "passed"
+    },
+    {
+      "name": "api_redaction",
+      "status": "passed"
+    },
+    {
+      "name": "ui_redaction",
+      "status": "passed"
+    },
+    {
+      "name": "logs_redacted",
+      "status": "passed"
+    },
+    {
+      "name": "exceptions_redacted",
+      "status": "passed"
+    },
+    {
+      "name": "search_excludes_labels",
+      "status": "passed"
+    },
+    {
+      "name": "active_process_denied",
+      "status": "passed"
+    },
+    {
+      "name": "proposal_process_denied",
+      "status": "passed"
+    }
+  ],
+  "leaks": [],
+  "pre_unlock_label_access_count": 0,
+  "schema_version": "blindness_gate_result_v1",
+  "status": "passed",
+  "test_oracle_access_count": 0
+}

@@ -1,0 +1,109 @@
+{
+  "entries": [
+    {
+      "attack_variant_counts": {
+        "variants": 20
+      },
+      "benign_variant_counts": {
+        "variants": 4
+      },
+      "blind_labels": true,
+      "capture_count": 4320,
+      "class_counts": {
+        "auth_failures": 684,
+        "beacon": 684,
+        "benign": 684,
+        "low_rate_dos": 684,
+        "port_scan": 684,
+        "web_probe": 684
+      },
+      "contains_external_organization_data": false,
+      "contains_personal_data": false,
+      "contains_real_data": false,
+      "control_pack_id": "blind-pack:v047:01c5f40ba48a9944",
+      "distribution_allowed": false,
+      "duration_distribution": {
+        "seconds_per_session": 540
+      },
+      "event_count": 4320,
+      "frozen": true,
+      "generation_protocol": "independent_domain_scenario_generator_r1",
+      "generation_protocol_sha256": "925b05ffbead8380d9930a617e18dfe1ae148cfada2a056bc5cfd1260cd99960",
+      "group_keys": [
+        "s-5755b1e61ff57a67ce55",
+        "s-08bec9336cc9a6c8bbc5",
+        "s-2c603e88e60bbfa3d841",
+        "s-6759c14edec3da0d2580",
+        "s-392abb36094aa2cdd8d9",
+        "s-fb635ad8041b17581898",
+        "s-35339b6fdf950047d784",
+        "s-2be4408bcffc8143aff0",
+        "s-423e18110458a50dd30c",
+        "s-4fc3cb945f2a6294310c",
+        "s-03b0541919a7dfb6072e",
+        "s-81ccddb743f56c7b833d",
+        "s-550d5f2b8390a346b3d6",
+        "s-b298d83b942726018cae",
+        "s-b29cee2216c42c5da4f1",
+        "s-353d02c401fd2b7c564a",
+        "s-f9a770deca34f2b2e802",
+        "s-4884bf4466ca0fa5a791",
+        "s-77b3c826d34619d09063",
+        "s-76a0d4791cbd9a44ecb4",
+        "s-1da5845b98dbf65705ee",
+        "s-38d00d948394dcef0dc5",
+        "s-675bce98fe8c2cadbdae",
+        "s-00238d77f11127573d23"
+      ],
+      "input_manifest_sha256": "c0f8a61a99df7410cc415cabd39af9bcaca3f6691b9169d9dab81656733e9eb5",
+      "input_semantic_sha256": "dba9e815c5d964909f8a9cf0e6dd46201edb2c22d413af0b1194f96693c6baea",
+      "label_manifest_sha256": "378da2712655ca18bd63c6973733fa738dc6c39312b636bafe3430478487d0a8",
+      "label_semantic_sha256": "ad875e5c7b2aaa05151fbc9b49a6d1b981ae935fd46ed20d51d1e6ac579359a4",
+      "limitations": [
+        "Synthetic feature-level control pack.",
+        "Не является сетевым трафиком организации."
+      ],
+      "overlaps_calibration_data": false,
+      "overlaps_development_validation": false,
+      "overlaps_internal_screening": false,
+      "overlaps_previous_blind_sets": false,
+      "overlaps_training_data": false,
+      "runtime_only": true,
+      "scenario_catalog_sha256": "e20e509c54622d8838b17720d8f37cf22cb4a43b9722a98c85445b6919bfff8e",
+      "scenario_counts": {
+        "opaque_variants": 24
+      },
+      "schema_version": "blind_control_pack_v1",
+      "scored_window_count": 4104,
+      "seed_commitments": [
+        "aafa6f82c69ac4a2e6556057892b2172db5fae964652e08df7dc8e196d86dcc6",
+        "5ce948c9001a8057514eecd3f6a2547ae1b79c4b7a34b691096940d04a44b730",
+        "a80fe200de6f6f7df071ff727ff1e17595e0eb7c23b794d0883207ba222005bb",
+        "84f50bf18dba28b6c6293797d017d7312057269dda791665c0bd751c43877d5e",
+        "1711621457fcf8d6487e69dbd32c97ad03449eea7d8f9e0fe6cb3b507c47d78b",
+        "68c2f9227f6160664e485c6d32429a8e40816d5d8c8877de4f44512c240c9e58",
+        "73ebad3948a2ad47cddee9d163ad0d4ebc9ec8505f12db04a7fa603986938d1a",
+        "0726f6420bc6059ba6601f420b626561ab60bc035b03feb3cd2ae60866c94ec2",
+        "3491677edf719a8fc55d2e96eb4fbf80df0f05e4c6cbb8174e71e88bdc29c7b8",
+        "55c76d7eeee6ab58e56cafb09818821194e744a208ace3f17b0e86d72d479e70",
+        "a69ad5edcb4883bc8c2684745309ad287ec92792d2c94dd0d7619e0b63ae97f2",
+        "37ab1f1f1de56bab07541c62847b46c8fd3cbfd6e93e9d590f296202bb773127",
+        "f0b706e46c2c9551a05ab8db23875bc0fc72428f6c446a426dbdc729d46d2136",
+        "48468d7448d06447b25630f750b980fc575474a8a7f49f8a44495d1750e64d84",
+        "191725e7deaed6ab22345aa80b949b8d517dfd9cffe11de6cbb2b256999805a9",
+        "fa22537131db789229af5385f4947c89587bba577ee3a227c68e45ab370de1e1",
+        "f71292e6e447433c6291c01750560da33aa526adc41a023f6e72da8f93f6dccc",
+        "b4005703cd96d62cbf66bb8c4edbb33b759c9f8cacc7357b58d439c5a3a915b0",
+        "1795063fa026f4de3907bddc689d676577880640fd065a5936440555b8c13d8d",
+        "3bf9005b71ac84b67a3daa5a7d8734f4eecb16cbd69aa1d05322154380f82944",
+        "d52e36b9817399d42923581d7744f9cc9bf4c6a3d9c9d2de3c1f3de6ebfc5e4b",
+        "e8c42b33ada9bed3c882288d1cc8634fc839486767f9266cb9c7c7a0bd0013fe",
+        "8b7db7a0697268a4de2876d57d62fcd3f06bdf8de037cd1aca78bc19722d73b7",
+        "c57289a8fbc470bc17366dc2e7d09ea69b69b323440c494f8f9c80dd745e20cf"
+      ],
+      "separate_license_required": true,
+      "session_count": 24,
+      "source_kind": "locally_generated_synthetic_network_features"
+    }
+  ]
+}

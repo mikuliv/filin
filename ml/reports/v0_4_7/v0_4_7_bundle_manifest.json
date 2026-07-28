@@ -1,0 +1,155 @@
+{
+  "dataset_included": false,
+  "entries": [
+    {
+      "path": "active_inference_record.json",
+      "sha256": "322743de5d68da322a6e8da0ed3e73e1e105028a0ca63160cf509418581d9ebe",
+      "size": 1034147
+    },
+    {
+      "path": "blind_acceptance_gate.json",
+      "sha256": "730ee6613848c4e3867e5b745b9ee720829330062380bc1289eb15c55be35ffc",
+      "size": 5501
+    },
+    {
+      "path": "blindness_report.json",
+      "sha256": "e89c72f9eedadd3801db66343e8c06f285163109518c5f5ddb4796b7932b795f",
+      "size": 1063
+    },
+    {
+      "path": "browser_acceptance_report.md",
+      "sha256": "887a2d8cd19a3c38aa4008ee28195de5415de127f41a2bd436ecd8bc6446e1c5",
+      "size": 962
+    },
+    {
+      "path": "claim_evidence_ledger.json",
+      "sha256": "9ad1b7d2f5c7090e9735350bcce88a2062e6bd0efcd4beef323aacbc224968e6",
+      "size": 1345
+    },
+    {
+      "path": "comparability_assessment.json",
+      "sha256": "60dc5195271239f3c5f2b10c970e6958ce4cf6d24a2d653fa7000687def0a315",
+      "size": 309
+    },
+    {
+      "path": "comparison_bundle.json",
+      "sha256": "1f1a5cea28948184186696e18f71e52bfac6536fb2ec939023ed1930c909e0f8",
+      "size": 9829
+    },
+    {
+      "path": "control_data_catalog.json",
+      "sha256": "b1f1c5b9362c5b698d09a0a75b44248e4e33d7584645c46c82d858cddedb61e5",
+      "size": 4841
+    },
+    {
+      "path": "control_pack_metadata.json",
+      "sha256": "5cf192174d0c8709c4dad4051000d52103237cf3286863285808b542a35e180e",
+      "size": 4398
+    },
+    {
+      "path": "evaluation_bundle.json",
+      "sha256": "46871e3669e235b0cd730507f51712bcc14d3e7238b2cbc47e278b4fafdd8a90",
+      "size": 5300
+    },
+    {
+      "path": "final_decision.json",
+      "sha256": "ab0cc208cb07ca7c565c5cf68920dde71b9bddb4550be2343fefd2c0873c2ef3",
+      "size": 6764
+    },
+    {
+      "path": "independence_assessment.json",
+      "sha256": "77e59e331b324faacda22053bbd0aea1c6174e58b98b33b7445dc38d0fd64075",
+      "size": 255
+    },
+    {
+      "path": "input_manifest.json",
+      "sha256": "abed1db0fb5f8e67a6c886a969eb3d13d54cda5ab260b5d36cffec9012bbd4ac",
+      "size": 132
+    },
+    {
+      "path": "known_limitations.md",
+      "sha256": "b64269285bf435d6711e2e2abd7fdd8c8fc6cbbc38eb78fc21cc545fc84beec6",
+      "size": 376
+    },
+    {
+      "path": "label_commitment_metadata.json",
+      "sha256": "86518a8b8435aaa983de583472e954274c887f3fb6f9bb927485205a5d5cadae",
+      "size": 452
+    },
+    {
+      "path": "label_unlock_record.json",
+      "sha256": "6b51f3b79f4c9f41e5e7fd973b9da120a3c50bf5202cd17ac0dd94c603dcaa17",
+      "size": 562
+    },
+    {
+      "path": "manual_review.json",
+      "sha256": "abeb44d805519865f1383a1e36ae5b9e0afb69ff2ba8920c2695d8932e195209",
+      "size": 9130
+    },
+    {
+      "path": "negative_campaign.json",
+      "sha256": "7df70874c7059ffde98a5945b3ad00c94e239f88a6fffc1709792f351dbb7441",
+      "size": 74609
+    },
+    {
+      "path": "operator_guide.md",
+      "sha256": "d34a34a62f4f2540ce125e759e6bd9d46c77cfd19ceefae4e319fd4878fc68aa",
+      "size": 402
+    },
+    {
+      "path": "overlap_report.json",
+      "sha256": "a993dcc9627f497eee90a956d3d5087d70be8293f9146cb76886b124394fcfaa",
+      "size": 1649
+    },
+    {
+      "path": "positive_campaign.json",
+      "sha256": "658a09aa888a9ae8e49cd08b958d332d6fd4433df956bcb06cd51e96c9e7b2e0",
+      "size": 20423
+    },
+    {
+      "path": "prediction_commitments.json",
+      "sha256": "911ad27661aa38b8d7010cc85c9830d21e372a06010f3bfed5a74c7e26178a8f",
+      "size": 1203
+    },
+    {
+      "path": "prediction_plan.json",
+      "sha256": "bc2f4d40de2ee83d87da0cf2dcc8c6fdc7646c8425dcbf1bfe9b3bb585f27f1c",
+      "size": 1832
+    },
+    {
+      "path": "proposal_inference_record.json",
+      "sha256": "cf6fe21557f6df9150c8fc36bae8e8f690bff4dae8dfdbcd37000a67fab82ca1",
+      "size": 1037520
+    },
+    {
+      "path": "reproduction_guide.md",
+      "sha256": "96b80b31c6a38b3099dea9de6c1ed3cb2b81c98b353013e38771076b77051ca7",
+      "size": 248
+    },
+    {
+      "path": "role_assignment.json",
+      "sha256": "a0676b614c1b436ee93f53936732471a4dcd08cb27abf14414d9d4258ff92308",
+      "size": 1759
+    },
+    {
+      "path": "summary.md",
+      "sha256": "af580efe2d1b3a5ab316f3bb1a81d44f681adca2419483416e14986d9c07262e",
+      "size": 344
+    },
+    {
+      "path": "test_summary.json",
+      "sha256": "78f63acb9eb9838e65a6d40d64fad1d7ce300659979a90b5a46a02dfd7f75913",
+      "size": 734
+    },
+    {
+      "path": "v0_4_7_policy_result.json",
+      "sha256": "540145891eec75753f23dec1b83c5f98272756d1de7fc1112797ab73c917438e",
+      "size": 7695
+    }
+  ],
+  "labels_included": false,
+  "model_binary_included": false,
+  "prediction_rows_included": false,
+  "schema_version": "v0_4_7_bundle_manifest_v1",
+  "stage": "v0.4.7"
+}

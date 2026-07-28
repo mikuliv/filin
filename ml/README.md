@@ -44,3 +44,7 @@ Candidate `v03154:65a3dd912d845bc1`,
 ## Лабораторное обучение v0.4.6
 
 `v0.4.6` использует только проверенные synthetic feature rows и один frozen allowlist recipe. Два независимых выполнения должны подтвердить воспроизводимость до формирования proposal package. Новый model binary хранится исключительно в runtime и требует отдельного лицензионного решения; действующий candidate registry не меняется.
+
+## Слепая проверка v0.4.7
+
+Новый независимый synthetic control pack, labels и prediction packages существуют только в runtime. В Git входят агрегированные метрики, commitments, gates и ручное решение. Процедура пройдена, однако proposal получил `failed_validation`; действующий кандидат и registry не изменены.

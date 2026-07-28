@@ -1,0 +1,52 @@
+[
+  {
+    "assignment_id": "assign-01",
+    "capability_token_separate": true,
+    "independent_human": false,
+    "operator_identity": "local-role-separated-operator",
+    "role": "control_data_custodian",
+    "schema_version": "blind_validation_role_assignment_v1",
+    "separate_workspace": true,
+    "validation_token": "blind-e014570fb25d405599ef"
+  },
+  {
+    "assignment_id": "assign-02",
+    "capability_token_separate": true,
+    "independent_human": false,
+    "operator_identity": "local-role-separated-operator",
+    "role": "inference_operator",
+    "schema_version": "blind_validation_role_assignment_v1",
+    "separate_workspace": true,
+    "validation_token": "blind-e014570fb25d405599ef"
+  },
+  {
+    "assignment_id": "assign-03",
+    "capability_token_separate": true,
+    "independent_human": false,
+    "operator_identity": "local-role-separated-operator",
+    "role": "evaluation_operator",
+    "schema_version": "blind_validation_role_assignment_v1",
+    "separate_workspace": true,
+    "validation_token": "blind-e014570fb25d405599ef"
+  },
+  {
+    "assignment_id": "assign-04",
+    "capability_token_separate": true,
+    "independent_human": false,
+    "operator_identity": "local-role-separated-operator",
+    "role": "validation_reviewer",
+    "schema_version": "blind_validation_role_assignment_v1",
+    "separate_workspace": true,
+    "validation_token": "blind-e014570fb25d405599ef"
+  },
+  {
+    "assignment_id": "assign-05",
+    "capability_token_separate": true,
+    "independent_human": false,
+    "operator_identity": "local-role-separated-operator",
+    "role": "observer",
+    "schema_version": "blind_validation_role_assignment_v1",
+    "separate_workspace": true,
+    "validation_token": "blind-e014570fb25d405599ef"
+  }
+]

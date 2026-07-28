@@ -1,0 +1,344 @@
+{
+  "active_candidate_id": "v03154:65a3dd912d845bc1",
+  "card_deltas": [],
+  "class_differences": [
+    {
+      "active": {
+        "class": "benign",
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 684
+      },
+      "class": "benign",
+      "proposal": {
+        "class": "benign",
+        "f1": 0.6644001942690626,
+        "precision": 0.4974545454545454,
+        "recall": 1.0,
+        "support": 684
+      },
+      "recall_delta": 0.0
+    },
+    {
+      "active": {
+        "class": "auth_failures",
+        "f1": 0.9963583394027676,
+        "precision": 0.9927431059506531,
+        "recall": 1.0,
+        "support": 684
+      },
+      "class": "auth_failures",
+      "proposal": {
+        "class": "auth_failures",
+        "f1": 0.9963583394027676,
+        "precision": 0.9927431059506531,
+        "recall": 1.0,
+        "support": 684
+      },
+      "recall_delta": 0.0
+    },
+    {
+      "active": {
+        "class": "beacon",
+        "f1": 0.4972537532039546,
+        "precision": 0.33170493404982904,
+        "recall": 0.9926900584795322,
+        "support": 684
+      },
+      "class": "beacon",
+      "proposal": {
+        "class": "beacon",
+        "f1": 0.7979351032448377,
+        "precision": 0.8050595238095238,
+        "recall": 0.7909356725146199,
+        "support": 684
+      },
+      "recall_delta": -0.20175438596491224
+    },
+    {
+      "active": {
+        "class": "low_rate_dos",
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 684
+      },
+      "class": "low_rate_dos",
+      "proposal": {
+        "class": "low_rate_dos",
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 684
+      },
+      "recall_delta": 1.0
+    },
+    {
+      "active": {
+        "class": "port_scan",
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 684
+      },
+      "class": "port_scan",
+      "proposal": {
+        "class": "port_scan",
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "support": 684
+      },
+      "recall_delta": 0.0
+    },
+    {
+      "active": {
+        "class": "web_probe",
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 684
+      },
+      "class": "web_probe",
+      "proposal": {
+        "class": "web_probe",
+        "f1": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "support": 684
+      },
+      "recall_delta": 0.0
+    }
+  ],
+  "comparability": {
+    "different_label_access": false,
+    "equivalent_environment": true,
+    "same_class_contract": true,
+    "same_control_pack": true,
+    "same_input_manifest": true,
+    "same_metric_contract": true,
+    "same_population": true,
+    "same_scoring_policy": true,
+    "same_warmup_policy": true,
+    "status": "comparable"
+  },
+  "comparison_engine": "v0.4.5",
+  "comparison_semantic_sha256": "ec527f159157014c8252a9841b92f87a925539fe72a0a5a11e3cfd8859807a60",
+  "gap_deltas": [],
+  "hidden_weight_count": 0,
+  "hypothesis_deltas": [],
+  "limitations": [
+    "Сравнение относится только к одному blind synthetic control pack."
+  ],
+  "metric_differences": [
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-01",
+      "dimension": "benign_recall",
+      "interpretation": "unchanged",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 1.0,
+      "relative_delta": 0.0,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 0.0,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-02",
+      "dimension": "false_positive_rate",
+      "interpretation": "unchanged",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.0,
+      "relative_delta": null,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.1596491228070177,
+      "active_value": 0.5985380116959064,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-03",
+      "dimension": "attack_macro_recall",
+      "interpretation": "proposal_higher",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.7581871345029241,
+      "relative_delta": 0.26673180263800716,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.2601362700081767,
+      "active_value": 0.4987224185213444,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-04",
+      "dimension": "attack_macro_f1",
+      "interpretation": "proposal_higher",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.7588586885295211,
+      "relative_delta": 0.5216053266252825,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.20000000000000007,
+      "active_value": 0.6,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-05",
+      "dimension": "episode_recall",
+      "interpretation": "proposal_higher",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.8,
+      "relative_delta": 0.3333333333333335,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.20000000000000007,
+      "active_value": 0.6,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-06",
+      "dimension": "episode_precision",
+      "interpretation": "proposal_higher",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.8,
+      "relative_delta": 0.3333333333333335,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 0.0,
+      "affected_artifacts": [
+        "active_prediction",
+        "proposal_prediction"
+      ],
+      "affected_classes": [],
+      "affected_sessions": [],
+      "confidence": "descriptive",
+      "contradicting_evidence": [],
+      "critical": false,
+      "difference_id": "bdiff-07",
+      "dimension": "abstention_rate",
+      "interpretation": "unchanged",
+      "likely_source": "model_behavior",
+      "limitations": [
+        "Статистическая значимость не заявляется."
+      ],
+      "proposal_value": 0.0,
+      "relative_delta": null,
+      "reviewer_question_ids": [],
+      "schema_version": "blind_validation_difference_v1",
+      "significance_method": "not_predeclared",
+      "supporting_evidence": [
+        "evaluation.json"
+      ],
+      "verified": true
+    }
+  ],
+  "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+  "reconstruction_differences": 0.20000000000000007,
+  "replacement_recommended": false,
+  "schema_version": "blind_active_proposal_comparison_v1",
+  "winner_selected": false
+}

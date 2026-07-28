@@ -1,0 +1,11 @@
+{
+  "committed_at": "2026-07-28T08:02:28.169232Z",
+  "control_pack_id": "blind-pack:v047:01c5f40ba48a9944",
+  "custodian_role": "control_data_custodian",
+  "frozen": true,
+  "label_package_sha256": "378da2712655ca18bd63c6973733fa738dc6c39312b636bafe3430478487d0a8",
+  "label_semantic_sha256": "ad875e5c7b2aaa05151fbc9b49a6d1b981ae935fd46ed20d51d1e6ac579359a4",
+  "protocol_revision": 1,
+  "schema_version": "label_commitment_v1",
+  "unlocked": false
+}

@@ -9,7 +9,7 @@ candidate, prospective holdout, локальный runtime/transport, corrective
 
 ## Лабораторная линия v0.4.x
 
-`v0.4.0–v0.4.6` последовательно добавили reconstruction, temporal model,
+`v0.4.0–v0.4.7` последовательно добавили reconstruction, temporal model,
 structural relations/hypotheses, localhost console, persistent operator workflow,
 воспроизводимые запуски, безопасное сравнение результатов и управляемое proposal без регистрации кандидата. Подробности — в
 [истории лабораторной линии](laboratory-track-history.md).

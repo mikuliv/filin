@@ -1,0 +1,2402 @@
+[
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-001",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-002",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-003",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-004",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-005",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_protocol_immutable",
+    "observed_error_code": "frozen_protocol_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-006",
+    "source_tree_mutated": false,
+    "violation": "protocol_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "control_pack_immutable",
+    "observed_error_code": "control_pack_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-007",
+    "source_tree_mutated": false,
+    "violation": "control_pack_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_package_immutable",
+    "observed_error_code": "label_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-008",
+    "source_tree_mutated": false,
+    "violation": "label_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_immutable",
+    "observed_error_code": "prediction_plan_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-009",
+    "source_tree_mutated": false,
+    "violation": "prediction_plan_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_package_immutable",
+    "observed_error_code": "prediction_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-010",
+    "source_tree_mutated": false,
+    "violation": "prediction_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "data_overlap_detected",
+    "observed_error_code": "data_overlap_detected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-011",
+    "source_tree_mutated": false,
+    "violation": "overlap_detected"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "overlap_gate_required",
+    "observed_error_code": "overlap_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-012",
+    "source_tree_mutated": false,
+    "violation": "overlap_not_checked"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blindness_gate_required",
+    "observed_error_code": "blindness_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-013",
+    "source_tree_mutated": false,
+    "violation": "blindness_failed"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-014",
+    "source_tree_mutated": false,
+    "violation": "inference_before_plan"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_commitments_required",
+    "observed_error_code": "prediction_commitments_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-015",
+    "source_tree_mutated": false,
+    "violation": "unlock_before_commitments"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_unlock_authorization_required",
+    "observed_error_code": "label_unlock_authorization_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-016",
+    "source_tree_mutated": false,
+    "violation": "unlock_without_authorization"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "official_inference_after_label_unlock_forbidden",
+    "observed_error_code": "official_inference_after_label_unlock_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-017",
+    "source_tree_mutated": false,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "missing_prediction_rejected",
+    "observed_error_code": "missing_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-018",
+    "source_tree_mutated": false,
+    "violation": "missing_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_prediction_rejected",
+    "observed_error_code": "duplicate_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-019",
+    "source_tree_mutated": false,
+    "violation": "duplicate_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_prediction_rejected",
+    "observed_error_code": "invalid_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-020",
+    "source_tree_mutated": false,
+    "violation": "invalid_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "comparison_population_mismatch",
+    "observed_error_code": "comparison_population_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-021",
+    "source_tree_mutated": false,
+    "violation": "changed_population"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "metric_contract_mismatch",
+    "observed_error_code": "metric_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-022",
+    "source_tree_mutated": false,
+    "violation": "changed_metric_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "class_contract_mismatch",
+    "observed_error_code": "class_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-023",
+    "source_tree_mutated": false,
+    "violation": "changed_class_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-024",
+    "source_tree_mutated": false,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-025",
+    "source_tree_mutated": false,
+    "violation": "winner_score"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "promotion_forbidden",
+    "observed_error_code": "promotion_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-026",
+    "source_tree_mutated": false,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-027",
+    "source_tree_mutated": false,
+    "violation": "candidate_registration"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "active_candidate_change_forbidden",
+    "observed_error_code": "active_candidate_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-028",
+    "source_tree_mutated": false,
+    "violation": "active_candidate_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "threshold_change_forbidden",
+    "observed_error_code": "threshold_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-029",
+    "source_tree_mutated": false,
+    "violation": "threshold_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "retraining_forbidden",
+    "observed_error_code": "retraining_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-030",
+    "source_tree_mutated": false,
+    "violation": "retrain"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-031",
+    "source_tree_mutated": false,
+    "violation": "model_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-032",
+    "source_tree_mutated": false,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-033",
+    "source_tree_mutated": false,
+    "violation": "network_access"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-034",
+    "source_tree_mutated": false,
+    "violation": "shell_command"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-035",
+    "source_tree_mutated": false,
+    "violation": "absolute_path"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-036",
+    "source_tree_mutated": false,
+    "violation": "path_traversal"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-037",
+    "source_tree_mutated": false,
+    "violation": "secret_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-038",
+    "source_tree_mutated": false,
+    "violation": "binary_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-039",
+    "source_tree_mutated": false,
+    "violation": "dataset_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_export_forbidden",
+    "observed_error_code": "label_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-040",
+    "source_tree_mutated": false,
+    "violation": "labels_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "sqlite_export_forbidden",
+    "observed_error_code": "sqlite_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-041",
+    "source_tree_mutated": false,
+    "violation": "sqlite_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "independent_human_claim_forbidden",
+    "observed_error_code": "independent_human_claim_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-042",
+    "source_tree_mutated": false,
+    "violation": "independent_human_claim"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-043",
+    "source_tree_mutated": false,
+    "violation": "passed_failed_gate"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "next_stage_forbidden",
+    "observed_error_code": "next_stage_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-044",
+    "source_tree_mutated": false,
+    "violation": "v048_after_failure"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-045",
+    "source_tree_mutated": false,
+    "violation": "protected_material_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-046",
+    "source_tree_mutated": false,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-047",
+    "source_tree_mutated": false,
+    "violation": "git_history_operation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-048",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-049",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-050",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-051",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-052",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_protocol_immutable",
+    "observed_error_code": "frozen_protocol_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-053",
+    "source_tree_mutated": false,
+    "violation": "protocol_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "control_pack_immutable",
+    "observed_error_code": "control_pack_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-054",
+    "source_tree_mutated": false,
+    "violation": "control_pack_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_package_immutable",
+    "observed_error_code": "label_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-055",
+    "source_tree_mutated": false,
+    "violation": "label_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_immutable",
+    "observed_error_code": "prediction_plan_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-056",
+    "source_tree_mutated": false,
+    "violation": "prediction_plan_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_package_immutable",
+    "observed_error_code": "prediction_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-057",
+    "source_tree_mutated": false,
+    "violation": "prediction_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "data_overlap_detected",
+    "observed_error_code": "data_overlap_detected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-058",
+    "source_tree_mutated": false,
+    "violation": "overlap_detected"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "overlap_gate_required",
+    "observed_error_code": "overlap_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-059",
+    "source_tree_mutated": false,
+    "violation": "overlap_not_checked"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blindness_gate_required",
+    "observed_error_code": "blindness_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-060",
+    "source_tree_mutated": false,
+    "violation": "blindness_failed"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-061",
+    "source_tree_mutated": false,
+    "violation": "inference_before_plan"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_commitments_required",
+    "observed_error_code": "prediction_commitments_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-062",
+    "source_tree_mutated": false,
+    "violation": "unlock_before_commitments"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_unlock_authorization_required",
+    "observed_error_code": "label_unlock_authorization_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-063",
+    "source_tree_mutated": false,
+    "violation": "unlock_without_authorization"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "official_inference_after_label_unlock_forbidden",
+    "observed_error_code": "official_inference_after_label_unlock_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-064",
+    "source_tree_mutated": false,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "missing_prediction_rejected",
+    "observed_error_code": "missing_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-065",
+    "source_tree_mutated": false,
+    "violation": "missing_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_prediction_rejected",
+    "observed_error_code": "duplicate_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-066",
+    "source_tree_mutated": false,
+    "violation": "duplicate_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_prediction_rejected",
+    "observed_error_code": "invalid_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-067",
+    "source_tree_mutated": false,
+    "violation": "invalid_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "comparison_population_mismatch",
+    "observed_error_code": "comparison_population_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-068",
+    "source_tree_mutated": false,
+    "violation": "changed_population"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "metric_contract_mismatch",
+    "observed_error_code": "metric_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-069",
+    "source_tree_mutated": false,
+    "violation": "changed_metric_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "class_contract_mismatch",
+    "observed_error_code": "class_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-070",
+    "source_tree_mutated": false,
+    "violation": "changed_class_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-071",
+    "source_tree_mutated": false,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-072",
+    "source_tree_mutated": false,
+    "violation": "winner_score"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "promotion_forbidden",
+    "observed_error_code": "promotion_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-073",
+    "source_tree_mutated": false,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-074",
+    "source_tree_mutated": false,
+    "violation": "candidate_registration"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "active_candidate_change_forbidden",
+    "observed_error_code": "active_candidate_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-075",
+    "source_tree_mutated": false,
+    "violation": "active_candidate_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "threshold_change_forbidden",
+    "observed_error_code": "threshold_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-076",
+    "source_tree_mutated": false,
+    "violation": "threshold_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "retraining_forbidden",
+    "observed_error_code": "retraining_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-077",
+    "source_tree_mutated": false,
+    "violation": "retrain"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-078",
+    "source_tree_mutated": false,
+    "violation": "model_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-079",
+    "source_tree_mutated": false,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-080",
+    "source_tree_mutated": false,
+    "violation": "network_access"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-081",
+    "source_tree_mutated": false,
+    "violation": "shell_command"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-082",
+    "source_tree_mutated": false,
+    "violation": "absolute_path"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-083",
+    "source_tree_mutated": false,
+    "violation": "path_traversal"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-084",
+    "source_tree_mutated": false,
+    "violation": "secret_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-085",
+    "source_tree_mutated": false,
+    "violation": "binary_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-086",
+    "source_tree_mutated": false,
+    "violation": "dataset_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_export_forbidden",
+    "observed_error_code": "label_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-087",
+    "source_tree_mutated": false,
+    "violation": "labels_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "sqlite_export_forbidden",
+    "observed_error_code": "sqlite_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-088",
+    "source_tree_mutated": false,
+    "violation": "sqlite_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "independent_human_claim_forbidden",
+    "observed_error_code": "independent_human_claim_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-089",
+    "source_tree_mutated": false,
+    "violation": "independent_human_claim"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-090",
+    "source_tree_mutated": false,
+    "violation": "passed_failed_gate"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "next_stage_forbidden",
+    "observed_error_code": "next_stage_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-091",
+    "source_tree_mutated": false,
+    "violation": "v048_after_failure"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-092",
+    "source_tree_mutated": false,
+    "violation": "protected_material_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-093",
+    "source_tree_mutated": false,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-094",
+    "source_tree_mutated": false,
+    "violation": "git_history_operation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-095",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-096",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-097",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-098",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-099",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_protocol_immutable",
+    "observed_error_code": "frozen_protocol_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-100",
+    "source_tree_mutated": false,
+    "violation": "protocol_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "control_pack_immutable",
+    "observed_error_code": "control_pack_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-101",
+    "source_tree_mutated": false,
+    "violation": "control_pack_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_package_immutable",
+    "observed_error_code": "label_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-102",
+    "source_tree_mutated": false,
+    "violation": "label_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_immutable",
+    "observed_error_code": "prediction_plan_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-103",
+    "source_tree_mutated": false,
+    "violation": "prediction_plan_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_package_immutable",
+    "observed_error_code": "prediction_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-104",
+    "source_tree_mutated": false,
+    "violation": "prediction_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "data_overlap_detected",
+    "observed_error_code": "data_overlap_detected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-105",
+    "source_tree_mutated": false,
+    "violation": "overlap_detected"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "overlap_gate_required",
+    "observed_error_code": "overlap_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-106",
+    "source_tree_mutated": false,
+    "violation": "overlap_not_checked"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blindness_gate_required",
+    "observed_error_code": "blindness_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-107",
+    "source_tree_mutated": false,
+    "violation": "blindness_failed"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-108",
+    "source_tree_mutated": false,
+    "violation": "inference_before_plan"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_commitments_required",
+    "observed_error_code": "prediction_commitments_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-109",
+    "source_tree_mutated": false,
+    "violation": "unlock_before_commitments"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_unlock_authorization_required",
+    "observed_error_code": "label_unlock_authorization_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-110",
+    "source_tree_mutated": false,
+    "violation": "unlock_without_authorization"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "official_inference_after_label_unlock_forbidden",
+    "observed_error_code": "official_inference_after_label_unlock_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-111",
+    "source_tree_mutated": false,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "missing_prediction_rejected",
+    "observed_error_code": "missing_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-112",
+    "source_tree_mutated": false,
+    "violation": "missing_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_prediction_rejected",
+    "observed_error_code": "duplicate_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-113",
+    "source_tree_mutated": false,
+    "violation": "duplicate_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_prediction_rejected",
+    "observed_error_code": "invalid_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-114",
+    "source_tree_mutated": false,
+    "violation": "invalid_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "comparison_population_mismatch",
+    "observed_error_code": "comparison_population_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-115",
+    "source_tree_mutated": false,
+    "violation": "changed_population"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "metric_contract_mismatch",
+    "observed_error_code": "metric_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-116",
+    "source_tree_mutated": false,
+    "violation": "changed_metric_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "class_contract_mismatch",
+    "observed_error_code": "class_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-117",
+    "source_tree_mutated": false,
+    "violation": "changed_class_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-118",
+    "source_tree_mutated": false,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-119",
+    "source_tree_mutated": false,
+    "violation": "winner_score"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "promotion_forbidden",
+    "observed_error_code": "promotion_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-120",
+    "source_tree_mutated": false,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-121",
+    "source_tree_mutated": false,
+    "violation": "candidate_registration"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "active_candidate_change_forbidden",
+    "observed_error_code": "active_candidate_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-122",
+    "source_tree_mutated": false,
+    "violation": "active_candidate_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "threshold_change_forbidden",
+    "observed_error_code": "threshold_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-123",
+    "source_tree_mutated": false,
+    "violation": "threshold_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "retraining_forbidden",
+    "observed_error_code": "retraining_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-124",
+    "source_tree_mutated": false,
+    "violation": "retrain"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-125",
+    "source_tree_mutated": false,
+    "violation": "model_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-126",
+    "source_tree_mutated": false,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-127",
+    "source_tree_mutated": false,
+    "violation": "network_access"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-128",
+    "source_tree_mutated": false,
+    "violation": "shell_command"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-129",
+    "source_tree_mutated": false,
+    "violation": "absolute_path"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-130",
+    "source_tree_mutated": false,
+    "violation": "path_traversal"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-131",
+    "source_tree_mutated": false,
+    "violation": "secret_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-132",
+    "source_tree_mutated": false,
+    "violation": "binary_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-133",
+    "source_tree_mutated": false,
+    "violation": "dataset_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_export_forbidden",
+    "observed_error_code": "label_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-134",
+    "source_tree_mutated": false,
+    "violation": "labels_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "sqlite_export_forbidden",
+    "observed_error_code": "sqlite_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-135",
+    "source_tree_mutated": false,
+    "violation": "sqlite_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "independent_human_claim_forbidden",
+    "observed_error_code": "independent_human_claim_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-136",
+    "source_tree_mutated": false,
+    "violation": "independent_human_claim"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-137",
+    "source_tree_mutated": false,
+    "violation": "passed_failed_gate"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "next_stage_forbidden",
+    "observed_error_code": "next_stage_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-138",
+    "source_tree_mutated": false,
+    "violation": "v048_after_failure"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-139",
+    "source_tree_mutated": false,
+    "violation": "protected_material_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-140",
+    "source_tree_mutated": false,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-141",
+    "source_tree_mutated": false,
+    "violation": "git_history_operation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-142",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-143",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-144",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-145",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-146",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_protocol_immutable",
+    "observed_error_code": "frozen_protocol_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-147",
+    "source_tree_mutated": false,
+    "violation": "protocol_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "control_pack_immutable",
+    "observed_error_code": "control_pack_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-148",
+    "source_tree_mutated": false,
+    "violation": "control_pack_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_package_immutable",
+    "observed_error_code": "label_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-149",
+    "source_tree_mutated": false,
+    "violation": "label_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_immutable",
+    "observed_error_code": "prediction_plan_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-150",
+    "source_tree_mutated": false,
+    "violation": "prediction_plan_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_package_immutable",
+    "observed_error_code": "prediction_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-151",
+    "source_tree_mutated": false,
+    "violation": "prediction_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "data_overlap_detected",
+    "observed_error_code": "data_overlap_detected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-152",
+    "source_tree_mutated": false,
+    "violation": "overlap_detected"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "overlap_gate_required",
+    "observed_error_code": "overlap_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-153",
+    "source_tree_mutated": false,
+    "violation": "overlap_not_checked"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blindness_gate_required",
+    "observed_error_code": "blindness_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-154",
+    "source_tree_mutated": false,
+    "violation": "blindness_failed"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-155",
+    "source_tree_mutated": false,
+    "violation": "inference_before_plan"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_commitments_required",
+    "observed_error_code": "prediction_commitments_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-156",
+    "source_tree_mutated": false,
+    "violation": "unlock_before_commitments"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_unlock_authorization_required",
+    "observed_error_code": "label_unlock_authorization_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-157",
+    "source_tree_mutated": false,
+    "violation": "unlock_without_authorization"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "official_inference_after_label_unlock_forbidden",
+    "observed_error_code": "official_inference_after_label_unlock_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-158",
+    "source_tree_mutated": false,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "missing_prediction_rejected",
+    "observed_error_code": "missing_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-159",
+    "source_tree_mutated": false,
+    "violation": "missing_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_prediction_rejected",
+    "observed_error_code": "duplicate_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-160",
+    "source_tree_mutated": false,
+    "violation": "duplicate_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_prediction_rejected",
+    "observed_error_code": "invalid_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-161",
+    "source_tree_mutated": false,
+    "violation": "invalid_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "comparison_population_mismatch",
+    "observed_error_code": "comparison_population_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-162",
+    "source_tree_mutated": false,
+    "violation": "changed_population"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "metric_contract_mismatch",
+    "observed_error_code": "metric_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-163",
+    "source_tree_mutated": false,
+    "violation": "changed_metric_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "class_contract_mismatch",
+    "observed_error_code": "class_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-164",
+    "source_tree_mutated": false,
+    "violation": "changed_class_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-165",
+    "source_tree_mutated": false,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-166",
+    "source_tree_mutated": false,
+    "violation": "winner_score"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "promotion_forbidden",
+    "observed_error_code": "promotion_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-167",
+    "source_tree_mutated": false,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-168",
+    "source_tree_mutated": false,
+    "violation": "candidate_registration"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "active_candidate_change_forbidden",
+    "observed_error_code": "active_candidate_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-169",
+    "source_tree_mutated": false,
+    "violation": "active_candidate_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "threshold_change_forbidden",
+    "observed_error_code": "threshold_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-170",
+    "source_tree_mutated": false,
+    "violation": "threshold_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "retraining_forbidden",
+    "observed_error_code": "retraining_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-171",
+    "source_tree_mutated": false,
+    "violation": "retrain"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-172",
+    "source_tree_mutated": false,
+    "violation": "model_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-173",
+    "source_tree_mutated": false,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-174",
+    "source_tree_mutated": false,
+    "violation": "network_access"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-175",
+    "source_tree_mutated": false,
+    "violation": "shell_command"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-176",
+    "source_tree_mutated": false,
+    "violation": "absolute_path"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-177",
+    "source_tree_mutated": false,
+    "violation": "path_traversal"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-178",
+    "source_tree_mutated": false,
+    "violation": "secret_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-179",
+    "source_tree_mutated": false,
+    "violation": "binary_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-180",
+    "source_tree_mutated": false,
+    "violation": "dataset_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_export_forbidden",
+    "observed_error_code": "label_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-181",
+    "source_tree_mutated": false,
+    "violation": "labels_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "sqlite_export_forbidden",
+    "observed_error_code": "sqlite_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-182",
+    "source_tree_mutated": false,
+    "violation": "sqlite_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "independent_human_claim_forbidden",
+    "observed_error_code": "independent_human_claim_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-183",
+    "source_tree_mutated": false,
+    "violation": "independent_human_claim"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-184",
+    "source_tree_mutated": false,
+    "violation": "passed_failed_gate"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "next_stage_forbidden",
+    "observed_error_code": "next_stage_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-185",
+    "source_tree_mutated": false,
+    "violation": "v048_after_failure"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-186",
+    "source_tree_mutated": false,
+    "violation": "protected_material_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-187",
+    "source_tree_mutated": false,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-188",
+    "source_tree_mutated": false,
+    "violation": "git_history_operation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-189",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-190",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-191",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-192",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-193",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_protocol_immutable",
+    "observed_error_code": "frozen_protocol_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-194",
+    "source_tree_mutated": false,
+    "violation": "protocol_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "control_pack_immutable",
+    "observed_error_code": "control_pack_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-195",
+    "source_tree_mutated": false,
+    "violation": "control_pack_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_package_immutable",
+    "observed_error_code": "label_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-196",
+    "source_tree_mutated": false,
+    "violation": "label_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_immutable",
+    "observed_error_code": "prediction_plan_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-197",
+    "source_tree_mutated": false,
+    "violation": "prediction_plan_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_package_immutable",
+    "observed_error_code": "prediction_package_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-198",
+    "source_tree_mutated": false,
+    "violation": "prediction_package_mutated"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "data_overlap_detected",
+    "observed_error_code": "data_overlap_detected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-199",
+    "source_tree_mutated": false,
+    "violation": "overlap_detected"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "overlap_gate_required",
+    "observed_error_code": "overlap_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-200",
+    "source_tree_mutated": false,
+    "violation": "overlap_not_checked"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blindness_gate_required",
+    "observed_error_code": "blindness_gate_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-201",
+    "source_tree_mutated": false,
+    "violation": "blindness_failed"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-202",
+    "source_tree_mutated": false,
+    "violation": "inference_before_plan"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "prediction_commitments_required",
+    "observed_error_code": "prediction_commitments_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-203",
+    "source_tree_mutated": false,
+    "violation": "unlock_before_commitments"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_unlock_authorization_required",
+    "observed_error_code": "label_unlock_authorization_required",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-204",
+    "source_tree_mutated": false,
+    "violation": "unlock_without_authorization"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "official_inference_after_label_unlock_forbidden",
+    "observed_error_code": "official_inference_after_label_unlock_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-205",
+    "source_tree_mutated": false,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "missing_prediction_rejected",
+    "observed_error_code": "missing_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-206",
+    "source_tree_mutated": false,
+    "violation": "missing_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_prediction_rejected",
+    "observed_error_code": "duplicate_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-207",
+    "source_tree_mutated": false,
+    "violation": "duplicate_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_prediction_rejected",
+    "observed_error_code": "invalid_prediction_rejected",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-208",
+    "source_tree_mutated": false,
+    "violation": "invalid_prediction"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "comparison_population_mismatch",
+    "observed_error_code": "comparison_population_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-209",
+    "source_tree_mutated": false,
+    "violation": "changed_population"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "metric_contract_mismatch",
+    "observed_error_code": "metric_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-210",
+    "source_tree_mutated": false,
+    "violation": "changed_metric_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "class_contract_mismatch",
+    "observed_error_code": "class_contract_mismatch",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-211",
+    "source_tree_mutated": false,
+    "violation": "changed_class_contract"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-212",
+    "source_tree_mutated": false,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-213",
+    "source_tree_mutated": false,
+    "violation": "winner_score"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "promotion_forbidden",
+    "observed_error_code": "promotion_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-214",
+    "source_tree_mutated": false,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-215",
+    "source_tree_mutated": false,
+    "violation": "candidate_registration"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "active_candidate_change_forbidden",
+    "observed_error_code": "active_candidate_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-216",
+    "source_tree_mutated": false,
+    "violation": "active_candidate_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "threshold_change_forbidden",
+    "observed_error_code": "threshold_change_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-217",
+    "source_tree_mutated": false,
+    "violation": "threshold_change"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "retraining_forbidden",
+    "observed_error_code": "retraining_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-218",
+    "source_tree_mutated": false,
+    "violation": "retrain"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-219",
+    "source_tree_mutated": false,
+    "violation": "model_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-220",
+    "source_tree_mutated": false,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-221",
+    "source_tree_mutated": false,
+    "violation": "network_access"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-222",
+    "source_tree_mutated": false,
+    "violation": "shell_command"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-223",
+    "source_tree_mutated": false,
+    "violation": "absolute_path"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-224",
+    "source_tree_mutated": false,
+    "violation": "path_traversal"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-225",
+    "source_tree_mutated": false,
+    "violation": "secret_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-226",
+    "source_tree_mutated": false,
+    "violation": "binary_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-227",
+    "source_tree_mutated": false,
+    "violation": "dataset_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "label_export_forbidden",
+    "observed_error_code": "label_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-228",
+    "source_tree_mutated": false,
+    "violation": "labels_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "sqlite_export_forbidden",
+    "observed_error_code": "sqlite_export_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-229",
+    "source_tree_mutated": false,
+    "violation": "sqlite_export"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "independent_human_claim_forbidden",
+    "observed_error_code": "independent_human_claim_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-230",
+    "source_tree_mutated": false,
+    "violation": "independent_human_claim"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-231",
+    "source_tree_mutated": false,
+    "violation": "passed_failed_gate"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "next_stage_forbidden",
+    "observed_error_code": "next_stage_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-232",
+    "source_tree_mutated": false,
+    "violation": "v048_after_failure"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-233",
+    "source_tree_mutated": false,
+    "violation": "protected_material_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-234",
+    "source_tree_mutated": false,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-235",
+    "source_tree_mutated": false,
+    "violation": "git_history_operation"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "pre_unlock_label_access_forbidden",
+    "observed_error_code": "pre_unlock_label_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-236",
+    "source_tree_mutated": false,
+    "violation": "labels_visible_pre_unlock"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "oracle_access_forbidden",
+    "observed_error_code": "oracle_access_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-237",
+    "source_tree_mutated": false,
+    "violation": "oracle_visible"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_role_authorization_denied",
+    "observed_error_code": "blind_role_authorization_denied",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-238",
+    "source_tree_mutated": false,
+    "violation": "role_token_missing"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_capability_reuse_forbidden",
+    "observed_error_code": "role_capability_reuse_forbidden",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-239",
+    "source_tree_mutated": false,
+    "violation": "role_token_reused"
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "role_workspace_overlap",
+    "observed_error_code": "role_workspace_overlap",
+    "passed": true,
+    "rejected": true,
+    "scenario_id": "v047-neg-240",
+    "source_tree_mutated": false,
+    "violation": "role_overlap"
+  }
+]

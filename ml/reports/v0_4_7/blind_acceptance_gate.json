@@ -1,0 +1,205 @@
+{
+  "all_mandatory_passed": false,
+  "failed_count": 6,
+  "gate_id": "blind-validation-v047-r1",
+  "hidden_weight_count": 0,
+  "invalidated_count": 0,
+  "not_assessable_count": 0,
+  "passed_count": 18,
+  "results": [
+    {
+      "criterion_id": "blind-gate-01-protocol_frozen",
+      "mandatory": true,
+      "name": "protocol_frozen",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-02-control_pack_independent",
+      "mandatory": true,
+      "name": "control_pack_independent",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-03-overlap_gate_passed",
+      "mandatory": true,
+      "name": "overlap_gate_passed",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-04-blindness_gate_passed",
+      "mandatory": true,
+      "name": "blindness_gate_passed",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-05-label_commitment_valid",
+      "mandatory": true,
+      "name": "label_commitment_valid",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-06-predictions_frozen_before_unlock",
+      "mandatory": true,
+      "name": "predictions_frozen_before_unlock",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-07-no_post_unlock_inference",
+      "mandatory": true,
+      "name": "no_post_unlock_inference",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-08-comparability",
+      "mandatory": true,
+      "name": "comparability",
+      "observed": "comparable",
+      "status": "passed",
+      "threshold": "comparable"
+    },
+    {
+      "criterion_id": "blind-gate-09-active_benign_recall",
+      "mandatory": true,
+      "name": "active_benign_recall",
+      "observed": 1.0,
+      "status": "passed",
+      "threshold": 0.98
+    },
+    {
+      "criterion_id": "blind-gate-10-proposal_benign_recall",
+      "mandatory": true,
+      "name": "proposal_benign_recall",
+      "observed": 1.0,
+      "status": "passed",
+      "threshold": 0.98
+    },
+    {
+      "criterion_id": "blind-gate-11-active_fpr",
+      "mandatory": true,
+      "name": "active_fpr",
+      "observed": 0.0,
+      "status": "passed",
+      "threshold": 0.02
+    },
+    {
+      "criterion_id": "blind-gate-12-proposal_fpr",
+      "mandatory": true,
+      "name": "proposal_fpr",
+      "observed": 0.0,
+      "status": "passed",
+      "threshold": 0.02
+    },
+    {
+      "criterion_id": "blind-gate-13-active_attack_macro_recall",
+      "mandatory": true,
+      "name": "active_attack_macro_recall",
+      "observed": 0.5985380116959064,
+      "status": "failed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "blind-gate-14-proposal_attack_macro_recall",
+      "mandatory": true,
+      "name": "proposal_attack_macro_recall",
+      "observed": 0.7581871345029241,
+      "status": "failed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "blind-gate-15-active_attack_macro_f1",
+      "mandatory": true,
+      "name": "active_attack_macro_f1",
+      "observed": 0.4987224185213444,
+      "status": "failed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "blind-gate-16-proposal_attack_macro_f1",
+      "mandatory": true,
+      "name": "proposal_attack_macro_f1",
+      "observed": 0.7588586885295211,
+      "status": "failed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "blind-gate-17-active_worst_attack_recall",
+      "mandatory": true,
+      "name": "active_worst_attack_recall",
+      "observed": 0.0,
+      "status": "failed",
+      "threshold": 0.9
+    },
+    {
+      "criterion_id": "blind-gate-18-proposal_worst_attack_recall",
+      "mandatory": true,
+      "name": "proposal_worst_attack_recall",
+      "observed": 0.0,
+      "status": "failed",
+      "threshold": 0.9
+    },
+    {
+      "criterion_id": "blind-gate-19-missing_predictions",
+      "mandatory": true,
+      "name": "missing_predictions",
+      "observed": 0,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "blind-gate-20-duplicate_predictions",
+      "mandatory": true,
+      "name": "duplicate_predictions",
+      "observed": 0,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "blind-gate-21-invalid_predictions",
+      "mandatory": true,
+      "name": "invalid_predictions",
+      "observed": 0,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "blind-gate-22-unresolved_critical_differences",
+      "mandatory": true,
+      "name": "unresolved_critical_differences",
+      "observed": 0,
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "blind-gate-23-evaluation_rebuild_deterministic",
+      "mandatory": true,
+      "name": "evaluation_rebuild_deterministic",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "blind-gate-24-candidate_registry_unchanged",
+      "mandatory": true,
+      "name": "candidate_registry_unchanged",
+      "observed": true,
+      "status": "passed",
+      "threshold": true
+    }
+  ],
+  "schema_version": "blind_acceptance_gate_result_v1",
+  "winner_selected": false
+}

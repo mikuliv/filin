@@ -1,0 +1,78 @@
+{
+  "checks": [
+    {
+      "check_id": "overlap-01",
+      "domain": "file_sha",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-02",
+      "domain": "semantic_sha",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-03",
+      "domain": "session_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-04",
+      "domain": "capture_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-05",
+      "domain": "scenario_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-06",
+      "domain": "seed_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-07",
+      "domain": "event_fingerprint",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-08",
+      "domain": "normalized_row",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-09",
+      "domain": "temporal_sequence",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-10",
+      "domain": "derived_copy",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "overlap-11",
+      "domain": "parameter_template",
+      "overlap_count": 0,
+      "status": "passed"
+    }
+  ],
+  "compared_sources": [
+    "v0.4.6 splits",
+    "v0.4.5 replay packs",
+    "prior blind and procedural packs"
+  ],
+  "failure_count": 0,
+  "schema_version": "blind_data_overlap_assessment_v1",
+  "status": "passed"
+}

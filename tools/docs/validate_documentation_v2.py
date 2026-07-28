@@ -106,7 +106,7 @@ def validate_status(root: Path) -> list[str]:
     main = yaml.safe_load((root / "docs/status/project-status.yaml").read_text(encoding="utf-8"))
     lab = yaml.safe_load((root / "docs/status/v0_4_track.yaml").read_text(encoding="utf-8"))
     expected_main = {"current_completed_stage": "v0.3.18", "next_allowed_stage": "v0.3.19", "current_candidate": CANDIDATE_ID, "production_ready": False, "shadow_mode_ready": False, "backend_integration_ready": False}
-    expected_lab = {"latest_completed_stage": "v0.4.6", "allowed_next_stage": "v0.4.7", "mainline_next_allowed_stage": "v0.3.19", "candidate_id": CANDIDATE_ID, "production_ready": False, "laboratory_only": True}
+    expected_lab = {"latest_completed_stage": "v0.4.7", "allowed_next_stage": "independent_human_review_required", "mainline_next_allowed_stage": "v0.3.19", "candidate_id": CANDIDATE_ID, "production_ready": False, "laboratory_only": True}
     for key, value in expected_main.items():
         if main.get(key) != value: errors.append(error("mainline_status_mismatch", key))
     for key, value in expected_lab.items():
@@ -114,7 +114,7 @@ def validate_status(root: Path) -> list[str]:
     required_texts = ("README.md", "docs/status/current-status.md", "docs/status/next-stage.md", "docs/roadmap.md")
     for name in required_texts:
         text = (root / name).read_text(encoding="utf-8")
-        for marker in ("v0.3.18", "v0.3.19", "v0.4.5", "v0.4.6"):
+        for marker in ("v0.3.18", "v0.3.19", "v0.4.5", "v0.4.6", "v0.4.7"):
             if marker not in text: errors.append(error("status_marker_missing", name, marker))
     registry = json.loads((root / "collectors/shadow/contracts/candidate_registry_v1.json").read_text(encoding="utf-8"))
     if CANDIDATE_ID not in json.dumps(registry, ensure_ascii=False): errors.append("candidate_identity_mismatch")

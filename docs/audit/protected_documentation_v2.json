@@ -11003,6 +11003,19 @@
       "mutable": false
     },
     {
+      "path": "ml/reports/v0_4_6/test_report.json",
+      "protecting_stage": "v0.4.6",
+      "protecting_manifest": "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json",
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ],
+      "expected_sha256": "b0eefac3c6d30b0be99500df124398148307955f4f37c407c8083cbaa36facd1",
+      "actual_sha256": "b0eefac3c6d30b0be99500df124398148307955f4f37c407c8083cbaa36facd1",
+      "current_sha256": "b0eefac3c6d30b0be99500df124398148307955f4f37c407c8083cbaa36facd1",
+      "manifest_sha_matches": true,
+      "mutable": false
+    },
+    {
       "path": "ml/reports/v0_4_6/training_run_records.json",
       "protecting_stage": "v0.4.6",
       "protecting_manifest": "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json",
@@ -11064,6 +11077,19 @@
       "expected_sha256": "7d989a5364b9ed3aefacc0884bfaa0233b48b0f9fd563f0467cc7fe458f18e99",
       "actual_sha256": "7d989a5364b9ed3aefacc0884bfaa0233b48b0f9fd563f0467cc7fe458f18e99",
       "current_sha256": "7d989a5364b9ed3aefacc0884bfaa0233b48b0f9fd563f0467cc7fe458f18e99",
+      "manifest_sha_matches": true,
+      "mutable": false
+    },
+    {
+      "path": "ml/reports/v0_4_6/verification_summary.json",
+      "protecting_stage": "v0.4.6",
+      "protecting_manifest": "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json",
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ],
+      "expected_sha256": "8a6eeb876940c860f8195c47050ae8a2a39bbd3f4c644303e10081fc4a326d86",
+      "actual_sha256": "8a6eeb876940c860f8195c47050ae8a2a39bbd3f4c644303e10081fc4a326d86",
+      "current_sha256": "8a6eeb876940c860f8195c47050ae8a2a39bbd3f4c644303e10081fc4a326d86",
       "manifest_sha_matches": true,
       "mutable": false
     },

@@ -1,0 +1,62 @@
+[
+  {
+    "claim": "protocol_frozen",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "control_pack_independent",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "overlap_gate_passed",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "blindness_gate_passed",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "label_commitment_valid",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "predictions_frozen_before_unlock",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "evaluation_rebuild_deterministic",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "comparability",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "review_resumed",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "candidate_registry_unchanged",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "active_candidate_unchanged",
+    "evidence": "official-evidence.json",
+    "supported": true
+  },
+  {
+    "claim": "network_disabled",
+    "evidence": "official-evidence.json",
+    "supported": true
+  }
+]

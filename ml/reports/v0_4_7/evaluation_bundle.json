@@ -1,0 +1,251 @@
+{
+  "control_pack_id": "blind-pack:v047:01c5f40ba48a9944",
+  "evaluation_semantic_sha256": "7057636dc7dd48faf3fc799f0b53760b82c7eabc00c3583855ba44f8d09e0e15",
+  "labels_mutated": false,
+  "metric_contract": "blind_metric_contract_v1",
+  "participants": {
+    "active_candidate": {
+      "abstention_count": 0,
+      "abstention_rate": 0.0,
+      "accuracy": 0.6654483430799221,
+      "attack_macro_f1": 0.4987224185213444,
+      "attack_macro_recall": 0.5985380116959064,
+      "benign_recall": 1.0,
+      "class_metrics": [
+        {
+          "class": "benign",
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "auth_failures",
+          "f1": 0.9963583394027676,
+          "precision": 0.9927431059506531,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "beacon",
+          "f1": 0.4972537532039546,
+          "precision": 0.33170493404982904,
+          "recall": 0.9926900584795322,
+          "support": 684
+        },
+        {
+          "class": "low_rate_dos",
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 684
+        },
+        {
+          "class": "port_scan",
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "web_probe",
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 684
+        }
+      ],
+      "class_support": {
+        "auth_failures": 684,
+        "beacon": 684,
+        "benign": 684,
+        "low_rate_dos": 684,
+        "port_scan": 684,
+        "web_probe": 684
+      },
+      "confusion_matrix": [
+        [
+          684,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          684,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          5,
+          679,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          684,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          684,
+          0
+        ],
+        [
+          0,
+          0,
+          684,
+          0,
+          0,
+          0
+        ]
+      ],
+      "duplicate_prediction_count": 0,
+      "episode_precision": 0.6,
+      "episode_recall": 0.6,
+      "false_positive_rate": 0.0,
+      "first_detection_delay_seconds": 0.0,
+      "invalid_prediction_count": 0,
+      "missing_prediction_count": 0,
+      "session_support": 24,
+      "unscored_window_count": 216,
+      "worst_attack_recall": 0.0
+    },
+    "proposal": {
+      "abstention_count": 0,
+      "abstention_rate": 0.0,
+      "accuracy": 0.7984892787524367,
+      "attack_macro_f1": 0.7588586885295211,
+      "attack_macro_recall": 0.7581871345029241,
+      "benign_recall": 1.0,
+      "class_metrics": [
+        {
+          "class": "benign",
+          "f1": 0.6644001942690626,
+          "precision": 0.4974545454545454,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "auth_failures",
+          "f1": 0.9963583394027676,
+          "precision": 0.9927431059506531,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "beacon",
+          "f1": 0.7979351032448377,
+          "precision": 0.8050595238095238,
+          "recall": 0.7909356725146199,
+          "support": 684
+        },
+        {
+          "class": "low_rate_dos",
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "port_scan",
+          "f1": 1.0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "support": 684
+        },
+        {
+          "class": "web_probe",
+          "f1": 0.0,
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 684
+        }
+      ],
+      "class_support": {
+        "auth_failures": 684,
+        "beacon": 684,
+        "benign": 684,
+        "low_rate_dos": 684,
+        "port_scan": 684,
+        "web_probe": 684
+      },
+      "confusion_matrix": [
+        [
+          684,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          684,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          138,
+          5,
+          541,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          684,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          684,
+          0
+        ],
+        [
+          553,
+          0,
+          131,
+          0,
+          0,
+          0
+        ]
+      ],
+      "duplicate_prediction_count": 0,
+      "episode_precision": 0.8,
+      "episode_recall": 0.8,
+      "false_positive_rate": 0.0,
+      "first_detection_delay_seconds": 0.375,
+      "invalid_prediction_count": 0,
+      "missing_prediction_count": 0,
+      "session_support": 24,
+      "unscored_window_count": 216,
+      "worst_attack_recall": 0.0
+    }
+  },
+  "population_mutated": false,
+  "predictions_mutated": false,
+  "schema_version": "blind_evaluation_result_v1"
+}

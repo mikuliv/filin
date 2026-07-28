@@ -12,7 +12,7 @@ NAVIGATION = [
     {"label": "Обзор", "items": [("dashboard", "Главная"), ("stages", "Этапы проекта")]},
     {"label": "Анализ", "items": [("models", "Модели"), ("metrics", "Результаты модели"), ("cases", "Лабораторные карточки")]},
     {"label": "Исследование", "items": [("timeline", "Временная шкала"), ("graph", "Граф реконструкции"), ("hypotheses", "Гипотезы"), ("comparisons", "Матрица сопоставлений"), ("questions", "Вопросы специалисту"), ("reviews", "Ручное рассмотрение")]},
-    {"label": "Лаборатория", "items": [("lab-runs", "Лабораторные запуски"), ("run-comparisons", "Сравнения запусков"), ("candidate-proposals", "Предложения кандидатов"), ("candidate-versions", "Версии кандидатов")]},
+    {"label": "Лаборатория", "items": [("lab-runs", "Лабораторные запуски"), ("run-comparisons", "Сравнения запусков"), ("candidate-proposals", "Предложения кандидатов"), ("candidate-versions", "Версии кандидатов"), ("blind-validations", "Слепые проверки")]},
     {"label": "Управление", "items": [("tasks", "Задачи"), ("tests", "Тесты"), ("logs", "Журналы"), ("bundles", "Комплекты"), ("system", "Состояние системы")]},
 ]
 
@@ -33,11 +33,11 @@ def _base(page: str) -> dict[str, Any]:
 
 def _stages() -> list[dict[str, Any]]:
     main = ["v0.3.15.4", "v0.3.15.5", "v0.3.16", "v0.3.17.1", "v0.3.18", "v0.3.19"]
-    lab = ["v0.4.0", "v0.4.1", "v0.4.2", "v0.4.3", "v0.4.4"]
+    lab = ["v0.4.0", "v0.4.1", "v0.4.2", "v0.4.3", "v0.4.4", "v0.4.5", "v0.4.6", "v0.4.7"]
     rows = []
     for line, versions in (("Основная линия", main), ("Лабораторная линия", lab)):
         for order, version in enumerate(versions, 1):
-            future = version in {"v0.3.19", "v0.4.4"}
+            future = version in {"v0.3.19"}
             report_key = version.replace(".", "_")
             policy = load_json(f"ml/reports/{report_key}/{report_key}_policy_result.json", {}) if not future else {}
             journal = load_json(f"ml/reports/{report_key}/official_run_journal.json", {}) if not future else {}
@@ -58,7 +58,7 @@ def dashboard(runner) -> dict[str, Any]:
     status = project_status(); runs = runner.list(); active = sum(r["status"] == "running" for r in runs)
     cards = [
         ("Основной этап", "v0.3.18", "Завершён"), ("Следующий основной", "v0.3.19", "Разрешён"),
-        ("Лабораторный этап", "v0.4.3", "Завершён"), ("Следующий лабораторный", "v0.4.4", "После UI-приёмки"),
+        ("Лабораторный этап", "v0.4.7", "Завершён · failed_validation"), ("Следующий лабораторный", "Независимый reviewer", "v0.4.8 запрещён"),
         ("Кандидат", "v03154", "frozen"), ("Целостность комплектов", "3 из 3", "Проверено"),
         ("Полная регрессия", "1650 passed", "3 warnings"), ("Активные задачи", str(active), "Локально"),
     ]

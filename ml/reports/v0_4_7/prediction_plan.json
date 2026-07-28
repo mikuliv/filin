@@ -1,0 +1,47 @@
+{
+  "active_candidate_binding": {
+    "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+    "candidate_id": "v03154:65a3dd912d845bc1"
+  },
+  "allowed_failures": [
+    "controlled_interruption"
+  ],
+  "class_contract": "network_classes_v2",
+  "control_pack_binding": "blind-pack:v047:01c5f40ba48a9944",
+  "environment_profile": "local-offline-cpu",
+  "event_contract": "shadow_event_v2",
+  "execution_order": [
+    "active_candidate",
+    "proposal"
+  ],
+  "execution_order_policy": "deterministic_randomized_order",
+  "feature_contract": "network_features_v2",
+  "frozen": true,
+  "frozen_at": "2026-07-28T08:02:28.528334Z",
+  "input_package_sha256": "6c8d03d4a840f5f81ace960666fe951601612fe9e792bd2b8481123e6622a581",
+  "interruption_policy": "checkpoint_and_deterministic_recovery",
+  "output_contract": "blind_prediction_row_v1",
+  "plan_sha256": "b5292395abdfcb81733b7aa2aacd1beeecf610774dcf114e09ffe70f412f46da",
+  "prediction_package_contract": "blind_prediction_package_v1",
+  "prediction_plan_id": "blind-plan-v047-r1",
+  "preprocessing_contract": "identity_float64",
+  "proposal_binding": {
+    "artifact_sha256": "4bd61f85b455cd6f4bfa4199e81036a84af90d091a989469a77c0dccc230204c",
+    "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+    "semantic_sha256": "73454e03ecd4704d5a24fc3f576a4e0c6078197aa2233f10a84bb99c69c3b693"
+  },
+  "resource_limits": {
+    "cpu_threads": 1,
+    "memory_mib": 1024
+  },
+  "retry_policy": "same_plan_before_unlock_only",
+  "runner_version": "v047-safe-inprocess-inference-r1",
+  "schema_version": "blind_prediction_plan_v1",
+  "scoring_policy": "all_post_warmup",
+  "threshold_contracts": [
+    "frozen_candidate_v03154_calibrated_argmax",
+    "argmax_multiclass_v046_r1"
+  ],
+  "timeout_seconds": 180,
+  "warmup_policy": "first_9_windows_per_session"
+}

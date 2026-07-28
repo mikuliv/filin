@@ -1,0 +1,5 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-intro"><p class="eyebrow">v0.4.7 · ручное рассмотрение</p><h2>Рассмотрение слепой проверки</h2><p>{{ validation.validation_lineage_id }}</p></section>
+<section class="notice"><h3>Статус независимости</h3><p>{{ validation.independence_assessment.review_independence_status }}. Независимая человеческая проверка не заявляется; ролевая изоляция не заменяет второго человека.</p></section>
+<div class="review-layout"><section class="panel"><h3>Чек-лист, 29 пунктов</h3><div class="checklist">{% for step in blind_review.steps %}<label><input type="checkbox" disabled {% if step in blind_review.completed_steps %}checked{% endif %}> {{ loop.index }}. {{ step }}</label>{% endfor %}</div></section><aside class="panel"><h3>Решение</h3><p><strong>{{ blind_review.decision.decision if blind_review.decision else 'не принято' }}</strong></p><p>{{ blind_review.decision.reviewer_summary if blind_review.decision else 'Итоговое объяснение ещё не зафиксировано.' }}</p><p>Статус: {{ blind_review.status }}</p><pre>{{ blind_review.notes|json_ru }}</pre></aside></div>
+{% endblock %}

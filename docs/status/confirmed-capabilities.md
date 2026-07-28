@@ -43,6 +43,7 @@
 | `reproducible_laboratory_runs` | Каталог frozen лабораторных запусков | `v0.4.5` | 12 завершённых запусков, exact replay и явное recovery | Работа с реальными данными или внешней инфраструктурой | [policy](../../ml/reports/v0_4_5/v0_4_5_policy_result.json) |
 | `safe_run_comparison` | Comparability gate и описательные дельты | `v0.4.5` | Comparable/conditional/not-comparable режимы, ручной review и export | Рейтинг, победитель или automatic promotion | [comparison](../research/laboratory-run-comparison.md) |
 | `laboratory_candidate_proposal` | Frozen synthetic training proposal и ручной admission | `v0.4.6` | Два независимых обучения, semantic fingerprint, screening, сравнение и обязательный gate | Регистрация, активация, внешняя validation или production | [governance](../research/candidate-proposal-governance.md) |
+| `role_separated_blind_validation` | Blind-процедура с закрытой разметкой и frozen predictions | `v0.4.7` | 24 сессии, 4104 scored windows, overlap/blindness passed, deterministic evaluation | Не independent human review; proposal failed; v0.4.8 запрещён | [описание](../research/blind-laboratory-validation.md) |
 
 ## Общее ограничение
 

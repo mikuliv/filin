@@ -1,0 +1,12 @@
+{
+  "different_label_access": false,
+  "equivalent_environment": true,
+  "same_class_contract": true,
+  "same_control_pack": true,
+  "same_input_manifest": true,
+  "same_metric_contract": true,
+  "same_population": true,
+  "same_scoring_policy": true,
+  "same_warmup_policy": true,
+  "status": "comparable"
+}

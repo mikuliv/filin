@@ -92,7 +92,7 @@ def test_metrics_have_sources_and_five_classes(client):
 
 
 def test_stages_and_bundles_are_structured(client):
-    assert len(soup(client, "/ui/stages").select(".stage-card")) == 11
+    assert len(soup(client, "/ui/stages").select(".stage-card")) == 14
     bundle = soup(client, "/ui/bundles")
     assert len(bundle.select("#bundle-table tbody > tr:not(.bundle-detail)")) == 4
     assert "Manifest SHA" in bundle.get_text() and "Verifier" in bundle.get_text()
@@ -149,7 +149,7 @@ def test_questions_tasks_tests_and_system_are_operator_components(client):
 
 def test_navigation_active_state_and_accessibility(client):
     document = soup(client, "/ui/graph")
-    assert len(document.select(".nav-link")) == 20
+    assert len(document.select(".nav-link")) == 21
     active = document.select_one(".nav-link[aria-current='page']")
     assert active and active.get("data-nav") == "graph"
     assert document.select_one(".skip-link") and document.select_one("main[tabindex='-1']")

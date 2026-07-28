@@ -123,6 +123,9 @@
 ## Предложения лабораторных кандидатов
 
 - [Этап v0.4.6](experiments/v0_4_6.md).
+- [Этап v0.4.7](experiments/v0_4_7.md).
+- [Слепая лабораторная проверка](research/blind-laboratory-validation.md).
+- [Запуск blind-проверки](getting-started/running-blind-laboratory-validation.md).
 - [Управление proposal](research/candidate-proposal-governance.md).
 - [Происхождение данных](research/training-data-lineage.md).
 - [Воспроизводимость обучения](research/model-training-reproducibility.md).

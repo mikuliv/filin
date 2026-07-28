@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://v0.4.7/blind_abstention_metric_v1",
+  "title": "blind_abstention_metric_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "blind_abstention_metric_v1"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "opaque_token": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_-]{1,79}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "status": {
+          "type": "string",
+          "minLength": 2,
+          "maxLength": 80
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 10000
+        },
+        "relative_locator": {
+          "type": "string",
+          "pattern": "^(?![A-Za-z]:|/|.*\\.\\.).{1,240}$"
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000,
+          "pattern": "^[^<>]*$"
+        }
+      }
+    }
+  }
+}

@@ -29,7 +29,12 @@ MIGRATIONS = (
     CREATE TABLE IF NOT EXISTS candidate_proposal_review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload_json TEXT NOT NULL, UNIQUE(review_id,version));
     CREATE INDEX IF NOT EXISTS idx_candidate_proposals_status ON candidate_proposals(status);
     CREATE INDEX IF NOT EXISTS idx_proposal_training_runs_proposal ON proposal_training_runs(proposal_token,status);
-    CREATE INDEX IF NOT EXISTS idx_candidate_proposal_reviews_proposal ON candidate_proposal_reviews(proposal_token,status);""",
+    CREATE INDEX IF NOT EXISTS idx_candidate_proposal_reviews_proposal ON candidate_proposal_reviews(proposal_token,status);""" +
+    """CREATE TABLE IF NOT EXISTS blind_validations(token TEXT PRIMARY KEY, lineage_id TEXT NOT NULL UNIQUE, status TEXT NOT NULL, payload_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS blind_validation_reviews(id TEXT PRIMARY KEY, validation_token TEXT NOT NULL, version INTEGER NOT NULL, status TEXT NOT NULL, payload_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS blind_validation_review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload_json TEXT NOT NULL, UNIQUE(review_id,version));
+    CREATE INDEX IF NOT EXISTS idx_blind_validations_status ON blind_validations(status);
+    CREATE INDEX IF NOT EXISTS idx_blind_reviews_validation ON blind_validation_reviews(validation_token,status);""",
 )
 
 

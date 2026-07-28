@@ -113,3 +113,28 @@ class CandidateProposalReviewComplete(StrictModel):
     reviewer_summary: str = Field(min_length=1, max_length=4000)
     limitations: list[str] = Field(max_length=30)
     next_allowed_action: str
+
+
+class BlindValidationCreate(StrictModel):
+    confirmed: bool
+
+
+class BlindInferenceStart(StrictModel):
+    interrupt: bool = False
+
+
+class BlindInferenceRecovery(StrictModel):
+    execution_id: str = Field(pattern=r"^binf-[a-f0-9]{32}$")
+
+
+class BlindValidationReviewProgress(StrictModel):
+    completed_steps: list[str] = Field(max_length=29)
+
+
+class BlindValidationReviewNote(StrictModel):
+    text: str = Field(min_length=1, max_length=4000)
+
+
+class BlindValidationReviewComplete(StrictModel):
+    decision: str
+    reviewer_summary: str = Field(min_length=1, max_length=4000)

@@ -1,0 +1,24 @@
+[
+  {
+    "committed_at": "2026-07-28T08:02:30.696757Z",
+    "control_pack_id": "blind-pack:v047:01c5f40ba48a9944",
+    "execution_id": "binf-fa67f3bfab7e49bca6ff11c89bb12c11",
+    "input_package_sha256": "6c8d03d4a840f5f81ace960666fe951601612fe9e792bd2b8481123e6622a581",
+    "participant_kind": "active_candidate",
+    "prediction_package_sha256": "48b41359d961154a0d0f6f851daf1220dc5346c65ec1d2f0915837be1c6459f4",
+    "prediction_semantic_sha256": "bbb0abf11ac8e3c2787431e7d29cb18d34c02231ec0ab2289b77e568e54b0375",
+    "predictions_frozen": true,
+    "schema_version": "prediction_commitment_v1"
+  },
+  {
+    "committed_at": "2026-07-28T08:02:30.721842Z",
+    "control_pack_id": "blind-pack:v047:01c5f40ba48a9944",
+    "execution_id": "binf-97f8a894172f427cb0a49cc0309f92ca",
+    "input_package_sha256": "6c8d03d4a840f5f81ace960666fe951601612fe9e792bd2b8481123e6622a581",
+    "participant_kind": "proposal",
+    "prediction_package_sha256": "ef03832d3b138044e19435b2ed4d31bea975c5fb7693000d9d50a7fa94dd85fa",
+    "prediction_semantic_sha256": "db8142e0b91f8cdb15319141b51760999bdda55c2d6595c5d62461a452f3d684",
+    "predictions_frozen": true,
+    "schema_version": "prediction_commitment_v1"
+  }
+]
