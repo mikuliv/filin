@@ -87,8 +87,10 @@ def test_operator_views_explain_comparisons_and_keep_layout_safe(client):
 
     comparisons = BeautifulSoup(client.get("/ui/cases/normal/comparisons").text, "html.parser")
     guide = comparisons.select_one(".matrix-guide")
-    assert guide and "Равная опора" in guide.get_text(" ", strip=True)
+    assert guide and "Опора одинакова" in guide.get_text(" ", strip=True)
+    assert "Гипотезы при этом не равны" in guide.get_text(" ", strip=True)
     assert comparisons.select("[data-v044-comparison]")
+    assert {button.get_text(" ", strip=True) for button in comparisons.select("[data-v044-comparison]")} == {"Опора одинакова"}
     assert "Та же гипотеза" in comparisons.get_text(" ", strip=True)
 
     css = (ROOT / "lab_console/static/console.css").read_text(encoding="utf-8")
@@ -97,14 +99,51 @@ def test_operator_views_explain_comparisons_and_keep_layout_safe(client):
     assert ".stats-grid.four" in css and ".gap-grid>.gap-card" in css
     assert "visibleIds.has(value.left)&&visibleIds.has(value.right)" in javascript
     assert "result_explanation" in javascript and '<p class="comparison-result">' in javascript
+    assert "Почему такой результат" in javascript and "evidence_summary" in javascript
     assert "<summary>Технические сведения</summary>" in javascript
-    assert "console.css?v=documentation-v2" in base and "console.js?v=documentation-v2" in base
+    assert "console.css?v=operator-ui-fix-20260727" in base and "console.js?v=operator-ui-fix-20260727" in base
+
+
+def test_timeline_modes_reposition_events_and_graph_selection_can_be_cleared(client):
+    from bs4 import BeautifulSoup
+
+    timeline = BeautifulSoup(client.get("/ui/cases/late/timeline").text, "html.parser")
+    assert timeline.select_one('[data-case-timeline][data-timeline-mode="observation"]')
+    assert len(timeline.select("[data-timeline-item][data-observation][data-delivery]")) >= 2
+    javascript = (ROOT / "lab_console/static/console.js").read_text(encoding="utf-8")
+    assert "item.style.left" in javascript and "timelinePosition(item" not in javascript
+    assert "applyTimelineMode(button.dataset.mode)" in javascript
+    assert "target.classList.contains(\"selected\")" in javascript
+    assert "clearCaseGraphSelection" in javascript
+
+
+def test_questions_are_contextual_and_explain_their_effect(client):
+    from bs4 import BeautifulSoup
+
+    document = BeautifulSoup(client.get("/ui/cases/normal/questions").text, "html.parser")
+    cards = document.select(".question-card")
+    assert cards
+    titles = [card.select_one("h3").get_text(" ", strip=True) for card in cards]
+    assert len(set(titles)) == len(titles)
+    assert all("указанный разрыв" not in title for title in titles)
+    for card in cards:
+        text = card.get_text(" ", strip=True)
+        assert "Зачем спрашиваем" in text
+        assert "Если подтверждено" in text
+        assert "Если опровергнуто" in text
+        assert "Затронутые гипотезы" in text
+
+
+def test_long_technical_values_are_wrapped_locally():
+    css = (ROOT / "lab_console/static/console.css").read_text(encoding="utf-8")
+    assert ".property-panel pre,.entity-card pre,.question-card pre" in css
+    assert "overflow-wrap:anywhere" in css and "word-break:break-word" in css
 
 
 def test_operator_documentation_is_available_without_external_resources(client):
     response = client.get("/ui/documentation")
     assert response.status_code == 200
-    assert "Равная опора" in response.text
+    assert "Опора одинакова" in response.text
     assert "https://" not in response.text and "http://" not in response.text
 
 

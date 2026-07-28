@@ -70,10 +70,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   all("[data-comparison]").forEach(button => button.addEventListener("click", () => {
     let value = {}; try { value = JSON.parse(button.dataset.comparison || "{}"); } catch (_) { value = {}; }
+    const labels = {equally_supported:"Опора одинакова",better_supported:"Строка сильнее",less_supported:"Строка слабее",incomparable:"Несопоставимы",insufficient_data:"Мало данных"};
     one("[data-comparison-title]").textContent = button.getAttribute("aria-label");
     one("[data-comparison-id]").textContent = value.comparison_id || "диагональ";
-    one("[data-comparison-result]").textContent = value.comparison_result || "та же гипотеза";
-    one("[data-comparison-basis]").textContent = value.comparison_basis || "Сравнение гипотезы с самой собой.";
+    one("[data-comparison-result]").textContent = labels[value.comparison_result] || "та же гипотеза";
+    one("[data-comparison-basis]").textContent = value.comparison_basis ? "Проверены подтверждения, противоречия и открытые разрывы по прозрачному правилу сопоставления." : "Сравнение гипотезы с самой собой не выполняется.";
+    const decisive = (value.decisive_assessment_ids || []).length;
+    one("[data-comparison-explanation]").textContent = value.comparison_result === "equally_supported" && decisive === 0 ? "Ни у одной гипотезы в паре нет решающего сведения, которое давало бы ей преимущество. Это не делает гипотезы одинаковыми или истинными." : `Решающих оценок в этой паре: ${decisive}. Результат остаётся относительным и не является окончательным выводом.`;
     one("[data-comparison-limit]").textContent = (value.limitations || ["Не является рейтингом или окончательным решением."]).join("; ");
   }));
 });
@@ -119,16 +122,57 @@ document.addEventListener("DOMContentLoaded", () => {
     api(`/api/console/v1/reviews/${progressPanel.dataset.reviewId}/progress`, "PATCH", { current_step:step, completed_step_ids:completed, unresolved_item_ids:JSON.parse(progressPanel.dataset.unresolved || "[]") }, progressPanel.dataset.csrf).catch(() => {});
   }
 
+  const caseTimeline = one("[data-case-timeline]");
+  const caseTimelineItems = all("[data-timeline-item]");
+  const timelineMilliseconds = value => new Date(value).getTime();
+  const timelineDomain = caseTimelineItems.flatMap(item => [timelineMilliseconds(item.dataset.observation), timelineMilliseconds(item.dataset.delivery)]);
+  const timelineMinimum = timelineDomain.length ? Math.min(...timelineDomain) : 0;
+  const timelineMaximum = timelineDomain.length ? Math.max(...timelineDomain) : timelineMinimum;
+  const timelinePosition = value => timelineMaximum === timelineMinimum ? 50 : 7 + ((timelineMilliseconds(value) - timelineMinimum) / (timelineMaximum - timelineMinimum)) * 86;
+  const formatDelay = milliseconds => `${(milliseconds / 1000).toLocaleString("ru-RU", {minimumFractionDigits:3, maximumFractionDigits:3})} с`;
+  const applyTimelineMode = mode => {
+    if (!caseTimeline) return;
+    caseTimeline.dataset.timelineMode = mode;
+    const notes = {
+      observation:"Положение рассчитано по исходному времени наблюдения.",
+      delivery:"Положение пересчитано по времени поступления события в лабораторный контур.",
+      comparison:"Основная точка — наблюдение, светлая точка — доставка; линия между ними показывает задержку, а не причинность."
+    };
+    one("[data-timeline-mode-note]").textContent = notes[mode];
+    caseTimelineItems.forEach(item => {
+      const observation = item.dataset.observation;
+      const delivery = item.dataset.delivery;
+      const observationPosition = timelinePosition(observation);
+      const deliveryPosition = timelinePosition(delivery);
+      const displayedPosition = mode === "delivery" ? deliveryPosition : observationPosition;
+      const delay = timelineMilliseconds(delivery) - timelineMilliseconds(observation);
+      item.style.left = `${displayedPosition}%`;
+      item.style.setProperty("--delivery-shift", `${Math.max(-90, Math.min(90, (deliveryPosition - observationPosition) * caseTimeline.clientWidth / 100))}px`);
+      item.classList.toggle("comparison", mode === "comparison");
+      one("[data-event-label]", item).textContent = mode === "delivery" ? `Доставка ${item.dataset.eventIndex}` : mode === "comparison" ? `Событие ${item.dataset.eventIndex} · задержка ${formatDelay(delay)}` : `Наблюдение ${item.dataset.eventIndex}`;
+      one("[data-time-label]", item).textContent = mode === "comparison" ? `${observation.slice(11,23)} → ${delivery.slice(11,23)}` : (mode === "delivery" ? delivery : observation).slice(11,23);
+    });
+  };
   all("[data-timeline-modes] button").forEach(button => button.addEventListener("click", () => {
-    all("[data-timeline-modes] button").forEach(x => x.classList.remove("active")); button.classList.add("active");
-    all("[data-timeline-item]").forEach(item => { const value = button.dataset.mode === "delivery" ? item.dataset.delivery : item.dataset.observation; one("[data-time-label]", item).textContent = value.slice(11,23); });
+    all("[data-timeline-modes] button").forEach(x => x.classList.remove("active")); button.classList.add("active"); applyTimelineMode(button.dataset.mode);
   }));
+  if (caseTimeline) {
+    applyTimelineMode("observation");
+    window.addEventListener("resize", () => applyTimelineMode(caseTimeline.dataset.timelineMode || "observation"));
+  }
   all("[data-timeline-item]").forEach(button => button.addEventListener("click", () => {
     const value = JSON.parse(button.dataset.timelineItem); const panel = one("[data-timeline-explanation]");
     panel.innerHTML = `<p class="eyebrow">Почему элемент расположен здесь</p><h3>${value.timeline_item_id}</h3><p>Наблюдение: ${value.observation_time}<br>Доставка: ${value.delivery_time}<br>Clock domain: ${value.clock_domain}<br>Точность: ${value.precision}<br>Основание порядка: ${value.ordering_basis}</p><p class="limitation">Порядок не доказывает причинность.</p>`;
   }));
 
+  const graphDetailDefault = `<p class="eyebrow">Свойства</p><h3>Выберите узел или ребро</h3><p>Соседи будут подсвечены, остальной граф — приглушён. Повторный клик или клик по пустому месту снимает выделение.</p><button class="button secondary" data-graph-path disabled>Показать путь к гипотезе</button>`;
+  const clearCaseGraphSelection = () => {
+    all("[data-node],[data-edge]").forEach(x => x.classList.remove("selected", "dim"));
+    const detail = one("[data-graph-detail]");
+    if (detail) detail.innerHTML = graphDetailDefault;
+  };
   const applyCaseGraphMode = button => {
+    clearCaseGraphSelection();
     all("[data-graph-modes] button").forEach(x => x.classList.remove("active")); button.classList.add("active");
     const visible = { simplified:["fact","gap"], facts:["fact"], facts_temporal:["fact","event"], facts_structural:["fact","group"], gaps:["fact","gap"], hypotheses:["fact","gap","hypothesis"], full:["fact","event","group","gap","hypothesis"] }[button.dataset.mode];
     const visibleIds = new Set();
@@ -139,6 +183,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const initialGraphMode = one("[data-graph-modes] button.active");
   if (initialGraphMode) applyCaseGraphMode(initialGraphMode);
   const selectGraph = target => {
+    if (target.classList.contains("selected")) { clearCaseGraphSelection(); return; }
     const value = JSON.parse(target.dataset.node || target.dataset.edge); const isNode = Boolean(target.dataset.node);
     all("[data-node],[data-edge]").forEach(x => { x.classList.remove("selected"); x.classList.add("dim"); }); target.classList.remove("dim"); target.classList.add("selected");
     if (isNode) all("[data-edge]").filter(x => { const e=JSON.parse(x.dataset.edge), source=e.source||e.left, target=e.target||e.right; return source===value.id || target===value.id; }).forEach(x => x.classList.remove("dim"));
@@ -157,10 +202,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
   all("[data-node],[data-edge]").forEach(target => { target.addEventListener("click",()=>selectGraph(target)); target.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" ")selectGraph(target);}); });
+  one("[data-v044-graph]")?.addEventListener("click", event => { if (!event.target.closest("[data-node],[data-edge]")) clearCaseGraphSelection(); });
   all("[data-gap-show]").forEach(button => button.addEventListener("click", () => { const impact=one("[data-gap-impact]",button.closest("[data-gap-card]")); impact.hidden=!impact.hidden; button.textContent=impact.hidden?"Показать влияние":"Скрыть влияние"; }));
   all("[data-v044-comparison]").forEach(button => button.addEventListener("click", () => {
     const value=JSON.parse(button.dataset.v044Comparison);
-    one("[data-comparison-detail]").innerHTML=`<p class="eyebrow">Объяснение ячейки</p><h3>${value.result_label}</h3><p class="comparison-pair"><strong>${value.left_ref}</strong> ${value.left_name}<br><strong>${value.right_ref}</strong> ${value.right_name}</p><p class="comparison-result">${value.result_explanation}</p><dl><div><dt>Основание</dt><dd>${value.basis_label}</dd></div><div><dt>Ограничение</dt><dd>${(value.limitations||["Не является окончательным выводом."]).join("; ")}</dd></div></dl><details><summary>Технические сведения</summary><div><b>Правило:</b> ${value.comparison_basis}<br><b>ID:</b> ${value.comparison_id}</div></details>`;
+    one("[data-comparison-detail]").innerHTML=`<p class="eyebrow">Объяснение ячейки</p><h3>${value.result_label}</h3><p class="comparison-pair"><strong>${value.left_ref}</strong> ${value.left_name}<br><strong>${value.right_ref}</strong> ${value.right_name}</p><p class="comparison-result">${value.result_explanation}</p><h4>Почему такой результат</h4><p>${value.evidence_summary}</p><dl><div><dt>Основание</dt><dd>${value.basis_label}</dd></div><div><dt>Ограничение</dt><dd>${(value.limitations||["Не является окончательным выводом."]).join("; ")}</dd></div></dl><details><summary>Технические сведения</summary><div><b>Правило:</b> ${value.comparison_basis}<br><b>ID:</b> ${value.comparison_id}</div></details>`;
   }));
   one("[data-differences-only]")?.addEventListener("change", event => all("[data-v044-comparison]").forEach(button => { button.closest("td").style.opacity=event.target.checked && JSON.parse(button.dataset.v044Comparison).comparison_result==="equally_supported"?".18":"1"; }));
 

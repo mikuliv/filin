@@ -60,7 +60,39 @@ def case_page(registry: CaseRegistry, reviews: ReviewService, token: str, sectio
     node_map = {x["id"]:x for x in visual_nodes}
     visual_edges = [{**edge,"a":node_map[edge["left"]],"b":node_map[edge["right"]]} for edge in view["graph"]["edges"] if edge["left"] in node_map and edge["right"] in node_map]
     hypothesis_refs = {item["hypothesis_id"]:item["display_ref"] for item in hypotheses}
-    result_labels = {"equally_supported":"Равная опора","better_supported":"Строка сильнее","less_supported":"Строка слабее","incomparable":"Нельзя сопоставить","insufficient_data":"Мало данных"}
+    gap_by_id = {item["gap_id"]:item for item in gaps}
+    question_wording = {
+        "missing_interval_boundary": lambda gap, entities: f"Какая первичная запись подтверждает отсутствующую границу интервала для {entities}?",
+        "missing_event": lambda gap, entities: f"Есть ли независимая первичная запись события, отсутствующего рядом с {entities}?",
+        "clock_domain_mismatch": lambda gap, entities: f"Какой источник времени является опорным и какова измеренная поправка часов для {entities}?",
+        "insufficient_precision": lambda gap, entities: f"Есть ли первичная отметка времени с большей точностью для {entities}?",
+        "conflicting_timestamp": lambda gap, entities: f"Какая независимая запись позволяет проверить противоречащие отметки времени для {entities}?",
+        "unresolved_duplicate": lambda gap, entities: f"Подтверждают ли первичные журналы, что записи для {entities} относятся к одному событию?",
+        "broken_reference": lambda gap, entities: f"Какой первичный материал восстанавливает неразрешимую ссылку для {entities}?",
+        "incomplete_evidence": lambda gap, entities: f"Какой обязательный первичный материал отсутствует в комплекте для {entities}?",
+    }
+    questions = []
+    for item in view["questions"]:
+        linked_gaps = [gap_by_id[value] for value in item["source_gap_ids"] if value in gap_by_id]
+        primary_gap = linked_gaps[0] if linked_gaps else None
+        entity_labels = [] if primary_gap is None else primary_gap["detected_between_display"]
+        entities = ", ".join(entity_labels) if entity_labels else "связанного наблюдения"
+        display_question = item["question_text"]
+        if primary_gap is not None:
+            display_question = question_wording.get(
+                primary_gap["gap_type"],
+                lambda gap, labels: f"Какие независимые первичные сведения позволяют проверить разрыв «{gap['display_name']}» для {labels}?",
+            )(primary_gap, entities)
+        gap_labels = [gap["display_name"] for gap in linked_gaps] or ["Разрыв не найден в операторском представлении"]
+        questions.append({**item,
+                          "display_question":display_question,
+                          "purpose":"Закрыть конкретный пробел в доказательствах и проверить, меняется ли относительная опора связанных гипотез.",
+                          "expected_label":"Независимая первичная запись, журнал или измерение с проверяемым происхождением.",
+                          "source_gap_labels":gap_labels,
+                          "related_hypothesis_refs":[hypothesis_refs[value] for value in item["related_hypothesis_ids"] if value in hypothesis_refs],
+                          "effect_confirmed_label":"Разрыв можно сузить или закрыть; связанные гипотезы пересматриваются вручную.",
+                          "effect_refuted_label":"Разрыв остаётся открытым либо гипотеза, зависящая от ожидаемого факта, ослабляется."})
+    result_labels = {"equally_supported":"Опора одинакова","better_supported":"Строка сильнее","less_supported":"Строка слабее","incomparable":"Нельзя сопоставить","insufficient_data":"Мало данных"}
     def decorate_comparison(item: dict[str, Any]) -> dict[str, Any]:
         result = item["comparison_result"]
         left_ref = hypothesis_refs[item["left_hypothesis_id"]]
@@ -72,8 +104,15 @@ def case_page(registry: CaseRegistry, reviews: ReviewService, token: str, sectio
             "incomparable":f"{left_ref} и {right_ref} нельзя безопасно упорядочить по доступным сведениям.",
             "insufficient_data":f"Для содержательного сопоставления {left_ref} и {right_ref} недостаточно сведений.",
         }
+        decisive_count = len(item.get("decisive_assessment_ids", []))
+        unresolved_count = len(item.get("unresolved_difference_ids", []))
+        if result == "equally_supported" and decisive_count == 0:
+            evidence_summary = "Для этой пары не найдено решающего подтверждения или противоречия, которое выделяло бы одну гипотезу."
+        else:
+            evidence_summary = f"Решающих оценок: {decisive_count}; неразрешённых различий: {unresolved_count}."
         return {**item,"left_ref":left_ref,"right_ref":right_ref,"result_label":result_labels[result],
-                "result_explanation":explanations[result],"basis_label":"Сопоставление подтверждений, противоречий и открытых разрывов"}
+                "result_explanation":explanations[result],"evidence_summary":evidence_summary,
+                "basis_label":"Сопоставление подтверждений, противоречий и открытых разрывов"}
     pair = {(x["left_hypothesis_id"],x["right_hypothesis_id"]):decorate_comparison(x) for x in view["comparisons"]}
     for item in view["comparisons"]:
         inverse = {**item,"left_hypothesis_id":item["right_hypothesis_id"],"right_hypothesis_id":item["left_hypothesis_id"],"left_name":item["right_name"],"right_name":item["left_name"],"comparison_result":{"better_supported":"less_supported","less_supported":"better_supported"}.get(item["comparison_result"],item["comparison_result"])}
@@ -86,6 +125,6 @@ def case_page(registry: CaseRegistry, reviews: ReviewService, token: str, sectio
         matrix.append({"hypothesis":left,"cells":cells})
     return {"view_model":f"case_{section}_v044","section":section,"section_title":SECTION_TITLES[section],"case_token":token,
             "descriptor":descriptor,"bundle":bundle,"case":view,"facts":facts,"timeline":view["timeline"],"gaps":gaps,
-            "graph":{**view["graph"],"nodes":visual_nodes,"edges":visual_edges},"hypotheses":hypotheses,"comparisons":view["comparisons"],"matrix":matrix,"questions":view["questions"],
+            "graph":{**view["graph"],"nodes":visual_nodes,"edges":visual_edges},"hypotheses":hypotheses,"comparisons":view["comparisons"],"matrix":matrix,"questions":questions,
             "review":current,"review_history":history,"progress":progress,"required_checks":REQUIRED_CHECKS,"workflow_steps":WORKFLOW_STEPS,
             "sections":SECTION_TITLES,"raw":bundle}

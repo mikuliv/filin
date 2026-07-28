@@ -48,7 +48,7 @@
 | `docs/architecture/storage-and-artifacts.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `ad149485cfc2` | `da7111bf5649` |
 | `docs/architecture/trust-boundaries.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `1f133afa2697` | `db0bc7bfd28f` |
 | `docs/audit/documentation_inventory.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `c23a3c126926` | `840eb00e9075` |
-| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `85d639aa3816` |
+| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `d7aa67189afe` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `1839146eb403` | `db1d6d17cf04` |
 | `docs/audit/documentation_path_migration_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `cb437745bba4` | `b5a47f8be9ef` |
 | `docs/audit/documentation_refactor_plan_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8ca9d2c1f48b` | `f9d20603f919` |
@@ -133,7 +133,7 @@
 | `docs/getting-started/local-environment.md` | Руководство разработчика | `current` | current | нет | `rewritten` | `14ef0667f4ce` | `51c6fd8a93e5` |
 | `docs/getting-started/overview.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `45997f9fcf82` | `a305e72e5113` |
 | `docs/getting-started/repository-layout.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `308d87c07b87` | `2ca2e75f73e5` |
-| `docs/getting-started/reviewing-laboratory-cards.md` | Руководство пользователя или оператора | `current` | current | нет | `rewritten` | `8ed1c9d37795` | `8ad6df31eeda` |
+| `docs/getting-started/reviewing-laboratory-cards.md` | Руководство пользователя или оператора | `current` | current | нет | `rewritten` | `8ed1c9d37795` | `00c01cf38ebb` |
 | `docs/getting-started/testing.md` | Руководство разработчика | `current` | current | нет | `rewritten` | `c6f8558576d2` | `03ec4afcd0e2` |
 | `docs/getting-started/troubleshooting.md` | Руководство пользователя или оператора | `current` | current | нет | `rewritten` | `a25d8e0de03e` | `8134732ab227` |
 | `docs/glossary.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `a78b99a74996` | `66bf99d29468` |

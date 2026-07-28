@@ -188,7 +188,7 @@ def comparisons() -> dict[str, Any]:
         pair[(c["left_hypothesis_id"], c["right_hypothesis_id"])] = c
         inverse = {"better_supported": "less_supported", "less_supported": "better_supported"}.get(c.get("comparison_result"), c.get("comparison_result"))
         pair[(c["right_hypothesis_id"], c["left_hypothesis_id"])] = {**c, "comparison_result": inverse}
-    labels = {"equally_supported": "Равно", "better_supported": "Лучше", "less_supported": "Слабее", "incomparable": "Несопоставимы", "insufficient_data": "Мало данных", "not_comparable": "Не сравниваются"}
+    labels = {"equally_supported": "Опора одинакова", "better_supported": "Строка сильнее", "less_supported": "Строка слабее", "incomparable": "Несопоставимы", "insufficient_data": "Мало данных", "not_comparable": "Не сравниваются"}
     matrix = []
     for left in hyps:
         cells = []
@@ -202,11 +202,24 @@ def comparisons() -> dict[str, Any]:
 
 def questions() -> dict[str, Any]:
     data = incident_data(); items = []
+    gap_by_id = {gap["gap_id"]: gap for gap in data["gaps"]}
+    gap_labels = {"missing_interval_boundary":"Неизвестная граница временного интервала","missing_event":"Возможное отсутствующее событие","clock_domain_mismatch":"Несогласованные источники времени","insufficient_precision":"Недостаточная точность времени"}
+    hypothesis_refs = {item["id"]: f"H{index}" for index, item in enumerate(data["hypotheses"], 1)}
     for i, q in enumerate(data["analysis"].get("analyst_questions", [])):
         category = ["Критические", "Уточняющие", "Целостность", "Временные разрывы"][i % 4]
-        items.append({"id": q["analyst_question_id"], "text": q.get("question_text"), "category": category,
-                      "gaps": q.get("source_gap_ids", []), "hypotheses": q.get("related_hypothesis_ids", []), "expected": q.get("expected_evidence_type"),
-                      "impact": q.get("effect_if_confirmed"), "status": "Ожидает ручного рассмотрения"})
+        linked = [gap_by_id[value] for value in q.get("source_gap_ids", []) if value in gap_by_id]
+        gap = linked[0] if linked else None
+        gap_name = gap_labels.get((gap or {}).get("gap_type"), "Разрыв реконструкции")
+        context = short((gap or {}).get("detected_between", ["связанное наблюдение"])[0])
+        text = f"Какая независимая первичная запись позволяет проверить «{gap_name}» для {context}?"
+        items.append({"id": q["analyst_question_id"], "text": text, "category": category,
+                      "gaps": q.get("source_gap_ids", []), "gap_labels":[gap_labels.get(x.get("gap_type"), "Разрыв реконструкции") for x in linked],
+                      "hypotheses":[hypothesis_refs[value] for value in q.get("related_hypothesis_ids", []) if value in hypothesis_refs],
+                      "expected":"Независимая первичная запись с проверяемым происхождением",
+                      "purpose":"Проверить конкретный пробел и понять, изменится ли относительная опора гипотез.",
+                      "impact":"Разрыв можно сузить или закрыть; гипотезы пересматриваются вручную.",
+                      "refutation":"Разрыв остаётся открытым либо зависимая от ожидаемого факта гипотеза ослабляется.",
+                      "source_text":q.get("question_text"), "status": "Ожидает ручного рассмотрения"})
     return {"view_model": "analyst_questions_v0431", "groups": [{"name": name, "items": [q for q in items if q["category"] == name]} for name in ["Критические", "Уточняющие", "Целостность", "Временные разрывы"]], "raw": raw(items)}
 
 

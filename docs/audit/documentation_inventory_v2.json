@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "85d639aa38164c51980c8217245f869d4472dd9788eb60d22436abe8bb0b0245"
+      "sha256_after": "d7aa67189afea4873e79f1ce4ed6fd7f9a274f347b6508d2ff3435e5f7364702"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -4610,7 +4610,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "8ed1c9d377952a462c50b6fbb6abf5779d36df0917e6056c357dfbcb5c449557",
-      "sha256_after": "8ad6df31eedadd9c5d1b86804acc3574e6bbd4ae24af62ff2a73829e47933537"
+      "sha256_after": "00c01cf38ebbf357741e0ddb97cd1de6c59866a648f6ecf8033c38d49d10aeaf"
     },
     {
       "path": "docs/getting-started/testing.md",
