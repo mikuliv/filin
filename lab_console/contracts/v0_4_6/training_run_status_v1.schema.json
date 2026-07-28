@@ -1,0 +1,113 @@
+{
+  "$id": "training_run_status_v1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "not": {
+        "properties": {
+          "absolute_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "absolute_path"
+        ]
+      }
+    }
+  ],
+  "properties": {
+    "absolute_path": {
+      "type": "null"
+    },
+    "candidate_id": {
+      "type": [
+        "null"
+      ]
+    },
+    "distribution_allowed": {
+      "const": false
+    },
+    "flags": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "type": "object"
+    },
+    "id": {
+      "maxLength": 80,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9_-]{1,79}$",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "type": [
+          "string",
+          "number",
+          "integer",
+          "boolean",
+          "object",
+          "array",
+          "null"
+        ]
+      },
+      "maxItems": 10000,
+      "type": "array",
+      "uniqueItems": true
+    },
+    "laboratory_only": {
+      "const": true
+    },
+    "metadata": {
+      "maxProperties": 200,
+      "type": "object"
+    },
+    "no_active_candidate_change": {
+      "const": true
+    },
+    "no_candidate_registration": {
+      "const": true
+    },
+    "note": {
+      "maxLength": 4000,
+      "minLength": 1,
+      "pattern": "^[^<>\\r\\n]*$",
+      "type": "string"
+    },
+    "proposal_id": {
+      "pattern": "^proposal:v046:[a-f0-9]{8,32}$",
+      "type": "string"
+    },
+    "runtime_token": {
+      "maxLength": 80,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9_-]{1,79}$",
+      "type": "string"
+    },
+    "schema_version": {
+      "const": "training_run_status_v1"
+    },
+    "sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "status": {
+      "maxLength": 80,
+      "minLength": 2,
+      "pattern": "^[a-z][a-z0-9_]*$",
+      "type": "string"
+    },
+    "token": {
+      "maxLength": 80,
+      "minLength": 2,
+      "pattern": "^[a-z0-9][a-z0-9_-]{1,79}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "training_run_status_v1",
+  "type": "object"
+}

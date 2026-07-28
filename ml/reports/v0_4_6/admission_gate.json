@@ -1,0 +1,364 @@
+{
+  "definition": {
+    "criteria": [
+      {
+        "criterion_id": "gate-01-provenance_complete",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "provenance_complete",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-02-leakage_gate_passed",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "leakage_gate_passed",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-03-recipe_frozen_before_training",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "recipe_frozen_before_training",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-04-split_frozen_before_training",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "split_frozen_before_training",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-05-reproducibility_passed",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "reproducibility_passed",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-06-artifact_integrity_passed",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "artifact_integrity_passed",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-07-contract_compatibility_passed",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "contract_compatibility_passed",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-08-no_missing_predictions",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "no_missing_predictions",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-09-no_invalid_predictions",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "no_invalid_predictions",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-10-abstention_semantics_compatible",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "abstention_semantics_compatible",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-11-benign_recall",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "benign_recall",
+        "operator": "minimum",
+        "schema_version": "admission_criterion_v1",
+        "threshold": 0.98
+      },
+      {
+        "criterion_id": "gate-12-false_positive_rate",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "false_positive_rate",
+        "operator": "maximum",
+        "schema_version": "admission_criterion_v1",
+        "threshold": 0.02
+      },
+      {
+        "criterion_id": "gate-13-attack_macro_recall",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "attack_macro_recall",
+        "operator": "minimum",
+        "schema_version": "admission_criterion_v1",
+        "threshold": 0.95
+      },
+      {
+        "criterion_id": "gate-14-worst_attack_recall",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "worst_attack_recall",
+        "operator": "minimum",
+        "schema_version": "admission_criterion_v1",
+        "threshold": 0.9
+      },
+      {
+        "criterion_id": "gate-15-reconstruction_compatible",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "reconstruction_compatible",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-16-comparison_rebuild_deterministic",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "comparison_rebuild_deterministic",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-17-no_unresolved_critical_difference",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "no_unresolved_critical_difference",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-18-model_license_recorded",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "model_license_recorded",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-19-manual_review_completed",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "manual_review_completed",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-20-no_candidate_registry_mutation",
+        "hidden_weight": false,
+        "mandatory": true,
+        "name": "no_candidate_registry_mutation",
+        "operator": "boolean",
+        "schema_version": "admission_criterion_v1",
+        "threshold": true
+      }
+    ],
+    "frozen_before_screening": true,
+    "gate_id": "admission-v046-r1",
+    "gate_sha256": "9bfe7d676a0cf9d453031db863a1db49eafb8e50319f358010d8f7321877ec1d",
+    "hidden_weights": false,
+    "schema_version": "admission_gate_definition_v1"
+  },
+  "result": {
+    "all_mandatory_passed": true,
+    "failed_count": 0,
+    "gate_id": "admission-v046-r1",
+    "hidden_weight_count": 0,
+    "not_assessable_count": 0,
+    "passed_count": 20,
+    "proposal_token": "prop-bf51a20d8df84ef497e2",
+    "results": [
+      {
+        "criterion_id": "gate-01-provenance_complete",
+        "mandatory": true,
+        "name": "provenance_complete",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-02-leakage_gate_passed",
+        "mandatory": true,
+        "name": "leakage_gate_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-03-recipe_frozen_before_training",
+        "mandatory": true,
+        "name": "recipe_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-04-split_frozen_before_training",
+        "mandatory": true,
+        "name": "split_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-05-reproducibility_passed",
+        "mandatory": true,
+        "name": "reproducibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-06-artifact_integrity_passed",
+        "mandatory": true,
+        "name": "artifact_integrity_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-07-contract_compatibility_passed",
+        "mandatory": true,
+        "name": "contract_compatibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-08-no_missing_predictions",
+        "mandatory": true,
+        "name": "no_missing_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-09-no_invalid_predictions",
+        "mandatory": true,
+        "name": "no_invalid_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-10-abstention_semantics_compatible",
+        "mandatory": true,
+        "name": "abstention_semantics_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-11-benign_recall",
+        "mandatory": true,
+        "name": "benign_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.98
+      },
+      {
+        "criterion_id": "gate-12-false_positive_rate",
+        "mandatory": true,
+        "name": "false_positive_rate",
+        "observed": 0.0,
+        "status": "passed",
+        "threshold": 0.02
+      },
+      {
+        "criterion_id": "gate-13-attack_macro_recall",
+        "mandatory": true,
+        "name": "attack_macro_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.95
+      },
+      {
+        "criterion_id": "gate-14-worst_attack_recall",
+        "mandatory": true,
+        "name": "worst_attack_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.9
+      },
+      {
+        "criterion_id": "gate-15-reconstruction_compatible",
+        "mandatory": true,
+        "name": "reconstruction_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-16-comparison_rebuild_deterministic",
+        "mandatory": true,
+        "name": "comparison_rebuild_deterministic",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-17-no_unresolved_critical_difference",
+        "mandatory": true,
+        "name": "no_unresolved_critical_difference",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-18-model_license_recorded",
+        "mandatory": true,
+        "name": "model_license_recorded",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-19-manual_review_completed",
+        "mandatory": true,
+        "name": "manual_review_completed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-20-no_candidate_registry_mutation",
+        "mandatory": true,
+        "name": "no_candidate_registry_mutation",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      }
+    ],
+    "schema_version": "admission_gate_result_v1",
+    "winner_score": null
+  }
+}

@@ -1,0 +1,13 @@
+[
+  {
+    "packages": {
+      "joblib": "1.5.3",
+      "numpy": "2.2.6",
+      "pandas": "3.0.0",
+      "scikit-learn": "1.8.0"
+    },
+    "python_major_minor": "3.13",
+    "schema_version": "training_dependency_snapshot_v1",
+    "snapshot_sha256": "d29cb0a5a73341cc3cfba18ccccbfa400f6de99ed2277b822afaac12cd0e5aa3"
+  }
+]

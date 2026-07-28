@@ -1,6 +1,6 @@
 {
   "schema_version": "filin_frozen_spdx_mapping_v1",
-  "protected_count": 862,
+  "protected_count": 895,
   "files": [
     {
       "path": "collectors/shadow/contracts/candidate_registry_v1.commitment.json",
@@ -1508,6 +1508,21 @@
       ]
     },
     {
+      "path": "incident_reconstruction/protocols/v0_4_6_protocol_r1.yaml",
+      "sha256": "6a08aedba6c32f32127855532e787fd8320736f52c092371d7710074c4b73be9",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "incident_reconstruction/protocols/v0_4_6_protocol_r1.yaml"
+      ]
+    },
+    {
       "path": "incident_reconstruction/rules/v0_4_2_hypothesis_rules_v1.json",
       "sha256": "fb5535e4143c77630c1b1dd49b7c379cbbbfb2e5f9bea28aaaa78f99dc9d37d2",
       "license_expression": "MPL-2.0",
@@ -1970,6 +1985,21 @@
       ],
       "protecting_manifests": [
         "ml/reports/v0_4_3/v0_4_3_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "lab_console/contracts/v0_4_6/candidate_proposal_manifest_v1.schema.json",
+      "sha256": "d2752096ebdabca8e95a22354a4f6244f67ed9df36bf64159ece3baf2fcd081d",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "lab_console/contracts/v0_4_6/candidate_proposal_manifest_v1.schema.json"
       ]
     },
     {
@@ -12273,6 +12303,474 @@
       ],
       "protecting_manifests": [
         "ml/reports/v0_4_5/v0_4_5_semantic.sha256"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/admission_gate.json",
+      "sha256": "b52ec49d9c2085fb3d2f422f90e76b8835281d184ec7cbc0698b36231870d1b6",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/browser_acceptance_report.md",
+      "sha256": "6d4164673066ea5b07199d3b64f7f14caa7719c2176b268198534c74dd2b2850",
+      "license_expression": "CC-BY-4.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "documentation",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/browser_acceptance_result.json",
+      "sha256": "2d5e631d599628882fc3487aa694b57cda5deb4e02668e61804070aef85efc51",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/claim_evidence_ledger.json",
+      "sha256": "a760fa40186ef1ccc98d76f877a0777e6ba6c6e2ec3f13d2a3a15427bc15667b",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/claim_evidence_ledger.json",
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/comparison_bundle.json",
+      "sha256": "d5cfc092556cfc43fa8c748df38b44b34a2b93f57ce20c830ed4dd2370fee932",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/data_catalog.json",
+      "sha256": "88442aba3ecd725f0e36950fa45fad50ab775c9cc3445b9425dc9a9847043ddd",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/decision.json",
+      "sha256": "988e5c374ba9eeba7dff88cbc8e0e3cb8e0b860b1a8a04b4d279b6b44bd69137",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/dependency_snapshots.json",
+      "sha256": "8b9bf9c5129caf6a1f3b8360dc0d914a0586f89a05d3f645b27567e122447724",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/environment_snapshots.json",
+      "sha256": "a47fe571a25beb191d4abc82e3671167caf7b796722c3434c89427531e0decff",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/frozen_recipe.json",
+      "sha256": "8bd49d1c64b4fd549596a5485ea5bdfae4aa7cd038b4a2591a58ac5cbfbd1a6b",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/known_limitations.md",
+      "sha256": "16b4c984d8ee784061f4613e490e306d38b844d47b057b4f58d226b3ebdc89ff",
+      "license_expression": "CC-BY-4.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "documentation",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/leakage_report.json",
+      "sha256": "18ea9df35608d2087aa937863a83fea7f3375fc61ad1c18cf9929eed18907829",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/manual_review.json",
+      "sha256": "c0834a20ad88c6302e4821559eac9bafd0e8778524ef2efafd68ecbde281148b",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/model_semantic_fingerprint.json",
+      "sha256": "fce31440481b2d0f0285f721aa246cf46da379157715c1816ec3e05b423b7189",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/negative_scenarios.json",
+      "sha256": "be7a9d04e81fb58c92e41827be7bdc491a792306886d2a0f324ab2e6f71f1f10",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/positive_scenarios.json",
+      "sha256": "66f742efcef618c3440ef80c2de74806997e6d6ceeb5fd1aee21589d358022fc",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/proposal_manifest.json",
+      "sha256": "906d643d960134de9e49f711ca610acd4adb0302ccd6268f42e88872dd35cd29",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/proposal_manifest.json",
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/recipe_catalog.json",
+      "sha256": "b805841d5ae93f62376d52b909420aa2640254b2753e46c134c50ea9534f9002",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/representative_proposal.json",
+      "sha256": "a66416d29fa7b477048ad8dd9040e8e1c72bbdca033a66502222ea3e4f65ccc4",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/reproducibility_assessment.json",
+      "sha256": "6f822ab340cb29c2237a67d1492a66590e7e9ca9b455c7c94217483675257fc3",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/screening_plan.json",
+      "sha256": "85bcd9fce1fc995cc217e6ab3e85981f34759ab775243bc2ad12099369314fa0",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/screening_results.json",
+      "sha256": "3e7590d4060a1d4168fd5c15f8a6599ddf66479925c6a8b2ee7db8609970832f",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/split_manifest.json",
+      "sha256": "39ded79ed68a92a2b6de0da2fce2b265405953bd297a328a7a7ec13324b08c98",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/split_manifest.json",
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/summary.md",
+      "sha256": "ba4c53b5069481ae52b0d5b6d4c8e0ed1123b2b985578d10a52c78a6aec325ee",
+      "license_expression": "CC-BY-4.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "documentation",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/test_report.json",
+      "sha256": "b0eefac3c6d30b0be99500df124398148307955f4f37c407c8083cbaa36facd1",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/training_run_records.json",
+      "sha256": "3f608e76e294127c10f6152b227b5bf420455338e99c70d5652ed335fccd03a9",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json",
+      "sha256": "40564bca8abcff7bf93b05fd1339e167d902236185313e0c412e14567d4c0e0e",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/v0_4_6_bundle_manifest.sha256",
+      "sha256": "e6b0c0fa589601356d432e67589724f256c764cd3fd4c3ccc00ca69a2500782b",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.sha256"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/v0_4_6_policy_result.json",
+      "sha256": "a20665e0335712a2def101c1265907a19845186f5a937ab59233805cc9c924d2",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/v0_4_6_semantic.sha256",
+      "sha256": "7d989a5364b9ed3aefacc0884bfaa0233b48b0f9fd563f0467cc7fe458f18e99",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_semantic.sha256"
+      ]
+    },
+    {
+      "path": "ml/reports/v0_4_6/verification_summary.json",
+      "sha256": "8a6eeb876940c860f8195c47050ae8a2a39bbd3f4c644303e10081fc4a326d86",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "distribution_profile": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "protecting_manifests": [
+        "ml/reports/v0_4_6/v0_4_6_bundle_manifest.json"
       ]
     },
     {

@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0_4_6_browser_acceptance_v1",
+  "passed": true,
+  "browser": "Codex in-app browser",
+  "screenshot_count": 30,
+  "screenshots_committed": false,
+  "runtime_directory": "runtime/lab_console/v0_4_6/browser",
+  "viewport_sets": [
+    {"name": "desktop", "width": 1920, "height": 1080, "screenshot_count": 10},
+    {"name": "compact", "width": 1366, "height": 768, "screenshot_count": 10},
+    {"name": "effective_125_percent", "width": 1536, "height": 864, "physical_equivalent": "1920x1080 at 125%", "screenshot_count": 10}
+  ],
+  "views": ["catalog", "overview", "lineage", "training", "artifact", "screening", "comparison", "gate", "review", "candidate_versions"],
+  "checks": {
+    "official_proposal_visible": true,
+    "review_restored_after_restart": true,
+    "manual_review_completed_observed_true": true,
+    "mandatory_gate_passed_count": 20,
+    "mandatory_gate_failed_count": 0,
+    "russian_json_readable": true,
+    "text_overflow_detected": false,
+    "proposal_absent_from_candidate_catalog": true,
+    "promotion_controls_absent": true,
+    "browser_console_error_count": 0,
+    "browser_console_warning_count": 0
+  }
+}

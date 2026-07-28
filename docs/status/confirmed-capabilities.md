@@ -42,6 +42,7 @@
 | `deterministic_review_export` | Детерминированный экспорт | `v0.4.4` | Повторяемый export одного состояния | Внешняя юридическая или научная валидность | [reproduction](../../ml/reports/v0_4_4/reproduction.md) |
 | `reproducible_laboratory_runs` | Каталог frozen лабораторных запусков | `v0.4.5` | 12 завершённых запусков, exact replay и явное recovery | Работа с реальными данными или внешней инфраструктурой | [policy](../../ml/reports/v0_4_5/v0_4_5_policy_result.json) |
 | `safe_run_comparison` | Comparability gate и описательные дельты | `v0.4.5` | Comparable/conditional/not-comparable режимы, ручной review и export | Рейтинг, победитель или automatic promotion | [comparison](../research/laboratory-run-comparison.md) |
+| `laboratory_candidate_proposal` | Frozen synthetic training proposal и ручной admission | `v0.4.6` | Два независимых обучения, semantic fingerprint, screening, сравнение и обязательный gate | Регистрация, активация, внешняя validation или production | [governance](../research/candidate-proposal-governance.md) |
 
 ## Общее ограничение
 

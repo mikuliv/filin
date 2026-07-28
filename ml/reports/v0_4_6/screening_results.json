@@ -1,0 +1,48 @@
+{
+  "active_abstention_count": 0,
+  "active_candidate_metrics": {
+    "accuracy": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_recall": 1.0,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "worst_attack_recall": 1.0
+  },
+  "active_predictions_sha256": "16dc9c1d9b1a838857c6f070d6af0e0a641368f02a79dd078986f91cda714549",
+  "invalid_prediction_count": 0,
+  "missing_prediction_count": 0,
+  "proposal_abstention_count": 0,
+  "proposal_frozen_before_screening": true,
+  "proposal_metrics": {
+    "accuracy": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_recall": 1.0,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "worst_attack_recall": 1.0
+  },
+  "proposal_predictions_sha256": "16dc9c1d9b1a838857c6f070d6af0e0a641368f02a79dd078986f91cda714549",
+  "proposal_token": "prop-bf51a20d8df84ef497e2",
+  "row_count": 950,
+  "schema_version": "internal_screening_result_v1",
+  "screening_id": "screen-76232afb99f69c09c386197b",
+  "screening_pack_sha256": "9971a5a15b9bf4009c897a2f10d8f0e6195085b905024defe7c42af86e98e292",
+  "threshold_change_after_screening_count": 0,
+  "training_after_screening_count": 0
+}

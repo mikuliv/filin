@@ -22,7 +22,14 @@ MIGRATIONS = (
     CREATE INDEX IF NOT EXISTS idx_lab_runs_status ON laboratory_runs(status);
     CREATE INDEX IF NOT EXISTS idx_lab_runs_semantic ON laboratory_runs(run_semantic_id);
     CREATE INDEX IF NOT EXISTS idx_run_comparisons_runs ON run_comparisons(left_run_token,right_run_token);
-    CREATE INDEX IF NOT EXISTS idx_comparison_reviews_comparison ON comparison_reviews(comparison_token,status);""",
+    CREATE INDEX IF NOT EXISTS idx_comparison_reviews_comparison ON comparison_reviews(comparison_token,status);
+    CREATE TABLE IF NOT EXISTS candidate_proposals(token TEXT PRIMARY KEY, proposal_id TEXT NOT NULL UNIQUE, status TEXT NOT NULL, payload_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS proposal_training_runs(execution_id TEXT PRIMARY KEY, proposal_token TEXT NOT NULL, training_semantic_id TEXT NOT NULL, status TEXT NOT NULL, payload_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS candidate_proposal_reviews(id TEXT PRIMARY KEY, proposal_token TEXT NOT NULL, version INTEGER NOT NULL, status TEXT NOT NULL, payload_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS candidate_proposal_review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload_json TEXT NOT NULL, UNIQUE(review_id,version));
+    CREATE INDEX IF NOT EXISTS idx_candidate_proposals_status ON candidate_proposals(status);
+    CREATE INDEX IF NOT EXISTS idx_proposal_training_runs_proposal ON proposal_training_runs(proposal_token,status);
+    CREATE INDEX IF NOT EXISTS idx_candidate_proposal_reviews_proposal ON candidate_proposal_reviews(proposal_token,status);""",
 )
 
 

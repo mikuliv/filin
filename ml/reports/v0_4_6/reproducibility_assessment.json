@@ -1,0 +1,15 @@
+{
+  "allowed_nonsemantic_differences": [],
+  "artifact_byte_sha256_equal": true,
+  "execution_ids": [
+    "texec_6397ea405cbb44bfb0ee0b93fc675a33",
+    "texec_fc2f900aeb3c48b2bf586d8cb4ed180b"
+  ],
+  "model_semantic_sha256_equal": true,
+  "passed": true,
+  "predictions_equal": true,
+  "proposal_token": "prop-bf51a20d8df84ef497e2",
+  "schema_version": "training_reproducibility_assessment_v1",
+  "status": "byte_identical",
+  "training_semantic_ids_equal": true
+}

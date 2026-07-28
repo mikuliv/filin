@@ -6,7 +6,7 @@
 
 ## Статус
 
-`current`, `laboratory-only`, этапы `v0.4.3–v0.4.4`.
+`current`, `laboratory-only`, этапы `v0.4.3–v0.4.6`.
 
 ## Место в архитектуре
 
@@ -56,6 +56,7 @@ python -m lab_console --host 127.0.0.1 --port 8043
 python -m tools.lab_console.verify_console
 python -m tools.lab_console.verify_v044
 python -m tools.lab_console.verify_v045
+python -m tools.lab_console.verify_v046
 python -m pytest ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_ui.py ml/tests/test_v044_operator_cycle.py -q
 ```
 
@@ -67,3 +68,7 @@ python -m pytest ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_u
 ## Каталог запусков v0.4.5
 
 Раздел «Лаборатория» предоставляет каталог запусков, мастер замораживания плана, явное восстановление, проверку reproducibility, каталог версий кандидатов и сравнения с обязательным comparability gate. Выполнение ограничено встроенными offline-процедурами; произвольные команды, пути, сеть, обучение и автоматическое продвижение отсутствуют. Контракты находятся в `contracts/v0_4_5/`, а операторские инструкции — в [руководстве по повтору](../docs/getting-started/running-laboratory-replays.md).
+
+## Предложения кандидатов v0.4.6
+
+Раздел «Предложения кандидатов» реализует guided wizard, frozen split/recipe, безопасный in-process runner, восстановление, fingerprint, reproducibility, screening, сравнение v0.4.5, admission gate и версионируемое review. Model binary остаётся только в runtime. Register, activate, promote, upload и arbitrary-command маршруты отсутствуют.

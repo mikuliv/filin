@@ -83,3 +83,33 @@ class ComparisonReviewPatch(StrictModel):
 
 class ComparisonReviewNote(StrictModel):
     text: str = Field(min_length=1, max_length=4000)
+
+
+class CandidateProposalCreate(StrictModel):
+    data_catalog_id: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+    split_id: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+    recipe_id: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+
+
+class ProposalTrainingStart(StrictModel):
+    confirmed: bool
+
+
+class ProposalTrainingRecovery(StrictModel):
+    execution_id: str = Field(pattern=r"^texec_[a-f0-9]{32}$")
+    action: str = Field(pattern=r"^(archive_partial|mark_failed)$")
+
+
+class CandidateProposalReviewProgress(StrictModel):
+    completed_steps: list[str] = Field(max_length=21)
+
+
+class CandidateProposalReviewNote(StrictModel):
+    text: str = Field(min_length=1, max_length=4000)
+
+
+class CandidateProposalReviewComplete(StrictModel):
+    decision: str
+    reviewer_summary: str = Field(min_length=1, max_length=4000)
+    limitations: list[str] = Field(max_length=30)
+    next_allowed_action: str

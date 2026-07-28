@@ -1,0 +1,2602 @@
+[
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_or_disabled_dataset",
+    "observed_error_code": "unknown_or_disabled_dataset",
+    "rejected": true,
+    "scenario_id": "v046-neg-001",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 0,
+      "violation": "unknown_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-002",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 1,
+      "violation": "real_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-003",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 2,
+      "violation": "personal_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_organization_data_forbidden",
+    "observed_error_code": "external_organization_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-004",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 3,
+      "violation": "organization_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_pcap_forbidden",
+    "observed_error_code": "real_pcap_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-005",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 4,
+      "violation": "real_pcap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_license_rejected",
+    "observed_error_code": "dataset_license_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-006",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 5,
+      "violation": "unknown_license"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_manifest_required",
+    "observed_error_code": "dataset_manifest_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-007",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 6,
+      "violation": "missing_manifest"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_semantic_sha_required",
+    "observed_error_code": "dataset_semantic_sha_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-008",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 7,
+      "violation": "missing_semantic_sha"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "split_role_overlap",
+    "observed_error_code": "split_role_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-009",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 8,
+      "violation": "role_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "session_overlap",
+    "observed_error_code": "session_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-010",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 9,
+      "violation": "session_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "capture_overlap",
+    "observed_error_code": "capture_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-011",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 10,
+      "violation": "capture_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_duplicate",
+    "observed_error_code": "semantic_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-012",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 11,
+      "violation": "semantic_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "exact_duplicate",
+    "observed_error_code": "exact_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-013",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 12,
+      "violation": "exact_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "group_split_required",
+    "observed_error_code": "group_split_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-014",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 13,
+      "violation": "row_split"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_split_immutable",
+    "observed_error_code": "frozen_split_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-015",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 14,
+      "violation": "split_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "test_oracle_forbidden",
+    "observed_error_code": "test_oracle_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-016",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 15,
+      "violation": "oracle_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_labels_forbidden",
+    "observed_error_code": "blind_labels_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-017",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 16,
+      "violation": "blind_label_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_locked",
+    "observed_error_code": "screening_locked",
+    "rejected": true,
+    "scenario_id": "v046-neg-018",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 17,
+      "violation": "screening_labels_early"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "leakage_gate_not_passed",
+    "observed_error_code": "leakage_gate_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-019",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 18,
+      "violation": "leakage_warning"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_recipe",
+    "observed_error_code": "unknown_recipe",
+    "rejected": true,
+    "scenario_id": "v046-neg-020",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 19,
+      "violation": "unknown_recipe"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "estimator_not_allowlisted",
+    "observed_error_code": "estimator_not_allowlisted",
+    "rejected": true,
+    "scenario_id": "v046-neg-021",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 20,
+      "violation": "arbitrary_estimator"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_code_forbidden",
+    "observed_error_code": "arbitrary_code_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-022",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 21,
+      "violation": "arbitrary_module"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-023",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 22,
+      "violation": "shell_true"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "rejected": true,
+    "scenario_id": "v046-neg-024",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 23,
+      "violation": "path_traversal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-025",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 24,
+      "violation": "absolute_path"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-026",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 25,
+      "violation": "upload_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-027",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 26,
+      "violation": "upload_model"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "artifact_provenance_rejected",
+    "observed_error_code": "artifact_provenance_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-028",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 27,
+      "violation": "external_pickle"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_recipe_immutable",
+    "observed_error_code": "frozen_recipe_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-029",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 28,
+      "violation": "recipe_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-030",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 29,
+      "violation": "grid_search"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-031",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 30,
+      "violation": "automl"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "post_screening_threshold_change_forbidden",
+    "observed_error_code": "post_screening_threshold_change_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-032",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 31,
+      "violation": "screening_threshold"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_identity_invalid",
+    "observed_error_code": "proposal_identity_invalid",
+    "rejected": true,
+    "scenario_id": "v046-neg-033",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 32,
+      "violation": "candidate_format_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_id_forbidden",
+    "observed_error_code": "candidate_id_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-034",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 33,
+      "violation": "candidate_id_in_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_active_artifact",
+    "observed_error_code": "duplicate_active_artifact",
+    "rejected": true,
+    "scenario_id": "v046-neg-035",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 34,
+      "violation": "duplicate_active_artifact"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_identity_nondeterministic",
+    "observed_error_code": "semantic_identity_nondeterministic",
+    "rejected": true,
+    "scenario_id": "v046-neg-036",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 35,
+      "violation": "timestamp_semantic_id"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "partial_artifact_rejected",
+    "observed_error_code": "partial_artifact_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-037",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 36,
+      "violation": "partial_completed"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "reproducibility_not_passed",
+    "observed_error_code": "reproducibility_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-038",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 37,
+      "violation": "not_reproducible"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_before_freeze_forbidden",
+    "observed_error_code": "screening_before_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-039",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 38,
+      "violation": "screen_before_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_frozen",
+    "observed_error_code": "proposal_frozen",
+    "rejected": true,
+    "scenario_id": "v046-neg-040",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 39,
+      "violation": "edit_after_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "training_after_freeze_forbidden",
+    "observed_error_code": "training_after_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-041",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 40,
+      "violation": "train_after_screen"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "incompatible_contract",
+    "observed_error_code": "incompatible_contract",
+    "rejected": true,
+    "scenario_id": "v046-neg-042",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 41,
+      "violation": "feature_contract_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "not_comparable",
+    "observed_error_code": "not_comparable",
+    "rejected": true,
+    "scenario_id": "v046-neg-043",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 42,
+      "violation": "population_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-044",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 43,
+      "violation": "hidden_weight"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-045",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 44,
+      "violation": "winner_score"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-046",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 45,
+      "violation": "promotion"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-047",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 46,
+      "violation": "registration"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-048",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 47,
+      "violation": "activation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-049",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 48,
+      "violation": "registry_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "admission_gate_immutable",
+    "observed_error_code": "admission_gate_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-050",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 49,
+      "violation": "gate_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "rejected": true,
+    "scenario_id": "v046-neg-051",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 50,
+      "violation": "admit_failed_gate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "manual_review_required",
+    "observed_error_code": "manual_review_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-052",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 51,
+      "violation": "automatic_decision"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "production_forbidden",
+    "observed_error_code": "production_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-053",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 52,
+      "violation": "production"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_trial_forbidden",
+    "observed_error_code": "external_trial_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-054",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 53,
+      "violation": "external_trial"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-055",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 54,
+      "violation": "network"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-056",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 55,
+      "violation": "docker_pull"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "remote_training_forbidden",
+    "observed_error_code": "remote_training_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-057",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 56,
+      "violation": "cloud_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "authentication_required",
+    "observed_error_code": "authentication_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-058",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 57,
+      "violation": "unauthenticated"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "csrf_rejected",
+    "observed_error_code": "csrf_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-059",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 58,
+      "violation": "csrf"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "json_content_type_required",
+    "observed_error_code": "json_content_type_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-060",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 59,
+      "violation": "content_type"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_review_note",
+    "observed_error_code": "invalid_review_note",
+    "rejected": true,
+    "scenario_id": "v046-neg-061",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 60,
+      "violation": "xss_note"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "rejected": true,
+    "scenario_id": "v046-neg-062",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 61,
+      "violation": "secret_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_in_export",
+    "observed_error_code": "absolute_path_in_export",
+    "rejected": true,
+    "scenario_id": "v046-neg-063",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 62,
+      "violation": "absolute_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-064",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 63,
+      "violation": "binary_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-065",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 64,
+      "violation": "dataset_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_commit_forbidden",
+    "observed_error_code": "model_binary_commit_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-066",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 65,
+      "violation": "binary_git"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_commit_forbidden",
+    "observed_error_code": "dataset_commit_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-067",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 66,
+      "violation": "dataset_git"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "distribution_profile_not_approved",
+    "observed_error_code": "distribution_profile_not_approved",
+    "rejected": true,
+    "scenario_id": "v046-neg-068",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 67,
+      "violation": "license_profile"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "upstream_text_immutable",
+    "observed_error_code": "upstream_text_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-069",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 68,
+      "violation": "license_text"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-070",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 69,
+      "violation": "protected_v045"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-071",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 70,
+      "violation": "backend_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-072",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 71,
+      "violation": "git_history"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_or_disabled_dataset",
+    "observed_error_code": "unknown_or_disabled_dataset",
+    "rejected": true,
+    "scenario_id": "v046-neg-073",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 72,
+      "violation": "unknown_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-074",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 73,
+      "violation": "real_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-075",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 74,
+      "violation": "personal_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_organization_data_forbidden",
+    "observed_error_code": "external_organization_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-076",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 75,
+      "violation": "organization_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_pcap_forbidden",
+    "observed_error_code": "real_pcap_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-077",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 76,
+      "violation": "real_pcap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_license_rejected",
+    "observed_error_code": "dataset_license_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-078",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 77,
+      "violation": "unknown_license"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_manifest_required",
+    "observed_error_code": "dataset_manifest_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-079",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 78,
+      "violation": "missing_manifest"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_semantic_sha_required",
+    "observed_error_code": "dataset_semantic_sha_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-080",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 79,
+      "violation": "missing_semantic_sha"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "split_role_overlap",
+    "observed_error_code": "split_role_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-081",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 80,
+      "violation": "role_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "session_overlap",
+    "observed_error_code": "session_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-082",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 81,
+      "violation": "session_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "capture_overlap",
+    "observed_error_code": "capture_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-083",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 82,
+      "violation": "capture_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_duplicate",
+    "observed_error_code": "semantic_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-084",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 83,
+      "violation": "semantic_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "exact_duplicate",
+    "observed_error_code": "exact_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-085",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 84,
+      "violation": "exact_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "group_split_required",
+    "observed_error_code": "group_split_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-086",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 85,
+      "violation": "row_split"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_split_immutable",
+    "observed_error_code": "frozen_split_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-087",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 86,
+      "violation": "split_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "test_oracle_forbidden",
+    "observed_error_code": "test_oracle_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-088",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 87,
+      "violation": "oracle_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_labels_forbidden",
+    "observed_error_code": "blind_labels_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-089",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 88,
+      "violation": "blind_label_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_locked",
+    "observed_error_code": "screening_locked",
+    "rejected": true,
+    "scenario_id": "v046-neg-090",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 89,
+      "violation": "screening_labels_early"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "leakage_gate_not_passed",
+    "observed_error_code": "leakage_gate_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-091",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 90,
+      "violation": "leakage_warning"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_recipe",
+    "observed_error_code": "unknown_recipe",
+    "rejected": true,
+    "scenario_id": "v046-neg-092",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 91,
+      "violation": "unknown_recipe"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "estimator_not_allowlisted",
+    "observed_error_code": "estimator_not_allowlisted",
+    "rejected": true,
+    "scenario_id": "v046-neg-093",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 92,
+      "violation": "arbitrary_estimator"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_code_forbidden",
+    "observed_error_code": "arbitrary_code_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-094",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 93,
+      "violation": "arbitrary_module"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-095",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 94,
+      "violation": "shell_true"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "rejected": true,
+    "scenario_id": "v046-neg-096",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 95,
+      "violation": "path_traversal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-097",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 96,
+      "violation": "absolute_path"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-098",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 97,
+      "violation": "upload_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-099",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 98,
+      "violation": "upload_model"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "artifact_provenance_rejected",
+    "observed_error_code": "artifact_provenance_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-100",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 99,
+      "violation": "external_pickle"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_recipe_immutable",
+    "observed_error_code": "frozen_recipe_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-101",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 100,
+      "violation": "recipe_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-102",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 101,
+      "violation": "grid_search"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-103",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 102,
+      "violation": "automl"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "post_screening_threshold_change_forbidden",
+    "observed_error_code": "post_screening_threshold_change_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-104",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 103,
+      "violation": "screening_threshold"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_identity_invalid",
+    "observed_error_code": "proposal_identity_invalid",
+    "rejected": true,
+    "scenario_id": "v046-neg-105",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 104,
+      "violation": "candidate_format_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_id_forbidden",
+    "observed_error_code": "candidate_id_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-106",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 105,
+      "violation": "candidate_id_in_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_active_artifact",
+    "observed_error_code": "duplicate_active_artifact",
+    "rejected": true,
+    "scenario_id": "v046-neg-107",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 106,
+      "violation": "duplicate_active_artifact"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_identity_nondeterministic",
+    "observed_error_code": "semantic_identity_nondeterministic",
+    "rejected": true,
+    "scenario_id": "v046-neg-108",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 107,
+      "violation": "timestamp_semantic_id"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "partial_artifact_rejected",
+    "observed_error_code": "partial_artifact_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-109",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 108,
+      "violation": "partial_completed"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "reproducibility_not_passed",
+    "observed_error_code": "reproducibility_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-110",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 109,
+      "violation": "not_reproducible"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_before_freeze_forbidden",
+    "observed_error_code": "screening_before_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-111",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 110,
+      "violation": "screen_before_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_frozen",
+    "observed_error_code": "proposal_frozen",
+    "rejected": true,
+    "scenario_id": "v046-neg-112",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 111,
+      "violation": "edit_after_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "training_after_freeze_forbidden",
+    "observed_error_code": "training_after_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-113",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 112,
+      "violation": "train_after_screen"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "incompatible_contract",
+    "observed_error_code": "incompatible_contract",
+    "rejected": true,
+    "scenario_id": "v046-neg-114",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 113,
+      "violation": "feature_contract_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "not_comparable",
+    "observed_error_code": "not_comparable",
+    "rejected": true,
+    "scenario_id": "v046-neg-115",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 114,
+      "violation": "population_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-116",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 115,
+      "violation": "hidden_weight"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-117",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 116,
+      "violation": "winner_score"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-118",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 117,
+      "violation": "promotion"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-119",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 118,
+      "violation": "registration"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-120",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 119,
+      "violation": "activation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-121",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 120,
+      "violation": "registry_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "admission_gate_immutable",
+    "observed_error_code": "admission_gate_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-122",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 121,
+      "violation": "gate_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "rejected": true,
+    "scenario_id": "v046-neg-123",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 122,
+      "violation": "admit_failed_gate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "manual_review_required",
+    "observed_error_code": "manual_review_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-124",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 123,
+      "violation": "automatic_decision"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "production_forbidden",
+    "observed_error_code": "production_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-125",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 124,
+      "violation": "production"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_trial_forbidden",
+    "observed_error_code": "external_trial_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-126",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 125,
+      "violation": "external_trial"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-127",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 126,
+      "violation": "network"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-128",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 127,
+      "violation": "docker_pull"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "remote_training_forbidden",
+    "observed_error_code": "remote_training_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-129",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 128,
+      "violation": "cloud_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "authentication_required",
+    "observed_error_code": "authentication_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-130",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 129,
+      "violation": "unauthenticated"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "csrf_rejected",
+    "observed_error_code": "csrf_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-131",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 130,
+      "violation": "csrf"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "json_content_type_required",
+    "observed_error_code": "json_content_type_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-132",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 131,
+      "violation": "content_type"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_review_note",
+    "observed_error_code": "invalid_review_note",
+    "rejected": true,
+    "scenario_id": "v046-neg-133",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 132,
+      "violation": "xss_note"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "secret_in_export",
+    "observed_error_code": "secret_in_export",
+    "rejected": true,
+    "scenario_id": "v046-neg-134",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 133,
+      "violation": "secret_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_in_export",
+    "observed_error_code": "absolute_path_in_export",
+    "rejected": true,
+    "scenario_id": "v046-neg-135",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 134,
+      "violation": "absolute_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_export_forbidden",
+    "observed_error_code": "model_binary_export_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-136",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 135,
+      "violation": "binary_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_export_forbidden",
+    "observed_error_code": "dataset_export_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-137",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 136,
+      "violation": "dataset_export"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "model_binary_commit_forbidden",
+    "observed_error_code": "model_binary_commit_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-138",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 137,
+      "violation": "binary_git"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_commit_forbidden",
+    "observed_error_code": "dataset_commit_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-139",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 138,
+      "violation": "dataset_git"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "distribution_profile_not_approved",
+    "observed_error_code": "distribution_profile_not_approved",
+    "rejected": true,
+    "scenario_id": "v046-neg-140",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 139,
+      "violation": "license_profile"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "upstream_text_immutable",
+    "observed_error_code": "upstream_text_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-141",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 140,
+      "violation": "license_text"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "protected_file_immutable",
+    "observed_error_code": "protected_file_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-142",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 141,
+      "violation": "protected_v045"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-143",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 142,
+      "violation": "backend_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "git_operation_forbidden",
+    "observed_error_code": "git_operation_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-144",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 143,
+      "violation": "git_history"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_or_disabled_dataset",
+    "observed_error_code": "unknown_or_disabled_dataset",
+    "rejected": true,
+    "scenario_id": "v046-neg-145",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 144,
+      "violation": "unknown_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-146",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 145,
+      "violation": "real_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-147",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 146,
+      "violation": "personal_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_organization_data_forbidden",
+    "observed_error_code": "external_organization_data_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-148",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 147,
+      "violation": "organization_data"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "real_pcap_forbidden",
+    "observed_error_code": "real_pcap_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-149",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 148,
+      "violation": "real_pcap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_license_rejected",
+    "observed_error_code": "dataset_license_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-150",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 149,
+      "violation": "unknown_license"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_manifest_required",
+    "observed_error_code": "dataset_manifest_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-151",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 150,
+      "violation": "missing_manifest"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "dataset_semantic_sha_required",
+    "observed_error_code": "dataset_semantic_sha_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-152",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 151,
+      "violation": "missing_semantic_sha"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "split_role_overlap",
+    "observed_error_code": "split_role_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-153",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 152,
+      "violation": "role_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "session_overlap",
+    "observed_error_code": "session_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-154",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 153,
+      "violation": "session_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "capture_overlap",
+    "observed_error_code": "capture_overlap",
+    "rejected": true,
+    "scenario_id": "v046-neg-155",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 154,
+      "violation": "capture_overlap"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_duplicate",
+    "observed_error_code": "semantic_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-156",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 155,
+      "violation": "semantic_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "exact_duplicate",
+    "observed_error_code": "exact_duplicate",
+    "rejected": true,
+    "scenario_id": "v046-neg-157",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 156,
+      "violation": "exact_duplicate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "group_split_required",
+    "observed_error_code": "group_split_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-158",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 157,
+      "violation": "row_split"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_split_immutable",
+    "observed_error_code": "frozen_split_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-159",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 158,
+      "violation": "split_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "test_oracle_forbidden",
+    "observed_error_code": "test_oracle_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-160",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 159,
+      "violation": "oracle_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "blind_labels_forbidden",
+    "observed_error_code": "blind_labels_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-161",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 160,
+      "violation": "blind_label_training"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_locked",
+    "observed_error_code": "screening_locked",
+    "rejected": true,
+    "scenario_id": "v046-neg-162",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 161,
+      "violation": "screening_labels_early"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "leakage_gate_not_passed",
+    "observed_error_code": "leakage_gate_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-163",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 162,
+      "violation": "leakage_warning"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "unknown_recipe",
+    "observed_error_code": "unknown_recipe",
+    "rejected": true,
+    "scenario_id": "v046-neg-164",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 163,
+      "violation": "unknown_recipe"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "estimator_not_allowlisted",
+    "observed_error_code": "estimator_not_allowlisted",
+    "rejected": true,
+    "scenario_id": "v046-neg-165",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 164,
+      "violation": "arbitrary_estimator"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "arbitrary_code_forbidden",
+    "observed_error_code": "arbitrary_code_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-166",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 165,
+      "violation": "arbitrary_module"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-167",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 166,
+      "violation": "shell_true"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "invalid_runtime_token",
+    "observed_error_code": "invalid_runtime_token",
+    "rejected": true,
+    "scenario_id": "v046-neg-168",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 167,
+      "violation": "path_traversal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "absolute_path_forbidden",
+    "observed_error_code": "absolute_path_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-169",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 168,
+      "violation": "absolute_path"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-170",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 169,
+      "violation": "upload_dataset"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-171",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 170,
+      "violation": "upload_model"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "artifact_provenance_rejected",
+    "observed_error_code": "artifact_provenance_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-172",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 171,
+      "violation": "external_pickle"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "frozen_recipe_immutable",
+    "observed_error_code": "frozen_recipe_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-173",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 172,
+      "violation": "recipe_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-174",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 173,
+      "violation": "grid_search"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "automatic_search_forbidden",
+    "observed_error_code": "automatic_search_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-175",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 174,
+      "violation": "automl"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "post_screening_threshold_change_forbidden",
+    "observed_error_code": "post_screening_threshold_change_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-176",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 175,
+      "violation": "screening_threshold"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_identity_invalid",
+    "observed_error_code": "proposal_identity_invalid",
+    "rejected": true,
+    "scenario_id": "v046-neg-177",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 176,
+      "violation": "candidate_format_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_id_forbidden",
+    "observed_error_code": "candidate_id_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-178",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 177,
+      "violation": "candidate_id_in_proposal"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "duplicate_active_artifact",
+    "observed_error_code": "duplicate_active_artifact",
+    "rejected": true,
+    "scenario_id": "v046-neg-179",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 178,
+      "violation": "duplicate_active_artifact"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "semantic_identity_nondeterministic",
+    "observed_error_code": "semantic_identity_nondeterministic",
+    "rejected": true,
+    "scenario_id": "v046-neg-180",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 179,
+      "violation": "timestamp_semantic_id"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "partial_artifact_rejected",
+    "observed_error_code": "partial_artifact_rejected",
+    "rejected": true,
+    "scenario_id": "v046-neg-181",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 180,
+      "violation": "partial_completed"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "reproducibility_not_passed",
+    "observed_error_code": "reproducibility_not_passed",
+    "rejected": true,
+    "scenario_id": "v046-neg-182",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 181,
+      "violation": "not_reproducible"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "screening_before_freeze_forbidden",
+    "observed_error_code": "screening_before_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-183",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 182,
+      "violation": "screen_before_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "proposal_frozen",
+    "observed_error_code": "proposal_frozen",
+    "rejected": true,
+    "scenario_id": "v046-neg-184",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 183,
+      "violation": "edit_after_freeze"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "training_after_freeze_forbidden",
+    "observed_error_code": "training_after_freeze_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-185",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 184,
+      "violation": "train_after_screen"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "incompatible_contract",
+    "observed_error_code": "incompatible_contract",
+    "rejected": true,
+    "scenario_id": "v046-neg-186",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 185,
+      "violation": "feature_contract_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "not_comparable",
+    "observed_error_code": "not_comparable",
+    "rejected": true,
+    "scenario_id": "v046-neg-187",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 186,
+      "violation": "population_mismatch"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-188",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 187,
+      "violation": "hidden_weight"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "winner_selection_forbidden",
+    "observed_error_code": "winner_selection_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-189",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 188,
+      "violation": "winner_score"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-190",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 189,
+      "violation": "promotion"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-191",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 190,
+      "violation": "registration"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "endpoint_not_found",
+    "observed_error_code": "endpoint_not_found",
+    "rejected": true,
+    "scenario_id": "v046-neg-192",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 191,
+      "violation": "activation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-193",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 192,
+      "violation": "registry_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "admission_gate_immutable",
+    "observed_error_code": "admission_gate_immutable",
+    "rejected": true,
+    "scenario_id": "v046-neg-194",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 193,
+      "violation": "gate_mutation"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "mandatory_gate_failed",
+    "observed_error_code": "mandatory_gate_failed",
+    "rejected": true,
+    "scenario_id": "v046-neg-195",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 194,
+      "violation": "admit_failed_gate"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "manual_review_required",
+    "observed_error_code": "manual_review_required",
+    "rejected": true,
+    "scenario_id": "v046-neg-196",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 195,
+      "violation": "automatic_decision"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "production_forbidden",
+    "observed_error_code": "production_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-197",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 196,
+      "violation": "production"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "external_trial_forbidden",
+    "observed_error_code": "external_trial_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-198",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 197,
+      "violation": "external_trial"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-199",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 198,
+      "violation": "network"
+    }
+  },
+  {
+    "executed_in_temporary_copy": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "rejected": true,
+    "scenario_id": "v046-neg-200",
+    "source_tree_mutated": false,
+    "violation": {
+      "invalid": true,
+      "variant": 199,
+      "violation": "docker_pull"
+    }
+  }
+]

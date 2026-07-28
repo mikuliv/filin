@@ -1,0 +1,153 @@
+{
+  "abstention_results": {
+    "active": 0,
+    "proposal": 0
+  },
+  "active_candidate_binding": {
+    "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+    "candidate_id": "v03154:65a3dd912d845bc1",
+    "manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537"
+  },
+  "card_diffs": [],
+  "class_results": [
+    {
+      "active_recall": 1.0,
+      "class": "benign",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "auth_failures",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "beacon",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "low_rate_dos",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "port_scan",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "web_probe",
+      "interpretation": "unchanged",
+      "proposal_recall": 1.0
+    }
+  ],
+  "comparability_status": "comparable",
+  "comparison_engine": "v0.4.5/proposal_evaluation_binding_v1",
+  "comparison_id": "pcmp_67fb90de79c4de7a6dcea6183bf7cca6edc96817",
+  "comparison_semantic_sha256": "92a4510e5a9e7b35fdb1d388a2c7a6305207c68b8f5bc0b5471d83cfc39923f2",
+  "compatibility": {
+    "active_candidate_id": "v03154:65a3dd912d845bc1",
+    "dimensions": {
+      "abstention_semantics": "passed",
+      "class_contract": "passed",
+      "class_labels": "passed",
+      "event_contract": "passed",
+      "feature_contract": "passed",
+      "feature_order": "passed",
+      "input_schema": "passed",
+      "metric_contract": "passed",
+      "missing_value_policy": "passed",
+      "output_schema": "passed",
+      "preprocessing": "passed",
+      "reconstruction_contract": "passed",
+      "threshold_semantics": "passed"
+    },
+    "direct_pairwise_comparison_allowed": true,
+    "proposal_token": "prop-bf51a20d8df84ef497e2",
+    "schema_version": "proposal_compatibility_assessment_v1",
+    "status": "compatible"
+  },
+  "differences": [],
+  "episode_results": [],
+  "false_positive_results": [
+    {
+      "absolute_delta": 0.0,
+      "active_value": 0.0,
+      "interpretation": "unchanged",
+      "metric_id": "fpr",
+      "proposal_value": 0.0,
+      "requirement_masking_forbidden": true
+    }
+  ],
+  "gap_diffs": [],
+  "hidden_score": false,
+  "hypothesis_diffs": [],
+  "limitations": [
+    "Внутренний synthetic screening не является внешней validation."
+  ],
+  "metric_results": [
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "interpretation": "unchanged",
+      "metric_id": "accuracy",
+      "proposal_value": 1.0,
+      "requirement_masking_forbidden": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "interpretation": "unchanged",
+      "metric_id": "benign_recall",
+      "proposal_value": 1.0,
+      "requirement_masking_forbidden": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 0.0,
+      "interpretation": "unchanged",
+      "metric_id": "fpr",
+      "proposal_value": 0.0,
+      "requirement_masking_forbidden": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "interpretation": "unchanged",
+      "metric_id": "attack_macro_recall",
+      "proposal_value": 1.0,
+      "requirement_masking_forbidden": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "interpretation": "unchanged",
+      "metric_id": "attack_macro_f1",
+      "proposal_value": 1.0,
+      "requirement_masking_forbidden": true
+    },
+    {
+      "absolute_delta": 0.0,
+      "active_value": 1.0,
+      "interpretation": "unchanged",
+      "metric_id": "worst_attack_recall",
+      "proposal_value": 1.0,
+      "requirement_masking_forbidden": true
+    }
+  ],
+  "proposal_evaluation_binding": {
+    "artifact_sha256": "4bd61f85b455cd6f4bfa4199e81036a84af90d091a989469a77c0dccc230204c",
+    "candidate_id": null,
+    "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+    "semantic_sha256": "73454e03ecd4704d5a24fc3f576a4e0c6078197aa2233f10a84bb99c69c3b693"
+  },
+  "replacement_recommended": false,
+  "schema_version": "proposal_active_candidate_comparison_v1",
+  "winner_selected": false
+}

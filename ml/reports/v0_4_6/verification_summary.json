@@ -1,0 +1,17 @@
+{
+  "schema_version": "v0_4_6_verification_summary_v1",
+  "all_final_checks_passed": true,
+  "browser_acceptance_passed": true,
+  "browser_screenshot_count": 30,
+  "console_regression_passed": true,
+  "documentation_validation_passed": true,
+  "full_regression_passed": true,
+  "licensing_validation_passed": true,
+  "license_review_required_file_count": 0,
+  "reuse_coverage_percent": 100,
+  "standalone_verifier_passed": true,
+  "unassigned_license_file_count": 0,
+  "unknown_license_file_count": 0,
+  "v0_4_4_regression_passed": true,
+  "v0_4_5_regression_passed": true
+}

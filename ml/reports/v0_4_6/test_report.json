@@ -1,0 +1,23 @@
+{
+  "schema_version": "v0_4_6_test_report_v1",
+  "full_pytest": {
+    "passed": true,
+    "passed_count": 1792,
+    "failed_count": 0,
+    "warning_count": 3,
+    "duration_seconds": 485.28,
+    "command": "python -m pytest -q --basetemp runtime/pytest-v046-full-confirmed"
+  },
+  "targeted_regression_fixes": {
+    "passed": true,
+    "passed_count": 4
+  },
+  "documentation_regression": {
+    "passed": true,
+    "passed_count": 7
+  },
+  "known_warnings": [
+    "sklearn classification warning: y_pred contains classes not in y_true",
+    "sklearn confusion-matrix warning for a single label (2 occurrences)"
+  ]
+}

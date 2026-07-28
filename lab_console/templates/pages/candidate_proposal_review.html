@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<section class="page-intro"><p class="eyebrow">21 шаг · ручное решение</p><h2>Рассмотреть предложение лабораторного кандидата</h2><p>{{ proposal.proposal_id }} · решение не регистрирует и не активирует модель.</p></section>
+<section class="panel"><h3>Прогресс</h3><ol>{% for step in proposal_review.steps %}<li class="{{ 'state-ok' if step.completed else '' }}">{{ step.step_id }} — {{ 'проверено' if step.completed else 'ожидает проверки' }}</li>{% endfor %}</ol></section>
+<section class="notice"><h3>Неизменяемые флаги</h3><p>no_candidate_registration = true · no_active_candidate_change = true · no_external_validation_claim = true · no_production_decision = true</p></section>
+{% if proposal_review.decision %}<section class="panel"><h3>Решение</h3><pre class="proposal-json">{{ proposal_review.decision | json_ru }}</pre></section>{% endif %}
+{% endblock %}

@@ -1,0 +1,13 @@
+[
+  {
+    "external_bind": false,
+    "laboratory_only": true,
+    "machine": "AMD64",
+    "network_allowed": false,
+    "platform": "Windows",
+    "python": "3.13.9",
+    "schema_version": "training_environment_snapshot_v1",
+    "shell": false,
+    "snapshot_sha256": "fcfe4401b833206bc4821fcfbe223a0f84fb5fa9cc8c672165ebd5f10cb3e7a4"
+  }
+]

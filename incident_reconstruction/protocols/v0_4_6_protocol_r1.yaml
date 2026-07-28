@@ -1,0 +1,107 @@
+schema_version: v0_4_6_protocol_v1
+stage: v0.4.6
+protocol_revision: 1
+frozen_before_official_training: true
+starting_head: 665ab1207de034c90aef74cb28efd9b1db704dc9
+v0_4_5:
+  implementation_commit: 665ab1207de034c90aef74cb28efd9b1db704dc9
+  manifest_sha256: c204fd58f2e447b6c6814b1a7d096daa3adc4b8c3e9f1a5d06210f34d66dc874
+  semantic_sha256: 8eebff417d0b172c0fc107b7775cbd048ada941f68e490c4cc08019a413b6569
+licensing_baseline:
+  tracked_file_count: 2761
+  protected_file_count: 862
+  reuse_coverage_percent: 100
+  approved_distribution_profiles: [source-core, laboratory-source]
+  all_distribution_profiles_ready: false
+active_candidate:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+  registry_sha256: 31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d
+  registry_commitment_artifact_sha256: a6c79a6b19561b9924ee8145d019e73baf78a286aebcf40c7542bdc298561fe0
+contracts:
+  feature_contract: network_features_v2
+  feature_contract_sha256: 960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9
+  event_contract: shadow_event_v2
+  event_contract_sha256: 38c7cace3e6f85715f68a98662314aab06f7b40d91d67980c854b75a86fe8149
+protected_set:
+  source: docs/licensing/frozen-spdx-mapping.json
+  entry_count: 862
+purpose: reproducible_candidate_proposal_and_manual_separate_validation_admission
+allowed_data:
+  - verified_project_generated_synthetic_network_features
+forbidden_data:
+  - real_organization_data
+  - personal_data
+  - real_pcap
+  - blind_labels_for_training
+  - test_oracle_for_training
+split_model:
+  contract: candidate_development_split_v1
+  grouping_key: session_id
+  policy: whole_session_predeclared_suffix
+  roles: [training, calibration, development_validation, internal_screening]
+leakage_protection:
+  required_status: passed
+  warning_is_passed: false
+  checks: [file_sha, semantic_sha, session_id, capture_id, scenario_instance_id, event_id, exact_row, normalized_row, derived_copy, temporal_sequence, role_exclusivity, oracle_and_blind_label_access]
+recipe_governance:
+  catalog: candidate_training_recipe_catalog_v1
+  selected_recipe: hgb-multiclass-v046-r1
+  arbitrary_code_allowed: false
+  automatic_search_allowed: false
+  parameters_frozen_before_training: true
+training_identity:
+  physical: training_execution_id
+  semantic: training_semantic_id
+proposal_identity:
+  format: proposal:v046:<semantic-prefix>
+  candidate_id_allowed: false
+reproducibility:
+  minimum_independent_executions: 2
+  forbidden_status: not_reproducible
+calibration:
+  method: none_predeclared
+  threshold_policy: argmax_multiclass_no_post_screening_change
+screening:
+  unlock_requires_frozen_proposal: true
+  pack_role: internal_screening
+  post_screening_training_allowed: false
+comparison:
+  engine: v0.4.5/proposal_evaluation_binding_v1
+  active_candidate_read_only: true
+  winner_selection_allowed: false
+admission:
+  gate: admission-v046-r1
+  frozen_before_screening: true
+  mandatory_criteria: 20
+  hidden_weights_allowed: false
+manual_review:
+  workflow: candidate_proposal_review_session_v1
+  required_steps: 21
+  decisions: [admitted_to_separate_validation, rejected, needs_new_training_run, needs_data_investigation, needs_leakage_investigation, needs_contract_review, withdrawn]
+candidate_governance:
+  candidate_registration_allowed: false
+  active_candidate_change_allowed: false
+  registry_mutation_allowed: false
+model_licensing:
+  status: separate_license_required
+  distribution_allowed: false
+  binary_runtime_only: true
+export:
+  include_model_binary: false
+  include_dataset: false
+  include_absolute_paths: false
+positive_campaign_minimum: 110
+negative_campaign_minimum: 190
+success:
+  requires_full_regression: true
+  requires_browser_acceptance: true
+  requires_reuse_coverage_percent: 100
+next_allowed_stage_on_admission: v0.4.7
+mainline_next_allowed_stage: v0.3.19
+forbidden_claims:
+  - registered_candidate
+  - best_candidate
+  - production_ready
+  - external_validation_completed

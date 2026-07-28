@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 from pathlib import Path
 from urllib.parse import parse_qs
 
@@ -15,10 +16,14 @@ from .config import Settings, load_settings
 from .database import Database
 from .files import read_safe
 from .jobs import TaskCatalog, TaskRunner
-from .models import (ComparisonReviewNote, ComparisonReviewPatch, LaboratoryRunCreate,
+from .models import (CandidateProposalCreate, CandidateProposalReviewComplete,
+                     CandidateProposalReviewNote, CandidateProposalReviewProgress,
+                     ComparisonReviewNote, ComparisonReviewPatch, LaboratoryRunCreate,
                      LaboratoryRunExecute, LaboratoryRunRecovery, ReviewCheck,
                      ReviewComplete, ReviewCreate, ReviewDecision, ReviewItemState,
-                     ReviewNote, ReviewProgress, RunComparisonCreate, TaskStart)
+                     ReviewNote, ReviewProgress, RunComparisonCreate, TaskStart,
+                     ProposalTrainingRecovery, ProposalTrainingStart)
+from .candidate_proposals import CandidateProposalService
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
@@ -26,7 +31,7 @@ from .presentation.case_views import case_catalog, case_page
 from .review import ReviewService
 from .security import SessionStore
 
-PAGES = {key: value for key, value in TITLE.items() if key not in {"cases", "lab-runs", "run-comparisons", "candidate-versions"}}
+PAGES = {key: value for key, value in TITLE.items() if key not in {"cases", "lab-runs", "run-comparisons", "candidate-proposals", "candidate-versions"}}
 
 
 def create_app(settings: Settings | None = None, database_path: Path | None = None) -> FastAPI:
@@ -37,11 +42,12 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     catalog = TaskCatalog(task_catalog_path if task_catalog_path.is_file() else Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     ui_catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     runner = TaskRunner(catalog, db, runtime, settings.max_parallel_tasks)
-    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
-    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.5", docs_url=None, redoc_url=None)
+    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); proposals = CandidateProposalService(db, runtime); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
+    app = FastAPI(title="Филин — лабораторная консоль", version="0.4.6", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
+    templates.env.filters["json_ru"] = lambda value: json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True)
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
-    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs = settings, db, catalog, runner, cases, reviews, lab_runs
+    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals = settings, db, catalog, runner, cases, reviews, lab_runs, proposals
 
     @app.exception_handler(ValueError)
     async def value_error_handler(_request: Request, exc: ValueError):
@@ -110,6 +116,11 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         if page == "candidate-versions":
             context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf, "page": page, "title": "Версии кандидатов", "breadcrumbs": ["Филин", "Версии кандидатов"], "candidate_catalog": lab_runs.candidate_catalog()}
             return templates.TemplateResponse(request, "pages/candidate_versions.html", context)
+        if page == "candidate-proposals":
+            context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf, "page": page,
+                       "title": "Предложения кандидатов", "breadcrumbs": ["Филин", "Предложения кандидатов"], "proposals": proposals.list(),
+                       "data_catalog": proposals.data_catalog(), "splits": proposals.splits(), "recipes": proposals.recipes(), "criteria": proposals.admission_criteria()}
+            return templates.TemplateResponse(request, "pages/candidate_proposals.html", context)
         if page == "documentation":
             context = present_page("dashboard", reviews, runner, ui_catalog)
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
@@ -191,8 +202,97 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                    "page": "run-comparisons", "title": "Рассмотреть сравнение запусков", "breadcrumbs": ["Филин", "Сравнения запусков", "Ручное рассмотрение"], "comparison_review": review, "comparison": comparison}
         return templates.TemplateResponse(request, "pages/comparison_review.html", context)
 
+    @app.get("/ui/candidate-proposals/{proposal_token}", response_class=HTMLResponse)
+    async def candidate_proposal_detail_page(request: Request, proposal_token: str):
+        try: proposal = proposals.get(proposal_token)
+        except (KeyError, ValueError): raise HTTPException(404)
+        context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf, "page": "candidate-proposals",
+                   "title": "Предложение лабораторного кандидата", "breadcrumbs": ["Филин", "Предложения кандидатов", proposal["proposal_id"]],
+                   "proposal": proposal, "training_runs": proposals.training_runs(proposal_token), "compatibility": proposals.compatibility(proposal_token),
+                   "criteria": proposals.admission_criteria()}
+        return templates.TemplateResponse(request, "pages/candidate_proposal_detail.html", context)
+
+    @app.get("/ui/candidate-proposal-reviews/{review_id}", response_class=HTMLResponse)
+    async def candidate_proposal_review_page(request: Request, review_id: str):
+        try: review = proposals.review(review_id); proposal = proposals.get(review["proposal_token"])
+        except (KeyError, ValueError): raise HTTPException(404)
+        context = {**present_page("reviews", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf, "page": "candidate-proposals",
+                   "title": "Рассмотреть предложение лабораторного кандидата", "breadcrumbs": ["Филин", "Предложения кандидатов", "Ручное рассмотрение"],
+                   "proposal": proposal, "proposal_review": review}
+        return templates.TemplateResponse(request, "pages/candidate_proposal_review.html", context)
+
     @app.get("/api/console/v1/health")
     async def health(): return {"schema_version": "console_health_v1", "status": "ok", "laboratory_only": True}
+
+    @app.get("/api/console/v1/candidate-proposals")
+    async def candidate_proposal_catalog(): return proposals.list()
+    @app.get("/api/console/v1/candidate-proposals/data-catalog")
+    async def candidate_proposal_data_catalog(): return proposals.data_catalog()
+    @app.get("/api/console/v1/candidate-proposals/splits")
+    async def candidate_proposal_splits(): return proposals.splits()
+    @app.get("/api/console/v1/candidate-proposals/recipes")
+    async def candidate_proposal_recipes(): return proposals.recipes()
+    @app.get("/api/console/v1/candidate-proposals/admission-criteria")
+    async def candidate_proposal_admission_criteria(): return proposals.admission_criteria()
+    @app.post("/api/console/v1/candidate-proposals")
+    async def candidate_proposal_create(body: CandidateProposalCreate): return proposals.create(body.data_catalog_id, body.split_id, body.recipe_id)
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}")
+    async def candidate_proposal_get(proposal_token: str): return proposals.get(proposal_token)
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/lineage")
+    async def candidate_proposal_lineage(proposal_token: str):
+        p = proposals.get(proposal_token); return {"schema_version": "candidate_proposal_lineage_v1", "proposal_id": p["proposal_id"], "candidate_id": None, "parent_proposal_id": None, "screening_feedback_reused": False}
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/leakage")
+    async def candidate_proposal_leakage(proposal_token: str): proposals.get(proposal_token); return proposals.leakage_assessment()
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/training-runs")
+    async def candidate_proposal_training_runs(proposal_token: str): return proposals.training_runs(proposal_token)
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/artifact")
+    async def candidate_proposal_artifact(proposal_token: str):
+        p = proposals.get(proposal_token); return {"schema_version": "model_artifact_descriptor_v1", "artifact_sha256": p["model_artifact_sha256"], "semantic_sha256": p["model_semantic_sha256"], "runtime_only": True, "distribution_allowed": False, "license_status": p["license_status"]}
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/reproducibility")
+    async def candidate_proposal_reproducibility(proposal_token: str): return proposals.get(proposal_token).get("reproducibility_assessment")
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/compatibility")
+    async def candidate_proposal_compatibility(proposal_token: str): return proposals.compatibility(proposal_token)
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/screening")
+    async def candidate_proposal_screening(proposal_token: str): return proposals.get(proposal_token).get("screening")
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/comparison")
+    async def candidate_proposal_comparison(proposal_token: str): return proposals.get(proposal_token).get("comparison")
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/gate")
+    async def candidate_proposal_gate(proposal_token: str): return proposals.get(proposal_token).get("gate_result")
+    @app.get("/api/console/v1/candidate-proposals/{proposal_token}/review")
+    async def candidate_proposal_review_get(proposal_token: str):
+        p = proposals.get(proposal_token); return proposals.review(p["review_id"]) if p.get("review_id") else None
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/validate")
+    async def candidate_proposal_validate(proposal_token: str): return proposals.validate(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/dry-run")
+    async def candidate_proposal_dry_run(proposal_token: str): return proposals.dry_run(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/train")
+    async def candidate_proposal_train(proposal_token: str, body: ProposalTrainingStart):
+        if not body.confirmed: raise ValueError("confirmation_required")
+        return proposals.train(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/cancel-training")
+    async def candidate_proposal_cancel_training(proposal_token: str): return proposals.cancel_training(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/recover-training")
+    async def candidate_proposal_recover_training(proposal_token: str, body: ProposalTrainingRecovery): return proposals.recover_training(proposal_token, body.execution_id, body.action)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/verify-reproducibility")
+    async def candidate_proposal_verify_reproducibility(proposal_token: str): return proposals.verify_reproducibility(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/freeze")
+    async def candidate_proposal_freeze(proposal_token: str): return proposals.freeze(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/screen")
+    async def candidate_proposal_screen(proposal_token: str): return proposals.screen(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/compare")
+    async def candidate_proposal_compare(proposal_token: str): return proposals.compare(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/reviews")
+    async def candidate_proposal_review_create(proposal_token: str): return proposals.create_review(proposal_token)
+    @app.post("/api/console/v1/candidate-proposals/{proposal_token}/export")
+    async def candidate_proposal_export(proposal_token: str): return proposals.export(proposal_token)
+    @app.patch("/api/console/v1/candidate-proposal-reviews/{review_id}/progress")
+    async def candidate_proposal_review_progress(review_id: str, body: CandidateProposalReviewProgress): return proposals.update_review(review_id, completed_steps=body.completed_steps)
+    @app.post("/api/console/v1/candidate-proposal-reviews/{review_id}/notes")
+    async def candidate_proposal_review_note(review_id: str, body: CandidateProposalReviewNote): return proposals.update_review(review_id, note=body.text)
+    @app.post("/api/console/v1/candidate-proposal-reviews/{review_id}/decision")
+    async def candidate_proposal_review_decision(review_id: str, body: CandidateProposalReviewComplete): return proposals.complete_review(review_id, body.decision, body.reviewer_summary, body.limitations, body.next_allowed_action)
+    @app.post("/api/console/v1/candidate-proposal-reviews/{review_id}/complete")
+    async def candidate_proposal_review_complete(review_id: str, body: CandidateProposalReviewComplete): return proposals.complete_review(review_id, body.decision, body.reviewer_summary, body.limitations, body.next_allowed_action)
 
     @app.get("/api/console/v1/lab-runs")
     async def laboratory_runs(): return lab_runs.list()

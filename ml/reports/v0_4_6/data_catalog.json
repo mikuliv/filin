@@ -1,0 +1,52 @@
+{
+  "entries": [
+    {
+      "allowed_roles": [
+        "training",
+        "calibration",
+        "development_validation",
+        "internal_screening",
+        "reproducibility_only"
+      ],
+      "capture_count": 5000,
+      "class_contract": "network_classes_v2",
+      "contains_blind_labels": false,
+      "contains_external_organization_data": false,
+      "contains_personal_data": false,
+      "contains_real_data": false,
+      "contains_test_oracle": false,
+      "content_semantic_sha256": "d276cd0fae177b6a923b3bc65c2894a120e226d35b6e1f4c3c1db3dc5bc0653d",
+      "data_catalog_id": "v03154-synthetic-development-runtime",
+      "data_kind": "synthetic_network_feature_rows",
+      "display_name": "Синтетическая development-кампания v0.3.15.4",
+      "distribution_allowed": false,
+      "enabled": true,
+      "feature_contract": "network_features_v2",
+      "forbidden_roles": [
+        "blind_evaluation",
+        "production"
+      ],
+      "group_key": "session_id",
+      "license_expression": "CC-BY-4.0",
+      "limitations": [
+        "Локальный synthetic runtime; распространение dataset запрещено.",
+        "Internal-screening labels остаются sealed до freeze proposal."
+      ],
+      "overlap_domains": [
+        "sha256",
+        "semantic_sha256",
+        "session_id",
+        "capture_id",
+        "normalized_row"
+      ],
+      "provenance_status": "verified",
+      "row_count": 4750,
+      "schema_version": "candidate_development_data_descriptor_v1",
+      "session_count": 25,
+      "source_manifest_sha256": "0e186040e21e2ab9a8bde97634ae4b886f03d2f8bfbe9dc16ce3d1fa730bb3f8",
+      "source_stage": "v0.3.15.4"
+    }
+  ],
+  "read_only": true,
+  "schema_version": "candidate_development_data_catalog_v1"
+}

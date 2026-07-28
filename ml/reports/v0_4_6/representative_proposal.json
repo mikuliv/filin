@@ -1,0 +1,592 @@
+{
+  "admission_status": "admitted_to_separate_validation",
+  "candidate_id": null,
+  "class_contract": "network_classes_v2",
+  "comparison": {
+    "abstention_results": {
+      "active": 0,
+      "proposal": 0
+    },
+    "active_candidate_binding": {
+      "artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
+      "candidate_id": "v03154:65a3dd912d845bc1",
+      "manifest_sha256": "56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537"
+    },
+    "card_diffs": [],
+    "class_results": [
+      {
+        "active_recall": 1.0,
+        "class": "benign",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      },
+      {
+        "active_recall": 1.0,
+        "class": "auth_failures",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      },
+      {
+        "active_recall": 1.0,
+        "class": "beacon",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      },
+      {
+        "active_recall": 1.0,
+        "class": "low_rate_dos",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      },
+      {
+        "active_recall": 1.0,
+        "class": "port_scan",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      },
+      {
+        "active_recall": 1.0,
+        "class": "web_probe",
+        "interpretation": "unchanged",
+        "proposal_recall": 1.0
+      }
+    ],
+    "comparability_status": "comparable",
+    "comparison_engine": "v0.4.5/proposal_evaluation_binding_v1",
+    "comparison_id": "pcmp_67fb90de79c4de7a6dcea6183bf7cca6edc96817",
+    "comparison_semantic_sha256": "92a4510e5a9e7b35fdb1d388a2c7a6305207c68b8f5bc0b5471d83cfc39923f2",
+    "compatibility": {
+      "active_candidate_id": "v03154:65a3dd912d845bc1",
+      "dimensions": {
+        "abstention_semantics": "passed",
+        "class_contract": "passed",
+        "class_labels": "passed",
+        "event_contract": "passed",
+        "feature_contract": "passed",
+        "feature_order": "passed",
+        "input_schema": "passed",
+        "metric_contract": "passed",
+        "missing_value_policy": "passed",
+        "output_schema": "passed",
+        "preprocessing": "passed",
+        "reconstruction_contract": "passed",
+        "threshold_semantics": "passed"
+      },
+      "direct_pairwise_comparison_allowed": true,
+      "proposal_token": "prop-bf51a20d8df84ef497e2",
+      "schema_version": "proposal_compatibility_assessment_v1",
+      "status": "compatible"
+    },
+    "differences": [],
+    "episode_results": [],
+    "false_positive_results": [
+      {
+        "absolute_delta": 0.0,
+        "active_value": 0.0,
+        "interpretation": "unchanged",
+        "metric_id": "fpr",
+        "proposal_value": 0.0,
+        "requirement_masking_forbidden": true
+      }
+    ],
+    "gap_diffs": [],
+    "hidden_score": false,
+    "hypothesis_diffs": [],
+    "limitations": [
+      "Внутренний synthetic screening не является внешней validation."
+    ],
+    "metric_results": [
+      {
+        "absolute_delta": 0.0,
+        "active_value": 1.0,
+        "interpretation": "unchanged",
+        "metric_id": "accuracy",
+        "proposal_value": 1.0,
+        "requirement_masking_forbidden": true
+      },
+      {
+        "absolute_delta": 0.0,
+        "active_value": 1.0,
+        "interpretation": "unchanged",
+        "metric_id": "benign_recall",
+        "proposal_value": 1.0,
+        "requirement_masking_forbidden": true
+      },
+      {
+        "absolute_delta": 0.0,
+        "active_value": 0.0,
+        "interpretation": "unchanged",
+        "metric_id": "fpr",
+        "proposal_value": 0.0,
+        "requirement_masking_forbidden": true
+      },
+      {
+        "absolute_delta": 0.0,
+        "active_value": 1.0,
+        "interpretation": "unchanged",
+        "metric_id": "attack_macro_recall",
+        "proposal_value": 1.0,
+        "requirement_masking_forbidden": true
+      },
+      {
+        "absolute_delta": 0.0,
+        "active_value": 1.0,
+        "interpretation": "unchanged",
+        "metric_id": "attack_macro_f1",
+        "proposal_value": 1.0,
+        "requirement_masking_forbidden": true
+      },
+      {
+        "absolute_delta": 0.0,
+        "active_value": 1.0,
+        "interpretation": "unchanged",
+        "metric_id": "worst_attack_recall",
+        "proposal_value": 1.0,
+        "requirement_masking_forbidden": true
+      }
+    ],
+    "proposal_evaluation_binding": {
+      "artifact_sha256": "4bd61f85b455cd6f4bfa4199e81036a84af90d091a989469a77c0dccc230204c",
+      "candidate_id": null,
+      "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+      "semantic_sha256": "73454e03ecd4704d5a24fc3f576a4e0c6078197aa2233f10a84bb99c69c3b693"
+    },
+    "replacement_recommended": false,
+    "schema_version": "proposal_active_candidate_comparison_v1",
+    "winner_selected": false
+  },
+  "comparison_status": "completed",
+  "created_at": "2026-07-28T05:59:39.564847Z",
+  "data_catalog_id": "v03154-synthetic-development-runtime",
+  "data_lineage": {
+    "allowed_roles": [
+      "training",
+      "calibration",
+      "development_validation",
+      "internal_screening",
+      "reproducibility_only"
+    ],
+    "capture_count": 5000,
+    "class_contract": "network_classes_v2",
+    "contains_blind_labels": false,
+    "contains_external_organization_data": false,
+    "contains_personal_data": false,
+    "contains_real_data": false,
+    "contains_test_oracle": false,
+    "content_semantic_sha256": "d276cd0fae177b6a923b3bc65c2894a120e226d35b6e1f4c3c1db3dc5bc0653d",
+    "data_catalog_id": "v03154-synthetic-development-runtime",
+    "data_kind": "synthetic_network_feature_rows",
+    "display_name": "Синтетическая development-кампания v0.3.15.4",
+    "distribution_allowed": false,
+    "enabled": true,
+    "feature_contract": "network_features_v2",
+    "forbidden_roles": [
+      "blind_evaluation",
+      "production"
+    ],
+    "group_key": "session_id",
+    "license_expression": "CC-BY-4.0",
+    "limitations": [
+      "Локальный synthetic runtime; распространение dataset запрещено.",
+      "Internal-screening labels остаются sealed до freeze proposal."
+    ],
+    "overlap_domains": [
+      "sha256",
+      "semantic_sha256",
+      "session_id",
+      "capture_id",
+      "normalized_row"
+    ],
+    "provenance_status": "verified",
+    "row_count": 4750,
+    "schema_version": "candidate_development_data_descriptor_v1",
+    "session_count": 25,
+    "source_manifest_sha256": "0e186040e21e2ab9a8bde97634ae4b886f03d2f8bfbe9dc16ce3d1fa730bb3f8",
+    "source_stage": "v0.3.15.4"
+  },
+  "dependency_snapshot": {
+    "packages": {
+      "joblib": "1.5.3",
+      "numpy": "2.2.6",
+      "pandas": "3.0.0",
+      "scikit-learn": "1.8.0"
+    },
+    "python_major_minor": "3.13",
+    "schema_version": "training_dependency_snapshot_v1",
+    "snapshot_sha256": "d29cb0a5a73341cc3cfba18ccccbfa400f6de99ed2277b822afaac12cd0e5aa3"
+  },
+  "distribution_allowed": false,
+  "environment_snapshot": {
+    "external_bind": false,
+    "laboratory_only": true,
+    "machine": "AMD64",
+    "network_allowed": false,
+    "platform": "Windows",
+    "python": "3.13.9",
+    "schema_version": "training_environment_snapshot_v1",
+    "shell": false,
+    "snapshot_sha256": "fcfe4401b833206bc4821fcfbe223a0f84fb5fa9cc8c672165ebd5f10cb3e7a4"
+  },
+  "feature_contract": "network_features_v2",
+  "feature_contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "frozen_at": "2026-07-28T05:59:40.589332Z",
+  "gate_result": {
+    "all_mandatory_passed": true,
+    "failed_count": 0,
+    "gate_id": "admission-v046-r1",
+    "hidden_weight_count": 0,
+    "not_assessable_count": 0,
+    "passed_count": 20,
+    "proposal_token": "prop-bf51a20d8df84ef497e2",
+    "results": [
+      {
+        "criterion_id": "gate-01-provenance_complete",
+        "mandatory": true,
+        "name": "provenance_complete",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-02-leakage_gate_passed",
+        "mandatory": true,
+        "name": "leakage_gate_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-03-recipe_frozen_before_training",
+        "mandatory": true,
+        "name": "recipe_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-04-split_frozen_before_training",
+        "mandatory": true,
+        "name": "split_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-05-reproducibility_passed",
+        "mandatory": true,
+        "name": "reproducibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-06-artifact_integrity_passed",
+        "mandatory": true,
+        "name": "artifact_integrity_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-07-contract_compatibility_passed",
+        "mandatory": true,
+        "name": "contract_compatibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-08-no_missing_predictions",
+        "mandatory": true,
+        "name": "no_missing_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-09-no_invalid_predictions",
+        "mandatory": true,
+        "name": "no_invalid_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-10-abstention_semantics_compatible",
+        "mandatory": true,
+        "name": "abstention_semantics_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-11-benign_recall",
+        "mandatory": true,
+        "name": "benign_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.98
+      },
+      {
+        "criterion_id": "gate-12-false_positive_rate",
+        "mandatory": true,
+        "name": "false_positive_rate",
+        "observed": 0.0,
+        "status": "passed",
+        "threshold": 0.02
+      },
+      {
+        "criterion_id": "gate-13-attack_macro_recall",
+        "mandatory": true,
+        "name": "attack_macro_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.95
+      },
+      {
+        "criterion_id": "gate-14-worst_attack_recall",
+        "mandatory": true,
+        "name": "worst_attack_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.9
+      },
+      {
+        "criterion_id": "gate-15-reconstruction_compatible",
+        "mandatory": true,
+        "name": "reconstruction_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-16-comparison_rebuild_deterministic",
+        "mandatory": true,
+        "name": "comparison_rebuild_deterministic",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-17-no_unresolved_critical_difference",
+        "mandatory": true,
+        "name": "no_unresolved_critical_difference",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-18-model_license_recorded",
+        "mandatory": true,
+        "name": "model_license_recorded",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-19-manual_review_completed",
+        "mandatory": true,
+        "name": "manual_review_completed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-20-no_candidate_registry_mutation",
+        "mandatory": true,
+        "name": "no_candidate_registry_mutation",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      }
+    ],
+    "schema_version": "admission_gate_result_v1",
+    "winner_score": null
+  },
+  "laboratory_only": true,
+  "leakage_assessment": {
+    "assessment_id": "leakage-v046-r1",
+    "blind_label_access_count": 0,
+    "checks": [
+      {
+        "check_id": "leak-01",
+        "check_type": "file_sha",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-02",
+        "check_type": "semantic_sha",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-03",
+        "check_type": "session_id",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-04",
+        "check_type": "capture_id",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-05",
+        "check_type": "scenario_instance_id",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-06",
+        "check_type": "event_id",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-07",
+        "check_type": "exact_row",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-08",
+        "check_type": "normalized_row",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-09",
+        "check_type": "derived_copy",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-10",
+        "check_type": "temporal_sequence",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-11",
+        "check_type": "role_exclusivity",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      },
+      {
+        "check_id": "leak-12",
+        "check_type": "oracle_and_blind_label_access",
+        "error_code": null,
+        "overlap_count": 0,
+        "status": "passed"
+      }
+    ],
+    "schema_version": "leakage_assessment_v1",
+    "screening_label_access_before_freeze_count": 0,
+    "status": "passed",
+    "test_oracle_access_count": 0,
+    "warning_treated_as_passed": false
+  },
+  "license_status": "separate_license_required",
+  "limitations": [
+    "Только synthetic laboratory data.",
+    "Не является зарегистрированным кандидатом."
+  ],
+  "model_artifact_sha256": "4bd61f85b455cd6f4bfa4199e81036a84af90d091a989469a77c0dccc230204c",
+  "model_semantic_sha256": "73454e03ecd4704d5a24fc3f576a4e0c6078197aa2233f10a84bb99c69c3b693",
+  "no_active_candidate_change": true,
+  "no_candidate_registration": true,
+  "proposal_frozen": true,
+  "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+  "proposal_manifest_sha256": "731b4d5b81bccc6d50b258fa59d3cb658fac189cb58bade2454a0c5f3d5255f9",
+  "proposal_semantic_sha256": "d2dd37a4a0dcbcf541599781f29c5342b5311fc5f8a74b7d4b9b503595aeebf8",
+  "proposal_status": "admitted_to_separate_validation",
+  "proposal_token": "prop-bf51a20d8df84ef497e2",
+  "proposal_version": 1,
+  "reproducibility_assessment": {
+    "allowed_nonsemantic_differences": [],
+    "artifact_byte_sha256_equal": true,
+    "execution_ids": [
+      "texec_6397ea405cbb44bfb0ee0b93fc675a33",
+      "texec_fc2f900aeb3c48b2bf586d8cb4ed180b"
+    ],
+    "model_semantic_sha256_equal": true,
+    "passed": true,
+    "predictions_equal": true,
+    "proposal_token": "prop-bf51a20d8df84ef497e2",
+    "schema_version": "training_reproducibility_assessment_v1",
+    "status": "byte_identical",
+    "training_semantic_ids_equal": true
+  },
+  "review_id": "prev_735cc3cb1e6545db876fc8b718f56daa",
+  "schema_version": "candidate_proposal_v1",
+  "screening": {
+    "active_abstention_count": 0,
+    "active_candidate_metrics": {
+      "accuracy": 1.0,
+      "attack_macro_f1": 1.0,
+      "attack_macro_recall": 1.0,
+      "benign_recall": 1.0,
+      "fpr": 0.0,
+      "per_class_recall": {
+        "auth_failures": 1.0,
+        "beacon": 1.0,
+        "benign": 1.0,
+        "low_rate_dos": 1.0,
+        "port_scan": 1.0,
+        "web_probe": 1.0
+      },
+      "worst_attack_recall": 1.0
+    },
+    "active_predictions_sha256": "16dc9c1d9b1a838857c6f070d6af0e0a641368f02a79dd078986f91cda714549",
+    "invalid_prediction_count": 0,
+    "missing_prediction_count": 0,
+    "proposal_abstention_count": 0,
+    "proposal_frozen_before_screening": true,
+    "proposal_metrics": {
+      "accuracy": 1.0,
+      "attack_macro_f1": 1.0,
+      "attack_macro_recall": 1.0,
+      "benign_recall": 1.0,
+      "fpr": 0.0,
+      "per_class_recall": {
+        "auth_failures": 1.0,
+        "beacon": 1.0,
+        "benign": 1.0,
+        "low_rate_dos": 1.0,
+        "port_scan": 1.0,
+        "web_probe": 1.0
+      },
+      "worst_attack_recall": 1.0
+    },
+    "proposal_predictions_sha256": "16dc9c1d9b1a838857c6f070d6af0e0a641368f02a79dd078986f91cda714549",
+    "proposal_token": "prop-bf51a20d8df84ef497e2",
+    "row_count": 950,
+    "schema_version": "internal_screening_result_v1",
+    "screening_id": "screen-76232afb99f69c09c386197b",
+    "screening_pack_sha256": "9971a5a15b9bf4009c897a2f10d8f0e6195085b905024defe7c42af86e98e292",
+    "threshold_change_after_screening_count": 0,
+    "training_after_screening_count": 0
+  },
+  "screening_status": "completed",
+  "screening_unlocked": true,
+  "split_binding": "split-v046-session-r1",
+  "threshold_contract": "argmax_multiclass_v046_r1",
+  "training_recipe_binding": "hgb-multiclass-v046-r1",
+  "training_run_bindings": [
+    "texec_6397ea405cbb44bfb0ee0b93fc675a33",
+    "texec_fc2f900aeb3c48b2bf586d8cb4ed180b"
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "completed_steps": [
+    "data_provenance",
+    "data_license",
+    "split",
+    "leakage",
+    "recipe",
+    "training_runs",
+    "reproducibility",
+    "artifact_identity",
+    "contract_compatibility",
+    "internal_screening",
+    "active_comparison",
+    "class_metrics",
+    "false_positives",
+    "abstentions",
+    "episodes",
+    "cards",
+    "gaps",
+    "hypotheses",
+    "unexplained_differences",
+    "limitations",
+    "decision"
+  ],
+  "created_at": "2026-07-28T06:02:05.971758Z",
+  "decision": {
+    "decision": "admitted_to_separate_validation",
+    "failed_gate_ids": [],
+    "limitations": [
+      "Только синтетическая внутренняя среда."
+    ],
+    "mandatory_gate_results": [
+      {
+        "criterion_id": "gate-01-provenance_complete",
+        "mandatory": true,
+        "name": "provenance_complete",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-02-leakage_gate_passed",
+        "mandatory": true,
+        "name": "leakage_gate_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-03-recipe_frozen_before_training",
+        "mandatory": true,
+        "name": "recipe_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-04-split_frozen_before_training",
+        "mandatory": true,
+        "name": "split_frozen_before_training",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-05-reproducibility_passed",
+        "mandatory": true,
+        "name": "reproducibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-06-artifact_integrity_passed",
+        "mandatory": true,
+        "name": "artifact_integrity_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-07-contract_compatibility_passed",
+        "mandatory": true,
+        "name": "contract_compatibility_passed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-08-no_missing_predictions",
+        "mandatory": true,
+        "name": "no_missing_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-09-no_invalid_predictions",
+        "mandatory": true,
+        "name": "no_invalid_predictions",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-10-abstention_semantics_compatible",
+        "mandatory": true,
+        "name": "abstention_semantics_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-11-benign_recall",
+        "mandatory": true,
+        "name": "benign_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.98
+      },
+      {
+        "criterion_id": "gate-12-false_positive_rate",
+        "mandatory": true,
+        "name": "false_positive_rate",
+        "observed": 0.0,
+        "status": "passed",
+        "threshold": 0.02
+      },
+      {
+        "criterion_id": "gate-13-attack_macro_recall",
+        "mandatory": true,
+        "name": "attack_macro_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.95
+      },
+      {
+        "criterion_id": "gate-14-worst_attack_recall",
+        "mandatory": true,
+        "name": "worst_attack_recall",
+        "observed": 1.0,
+        "status": "passed",
+        "threshold": 0.9
+      },
+      {
+        "criterion_id": "gate-15-reconstruction_compatible",
+        "mandatory": true,
+        "name": "reconstruction_compatible",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-16-comparison_rebuild_deterministic",
+        "mandatory": true,
+        "name": "comparison_rebuild_deterministic",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-17-no_unresolved_critical_difference",
+        "mandatory": true,
+        "name": "no_unresolved_critical_difference",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-18-model_license_recorded",
+        "mandatory": true,
+        "name": "model_license_recorded",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-19-manual_review_completed",
+        "mandatory": true,
+        "name": "manual_review_completed",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      },
+      {
+        "criterion_id": "gate-20-no_candidate_registry_mutation",
+        "mandatory": true,
+        "name": "no_candidate_registry_mutation",
+        "observed": true,
+        "status": "passed",
+        "threshold": true
+      }
+    ],
+    "next_allowed_action": "prepare_separate_validation_protocol",
+    "no_active_candidate_change": true,
+    "no_candidate_registration": true,
+    "no_external_validation_claim": true,
+    "no_production_decision": true,
+    "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+    "reviewer_summary": "Ручная проверка происхождения, воспроизводимости, screening и admission gate завершена.",
+    "schema_version": "candidate_proposal_review_decision_v1",
+    "unresolved_issues": []
+  },
+  "no_active_candidate_change": true,
+  "no_candidate_registration": true,
+  "no_external_validation_claim": true,
+  "no_production_decision": true,
+  "notes": [
+    "Промежуточный прогресс сохранён."
+  ],
+  "proposal_id": "proposal:v046:9d93cdc53689b0f5",
+  "proposal_token": "prop-bf51a20d8df84ef497e2",
+  "review_id": "prev_735cc3cb1e6545db876fc8b718f56daa",
+  "schema_version": "candidate_proposal_review_session_v1",
+  "status": "completed",
+  "steps": [
+    {
+      "completed": true,
+      "step_id": "data_provenance"
+    },
+    {
+      "completed": true,
+      "step_id": "data_license"
+    },
+    {
+      "completed": true,
+      "step_id": "split"
+    },
+    {
+      "completed": true,
+      "step_id": "leakage"
+    },
+    {
+      "completed": true,
+      "step_id": "recipe"
+    },
+    {
+      "completed": true,
+      "step_id": "training_runs"
+    },
+    {
+      "completed": true,
+      "step_id": "reproducibility"
+    },
+    {
+      "completed": true,
+      "step_id": "artifact_identity"
+    },
+    {
+      "completed": true,
+      "step_id": "contract_compatibility"
+    },
+    {
+      "completed": true,
+      "step_id": "internal_screening"
+    },
+    {
+      "completed": true,
+      "step_id": "active_comparison"
+    },
+    {
+      "completed": true,
+      "step_id": "class_metrics"
+    },
+    {
+      "completed": true,
+      "step_id": "false_positives"
+    },
+    {
+      "completed": true,
+      "step_id": "abstentions"
+    },
+    {
+      "completed": true,
+      "step_id": "episodes"
+    },
+    {
+      "completed": true,
+      "step_id": "cards"
+    },
+    {
+      "completed": true,
+      "step_id": "gaps"
+    },
+    {
+      "completed": true,
+      "step_id": "hypotheses"
+    },
+    {
+      "completed": true,
+      "step_id": "unexplained_differences"
+    },
+    {
+      "completed": true,
+      "step_id": "limitations"
+    },
+    {
+      "completed": true,
+      "step_id": "decision"
+    }
+  ],
+  "version": 3
+}

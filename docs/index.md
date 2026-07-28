@@ -119,3 +119,13 @@
 - [Управление версиями кандидатов](research/candidate-version-governance.md).
 - [Повтор запуска](getting-started/running-laboratory-replays.md).
 - [Сравнение запусков](getting-started/comparing-laboratory-runs.md).
+
+## Предложения лабораторных кандидатов
+
+- [Этап v0.4.6](experiments/v0_4_6.md).
+- [Управление proposal](research/candidate-proposal-governance.md).
+- [Происхождение данных](research/training-data-lineage.md).
+- [Воспроизводимость обучения](research/model-training-reproducibility.md).
+- [Internal screening](research/internal-screening-policy.md).
+- [Подготовка proposal](getting-started/preparing-candidate-proposals.md).
+- [Ручное рассмотрение](getting-started/reviewing-candidate-proposals.md).

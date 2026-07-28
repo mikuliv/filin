@@ -1,0 +1,95 @@
+{
+  "assessment_id": "leakage-v046-r1",
+  "blind_label_access_count": 0,
+  "checks": [
+    {
+      "check_id": "leak-01",
+      "check_type": "file_sha",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-02",
+      "check_type": "semantic_sha",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-03",
+      "check_type": "session_id",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-04",
+      "check_type": "capture_id",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-05",
+      "check_type": "scenario_instance_id",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-06",
+      "check_type": "event_id",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-07",
+      "check_type": "exact_row",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-08",
+      "check_type": "normalized_row",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-09",
+      "check_type": "derived_copy",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-10",
+      "check_type": "temporal_sequence",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-11",
+      "check_type": "role_exclusivity",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "leak-12",
+      "check_type": "oracle_and_blind_label_access",
+      "error_code": null,
+      "overlap_count": 0,
+      "status": "passed"
+    }
+  ],
+  "schema_version": "leakage_assessment_v1",
+  "screening_label_access_before_freeze_count": 0,
+  "status": "passed",
+  "test_oracle_access_count": 0,
+  "warning_treated_as_passed": false
+}

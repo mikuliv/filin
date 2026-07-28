@@ -1,0 +1,15 @@
+{
+  "claims": [
+    {
+      "claim": "proposal package reproducible",
+      "evidence": "reproducibility_assessment.json",
+      "supported": true
+    },
+    {
+      "claim": "candidate registered",
+      "evidence": "v0_4_6_policy_result.json",
+      "supported": false
+    }
+  ],
+  "schema_version": "v0_4_6_claim_evidence_ledger_v1"
+}

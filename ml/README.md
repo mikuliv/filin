@@ -40,3 +40,7 @@ python -m pytest ml/tests -q
 Candidate `v03154:65a3dd912d845bc1`,
 `artifacts/v0_3_15_4/candidate_manifest.json`, [protocol index](protocols/index.md) и
 [report index](reports/index.md).
+
+## Лабораторное обучение v0.4.6
+
+`v0.4.6` использует только проверенные synthetic feature rows и один frozen allowlist recipe. Два независимых выполнения должны подтвердить воспроизводимость до формирования proposal package. Новый model binary хранится исключительно в runtime и требует отдельного лицензионного решения; действующий candidate registry не меняется.
