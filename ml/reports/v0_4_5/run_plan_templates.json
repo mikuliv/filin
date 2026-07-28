@@ -1,0 +1,32 @@
+{
+  "schema_version": "laboratory_run_plan_template_catalog_v1",
+  "templates": [
+    {
+      "display_name": "Полный воспроизводимый replay",
+      "enabled": true,
+      "environment_profile": "local-offline-cpu",
+      "run_kind": "full_laboratory_replay",
+      "runner_id": "v045-safe-replay",
+      "runner_version": "1",
+      "template_id": "full-replay-r1"
+    },
+    {
+      "display_name": "Повтор реконструкции",
+      "enabled": true,
+      "environment_profile": "local-offline-cpu",
+      "run_kind": "reconstruction_replay",
+      "runner_id": "v045-safe-replay",
+      "runner_version": "1",
+      "template_id": "reconstruction-r1"
+    },
+    {
+      "display_name": "Повторное построение карточки",
+      "enabled": true,
+      "environment_profile": "local-offline-cpu",
+      "run_kind": "card_rebuild",
+      "runner_id": "v045-safe-replay",
+      "runner_version": "1",
+      "template_id": "card-rebuild-r1"
+    }
+  ]
+}

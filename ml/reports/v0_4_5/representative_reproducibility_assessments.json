@@ -1,0 +1,37 @@
+{
+  "assessments": {
+    "A1-A2": {
+      "level": "semantic_identical",
+      "limitations": [],
+      "not_reproducible": false,
+      "same_result_semantic_sha": true,
+      "same_run_semantic_id": true,
+      "schema_version": "reproducibility_assessment_v1"
+    },
+    "B1-baseline": {
+      "level": "semantic_identical",
+      "limitations": [],
+      "not_reproducible": false,
+      "same_result_semantic_sha": true,
+      "same_run_semantic_id": true,
+      "schema_version": "reproducibility_assessment_v1"
+    },
+    "C1-C2": {
+      "level": "semantic_identical",
+      "limitations": [],
+      "not_reproducible": false,
+      "same_result_semantic_sha": true,
+      "same_run_semantic_id": true,
+      "schema_version": "reproducibility_assessment_v1"
+    },
+    "D1-D2": {
+      "level": "semantic_identical",
+      "limitations": [],
+      "not_reproducible": false,
+      "same_result_semantic_sha": true,
+      "same_run_semantic_id": true,
+      "schema_version": "reproducibility_assessment_v1"
+    }
+  },
+  "schema_version": "v0_4_5_representative_reproducibility_v1"
+}

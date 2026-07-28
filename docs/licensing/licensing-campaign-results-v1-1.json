@@ -131,7 +131,7 @@
       },
       {
         "id": 26,
-        "name": "protected_count",
+        "name": "protected_count_not_decreased",
         "passed": true
       },
       {
@@ -493,10 +493,10 @@
       },
       {
         "id": 32,
-        "name": "v045_changed",
-        "expected_code": "v045_changed",
+        "name": "v046_changed",
+        "expected_code": "v046_changed",
         "detected_codes": [
-          "v045_changed"
+          "v046_changed"
         ],
         "passed": true,
         "temporary_copy": true,

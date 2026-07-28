@@ -1,0 +1,487 @@
+{
+  "count": 96,
+  "passed": 96,
+  "scenarios": [
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-001"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-002"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-003"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-004"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-005"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-006"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-007"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-008"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-009"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-010"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-011"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-012"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-013"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-014"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-015"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-016"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-017"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-018"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-019"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-020"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-021"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-022"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-023"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-024"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-025"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-026"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-027"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-028"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-029"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-030"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-031"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-032"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-033"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-034"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-035"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-036"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-037"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-038"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-039"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-040"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-041"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-042"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-043"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-044"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-045"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-046"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-047"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-048"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-049"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-050"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-051"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-052"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-053"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-054"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-055"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-056"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-057"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-058"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-059"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-060"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-061"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-062"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-063"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-064"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-065"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-066"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-067"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-068"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-069"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-070"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-071"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-072"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-073"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-074"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-075"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-076"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-077"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-078"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-079"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-080"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-081"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-082"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-083"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-084"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-085"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-086"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-087"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-088"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-089"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-090"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-091"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-092"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-093"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-094"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-095"
+    },
+    {
+      "actual": "passed",
+      "expected": "passed",
+      "scenario_id": "v045-positive-096"
+    }
+  ],
+  "schema_version": "v0_4_5_positive_campaign_v1"
+}

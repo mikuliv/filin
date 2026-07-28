@@ -91,6 +91,12 @@ class DurableSpool:
 
     def remove(self, event: dict) -> None:
         self.path_for(event).unlink(missing_ok=True)
+        try:
+            self.root.rmdir()
+        except OSError:
+            # Каталог остаётся, если в spool ещё есть записи. Удаление пустого
+            # каталога устраняет Windows race при очистке временного runtime.
+            pass
 
     def compact(self, acknowledged: set[str]) -> int:
         removed = 0
@@ -99,6 +105,11 @@ class DurableSpool:
             if event["idempotency_key"] in acknowledged:
                 path.unlink()
                 removed += 1
+        if removed:
+            try:
+                self.root.rmdir()
+            except OSError:
+                pass
         return removed
 
 

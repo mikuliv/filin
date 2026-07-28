@@ -40,6 +40,8 @@
 | `persistent_operator_cycle` | Сохраняемый операторский цикл | `v0.4.4` | SQLite overlay, progress, notes и decision | Разрешение автоматических действий | [policy](../../ml/reports/v0_4_4/v0_4_4_policy_result.json) |
 | `manual_review_overlay` | Ручное рассмотрение без изменения evidence | `v0.4.4` | Source artifacts остаются read-only | Превращение заметки в evidence | [acceptance](../../ml/reports/v0_4_4/operator_acceptance_report.md) |
 | `deterministic_review_export` | Детерминированный экспорт | `v0.4.4` | Повторяемый export одного состояния | Внешняя юридическая или научная валидность | [reproduction](../../ml/reports/v0_4_4/reproduction.md) |
+| `reproducible_laboratory_runs` | Каталог frozen лабораторных запусков | `v0.4.5` | 12 завершённых запусков, exact replay и явное recovery | Работа с реальными данными или внешней инфраструктурой | [policy](../../ml/reports/v0_4_5/v0_4_5_policy_result.json) |
+| `safe_run_comparison` | Comparability gate и описательные дельты | `v0.4.5` | Comparable/conditional/not-comparable режимы, ручной review и export | Рейтинг, победитель или automatic promotion | [comparison](../research/laboratory-run-comparison.md) |
 
 ## Общее ограничение
 

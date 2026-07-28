@@ -1,0 +1,898 @@
+{
+  "comparison": {
+    "automatic_promotion_allowed": false,
+    "card_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "card_id": "card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5",
+          "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+        },
+        "right": {
+          "card_id": "card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5",
+          "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+        },
+        "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+      }
+    ],
+    "class_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "class_id": "normal",
+          "count": 1
+        },
+        "right": {
+          "class_id": "normal",
+          "count": 1
+        },
+        "semantic_key": "normal"
+      }
+    ],
+    "comparability": {
+      "allowed_comparison_views": [
+        "provenance",
+        "environment",
+        "execution",
+        "metrics",
+        "classes",
+        "episodes",
+        "passive_events",
+        "cards",
+        "gaps",
+        "hypotheses"
+      ],
+      "blocking_reasons": [],
+      "conditional_dimensions": [],
+      "dimensions": {
+        "candidate": {
+          "left": "current",
+          "right": "current",
+          "status": "passed"
+        },
+        "code_revision": {
+          "left": "04e9230e4a6f75212002ce3bb03d170233094e06",
+          "right": "04e9230e4a6f75212002ce3bb03d170233094e06",
+          "status": "passed"
+        },
+        "environment_profile": {
+          "left": "local-offline-cpu",
+          "right": "local-offline-cpu",
+          "status": "passed"
+        },
+        "event_contract": {
+          "left": "shadow_event_v2",
+          "right": "shadow_event_v2",
+          "status": "passed"
+        },
+        "feature_contract": {
+          "left": "network_features_v2",
+          "right": "network_features_v2",
+          "status": "passed"
+        },
+        "input_population": {
+          "left": "normal",
+          "right": "normal",
+          "status": "passed"
+        },
+        "metric_contract": {
+          "left": "v045_descriptive_metrics_v1",
+          "right": "v045_descriptive_metrics_v1",
+          "status": "passed"
+        },
+        "run_kind": {
+          "left": "full_laboratory_replay",
+          "right": "full_laboratory_replay",
+          "status": "passed"
+        }
+      },
+      "failed_dimensions": [],
+      "limitations": [
+        "Сравнение не выбирает победителя."
+      ],
+      "passed_dimensions": [
+        "candidate",
+        "run_kind",
+        "input_population",
+        "feature_contract",
+        "event_contract",
+        "metric_contract",
+        "environment_profile",
+        "code_revision"
+      ],
+      "prohibited_comparison_views": [],
+      "schema_version": "run_comparability_assessment_v1",
+      "status": "comparable"
+    },
+    "comparison_token": "cmp-aa416859c790b8e246006dd4",
+    "difference_explanations": [
+      {
+        "affected_artifacts": [
+          "classes"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_7f105f57fd9e0596fc52c08b",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "class_id": "normal",
+            "count": 1
+          },
+          "right": {
+            "class_id": "normal",
+            "count": 1
+          },
+          "semantic_key": "normal"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "classes:normal"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "episodes"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_f0d25f1c9247a2e30d4fa38d",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "lab_normal_activity",
+            "status": "observed"
+          },
+          "right": {
+            "semantic_key": "lab_normal_activity",
+            "status": "observed"
+          },
+          "semantic_key": "lab_normal_activity"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "episodes:lab_normal_activity"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "passive_events"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_f5a68c0a5e517bb1972a6361",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+            "status": "observed"
+          },
+          "right": {
+            "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+            "status": "observed"
+          },
+          "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "passive_events:fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "passive_events"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_de768a5473e12ed779746e52",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+            "status": "observed"
+          },
+          "right": {
+            "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+            "status": "observed"
+          },
+          "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "passive_events:fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "passive_events"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_eaf646d6c1707e21ea950b19",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+            "status": "observed"
+          },
+          "right": {
+            "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+            "status": "observed"
+          },
+          "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "passive_events:fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "passive_events"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_b59173b0d03b17fc29fd18fd",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025",
+            "status": "observed"
+          },
+          "right": {
+            "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025",
+            "status": "observed"
+          },
+          "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "passive_events:fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "cards"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_0a444e6c47668f2138f4f4af",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "card_id": "card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5",
+            "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+          },
+          "right": {
+            "card_id": "card_fe4c603f54b0791e757eaf3b6bf36ee11eee8a28d7255b009359d6be51e542f5",
+            "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+          },
+          "semantic_key": "96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "cards:96d70168eab3568bffb3129161ca2e59309112aca695e9879f5e9fca91ef5476"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "gaps"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_ecf067784dbc0558d4143313",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6",
+            "type": "missing_interval_boundary"
+          },
+          "right": {
+            "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6",
+            "type": "missing_interval_boundary"
+          },
+          "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "gaps:gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "gaps"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_562568a5b08596c58712ae2e",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971",
+            "type": "missing_interval_boundary"
+          },
+          "right": {
+            "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971",
+            "type": "missing_interval_boundary"
+          },
+          "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "gaps:gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "gaps"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_c71e47ecbc263cb157432dd5",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317",
+            "type": "missing_interval_boundary"
+          },
+          "right": {
+            "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317",
+            "type": "missing_interval_boundary"
+          },
+          "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "gaps:gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "gaps"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_ced4892bd8e9a837f772f752",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a",
+            "type": "missing_interval_boundary"
+          },
+          "right": {
+            "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a",
+            "type": "missing_interval_boundary"
+          },
+          "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "gaps:gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "hypotheses"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_cf9b5c98a4792e9511ce0e5b",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "name": "Гипотеза: routine_activity",
+            "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+          },
+          "right": {
+            "name": "Гипотеза: routine_activity",
+            "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+          },
+          "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "hypotheses:hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "hypotheses"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_e577f6bacf1b77e13e7e4579",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "name": "Гипотеза: insufficient_suspicious_basis",
+            "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+          },
+          "right": {
+            "name": "Гипотеза: insufficient_suspicious_basis",
+            "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+          },
+          "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "hypotheses:hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+        ],
+        "verified": true
+      },
+      {
+        "affected_artifacts": [
+          "reconstruction"
+        ],
+        "analyst_question_ids": [],
+        "confidence": "high",
+        "contradicting_evidence": [],
+        "difference_id": "diff_0971fdd836dbf6b1dc325efe",
+        "limitations": [
+          "Причина не считается доказанной без подтверждения."
+        ],
+        "observed_change": {
+          "change": "identical",
+          "left": {
+            "facts": [
+              "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+              "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+              "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+              "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+            ],
+            "relations": [
+              "frel_021a3cdb97b1224b9f038aea5647acf8d4a5bfdda622f7e3d8e00741395d4c4e",
+              "frel_4a49349c64b6db449d181a5b97ab432c516f8bec0457568dc222fe5091cf1f84",
+              "frel_72281e4d195ea074e74b94ae5f512903494d0770724a82fa4cfe84616da3e0a2",
+              "frel_b1fa0ddcef566d11fdc5424dfd0668bec9bda23506f85d6c97209d4441aa5a11",
+              "frel_be3565f1aa929700e275223b44ba08a33dab183480a483dfd8c0e21cce0a9ced",
+              "frel_d6b6a20dbaa75122433828b291a61479ec1cd079baa20fe1e3761d2193d84033",
+              "trel_0cf49ee401f7d6937af6ed42bab8f340236b2f5677e2114885c81429e71ea4df",
+              "trel_109160e76bd0369eb16519351a614da510ce424e56d9d32e66c82bd30011d548",
+              "trel_360618c85e652dfe124838231b54bdcdb779b97f1b3f14f79c12e3d39c2e44c3",
+              "trel_3d7256f72bdac247858dcad36b18e0344ac72cbf015a5c56481cb386e9c10a44",
+              "trel_3fed43db5373e927eb6b728ee253eee817184a36eee13c48482e739f4949cc52",
+              "trel_4e6e166d273c0f4c8b90b7dcd8ad0ce5c0c0782948799437ac87ec833af9f5ee",
+              "trel_75c9403ed5c73fd1406756952911d2f7a98e8d5e66e0be301ed505f41d70718f",
+              "trel_861ccbdc019c988d7f6ab34e7f0fba33199e659865b01796a5366faf1a9a3f16",
+              "trel_af704985d9568bc51b29d89cbe422589763a4e20805df8aa2b9da7fba06b09ae",
+              "trel_c7d12a14297328947bbd1879ed3ee723a9645c1d7e9071cccbb88b5813a107fa",
+              "trel_e7556b16a10e054b9509dfce85f7fcd4b76c54023d991217b35f162d23c487ce",
+              "trel_f9b0a0aba8ede7570944514f8d88b580d2128363ece8f989d7a789747652e53c",
+              "gedge_5619839b3e8bf9833cb92e1d5b144f42c529f1a582c1e2ba84452c552e7587d9",
+              "gedge_e1cd0b3139f50d468f0c17808ea08299c5ac18c7e4d8de10d3c19be16843e5ab",
+              "gedge_dbd4561f6fbd27951842315aa4b3eca8b85306b6ca84597301a0fbfdbb191ddc",
+              "gedge_c7245442af4ac9d3b0a6cc8bb38c009a747536fa4be3611a7f5d40383d3e2f88",
+              "hedge_0740747056120d656558b13de147f126a0e02697008fc4ae7e27a288b62b6c16",
+              "hedge_52fcee9aa7bad3a6790fcd943aac5d05bd65b39b10706ba1e969601d51978ec6",
+              "hedge_5338f61ad8253d0429c4269781f984a73810bc787468a6fd0dee62fde75e5001",
+              "hedge_8b5b46b7aa3f21a7b291965e8c87655fd8c0fe51fea0c4b50076f6b17ec56411"
+            ]
+          },
+          "right": {
+            "facts": [
+              "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+              "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+              "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+              "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+            ],
+            "relations": [
+              "frel_021a3cdb97b1224b9f038aea5647acf8d4a5bfdda622f7e3d8e00741395d4c4e",
+              "frel_4a49349c64b6db449d181a5b97ab432c516f8bec0457568dc222fe5091cf1f84",
+              "frel_72281e4d195ea074e74b94ae5f512903494d0770724a82fa4cfe84616da3e0a2",
+              "frel_b1fa0ddcef566d11fdc5424dfd0668bec9bda23506f85d6c97209d4441aa5a11",
+              "frel_be3565f1aa929700e275223b44ba08a33dab183480a483dfd8c0e21cce0a9ced",
+              "frel_d6b6a20dbaa75122433828b291a61479ec1cd079baa20fe1e3761d2193d84033",
+              "trel_0cf49ee401f7d6937af6ed42bab8f340236b2f5677e2114885c81429e71ea4df",
+              "trel_109160e76bd0369eb16519351a614da510ce424e56d9d32e66c82bd30011d548",
+              "trel_360618c85e652dfe124838231b54bdcdb779b97f1b3f14f79c12e3d39c2e44c3",
+              "trel_3d7256f72bdac247858dcad36b18e0344ac72cbf015a5c56481cb386e9c10a44",
+              "trel_3fed43db5373e927eb6b728ee253eee817184a36eee13c48482e739f4949cc52",
+              "trel_4e6e166d273c0f4c8b90b7dcd8ad0ce5c0c0782948799437ac87ec833af9f5ee",
+              "trel_75c9403ed5c73fd1406756952911d2f7a98e8d5e66e0be301ed505f41d70718f",
+              "trel_861ccbdc019c988d7f6ab34e7f0fba33199e659865b01796a5366faf1a9a3f16",
+              "trel_af704985d9568bc51b29d89cbe422589763a4e20805df8aa2b9da7fba06b09ae",
+              "trel_c7d12a14297328947bbd1879ed3ee723a9645c1d7e9071cccbb88b5813a107fa",
+              "trel_e7556b16a10e054b9509dfce85f7fcd4b76c54023d991217b35f162d23c487ce",
+              "trel_f9b0a0aba8ede7570944514f8d88b580d2128363ece8f989d7a789747652e53c",
+              "gedge_5619839b3e8bf9833cb92e1d5b144f42c529f1a582c1e2ba84452c552e7587d9",
+              "gedge_e1cd0b3139f50d468f0c17808ea08299c5ac18c7e4d8de10d3c19be16843e5ab",
+              "gedge_dbd4561f6fbd27951842315aa4b3eca8b85306b6ca84597301a0fbfdbb191ddc",
+              "gedge_c7245442af4ac9d3b0a6cc8bb38c009a747536fa4be3611a7f5d40383d3e2f88",
+              "hedge_0740747056120d656558b13de147f126a0e02697008fc4ae7e27a288b62b6c16",
+              "hedge_52fcee9aa7bad3a6790fcd943aac5d05bd65b39b10706ba1e969601d51978ec6",
+              "hedge_5338f61ad8253d0429c4269781f984a73810bc787468a6fd0dee62fde75e5001",
+              "hedge_8b5b46b7aa3f21a7b291965e8c87655fd8c0fe51fea0c4b50076f6b17ec56411"
+            ]
+          },
+          "semantic_key": "reconstruction"
+        },
+        "proposed_source": "serialization_only",
+        "supporting_evidence": [
+          "reconstruction:reconstruction"
+        ],
+        "verified": true
+      }
+    ],
+    "episode_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "lab_normal_activity",
+          "status": "observed"
+        },
+        "right": {
+          "semantic_key": "lab_normal_activity",
+          "status": "observed"
+        },
+        "semantic_key": "lab_normal_activity"
+      }
+    ],
+    "gap_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6",
+          "type": "missing_interval_boundary"
+        },
+        "right": {
+          "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6",
+          "type": "missing_interval_boundary"
+        },
+        "semantic_key": "gap_58869a9c914d308e67c10b4e9d2c1e76e3ecbae08c87e14cfb515089350d9db6"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971",
+          "type": "missing_interval_boundary"
+        },
+        "right": {
+          "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971",
+          "type": "missing_interval_boundary"
+        },
+        "semantic_key": "gap_677bef12d7ee9fd97916d2320f72f3bd8a0b93e9e58a3b097f0f3a9911e91971"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317",
+          "type": "missing_interval_boundary"
+        },
+        "right": {
+          "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317",
+          "type": "missing_interval_boundary"
+        },
+        "semantic_key": "gap_7283a078c805e18122e9cfbe8a4225793b8d779d1dab9d6ef47bfe44415ee317"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a",
+          "type": "missing_interval_boundary"
+        },
+        "right": {
+          "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a",
+          "type": "missing_interval_boundary"
+        },
+        "semantic_key": "gap_f960cf6994acafb1b0b8fef8f01dc2e022c07517d0e1b6aeda3564b5ec83339a"
+      }
+    ],
+    "hypothesis_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "name": "Гипотеза: routine_activity",
+          "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+        },
+        "right": {
+          "name": "Гипотеза: routine_activity",
+          "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+        },
+        "semantic_key": "hyp_b92c7f295825d9846667ea22879322ca06830984d34a928cac77aeed6b1ea73a"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "name": "Гипотеза: insufficient_suspicious_basis",
+          "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+        },
+        "right": {
+          "name": "Гипотеза: insufficient_suspicious_basis",
+          "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+        },
+        "semantic_key": "hyp_fc904acfc232a4ecbb2c976aa78550e1b85fe1524fb689a468c4e3ea2f3a6a32"
+      }
+    ],
+    "left_run_token": "run-18527dbbc8f048e2afa4",
+    "metric_deltas": [
+      {
+        "absolute_delta": 0,
+        "comparison_allowed": true,
+        "interpretation": "unchanged",
+        "left_value": 1,
+        "limitations": [
+          "Не является решением о кандидате."
+        ],
+        "metric_contract_same": true,
+        "metric_id": "card_count",
+        "population_same": true,
+        "preferred_direction": "descriptive_only",
+        "relative_delta": 0.0,
+        "right_value": 1
+      },
+      {
+        "absolute_delta": 0,
+        "comparison_allowed": true,
+        "interpretation": "unchanged",
+        "left_value": 4,
+        "limitations": [
+          "Не является решением о кандидате."
+        ],
+        "metric_contract_same": true,
+        "metric_id": "fact_count",
+        "population_same": true,
+        "preferred_direction": "descriptive_only",
+        "relative_delta": 0.0,
+        "right_value": 4
+      },
+      {
+        "absolute_delta": 0,
+        "comparison_allowed": true,
+        "interpretation": "unchanged",
+        "left_value": 4,
+        "limitations": [
+          "Не является решением о кандидате."
+        ],
+        "metric_contract_same": true,
+        "metric_id": "gap_count",
+        "population_same": true,
+        "preferred_direction": "descriptive_only",
+        "relative_delta": 0.0,
+        "right_value": 4
+      },
+      {
+        "absolute_delta": 0,
+        "comparison_allowed": true,
+        "interpretation": "unchanged",
+        "left_value": 2,
+        "limitations": [
+          "Не является решением о кандидате."
+        ],
+        "metric_contract_same": true,
+        "metric_id": "hypothesis_count",
+        "population_same": true,
+        "preferred_direction": "descriptive_only",
+        "relative_delta": 0.0,
+        "right_value": 2
+      },
+      {
+        "absolute_delta": 0,
+        "comparison_allowed": true,
+        "interpretation": "unchanged",
+        "left_value": 4,
+        "limitations": [
+          "Не является решением о кандидате."
+        ],
+        "metric_contract_same": true,
+        "metric_id": "question_count",
+        "population_same": true,
+        "preferred_direction": "descriptive_only",
+        "relative_delta": 0.0,
+        "right_value": 4
+      }
+    ],
+    "no_winner": true,
+    "passive_event_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+          "status": "observed"
+        },
+        "right": {
+          "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+          "status": "observed"
+        },
+        "semantic_key": "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+          "status": "observed"
+        },
+        "right": {
+          "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+          "status": "observed"
+        },
+        "semantic_key": "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+          "status": "observed"
+        },
+        "right": {
+          "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+          "status": "observed"
+        },
+        "semantic_key": "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23"
+      },
+      {
+        "change": "identical",
+        "left": {
+          "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025",
+          "status": "observed"
+        },
+        "right": {
+          "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025",
+          "status": "observed"
+        },
+        "semantic_key": "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+      }
+    ],
+    "reconstruction_deltas": [
+      {
+        "change": "identical",
+        "left": {
+          "facts": [
+            "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+            "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+            "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+            "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+          ],
+          "relations": [
+            "frel_021a3cdb97b1224b9f038aea5647acf8d4a5bfdda622f7e3d8e00741395d4c4e",
+            "frel_4a49349c64b6db449d181a5b97ab432c516f8bec0457568dc222fe5091cf1f84",
+            "frel_72281e4d195ea074e74b94ae5f512903494d0770724a82fa4cfe84616da3e0a2",
+            "frel_b1fa0ddcef566d11fdc5424dfd0668bec9bda23506f85d6c97209d4441aa5a11",
+            "frel_be3565f1aa929700e275223b44ba08a33dab183480a483dfd8c0e21cce0a9ced",
+            "frel_d6b6a20dbaa75122433828b291a61479ec1cd079baa20fe1e3761d2193d84033",
+            "trel_0cf49ee401f7d6937af6ed42bab8f340236b2f5677e2114885c81429e71ea4df",
+            "trel_109160e76bd0369eb16519351a614da510ce424e56d9d32e66c82bd30011d548",
+            "trel_360618c85e652dfe124838231b54bdcdb779b97f1b3f14f79c12e3d39c2e44c3",
+            "trel_3d7256f72bdac247858dcad36b18e0344ac72cbf015a5c56481cb386e9c10a44",
+            "trel_3fed43db5373e927eb6b728ee253eee817184a36eee13c48482e739f4949cc52",
+            "trel_4e6e166d273c0f4c8b90b7dcd8ad0ce5c0c0782948799437ac87ec833af9f5ee",
+            "trel_75c9403ed5c73fd1406756952911d2f7a98e8d5e66e0be301ed505f41d70718f",
+            "trel_861ccbdc019c988d7f6ab34e7f0fba33199e659865b01796a5366faf1a9a3f16",
+            "trel_af704985d9568bc51b29d89cbe422589763a4e20805df8aa2b9da7fba06b09ae",
+            "trel_c7d12a14297328947bbd1879ed3ee723a9645c1d7e9071cccbb88b5813a107fa",
+            "trel_e7556b16a10e054b9509dfce85f7fcd4b76c54023d991217b35f162d23c487ce",
+            "trel_f9b0a0aba8ede7570944514f8d88b580d2128363ece8f989d7a789747652e53c",
+            "gedge_5619839b3e8bf9833cb92e1d5b144f42c529f1a582c1e2ba84452c552e7587d9",
+            "gedge_e1cd0b3139f50d468f0c17808ea08299c5ac18c7e4d8de10d3c19be16843e5ab",
+            "gedge_dbd4561f6fbd27951842315aa4b3eca8b85306b6ca84597301a0fbfdbb191ddc",
+            "gedge_c7245442af4ac9d3b0a6cc8bb38c009a747536fa4be3611a7f5d40383d3e2f88",
+            "hedge_0740747056120d656558b13de147f126a0e02697008fc4ae7e27a288b62b6c16",
+            "hedge_52fcee9aa7bad3a6790fcd943aac5d05bd65b39b10706ba1e969601d51978ec6",
+            "hedge_5338f61ad8253d0429c4269781f984a73810bc787468a6fd0dee62fde75e5001",
+            "hedge_8b5b46b7aa3f21a7b291965e8c87655fd8c0fe51fea0c4b50076f6b17ec56411"
+          ]
+        },
+        "right": {
+          "facts": [
+            "fact_30a0174c097a1f9bf583e9310a460d192766e4f1bf49d5b27e26d8725fd9dd02",
+            "fact_3fe550de1cd740c5fffced034a1b80c76e84c7491b2f9df7037386ff935c0519",
+            "fact_7b6222e16f773faacd28e08cc792ddd4590463099f92a9b6e1e48d8a6f9ded23",
+            "fact_996f540969229fbe01c208e2ac0a82cc91e79fe96dc4d0ea377c0332adde1025"
+          ],
+          "relations": [
+            "frel_021a3cdb97b1224b9f038aea5647acf8d4a5bfdda622f7e3d8e00741395d4c4e",
+            "frel_4a49349c64b6db449d181a5b97ab432c516f8bec0457568dc222fe5091cf1f84",
+            "frel_72281e4d195ea074e74b94ae5f512903494d0770724a82fa4cfe84616da3e0a2",
+            "frel_b1fa0ddcef566d11fdc5424dfd0668bec9bda23506f85d6c97209d4441aa5a11",
+            "frel_be3565f1aa929700e275223b44ba08a33dab183480a483dfd8c0e21cce0a9ced",
+            "frel_d6b6a20dbaa75122433828b291a61479ec1cd079baa20fe1e3761d2193d84033",
+            "trel_0cf49ee401f7d6937af6ed42bab8f340236b2f5677e2114885c81429e71ea4df",
+            "trel_109160e76bd0369eb16519351a614da510ce424e56d9d32e66c82bd30011d548",
+            "trel_360618c85e652dfe124838231b54bdcdb779b97f1b3f14f79c12e3d39c2e44c3",
+            "trel_3d7256f72bdac247858dcad36b18e0344ac72cbf015a5c56481cb386e9c10a44",
+            "trel_3fed43db5373e927eb6b728ee253eee817184a36eee13c48482e739f4949cc52",
+            "trel_4e6e166d273c0f4c8b90b7dcd8ad0ce5c0c0782948799437ac87ec833af9f5ee",
+            "trel_75c9403ed5c73fd1406756952911d2f7a98e8d5e66e0be301ed505f41d70718f",
+            "trel_861ccbdc019c988d7f6ab34e7f0fba33199e659865b01796a5366faf1a9a3f16",
+            "trel_af704985d9568bc51b29d89cbe422589763a4e20805df8aa2b9da7fba06b09ae",
+            "trel_c7d12a14297328947bbd1879ed3ee723a9645c1d7e9071cccbb88b5813a107fa",
+            "trel_e7556b16a10e054b9509dfce85f7fcd4b76c54023d991217b35f162d23c487ce",
+            "trel_f9b0a0aba8ede7570944514f8d88b580d2128363ece8f989d7a789747652e53c",
+            "gedge_5619839b3e8bf9833cb92e1d5b144f42c529f1a582c1e2ba84452c552e7587d9",
+            "gedge_e1cd0b3139f50d468f0c17808ea08299c5ac18c7e4d8de10d3c19be16843e5ab",
+            "gedge_dbd4561f6fbd27951842315aa4b3eca8b85306b6ca84597301a0fbfdbb191ddc",
+            "gedge_c7245442af4ac9d3b0a6cc8bb38c009a747536fa4be3611a7f5d40383d3e2f88",
+            "hedge_0740747056120d656558b13de147f126a0e02697008fc4ae7e27a288b62b6c16",
+            "hedge_52fcee9aa7bad3a6790fcd943aac5d05bd65b39b10706ba1e969601d51978ec6",
+            "hedge_5338f61ad8253d0429c4269781f984a73810bc787468a6fd0dee62fde75e5001",
+            "hedge_8b5b46b7aa3f21a7b291965e8c87655fd8c0fe51fea0c4b50076f6b17ec56411"
+          ]
+        },
+        "semantic_key": "reconstruction"
+      }
+    ],
+    "reproducibility": {
+      "level": "semantic_identical",
+      "limitations": [],
+      "not_reproducible": false,
+      "same_result_semantic_sha": true,
+      "same_run_semantic_id": true,
+      "schema_version": "reproducibility_assessment_v1"
+    },
+    "right_run_token": "run-b3ede346d507429af524",
+    "schema_version": "run_comparison_bundle_v1",
+    "semantic_sha256": "30d85fa916fa88e78db03c7eaebd7acd6a30850d2f47cf7909fc515ea92128f9"
+  },
+  "safety": {
+    "contains_absolute_path": false,
+    "contains_model_binary": false,
+    "contains_test_oracle": false,
+    "no_automatic_promotion": true,
+    "no_winner": true
+  },
+  "schema_version": "run_comparison_export_v1",
+  "semantic_sha256": "8650cca9ceea1eea60b59fad880f10f1f1d3ad7d50de5f6bf26bffd8dea87684"
+}

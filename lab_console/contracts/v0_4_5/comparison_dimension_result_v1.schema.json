@@ -1,0 +1,40 @@
+{
+  "$id": "https://filin.local/contracts/v0_4_5/comparison_dimension_result_v1.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "properties": {
+        "schema_version": {
+          "const": "comparison_dimension_result_v1"
+        }
+      }
+    }
+  ],
+  "properties": {
+    "laboratory_only": {
+      "const": true,
+      "type": "boolean"
+    },
+    "payload": {
+      "type": "object"
+    },
+    "schema_version": {
+      "pattern": "^[a-z0-9_]{3,100}$",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[a-f0-9]{64}$",
+      "type": "string"
+    },
+    "token": {
+      "pattern": "^[a-z0-9][a-z0-9_-]{1,79}$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "schema_version"
+  ],
+  "title": "comparison_dimension_result_v1",
+  "type": "object"
+}

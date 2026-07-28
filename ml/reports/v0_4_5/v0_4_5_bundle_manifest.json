@@ -1,0 +1,131 @@
+{
+  "files": [
+    {
+      "bytes": 2510,
+      "path": "ml/reports/v0_4_5/browser_acceptance_report.md",
+      "sha256": "89073a5546caa52b94326492297a288a745d8d3fc721fbe33eea1c71df68c3fb"
+    },
+    {
+      "bytes": 896,
+      "path": "ml/reports/v0_4_5/browser_acceptance_result.json",
+      "sha256": "30e0aa74e3b0641786079dfa7ed8dc9725cdd6bed681178acee80b34b79cbeb7"
+    },
+    {
+      "bytes": 2153,
+      "path": "ml/reports/v0_4_5/candidate_comparison_catalog.json",
+      "sha256": "6db0a132ea00e50c109392891ce3e458255bec3f7f76cecd90b58a858c95cec7"
+    },
+    {
+      "bytes": 713,
+      "path": "ml/reports/v0_4_5/claim_evidence_ledger.json",
+      "sha256": "0a84afcf24c638c55ce3e814bc94d93ee7a0e3915120b81c7dbf615b6cc43a8c"
+    },
+    {
+      "bytes": 41907,
+      "path": "ml/reports/v0_4_5/environment_profiles.json",
+      "sha256": "6f52bf3aab71f465c33dfcdfac995d73bb7c96eecacc8dbdd8c14f3f38773ece"
+    },
+    {
+      "bytes": 756,
+      "path": "ml/reports/v0_4_5/known_limitations.md",
+      "sha256": "da9f493ed4ec5a4fc0106afbddcf67100ba006e6c4b5d3730059c282788d7023"
+    },
+    {
+      "bytes": 13704,
+      "path": "ml/reports/v0_4_5/laboratory_input_catalog.json",
+      "sha256": "0475d46dc4d86f4476b7541d7f9f397eba785fab9631dd623a9d13af510ed0e2"
+    },
+    {
+      "bytes": 32686,
+      "path": "ml/reports/v0_4_5/negative_scenarios.json",
+      "sha256": "2dc4a22672aad41f4492b3f415de2e64dc2019686ca75d52e1120100df13e51f"
+    },
+    {
+      "bytes": 423287,
+      "path": "ml/reports/v0_4_5/official_comparison_catalog.json",
+      "sha256": "e9cf7b075ab6348e7b9558c3c57d92f80bf105532304940e87ed54bff9a7ec31"
+    },
+    {
+      "bytes": 126736,
+      "path": "ml/reports/v0_4_5/official_run_catalog.json",
+      "sha256": "1f071968ba30ab00f4fd438f5a7f4511dbd2dad28fbc6bea863c3023b06a2653"
+    },
+    {
+      "bytes": 10474,
+      "path": "ml/reports/v0_4_5/positive_scenarios.json",
+      "sha256": "bab1d6e25f05bfc6b8ef8e46b15d864d6412a5879436cbd7fdc3149229878251"
+    },
+    {
+      "bytes": 35308,
+      "path": "ml/reports/v0_4_5/representative_comparison_bundle.json",
+      "sha256": "8d08d8debf55c917c446586334ae507832f58a6499d0426bb1a0171dbc4a118d"
+    },
+    {
+      "bytes": 228924,
+      "path": "ml/reports/v0_4_5/representative_comparison_bundles.json",
+      "sha256": "38627e61ab991c8f0ffc93b0c3d90d8a18355b579b4b39110e28f23347b1d620"
+    },
+    {
+      "bytes": 37382,
+      "path": "ml/reports/v0_4_5/representative_comparison_export.json",
+      "sha256": "098235e98f56d5917b5c0d068f54533d6347205141976b7dd0a6d77000022156"
+    },
+    {
+      "bytes": 1230,
+      "path": "ml/reports/v0_4_5/representative_comparison_review.json",
+      "sha256": "806812c34bf9c16b8f4c9d75da3a5881c26a11a58f9e46048b4c2446d2e28a1c"
+    },
+    {
+      "bytes": 61269,
+      "path": "ml/reports/v0_4_5/representative_not_comparable_bundle.json",
+      "sha256": "56297e0fc2cd8bdd3f479bff9239fe292c7608d171008d9c5cfa0a37b4379c65"
+    },
+    {
+      "bytes": 207,
+      "path": "ml/reports/v0_4_5/representative_reproducibility_assessment.json",
+      "sha256": "1148fa57aea5727e7325664944bc12a89e71e2c0ef295215cd9aa9421499a983"
+    },
+    {
+      "bytes": 1092,
+      "path": "ml/reports/v0_4_5/representative_reproducibility_assessments.json",
+      "sha256": "1f3f9e85d4222b2e61f482743149250206076852d36dd7979fdd9a6fb01a0159"
+    },
+    {
+      "bytes": 7567,
+      "path": "ml/reports/v0_4_5/representative_run_bundle.json",
+      "sha256": "0bd535f9a08677a080079dbee7e8ea74153b754236478226f55a423af8642042"
+    },
+    {
+      "bytes": 29842,
+      "path": "ml/reports/v0_4_5/representative_run_bundles.json",
+      "sha256": "9e122986d1751f921e8b89375223737bdf206cdb6e8aeb4f17ea8eda9f422a57"
+    },
+    {
+      "bytes": 19537,
+      "path": "ml/reports/v0_4_5/run_plan_catalog.json",
+      "sha256": "8ca3edcf024e849c5bb11f858e471b4dcabcab7ec6173500889f60c6baf1f1db"
+    },
+    {
+      "bytes": 1011,
+      "path": "ml/reports/v0_4_5/run_plan_templates.json",
+      "sha256": "06ac47afaa232ac3e810688f9ff4cf2505bd4db215c92994c329f7a2dbd791d6"
+    },
+    {
+      "bytes": 1076,
+      "path": "ml/reports/v0_4_5/summary.md",
+      "sha256": "fb8a513aa004516f837d8fca2f91ff715c2d82241727aebb09cbdb8eccb6326e"
+    },
+    {
+      "bytes": 788,
+      "path": "ml/reports/v0_4_5/test_report.json",
+      "sha256": "cf5c1c4152459aee5950fc7a08b077723e8bff335d4b19036b24851ec97ffd7a"
+    },
+    {
+      "bytes": 4450,
+      "path": "ml/reports/v0_4_5/v0_4_5_policy_result.json",
+      "sha256": "5c27a51ba3aac0abb31350357de6f674f28178ad1199ab8fb8850817629eb4ce"
+    }
+  ],
+  "schema_version": "v0_4_5_bundle_manifest_v1",
+  "stage": "v0.4.5"
+}

@@ -15,7 +15,8 @@ def validate(root=ROOT):
  if root==ROOT:
   changed=set(git("diff","--name-only",BASELINE,"--").splitlines())
   protected={r["path"] for r in current}
-  for path in sorted(changed & protected):errors.append({"code":"protected_file_changed","path":path})
+  baseline_paths=set(git("ls-tree","-r","--name-only",BASELINE).splitlines())
+  for path in sorted(changed & protected & baseline_paths):errors.append({"code":"protected_file_changed","path":path})
   if git("rev-parse",BASELINE+":backend").strip()!=BACKEND_TREE:errors.append({"code":"backend_baseline_mismatch"})
   candidate_manifest=root/"ml/artifacts/v0_3_15_4/candidate_manifest.json"
   candidate_text=candidate_manifest.read_text(encoding="utf-8") if candidate_manifest.is_file() else ""

@@ -1,0 +1,30 @@
+{
+  "schema_version": "v0_4_5_browser_acceptance_v1",
+  "checked_at": "2026-07-28",
+  "status": "passed",
+  "localhost_only": true,
+  "network_used": false,
+  "screenshot_count": 26,
+  "viewports": [
+    "1920x1080",
+    "1536x864",
+    "1366x768"
+  ],
+  "checks": {
+    "official_catalog_bootstrap": "passed",
+    "run_wizard_validate_dry_run_freeze": "passed",
+    "run_filter_and_details": "passed",
+    "recovery_visibility": "passed",
+    "comparability_states": "passed",
+    "not_comparable_quality_delta_blocked": "passed",
+    "candidate_catalog_read_only": "passed",
+    "review_restored_after_restart": "passed",
+    "completed_review_immutable": "passed",
+    "safe_comparison_export": "passed",
+    "existing_case_views": "passed",
+    "responsive_overflow": "passed"
+  },
+  "automatic_promotion_allowed": false,
+  "active_candidate_changed": false,
+  "production_decision": false
+}

@@ -1,0 +1,509 @@
+{
+  "plans": {
+    "A1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "A2": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "A3": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "B1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "B2": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "C1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "C2": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "D1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "D2": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "normal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "e454bf641cece835a9ae4e96c471ca2bfd5aac0b6b9795be1c8a2c05e4fa47ce",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_a84b8791fca9ed47f646a8985c79f54d",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "63d909d3d122970b52f0cb54e076a19a45d32b24c9ccf3ff275870bdf3b1fe0d",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "26bf45fb648da806df20fddf83db18ba13d88297b4baa39cf414e9251394f82a",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "E1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "auth",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "a99e6a59f9f9b093a13bcc62c16d306181a2c5ed8de5a5dcea015055d8751b28",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_6c909f683a21cd970ef61663c325c746",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "04ddec66b4c69b805d359976f71df0b4407bde97330ae2ffb043a25652e889a1",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "a3d148aeacb603559d16fba567318c48d382cce4976f074405cf52d769437e70",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "E2": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "full-replay-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "beacon",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "aabb50ce9bd8e2f2d5d5d28cad612c9814515e2b46bc4b011b922565f4246009",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "full_laboratory_replay",
+      "run_plan_id": "plan_0ccb66bce6ab10adf80e343c49e8bd33",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "4990d89dbfa6d8c02a58617cd6046ff8e3bb111f2e5c5558f0f154d2e5f443ca",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "722e09da4ec20b2481b46f42f15e915fc2f236d246ed7ba95f39f6a23a55119b",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    },
+    "F1": {
+      "candidate_binding": "current",
+      "class_binding": "network_classes_v2",
+      "created_from_template": "reconstruction-r1",
+      "environment_profile": "local-offline-cpu",
+      "event_contract_binding": "shadow_event_v2",
+      "expected_output_contracts": [
+        "laboratory_run_result_v1",
+        "metric_bundle_v1",
+        "incident_card_v2"
+      ],
+      "feature_contract_binding": "network_features_v2",
+      "frozen": true,
+      "input_binding": "equal",
+      "laboratory_only": true,
+      "metric_contract": "v045_descriptive_metrics_v1",
+      "plan_sha256": "b0990d419cc1d6f7cc87830462525b1ca2e46f48bb19782077af76737cf792df",
+      "reconstruction_contract": "incident_card_v2",
+      "resource_limits": {
+        "cpu_count": 2,
+        "memory_class": "bounded",
+        "output_bytes": 5000000
+      },
+      "run_kind": "reconstruction_replay",
+      "run_plan_id": "plan_31761f6d06a4a71e678dad14f83e29f1",
+      "run_plan_version": 1,
+      "runner_binding": "v045-safe-replay",
+      "safety_flags": {
+        "laboratory_only": true,
+        "network_allowed": false,
+        "promotion_allowed": false,
+        "shell_allowed": false,
+        "training_allowed": false
+      },
+      "scenario_pack_binding": "d6b214f0fc1a01f3301f7733c2e89d9651e422ef4be63d8740421bb07a3fc536",
+      "schema_version": "laboratory_run_plan_v1",
+      "scoring_policy": "frozen_v03154",
+      "seed_binding": "9912b14c5129eba62b37245bcf25192456a11ca8d73f5194bea9405bc1c46811",
+      "threshold_binding": "frozen_v03154",
+      "timeout_seconds": 120,
+      "warmup_policy": "none"
+    }
+  },
+  "schema_version": "laboratory_run_plan_catalog_v1"
+}

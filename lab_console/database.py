@@ -14,7 +14,15 @@ MIGRATIONS = (
     CREATE TABLE IF NOT EXISTS audit_events(id INTEGER PRIMARY KEY AUTOINCREMENT, occurred_at TEXT NOT NULL, action TEXT NOT NULL, object_id TEXT NOT NULL, outcome TEXT NOT NULL, detail TEXT NOT NULL);
     CREATE TABLE IF NOT EXISTS review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload TEXT NOT NULL, UNIQUE(review_id,version));
     CREATE INDEX IF NOT EXISTS idx_reviews_card_status ON reviews(card_id,status);
-    CREATE INDEX IF NOT EXISTS idx_review_versions_review ON review_versions(review_id,version);""",
+    CREATE INDEX IF NOT EXISTS idx_review_versions_review ON review_versions(review_id,version);""" +
+    """CREATE TABLE IF NOT EXISTS laboratory_runs(token TEXT PRIMARY KEY, execution_id TEXT NOT NULL UNIQUE, run_semantic_id TEXT NOT NULL, status TEXT NOT NULL, plan_json TEXT NOT NULL, record_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS run_comparisons(token TEXT PRIMARY KEY, left_run_token TEXT NOT NULL, right_run_token TEXT NOT NULL, status TEXT NOT NULL, bundle_json TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS comparison_reviews(id TEXT PRIMARY KEY, comparison_token TEXT NOT NULL, version INTEGER NOT NULL, status TEXT NOT NULL, payload TEXT NOT NULL, created_at TEXT NOT NULL, updated_at TEXT NOT NULL);
+    CREATE TABLE IF NOT EXISTS comparison_review_versions(id INTEGER PRIMARY KEY AUTOINCREMENT, review_id TEXT NOT NULL, version INTEGER NOT NULL, occurred_at TEXT NOT NULL, action TEXT NOT NULL, payload TEXT NOT NULL, UNIQUE(review_id,version));
+    CREATE INDEX IF NOT EXISTS idx_lab_runs_status ON laboratory_runs(status);
+    CREATE INDEX IF NOT EXISTS idx_lab_runs_semantic ON laboratory_runs(run_semantic_id);
+    CREATE INDEX IF NOT EXISTS idx_run_comparisons_runs ON run_comparisons(left_run_token,right_run_token);
+    CREATE INDEX IF NOT EXISTS idx_comparison_reviews_comparison ON comparison_reviews(comparison_token,status);""",
 )
 
 

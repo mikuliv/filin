@@ -8,5 +8,6 @@
 | `v0.4.3` | localhost console, SQLite review overlay | локальный UI и API | не backend/SIEM |
 | `v0.4.3.1` | переработанный operator interface | browser acceptance | capability не расширена |
 | `v0.4.4` | 12 cases и persistent operator workflow | positive/negative campaign и deterministic export | external applicability не проверена |
+| `v0.4.5` | frozen run plans, restart recovery и comparability gate | 12 запусков, 8 сравнений, 26 browser checks | сравнение не выбирает и не продвигает кандидата |
 
-Следующий допустимый `v0.4.5` не реализован. Линия не заменяет `v0.3.19`.
+Следующий допустимый лабораторный этап — `v0.4.6`. Линия не заменяет основной следующий этап `v0.3.19`.

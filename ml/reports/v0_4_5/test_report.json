@@ -1,0 +1,27 @@
+{
+  "schema_version": "v0_4_5_test_report_v1",
+  "stage": "v0.4.5",
+  "status": "passed",
+  "compileall_passed": true,
+  "targeted_v0_4_5_tests": {
+    "passed": 18,
+    "failed": 0
+  },
+  "full_pytest": {
+    "passed": 1785,
+    "failed": 0,
+    "warnings": 3,
+    "duration_seconds": 460.54,
+    "command": "python -m pytest -q -p no:cacheprovider --basetemp runtime/pytest-v045-full-final2"
+  },
+  "warning_summary": [
+    "sklearn: y_pred contains classes not in y_true",
+    "sklearn: single label found in y_true and y_pred (2 occurrences)"
+  ],
+  "console_verifier_passed": true,
+  "v0_4_4_regression_passed": true,
+  "v0_4_5_standalone_verifier_passed": true,
+  "documentation_validation_passed": true,
+  "licensing_validation_passed": true,
+  "browser_acceptance_passed": true
+}

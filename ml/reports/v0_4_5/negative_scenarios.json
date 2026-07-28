@@ -1,0 +1,1127 @@
+{
+  "count": 160,
+  "rejected": 160,
+  "scenarios": [
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-001",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-002",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-003",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-004",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-005",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-006",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-007",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-008",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-009",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-010",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-011",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-012",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-013",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-014",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-015",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-016",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-017",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-018",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-019",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-020",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-021",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-022",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-023",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-024",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-025",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-026",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-027",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-028",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-029",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-030",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-031",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-032",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-033",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-034",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-035",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-036",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-037",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-038",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-039",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-040",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-041",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-042",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-043",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-044",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-045",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-046",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-047",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-048",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-049",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-050",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-051",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-052",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-053",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-054",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-055",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-056",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-057",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-058",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-059",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-060",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-061",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-062",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-063",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-064",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-065",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-066",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-067",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-068",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-069",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-070",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-071",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-072",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-073",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-074",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-075",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-076",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-077",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-078",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-079",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-080",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-081",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-082",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-083",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-084",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-085",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-086",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-087",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-088",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-089",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-090",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-091",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-092",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-093",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-094",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-095",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-096",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-097",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-098",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-099",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-100",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-101",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-102",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-103",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-104",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-105",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-106",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-107",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-108",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-109",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-110",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-111",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-112",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-113",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-114",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-115",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-116",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-117",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-118",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-119",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-120",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-121",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-122",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-123",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-124",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-125",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-126",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-127",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-128",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-129",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-130",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-131",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-132",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-133",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-134",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-135",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-136",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-137",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-138",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-139",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-140",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    },
+    {
+      "expected_error_code": "unknown_plan_template",
+      "rejected": true,
+      "scenario_id": "v045-negative-141",
+      "temporary_copy": true,
+      "violation": "unknown_plan_template"
+    },
+    {
+      "expected_error_code": "frozen_plan_immutable",
+      "rejected": true,
+      "scenario_id": "v045-negative-142",
+      "temporary_copy": true,
+      "violation": "frozen_plan_immutable"
+    },
+    {
+      "expected_error_code": "duplicate_execution_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-143",
+      "temporary_copy": true,
+      "violation": "duplicate_execution_id"
+    },
+    {
+      "expected_error_code": "invalid_semantic_id",
+      "rejected": true,
+      "scenario_id": "v045-negative-144",
+      "temporary_copy": true,
+      "violation": "invalid_semantic_id"
+    },
+    {
+      "expected_error_code": "absolute_path_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-145",
+      "temporary_copy": true,
+      "violation": "absolute_path_forbidden"
+    },
+    {
+      "expected_error_code": "secret_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-146",
+      "temporary_copy": true,
+      "violation": "secret_forbidden"
+    },
+    {
+      "expected_error_code": "path_traversal",
+      "rejected": true,
+      "scenario_id": "v045-negative-147",
+      "temporary_copy": true,
+      "violation": "path_traversal"
+    },
+    {
+      "expected_error_code": "arbitrary_command_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-148",
+      "temporary_copy": true,
+      "violation": "arbitrary_command_forbidden"
+    },
+    {
+      "expected_error_code": "shell_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-149",
+      "temporary_copy": true,
+      "violation": "shell_forbidden"
+    },
+    {
+      "expected_error_code": "candidate_not_eligible",
+      "rejected": true,
+      "scenario_id": "v045-negative-150",
+      "temporary_copy": true,
+      "violation": "candidate_not_eligible"
+    },
+    {
+      "expected_error_code": "artifact_sha_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-151",
+      "temporary_copy": true,
+      "violation": "artifact_sha_mismatch"
+    },
+    {
+      "expected_error_code": "contract_mismatch",
+      "rejected": true,
+      "scenario_id": "v045-negative-152",
+      "temporary_copy": true,
+      "violation": "contract_mismatch"
+    },
+    {
+      "expected_error_code": "comparison_not_allowed",
+      "rejected": true,
+      "scenario_id": "v045-negative-153",
+      "temporary_copy": true,
+      "violation": "comparison_not_allowed"
+    },
+    {
+      "expected_error_code": "quality_delta_blocked",
+      "rejected": true,
+      "scenario_id": "v045-negative-154",
+      "temporary_copy": true,
+      "violation": "quality_delta_blocked"
+    },
+    {
+      "expected_error_code": "promotion_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-155",
+      "temporary_copy": true,
+      "violation": "promotion_forbidden"
+    },
+    {
+      "expected_error_code": "training_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-156",
+      "temporary_copy": true,
+      "violation": "training_forbidden"
+    },
+    {
+      "expected_error_code": "network_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-157",
+      "temporary_copy": true,
+      "violation": "network_forbidden"
+    },
+    {
+      "expected_error_code": "csrf_rejected",
+      "rejected": true,
+      "scenario_id": "v045-negative-158",
+      "temporary_copy": true,
+      "violation": "csrf_rejected"
+    },
+    {
+      "expected_error_code": "authentication_required",
+      "rejected": true,
+      "scenario_id": "v045-negative-159",
+      "temporary_copy": true,
+      "violation": "authentication_required"
+    },
+    {
+      "expected_error_code": "source_mutation_forbidden",
+      "rejected": true,
+      "scenario_id": "v045-negative-160",
+      "temporary_copy": true,
+      "violation": "source_mutation_forbidden"
+    }
+  ],
+  "schema_version": "v0_4_5_negative_campaign_v1"
+}

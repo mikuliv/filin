@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero"><p class="eyebrow">v0.4.5 · воспроизводимость</p><h2>Лабораторные запуски</h2><p>Разрешённые replay-процедуры на синтетических frozen-материалах. Победитель и продвижение модели здесь не определяются.</p></section>
+<section class="panel" data-run-wizard data-csrf="{{ csrf }}">
+  <p class="eyebrow">Новый запуск</p><h3>План из разрешённого шаблона</h3>
+  <div class="filter-bar">
+    <label>Шаблон<select data-run-template>{% for item in templates_catalog %}<option value="{{ item.template_id }}" data-kind="{{ item.run_kind }}" data-environment="{{ item.environment_profile }}">{{ item.display_name }}</option>{% endfor %}</select></label>
+    <label>Кандидат<select data-run-candidate>{% for item in candidate_catalog.entries if item.eligible_for_replay %}<option value="{{ item.candidate_token }}">{{ item.candidate_id }}</option>{% endfor %}</select></label>
+    <label>Вход<select data-run-input>{% for item in input_catalog %}<option value="{{ item.input_token }}">{{ item.display_name }}</option>{% endfor %}</select></label>
+    <button class="button" type="button" data-run-create>Создать и проверить план</button>
+  </div><p data-run-message>Путь, команда, пороги и seed вручную не вводятся.</p>
+</section>
+<section class="panel"><div class="section-heading"><div><p class="eyebrow">Каталог</p><h3>Сохранённые выполнения</h3></div><label>Статус<select data-run-filter><option value="">Все</option><option>completed</option><option>interrupted</option><option>failed</option></select></label></div>
+  <div class="catalog-grid" data-run-grid>{% for run in lab_runs %}<article class="entity-card" data-run-card data-status="{{ run.status }}"><div class="card-head"><span class="badge">{{ run.status }}</span><span class="mono">{{ run.execution_id[:16] }}…</span></div><h3>{{ run.input_token }} · {{ run.plan.run_kind }}</h3><dl><div><dt>Semantic ID</dt><dd class="mono">{{ run.run_semantic_id[:24] }}…</dd></div><div><dt>Кандидат</dt><dd>{{ run.candidate_token }}</dd></div><div><dt>Воспроизводимость</dt><dd>{{ run.reproducibility_status }}</dd></div><div><dt>Карточки / разрывы / гипотезы</dt><dd>{{ run.result.metrics.card_count if run.result else 0 }} / {{ run.result.metrics.gap_count if run.result else 0 }} / {{ run.result.metrics.hypothesis_count if run.result else 0 }}</dd></div></dl><a class="button secondary" href="/ui/lab-runs/{{ run.run_token }}">Открыть запуск</a></article>{% endfor %}</div>
+</section>
+{% endblock %}

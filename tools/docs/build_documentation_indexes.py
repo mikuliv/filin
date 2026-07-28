@@ -10,24 +10,7 @@ import yaml
 from tools.docs.documentation_v2 import ROOT, stage_from_path
 
 
-HEADER = """---
-doc_schema: filin_document_v2
-title: {title}
-document_type: reference
-audience:
-  - developer
-  - auditor
-lifecycle: generated
-authoritative_for:
-  - {authority}
-source_of_truth:
-{sources}
-last_reviewed_stage: v0.4.4
-generated: true
-evidence_immutable: false
----
-
-# {title}
+HEADER = """# {title}
 
 > Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:
 > `python -m tools.docs.build_documentation_indexes`. Генерируемую область вручную не редактировать.
@@ -62,11 +45,11 @@ def build_contracts(root: Path) -> str:
         rel = path.relative_to(root).as_posix()
         subsystem = rel.split("/", 1)[0]
         stage = stage_from_path(rel)
-        status = "текущий" if any(v in rel for v in ("v0_4_4", "v03154", "shadow_event_v2")) else "versioned/исторический"
+        status = "текущий" if any(v in rel for v in ("v0_4_5", "v03154", "shadow_event_v2")) else "versioned/исторический"
         consumer = {"lab_console": "console/API", "incident_reconstruction": "reconstruction", "collectors": "collector/runtime", "staging": "receiver", "rehearsal": "rehearsal", "external_review": "external procedure"}.get(subsystem, "tests/tools")
         link = relative_link(root / "docs/contracts", path)
         lines.append(f"| `{schema_id(path)}` | `{stage}` | `{subsystem}` | {status} | [`{rel}`]({link}) | {consumer} |")
-    lines += ["", "Индекс включает incident reconstruction, temporal reconstruction, hypothesis analysis, lab console, operator workflow, laboratory cases и manual review v2.", "", "<!-- generated:end -->", ""]
+    lines += ["", "Индекс включает incident reconstruction, temporal reconstruction, hypothesis analysis, lab console, operator workflow, laboratory cases, reproducible runs и comparison review.", "", "<!-- generated:end -->", ""]
     return "\n".join(lines)
 
 

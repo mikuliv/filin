@@ -1,0 +1,10 @@
+{
+  "schema_version": "v0_4_5_claim_evidence_ledger_v1",
+  "claims": [
+    {"claim": "twelve_official_runs_completed", "evidence": ["ml/reports/v0_4_5/official_run_catalog.json"], "status": "supported"},
+    {"claim": "eight_comparisons_created", "evidence": ["ml/reports/v0_4_5/official_comparison_catalog.json"], "status": "supported"},
+    {"claim": "exact_replay_reproducible", "evidence": ["ml/reports/v0_4_5/representative_reproducibility_assessment.json"], "status": "supported"},
+    {"claim": "automatic_promotion_absent", "evidence": ["ml/reports/v0_4_5/v0_4_5_policy_result.json"], "status": "supported"},
+    {"claim": "external_applicability_confirmed", "evidence": [], "status": "prohibited"}
+  ]
+}

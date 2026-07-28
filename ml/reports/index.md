@@ -42,6 +42,7 @@
 | `v0.4.3` | [summary](v0_4_3/v0_4_3_summary.md) | [policy](v0_4_3/v0_4_3_policy_result.json) | [manifest](v0_4_3/v0_4_3_bundle_manifest.json) | — | [limitations](v0_4_3/known_limitations.md) | frozen stage result |
 | `v0.4.3.1` | — | [policy](v0_4_3_1/v0_4_3_1_policy_result.json) | — | — | — | frozen stage result |
 | `v0.4.4` | [summary](v0_4_4/summary.md) | [policy](v0_4_4/v0_4_4_policy_result.json) | [manifest](v0_4_4/v0_4_4_bundle_manifest.json) | [semantic SHA](v0_4_4/v0_4_4_semantic.sha256) | [limitations](v0_4_4/known_limitations.md) | frozen stage result |
+| `v0.4.5` | [summary](v0_4_5/summary.md) | [policy](v0_4_5/v0_4_5_policy_result.json) | [manifest](v0_4_5/v0_4_5_bundle_manifest.json) | [semantic SHA](v0_4_5/v0_4_5_semantic.sha256) | [limitations](v0_4_5/known_limitations.md) | frozen stage result |
 
 Точный result определяется policy. Отсутствие отдельного summary не меняет machine-readable evidence.
 

@@ -110,3 +110,12 @@
 - [Профили распространяемого состава](licensing/distribution-profiles.md).
 - [Сторонние компоненты](licensing/third-party-components.md).
 - [Контрольный список релиза](licensing/release-checklist.md).
+
+## Воспроизводимые лабораторные запуски
+
+- [Этап v0.4.5](experiments/v0_4_5.md).
+- [Воспроизводимость](research/laboratory-run-reproducibility.md).
+- [Сопоставимость и сравнение](research/laboratory-run-comparison.md).
+- [Управление версиями кандидатов](research/candidate-version-governance.md).
+- [Повтор запуска](getting-started/running-laboratory-replays.md).
+- [Сравнение запусков](getting-started/comparing-laboratory-runs.md).

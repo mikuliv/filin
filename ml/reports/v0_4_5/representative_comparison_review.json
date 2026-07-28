@@ -1,0 +1,45 @@
+{
+  "comparability_status": "conditionally_comparable",
+  "comparison_token": "cmp-cfa169b60abb4f34ff2fbea0",
+  "completed_steps": [
+    "provenance",
+    "comparability",
+    "inputs",
+    "candidate",
+    "environment",
+    "metrics",
+    "classes",
+    "episodes",
+    "cards",
+    "gaps",
+    "explanations",
+    "questions",
+    "decision"
+  ],
+  "decision": null,
+  "limitations": [
+    "Разные синтетические популяции допускают только описательное сопоставление."
+  ],
+  "no_active_candidate_change": true,
+  "no_automatic_promotion": true,
+  "no_production_decision": true,
+  "notes": [],
+  "operator_summary": "Различия описаны без выбора или продвижения кандидата.",
+  "recommended_manual_action": "continue_research",
+  "review_id": "crv_7f3a07d82c7677d41ce4c7ecc84c0130",
+  "reviewed_dimensions": [
+    "provenance",
+    "inputs",
+    "environment",
+    "metrics",
+    "cards",
+    "gaps",
+    "hypotheses"
+  ],
+  "schema_version": "comparison_review_session_v1",
+  "status": "closed_without_candidate_decision",
+  "unresolved_differences": [
+    "different_synthetic_populations"
+  ],
+  "version": 2
+}

@@ -1,13 +1,13 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 291,
-    "protected_count": 61,
-    "current_count": 206,
-    "historical_count": 85,
+    "document_count": 300,
+    "protected_count": 64,
+    "current_count": 212,
+    "historical_count": 88,
     "generated_count": 6,
-    "created_count": 30,
-    "rewritten_count": 77,
+    "created_count": 39,
+    "rewritten_count": 78,
     "redirect_count": 15,
     "broken_link_count": 0,
     "broken_anchor_count": 0
@@ -163,11 +163,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 32,
+      "outgoing_link_count": 34,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "008ca1cadce9db265793bc24cc30952741531af67bc4f357c5a5fadd22c17c3b"
+      "sha256_after": "fc44de0ee6036029280bae219b3e7aa6d6398ad301c40ac43b526f08db856344"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "d7aa67189afea4873e79f1ce4ed6fd7f9a274f347b6508d2ff3435e5f7364702"
+      "sha256_after": "31b7d863df752aa72e168a0f2130c79d91a9311efe7559fb732e915e962b27bd"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1822,11 +1822,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 8,
-      "outgoing_link_count": 92,
+      "outgoing_link_count": 128,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3baa92ef57bde83caffd8e77888ae4bfd1a3239d6af043f3cf055b8969effc48",
-      "sha256_after": "7ed37016a502a154ba70b7a6a75c7bc0e85c8b14e602b4f95d67ac735f6ef081"
+      "sha256_after": "5a57b0a9dd851b4b2009aa227d0449fe919f1a8a7b756fb5291791009250d4e2"
     },
     {
       "path": "docs/contracts/operator_projection_v1.md",
@@ -3583,6 +3583,43 @@
       "sha256_after": "f925636f9a32c80ad024193e44a79c91022f37bd1ad83067a385d3a21ef52dd4"
     },
     {
+      "path": "docs/experiments/v0_4_5.md",
+      "title": "Этап v0.4.5",
+      "category": "Историческое описание",
+      "doc_schema": "filin_document_v2",
+      "document_type": "history",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.5",
+      "last_relevant_stage": "v0.4.5",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 3,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "4d08b4b83e872bcef87eee83f0f0f29d195cc624c2835e16385eba7af44b3a9d"
+    },
+    {
       "path": "docs/external_review/README.md",
       "title": "Пакет независимой проверки",
       "category": "Frozen evidence",
@@ -4324,6 +4361,43 @@
       "sha256_after": "06c32f88a1002d2099847137c961ab03cbee525aad53c298c36ecff00452bfe4"
     },
     {
+      "path": "docs/getting-started/comparing-laboratory-runs.md",
+      "title": "Сравнение лабораторных запусков",
+      "category": "Руководство разработчика",
+      "doc_schema": "filin_document_v2",
+      "document_type": "guide",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "b0ff94e2aded59b0b1d405e329153f2f610da176aa235eb89f17e8b2e2ca8e2d"
+    },
+    {
       "path": "docs/getting-started/developer-entrypoint.md",
       "title": "Точка входа разработчика",
       "category": "Руководство разработчика",
@@ -4611,6 +4685,43 @@
       "actual_action": "rewritten",
       "sha256_before": "8ed1c9d377952a462c50b6fbb6abf5779d36df0917e6056c357dfbcb5c449557",
       "sha256_after": "00c01cf38ebbf357741e0ddb97cd1de6c59866a648f6ecf8033c38d49d10aeaf"
+    },
+    {
+      "path": "docs/getting-started/running-laboratory-replays.md",
+      "title": "Выполнение лабораторного replay",
+      "category": "Руководство разработчика",
+      "doc_schema": "filin_document_v2",
+      "document_type": "guide",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 3,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "bf022acecde5cd7aa60f2c8f387d3be93971be90f6d0001fed7dffdc2f617467"
     },
     {
       "path": "docs/getting-started/testing.md",
@@ -5137,11 +5248,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 2,
-      "outgoing_link_count": 79,
+      "outgoing_link_count": 85,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "0b1ee4647b46bb54b028bb1dab814fb07eb3a315a40a62fe36f8e31c001b37d9",
-      "sha256_after": "67f3f97de3bfdcfb3c57cd1a83ab80c04650689aad3b4c9977bfcf6f6fda7746"
+      "sha256_after": "5d14abb6fb368f05cdd808cd47ade0c581d49ce3c6ffa665dc6bb6de2123aadf"
     },
     {
       "path": "docs/lab-stand.md",
@@ -6518,11 +6629,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 6,
-      "outgoing_link_count": 24,
+      "outgoing_link_count": 25,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "00317fb682c4c2dd9e80753cd06c0d269b656f551fd2d3f6fd695147a5060a7e",
-      "sha256_after": "58f3f162112ad32fcb3cd30a9b8b2c2c2267bf07a59cbb3814e0f6b4fc335fae"
+      "sha256_after": "4f5b374c20af406f3b075abd26616926d82eb0fe740b7a6f762f9da87e6b740b"
     },
     {
       "path": "docs/reference/artifact-types.md",
@@ -6975,11 +7086,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 12,
-      "outgoing_link_count": 83,
+      "outgoing_link_count": 88,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f493cadaf5eef1a7a6fcb73e5b73751958a87feb63f36ad9e7545b608ec0324e",
-      "sha256_after": "3318977de40ce855b091f3fe63e419dd5fc2a7d31643134ec78ba2d74ea13394"
+      "sha256_after": "0bd88d06eff8d5052b6b6fd86e5bf9754d5459a383cf91124ec281d121cbceef"
     },
     {
       "path": "docs/repository-migration.md",
@@ -7136,6 +7247,43 @@
       "actual_action": "rewritten",
       "sha256_before": "330c0afd423f7ef7431599a325b8acdd336bc01864a5303be9a70b89ef74fc94",
       "sha256_after": "52d1c14a057caca69297f633307b4a5aa8945b6f301fc946f6b6d89092282458"
+    },
+    {
+      "path": "docs/research/candidate-version-governance.md",
+      "title": "Управление версиями кандидатов",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "candidate",
+      "last_relevant_stage": "candidate",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "2e3ef28c215be8446596f9d54b1cba2a2557c9d14b45868744c8117178b956e2"
     },
     {
       "path": "docs/research/causal-features.md",
@@ -7418,6 +7566,80 @@
       "actual_action": "unchanged",
       "sha256_before": "6b55dfe93a0f029c755dd158b78ff0adf647f87dbc27e0e1a031800e2df7d8a3",
       "sha256_after": "6b55dfe93a0f029c755dd158b78ff0adf647f87dbc27e0e1a031800e2df7d8a3"
+    },
+    {
+      "path": "docs/research/laboratory-run-comparison.md",
+      "title": "Сравнение лабораторных запусков",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "82a5576659c6e7469dbd0c513dfaf26eacf3551acd668732357d676693908609"
+    },
+    {
+      "path": "docs/research/laboratory-run-reproducibility.md",
+      "title": "Воспроизводимость лабораторных запусков",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "e240526db4283c90b01c03cbf098f6ea100c55204c741aa6e9dd66c39c1a6774"
     },
     {
       "path": "docs/research/manual-incident-review.md",
@@ -7710,7 +7932,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6316b247fd5f2676f97bf7c924742a511cbd20d432b250b4b3ed83db2a7bcbd6",
-      "sha256_after": "0275aea9e44f5206dc69cfa3ab5d4cb1ebeaa7d5698be0c3e4abbc826344a156"
+      "sha256_after": "4e1aa1ee778976aea94e1c416d050237112c1ad4af92eeb83285eb508e40758d"
     },
     {
       "path": "docs/safety-model.md",
@@ -7940,11 +8162,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 8,
-      "outgoing_link_count": 19,
+      "outgoing_link_count": 21,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "4598defaa5df271df89247abdd91f34c636b1491a9ddf12d62fdbbf26e57d9d5",
-      "sha256_after": "b0dd53043b4cb4d8a4ff61a100800726eacd432accd6c2863feb74b6b6bdc8b3"
+      "sha256_after": "5392b531a4ad68285808081136148aa4182de7298be2814a56c91657b682517b"
     },
     {
       "path": "docs/status/current-status.md",
@@ -7988,7 +8210,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "da032ce5a852ea924b5023bef396b56cdb0605c97c84f19cf2fbcd401e8766e3"
+      "sha256_after": "6cafd3eca20885c30ed1145775872a93cc3e62c32a533ea0a3122e15e8a58863"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -8066,7 +8288,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "272725af51b82edcefaebf8c19758d89cb0701eb1a6cdad3b6c36478d9ef8634",
-      "sha256_after": "d96f47776a0ab329c30a3d9aab58e5107e5d560ef9c7b5b6736492ab4f9bd83c"
+      "sha256_after": "e0ed1d7dc247419a4c80893e9aa287d4117cad67e9802da27c601e795667a3d6"
     },
     {
       "path": "docs/status/mainline-history.md",
@@ -8150,7 +8372,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f1f7b2ef60b4d1150b35916811db6b55ecf9259185ed0e3920732e1cdc2141c9",
-      "sha256_after": "0064c8be4649181dcd898fc024e7e49b01b44faf8bfc95325c540208c5e9dac1"
+      "sha256_after": "cfe2078a9231eb8b30bfb39f00478cd3e43a2ac4db49d40f9a57d40ca2ee6991"
     },
     {
       "path": "docs/status/prohibited-capabilities.md",
@@ -8263,7 +8485,7 @@
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.4",
       "last_relevant_stage": "v0.4.4",
-      "current_stage_mentioned": "v0.4.4",
+      "current_stage_mentioned": "v0.3.18",
       "stale_status": false,
       "stale_architecture": false,
       "stale_command": false,
@@ -8275,7 +8497,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6a9a8559eef4bda6af66439f3cdc84d3fbc386737c345fbc797e33a85f11c378",
-      "sha256_after": "59845381e5b198fa050faa90c7f61676dc721fd5fb6158a9dd5f625796541e6c"
+      "sha256_after": "fd325bde11f1413636ce7ac5c3496f14070635614162923b3ecb09b9d1842bfc"
     },
     {
       "path": "docs/third-party-components.md",
@@ -9087,11 +9309,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 3,
-      "outgoing_link_count": 1,
+      "outgoing_link_count": 2,
       "recommended_action": "maintain",
-      "actual_action": "unchanged",
+      "actual_action": "rewritten",
       "sha256_before": "60b7e7bec8247889749ab014dc56a44056c45626cc53377bf6ca5d0b7640f6f5",
-      "sha256_after": "60b7e7bec8247889749ab014dc56a44056c45626cc53377bf6ca5d0b7640f6f5"
+      "sha256_after": "7000ea07dabe78ba216466ffbe665b10b85d073dc45c6a72082049bf8465bf2f"
     },
     {
       "path": "ml/README.md",
@@ -9981,11 +10203,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 24,
+      "outgoing_link_count": 25,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3a7ba294e87a6f0d84d8d0a4264ff6becd985a05a003de776c9aaadfae7fe095",
-      "sha256_after": "5097a271c13146b0aca7c4558141a51e0c6ecc36a6c81a82f6aabec100b8d323"
+      "sha256_after": "ddd155dd687aae862499d7a92048bfa48ecb71a1284e8d2b18ebb4da415906ae"
     },
     {
       "path": "ml/reports/index.md",
@@ -10023,11 +10245,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 83,
+      "outgoing_link_count": 88,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "daccac679f5ed83f6a9acdee3094a02a5f273c9f11562c2212769f9e5fdde7c9",
-      "sha256_after": "37c693d8a7af35c8393b727a39d2a286c16782bfecdaaef313ad10568084b238"
+      "sha256_after": "9ed906c984b048ec38869e72475c7f8d179d619d380b1e2f389ec4b9921ed1a5"
     },
     {
       "path": "ml/reports/v0_3_15/v0_3_15_summary.md",
@@ -11155,6 +11377,117 @@
       "actual_action": "unchanged",
       "sha256_before": "9f948fd6cc9e98c7b0d54bc6e161e28a49a39ef055ddcba6bba9e9a8ea89e17a",
       "sha256_after": "9f948fd6cc9e98c7b0d54bc6e161e28a49a39ef055ddcba6bba9e9a8ea89e17a"
+    },
+    {
+      "path": "ml/reports/v0_4_5/browser_acceptance_report.md",
+      "title": "Браузерная приёмка v0.4.5",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.5",
+      "last_relevant_stage": "v0.4.5",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 0,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "89073a5546caa52b94326492297a288a745d8d3fc721fbe33eea1c71df68c3fb"
+    },
+    {
+      "path": "ml/reports/v0_4_5/known_limitations.md",
+      "title": "Известные ограничения v0.4.5",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.5",
+      "last_relevant_stage": "v0.4.5",
+      "current_stage_mentioned": "v0.4.4",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "da9f493ed4ec5a4fc0106afbddcf67100ba006e6c4b5d3730059c282788d7023"
+    },
+    {
+      "path": "ml/reports/v0_4_5/summary.md",
+      "title": "Итог v0.4.5",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.5",
+      "last_relevant_stage": "v0.4.5",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "fb8a513aa004516f837d8fca2f91ff715c2d82241727aebb09cbdb8eccb6326e"
     },
     {
       "path": "ml/training/README.md",

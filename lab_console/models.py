@@ -47,3 +47,39 @@ class ReviewComplete(StrictModel):
 
 class TaskStart(StrictModel):
     confirmed: bool = False
+
+
+class LaboratoryRunCreate(StrictModel):
+    template_id: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+    candidate_token: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+    input_token: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+    run_kind: str = Field(pattern=r"^[a-z][a-z0-9_]{2,79}$")
+    environment_profile: str = Field(pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+
+
+class LaboratoryRunExecute(StrictModel):
+    confirmed: bool
+    recovery_boundary: str | None = Field(default=None, pattern=r"^[a-z0-9][a-z0-9_-]{1,79}$")
+
+
+class LaboratoryRunRecovery(StrictModel):
+    action: str = Field(pattern=r"^(continue|mark_failed)$")
+
+
+class RunComparisonCreate(StrictModel):
+    left_run_token: str = Field(pattern=r"^run-[a-f0-9]{20}$")
+    right_run_token: str = Field(pattern=r"^run-[a-f0-9]{20}$")
+
+
+class ComparisonReviewPatch(StrictModel):
+    status: str | None = None
+    completed_steps: list[str] | None = Field(default=None, max_length=13)
+    reviewed_dimensions: list[str] | None = Field(default=None, max_length=20)
+    unresolved_differences: list[str] | None = Field(default=None, max_length=100)
+    recommended_manual_action: str | None = None
+    operator_summary: str | None = Field(default=None, max_length=4000)
+    limitations: list[str] | None = Field(default=None, max_length=30)
+
+
+class ComparisonReviewNote(StrictModel):
+    text: str = Field(min_length=1, max_length=4000)
