@@ -14,10 +14,10 @@
 2. [Известные ограничения](known_limitations.md).
 3. [Архитектура процесса](architecture.md).
 4. [Руководство независимого эксперта](reviewer_guide.md).
-5. Ролевое руководство нужного участника.
+5. [Ролевое руководство нужного участника](#ролевые-руководства).
 6. [Приём данных](data_acceptance_policy.md), [метрики](metric_policy.md) и [условия остановки](stop_conditions.md).
 7. [Воспроизводимость](reproducibility_guide.md).
-8. Правовые требования, передача, хранение, удаление и публикация.
+8. [Правовые требования](legal_requirements_checklist.md), [передача данных](data_transfer_requirements.md), [хранение и удаление](retention_and_deletion_requirements.md), [публикация](publication_requirements.md).
 
 ## Ролевые руководства
 

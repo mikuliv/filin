@@ -48,7 +48,7 @@
 | `docs/architecture/storage-and-artifacts.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `ad149485cfc2` | `2f5a4bee340e` |
 | `docs/architecture/trust-boundaries.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `1f133afa2697` | `f53b7a994ab7` |
 | `docs/audit/documentation_inventory.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `c23a3c126926` | `840eb00e9075` |
-| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `9f75e5f1a5ef` |
+| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `4e4421239286` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `1839146eb403` | `8674307c984f` |
 | `docs/audit/documentation_path_migration_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `cb437745bba4` | `4f4f1743a49f` |
 | `docs/audit/documentation_refactor_plan_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8ca9d2c1f48b` | `559cd867b8e3` |
@@ -147,7 +147,7 @@
 | `docs/getting-started/testing.md` | Руководство разработчика | `current` | current | нет | `rewritten` | `c6f8558576d2` | `5355b5bd9849` |
 | `docs/getting-started/troubleshooting.md` | Руководство пользователя или оператора | `current` | current | нет | `rewritten` | `a25d8e0de03e` | `978f378cbd72` |
 | `docs/glossary.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `a78b99a74996` | `66bf99d29468` |
-| `docs/guides/external-review/README.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `b85a90cc0d24` |
+| `docs/guides/external-review/README.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `f0bb8f1d779d` |
 | `docs/guides/external-review/architecture.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `9c8c7676fc35` |
 | `docs/guides/external-review/confirmed_scope.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `a2cc1b0eed6f` |
 | `docs/guides/external-review/data_acceptance_policy.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `ec339099a87a` |

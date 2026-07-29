@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "9f75e5f1a5efedbf7e1e08bdabc364a280d285dc8ea41e4b510d8eb15cc08821"
+      "sha256_after": "4e4421239286392664816bb6d5fb27c87892f633f6d824d04a33c3fff40a36d5"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -5136,12 +5136,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 7,
-      "outgoing_link_count": 25,
+      "incoming_link_count": 8,
+      "outgoing_link_count": 30,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "b85a90cc0d24b8264a629fb813a77df882a734d644c3cea5fa9433e64470386c"
+      "sha256_after": "f0bb8f1d779ddb13f84d5a44866ff33a02b5cba8fbd9563534cec0653f1706b6"
     },
     {
       "path": "docs/guides/external-review/architecture.md",
@@ -5321,7 +5321,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
+      "incoming_link_count": 2,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
@@ -5469,7 +5469,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
+      "incoming_link_count": 2,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
@@ -5543,7 +5543,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
+      "incoming_link_count": 2,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
@@ -5654,7 +5654,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
+      "incoming_link_count": 2,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",

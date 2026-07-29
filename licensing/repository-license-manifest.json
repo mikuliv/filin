@@ -4746,7 +4746,7 @@
     },
     {
       "path": "docs/audit/documentation_inventory_v2.json",
-      "sha256": "3888eb32be30aefc7e086359e6ff3377d88dd26f5ed5e164e9aef7c1fb2f8850",
+      "sha256": "71d4c02fff412ec3d6ed27767aed55aae26c595d3045d3f07c3cffd4967269be",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -4767,7 +4767,7 @@
     },
     {
       "path": "docs/audit/documentation_inventory_v2.md",
-      "sha256": "4e4421239286392664816bb6d5fb27c87892f633f6d824d04a33c3fff40a36d5",
+      "sha256": "df5fe6e2535853c9e415b872252ecae0de00183c8ece32ed2036a958a96d2e4e",
       "file_type": "documentation",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -6909,7 +6909,7 @@
     },
     {
       "path": "docs/guides/external-review/README.md",
-      "sha256": "b85a90cc0d24b8264a629fb813a77df882a734d644c3cea5fa9433e64470386c",
+      "sha256": "f0bb8f1d779ddb13f84d5a44866ff33a02b5cba8fbd9563534cec0653f1706b6",
       "file_type": "documentation",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -19887,7 +19887,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "6259657a6d8c3f71f113bd52952edb351782da54bc08c26c8281b88356d6ef2f",
+      "sha256": "f9040abea93a6cfb793ab40e667247298adf4f3faa8eaf1a7571709c496041cc",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -59388,7 +59388,7 @@
     },
     {
       "path": "sbom/repository.spdx.json",
-      "sha256": "8de6fe28641d9dcdd21cc44fc3345914d80487f9b44f5c70bd97289c41653d28",
+      "sha256": "6391db75ee75017afb246244a8dba36fedf80dea2d44e961137df9bab76f50ac",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
