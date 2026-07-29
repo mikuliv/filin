@@ -1,0 +1,33 @@
+{
+  "allowed_generalized_knowledge": [
+    "web_probe является проблемным классом",
+    "границы web_probe, benign и beacon требуют новых вариантов",
+    "требуется контроль доступности признаков"
+  ],
+  "forbidden_acceptance_data": [
+    "v0.4.7 control pack and derivatives"
+  ],
+  "forbidden_object_transfer": [
+    "rows",
+    "normalized_rows",
+    "derived_rows",
+    "sessions",
+    "captures",
+    "temporal_sequences",
+    "scenario_ids",
+    "generator_seeds",
+    "exact_features"
+  ],
+  "forbidden_training_data": [
+    "v0.4.7 control pack and derivatives"
+  ],
+  "frozen": true,
+  "labels_revealed": true,
+  "required_future_disclosure": [
+    "post_blind_knowledge_used",
+    "new_seed_namespace",
+    "isolation_gate_result"
+  ],
+  "schema_version": "post_blind_knowledge_transfer_v1",
+  "source_pack_id": "blind-pack:v047:01c5f40ba48a9944"
+}

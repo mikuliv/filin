@@ -149,7 +149,7 @@ def test_questions_tasks_tests_and_system_are_operator_components(client):
 
 def test_navigation_active_state_and_accessibility(client):
     document = soup(client, "/ui/graph")
-    assert len(document.select(".nav-link")) == 21
+    assert len(document.select(".nav-link")) == 22
     active = document.select_one(".nav-link[aria-current='page']")
     assert active and active.get("data-nav") == "graph"
     assert document.select_one(".skip-link") and document.select_one("main[tabindex='-1']")

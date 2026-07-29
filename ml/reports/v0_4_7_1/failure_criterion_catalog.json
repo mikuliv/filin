@@ -1,0 +1,211 @@
+{
+  "criteria": [
+    {
+      "active_candidate_value": 0.5985380116959064,
+      "affected_classes": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-13-active_attack_macro_recall",
+      "criticality": "critical",
+      "deviation": -0.3514619883040936,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.95,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "active_attack_macro_recall",
+      "observed_value": 0.5985380116959064,
+      "proposal_value": 0.7581871345029241,
+      "related_difference_ids": [
+        "critical:blind-gate-13-active_attack_macro_recall"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    },
+    {
+      "active_candidate_value": 0.5985380116959064,
+      "affected_classes": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-14-proposal_attack_macro_recall",
+      "criticality": "critical",
+      "deviation": -0.19181286549707588,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.95,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "proposal_attack_macro_recall",
+      "observed_value": 0.7581871345029241,
+      "proposal_value": 0.7581871345029241,
+      "related_difference_ids": [
+        "critical:blind-gate-14-proposal_attack_macro_recall"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    },
+    {
+      "active_candidate_value": 0.4987224185213444,
+      "affected_classes": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-15-active_attack_macro_f1",
+      "criticality": "critical",
+      "deviation": -0.45127758147865554,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.95,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "active_attack_macro_f1",
+      "observed_value": 0.4987224185213444,
+      "proposal_value": 0.7588586885295211,
+      "related_difference_ids": [
+        "critical:blind-gate-15-active_attack_macro_f1"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    },
+    {
+      "active_candidate_value": 0.4987224185213444,
+      "affected_classes": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-16-proposal_attack_macro_f1",
+      "criticality": "critical",
+      "deviation": -0.19114131147047886,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.95,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "proposal_attack_macro_f1",
+      "observed_value": 0.7588586885295211,
+      "proposal_value": 0.7588586885295211,
+      "related_difference_ids": [
+        "critical:blind-gate-16-proposal_attack_macro_f1"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    },
+    {
+      "active_candidate_value": 0.0,
+      "affected_classes": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "low_rate_dos",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-17-active_worst_attack_recall",
+      "criticality": "critical",
+      "deviation": -0.9,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.9,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "active_worst_attack_recall",
+      "observed_value": 0.0,
+      "proposal_value": 0.0,
+      "related_difference_ids": [
+        "critical:blind-gate-17-active_worst_attack_recall"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    },
+    {
+      "active_candidate_value": 0.0,
+      "affected_classes": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_scenarios": [
+        "beacon",
+        "web_probe"
+      ],
+      "affected_sessions": "all_sessions_with_affected_classes",
+      "affected_windows": "see_error_atlas",
+      "criterion_id": "blind-gate-18-proposal_worst_attack_recall",
+      "criticality": "critical",
+      "deviation": -0.9,
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "expected_value": 0.9,
+      "limitations": [
+        "Набор раскрыт и пригоден только для диагностики."
+      ],
+      "mandatory": true,
+      "name": "proposal_worst_attack_recall",
+      "observed_value": 0.0,
+      "proposal_value": 0.0,
+      "related_difference_ids": [
+        "critical:blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "result": "failed",
+      "schema_version": "failed_criterion_descriptor_v1"
+    }
+  ],
+  "criterion_count": 6,
+  "schema_version": "failed_criterion_catalog_v1",
+  "stage": "v0.4.7.1"
+}

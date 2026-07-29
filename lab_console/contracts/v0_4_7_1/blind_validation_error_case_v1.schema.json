@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://v0.4.7.1/blind_validation_error_case_v1",
+  "title": "blind_validation_error_case_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "blind_validation_error_case_v1"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9_.:-]{1,127}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "relative_locator": {
+          "type": "string",
+          "pattern": "^(?![A-Za-z]:|/|.*\\.\\.).{1,240}$"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "passed",
+            "failed",
+            "ready",
+            "conditionally_ready",
+            "not_ready",
+            "confirmed",
+            "strongly_supported",
+            "partially_supported",
+            "hypothesis_only",
+            "unknown"
+          ]
+        },
+        "frozen": {
+          "type": "boolean"
+        },
+        "items": {
+          "type": "array",
+          "uniqueItems": true,
+          "maxItems": 10000
+        },
+        "note_ru": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 4000,
+          "pattern": "^[^<>]*$"
+        }
+      }
+    }
+  }
+}

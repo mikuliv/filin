@@ -44,7 +44,8 @@
 | `v0.4.4` | [summary](v0_4_4/summary.md) | [policy](v0_4_4/v0_4_4_policy_result.json) | [manifest](v0_4_4/v0_4_4_bundle_manifest.json) | [semantic SHA](v0_4_4/v0_4_4_semantic.sha256) | [limitations](v0_4_4/known_limitations.md) | frozen stage result |
 | `v0.4.5` | [summary](v0_4_5/summary.md) | [policy](v0_4_5/v0_4_5_policy_result.json) | [manifest](v0_4_5/v0_4_5_bundle_manifest.json) | [semantic SHA](v0_4_5/v0_4_5_semantic.sha256) | [limitations](v0_4_5/known_limitations.md) | frozen stage result |
 | `v0.4.6` | [summary](v0_4_6/summary.md) | [policy](v0_4_6/v0_4_6_policy_result.json) | [manifest](v0_4_6/v0_4_6_bundle_manifest.json) | [semantic SHA](v0_4_6/v0_4_6_semantic.sha256) | [limitations](v0_4_6/known_limitations.md) | frozen stage result |
-| `v0.4.7` | [summary](v0_4_7/summary.md) | [policy](v0_4_7/v0_4_7_policy_result.json) | [manifest](v0_4_7/v0_4_7_bundle_manifest.json) | [semantic SHA](v0_4_7/v0_4_7_semantic.sha256) | [limitations](v0_4_7/known_limitations.md) | procedure passed; proposal failed validation |
+| `v0.4.7` | [summary](v0_4_7/summary.md) | [policy](v0_4_7/v0_4_7_policy_result.json) | [manifest](v0_4_7/v0_4_7_bundle_manifest.json) | [semantic SHA](v0_4_7/v0_4_7_semantic.sha256) | [limitations](v0_4_7/known_limitations.md) | frozen stage result |
+| `v0.4.7.1` | [summary](v0_4_7_1/summary.md) | [policy](v0_4_7_1/v0_4_7_1_policy_result.json) | [manifest](v0_4_7_1/v0_4_7_1_bundle_manifest.json) | [semantic SHA](v0_4_7_1/v0_4_7_1_semantic.sha256) | [limitations](v0_4_7_1/known_limitations.md) | frozen stage result |
 
 Точный result определяется policy. Отсутствие отдельного summary не меняет machine-readable evidence.
 

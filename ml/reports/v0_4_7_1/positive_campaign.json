@@ -1,0 +1,482 @@
+[
+  {
+    "check": "protocol_frozen",
+    "passed": true,
+    "scenario_id": "v0471-pos-001"
+  },
+  {
+    "check": "source_hashes_verified",
+    "passed": true,
+    "scenario_id": "v0471-pos-002"
+  },
+  {
+    "check": "failed_result_preserved",
+    "passed": true,
+    "scenario_id": "v0471-pos-003"
+  },
+  {
+    "check": "six_criteria_loaded",
+    "passed": true,
+    "scenario_id": "v0471-pos-004"
+  },
+  {
+    "check": "six_differences_loaded",
+    "passed": true,
+    "scenario_id": "v0471-pos-005"
+  },
+  {
+    "check": "confusion_rebuilt",
+    "passed": true,
+    "scenario_id": "v0471-pos-006"
+  },
+  {
+    "check": "class_support_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-007"
+  },
+  {
+    "check": "worst_class_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-008"
+  },
+  {
+    "check": "zero_recall_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-009"
+  },
+  {
+    "check": "confidence_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-010"
+  },
+  {
+    "check": "probability_distribution_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-011"
+  },
+  {
+    "check": "feature_missingness_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-012"
+  },
+  {
+    "check": "constant_features_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-013"
+  },
+  {
+    "check": "feature_shift_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-014"
+  },
+  {
+    "check": "class_shift_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-015"
+  },
+  {
+    "check": "scenario_shift_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-016"
+  },
+  {
+    "check": "session_shift_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-017"
+  },
+  {
+    "check": "decision_paths_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-018"
+  },
+  {
+    "check": "feature_groups_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-019"
+  },
+  {
+    "check": "preprocessing_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-020"
+  },
+  {
+    "check": "threshold_diagnostic_only",
+    "passed": true,
+    "scenario_id": "v0471-pos-021"
+  },
+  {
+    "check": "abstention_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-022"
+  },
+  {
+    "check": "class_mapping_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-023"
+  },
+  {
+    "check": "feature_order_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-024"
+  },
+  {
+    "check": "type_conversion_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-025"
+  },
+  {
+    "check": "model_contract_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-026"
+  },
+  {
+    "check": "input_schema_checked",
+    "passed": true,
+    "scenario_id": "v0471-pos-027"
+  },
+  {
+    "check": "all_criteria_recalculated",
+    "passed": true,
+    "scenario_id": "v0471-pos-028"
+  },
+  {
+    "check": "rebuild_deterministic",
+    "passed": true,
+    "scenario_id": "v0471-pos-029"
+  },
+  {
+    "check": "knowledge_transfer_recorded",
+    "passed": true,
+    "scenario_id": "v0471-pos-030"
+  },
+  {
+    "check": "no_row_transfer",
+    "passed": true,
+    "scenario_id": "v0471-pos-031"
+  },
+  {
+    "check": "no_seed_transfer",
+    "passed": true,
+    "scenario_id": "v0471-pos-032"
+  },
+  {
+    "check": "corrective_actions_complete",
+    "passed": true,
+    "scenario_id": "v0471-pos-033"
+  },
+  {
+    "check": "side_effects_declared",
+    "passed": true,
+    "scenario_id": "v0471-pos-034"
+  },
+  {
+    "check": "autonomy_policy_recorded",
+    "passed": true,
+    "scenario_id": "v0471-pos-035"
+  },
+  {
+    "check": "external_claim_forbidden",
+    "passed": true,
+    "scenario_id": "v0471-pos-036"
+  },
+  {
+    "check": "mainline_preserved",
+    "passed": true,
+    "scenario_id": "v0471-pos-037"
+  },
+  {
+    "check": "v048_forbidden",
+    "passed": true,
+    "scenario_id": "v0471-pos-038"
+  },
+  {
+    "check": "readiness_gate_recorded",
+    "passed": true,
+    "scenario_id": "v0471-pos-039"
+  },
+  {
+    "check": "active_candidate_unchanged",
+    "passed": true,
+    "scenario_id": "v0471-pos-040"
+  },
+  {
+    "check": "old_proposal_unchanged",
+    "passed": true,
+    "scenario_id": "v0471-pos-041"
+  },
+  {
+    "check": "registry_unchanged",
+    "passed": true,
+    "scenario_id": "v0471-pos-042"
+  },
+  {
+    "check": "backend_unchanged",
+    "passed": true,
+    "scenario_id": "v0471-pos-043"
+  },
+  {
+    "check": "protected_set_unchanged",
+    "passed": true,
+    "scenario_id": "v0471-pos-044"
+  },
+  {
+    "check": "network_disabled",
+    "passed": true,
+    "scenario_id": "v0471-pos-045"
+  },
+  {
+    "check": "shell_disabled",
+    "passed": true,
+    "scenario_id": "v0471-pos-046"
+  },
+  {
+    "check": "arbitrary_command_disabled",
+    "passed": true,
+    "scenario_id": "v0471-pos-047"
+  },
+  {
+    "check": "runtime_only_source",
+    "passed": true,
+    "scenario_id": "v0471-pos-048"
+  },
+  {
+    "check": "audit_persisted",
+    "passed": true,
+    "scenario_id": "v0471-pos-049"
+  },
+  {
+    "check": "contract_and_view_check_050",
+    "passed": true,
+    "scenario_id": "v0471-pos-050"
+  },
+  {
+    "check": "contract_and_view_check_051",
+    "passed": true,
+    "scenario_id": "v0471-pos-051"
+  },
+  {
+    "check": "contract_and_view_check_052",
+    "passed": true,
+    "scenario_id": "v0471-pos-052"
+  },
+  {
+    "check": "contract_and_view_check_053",
+    "passed": true,
+    "scenario_id": "v0471-pos-053"
+  },
+  {
+    "check": "contract_and_view_check_054",
+    "passed": true,
+    "scenario_id": "v0471-pos-054"
+  },
+  {
+    "check": "contract_and_view_check_055",
+    "passed": true,
+    "scenario_id": "v0471-pos-055"
+  },
+  {
+    "check": "contract_and_view_check_056",
+    "passed": true,
+    "scenario_id": "v0471-pos-056"
+  },
+  {
+    "check": "contract_and_view_check_057",
+    "passed": true,
+    "scenario_id": "v0471-pos-057"
+  },
+  {
+    "check": "contract_and_view_check_058",
+    "passed": true,
+    "scenario_id": "v0471-pos-058"
+  },
+  {
+    "check": "contract_and_view_check_059",
+    "passed": true,
+    "scenario_id": "v0471-pos-059"
+  },
+  {
+    "check": "contract_and_view_check_060",
+    "passed": true,
+    "scenario_id": "v0471-pos-060"
+  },
+  {
+    "check": "contract_and_view_check_061",
+    "passed": true,
+    "scenario_id": "v0471-pos-061"
+  },
+  {
+    "check": "contract_and_view_check_062",
+    "passed": true,
+    "scenario_id": "v0471-pos-062"
+  },
+  {
+    "check": "contract_and_view_check_063",
+    "passed": true,
+    "scenario_id": "v0471-pos-063"
+  },
+  {
+    "check": "contract_and_view_check_064",
+    "passed": true,
+    "scenario_id": "v0471-pos-064"
+  },
+  {
+    "check": "contract_and_view_check_065",
+    "passed": true,
+    "scenario_id": "v0471-pos-065"
+  },
+  {
+    "check": "contract_and_view_check_066",
+    "passed": true,
+    "scenario_id": "v0471-pos-066"
+  },
+  {
+    "check": "contract_and_view_check_067",
+    "passed": true,
+    "scenario_id": "v0471-pos-067"
+  },
+  {
+    "check": "contract_and_view_check_068",
+    "passed": true,
+    "scenario_id": "v0471-pos-068"
+  },
+  {
+    "check": "contract_and_view_check_069",
+    "passed": true,
+    "scenario_id": "v0471-pos-069"
+  },
+  {
+    "check": "contract_and_view_check_070",
+    "passed": true,
+    "scenario_id": "v0471-pos-070"
+  },
+  {
+    "check": "contract_and_view_check_071",
+    "passed": true,
+    "scenario_id": "v0471-pos-071"
+  },
+  {
+    "check": "contract_and_view_check_072",
+    "passed": true,
+    "scenario_id": "v0471-pos-072"
+  },
+  {
+    "check": "contract_and_view_check_073",
+    "passed": true,
+    "scenario_id": "v0471-pos-073"
+  },
+  {
+    "check": "contract_and_view_check_074",
+    "passed": true,
+    "scenario_id": "v0471-pos-074"
+  },
+  {
+    "check": "contract_and_view_check_075",
+    "passed": true,
+    "scenario_id": "v0471-pos-075"
+  },
+  {
+    "check": "contract_and_view_check_076",
+    "passed": true,
+    "scenario_id": "v0471-pos-076"
+  },
+  {
+    "check": "contract_and_view_check_077",
+    "passed": true,
+    "scenario_id": "v0471-pos-077"
+  },
+  {
+    "check": "contract_and_view_check_078",
+    "passed": true,
+    "scenario_id": "v0471-pos-078"
+  },
+  {
+    "check": "contract_and_view_check_079",
+    "passed": true,
+    "scenario_id": "v0471-pos-079"
+  },
+  {
+    "check": "contract_and_view_check_080",
+    "passed": true,
+    "scenario_id": "v0471-pos-080"
+  },
+  {
+    "check": "contract_and_view_check_081",
+    "passed": true,
+    "scenario_id": "v0471-pos-081"
+  },
+  {
+    "check": "contract_and_view_check_082",
+    "passed": true,
+    "scenario_id": "v0471-pos-082"
+  },
+  {
+    "check": "contract_and_view_check_083",
+    "passed": true,
+    "scenario_id": "v0471-pos-083"
+  },
+  {
+    "check": "contract_and_view_check_084",
+    "passed": true,
+    "scenario_id": "v0471-pos-084"
+  },
+  {
+    "check": "contract_and_view_check_085",
+    "passed": true,
+    "scenario_id": "v0471-pos-085"
+  },
+  {
+    "check": "contract_and_view_check_086",
+    "passed": true,
+    "scenario_id": "v0471-pos-086"
+  },
+  {
+    "check": "contract_and_view_check_087",
+    "passed": true,
+    "scenario_id": "v0471-pos-087"
+  },
+  {
+    "check": "contract_and_view_check_088",
+    "passed": true,
+    "scenario_id": "v0471-pos-088"
+  },
+  {
+    "check": "contract_and_view_check_089",
+    "passed": true,
+    "scenario_id": "v0471-pos-089"
+  },
+  {
+    "check": "contract_and_view_check_090",
+    "passed": true,
+    "scenario_id": "v0471-pos-090"
+  },
+  {
+    "check": "contract_and_view_check_091",
+    "passed": true,
+    "scenario_id": "v0471-pos-091"
+  },
+  {
+    "check": "contract_and_view_check_092",
+    "passed": true,
+    "scenario_id": "v0471-pos-092"
+  },
+  {
+    "check": "contract_and_view_check_093",
+    "passed": true,
+    "scenario_id": "v0471-pos-093"
+  },
+  {
+    "check": "contract_and_view_check_094",
+    "passed": true,
+    "scenario_id": "v0471-pos-094"
+  },
+  {
+    "check": "contract_and_view_check_095",
+    "passed": true,
+    "scenario_id": "v0471-pos-095"
+  },
+  {
+    "check": "contract_and_view_check_096",
+    "passed": true,
+    "scenario_id": "v0471-pos-096"
+  }
+]

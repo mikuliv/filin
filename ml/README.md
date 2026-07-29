@@ -1,5 +1,9 @@
 # Подсистема ML
 
+## Анализ v0.4.7.1
+
+Каталог `ml/reports/v0_4_7_1/` содержит диагностический разбор замороженных прогнозов v0.4.7. Он не переобучает модель и не использует раскрытый набор для приёмки. Автономная проверка: `python -m tools.lab_console.verify_v0471`.
+
 ## Назначение
 
 Features, candidate artifacts, inference/decision policies, experiments, protocols и reports.

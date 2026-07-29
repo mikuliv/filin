@@ -28,6 +28,7 @@ from .models import (CandidateProposalCreate, CandidateProposalReviewComplete,
                      BlindValidationReviewComplete)
 from .candidate_proposals import CandidateProposalService
 from .blind_validations import BlindValidationService
+from .corrective_cycles import failure_analysis
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
@@ -133,6 +134,13 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                        "page": page, "title": "Слепые лабораторные проверки", "breadcrumbs": ["Филин", "Слепые лабораторные проверки"],
                        "validations": blind_validations.list(), "roles": blind_validations.roles()}
             return templates.TemplateResponse(request, "pages/blind_validations.html", context)
+        if page == "failure-analysis":
+            analysis = failure_analysis()
+            context = {**present_page("models", reviews, runner, ui_catalog), "request": request,
+                       "csrf": request.state.session.csrf, "page": page, "title": "Разбор отрицательного результата",
+                       "breadcrumbs": ["Филин", "Разбор отрицательного результата"], "analysis": analysis,
+                       "view_model": "failure_analysis_v0471"}
+            return templates.TemplateResponse(request, "pages/failure_analysis.html", context)
         if page == "documentation":
             context = present_page("dashboard", reviews, runner, ui_catalog)
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
@@ -145,6 +153,25 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         context = present_page(page, reviews, runner, ui_catalog)
         context.update({"request": request, "csrf": request.state.session.csrf})
         return templates.TemplateResponse(request, f"pages/{page}.html", context)
+
+    @app.get("/ui/failure-analysis/{view}", response_class=HTMLResponse)
+    async def failure_analysis_page(request: Request, view: str):
+        try:
+            analysis = failure_analysis(view)
+        except KeyError:
+            raise HTTPException(404)
+        context = {**present_page("models", reviews, runner, ui_catalog), "request": request,
+                   "csrf": request.state.session.csrf, "page": "failure-analysis", "title": "Разбор отрицательного результата",
+                   "breadcrumbs": ["Филин", "Разбор отрицательного результата", view], "analysis": analysis,
+                   "view_model": "failure_analysis_v0471"}
+        return templates.TemplateResponse(request, "pages/failure_analysis.html", context)
+
+    @app.get("/api/console/v1/failure-analysis/{view}")
+    async def failure_analysis_api(view: str):
+        try:
+            return failure_analysis(view)
+        except KeyError:
+            raise HTTPException(404)
 
     @app.get("/ui/incidents/{card_token}", response_class=HTMLResponse)
     async def incident_detail(request: Request, card_token: str):

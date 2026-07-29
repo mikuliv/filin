@@ -1,0 +1,28 @@
+{
+  "browser": {
+    "passed": true,
+    "views": 24
+  },
+  "compileall": true,
+  "documentation": true,
+  "full_regression": {
+    "basetemp": "runtime/pytest-v0471-final",
+    "duration_seconds": 602.28,
+    "failed": 0,
+    "passed": 2054,
+    "warnings": 3
+  },
+  "known_warnings": [
+    "Три известных предупреждения sklearn в тестах v0.3.6 и v0.3.7."
+  ],
+  "licensing": true,
+  "negative": {
+    "rejected": 160,
+    "total": 160
+  },
+  "positive": {
+    "passed": 96,
+    "total": 96
+  },
+  "schema_version": "v0_4_7_1_test_report_v1"
+}

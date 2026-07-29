@@ -1,0 +1,109 @@
+{
+  "dataset_rows_included": false,
+  "entries": [
+    {
+      "path": "browser_acceptance_report.md",
+      "sha256": "bf36b160eeb9e41a25b34baa996d97ca6766264decd83130c058c7d71c0d8124",
+      "size": 626
+    },
+    {
+      "path": "corrective_action_catalog.json",
+      "sha256": "78cec7a39db30f3acee5d9cea4f5ddc5c8c07b02f9c8e956878a5ff2c1fd7cb1",
+      "size": 10574
+    },
+    {
+      "path": "corrective_proposal_readiness_gate.json",
+      "sha256": "58fd2a1e8432d484f71a5ad2162d1ab8e4ec21a01d0e672933a06adec12e7a61",
+      "size": 1519
+    },
+    {
+      "path": "critical_difference_catalog.json",
+      "sha256": "69111832f71bcf7820c16fdcdf1b6ad91083b2bf4557611208d7355d6d04cc6b",
+      "size": 3471
+    },
+    {
+      "path": "error_atlas.json",
+      "sha256": "f11e2ccb6ff2329969c6a093410449f21a7a60643ca6fa63ec14e6dfc55a678e",
+      "size": 24203
+    },
+    {
+      "path": "failure_criterion_catalog.json",
+      "sha256": "62a4482e537dc43bc021d5b299f2ba96cac7606f023dcdd93d189a07317d9b35",
+      "size": 6848
+    },
+    {
+      "path": "feature_availability_assessment.json",
+      "sha256": "9887f6b12b40a80a83325293e88c72a58d0c3201e0ccff50e26331d34ed403ed",
+      "size": 1505
+    },
+    {
+      "path": "feature_shift_assessment.json",
+      "sha256": "e80bba5fc7b21af52306d7ef304c41ed39879358ae7bfc089efa09c5d4837e50",
+      "size": 639
+    },
+    {
+      "path": "known_limitations.md",
+      "sha256": "5520f87d1b3ab63d46534cbed97cc7c36cd48578620f920a8d78b9a1d59ba02b",
+      "size": 626
+    },
+    {
+      "path": "laboratory_autonomy_policy.json",
+      "sha256": "54a3214cb01c0f2bf57d04203ee74bd367f842c067e03820cd028e2128cffb9b",
+      "size": 964
+    },
+    {
+      "path": "manual_review.json",
+      "sha256": "55eb07c52a1619096060685450f7be5db1071e2bb2551c7c96384a166df4540e",
+      "size": 333
+    },
+    {
+      "path": "negative_campaign.json",
+      "sha256": "d87a5c6f1966d197ecda198c16558585ec36767b49da65bb5f67de317125ac1f",
+      "size": 46651
+    },
+    {
+      "path": "positive_campaign.json",
+      "sha256": "a1e6c4e3ef5a77da632fde504aed6b46ea9e056732d418d8325aea21a53110b7",
+      "size": 10076
+    },
+    {
+      "path": "post_blind_knowledge_transfer.json",
+      "sha256": "e9086c89d0ba1ce44cbc5598a0b9818cfa90e7ddd626dad01d7e927ec333c7a7",
+      "size": 950
+    },
+    {
+      "path": "preprocessing_diagnostic_assessment.json",
+      "sha256": "71f3b6cbb5ad4b8c56dfec9776557aee3f95f34910d224b4f0a7396aa365d3cd",
+      "size": 446
+    },
+    {
+      "path": "root_cause_assessments.json",
+      "sha256": "085df2284b748669a0d7472843735494b12b355c73fa150d9fd9225e670aa448",
+      "size": 9292
+    },
+    {
+      "path": "summary.md",
+      "sha256": "36865f314c5a8c9004fc613cdf43e848c88b92f67042d691d0a68602bff1ba99",
+      "size": 774
+    },
+    {
+      "path": "test_report.json",
+      "sha256": "9eb9dfb72869a6672e2c3a0ffe61a82ead9d2e81dcf1dd7e9386be1bd0cd4ffe",
+      "size": 579
+    },
+    {
+      "path": "threshold_diagnostic_assessment.json",
+      "sha256": "922be05ceb71570b74fffeff1f7614c3cfe0e7c0effe8d4cd2aa5444861bff6a",
+      "size": 428
+    },
+    {
+      "path": "v0_4_7_1_policy_result.json",
+      "sha256": "15426442a6313c5aae84087c61989dcf13bf8ecd9949aac514073d48f6a797dc",
+      "size": 1921
+    }
+  ],
+  "frozen_v0_4_7_content_included": false,
+  "model_binary_included": false,
+  "schema_version": "v0_4_7_1_bundle_manifest_v1",
+  "stage": "v0.4.7.1"
+}

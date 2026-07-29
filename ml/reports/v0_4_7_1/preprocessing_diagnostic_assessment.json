@@ -1,0 +1,10 @@
+{
+  "class_mapping_valid": true,
+  "diagnostic_result": "Ошибки сопоставления классов, порядка признаков, типов и входной схемы не обнаружены.",
+  "evaluation_defect_found": false,
+  "feature_order_valid": true,
+  "finite_conversion_valid": true,
+  "input_schema_valid": true,
+  "pipeline_defect_found": false,
+  "schema_version": "preprocessing_diagnostic_assessment_v1"
+}

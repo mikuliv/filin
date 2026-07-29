@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><p class="eyebrow">v0.4.7.1 · только чтение</p><h1>Разбор отрицательного результата</h1>
+<p>Анализ раскрытого набора объясняет прежний результат, но не является новой проверкой и не меняет <code>failed_validation</code>.</p></section>
+<nav class="tabs" aria-label="Представления анализа">{% for item in analysis.views %}<a href="/ui/failure-analysis/{{ item }}" {% if item == analysis.view %}aria-current="page"{% endif %}>{{ item }}</a>{% endfor %}</nav>
+<section class="panel"><h2>{{ analysis.view }}</h2><pre class="raw-block">{{ analysis.data|json_ru }}</pre></section>
+<aside class="notice warning"><strong>Ограничение</strong><p>Обучение, калибровка и приёмка на наборе v0.4.7 запрещены. Регистрация, активация и продвижение отсутствуют.</p></aside>
+<details class="raw-panel"><summary>Исходные данные <small>техническое представление</small></summary><pre>{{ analysis|json_ru }}</pre></details>
+{% endblock %}

@@ -82,6 +82,10 @@
 - [Ручное рассмотрение](research/manual-incident-review.md).
 - [Каталог лабораторных случаев](research/laboratory-case-catalog.md).
 - [Операторский цикл](research/operator-incident-workflow.md).
+- [Анализ причин отрицательной проверки](research/failed-validation-root-cause-analysis.md).
+- [Автономность лабораторной линии](research/laboratory-track-autonomy.md).
+- [Управление данными после раскрытия разметки](research/post-blind-data-governance.md).
+- [Рассмотрение отрицательного результата](getting-started/reviewing-failed-validation.md).
 
 ## Справочники
 

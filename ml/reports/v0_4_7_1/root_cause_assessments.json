@@ -1,0 +1,194 @@
+{
+  "assessments": [
+    {
+      "affected_classes": [
+        "web_probe",
+        "beacon"
+      ],
+      "affected_criteria": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "affected_scenarios": [
+        "web_probe",
+        "beacon"
+      ],
+      "causality_status": "not_experimentally_confirmed",
+      "cause_category": "class_overlap",
+      "cause_id": "cause-feature-overlap",
+      "confidence_level": "strongly_supported",
+      "contradicting_evidence": [
+        "Проверки порядка признаков, типов и схемы пройдены."
+      ],
+      "corrective_action_ids": [
+        "action-hard-negatives",
+        "action-recipe",
+        "action-preserve-threshold"
+      ],
+      "diagnostic_method": "frozen_prediction_and_feature_diagnostics",
+      "diagnostic_result": "Обе модели систематически смешивают web_probe с benign/beacon; ошибки часто имеют высокую уверенность.",
+      "future_validation_method": "new_independent_synthetic_development_and_screening",
+      "limitations": [
+        "Диагностика раскрытого набора не является новой приёмкой."
+      ],
+      "observed_evidence": [
+        "Обе модели систематически смешивают web_probe с benign/beacon; ошибки часто имеют высокую уверенность."
+      ],
+      "schema_version": "root_cause_assessment_v1"
+    },
+    {
+      "affected_classes": [
+        "web_probe"
+      ],
+      "affected_criteria": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "affected_scenarios": [
+        "web_probe"
+      ],
+      "causality_status": "not_experimentally_confirmed",
+      "cause_category": "insufficient_training_coverage",
+      "cause_id": "cause-coverage",
+      "confidence_level": "strongly_supported",
+      "contradicting_evidence": [
+        "Проверки порядка признаков, типов и схемы пройдены."
+      ],
+      "corrective_action_ids": [
+        "action-expand-web-probe",
+        "action-rebalance"
+      ],
+      "diagnostic_method": "frozen_prediction_and_feature_diagnostics",
+      "diagnostic_result": "Нулевая полнота web_probe у обеих моделей при полной поддержке класса указывает на недостаточное покрытие вариантов поведения.",
+      "future_validation_method": "new_independent_synthetic_development_and_screening",
+      "limitations": [
+        "Диагностика раскрытого набора не является новой приёмкой."
+      ],
+      "observed_evidence": [
+        "Нулевая полнота web_probe у обеих моделей при полной поддержке класса указывает на недостаточное покрытие вариантов поведения."
+      ],
+      "schema_version": "root_cause_assessment_v1"
+    },
+    {
+      "affected_classes": [
+        "web_probe",
+        "beacon"
+      ],
+      "affected_criteria": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "affected_scenarios": [
+        "web_probe",
+        "beacon"
+      ],
+      "causality_status": "not_experimentally_confirmed",
+      "cause_category": "insufficient_scenario_diversity",
+      "cause_id": "cause-scenario-diversity",
+      "confidence_level": "partially_supported",
+      "contradicting_evidence": [
+        "Проверки порядка признаков, типов и схемы пройдены."
+      ],
+      "corrective_action_ids": [
+        "action-expand-web-probe"
+      ],
+      "diagnostic_method": "frozen_prediction_and_feature_diagnostics",
+      "diagnostic_result": "Ошибки повторяются в нескольких сессиях и временных участках, но причинность разнообразия не доказана экспериментом.",
+      "future_validation_method": "new_independent_synthetic_development_and_screening",
+      "limitations": [
+        "Диагностика раскрытого набора не является новой приёмкой."
+      ],
+      "observed_evidence": [
+        "Ошибки повторяются в нескольких сессиях и временных участках, но причинность разнообразия не доказана экспериментом."
+      ],
+      "schema_version": "root_cause_assessment_v1"
+    },
+    {
+      "affected_classes": [
+        "web_probe"
+      ],
+      "affected_criteria": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "affected_scenarios": [
+        "web_probe"
+      ],
+      "causality_status": "not_experimentally_confirmed",
+      "cause_category": "feature_contract_limitation",
+      "cause_id": "cause-feature-contract",
+      "confidence_level": "partially_supported",
+      "contradicting_evidence": [
+        "Проверки порядка признаков, типов и схемы пройдены."
+      ],
+      "corrective_action_ids": [
+        "action-preserve-contract"
+      ],
+      "diagnostic_method": "frozen_prediction_and_feature_diagnostics",
+      "diagnostic_result": "Общий отказ двух разных моделей допускает недостаточную разделяющую способность текущих групп признаков; изменение контракта пока не требуется.",
+      "future_validation_method": "new_independent_synthetic_development_and_screening",
+      "limitations": [
+        "Диагностика раскрытого набора не является новой приёмкой."
+      ],
+      "observed_evidence": [
+        "Общий отказ двух разных моделей допускает недостаточную разделяющую способность текущих групп признаков; изменение контракта пока не требуется."
+      ],
+      "schema_version": "root_cause_assessment_v1"
+    },
+    {
+      "affected_classes": [
+        "web_probe",
+        "beacon"
+      ],
+      "affected_criteria": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "affected_scenarios": [
+        "web_probe",
+        "beacon"
+      ],
+      "causality_status": "not_experimentally_confirmed",
+      "cause_category": "synthetic_generator_artifact",
+      "cause_id": "cause-generator",
+      "confidence_level": "hypothesis_only",
+      "contradicting_evidence": [
+        "Проверки порядка признаков, типов и схемы пройдены."
+      ],
+      "corrective_action_ids": [
+        "action-generator-audit"
+      ],
+      "diagnostic_method": "frozen_prediction_and_feature_diagnostics",
+      "diagnostic_result": "Совершенные результаты отдельных классов и общий провал web_probe могут зависеть от формы синтетических сценариев; независимая проверка отсутствует.",
+      "future_validation_method": "new_independent_synthetic_development_and_screening",
+      "limitations": [
+        "Диагностика раскрытого набора не является новой приёмкой."
+      ],
+      "observed_evidence": [
+        "Совершенные результаты отдельных классов и общий провал web_probe могут зависеть от формы синтетических сценариев; независимая проверка отсутствует."
+      ],
+      "schema_version": "root_cause_assessment_v1"
+    }
+  ],
+  "schema_version": "root_cause_assessment_catalog_v1"
+}

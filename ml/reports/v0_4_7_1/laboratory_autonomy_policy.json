@@ -1,0 +1,23 @@
+{
+  "external_applicability_claim_allowed": false,
+  "external_review_optional_for_internal_progress": true,
+  "external_review_required_for_external_applicability_claim": true,
+  "external_review_required_for_independent_claim": true,
+  "external_reviewer_required_for_internal_development": false,
+  "independent_validation_claim_allowed": false,
+  "internal_development_allowed": true,
+  "laboratory_next_stage": "v0.4.7.2",
+  "mainline_external_review_required": true,
+  "mainline_next_stage": "v0.3.19",
+  "new_internal_blind_validation_allowed": true,
+  "new_proposal_lineage_allowed": true,
+  "new_training_allowed": true,
+  "old_blind_pack_reuse_allowed": false,
+  "old_proposal_registration_allowed": false,
+  "old_proposal_result": "failed_validation",
+  "old_proposal_retraining_allowed": false,
+  "production_claim_allowed": false,
+  "root_cause_analysis_allowed": true,
+  "schema_version": "laboratory_autonomy_policy_v1",
+  "v0_4_8_allowed": false
+}

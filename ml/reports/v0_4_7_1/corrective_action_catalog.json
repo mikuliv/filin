@@ -1,0 +1,229 @@
+{
+  "actions": [
+    {
+      "action_category": "add_scenario_variants",
+      "action_id": "action-expand-web-probe",
+      "conflicts": [],
+      "description": "Создать новые независимые варианты web_probe и сходных безопасных обменов.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": true,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-coverage",
+        "cause-scenario-diversity"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "rebalance_training_population",
+      "action_id": "action-rebalance",
+      "conflicts": [],
+      "description": "Сбалансировать новые группы по классам и семействам сценариев без строк v0.4.7.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": true,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-coverage"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "expand_training_coverage",
+      "action_id": "action-hard-negatives",
+      "conflicts": [],
+      "description": "Добавить независимые трудные benign/beacon варианты для проверки границ классов.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": true,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-feature-overlap"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "revise_estimator_parameters",
+      "action_id": "action-recipe",
+      "conflicts": [],
+      "description": "Заранее зафиксировать один более ёмкий рецепт без автоматического поиска.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": false,
+      "required_feature_changes": false,
+      "required_recipe_changes": true,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-feature-overlap"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "preserve_without_change",
+      "action_id": "action-preserve-contract",
+      "conflicts": [],
+      "description": "Сохранить network_features_v2 и отдельно контролировать доступность и порядок признаков.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": false,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-feature-contract"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-13-active_attack_macro_recall",
+        "blind-gate-14-proposal_attack_macro_recall",
+        "blind-gate-15-active_attack_macro_f1",
+        "blind-gate-16-proposal_attack_macro_f1",
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "investigate_further",
+      "action_id": "action-generator-audit",
+      "conflicts": [],
+      "description": "Использовать новые seeds, параметры и временные структуры и проверить отсутствие артефактов генератора.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": true,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "mandatory",
+      "required_data_changes": false,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-generator"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    },
+    {
+      "action_category": "preserve_without_change",
+      "action_id": "action-preserve-threshold",
+      "conflicts": [],
+      "description": "Не подбирать пороги по раскрытому набору; использовать заранее объявленный argmax и нулевую автоматическую калибровку.",
+      "expected_effect": "Проверяемое уменьшение прежних ошибок на новых синтетических данных.",
+      "implementation_scope": "v0.4.7.2",
+      "limitations": [
+        "Набор v0.4.7 не используется для обучения или приёмки."
+      ],
+      "mandatory": false,
+      "possible_side_effects": [
+        "Возможное снижение benign recall или рост ложных срабатываний."
+      ],
+      "priority": "high",
+      "required_data_changes": false,
+      "required_feature_changes": false,
+      "required_recipe_changes": false,
+      "required_threshold_changes": false,
+      "schema_version": "corrective_action_v1",
+      "source_cause_ids": [
+        "cause-feature-overlap"
+      ],
+      "source_criterion_ids": [
+        "blind-gate-17-active_worst_attack_recall",
+        "blind-gate-18-proposal_worst_attack_recall"
+      ],
+      "validation_method": "new_internal_screening_after_freeze"
+    }
+  ],
+  "schema_version": "corrective_action_catalog_v1"
+}

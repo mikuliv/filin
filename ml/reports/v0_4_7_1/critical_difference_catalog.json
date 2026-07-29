@@ -1,0 +1,102 @@
+{
+  "difference_count": 6,
+  "differences": [
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-13-active_attack_macro_recall",
+      "critical": true,
+      "difference_id": "critical:blind-gate-13-active_attack_macro_recall",
+      "dimension": "active_attack_macro_recall",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    },
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-14-proposal_attack_macro_recall",
+      "critical": true,
+      "difference_id": "critical:blind-gate-14-proposal_attack_macro_recall",
+      "dimension": "proposal_attack_macro_recall",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    },
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-15-active_attack_macro_f1",
+      "critical": true,
+      "difference_id": "critical:blind-gate-15-active_attack_macro_f1",
+      "dimension": "active_attack_macro_f1",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    },
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-16-proposal_attack_macro_f1",
+      "critical": true,
+      "difference_id": "critical:blind-gate-16-proposal_attack_macro_f1",
+      "dimension": "proposal_attack_macro_f1",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    },
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-17-active_worst_attack_recall",
+      "critical": true,
+      "difference_id": "critical:blind-gate-17-active_worst_attack_recall",
+      "dimension": "active_worst_attack_recall",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    },
+    {
+      "cause_assessment_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ],
+      "criterion_id": "blind-gate-18-proposal_worst_attack_recall",
+      "critical": true,
+      "difference_id": "critical:blind-gate-18-proposal_worst_attack_recall",
+      "dimension": "proposal_worst_attack_recall",
+      "evidence_references": [
+        "ml/reports/v0_4_7/blind_acceptance_gate.json",
+        "ml/reports/v0_4_7/evaluation_bundle.json"
+      ],
+      "schema_version": "critical_difference_descriptor_v1",
+      "status": "analyzed"
+    }
+  ],
+  "schema_version": "critical_difference_catalog_v1"
+}

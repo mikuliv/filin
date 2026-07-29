@@ -1,0 +1,18 @@
+{
+  "causal_claim": false,
+  "class_shift_observed": true,
+  "comparison": "v0.4.6 development versus v0.4.7 revealed control",
+  "feature_count": 51,
+  "limitations": [
+    "Диагностика распределений не используется для выбора по показателям раскрытого набора."
+  ],
+  "method": "frozen_summary_and_robust_range_diagnostic",
+  "notable_features": [
+    "robust_z_events_per_second",
+    "robust_z_flows_per_second",
+    "request_spacing_cv",
+    "periodicity_stability"
+  ],
+  "scenario_shift_observed": true,
+  "schema_version": "feature_shift_assessment_v1"
+}

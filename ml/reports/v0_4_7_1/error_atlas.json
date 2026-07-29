@@ -1,0 +1,781 @@
+{
+  "abstention_count": 0,
+  "active_error_count": 1373,
+  "duplicate_prediction_count": 0,
+  "error_case_count": 1511,
+  "groups": [
+    {
+      "active_error_count": 5,
+      "class_support": {
+        "beacon": 143
+      },
+      "confidence_summary": {
+        "active_mean": 0.978256238763417,
+        "high_confidence_error_count": 5,
+        "proposal_mean": 0.47556441387705656
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "beacon",
+      "group_kind": "class",
+      "population_count": 143,
+      "proposal_error_count": 143,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 5,
+      "stable_error_group_id": "errgrp:999221d9fc933dd4421d",
+      "suspected_cause_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ]
+    },
+    {
+      "active_error_count": 684,
+      "class_support": {
+        "low_rate_dos": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.81215683748337
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "low_rate_dos",
+      "group_kind": "class",
+      "population_count": 684,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:a8135035c5dcf84e2d3d",
+      "suspected_cause_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ]
+    },
+    {
+      "active_error_count": 684,
+      "class_support": {
+        "web_probe": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 684,
+        "proposal_mean": 0.6775344040438442
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "web_probe",
+      "group_kind": "class",
+      "population_count": 684,
+      "proposal_error_count": 684,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 684,
+      "stable_error_group_id": "errgrp:c166ceb0eb649dc7b654",
+      "suspected_cause_ids": [
+        "cause-feature-overlap",
+        "cause-coverage"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "web_probe": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 171,
+        "proposal_mean": 0.6702138198713684
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-00238d77f11127573d23",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 171,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 171,
+      "stable_error_group_id": "errgrp:0d9322df4fd42337471e",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 1,
+      "class_support": {
+        "beacon": 25
+      },
+      "confidence_summary": {
+        "active_mean": 0.9759522080702194,
+        "high_confidence_error_count": 1,
+        "proposal_mean": 0.4781641279899486
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-1da5845b98dbf65705ee",
+      "group_kind": "session",
+      "population_count": 25,
+      "proposal_error_count": 25,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 1,
+      "stable_error_group_id": "errgrp:ce4eea0ff20b3be8365a",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 0,
+      "class_support": {
+        "beacon": 35
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106222,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.4575108436486396
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-2c603e88e60bbfa3d841",
+      "group_kind": "session",
+      "population_count": 35,
+      "proposal_error_count": 35,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:fb1951560dc278da8ad3",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "low_rate_dos": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.7966693409112492
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-353d02c401fd2b7c564a",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:42312c9dabd8f25114ed",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "low_rate_dos": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.8113417060848372
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-38d00d948394dcef0dc5",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:4d65a825ab919a59d364",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 1,
+      "class_support": {
+        "beacon": 42
+      },
+      "confidence_summary": {
+        "active_mean": 0.9833610686722872,
+        "high_confidence_error_count": 1,
+        "proposal_mean": 0.4698044652803712
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-423e18110458a50dd30c",
+      "group_kind": "session",
+      "population_count": 42,
+      "proposal_error_count": 42,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 1,
+      "stable_error_group_id": "errgrp:8aa441e449cf588873a4",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "web_probe": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 171,
+        "proposal_mean": 0.6947608942406995
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-4884bf4466ca0fa5a791",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 171,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 171,
+      "stable_error_group_id": "errgrp:1105543fe1240e9eae10",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "low_rate_dos": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.8178627572730985
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-4fc3cb945f2a6294310c",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:502602b489e437fb7b33",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "low_rate_dos": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.8227535456642945
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-6759c14edec3da0d2580",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:15c4b7501e66031caa56",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "web_probe": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 171,
+        "proposal_mean": 0.6700116657933626
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-81ccddb743f56c7b833d",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 171,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 171,
+      "stable_error_group_id": "errgrp:e09947248518ddc2d602",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 3,
+      "class_support": {
+        "beacon": 41
+      },
+      "confidence_summary": {
+        "active_mean": 0.960773079031837,
+        "high_confidence_error_count": 3,
+        "proposal_mean": 0.49529124183396106
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-b29cee2216c42c5da4f1",
+      "group_kind": "session",
+      "population_count": 41,
+      "proposal_error_count": 41,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 3,
+      "stable_error_group_id": "errgrp:994b299a9325d3190d9d",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 171,
+      "class_support": {
+        "web_probe": 171
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 171,
+        "proposal_mean": 0.6751512362699461
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "s-fb635ad8041b17581898",
+      "group_kind": "session",
+      "population_count": 171,
+      "proposal_error_count": 171,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 1,
+      "shared_error_count": 171,
+      "stable_error_group_id": "errgrp:050c9ffd59207b875693",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 438,
+      "class_support": {
+        "low_rate_dos": 438
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.7118956754638516
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "medium",
+      "group_kind": "confidence",
+      "population_count": 438,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:d1b742688090a5b7ee93",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 935,
+      "class_support": {
+        "beacon": 143,
+        "low_rate_dos": 246,
+        "web_probe": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.8784588421262233,
+        "high_confidence_error_count": 689,
+        "proposal_mean": 0.7224084012449827
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "high",
+      "group_kind": "confidence",
+      "population_count": 1073,
+      "proposal_error_count": 827,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 12,
+      "shared_error_count": 689,
+      "stable_error_group_id": "errgrp:53c744e6027a5a0025c7",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 684,
+      "class_support": {
+        "low_rate_dos": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.4984726924853797,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.81215683748337
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "active_only",
+      "group_kind": "error_kind",
+      "population_count": 684,
+      "proposal_error_count": 0,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:8859de27a430ff3ca491",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 0,
+      "class_support": {
+        "beacon": 138
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 0,
+        "proposal_mean": 0.4575108436486396
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "proposal_only",
+      "group_kind": "error_kind",
+      "population_count": 138,
+      "proposal_error_count": 138,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 4,
+      "shared_error_count": 0,
+      "stable_error_group_id": "errgrp:b436163e9a13b5e72931",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 689,
+      "class_support": {
+        "beacon": 5,
+        "web_probe": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.9909356529555416,
+        "high_confidence_error_count": 689,
+        "proposal_mean": 0.6796846837835939
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "shared",
+      "group_kind": "error_kind",
+      "population_count": 689,
+      "proposal_error_count": 689,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 7,
+      "shared_error_count": 689,
+      "stable_error_group_id": "errgrp:62546372544d45b63651",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 553,
+      "class_support": {
+        "beacon": 138,
+        "web_probe": 553
+      },
+      "confidence_summary": {
+        "active_mean": 0.9942564519106221,
+        "high_confidence_error_count": 553,
+        "proposal_mean": 0.5793011605363041
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "false_negative",
+      "group_kind": "error_kind",
+      "population_count": 691,
+      "proposal_error_count": 691,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 8,
+      "shared_error_count": 553,
+      "stable_error_group_id": "errgrp:45ea49d83b04c2810c87",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 689,
+      "class_support": {
+        "auth_failures": 684,
+        "beacon": 143,
+        "low_rate_dos": 684,
+        "port_scan": 684
+      },
+      "confidence_summary": {
+        "active_mean": 0.5416264824141912,
+        "high_confidence_error_count": 5,
+        "proposal_mean": 0.9016703695877044
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "boundary",
+      "group_kind": "error_kind",
+      "population_count": 2195,
+      "proposal_error_count": 143,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 16,
+      "shared_error_count": 5,
+      "stable_error_group_id": "errgrp:0ba3acd4dc3daba52835",
+      "suspected_cause_ids": [
+        "cause-feature-overlap"
+      ]
+    },
+    {
+      "active_error_count": 89,
+      "class_support": {
+        "beacon": 10,
+        "low_rate_dos": 44,
+        "web_probe": 44
+      },
+      "confidence_summary": {
+        "active_mean": 0.7669902120053085,
+        "high_confidence_error_count": 45,
+        "proposal_mean": 0.7347406362252008
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "early",
+      "group_kind": "temporal_segment",
+      "population_count": 98,
+      "proposal_error_count": 54,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 12,
+      "shared_error_count": 45,
+      "stable_error_group_id": "errgrp:d70f89020435da402094",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 193,
+      "class_support": {
+        "beacon": 15,
+        "low_rate_dos": 96,
+        "web_probe": 96
+      },
+      "confidence_summary": {
+        "active_mean": 0.7621170944186736,
+        "high_confidence_error_count": 97,
+        "proposal_mean": 0.7345352404486333
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "middle",
+      "group_kind": "temporal_segment",
+      "population_count": 207,
+      "proposal_error_count": 111,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 12,
+      "shared_error_count": 97,
+      "stable_error_group_id": "errgrp:d638d8de471c5d82d720",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    },
+    {
+      "active_error_count": 1091,
+      "class_support": {
+        "beacon": 118,
+        "low_rate_dos": 544,
+        "web_probe": 544
+      },
+      "confidence_summary": {
+        "active_mean": 0.7694810096093269,
+        "high_confidence_error_count": 547,
+        "proposal_mean": 0.7155067522936125
+      },
+      "evidence_references": [
+        "ml/reports/v0_4_7/evaluation_bundle.json",
+        "runtime/lab_console/v0_4_7/validations/<token>"
+      ],
+      "feature_availability_summary": {
+        "contract": "network_features_v2",
+        "missing_value_count": 0
+      },
+      "group_key": "late",
+      "group_kind": "temporal_segment",
+      "population_count": 1206,
+      "proposal_error_count": 662,
+      "schema_version": "blind_validation_error_group_v1",
+      "session_support": 12,
+      "shared_error_count": 547,
+      "stable_error_group_id": "errgrp:9a2abf260c311ebdcd6d",
+      "suspected_cause_ids": [
+        "cause-scenario-diversity"
+      ]
+    }
+  ],
+  "invalid_prediction_count": 0,
+  "missing_prediction_count": 0,
+  "population_count": 4104,
+  "proposal_error_count": 827,
+  "rebuilt_deterministically": true,
+  "schema_version": "blind_validation_error_atlas_v1",
+  "shared_error_count": 689
+}

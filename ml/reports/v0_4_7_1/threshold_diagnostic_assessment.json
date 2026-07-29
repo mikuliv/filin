@@ -1,0 +1,8 @@
+{
+  "calibration_performed": false,
+  "diagnostic_result": "Ошибки проблемного класса часто уверенные; одна только смена порога не имеет достаточного обоснования.",
+  "high_confidence_error_count": 689,
+  "official_metrics_changed": false,
+  "schema_version": "threshold_diagnostic_assessment_v1",
+  "threshold_change_recommended": false
+}
