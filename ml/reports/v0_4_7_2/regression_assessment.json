@@ -1,0 +1,7 @@
+{
+  "active_comparison_count": 1,
+  "new_critical_regression_count": 0,
+  "previous_proposal_comparison_count": 1,
+  "schema_version": "corrective_regression_assessment_v1",
+  "unexplained_regression_count": 0
+}

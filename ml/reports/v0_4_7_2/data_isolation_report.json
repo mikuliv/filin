@@ -1,0 +1,94 @@
+{
+  "checks": [
+    {
+      "check_id": "isolation-01",
+      "domain": "sha256",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-02",
+      "domain": "semantic_sha256",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-03",
+      "domain": "session_id",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-04",
+      "domain": "capture_id",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-05",
+      "domain": "scenario_id",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-06",
+      "domain": "generator_seed",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-07",
+      "domain": "normalized_row",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-08",
+      "domain": "temporal_sequence",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-09",
+      "domain": "network_structure",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-10",
+      "domain": "derived_copy",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    },
+    {
+      "check_id": "isolation-11",
+      "domain": "scenario_parameters",
+      "overlap_count": 0,
+      "schema_version": "corrective_data_isolation_check_v1",
+      "status": "passed"
+    }
+  ],
+  "compared_sources": [
+    "v0.4.6 development",
+    "v0.4.7 revealed control",
+    "previous blind and laboratory packages"
+  ],
+  "gate_id": "isolation-v0472-r1",
+  "new_object_count": 5760,
+  "new_session_count": 48,
+  "old_blind_pack_object_reuse_count": 0,
+  "old_blind_pack_seed_reuse_count": 0,
+  "old_blind_pack_session_reuse_count": 0,
+  "schema_version": "corrective_data_isolation_gate_v1",
+  "status": "passed"
+}

@@ -1,0 +1,229 @@
+{
+  "all_mandatory_passed": true,
+  "failed_count": 0,
+  "frozen_before_training": true,
+  "gate_id": "corrective-admission-v0472-r1",
+  "hidden_weight_count": 0,
+  "not_assessable_count": 0,
+  "passed_count": 24,
+  "results": [
+    {
+      "criterion_id": "corrective-gate-01-data_isolation",
+      "mandatory": true,
+      "name": "data_isolation",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-02-split_frozen",
+      "mandatory": true,
+      "name": "split_frozen",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-03-recipe_frozen",
+      "mandatory": true,
+      "name": "recipe_frozen",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-04-reproducibility",
+      "mandatory": true,
+      "name": "reproducibility",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-05-artifact_integrity",
+      "mandatory": true,
+      "name": "artifact_integrity",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-06-proposal_frozen_before_screening",
+      "mandatory": true,
+      "name": "proposal_frozen_before_screening",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-07-benign_recall",
+      "mandatory": true,
+      "name": "benign_recall",
+      "observed": 1.0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0.98
+    },
+    {
+      "criterion_id": "corrective-gate-08-false_positive_rate",
+      "mandatory": true,
+      "name": "false_positive_rate",
+      "observed": 0.0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0.02
+    },
+    {
+      "criterion_id": "corrective-gate-09-attack_macro_recall",
+      "mandatory": true,
+      "name": "attack_macro_recall",
+      "observed": 1.0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "corrective-gate-10-attack_macro_f1",
+      "mandatory": true,
+      "name": "attack_macro_f1",
+      "observed": 1.0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0.95
+    },
+    {
+      "criterion_id": "corrective-gate-11-worst_attack_recall",
+      "mandatory": true,
+      "name": "worst_attack_recall",
+      "observed": 1.0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0.9
+    },
+    {
+      "criterion_id": "corrective-gate-12-missing_predictions",
+      "mandatory": true,
+      "name": "missing_predictions",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-13-duplicate_predictions",
+      "mandatory": true,
+      "name": "duplicate_predictions",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-14-invalid_predictions",
+      "mandatory": true,
+      "name": "invalid_predictions",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-15-old_pack_object_reuse",
+      "mandatory": true,
+      "name": "old_pack_object_reuse",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-16-old_pack_session_reuse",
+      "mandatory": true,
+      "name": "old_pack_session_reuse",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-17-old_pack_seed_reuse",
+      "mandatory": true,
+      "name": "old_pack_seed_reuse",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-18-previous_failures_remaining",
+      "mandatory": true,
+      "name": "previous_failures_remaining",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-19-new_critical_regressions",
+      "mandatory": true,
+      "name": "new_critical_regressions",
+      "observed": 0,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": 0
+    },
+    {
+      "criterion_id": "corrective-gate-20-manual_review",
+      "mandatory": true,
+      "name": "manual_review",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-21-candidate_registry_unchanged",
+      "mandatory": true,
+      "name": "candidate_registry_unchanged",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-22-active_candidate_unchanged",
+      "mandatory": true,
+      "name": "active_candidate_unchanged",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-23-old_proposal_unchanged",
+      "mandatory": true,
+      "name": "old_proposal_unchanged",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    },
+    {
+      "criterion_id": "corrective-gate-24-backend_unchanged",
+      "mandatory": true,
+      "name": "backend_unchanged",
+      "observed": true,
+      "schema_version": "corrective_admission_criterion_v1",
+      "status": "passed",
+      "threshold": true
+    }
+  ],
+  "schema_version": "corrective_admission_gate_v1",
+  "winner_selected": false
+}

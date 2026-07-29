@@ -1,0 +1,11 @@
+{
+  "artifact_id": "artifact:v0472:6b5297001c5e0538",
+  "artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+  "committed": false,
+  "distribution_allowed": false,
+  "license_status": "separate_license_required",
+  "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+  "relative_runtime_locator": "models/train-v0472-full-a.joblib",
+  "runtime_only": true,
+  "schema_version": "corrective_model_artifact_v1"
+}

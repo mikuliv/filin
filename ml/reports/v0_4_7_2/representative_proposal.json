@@ -1,0 +1,44 @@
+{
+  "abstention_policy": "no_abstention_predeclared",
+  "class_contract": "network_classes_v2",
+  "comparison_status": "completed",
+  "corrective_gate_status": "passed",
+  "data_catalog_binding": "corrective-data:v0472:8e32967452e4949c",
+  "data_isolation_assessment": "passed",
+  "feature_contract": "network_features_v2",
+  "final_decision": "admitted_to_new_blind_validation",
+  "frozen": true,
+  "frozen_before_internal_screening": true,
+  "internal_screening_status": "completed",
+  "limitations": [
+    "Только локальные синтетические данные.",
+    "Не является независимой проверкой."
+  ],
+  "model_artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+  "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+  "proposal_id": "proposal:v0472:f02d06231e65df6f",
+  "proposal_manifest_sha256": "e89663c6c02f6b906fe306a83d6a1407e43fedf1e0359ad364e93fd63effc54d",
+  "proposal_semantic_sha256": "9bf600b09bccb43fd22333a459340a10161ae54d1bd1a054ced1e9d25a782c0d",
+  "proposal_version": 1,
+  "recipe_binding": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+  "reproducibility_assessment": "byte_identical",
+  "schema_version": "corrective_candidate_proposal_v1",
+  "source_corrective_actions": [
+    "action-expand-web-probe",
+    "action-rebalance",
+    "action-hard-negatives",
+    "action-recipe",
+    "action-preserve-contract",
+    "action-generator-audit",
+    "action-preserve-threshold"
+  ],
+  "source_failure_analysis": "v0.4.7.1",
+  "source_stage": "v0.4.7.2",
+  "split_binding": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+  "threshold_contract": "argmax_multiclass_v0472_r1",
+  "training_run_bindings": [
+    "train-v0472-full-a",
+    "train-v0472-full-b",
+    "train-v0472-recovered"
+  ]
+}

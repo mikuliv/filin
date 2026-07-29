@@ -1,0 +1,13 @@
+{
+  "active_candidate_change_allowed": false,
+  "admitted_to_new_blind_validation": true,
+  "candidate_registration_allowed": false,
+  "decision": "admitted_to_new_blind_validation",
+  "external_validation_claim": false,
+  "independent_validation_claim": false,
+  "next_allowed_action": "prepare_v0_4_7_3_new_blind_pack",
+  "proposal_id": "proposal:v0472:f02d06231e65df6f",
+  "schema_version": "corrective_proposal_decision_v1",
+  "v0_4_7_3_allowed": true,
+  "v0_4_8_allowed": false
+}

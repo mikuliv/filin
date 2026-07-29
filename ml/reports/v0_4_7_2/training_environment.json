@@ -1,0 +1,15 @@
+{
+  "laboratory_only": true,
+  "machine": "AMD64",
+  "network": false,
+  "packages": {
+    "joblib": "1.5.3",
+    "numpy": "2.2.6",
+    "pandas": "3.0.0",
+    "scikit-learn": "1.8.0"
+  },
+  "platform": "Windows",
+  "python": "3.13.9",
+  "schema_version": "corrective_training_environment_v1",
+  "shell": false
+}

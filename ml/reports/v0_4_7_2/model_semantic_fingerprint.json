@@ -1,0 +1,18 @@
+{
+  "class_order": [
+    "auth_failures",
+    "beacon",
+    "benign",
+    "low_rate_dos",
+    "port_scan",
+    "web_probe"
+  ],
+  "estimator_family": "HistGradientBoostingClassifier",
+  "feature_order_sha256": "9049b8f5da69617ba415cb3f87184c49be849a22f8287ddc9172c86962a790f9",
+  "method": "parameters_structure_predictions_v1",
+  "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+  "n_iter": 64,
+  "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+  "schema_version": "corrective_model_semantic_fingerprint_v1",
+  "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800"
+}

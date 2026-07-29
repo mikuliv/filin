@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 348,
-    "protected_count": 72,
-    "current_count": 252,
-    "historical_count": 96,
+    "document_count": 357,
+    "protected_count": 78,
+    "current_count": 255,
+    "historical_count": 102,
     "generated_count": 6,
-    "created_count": 87,
+    "created_count": 96,
     "rewritten_count": 142,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -167,7 +167,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "e81be55934e0de9c2084001c2d9f9a42c730e54ba487acff801a2791dfc39391"
+      "sha256_after": "7b5f93a066c8089bf2638d2235dce28c09a0b8eca5dec033540ba8ba68ff1f3c"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "df5fe6e2535853c9e415b872252ecae0de00183c8ece32ed2036a958a96d2e4e"
+      "sha256_after": "62404fb29a104c037c9d299918250491870bfce23435581b47b176932d7829b8"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1859,11 +1859,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 7,
-      "outgoing_link_count": 237,
+      "outgoing_link_count": 273,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3baa92ef57bde83caffd8e77888ae4bfd1a3239d6af043f3cf055b8969effc48",
-      "sha256_after": "805b14331eb16520ff64be54543b7892135837695d36ea8ce3b4ce257b95f556"
+      "sha256_after": "8c8dc425aa447b2189cd323d5e0d0eabc291c7a7fb50e41b7b1ab2f9b02e1392"
     },
     {
       "path": "docs/contracts/operator_projection_v1.md",
@@ -3768,6 +3768,43 @@
       "sha256_after": "08aac8d12965216232e342ce73d1d810bdf922a4b5a1897735970e81220527c3"
     },
     {
+      "path": "docs/experiments/v0_4_7_2.md",
+      "title": "v0.4.7.2 — новое корректирующее предложение",
+      "category": "Историческое описание",
+      "doc_schema": "filin_document_v2",
+      "document_type": "history",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.2",
+      "last_relevant_stage": "v0.4.7.2",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 1,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "5a094204c1fdd9659c04b81799ffbb6610ffbd092b93615c378298918a940d5c"
+    },
+    {
       "path": "docs/external_review/README.md",
       "title": "Пакет независимой проверки",
       "category": "Frozen evidence",
@@ -4785,6 +4822,43 @@
       "actual_action": "created",
       "sha256_before": null,
       "sha256_after": "998c364d9960828a6ecaf82786627e505be1c4e576e24209bf00703e11bacf0d"
+    },
+    {
+      "path": "docs/getting-started/preparing-corrective-candidate-proposal.md",
+      "title": "Подготовка корректирующего предложения",
+      "category": "Руководство разработчика",
+      "doc_schema": "filin_document_v2",
+      "document_type": "guide",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "candidate",
+      "last_relevant_stage": "candidate",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "c3de8c7eb83be7309543ea461c371ac99f7652d627ba2463018f9d46b75f40c1"
     },
     {
       "path": "docs/getting-started/repository-layout.md",
@@ -6284,11 +6358,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 2,
-      "outgoing_link_count": 99,
+      "outgoing_link_count": 102,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "0b1ee4647b46bb54b028bb1dab814fb07eb3a315a40a62fe36f8e31c001b37d9",
-      "sha256_after": "465c50c545b2de0e8a3b3e4c6b2db25b430b75ead791156cab623179a9a8398c"
+      "sha256_after": "417fea7b212e800e98f57d26d72d4ba5636a74b7c77e570051948d4c74925205"
     },
     {
       "path": "docs/lab-stand.md",
@@ -7665,11 +7739,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 6,
-      "outgoing_link_count": 28,
+      "outgoing_link_count": 29,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "00317fb682c4c2dd9e80753cd06c0d269b656f551fd2d3f6fd695147a5060a7e",
-      "sha256_after": "a99838b7c8fec307ec71919cbad9c7f71158266c11997c1d0e147304d4c79e26"
+      "sha256_after": "7b7b2be4ad10b2f109c6da1d9d822789dca595a5d6cadb2e32a0e51836bbf4b4"
     },
     {
       "path": "docs/reference/artifact-types.md",
@@ -8159,11 +8233,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 11,
-      "outgoing_link_count": 103,
+      "outgoing_link_count": 108,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f493cadaf5eef1a7a6fcb73e5b73751958a87feb63f36ad9e7545b608ec0324e",
-      "sha256_after": "a46c5944bda7ace8d6d9660e7be8ffd09867809ae57056ca8adf0bd8ef5635c4"
+      "sha256_after": "cee7e2739a8a110488bc8a132697d7fde280de7583ac5021d132f2dfcab3a230"
     },
     {
       "path": "docs/repository-migration.md",
@@ -8548,6 +8622,43 @@
       "actual_action": "unchanged",
       "sha256_before": "11f699cb1309dfc02f6e62fbfe429b271bc13430f7e54dfe6ff2d565701dff24",
       "sha256_after": "11f699cb1309dfc02f6e62fbfe429b271bc13430f7e54dfe6ff2d565701dff24"
+    },
+    {
+      "path": "docs/research/corrective-candidate-development.md",
+      "title": "Разработка корректирующего предложения кандидата",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "candidate",
+      "last_relevant_stage": "candidate",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "8a24f8606399166990c4fd25116bb25ae7d3beecab109505c39c1a4a756de1cb"
     },
     {
       "path": "docs/research/evaluation-principles.md",
@@ -9412,7 +9523,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6316b247fd5f2676f97bf7c924742a511cbd20d432b250b4b3ed83db2a7bcbd6",
-      "sha256_after": "5ba4b4ce055d72de64c436f33fb71cd5c01abf81f539e0fd40360d22f866d813"
+      "sha256_after": "816ad5c5e847314ef9b362ad397817b7a5917a7891cfd33a46afe9cba004f179"
     },
     {
       "path": "docs/safety-model.md",
@@ -9646,7 +9757,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "4598defaa5df271df89247abdd91f34c636b1491a9ddf12d62fdbbf26e57d9d5",
-      "sha256_after": "1a2ba8331290199d853b111b4f9122f2cd9ec96ce3c33c42a1d1927c423bbd04"
+      "sha256_after": "aa4b701dc786b87197e06905dbd1e910005dd8002572d9efc0a54689a1dac204"
     },
     {
       "path": "docs/status/current-status.md",
@@ -9690,7 +9801,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "091e705f14bd8f64397498a0f2f674791533c6e099018d31e9831b3351ca06b0"
+      "sha256_after": "a423c349f41dd700327060b7fb88e20235e31e5438486c88bb437e094e7c7c84"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -9768,7 +9879,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "272725af51b82edcefaebf8c19758d89cb0701eb1a6cdad3b6c36478d9ef8634",
-      "sha256_after": "c8dc19414da3b40499e9b1b9f908d92d64f0db74a31046415f811a3383dede6b"
+      "sha256_after": "3208df930249b7e293b6353e89918c397ad2265ab1386e6e0667c645bd805e55"
     },
     {
       "path": "docs/status/mainline-history.md",
@@ -9852,7 +9963,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f1f7b2ef60b4d1150b35916811db6b55ecf9259185ed0e3920732e1cdc2141c9",
-      "sha256_after": "55299899d92a61aafdc2f747c696181d7caf9a5c25d91c4dffd557e4328febeb"
+      "sha256_after": "826672aa75b04a09e1c2ba5c3106391532ae9a07a0d9d8203d8096d5e37ecec5"
     },
     {
       "path": "docs/status/prohibited-capabilities.md",
@@ -9897,7 +10008,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "537f845c7729a7b9227efc5575b5ee8479d5ccc11242ca34458cfccd0c1df360",
-      "sha256_after": "30169f94b78304088e47364e261b32377a666c3144b5e4703761e90a643ba995"
+      "sha256_after": "133ccf4ce651036c736be468f57045813dfa4b73c1b6785cbe63ae0a51f5af7e"
     },
     {
       "path": "docs/status/v0_3_18_working_handoff.md",
@@ -9977,7 +10088,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6a9a8559eef4bda6af66439f3cdc84d3fbc386737c345fbc797e33a85f11c378",
-      "sha256_after": "fcbc67842a966e1fdae5e9e1d0b929e60c47d8bcc114bf7c24c927d0a86f0b64"
+      "sha256_after": "b860de73e29e396ef1cb0529a88bb499622bb268f518bd62f38b69921487401c"
     },
     {
       "path": "docs/third-party-components.md",
@@ -10793,7 +10904,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "60b7e7bec8247889749ab014dc56a44056c45626cc53377bf6ca5d0b7640f6f5",
-      "sha256_after": "57342a0d7bc4752bfaf6f29c6c712c0a4473e578720902cf637867f6d70803c7"
+      "sha256_after": "bda9241b396a02e55c4f3b6ed783692dbf36fd4a65000d4d4ef1de432171184f"
     },
     {
       "path": "ml/README.md",
@@ -10830,7 +10941,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "5eb74e22fc7ae6e65602abd5fcd8480349f11ab201c9ce28101e968b2febdc2d",
-      "sha256_after": "88885feed44bd67232f34adfe25d185c5b54340e25e26d428b1b1325813ac6f7"
+      "sha256_after": "6a8e00afad9d2eea1397eb1e30a3c0257594004bc55a1ecb9547a33428756d75"
     },
     {
       "path": "ml/analysis/README.md",
@@ -11683,11 +11794,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 28,
+      "outgoing_link_count": 29,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3a7ba294e87a6f0d84d8d0a4264ff6becd985a05a003de776c9aaadfae7fe095",
-      "sha256_after": "69e49866db99e47f6eaf7ef0ee20e0bac6333f0c7f38d54985df6cc567b1b8fd"
+      "sha256_after": "f2de82383be0c70c4fc2551aa2694524beb4225548196dab715d1de63ef1ccfa"
     },
     {
       "path": "ml/reports/index.md",
@@ -11725,11 +11836,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 103,
+      "outgoing_link_count": 108,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "daccac679f5ed83f6a9acdee3094a02a5f273c9f11562c2212769f9e5fdde7c9",
-      "sha256_after": "a9c1db79862e774fe07239d4ab2510e7306c17982a3c951c8082fca775c59c57"
+      "sha256_after": "c6eaf7fdacf9aff28a1116abddc0adeaf6ce945fb2b661c9283117d72bff1b6c"
     },
     {
       "path": "ml/reports/v0_3_15/v0_3_15_summary.md",
@@ -13264,6 +13375,228 @@
       "actual_action": "created",
       "sha256_before": null,
       "sha256_after": "af580efe2d1b3a5ab316f3bb1a81d44f681adca2419483416e14986d9c07262e"
+    },
+    {
+      "path": "ml/reports/v0_4_7_1/browser_acceptance_report.md",
+      "title": "Браузерная приёмка v0.4.7.1",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.1",
+      "last_relevant_stage": "v0.4.7.1",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 0,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "bf36b160eeb9e41a25b34baa996d97ca6766264decd83130c058c7d71c0d8124"
+    },
+    {
+      "path": "ml/reports/v0_4_7_1/known_limitations.md",
+      "title": "Известные ограничения v0.4.7.1",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.1",
+      "last_relevant_stage": "v0.4.7.1",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "5520f87d1b3ab63d46534cbed97cc7c36cd48578620f920a8d78b9a1d59ba02b"
+    },
+    {
+      "path": "ml/reports/v0_4_7_1/summary.md",
+      "title": "v0.4.7.1 — анализ отрицательного результата",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.1",
+      "last_relevant_stage": "v0.4.7.1",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "36865f314c5a8c9004fc613cdf43e848c88b92f67042d691d0a68602bff1ba99"
+    },
+    {
+      "path": "ml/reports/v0_4_7_2/browser_acceptance_report.md",
+      "title": "Браузерная приёмка v0.4.7.2",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.2",
+      "last_relevant_stage": "v0.4.7.2",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 0,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "2bd69de81d0f59b2abc049f3079c6827dad449778d7ad7ed92aa4023fa03bcf6"
+    },
+    {
+      "path": "ml/reports/v0_4_7_2/known_limitations.md",
+      "title": "Известные ограничения v0.4.7.2",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.2",
+      "last_relevant_stage": "v0.4.7.2",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "fd27652b2f81ed2b0b4646eabb298688578085cb1e3ab81213611928066fe82c"
+    },
+    {
+      "path": "ml/reports/v0_4_7_2/summary.md",
+      "title": "v0.4.7.2 — новое корректирующее предложение",
+      "category": "Frozen evidence",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "v0.4.7.2",
+      "last_relevant_stage": "v0.4.7.2",
+      "current_stage_mentioned": "v0.4.7",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 2,
+      "outgoing_link_count": 0,
+      "recommended_action": "preserve",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "0155a65315cb0b9abf7763d6b7063842d3ece0e5d8e75e1d890033a9181ffebe"
     },
     {
       "path": "ml/training/README.md",

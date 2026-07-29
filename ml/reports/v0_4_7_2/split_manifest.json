@@ -1,0 +1,81 @@
+{
+  "calibration_groups": [
+    "corr472-auth-failures-05",
+    "corr472-beacon-05",
+    "corr472-benign-05",
+    "corr472-low-rate-dos-05",
+    "corr472-port-scan-05",
+    "corr472-web-probe-05"
+  ],
+  "created_before_training": true,
+  "development_validation_groups": [
+    "corr472-auth-failures-06",
+    "corr472-beacon-06",
+    "corr472-benign-06",
+    "corr472-low-rate-dos-06",
+    "corr472-port-scan-06",
+    "corr472-web-probe-06"
+  ],
+  "frozen": true,
+  "group_counts": {
+    "calibration": 6,
+    "development_validation": 6,
+    "internal_screening": 12,
+    "training": 24
+  },
+  "grouping_key": "session_id",
+  "internal_screening_groups": [
+    "corr472-auth-failures-07",
+    "corr472-auth-failures-08",
+    "corr472-beacon-07",
+    "corr472-beacon-08",
+    "corr472-benign-07",
+    "corr472-benign-08",
+    "corr472-low-rate-dos-07",
+    "corr472-low-rate-dos-08",
+    "corr472-port-scan-07",
+    "corr472-port-scan-08",
+    "corr472-web-probe-07",
+    "corr472-web-probe-08"
+  ],
+  "overlap_count": 0,
+  "row_counts": {
+    "calibration": 720,
+    "development_validation": 720,
+    "internal_screening": 1440,
+    "training": 2880
+  },
+  "row_random_split": false,
+  "schema_version": "corrective_candidate_split_v1",
+  "seed": 472019,
+  "source_catalog_id": "corrective-data:v0472:8e32967452e4949c",
+  "split_id": "split-v0472-session-r1",
+  "split_policy": "whole_session_predeclared_variant",
+  "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+  "training_groups": [
+    "corr472-auth-failures-01",
+    "corr472-auth-failures-02",
+    "corr472-auth-failures-03",
+    "corr472-auth-failures-04",
+    "corr472-beacon-01",
+    "corr472-beacon-02",
+    "corr472-beacon-03",
+    "corr472-beacon-04",
+    "corr472-benign-01",
+    "corr472-benign-02",
+    "corr472-benign-03",
+    "corr472-benign-04",
+    "corr472-low-rate-dos-01",
+    "corr472-low-rate-dos-02",
+    "corr472-low-rate-dos-03",
+    "corr472-low-rate-dos-04",
+    "corr472-port-scan-01",
+    "corr472-port-scan-02",
+    "corr472-port-scan-03",
+    "corr472-port-scan-04",
+    "corr472-web-probe-01",
+    "corr472-web-probe-02",
+    "corr472-web-probe-03",
+    "corr472-web-probe-04"
+  ]
+}

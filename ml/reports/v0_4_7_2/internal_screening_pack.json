@@ -1,0 +1,10 @@
+{
+  "labels_locked_until_proposal_freeze": true,
+  "overlap_count": 0,
+  "pack_id": "screening-pack:v0472:445a8b40068f1a0e",
+  "row_count": 1440,
+  "runtime_only": true,
+  "schema_version": "corrective_internal_screening_pack_v1",
+  "session_count": 12,
+  "unlocked_after_proposal_freeze": true
+}

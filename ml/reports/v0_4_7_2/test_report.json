@@ -1,0 +1,26 @@
+{
+  "browser": {
+    "passed": true,
+    "views": 30
+  },
+  "compileall": true,
+  "documentation": true,
+  "full_regression": {
+    "basetemp": "runtime/pytest-v0472-final",
+    "duration_seconds": 649.9,
+    "failed": 0,
+    "passed": 2068,
+    "warnings": 3
+  },
+  "known_warnings": [],
+  "licensing": true,
+  "negative": {
+    "rejected": 224,
+    "total": 224
+  },
+  "positive": {
+    "passed": 136,
+    "total": 136
+  },
+  "schema_version": "v0_4_7_2_test_report_v1"
+}

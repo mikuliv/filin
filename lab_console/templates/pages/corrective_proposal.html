@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><p class="eyebrow">v0.4.7.2 · только чтение</p><h1>Новое предложение после корректирующего анализа</h1>
+<p>Здесь показана замороженная история нового лабораторного предложения. Допуск относится только к подготовке новой слепой проверки v0.4.7.3 и не регистрирует кандидата.</p></section>
+<nav class="tabs" aria-label="Представления корректирующего предложения">{% for item in proposal.views %}<a href="/ui/corrective-proposal/{{ item }}" {% if item == proposal.view %}aria-current="page"{% endif %}>{{ item }}</a>{% endfor %}</nav>
+<section class="panel"><h2>{{ proposal.view }}</h2><pre class="raw-block">{{ proposal.data|json_ru }}</pre></section>
+<aside class="notice warning"><strong>Ограничение</strong><p>Повторное использование набора v0.4.7, регистрация, активация, автоматическое продвижение и переход к v0.4.8 запрещены.</p></aside>
+<details class="raw-panel"><summary>Исходные данные <small>техническое представление</small></summary><pre>{{ proposal|json_ru }}</pre></details>
+{% endblock %}

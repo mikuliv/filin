@@ -1,0 +1,508 @@
+{
+  "catalog_id": "corrective-data:v0472:8e32967452e4949c",
+  "class_contract": "network_classes_v2",
+  "class_support": {
+    "auth_failures": 960,
+    "beacon": 960,
+    "benign": 960,
+    "low_rate_dos": 960,
+    "port_scan": 960,
+    "web_probe": 960
+  },
+  "content_semantic_sha256": "8e32967452e4949c1a021900258b5b03088dce6fbeef55d6b8f572b5400b9467",
+  "distribution_allowed": false,
+  "feature_contract": "network_features_v2",
+  "generator_namespace": "v0472-corrective-r1",
+  "license_status": "separate_license_required",
+  "object_count": 5760,
+  "organization_data_input_count": 0,
+  "personal_data_input_count": 0,
+  "provenance_status": "verified",
+  "real_data_input_count": 0,
+  "runtime_only": true,
+  "schema_version": "corrective_development_data_catalog_v1",
+  "session_count": 48,
+  "sessions": [
+    {
+      "class": "benign",
+      "network_structure": "topology-1-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-benign-01",
+      "seed": 472000,
+      "session_id": "corr472-benign-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-benign-02",
+      "seed": 472001,
+      "session_id": "corr472-benign-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-benign-03",
+      "seed": 472002,
+      "session_id": "corr472-benign-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-benign-04",
+      "seed": 472003,
+      "session_id": "corr472-benign-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-benign-05",
+      "seed": 472004,
+      "session_id": "corr472-benign-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-benign-06",
+      "seed": 472005,
+      "session_id": "corr472-benign-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-benign-07",
+      "seed": 472006,
+      "session_id": "corr472-benign-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "benign",
+      "network_structure": "topology-1-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-benign-08",
+      "seed": 472007,
+      "session_id": "corr472-benign-08",
+      "temporal_structure": "phase-8"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-auth-failures-01",
+      "seed": 472100,
+      "session_id": "corr472-auth-failures-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-auth-failures-02",
+      "seed": 472101,
+      "session_id": "corr472-auth-failures-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-auth-failures-03",
+      "seed": 472102,
+      "session_id": "corr472-auth-failures-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-auth-failures-04",
+      "seed": 472103,
+      "session_id": "corr472-auth-failures-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-auth-failures-05",
+      "seed": 472104,
+      "session_id": "corr472-auth-failures-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-auth-failures-06",
+      "seed": 472105,
+      "session_id": "corr472-auth-failures-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-auth-failures-07",
+      "seed": 472106,
+      "session_id": "corr472-auth-failures-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "auth_failures",
+      "network_structure": "topology-2-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-auth-failures-08",
+      "seed": 472107,
+      "session_id": "corr472-auth-failures-08",
+      "temporal_structure": "phase-8"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-beacon-01",
+      "seed": 472200,
+      "session_id": "corr472-beacon-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-beacon-02",
+      "seed": 472201,
+      "session_id": "corr472-beacon-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-beacon-03",
+      "seed": 472202,
+      "session_id": "corr472-beacon-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-beacon-04",
+      "seed": 472203,
+      "session_id": "corr472-beacon-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-beacon-05",
+      "seed": 472204,
+      "session_id": "corr472-beacon-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-beacon-06",
+      "seed": 472205,
+      "session_id": "corr472-beacon-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-beacon-07",
+      "seed": 472206,
+      "session_id": "corr472-beacon-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "beacon",
+      "network_structure": "topology-3-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-beacon-08",
+      "seed": 472207,
+      "session_id": "corr472-beacon-08",
+      "temporal_structure": "phase-8"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-low-rate-dos-01",
+      "seed": 472300,
+      "session_id": "corr472-low-rate-dos-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-low-rate-dos-02",
+      "seed": 472301,
+      "session_id": "corr472-low-rate-dos-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-low-rate-dos-03",
+      "seed": 472302,
+      "session_id": "corr472-low-rate-dos-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-low-rate-dos-04",
+      "seed": 472303,
+      "session_id": "corr472-low-rate-dos-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-low-rate-dos-05",
+      "seed": 472304,
+      "session_id": "corr472-low-rate-dos-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-low-rate-dos-06",
+      "seed": 472305,
+      "session_id": "corr472-low-rate-dos-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-low-rate-dos-07",
+      "seed": 472306,
+      "session_id": "corr472-low-rate-dos-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "low_rate_dos",
+      "network_structure": "topology-4-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-low-rate-dos-08",
+      "seed": 472307,
+      "session_id": "corr472-low-rate-dos-08",
+      "temporal_structure": "phase-8"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-port-scan-01",
+      "seed": 472400,
+      "session_id": "corr472-port-scan-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-port-scan-02",
+      "seed": 472401,
+      "session_id": "corr472-port-scan-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-port-scan-03",
+      "seed": 472402,
+      "session_id": "corr472-port-scan-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-port-scan-04",
+      "seed": 472403,
+      "session_id": "corr472-port-scan-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-port-scan-05",
+      "seed": 472404,
+      "session_id": "corr472-port-scan-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-port-scan-06",
+      "seed": 472405,
+      "session_id": "corr472-port-scan-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-port-scan-07",
+      "seed": 472406,
+      "session_id": "corr472-port-scan-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "port_scan",
+      "network_structure": "topology-5-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-port-scan-08",
+      "seed": 472407,
+      "session_id": "corr472-port-scan-08",
+      "temporal_structure": "phase-8"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-1",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-web-probe-01",
+      "seed": 472500,
+      "session_id": "corr472-web-probe-01",
+      "temporal_structure": "phase-1"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-2",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-web-probe-02",
+      "seed": 472501,
+      "session_id": "corr472-web-probe-02",
+      "temporal_structure": "phase-2"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-3",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-web-probe-03",
+      "seed": 472502,
+      "session_id": "corr472-web-probe-03",
+      "temporal_structure": "phase-3"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-4",
+      "object_count": 120,
+      "role": "training",
+      "scenario_id": "scenario-v0472-web-probe-04",
+      "seed": 472503,
+      "session_id": "corr472-web-probe-04",
+      "temporal_structure": "phase-4"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-5",
+      "object_count": 120,
+      "role": "calibration",
+      "scenario_id": "scenario-v0472-web-probe-05",
+      "seed": 472504,
+      "session_id": "corr472-web-probe-05",
+      "temporal_structure": "phase-5"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-6",
+      "object_count": 120,
+      "role": "development_validation",
+      "scenario_id": "scenario-v0472-web-probe-06",
+      "seed": 472505,
+      "session_id": "corr472-web-probe-06",
+      "temporal_structure": "phase-6"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-7",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-web-probe-07",
+      "seed": 472506,
+      "session_id": "corr472-web-probe-07",
+      "temporal_structure": "phase-7"
+    },
+    {
+      "class": "web_probe",
+      "network_structure": "topology-6-8",
+      "object_count": 120,
+      "role": "internal_screening",
+      "scenario_id": "scenario-v0472-web-probe-08",
+      "seed": 472507,
+      "session_id": "corr472-web-probe-08",
+      "temporal_structure": "phase-8"
+    }
+  ],
+  "source_kind": "locally_generated_synthetic_network_features"
+}

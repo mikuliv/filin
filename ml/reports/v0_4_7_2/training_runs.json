@@ -1,0 +1,62 @@
+{
+  "runs": [
+    {
+      "artifact_relative_locator": "models/train-v0472-full-a.joblib",
+      "execution_id": "train-v0472-full-a",
+      "model_artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+      "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+      "network": false,
+      "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+      "recovered": false,
+      "reproducibility_predictions_sha256": "19fb7796bd76e342e0de5b5433ebcdea9b65b9a29cc95f1d34e74e3099ac1efe",
+      "schema_version": "corrective_training_record_v1",
+      "shell": false,
+      "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+      "status": "completed",
+      "training_semantic_id": "tsem-v0472-98917cf2661d86abe6595b87b3596c4d1f202b13495fbdbdf8dc22dc4b3aa7c7"
+    },
+    {
+      "artifact_relative_locator": "models/train-v0472-full-b.joblib",
+      "execution_id": "train-v0472-full-b",
+      "model_artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+      "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+      "network": false,
+      "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+      "recovered": false,
+      "reproducibility_predictions_sha256": "19fb7796bd76e342e0de5b5433ebcdea9b65b9a29cc95f1d34e74e3099ac1efe",
+      "schema_version": "corrective_training_record_v1",
+      "shell": false,
+      "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+      "status": "completed",
+      "training_semantic_id": "tsem-v0472-98917cf2661d86abe6595b87b3596c4d1f202b13495fbdbdf8dc22dc4b3aa7c7"
+    },
+    {
+      "execution_id": "train-v0472-interrupted",
+      "network": false,
+      "partial_artifact_accepted": false,
+      "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+      "recovered": false,
+      "schema_version": "corrective_training_record_v1",
+      "shell": false,
+      "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+      "status": "interrupted"
+    },
+    {
+      "artifact_relative_locator": "models/train-v0472-recovered.joblib",
+      "execution_id": "train-v0472-recovered",
+      "model_artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+      "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+      "network": false,
+      "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+      "recovered": true,
+      "recovered_from": "train-v0472-interrupted",
+      "reproducibility_predictions_sha256": "19fb7796bd76e342e0de5b5433ebcdea9b65b9a29cc95f1d34e74e3099ac1efe",
+      "schema_version": "corrective_training_record_v1",
+      "shell": false,
+      "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800",
+      "status": "completed",
+      "training_semantic_id": "tsem-v0472-98917cf2661d86abe6595b87b3596c4d1f202b13495fbdbdf8dc22dc4b3aa7c7"
+    }
+  ],
+  "schema_version": "corrective_training_record_catalog_v1"
+}

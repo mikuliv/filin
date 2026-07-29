@@ -28,7 +28,7 @@ from .models import (CandidateProposalCreate, CandidateProposalReviewComplete,
                      BlindValidationReviewComplete)
 from .candidate_proposals import CandidateProposalService
 from .blind_validations import BlindValidationService
-from .corrective_cycles import failure_analysis
+from .corrective_cycles import corrective_proposal, failure_analysis
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
@@ -141,6 +141,13 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                        "breadcrumbs": ["Филин", "Разбор отрицательного результата"], "analysis": analysis,
                        "view_model": "failure_analysis_v0471"}
             return templates.TemplateResponse(request, "pages/failure_analysis.html", context)
+        if page == "corrective-proposal":
+            proposal = corrective_proposal()
+            context = {**present_page("models", reviews, runner, ui_catalog), "request": request,
+                       "csrf": request.state.session.csrf, "page": page, "title": "Новое предложение после корректирующего анализа",
+                       "breadcrumbs": ["Филин", "Новое предложение после корректирующего анализа"], "proposal": proposal,
+                       "view_model": "corrective_proposal_v0472"}
+            return templates.TemplateResponse(request, "pages/corrective_proposal.html", context)
         if page == "documentation":
             context = present_page("dashboard", reviews, runner, ui_catalog)
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
@@ -170,6 +177,25 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     async def failure_analysis_api(view: str):
         try:
             return failure_analysis(view)
+        except KeyError:
+            raise HTTPException(404)
+
+    @app.get("/ui/corrective-proposal/{view}", response_class=HTMLResponse)
+    async def corrective_proposal_page(request: Request, view: str):
+        try:
+            proposal = corrective_proposal(view)
+        except KeyError:
+            raise HTTPException(404)
+        context = {**present_page("models", reviews, runner, ui_catalog), "request": request,
+                   "csrf": request.state.session.csrf, "page": "corrective-proposal", "title": "Новое предложение после корректирующего анализа",
+                   "breadcrumbs": ["Филин", "Новое предложение после корректирующего анализа", view], "proposal": proposal,
+                   "view_model": "corrective_proposal_v0472"}
+        return templates.TemplateResponse(request, "pages/corrective_proposal.html", context)
+
+    @app.get("/api/console/v1/corrective-proposal/{view}")
+    async def corrective_proposal_api(view: str):
+        try:
+            return corrective_proposal(view)
         except KeyError:
             raise HTTPException(404)
 

@@ -1,0 +1,11 @@
+{
+  "artifact_sha256": "6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56",
+  "data_semantic_sha256": "8e32967452e4949c1a021900258b5b03088dce6fbeef55d6b8f572b5400b9467",
+  "model_semantic_sha256": "f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6",
+  "proposal_id": "proposal:v0472:f02d06231e65df6f",
+  "proposal_manifest_sha256": "e89663c6c02f6b906fe306a83d6a1407e43fedf1e0359ad364e93fd63effc54d",
+  "proposal_semantic_sha256": "9bf600b09bccb43fd22333a459340a10161ae54d1bd1a054ced1e9d25a782c0d",
+  "recipe_sha256": "f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d",
+  "schema_version": "corrective_candidate_proposal_manifest_v1",
+  "split_sha256": "aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800"
+}

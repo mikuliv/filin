@@ -1,0 +1,29 @@
+{
+  "abstention_count": 0,
+  "duplicate_prediction_count": 0,
+  "invalid_prediction_count": 0,
+  "metrics": {
+    "accuracy": 1.0,
+    "attack_macro_f1": 1.0,
+    "attack_macro_recall": 1.0,
+    "benign_recall": 1.0,
+    "fpr": 0.0,
+    "per_class_recall": {
+      "auth_failures": 1.0,
+      "beacon": 1.0,
+      "benign": 1.0,
+      "low_rate_dos": 1.0,
+      "port_scan": 1.0,
+      "web_probe": 1.0
+    },
+    "worst_attack_recall": 1.0
+  },
+  "missing_prediction_count": 0,
+  "pack_id": "screening-pack:v0472:445a8b40068f1a0e",
+  "prediction_sha256": "b1ca278540e711aa19b0e2dd99119f750d0261d8cfe41776b9952db5df125912",
+  "proposal_frozen_before_screening": true,
+  "proposal_id": "proposal:v0472:f02d06231e65df6f",
+  "schema_version": "corrective_internal_screening_result_v1",
+  "threshold_change_after_screening_count": 0,
+  "training_after_screening_count": 0
+}

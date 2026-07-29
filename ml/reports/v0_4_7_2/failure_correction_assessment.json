@@ -1,0 +1,44 @@
+{
+  "assessments": [
+    {
+      "criterion_id": "blind-gate-13-active_attack_macro_recall",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    },
+    {
+      "criterion_id": "blind-gate-14-proposal_attack_macro_recall",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    },
+    {
+      "criterion_id": "blind-gate-15-active_attack_macro_f1",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    },
+    {
+      "criterion_id": "blind-gate-16-proposal_attack_macro_f1",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    },
+    {
+      "criterion_id": "blind-gate-17-active_worst_attack_recall",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    },
+    {
+      "criterion_id": "blind-gate-18-proposal_worst_attack_recall",
+      "evidence": "internal_screening_result.json",
+      "old_result_unchanged": true,
+      "status": "corrected_on_new_internal_screening"
+    }
+  ],
+  "corrected_previous_failure_count": 6,
+  "previous_failure_count": 6,
+  "remaining_previous_failure_count": 0,
+  "schema_version": "corrected_failure_assessment_v1"
+}

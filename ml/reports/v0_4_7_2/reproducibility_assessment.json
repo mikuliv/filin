@@ -1,0 +1,18 @@
+{
+  "duplicate_record_count": 0,
+  "execution_ids": [
+    "train-v0472-full-a",
+    "train-v0472-full-b",
+    "train-v0472-recovered"
+  ],
+  "loss_count": 0,
+  "model_semantic_sha256_equal": true,
+  "passed": true,
+  "predictions_equal": true,
+  "recipe_sha256_equal": true,
+  "schema_version": "corrective_training_reproducibility_v1",
+  "split_sha256_equal": true,
+  "status": "byte_identical",
+  "structure_equal": true,
+  "training_semantic_ids_equal": true
+}

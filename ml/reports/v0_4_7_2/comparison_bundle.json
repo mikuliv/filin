@@ -1,0 +1,118 @@
+{
+  "class_comparison": [
+    {
+      "active_recall": 0.0,
+      "class": "benign",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 0.9291666666666667
+    },
+    {
+      "active_recall": 0.0,
+      "class": "auth_failures",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 0.0
+    },
+    {
+      "active_recall": 0.0,
+      "class": "beacon",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 0.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "low_rate_dos",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 1.0
+    },
+    {
+      "active_recall": 1.0,
+      "class": "port_scan",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 0.0
+    },
+    {
+      "active_recall": 0.0,
+      "class": "web_probe",
+      "new_proposal_recall": 1.0,
+      "old_proposal_recall": 0.0
+    }
+  ],
+  "episode_comparison": {
+    "active_detected_sessions": 1200,
+    "method": "session_level_detection",
+    "new_detected_sessions": 1200,
+    "old_detected_sessions": 295
+  },
+  "limitations": [
+    "Сравнение относится только к новому внутреннему синтетическому набору."
+  ],
+  "participants": {
+    "active_candidate": {
+      "id": "v03154:65a3dd912d845bc1",
+      "metrics": {
+        "accuracy": 0.3333333333333333,
+        "attack_macro_f1": 0.3,
+        "attack_macro_recall": 0.4,
+        "benign_recall": 0.0,
+        "fpr": 1.0,
+        "per_class_recall": {
+          "auth_failures": 0.0,
+          "beacon": 0.0,
+          "benign": 0.0,
+          "low_rate_dos": 1.0,
+          "port_scan": 1.0,
+          "web_probe": 0.0
+        },
+        "worst_attack_recall": 0.0
+      }
+    },
+    "new_proposal": {
+      "id": "proposal:v0472:f02d06231e65df6f",
+      "metrics": {
+        "accuracy": 1.0,
+        "attack_macro_f1": 1.0,
+        "attack_macro_recall": 1.0,
+        "benign_recall": 1.0,
+        "fpr": 0.0,
+        "per_class_recall": {
+          "auth_failures": 1.0,
+          "beacon": 1.0,
+          "benign": 1.0,
+          "low_rate_dos": 1.0,
+          "port_scan": 1.0,
+          "web_probe": 1.0
+        },
+        "worst_attack_recall": 1.0
+      }
+    },
+    "old_proposal": {
+      "id": "proposal:v046:9d93cdc53689b0f5",
+      "metrics": {
+        "accuracy": 0.3215277777777778,
+        "attack_macro_f1": 0.2,
+        "attack_macro_recall": 0.2,
+        "benign_recall": 0.9291666666666667,
+        "fpr": 0.07083333333333333,
+        "per_class_recall": {
+          "auth_failures": 0.0,
+          "beacon": 0.0,
+          "benign": 0.9291666666666667,
+          "low_rate_dos": 1.0,
+          "port_scan": 0.0,
+          "web_probe": 0.0
+        },
+        "worst_attack_recall": 0.0
+      }
+    }
+  },
+  "population": "screening-pack:v0472:445a8b40068f1a0e",
+  "ranking_created": false,
+  "reconstruction_comparison": {
+    "cards_compared": 12,
+    "gaps_compared": 12,
+    "hypotheses_compared": 12,
+    "new_unexplained_gap_count": 0
+  },
+  "schema_version": "corrective_comparison_bundle_v1",
+  "winner_selected": false
+}

@@ -207,7 +207,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "d399f67f849c368603555f0485ebda31a22cb1d2b63eb9410120eec0b36e78a0"
+          "checksumValue": "1aa92b55fb982f657fcf30f85ab7043169c2292bd459a50fa99357090b1422a1"
         }
       ],
       "fileTypes": [
@@ -4292,7 +4292,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "e49194150c88a2f38eeeb0cc0ede02db90c558009a6e48116366de6b85d9b224"
+          "checksumValue": "cc0c89fc7ec0269ed62617f01f8646ab84e560b99a4eee2341cd06d9d045bb41"
         }
       ],
       "fileTypes": [
@@ -4311,7 +4311,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "dcba47057c4906105b2336bbebcebd7122bd29340c979ad425fa5cbb68efbb27"
+          "checksumValue": "c53f9669f7315b28500b630cf648747df232448e39ff7486bb1eeeaa701ff32e"
         }
       ],
       "fileTypes": [
@@ -4482,7 +4482,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "1878b3f80621467a79a6b4ea35fdcfdcea6e0b14d1ab9f88c312361b50a08886"
+          "checksumValue": "7c6328a1c573b9f1a993cf2a4ed7797480bcf9c96d0270edee2813735829d909"
         }
       ],
       "fileTypes": [
@@ -4634,7 +4634,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "805b14331eb16520ff64be54543b7892135837695d36ea8ce3b4ce257b95f556"
+          "checksumValue": "8c8dc425aa447b2189cd323d5e0d0eabc291c7a7fb50e41b7b1ab2f9b02e1392"
         }
       ],
       "fileTypes": [
@@ -5598,6 +5598,25 @@
       "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
     },
     {
+      "fileName": "./docs/experiments/v0_4_7_2.md",
+      "SPDXID": "SPDXRef-File-3c6009446e442d47",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5a094204c1fdd9659c04b81799ffbb6610ffbd092b93615c378298918a940d5c"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
       "fileName": "./docs/external_review/README.md",
       "SPDXID": "SPDXRef-File-840c172e55f67df0",
       "checksums": [
@@ -6079,6 +6098,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "998c364d9960828a6ecaf82786627e505be1c4e576e24209bf00703e11bacf0d"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./docs/getting-started/preparing-corrective-candidate-proposal.md",
+      "SPDXID": "SPDXRef-File-8a82f3a02ea1ee51",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c3de8c7eb83be7309543ea461c371ac99f7652d627ba2463018f9d46b75f40c1"
         }
       ],
       "fileTypes": [
@@ -6819,7 +6857,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "a9b8c7ce84d263ebe31eb44b84ec08517c7f87a50735231cc4d99de21960e3ae"
+          "checksumValue": "7c313e657e695c319a9f252c6d26d40b2db1ca22d132ea05c0c8c4397ee0baf0"
         }
       ],
       "fileTypes": [
@@ -7047,7 +7085,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "55be1f5f0452b93071d97b574d3d69a67d7df19bcc74f7ec18224dabcebe42ae"
+          "checksumValue": "4639d81011dc03e37232ea7858d16e1288123b330ad16c3d9803c15df15b51a8"
         }
       ],
       "fileTypes": [
@@ -7104,7 +7142,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "0742b034634ef8a25044f92fe22f237d68f6995d12ccfd86515a421094a5fd69"
+          "checksumValue": "de32c1aef72ea7c98dc369c5e1c8169ad72dc1841aae1d83e91fdd125f91da42"
         }
       ],
       "fileTypes": [
@@ -7769,7 +7807,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "a99838b7c8fec307ec71919cbad9c7f71158266c11997c1d0e147304d4c79e26"
+          "checksumValue": "7b7b2be4ad10b2f109c6da1d9d822789dca595a5d6cadb2e32a0e51836bbf4b4"
         }
       ],
       "fileTypes": [
@@ -8073,7 +8111,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "a46c5944bda7ace8d6d9660e7be8ffd09867809ae57056ca8adf0bd8ef5635c4"
+          "checksumValue": "cee7e2739a8a110488bc8a132697d7fde280de7583ac5021d132f2dfcab3a230"
         }
       ],
       "fileTypes": [
@@ -8283,6 +8321,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "11f699cb1309dfc02f6e62fbfe429b271bc13430f7e54dfe6ff2d565701dff24"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./docs/research/corrective-candidate-development.md",
+      "SPDXID": "SPDXRef-File-eadcbc2b8619ced3",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8a24f8606399166990c4fd25116bb25ae7d3beecab109505c39c1a4a756de1cb"
         }
       ],
       "fileTypes": [
@@ -8700,7 +8757,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "cc5db40848abeb80019e882bdbcd9cf8d665240026dcdba637b8f756e33080ff"
+          "checksumValue": "3f8925715b5b51ffec44a10b6c96f959d7dff06dba44dfd78760e67154b0354b"
         }
       ],
       "fileTypes": [
@@ -8814,7 +8871,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "1a2ba8331290199d853b111b4f9122f2cd9ec96ce3c33c42a1d1927c423bbd04"
+          "checksumValue": "aa4b701dc786b87197e06905dbd1e910005dd8002572d9efc0a54689a1dac204"
         }
       ],
       "fileTypes": [
@@ -8833,7 +8890,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "091e705f14bd8f64397498a0f2f674791533c6e099018d31e9831b3351ca06b0"
+          "checksumValue": "a423c349f41dd700327060b7fb88e20235e31e5438486c88bb437e094e7c7c84"
         }
       ],
       "fileTypes": [
@@ -8871,7 +8928,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "5bdc7d9004fa09cee54e8fab39d65c5895e0230426e31e4106148f55bd9a4465"
+          "checksumValue": "a1a6ef0280ed726073333068251e14e905a6ae1ed97fd96c8a810737de9e0050"
         }
       ],
       "fileTypes": [
@@ -8909,7 +8966,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "55299899d92a61aafdc2f747c696181d7caf9a5c25d91c4dffd557e4328febeb"
+          "checksumValue": "826672aa75b04a09e1c2ba5c3106391532ae9a07a0d9d8203d8096d5e37ecec5"
         }
       ],
       "fileTypes": [
@@ -8928,7 +8985,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "30169f94b78304088e47364e261b32377a666c3144b5e4703761e90a643ba995"
+          "checksumValue": "133ccf4ce651036c736be468f57045813dfa4b73c1b6785cbe63ae0a51f5af7e"
         }
       ],
       "fileTypes": [
@@ -8985,7 +9042,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "0b7475558f44166ef0154ebebc5e8d581c2dc422611d4d091500a33c487978ba"
+          "checksumValue": "e58480c6e85def2d153bb691ab3e410d8620cdeb7afa052908cd575fbbed01df"
         }
       ],
       "fileTypes": [
@@ -9004,7 +9061,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "97af7a354c74fcd89ab29b1e92a7c6b84c1e2bc6e8c3d7d1c0673dca3cb42866"
+          "checksumValue": "21f17b501c98a5b68826026f2e08308fe219e894ee9412f48213e1cba9188e16"
         }
       ],
       "fileTypes": [
@@ -10297,6 +10354,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "457b288301e52820c5412f3d5b9041b71c2a2fff914aa953fc6f66d7ce95a821"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./incident_reconstruction/protocols/v0_4_7_2_protocol_r1.yaml",
+      "SPDXID": "SPDXRef-File-083bc511de14cd9f",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c5aa7f3982aa72a50fcef3d738caa070d2a1bd4be0e431e923ca239dc5fcad80"
         }
       ],
       "fileTypes": [
@@ -13754,7 +13830,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "57342a0d7bc4752bfaf6f29c6c712c0a4473e578720902cf637867f6d70803c7"
+          "checksumValue": "bda9241b396a02e55c4f3b6ed783692dbf36fd4a65000d4d4ef1de432171184f"
         }
       ],
       "fileTypes": [
@@ -13830,7 +13906,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "9a4de4d0eb39705d914b6628e0ef5d92d6a4a0727f8615da4e8649e519a33d2b"
+          "checksumValue": "13523733aa38e5dca4c6b767bcfe7967a78eabdd4a1c8fb3de398aaa81c77d1f"
         }
       ],
       "fileTypes": [
@@ -17492,12 +17568,696 @@
       "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
     },
     {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrected_failure_assessment_v1.schema.json",
+      "SPDXID": "SPDXRef-File-a3b18718c3adbc6c",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f32085f49fddd07acf9f360bb5e28b1d55ca49692240d12a6a10ed82889f9b0a"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_active_comparison_v1.schema.json",
+      "SPDXID": "SPDXRef-File-9935cb5d3fe2d4b2",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cd2c7852997c578eec1ebc6dd44a48a54806d55e9fbd555487cbd034148abb29"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_admission_criterion_v1.schema.json",
+      "SPDXID": "SPDXRef-File-ac0f9514dfa86b47",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7b456a0e9f15ca36212560daa860086cd89869d8ac7353d8a1117cdb1a540669"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_admission_gate_v1.schema.json",
+      "SPDXID": "SPDXRef-File-989b24e2de7d3e07",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "716248c8befe18c7ec4831d72974947af6a2df728f4ae85e2998cd4050e1d104"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_candidate_proposal_manifest_v1.schema.json",
+      "SPDXID": "SPDXRef-File-2380a5c3158b1e0c",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2a5227a9d9abb291294ff0c64ce31be39d59e9db400ce473dd0d350673816a07"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_candidate_proposal_v1.schema.json",
+      "SPDXID": "SPDXRef-File-984a2b75ec1089ca",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3d1a7b5240dee5104ac5a2f57dec72dad2f5da29ed91bbb9f038a12a5595a389"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_candidate_split_v1.schema.json",
+      "SPDXID": "SPDXRef-File-a75e464472202ed5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d8c54aafe3455cec33763cb68d1756a8c7e4c7acd2b30faa8ce54a7ffb89ddbe"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_data_descriptor_v1.schema.json",
+      "SPDXID": "SPDXRef-File-65c77938238093c5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e764571597ac5ff0e51cf682a34193ee5da540ba610e66529305ae9e0b0cc999"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_data_generation_plan_v1.schema.json",
+      "SPDXID": "SPDXRef-File-3cb085d7afce50c6",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a4e05c4cc96a56dfe08d57c5af2a0e5667874b76e2d4a113c593f88f09c2c615"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_data_isolation_check_v1.schema.json",
+      "SPDXID": "SPDXRef-File-c082b7eb8f8ec74f",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "c240f6783a373fea79b7f2b293f34c83c803cb73e9105d8398ebea8ba6f3a975"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_data_isolation_gate_v1.schema.json",
+      "SPDXID": "SPDXRef-File-e5ca277c1218332d",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "af3f048b4c12538ebab42efd05cb31c4c815edc6a3098060a97541b21d101c97"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_development_data_catalog_v1.schema.json",
+      "SPDXID": "SPDXRef-File-02122a0864b6b550",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5c1e53596b531684d8778566db25fcba2ae7e5213fdcd64c1175d53973e9b909"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_internal_screening_pack_v1.schema.json",
+      "SPDXID": "SPDXRef-File-72a293606922e297",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ed8a02ced43bf8cb23914b2f49c0519bb24dad09703b4e52c25b9bc9de9f8998"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_internal_screening_plan_v1.schema.json",
+      "SPDXID": "SPDXRef-File-1ff58e6c34130a56",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d4d3b96aab9b3d48544b372c37444e3474282dc5688846b7c84febfbe91579a6"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_internal_screening_result_v1.schema.json",
+      "SPDXID": "SPDXRef-File-4ebaa3efa69b81c5",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3be527e22d8620d99034778377d645fcb856f78fdd15f1d6eed9add4f467aab3"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_model_artifact_v1.schema.json",
+      "SPDXID": "SPDXRef-File-4907b43cb71b1df7",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b2190b89e04b10b8971531400d1821befbca1ba32575bbf44f7f9afd5d695e99"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_model_semantic_fingerprint_v1.schema.json",
+      "SPDXID": "SPDXRef-File-73ce3e4fbb217dfe",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3339451725c65ebac7eb00f31b286fbcf5477917167dfbaaee0f1f24af5c3648"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_previous_proposal_comparison_v1.schema.json",
+      "SPDXID": "SPDXRef-File-50264b78e9a7e34f",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "486f93ba3619f5ba393c98942cb912a6ce0fab3cc378599d3c38ed87591c8944"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_proposal_decision_v1.schema.json",
+      "SPDXID": "SPDXRef-File-189fde2a0ce2e99f",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5913da962d471ad3df381425f053be01a9a515cb08aae947514b6ffe5b21bbec"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_proposal_export_v1.schema.json",
+      "SPDXID": "SPDXRef-File-04155da464541a6f",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "88d5473cbca95e963c9e1c8e3d727d7ae9462ddef15812ff2df39f189d2ab62d"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_proposal_lineage_v1.schema.json",
+      "SPDXID": "SPDXRef-File-bb95d201b5047c02",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7001f68d6ce037d883e30ec6ffa2534916a8f5900cec3696074440a05f1ad7ee"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_proposal_review_v1.schema.json",
+      "SPDXID": "SPDXRef-File-1bc770d31d3e6d09",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "19bcc420eabab2aab91d1455e84cacc7ff752e24fe6da5d711eb0433b2cc1658"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_regression_assessment_v1.schema.json",
+      "SPDXID": "SPDXRef-File-ff2436dbbee26c36",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2289f783d0ea7b976d8300e7d0195aa883bbffec9fc3b067d8f2f934e16dfed5"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_split_overlap_assessment_v1.schema.json",
+      "SPDXID": "SPDXRef-File-7067ff1e1dd62372",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2d97ad86955ec79256d09d4edf76023a0720cd8331a19349e5a48d2b83745522"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_environment_v1.schema.json",
+      "SPDXID": "SPDXRef-File-cc1354d590336012",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8bbbc6e5d6b08e67e76840557fcf8e3eb5565cd4e33ce9f96376263198f4556f"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_identity_v1.schema.json",
+      "SPDXID": "SPDXRef-File-c66cdfd15cde2724",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "34e151bc12804e0f6a20d4de996b498ffabdab5dcd6a34ae114d0171955d47b4"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_recipe_catalog_v1.schema.json",
+      "SPDXID": "SPDXRef-File-d558f61fd57860cc",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5b96e3ece76d5627db522343c1c9d310b94d7826306d04df84917cc17b4fa894"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_recipe_v1.schema.json",
+      "SPDXID": "SPDXRef-File-614e61ed1cf8f1b9",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8cbbf84f83e8c13ae9d8e2b33580beb111638b1bb0df3ccd0c77239a4c8c8465"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_record_v1.schema.json",
+      "SPDXID": "SPDXRef-File-765a81ee34e7c286",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1a828a0b4e57db952727f5ab91fc788fc72b7ce54eec5fa8a9af292a36750b13"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_reproducibility_v1.schema.json",
+      "SPDXID": "SPDXRef-File-be8c50009a3c7dd1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d8eb53033ab9dd42fc4f5f9d96ce3637383d792f831f949be01f9a491322425c"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_run_plan_v1.schema.json",
+      "SPDXID": "SPDXRef-File-a8ee6b4ae593184e",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0c6d77d248951e22d42d0a7cd6fc727c49c32d86488b0a4a60cc48ea20599d42"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/corrective_training_status_v1.schema.json",
+      "SPDXID": "SPDXRef-File-01182c607f34b207",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8ca5d16dc684faf20751add1cd2af27f4bce414b5eaf592332eac2fc26718925"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/post_failure_knowledge_declaration_v1.schema.json",
+      "SPDXID": "SPDXRef-File-0fddf59ecd7f29bf",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e6c80ddff98cc86242cab1702b0c30eb7ea2f4161616926efaa01ae89ab3905f"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/prohibited_blind_pack_reuse_assessment_v1.schema.json",
+      "SPDXID": "SPDXRef-File-04676d3330a0d462",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b4c5de7b864e1f9e0ed14bb0fafbfe923ec2bfa37228bda45e4fea20d2dbca32"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/v0_4_7_2_console_state_v1.schema.json",
+      "SPDXID": "SPDXRef-File-98555df3d6d2a4b7",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "6b51391d3fd23b7785b19c2ece97a9ef29ca5cd502db359f7b0190d7b6169bc1"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/contracts/v0_4_7_2/v0_4_7_2_policy_result_v1.schema.json",
+      "SPDXID": "SPDXRef-File-fb579b41f14a44fc",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cdb9d6d3a2f73410ed5641b92e00c58c89307af46cb4ea22026c119ef5e51b1f"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
       "fileName": "./lab_console/corrective_cycles.py",
       "SPDXID": "SPDXRef-File-6ce17b75eb7439b3",
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "30c677a8fcde7e46d261cde312ed26393498dd44fe052c5da869350c7ab33aa5"
+          "checksumValue": "1ee10f9b4d1125816dec982dd713bcc0ea638817ad8311348a91dd05ef3dc400"
         }
       ],
       "fileTypes": [
@@ -17782,7 +18542,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "991a55936cdd60281aa040eafab64f6846fbcc8db714212586b6a63d0145e7ff"
+          "checksumValue": "6a3e9615629b817fd1db2907d6a83c4ca7f624c48a427e1fcfe50c69395fbd61"
         }
       ],
       "fileTypes": [
@@ -18163,6 +18923,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "e97dfcc7cc5676f22f1c888ed75685630690f26ba12fd5c3bf256f019fb2ba81"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./lab_console/templates/pages/corrective_proposal.html",
+      "SPDXID": "SPDXRef-File-07356c02b0cc502b",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "75d8bca4729b21718f438e51ceb94be937c18f6924f351e4cd32d76b21634b67"
         }
       ],
       "fileTypes": [
@@ -18599,7 +19378,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "57b49b708fe9fe047c43de9b7f4a06379835748d4f71dc8cea39386c480aa3a7"
+          "checksumValue": "425eea88bb931002b4f2a9e458723a595a9ff08ba020b11f26bd97139f44a805"
         }
       ],
       "fileTypes": [
@@ -18656,7 +19435,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "bf862c2d6b9a7c24603741ab2ab77bdfa3becfe00dba30dd58e9d2f49df0308d"
+          "checksumValue": "59505177641c71b8a9b1cbfa9cf09507ef8f3fc23642c1fddb60e4071b30dd09"
         }
       ],
       "fileTypes": [
@@ -28441,7 +29220,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "69e49866db99e47f6eaf7ef0ee20e0bac6333f0c7f38d54985df6cc567b1b8fd"
+          "checksumValue": "f2de82383be0c70c4fc2551aa2694524beb4225548196dab715d1de63ef1ccfa"
         }
       ],
       "fileTypes": [
@@ -28802,7 +29581,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "a9c1db79862e774fe07239d4ab2510e7306c17982a3c951c8082fca775c59c57"
+          "checksumValue": "c6eaf7fdacf9aff28a1116abddc0adeaf6ce945fb2b661c9283117d72bff1b6c"
         }
       ],
       "fileTypes": [
@@ -42572,6 +43351,576 @@
       "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
     },
     {
+      "fileName": "./ml/reports/v0_4_7_2/browser_acceptance_report.md",
+      "SPDXID": "SPDXRef-File-3d76b568b85a15db",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "2bd69de81d0f59b2abc049f3079c6827dad449778d7ad7ed92aa4023fa03bcf6"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/comparison_bundle.json",
+      "SPDXID": "SPDXRef-File-8404061b3b518280",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "530aec8cab454410e27c81260901c06ad79d5118245761e18eb361c62e24a350"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/corrective_gate_result.json",
+      "SPDXID": "SPDXRef-File-cd5b9ef3705b7625",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "33602f1ed5c21d61c39c6cc052acb9d54950776bb8c6ac2e313a71a7e0f17484"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/data_catalog.json",
+      "SPDXID": "SPDXRef-File-76d66138e302ac1d",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "eff35b88ed203b2ab497638247c083584bc93eb6e6da115f35285fdf99f2cbcc"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/data_generation_plan.json",
+      "SPDXID": "SPDXRef-File-5a14fb2a60d33764",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7a11b8435e5b99fe37322ef86322fe412980b3b9e2a35765bfaebd6889f55dff"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/data_isolation_report.json",
+      "SPDXID": "SPDXRef-File-264e7135c0acb246",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "37b665de04eee1a70a4a8e1b12a3e58ca9d2106eaec11802ab76c14c61a718cf"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/failure_correction_assessment.json",
+      "SPDXID": "SPDXRef-File-db1b31fd3906fc13",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "8b26ab76ca10d3a4694cfaba6314c1aa194cd31ea279edf051508757e5775a38"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/final_decision.json",
+      "SPDXID": "SPDXRef-File-fedeb44f654665af",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "425fff08a8404edd910901dd95af95d6b00586ba280559f735ff725eb788ebfd"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/internal_screening_pack.json",
+      "SPDXID": "SPDXRef-File-de27c120ea489ec6",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a143f09c27eeff5b21f3e64093391dcf8e5424afbde2dc71ba1791d64b8beb9c"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/internal_screening_result.json",
+      "SPDXID": "SPDXRef-File-a6843af71c8e046e",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "1f13b7088b08ac35aaea2547b9f6bfdeba68fe231068aa63a2cfdd77b28bef42"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/known_limitations.md",
+      "SPDXID": "SPDXRef-File-2b1a97789d75bd13",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "fd27652b2f81ed2b0b4646eabb298688578085cb1e3ab81213611928066fe82c"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/manual_review.json",
+      "SPDXID": "SPDXRef-File-31f9c3dc220fdb2a",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "b5fd9e80b74dd471d227cf572bd00ebd4c7f7a7ac09afd5b2df573fc6750b064"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/model_artifact.json",
+      "SPDXID": "SPDXRef-File-430bf79391d35568",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "e31284638e0433428165e3f5517955793e21777c478c1e25b6dfe544c8938b6c"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/model_semantic_fingerprint.json",
+      "SPDXID": "SPDXRef-File-5499626c483d076e",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f830bd94f01a9f6d78457ef4050c213ef21a73534db43ac75fd9f03d8d7f6bd0"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/negative_campaign.json",
+      "SPDXID": "SPDXRef-File-b0ab05605543cf00",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "34be29ab26b33ab5133f016383eeb8a15317d52e3100324b6b8807ec74b94463"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/positive_campaign.json",
+      "SPDXID": "SPDXRef-File-47b68167ec53e7db",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a656bd8eb220d95ee2d416543a57bc7297e721a8b8dc7a24930fd3c2ae2c688e"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/proposal_manifest.json",
+      "SPDXID": "SPDXRef-File-5eea0ac3c8739d7d",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f0293cd256907c96c228331bcac2cfd9f8cdc6dd20606589732a339ebc22c082"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/regression_assessment.json",
+      "SPDXID": "SPDXRef-File-cda15ede3a158951",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "3d377068e8d8d2a7e984de2de1a5db0566207246b5b49101244a1435c8531a49"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/representative_proposal.json",
+      "SPDXID": "SPDXRef-File-d622bb950abd840d",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f1f576d64ffb34d5b0e40bce27192c658e62e26c452d79f2b7cb819262bb4fe0"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/reproducibility_assessment.json",
+      "SPDXID": "SPDXRef-File-aab2b065851d78e8",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "a5231f4fffae1c973d3348fc51df172252de7d4bfc68a493cb47d71b3493ce20"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/split_manifest.json",
+      "SPDXID": "SPDXRef-File-c14a69f4ffc8ce95",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "06e6c195374cbb2d416cfab486c45f2a25aa5d81c29ec38903d0e17bd65466fb"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/summary.md",
+      "SPDXID": "SPDXRef-File-3245362ec3b68f29",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "0155a65315cb0b9abf7763d6b7063842d3ece0e5d8e75e1d890033a9181ffebe"
+        }
+      ],
+      "fileTypes": [
+        "TEXT"
+      ],
+      "licenseConcluded": "CC-BY-4.0",
+      "licenseInfoInFiles": [
+        "CC-BY-4.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/test_report.json",
+      "SPDXID": "SPDXRef-File-ca37d66d009dedbf",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ab87b69c3e8ab76f20ae39f379ba40c24a7cb4795320617eef76bc6a1306dc55"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/training_environment.json",
+      "SPDXID": "SPDXRef-File-b3b190a91c4dd4c6",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d8eda699dfde85ad960dcf5c0323efb5c1ec84170a32e271b09662aa07ce8498"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/training_recipe.json",
+      "SPDXID": "SPDXRef-File-50868b2a5e45e31c",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "264f2a7ab0c5684bac7d5a9fd24bcaf9c22c3297e4bfd560af9f9646f399d310"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/training_runs.json",
+      "SPDXID": "SPDXRef-File-92b091cf6095f8c1",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "ce15363a8deae88dec422a8f3ea00428c44a9e5417ce3a936f23eb753c211a95"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/v0_4_7_2_bundle_manifest.json",
+      "SPDXID": "SPDXRef-File-9dc4fc34c7d374ce",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "cac3fdd3b326b3257293593927234985a18b6c9a9d1a881147038a48525e0542"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/v0_4_7_2_bundle_manifest.sha256",
+      "SPDXID": "SPDXRef-File-aaec508d19f75f57",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "9af8fd63b4602657e6414e2f2da748606bef134186c3b99a57b32d2acfcfeeaa"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/v0_4_7_2_policy_result.json",
+      "SPDXID": "SPDXRef-File-5b18abe16dd35bea",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "82cc266814cf29620da4174407a2e10dc75b6e9c87cd54b3ef2e4c45738dbbae"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/reports/v0_4_7_2/v0_4_7_2_semantic.sha256",
+      "SPDXID": "SPDXRef-File-a0c465cce5578709",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "5cf5c3e8a9d78793813cc0ba55a6751c020be7e60447d526962cc57b2742382a"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
       "fileName": "./ml/requirements-v0_3_4.txt",
       "SPDXID": "SPDXRef-File-c9b313b533627740",
       "checksums": [
@@ -53711,7 +55060,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "242e15e21b2ea24c4220176a92eb46da8bdd2c777c48373eacd7f8e66f5a6787"
+          "checksumValue": "86995f3f7790d52fe79eccbf0c0653a36b2a165a1cebd1fb089a671aeb415dc6"
         }
       ],
       "fileTypes": [
@@ -53768,7 +55117,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "07b7110db78767cd2035d7302db63ccc19327d34fb696796069fda47ab843335"
+          "checksumValue": "5701ee5efbd17f724e469eac4752205f7047ef2f9ca1b02e3cf0cf1c317cbe5c"
         }
       ],
       "fileTypes": [
@@ -53864,6 +55213,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "61390399b41959936d9629c0a9d466689de86afda53af7a401742c9c170fe5d6"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./ml/tests/test_v0472_corrective_proposal.py",
+      "SPDXID": "SPDXRef-File-2f73e9468b642209",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "d7ba7f99f495538236e17c18685ab644454087c8ca3254840280045b24ac3ce2"
         }
       ],
       "fileTypes": [
@@ -54794,7 +56162,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "61407620bdb609465dfa8bb84ee639b2b725a6d6ea043bf268be59f491fced22"
+          "checksumValue": "3be7218c1ca97933fb57c79c8550e642518d26a7af5a210d7c2851875c612f4f"
         }
       ],
       "fileTypes": [
@@ -56276,7 +57644,7 @@
       "checksums": [
         {
           "algorithm": "SHA256",
-          "checksumValue": "bcf21ff53a61c9e83e3ec9b5a4aeb7311c7bb93ad9edb708ef5c467291e80f54"
+          "checksumValue": "419172c0228d0b185bf9a4b9600f031b2a6bba7bf91c69e9d9fa759e6932bf59"
         }
       ],
       "fileTypes": [
@@ -56860,6 +58228,25 @@
       "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
     },
     {
+      "fileName": "./tools/lab_console/finalize_v0472.py",
+      "SPDXID": "SPDXRef-File-22488ed9fdaeed17",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "f897440f957df0173f8ee0785ce15ea40be1aee750534067304c298bdc729835"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
       "fileName": "./tools/lab_console/generate_v043_contracts.py",
       "SPDXID": "SPDXRef-File-e6b53874c595a2cf",
       "checksums": [
@@ -56923,6 +58310,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "ac2d167c618ae069db2ab8e84a81815e2ee7a413f9da1031b253d4875c190f69"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./tools/lab_console/generate_v0472_contracts.py",
+      "SPDXID": "SPDXRef-File-7ae28998321b8404",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "73a3a20b39095263a07117ecb343d34ea87a1a903db28430692280e48e61b6f9"
         }
       ],
       "fileTypes": [
@@ -57107,6 +58513,25 @@
       "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
     },
     {
+      "fileName": "./tools/lab_console/v0472_stage.py",
+      "SPDXID": "SPDXRef-File-2eece1fbc1a5d697",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "91318c6a5e24ad933177eb5ff87a16ef2e1fddf690e985d531ef54b899c81311"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
       "fileName": "./tools/lab_console/v047_stage.py",
       "SPDXID": "SPDXRef-File-5b0d28cc636bf59f",
       "checksums": [
@@ -57246,6 +58671,25 @@
         {
           "algorithm": "SHA256",
           "checksumValue": "a84945d55d7ca0866a6b4db7780e37fb07c60057f907cd40b8c259fe6adab872"
+        }
+      ],
+      "fileTypes": [
+        "SOURCE"
+      ],
+      "licenseConcluded": "MPL-2.0",
+      "licenseInfoInFiles": [
+        "MPL-2.0"
+      ],
+      "copyrightText": "Руслан Покатилов",
+      "comment": "{\"ownership\": \"project_owned\", \"upstream_standard_text\": false, \"project_authored\": true}"
+    },
+    {
+      "fileName": "./tools/lab_console/verify_v0472.py",
+      "SPDXID": "SPDXRef-File-cf692b3fdb1db82b",
+      "checksums": [
+        {
+          "algorithm": "SHA256",
+          "checksumValue": "7738a07c4d97b16ef740ba2f2569a39f63a2cfc315446f62cb269c1941e42aef"
         }
       ],
       "fileTypes": [

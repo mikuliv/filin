@@ -7,10 +7,17 @@ from typing import Any
 from .config import ROOT
 
 V0471_REPORT = ROOT / "ml" / "reports" / "v0_4_7_1"
+V0472_REPORT = ROOT / "ml" / "reports" / "v0_4_7_2"
 V0471_VIEWS = (
     "summary", "failed-criteria", "critical-differences", "classes", "scenarios", "sessions", "confusion-matrices",
     "confidence", "feature-availability", "feature-shift", "root-causes", "supporting-evidence", "contradicting-evidence",
     "corrective-actions", "prohibited-reuse", "autonomy", "readiness", "limitations", "export",
+)
+V0472_VIEWS = (
+    "lineage", "new-data", "isolation", "split", "recipe", "training-runs", "recovery",
+    "reproducibility", "model-artifact", "proposal", "internal-screening", "failure-corrections",
+    "active-comparison", "previous-proposal-comparison", "corrective-gates", "manual-review",
+    "decision", "limitations", "export",
 )
 
 
@@ -45,3 +52,42 @@ def failure_analysis(view: str = "summary") -> dict[str, Any]:
     return {"stage": "v0.4.7.1", "view": view, "views": V0471_VIEWS, "data": mapping[view],
             "read_only": True, "failed_validation_preserved": True, "candidate_mutation_allowed": False,
             "registration_allowed": False, "v0_4_8_allowed": False}
+
+
+def corrective_proposal(view: str = "lineage") -> dict[str, Any]:
+    if view not in V0472_VIEWS:
+        raise KeyError("unknown_corrective_proposal_view")
+
+    def load(name: str, default: Any) -> Any:
+        path = V0472_REPORT / name
+        return json.loads(path.read_text(encoding="utf-8")) if path.is_file() else default
+
+    runs = load("training_runs.json", {"runs": []})
+    comparison = load("comparison_bundle.json", {})
+    mapping = {
+        "lineage": load("representative_proposal.json", {}),
+        "new-data": load("data_catalog.json", {}),
+        "isolation": load("data_isolation_report.json", {}),
+        "split": load("split_manifest.json", {}),
+        "recipe": load("training_recipe.json", {}),
+        "training-runs": runs,
+        "recovery": {"runs": [row for row in runs.get("runs", []) if row.get("status") == "interrupted" or row.get("recovered")]},
+        "reproducibility": load("reproducibility_assessment.json", {}),
+        "model-artifact": load("model_artifact.json", {}),
+        "proposal": load("proposal_manifest.json", {}),
+        "internal-screening": load("internal_screening_result.json", {}),
+        "failure-corrections": load("failure_correction_assessment.json", {}),
+        "active-comparison": {"participant": comparison.get("participants", {}).get("active_candidate"), "classes": comparison.get("class_comparison", [])},
+        "previous-proposal-comparison": {"participant": comparison.get("participants", {}).get("old_proposal"), "classes": comparison.get("class_comparison", [])},
+        "corrective-gates": load("corrective_gate_result.json", {}),
+        "manual-review": load("manual_review.json", {}),
+        "decision": load("final_decision.json", {}),
+        "limitations": {"document": "ml/reports/v0_4_7_2/known_limitations.md"},
+        "export": load("v0_4_7_2_bundle_manifest.json", {}),
+    }
+    return {
+        "stage": "v0.4.7.2", "view": view, "views": V0472_VIEWS, "data": mapping[view],
+        "read_only": True, "proposal_mutation_allowed": False, "candidate_registration_allowed": False,
+        "active_candidate_mutation_allowed": False, "automatic_promotion_allowed": False,
+        "old_blind_pack_reuse_allowed": False, "v0_4_8_allowed": False,
+    }

@@ -18,6 +18,7 @@
 | `v0.4.5` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_5_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_5_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.4.6` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_6_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_6_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.4.7.1` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_7_1_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_7_1_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
+| `v0.4.7.2` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_7_2_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_7_2_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.4.7` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_7_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_7_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.3.15.2` | `1/legacy` | official | [`ml/protocols/v0_3_15_2_protocol.yaml`](../../ml/protocols/v0_3_15_2_protocol.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.3.15.3` | `1/legacy` | official | [`ml/protocols/v0_3_15_3_protocol.yaml`](../../ml/protocols/v0_3_15_3_protocol.yaml) | SHA в manifest/detached registry при наличии |

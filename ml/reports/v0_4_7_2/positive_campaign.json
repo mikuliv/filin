@@ -1,0 +1,682 @@
+[
+  {
+    "check": "corrective_check_001",
+    "passed": true,
+    "scenario_id": "v0472-pos-001"
+  },
+  {
+    "check": "corrective_check_002",
+    "passed": true,
+    "scenario_id": "v0472-pos-002"
+  },
+  {
+    "check": "corrective_check_003",
+    "passed": true,
+    "scenario_id": "v0472-pos-003"
+  },
+  {
+    "check": "corrective_check_004",
+    "passed": true,
+    "scenario_id": "v0472-pos-004"
+  },
+  {
+    "check": "corrective_check_005",
+    "passed": true,
+    "scenario_id": "v0472-pos-005"
+  },
+  {
+    "check": "corrective_check_006",
+    "passed": true,
+    "scenario_id": "v0472-pos-006"
+  },
+  {
+    "check": "corrective_check_007",
+    "passed": true,
+    "scenario_id": "v0472-pos-007"
+  },
+  {
+    "check": "corrective_check_008",
+    "passed": true,
+    "scenario_id": "v0472-pos-008"
+  },
+  {
+    "check": "corrective_check_009",
+    "passed": true,
+    "scenario_id": "v0472-pos-009"
+  },
+  {
+    "check": "corrective_check_010",
+    "passed": true,
+    "scenario_id": "v0472-pos-010"
+  },
+  {
+    "check": "corrective_check_011",
+    "passed": true,
+    "scenario_id": "v0472-pos-011"
+  },
+  {
+    "check": "corrective_check_012",
+    "passed": true,
+    "scenario_id": "v0472-pos-012"
+  },
+  {
+    "check": "corrective_check_013",
+    "passed": true,
+    "scenario_id": "v0472-pos-013"
+  },
+  {
+    "check": "corrective_check_014",
+    "passed": true,
+    "scenario_id": "v0472-pos-014"
+  },
+  {
+    "check": "corrective_check_015",
+    "passed": true,
+    "scenario_id": "v0472-pos-015"
+  },
+  {
+    "check": "corrective_check_016",
+    "passed": true,
+    "scenario_id": "v0472-pos-016"
+  },
+  {
+    "check": "corrective_check_017",
+    "passed": true,
+    "scenario_id": "v0472-pos-017"
+  },
+  {
+    "check": "corrective_check_018",
+    "passed": true,
+    "scenario_id": "v0472-pos-018"
+  },
+  {
+    "check": "corrective_check_019",
+    "passed": true,
+    "scenario_id": "v0472-pos-019"
+  },
+  {
+    "check": "corrective_check_020",
+    "passed": true,
+    "scenario_id": "v0472-pos-020"
+  },
+  {
+    "check": "corrective_check_021",
+    "passed": true,
+    "scenario_id": "v0472-pos-021"
+  },
+  {
+    "check": "corrective_check_022",
+    "passed": true,
+    "scenario_id": "v0472-pos-022"
+  },
+  {
+    "check": "corrective_check_023",
+    "passed": true,
+    "scenario_id": "v0472-pos-023"
+  },
+  {
+    "check": "corrective_check_024",
+    "passed": true,
+    "scenario_id": "v0472-pos-024"
+  },
+  {
+    "check": "corrective_check_025",
+    "passed": true,
+    "scenario_id": "v0472-pos-025"
+  },
+  {
+    "check": "corrective_check_026",
+    "passed": true,
+    "scenario_id": "v0472-pos-026"
+  },
+  {
+    "check": "corrective_check_027",
+    "passed": true,
+    "scenario_id": "v0472-pos-027"
+  },
+  {
+    "check": "corrective_check_028",
+    "passed": true,
+    "scenario_id": "v0472-pos-028"
+  },
+  {
+    "check": "corrective_check_029",
+    "passed": true,
+    "scenario_id": "v0472-pos-029"
+  },
+  {
+    "check": "corrective_check_030",
+    "passed": true,
+    "scenario_id": "v0472-pos-030"
+  },
+  {
+    "check": "corrective_check_031",
+    "passed": true,
+    "scenario_id": "v0472-pos-031"
+  },
+  {
+    "check": "corrective_check_032",
+    "passed": true,
+    "scenario_id": "v0472-pos-032"
+  },
+  {
+    "check": "corrective_check_033",
+    "passed": true,
+    "scenario_id": "v0472-pos-033"
+  },
+  {
+    "check": "corrective_check_034",
+    "passed": true,
+    "scenario_id": "v0472-pos-034"
+  },
+  {
+    "check": "corrective_check_035",
+    "passed": true,
+    "scenario_id": "v0472-pos-035"
+  },
+  {
+    "check": "corrective_check_036",
+    "passed": true,
+    "scenario_id": "v0472-pos-036"
+  },
+  {
+    "check": "corrective_check_037",
+    "passed": true,
+    "scenario_id": "v0472-pos-037"
+  },
+  {
+    "check": "corrective_check_038",
+    "passed": true,
+    "scenario_id": "v0472-pos-038"
+  },
+  {
+    "check": "corrective_check_039",
+    "passed": true,
+    "scenario_id": "v0472-pos-039"
+  },
+  {
+    "check": "corrective_check_040",
+    "passed": true,
+    "scenario_id": "v0472-pos-040"
+  },
+  {
+    "check": "corrective_check_041",
+    "passed": true,
+    "scenario_id": "v0472-pos-041"
+  },
+  {
+    "check": "corrective_check_042",
+    "passed": true,
+    "scenario_id": "v0472-pos-042"
+  },
+  {
+    "check": "corrective_check_043",
+    "passed": true,
+    "scenario_id": "v0472-pos-043"
+  },
+  {
+    "check": "corrective_check_044",
+    "passed": true,
+    "scenario_id": "v0472-pos-044"
+  },
+  {
+    "check": "corrective_check_045",
+    "passed": true,
+    "scenario_id": "v0472-pos-045"
+  },
+  {
+    "check": "corrective_check_046",
+    "passed": true,
+    "scenario_id": "v0472-pos-046"
+  },
+  {
+    "check": "corrective_check_047",
+    "passed": true,
+    "scenario_id": "v0472-pos-047"
+  },
+  {
+    "check": "corrective_check_048",
+    "passed": true,
+    "scenario_id": "v0472-pos-048"
+  },
+  {
+    "check": "corrective_check_049",
+    "passed": true,
+    "scenario_id": "v0472-pos-049"
+  },
+  {
+    "check": "corrective_check_050",
+    "passed": true,
+    "scenario_id": "v0472-pos-050"
+  },
+  {
+    "check": "corrective_check_051",
+    "passed": true,
+    "scenario_id": "v0472-pos-051"
+  },
+  {
+    "check": "corrective_check_052",
+    "passed": true,
+    "scenario_id": "v0472-pos-052"
+  },
+  {
+    "check": "corrective_check_053",
+    "passed": true,
+    "scenario_id": "v0472-pos-053"
+  },
+  {
+    "check": "corrective_check_054",
+    "passed": true,
+    "scenario_id": "v0472-pos-054"
+  },
+  {
+    "check": "corrective_check_055",
+    "passed": true,
+    "scenario_id": "v0472-pos-055"
+  },
+  {
+    "check": "corrective_check_056",
+    "passed": true,
+    "scenario_id": "v0472-pos-056"
+  },
+  {
+    "check": "corrective_check_057",
+    "passed": true,
+    "scenario_id": "v0472-pos-057"
+  },
+  {
+    "check": "corrective_check_058",
+    "passed": true,
+    "scenario_id": "v0472-pos-058"
+  },
+  {
+    "check": "corrective_check_059",
+    "passed": true,
+    "scenario_id": "v0472-pos-059"
+  },
+  {
+    "check": "corrective_check_060",
+    "passed": true,
+    "scenario_id": "v0472-pos-060"
+  },
+  {
+    "check": "corrective_check_061",
+    "passed": true,
+    "scenario_id": "v0472-pos-061"
+  },
+  {
+    "check": "corrective_check_062",
+    "passed": true,
+    "scenario_id": "v0472-pos-062"
+  },
+  {
+    "check": "corrective_check_063",
+    "passed": true,
+    "scenario_id": "v0472-pos-063"
+  },
+  {
+    "check": "corrective_check_064",
+    "passed": true,
+    "scenario_id": "v0472-pos-064"
+  },
+  {
+    "check": "corrective_check_065",
+    "passed": true,
+    "scenario_id": "v0472-pos-065"
+  },
+  {
+    "check": "corrective_check_066",
+    "passed": true,
+    "scenario_id": "v0472-pos-066"
+  },
+  {
+    "check": "corrective_check_067",
+    "passed": true,
+    "scenario_id": "v0472-pos-067"
+  },
+  {
+    "check": "corrective_check_068",
+    "passed": true,
+    "scenario_id": "v0472-pos-068"
+  },
+  {
+    "check": "corrective_check_069",
+    "passed": true,
+    "scenario_id": "v0472-pos-069"
+  },
+  {
+    "check": "corrective_check_070",
+    "passed": true,
+    "scenario_id": "v0472-pos-070"
+  },
+  {
+    "check": "corrective_check_071",
+    "passed": true,
+    "scenario_id": "v0472-pos-071"
+  },
+  {
+    "check": "corrective_check_072",
+    "passed": true,
+    "scenario_id": "v0472-pos-072"
+  },
+  {
+    "check": "corrective_check_073",
+    "passed": true,
+    "scenario_id": "v0472-pos-073"
+  },
+  {
+    "check": "corrective_check_074",
+    "passed": true,
+    "scenario_id": "v0472-pos-074"
+  },
+  {
+    "check": "corrective_check_075",
+    "passed": true,
+    "scenario_id": "v0472-pos-075"
+  },
+  {
+    "check": "corrective_check_076",
+    "passed": true,
+    "scenario_id": "v0472-pos-076"
+  },
+  {
+    "check": "corrective_check_077",
+    "passed": true,
+    "scenario_id": "v0472-pos-077"
+  },
+  {
+    "check": "corrective_check_078",
+    "passed": true,
+    "scenario_id": "v0472-pos-078"
+  },
+  {
+    "check": "corrective_check_079",
+    "passed": true,
+    "scenario_id": "v0472-pos-079"
+  },
+  {
+    "check": "corrective_check_080",
+    "passed": true,
+    "scenario_id": "v0472-pos-080"
+  },
+  {
+    "check": "corrective_check_081",
+    "passed": true,
+    "scenario_id": "v0472-pos-081"
+  },
+  {
+    "check": "corrective_check_082",
+    "passed": true,
+    "scenario_id": "v0472-pos-082"
+  },
+  {
+    "check": "corrective_check_083",
+    "passed": true,
+    "scenario_id": "v0472-pos-083"
+  },
+  {
+    "check": "corrective_check_084",
+    "passed": true,
+    "scenario_id": "v0472-pos-084"
+  },
+  {
+    "check": "corrective_check_085",
+    "passed": true,
+    "scenario_id": "v0472-pos-085"
+  },
+  {
+    "check": "corrective_check_086",
+    "passed": true,
+    "scenario_id": "v0472-pos-086"
+  },
+  {
+    "check": "corrective_check_087",
+    "passed": true,
+    "scenario_id": "v0472-pos-087"
+  },
+  {
+    "check": "corrective_check_088",
+    "passed": true,
+    "scenario_id": "v0472-pos-088"
+  },
+  {
+    "check": "corrective_check_089",
+    "passed": true,
+    "scenario_id": "v0472-pos-089"
+  },
+  {
+    "check": "corrective_check_090",
+    "passed": true,
+    "scenario_id": "v0472-pos-090"
+  },
+  {
+    "check": "corrective_check_091",
+    "passed": true,
+    "scenario_id": "v0472-pos-091"
+  },
+  {
+    "check": "corrective_check_092",
+    "passed": true,
+    "scenario_id": "v0472-pos-092"
+  },
+  {
+    "check": "corrective_check_093",
+    "passed": true,
+    "scenario_id": "v0472-pos-093"
+  },
+  {
+    "check": "corrective_check_094",
+    "passed": true,
+    "scenario_id": "v0472-pos-094"
+  },
+  {
+    "check": "corrective_check_095",
+    "passed": true,
+    "scenario_id": "v0472-pos-095"
+  },
+  {
+    "check": "corrective_check_096",
+    "passed": true,
+    "scenario_id": "v0472-pos-096"
+  },
+  {
+    "check": "corrective_check_097",
+    "passed": true,
+    "scenario_id": "v0472-pos-097"
+  },
+  {
+    "check": "corrective_check_098",
+    "passed": true,
+    "scenario_id": "v0472-pos-098"
+  },
+  {
+    "check": "corrective_check_099",
+    "passed": true,
+    "scenario_id": "v0472-pos-099"
+  },
+  {
+    "check": "corrective_check_100",
+    "passed": true,
+    "scenario_id": "v0472-pos-100"
+  },
+  {
+    "check": "corrective_check_101",
+    "passed": true,
+    "scenario_id": "v0472-pos-101"
+  },
+  {
+    "check": "corrective_check_102",
+    "passed": true,
+    "scenario_id": "v0472-pos-102"
+  },
+  {
+    "check": "corrective_check_103",
+    "passed": true,
+    "scenario_id": "v0472-pos-103"
+  },
+  {
+    "check": "corrective_check_104",
+    "passed": true,
+    "scenario_id": "v0472-pos-104"
+  },
+  {
+    "check": "corrective_check_105",
+    "passed": true,
+    "scenario_id": "v0472-pos-105"
+  },
+  {
+    "check": "corrective_check_106",
+    "passed": true,
+    "scenario_id": "v0472-pos-106"
+  },
+  {
+    "check": "corrective_check_107",
+    "passed": true,
+    "scenario_id": "v0472-pos-107"
+  },
+  {
+    "check": "corrective_check_108",
+    "passed": true,
+    "scenario_id": "v0472-pos-108"
+  },
+  {
+    "check": "corrective_check_109",
+    "passed": true,
+    "scenario_id": "v0472-pos-109"
+  },
+  {
+    "check": "corrective_check_110",
+    "passed": true,
+    "scenario_id": "v0472-pos-110"
+  },
+  {
+    "check": "corrective_check_111",
+    "passed": true,
+    "scenario_id": "v0472-pos-111"
+  },
+  {
+    "check": "corrective_check_112",
+    "passed": true,
+    "scenario_id": "v0472-pos-112"
+  },
+  {
+    "check": "corrective_check_113",
+    "passed": true,
+    "scenario_id": "v0472-pos-113"
+  },
+  {
+    "check": "corrective_check_114",
+    "passed": true,
+    "scenario_id": "v0472-pos-114"
+  },
+  {
+    "check": "corrective_check_115",
+    "passed": true,
+    "scenario_id": "v0472-pos-115"
+  },
+  {
+    "check": "corrective_check_116",
+    "passed": true,
+    "scenario_id": "v0472-pos-116"
+  },
+  {
+    "check": "corrective_check_117",
+    "passed": true,
+    "scenario_id": "v0472-pos-117"
+  },
+  {
+    "check": "corrective_check_118",
+    "passed": true,
+    "scenario_id": "v0472-pos-118"
+  },
+  {
+    "check": "corrective_check_119",
+    "passed": true,
+    "scenario_id": "v0472-pos-119"
+  },
+  {
+    "check": "corrective_check_120",
+    "passed": true,
+    "scenario_id": "v0472-pos-120"
+  },
+  {
+    "check": "corrective_check_121",
+    "passed": true,
+    "scenario_id": "v0472-pos-121"
+  },
+  {
+    "check": "corrective_check_122",
+    "passed": true,
+    "scenario_id": "v0472-pos-122"
+  },
+  {
+    "check": "corrective_check_123",
+    "passed": true,
+    "scenario_id": "v0472-pos-123"
+  },
+  {
+    "check": "corrective_check_124",
+    "passed": true,
+    "scenario_id": "v0472-pos-124"
+  },
+  {
+    "check": "corrective_check_125",
+    "passed": true,
+    "scenario_id": "v0472-pos-125"
+  },
+  {
+    "check": "corrective_check_126",
+    "passed": true,
+    "scenario_id": "v0472-pos-126"
+  },
+  {
+    "check": "corrective_check_127",
+    "passed": true,
+    "scenario_id": "v0472-pos-127"
+  },
+  {
+    "check": "corrective_check_128",
+    "passed": true,
+    "scenario_id": "v0472-pos-128"
+  },
+  {
+    "check": "corrective_check_129",
+    "passed": true,
+    "scenario_id": "v0472-pos-129"
+  },
+  {
+    "check": "corrective_check_130",
+    "passed": true,
+    "scenario_id": "v0472-pos-130"
+  },
+  {
+    "check": "corrective_check_131",
+    "passed": true,
+    "scenario_id": "v0472-pos-131"
+  },
+  {
+    "check": "corrective_check_132",
+    "passed": true,
+    "scenario_id": "v0472-pos-132"
+  },
+  {
+    "check": "corrective_check_133",
+    "passed": true,
+    "scenario_id": "v0472-pos-133"
+  },
+  {
+    "check": "corrective_check_134",
+    "passed": true,
+    "scenario_id": "v0472-pos-134"
+  },
+  {
+    "check": "corrective_check_135",
+    "passed": true,
+    "scenario_id": "v0472-pos-135"
+  },
+  {
+    "check": "corrective_check_136",
+    "passed": true,
+    "scenario_id": "v0472-pos-136"
+  }
+]

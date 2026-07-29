@@ -1,0 +1,22 @@
+{
+  "class_variant_count": 8,
+  "frozen": true,
+  "network_diversity": "class_and_variant_specific_topologies",
+  "object_count": 5760,
+  "objects_per_session": 120,
+  "parameter_diversity": "eight_predeclared_variants_per_class",
+  "plan_id": "generation-v0472-r1",
+  "problem_groups": [
+    "web_probe",
+    "beacon",
+    "benign_hard_negative"
+  ],
+  "schema_version": "corrective_data_generation_plan_v1",
+  "seed_range": [
+    472000,
+    472507
+  ],
+  "selection_by_metric": false,
+  "session_count": 48,
+  "temporal_diversity": "eight_phase_profiles"
+}
