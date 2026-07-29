@@ -2,46 +2,15 @@
 
 ## Назначение
 
-Локальный интерфейс каталога карточек, reconstruction views и сохраняемого ручного review.
-
-## Статус
-
-`current`, `laboratory-only`, этапы `v0.4.3–v0.4.7`.
+Локальный человекочитаемый интерфейс для карточек реконструкции, лабораторных запусков, предложений кандидатов и слепых проверок этапов `v0.4.3–v0.4.7`.
 
 ## Место в архитектуре
 
-Консоль читает incident card bundles после `incident_reconstruction/` и хранит
-operator overlay отдельно от source evidence.
+Консоль читает исходные пакеты после `incident_reconstruction/` без изменения и хранит операторский слой отдельно в `runtime/lab_console/`. Модули `presentation/`, `templates/` и `static/` отвечают за отображение; `database.py` и `review.py` — за локальное сохраняемое состояние; `adapters.py` — за адаптеры только для чтения. Версионированные контракты находятся в `contracts/`.
 
-## Основные каталоги и файлы
+## Разрешённые входы и выходы
 
-- `app.py` и `__main__.py` — localhost application/CLI;
-- `presentation/` и `templates/` — operator views;
-- `static/` — CSS/JavaScript;
-- `cases/` — каталог 12 synthetic cases;
-- `contracts/` — UI, card и workflow schemas;
-- `database.py` и `review.py` — SQLite overlay;
-- `adapters.py` — read-only source adapters.
-
-## Разрешённые входы
-
-Только allowlisted laboratory case bundles и frozen reports. Token передаётся через
-`FILIN_CONSOLE_TOKEN`; host должен оставаться `127.0.0.1`.
-
-## Выходы
-
-HTML/API views, review progress, notes, decision history и deterministic export.
-Изменяемые данные пишутся в `runtime/lab_console/`.
-
-## Страницы и API
-
-UI: catalog, overview, facts, timeline, graph, gaps, hypotheses, comparisons,
-questions, review и export. API routes versioned под `/api/console/v1/`.
-
-## Границы и запреты
-
-Консоль не является backend/SIEM, не меняет frozen artifacts, не определяет истинную
-hypothesis и не выполняет network action. Operator notes не являются evidence.
+Входами служат только лабораторные пакеты из перечня разрешённых значений и зафиксированные отчёты. Выходы — страницы HTML, локальные состояния рассмотрения, история решений и детерминированный экспорт. Токен задаётся через `FILIN_CONSOLE_TOKEN`, а адрес должен оставаться `127.0.0.1`.
 
 ## Безопасный запуск
 
@@ -50,28 +19,27 @@ $env:FILIN_CONSOLE_TOKEN = "локальный-одноразовый-токен
 python -m lab_console --host 127.0.0.1 --port 8043
 ```
 
-## Тестирование
+Маршруты интерфейса начинаются с `/ui/`, программного интерфейса — с `/api/console/v1/`. Подробный порядок запуска приведён в [руководстве](../docs/getting-started/laboratory-console.md).
+
+## Возможности по этапам
+
+- `v0.4.4`: каталог 12 синтетических карточек, факты, временная шкала, граф, разрывы, гипотезы, вопросы, ручное рассмотрение и экспорт;
+- `v0.4.5`: регистрация лабораторных запусков, зафиксированный план, восстановление, проверка воспроизводимости, версии кандидатов и безопасное сравнение;
+- `v0.4.6`: предложения кандидатов, зафиксированные разбиение и рецепт, проверка происхождения, предварительная оценка и версионируемое ручное рассмотрение;
+- `v0.4.7`: слепая проверка с разделением ролей, предварительная фиксация прогнозов, раскрытие эталонной разметки и 25 представлений результата.
+
+## Проверка
 
 ```powershell
 python -m tools.lab_console.verify_console
 python -m tools.lab_console.verify_v044
 python -m tools.lab_console.verify_v045
 python -m tools.lab_console.verify_v046
-python -m pytest ml/tests/test_v043_lab_console.py ml/tests/test_v0431_console_ui.py ml/tests/test_v044_operator_cycle.py -q
+python -m tools.lab_console.verify_v047
 ```
 
-## Источники истины
+## Ограничения и запреты
 
-`contracts/v0_4_3/`, `contracts/v0_4_4/`, frozen policy/manifest v0.4.4 и
-[operator guide](../docs/getting-started/reviewing-laboratory-cards.md).
+Консоль не является промышленной серверной частью или SIEM, не выполняет сетевые действия, не принимает произвольные команды и не меняет зафиксированные артефакты. Заметки оператора не являются подтверждающими материалами. Маршруты регистрации, активации и автоматического продвижения кандидата отсутствуют; повторное применение модели после раскрытия слепых меток запрещено.
 
-## Каталог запусков v0.4.5
-
-Раздел «Лаборатория» предоставляет каталог запусков, мастер замораживания плана, явное восстановление, проверку reproducibility, каталог версий кандидатов и сравнения с обязательным comparability gate. Выполнение ограничено встроенными offline-процедурами; произвольные команды, пути, сеть, обучение и автоматическое продвижение отсутствуют. Контракты находятся в `contracts/v0_4_5/`, а операторские инструкции — в [руководстве по повтору](../docs/getting-started/running-laboratory-replays.md).
-
-## Предложения кандидатов v0.4.6
-
-Раздел «Предложения кандидатов» реализует guided wizard, frozen split/recipe, безопасный in-process runner, восстановление, fingerprint, reproducibility, screening, сравнение v0.4.5, admission gate и версионируемое review. Model binary остаётся только в runtime. Register, activate, promote, upload и arbitrary-command маршруты отсутствуют.
-## Слепые проверки v0.4.7
-
-Раздел `/ui/blind-validations` показывает каталог и 25 представлений blind workflow. Мутации API требуют отдельного `X-Blind-Role-Token`; GET не раскрывает raw labels или prediction rows. Регистрация, promotion, повторный inference после unlock и загрузка model/dataset отсутствуют.
+Авторитетными источниками остаются контракты, манифесты и файлы состояния проекта. Текст интерфейса объясняет их, но не расширяет полномочия системы.

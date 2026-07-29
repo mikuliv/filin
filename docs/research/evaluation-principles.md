@@ -2,25 +2,25 @@
 
 ## До запуска
 
-Фиксируются scope, candidate, data split, seed namespace, contracts, metrics,
+Фиксируются область применимости, candidate, data разбиение, seed namespace, contracts, показатели,
 absolute gates, relative comparisons, stop conditions и prohibited adaptation.
 
 ## Во время запуска
 
 Run journal сохраняет команды, environment identity, timestamps и failures.
-Непредусмотренный input отклоняется. Missing evidence не заменяется предположением.
+Непредусмотренный input отклоняется. Missing подтверждающие материалы не заменяется предположением.
 
 ## После запуска
 
-Policy result выводится из frozen gates. Manifest и detached SHA связывают artifacts.
-Claim ledger показывает, какой artifact поддерживает каждое утверждение.
+Policy result выводится из Зафиксировано gates. манифест и detached SHA связывают artifacts.
+утверждение ledger показывает, какой артефакт поддерживает каждое утверждение.
 
 ## Отрицательный результат
 
 Failure сохраняется и ограничивает следующий stage. Corrective stage не переписывает
-историческую policy; он создаёт новый protocol и новые evidence.
+историческую policy; он создаёт новый protocol и новые подтверждающие материалы.
 
 ## Лабораторная линия
 
 Успех v0.4 означает корректность предусмотренной reconstruction/operator procedure,
-а не новое подтверждение качества model на внешних данных.
+а не новое подтверждение качества модель на внешних данных.

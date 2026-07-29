@@ -1,7 +1,7 @@
-# Holdout v0.3.6
+# отложенная контрольная выборка v0.3.6
 
-Каталог содержит protocol-aware preflight, профили условий, safety policy и идемпотентный stage runner.
-Collection не импортирует `joblib` и не загружает frozen candidate. Модель разрешено открыть только после
+Каталог содержит protocol-aware preflight, профили условий, safety policy и идемпотентный stage модуль запуска.
+Collection не импортирует `joblib` и не загружает Зафиксировано candidate. Модель разрешено открыть только после
 создания `holdout_lock_manifest.yaml`. `--resume` использует уже заблокированные predictions и не вызывает
 повторный predict.
 

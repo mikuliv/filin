@@ -30,7 +30,7 @@
     <header class="topbar">
       <button class="icon-button sidebar-toggle" type="button" aria-label="Свернуть боковую панель" aria-controls="sidebar">☰</button>
       <div class="page-heading"><div class="breadcrumbs">{% for item in breadcrumbs %}<span>{{ item }}</span>{% endfor %}</div><h1>{{ title }}</h1></div>
-      <div class="top-meta"><span class="mode-badge">Лабораторный режим · не production</span><span class="mono" title="v03154:65a3dd912d845bc1">{{ candidate_short }}</span><span>{{ branch }}</span><span class="state-{{ 'ok' if tree_state == 'clean' else 'warn' }}">{{ 'дерево чистое' if tree_state == 'clean' else 'дерево изменено' }}</span><time>{{ updated_at }}</time><button class="icon-button refresh-button" type="button" title="Обновить">↻</button><button id="logout" class="button secondary" type="button" data-csrf="{{ csrf }}">Выйти</button></div>
+      <div class="top-meta"><span class="mode-badge">Лабораторный режим · не промышленная эксплуатация</span><span class="mono" title="v03154:65a3dd912d845bc1">{{ candidate_short }}</span><span>{{ branch }}</span><span class="state-{{ 'ok' if tree_state == 'clean' else 'warn' }}">{{ 'дерево чистое' if tree_state == 'clean' else 'дерево изменено' }}</span><time>{{ updated_at }}</time><button class="icon-button refresh-button" type="button" title="Обновить">↻</button><button id="logout" class="button secondary" type="button" data-csrf="{{ csrf }}">Выйти</button></div>
     </header>
     <main id="content" tabindex="-1">
       {% block content %}{% endblock %}

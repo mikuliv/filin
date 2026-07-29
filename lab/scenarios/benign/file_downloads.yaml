@@ -1,7 +1,7 @@
 scenario_id: benign_file_downloads
 type: benign
 name: Скачивание небольших файлов
-description: Получение небольших тестовых файлов с внутреннего web-сервиса.
+description: Получение небольших тестовых файлов с внутреннего сервиса веб.
 source_role: benign-client
 target_role: target-web
 expected_label: benign

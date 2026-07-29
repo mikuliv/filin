@@ -2,32 +2,32 @@
 
 ## Принципы
 
-Каждый значимый этап начинается с versioned protocol и заранее определённых gates.
-Inputs, candidate identity, split, metrics и prohibited adaptations фиксируются до
+Каждый значимый этап начинается с версионированный protocol и заранее определённых gates.
+Inputs, candidate identity, разбиение, показатели и prohibited adaptations фиксируются до
 оценки. Итог сохраняется независимо от того, положительный он или отрицательный.
 
-## Разделение development и evaluation
+## Разделение development и оценка
 
-Training/development data не используются как независимое подтверждение. Frozen
-holdout и prospective campaign запрещают скрытый выбор thresholds, features или
-candidate по результату. Отсутствующие исходные данные ограничивают claim, а не
+Training/development data не используются как независимое подтверждение. Зафиксировано
+отложенная контрольная выборка и prospective campaign запрещают скрытый выбор thresholds, features или
+candidate по результату. Отсутствующие исходные данные ограничивают утверждение, а не
 заменяются реконструкцией.
 
 ## Неопределённость
 
-Conformal prediction, abstention и competing hypotheses сохраняют неопределённость.
-Forced winner запрещён там, где evidence не различает варианты.
+Conformal prediction, abstention и competing гипотезы сохраняют неопределённость.
+принудительный выбор победителя запрещён там, где подтверждающие материалы не различает варианты.
 
 ## Воспроизводимость
 
-Artifacts связываются через manifests, SHA-256, semantic SHA, claim ledgers и
-deterministic generators. Human-readable summary не переписывает policy result.
+Artifacts связываются через manifests, SHA-256, семантическая контрольная сумма, утверждение ledgers и
+deterministic generators. человекочитаемый summary не переписывает policy result.
 
 ## Две линии
 
-`v0.3.x` оценивает model/runtime/external procedure. `v0.4.x` оценивает лабораторную
-reconstruction и operator workflow над неизменными событиями. Положительный
-результат одной линии не расширяет scope другой.
+`v0.3.x` оценивает модель/среда выполнения/external procedure. `v0.4.x` оценивает лабораторную
+reconstruction и operator порядок работы над неизменными событиями. Положительный
+результат одной линии не расширяет область применимости другой.
 
 См. [принципы оценки](evaluation-principles.md),
 [воспроизводимость](reproducibility.md) и [источники истины](../reference/sources-of-truth.md).

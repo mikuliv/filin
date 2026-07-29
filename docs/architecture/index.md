@@ -2,7 +2,7 @@
 
 - [Обзор текущей архитектуры](overview.md) — две линии и их доказательная граница.
 - [Сквозной поток данных](end-to-end-data-flow.md) — от PCAP до решения оператора.
-- [Detection/runtime `v0.3.x`](detection-and-runtime-track.md).
+- [Detection/среда выполнения `v0.3.x`](detection-and-runtime-track.md).
 - [Реконструкция и анализ `v0.4.x`](reconstruction-and-analysis-track.md).
 - [Лабораторная консоль](laboratory-console.md).
 - [Компонентная карта](component-map.md).

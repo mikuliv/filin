@@ -6,24 +6,24 @@
 2. **Статус лабораторной линии:** `docs/status/v0_4_track.yaml`.
 3. **Идентичность кандидата:** `collectors/shadow/contracts/candidate_registry_v1.json`
    и `ml/artifacts/v0_3_15_4/candidate_manifest.json`.
-4. **Результат этапа:** frozen protocol, policy result, bundle manifest, detached SHA,
-   claim-evidence ledger и итоговый report.
-5. **Форма данных:** JSON Schema, YAML contract, Pydantic contract или versioned API contract.
+4. **Результат этапа:** Зафиксировано protocol, policy result, комплект манифест, detached SHA,
+   утверждение-подтверждающие материалы ledger и итоговый report.
+5. **Форма данных:** Файлы JSON Schema, YAML contract, Pydantic contract или версионированный API contract.
 6. **Реализованное поведение:** code, tests, contracts и policy соответствующего этапа.
 7. **Документация:** объясняет перечисленные источники, но не расширяет capability.
 
 ## Разрешение противоречий
 
-Machine-readable status имеет приоритет над README. Policy result имеет приоритет
-над summary. Manifest определяет состав bundle, а detached SHA — identity manifest.
+машиночитаемый status имеет приоритет над README. Policy result имеет приоритет
+над summary. манифест определяет состав комплект, а detached SHA — identity манифест.
 Code не может задним числом изменить исторический результат: для нового поведения
-нужен новый stage и новый evidence.
+нужен новый stage и новый подтверждающие материалы.
 
-## Human-readable страницы
+## человекочитаемый страницы
 
 [Текущий статус](../status/current-status.md) сводит две линии, а
 [подтверждённые возможности](../status/confirmed-capabilities.md) связывают capability
-с evidence. Они должны проходить строгую consistency validation.
+с подтверждающие материалы. Они должны проходить строгую consistency проверка.
 
 ## Лицензионные источники истины
 

@@ -6,7 +6,7 @@
 
 ## Статус
 
-`current`, `laboratory-only`, не production backend.
+`current`, `laboratory-only`, не промышленная серверная часть.
 
 ## Место в архитектуре
 

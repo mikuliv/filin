@@ -1,4 +1,4 @@
-# Campaigns
+# Кампании
 
 ## v0.3.6
 
@@ -7,7 +7,7 @@
 
 ## Назначение
 
-Campaign manifest задаёт независимые laboratory runs, seeds, роли train/test/robustness и безопасные параметры сценариев.
+Campaign манифест задаёт независимые laboratory runs, seeds, роли train/test/robustness и безопасные параметры сценариев.
 
 ## Что реализовано
 
@@ -20,15 +20,15 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 - `run_sensor_campaign.py` — запуск/продолжение sensor campaign.
 - `v0_3_4_training.yaml` и `v0_3_4_internal_validation.yaml` — раздельные
   кампании 12/6 для v0.3.4;
-- `run_v034_campaign.py` — последовательный resume-runner v0.3.4.
+- `run_v034_campaign.py` — последовательный модуль возобновления запуска v0.3.4.
 
 ## Входные данные и выходные данные
 
-Вход — manifest; выход — run statuses и runtime artifacts в `lab/output/`.
+Вход — манифест; выход — run statuses и среда выполнения artifacts в `lab/output/`.
 
 ## Запуск
 
-Параметры runner: `python lab/campaigns/run_sensor_campaign.py --help`.
+Параметры модуль запуска: `python lab/campaigns/run_sensor_campaign.py --help`.
 
 ## Проверки
 
@@ -36,9 +36,9 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 
 ## Ограничения
 
-Campaign roles разделяют данные, но не подтверждают production applicability.
-`v0.3.3` не является входом v0.3.4; его runtime dataset не допускается в
-training или model selection.
+Campaign roles разделяют данные, но не подтверждают промышленная эксплуатация applicability.
+`v0.3.3` не является входом v0.3.4; его среда выполнения набор данных не допускается в
+training или модель selection.
 
 ## Связанные документы
 
@@ -47,12 +47,12 @@ training или model selection.
 ## v0.3.7
 
 - `v0_3_7_training.yaml`: 12 runs, seeds 12701–13003, 336 scored окон.
-- `v0_3_7_internal_validation.yaml`: 6 validation-only runs, seeds 13101–13302, 168 scored окон.
+- `v0_3_7_internal_validation.yaml`: 6 только проверка runs, seeds 13101–13302, 168 scored окон.
 - `run_v0_3_7_training.py` и `run_v0_3_7_validation.py`: strict resumable Docker runners.
-- `v0_3_7_preflight.py`: проверка safety, capture, marker mapping, profiles и warm-up isolation без открытия validation rows.
-- `v037_runner.py`: resumable Docker runner; для validation изолирует каждый execution в собственный PCAP и объединяет только нормализованные Zeek observations, исключая marker flows.
+- `v0_3_7_preflight.py`: проверка safety, capture, marker mapping, profiles и warm-up isolation без открытия проверка rows.
+- `v037_runner.py`: resumable Docker модуль запуска; для проверка изолирует каждый execution в собственный PCAP и объединяет только нормализованные Zeek observations, исключая marker flows.
 
-Успешные runs при `--resume` не выполняются повторно. Validation runner требует frozen candidate manifest.
+Успешные runs при `--resume` не выполняются повторно. проверка модуль запуска требует Зафиксировано candidate манифест.
 
 ## v0.3.8
 
@@ -62,20 +62,20 @@ training или model selection.
 - `v0_3_8_preflight.py`: fail-closed проверка изоляции, capability и integrity.
 - `v038_runner.py`: per-run Docker capture, нормализация вывода subprocess и безопасное возобновление без повторения успешных запусков.
 
-Validation runner требует frozen candidate, а evaluation — дополнительно frozen validation lock. Ни один validation row не доступен nested selection.
+проверка модуль запуска требует Зафиксировано candidate, а оценка — дополнительно Зафиксировано проверка lock. Ни один проверка row не доступен nested selection.
 
 ## v0.3.9
 
 - `v0_3_9_training.yaml`: 12 runs, 72 warm-up, 504 scored windows, 168 episodes.
 - `v0_3_9_internal_validation.yaml`: 6 runs, 36 warm-up, 252 scored windows, 84 episodes.
 - `v039_runner.py`: strict/resumable per-execution capture без повторения success.
-- Validation collection требует frozen candidate; prediction требует immutable lock.
+- проверка collection требует Зафиксировано candidate; prediction требует immutable lock.
 
-Background и routes не зависят от labels. Rate limits, internal DNS allowlist и target responsiveness проверяются до принятия run.
+Background и routes не зависят от labels. Rate limits, internal DNS Перечень разрешённых значений и target responsiveness проверяются до принятия run.
 ## v0.3.10
 
-`v0_3_10_training.yaml` задаёт 12 runs по четырём environment groups. `v0_3_10_internal_validation.yaml` задаёт шесть новых runs по трём prospective groups. Validation runner требует frozen candidate. Каждый успешный run обязан создать 60 непустых уникальных PCAP в canonical `captures/`, 54 scored rows и 18 episodes.
+`v0_3_10_training.yaml` задаёт 12 runs по четырём environment groups. `v0_3_10_internal_validation.yaml` задаёт шесть новых runs по трём prospective groups. проверка модуль запуска требует Зафиксировано candidate. Каждый успешный run обязан создать 60 непустых уникальных PCAP в canonical `captures/`, 54 scored rows и 18 episodes.
 
 Кампании завершены 12/12 и 6/6. Получены соответственно 720/720 и 360/360
-marker/capture intervals; validation collection началась только после candidate
+marker/capture intervals; проверка collection началась только после candidate
 freeze. Повторный `--strict --resume` пропустил все успешные runs.

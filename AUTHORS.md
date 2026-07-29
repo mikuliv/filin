@@ -2,7 +2,7 @@
 
 - Руслан Покатилов — автор и правообладатель собственного кода и документации проекта.
 
-Идентификаторы `mikuliv <ruslan.pockatilov@gmail.com>` и `mikuliv <64185192+mikuliv@users.noreply.github.com>` сопоставлены с одним лицом по устойчивому GitHub-идентификатору и подтверждённой конфигурации этапа. `GitHub <noreply@github.com>` встречается только как технический committer и не считается отдельным автором.
+Идентификаторы `mikuliv <ruslan.pockatilov@gmail.com>` и `mikuliv <64185192+mikuliv@users.noreply.github.com>` сопоставлены с одним лицом по устойчивому идентификатору GitHub и подтверждённой конфигурации этапа. `GitHub <noreply@github.com>` встречается только как технический committer и не считается отдельным автором.
 
-Полная машинная выборка приведена в [аудите Git-авторства](docs/licensing/git-authorship-audit.md).
+Полная машинная выборка приведена в [аудите авторства Git](docs/licensing/git-authorship-audit.md).
 

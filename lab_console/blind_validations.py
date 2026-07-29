@@ -63,7 +63,7 @@ def safe_token(value: str) -> str:
 
 
 class BlindValidationService:
-    """Role-separated, offline blind validation with runtime-only data and model artifacts."""
+    """Локальная слепая проверка с разделением ролей и данными только в среде выполнения."""
 
     def __init__(self, db: Database, runtime: Path, *, import_official: bool = True) -> None:
         self.db = db
@@ -137,7 +137,7 @@ class BlindValidationService:
             "review_id": None, "final_decision": None, "post_unlock_official_inference_count": 0,
             "candidate_registration_count": 0, "active_candidate_change_count": 0, "created_at": now(),
             "limitations": ["Один человек выполняет технически разделённые роли.", "Независимая человеческая проверка отсутствует.",
-                            "Только новый локальный синтетический control pack; внешняя применимость не установлена."],
+                            "Использован только новый локальный синтетический контрольный набор; внешняя применимость не установлена."],
         }
         self._save(state)
         self.db.audit("blind_control_pack_committed", token, "success", {"control_pack_id": catalog["control_pack_id"]})
@@ -311,7 +311,7 @@ class BlindValidationService:
                  "active_candidate_id": ACTIVE_CANDIDATE, "proposal_id": PROPOSAL_ID, "metric_differences": differences,
                  "class_differences": self._class_differences(a, p), **structural,
                  "winner_selected": False, "hidden_weight_count": 0, "replacement_recommended": False,
-                 "limitations": ["Сравнение относится только к одному blind synthetic control pack."]}
+                 "limitations": ["Сравнение относится только к одному синтетическому контрольному набору слепой проверки."]}
         value["comparison_semantic_sha256"] = digest(value)
         state["comparison"] = value; state["acceptance_result"] = self._acceptance(state)
         state["status"] = "compared"; self._save(state); self._write(self._work(token) / "evaluation" / "comparison.json", value)
@@ -509,7 +509,7 @@ class BlindValidationService:
                    "contains_external_organization_data": False, "overlaps_training_data": False, "overlaps_calibration_data": False,
                    "overlaps_development_validation": False, "overlaps_internal_screening": False, "overlaps_previous_blind_sets": False,
                    "blind_labels": True, "frozen": True, "runtime_only": True, "separate_license_required": True, "distribution_allowed": False,
-                   "limitations": ["Synthetic feature-level control pack.", "Не является сетевым трафиком организации."]}
+                   "limitations": ["Синтетический контрольный набор на уровне признаков.", "Не является сетевым трафиком организации."]}
         return input_core, label_core, catalog
 
     @staticmethod

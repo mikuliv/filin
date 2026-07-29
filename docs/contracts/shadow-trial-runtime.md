@@ -1,9 +1,9 @@
-# Runtime-контракт локального shadow trial
+# контракт среды выполнения локального shadow trial
 
-Контракт определяет последовательную обработку закрытых causal windows без production-соединения. Источником телеметрии остаётся неизменный `shadow_event_v1` версии v0.3.14.
+Контракт определяет последовательную обработку закрытых causal windows без соединения промышленной эксплуатации. Источником телеметрии остаётся неизменный `shadow_event_v1` версии v0.3.14.
 
-Для каждого scored window coordinator фиксирует SHA-256 PCAP, результат Zeek, immutable row ID, 51-feature row, causal order, pseudonymous activity key, frozen prediction, последнее event hash, delivery acknowledgement и atomic checkpoint. Labels в checkpoint отсутствуют.
+Для каждого scored window coordinator фиксирует SHA-256 PCAP, результат Zeek, immutable row ID, 51-признак row, causal order, pseudonymous activity key, Зафиксировано prediction, последнее event hash, delivery acknowledgement и atomic checkpoint. Labels в checkpoint отсутствуют.
 
-Delivery имеет семантику at-least-once. Sink обязан дедуплицировать `idempotency_key`; exactly-once не заявляется. Queue и spool ограничены, alert/review имеют приоритет, каждый drop учитывается. Transport fault не вправе изменять prediction, state machine, causal order или thresholds.
+Delivery имеет семантику at-least-once. Sink обязан дедуплицировать `idempotency_key`; exactly-once не заявляется. Queue и spool ограничены, alert/рассмотрение имеют приоритет, каждый drop учитывается. Transport fault не вправе изменять prediction, state machine, causal order или thresholds.
 
-Runtime-контракт запрещает внешние URL, production credentials, backend writes, host network, firewall changes и automatic enforcement. Все события проходят JSON Schema, privacy и data-minimization проверки.
+контракт среды выполнения запрещает внешние URL, промышленная эксплуатация credentials, серверная часть writes, host network, firewall changes и automatic enforcement. Все события проходят Файлы JSON Schema, privacy и data-minimization проверки.

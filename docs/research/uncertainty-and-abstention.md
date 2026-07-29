@@ -2,22 +2,22 @@
 
 ## На уровне модели
 
-Calibration и conformal set выражают ограниченную uncertainty в frozen evaluation
-scope. State policy может отказаться от определённого класса. Это безопаснее, чем
+Calibration и conformal set выражают ограниченную uncertainty в Зафиксировано оценка
+область применимости. State policy может отказаться от определённого класса. Это безопаснее, чем
 принудительно выбирать label, но не гарантирует внешний coverage.
 
 ## На уровне реконструкции
 
-Unknown interval boundaries, clock differences и missing evidence представлены
-явными gaps. Они не превращаются в synthetic facts.
+Unknown interval boundaries, clock differences и missing подтверждающие материалы представлены
+явными разрывы. Они не превращаются в synthetic facts.
 
 ## На уровне гипотез
 
-Несколько hypotheses могут иметь равную опору или быть incomparable. Матрица
-показывает row-versus-column comparison, а не probability ranking. Результат
+Несколько гипотезы могут иметь равную опору или быть incomparable. Матрица
+показывает row-versus-column comparison, а не probability ранжирование. Результат
 `equally_supported` не означает истинность обеих гипотез.
 
 ## На уровне оператора
 
-Допустимый итог review — отсутствие окончательного определения и запрос нового
+Допустимый итог рассмотрение — отсутствие окончательного определения и запрос нового
 первичного материала. Такой итог не считается failure интерфейса.

@@ -6,11 +6,11 @@ Features, candidate artifacts, inference/decision policies, experiments, protoco
 
 ## Статус
 
-`current` для frozen candidate/runtime contracts и `historical/frozen` для завершённых stages.
+`current` для Зафиксировано candidate/среда выполнения contracts и `historical/frozen` для завершённых stages.
 
 ## Место в архитектуре
 
-Формирует model decision основной линии. `v0.4.x` потребляет output, но не меняет модель.
+Формирует модель decision основной линии. `v0.4.x` потребляет output, но не меняет модель.
 
 ## Основные каталоги
 
@@ -19,15 +19,15 @@ Features, candidate artifacts, inference/decision policies, experiments, protoco
 
 ## Разрешённые входы
 
-Versioned feature rows и datasets, разрешённые frozen protocol.
+версионированный признак rows и Наборы данных, разрешённые Зафиксировано protocol.
 
 ## Выходы
 
-Candidate artifacts, predictions, policies, manifests и evidence reports.
+Candidate artifacts, predictions, policies, manifests и подтверждающие материалы reports.
 
 ## Границы и запреты
 
-Запрещены silent retraining, holdout adaptation и изменение frozen reports.
+Запрещены silent retraining, отложенная контрольная выборка adaptation и изменение Зафиксировано reports.
 
 ## Безопасный запуск и тестирование
 
@@ -37,14 +37,14 @@ python -m pytest ml/tests -q
 
 ## Источники истины
 
-Candidate `v03154:65a3dd912d845bc1`,
-`artifacts/v0_3_15_4/candidate_manifest.json`, [protocol index](protocols/index.md) и
-[report index](reports/index.md).
+Действующий кандидат `v03154:65a3dd912d845bc1`,
+`artifacts/v0_3_15_4/candidate_manifest.json`, [указатель протоколов](protocols/index.md) и
+[указатель отчётов](reports/index.md).
 
 ## Лабораторное обучение v0.4.6
 
-`v0.4.6` использует только проверенные synthetic feature rows и один frozen allowlist recipe. Два независимых выполнения должны подтвердить воспроизводимость до формирования proposal package. Новый model binary хранится исключительно в runtime и требует отдельного лицензионного решения; действующий candidate registry не меняется.
+Этап v0.4.6 использует только проверенные синтетические строки признаков и один зафиксированный рецепт из перечня разрешённых значений. Два независимых выполнения подтверждают воспроизводимость до формирования предложения кандидата. Новый двоичный файл модели хранится исключительно в среде выполнения и требует отдельного лицензионного решения; действующий реестр кандидатов не меняется.
 
 ## Слепая проверка v0.4.7
 
-Новый независимый synthetic control pack, labels и prediction packages существуют только в runtime. В Git входят агрегированные метрики, commitments, gates и ручное решение. Процедура пройдена, однако proposal получил `failed_validation`; действующий кандидат и registry не изменены.
+Новый независимый синтетический контрольный набор, эталонные метки и пакеты прогнозов существуют только в среде выполнения. В репозиторий входят агрегированные показатели, контрольные суммы предварительной фиксации, результаты обязательных проверок и ручное решение. Процедура выполнена корректно, однако предложение кандидата получило решение `failed_validation`; действующий кандидат и реестр не изменены.

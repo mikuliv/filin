@@ -51,11 +51,11 @@ def semantic_projection(value: Any) -> Any:
 
 
 class LaboratoryRunService:
-    """Persistent, offline-only laboratory run and comparison service.
+    """Локальная служба сохраняемых лабораторных запусков и сопоставлений.
 
-    It never accepts paths or commands. Every binding is resolved through an
-    immutable in-repository catalog and execution is an in-process replay of
-    already frozen synthetic v0.4.4 bundles.
+    Служба не принимает пути или команды. Все привязки разрешаются через
+    неизменяемый каталог репозитория, а выполнение воспроизводит в процессе
+    уже зафиксированные синтетические комплекты v0.4.4.
     """
 
     def __init__(self, db: Database, runtime: Path, cases: CaseRegistry | None = None) -> None:

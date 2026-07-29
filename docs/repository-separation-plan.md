@@ -9,7 +9,7 @@
 ### Вариант A — новый чистый репозиторий Filin
 
 1. Сохранить текущий Anomalyzer как архивный GPLv3-репозиторий.
-2. Выполнить provenance review export-snapshot `filin/`.
+2. Выполнить происхождение рассмотрение снимок экспорт `filin/`.
 3. Создать новый private repository только с проверенным Filin snapshot, отдельными Git history и dependency notices.
 4. После подтверждения прав выбрать лицензию новой платформы.
 
@@ -19,27 +19,27 @@
 
 Перенести Anomalyzer в другой архив, удалить его из текущей истории и переименовать repository в Filin.
 
-Недостатки: rewrite history, риск потери blobs и ссылок, сложная координация fork/clone, более трудное объяснение provenance и высокая вероятность технической ошибки. Этот вариант не рекомендуется.
+Недостатки: rewrite history, риск потери blobs и ссылок, сложная координация fork/clone, более трудное объяснение происхождение и высокая вероятность технической ошибки. Этот вариант не рекомендуется.
 
 ## Рекомендуемая последовательность для варианта A
 
-1. Заморозить текущий архивный repository и создать read-only backup/bundle.
+1. Заморозить текущий архивный repository и создать только для чтения backup/комплект.
 2. Получить подтверждение правообладателя и список разрешённых contributors/ресурсов.
-3. Провести повторный similarity/provenance audit только для экспортируемого Filin snapshot.
-4. Исключить `Anomalyzer-main/`, runtime artifacts, historical models, PCAP и generated reports.
+3. Провести повторный similarity/происхождение audit только для экспортируемого Filin snapshot.
+4. Исключить `Anomalyzer-main/`, среда выполнения artifacts, исторический models, PCAP и generated reports.
 5. Закрепить dependency versions/digests, SBOM и third-party notices.
-6. Создать новый private repository; не копировать historical Git objects и не переносить GPL history.
-7. Добавить `LICENSE` только после решения правообладателя и third-party review.
+6. Создать новый private repository; не копировать исторический Git objects и не переносить GPL history.
+7. Добавить `LICENSE` только после решения правообладателя и third-party рассмотрение.
 8. Сохранить в новом repository данный audit, source-origin declarations и contributor policy.
 
 ## Контрольные условия
 
-Нельзя считать миграцию завершённой, пока не подтверждены: отсутствие GPL-derived code, происхождение model artifacts/datasets, допустимость сторонних images, права работодателя/ВУЗа и политика contributors. Наличие отдельных каталогов само по себе не заменяет эти проверки.
+Нельзя считать миграцию завершённой, пока не подтверждены: отсутствие GPL-derived code, происхождение модель artifacts/Наборы данных, допустимость сторонних images, права работодателя/ВУЗа и политика contributors. Наличие отдельных каталогов само по себе не заменяет эти проверки.
 
 ## Возможные лицензионные пути после проверки
 
 - **Private/proprietary**: подходит для пилотов и закрытых корпоративных модулей при подтверждённых правах; условия использования оформляются договором.
-- **Apache-2.0**: подходит для permissive commercial ecosystem, но только при чистой provenance и соблюдении notices/patent terms.
+- **Apache-2.0**: подходит для permissive commercial ecosystem, но только при чистой происхождение и соблюдении notices/patent terms.
 - **MPL-2.0**: подходит для file-level copyleft и closed surrounding modules; требует понимания границы файлов.
 - **GPLv3/AGPLv3**: вариант, если правообладатель сознательно выбирает copyleft; GPLv3 допускает коммерческое распространение, AGPLv3 добавляет условие для сетевого использования изменённого сервиса.
 - **Dual licensing/open-core**: возможен после contributor agreements и чётко выделенных компонентов.

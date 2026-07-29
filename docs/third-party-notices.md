@@ -1,9 +1,17 @@
-# Third-party dependency notices
+# Уведомления о сторонних зависимостях
 
-The repository does not assign a project license. Before any distribution,
-generate an inventory for the exact release environment and review every
-dependency licence and image notice. The current development inventory can be
-recorded with `python tools/runtime_environment_report.py`; Python packages
-should additionally be captured with `python -m pip freeze` in the release
-environment. Docker image digests must be recorded only after they are
-actually resolved; this repository does not invent digests.
+Перед каждым распространением формируется инвентарь точного окружения выпуска и проверяются лицензии всех зависимостей и контейнерных образов.
+
+Текущее окружение разработки можно описать командой:
+
+```powershell
+python tools/runtime_environment_report.py
+```
+
+Список пакетов Python для конкретного выпуска дополнительно сохраняется командой:
+
+```powershell
+python -m pip freeze
+```
+
+Контрольные суммы контейнерных образов указываются только после их фактического разрешения. Репозиторий не создаёт вымышленные контрольные суммы. Авторитетный полный перечень уведомлений находится в `THIRD_PARTY_NOTICES.md`.

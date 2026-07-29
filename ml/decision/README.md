@@ -2,20 +2,20 @@
 
 ## Назначение и статус
 
-Текущий frozen inference/episode/state layer для candidate `v03154`.
+Текущий зафиксированное применение модели/episode/state layer для candidate `v03154`.
 
 ## Место в архитектуре
 
-Преобразует model scores и conformal output в passive episode decision.
+Преобразует модель scores и conformal output в passive episode decision.
 
 ## Входы и выходы
 
-Входы закреплены candidate manifest; выход формирует class/abstention state для
-`shadow_event_v2`.
+Входы закреплены candidate манифест; выход формирует class/abstention state для
+контракт пассивного события (`shadow_event_v2`).
 
 ## Границы и запреты
 
-Forced winner, runtime threshold tuning и automatic enforcement запрещены.
+принудительный выбор победителя, среда выполнения threshold tuning и automatic enforcement запрещены.
 
 ## Безопасный запуск и тестирование
 
@@ -25,4 +25,4 @@ python -m pytest ml/tests -q -k decision
 
 ## Источники истины
 
-Candidate manifest, state policy artifacts и [uncertainty guide](../../docs/research/uncertainty-and-abstention.md).
+Candidate манифест, state policy artifacts и [uncertainty guide](../../docs/research/uncertainty-and-abstention.md).

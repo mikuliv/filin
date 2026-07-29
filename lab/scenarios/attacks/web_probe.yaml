@@ -1,7 +1,7 @@
 scenario_id: attack_web_probe
 type: attack
 name: Безопасный web-probe
-description: Проверка реакции внутреннего web-сервиса на безвредные диагностические пути без вредоносных payload-ов.
+description: Проверка реакции внутреннего сервиса веб на безвредные диагностические пути без вредоносных ов полезной нагрузки.
 source_role: attacker-simulator
 target_role: target-web
 expected_label: web_probe

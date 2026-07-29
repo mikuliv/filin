@@ -11,7 +11,7 @@ class DocumentationMetricsConsistencyTests(unittest.TestCase):
         text = (ROOT / "docs/experiments.md").read_text(encoding="utf-8")
         for historical_value in ("0.918", "0.933", "0.972", "0.979", "12 robustness-runs", "156 windows"):
             self.assertNotIn(historical_value, text)
-        self.assertIn("stage-specific frozen reports", text)
+        self.assertIn("зафиксированных отчётах конкретных этапов", text)
 
     def test_evergreen_testing_guide_has_no_stale_passed_counter(self):
         text = (ROOT / "docs/getting-started/testing.md").read_text(encoding="utf-8")

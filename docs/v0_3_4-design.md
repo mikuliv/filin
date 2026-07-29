@@ -1,10 +1,7 @@
-# v0.3.4 design boundary
+# Граница проектирования v0.3.4
 
-`network_sensor_v0_3` is historical and remains unchanged for reproduction of
-v0.3.1--v0.3.3. The future `network_sensor_v0_4` profile has one ordered source
-of truth in `ml/features/schema.py` and is built only by the v0.4 builder.
-Metadata, labels, markers, execution IDs, seeds, environment groups, and raw
-endpoints are forbidden model features. The builder derives every feature from
-assigned Zeek observations; no undeclared profile field is silently filled with
-zero. Dataset quality audit rejects missing/unexpected fields and suspicious
-constant or zero-only features.
+Историческая схема `network_sensor_v0_3` остаётся неизменной для воспроизведения этапов v0.3.1–v0.3.3. Будущий профиль `network_sensor_v0_4` имеет один авторитетный источник в `ml/features/schema.py` и строится только модулем этапа v0.4.
+
+Метаданные, эталонные метки, служебные отметки, идентификаторы выполнения, начальные значения генератора, группы окружения и необработанные адреса запрещено использовать как признаки модели. Модуль построения получает каждый признак из назначенных наблюдений Zeek; необъявленное поле профиля не заполняется нулём без явного правила.
+
+Проверка качества набора данных отклоняет отсутствующие и неожиданные поля, а также подозрительные постоянные или полностью нулевые признаки.

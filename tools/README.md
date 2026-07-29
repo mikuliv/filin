@@ -2,15 +2,15 @@
 
 ## Назначение
 
-Versioned generators, bundle validators, documentation checks и standalone verifiers.
+версионированный generators, комплект validators, documentation checks и standalone verifiers.
 
 ## Статус
 
-`current`; отдельные scripts относятся к historical frozen stages.
+`current`; отдельные scripts относятся к исторический Зафиксировано stages.
 
 ## Место в архитектуре
 
-Tools воспроизводят и проверяют artifacts, но не являются runtime service.
+Tools воспроизводят и проверяют artifacts, но не являются среда выполнения service.
 
 ## Основные каталоги
 
@@ -18,12 +18,12 @@ Tools воспроизводят и проверяют artifacts, но не яв
 
 ## Разрешённые входы и выходы
 
-Tracked contracts/reports и локальный runtime. Generator может менять только явно
+Tracked contracts/reports и локальный среда выполнения. Generator может менять только явно
 указанные generated files.
 
 ## Границы и запреты
 
-Нельзя rebuild frozen evidence для маскировки mismatch или обходить policy gate.
+Нельзя rebuild Зафиксировано подтверждающие материалы для маскировки mismatch или обходить policy gate.
 
 ## Безопасный запуск и тестирование
 
@@ -32,4 +32,4 @@ Documentation v2 проверяется `python -m tools.docs.validate_documenta
 
 ## Источники истины
 
-CLI source, tests и frozen protocol соответствующего stage.
+CLI source, tests и Зафиксировано protocol соответствующего stage.

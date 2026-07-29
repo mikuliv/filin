@@ -1,8 +1,8 @@
-# Suricata collector
+# Сборщик Suricata
 
 ## Назначение и статус
 
-Лабораторный adapter для предусмотренных Suricata records; не текущий production path.
+Лабораторный adapter для предусмотренных Suricata records; не текущий промышленная эксплуатация path.
 
 ## Место в архитектуре
 
@@ -10,7 +10,7 @@
 
 ## Основные файлы, входы и выходы
 
-Parser принимает versioned synthetic records и выдаёт нормализованное представление.
+Parser принимает версионированный synthetic records и выдаёт нормализованное представление.
 
 ## Границы и запреты
 
@@ -24,4 +24,4 @@ python -m pytest collectors/suricata_collector -q
 
 ## Источники истины
 
-Code, tests и [collectors overview](../README.md).
+Code, tests и [Сборщики overview](../README.md).

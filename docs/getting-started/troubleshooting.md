@@ -8,17 +8,17 @@
 ## Вход отклонён
 
 Создайте новый локальный `FILIN_CONSOLE_TOKEN` и повторите login. Не записывайте token
-в tracked-файл или журнал issue.
+в файл отслеживаемый или журнал issue.
 
 ## Интерфейс показывает старую версию
 
 Перезапустите процесс console и выполните hard reload браузера. Static resources
-имеют cache-busting version; ручное редактирование frozen reports не требуется.
+имеют cache-busting version; ручное редактирование Зафиксировано reports не требуется.
 
-## Тесты оставили runtime
+## Тесты оставили среда выполнения
 
 Проверьте `git status`. Удаляйте только воспроизводимые untracked файлы внутри
-`runtime/`, убедившись, что путь относится к текущему репозиторию. Не удаляйте tracked evidence.
+`runtime/`, убедившись, что путь относится к текущему репозиторию. Не удаляйте tracked подтверждающие материалы.
 
 ## Documentation validator сообщает ошибку
 
@@ -29,4 +29,4 @@ python -m tools.docs.build_documentation_inventory
 python -m tools.docs.validate_documentation_v2 --strict
 ```
 
-Не отключайте правило и не перегенерируйте frozen artifact для маскировки finding.
+Не отключайте правило и не перегенерируйте Зафиксировано артефакт для маскировки finding.

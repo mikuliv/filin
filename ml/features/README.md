@@ -2,11 +2,11 @@
 
 ## Назначение и статус
 
-Текущий versioned feature layer; основной contract — `network_features_v2`.
+Текущий версионированный признак layer; основной contract — `network_features_v2`.
 
 ## Место в архитектуре
 
-Преобразует normalized observations во вход frozen candidate.
+Преобразует normalized observations во вход Зафиксировано candidate.
 
 ## Входы и выходы
 
@@ -25,4 +25,4 @@ python -m pytest ml/tests -q -k feature
 
 ## Источники истины
 
-Feature manifests, candidate manifest и [causal features](../../docs/research/causal-features.md).
+признак manifests, candidate манифест и [causal features](../../docs/research/causal-features.md).

@@ -15,7 +15,7 @@ retention requirements, а также провёл синтетическую re
 
 Предусмотрены evaluator, data provider, label custodian, trial operator и result
 approver с разделёнными обязанностями. На первом контакте передаются публичная
-навигация, confirmed scope, limitations и перечень frozen artifacts — не реальные
+навигация, confirmed область применимости, limitations и перечень Зафиксировано artifacts — не реальные
 данные, labels, secrets или доступ к инфраструктуре.
 
 ## Организационная граница
@@ -27,8 +27,8 @@ approver с разделёнными обязанностями. На перво
 ## Навигация
 
 - [внешний README](../../external_review/README.md);
-- [confirmed scope](../external_review/confirmed_scope.md);
+- [confirmed область применимости](../external_review/confirmed_scope.md);
 - [known limitations](../external_review/known_limitations.md);
-- [frozen package manifest](../../ml/reports/v0_3_18/external_review_package_manifest.yaml).
+- [Зафиксировано package манифест](../../ml/reports/v0_3_18/external_review_package_manifest.yaml).
 
-Checklist не является юридическим заключением.
+Контрольный список не является юридическим заключением.

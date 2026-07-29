@@ -1,5 +1,5 @@
-# Incident workflow — исторический путь
+# Incident порядок работы — исторический путь
 
-Ранний backend workflow описан в [историческом обзоре](history/historical-backend.md).
+Ранний серверная часть порядок работы описан в [историческом обзоре](history/historical-backend.md).
 Текущий операторский цикл находится в [руководстве](research/operator-incident-workflow.md).
-Этот путь не описывает current execution path.
+Этот путь не описывает текущий execution path.

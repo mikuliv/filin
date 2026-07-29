@@ -1,0 +1,1706 @@
+{
+  "schema_version": "filin_russian_narrative_campaign_v3",
+  "positive_scenario_count": 90,
+  "positive_scenario_passed_count": 90,
+  "negative_scenario_count": 140,
+  "negative_scenario_rejected_count": 140,
+  "passed": true,
+  "positive": [
+    {
+      "id": "positive-001",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 1.",
+      "passed": true
+    },
+    {
+      "id": "positive-002",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 2.",
+      "passed": true
+    },
+    {
+      "id": "positive-003",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 3.",
+      "passed": true
+    },
+    {
+      "id": "positive-004",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 4.",
+      "passed": true
+    },
+    {
+      "id": "positive-005",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 5.",
+      "passed": true
+    },
+    {
+      "id": "positive-006",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 6.",
+      "passed": true
+    },
+    {
+      "id": "positive-007",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 7.",
+      "passed": true
+    },
+    {
+      "id": "positive-008",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 8.",
+      "passed": true
+    },
+    {
+      "id": "positive-009",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 9.",
+      "passed": true
+    },
+    {
+      "id": "positive-010",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 10.",
+      "passed": true
+    },
+    {
+      "id": "positive-011",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 11.",
+      "passed": true
+    },
+    {
+      "id": "positive-012",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 12.",
+      "passed": true
+    },
+    {
+      "id": "positive-013",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 13.",
+      "passed": true
+    },
+    {
+      "id": "positive-014",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 14.",
+      "passed": true
+    },
+    {
+      "id": "positive-015",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 15.",
+      "passed": true
+    },
+    {
+      "id": "positive-016",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 16.",
+      "passed": true
+    },
+    {
+      "id": "positive-017",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 17.",
+      "passed": true
+    },
+    {
+      "id": "positive-018",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 18.",
+      "passed": true
+    },
+    {
+      "id": "positive-019",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 19.",
+      "passed": true
+    },
+    {
+      "id": "positive-020",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 20.",
+      "passed": true
+    },
+    {
+      "id": "positive-021",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 21.",
+      "passed": true
+    },
+    {
+      "id": "positive-022",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 22.",
+      "passed": true
+    },
+    {
+      "id": "positive-023",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 23.",
+      "passed": true
+    },
+    {
+      "id": "positive-024",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 24.",
+      "passed": true
+    },
+    {
+      "id": "positive-025",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 25.",
+      "passed": true
+    },
+    {
+      "id": "positive-026",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 26.",
+      "passed": true
+    },
+    {
+      "id": "positive-027",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 27.",
+      "passed": true
+    },
+    {
+      "id": "positive-028",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 28.",
+      "passed": true
+    },
+    {
+      "id": "positive-029",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 29.",
+      "passed": true
+    },
+    {
+      "id": "positive-030",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 30.",
+      "passed": true
+    },
+    {
+      "id": "positive-031",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 31.",
+      "passed": true
+    },
+    {
+      "id": "positive-032",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 32.",
+      "passed": true
+    },
+    {
+      "id": "positive-033",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 33.",
+      "passed": true
+    },
+    {
+      "id": "positive-034",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 34.",
+      "passed": true
+    },
+    {
+      "id": "positive-035",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 35.",
+      "passed": true
+    },
+    {
+      "id": "positive-036",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 36.",
+      "passed": true
+    },
+    {
+      "id": "positive-037",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 37.",
+      "passed": true
+    },
+    {
+      "id": "positive-038",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 38.",
+      "passed": true
+    },
+    {
+      "id": "positive-039",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 39.",
+      "passed": true
+    },
+    {
+      "id": "positive-040",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 40.",
+      "passed": true
+    },
+    {
+      "id": "positive-041",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 41.",
+      "passed": true
+    },
+    {
+      "id": "positive-042",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 42.",
+      "passed": true
+    },
+    {
+      "id": "positive-043",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 43.",
+      "passed": true
+    },
+    {
+      "id": "positive-044",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 44.",
+      "passed": true
+    },
+    {
+      "id": "positive-045",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 45.",
+      "passed": true
+    },
+    {
+      "id": "positive-046",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 46.",
+      "passed": true
+    },
+    {
+      "id": "positive-047",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 47.",
+      "passed": true
+    },
+    {
+      "id": "positive-048",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 48.",
+      "passed": true
+    },
+    {
+      "id": "positive-049",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 49.",
+      "passed": true
+    },
+    {
+      "id": "positive-050",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 50.",
+      "passed": true
+    },
+    {
+      "id": "positive-051",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 51.",
+      "passed": true
+    },
+    {
+      "id": "positive-052",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 52.",
+      "passed": true
+    },
+    {
+      "id": "positive-053",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 53.",
+      "passed": true
+    },
+    {
+      "id": "positive-054",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 54.",
+      "passed": true
+    },
+    {
+      "id": "positive-055",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 55.",
+      "passed": true
+    },
+    {
+      "id": "positive-056",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 56.",
+      "passed": true
+    },
+    {
+      "id": "positive-057",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 57.",
+      "passed": true
+    },
+    {
+      "id": "positive-058",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 58.",
+      "passed": true
+    },
+    {
+      "id": "positive-059",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 59.",
+      "passed": true
+    },
+    {
+      "id": "positive-060",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 60.",
+      "passed": true
+    },
+    {
+      "id": "positive-061",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 61.",
+      "passed": true
+    },
+    {
+      "id": "positive-062",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 62.",
+      "passed": true
+    },
+    {
+      "id": "positive-063",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 63.",
+      "passed": true
+    },
+    {
+      "id": "positive-064",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 64.",
+      "passed": true
+    },
+    {
+      "id": "positive-065",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 65.",
+      "passed": true
+    },
+    {
+      "id": "positive-066",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 66.",
+      "passed": true
+    },
+    {
+      "id": "positive-067",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 67.",
+      "passed": true
+    },
+    {
+      "id": "positive-068",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 68.",
+      "passed": true
+    },
+    {
+      "id": "positive-069",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 69.",
+      "passed": true
+    },
+    {
+      "id": "positive-070",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 70.",
+      "passed": true
+    },
+    {
+      "id": "positive-071",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 71.",
+      "passed": true
+    },
+    {
+      "id": "positive-072",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 72.",
+      "passed": true
+    },
+    {
+      "id": "positive-073",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 73.",
+      "passed": true
+    },
+    {
+      "id": "positive-074",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 74.",
+      "passed": true
+    },
+    {
+      "id": "positive-075",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 75.",
+      "passed": true
+    },
+    {
+      "id": "positive-076",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 76.",
+      "passed": true
+    },
+    {
+      "id": "positive-077",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 77.",
+      "passed": true
+    },
+    {
+      "id": "positive-078",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 78.",
+      "passed": true
+    },
+    {
+      "id": "positive-079",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 79.",
+      "passed": true
+    },
+    {
+      "id": "positive-080",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 80.",
+      "passed": true
+    },
+    {
+      "id": "positive-081",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 81.",
+      "passed": true
+    },
+    {
+      "id": "positive-082",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 82.",
+      "passed": true
+    },
+    {
+      "id": "positive-083",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 83.",
+      "passed": true
+    },
+    {
+      "id": "positive-084",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 84.",
+      "passed": true
+    },
+    {
+      "id": "positive-085",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 85.",
+      "passed": true
+    },
+    {
+      "id": "positive-086",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 86.",
+      "passed": true
+    },
+    {
+      "id": "positive-087",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 87.",
+      "passed": true
+    },
+    {
+      "id": "positive-088",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 88.",
+      "passed": true
+    },
+    {
+      "id": "positive-089",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 89.",
+      "passed": true
+    },
+    {
+      "id": "positive-090",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 90.",
+      "passed": true
+    }
+  ],
+  "negative": [
+    {
+      "id": "negative-001",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-002",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-003",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-004",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-005",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-006",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-007",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-008",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-009",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-010",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-011",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-012",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-013",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-014",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-015",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-016",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-017",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-018",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-019",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-020",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-021",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-022",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-023",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-024",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-025",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-026",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-027",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-028",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-029",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-030",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-031",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-032",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-033",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-034",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "identifier_without_code_style"
+      ]
+    },
+    {
+      "id": "negative-035",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-036",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-037",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-038",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-039",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-040",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-041",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-042",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-043",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-044",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-045",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-046",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-047",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-048",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-049",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-050",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-051",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-052",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-053",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-054",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-055",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-056",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-057",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-058",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-059",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-060",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-061",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-062",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-063",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-064",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-065",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-066",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-067",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-068",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-069",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-070",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-071",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-072",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-073",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-074",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-075",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-076",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-077",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "identifier_without_code_style"
+      ]
+    },
+    {
+      "id": "negative-078",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-079",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-080",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-081",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-082",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-083",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-084",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-085",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-086",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-087",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-088",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-089",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-090",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-091",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-092",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-093",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-094",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-095",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-096",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-097",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-098",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-099",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-100",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-101",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-102",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-103",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-104",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-105",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-106",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-107",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-108",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-109",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-110",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-111",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-112",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-113",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-114",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-115",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-116",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-117",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-118",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-119",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label"
+      ]
+    },
+    {
+      "id": "negative-120",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "identifier_without_code_style"
+      ]
+    },
+    {
+      "id": "negative-121",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-122",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-123",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-124",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-125",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-126",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-127",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-128",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-129",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-130",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-131",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-132",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-133",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "mixed_compound"
+      ]
+    },
+    {
+      "id": "negative-134",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
+      ]
+    },
+    {
+      "id": "negative-135",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-136",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-137",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-138",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-139",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    },
+    {
+      "id": "negative-140",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "narrative_english"
+      ]
+    }
+  ]
+}

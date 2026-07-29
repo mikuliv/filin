@@ -2,7 +2,7 @@
 
 ## Назначение
 
-Воспроизводимая локальная проверка transport, timing, recovery и evidence collection.
+Воспроизводимая локальная проверка transport, timing, восстановление и подтверждающие материалы collection.
 
 ## Статус
 
@@ -14,19 +14,19 @@
 
 ## Основные каталоги
 
-Contracts, runner components и local fixtures находятся в `rehearsal/`.
+Contracts, модуль запуска components и local fixtures находятся в `rehearsal/`.
 
 ## Разрешённые входы и выходы
 
-Frozen synthetic scenarios; outputs пишутся в runtime и stage reports по protocol.
+Зафиксировано synthetic scenarios; outputs пишутся в среда выполнения и stage reports по protocol.
 
 ## Границы и запреты
 
-Запрещены real notifications, external endpoints и трактовка результата как production readiness.
+Запрещены real notifications, external endpoints и трактовка результата как промышленная эксплуатация readiness.
 
 ## Безопасный запуск
 
-Только команда конкретного frozen protocol; общий quick runner намеренно не публикуется.
+Только команда конкретного Зафиксировано protocol; общий quick модуль запуска намеренно не публикуется.
 
 ## Тестирование
 

@@ -1,7 +1,7 @@
 scenario_id: benign_web_browsing
 type: benign
 name: Обычные HTTP-запросы
-description: Последовательные обращения к внутреннему web-сервису для имитации просмотра страниц.
+description: Последовательные обращения к внутреннему сервису веб для имитации просмотра страниц.
 source_role: benign-client
 target_role: target-web
 expected_label: benign

@@ -1,4 +1,4 @@
-# Datasets
+# Наборы данных
 
 ## Назначение
 
@@ -10,16 +10,16 @@
 
 ## Место в архитектуре
 
-Dataset metadata поддерживает experiment protocols и feature generation основной линии.
+набор данных metadata поддерживает experiment protocols и признак generation основной линии.
 
 ## Основные файлы
 
-Описания sources, splits, labels и provenance; точный состав определяется stage protocol.
+Описания sources, splits, labels и происхождение; точный состав определяется stage protocol.
 
 ## Разрешённые входы и выходы
 
-Только synthetic/controlled inputs с documented provenance. Output — metadata и
-локальные runtime artifacts, разрешённые protocol.
+Только synthetic/controlled inputs с documented происхождение. Output — metadata и
+локальные среда выполнения artifacts, разрешённые protocol.
 
 ## Границы и запреты
 
@@ -27,8 +27,8 @@ Dataset metadata поддерживает experiment protocols и feature genera
 
 ## Безопасный запуск и тестирование
 
-Используйте tests конкретной ML campaign; отдельного production importer нет.
+Используйте tests конкретной ML campaign; отдельного промышленная эксплуатация importer нет.
 
 ## Источники истины
 
-[Data provenance](../docs/data-provenance.md) и frozen protocols соответствующего stage.
+[Data происхождение](../docs/data-provenance.md) и Зафиксировано protocols соответствующего stage.

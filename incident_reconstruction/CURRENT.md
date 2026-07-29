@@ -2,13 +2,13 @@
 
 ## Почему отдельный файл
 
-`incident_reconstruction/README.md` входит во frozen bundle и не может быть изменён.
+`incident_reconstruction/README.md` входит во Зафиксировано комплект и не может быть изменён.
 Этот документ является современной редакцией без подмены защищённых байтов.
 
 ## Назначение и статус
 
-Текущая laboratory subsystem преобразует passive event и evidence references в
-facts, temporal/structural relations, gaps, correlation groups, competing hypotheses
+Текущая laboratory subsystem преобразует passive event и подтверждающие материалы references в
+facts, temporal/structural relations, разрывы, correlation groups, competing гипотезы
 и incident card v2. Этапы `v0.4.0–v0.4.4` завершены; external applicability не подтверждена.
 
 ## Место в архитектуре
@@ -21,12 +21,12 @@ facts, temporal/structural relations, gaps, correlation groups, competing hypoth
 
 ## Разрешённые входы и выходы
 
-Только versioned laboratory bundles. Outputs — deterministic cards и explanation views.
+Только версионированный laboratory bundles. Outputs — deterministic cards и explanation views.
 
 ## Границы и запреты
 
-Fact требует evidence; temporal/graph relation не доказывает причинность; hypothesis
-не является фактом; forced winner и automatic response запрещены.
+Fact требует подтверждающие материалы; temporal/graph relation не доказывает причинность; hypothesis
+не является фактом; принудительный выбор победителя и automatic response запрещены.
 
 ## Безопасный запуск и тестирование
 
@@ -36,5 +36,5 @@ python -m pytest ml/tests/test_v040_incident_reconstruction.py ml/tests/test_v04
 
 ## Источники истины
 
-Versioned schemas, frozen protocols, v0.4 policy results и
+версионированный schemas, Зафиксировано protocols, v0.4 policy results и
 [архитектурный обзор](../docs/architecture/reconstruction-and-analysis-track.md).

@@ -1,4 +1,4 @@
-"""Проверяет запрещённые semantic substitutions в current narrative."""
+"""Проверяет научные подмены и русскоязычный повествовательный текст."""
 from __future__ import annotations
 
 import argparse
@@ -10,6 +10,7 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.docs.documentation_v2 import ROOT, build_protected_set, document_metadata, tracked_markdown
+from tools.docs.validate_russian_narrative import scan_repository
 
 
 FORBIDDEN = {
@@ -30,6 +31,8 @@ def validate() -> list[str]:
         lower=path.read_text(encoding="utf-8").casefold()
         for phrase,code in FORBIDDEN.items():
             if phrase in lower: errors.append(f"{code}:{rel}")
+    narrative = scan_repository(ROOT)
+    errors.extend(f"{item['code']}:{item['path']}:{item['line']}" for item in narrative["findings"])
     return errors
 
 

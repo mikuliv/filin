@@ -1,7 +1,7 @@
 scenario_id: benign_auth_retry_recovery
 type: benign
 name: Authentication retry recovery
-description: A bounded failed test login followed by benign internal reads.
+description: A bounded ошибка test login followed by benign internal reads.
 source_role: benign-client
 target_role: target-api
 expected_label: benign

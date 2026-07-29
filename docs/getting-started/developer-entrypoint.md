@@ -1,6 +1,6 @@
 # Точка входа разработчика
 
-1. Прочитайте [границу current/historical](../architecture/current-vs-historical.md).
+1. Прочитайте [границу текущий/исторический](../architecture/current-vs-historical.md).
 2. Подготовьте [локальное окружение](local-environment.md).
 3. Найдите компонент в [каталоге](../reference/component-directory.md) и прочитайте его README.
 4. Проверьте input/output schema через [индекс контрактов](../contracts/index.md).
@@ -8,5 +8,5 @@
 6. Запустите тесты компонента и documentation validators.
 7. Не изменяйте protected files из [реестра](../audit/protected_documentation_v2.json).
 
-Изменение capability требует отдельного versioned stage, protocol и policy result;
+Изменение capability требует отдельного версионированный stage, protocol и policy result;
 документационный коммит не может разрешить новое поведение.

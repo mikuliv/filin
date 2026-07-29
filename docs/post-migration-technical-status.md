@@ -1,9 +1,5 @@
-# Post-migration technical and legal status
+# Техническое и правовое состояние после миграции
 
-The standalone Filin repository exists after the 2026-07-11 technical
-migration. The earlier licensing audit is a **pre-migration historical audit**
-of the former combined repository and must not be rewritten as though it were
-performed after the split. Technical separation does not establish copyright
-ownership or select a licence. No project licence is assigned by this
-repository; ownership and distribution decisions require a separate legal
-review.
+Отдельный репозиторий «Филин» существует после технической миграции 11 июля 2026 года. Более ранняя проверка лицензирования относится к историческому состоянию объединённого репозитория и не должна описываться как выполненная после разделения.
+
+Техническое разделение не устанавливает правообладателя и не выбирает лицензию. Сам факт существования репозитория не назначает лицензию проекта. Решения о правообладании и распространении требуют отдельной правовой проверки.

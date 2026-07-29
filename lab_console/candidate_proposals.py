@@ -50,7 +50,7 @@ def _safe(value: str, field: str = "token") -> str:
 
 
 class CandidateProposalService:
-    """Offline, allowlist-only proposal workflow. Proposals are never candidates."""
+    """Локальный порядок подготовки предложений только из разрешённого перечня данных."""
 
     def __init__(self, db: Database, runtime: Path, *, import_official: bool = True) -> None:
         self.db = db
@@ -73,7 +73,7 @@ class CandidateProposalService:
         source_manifest = digest({p.name: _sha(p) for p in (feature, labels, sealed, campaign)}) if enabled else "0" * 64
         entry = {
             "schema_version": "candidate_development_data_descriptor_v1", "data_catalog_id": "v03154-synthetic-development-runtime",
-            "display_name": "Синтетическая development-кампания v0.3.15.4", "data_kind": "synthetic_network_feature_rows",
+            "display_name": "Синтетическая кампания разработки v0.3.15.4", "data_kind": "synthetic_network_feature_rows",
             "source_stage": "v0.3.15.4", "provenance_status": "verified" if enabled else "missing",
             "source_manifest_sha256": source_manifest, "content_semantic_sha256": digest({"feature_rows": _sha(feature) if feature.is_file() else None, "contract": "network_features_v2"}),
             "license_expression": "CC-BY-4.0", "distribution_allowed": False, "contains_real_data": False,
@@ -82,7 +82,7 @@ class CandidateProposalService:
             "session_count": 25, "capture_count": 5000, "row_count": 4750, "group_key": "session_id",
             "allowed_roles": ["training", "calibration", "development_validation", "internal_screening", "reproducibility_only"],
             "forbidden_roles": ["blind_evaluation", "production"], "overlap_domains": ["sha256", "semantic_sha256", "session_id", "capture_id", "normalized_row"],
-            "enabled": enabled, "limitations": ["Локальный synthetic runtime; распространение dataset запрещено.", "Internal-screening labels остаются sealed до freeze proposal."],
+            "enabled": enabled, "limitations": ["Локальная синтетическая среда выполнения; распространение набора данных запрещено.", "Метки предварительной внутренней проверки остаются закрытыми до фиксации предложения кандидата."],
         }
         return {"schema_version": "candidate_development_data_catalog_v1", "entries": [entry], "read_only": True}
 
@@ -289,7 +289,7 @@ class CandidateProposalService:
                   "comparability_status": "comparable", "metric_results": metric_deltas, "class_results": class_results, "false_positive_results": [x for x in metric_deltas if x["metric_id"] == "fpr"],
                   "abstention_results": {"active": p["screening"]["active_abstention_count"], "proposal": p["screening"]["proposal_abstention_count"]},
                   "episode_results": [], "card_diffs": [], "gap_diffs": [], "hypothesis_diffs": [], "differences": [x for x in metric_deltas if x["interpretation"] != "unchanged"],
-                  "limitations": ["Внутренний synthetic screening не является внешней validation."], "winner_selected": False, "hidden_score": False, "replacement_recommended": False}
+                  "limitations": ["Внутренняя проверка на синтетических данных не является внешней проверкой."], "winner_selected": False, "hidden_score": False, "replacement_recommended": False}
         bundle["comparison_semantic_sha256"] = digest(bundle)
         p.update({"proposal_status": "comparison_completed", "comparison_status": "completed", "comparison": bundle}); self._save_proposal(p); self._write_metadata(token, "comparison.json", bundle); return bundle
 

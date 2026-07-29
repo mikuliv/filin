@@ -95,7 +95,7 @@ def test_stages_and_bundles_are_structured(client):
     assert len(soup(client, "/ui/stages").select(".stage-card")) == 14
     bundle = soup(client, "/ui/bundles")
     assert len(bundle.select("#bundle-table tbody > tr:not(.bundle-detail)")) == 4
-    assert "Manifest SHA" in bundle.get_text() and "Verifier" in bundle.get_text()
+    assert "манифест SHA" in bundle.get_text() and "Средство проверки" in bundle.get_text()
 
 
 def test_incident_list_and_detail(client):

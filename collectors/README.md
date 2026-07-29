@@ -1,8 +1,8 @@
-# Collectors
+# Сборщики
 
 ## Назначение
 
-Сбор и нормализация CSV, Zeek и Suricata observations, а также passive shadow runtime.
+Сбор и нормализация CSV, Zeek и Suricata observations, а также passive shadow среда выполнения.
 
 ## Статус
 
@@ -10,7 +10,7 @@
 
 ## Место в архитектуре
 
-Компонент формирует вход feature pipeline и `shadow_event_v2` основной линии.
+Компонент формирует вход признак pipeline и `shadow_event_v2` основной линии.
 
 ## Основные каталоги
 
@@ -18,15 +18,15 @@
 
 ## Разрешённые входы
 
-Контролируемые fixtures и formats, предусмотренные versioned contracts.
+Контролируемые fixtures и formats, предусмотренные версионированный contracts.
 
 ## Выходы
 
-Нормализованные records, feature inputs и passive events с candidate identity.
+Нормализованные records, признак inputs и passive events с candidate identity.
 
 ## Границы и запреты
 
-Production capture, скрытая отправка наружу и неизвестный candidate запрещены.
+промышленная эксплуатация capture, скрытая отправка наружу и неизвестный candidate запрещены.
 
 ## Безопасный запуск и тестирование
 
@@ -37,4 +37,4 @@ python -m pytest collectors -q
 ## Источники истины
 
 `collectors/shadow/contracts/candidate_registry_v1.json`, collector schemas и
-[detection/runtime architecture](../docs/architecture/detection-and-runtime-track.md).
+[detection/среда выполнения architecture](../docs/architecture/detection-and-runtime-track.md).

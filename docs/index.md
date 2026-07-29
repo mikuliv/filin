@@ -1,7 +1,7 @@
 # Документация платформы «Филин»
 
 Эта страница — каноническая навигация по текущему устройству проекта. Исторические
-отчёты и frozen evidence доступны через отдельные индексы и не подменяют текущий статус.
+отчёты и Зафиксировано подтверждающие материалы доступны через отдельные индексы и не подменяют текущий статус.
 
 ## Новый технический читатель
 
@@ -40,8 +40,8 @@
 2. [Точка входа аудитора](getting-started/auditor-entrypoint.md).
 3. [Статус основной линии](status/project-status.yaml) и
    [лабораторной линии](status/v0_4_track.yaml).
-4. [Frozen protocols](protocols/index.md).
-5. [Итоговые отчёты и evidence bundles](reports/index.md).
+4. [Зафиксировано protocols](protocols/index.md).
+5. [Итоговые отчёты и подтверждающие материалы bundles](reports/index.md).
 6. [Контракты](contracts/index.md).
 7. [Воспроизводимость](research/reproducibility.md).
 8. [Коррекции и отрицательные результаты](history/corrections-and-negative-results.md).
@@ -55,13 +55,13 @@
 3. [Подтверждённая область](status/confirmed-capabilities.md).
 4. [Известные ограничения](architecture/limitations.md).
 5. [Роли и порядок первого контакта](getting-started/external-review-entrypoint.md#роли).
-6. [Frozen package v0.3.18](reports/index.md).
+6. [Зафиксировано package v0.3.18](reports/index.md).
 
 ## Архитектура
 
 - [Индекс архитектуры](architecture/index.md).
 - [Сквозной поток данных](architecture/end-to-end-data-flow.md).
-- [Основная линия detection/runtime](architecture/detection-and-runtime-track.md).
+- [Основная линия detection/среда выполнения](architecture/detection-and-runtime-track.md).
 - [Лабораторная реконструкция и анализ](architecture/reconstruction-and-analysis-track.md).
 - [Лабораторная консоль](architecture/laboratory-console.md).
 - [Компонентная карта](architecture/component-map.md).
@@ -96,13 +96,13 @@
 ## Сопровождение документации
 
 - [Единый стиль](contributing/documentation-style.md).
-- [Maintenance-процесс](contributing/documentation-maintenance.md).
+- [процесс обслуживания](contributing/documentation-maintenance.md).
 - [Проверка документации](contributing/testing-and-validation.md).
 - [Добавление этапа](contributing/adding-a-stage.md).
 - [Добавление контракта](contributing/adding-a-contract.md).
 - [Добавление отчёта](contributing/adding-a-report.md).
 - [README подсистемы](contributing/adding-a-subsystem-readme.md).
-- [Audit-материалы текущей переработки](audit/index.md).
+- [материалы аудита текущей переработки](audit/index.md).
 
 ## Лицензирование и распространение
 
@@ -125,10 +125,10 @@
 - [Этап v0.4.6](experiments/v0_4_6.md).
 - [Этап v0.4.7](experiments/v0_4_7.md).
 - [Слепая лабораторная проверка](research/blind-laboratory-validation.md).
-- [Запуск blind-проверки](getting-started/running-blind-laboratory-validation.md).
-- [Управление proposal](research/candidate-proposal-governance.md).
+- [Выполнение слепой проверки](getting-started/running-blind-laboratory-validation.md).
+- [Управление предложением кандидата](research/candidate-proposal-governance.md).
 - [Происхождение данных](research/training-data-lineage.md).
 - [Воспроизводимость обучения](research/model-training-reproducibility.md).
-- [Internal screening](research/internal-screening-policy.md).
-- [Подготовка proposal](getting-started/preparing-candidate-proposals.md).
+- [предварительная внутренняя проверка](research/internal-screening-policy.md).
+- [Подготовка предложение кандидата](getting-started/preparing-candidate-proposals.md).
 - [Ручное рассмотрение](getting-started/reviewing-candidate-proposals.md).

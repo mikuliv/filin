@@ -1,7 +1,7 @@
 scenario_id: benign_database_pool_recovery
 type: benign
 name: Database pool recovery
-description: Safe local retry and recovery workflow.
+description: Safe local retry and восстановление порядок работы.
 source_role: benign-client
 target_role: target-api
 expected_label: benign

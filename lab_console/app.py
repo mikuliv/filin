@@ -31,6 +31,7 @@ from .blind_validations import BlindValidationService
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
+from .presentation.statuses import status_display, status_label
 from .presentation.case_views import case_catalog, case_page
 from .review import ReviewService
 from .security import SessionStore
@@ -50,6 +51,8 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     app = FastAPI(title="Филин — лабораторная консоль", version="0.4.7", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
     templates.env.filters["json_ru"] = lambda value: json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True)
+    templates.env.filters["status_label"] = status_label
+    templates.env.filters["status_display"] = status_display
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
     app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals, app.state.blind_validations = settings, db, catalog, runner, cases, reviews, lab_runs, proposals, blind_validations
 
@@ -231,15 +234,15 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
         return templates.TemplateResponse(request, "pages/candidate_proposal_review.html", context)
 
     blind_views = [
-        ("overview", "Обзор"), ("control-packs", "Контрольные наборы"), ("commitments", "Commitments"),
-        ("roles", "Роли и доступ"), ("blindness", "Blindness gate"), ("prediction-plans", "Prediction plans"),
-        ("active-inference", "Inference active"), ("proposal-inference", "Inference proposal"),
-        ("prediction-commitments", "Prediction commitments"), ("label-unlock", "Label unlock"),
-        ("evaluation", "Evaluation"), ("comparability", "Comparability"), ("metrics", "Metrics"),
-        ("classes", "Classes"), ("episodes", "Episodes"), ("abstentions", "Abstentions"),
-        ("reconstruction", "Reconstruction"), ("cards", "Cards"), ("gaps", "Gaps"),
-        ("hypotheses", "Hypotheses"), ("differences", "Differences"), ("acceptance-gate", "Acceptance gate"),
-        ("manual-review", "Manual review"), ("export", "Export"), ("limitations", "Limitations"),
+        ("overview", "Обзор"), ("control-packs", "Контрольные наборы"), ("commitments", "Предварительная фиксация"),
+        ("roles", "Роли и доступ"), ("blindness", "Сохранение слепого режима"), ("prediction-plans", "Планы формирования прогнозов"),
+        ("active-inference", "Применение действующего кандидата"), ("proposal-inference", "Применение предложения кандидата"),
+        ("prediction-commitments", "Фиксация пакетов прогнозов"), ("label-unlock", "Раскрытие разметки"),
+        ("evaluation", "Оценка"), ("comparability", "Сопоставимость"), ("metrics", "Показатели"),
+        ("classes", "Классы"), ("episodes", "Эпизоды"), ("abstentions", "Отказы от решения"),
+        ("reconstruction", "Реконструкция"), ("cards", "Карточки"), ("gaps", "Разрывы"),
+        ("hypotheses", "Гипотезы"), ("differences", "Различия"), ("acceptance-gate", "Критерии приёмки"),
+        ("manual-review", "Ручное рассмотрение"), ("export", "Экспорт"), ("limitations", "Ограничения"),
     ]
 
     @app.get("/ui/blind-validations/{validation_token}", response_class=HTMLResponse)

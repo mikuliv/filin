@@ -7,6 +7,7 @@ from typing import Any
 from ..adapters import git_value, project_status
 from ..cards import build_console_view, build_incident_card_v2
 from .common import load_json, load_text, now_label, pct, raw, short, source
+from .statuses import status_label
 
 NAVIGATION = [
     {"label": "Обзор", "items": [("dashboard", "Главная"), ("stages", "Этапы проекта")]},
@@ -50,7 +51,7 @@ def _stages() -> list[dict[str, Any]]:
                          "manifest": short(policy.get(f"{report_key}_manifest_sha256") or policy.get("manifest_sha256") or manifest_sha),
                          "semantic": short(policy.get("semantic_sha256") or policy.get(f"{report_key}_semantic_sha256") or journal.get("semantic_sha256")),
                          "capability": "Следующий разрешённый исследовательский этап" if future else "Подтверждённая лабораторная возможность",
-                         "limitations": "Не production; без автоматических действий", "next": "—" if future else (versions[order] if order < len(versions) else "—")})
+                         "limitations": "Не для промышленной эксплуатации; без автоматических действий", "next": "—" if future else (versions[order] if order < len(versions) else "—")})
     return rows
 
 
@@ -58,18 +59,18 @@ def dashboard(runner) -> dict[str, Any]:
     status = project_status(); runs = runner.list(); active = sum(r["status"] == "running" for r in runs)
     cards = [
         ("Основной этап", "v0.3.18", "Завершён"), ("Следующий основной", "v0.3.19", "Разрешён"),
-        ("Лабораторный этап", "v0.4.7", "Завершён · failed_validation"), ("Следующий лабораторный", "Независимый reviewer", "v0.4.8 запрещён"),
-        ("Кандидат", "v03154", "frozen"), ("Целостность комплектов", "3 из 3", "Проверено"),
-        ("Полная регрессия", "1650 passed", "3 warnings"), ("Активные задачи", str(active), "Локально"),
+        ("Лабораторный этап", "v0.4.7", f"Завершён · {status_label('failed_validation')}"), ("Следующий лабораторный", "Независимый эксперт", "v0.4.8 запрещён"),
+        ("Кандидат", "v03154", status_label("frozen")), ("Целостность комплектов", "3 из 3", "Проверено"),
+        ("Полная регрессия", "1802 пройдено", "3 предупреждения"), ("Активные задачи", str(active), "Локально"),
     ]
     return {"view_model": "dashboard_v0431", "cards": [{"label": a, "value": b, "meta": c} for a, b, c in cards],
-            "project_state": [("Кандидат неизменён", True), ("Backend изолирован", status["backend_isolated"]),
-                              ("Production разрешён", False), ("Внешнее испытание выполнено", False),
+            "project_state": [("Кандидат неизменён", True), ("Серверная часть изолирована", status["backend_isolated"]),
+                              ("Промышленная эксплуатация разрешена", False), ("Внешнее испытание выполнено", False),
                               ("Автоматические действия разрешены", False), ("Дерево Git чистое", status["tree_state"] == "clean")],
             "stage_lines": _stages(), "recent_runs": runs[:5],
-            "checks": [{"name": "Полная регрессия", "state": "passed", "detail": "1650 тестов"},
-                       {"name": "Bundle verifier", "state": "passed", "detail": "3 комплекта"},
-                       {"name": "Документация", "state": "passed", "detail": "203 документа"}],
+            "checks": [{"name": "Полная регрессия", "state": "passed", "detail": "1802 теста"},
+                       {"name": "Проверка комплектов", "state": "passed", "detail": "3 комплекта"},
+                       {"name": "Документация", "state": "passed", "detail": "317 документов"}],
             "integrity_errors": [], "attention": ["7 временных разрывов требуют ручной проверки", "6 гипотез остаются без окончательного определения"],
             "raw": raw(status)}
 
@@ -83,10 +84,10 @@ def stages() -> dict[str, Any]:
 def model() -> dict[str, Any]:
     lock = load_json("ml/reports/v0_3_15_4/pre_audit_lock.json")
     return {"view_model": "model_registry_v0431", "count": 1, "candidate": {"id": "v03154:65a3dd912d845bc1", "short": "v03154",
-            "status": "frozen", "created_stage": "v0.3.15.4", "validated_stage": "v0.4.3", "feature_contract": "network_features_v2",
+            "status": status_label("frozen"), "created_stage": "v0.3.15.4", "validated_stage": "v0.4.3", "feature_contract": "network_features_v2",
             "event_contract": "shadow_event_v2", "artifact_sha": lock.get("candidate_artifact_sha256"), "manifest_sha": lock.get("candidate_manifest_sha256"),
             "integrity": "Проверено", "allowed": ["Синтетические лабораторные события", "Read-only реконструкция", "Ручной анализ"],
-            "forbidden": ["Production", "Внешние испытания", "Автоматическое реагирование", "Подтверждение компрометации"]},
+            "forbidden": ["Промышленная эксплуатация", "Внешние испытания", "Автоматическое реагирование", "Подтверждение компрометации"]},
             "tabs": ["Обзор", "Показатели", "Классы поведения", "Эпизоды", "Артефакты", "Ограничения", "Исходные данные"], "raw": raw(lock)}
 
 

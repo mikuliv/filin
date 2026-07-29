@@ -2,7 +2,7 @@
 
 ## Назначение
 
-Изолированные scenarios, environments, sensors, campaigns, holdouts и robustness checks.
+Изолированные scenarios, environments, sensors, Кампании, holdouts и robustness checks.
 
 ## Статус
 
@@ -18,15 +18,15 @@
 
 ## Разрешённые входы и выходы
 
-Только synthetic сценарии и локальные fixtures. Outputs пишутся в разрешённый runtime.
+Только synthetic сценарии и локальные fixtures. Outputs пишутся в разрешённый среда выполнения.
 
 ## Границы и запреты
 
-Запрещены выход из изоляции, production traffic и трактовка rehearsal как external trial.
+Запрещены выход из изоляции, промышленная эксплуатация traffic и трактовка rehearsal как external trial.
 
 ## Безопасный запуск
 
-Запускайте только command, указанный frozen protocol конкретного stage.
+Запускайте только command, указанный Зафиксировано protocol конкретного stage.
 
 ## Тестирование
 
@@ -36,4 +36,4 @@ python -m pytest ml/tests -q
 
 ## Источники истины
 
-Frozen protocols, policy results и [research methodology](../docs/research/methodology.md).
+Зафиксировано protocols, policy results и [research methodology](../docs/research/methodology.md).

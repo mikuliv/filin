@@ -1,7 +1,7 @@
 scenario_id: attack_port_scan
 type: attack
 name: Контролируемое сканирование портов
-description: Безопасная проверка ограниченного списка портов только на внутренних сервисах allowlist.
+description: Безопасная проверка ограниченного списка портов только на внутренних сервисах Перечень разрешённых значений.
 source_role: attacker-simulator
 target_role: target-web
 expected_label: port_scan

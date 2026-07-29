@@ -1,4 +1,4 @@
 # Отчёт переработки v1 — исторический
 
 Прежний report относится к состоянию после v0.3.18. Текущий результат находится в
-[Documentation Maintenance v2](documentation_refactor_report_v2.md).
+[Обслуживание документации v2](documentation_refactor_report_v2.md).

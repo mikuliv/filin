@@ -1,20 +1,20 @@
-# Robustness laboratory
+# Лаборатория устойчивости
 
 ## Назначение
 
-Подготовка независимых external runs для проверки устойчивости frozen sensor baseline.
+Подготовка независимых external runs для проверки устойчивости Зафиксировано sensor baseline.
 
 ## Что реализовано
 
-v0.3.2 использует 12 completed runs: по три topology, background, temporal и combined. Эти данные применяются только к predict/evaluation.
+v0.3.2 использует 12 завершено runs: по три topology, background, temporal и combined. Эти данные применяются только к predict/оценка.
 
 ## Основные файлы
 
-`run_v0_3_2_stage.py` координирует integrity audits и evaluation pipeline.
+`run_v0_3_2_stage.py` координирует integrity audits и оценка pipeline.
 
 ## Входные данные и выходные данные
 
-Вход — существующая campaign и frozen model manifest. Выход — runtime reports v0.3.2.
+Вход — существующая campaign и Зафиксировано модель манифест. Выход — среда выполнения reports v0.3.2.
 
 ## Запуск
 
@@ -22,11 +22,11 @@ v0.3.2 использует 12 completed runs: по три topology, background,
 
 ## Проверки
 
-Runner с `--resume` должен распознавать успешные runs и не выполнять Docker campaign повторно.
+модуль запуска с `--resume` должен распознавать успешные runs и не выполнять Docker campaign повторно.
 
 ## Ограничения
 
-Положительный результат policy не означает production readiness.
+Положительный результат policy не означает промышленная эксплуатация readiness.
 
 ## Связанные документы
 

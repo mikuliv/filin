@@ -2,10 +2,10 @@
 
 ## Состав
 
-`incident_reconstruction/` валидирует source bundle, создаёт наблюдаемые факты,
-temporal/structural relations, gaps, correlation groups, competing hypotheses и
+`incident_reconstruction/` валидирует source комплект, создаёт наблюдаемые факты,
+temporal/structural relations, разрывы, correlation groups, competing гипотезы и
 incident card v2. `lab_console/` предоставляет локальные представления и отдельный
-SQLite overlay ручного рассмотрения.
+SQLite изменяемый слой ручного рассмотрения.
 
 ## Семантические границы
 
@@ -14,7 +14,7 @@ SQLite overlay ручного рассмотрения.
 - relation описывает проверяемую связь, но не автоматически причинность;
 - hypothesis остаётся объяснением даже при лучшей поддержке;
 - равная опора не означает одинаковость или истинность обеих гипотез;
-- manual review фиксирует работу оператора, но не меняет evidence.
+- manual рассмотрение фиксирует работу оператора, но не меняет подтверждающие материалы.
 
 ## Этапы
 

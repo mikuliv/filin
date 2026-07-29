@@ -1,4 +1,4 @@
-# Zeek collector
+# Сборщик Zeek
 
 ## Назначение и статус
 
@@ -14,7 +14,7 @@ Parser и normalization code принимают controlled Zeek fixtures и во
 
 ## Границы и запреты
 
-Не является production sensor agent; неизвестные schemas должны отклоняться.
+Не является промышленная эксплуатация sensor agent; неизвестные schemas должны отклоняться.
 
 ## Безопасный запуск и тестирование
 
@@ -24,4 +24,4 @@ python -m pytest collectors/zeek_collector -q
 
 ## Источники истины
 
-Code, tests и [collectors overview](../README.md).
+Code, tests и [Сборщики overview](../README.md).

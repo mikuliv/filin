@@ -148,105 +148,105 @@ features:
     type: numeric
     level: window
     source: [normalized_events, zeek_conn]
-    description: "Учебная оценка числа TCP connect-проверок."
+    description: "Учебная оценка числа TCP проверок соединения."
     used_for: [port_scan]
     leakage_risk: low
   - name: tcp_ack_count
     type: numeric
     level: window
     source: [normalized_events, zeek_conn]
-    description: "Учебная оценка числа успешных TCP connect-проверок."
+    description: "Учебная оценка числа успешных TCP проверок соединения."
     used_for: [port_scan]
     leakage_risk: low
   - name: tcp_rst_count
     type: numeric
     level: window
     source: [normalized_events, zeek_conn]
-    description: "Учебная оценка числа закрытых TCP connect-проверок."
+    description: "Учебная оценка числа закрытых TCP проверок соединения."
     used_for: [port_scan]
     leakage_risk: low
   - name: tcp_fin_count
     type: numeric
     level: window
     source: [normalized_events, zeek_conn]
-    description: "Учебная оценка числа завершенных TCP connect-проверок."
+    description: "Учебная оценка числа завершенных TCP проверок соединения."
     used_for: [port_scan]
     leakage_risk: low
   - name: syn_rate
     type: numeric
     level: window
     source: [normalized_events]
-    description: "Частота TCP connect-проверок в секунду."
+    description: "Частота TCP проверок соединения в секунду."
     used_for: [port_scan]
     leakage_risk: low
   - name: rst_rate
     type: numeric
     level: window
     source: [normalized_events]
-    description: "Частота закрытых TCP connect-проверок в секунду."
+    description: "Частота закрытых TCP проверок соединения в секунду."
     used_for: [port_scan]
     leakage_risk: low
   - name: http_request_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество HTTP-запросов в окне."
+    description: "Количество запросов HTTP в окне."
     used_for: [web_probe, low_rate_dos, benign_web]
     leakage_risk: low
   - name: http_get_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество HTTP GET-запросов."
+    description: "Количество HTTP запросов GET."
     used_for: [web_probe, benign_web]
     leakage_risk: low
   - name: http_post_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество HTTP POST-запросов."
+    description: "Количество HTTP запросов POST."
     used_for: [auth_failures, beacon_simulation]
     leakage_risk: low
   - name: http_2xx_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество успешных HTTP-ответов."
+    description: "Количество успешных ответов HTTP."
     used_for: [benign_web]
     leakage_risk: low
   - name: http_4xx_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество HTTP-ответов класса 4xx."
+    description: "Количество ответов HTTP класса 4xx."
     used_for: [web_probe, auth_failures]
     leakage_risk: low
   - name: http_5xx_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество HTTP-ответов класса 5xx."
+    description: "Количество ответов HTTP класса 5xx."
     used_for: [service_errors]
     leakage_risk: low
   - name: http_4xx_rate
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Доля HTTP-ответов класса 4xx."
+    description: "Доля ответов HTTP класса 4xx."
     used_for: [web_probe, auth_failures]
     leakage_risk: low
   - name: unique_url_count
     type: numeric
     level: window
     source: [normalized_events, zeek_http]
-    description: "Количество уникальных URL-путей."
+    description: "Количество уникальных путей URL."
     used_for: [web_probe, benign_web]
     leakage_risk: low
   - name: suspicious_path_count
     type: numeric
     level: window
     source: [normalized_events]
-    description: "Количество обращений к безопасным тестовым путям probe-сценария."
+    description: "Количество обращений к безопасным тестовым путям сценария проверки."
     used_for: [web_probe]
     leakage_risk: low
   - name: file_download_count
@@ -267,7 +267,7 @@ features:
     type: numeric
     level: window
     source: [normalized_events, zeek_dns]
-    description: "Количество уникальных внутренних DNS-имен."
+    description: "Количество уникальных внутренних имен DNS."
     used_for: [dns_activity]
     leakage_risk: low
   - name: dns_nxdomain_count

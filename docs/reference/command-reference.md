@@ -1,54 +1,66 @@
 # Справочник команд
 
-Все команды выполняются из корня репозитория, если не указано иное.
+Все команды выполняются из корня репозитория. Поле «изменения» описывает ожидаемую запись на диск; ни одна команда ниже не должна обращаться к сети или менять действующего кандидата.
 
-## Подготовка среды
+## Основные проверки
 
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m pip install -r requirements.txt` | установить dependencies | environment | нет | возможно | packages доступны | не менять lock без этапа |
-
-## Полный pytest и compileall
-
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m pytest -q` | полный regression | нет | да | нет | `0 failed` | может быть длительным |
-| `python -m compileall backend collectors incident_reconstruction lab_console ml rehearsal staging tools` | syntax/import bytecode check | `__pycache__` | да | нет | exit 0 | не является functional test |
+| Команда | Назначение | Изменения | Ожидаемый результат | Ограничение |
+|---|---|---|---|---|
+| `python -m pytest -q` | полная регрессия | временные файлы pytest | `0 failed` | число пройденных тестов не фиксировано |
+| `python -m compileall backend collectors incident_reconstruction lab_console ml rehearsal staging tools` | проверка синтаксиса и импорта | `__pycache__` | код `0` | не заменяет функциональные тесты |
+| `python -m tools.lab_console.verify_console` | базовые контракты консоли | временные файлы | проверка пройдена | только локальный режим |
+| `python -m tools.lab_console.verify_v044` | операторский цикл карточек | временные файлы | проверка пройдена | не создаёт научного решения |
+| `python -m tools.lab_console.verify_v045` | каталог и сравнение запусков | временные файлы | проверка пройдена | без выбора кандидата |
+| `python -m tools.lab_console.verify_v046` | предложения кандидатов | временные файлы | проверка пройдена | без регистрации и продвижения |
+| `python -m tools.lab_console.verify_v047` | слепая лабораторная проверка | временные файлы | проверка пройдена | без раскрытия строк и повторного вывода |
 
 ## Документация
 
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m tools.docs.build_documentation_inventory` | перестроить inventory/protected registry | docs/audit | нет | нет | deterministic files | запускать после content changes |
-| `python -m tools.docs.validate_documentation_v2 --strict` | все правила Documentation v2 | нет | нет | нет | valid | findings не скрывать |
-| `python -m tools.docs.run_documentation_campaign` | positive/negative campaign | audit + runtime | да | нет | все scenarios passed/rejected | temporary fixtures only |
+| Команда | Назначение | Изменения | Ожидаемый результат | Ограничение |
+|---|---|---|---|---|
+| `python -m tools.docs.build_documentation_inventory` | пересобрать навигацию и защищённый перечень | `docs/audit/` | детерминированные индексы | запускать после редакции |
+| `python -m tools.docs.validate_documentation_v2 --strict` | проверить структуру Documentation v2 | нет | `valid: true` | не исправляет файлы |
+| `python -m tools.docs.validate_documentation_authority` | проверить источники истины | нет | код `0` | YAML статуса имеет приоритет |
+| `python -m tools.docs.validate_documentation_freshness` | найти устаревшие ссылки и сведения | нет | код `0` | исторические документы не становятся текущими |
+| `python -m tools.docs.validate_documentation_immutability` | проверить защищённые байты | нет | код `0` | несовпадение хеша блокирует этап |
+| `python -m tools.docs.validate_documentation_terminology` | проверить научные замены терминов | нет | код `0` | не заменяет языковой сканер |
+| `python -m tools.docs.validate_russian_narrative --strict` | проверить человекочитаемый русский текст | нет | `finding_count: 0` | код и разрешённые идентификаторы исключаются контекстно |
+| `python -m tools.docs.run_russian_narrative_campaign` | проверить положительные и отрицательные примеры | временный каталог | все сценарии пройдены | примеры не входят в продуктовые данные |
 
-## Status и authority
+## Целостность кандидата и этапов
 
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m tools.docs.validate_project_status --strict` | status consistency | нет | нет | нет | exit 0 | YAML имеет приоритет |
-| `python -m tools.docs.validate_documentation_authority` | authoritative sources | нет | нет | нет | exit 0 | не создаёт status |
-| `python -m tools.docs.validate_documentation_immutability` | frozen bytes | нет | нет | нет | exit 0 | baseline mismatches — warning |
+```powershell
+python -m tools.audit.validate_v03154_bundle
+python -m tools.audit.validate_v0318_bundle
+python -m tools.audit.validate_v040_bundle
+python -m tools.audit.validate_v041_bundle
+python -m tools.audit.validate_v042_bundle
+```
 
-## Candidate integrity и bundles
+Эти команды читают зафиксированные пакеты и сверяют контрольные суммы. Они не обучают модель, не пересобирают исторические артефакты и не меняют реестр кандидатов.
 
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m tools.audit.validate_v03154_bundle` | candidate bundle | нет | нет | нет | valid | не rebuild frozen artifact |
-| `python -m tools.audit.validate_v0318_bundle` | external-review bundle | нет | нет | нет | valid | не запускает external trial |
-| `python -m tools.audit.validate_v042_bundle` | v0.4.2 reconstruction bundle | нет | нет | нет | valid | laboratory scope |
+## Лицензирование
 
-## Console и operator cycle
+```powershell
+python -m tools.licensing.validate_manifest
+python -m tools.licensing.validate_frozen_license_mapping
+python -m tools.licensing.validate_upstream_standard_texts
+python -m tools.licensing.validate_license_files
+python -m tools.licensing.validate_distribution_profiles
+python -m tools.licensing.validate_third_party_notices
+```
 
-| Команда | Назначение | Меняет файлы | Runtime | Сеть | Ожидаемый итог | Ограничение |
-|---|---|---:|---:|---:|---|---|
-| `python -m lab_console --host 127.0.0.1 --port 8043` | localhost console | нет | да | localhost | UI доступен | token обязателен, public bind запрещён |
-| `python -m tools.lab_console.verify_console` | standalone console verifier | нет | да | нет | passed | не production probe |
-| `python -m tools.lab_console.verify_v044` | case catalog/operator workflow | нет | да | нет | policy valid | не запускает новый cycle |
+Ожидаемый результат — отсутствие файлов без назначения, конфликтов и неизвестных лицензий. Официальные тексты лицензий и зафиксированные материалы не редактируются языковой кампанией.
 
-## Безопасное воспроизведение
+## Запуск консоли
 
-Используйте reproduction guide конкретного stage из [reports index](../reports/index.md).
-Команда должна ссылаться на существующий versioned tool, писать только в разрешённый
-runtime и не использовать production capture, secrets или external connections.
+```powershell
+$env:FILIN_CONSOLE_TOKEN = "локальный-одноразовый-токен"
+python -m lab_console --host 127.0.0.1 --port 8043
+```
+
+Команда пишет только изменяемое состояние в `runtime/lab_console/`. Запрещены внешний адрес, публикация токена, произвольные аргументы выполнения, сетевой доступ и промышленное использование.
+
+## Полномочия результата
+
+Код завершения `0` подтверждает только контракт конкретной команды. Он не означает внешнюю валидацию, готовность к промышленной эксплуатации, истинность гипотезы или право автоматически выбрать либо продвинуть модель.

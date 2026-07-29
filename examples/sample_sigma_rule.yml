@@ -1,7 +1,7 @@
 title: "Филин: кандидат правила для класса Подбор учетных данных"
 id: filin-demo-bruteforce
 status: experimental
-description: Черновик Sigma-правила подготовлен по карточке инцидента Филин.
+description: Черновик правила Sigma подготовлен по карточке инцидента Филин.
 logsource:
   product: network
   category: network_connection

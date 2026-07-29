@@ -2,7 +2,7 @@
 
 ## Назначение и статус
 
-Research utilities для frozen metrics, comparisons и diagnostic reports.
+Research utilities для Зафиксировано показатели, comparisons и diagnostic reports.
 
 ## Место в архитектуре
 
@@ -10,11 +10,11 @@ Research utilities для frozen metrics, comparisons и diagnostic reports.
 
 ## Входы и выходы
 
-Входы — versioned predictions/labels в разрешённом scope; outputs — reports и metrics.
+Входы — версионированный predictions/labels в разрешённом область применимости; outputs — reports и показатели.
 
 ## Границы и запреты
 
-Post-hoc analysis не может менять frozen gate или candidate identity.
+Post-hoc analysis не может менять Зафиксировано gate или candidate identity.
 
 ## Безопасный запуск и тестирование
 
@@ -22,4 +22,4 @@ Post-hoc analysis не может менять frozen gate или candidate iden
 
 ## Источники истины
 
-Frozen protocol, policy result и [evaluation principles](../../docs/research/evaluation-principles.md).
+Зафиксировано protocol, policy result и [оценка principles](../../docs/research/evaluation-principles.md).

@@ -15,12 +15,12 @@ Validator использует стабильные префиксы: `broken_li
 - `incomparable` — безопасное сравнение невозможно;
 - `insufficient_data` — недостаточно сведений.
 
-## Review
+## рассмотрение
 
 - `not_reviewed` — не рассмотрено;
-- `reviewed` — рассмотрено без изменения evidence;
+- `reviewed` — рассмотрено без изменения подтверждающие материалы;
 - `additional_evidence_required` — нужен новый материал;
 - `unresolved` — остаётся открытым;
 - `completed` — operator session завершена, не означает окончательного определения.
 
-Точные enum и HTTP responses определяются соответствующей versioned schema/API.
+Точные enum и HTTP responses определяются соответствующей версионированный schema/API.
