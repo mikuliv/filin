@@ -40,22 +40,22 @@
 2. [Точка входа аудитора](getting-started/auditor-entrypoint.md).
 3. [Статус основной линии](status/project-status.yaml) и
    [лабораторной линии](status/v0_4_track.yaml).
-4. [Зафиксировано protocols](protocols/index.md).
-5. [Итоговые отчёты и подтверждающие материалы bundles](reports/index.md).
+4. [Зафиксированные протоколы](protocols/index.md).
+5. [Итоговые отчёты и пакеты подтверждающих материалов](reports/index.md).
 6. [Контракты](contracts/index.md).
 7. [Воспроизводимость](research/reproducibility.md).
 8. [Коррекции и отрицательные результаты](history/corrections-and-negative-results.md).
 9. [Инвентаризация документации](audit/documentation_inventory_v2.md).
-10. [Protected set](audit/protected_documentation_v2.json).
+10. [Защищённый набор](audit/protected_documentation_v2.json).
 
 ## Независимый эксперт
 
 1. [Граница v0.3.19](getting-started/external-review-entrypoint.md).
-2. [Навигация по внешнему комплекту](../external_review/README.md).
+2. [Полное русское изложение внешнего комплекта](guides/external-review/README.md).
 3. [Подтверждённая область](status/confirmed-capabilities.md).
 4. [Известные ограничения](architecture/limitations.md).
 5. [Роли и порядок первого контакта](getting-started/external-review-entrypoint.md#роли).
-6. [Зафиксировано package v0.3.18](reports/index.md).
+6. [Зафиксированный пакет v0.3.18](reports/index.md).
 
 ## Архитектура
 

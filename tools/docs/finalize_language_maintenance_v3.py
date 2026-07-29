@@ -69,6 +69,12 @@ def main() -> int:
         "historical_document_count": summary["historical_document_count"],
         "generated_document_count": summary["generated_document_count"],
         "protected_document_count": summary["protected_document_count"],
+        "narrative_measurement_scope": "editable_current_documents_only",
+        "protected_files_excluded_from_narrative_measurement": 929,
+        "frozen_external_review_source_file_count": 18,
+        "frozen_external_review_source_changed_count": 0,
+        "external_review_russian_projection_file_count": 18,
+        "external_review_russian_projection_complete": True,
         "files_scanned_count": scan["files_scanned_count"],
         "files_rewritten_count": summary["files_rewritten_count"],
         "generated_files_rebuilt_count": summary["generated_files_rebuilt_count"],
@@ -152,6 +158,8 @@ def main() -> int:
 - отрицательная кампания: **{result['campaign']['negative']}**;
 - защищённых файлов изменено: **{semantic['protected_files_changed']}**;
 - официальных текстов изменено: **{semantic['official_standard_texts_changed']}**;
+- зафиксированных файлов внешней проверки: **18**, изменено: **0**;
+- русских читаемых версий внешней проверки: **18 из 18**.
 - полная регрессия: **{args.pytest_passed} пройдено**, предупреждений: **{args.warnings}**;
 - браузерная приёмка: **{'пройдена' if args.browser_passed else 'не завершена'}**, снимков: **{args.browser_screenshots}**.
 
@@ -162,6 +170,8 @@ def main() -> int:
 ## Смысловая сохранность
 
 Научные утверждения, статусы этапов, разрешения, запреты, действующий кандидат и зафиксированные контрольные суммы не менялись. Исторические и официальные тексты сохранены побайтово.
+
+Нулевая метрика английского повествования относится только к редактируемым текущим документам. Защищённые материалы исключаются из этой метрики и учитываются отдельно. Для 18 файлов внешней проверки v0.3.18 создано отдельное полное русское изложение.
 
 ## Ограничения
 

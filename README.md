@@ -151,7 +151,7 @@ python -m tools.lab_console.verify_v044
 - **Аудитор:** [источники истины](docs/reference/sources-of-truth.md) →
   [протоколы](docs/protocols/index.md) → [отчёты](docs/reports/index.md).
 - **Независимый эксперт:** [точка входа](docs/getting-started/external-review-entrypoint.md) →
-  [современная навигация](external_review/README.md).
+  [полное русское изложение пакета](docs/guides/external-review/README.md).
 
 Полный документационный портал: [docs/index.md](docs/index.md).
 

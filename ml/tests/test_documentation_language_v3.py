@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 from pathlib import Path
 
 import pytest
@@ -42,3 +43,22 @@ def test_allowed_identifiers_are_explicit_not_global():
 def test_protected_evidence_is_not_edited():
     data = json.loads(Path("docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8"))
     assert data["files"]
+
+
+def test_external_review_has_complete_russian_projection_without_source_changes():
+    protected = json.loads(Path("docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8"))
+    sources = {
+        Path(row["path"]).name: row
+        for row in protected["files"]
+        if row["path"].startswith("docs/external_review/")
+    }
+    projection = Path("docs/guides/external-review")
+    projected = {path.name: path for path in projection.glob("*.md")}
+    assert len(sources) == 18
+    assert projected.keys() == sources.keys()
+    for name, row in sources.items():
+        source = Path(row["path"])
+        assert hashlib.sha256(source.read_bytes()).hexdigest() == row["current_sha256"]
+        text = projected[name].read_text(encoding="utf-8")
+        assert "Русское изложение" in text or name == "README.md"
+        assert analyze_text(text, "current_human_document", ".md") == []

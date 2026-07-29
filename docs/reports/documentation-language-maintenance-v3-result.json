@@ -9,6 +9,12 @@
   "historical_document_count": 572,
   "generated_document_count": 19,
   "protected_document_count": 904,
+  "narrative_measurement_scope": "editable_current_documents_only",
+  "protected_files_excluded_from_narrative_measurement": 929,
+  "frozen_external_review_source_file_count": 18,
+  "frozen_external_review_source_changed_count": 0,
+  "external_review_russian_projection_file_count": 18,
+  "external_review_russian_projection_complete": true,
   "files_scanned_count": 358,
   "files_rewritten_count": 227,
   "generated_files_rebuilt_count": 5,
@@ -48,7 +54,7 @@
   "negative_scenario_count": 140,
   "negative_scenario_rejected_count": 140,
   "full_regression_passed": true,
-  "full_regression_passed_count": 2041,
+  "full_regression_passed_count": 2042,
   "licensing_validation_passed": true,
   "reuse_coverage_percent": 100,
   "unassigned_license_file_count": 0,
@@ -100,7 +106,7 @@
     "passed": true
   },
   "regression": {
-    "pytest_passed": 2041,
+    "pytest_passed": 2042,
     "warnings": 3
   },
   "browser_acceptance": {
