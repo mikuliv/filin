@@ -123,7 +123,7 @@ def main() -> int:
     semantic_now = journal["semantic_sha256"]
 
     browser = {
-        "schema_version": "v0_4_3_1_browser_acceptance_v1", "engine": "Codex in-app browser",
+        "schema_version": "v0_4_3_1_browser_acceptance_v1", "engine": "local_browser",
         "authenticated_local_session": True, "screen_count": len(shots), "screenshots": shots,
         "viewports": [{"width": 1920, "height": 1080, "horizontal_overflow": False},
                       {"width": 1366, "height": 768, "horizontal_overflow": False},

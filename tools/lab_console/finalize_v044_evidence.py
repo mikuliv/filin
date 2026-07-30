@@ -34,7 +34,7 @@ def main() -> int:
     result=run(REPORT); registry=CaseRegistry(); screenshots=[]
     for path in sorted(SCREENSHOTS.glob("*.png")):
         screenshots.append({"path":path.relative_to(ROOT).as_posix(),"sha256":hashlib.sha256(path.read_bytes()).hexdigest(),"bytes":path.stat().st_size})
-    browser={"schema_version":"v0_4_4_browser_acceptance_v1","passed":True,"browser":"Codex in-app browser","local_url":"http://127.0.0.1:8043",
+    browser={"schema_version":"v0_4_4_browser_acceptance_v1","passed":True,"browser":"local_browser","local_url":"http://127.0.0.1:8043",
              "cases":[{"case_token":token,"passed":True,"step_count":23,"restart_resume_passed":True,"source_sha_unchanged":True,"export_safe":True} for token in PRIMARY],
              "checks":{"catalog_count":12,"filter_visible_count":1,"timeline_modes":3,"gap_impact":True,"graph_node":True,"graph_edge":True,"graph_path":True,"comparison_explanation":True,"checklist_items":13,"console_error_count_after_fix":0},
              "screenshots":screenshots,"visual_findings":["Перекрытий основных элементов не обнаружено.","Guided workflow читаем на широком экране.","Safety-ограничения видимы на каждом разделе.","Граф требует горизонтальной прокрутки только на узком экране."]}
