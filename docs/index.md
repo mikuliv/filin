@@ -76,6 +76,8 @@
 - [Методология](research/methodology.md).
 - [Причинные признаки](research/causal-features.md).
 - [Линия кандидата](research/candidate-lineage.md).
+- [Переоценка методологии v0.3.15.4–v0.3.15.5](experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md).
+- [Протокол следующей независимой сетевой проверки](experiments/next_independent_network_validation_protocol.md).
 - [Принципы оценки](research/evaluation-principles.md).
 - [Неопределённость и отказ от решения](research/uncertainty-and-abstention.md).
 - [Реконструкция инцидента](research/incident-reconstruction.md).

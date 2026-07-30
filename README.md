@@ -79,10 +79,12 @@ flowchart LR
 | Контракт признаков | `network_features_v2` |
 | Манифест кандидата | `ml/artifacts/v0_3_15_4/candidate_manifest.json` |
 | Реестр кандидатов | `collectors/shadow/contracts/candidate_registry_v1.json` |
+| Проверенный корпус | одно синтетическое семейство генерации |
+| Семантически независимый holdout | не подтверждён |
 | Внешняя проверка | не завершена |
 | Промышленная готовность | отсутствует |
 
-История получения и проверок: [линия кандидата](docs/research/candidate-lineage.md).
+История получения и проверок: [линия кандидата](docs/research/candidate-lineage.md). Научные ограничения результатов v0.3.15.4–v0.3.15.5 зафиксированы в [переоценке методологии](docs/experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md).
 
 ## Быстрый безопасный старт
 

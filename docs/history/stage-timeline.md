@@ -4,7 +4,9 @@
 
 `v0.3.1–v0.3.15.3` сформировали и многократно корректировали model/evaluation/runtime
 основания. `v0.3.15.4` создал текущего кандидата; `v0.3.15.5–v0.3.17.1` проверили
-holdout, runtime, transport и rehearsal. `v0.3.18` подготовил external-review package.
+синтетический holdout того же generator family, runtime, transport и rehearsal.
+`v0.3.18` подготовил external-review package. Последующая [переоценка методологии](../experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md)
+ограничила scientific claim локальным синтетическим корпусом без изменения frozen-материалов.
 
 ## Лабораторная линия
 

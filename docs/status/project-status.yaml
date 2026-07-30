@@ -5,6 +5,10 @@ current_corrective_stage: v0.3.17.1
 current_candidate: v03154:65a3dd912d845bc1
 latest_training_stage: v0.3.15.4
 latest_independent_model_holdout: v0.3.15.5
+latest_independent_model_holdout_semantically_independent: false
+candidate_validation_scope: single_synthetic_generator_family
+candidate_external_validity_confirmed: false
+methodology_reassessment: docs/experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md
 latest_runtime_trial: v0.3.15.5.1
 latest_staging_transport_trial: v0.3.16
 latest_controlled_local_rehearsal: v0.3.17
@@ -273,16 +277,19 @@ stages:
   superseded_claims: []
   next_stage: v0.3.15.5
 - version: v0.3.15.5
-  title: Независимый перспективный сравнительный holdout
+  title: Процедурно отделённый синтетический сравнительный holdout
   category: holdout
   chronological_order: 23
   status: completed
-  result: scientific_passed_runtime_contract_failed_not_promoted
+  result: synthetic_generator_holdout_passed_external_validity_not_confirmed
   primary_report: docs/experiments/v0_3_15_5.md
   policy_result: ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json
-  limitations: Historical baseline ineligible; frozen event contract отклоняет candidate
-    v03154; v0.3.16 запрещён
-  superseded_claims: []
+  limitations: То же семейство packet generator, target templates и инфраструктура,
+    что в v0.3.15.4; новые identifiers, seeds и SHA не обеспечивают семантическую
+    независимость; external validity не подтверждена
+  superseded_claims:
+  - independent scientific holdout
+  - generalization beyond the synthetic generator family
   next_stage: v0.3.15.5.1
 - version: v0.3.15.5.1
   title: Candidate-compatible event contract и prospective runtime recovery
