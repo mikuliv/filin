@@ -1,0 +1,391 @@
+{
+  "class_contract": "network_classes_v2",
+  "class_support": {
+    "auth_failures": 1032,
+    "beacon": 1032,
+    "benign": 1032,
+    "low_rate_dos": 1032,
+    "port_scan": 1032,
+    "web_probe": 1032
+  },
+  "content_semantic_sha256": "b2a10ef3040e926a64f7f93b205f5184e980dd50bd1c7121a145d49496f39dca",
+  "control_pack_id": "blind-pack:v0473:b2a10ef3040e926a",
+  "distribution_allowed": false,
+  "external_organization_data_count": 0,
+  "feature_contract": "network_features_v2",
+  "generator_namespace": "v0473-blind-control-r1",
+  "license_status": "separate_license_required",
+  "personal_data_input_count": 0,
+  "provenance_status": "verified",
+  "real_data_input_count": 0,
+  "runtime_only": true,
+  "schema_version": "blind_control_data_catalog_v0473_v1",
+  "scored_window_count": 6192,
+  "session_count": 36,
+  "sessions": [
+    {
+      "class_support": 180,
+      "network_structure": "mesh-00-03",
+      "scenario_parameter_commitment": "c33df648d33f751b5d4aa1cd0c259b746e77aacb8fcdb94231deb0ead2fd1314",
+      "scenario_token": "scn-v0473-706a90c0eac9fe2de9",
+      "seed_commitment": "79a008c0bca92491ff0b342ababedd77f216a5afeb79bae19d0da796576f675d",
+      "session_token": "ses-v0473-0000-a281ef1e6d28",
+      "temporal_structure": "burst-ramp-00",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-07-04",
+      "scenario_parameter_commitment": "95ae7784ca64f10cf4584b928d7c445736761594265091524fb359e28c5ac3dc",
+      "scenario_token": "scn-v0473-550f36cb8eaa137e69",
+      "seed_commitment": "8f750ca8b23b65561d9cb78cbb89e1a6968366154ca99c361dcf1d5b4563837d",
+      "session_token": "ses-v0473-0001-30b63f9b8724",
+      "temporal_structure": "burst-ramp-05",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-14-05",
+      "scenario_parameter_commitment": "455193f02cfed7c734b26fcb78d5dd3b4114cf465e8f511f1977919a8f886a2c",
+      "scenario_token": "scn-v0473-c0b079776e68ced898",
+      "seed_commitment": "c678f9fe098b101854cef448dfb34c04539a4dc700e5730fd9dc86493c1ec369",
+      "session_token": "ses-v0473-0002-f0bfb4f0a76a",
+      "temporal_structure": "burst-ramp-10",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-21-06",
+      "scenario_parameter_commitment": "8047d433dea24b492a839d8c605c9507b00eac0ff59e5e321c87802598f1b5e3",
+      "scenario_token": "scn-v0473-eac5f211f662dc3b63",
+      "seed_commitment": "3b5837cb36d1f60d3cb983fd0aba74bb429f96278000f1cd3a6930574f0c9a90",
+      "session_token": "ses-v0473-0003-c7e251a41075",
+      "temporal_structure": "burst-ramp-15",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-28-07",
+      "scenario_parameter_commitment": "28304038a2e2ba8cf6ac8c248bb64d714fedba31bf78441bf98a8d8f7c6fb11b",
+      "scenario_token": "scn-v0473-f4e761146d7c6aece2",
+      "seed_commitment": "05f18d9992a880accd4f5f2eb2f22090a716d877529e023acac9c2ce42669e16",
+      "session_token": "ses-v0473-0004-417ff7613586",
+      "temporal_structure": "burst-ramp-03",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-06-08",
+      "scenario_parameter_commitment": "4db171dc22f7660297b55c5a5a3d9879a62e640ddad50063b690a4b00dcb318f",
+      "scenario_token": "scn-v0473-5e63b4772a22f5e5bb",
+      "seed_commitment": "06128b19585eed621cb053dae285c097112ab74a9a2b5ddaeb5211b33259532e",
+      "session_token": "ses-v0473-0005-aa0497dcae46",
+      "temporal_structure": "burst-ramp-08",
+      "variant": 6
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-11-03",
+      "scenario_parameter_commitment": "a22d60b20449c06f72501e3ed3920d38222c83407a54be6faebe4cc97ff52887",
+      "scenario_token": "scn-v0473-32099ef16a0367363c",
+      "seed_commitment": "3a3be5bfeb48f301d613e2ee8795e032c24ccb3d9df381a6b8583912b18a23f6",
+      "session_token": "ses-v0473-0100-ccbe4eb7959c",
+      "temporal_structure": "burst-ramp-03",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-18-04",
+      "scenario_parameter_commitment": "6f291f9647b394d1d0c653399835363db61d08dfda7248a2bcb1239e1048968c",
+      "scenario_token": "scn-v0473-5cb0b698787251965f",
+      "seed_commitment": "96e43676fc5acaa62091474b2e4811f2fbe5bbe6774d0a38a5caf2fc19a2c911",
+      "session_token": "ses-v0473-0101-1c8a9ee63414",
+      "temporal_structure": "burst-ramp-08",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-25-05",
+      "scenario_parameter_commitment": "3652f40d9fd035af1cfde268124f042735e63cb81a3b433001a03e5261781871",
+      "scenario_token": "scn-v0473-9121339a6fe6751b87",
+      "seed_commitment": "67193a707db47d49a1f60de8f4749fa8bfc89d3b54576ce5416a712c8e5df637",
+      "session_token": "ses-v0473-0102-ee574124ec92",
+      "temporal_structure": "burst-ramp-13",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-03-06",
+      "scenario_parameter_commitment": "f49cfb365b0ed1a92e8a62f49a4fdaffd61ae116596059878c04d3738b0036e0",
+      "scenario_token": "scn-v0473-bcfc8cce41ca0a3f46",
+      "seed_commitment": "a45514ed48b690a435744438fffd94d7aab042b45feaceb3bf68cf4090ff6cb1",
+      "session_token": "ses-v0473-0103-a28152cc9344",
+      "temporal_structure": "burst-ramp-01",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-10-07",
+      "scenario_parameter_commitment": "b9fd2d2975aeb9f1acdce0f04b4ed2f38ac7e9c6bf87a4392a239bc2a3f759a6",
+      "scenario_token": "scn-v0473-cd4af28cdaca40a264",
+      "seed_commitment": "65c69b31c120572d9dbe3334402d7a26244e580e634283283f9952ebd33ad728",
+      "session_token": "ses-v0473-0104-b2235c010b57",
+      "temporal_structure": "burst-ramp-06",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-17-08",
+      "scenario_parameter_commitment": "16212c37f202c43685f846fe8b6283b076d497d383f56f47f16209c0a90503e6",
+      "scenario_token": "scn-v0473-e770f1398521336168",
+      "seed_commitment": "9a5b5c7128afeb2d730bcb70dbfae855e01f49e4c05910c824675b76ecc1910a",
+      "session_token": "ses-v0473-0105-70ad12ab4754",
+      "temporal_structure": "burst-ramp-11",
+      "variant": 6
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-22-03",
+      "scenario_parameter_commitment": "4edf352c8dc0f99e7e7986e6141c72c84a4b74684ab0750f8984bbb7c4fd6a43",
+      "scenario_token": "scn-v0473-7c65589d2d5429b8e9",
+      "seed_commitment": "fdf7478a5dde6ba0e1e70d2058cea9a693a58dbd1adc29015a875ba58cbd4909",
+      "session_token": "ses-v0473-0200-075eab32a289",
+      "temporal_structure": "burst-ramp-06",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-00-04",
+      "scenario_parameter_commitment": "031a79324d9055644017353a11811573d79a9cbc58f528168ee879ef572d2287",
+      "scenario_token": "scn-v0473-8596b456f3e091c61c",
+      "seed_commitment": "f8b0bc6f7cae71090936f8a0d44db2f35c9c3410466bf2c9397bf956b5850324",
+      "session_token": "ses-v0473-0201-a9c2f692e7c2",
+      "temporal_structure": "burst-ramp-11",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-07-05",
+      "scenario_parameter_commitment": "5d4d16a5b1173dfec906de606c0d0a7c6d94b21fc6d2edebbeb60e8b2ca82c3e",
+      "scenario_token": "scn-v0473-6adbeed7e8356aebb4",
+      "seed_commitment": "d6a4efd6b2bb6ebb9e22b48c955582d708e6e072ce3489cdd62a9a4cb1ce0b27",
+      "session_token": "ses-v0473-0202-8eb83a5fb082",
+      "temporal_structure": "burst-ramp-16",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-14-06",
+      "scenario_parameter_commitment": "b135e896b4dc9fcc4be47c009173ddf4b87ed598eaa1ac9676d180f62690da0f",
+      "scenario_token": "scn-v0473-5b3bad5600a5c550cc",
+      "seed_commitment": "210e2bc185c0b236865374a137bbaf478c444dca08256555ec15293ee2828157",
+      "session_token": "ses-v0473-0203-61ed5c74b176",
+      "temporal_structure": "burst-ramp-04",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-21-07",
+      "scenario_parameter_commitment": "dbd770814684d23974fa48a5387ec68a4411b9745334605475c18b2952834bc6",
+      "scenario_token": "scn-v0473-c2af42cd4b730178c8",
+      "seed_commitment": "7e7aeba9ed4e97a1a60eb3000240f4fcc1228da2d324e75ebfd1a339c465f70c",
+      "session_token": "ses-v0473-0204-be9ba2f29699",
+      "temporal_structure": "burst-ramp-09",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-28-08",
+      "scenario_parameter_commitment": "d73ada98aa05a61bc904ebe1a63ec453dca782d4987416a4b8fa9d772437d8a2",
+      "scenario_token": "scn-v0473-034c4c233dd8b41c2b",
+      "seed_commitment": "36965d929be23cb814942d20fe5158fc3cbe79f3fae48c163734e79ec54c1a3a",
+      "session_token": "ses-v0473-0205-32dacd79da4c",
+      "temporal_structure": "burst-ramp-14",
+      "variant": 6
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-04-03",
+      "scenario_parameter_commitment": "99989b4fa689912ad1c358df18d8e4282436a9aa8feaf12f519f096fdd37ba72",
+      "scenario_token": "scn-v0473-f04c11bd84294c1ee7",
+      "seed_commitment": "c118fa88409b4bda0b20f2a0ddb26723b7304778c6e487d0956f045819ffe77c",
+      "session_token": "ses-v0473-0300-a1b2588b0c22",
+      "temporal_structure": "burst-ramp-09",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-11-04",
+      "scenario_parameter_commitment": "5e79a2ba7e51b536c50622bcd190bb41e118935c15589bc952640a7c99a928b4",
+      "scenario_token": "scn-v0473-1136577563df236fad",
+      "seed_commitment": "29fee1097dbeaef70abea6f808c6a6fd3cf9594edbc898b9bd5dae33f423e829",
+      "session_token": "ses-v0473-0301-de4a38117ff6",
+      "temporal_structure": "burst-ramp-14",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-18-05",
+      "scenario_parameter_commitment": "ea1989d1832e3c52aca2cc7c94ffcd735cad089d3f2ec05937f0c3f5520cf4a9",
+      "scenario_token": "scn-v0473-b07481543234b7ac9d",
+      "seed_commitment": "79d9c0523786f52e422c416ca4e3228212e1aa43adddf8cb203b6a6e7cde7200",
+      "session_token": "ses-v0473-0302-6b946b14b6a1",
+      "temporal_structure": "burst-ramp-02",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-25-06",
+      "scenario_parameter_commitment": "e56dc68065346454bdd5ed0aa012d3bbc4b975d9981e0d53de58ba3d723c5f9e",
+      "scenario_token": "scn-v0473-d3e9217db946dc5bb4",
+      "seed_commitment": "9b082f868ade34a566a766e88df1aefd688aea173d7031bdc9288525b19f45a2",
+      "session_token": "ses-v0473-0303-605510773b01",
+      "temporal_structure": "burst-ramp-07",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-03-07",
+      "scenario_parameter_commitment": "a92295c5f9d98293941b596d3a6bf9682aa504df304c4ce455d1f91ae9e3564d",
+      "scenario_token": "scn-v0473-40faedbdbfc71e7428",
+      "seed_commitment": "37ca1bb3f1d6ffe277d2b4a6ac7d1c9901c86a25808b0c425d88676fe86ed3bb",
+      "session_token": "ses-v0473-0304-560962a586db",
+      "temporal_structure": "burst-ramp-12",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-10-08",
+      "scenario_parameter_commitment": "f197b82515d7c1fdd1c0dc0f238ff07b884cd72a16ad39d89b9cee5ea3be77a5",
+      "scenario_token": "scn-v0473-e5ab507a5727c3cf59",
+      "seed_commitment": "a1133904640e8d6161dc03aebcfdacedb9715d045c0ce24c04346c0f0d6a071c",
+      "session_token": "ses-v0473-0305-f958d5c0e8e1",
+      "temporal_structure": "burst-ramp-00",
+      "variant": 6
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-15-03",
+      "scenario_parameter_commitment": "efa3d71bb8b90a06ce9722b8e4707ad5aed402f6e28a783debf2a9bf50d29123",
+      "scenario_token": "scn-v0473-1306a0e92ce31a50fd",
+      "seed_commitment": "da4c1f27546df9a3a497eed0346ddcfcf61e1e2ddb0d22e2e994a21880ecbc55",
+      "session_token": "ses-v0473-0400-6eeee5a0e50c",
+      "temporal_structure": "burst-ramp-12",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-22-04",
+      "scenario_parameter_commitment": "ce1d030f8c5c721b56afbacab610d2a4d89bd45124dc06e74d8792b408216d18",
+      "scenario_token": "scn-v0473-d9041c4bfc13bdac6f",
+      "seed_commitment": "664d38b30cfe1f8677e950c873b05ef974cdb3b12729a753496dc4a51f909bf5",
+      "session_token": "ses-v0473-0401-0de4e0a3cac7",
+      "temporal_structure": "burst-ramp-00",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-00-05",
+      "scenario_parameter_commitment": "2325956af5aecf9efd7eb7fa6dc11f3e8cd9716bc0e35e34b45ad8bc1a81c9d4",
+      "scenario_token": "scn-v0473-b6d2ed4b2721e1562e",
+      "seed_commitment": "1257761a7bc8b748f73ec1e68d791e9ea6bb444580b5464a129a0620d0a573a5",
+      "session_token": "ses-v0473-0402-843fcce33cbc",
+      "temporal_structure": "burst-ramp-05",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-07-06",
+      "scenario_parameter_commitment": "ef2f4d9740f8af9fdec0b05c7d6e8e61d733d0553558cf5b81c2a7a4dd59f7f2",
+      "scenario_token": "scn-v0473-2fed36c57b492d1297",
+      "seed_commitment": "e99c2fcfeeb8f754cfe119ef544ce06ebb72c088f532129537c8209a349f28b2",
+      "session_token": "ses-v0473-0403-ecd9a5fa4a6e",
+      "temporal_structure": "burst-ramp-10",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-14-07",
+      "scenario_parameter_commitment": "429c55cb83569f992c86c70b73f5f3b1a3cdf0c87c056d85b3dbe38462a2d641",
+      "scenario_token": "scn-v0473-a4edf21f7c37a0cc8c",
+      "seed_commitment": "db8cc1b1e4e3b38f8530ee59ab68fb7e30ec2c8fab3fdcbbcc5e3086461d0a64",
+      "session_token": "ses-v0473-0404-e3ce72a9faf6",
+      "temporal_structure": "burst-ramp-15",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-21-08",
+      "scenario_parameter_commitment": "a846fb097356b7c15622b1d52f4f34c20be10c7941ee9073dcdb549002994f2e",
+      "scenario_token": "scn-v0473-f19ea337850da76422",
+      "seed_commitment": "3401444058d56973511621beca154eaa817cc3b5b0e829824407d51ee2f44fe3",
+      "session_token": "ses-v0473-0405-abe02c23dc17",
+      "temporal_structure": "burst-ramp-03",
+      "variant": 6
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-26-03",
+      "scenario_parameter_commitment": "8e66f6a91cb7e3572d91c13a4ec256242e9ab2fe07980c2495e3d4ddd9507fe6",
+      "scenario_token": "scn-v0473-92fdf6c04e19b04b5d",
+      "seed_commitment": "c2ff079fb2d232957fa36ca783b113d2eac3a42078114265434c7a65a57b04b4",
+      "session_token": "ses-v0473-0500-cb5fccd75c6d",
+      "temporal_structure": "burst-ramp-15",
+      "variant": 1
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-04-04",
+      "scenario_parameter_commitment": "18ee3c22bab2d467a947cd0638d6171b8bcce7a95c2e96c20e349639f3bcf0a2",
+      "scenario_token": "scn-v0473-9008190d1fd1fe584e",
+      "seed_commitment": "93e8315e8c110ca457e1dd74558143b013d2fe10764cf7ec5f5f6a32d545766e",
+      "session_token": "ses-v0473-0501-656d6487ce38",
+      "temporal_structure": "burst-ramp-03",
+      "variant": 2
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-11-05",
+      "scenario_parameter_commitment": "8dbe0c1bbd66572e5cd176733a5a76e5ef247e26382bb0d2a7a34079e1f64c5d",
+      "scenario_token": "scn-v0473-e62d297342303b1008",
+      "seed_commitment": "c1784c72e8ed2e341d27d5a15a2ec9efeb9ec25cab60793025f1b9e098a66e83",
+      "session_token": "ses-v0473-0502-3cb70440d8a9",
+      "temporal_structure": "burst-ramp-08",
+      "variant": 3
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-18-06",
+      "scenario_parameter_commitment": "14f00449092839d0f531175078f6eb2452e5642114323cc9f545d890c84e30c9",
+      "scenario_token": "scn-v0473-f1fc169a0827991248",
+      "seed_commitment": "4ff8c3c63ad4387c69ab726926e84c0fd4f9b8196735fa0ea7fcbb8b1503507b",
+      "session_token": "ses-v0473-0503-c181e5da7145",
+      "temporal_structure": "burst-ramp-13",
+      "variant": 4
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-25-07",
+      "scenario_parameter_commitment": "4e70e2a9110266b73a2f51c9b5b46cc751cb77e24af25377f6370b7ce2a93343",
+      "scenario_token": "scn-v0473-e9d256ee2934718350",
+      "seed_commitment": "3224eb643ac190c803b76f3ba764a7d1c1b895f45bfecf0d6f10d9033dd97818",
+      "session_token": "ses-v0473-0504-4b0e21eee846",
+      "temporal_structure": "burst-ramp-01",
+      "variant": 5
+    },
+    {
+      "class_support": 180,
+      "network_structure": "mesh-03-08",
+      "scenario_parameter_commitment": "6b3323518a92b63b8a44534360699aa3521516a3aa6c8eaaa84688bbb0de5849",
+      "scenario_token": "scn-v0473-93bc252981bcb10fed",
+      "seed_commitment": "a67695cba4ec78e13f7f6cb829dc82eb6c07efcc92ac75479bbd40a24badf1c0",
+      "session_token": "ses-v0473-0505-e1168f94624a",
+      "temporal_structure": "burst-ramp-06",
+      "variant": 6
+    }
+  ],
+  "source_kind": "locally_generated_synthetic_network_features",
+  "source_object_count": 6480,
+  "validation_lineage_id": "blind-lineage:v0473:dc6ce13746302ddf",
+  "warmup_window_count": 288
+}

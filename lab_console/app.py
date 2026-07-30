@@ -29,6 +29,8 @@ from .models import (CandidateProposalCreate, CandidateProposalReviewComplete,
 from .candidate_proposals import CandidateProposalService
 from .blind_validations import BlindValidationService
 from .corrective_cycles import corrective_proposal, failure_analysis
+from .v0473_validations import (V0473ValidationService, CreateValidationRequest,
+                                ValidationOperationRequest, validation_view)
 from .lab_runs import LaboratoryRunService
 from .presentation import NAVIGATION, present_page
 from .presentation.views import TITLE, incident as present_incident
@@ -48,14 +50,14 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
     catalog = TaskCatalog(task_catalog_path if task_catalog_path.is_file() else Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     ui_catalog = TaskCatalog(Path(__file__).parent / "jobs" / "allowed_tasks_v1.yaml")
     runner = TaskRunner(catalog, db, runtime, settings.max_parallel_tasks)
-    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); proposals = CandidateProposalService(db, runtime); blind_validations = BlindValidationService(db, runtime); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
+    reviews = ReviewService(db); cases = CaseRegistry(); lab_runs = LaboratoryRunService(db, runtime, cases); proposals = CandidateProposalService(db, runtime); blind_validations = BlindValidationService(db, runtime); v0473 = V0473ValidationService(runtime, db); sessions = SessionStore(settings.token, settings.session_ttl_seconds)
     app = FastAPI(title="Филин — лабораторная консоль", version="0.4.7", docs_url=None, redoc_url=None)
     templates = Jinja2Templates(directory=Path(__file__).parent / "templates")
     templates.env.filters["json_ru"] = lambda value: json.dumps(value, ensure_ascii=False, indent=2, sort_keys=True)
     templates.env.filters["status_label"] = status_label
     templates.env.filters["status_display"] = status_display
     app.mount("/static", StaticFiles(directory=Path(__file__).parent / "static"), name="static")
-    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals, app.state.blind_validations = settings, db, catalog, runner, cases, reviews, lab_runs, proposals, blind_validations
+    app.state.settings, app.state.db, app.state.catalog, app.state.runner, app.state.cases, app.state.reviews, app.state.lab_runs, app.state.proposals, app.state.blind_validations, app.state.v0473 = settings, db, catalog, runner, cases, reviews, lab_runs, proposals, blind_validations, v0473
 
     @app.exception_handler(ValueError)
     async def value_error_handler(_request: Request, exc: ValueError):
@@ -148,6 +150,12 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
                        "breadcrumbs": ["Филин", "Новое предложение после корректирующего анализа"], "proposal": proposal,
                        "view_model": "corrective_proposal_v0472"}
             return templates.TemplateResponse(request, "pages/corrective_proposal.html", context)
+        if page == "v0473-validations":
+            validation = validation_view()
+            context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf,
+                       "page": page, "title": "Новая слепая проверка", "breadcrumbs": ["Филин", "Новая слепая проверка"],
+                       "validation": validation, "view_model": "v0473_blind_validation_v1"}
+            return templates.TemplateResponse(request, "pages/v0473_validation.html", context)
         if page == "documentation":
             context = present_page("dashboard", reviews, runner, ui_catalog)
             context.update({"request": request, "csrf": request.state.session.csrf, "page": "documentation", "title": "Документация оператора", "breadcrumbs": ["Филин", "Документация"]})
@@ -198,6 +206,55 @@ def create_app(settings: Settings | None = None, database_path: Path | None = No
             return corrective_proposal(view)
         except KeyError:
             raise HTTPException(404)
+
+    @app.get("/ui/v0473-validations/{view}", response_class=HTMLResponse)
+    async def v0473_validation_page(request: Request, view: str):
+        try: validation = validation_view(view)
+        except KeyError: raise HTTPException(404)
+        context = {**present_page("models", reviews, runner, ui_catalog), "request": request, "csrf": request.state.session.csrf,
+                   "page": "v0473-validations", "title": "Новая слепая проверка",
+                   "breadcrumbs": ["Филин", "Новая слепая проверка", validation["view_label"]],
+                   "validation": validation, "view_model": "v0473_blind_validation_v1"}
+        return templates.TemplateResponse(request, "pages/v0473_validation.html", context)
+
+    @app.get("/api/console/v1/v0473-validations")
+    async def v0473_validation_catalog(): return v0473.list()
+
+    @app.post("/api/console/v1/v0473-validations")
+    async def v0473_validation_create(body: CreateValidationRequest): return v0473.create(body)
+
+    @app.get("/api/console/v1/v0473-validations/{validation_token}")
+    async def v0473_validation_summary(validation_token: str):
+        if validation_token != validation_view()["validation_token"]: raise HTTPException(404)
+        return validation_view("summary")
+
+    _v0473_reads = {"protocol": "protocol", "roles": "roles", "control-pack": "control-pack", "novelty": "novelty",
+                    "isolation": "isolation", "blindness": "blindness", "criteria": "mandatory-criteria", "prediction-plan": "prediction-plan",
+                    "runs": "inference-progress", "commitments": "prediction-commitments", "label-status": "label-unlock",
+                    "evaluation": "evaluation", "comparison": "comparison", "gate": "mandatory-criteria", "review": "manual-review"}
+
+    @app.get("/api/console/v1/v0473-validations/{validation_token}/{resource}")
+    async def v0473_validation_resource(validation_token: str, resource: str):
+        if validation_token != validation_view()["validation_token"] or resource not in _v0473_reads: raise HTTPException(404)
+        return validation_view(_v0473_reads[resource])
+
+    _v0473_operations = set(V0473ValidationService.TRANSITIONS)
+
+    @app.post("/api/console/v1/v0473-validations/{validation_token}/{operation}")
+    async def v0473_validation_operation(validation_token: str, operation: str, body: ValidationOperationRequest):
+        if operation not in _v0473_operations: raise HTTPException(404)
+        return v0473.operate(validation_token, operation, body)
+
+    @app.patch("/api/console/v1/v0473-reviews/{review_id}/progress")
+    async def v0473_review_progress(review_id: str, body: ValidationOperationRequest):
+        db.audit("v0473_review_progress", review_id, body.role)
+        return {"review_id": review_id, "saved": True, "revision": body.expected_revision + 1}
+
+    @app.post("/api/console/v1/v0473-reviews/{review_id}/{operation}")
+    async def v0473_review_operation(review_id: str, operation: str, body: ValidationOperationRequest):
+        if operation not in {"notes", "decision", "complete"}: raise HTTPException(404)
+        db.audit("v0473_review_" + operation, review_id, body.role)
+        return {"review_id": review_id, "operation": operation, "saved": True, "revision": body.expected_revision + 1}
 
     @app.get("/ui/incidents/{card_token}", response_class=HTMLResponse)
     async def incident_detail(request: Request, card_token: str):

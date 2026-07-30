@@ -1,0 +1,227 @@
+schema_version: filin_internal_blind_validation_protocol_v1
+stage: v0.4.7.3
+protocol_revision: 1
+status: frozen_before_control_data_generation_and_official_inference
+starting_head: 6771d362c6e61a65b84c52767dd1a07204a4b507
+v0_4_7_1_commit: fe5252f4293b61f5c32de4deb7a4e43c3f50462a
+v0_4_7_2_commit: 6771d362c6e61a65b84c52767dd1a07204a4b507
+v0_4_7_1_manifest_sha256: 92f73006edb9985d5bfbabcd6c05800232cbbde93b892a7f41750c1ade47d87d
+v0_4_7_1_semantic_sha256: 95adbce0bb50ae823d97749de33434e55876ae01b07574f45939dc31555e5269
+v0_4_7_2_manifest_sha256: cac3fdd3b326b3257293593927234985a18b6c9a9d1a881147038a48525e0542
+v0_4_7_2_semantic_sha256: 125168415280e5870d047c362ab0a2cbbc9840f2438bb3c32ba3af79f32fc9bb
+active_candidate_binding:
+  candidate_id: v03154:65a3dd912d845bc1
+  artifact_sha256: 65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87
+  manifest_sha256: 56d95a75b6ce5a81a3bd5366245b3adf98314de59bdd44f13bdd138f2ddf3537
+proposal_binding:
+  proposal_id: proposal:v0472:f02d06231e65df6f
+  proposal_manifest_sha256: e89663c6c02f6b906fe306a83d6a1407e43fedf1e0359ad364e93fd63effc54d
+  recipe_sha256: f4b52d74984836a269f72c21f55a018c591371249975e590c9fbfe6791544f1d
+  split_sha256: aa1c757170aaaa2c1da5f1bd9132322c9a8eff44e4f708ab797040206f573800
+  data_catalog_sha256: eff35b88ed203b2ab497638247c083584bc93eb6e6da115f35285fdf99f2cbcc
+  internal_screening_pack_sha256: a143f09c27eeff5b21f3e64093391dcf8e5424afbde2dc71ba1791d64b8beb9c
+proposal_artifact_sha256: 6b5297001c5e053878ddfc4cacb3619dc8e158cb4f1862e711f303ecb0420e56
+proposal_model_semantic_sha256: f02d06231e65df6f1fe1b0af9acae24befa53dc3863cc50f284ea59f1c1d08b6
+feature_contract: network_features_v2
+feature_order:
+  - bytes_per_flow
+  - bytes_per_flow_to_rolling_median
+  - connection_completion_rate
+  - consecutive_high_failure_windows
+  - consecutive_high_flow_windows
+  - delta_bytes_per_flow
+  - delta_events_per_second
+  - delta_failed_connections_per_second
+  - delta_flows_per_second
+  - delta_packets_per_flow
+  - delta_unique_destinations_per_flow
+  - destination_set_jaccard_change
+  - dns_requests_per_flow
+  - events_per_second
+  - events_per_second_to_rolling_median
+  - failed_connection_rate
+  - failed_connections_per_second
+  - failed_connections_to_rolling_median
+  - failed_then_successful_connection_rate
+  - flows_per_second
+  - flows_per_second_to_rolling_median
+  - http_method_diversity
+  - http_requests_per_flow
+  - http_response_status_entropy
+  - long_lived_flow_persistence
+  - long_lived_flow_share
+  - orig_bytes_per_flow
+  - orig_packet_share
+  - packets_per_flow
+  - packets_per_flow_to_rolling_median
+  - periodicity_stability
+  - protocol_mix_l1_change
+  - request_spacing_cv
+  - resp_bytes_per_flow
+  - response_bytes_share
+  - response_bytes_share_change
+  - response_direction_balance
+  - retry_recovery_rate
+  - robust_z_events_per_second
+  - robust_z_failed_connections
+  - robust_z_flows_per_second
+  - rolling_activity_slope
+  - rolling_failure_slope
+  - service_availability_recovery_evidence
+  - success_response_share
+  - target_responsiveness_ratio
+  - tcp_flow_share
+  - udp_flow_share
+  - udp_flow_share_change
+  - unique_destinations_per_flow
+  - unique_services_per_flow
+class_contract: network_classes_v2
+class_order: [benign, auth_failures, beacon, low_rate_dos, port_scan, web_probe]
+threshold_contracts:
+  active_candidate: frozen_v03154_threshold_contract
+  proposal: argmax_multiclass_v0472_r1
+abstention_policy: no_abstention_predeclared
+protected_set_binding:
+  manifest: docs/audit/protected_documentation_v2.json
+  file_count: 985
+  manifest_sha256: 7c6328a1c573b9f1a993cf2a4ed7797480bcf9c96d0270edee2813735829d909
+purpose: Провести внутреннюю слепую лабораторную проверку с техническим разделением ролей на новом синтетическом контрольном наборе.
+independence_status: internal_role_separated_blind
+external_reviewer_required: false
+external_reviewer_count: 0
+roles:
+  - control_data_custodian
+  - inference_operator
+  - evaluation_operator
+  - validation_reviewer
+  - observer
+role_separation:
+  opaque_capability_tokens: true
+  separate_workspaces: true
+  separate_access_logs: true
+  inference_label_access_allowed: false
+  evaluation_prediction_mutation_allowed: false
+control_data:
+  generator_namespace: v0473-blind-control-r1
+  source_kind: locally_generated_synthetic_network_features
+  minimum_sessions: 36
+  objects_per_session: 180
+  minimum_source_objects: 6480
+  warmup_windows_per_session: 8
+  minimum_scored_windows: 6000
+  variants_per_class: 6
+  seed_namespace: blind-473000-plus
+  real_data_allowed: false
+  personal_data_allowed: false
+  organization_data_allowed: false
+  runtime_only: true
+scenario_novelty:
+  combined_parameter_novelty_required: true
+  exact_copy_allowed: false
+  normalized_copy_allowed: false
+  semantic_copy_allowed: false
+  derived_copy_allowed: false
+isolation_domains:
+  - file_sha256
+  - semantic_sha256
+  - session_id
+  - object_id
+  - capture_id
+  - scenario_id
+  - generator_seed
+  - normalized_feature_row
+  - temporal_sequence
+  - network_structure
+  - scenario_parameters
+  - derived_copy
+label_hiding:
+  label_package_runtime_only: true
+  frozen_before_inference: true
+  unlocked_before_commitments: false
+  inference_operator_access: false
+prediction:
+  order_policy: deterministic_counterbalanced_order
+  same_inputs: true
+  same_resource_limits: true
+  resource_limits: {cpu_threads: 1, memory_mib: 1536, timeout_seconds: 240}
+  controlled_interruption_required: true
+  successful_recovery_required: true
+  shell: false
+  network: false
+  arbitrary_command: false
+  arbitrary_module: false
+  prediction_rows_runtime_only: true
+freeze_and_unlock:
+  protocol_frozen_before_generation: true
+  plan_frozen_before_first_inference: true
+  both_prediction_packages_required: true
+  prediction_commitment_count_required: 2
+  post_unlock_official_inference_allowed: false
+metric_contract:
+  frozen_before_label_unlock: true
+  metrics: [accuracy, benign_recall, false_positive_rate, attack_macro_recall, attack_macro_f1, per_class_metrics, worst_attack_recall, confusion_matrix, class_support, scenario_support, session_support, episode_recall, episode_precision, first_detection_latency, abstention_count, abstention_rate, missing_predictions, duplicate_predictions, invalid_predictions, excluded_windows, previous_failure_results]
+  significance_test: none
+episode_contract: session_level_attack_episode_v0473_r1
+reconstruction_contract: incident_reconstruction_v2
+card_contract: incident_card_v2
+comparability:
+  required_status: comparable
+  shared_population: true
+  shared_metric_contract: true
+  shared_class_contract: true
+acceptance_thresholds:
+  benign_recall_min: 0.98
+  false_positive_rate_max: 0.02
+  attack_macro_recall_min: 0.95
+  attack_macro_f1_min: 0.95
+  worst_attack_recall_min: 0.90
+  episode_recall_min: 0.95
+  episode_precision_min: 0.95
+  missing_predictions_max: 0
+  duplicate_predictions_max: 0
+  invalid_predictions_max: 0
+  unresolved_previous_failures_max: 0
+  unresolved_critical_differences_max: 0
+  new_critical_regressions_max: 0
+criterion_lineage:
+  source_v0_4_7_count: 24
+  source_v0_4_7_2_count: 24
+  previous_failure_count: 6
+  corrective_action_count: 7
+  unmapped_source_allowed: false
+manual_review:
+  required: true
+  step_count: 35
+  persistence_required: true
+  resume_required: true
+  allowed_decisions: [passed_for_inactive_laboratory_registration, failed_validation, inconclusive, invalidated_by_data_overlap, invalidated_by_blindness_violation, invalidated_by_label_mutation, invalidated_by_prediction_mutation, invalidated_by_protocol_violation, withdrawn]
+invalidation:
+  data_overlap_invalidates: true
+  blindness_violation_invalidates: true
+  label_mutation_invalidates: true
+  prediction_mutation_invalidates: true
+  protocol_mutation_invalidates: true
+claim_limits:
+  independent_validation_claim_allowed: false
+  external_validation_claim_allowed: false
+  external_applicability_claim_allowed: false
+  production_claim_allowed: false
+  public_deployment_allowed: false
+  backend_integration_allowed: false
+  automatic_response_ready: false
+  candidate_registration_in_stage_allowed: false
+  activation_allowed: false
+  automatic_promotion_allowed: false
+positive_scenario_minimum: 150
+negative_scenario_minimum: 260
+browser_screenshot_minimum: 36
+completion:
+  full_regression_required: true
+  documentation_validation_required: true
+  licensing_validation_required: true
+  protected_file_changed_count_required: 0
+next_stage:
+  on_pass: v0.4.8
+  on_fail: v0.4.7.4
+  on_invalidation: new_v0_4_7_3_lineage_required
+  mainline: v0.3.19

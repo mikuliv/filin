@@ -1,0 +1,12 @@
+{
+  "authorization_id": "unlock-auth-v0473-r1",
+  "authorized_by": "evaluation_operator",
+  "invalid_unlock_count": 0,
+  "label_package_sha256_before_unlock": "db991282351d998324d8f9b8be6a345d803c5f50e4ed17426794c423bef000c0",
+  "post_unlock_official_inference_count": 0,
+  "prediction_commitment_count": 2,
+  "schema_version": "label_unlock_record_v0473_v1",
+  "unlock_count": 1,
+  "unlock_id": "label-unlock-v0473-r1",
+  "unlocked": true
+}

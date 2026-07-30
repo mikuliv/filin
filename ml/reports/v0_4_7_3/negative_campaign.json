@@ -1,0 +1,2802 @@
+[
+  {
+    "executed": true,
+    "expected_error_code": "starting_head_mismatch",
+    "observed_error_code": "starting_head_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-001",
+    "temporary_copy": true,
+    "violation": "wrong_head"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "clean_tree_required",
+    "observed_error_code": "clean_tree_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-002",
+    "temporary_copy": true,
+    "violation": "dirty_tree"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "active_candidate_immutable",
+    "observed_error_code": "active_candidate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-003",
+    "temporary_copy": true,
+    "violation": "active_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "proposal_immutable",
+    "observed_error_code": "proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-004",
+    "temporary_copy": true,
+    "violation": "proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_proposal_immutable",
+    "observed_error_code": "old_proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-005",
+    "temporary_copy": true,
+    "violation": "old_proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_immutable",
+    "observed_error_code": "v0_4_7_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-006",
+    "temporary_copy": true,
+    "violation": "v047_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_1_immutable",
+    "observed_error_code": "v0_4_7_1_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-007",
+    "temporary_copy": true,
+    "violation": "v0471_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_2_immutable",
+    "observed_error_code": "v0_4_7_2_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-008",
+    "temporary_copy": true,
+    "violation": "v0472_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_control_object_reuse_forbidden",
+    "observed_error_code": "old_control_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-009",
+    "temporary_copy": true,
+    "violation": "v047_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "corrective_object_reuse_forbidden",
+    "observed_error_code": "corrective_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-010",
+    "temporary_copy": true,
+    "violation": "v0472_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "session_reuse_forbidden",
+    "observed_error_code": "session_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-011",
+    "temporary_copy": true,
+    "violation": "session_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "capture_reuse_forbidden",
+    "observed_error_code": "capture_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-012",
+    "temporary_copy": true,
+    "violation": "capture_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "seed_reuse_forbidden",
+    "observed_error_code": "seed_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-013",
+    "temporary_copy": true,
+    "violation": "seed_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "exact_copy_forbidden",
+    "observed_error_code": "exact_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-014",
+    "temporary_copy": true,
+    "violation": "exact_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "normalized_copy_forbidden",
+    "observed_error_code": "normalized_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-015",
+    "temporary_copy": true,
+    "violation": "normalized_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_copy_forbidden",
+    "observed_error_code": "semantic_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-016",
+    "temporary_copy": true,
+    "violation": "semantic_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "derived_copy_forbidden",
+    "observed_error_code": "derived_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-017",
+    "temporary_copy": true,
+    "violation": "derived_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "provenance_required",
+    "observed_error_code": "provenance_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-018",
+    "temporary_copy": true,
+    "violation": "missing_provenance"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "manifest_required",
+    "observed_error_code": "manifest_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-019",
+    "temporary_copy": true,
+    "violation": "missing_manifest"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_sha_required",
+    "observed_error_code": "semantic_sha_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-020",
+    "temporary_copy": true,
+    "violation": "missing_semantic"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-021",
+    "temporary_copy": true,
+    "violation": "real_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-022",
+    "temporary_copy": true,
+    "violation": "personal_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "organization_data_forbidden",
+    "observed_error_code": "organization_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-023",
+    "temporary_copy": true,
+    "violation": "organization_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_input",
+    "observed_error_code": "label_leakage_in_input",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-024",
+    "temporary_copy": true,
+    "violation": "label_in_input"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_filename",
+    "observed_error_code": "label_revealing_filename",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-025",
+    "temporary_copy": true,
+    "violation": "label_filename"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_directory",
+    "observed_error_code": "label_revealing_directory",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-026",
+    "temporary_copy": true,
+    "violation": "label_directory"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_scenario_id",
+    "observed_error_code": "label_revealing_scenario_id",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-027",
+    "temporary_copy": true,
+    "violation": "label_scenario"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_log",
+    "observed_error_code": "label_leakage_in_log",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-028",
+    "temporary_copy": true,
+    "violation": "label_log"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_ui_label_leakage",
+    "observed_error_code": "pre_unlock_ui_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-029",
+    "temporary_copy": true,
+    "violation": "label_ui"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_api_label_leakage",
+    "observed_error_code": "pre_unlock_api_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-030",
+    "temporary_copy": true,
+    "violation": "label_api"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_in_environment",
+    "observed_error_code": "label_in_environment",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-031",
+    "temporary_copy": true,
+    "violation": "label_environment"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "inference_label_access_forbidden",
+    "observed_error_code": "inference_label_access_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-032",
+    "temporary_copy": true,
+    "violation": "inference_label_access"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_commitment_mismatch",
+    "observed_error_code": "label_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-033",
+    "temporary_copy": true,
+    "violation": "label_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_checksum_invalid",
+    "observed_error_code": "label_checksum_invalid",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-034",
+    "temporary_copy": true,
+    "violation": "label_checksum"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-035",
+    "temporary_copy": true,
+    "violation": "unfrozen_plan"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "frozen_plan_immutable",
+    "observed_error_code": "frozen_plan_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-036",
+    "temporary_copy": true,
+    "violation": "plan_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_input_required",
+    "observed_error_code": "shared_input_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-037",
+    "temporary_copy": true,
+    "violation": "different_inputs"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_population_required",
+    "observed_error_code": "shared_population_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-038",
+    "temporary_copy": true,
+    "violation": "different_population"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "threshold_contract_immutable",
+    "observed_error_code": "threshold_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-039",
+    "temporary_copy": true,
+    "violation": "threshold_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "feature_contract_immutable",
+    "observed_error_code": "feature_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-040",
+    "temporary_copy": true,
+    "violation": "feature_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-041",
+    "temporary_copy": true,
+    "violation": "arbitrary_command"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-042",
+    "temporary_copy": true,
+    "violation": "shell_true"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_path_forbidden",
+    "observed_error_code": "arbitrary_path_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-043",
+    "temporary_copy": true,
+    "violation": "arbitrary_path"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "path_traversal_forbidden",
+    "observed_error_code": "path_traversal_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-044",
+    "temporary_copy": true,
+    "violation": "path_traversal"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_module_forbidden",
+    "observed_error_code": "arbitrary_module_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-045",
+    "temporary_copy": true,
+    "violation": "arbitrary_module"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-046",
+    "temporary_copy": true,
+    "violation": "network"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-047",
+    "temporary_copy": true,
+    "violation": "model_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-048",
+    "temporary_copy": true,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "incomplete_inference_rejected",
+    "observed_error_code": "incomplete_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-049",
+    "temporary_copy": true,
+    "violation": "incomplete_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "interrupted_inference_rejected",
+    "observed_error_code": "interrupted_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-050",
+    "temporary_copy": true,
+    "violation": "interrupted_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "recovery_audit_required",
+    "observed_error_code": "recovery_audit_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-051",
+    "temporary_copy": true,
+    "violation": "recovery_without_audit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_retry_forbidden",
+    "observed_error_code": "hidden_retry_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-052",
+    "temporary_copy": true,
+    "violation": "hidden_retry"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_freeze_required",
+    "observed_error_code": "prediction_freeze_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-053",
+    "temporary_copy": true,
+    "violation": "unfrozen_predictions"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_commitment_mismatch",
+    "observed_error_code": "prediction_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-054",
+    "temporary_copy": true,
+    "violation": "prediction_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "two_prediction_commitments_required",
+    "observed_error_code": "two_prediction_commitments_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-055",
+    "temporary_copy": true,
+    "violation": "early_unlock"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "evaluation_role_required",
+    "observed_error_code": "evaluation_role_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-056",
+    "temporary_copy": true,
+    "violation": "wrong_unlock_role"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "post_unlock_inference_forbidden",
+    "observed_error_code": "post_unlock_inference_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-057",
+    "temporary_copy": true,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "metric_contract_immutable",
+    "observed_error_code": "metric_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-058",
+    "temporary_copy": true,
+    "violation": "metric_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "acceptance_gate_immutable",
+    "observed_error_code": "acceptance_gate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-059",
+    "temporary_copy": true,
+    "violation": "criterion_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "retroactive_exclusion_forbidden",
+    "observed_error_code": "retroactive_exclusion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-060",
+    "temporary_copy": true,
+    "violation": "retroactive_exclusion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "winner_score_forbidden",
+    "observed_error_code": "winner_score_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-061",
+    "temporary_copy": true,
+    "violation": "hidden_score"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-062",
+    "temporary_copy": true,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_ranking_forbidden",
+    "observed_error_code": "automatic_ranking_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-063",
+    "temporary_copy": true,
+    "violation": "automatic_ranking"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-064",
+    "temporary_copy": true,
+    "violation": "automatic_registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_activation_forbidden",
+    "observed_error_code": "candidate_activation_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-065",
+    "temporary_copy": true,
+    "violation": "automatic_activation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_promotion_forbidden",
+    "observed_error_code": "automatic_promotion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-066",
+    "temporary_copy": true,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_criterion_failure_blocks_pass",
+    "observed_error_code": "mandatory_criterion_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-067",
+    "temporary_copy": true,
+    "violation": "pass_with_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_not_assessable_blocks_pass",
+    "observed_error_code": "mandatory_not_assessable_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-068",
+    "temporary_copy": true,
+    "violation": "pass_with_na"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "unresolved_previous_failure_blocks_pass",
+    "observed_error_code": "unresolved_previous_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-069",
+    "temporary_copy": true,
+    "violation": "pass_old_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "critical_regression_blocks_pass",
+    "observed_error_code": "critical_regression_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-070",
+    "temporary_copy": true,
+    "violation": "pass_regression"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "comparability_required",
+    "observed_error_code": "comparability_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-071",
+    "temporary_copy": true,
+    "violation": "pass_not_comparable"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "independent_claim_forbidden",
+    "observed_error_code": "independent_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-072",
+    "temporary_copy": true,
+    "violation": "independent_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "external_claim_forbidden",
+    "observed_error_code": "external_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-073",
+    "temporary_copy": true,
+    "violation": "external_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "production_claim_forbidden",
+    "observed_error_code": "production_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-074",
+    "temporary_copy": true,
+    "violation": "production_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "registration_out_of_scope",
+    "observed_error_code": "registration_out_of_scope",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-075",
+    "temporary_copy": true,
+    "violation": "registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-076",
+    "temporary_copy": true,
+    "violation": "registry_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-077",
+    "temporary_copy": true,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_binary_commit_forbidden",
+    "observed_error_code": "model_binary_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-078",
+    "temporary_copy": true,
+    "violation": "model_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "control_dataset_commit_forbidden",
+    "observed_error_code": "control_dataset_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-079",
+    "temporary_copy": true,
+    "violation": "dataset_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_package_commit_forbidden",
+    "observed_error_code": "label_package_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-080",
+    "temporary_copy": true,
+    "violation": "label_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_rows_commit_forbidden",
+    "observed_error_code": "prediction_rows_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-081",
+    "temporary_copy": true,
+    "violation": "prediction_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "official_license_text_immutable",
+    "observed_error_code": "official_license_text_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-082",
+    "temporary_copy": true,
+    "violation": "license_text"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "reuse_coverage_required",
+    "observed_error_code": "reuse_coverage_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-083",
+    "temporary_copy": true,
+    "violation": "reuse_gap"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "license_assignment_required",
+    "observed_error_code": "license_assignment_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-084",
+    "temporary_copy": true,
+    "violation": "unassigned_file"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_push_forbidden",
+    "observed_error_code": "git_push_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-085",
+    "temporary_copy": true,
+    "violation": "git_push"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_pull_forbidden",
+    "observed_error_code": "git_pull_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-086",
+    "temporary_copy": true,
+    "violation": "git_pull"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_reset_forbidden",
+    "observed_error_code": "git_reset_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-087",
+    "temporary_copy": true,
+    "violation": "git_reset"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_rebase_forbidden",
+    "observed_error_code": "git_rebase_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-088",
+    "temporary_copy": true,
+    "violation": "git_rebase"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "starting_head_mismatch",
+    "observed_error_code": "starting_head_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-089",
+    "temporary_copy": true,
+    "violation": "wrong_head"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "clean_tree_required",
+    "observed_error_code": "clean_tree_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-090",
+    "temporary_copy": true,
+    "violation": "dirty_tree"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "active_candidate_immutable",
+    "observed_error_code": "active_candidate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-091",
+    "temporary_copy": true,
+    "violation": "active_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "proposal_immutable",
+    "observed_error_code": "proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-092",
+    "temporary_copy": true,
+    "violation": "proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_proposal_immutable",
+    "observed_error_code": "old_proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-093",
+    "temporary_copy": true,
+    "violation": "old_proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_immutable",
+    "observed_error_code": "v0_4_7_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-094",
+    "temporary_copy": true,
+    "violation": "v047_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_1_immutable",
+    "observed_error_code": "v0_4_7_1_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-095",
+    "temporary_copy": true,
+    "violation": "v0471_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_2_immutable",
+    "observed_error_code": "v0_4_7_2_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-096",
+    "temporary_copy": true,
+    "violation": "v0472_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_control_object_reuse_forbidden",
+    "observed_error_code": "old_control_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-097",
+    "temporary_copy": true,
+    "violation": "v047_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "corrective_object_reuse_forbidden",
+    "observed_error_code": "corrective_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-098",
+    "temporary_copy": true,
+    "violation": "v0472_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "session_reuse_forbidden",
+    "observed_error_code": "session_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-099",
+    "temporary_copy": true,
+    "violation": "session_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "capture_reuse_forbidden",
+    "observed_error_code": "capture_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-100",
+    "temporary_copy": true,
+    "violation": "capture_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "seed_reuse_forbidden",
+    "observed_error_code": "seed_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-101",
+    "temporary_copy": true,
+    "violation": "seed_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "exact_copy_forbidden",
+    "observed_error_code": "exact_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-102",
+    "temporary_copy": true,
+    "violation": "exact_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "normalized_copy_forbidden",
+    "observed_error_code": "normalized_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-103",
+    "temporary_copy": true,
+    "violation": "normalized_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_copy_forbidden",
+    "observed_error_code": "semantic_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-104",
+    "temporary_copy": true,
+    "violation": "semantic_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "derived_copy_forbidden",
+    "observed_error_code": "derived_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-105",
+    "temporary_copy": true,
+    "violation": "derived_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "provenance_required",
+    "observed_error_code": "provenance_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-106",
+    "temporary_copy": true,
+    "violation": "missing_provenance"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "manifest_required",
+    "observed_error_code": "manifest_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-107",
+    "temporary_copy": true,
+    "violation": "missing_manifest"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_sha_required",
+    "observed_error_code": "semantic_sha_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-108",
+    "temporary_copy": true,
+    "violation": "missing_semantic"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-109",
+    "temporary_copy": true,
+    "violation": "real_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-110",
+    "temporary_copy": true,
+    "violation": "personal_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "organization_data_forbidden",
+    "observed_error_code": "organization_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-111",
+    "temporary_copy": true,
+    "violation": "organization_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_input",
+    "observed_error_code": "label_leakage_in_input",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-112",
+    "temporary_copy": true,
+    "violation": "label_in_input"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_filename",
+    "observed_error_code": "label_revealing_filename",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-113",
+    "temporary_copy": true,
+    "violation": "label_filename"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_directory",
+    "observed_error_code": "label_revealing_directory",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-114",
+    "temporary_copy": true,
+    "violation": "label_directory"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_scenario_id",
+    "observed_error_code": "label_revealing_scenario_id",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-115",
+    "temporary_copy": true,
+    "violation": "label_scenario"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_log",
+    "observed_error_code": "label_leakage_in_log",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-116",
+    "temporary_copy": true,
+    "violation": "label_log"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_ui_label_leakage",
+    "observed_error_code": "pre_unlock_ui_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-117",
+    "temporary_copy": true,
+    "violation": "label_ui"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_api_label_leakage",
+    "observed_error_code": "pre_unlock_api_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-118",
+    "temporary_copy": true,
+    "violation": "label_api"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_in_environment",
+    "observed_error_code": "label_in_environment",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-119",
+    "temporary_copy": true,
+    "violation": "label_environment"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "inference_label_access_forbidden",
+    "observed_error_code": "inference_label_access_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-120",
+    "temporary_copy": true,
+    "violation": "inference_label_access"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_commitment_mismatch",
+    "observed_error_code": "label_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-121",
+    "temporary_copy": true,
+    "violation": "label_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_checksum_invalid",
+    "observed_error_code": "label_checksum_invalid",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-122",
+    "temporary_copy": true,
+    "violation": "label_checksum"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-123",
+    "temporary_copy": true,
+    "violation": "unfrozen_plan"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "frozen_plan_immutable",
+    "observed_error_code": "frozen_plan_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-124",
+    "temporary_copy": true,
+    "violation": "plan_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_input_required",
+    "observed_error_code": "shared_input_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-125",
+    "temporary_copy": true,
+    "violation": "different_inputs"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_population_required",
+    "observed_error_code": "shared_population_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-126",
+    "temporary_copy": true,
+    "violation": "different_population"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "threshold_contract_immutable",
+    "observed_error_code": "threshold_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-127",
+    "temporary_copy": true,
+    "violation": "threshold_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "feature_contract_immutable",
+    "observed_error_code": "feature_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-128",
+    "temporary_copy": true,
+    "violation": "feature_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-129",
+    "temporary_copy": true,
+    "violation": "arbitrary_command"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-130",
+    "temporary_copy": true,
+    "violation": "shell_true"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_path_forbidden",
+    "observed_error_code": "arbitrary_path_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-131",
+    "temporary_copy": true,
+    "violation": "arbitrary_path"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "path_traversal_forbidden",
+    "observed_error_code": "path_traversal_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-132",
+    "temporary_copy": true,
+    "violation": "path_traversal"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_module_forbidden",
+    "observed_error_code": "arbitrary_module_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-133",
+    "temporary_copy": true,
+    "violation": "arbitrary_module"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-134",
+    "temporary_copy": true,
+    "violation": "network"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-135",
+    "temporary_copy": true,
+    "violation": "model_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-136",
+    "temporary_copy": true,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "incomplete_inference_rejected",
+    "observed_error_code": "incomplete_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-137",
+    "temporary_copy": true,
+    "violation": "incomplete_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "interrupted_inference_rejected",
+    "observed_error_code": "interrupted_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-138",
+    "temporary_copy": true,
+    "violation": "interrupted_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "recovery_audit_required",
+    "observed_error_code": "recovery_audit_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-139",
+    "temporary_copy": true,
+    "violation": "recovery_without_audit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_retry_forbidden",
+    "observed_error_code": "hidden_retry_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-140",
+    "temporary_copy": true,
+    "violation": "hidden_retry"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_freeze_required",
+    "observed_error_code": "prediction_freeze_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-141",
+    "temporary_copy": true,
+    "violation": "unfrozen_predictions"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_commitment_mismatch",
+    "observed_error_code": "prediction_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-142",
+    "temporary_copy": true,
+    "violation": "prediction_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "two_prediction_commitments_required",
+    "observed_error_code": "two_prediction_commitments_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-143",
+    "temporary_copy": true,
+    "violation": "early_unlock"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "evaluation_role_required",
+    "observed_error_code": "evaluation_role_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-144",
+    "temporary_copy": true,
+    "violation": "wrong_unlock_role"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "post_unlock_inference_forbidden",
+    "observed_error_code": "post_unlock_inference_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-145",
+    "temporary_copy": true,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "metric_contract_immutable",
+    "observed_error_code": "metric_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-146",
+    "temporary_copy": true,
+    "violation": "metric_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "acceptance_gate_immutable",
+    "observed_error_code": "acceptance_gate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-147",
+    "temporary_copy": true,
+    "violation": "criterion_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "retroactive_exclusion_forbidden",
+    "observed_error_code": "retroactive_exclusion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-148",
+    "temporary_copy": true,
+    "violation": "retroactive_exclusion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "winner_score_forbidden",
+    "observed_error_code": "winner_score_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-149",
+    "temporary_copy": true,
+    "violation": "hidden_score"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-150",
+    "temporary_copy": true,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_ranking_forbidden",
+    "observed_error_code": "automatic_ranking_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-151",
+    "temporary_copy": true,
+    "violation": "automatic_ranking"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-152",
+    "temporary_copy": true,
+    "violation": "automatic_registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_activation_forbidden",
+    "observed_error_code": "candidate_activation_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-153",
+    "temporary_copy": true,
+    "violation": "automatic_activation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_promotion_forbidden",
+    "observed_error_code": "automatic_promotion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-154",
+    "temporary_copy": true,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_criterion_failure_blocks_pass",
+    "observed_error_code": "mandatory_criterion_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-155",
+    "temporary_copy": true,
+    "violation": "pass_with_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_not_assessable_blocks_pass",
+    "observed_error_code": "mandatory_not_assessable_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-156",
+    "temporary_copy": true,
+    "violation": "pass_with_na"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "unresolved_previous_failure_blocks_pass",
+    "observed_error_code": "unresolved_previous_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-157",
+    "temporary_copy": true,
+    "violation": "pass_old_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "critical_regression_blocks_pass",
+    "observed_error_code": "critical_regression_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-158",
+    "temporary_copy": true,
+    "violation": "pass_regression"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "comparability_required",
+    "observed_error_code": "comparability_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-159",
+    "temporary_copy": true,
+    "violation": "pass_not_comparable"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "independent_claim_forbidden",
+    "observed_error_code": "independent_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-160",
+    "temporary_copy": true,
+    "violation": "independent_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "external_claim_forbidden",
+    "observed_error_code": "external_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-161",
+    "temporary_copy": true,
+    "violation": "external_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "production_claim_forbidden",
+    "observed_error_code": "production_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-162",
+    "temporary_copy": true,
+    "violation": "production_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "registration_out_of_scope",
+    "observed_error_code": "registration_out_of_scope",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-163",
+    "temporary_copy": true,
+    "violation": "registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-164",
+    "temporary_copy": true,
+    "violation": "registry_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-165",
+    "temporary_copy": true,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_binary_commit_forbidden",
+    "observed_error_code": "model_binary_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-166",
+    "temporary_copy": true,
+    "violation": "model_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "control_dataset_commit_forbidden",
+    "observed_error_code": "control_dataset_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-167",
+    "temporary_copy": true,
+    "violation": "dataset_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_package_commit_forbidden",
+    "observed_error_code": "label_package_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-168",
+    "temporary_copy": true,
+    "violation": "label_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_rows_commit_forbidden",
+    "observed_error_code": "prediction_rows_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-169",
+    "temporary_copy": true,
+    "violation": "prediction_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "official_license_text_immutable",
+    "observed_error_code": "official_license_text_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-170",
+    "temporary_copy": true,
+    "violation": "license_text"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "reuse_coverage_required",
+    "observed_error_code": "reuse_coverage_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-171",
+    "temporary_copy": true,
+    "violation": "reuse_gap"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "license_assignment_required",
+    "observed_error_code": "license_assignment_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-172",
+    "temporary_copy": true,
+    "violation": "unassigned_file"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_push_forbidden",
+    "observed_error_code": "git_push_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-173",
+    "temporary_copy": true,
+    "violation": "git_push"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_pull_forbidden",
+    "observed_error_code": "git_pull_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-174",
+    "temporary_copy": true,
+    "violation": "git_pull"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_reset_forbidden",
+    "observed_error_code": "git_reset_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-175",
+    "temporary_copy": true,
+    "violation": "git_reset"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_rebase_forbidden",
+    "observed_error_code": "git_rebase_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-176",
+    "temporary_copy": true,
+    "violation": "git_rebase"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "starting_head_mismatch",
+    "observed_error_code": "starting_head_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-177",
+    "temporary_copy": true,
+    "violation": "wrong_head"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "clean_tree_required",
+    "observed_error_code": "clean_tree_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-178",
+    "temporary_copy": true,
+    "violation": "dirty_tree"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "active_candidate_immutable",
+    "observed_error_code": "active_candidate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-179",
+    "temporary_copy": true,
+    "violation": "active_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "proposal_immutable",
+    "observed_error_code": "proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-180",
+    "temporary_copy": true,
+    "violation": "proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_proposal_immutable",
+    "observed_error_code": "old_proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-181",
+    "temporary_copy": true,
+    "violation": "old_proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_immutable",
+    "observed_error_code": "v0_4_7_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-182",
+    "temporary_copy": true,
+    "violation": "v047_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_1_immutable",
+    "observed_error_code": "v0_4_7_1_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-183",
+    "temporary_copy": true,
+    "violation": "v0471_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_2_immutable",
+    "observed_error_code": "v0_4_7_2_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-184",
+    "temporary_copy": true,
+    "violation": "v0472_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_control_object_reuse_forbidden",
+    "observed_error_code": "old_control_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-185",
+    "temporary_copy": true,
+    "violation": "v047_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "corrective_object_reuse_forbidden",
+    "observed_error_code": "corrective_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-186",
+    "temporary_copy": true,
+    "violation": "v0472_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "session_reuse_forbidden",
+    "observed_error_code": "session_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-187",
+    "temporary_copy": true,
+    "violation": "session_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "capture_reuse_forbidden",
+    "observed_error_code": "capture_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-188",
+    "temporary_copy": true,
+    "violation": "capture_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "seed_reuse_forbidden",
+    "observed_error_code": "seed_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-189",
+    "temporary_copy": true,
+    "violation": "seed_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "exact_copy_forbidden",
+    "observed_error_code": "exact_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-190",
+    "temporary_copy": true,
+    "violation": "exact_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "normalized_copy_forbidden",
+    "observed_error_code": "normalized_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-191",
+    "temporary_copy": true,
+    "violation": "normalized_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_copy_forbidden",
+    "observed_error_code": "semantic_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-192",
+    "temporary_copy": true,
+    "violation": "semantic_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "derived_copy_forbidden",
+    "observed_error_code": "derived_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-193",
+    "temporary_copy": true,
+    "violation": "derived_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "provenance_required",
+    "observed_error_code": "provenance_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-194",
+    "temporary_copy": true,
+    "violation": "missing_provenance"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "manifest_required",
+    "observed_error_code": "manifest_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-195",
+    "temporary_copy": true,
+    "violation": "missing_manifest"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_sha_required",
+    "observed_error_code": "semantic_sha_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-196",
+    "temporary_copy": true,
+    "violation": "missing_semantic"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "real_data_forbidden",
+    "observed_error_code": "real_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-197",
+    "temporary_copy": true,
+    "violation": "real_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "personal_data_forbidden",
+    "observed_error_code": "personal_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-198",
+    "temporary_copy": true,
+    "violation": "personal_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "organization_data_forbidden",
+    "observed_error_code": "organization_data_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-199",
+    "temporary_copy": true,
+    "violation": "organization_data"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_input",
+    "observed_error_code": "label_leakage_in_input",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-200",
+    "temporary_copy": true,
+    "violation": "label_in_input"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_filename",
+    "observed_error_code": "label_revealing_filename",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-201",
+    "temporary_copy": true,
+    "violation": "label_filename"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_directory",
+    "observed_error_code": "label_revealing_directory",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-202",
+    "temporary_copy": true,
+    "violation": "label_directory"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_revealing_scenario_id",
+    "observed_error_code": "label_revealing_scenario_id",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-203",
+    "temporary_copy": true,
+    "violation": "label_scenario"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_leakage_in_log",
+    "observed_error_code": "label_leakage_in_log",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-204",
+    "temporary_copy": true,
+    "violation": "label_log"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_ui_label_leakage",
+    "observed_error_code": "pre_unlock_ui_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-205",
+    "temporary_copy": true,
+    "violation": "label_ui"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "pre_unlock_api_label_leakage",
+    "observed_error_code": "pre_unlock_api_label_leakage",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-206",
+    "temporary_copy": true,
+    "violation": "label_api"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_in_environment",
+    "observed_error_code": "label_in_environment",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-207",
+    "temporary_copy": true,
+    "violation": "label_environment"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "inference_label_access_forbidden",
+    "observed_error_code": "inference_label_access_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-208",
+    "temporary_copy": true,
+    "violation": "inference_label_access"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_commitment_mismatch",
+    "observed_error_code": "label_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-209",
+    "temporary_copy": true,
+    "violation": "label_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_checksum_invalid",
+    "observed_error_code": "label_checksum_invalid",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-210",
+    "temporary_copy": true,
+    "violation": "label_checksum"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_plan_not_frozen",
+    "observed_error_code": "prediction_plan_not_frozen",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-211",
+    "temporary_copy": true,
+    "violation": "unfrozen_plan"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "frozen_plan_immutable",
+    "observed_error_code": "frozen_plan_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-212",
+    "temporary_copy": true,
+    "violation": "plan_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_input_required",
+    "observed_error_code": "shared_input_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-213",
+    "temporary_copy": true,
+    "violation": "different_inputs"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shared_population_required",
+    "observed_error_code": "shared_population_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-214",
+    "temporary_copy": true,
+    "violation": "different_population"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "threshold_contract_immutable",
+    "observed_error_code": "threshold_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-215",
+    "temporary_copy": true,
+    "violation": "threshold_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "feature_contract_immutable",
+    "observed_error_code": "feature_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-216",
+    "temporary_copy": true,
+    "violation": "feature_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_command_forbidden",
+    "observed_error_code": "arbitrary_command_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-217",
+    "temporary_copy": true,
+    "violation": "arbitrary_command"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "shell_forbidden",
+    "observed_error_code": "shell_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-218",
+    "temporary_copy": true,
+    "violation": "shell_true"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_path_forbidden",
+    "observed_error_code": "arbitrary_path_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-219",
+    "temporary_copy": true,
+    "violation": "arbitrary_path"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "path_traversal_forbidden",
+    "observed_error_code": "path_traversal_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-220",
+    "temporary_copy": true,
+    "violation": "path_traversal"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "arbitrary_module_forbidden",
+    "observed_error_code": "arbitrary_module_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-221",
+    "temporary_copy": true,
+    "violation": "arbitrary_module"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "network_forbidden",
+    "observed_error_code": "network_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-222",
+    "temporary_copy": true,
+    "violation": "network"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_upload_forbidden",
+    "observed_error_code": "model_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-223",
+    "temporary_copy": true,
+    "violation": "model_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "dataset_upload_forbidden",
+    "observed_error_code": "dataset_upload_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-224",
+    "temporary_copy": true,
+    "violation": "dataset_upload"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "incomplete_inference_rejected",
+    "observed_error_code": "incomplete_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-225",
+    "temporary_copy": true,
+    "violation": "incomplete_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "interrupted_inference_rejected",
+    "observed_error_code": "interrupted_inference_rejected",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-226",
+    "temporary_copy": true,
+    "violation": "interrupted_as_complete"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "recovery_audit_required",
+    "observed_error_code": "recovery_audit_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-227",
+    "temporary_copy": true,
+    "violation": "recovery_without_audit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_retry_forbidden",
+    "observed_error_code": "hidden_retry_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-228",
+    "temporary_copy": true,
+    "violation": "hidden_retry"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_freeze_required",
+    "observed_error_code": "prediction_freeze_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-229",
+    "temporary_copy": true,
+    "violation": "unfrozen_predictions"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_commitment_mismatch",
+    "observed_error_code": "prediction_commitment_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-230",
+    "temporary_copy": true,
+    "violation": "prediction_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "two_prediction_commitments_required",
+    "observed_error_code": "two_prediction_commitments_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-231",
+    "temporary_copy": true,
+    "violation": "early_unlock"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "evaluation_role_required",
+    "observed_error_code": "evaluation_role_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-232",
+    "temporary_copy": true,
+    "violation": "wrong_unlock_role"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "post_unlock_inference_forbidden",
+    "observed_error_code": "post_unlock_inference_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-233",
+    "temporary_copy": true,
+    "violation": "post_unlock_inference"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "metric_contract_immutable",
+    "observed_error_code": "metric_contract_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-234",
+    "temporary_copy": true,
+    "violation": "metric_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "acceptance_gate_immutable",
+    "observed_error_code": "acceptance_gate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-235",
+    "temporary_copy": true,
+    "violation": "criterion_change"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "retroactive_exclusion_forbidden",
+    "observed_error_code": "retroactive_exclusion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-236",
+    "temporary_copy": true,
+    "violation": "retroactive_exclusion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "winner_score_forbidden",
+    "observed_error_code": "winner_score_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-237",
+    "temporary_copy": true,
+    "violation": "hidden_score"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "hidden_weight_forbidden",
+    "observed_error_code": "hidden_weight_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-238",
+    "temporary_copy": true,
+    "violation": "hidden_weight"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_ranking_forbidden",
+    "observed_error_code": "automatic_ranking_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-239",
+    "temporary_copy": true,
+    "violation": "automatic_ranking"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registration_forbidden",
+    "observed_error_code": "candidate_registration_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-240",
+    "temporary_copy": true,
+    "violation": "automatic_registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_activation_forbidden",
+    "observed_error_code": "candidate_activation_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-241",
+    "temporary_copy": true,
+    "violation": "automatic_activation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "automatic_promotion_forbidden",
+    "observed_error_code": "automatic_promotion_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-242",
+    "temporary_copy": true,
+    "violation": "automatic_promotion"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_criterion_failure_blocks_pass",
+    "observed_error_code": "mandatory_criterion_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-243",
+    "temporary_copy": true,
+    "violation": "pass_with_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "mandatory_not_assessable_blocks_pass",
+    "observed_error_code": "mandatory_not_assessable_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-244",
+    "temporary_copy": true,
+    "violation": "pass_with_na"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "unresolved_previous_failure_blocks_pass",
+    "observed_error_code": "unresolved_previous_failure_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-245",
+    "temporary_copy": true,
+    "violation": "pass_old_failure"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "critical_regression_blocks_pass",
+    "observed_error_code": "critical_regression_blocks_pass",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-246",
+    "temporary_copy": true,
+    "violation": "pass_regression"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "comparability_required",
+    "observed_error_code": "comparability_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-247",
+    "temporary_copy": true,
+    "violation": "pass_not_comparable"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "independent_claim_forbidden",
+    "observed_error_code": "independent_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-248",
+    "temporary_copy": true,
+    "violation": "independent_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "external_claim_forbidden",
+    "observed_error_code": "external_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-249",
+    "temporary_copy": true,
+    "violation": "external_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "production_claim_forbidden",
+    "observed_error_code": "production_claim_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-250",
+    "temporary_copy": true,
+    "violation": "production_claim"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "registration_out_of_scope",
+    "observed_error_code": "registration_out_of_scope",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-251",
+    "temporary_copy": true,
+    "violation": "registration"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "candidate_registry_immutable",
+    "observed_error_code": "candidate_registry_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-252",
+    "temporary_copy": true,
+    "violation": "registry_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "backend_tree_immutable",
+    "observed_error_code": "backend_tree_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-253",
+    "temporary_copy": true,
+    "violation": "backend_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "model_binary_commit_forbidden",
+    "observed_error_code": "model_binary_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-254",
+    "temporary_copy": true,
+    "violation": "model_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "control_dataset_commit_forbidden",
+    "observed_error_code": "control_dataset_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-255",
+    "temporary_copy": true,
+    "violation": "dataset_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "label_package_commit_forbidden",
+    "observed_error_code": "label_package_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-256",
+    "temporary_copy": true,
+    "violation": "label_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "prediction_rows_commit_forbidden",
+    "observed_error_code": "prediction_rows_commit_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-257",
+    "temporary_copy": true,
+    "violation": "prediction_commit"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "official_license_text_immutable",
+    "observed_error_code": "official_license_text_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-258",
+    "temporary_copy": true,
+    "violation": "license_text"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "reuse_coverage_required",
+    "observed_error_code": "reuse_coverage_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-259",
+    "temporary_copy": true,
+    "violation": "reuse_gap"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "license_assignment_required",
+    "observed_error_code": "license_assignment_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-260",
+    "temporary_copy": true,
+    "violation": "unassigned_file"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_push_forbidden",
+    "observed_error_code": "git_push_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-261",
+    "temporary_copy": true,
+    "violation": "git_push"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_pull_forbidden",
+    "observed_error_code": "git_pull_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-262",
+    "temporary_copy": true,
+    "violation": "git_pull"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_reset_forbidden",
+    "observed_error_code": "git_reset_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-263",
+    "temporary_copy": true,
+    "violation": "git_reset"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "git_rebase_forbidden",
+    "observed_error_code": "git_rebase_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-264",
+    "temporary_copy": true,
+    "violation": "git_rebase"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "starting_head_mismatch",
+    "observed_error_code": "starting_head_mismatch",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-265",
+    "temporary_copy": true,
+    "violation": "wrong_head"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "clean_tree_required",
+    "observed_error_code": "clean_tree_required",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-266",
+    "temporary_copy": true,
+    "violation": "dirty_tree"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "active_candidate_immutable",
+    "observed_error_code": "active_candidate_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-267",
+    "temporary_copy": true,
+    "violation": "active_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "proposal_immutable",
+    "observed_error_code": "proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-268",
+    "temporary_copy": true,
+    "violation": "proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_proposal_immutable",
+    "observed_error_code": "old_proposal_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-269",
+    "temporary_copy": true,
+    "violation": "old_proposal_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_immutable",
+    "observed_error_code": "v0_4_7_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-270",
+    "temporary_copy": true,
+    "violation": "v047_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_1_immutable",
+    "observed_error_code": "v0_4_7_1_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-271",
+    "temporary_copy": true,
+    "violation": "v0471_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "v0_4_7_2_immutable",
+    "observed_error_code": "v0_4_7_2_immutable",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-272",
+    "temporary_copy": true,
+    "violation": "v0472_mutation"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "old_control_object_reuse_forbidden",
+    "observed_error_code": "old_control_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-273",
+    "temporary_copy": true,
+    "violation": "v047_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "corrective_object_reuse_forbidden",
+    "observed_error_code": "corrective_object_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-274",
+    "temporary_copy": true,
+    "violation": "v0472_object"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "session_reuse_forbidden",
+    "observed_error_code": "session_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-275",
+    "temporary_copy": true,
+    "violation": "session_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "capture_reuse_forbidden",
+    "observed_error_code": "capture_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-276",
+    "temporary_copy": true,
+    "violation": "capture_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "seed_reuse_forbidden",
+    "observed_error_code": "seed_reuse_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-277",
+    "temporary_copy": true,
+    "violation": "seed_reuse"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "exact_copy_forbidden",
+    "observed_error_code": "exact_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-278",
+    "temporary_copy": true,
+    "violation": "exact_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "normalized_copy_forbidden",
+    "observed_error_code": "normalized_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-279",
+    "temporary_copy": true,
+    "violation": "normalized_copy"
+  },
+  {
+    "executed": true,
+    "expected_error_code": "semantic_copy_forbidden",
+    "observed_error_code": "semantic_copy_forbidden",
+    "official_state_mutated": false,
+    "rejected": true,
+    "scenario_id": "v0473-neg-280",
+    "temporary_copy": true,
+    "violation": "semantic_copy"
+  }
+]

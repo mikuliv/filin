@@ -1,0 +1,58 @@
+{
+  "checks": [
+    {
+      "check": "inference_role_no_label_capability",
+      "passed": true
+    },
+    {
+      "check": "inference_process_does_not_open_labels",
+      "passed": true
+    },
+    {
+      "check": "api_hides_labels",
+      "passed": true
+    },
+    {
+      "check": "ui_hides_labels",
+      "passed": true
+    },
+    {
+      "check": "logs_hide_labels",
+      "passed": true
+    },
+    {
+      "check": "errors_hide_labels",
+      "passed": true
+    },
+    {
+      "check": "opaque_filenames",
+      "passed": true
+    },
+    {
+      "check": "opaque_scenario_ids",
+      "passed": true
+    },
+    {
+      "check": "environment_has_no_labels",
+      "passed": true
+    },
+    {
+      "check": "inference_database_has_no_labels",
+      "passed": true
+    },
+    {
+      "check": "search_does_not_index_labels",
+      "passed": true
+    },
+    {
+      "check": "input_has_no_oracle",
+      "passed": true
+    }
+  ],
+  "gate_id": "blindness-v0473-r1",
+  "label_leakage_count": 0,
+  "pre_unlock_label_access_count": 0,
+  "schema_version": "v0_4_7_3_blindness_gate_v1",
+  "status": "passed",
+  "test_oracle_access_count": 0
+}

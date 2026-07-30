@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block content %}
+<section class="hero"><p class="eyebrow">v0.4.7.3 · завершённая слепая лабораторная проверка</p><h1>Новая слепая проверка</h1><p>Процедура выполнена корректно, но обязательные требования действующего кандидата не пройдены. Предложение не зарегистрировано и не продвинуто.</p></section>
+<aside class="notice warning"><strong>Проверка не пройдена</strong><p>Технический статус: <code>failed_validation</code>. Следующее допустимое действие — анализ причин v0.4.7.4.</p></aside>
+<nav class="tabs" aria-label="Представления новой слепой проверки">{% for item in validation.views %}<a href="/ui/v0473-validations/{{ item.key }}" {% if item.key == validation.view %}aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}</nav>
+<section class="panel"><p class="eyebrow">{{ validation.view_label }}</p><h2>{{ validation.view_label }}</h2><pre class="raw-block">{{ validation.data|json_ru }}</pre></section>
+<aside class="notice"><strong>Ограничения</strong><p>Регистрация, активация, продвижение, изменение порога, переобучение и повторное применение моделей после раскрытия разметки запрещены.</p></aside>
+<details class="raw-panel"><summary>Исходные данные <small>техническое представление</small></summary><pre>{{ validation|json_ru }}</pre></details>
+{% endblock %}

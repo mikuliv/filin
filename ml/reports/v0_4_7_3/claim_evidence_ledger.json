@@ -1,0 +1,32 @@
+{
+  "claims": [
+    {
+      "claim": "internal_role_separated_blind_procedure_completed",
+      "evidence": [
+        "blindness_report.json",
+        "prediction_commitments.json",
+        "label_unlock_record.json"
+      ],
+      "supported": true
+    },
+    {
+      "claim": "internal_blind_validation_passed",
+      "evidence": [
+        "blind_acceptance_gate.json",
+        "final_decision.json"
+      ],
+      "supported": false
+    },
+    {
+      "claim": "independent_human_validation",
+      "prohibited": true,
+      "supported": false
+    },
+    {
+      "claim": "external_applicability",
+      "prohibited": true,
+      "supported": false
+    }
+  ],
+  "schema_version": "v0_4_7_3_claim_evidence_ledger_v1"
+}

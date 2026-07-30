@@ -1,0 +1,55 @@
+{
+  "display_name": "Внутренняя слепая проверка с техническим разделением ролей",
+  "external_reviewer_count": 0,
+  "independence_status": "internal_role_separated_blind",
+  "one_person_multiple_roles_allowed": true,
+  "roles": [
+    {
+      "capability_token": "cap-v0473-6ad15fcf5219bc57cf8877fa",
+      "display_name": "хранитель контрольных данных",
+      "label_access": true,
+      "prediction_mutation": false,
+      "role": "control_data_custodian",
+      "separate_access_log": true,
+      "workspace": "workspaces/control_data_custodian"
+    },
+    {
+      "capability_token": "cap-v0473-cdaed4888f01d15b06a79635",
+      "display_name": "исполнитель применения моделей",
+      "label_access": false,
+      "prediction_mutation": true,
+      "role": "inference_operator",
+      "separate_access_log": true,
+      "workspace": "workspaces/inference_operator"
+    },
+    {
+      "capability_token": "cap-v0473-45f1ed6b82d1fdcbf89dc70c",
+      "display_name": "исполнитель оценки",
+      "label_access": true,
+      "prediction_mutation": false,
+      "role": "evaluation_operator",
+      "separate_access_log": true,
+      "workspace": "workspaces/evaluation_operator"
+    },
+    {
+      "capability_token": "cap-v0473-f2187fb8db63e6df8817ee74",
+      "display_name": "специалист по внутреннему рассмотрению",
+      "label_access": false,
+      "prediction_mutation": false,
+      "role": "validation_reviewer",
+      "separate_access_log": true,
+      "workspace": "workspaces/validation_reviewer"
+    },
+    {
+      "capability_token": "cap-v0473-73c1e085d93d69be73cf943f",
+      "display_name": "наблюдатель",
+      "label_access": false,
+      "prediction_mutation": false,
+      "role": "observer",
+      "separate_access_log": true,
+      "workspace": "workspaces/observer"
+    }
+  ],
+  "schema_version": "blind_validation_role_assignment_v0473_v1",
+  "technical_separation_enforced": true
+}

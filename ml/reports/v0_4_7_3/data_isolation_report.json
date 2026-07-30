@@ -1,0 +1,90 @@
+{
+  "checks": [
+    {
+      "check_id": "v0473-isolation-01",
+      "domain": "session_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-02",
+      "domain": "object_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-03",
+      "domain": "capture_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-04",
+      "domain": "scenario_id",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-05",
+      "domain": "normalized_feature_row",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-06",
+      "domain": "generator_seed",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-07",
+      "domain": "file_sha256",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-08",
+      "domain": "semantic_sha256",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-09",
+      "domain": "temporal_sequence",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-10",
+      "domain": "network_structure",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-11",
+      "domain": "scenario_parameters",
+      "overlap_count": 0,
+      "status": "passed"
+    },
+    {
+      "check_id": "v0473-isolation-12",
+      "domain": "derived_copy",
+      "overlap_count": 0,
+      "status": "passed"
+    }
+  ],
+  "compared_sources": [
+    "v0.4.6 development/calibration/screening",
+    "v0.4.7 control pack",
+    "all v0.4.7.2 partitions",
+    "previous blind and laboratory packs"
+  ],
+  "exact_overlap_count": 0,
+  "gate_id": "isolation-v0473-r1",
+  "old_v0_4_7_object_reuse_count": 0,
+  "schema_version": "v0_4_7_3_data_isolation_gate_v1",
+  "semantic_overlap_count": 0,
+  "status": "passed",
+  "structural_overlap_count": 0,
+  "v0_4_7_2_object_reuse_count": 0
+}

@@ -1,0 +1,16 @@
+{
+  "catalog_semantic_sha256": "b2a10ef3040e926a64f7f93b205f5184e980dd50bd1c7121a145d49496f39dca",
+  "class_count": 6,
+  "committed": false,
+  "control_pack_id": "blind-pack:v0473:b2a10ef3040e926a",
+  "frozen": true,
+  "runtime_only": true,
+  "scenario_count": 36,
+  "schema_version": "blind_control_pack_v0473_v1",
+  "scored_window_count": 6192,
+  "session_count": 36,
+  "source_object_count": 6480,
+  "validation_lineage_id": "blind-lineage:v0473:dc6ce13746302ddf",
+  "variants_per_class": 6,
+  "warmup_windows_per_session": 8
+}

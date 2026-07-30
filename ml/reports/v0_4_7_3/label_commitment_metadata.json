@@ -1,0 +1,13 @@
+{
+  "commitment_id": "label-commitment-v0473-db991282351d9983",
+  "commitment_sha256": "c00595c8cfa79d1bb6cbe35fce185599c0feed612b16f32e0f800a7286230446",
+  "control_pack_id": "blind-pack:v0473:b2a10ef3040e926a",
+  "created_before_inference": true,
+  "custodian_role": "control_data_custodian",
+  "frozen": true,
+  "label_package_sha256": "db991282351d998324d8f9b8be6a345d803c5f50e4ed17426794c423bef000c0",
+  "label_semantic_sha256": "2f145666dd6993715ad6f5ef04d0487c0118f4352738f59ea3b647cf5d99ff2e",
+  "protocol_sha256": "550bf7aac7c2eae9e6300883a2a86642d350ff503094171b1cba2d26582977fa",
+  "schema_version": "label_commitment_v0473_v1",
+  "unlocked": false
+}

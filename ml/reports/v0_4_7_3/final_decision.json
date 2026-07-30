@@ -1,0 +1,14 @@
+{
+  "active_candidate_changed": false,
+  "automatic_promotion_performed": false,
+  "candidate_registration_performed": false,
+  "decision": "failed_validation",
+  "external_validation_claim_allowed": false,
+  "independent_validation_claim_allowed": false,
+  "internal_blind_validation_passed": false,
+  "next_allowed_stage": "v0.4.7.4",
+  "passed_for_inactive_laboratory_registration": false,
+  "schema_version": "blind_validation_review_decision_v0473_v1",
+  "v0_4_7_3_procedure_passed": true,
+  "v0_4_8_allowed": false
+}

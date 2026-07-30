@@ -1,0 +1,14 @@
+{
+  "created_before_label_unlock": true,
+  "execution_id": "v0473-active-official-r1",
+  "input_package_sha256": "c1eb79af156f7330f4be9c9733d24f519af1d54d9cab63d413dfef2a20d956a0",
+  "labels_accessed": false,
+  "network": false,
+  "order_policy": "deterministic_counterbalanced_order",
+  "participant_id": "v03154:65a3dd912d845bc1",
+  "plan_sha256": "3d8de4842649a8ef98a576b0956753251938f7ec9558b3aa36621b2bf3991083",
+  "prediction_count": 6192,
+  "schema_version": "blind_inference_record_v0473_v1",
+  "shell": false,
+  "status": "completed"
+}

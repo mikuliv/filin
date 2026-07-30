@@ -1,0 +1,18 @@
+{
+  "assessment_id": "comparability-v0473-r1",
+  "checks": {
+    "equivalent_resource_limits": true,
+    "same_card_version": true,
+    "same_class_contract": true,
+    "same_control_pack": true,
+    "same_input_package": true,
+    "same_label_access": true,
+    "same_metric_contract": true,
+    "same_population": true,
+    "same_reconstruction_version": true,
+    "same_scoring_policy": true,
+    "same_warmup_policy": true
+  },
+  "schema_version": "v0_4_7_3_comparability_assessment_v1",
+  "status": "comparable"
+}

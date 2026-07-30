@@ -1,0 +1,635 @@
+{
+  "corrective_action_count": 7,
+  "entries": [
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-01"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-01-protocol_frozen",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-02"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-02-control_pack_independent",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-03"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-03-overlap_gate_passed",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-04"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-04-blindness_gate_passed",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-05"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-05-label_commitment_valid",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-06"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-06-predictions_frozen_before_unlock",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-07"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-07-no_post_unlock_inference",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-08"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-08-comparability",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-09"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-09-active_benign_recall",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-10"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-10-proposal_benign_recall",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-11"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-11-active_fpr",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-12"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-12-proposal_fpr",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-13"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-13-active_attack_macro_recall",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-14"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-14-proposal_attack_macro_recall",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-15"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-15-active_attack_macro_f1",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-16"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-16-proposal_attack_macro_f1",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-17"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-17-active_worst_attack_recall",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-18"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-18-proposal_worst_attack_recall",
+      "source_result": "failed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-19"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-19-missing_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-20"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-20-duplicate_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-21"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-21-invalid_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-22"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-22-unresolved_critical_differences",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-23"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-23-evaluation_rebuild_deterministic",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v047-24"
+      ],
+      "mapping_kind": "preserved",
+      "preserved_semantics": true,
+      "rationale": "Обязательное требование исходной слепой проверки сохранено без ослабления.",
+      "source_criterion_id": "blind-gate-24-candidate_registry_unchanged",
+      "source_result": "passed",
+      "source_stage": "v0.4.7"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-01"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-01-data_isolation",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-02"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-02-split_frozen",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-03"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-03-recipe_frozen",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-04"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-04-reproducibility",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-05"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-05-artifact_integrity",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-06"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-06-proposal_frozen_before_screening",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-07"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-07-benign_recall",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-08"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-08-false_positive_rate",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-09"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-09-attack_macro_recall",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-10"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-10-attack_macro_f1",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-11"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-11-worst_attack_recall",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-12"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-12-missing_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-13"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-13-duplicate_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-14"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-14-invalid_predictions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-15"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-15-old_pack_object_reuse",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-16"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-16-old_pack_session_reuse",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-17"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-17-old_pack_seed_reuse",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-18"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-18-previous_failures_remaining",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-19"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-19-new_critical_regressions",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-20"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-20-manual_review",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-21"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-21-candidate_registry_unchanged",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-22"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-22-active_candidate_unchanged",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-23"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-23-old_proposal_unchanged",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    },
+    {
+      "limitations": [],
+      "mandatory": true,
+      "mapped_v0_4_7_3_criterion_ids": [
+        "blind-v0473-source-v0472-24"
+      ],
+      "mapping_kind": "strengthened",
+      "preserved_semantics": true,
+      "rationale": "Корректирующее требование повторно проверяется на новом слепом наборе.",
+      "source_criterion_id": "corrective-gate-24-backend_unchanged",
+      "source_result": "passed",
+      "source_stage": "v0.4.7.2"
+    }
+  ],
+  "frozen_before_inference": true,
+  "map_id": "criterion-lineage-v0473-r1",
+  "previous_failure_count": 6,
+  "schema_version": "blind_criterion_lineage_map_v1",
+  "source_count": 48,
+  "unmapped_count": 0
+}

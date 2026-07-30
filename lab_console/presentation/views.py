@@ -13,7 +13,7 @@ NAVIGATION = [
     {"label": "Обзор", "items": [("dashboard", "Главная"), ("stages", "Этапы проекта")]},
     {"label": "Анализ", "items": [("models", "Модели"), ("metrics", "Результаты модели"), ("cases", "Лабораторные карточки")]},
     {"label": "Исследование", "items": [("timeline", "Временная шкала"), ("graph", "Граф реконструкции"), ("hypotheses", "Гипотезы"), ("comparisons", "Матрица сопоставлений"), ("questions", "Вопросы специалисту"), ("reviews", "Ручное рассмотрение")]},
-    {"label": "Лаборатория", "items": [("lab-runs", "Лабораторные запуски"), ("run-comparisons", "Сравнения запусков"), ("candidate-proposals", "Предложения кандидатов"), ("candidate-versions", "Версии кандидатов"), ("blind-validations", "Слепые проверки"), ("failure-analysis", "Разбор отрицательного результата"), ("corrective-proposal", "Новое корректирующее предложение")]},
+    {"label": "Лаборатория", "items": [("lab-runs", "Лабораторные запуски"), ("run-comparisons", "Сравнения запусков"), ("candidate-proposals", "Предложения кандидатов"), ("candidate-versions", "Версии кандидатов"), ("blind-validations", "Слепые проверки"), ("failure-analysis", "Разбор отрицательного результата"), ("corrective-proposal", "Новое корректирующее предложение"), ("v0473-validations", "Новая слепая проверка")]},
     {"label": "Управление", "items": [("tasks", "Задачи"), ("tests", "Тесты"), ("logs", "Журналы"), ("bundles", "Комплекты"), ("system", "Состояние системы")]},
 ]
 

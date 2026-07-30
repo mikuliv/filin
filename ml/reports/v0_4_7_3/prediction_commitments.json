@@ -1,0 +1,28 @@
+[
+  {
+    "commitment_id": "prediction-commitment-active_candidate",
+    "commitment_sha256": "86c0764ed25997dcdf358116bf750a0b5fe0b61c2352ce82797a2b3c2da31cf7",
+    "created_before_label_unlock": true,
+    "execution_identity": "v0473-active-official-r1",
+    "frozen": true,
+    "input_package_sha256": "c1eb79af156f7330f4be9c9733d24f519af1d54d9cab63d413dfef2a20d956a0",
+    "package_sha256": "e52bdbe7cf6fb9215513598f84298f410a6e78ef5feb65ad2d531c3177416cbd",
+    "participant_id": "v03154:65a3dd912d845bc1",
+    "prediction_package_id": "prediction-package-v0473-active_candidate",
+    "schema_version": "prediction_commitment_v0473_v1",
+    "semantic_sha256": "74e00b4e4a7df941e5a1eb927ee55df56d079361ac654d7b861f0bcf261ade38"
+  },
+  {
+    "commitment_id": "prediction-commitment-proposal",
+    "commitment_sha256": "ef9f98bb5bab76c0fc492cc0d4e022eb5c447b5dc538879c75005440f2984846",
+    "created_before_label_unlock": true,
+    "execution_identity": "v0473-proposal-recovered-r1",
+    "frozen": true,
+    "input_package_sha256": "c1eb79af156f7330f4be9c9733d24f519af1d54d9cab63d413dfef2a20d956a0",
+    "package_sha256": "b9b4e2574aa91be39796113f11ccb25504eb0cf75e531ac133b19e7d8de22879",
+    "participant_id": "proposal:v0472:f02d06231e65df6f",
+    "prediction_package_id": "prediction-package-v0473-proposal",
+    "schema_version": "prediction_commitment_v0473_v1",
+    "semantic_sha256": "7ad85344bcc9dc85968b9702afa00d5838dc7f2b292a794698c6f97fa35add09"
+  }
+]

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://contracts/v0_4_7_3/blind_validation_role_v0473_v1",
+  "title": "blind_validation_role_v0473_v1",
+  "description": "Строгий контракт внутренней слепой лабораторной проверки v0.4.7.3.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "record_id",
+    "status",
+    "sha256",
+    "payload"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "blind_validation_role_v0473_v1"
+    },
+    "record_id": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9_-]{2,127}$"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "created",
+        "frozen",
+        "locked",
+        "passed",
+        "failed",
+        "not_assessable",
+        "invalidated",
+        "completed",
+        "interrupted",
+        "recovered",
+        "comparable"
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "opaque_token": {
+      "type": "string",
+      "pattern": "^[a-z][a-z0-9-]{7,127}$"
+    },
+    "relative_locator": {
+      "type": "string",
+      "pattern": "^(?![A-Za-z]:)(?!/)(?!.*\\.\\.)(?!.*[<>]).{1,240}$"
+    },
+    "payload": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {}
+    }
+  }
+}

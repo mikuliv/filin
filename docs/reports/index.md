@@ -47,6 +47,7 @@
 | `v0.4.7` | [summary](../../ml/reports/v0_4_7/summary.md) | [policy](../../ml/reports/v0_4_7/v0_4_7_policy_result.json) | [manifest](../../ml/reports/v0_4_7/v0_4_7_bundle_manifest.json) | [semantic SHA](../../ml/reports/v0_4_7/v0_4_7_semantic.sha256) | [limitations](../../ml/reports/v0_4_7/known_limitations.md) | frozen stage result |
 | `v0.4.7.1` | [summary](../../ml/reports/v0_4_7_1/summary.md) | [policy](../../ml/reports/v0_4_7_1/v0_4_7_1_policy_result.json) | [manifest](../../ml/reports/v0_4_7_1/v0_4_7_1_bundle_manifest.json) | [semantic SHA](../../ml/reports/v0_4_7_1/v0_4_7_1_semantic.sha256) | [limitations](../../ml/reports/v0_4_7_1/known_limitations.md) | frozen stage result |
 | `v0.4.7.2` | [summary](../../ml/reports/v0_4_7_2/summary.md) | [policy](../../ml/reports/v0_4_7_2/v0_4_7_2_policy_result.json) | [manifest](../../ml/reports/v0_4_7_2/v0_4_7_2_bundle_manifest.json) | [semantic SHA](../../ml/reports/v0_4_7_2/v0_4_7_2_semantic.sha256) | [limitations](../../ml/reports/v0_4_7_2/known_limitations.md) | frozen stage result |
+| `v0.4.7.3` | [summary](../../ml/reports/v0_4_7_3/summary.md) | [policy](../../ml/reports/v0_4_7_3/v0_4_7_3_policy_result.json) | [manifest](../../ml/reports/v0_4_7_3/v0_4_7_3_bundle_manifest.json) | [semantic SHA](../../ml/reports/v0_4_7_3/v0_4_7_3_semantic.sha256) | [limitations](../../ml/reports/v0_4_7_3/known_limitations.md) | frozen stage result |
 
 Точный result определяется policy. Отсутствие отдельного summary не меняет machine-readable evidence.
 

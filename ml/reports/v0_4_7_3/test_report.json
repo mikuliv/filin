@@ -1,0 +1,31 @@
+{
+  "baseline": {
+    "duration_seconds": 633.29,
+    "passed": 2068,
+    "warnings": 3
+  },
+  "browser": {
+    "passed": true,
+    "screenshots": 37
+  },
+  "compileall": true,
+  "documentation": true,
+  "full_regression": {
+    "basetemp": "runtime/pytest-v0473-final",
+    "duration_seconds": 714.63,
+    "failed": 0,
+    "passed": 2083,
+    "warnings": 3
+  },
+  "licensing": true,
+  "negative": {
+    "rejected": 280,
+    "total": 280
+  },
+  "positive": {
+    "passed": 160,
+    "total": 160
+  },
+  "schema_version": "v0_4_7_3_test_report_v1",
+  "standalone_verifier": true
+}

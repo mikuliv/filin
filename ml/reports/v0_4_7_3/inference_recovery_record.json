@@ -1,0 +1,13 @@
+{
+  "duplicate_count": 0,
+  "execution_id": "v0473-proposal-recovered-r1",
+  "labels_accessed": false,
+  "loss_count": 0,
+  "plan_unchanged": true,
+  "recovery_boundary": 2064,
+  "recovery_id": "v0473-proposal-recovery-r1",
+  "result_identical_to_uninterrupted_reference": true,
+  "schema_version": "blind_inference_recovery_record_v1",
+  "source_execution_id": "v0473-proposal-interrupted-r1",
+  "status": "recovered"
+}

@@ -1,0 +1,28 @@
+{
+  "completed": {
+    "created_before_label_unlock": true,
+    "execution_id": "v0473-proposal-recovered-r1",
+    "input_package_sha256": "c1eb79af156f7330f4be9c9733d24f519af1d54d9cab63d413dfef2a20d956a0",
+    "labels_accessed": false,
+    "network": false,
+    "participant_id": "proposal:v0472:f02d06231e65df6f",
+    "plan_sha256": "3d8de4842649a8ef98a576b0956753251938f7ec9558b3aa36621b2bf3991083",
+    "prediction_count": 6192,
+    "recovered_from": "v0473-proposal-interrupted-r1",
+    "schema_version": "blind_inference_record_v0473_v1",
+    "shell": false,
+    "status": "completed"
+  },
+  "interrupted": {
+    "completed_prediction_count": 2064,
+    "execution_id": "v0473-proposal-interrupted-r1",
+    "labels_accessed": false,
+    "partial_package_official": false,
+    "participant_id": "proposal:v0472:f02d06231e65df6f",
+    "plan_sha256": "3d8de4842649a8ef98a576b0956753251938f7ec9558b3aa36621b2bf3991083",
+    "reason": "controlled_interruption_fixture",
+    "recovery_boundary": 2064,
+    "schema_version": "blind_inference_record_v0473_v1",
+    "status": "interrupted"
+  }
+}

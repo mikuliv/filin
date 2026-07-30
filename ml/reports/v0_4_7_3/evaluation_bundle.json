@@ -1,0 +1,425 @@
+{
+  "control_pack_id": "blind-pack:v0473:b2a10ef3040e926a",
+  "deterministic_rebuild": true,
+  "duplicate_prediction_count": 0,
+  "evaluation_id": "evaluation-v0473-r1",
+  "evaluation_sha256": "b10ba586e6d4823be0b40dcba866566225b43d060ad0efb0d1b5a0ea1422d439",
+  "invalid_prediction_count": 0,
+  "label_commitment_sha256": "c00595c8cfa79d1bb6cbe35fce185599c0feed612b16f32e0f800a7286230446",
+  "labels_unlocked_after_predictions": true,
+  "metric_contract": "blind_metric_contract_v0473_v1",
+  "missing_prediction_count": 0,
+  "participants": {
+    "active_candidate": {
+      "metrics": {
+        "abstention_count": 0,
+        "abstention_rate": 0.0,
+        "accuracy": 0.3333333333333333,
+        "attack_macro_f1": 0.3016955996459235,
+        "attack_macro_recall": 0.4,
+        "benign_recall": 0.0,
+        "class_support": {
+          "auth_failures": 1032,
+          "beacon": 1032,
+          "benign": 1032,
+          "low_rate_dos": 1032,
+          "port_scan": 1032,
+          "web_probe": 1032
+        },
+        "confusion_matrix": {
+          "labels": [
+            "benign",
+            "auth_failures",
+            "beacon",
+            "low_rate_dos",
+            "port_scan",
+            "web_probe"
+          ],
+          "values": [
+            [
+              0,
+              0,
+              0,
+              0,
+              1030,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1029,
+              3
+            ],
+            [
+              1032,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1030,
+              0,
+              2
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1029,
+              3
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1027,
+              5
+            ]
+          ]
+        },
+        "duplicate_prediction_count": 0,
+        "episode_precision": 0.8,
+        "episode_recall": 0.8,
+        "excluded_window_count": 288,
+        "false_positive_rate": 1.0,
+        "first_detection_latency_seconds_mean": 0.0,
+        "invalid_prediction_count": 0,
+        "missing_prediction_count": 0,
+        "per_class": {
+          "auth_failures": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1032
+          },
+          "beacon": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1032
+          },
+          "benign": {
+            "f1": 0.0,
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 1032
+          },
+          "low_rate_dos": {
+            "f1": 0.9990300678952473,
+            "precision": 1.0,
+            "recall": 0.998062015503876,
+            "support": 1032
+          },
+          "port_scan": {
+            "f1": 0.3998445696522246,
+            "precision": 0.2500607533414338,
+            "recall": 0.997093023255814,
+            "support": 1032
+          },
+          "web_probe": {
+            "f1": 0.009551098376313277,
+            "precision": 0.3333333333333333,
+            "recall": 0.0048449612403100775,
+            "support": 1032
+          }
+        },
+        "scenario_support": {
+          "ses-v0473-0000-a281ef1e6d28": 172,
+          "ses-v0473-0001-30b63f9b8724": 172,
+          "ses-v0473-0002-f0bfb4f0a76a": 172,
+          "ses-v0473-0003-c7e251a41075": 172,
+          "ses-v0473-0004-417ff7613586": 172,
+          "ses-v0473-0005-aa0497dcae46": 172,
+          "ses-v0473-0100-ccbe4eb7959c": 172,
+          "ses-v0473-0101-1c8a9ee63414": 172,
+          "ses-v0473-0102-ee574124ec92": 172,
+          "ses-v0473-0103-a28152cc9344": 172,
+          "ses-v0473-0104-b2235c010b57": 172,
+          "ses-v0473-0105-70ad12ab4754": 172,
+          "ses-v0473-0200-075eab32a289": 172,
+          "ses-v0473-0201-a9c2f692e7c2": 172,
+          "ses-v0473-0202-8eb83a5fb082": 172,
+          "ses-v0473-0203-61ed5c74b176": 172,
+          "ses-v0473-0204-be9ba2f29699": 172,
+          "ses-v0473-0205-32dacd79da4c": 172,
+          "ses-v0473-0300-a1b2588b0c22": 172,
+          "ses-v0473-0301-de4a38117ff6": 172,
+          "ses-v0473-0302-6b946b14b6a1": 172,
+          "ses-v0473-0303-605510773b01": 172,
+          "ses-v0473-0304-560962a586db": 172,
+          "ses-v0473-0305-f958d5c0e8e1": 172,
+          "ses-v0473-0400-6eeee5a0e50c": 172,
+          "ses-v0473-0401-0de4e0a3cac7": 172,
+          "ses-v0473-0402-843fcce33cbc": 172,
+          "ses-v0473-0403-ecd9a5fa4a6e": 172,
+          "ses-v0473-0404-e3ce72a9faf6": 172,
+          "ses-v0473-0405-abe02c23dc17": 172,
+          "ses-v0473-0500-cb5fccd75c6d": 172,
+          "ses-v0473-0501-656d6487ce38": 172,
+          "ses-v0473-0502-3cb70440d8a9": 172,
+          "ses-v0473-0503-c181e5da7145": 172,
+          "ses-v0473-0504-4b0e21eee846": 172,
+          "ses-v0473-0505-e1168f94624a": 172
+        },
+        "session_support": {
+          "ses-v0473-0000-a281ef1e6d28": 172,
+          "ses-v0473-0001-30b63f9b8724": 172,
+          "ses-v0473-0002-f0bfb4f0a76a": 172,
+          "ses-v0473-0003-c7e251a41075": 172,
+          "ses-v0473-0004-417ff7613586": 172,
+          "ses-v0473-0005-aa0497dcae46": 172,
+          "ses-v0473-0100-ccbe4eb7959c": 172,
+          "ses-v0473-0101-1c8a9ee63414": 172,
+          "ses-v0473-0102-ee574124ec92": 172,
+          "ses-v0473-0103-a28152cc9344": 172,
+          "ses-v0473-0104-b2235c010b57": 172,
+          "ses-v0473-0105-70ad12ab4754": 172,
+          "ses-v0473-0200-075eab32a289": 172,
+          "ses-v0473-0201-a9c2f692e7c2": 172,
+          "ses-v0473-0202-8eb83a5fb082": 172,
+          "ses-v0473-0203-61ed5c74b176": 172,
+          "ses-v0473-0204-be9ba2f29699": 172,
+          "ses-v0473-0205-32dacd79da4c": 172,
+          "ses-v0473-0300-a1b2588b0c22": 172,
+          "ses-v0473-0301-de4a38117ff6": 172,
+          "ses-v0473-0302-6b946b14b6a1": 172,
+          "ses-v0473-0303-605510773b01": 172,
+          "ses-v0473-0304-560962a586db": 172,
+          "ses-v0473-0305-f958d5c0e8e1": 172,
+          "ses-v0473-0400-6eeee5a0e50c": 172,
+          "ses-v0473-0401-0de4e0a3cac7": 172,
+          "ses-v0473-0402-843fcce33cbc": 172,
+          "ses-v0473-0403-ecd9a5fa4a6e": 172,
+          "ses-v0473-0404-e3ce72a9faf6": 172,
+          "ses-v0473-0405-abe02c23dc17": 172,
+          "ses-v0473-0500-cb5fccd75c6d": 172,
+          "ses-v0473-0501-656d6487ce38": 172,
+          "ses-v0473-0502-3cb70440d8a9": 172,
+          "ses-v0473-0503-c181e5da7145": 172,
+          "ses-v0473-0504-4b0e21eee846": 172,
+          "ses-v0473-0505-e1168f94624a": 172
+        },
+        "worst_attack_recall": 0.0
+      },
+      "participant_id": "v03154:65a3dd912d845bc1"
+    },
+    "proposal": {
+      "metrics": {
+        "abstention_count": 0,
+        "abstention_rate": 0.0,
+        "accuracy": 1.0,
+        "attack_macro_f1": 1.0,
+        "attack_macro_recall": 1.0,
+        "benign_recall": 1.0,
+        "class_support": {
+          "auth_failures": 1032,
+          "beacon": 1032,
+          "benign": 1032,
+          "low_rate_dos": 1032,
+          "port_scan": 1032,
+          "web_probe": 1032
+        },
+        "confusion_matrix": {
+          "labels": [
+            "benign",
+            "auth_failures",
+            "beacon",
+            "low_rate_dos",
+            "port_scan",
+            "web_probe"
+          ],
+          "values": [
+            [
+              1032,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              1032,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              1032,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              1032,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              1032,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              1032
+            ]
+          ]
+        },
+        "duplicate_prediction_count": 0,
+        "episode_precision": 1.0,
+        "episode_recall": 1.0,
+        "excluded_window_count": 288,
+        "false_positive_rate": 0.0,
+        "first_detection_latency_seconds_mean": 0.0,
+        "invalid_prediction_count": 0,
+        "missing_prediction_count": 0,
+        "per_class": {
+          "auth_failures": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          },
+          "beacon": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          },
+          "benign": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          },
+          "low_rate_dos": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          },
+          "port_scan": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          },
+          "web_probe": {
+            "f1": 1.0,
+            "precision": 1.0,
+            "recall": 1.0,
+            "support": 1032
+          }
+        },
+        "scenario_support": {
+          "ses-v0473-0000-a281ef1e6d28": 172,
+          "ses-v0473-0001-30b63f9b8724": 172,
+          "ses-v0473-0002-f0bfb4f0a76a": 172,
+          "ses-v0473-0003-c7e251a41075": 172,
+          "ses-v0473-0004-417ff7613586": 172,
+          "ses-v0473-0005-aa0497dcae46": 172,
+          "ses-v0473-0100-ccbe4eb7959c": 172,
+          "ses-v0473-0101-1c8a9ee63414": 172,
+          "ses-v0473-0102-ee574124ec92": 172,
+          "ses-v0473-0103-a28152cc9344": 172,
+          "ses-v0473-0104-b2235c010b57": 172,
+          "ses-v0473-0105-70ad12ab4754": 172,
+          "ses-v0473-0200-075eab32a289": 172,
+          "ses-v0473-0201-a9c2f692e7c2": 172,
+          "ses-v0473-0202-8eb83a5fb082": 172,
+          "ses-v0473-0203-61ed5c74b176": 172,
+          "ses-v0473-0204-be9ba2f29699": 172,
+          "ses-v0473-0205-32dacd79da4c": 172,
+          "ses-v0473-0300-a1b2588b0c22": 172,
+          "ses-v0473-0301-de4a38117ff6": 172,
+          "ses-v0473-0302-6b946b14b6a1": 172,
+          "ses-v0473-0303-605510773b01": 172,
+          "ses-v0473-0304-560962a586db": 172,
+          "ses-v0473-0305-f958d5c0e8e1": 172,
+          "ses-v0473-0400-6eeee5a0e50c": 172,
+          "ses-v0473-0401-0de4e0a3cac7": 172,
+          "ses-v0473-0402-843fcce33cbc": 172,
+          "ses-v0473-0403-ecd9a5fa4a6e": 172,
+          "ses-v0473-0404-e3ce72a9faf6": 172,
+          "ses-v0473-0405-abe02c23dc17": 172,
+          "ses-v0473-0500-cb5fccd75c6d": 172,
+          "ses-v0473-0501-656d6487ce38": 172,
+          "ses-v0473-0502-3cb70440d8a9": 172,
+          "ses-v0473-0503-c181e5da7145": 172,
+          "ses-v0473-0504-4b0e21eee846": 172,
+          "ses-v0473-0505-e1168f94624a": 172
+        },
+        "session_support": {
+          "ses-v0473-0000-a281ef1e6d28": 172,
+          "ses-v0473-0001-30b63f9b8724": 172,
+          "ses-v0473-0002-f0bfb4f0a76a": 172,
+          "ses-v0473-0003-c7e251a41075": 172,
+          "ses-v0473-0004-417ff7613586": 172,
+          "ses-v0473-0005-aa0497dcae46": 172,
+          "ses-v0473-0100-ccbe4eb7959c": 172,
+          "ses-v0473-0101-1c8a9ee63414": 172,
+          "ses-v0473-0102-ee574124ec92": 172,
+          "ses-v0473-0103-a28152cc9344": 172,
+          "ses-v0473-0104-b2235c010b57": 172,
+          "ses-v0473-0105-70ad12ab4754": 172,
+          "ses-v0473-0200-075eab32a289": 172,
+          "ses-v0473-0201-a9c2f692e7c2": 172,
+          "ses-v0473-0202-8eb83a5fb082": 172,
+          "ses-v0473-0203-61ed5c74b176": 172,
+          "ses-v0473-0204-be9ba2f29699": 172,
+          "ses-v0473-0205-32dacd79da4c": 172,
+          "ses-v0473-0300-a1b2588b0c22": 172,
+          "ses-v0473-0301-de4a38117ff6": 172,
+          "ses-v0473-0302-6b946b14b6a1": 172,
+          "ses-v0473-0303-605510773b01": 172,
+          "ses-v0473-0304-560962a586db": 172,
+          "ses-v0473-0305-f958d5c0e8e1": 172,
+          "ses-v0473-0400-6eeee5a0e50c": 172,
+          "ses-v0473-0401-0de4e0a3cac7": 172,
+          "ses-v0473-0402-843fcce33cbc": 172,
+          "ses-v0473-0403-ecd9a5fa4a6e": 172,
+          "ses-v0473-0404-e3ce72a9faf6": 172,
+          "ses-v0473-0405-abe02c23dc17": 172,
+          "ses-v0473-0500-cb5fccd75c6d": 172,
+          "ses-v0473-0501-656d6487ce38": 172,
+          "ses-v0473-0502-3cb70440d8a9": 172,
+          "ses-v0473-0503-c181e5da7145": 172,
+          "ses-v0473-0504-4b0e21eee846": 172,
+          "ses-v0473-0505-e1168f94624a": 172
+        },
+        "worst_attack_recall": 1.0
+      },
+      "participant_id": "proposal:v0472:f02d06231e65df6f"
+    }
+  },
+  "population_count": 6192,
+  "prediction_commitments": [
+    "86c0764ed25997dcdf358116bf750a0b5fe0b61c2352ce82797a2b3c2da31cf7",
+    "ef9f98bb5bab76c0fc492cc0d4e022eb5c447b5dc538879c75005440f2984846"
+  ],
+  "rebuild_sha256": "b10ba586e6d4823be0b40dcba866566225b43d060ad0efb0d1b5a0ea1422d439",
+  "schema_version": "blind_evaluation_result_v0473_v1"
+}
