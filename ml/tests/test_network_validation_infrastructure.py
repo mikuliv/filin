@@ -11,7 +11,7 @@ import pytest
 import yaml
 
 import lab.network_validation.cli as cli_module
-from lab.network_validation import candidate_identity, common_client, feature_adapter, freeze
+from lab.network_validation import candidate_identity, common_client, feature_adapter, freeze, pipeline
 from lab.network_validation.capture import build_capture_manifest, pcap_summary, validate_capture_set
 from lab.network_validation.causal_guard import feature_order, guard_feature_rows
 from lab.network_validation.cli import main as cli_main
@@ -101,7 +101,7 @@ def environment_fixture(*, dirty: bool = False, resolved_images: bool = True) ->
         "schema_version": "network_validation_environment_lock_v1", "os": "Windows",
         "architecture": "AMD64", "python_version": "3.13.5",
         "pip_dependency_lock_digest": "a" * 64, "scikit_learn_version": "1.8.0",
-        "joblib_version": "1.5.3", "docker_version": "28.3.3",
+        "joblib_version": "1.5.3", "docker_version": "28.3.3", "docker_daemon_version": "28.3.3",
         "docker_compose_version": "2.39.2", "zeek_image_name": "zeek/zeek:7.0.5",
         "zeek_image_digest": "sha256:" + "b" * 64 if resolved_images else "unresolved",
         "client_image_digest": "sha256:" + "c" * 64 if resolved_images else "unresolved",
@@ -162,6 +162,7 @@ def test_generator_family_interface_and_supported_semantics():
         family = FamilyA() if row["generator_family"] == "family_a" else FamilyB()
         actions = family.actions(row)
         assert actions and all(isinstance(action, NetworkAction) for action in actions)
+        assert not any(action.path in {"/health", "/keepalive"} for action in actions)
 
 
 def test_generator_implementations_do_not_import_each_other():
@@ -354,6 +355,31 @@ def test_parameter_observations_come_from_zeek_and_support_not_observable(tmp_pa
     assert any(row["status"] == "not_observable" for row in verify_parameters(scenario(), {"evidence_source": "zeek:conn.log"})["checks"])
 
 
+def test_parameter_observations_distinguish_tcp_response_and_rejected_background_dns(tmp_path: Path):
+    (tmp_path / "conn.log").write_text(
+        '{"ts":1.0,"uid":"http-1","proto":"tcp","duration":0.1,"conn_state":"SF"}\n'
+        '{"ts":1.1,"uid":"dns-1","proto":"udp","duration":0.1,"conn_state":"SHR"}\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "http.log").write_text(
+        '{"ts":1.0,"uid":"http-1","method":"GET","host":"x","uri":"/docs","request_body_len":0}\n'
+        '{"ts":1.05,"uid":"http-2","method":"GET","host":"x","uri":"/news","request_body_len":0}\n'
+        '{"ts":1.06,"uid":"health","method":"GET","host":"x","uri":"/health","request_body_len":0}\n'
+        '{"ts":1.07,"uid":"keepalive","method":"GET","host":"x","uri":"/keepalive","request_body_len":0}\n',
+        encoding="utf-8",
+    )
+    (tmp_path / "dns.log").write_text(
+        '{"ts":1.1,"uid":"dns-1","proto":"udp","rcode_name":"SERVFAIL","rejected":true}\n'
+        '{"ts":1.2,"uid":"dns-1","proto":"udp","rcode_name":"SERVFAIL","rejected":true}\n',
+        encoding="utf-8",
+    )
+    observed = observations_from_zeek(tmp_path)
+    assert observed["request_count"] == 2
+    assert observed["timeout_behavior"] == "response_observed"
+    assert observed["background_traffic_level"] == 3
+    assert observed["evidence_sources"]["response_order"] == "zeek:http.log"
+
+
 def test_empty_zeek_logs_do_not_become_zero_observations(tmp_path: Path):
     for name in ("conn.log", "http.log", "dns.log"):
         (tmp_path / name).write_text("", encoding="utf-8")
@@ -510,10 +536,18 @@ def test_sealed_freeze_bytes_detect_modification():
 
 
 def test_environment_lock_has_no_absolute_paths_or_secrets(monkeypatch: pytest.MonkeyPatch):
-    monkeypatch.setattr(freeze, "_command", lambda args: "083cc18" if "rev-parse" in args else "")
+    def fake_command(args: list[str]) -> str:
+        if "rev-parse" in args:
+            return "f" * 40
+        if args[-1] == "{{.Server.Version}}":
+            return "28.3.3"
+        return ""
+
+    monkeypatch.setattr(freeze, "_command", fake_command)
     value = freeze.environment_lock(ROOT, {})
     encoded = json.dumps(value)
     assert value["schema_version"] == "network_validation_environment_lock_v1"
+    assert value["docker_daemon_version"] == "28.3.3"
     assert str(Path.home()) not in encoded and "password" not in encoded.lower()
 
 
@@ -613,6 +647,17 @@ def test_compose_declares_common_client_sensor_and_two_real_targets():
     assert value["services"]["common-client"]["networks"] == ["validation_a", "validation_b"]
     assert "/var/run/docker.sock" not in json.dumps(value)
     assert "G:\\" not in json.dumps(value)
+
+
+def test_compose_run_output_extracts_only_the_capture_container_id():
+    capture_id = "c" * 64
+    output = "#1 [internal] load build definition\n#1 DONE 0.1s\n" + capture_id + "\n"
+    assert pipeline._container_id_from_compose_output(output) == capture_id
+    with pytest.raises(RuntimeError, match="container ID"):
+        pipeline._container_id_from_compose_output("#1 build output only\n")
+    source = (PACKAGE / "pipeline.py").read_text(encoding="utf-8")
+    assert '"zeek/zeek:7.0.5", "sh", "-c"' in source
+    assert '"zeek/zeek:7.0.5", "sh", "-lc"' not in source
 
 
 def test_new_campaign_path_has_no_direct_pcap_generation_or_historical_generator_import():

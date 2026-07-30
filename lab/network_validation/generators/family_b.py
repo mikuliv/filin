@@ -22,7 +22,7 @@ class FamilyB(GeneratorFamily):
             order = order[::2] + order[1::2]
             return [NetworkAction("tcp", "multi_port", port=port, delay_ms=spacing) for port in order[:count]]
         recipes = {
-            "navigation": ("GET", ["/health", "/", "/assets/app.css"]),
+            "navigation": ("GET", ["/welcome", "/", "/assets/app.css"]),
             "credential_rejection": ("POST", ["/session", "/auth/login"]),
             "periodic_callback": ("GET", ["/pulse", "/heartbeat"]),
             "throttled_pressure": ("POST", ["/api/batch", "/api/items"]),

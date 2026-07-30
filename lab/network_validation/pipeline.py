@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import shlex
 import subprocess
 import time
@@ -17,6 +18,14 @@ from .parameter_verification import observations_from_zeek, verify_parameters
 
 ROOT = Path(__file__).resolve().parents[2]
 COMPOSE = Path(__file__).with_name("compose.yaml")
+
+
+def _container_id_from_compose_output(output: str) -> str:
+    for line in reversed(output.splitlines()):
+        candidate = line.strip()
+        if re.fullmatch(r"[a-f0-9]{64}", candidate):
+            return candidate
+    raise RuntimeError("docker compose run produced no container ID")
 
 
 def compose_config() -> str:
@@ -69,12 +78,13 @@ def run_technical_smoke(confirm_disposable: bool, output_dir: Path) -> dict[str,
                 "control": f"http://{target}", "multi_port": target,
                 "implementation": implementation, "network_identity": network_identity,
             })
-            capture = subprocess.run(
+            capture_output = subprocess.run(
                 command + ["run", "-d", "--no-deps", "sensor-capture", "-i", scenario["capture_policy"]["interface"],
                            "-B", "4096", "--immediate-mode", "-U", "-Z", "root",
                            "-w", f"/capture/{scenario_name}.pcap", *shlex.split(scenario["capture_policy"]["bpf"])],
                 cwd=COMPOSE.parent, check=True, capture_output=True, text=True,
-            ).stdout.strip()
+            ).stdout
+            capture = _container_id_from_compose_output(capture_output)
             capture_containers.append(capture)
             time.sleep(1)
             subprocess.run(command + ["exec", "-T", "common-client", "python", "-m", "lab.network_validation.common_client", "--scenario", f"/config/{scenario_name}.json", "--target-map", target_map, "--output-dir", f"/output/{scenario_name}", "--capture-id", scenario_name], cwd=COMPOSE.parent, check=True)
@@ -96,7 +106,7 @@ def run_technical_smoke(confirm_disposable: bool, output_dir: Path) -> dict[str,
             )
             subprocess.run(["docker", "run", "--rm", "-v", f"{capture_volume}:/capture:ro",
                             "-v", f"{output_volume}:/client-output:ro", "-v", f"{export_path}:/export",
-                            "zeek/zeek:7.0.5", "sh", "-lc", script], check=True)
+                            "zeek/zeek:7.0.5", "sh", "-c", script], check=True)
             if not (zeek_dir / "conn.log").is_file():
                 raise RuntimeError("technical smoke produced no conn.log")
             scenario = load_json(Path(__file__).with_name("config") / f"{scenario_name}.json")
@@ -148,4 +158,4 @@ def run_technical_smoke(confirm_disposable: bool, output_dir: Path) -> dict[str,
         for capture in capture_containers:
             subprocess.run(["docker", "rm", "-f", capture], check=False, capture_output=True)
         if started:
-            subprocess.run(command + ["down", "--volumes"], cwd=COMPOSE.parent, check=False, capture_output=True)
+            subprocess.run(command + ["down", "--volumes", "--remove-orphans"], cwd=COMPOSE.parent, check=False, capture_output=True)

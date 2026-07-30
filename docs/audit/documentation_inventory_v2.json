@@ -779,7 +779,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "ceb4f5ee4f36aec727faa80709eb6f0e9a2c9ece3757fe928919456a818b9620",
-      "sha256_after": "b85fb8a6f3977427e5899ccb9dcdcb47de347ac76208946318abc023720cf7df"
+      "sha256_after": "904279281c10923097325425cdccf52a2e74826519892e2c2c588516872ca12f"
     },
     {
       "path": "docs/architecture/end-to-end-data-flow.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "e750232ff0a4d71526546432031f7324aef1e613db6a68b00fc41c5f781134ae"
+      "sha256_after": "53df444f3251244eca0a6e9b6cc8b26fd6037a945400d8eafc2c9ab5459c292f"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -10097,7 +10097,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "6751c7cfce51a2a2ee922a312c50c5d56cab312a88151b5dbf51af5610eb0de3"
+      "sha256_after": "4499fb81833b66902cec86de335982017fa52e9ee21440e3abb7915086a18803"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -11052,7 +11052,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "30f6a9814a4a471c65493b29b1868921dfddfcd53012ec99cb0501edecaa5f7f"
+      "sha256_after": "8810d06cfb115aef0549d1d886ec1a7f64d3c04591e480a5476df3e3b53a3c80"
     },
     {
       "path": "lab/robustness/README.md",

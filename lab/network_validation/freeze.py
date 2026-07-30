@@ -27,7 +27,7 @@ def validate_environment_lock(value: dict[str, Any]) -> None:
     required = {
         "schema_version", "os", "architecture", "python_version",
         "pip_dependency_lock_digest", "scikit_learn_version", "joblib_version",
-        "docker_version", "docker_compose_version", "zeek_image_name",
+        "docker_version", "docker_daemon_version", "docker_compose_version", "zeek_image_name",
         "zeek_image_digest", "client_image_digest", "target_image_digests",
         "source_git_commit", "dirty_working_tree", "feature_contract_digest",
         "feature_order_digest", "timezone", "locale", "canonical_digest",
@@ -53,6 +53,7 @@ def environment_lock(root: Path, images: dict[str, str]) -> dict[str, Any]:
         "scikit_learn_version": importlib.metadata.version("scikit-learn"),
         "joblib_version": importlib.metadata.version("joblib"),
         "docker_version": _command(["docker", "version", "--format", "{{.Client.Version}}"]),
+        "docker_daemon_version": _command(["docker", "version", "--format", "{{.Server.Version}}"]),
         "docker_compose_version": _command(["docker", "compose", "version", "--short"]),
         "zeek_image_name": "zeek/zeek:7.0.5", "zeek_image_digest": images.get("zeek", "unresolved"),
         "client_image_digest": images.get("client", "unresolved"), "target_image_digests": images.get("targets", {}),

@@ -32,11 +32,20 @@ def observations_from_zeek(zeek_dir: Path) -> dict[str, Any]:
         key = (row.get("method"), row.get("host"), row.get("uri"))
         repeated[key] = repeated.get(key, 0) + 1
     retries = sum(max(0, count - 1) for count in repeated.values())
-    timeouts = sum(str(row.get("conn_state", "")) in {"S0", "SH", "SHR"} for row in conn)
+    tcp_connections = [row for row in conn if row.get("proto") == "tcp"]
+    timeouts = sum(str(row.get("conn_state", "")) in {"S0", "SH", "SHR"} for row in tcp_connections)
     application_uids = {str(row.get("uid")) for row in http + dns if row.get("uid")}
     service_connections = [row for row in conn if row.get("uid") and str(row.get("uid")) not in application_uids]
     background = sum(str(row.get("uri", "")) in {"/health", "/keepalive"} for row in http)
-    background += sum(str(row.get("query", "")).rstrip(".") == "background.invalid" for row in dns)
+    background_dns_uids = {
+        str(row.get("uid"))
+        for row in dns
+        if row.get("uid") and (
+            str(row.get("query", "")).rstrip(".") == "background.invalid"
+            or (row.get("rejected") is True and row.get("rcode_name") == "SERVFAIL")
+        )
+    }
+    background += len(background_dns_uids)
     http_evidence = "zeek:http.log" if http else "not_available"
     conn_evidence = "zeek:conn.log" if conn else "not_available"
     background_evidence = "zeek:http.log,dns.log" if (http or dns) else "not_available"
@@ -47,7 +56,7 @@ def observations_from_zeek(zeek_dir: Path) -> dict[str, Any]:
         "inter_request_spacing_ms": statistics.median(spacing) if spacing else None,
         "payload_size": statistics.median(request_sizes) if request_sizes else None,
         "retry_count": retries if scenario_http else None,
-        "timeout_behavior": "timeout_observed" if timeouts else "response_observed" if conn else None,
+        "timeout_behavior": "timeout_observed" if timeouts else "response_observed" if tcp_connections else None,
         "response_order": "normal" if scenario_http and [float(row.get("ts", 0)) for row in scenario_http] == timestamps else None,
         "background_traffic_level": background if (http or dns) else None,
         "evidence_sources": {
@@ -58,7 +67,7 @@ def observations_from_zeek(zeek_dir: Path) -> dict[str, Any]:
             "payload_size": http_evidence,
             "retry_count": http_evidence,
             "timeout_behavior": conn_evidence,
-            "response_order": "not_available",
+            "response_order": http_evidence if scenario_http else "not_available",
             "background_traffic_level": background_evidence,
         },
     }

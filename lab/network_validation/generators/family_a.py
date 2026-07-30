@@ -21,7 +21,7 @@ class FamilyA(GeneratorFamily):
             ports = parameters.get("ports", [80, 8080, 8090, 2222])
             return [NetworkAction("tcp", "multi_port", port=int(port), delay_ms=spacing) for port in ports[:count]]
         paths = {
-            "navigation": ["/", "/docs", "/health"],
+            "navigation": ["/", "/docs", "/news"],
             "credential_rejection": ["/auth/login"],
             "periodic_callback": ["/heartbeat"],
             "throttled_pressure": ["/api/items"],
