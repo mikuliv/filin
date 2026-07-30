@@ -116,3 +116,16 @@ Lock содержит Python, scikit-learn, joblib, Zeek version и image digest
 ## Результат протокола
 
 Документ определяет будущую проверку; эксперимент не выполнялся. До её завершения нельзя утверждать внешнюю валидность, практическую точность или production-готовность текущего кандидата.
+
+## Состояние технической инфраструктуры
+
+Реализация находится в `lab/network_validation` и включает общий client identity,
+два независимо реализованных семейства сетевых действий, два target/network
+профиля, capture sidecar, Zeek parameter verification, причинный адаптер 51
+признаков, split/proxy validators, environment lock и freeze preview.
+
+Техническая campaign-конфигурация проходит schema, counterfactual и split checks.
+Она остаётся fixture: proxy-risk warnings не устранены, числовые критерии принятия
+не утверждены, image digests не зафиксированы, поэтому seal невозможен. Docker
+smoke и научный запуск не выполнялись; корпуса, labels, predictions и metrics не
+создавались.

@@ -1,0 +1,79 @@
+services:
+  target-a:
+    build:
+      context: ../..
+      dockerfile: lab/network_validation/Dockerfile.target-a
+    command: ["--port", "8080"]
+    networks:
+      validation_a:
+        aliases: ["service-a.internal"]
+    expose: ["8080"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8080/health', timeout=2).read()"]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+
+  target-b:
+    build:
+      context: ../..
+      dockerfile: lab/network_validation/Dockerfile.target-b
+    command: ["--port", "9080"]
+    networks:
+      validation_b:
+        aliases: ["service-b.internal"]
+    expose: ["9080"]
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:9080/health', timeout=2).read()"]
+      interval: 2s
+      timeout: 2s
+      retries: 10
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+
+  common-client:
+    build:
+      context: ../..
+      dockerfile: lab/network_validation/Dockerfile.client
+    entrypoint: ["python", "-c"]
+    command: ["import time; time.sleep(86400)"]
+    networks: ["validation_a", "validation_b"]
+    volumes:
+      - validation_capture:/capture
+      - validation_output:/output
+      - ./config:/config:ro
+    depends_on:
+      target-a:
+        condition: service_healthy
+      target-b:
+        condition: service_healthy
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+
+  sensor-capture:
+    build:
+      context: ../docker
+      dockerfile: Dockerfile.sensor-capture
+    network_mode: "service:common-client"
+    command: ["-i", "${CAPTURE_INTERFACE:-any}", "-B", "4096", "--immediate-mode", "-U", "-Z", "root", "-w", "/capture/technical-smoke.pcap"]
+    volumes:
+      - validation_capture:/capture
+    cap_drop: ["ALL"]
+    cap_add: ["NET_RAW", "NET_ADMIN"]
+    security_opt: ["no-new-privileges:true"]
+
+networks:
+  validation_a:
+    internal: true
+    ipam:
+      config: [{subnet: "172.28.10.0/24"}]
+  validation_b:
+    internal: true
+    ipam:
+      config: [{subnet: "172.28.20.0/24"}]
+
+volumes:
+  validation_capture: {}
+  validation_output: {}

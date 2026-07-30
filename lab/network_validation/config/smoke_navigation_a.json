@@ -1,0 +1,20 @@
+{
+  "schema_version": "network_validation_scenario_v1",
+  "scenario_token": "smoke_navigation_a",
+  "behavior_type": "navigation",
+  "generator_family": "family_a",
+  "parameter_vector": {"path_rotation": 1},
+  "target_capability": "web",
+  "requested_duration_seconds": 2,
+  "requested_request_count": 2,
+  "requested_spacing_ms": 50,
+  "requested_payload_size": 0,
+  "retry_policy": {"max_retries": 1, "backoff_ms": 20},
+  "timeout_policy": {"connect_ms": 500, "read_ms": 1000, "expected": "response"},
+  "response_order_expectation": "normal",
+  "background_traffic_policy": {"http_requests": 1, "dns_queries": 1, "keepalive_count": 1},
+  "seed": 901,
+  "campaign_token": "technical_smoke_fixture",
+  "infrastructure_profile": "profile_a",
+  "capture_policy": {"interface": "any", "bpf": "tcp or udp port 53", "marker_copies": 2}
+}

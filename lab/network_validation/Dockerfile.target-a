@@ -1,0 +1,4 @@
+FROM python:3.13-slim
+WORKDIR /workspace
+COPY lab/network_validation /workspace/lab/network_validation
+ENTRYPOINT ["python", "-m", "lab.network_validation.targets.target_a"]

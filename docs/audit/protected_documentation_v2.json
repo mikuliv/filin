@@ -134,6 +134,19 @@
       "mutable": false
     },
     {
+      "path": "docs/experiments/next_independent_network_validation_protocol.md",
+      "protecting_stage": "unknown",
+      "protecting_manifest": "docs/experiments/next_independent_network_validation_protocol.md",
+      "protecting_manifests": [
+        "docs/experiments/next_independent_network_validation_protocol.md"
+      ],
+      "expected_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
+      "actual_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
+      "current_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
+      "manifest_sha_matches": true,
+      "mutable": false
+    },
+    {
       "path": "docs/experiments/v0_3_15_3.md",
       "protecting_stage": "v0.3.15.3",
       "protecting_manifest": "ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.yaml",

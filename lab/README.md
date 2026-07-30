@@ -14,7 +14,13 @@
 
 ## Основные каталоги
 
-`environment/`, `sensor/`, `campaigns/`, `holdout/`, `robustness/`, `training/`, `docker/`.
+`environment/`, `sensor/`, `campaigns/`, `holdout/`, `robustness/`, `training/`,
+`docker/`, `network_validation/`.
+
+`network_validation/` содержит технический каркас будущей независимой сетевой
+проверки: общий Docker-клиент, две реализации генераторов, два target-профиля,
+capture sidecar, строгие контракты и dry-run CLI. Эксперимент этим изменением не
+запущен; подробности приведены в [локальном README](network_validation/README.md).
 
 ## Разрешённые входы и выходы
 

@@ -73,6 +73,9 @@
 
 ## Исследовательская методология
 
+- [Протокол будущей независимой сетевой проверки](experiments/next_independent_network_validation_protocol.md).
+- [Техническая инфраструктура проверки](../lab/network_validation/README.md).
+
 - [Методология](research/methodology.md).
 - [Причинные признаки](research/causal-features.md).
 - [Линия кандидата](research/candidate-lineage.md).

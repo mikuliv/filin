@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 368,
-    "protected_count": 81,
+    "document_count": 369,
+    "protected_count": 82,
     "current_count": 263,
-    "historical_count": 105,
+    "historical_count": 106,
     "generated_count": 6,
-    "created_count": 107,
+    "created_count": 108,
     "rewritten_count": 142,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -163,11 +163,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 37,
+      "outgoing_link_count": 38,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "669ba668b88d355fba3c3a3f66f1fc2d5f2d814deb91c02232894619699294bb"
+      "sha256_after": "dafe1a31a660daf494e60b966c853bc93a679254143c4aba81975a8c9f8f24e0"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -779,7 +779,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "ceb4f5ee4f36aec727faa80709eb6f0e9a2c9ece3757fe928919456a818b9620",
-      "sha256_after": "8b88de27e603ba2d32c788a3d0207609daa0ed068db2b74c45aae03309284691"
+      "sha256_after": "b85fb8a6f3977427e5899ccb9dcdcb47de347ac76208946318abc023720cf7df"
     },
     {
       "path": "docs/architecture/end-to-end-data-flow.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "838be87c31a4c053e1564a371c362e2bde0e50484b28ef1474ea8ab23cbcc2b2"
+      "sha256_after": "e750232ff0a4d71526546432031f7324aef1e613db6a68b00fc41c5f781134ae"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2553,7 +2553,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "926f7151195c17e7573d992c11138279de1a830bd9ddeb07f8256071f1be116c",
-      "sha256_after": "3f1e9b57d7069b05cd6d3b099b43dc83e71d7a9abe68baba7706316740a5962d"
+      "sha256_after": "e180aefc413167caf294ceaad88911e7f1ed130b732b3484ae1d7d63e359f927"
     },
     {
       "path": "docs/dependency-licenses.md",
@@ -2716,19 +2716,19 @@
     {
       "path": "docs/experiments/next_independent_network_validation_protocol.md",
       "title": "Протокол следующей независимой сетевой проверки",
-      "category": "Историческое описание",
+      "category": "Frozen evidence",
       "doc_schema": "filin_document_v2",
       "document_type": "history",
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "frozen",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
-      "evidence_immutable": false,
-      "protected_by_manifest": false,
+      "evidence_immutable": true,
+      "protected_by_manifest": true,
       "source_of_truth": [],
       "duplicate_of": "",
       "supersedes": [],
@@ -2743,12 +2743,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 3,
       "outgoing_link_count": 0,
-      "recommended_action": "maintain",
+      "recommended_action": "preserve",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "8fd36c6e7c1211dc9e393665eac2fdd0a82e010260a2b35a9e06e16cf250c12f"
+      "sha256_after": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda"
     },
     {
       "path": "docs/experiments/v0_3_11.md",
@@ -6543,11 +6543,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 2,
-      "outgoing_link_count": 105,
+      "outgoing_link_count": 107,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "0b1ee4647b46bb54b028bb1dab814fb07eb3a315a40a62fe36f8e31c001b37d9",
-      "sha256_after": "a3e0492f2e911252e9de1d1c4af1cb7ef160bb495d12c02935831a49b6dd0635"
+      "sha256_after": "2906cc7a1b7d4d866fbe7251f7cbfce33776d40e675349204d3e6a574c14443f"
     },
     {
       "path": "docs/lab-stand.md",
@@ -10097,7 +10097,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "5950bbe0a0fe601cedc26d13b6a78b8ee0f04bcf1f62f95587e32da07037ad4c"
+      "sha256_after": "6751c7cfce51a2a2ee922a312c50c5d56cab312a88151b5dbf51af5610eb0de3"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -10641,11 +10641,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 1,
+      "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "4872824e419ec0346686cf778ee2710f1be78a2a40263273d9eab87205507ecc",
-      "sha256_after": "ac35f6124bd7f088053b55d7c1617a94938c2c02f3518cfad78d8c188e1efca0"
+      "sha256_after": "b6f5bb1a46743fb6af9b0d028a669b38c2bf64fc15064d54d575a03aeb336a99"
     },
     {
       "path": "lab/attack-scenarios.md",
@@ -11018,6 +11018,43 @@
       "sha256_after": "a1e455638a6fec82a327c4ab4bb51fdc7d2bad929d1a1b2b4fa460c765d6ecc4"
     },
     {
+      "path": "lab/network_validation/README.md",
+      "title": "Инфраструктура независимой сетевой проверки",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "overview",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 3,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "30f6a9814a4a471c65493b29b1868921dfddfcd53012ec99cb0501edecaa5f7f"
+    },
+    {
       "path": "lab/robustness/README.md",
       "title": "Лаборатория устойчивости",
       "category": "Текущий справочный документ",
@@ -11237,7 +11274,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "5eb74e22fc7ae6e65602abd5fcd8480349f11ab201c9ce28101e968b2febdc2d",
-      "sha256_after": "cbf64e229853385e560902d6293e9e5d1fbce23e43888c3e0a6795383d6ee4f0"
+      "sha256_after": "cff5f15128890c2fded26623fbd557a90b9a0e1cd3d33ed77126a69855ce4cd6"
     },
     {
       "path": "ml/analysis/README.md",

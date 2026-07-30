@@ -19,3 +19,15 @@ holdout, внешнюю валидность или практическую т�
 Fit, calibration, conformal fit, признак selection и threshold selection не
 выполняются в текущий оценка path. Неподдерживаемые форматы не
 интерпретируются как PCAP.
+
+## Каркас будущей независимой проверки
+
+`lab/network_validation` связывает единый Docker-клиент, две реализации target,
+capture sidecar, Zeek и существующий extractor 51 признака. `SessionFeatureAdapter`
+разделяет history по session и принимает окна только в возрастающем причинном
+порядке. Строгий model-input guard исключает labels, scenario identity, generator,
+infrastructure и прочие служебные поля.
+
+Этот путь пока подтверждён модульными и статическими проверками конфигурации.
+Контейнерный smoke и научный experiment не выполнялись, поэтому новая
+доказательная область применимости не заявляется.

@@ -19,3 +19,14 @@ PCAP -> Zeek logs -> Zeek parser -> normalized sensor events -> marker-based cor
 ## Контроль происхождения
 
 Campaign roles разделяют train, test и robustness runs. Для PCAP, Zeek logs, normalized events и Наборы данных сохраняются SHA-256. происхождение, разбиение и duplicate audits проверяют отсутствие пересечений и leakage fields. Raw IP, hostname, URI, Zeek UID, marker metadata, label и execution identifiers не являются модель features.
+
+## Будущий независимый корпус
+
+Новый технический путь предусматривает отдельные execution events, marker events,
+capture manifests, PCAP SHA-256, Zeek status и отчёт реализации параметров. Поля
+`requested` сравниваются с наблюдаемыми значениями из Zeek; недоступное измерение
+фиксируется как `not_observable`, а не копируется из конфигурации. Capture manifest
+связывается с execution и проверяет непустой PCAP, packet count, размер и SHA.
+
+Корпус по этому пути ещё не собран. В репозитории нет новых PCAP, Zeek logs,
+feature tables, labels, predictions или metric outputs этой проверки.

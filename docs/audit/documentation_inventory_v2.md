@@ -5,11 +5,11 @@
 <!-- generated:start -->
 ## Сводка
 
-- Документов: **368**.
-- Защищённых: **81**.
+- Документов: **369**.
+- Защищённых: **82**.
 - Текущих: **263**.
-- Исторических и frozen: **105**.
-- Созданных: **107**; переписанных: **142**; redirects: **15**.
+- Исторических и frozen: **106**.
+- Созданных: **108**; переписанных: **142**; redirects: **15**.
 - Сломанных ссылок: **0**; anchors: **0**.
 
 ## Документы
@@ -19,7 +19,7 @@
 | `AUTHORS.md` | Неопределённый документ | `current` | current | нет | `created` | `—` | `2136c3496150` |
 | `CONTRIBUTING.md` | Неопределённый документ | `current` | current | нет | `created` | `—` | `56d36ea83c69` |
 | `COPYRIGHT.md` | Неопределённый документ | `current` | current | нет | `created` | `—` | `04233c1a4c82` |
-| `README.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `e4ad7c0326b8` | `669ba668b88d` |
+| `README.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `e4ad7c0326b8` | `dafe1a31a660` |
 | `THIRD_PARTY_NOTICES.md` | Неопределённый документ | `current` | current | нет | `created` | `—` | `25d20374ef65` |
 | `TRADEMARKS.md` | Неопределённый документ | `current` | current | нет | `created` | `—` | `32caa71098a6` |
 | `backend/README.md` | Текущий справочный документ | `current` | current | нет | `unchanged` | `587348d47eed` | `587348d47eed` |
@@ -35,7 +35,7 @@
 | `docs/architecture/data-flow.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8d723bfca934` | `9cfeb79abb19` |
 | `docs/architecture/delivery-runtime.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `74817c93b058` | `dc671355d069` |
 | `docs/architecture/detection-and-runtime-track.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `02271c838d4f` | `713b006e9e1b` |
-| `docs/architecture/detection-pipeline.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `ceb4f5ee4f36` | `8b88de27e603` |
+| `docs/architecture/detection-pipeline.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `ceb4f5ee4f36` | `b85fb8a6f397` |
 | `docs/architecture/end-to-end-data-flow.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `f67a85cf8804` | `71940244599e` |
 | `docs/architecture/index.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `870f81fa90b6` | `cd1cfed9c31b` |
 | `docs/architecture/laboratory-console.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `d9941307a14b` | `105f5dbe2902` |
@@ -48,7 +48,7 @@
 | `docs/architecture/storage-and-artifacts.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `ad149485cfc2` | `2f5a4bee340e` |
 | `docs/architecture/trust-boundaries.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `1f133afa2697` | `f53b7a994ab7` |
 | `docs/audit/documentation_inventory.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `c23a3c126926` | `840eb00e9075` |
-| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `838be87c31a4` |
+| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `e750232ff0a4` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `1839146eb403` | `8674307c984f` |
 | `docs/audit/documentation_path_migration_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `cb437745bba4` | `4f4f1743a49f` |
 | `docs/audit/documentation_refactor_plan_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8ca9d2c1f48b` | `559cd867b8e3` |
@@ -80,12 +80,12 @@
 | `docs/contributing/documentation-style.md` | Руководство разработчика | `current` | current | нет | `rewritten` | `3a16051145ea` | `9ef630953022` |
 | `docs/contributing/testing-and-validation.md` | Руководство разработчика | `current` | current | нет | `rewritten` | `7ac07868969d` | `8d12d54ae1a8` |
 | `docs/current-capabilities.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `fdcb6eb5e4de` | `ca3848105244` |
-| `docs/data-provenance.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `926f7151195c` | `3f1e9b57d706` |
+| `docs/data-provenance.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `926f7151195c` | `e180aefc4131` |
 | `docs/dependency-licenses.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `0d5241dc17e6` | `932122c29ebd` |
 | `docs/development-history.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `ae900178e9e0` | `3108b24d017b` |
 | `docs/documentation-policy.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `5d914857e8da` | `d4922f60aa4f` |
 | `docs/experiments.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `93fdd697b8a4` | `1af0fe4fc601` |
-| `docs/experiments/next_independent_network_validation_protocol.md` | Историческое описание | `current` | current | нет | `created` | `—` | `8fd36c6e7c12` |
+| `docs/experiments/next_independent_network_validation_protocol.md` | Frozen evidence | `frozen` | historical | да | `created` | `—` | `4c4146c7a4fc` |
 | `docs/experiments/v0_3_11.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `b221582a5002` | `b221582a5002` |
 | `docs/experiments/v0_3_12.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `22d19e14b43d` | `22d19e14b43d` |
 | `docs/experiments/v0_3_12_1.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `49e49c8c9975` | `49e49c8c9975` |
@@ -184,7 +184,7 @@
 | `docs/history/index.md` | Историческое описание | `current` | current | нет | `rewritten` | `2fa443d0ca0f` | `17b1938eb3b8` |
 | `docs/history/stage-timeline.md` | Историческое описание | `historical` | historical | нет | `rewritten` | `6f1f9b74b1ed` | `51c0a571fdf8` |
 | `docs/incident-workflow.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `a3b0759c9e55` | `dd90498c2173` |
-| `docs/index.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `0b1ee4647b46` | `a3e0492f2e91` |
+| `docs/index.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `0b1ee4647b46` | `2906cc7a1b7d` |
 | `docs/lab-stand.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `120d0c073442` | `3e89d9cc319e` |
 | `docs/licensing-audit.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `6864b690a437` | `410b9d237fd9` |
 | `docs/licensing/audit-plan.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `e4c1d0a69b22` |
@@ -276,7 +276,7 @@
 | `docs/sigma-generation.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `6256510bbfad` | `70f9777c035a` |
 | `docs/status.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `50da05fd05a6` | `1d988fd4a121` |
 | `docs/status/confirmed-capabilities.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `4598defaa5df` | `8f04768dd054` |
-| `docs/status/current-status.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `6496f275100e` | `5950bbe0a0fe` |
+| `docs/status/current-status.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `6496f275100e` | `6751c7cfce51` |
 | `docs/status/documentation_refactor_handoff.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `c4ed023f005e` | `a146cc7ef3c5` |
 | `docs/status/laboratory-track-history.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `272725af51b8` | `ef49bf133ed5` |
 | `docs/status/mainline-history.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `e640e4dc97a3` | `abe4e6a5be91` |
@@ -290,7 +290,7 @@
 | `external_review/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `3b1d3263b434` | `97133687b249` |
 | `incident_reconstruction/CURRENT.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `64c2f5b80126` | `4ee0e646b4d6` |
 | `incident_reconstruction/README.md` | Frozen evidence | `frozen` | historical | да | `unchanged` | `615b4e88d018` | `615b4e88d018` |
-| `lab/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `4872824e419e` | `ac35f6124bd7` |
+| `lab/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `4872824e419e` | `b6f5bb1a4674` |
 | `lab/attack-scenarios.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `a7506488674b` | `6c582fb5258a` |
 | `lab/background/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `df0ab00bb55c` | `d65ac2fe66bf` |
 | `lab/campaigns/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `9207a2693a09` | `d262db7768e7` |
@@ -301,12 +301,13 @@
 | `lab/environment/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `78d2defef709` | `2e4ad0007470` |
 | `lab/holdout/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `d54a3f1d126f` | `1c014ab5a04e` |
 | `lab/isolation-rules.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `8f52a729527a` | `a1e455638a6f` |
+| `lab/network_validation/README.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `30f6a9814a4a` |
 | `lab/robustness/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `82d6f933f2c6` | `3e8bcc0f0441` |
 | `lab/scenario-schedule.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `fe3fb0e4aad8` | `46ac914a6b1c` |
 | `lab/sensor/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8cada83e855f` | `99b273b39131` |
 | `lab/training/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `276aee34aca6` | `b87221cf6d94` |
 | `lab_console/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `60b7e7bec824` | `a290d6a12d36` |
-| `ml/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `5eb74e22fc7a` | `cbf64e229853` |
+| `ml/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `5eb74e22fc7a` | `cff5f1512889` |
 | `ml/analysis/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `07d5e4db50d1` | `388f4dbc837e` |
 | `ml/audits/v0_3_12_1/README.md` | Текущий справочный документ | `current` | current | нет | `unchanged` | `c21d5f50bc1f` | `c21d5f50bc1f` |
 | `ml/decision/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `705e28547016` | `d6ff2c086ea2` |
