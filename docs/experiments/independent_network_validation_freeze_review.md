@@ -4,8 +4,8 @@
 
 Review подготавливает декларативные входы будущей независимой проверки. Он не
 запускает сетевые сценарии, не создаёт train, calibration или holdout, не открывает
-labels, не загружает модель и не рассчитывает научные метрики. Official freeze и
-seal в рамках review запрещены.
+labels, не загружает модель и не рассчитывает научные метрики. Official freeze
+фиксирует только неизменяемые pre-experiment входы и не разрешает запуск кампании.
 
 ## Два разных плана
 
@@ -68,21 +68,24 @@ Build-inputs digest включает только Dockerfile и фактичес
 каноническом порядке. Runtime output, PCAP, Zeek logs, caches и временные OCI
 архивы не входят в digest.
 
-Во время review Docker daemon был недоступен. Для каждого из четырёх локальных
-образов выполнены две независимые попытки, но OCI archives не были созданы.
-Статус этих entries — `unresolved_daemon_unavailable`; подмена local image ID не
-допускается.
+Четыре локальных образа проверены двумя независимыми OCI-экспортами для
+`linux/amd64`. Для каждой пары совпали index, platform manifest, config, ordered
+layers и runtime-конфигурация. Базовые образы закреплены platform manifest digest,
+а image lock имеет статус `resolved_reproducible` без локальных image ID.
 
 ## Pre-experiment seal
 
-- dirty working tree текущего review;
-- нерешённая воспроизводимость common-client, target-a, target-b и sensor-capture;
+- подтверждённая воспроизводимость common-client, target-a, target-b и sensor-capture;
+- чистое дерево коммита `a6a979aef803ba776933b39dbd7607bd0833cc63`;
 
 Proxy-locks и числовые `TBD` не являются blockers freeze-candidate. Preview имеет
-`seal_allowed: false` только из-за состояния протокола и окружения.
+`seal_allowed: true`; официальный пакет сохранён в
+`lab/network_validation/freeze/official_freeze.json`.
 
 Отсутствующие научный корпус, внешний результат, обученная модель, evaluation и
 открытые labels перечисляются как ожидаемые pre-experiment состояния и не блокируют
 предварительный seal. После кампании scientific pass требует выполнения всех
 критериев, включая результат обязательного external corpus. Scientific pass не
-означает production approval. Научная и внешняя валидность не оценивались.
+означает production approval. Официальный freeze не является scientific pass:
+научная кампания не запускалась, corpus и labels не создавались, модель не
+обучалась, метрики и внешняя валидность не оценивались.

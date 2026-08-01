@@ -11,7 +11,7 @@ from pathlib import Path
 from typing import Any
 
 from .causal_guard import feature_order
-from .contracts import ENVIRONMENT_SCHEMA, FREEZE_SCHEMA, ContractError, digest, validate_campaign
+from .contracts import ENVIRONMENT_SCHEMA, FREEZE_SCHEMA, ContractError, canonical_bytes, digest, validate_campaign
 from .freeze_candidate import counterfactual_pairs, expand_scenarios, freeze_candidate_proxy_risks, validate_acceptance_criteria, validate_freeze_candidate
 from .image_lock import image_lock_blockers, validate_image_lock
 
@@ -203,6 +203,100 @@ def freeze_candidate_preview(
     }
     value["preview_sha256"] = digest(value)
     return value
+
+
+OFFICIAL_FREEZE_SCHEMA = "network_validation_official_freeze_v1"
+OFFICIAL_FREEZE_FIELDS = {
+    "schema_version", "freeze_id", "created_at", "source_git_sha", "source_tree_clean",
+    "campaign_plan_digest", "campaign_matrix_digest", "counterfactual_plan_digest",
+    "split_policy_digest", "acceptance_criteria_digest", "feature_contract_digest",
+    "feature_order_digest", "image_lock_digest", "environment_lock_digest",
+    "generator_families", "infrastructure_profiles", "target_implementations",
+    "required_images", "proxy_validation_result", "seal_preconditions",
+    "expected_pre_experiment_absences", "scientific_pass_requirements",
+    "production_approval", "canonical_payload_sha256",
+}
+
+
+def official_freeze_identity(value: dict[str, Any]) -> dict[str, Any]:
+    return {key: item for key, item in value.items() if key not in {"created_at", "canonical_payload_sha256"}}
+
+
+def official_freeze_payload(
+    preview: dict[str, Any], environment: dict[str, Any], image_lock: dict[str, Any],
+    source_git_sha: str, created_at: str,
+) -> dict[str, Any]:
+    if not preview.get("seal_allowed") or preview.get("seal_blockers"):
+        raise ContractError("official freeze has unresolved seal blockers")
+    if preview.get("source_git_commit") != source_git_sha or environment.get("source_git_commit") != source_git_sha:
+        raise ContractError("official freeze source Git SHA mismatch")
+    if environment.get("dirty_working_tree"):
+        raise ContractError("official freeze requires a clean source tree")
+    images = {row["logical_name"]: row for row in image_lock["images"]}
+    required_images = {
+        name: {
+            "platform_manifest_digest": row["platform_manifest_digest"],
+            "config_digest": row["config_digest"],
+            "verification_status": row["verification_status"],
+        }
+        for name, row in images.items()
+    }
+    value = {
+        "schema_version": OFFICIAL_FREEZE_SCHEMA,
+        "created_at": created_at,
+        "source_git_sha": source_git_sha,
+        "source_tree_clean": True,
+        "campaign_plan_digest": preview["campaign_plan_digest"],
+        "campaign_matrix_digest": preview["scenario_matrix_digest"],
+        "counterfactual_plan_digest": preview["counterfactual_plan_digest"],
+        "split_policy_digest": preview["split_policy_digest"],
+        "acceptance_criteria_digest": preview["acceptance_criteria_digest"],
+        "feature_contract_digest": preview["feature_contract_digest"],
+        "feature_order_digest": preview["feature_order_digest"],
+        "image_lock_digest": preview["image_lock_digest"],
+        "environment_lock_digest": environment["canonical_digest"],
+        "generator_families": preview["generator_families"],
+        "infrastructure_profiles": preview["infrastructure_profiles"],
+        "target_implementations": preview["target_implementations"],
+        "required_images": required_images,
+        "proxy_validation_result": {"passed": True, "warning_count": 0, "warnings": []},
+        "seal_preconditions": {
+            "seal_allowed": True, "seal_blockers": [],
+            "scenario_count": preview["scenario_count"],
+            "counterfactual_pair_count": preview["counterfactual_pair_count"],
+            "campaign_status": "not_started", "labels_status": "locked_or_not_created",
+            "model_status": "not_trained", "scientific_metrics_status": "not_calculated",
+            "external_evaluation_status": "pending_post_experiment",
+        },
+        "expected_pre_experiment_absences": preview["expected_pre_experiment_absences"],
+        "scientific_pass_requirements": preview["scientific_pass_requirements"],
+        "production_approval": False,
+    }
+    value["freeze_id"] = f"network-validation-{digest({key: item for key, item in value.items() if key != 'created_at'})[:16]}"
+    value["canonical_payload_sha256"] = digest(official_freeze_identity(value))
+    return value
+
+
+def validate_official_freeze(
+    value: dict[str, Any], campaign: dict[str, Any], criteria: dict[str, Any],
+    image_lock: dict[str, Any], environment: dict[str, Any], source_git_sha: str, root: Path,
+) -> dict[str, Any]:
+    if set(value) != OFFICIAL_FREEZE_FIELDS or value.get("schema_version") != OFFICIAL_FREEZE_SCHEMA:
+        raise ContractError("official freeze fields mismatch")
+    preview = freeze_candidate_preview(campaign, criteria, image_lock, environment, source_git_sha, root)
+    expected = official_freeze_payload(preview, environment, image_lock, source_git_sha, value["created_at"])
+    if value != expected:
+        raise ContractError("official freeze does not match current sealed inputs")
+    return value
+
+
+def write_official_freeze(path: Path, value: dict[str, Any], *, confirmed: bool) -> None:
+    if not confirmed:
+        raise ContractError("explicit official-freeze confirmation is required")
+    if path.exists():
+        raise ContractError("official freeze overwrite is forbidden")
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_bytes(canonical_bytes(value) + b"\n")
 
 
 def require_sealable(preview: dict[str, Any]) -> None:

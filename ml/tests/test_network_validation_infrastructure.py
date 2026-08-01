@@ -699,6 +699,41 @@ def test_clean_tree_preview_is_sealable_with_reproducible_local_images():
     assert preview["seal_allowed"] is True and preview["scientific_pass_allowed"] is False
 
 
+def test_official_freeze_is_deterministic_and_validates_sealed_inputs():
+    campaign_value, criteria, image_lock = freeze_candidate(), load_json(ACCEPTANCE), load_json(IMAGE_LOCK)
+    environment = environment_fixture(dirty=False, resolved_images=True)
+    preview = freeze.freeze_candidate_preview(campaign_value, criteria, image_lock, environment, "f" * 40, ROOT)
+    first = freeze.official_freeze_payload(preview, environment, image_lock, "f" * 40, "2026-01-01T00:00:00Z")
+    second = freeze.official_freeze_payload(preview, environment, image_lock, "f" * 40, "2030-01-01T00:00:00Z")
+    assert first["freeze_id"] == second["freeze_id"]
+    assert first["canonical_payload_sha256"] == second["canonical_payload_sha256"]
+    assert freeze.validate_official_freeze(first, campaign_value, criteria, image_lock, environment, "f" * 40, ROOT) == first
+    changed = copy.deepcopy(first); changed["campaign_plan_digest"] = "0" * 64
+    with pytest.raises(ContractError):
+        freeze.validate_official_freeze(changed, campaign_value, criteria, image_lock, environment, "f" * 40, ROOT)
+
+
+def test_official_freeze_rejects_dirty_or_wrong_source():
+    campaign_value, criteria, image_lock = freeze_candidate(), load_json(ACCEPTANCE), load_json(IMAGE_LOCK)
+    environment = environment_fixture(dirty=True, resolved_images=True)
+    preview = freeze.freeze_candidate_preview(campaign_value, criteria, image_lock, environment, "f" * 40, ROOT)
+    with pytest.raises(ContractError):
+        freeze.official_freeze_payload(preview, environment, image_lock, "f" * 40, "2026-01-01T00:00:00Z")
+    environment = environment_fixture(dirty=False, resolved_images=True)
+    preview = freeze.freeze_candidate_preview(campaign_value, criteria, image_lock, environment, "f" * 40, ROOT)
+    with pytest.raises(ContractError):
+        freeze.official_freeze_payload(preview, environment, image_lock, "e" * 40, "2026-01-01T00:00:00Z")
+
+
+def test_official_freeze_write_requires_confirmation_and_forbids_overwrite(tmp_path: Path):
+    path = tmp_path / "official_freeze.json"
+    with pytest.raises(ContractError):
+        freeze.write_official_freeze(path, {"sealed": True}, confirmed=False)
+    freeze.write_official_freeze(path, {"sealed": True}, confirmed=True)
+    with pytest.raises(ContractError):
+        freeze.write_official_freeze(path, {"sealed": True}, confirmed=True)
+
+
 def test_plan_is_dry_and_does_not_create_artifacts(tmp_path: Path):
     before = list(tmp_path.iterdir()); result = plan_campaign(campaign())
     assert result["experiment_started"] is False and result["technical_fixture"] is True

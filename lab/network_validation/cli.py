@@ -3,12 +3,13 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import subprocess
 from pathlib import Path
 from typing import Any
 
 from .capture import validate_capture_set
-from .contracts import CAMPAIGN_SCHEMA, load_json, validate_campaign, validate_scenario
-from .freeze import environment_lock, freeze_candidate_preview, freeze_preview
+from .contracts import CAMPAIGN_SCHEMA, digest, load_json, validate_campaign, validate_scenario
+from .freeze import environment_lock, freeze_candidate_preview, freeze_preview, official_freeze_payload, validate_official_freeze, write_official_freeze
 from .freeze_candidate import FREEZE_CANDIDATE_SCHEMA, candidate_summary, freeze_candidate_proxy_risks, validate_freeze_candidate
 from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
 from .parameter_verification import observations_from_zeek, verify_parameters
@@ -20,6 +21,25 @@ DEFAULT_CAMPAIGN = Path(__file__).with_name("config") / "technical_campaign.json
 DEFAULT_FREEZE_CANDIDATE = Path(__file__).with_name("config") / "freeze_candidate_campaign.json"
 DEFAULT_ACCEPTANCE_CRITERIA = Path(__file__).with_name("config") / "acceptance_criteria.json"
 DEFAULT_IMAGE_LOCK = Path(__file__).with_name("config") / "image_lock.json"
+DEFAULT_OFFICIAL_FREEZE = Path(__file__).with_name("freeze") / "official_freeze.json"
+
+
+def _resolved_environment(image_lock: dict[str, Any], source_git_commit: str | None = None) -> dict[str, Any]:
+    by_name = {row["logical_name"]: row for row in image_lock["images"]}
+    images = {
+        "zeek": by_name["zeek"]["platform_manifest_digest"],
+        "client": by_name["common_client"]["platform_manifest_digest"],
+        "targets": {
+            "target_a": by_name["target_a"]["platform_manifest_digest"],
+            "target_b": by_name["target_b"]["platform_manifest_digest"],
+        },
+    }
+    value = environment_lock(ROOT, images)
+    if source_git_commit is not None:
+        value["source_git_commit"] = source_git_commit
+        value["dirty_working_tree"] = False
+        value["canonical_digest"] = digest({key: item for key, item in value.items() if key != "canonical_digest"})
+    return value
 
 
 def _emit(value: Any, json_output: bool) -> None:
@@ -50,6 +70,17 @@ def parser() -> argparse.ArgumentParser:
     preview.add_argument("--campaign", default=str(DEFAULT_FREEZE_CANDIDATE))
     preview.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
     preview.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
+    create = commands.add_parser("create-official-freeze")
+    create.add_argument("--campaign", default=str(DEFAULT_FREEZE_CANDIDATE))
+    create.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
+    create.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
+    create.add_argument("--output", default=str(DEFAULT_OFFICIAL_FREEZE))
+    create.add_argument("--confirm-official-freeze", action="store_true")
+    official = commands.add_parser("validate-official-freeze")
+    official.add_argument("--campaign", default=str(DEFAULT_FREEZE_CANDIDATE))
+    official.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
+    official.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
+    official.add_argument("--freeze", default=str(DEFAULT_OFFICIAL_FREEZE))
     commands.add_parser("render-compose")
     commands.add_parser("inspect-environment")
     parameter = commands.add_parser("validate-parameter-contract")
@@ -89,6 +120,25 @@ def main(argv: list[str] | None = None) -> int:
         value = load_json(Path(args.image_lock)); validate_image_lock(value, ROOT); _emit({"valid": True, "blockers": image_lock_blockers(value), "image_lock": value}, args.json_output); return 0
     if args.command == "verify-image-reproducibility":
         _emit(compare_oci_archives(Path(args.left), Path(args.right)), args.json_output); return 0
+    if args.command in {"create-official-freeze", "validate-official-freeze"}:
+        campaign = load_json(Path(args.campaign)); criteria = load_json(Path(args.acceptance_criteria)); image_lock = load_json(Path(args.image_lock))
+        if args.command == "create-official-freeze":
+            if _command := subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip():
+                raise ValueError(f"official freeze requires a clean working tree: {_command}")
+            source = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+            created_at = subprocess.run(["git", "show", "-s", "--format=%cI", source], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+            environment = _resolved_environment(image_lock)
+            preview = freeze_candidate_preview(campaign, criteria, image_lock, environment, source, ROOT)
+            value = official_freeze_payload(preview, environment, image_lock, source, created_at)
+            write_official_freeze(Path(args.output), value, confirmed=args.confirm_official_freeze)
+            _emit({"official_freeze_created": True, "path": str(Path(args.output)), "official_freeze": value}, args.json_output); return 0
+        value = load_json(Path(args.freeze)); source = value.get("source_git_sha", "")
+        result = subprocess.run(["git", "cat-file", "-e", f"{source}^{{commit}}"], cwd=ROOT, capture_output=True, check=False)
+        if result.returncode:
+            raise ValueError("official freeze source Git SHA does not exist")
+        environment = _resolved_environment(image_lock, source)
+        validate_official_freeze(value, campaign, criteria, image_lock, environment, source, ROOT)
+        _emit({"official_freeze_valid": True, "seal_allowed": True, "scientific_pass_allowed": False, "production_approval": value["production_approval"], "official_freeze": value}, args.json_output); return 0
     campaign = load_json(Path(args.campaign))
     if args.command == "validate-config":
         validate_campaign(campaign); validate_infrastructure_profiles(campaign["infrastructure_profiles"]); validate_counterfactuals(campaign); validate_split(campaign["split_policy"]["fixture_assignments"], campaign["split_policy"]); _emit({"valid": True, "experiment_started": False}, args.json_output)
@@ -99,7 +149,8 @@ def main(argv: list[str] | None = None) -> int:
     elif args.command == "validate-split":
         validate_campaign(campaign); validate_split(campaign["split_policy"]["fixture_assignments"], campaign["split_policy"]); _emit({"valid": True}, args.json_output)
     elif args.command == "build-freeze-preview":
-        env = environment_lock(ROOT, {})
+        image_lock = load_json(Path(args.image_lock)) if hasattr(args, "image_lock") else None
+        env = _resolved_environment(image_lock) if image_lock is not None else environment_lock(ROOT, {})
         if campaign.get("schema_version") == FREEZE_CANDIDATE_SCHEMA:
             preview = freeze_candidate_preview(campaign, load_json(Path(args.acceptance_criteria)), load_json(Path(args.image_lock)), env, env["source_git_commit"], ROOT)
         else:

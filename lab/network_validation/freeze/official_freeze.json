@@ -1,0 +1,87 @@
+{
+  "schema_version": "network_validation_official_freeze_v1",
+  "created_at": "2026-08-01T20:13:56+07:00",
+  "source_git_sha": "a6a979aef803ba776933b39dbd7607bd0833cc63",
+  "source_tree_clean": true,
+  "campaign_plan_digest": "33d3fb303bf36c720ab0c56c65197690e4e3b69a329652083548d13ce52c9ad6",
+  "campaign_matrix_digest": "1ba7e3dab1872dec54df953978e0bc6f2a166871911b80815219b0f5530f9903",
+  "counterfactual_plan_digest": "ebb15ccd22cc399f858e981254f3f504243607046dff210f9466d818d3732775",
+  "split_policy_digest": "928a5e229ac6da4fbbb8499baeea1283c465da570d33ed44e1d52e0883b9b02e",
+  "acceptance_criteria_digest": "cbe08a9d725ae20f25a848b59b9cddeb5b3f2398806a4c427258f43fc9ee051f",
+  "feature_contract_digest": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+  "feature_order_digest": "e9adc0617e2e670c1d846936ff69d36b5f9749faedf34ac9ecd21c4c7a00526c",
+  "image_lock_digest": "425fbb7ec0ebedffead965d2fb5b8c17bbeb74d5a0cc43e5e9c9640a73b92981",
+  "environment_lock_digest": "83ee7724e1ad47a70d4b67e593ab4d11c94ea556f9a6048235e447e7a85c806c",
+  "generator_families": [
+    "family_a",
+    "family_b"
+  ],
+  "infrastructure_profiles": [
+    "profile_a",
+    "profile_b"
+  ],
+  "target_implementations": [
+    "target_a",
+    "target_b"
+  ],
+  "required_images": {
+    "zeek": {
+      "platform_manifest_digest": "sha256:3d66069dc80d7bd933ead3e4aa0f001f8461448b439f06291175f6ebf27f3aa9",
+      "config_digest": "sha256:7670f8a6bf3529522fff4628de48d836104bff33aeaae16a0c700fce3eff6c4c",
+      "verification_status": "resolved_registry"
+    },
+    "common_client": {
+      "platform_manifest_digest": "sha256:47fc6fdfbcf7b642f90bb3cef2f6409feea1521a0444ce4ddcf7f5fec3465b6d",
+      "config_digest": "sha256:73183d91a69b9000d0742b9ee1d3cf9974f74c46d95469c9158be0882c563b33",
+      "verification_status": "resolved_reproducible"
+    },
+    "target_a": {
+      "platform_manifest_digest": "sha256:118ddf1b6533bae1e2b572971ab2516094367b78f242aeea5bb17df966c1ac20",
+      "config_digest": "sha256:e2f24d65d636e97299a8630a79f7c4106ef85fa2c783f95c87102acc2eb0a918",
+      "verification_status": "resolved_reproducible"
+    },
+    "target_b": {
+      "platform_manifest_digest": "sha256:e87939d9e8669a03fcd1bc92876fa0ef77059a9a95fac96e35e7fef0686868b9",
+      "config_digest": "sha256:23c42a1c2e710c1ce32c503148fb365c047a2afc295e375bc6f53a57d00f2a99",
+      "verification_status": "resolved_reproducible"
+    },
+    "sensor_capture": {
+      "platform_manifest_digest": "sha256:9a267317c43198744911020d7600bd1efc24d869b1e75858687e2eca918faa27",
+      "config_digest": "sha256:5dac6a0ab92bbf5df2acb5cf24ab54e2e4078ffcb9b3de0de1ca65efbc509958",
+      "verification_status": "resolved_reproducible"
+    }
+  },
+  "proxy_validation_result": {
+    "passed": true,
+    "warning_count": 0,
+    "warnings": []
+  },
+  "seal_preconditions": {
+    "seal_allowed": true,
+    "seal_blockers": [],
+    "scenario_count": 72,
+    "counterfactual_pair_count": 24,
+    "campaign_status": "not_started",
+    "labels_status": "locked_or_not_created",
+    "model_status": "not_trained",
+    "scientific_metrics_status": "not_calculated",
+    "external_evaluation_status": "pending_post_experiment"
+  },
+  "expected_pre_experiment_absences": [
+    "scientific_corpus_not_collected",
+    "external_corpus_result_missing",
+    "model_not_trained",
+    "evaluation_not_performed",
+    "labels_not_unlocked"
+  ],
+  "scientific_pass_requirements": [
+    "campaign_completed",
+    "predictions_frozen_before_label_unlock",
+    "evaluation_completed",
+    "acceptance_criteria_passed",
+    "external_corpus_result_passed"
+  ],
+  "production_approval": false,
+  "freeze_id": "network-validation-d6e946188d870a7f",
+  "canonical_payload_sha256": "870946390f9ca8a5fe0ac2c53e7855e979ef242d9486815ef67d6d47ca9cbe41"
+}

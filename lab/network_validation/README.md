@@ -60,6 +60,7 @@ python -m lab.network_validation.cli inspect-proxy-risks
 python -m lab.network_validation.cli inspect-image-lock
 python -m lab.network_validation.cli verify-image-reproducibility --help
 python -m lab.network_validation.cli build-freeze-preview
+python -m lab.network_validation.cli validate-official-freeze
 ```
 
 Эти команды не запускают эксперимент. `run-technical-smoke` требует явного
@@ -75,6 +76,8 @@ docker compose -f lab/network_validation/compose.yaml config
 
 Перед будущим freeze владелец отдельно завершает воспроизводимые OCI-сборки,
 проверяет чистое рабочее дерево и только затем рассматривает разрешение запуска.
-Freeze-candidate plan не является official freeze и не подтверждает качество модели.
+Официальный pre-experiment freeze сохранён в `freeze/official_freeze.json` и связан с
+коммитом image lock. Он фиксирует план, критерии, порядок признаков, окружение и
+воспроизводимые OCI-идентичности, но не подтверждает качество модели.
 `requirements.lock` фиксирует зависимости host-side Zeek/feature validation;
 client и target images используют только стандартную библиотеку Python.
