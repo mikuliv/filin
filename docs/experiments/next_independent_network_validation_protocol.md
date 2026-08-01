@@ -124,8 +124,15 @@ Lock содержит Python, scikit-learn, joblib, Zeek version и image digest
 профиля, capture sidecar, Zeek parameter verification, причинный адаптер 51
 признаков, split/proxy validators, environment lock и freeze preview.
 
-Техническая campaign-конфигурация проходит schema, counterfactual и split checks.
-Она остаётся fixture: proxy-risk warnings не устранены, числовые критерии принятия
-не утверждены, image digests не зафиксированы, поэтому seal невозможен. Docker
-smoke и научный запуск не выполнялись; корпуса, labels, predictions и metrics не
-создавались.
+Техническая campaign-конфигурация проходит schema, counterfactual и split checks,
+но остаётся fixture с 19 proxy-risk предупреждениями. Отдельный freeze-candidate
+plan задаёт 72 факторные комбинации, 24 контрфактические пары и предварительно
+зафиксированные числовые критерии. Для него proxy-lock предупреждения отсутствуют.
+
+Технический Docker smoke двух disposable сценариев выполнен; это подтверждает
+только сетевой путь до 51 признака. Научный запуск не выполнялся; корпуса, labels,
+predictions и metrics не создавались. Official freeze не создан: локальные OCI
+digests ещё не подтверждены двумя воспроизводимыми сборками, рабочее дерево review
+нечистое. Отсутствие научного корпуса и внешнего результата ожидаемо до эксперимента
+и не блокирует предварительный seal; внешний результат обязателен для последующего
+scientific pass.

@@ -140,9 +140,9 @@
       "protecting_manifests": [
         "docs/experiments/next_independent_network_validation_protocol.md"
       ],
-      "expected_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
-      "actual_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
-      "current_sha256": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda",
+      "expected_sha256": "3772dee6c268f45f13a317c92520db8429a31857f7bf333124b996864bbbde14",
+      "actual_sha256": "3772dee6c268f45f13a317c92520db8429a31857f7bf333124b996864bbbde14",
+      "current_sha256": "3772dee6c268f45f13a317c92520db8429a31857f7bf333124b996864bbbde14",
       "manifest_sha_matches": true,
       "mutable": false
     },

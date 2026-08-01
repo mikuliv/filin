@@ -1,0 +1,94 @@
+{
+  "schema_version": "network_validation_freeze_candidate_v1",
+  "campaign_token": "freeze_candidate_campaign",
+  "purpose": "scientific_campaign_plan",
+  "technical_fixture": false,
+  "execution_allowed": false,
+  "feature_contract_path": "ml/experiments/v0_3_15_4/feature_contract_v2.yaml",
+  "acceptance_criteria_path": "lab/network_validation/config/acceptance_criteria.json",
+  "image_lock_path": "lab/network_validation/config/image_lock.json",
+  "candidate_identity": {
+    "mode": "existing_candidate_integrity_only",
+    "candidate_id": "v03154:65a3dd912d845bc1",
+    "training_allowed": false
+  },
+  "infrastructure_profiles": [
+    {
+      "profile_id": "profile_a",
+      "docker_network": "validation_a",
+      "subnet": "172.28.10.0/24",
+      "dns_name": "service-a.internal",
+      "target_implementation": "target_a",
+      "internal_port": 8080,
+      "response_template": "json_status_path",
+      "service_configuration": "threaded_http"
+    },
+    {
+      "profile_id": "profile_b",
+      "docker_network": "validation_b",
+      "subnet": "172.28.20.0/24",
+      "dns_name": "service-b.internal",
+      "target_implementation": "target_b",
+      "internal_port": 9080,
+      "response_template": "json_result_resource",
+      "service_configuration": "asyncio_http"
+    }
+  ],
+  "factorial_matrix": {
+    "behaviors": [
+      "navigation",
+      "credential_rejection",
+      "periodic_callback",
+      "throttled_pressure",
+      "service_discovery",
+      "path_inspection"
+    ],
+    "generator_families": ["family_a", "family_b"],
+    "infrastructure_profiles": ["profile_a", "profile_b"],
+    "intensity_bands": ["low", "medium", "high"],
+    "background_assignment": "orthogonal_four_policy_balance"
+  },
+  "counterfactual_plan": {
+    "within_behavior_dimensions": [
+      "generator_family",
+      "infrastructure_profile",
+      "target_implementation",
+      "target_port",
+      "http_paths",
+      "response_status_profile",
+      "action_timing"
+    ],
+    "cross_behavior_requirements": [
+      "same_port",
+      "same_target",
+      "same_action_count",
+      "same_nominal_rate",
+      "navigation_high_intensity",
+      "path_inspection_low_intensity",
+      "credential_navigation_same_http_intensity",
+      "callback_discovery_same_action_count",
+      "pressure_navigation_same_rate"
+    ]
+  },
+  "split_policy": {
+    "unit": "whole_session",
+    "group_by": [
+      "generator_family",
+      "infrastructure_profile",
+      "target_implementation",
+      "parameter_combination",
+      "counterfactual_pair",
+      "session_token",
+      "campaign_token"
+    ],
+    "holdout_types": {
+      "unseen_generator_family": "generator_family",
+      "unseen_infrastructure_profile": "infrastructure_profile",
+      "unseen_target_implementation": "target_implementation",
+      "unseen_parameter_combinations": "parameter_vector",
+      "counterfactual_holdout": "pair_id",
+      "external_corpus": "external_source_id"
+    },
+    "selection_prohibited_fields": ["feature_values", "labels", "metrics", "predictions"]
+  }
+}

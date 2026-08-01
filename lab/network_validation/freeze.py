@@ -5,12 +5,15 @@ import importlib.metadata
 import locale
 import os
 import platform
+import re
 import subprocess
 from pathlib import Path
 from typing import Any
 
 from .causal_guard import feature_order
 from .contracts import ENVIRONMENT_SCHEMA, FREEZE_SCHEMA, ContractError, digest, validate_campaign
+from .freeze_candidate import counterfactual_pairs, expand_scenarios, freeze_candidate_proxy_risks, validate_acceptance_criteria, validate_freeze_candidate
+from .image_lock import image_lock_blockers, validate_image_lock
 
 
 def _command(args: list[str]) -> str:
@@ -21,6 +24,15 @@ def _command(args: list[str]) -> str:
         return result.stdout.strip()
     except (OSError, subprocess.TimeoutExpired):
         return "unavailable"
+
+
+def _docker_client_version() -> str:
+    value = _command(["docker", "version", "--format", "{{.Client.Version}}"])
+    if value != "unavailable":
+        return value
+    fallback = _command(["docker", "--version"])
+    match = re.search(r"Docker version ([0-9][0-9.]+)", fallback)
+    return match.group(1) if match else "unavailable"
 
 
 def validate_environment_lock(value: dict[str, Any]) -> None:
@@ -52,7 +64,7 @@ def environment_lock(root: Path, images: dict[str, str]) -> dict[str, Any]:
         "pip_dependency_lock_digest": hashlib.sha256(pip_lock.read_bytes()).hexdigest(),
         "scikit_learn_version": importlib.metadata.version("scikit-learn"),
         "joblib_version": importlib.metadata.version("joblib"),
-        "docker_version": _command(["docker", "version", "--format", "{{.Client.Version}}"]),
+        "docker_version": _docker_client_version(),
         "docker_daemon_version": _command(["docker", "version", "--format", "{{.Server.Version}}"]),
         "docker_compose_version": _command(["docker", "compose", "version", "--short"]),
         "zeek_image_name": "zeek/zeek:7.0.5", "zeek_image_digest": images.get("zeek", "unresolved"),
@@ -116,6 +128,78 @@ def freeze_preview(campaign: dict[str, Any], environment: dict[str, Any], compos
         "unresolved_integrity_fields": unresolved_integrity,
         "proxy_risks": risks,
         "sealable": not unresolved and not unresolved_integrity,
+    }
+    value["preview_sha256"] = digest(value)
+    return value
+
+
+def freeze_candidate_preview(
+    campaign: dict[str, Any],
+    criteria: dict[str, Any],
+    image_lock: dict[str, Any],
+    environment: dict[str, Any],
+    source_commit: str,
+    root: Path,
+) -> dict[str, Any]:
+    validate_freeze_candidate(campaign)
+    validate_acceptance_criteria(criteria)
+    validate_image_lock(image_lock, root)
+    validate_environment_lock(environment)
+    if source_commit != environment["source_git_commit"]:
+        raise ContractError("preview source commit mismatch")
+    if campaign["acceptance_criteria_path"] != "lab/network_validation/config/acceptance_criteria.json" or campaign["image_lock_path"] != "lab/network_validation/config/image_lock.json":
+        raise ContractError("freeze-candidate lock path mismatch")
+    rows = expand_scenarios(campaign)
+    pairs = counterfactual_pairs(campaign)
+    risks = freeze_candidate_proxy_risks(campaign)
+    seal_blockers = image_lock_blockers(image_lock)
+    if environment["dirty_working_tree"]:
+        seal_blockers.append("dirty_working_tree")
+    if risks:
+        seal_blockers.append("proxy_risk_warning")
+    expected_absences = [
+        "scientific_corpus_not_collected",
+        "external_corpus_result_missing",
+        "model_not_trained",
+        "evaluation_not_performed",
+        "labels_not_unlocked",
+    ]
+    scientific_pass_requirements = [
+        "campaign_completed",
+        "predictions_frozen_before_label_unlock",
+        "evaluation_completed",
+        "acceptance_criteria_passed",
+        "external_corpus_result_passed",
+    ]
+    order = feature_order()
+    value = {
+        "schema_version": "network_validation_freeze_candidate_preview_v1",
+        "official_freeze_created": False,
+        "experiment_started": False,
+        "source_git_commit": source_commit,
+        "dirty_working_tree": environment["dirty_working_tree"],
+        "campaign_plan_digest": digest(campaign),
+        "scenario_schema_digest": hashlib.sha256(root.joinpath("lab/network_validation/contracts.py").read_bytes()).hexdigest(),
+        "scenario_matrix_digest": digest(rows),
+        "scenario_count": len(rows),
+        "generator_families": sorted({row["scenario"]["generator_family"] for row in rows}),
+        "infrastructure_profiles": sorted({row["scenario"]["infrastructure_profile"] for row in rows}),
+        "target_implementations": sorted({row["target_implementation"] for row in rows}),
+        "feature_contract_digest": environment["feature_contract_digest"],
+        "feature_order_digest": environment["feature_order_digest"],
+        "acceptance_criteria_digest": criteria["canonical_digest"],
+        "split_policy_digest": digest(campaign["split_policy"]),
+        "counterfactual_plan_digest": digest(pairs),
+        "counterfactual_pair_count": len(pairs),
+        "image_lock_digest": image_lock["canonical_digest"],
+        "environment_lock": environment,
+        "proxy_risks": risks,
+        "seal_blockers": sorted(set(seal_blockers)),
+        "expected_pre_experiment_absences": expected_absences,
+        "scientific_pass_requirements": scientific_pass_requirements,
+        "scientific_pass_allowed": False,
+        "seal_allowed": not seal_blockers,
+        "sealable": not seal_blockers,
     }
     value["preview_sha256"] = digest(value)
     return value

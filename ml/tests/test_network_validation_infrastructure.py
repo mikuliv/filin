@@ -3,8 +3,10 @@ from __future__ import annotations
 import ast
 import copy
 import hashlib
+import io
 import json
 import struct
+import tarfile
 from pathlib import Path
 
 import pytest
@@ -30,19 +32,40 @@ from lab.network_validation.contracts import (
     validate_scenario,
     write_canonical,
 )
+from lab.network_validation.freeze_candidate import (
+    ACCEPTANCE_VALUES,
+    BACKGROUND_POLICIES,
+    candidate_summary,
+    counterfactual_pairs,
+    expand_scenarios,
+    freeze_candidate_proxy_risks,
+    holdout_support,
+    require_criteria_digest,
+    validate_acceptance_criteria,
+    validate_counterfactual_matrix,
+    validate_freeze_candidate,
+)
 from lab.network_validation.generators.base import GeneratorFamily, NetworkAction
 from lab.network_validation.generators.family_a import FamilyA
 from lab.network_validation.generators.family_b import FamilyB
 from lab.network_validation.parameter_verification import observations_from_zeek, verify_parameters
 from lab.network_validation.planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
+from lab.network_validation.image_lock import build_inputs_digest, compare_oci_archives, image_lock_blockers, parse_oci_archive, validate_image_lock
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / "lab/network_validation"
 CAMPAIGN = PACKAGE / "config/technical_campaign.json"
+FREEZE_CANDIDATE = PACKAGE / "config/freeze_candidate_campaign.json"
+ACCEPTANCE = PACKAGE / "config/acceptance_criteria.json"
+IMAGE_LOCK = PACKAGE / "config/image_lock.json"
 
 
 def campaign() -> dict:
     return load_json(CAMPAIGN)
+
+
+def freeze_candidate() -> dict:
+    return load_json(FREEZE_CANDIDATE)
 
 
 def scenario(token: str = "navigation_family_a") -> dict:
@@ -117,6 +140,28 @@ def environment_fixture(*, dirty: bool = False, resolved_images: bool = True) ->
 def write_pcap(path: Path) -> None:
     packet = b"\x00" * 60
     path.write_bytes(struct.pack("<IHHIIII", 0xA1B2C3D4, 2, 4, 0, 0, 65535, 1) + struct.pack("<IIII", 1, 0, len(packet), len(packet)) + packet)
+
+
+def write_oci(path: Path, layer_digest: str = "sha256:" + "d" * 64) -> None:
+    manifest = {
+        "schemaVersion": 2,
+        "config": {"digest": "sha256:" + "c" * 64},
+        "layers": [{"digest": layer_digest}],
+    }
+    manifest_bytes = json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
+    manifest_digest = "sha256:" + hashlib.sha256(manifest_bytes).hexdigest()
+    index = {
+        "schemaVersion": 2,
+        "manifests": [{"digest": manifest_digest, "platform": {"os": "linux", "architecture": "amd64"}}],
+    }
+    members = {
+        "index.json": json.dumps(index, sort_keys=True, separators=(",", ":")).encode(),
+        f"blobs/sha256/{manifest_digest.split(':', 1)[1]}": manifest_bytes,
+    }
+    with tarfile.open(path, "w") as archive:
+        for name, data in members.items():
+            info = tarfile.TarInfo(name); info.size = len(data); info.mtime = 0
+            archive.addfile(info, io.BytesIO(data))
 
 
 def test_campaign_and_all_twelve_scenarios_are_strictly_valid():
@@ -498,6 +543,135 @@ def test_proxy_validator_detects_family_metadata_counterfactual_and_unused_param
     assert {"class_to_family_lock", "unique_user_agent", "unique_technical_header", "missing_counterfactual", "unused_parameter_vector"} <= risks
 
 
+def test_freeze_candidate_expands_to_balanced_seventy_two_scenario_matrix():
+    value = validate_freeze_candidate(freeze_candidate())
+    rows = expand_scenarios(value)
+    summary = candidate_summary(value)
+    assert len(rows) == summary["scenario_count"] == 72
+    assert set(summary["behaviors"]) == FamilyA.supported_behaviors
+    assert set(summary["generator_families"]) == {"family_a", "family_b"}
+    assert set(summary["infrastructure_profiles"]) == {"profile_a", "profile_b"}
+    assert set(summary["target_implementations"]) == {"target_a", "target_b"}
+    assert set(summary["ports"]) == {8080, 9080}
+    assert set(summary["intensity_bands"]) == {"low", "medium", "high"}
+    assert len({row["scenario"]["scenario_token"] for row in rows}) == 72
+    assert len({row["session_token"] for row in rows}) == 72
+    assert all("label" not in row and "label" not in row["scenario"] for row in rows)
+    assert all(not ({"client_identity", "source_role", "user_agent", "technical_header"} & set(row["scenario"])) for row in rows)
+    assert all(len((FamilyA() if row["scenario"]["generator_family"] == "family_a" else FamilyB()).actions(row["scenario"])) == row["scenario"]["requested_request_count"] for row in rows)
+
+
+def test_freeze_candidate_resolves_proxy_locks_without_weakening_technical_validator():
+    technical = proxy_risks(campaign())
+    candidate = freeze_candidate_proxy_risks(freeze_candidate())
+    assert len(technical) == 19
+    assert candidate == []
+    assert {"class_to_infrastructure_lock", "class_to_target_lock", "class_to_port_lock", "non_overlapping_intensity"} <= {row["risk"] for row in technical}
+    assert not ({"class_to_infrastructure_lock", "class_to_target_lock", "class_to_port_lock", "class_to_generator_family_lock", "non_overlapping_intensity"} & {row["risk"] for row in candidate})
+
+
+def test_freeze_candidate_balances_background_and_counterfactual_invariants():
+    value = freeze_candidate(); rows = expand_scenarios(value)
+    by_behavior = {behavior: [row for row in rows if row["scenario"]["behavior_type"] == behavior] for behavior in FamilyA.supported_behaviors}
+    assert all({name: [row["background_policy"] for row in values].count(name) for name in BACKGROUND_POLICIES} == {name: 3 for name in BACKGROUND_POLICIES} for values in by_behavior.values())
+    for name in BACKGROUND_POLICIES:
+        selected = [row for row in rows if row["background_policy"] == name]
+        assert len(selected) == 18
+        assert {row["scenario"]["behavior_type"] for row in selected} == FamilyA.supported_behaviors
+        assert {family: sum(row["scenario"]["generator_family"] == family for row in selected) for family in ("family_a", "family_b")} == {"family_a": 9, "family_b": 9}
+        assert {profile: sum(row["scenario"]["infrastructure_profile"] == profile for row in selected) for profile in ("profile_a", "profile_b")} == {"profile_a": 9, "profile_b": 9}
+        assert {band: sum(row["intensity_band"] == band for row in selected) for band in ("low", "medium", "high")} == {"low": 6, "medium": 6, "high": 6}
+    pairs = validate_counterfactual_matrix(value)
+    assert len(pairs) == len(counterfactual_pairs(value)) == 24
+    assert len({pair["pair_id"] for pair in pairs}) == 24
+    assert sum(pair["comparison_type"].startswith("within_behavior_") for pair in pairs) == 15
+    assert sum(pair["comparison_type"] == "cross_behavior_matched_load" for pair in pairs) == 9
+    assert all(pair["comparison_type"] and pair["match_fields"] and pair["allowed_differences"] for pair in pairs)
+    assert "pair_id" not in feature_order()
+
+
+def test_freeze_candidate_supports_declared_whole_session_holdouts():
+    support = holdout_support(freeze_candidate())
+    assert support and all(support.values())
+    rows = expand_scenarios(freeze_candidate())
+    assert len({row["session_token"] for row in rows}) == len(rows)
+
+
+def test_acceptance_criteria_are_exact_numeric_prefreeze_values():
+    criteria = validate_acceptance_criteria(load_json(ACCEPTANCE))
+    assert criteria["values"] == ACCEPTANCE_VALUES
+    assert criteria["values"]["external_corpus_required"] is True
+    assert criteria["production_approval"] is False and criteria["sealed"] is False
+    require_criteria_digest(criteria, criteria["canonical_digest"])
+    changed = copy.deepcopy(criteria); changed["values"]["minimum_candidate_macro_f1"] = 0.81
+    changed["canonical_digest"] = digest({key: item for key, item in changed.items() if key != "canonical_digest"})
+    with pytest.raises(ContractError):
+        require_criteria_digest(changed, criteria["canonical_digest"])
+
+
+def test_build_inputs_digest_tracks_only_declared_inputs(tmp_path: Path):
+    (tmp_path / "Dockerfile").write_text("FROM scratch\n", encoding="utf-8")
+    (tmp_path / "used.py").write_text("VALUE = 1\n", encoding="utf-8")
+    inputs = ["Dockerfile", "used.py"]
+    first = build_inputs_digest(tmp_path, inputs)
+    assert first == build_inputs_digest(tmp_path, list(reversed(inputs)))
+    (tmp_path / "temporary.pcap").write_bytes(b"excluded")
+    assert build_inputs_digest(tmp_path, inputs) == first
+    (tmp_path / "used.py").write_text("VALUE = 2\n", encoding="utf-8")
+    assert build_inputs_digest(tmp_path, inputs) != first
+
+
+def test_portable_image_lock_is_strict_and_unresolved_images_block_seal():
+    value = validate_image_lock(load_json(IMAGE_LOCK), ROOT)
+    zeek = next(row for row in value["images"] if row["logical_name"] == "zeek")
+    assert zeek["repo_digest"] == "docker.io/zeek/zeek@sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3"
+    assert zeek["platform_manifest_digest"].startswith("sha256:")
+    assert zeek["config_digest"].startswith("sha256:")
+    assert zeek["local_image_id"] == "unresolved"
+    assert zeek["build_inputs_digest"] == "not_applicable"
+    assert zeek["verification_status"] == "resolved_registry"
+    assert set(image_lock_blockers(value)) == {"common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
+    assert str(Path.home()) not in json.dumps(value)
+    invalid = copy.deepcopy(value)
+    invalid["images"][0]["repo_digest"] = invalid["images"][0]["config_digest"]
+    invalid["canonical_digest"] = digest({key: item for key, item in invalid.items() if key != "canonical_digest"})
+    with pytest.raises(ContractError):
+        validate_image_lock(invalid)
+
+
+def test_oci_digest_parser_and_reproducibility_comparison(tmp_path: Path):
+    left, right, changed = tmp_path / "left.oci", tmp_path / "right.oci", tmp_path / "changed.oci"
+    write_oci(left); write_oci(right); write_oci(changed, "sha256:" + "e" * 64)
+    parsed = parse_oci_archive(left)
+    assert parsed["platform_manifest_digest"].startswith("sha256:") and parsed["config_digest"] == "sha256:" + "c" * 64
+    assert compare_oci_archives(left, right)["status"] == "resolved_reproducible"
+    assert compare_oci_archives(left, changed)["status"] == "unresolved_non_reproducible"
+
+
+def test_freeze_candidate_preview_keeps_dirty_and_image_blockers():
+    preview = freeze.freeze_candidate_preview(
+        freeze_candidate(), load_json(ACCEPTANCE), load_json(IMAGE_LOCK),
+        environment_fixture(dirty=True, resolved_images=False), "f" * 40, ROOT,
+    )
+    assert preview["scenario_count"] == 72 and preview["proxy_risks"] == []
+    assert preview["dirty_working_tree"] is True and preview["seal_allowed"] is False
+    assert set(preview["seal_blockers"]) == {"dirty_working_tree", "common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
+    assert set(preview["expected_pre_experiment_absences"]) == {"scientific_corpus_not_collected", "external_corpus_result_missing", "model_not_trained", "evaluation_not_performed", "labels_not_unlocked"}
+    assert not (set(preview["expected_pre_experiment_absences"]) & set(preview["seal_blockers"]))
+    assert preview["scientific_pass_allowed"] is False
+    assert "external_corpus_result_passed" in preview["scientific_pass_requirements"]
+    assert preview["acceptance_criteria_digest"] == load_json(ACCEPTANCE)["canonical_digest"]
+
+
+def test_clean_tree_preview_is_blocked_only_by_unresolved_local_images():
+    preview = freeze.freeze_candidate_preview(
+        freeze_candidate(), load_json(ACCEPTANCE), load_json(IMAGE_LOCK),
+        environment_fixture(dirty=False, resolved_images=False), "f" * 40, ROOT,
+    )
+    assert set(preview["seal_blockers"]) == {"common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
+    assert preview["seal_allowed"] is False and preview["scientific_pass_allowed"] is False
+
+
 def test_plan_is_dry_and_does_not_create_artifacts(tmp_path: Path):
     before = list(tmp_path.iterdir()); result = plan_campaign(campaign())
     assert result["experiment_started"] is False and result["technical_fixture"] is True
@@ -551,6 +725,16 @@ def test_environment_lock_has_no_absolute_paths_or_secrets(monkeypatch: pytest.M
     assert str(Path.home()) not in encoded and "password" not in encoded.lower()
 
 
+def test_docker_client_version_remains_available_without_daemon(monkeypatch: pytest.MonkeyPatch):
+    def fake_command(args: list[str]) -> str:
+        if args == ["docker", "--version"]:
+            return "Docker version 28.3.3, build 980b856"
+        return "unavailable"
+
+    monkeypatch.setattr(freeze, "_command", fake_command)
+    assert freeze._docker_client_version() == "28.3.3"
+
+
 def test_candidate_identity_uses_final_artifact_sha(tmp_path: Path):
     artifact = tmp_path / "candidate.bin"; artifact.write_bytes(b"final serialized bytes")
     sha = hashlib.sha256(artifact.read_bytes()).hexdigest(); order_digest = digest(feature_order())
@@ -597,7 +781,9 @@ def test_cli_dry_commands_validate_without_outputs(capsys: pytest.CaptureFixture
 @pytest.mark.parametrize("command", [
     "validate-config", "plan-campaign", "validate-counterfactuals", "render-compose",
     "inspect-environment", "validate-parameter-contract", "validate-capture-manifest",
-    "validate-split", "build-freeze-preview", "run-technical-smoke",
+    "validate-split", "validate-freeze-candidate", "inspect-proxy-risks",
+    "inspect-image-lock", "verify-image-reproducibility", "build-freeze-preview",
+    "run-technical-smoke",
 ])
 def test_every_cli_command_has_help(command: str, capsys: pytest.CaptureFixture[str]):
     with pytest.raises(SystemExit) as stopped:
@@ -615,6 +801,9 @@ def test_cli_remaining_dry_commands_succeed_without_side_effects(monkeypatch: py
     assert cli_main(["--json", "inspect-environment"]) == 0
     assert cli_main(["--json", "validate-counterfactuals"]) == 0
     assert cli_main(["--json", "validate-split"]) == 0
+    assert cli_main(["--json", "validate-freeze-candidate"]) == 0
+    assert cli_main(["--json", "inspect-proxy-risks"]) == 0
+    assert cli_main(["--json", "inspect-image-lock"]) == 0
     assert cli_main(["--json", "build-freeze-preview"]) == 0
     assert cli_main(["--json", "validate-parameter-contract", "--scenario", str(PACKAGE / "config/smoke_navigation_a.json"), "--zeek-dir", str(zeek)]) == 0
     assert "services:" in capsys.readouterr().out

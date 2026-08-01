@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 369,
+    "document_count": 370,
     "protected_count": 82,
-    "current_count": 263,
+    "current_count": 264,
     "historical_count": 106,
     "generated_count": 6,
-    "created_count": 108,
+    "created_count": 109,
     "rewritten_count": 142,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -163,11 +163,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 38,
+      "outgoing_link_count": 39,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "dafe1a31a660daf494e60b966c853bc93a679254143c4aba81975a8c9f8f24e0"
+      "sha256_after": "3f5083d9a54fe869f5eab5673d66e809b8601f035816ce793856431c4e4c964d"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -779,7 +779,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "ceb4f5ee4f36aec727faa80709eb6f0e9a2c9ece3757fe928919456a818b9620",
-      "sha256_after": "904279281c10923097325425cdccf52a2e74826519892e2c2c588516872ca12f"
+      "sha256_after": "9f60e4adadb40f73c767868c4aec728a53adc4cfabee2e970e8ec7cdc54f6165"
     },
     {
       "path": "docs/architecture/end-to-end-data-flow.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "53df444f3251244eca0a6e9b6cc8b26fd6037a945400d8eafc2c9ab5459c292f"
+      "sha256_after": "8f5d3805f94ff1ada6294eb7e78cc2a18a1c42786e4ac26dbb0ea3240ef43457"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2714,6 +2714,43 @@
       "sha256_after": "1af0fe4fc601504e2cd98b88a717ffffbf4293aed091fae6b8f3b03b9cbaa367"
     },
     {
+      "path": "docs/experiments/independent_network_validation_freeze_review.md",
+      "title": "Freeze-review независимой сетевой проверки",
+      "category": "Историческое описание",
+      "doc_schema": "filin_document_v2",
+      "document_type": "history",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 1,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "ec10d69c4a7a5b658ce563ab8d4fe40816f63f9e770b8b854a5712fd92262ec2"
+    },
+    {
       "path": "docs/experiments/next_independent_network_validation_protocol.md",
       "title": "Протокол следующей независимой сетевой проверки",
       "category": "Frozen evidence",
@@ -2748,7 +2785,7 @@
       "recommended_action": "preserve",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "4c4146c7a4fc9af9652891ae00bee3208b41082fc84b4e699062d39d23275cda"
+      "sha256_after": "3772dee6c268f45f13a317c92520db8429a31857f7bf333124b996864bbbde14"
     },
     {
       "path": "docs/experiments/v0_3_11.md",
@@ -10097,7 +10134,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "4499fb81833b66902cec86de335982017fa52e9ee21440e3abb7915086a18803"
+      "sha256_after": "7287955f7e2910a67385f312ba127d00e4c862f12faab7032734b89c69608442"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -11052,7 +11089,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "8810d06cfb115aef0549d1d886ec1a7f64d3c04591e480a5476df3e3b53a3c80"
+      "sha256_after": "c0b9ab265779c0daeec8f17b9d7a38bf174fe1536db0733f2dad933bc921b372"
     },
     {
       "path": "lab/robustness/README.md",

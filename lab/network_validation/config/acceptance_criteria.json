@@ -1,0 +1,33 @@
+{
+  "schema_version": "network_validation_acceptance_criteria_v1",
+  "sealed": false,
+  "production_approval": false,
+  "values": {
+    "minimum_candidate_macro_f1": 0.8,
+    "maximum_false_positive_rate": 0.05,
+    "minimum_per_class_recall": 0.65,
+    "maximum_macro_f1_drop_unseen_generator_family": 0.1,
+    "maximum_macro_f1_drop_unseen_infrastructure": 0.1,
+    "maximum_macro_f1_drop_unseen_target": 0.1,
+    "minimum_margin_over_infrastructure_only_baseline": 0.15,
+    "minimum_margin_over_ports_services_only_baseline": 0.1,
+    "minimum_margin_over_traffic_rate_only_baseline": 0.05,
+    "minimum_parameter_realization_pass_rate": 0.95,
+    "minimum_counterfactual_pass_rate": 0.9,
+    "external_corpus_required": true,
+    "minimum_external_corpus_macro_f1": 0.7,
+    "maximum_external_corpus_false_positive_rate": 0.1,
+    "minimum_external_per_class_recall": 0.55,
+    "maximum_excluded_row_share": 0.02,
+    "maximum_unresolved_required_parameter_share": 0.0
+  },
+  "rules": {
+    "immutable_after_seal": true,
+    "no_final_holdout_tuning": true,
+    "exclusions_before_label_unlock": true,
+    "external_corpus_blocks_scientific_pass": true,
+    "failed_required_criterion_blocks_promotion": true,
+    "scientific_pass_is_not_production_approval": true
+  },
+  "canonical_digest": "cbe08a9d725ae20f25a848b59b9cddeb5b3f2398806a4c427258f43fc9ee051f"
+}

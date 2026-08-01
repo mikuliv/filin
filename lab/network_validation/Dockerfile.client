@@ -1,5 +1,11 @@
 FROM python:3.13-slim
 WORKDIR /workspace
-COPY lab/network_validation /workspace/lab/network_validation
+COPY lab/network_validation/__init__.py /workspace/lab/network_validation/__init__.py
+COPY lab/network_validation/common_client.py /workspace/lab/network_validation/common_client.py
+COPY lab/network_validation/contracts.py /workspace/lab/network_validation/contracts.py
+COPY lab/network_validation/generators/__init__.py /workspace/lab/network_validation/generators/__init__.py
+COPY lab/network_validation/generators/base.py /workspace/lab/network_validation/generators/base.py
+COPY lab/network_validation/generators/family_a.py /workspace/lab/network_validation/generators/family_a.py
+COPY lab/network_validation/generators/family_b.py /workspace/lab/network_validation/generators/family_b.py
 ENTRYPOINT ["python", "-m", "lab.network_validation.common_client"]
 CMD ["--help"]

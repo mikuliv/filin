@@ -35,8 +35,14 @@ sidecar и видит namespace клиента. Привилегированны
 - `freeze.py` формирует preview и environment lock, но отклоняет seal при `TBD`;
 - `candidate_identity.py` связывает внутренний и внешний ID с SHA финальных bytes.
 
-Техническая конфигурация намеренно содержит предупреждения proxy-risk и
-неутверждённые критерии принятия. До их устранения freeze нельзя запечатать.
+`technical_campaign.json` остаётся disposable fixture и намеренно сохраняет 19
+proxy-risk предупреждений. Отдельный `freeze_candidate_campaign.json` задаёт
+декларативную факторную матрицу из 72 сценариев, но не разрешает их запуск.
+Числовые критерии находятся в `acceptance_criteria.json`, переносимые идентификаторы
+образов — в `image_lock.json`. Научный корпус этими файлами не создаётся.
+Отсутствие корпуса, модели, evaluation, открытых labels и внешнего результата до
+эксперимента не блокирует seal протокола. Эти результаты необходимы позже для
+scientific pass; внешний корпус остаётся обязательным критерием.
 
 ## Безопасные команды
 
@@ -49,6 +55,10 @@ python -m lab.network_validation.cli inspect-environment
 python -m lab.network_validation.cli validate-parameter-contract
 python -m lab.network_validation.cli validate-capture-manifest
 python -m lab.network_validation.cli validate-split
+python -m lab.network_validation.cli validate-freeze-candidate
+python -m lab.network_validation.cli inspect-proxy-risks
+python -m lab.network_validation.cli inspect-image-lock
+python -m lab.network_validation.cli verify-image-reproducibility --help
 python -m lab.network_validation.cli build-freeze-preview
 ```
 
@@ -63,7 +73,8 @@ python -m pytest ml/tests/test_network_validation_infrastructure.py -q
 docker compose -f lab/network_validation/compose.yaml config
 ```
 
-Перед будущим freeze владелец отдельно утверждает числовые критерии принятия,
-устраняет предупреждения proxy-risk, фиксирует image digests и разрешает запуск.
+Перед будущим freeze владелец отдельно завершает воспроизводимые OCI-сборки,
+проверяет чистое рабочее дерево и только затем рассматривает разрешение запуска.
+Freeze-candidate plan не является official freeze и не подтверждает качество модели.
 `requirements.lock` фиксирует зависимости host-side Zeek/feature validation;
 client и target images используют только стандартную библиотеку Python.
