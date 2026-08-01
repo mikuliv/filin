@@ -50,7 +50,7 @@ from lab.network_validation.generators.family_a import FamilyA
 from lab.network_validation.generators.family_b import FamilyB
 from lab.network_validation.parameter_verification import observations_from_zeek, verify_parameters
 from lab.network_validation.planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
-from lab.network_validation.image_lock import build_inputs_digest, compare_oci_archives, image_lock_blockers, parse_oci_archive, validate_image_lock
+from lab.network_validation.image_lock import build_inputs_digest, compare_oci_archives, image_lock_blockers, image_lock_identity, parse_oci_archive, validate_image_lock
 
 ROOT = Path(__file__).resolve().parents[2]
 PACKAGE = ROOT / "lab/network_validation"
@@ -143,9 +143,15 @@ def write_pcap(path: Path) -> None:
 
 
 def write_oci(path: Path, layer_digest: str = "sha256:" + "d" * 64) -> None:
+    config = {
+        "architecture": "amd64", "os": "linux",
+        "config": {"Entrypoint": ["python"], "Cmd": ["--help"], "Env": ["A=B"], "Labels": {"fixture": "true"}},
+    }
+    config_bytes = json.dumps(config, sort_keys=True, separators=(",", ":")).encode()
+    config_digest = "sha256:" + hashlib.sha256(config_bytes).hexdigest()
     manifest = {
         "schemaVersion": 2,
-        "config": {"digest": "sha256:" + "c" * 64},
+        "config": {"digest": config_digest},
         "layers": [{"digest": layer_digest}],
     }
     manifest_bytes = json.dumps(manifest, sort_keys=True, separators=(",", ":")).encode()
@@ -157,6 +163,7 @@ def write_oci(path: Path, layer_digest: str = "sha256:" + "d" * 64) -> None:
     members = {
         "index.json": json.dumps(index, sort_keys=True, separators=(",", ":")).encode(),
         f"blobs/sha256/{manifest_digest.split(':', 1)[1]}": manifest_bytes,
+        f"blobs/sha256/{config_digest.split(':', 1)[1]}": config_bytes,
     }
     with tarfile.open(path, "w") as archive:
         for name, data in members.items():
@@ -621,7 +628,7 @@ def test_build_inputs_digest_tracks_only_declared_inputs(tmp_path: Path):
     assert build_inputs_digest(tmp_path, inputs) != first
 
 
-def test_portable_image_lock_is_strict_and_unresolved_images_block_seal():
+def test_portable_image_lock_is_strict_and_reproducible_images_allow_seal():
     value = validate_image_lock(load_json(IMAGE_LOCK), ROOT)
     zeek = next(row for row in value["images"] if row["logical_name"] == "zeek")
     assert zeek["repo_digest"] == "docker.io/zeek/zeek@sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3"
@@ -630,7 +637,8 @@ def test_portable_image_lock_is_strict_and_unresolved_images_block_seal():
     assert zeek["local_image_id"] == "unresolved"
     assert zeek["build_inputs_digest"] == "not_applicable"
     assert zeek["verification_status"] == "resolved_registry"
-    assert set(image_lock_blockers(value)) == {"common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
+    assert image_lock_blockers(value) == []
+    assert all(row["reproducibility_build_count"] == 2 for row in value["images"] if row["source_type"] == "oci_build")
     assert str(Path.home()) not in json.dumps(value)
     invalid = copy.deepcopy(value)
     invalid["images"][0]["repo_digest"] = invalid["images"][0]["config_digest"]
@@ -639,11 +647,30 @@ def test_portable_image_lock_is_strict_and_unresolved_images_block_seal():
         validate_image_lock(invalid)
 
 
+def test_image_lock_audit_timestamps_do_not_change_scientific_identity():
+    value = load_json(IMAGE_LOCK)
+    changed = copy.deepcopy(value)
+    changed["checked_at"] = "2030-01-01T00:00:00Z"
+    for image in changed["images"]:
+        image["verified_at"] = "2030-01-01T00:00:00Z"
+    assert digest(image_lock_identity(changed)) == value["canonical_digest"]
+
+
+def test_image_lock_rejects_incomplete_or_mismatched_build_evidence():
+    value = load_json(IMAGE_LOCK)
+    image = next(row for row in value["images"] if row["logical_name"] == "common_client")
+    image["reproducibility_build_count"] = 1
+    value["canonical_digest"] = digest(image_lock_identity(value))
+    with pytest.raises(ContractError):
+        validate_image_lock(value)
+
+
 def test_oci_digest_parser_and_reproducibility_comparison(tmp_path: Path):
     left, right, changed = tmp_path / "left.oci", tmp_path / "right.oci", tmp_path / "changed.oci"
     write_oci(left); write_oci(right); write_oci(changed, "sha256:" + "e" * 64)
     parsed = parse_oci_archive(left)
-    assert parsed["platform_manifest_digest"].startswith("sha256:") and parsed["config_digest"] == "sha256:" + "c" * 64
+    assert parsed["platform_manifest_digest"].startswith("sha256:") and parsed["config_digest"].startswith("sha256:")
+    assert parsed["architecture"] == "amd64" and parsed["entrypoint"] == ["python"]
     assert compare_oci_archives(left, right)["status"] == "resolved_reproducible"
     assert compare_oci_archives(left, changed)["status"] == "unresolved_non_reproducible"
 
@@ -655,7 +682,7 @@ def test_freeze_candidate_preview_keeps_dirty_and_image_blockers():
     )
     assert preview["scenario_count"] == 72 and preview["proxy_risks"] == []
     assert preview["dirty_working_tree"] is True and preview["seal_allowed"] is False
-    assert set(preview["seal_blockers"]) == {"dirty_working_tree", "common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
+    assert set(preview["seal_blockers"]) == {"dirty_working_tree"}
     assert set(preview["expected_pre_experiment_absences"]) == {"scientific_corpus_not_collected", "external_corpus_result_missing", "model_not_trained", "evaluation_not_performed", "labels_not_unlocked"}
     assert not (set(preview["expected_pre_experiment_absences"]) & set(preview["seal_blockers"]))
     assert preview["scientific_pass_allowed"] is False
@@ -663,13 +690,13 @@ def test_freeze_candidate_preview_keeps_dirty_and_image_blockers():
     assert preview["acceptance_criteria_digest"] == load_json(ACCEPTANCE)["canonical_digest"]
 
 
-def test_clean_tree_preview_is_blocked_only_by_unresolved_local_images():
+def test_clean_tree_preview_is_sealable_with_reproducible_local_images():
     preview = freeze.freeze_candidate_preview(
         freeze_candidate(), load_json(ACCEPTANCE), load_json(IMAGE_LOCK),
         environment_fixture(dirty=False, resolved_images=False), "f" * 40, ROOT,
     )
-    assert set(preview["seal_blockers"]) == {"common_client_reproducibility", "target_a_reproducibility", "target_b_reproducibility", "sensor_capture_reproducibility"}
-    assert preview["seal_allowed"] is False and preview["scientific_pass_allowed"] is False
+    assert preview["seal_blockers"] == []
+    assert preview["seal_allowed"] is True and preview["scientific_pass_allowed"] is False
 
 
 def test_plan_is_dry_and_does_not_create_artifacts(tmp_path: Path):

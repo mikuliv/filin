@@ -1,4 +1,6 @@
-FROM python:3.13-slim
+FROM --platform=linux/amd64 python@sha256:afe189875f1d2f9b45e287834fb9f2c273a5d59d354ae4050ab9affbf0a6ba06
+ARG SOURCE_DATE_EPOCH
+ENV SOURCE_DATE_EPOCH=${SOURCE_DATE_EPOCH} PYTHONDONTWRITEBYTECODE=1
 WORKDIR /workspace
 COPY lab/network_validation/__init__.py /workspace/lab/network_validation/__init__.py
 COPY lab/network_validation/targets/__init__.py /workspace/lab/network_validation/targets/__init__.py

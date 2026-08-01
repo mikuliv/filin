@@ -1,8 +1,9 @@
 {
-  "schema_version": "network_validation_portable_image_lock_v1",
-  "checked_at": "2026-08-01T07:55:23Z",
-  "source_git_commit": "592f99d79582cab5e642484d95a9a0cedd9cae7c",
-  "dirty_working_tree": true,
+  "schema_version": "network_validation_portable_image_lock_v2",
+  "checked_at": "2026-08-01T12:10:00Z",
+  "source_git_commit": "2b67e3c42f0b79aa3a5b92184f923674fc2ae46c",
+  "source_tree_clean": true,
+  "dirty_working_tree": false,
   "platform": "linux/amd64",
   "build_tool_version": "docker buildx v0.27.0-desktop.1",
   "images": [
@@ -14,13 +15,18 @@
       "tag": "7.0.5",
       "platform": "linux/amd64",
       "dockerfile_path": null,
+      "build_context": null,
       "build_inputs": [],
       "build_inputs_digest": "not_applicable",
       "source_git_commit": null,
+      "source_tree_clean": true,
+      "base_image_repo_digest": "not_applicable",
+      "base_image_platform_manifest_digest": "not_applicable",
       "repo_digest": "docker.io/zeek/zeek@sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3",
       "oci_index_digest": "sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3",
       "platform_manifest_digest": "sha256:3d66069dc80d7bd933ead3e4aa0f001f8461448b439f06291175f6ebf27f3aa9",
       "config_digest": "sha256:7670f8a6bf3529522fff4628de48d836104bff33aeaae16a0c700fce3eff6c4c",
+      "local_image_id": "unresolved",
       "layer_digests": [
         "sha256:8cf9fb7a0b56cf93bf2502aff8087344f2dd06e29fb027b0c06aa2726ab3eda8",
         "sha256:8b76d0a39e4ff7c4f8a89c893acd676e6d63302e19f4c7de6ba0046342cffbe7",
@@ -30,10 +36,24 @@
         "sha256:36811fa0564f78f522a3f046602a10345d4c06a882d8ea8cd77ed7bbb123e27b"
       ],
       "requirements_lock_digest": "not_applicable",
-      "local_image_id": "unresolved",
-      "verification_method": "docker buildx imagetools inspect zeek/zeek:7.0.5",
+      "reproducibility_build_count": 0,
+      "runtime_config": {
+        "architecture": "amd64",
+        "os": "linux",
+        "entrypoint": null,
+        "command": [
+          "bash"
+        ],
+        "environment": [
+          "PATH=/usr/local/zeek/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PYTHONPATH=/usr/local/zeek/lib/zeek/python:"
+        ],
+        "labels": {}
+      },
+      "reproducibility_evidence": [],
+      "verification_method": "docker buildx imagetools inspect registry index and linux/amd64 manifest",
       "verification_status": "resolved_registry",
-      "verified_at": "2026-08-01T07:55:23Z",
+      "verified_at": "2026-08-01T12:10:00Z",
       "blocker": null
     },
     {
@@ -44,7 +64,9 @@
       "tag": null,
       "platform": "linux/amd64",
       "dockerfile_path": "lab/network_validation/Dockerfile.client",
+      "build_context": ".",
       "build_inputs": [
+        ".dockerignore",
         "lab/network_validation/Dockerfile.client",
         "lab/network_validation/__init__.py",
         "lab/network_validation/common_client.py",
@@ -54,19 +76,139 @@
         "lab/network_validation/generators/family_a.py",
         "lab/network_validation/generators/family_b.py"
       ],
-      "build_inputs_digest": "06b0963b16efdb36616cd292fe05fd327ffdebffab77a6297aa3d30be91bf657",
-      "source_git_commit": "592f99d79582cab5e642484d95a9a0cedd9cae7c",
+      "build_inputs_digest": "d1f9c257384c9e2193a6bfc4caa020543130dee5c3c3690f3a8eaa2dfc80f416",
+      "source_git_commit": "2b67e3c42f0b79aa3a5b92184f923674fc2ae46c",
+      "source_tree_clean": true,
+      "base_image_repo_digest": "docker.io/library/python@sha256:6771159cd4fa5d9bba1258caf0b82e6b73458c694d178ad97c5e925c2d0e1a91",
+      "base_image_platform_manifest_digest": "sha256:afe189875f1d2f9b45e287834fb9f2c273a5d59d354ae4050ab9affbf0a6ba06",
       "repo_digest": "unresolved",
-      "oci_index_digest": "unresolved",
-      "platform_manifest_digest": "unresolved",
-      "config_digest": "unresolved",
-      "layer_digests": [],
-      "requirements_lock_digest": "not_applicable",
+      "oci_index_digest": "sha256:0e313ad3a806f5a6d7d44bb0b0a4434007d77095e6551776ecd45e82b2a1c455",
+      "platform_manifest_digest": "sha256:47fc6fdfbcf7b642f90bb3cef2f6409feea1521a0444ce4ddcf7f5fec3465b6d",
+      "config_digest": "sha256:73183d91a69b9000d0742b9ee1d3cf9974f74c46d95469c9158be0882c563b33",
       "local_image_id": "unresolved",
-      "verification_method": "two_independent_buildx_oci_outputs",
-      "verification_status": "unresolved_daemon_unavailable",
-      "verified_at": "2026-08-01T07:55:23Z",
-      "blocker": "docker_daemon_unavailable"
+      "layer_digests": [
+        "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+        "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+        "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+        "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+        "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+        "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+        "sha256:39d582c961e6c9466dd6c1a07bf585788fa9e6fc94add1c50e693a3aeec9e5be",
+        "sha256:4e3be78426f2d0324d81e0b90cf789243b3b79bef5b74fca49c4ce9c7a53489c",
+        "sha256:592005df2a91adf8c90de9935cf58e2b6bee364326484bdcebb9d19d5a3948b3",
+        "sha256:873860ba829f849962c8eb2cf50556e37bfa5a4db7a1ff59bb98d3729cdc5977",
+        "sha256:68b9ee8724f40dac855e7167f79a75cdba9d40558119f5eb7733703ac9abf461",
+        "sha256:cb97dd938bc0216f4738ee3b482f6697ddd87bd6a5cce94e6981fcfbaba7716f"
+      ],
+      "requirements_lock_digest": "not_applicable",
+      "reproducibility_build_count": 2,
+      "runtime_config": {
+        "architecture": "amd64",
+        "os": "linux",
+        "entrypoint": [
+          "python",
+          "-m",
+          "lab.network_validation.common_client"
+        ],
+        "command": [
+          "--help"
+        ],
+        "environment": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.13.14",
+          "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+          "SOURCE_DATE_EPOCH=1785584532",
+          "PYTHONDONTWRITEBYTECODE=1"
+        ],
+        "labels": {}
+      },
+      "reproducibility_evidence": [
+        {
+          "oci_index_digest": "sha256:0e313ad3a806f5a6d7d44bb0b0a4434007d77095e6551776ecd45e82b2a1c455",
+          "platform_manifest_digest": "sha256:47fc6fdfbcf7b642f90bb3cef2f6409feea1521a0444ce4ddcf7f5fec3465b6d",
+          "config_digest": "sha256:73183d91a69b9000d0742b9ee1d3cf9974f74c46d95469c9158be0882c563b33",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:39d582c961e6c9466dd6c1a07bf585788fa9e6fc94add1c50e693a3aeec9e5be",
+            "sha256:4e3be78426f2d0324d81e0b90cf789243b3b79bef5b74fca49c4ce9c7a53489c",
+            "sha256:592005df2a91adf8c90de9935cf58e2b6bee364326484bdcebb9d19d5a3948b3",
+            "sha256:873860ba829f849962c8eb2cf50556e37bfa5a4db7a1ff59bb98d3729cdc5977",
+            "sha256:68b9ee8724f40dac855e7167f79a75cdba9d40558119f5eb7733703ac9abf461",
+            "sha256:cb97dd938bc0216f4738ee3b482f6697ddd87bd6a5cce94e6981fcfbaba7716f"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.common_client"
+            ],
+            "command": [
+              "--help"
+            ],
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        },
+        {
+          "oci_index_digest": "sha256:0e313ad3a806f5a6d7d44bb0b0a4434007d77095e6551776ecd45e82b2a1c455",
+          "platform_manifest_digest": "sha256:47fc6fdfbcf7b642f90bb3cef2f6409feea1521a0444ce4ddcf7f5fec3465b6d",
+          "config_digest": "sha256:73183d91a69b9000d0742b9ee1d3cf9974f74c46d95469c9158be0882c563b33",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:39d582c961e6c9466dd6c1a07bf585788fa9e6fc94add1c50e693a3aeec9e5be",
+            "sha256:4e3be78426f2d0324d81e0b90cf789243b3b79bef5b74fca49c4ce9c7a53489c",
+            "sha256:592005df2a91adf8c90de9935cf58e2b6bee364326484bdcebb9d19d5a3948b3",
+            "sha256:873860ba829f849962c8eb2cf50556e37bfa5a4db7a1ff59bb98d3729cdc5977",
+            "sha256:68b9ee8724f40dac855e7167f79a75cdba9d40558119f5eb7733703ac9abf461",
+            "sha256:cb97dd938bc0216f4738ee3b482f6697ddd87bd6a5cce94e6981fcfbaba7716f"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.common_client"
+            ],
+            "command": [
+              "--help"
+            ],
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        }
+      ],
+      "verification_method": "two independent no-cache buildx OCI exports with SOURCE_DATE_EPOCH and rewrite-timestamp=true",
+      "verification_status": "resolved_reproducible",
+      "verified_at": "2026-08-01T12:10:00Z",
+      "blocker": null
     },
     {
       "logical_name": "target_a",
@@ -76,25 +218,129 @@
       "tag": null,
       "platform": "linux/amd64",
       "dockerfile_path": "lab/network_validation/Dockerfile.target-a",
+      "build_context": ".",
       "build_inputs": [
+        ".dockerignore",
         "lab/network_validation/Dockerfile.target-a",
         "lab/network_validation/__init__.py",
         "lab/network_validation/targets/__init__.py",
         "lab/network_validation/targets/target_a.py"
       ],
-      "build_inputs_digest": "5e748e1b2d854a60643016bb3409c4f7d0b180b9f15c9ee7416157aa7e1c5115",
-      "source_git_commit": "592f99d79582cab5e642484d95a9a0cedd9cae7c",
+      "build_inputs_digest": "6d5ce28d4c3efafcb58b409b8c789e26bfc96c4f680d425d3c692e8d60e59e08",
+      "source_git_commit": "2b67e3c42f0b79aa3a5b92184f923674fc2ae46c",
+      "source_tree_clean": true,
+      "base_image_repo_digest": "docker.io/library/python@sha256:6771159cd4fa5d9bba1258caf0b82e6b73458c694d178ad97c5e925c2d0e1a91",
+      "base_image_platform_manifest_digest": "sha256:afe189875f1d2f9b45e287834fb9f2c273a5d59d354ae4050ab9affbf0a6ba06",
       "repo_digest": "unresolved",
-      "oci_index_digest": "unresolved",
-      "platform_manifest_digest": "unresolved",
-      "config_digest": "unresolved",
-      "layer_digests": [],
-      "requirements_lock_digest": "not_applicable",
+      "oci_index_digest": "sha256:cfc45ab8099b0e1c379057eee294a09638e651cc323c6c62aea25d93176abbbe",
+      "platform_manifest_digest": "sha256:118ddf1b6533bae1e2b572971ab2516094367b78f242aeea5bb17df966c1ac20",
+      "config_digest": "sha256:e2f24d65d636e97299a8630a79f7c4106ef85fa2c783f95c87102acc2eb0a918",
       "local_image_id": "unresolved",
-      "verification_method": "two_independent_buildx_oci_outputs",
-      "verification_status": "unresolved_daemon_unavailable",
-      "verified_at": "2026-08-01T07:55:23Z",
-      "blocker": "docker_daemon_unavailable"
+      "layer_digests": [
+        "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+        "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+        "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+        "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+        "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+        "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+        "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+        "sha256:1c2f79214b1e6c95c3e3f65a2a5822b650a5ad81b3ba2ca15dbbb539a0837a6b"
+      ],
+      "requirements_lock_digest": "not_applicable",
+      "reproducibility_build_count": 2,
+      "runtime_config": {
+        "architecture": "amd64",
+        "os": "linux",
+        "entrypoint": [
+          "python",
+          "-m",
+          "lab.network_validation.targets.target_a"
+        ],
+        "command": null,
+        "environment": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.13.14",
+          "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+          "SOURCE_DATE_EPOCH=1785584532",
+          "PYTHONDONTWRITEBYTECODE=1"
+        ],
+        "labels": {}
+      },
+      "reproducibility_evidence": [
+        {
+          "oci_index_digest": "sha256:cfc45ab8099b0e1c379057eee294a09638e651cc323c6c62aea25d93176abbbe",
+          "platform_manifest_digest": "sha256:118ddf1b6533bae1e2b572971ab2516094367b78f242aeea5bb17df966c1ac20",
+          "config_digest": "sha256:e2f24d65d636e97299a8630a79f7c4106ef85fa2c783f95c87102acc2eb0a918",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+            "sha256:1c2f79214b1e6c95c3e3f65a2a5822b650a5ad81b3ba2ca15dbbb539a0837a6b"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.targets.target_a"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        },
+        {
+          "oci_index_digest": "sha256:cfc45ab8099b0e1c379057eee294a09638e651cc323c6c62aea25d93176abbbe",
+          "platform_manifest_digest": "sha256:118ddf1b6533bae1e2b572971ab2516094367b78f242aeea5bb17df966c1ac20",
+          "config_digest": "sha256:e2f24d65d636e97299a8630a79f7c4106ef85fa2c783f95c87102acc2eb0a918",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+            "sha256:1c2f79214b1e6c95c3e3f65a2a5822b650a5ad81b3ba2ca15dbbb539a0837a6b"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.targets.target_a"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        }
+      ],
+      "verification_method": "two independent no-cache buildx OCI exports with SOURCE_DATE_EPOCH and rewrite-timestamp=true",
+      "verification_status": "resolved_reproducible",
+      "verified_at": "2026-08-01T12:10:00Z",
+      "blocker": null
     },
     {
       "logical_name": "target_b",
@@ -104,25 +350,129 @@
       "tag": null,
       "platform": "linux/amd64",
       "dockerfile_path": "lab/network_validation/Dockerfile.target-b",
+      "build_context": ".",
       "build_inputs": [
+        ".dockerignore",
         "lab/network_validation/Dockerfile.target-b",
         "lab/network_validation/__init__.py",
         "lab/network_validation/targets/__init__.py",
         "lab/network_validation/targets/target_b.py"
       ],
-      "build_inputs_digest": "202cf4e5271a29403f79bcd6b710d20ac268e79044b4d2ca7487cc18bb01cc19",
-      "source_git_commit": "592f99d79582cab5e642484d95a9a0cedd9cae7c",
+      "build_inputs_digest": "005226bc39b9fbc4a15b966cf377bb3e2331010633037caef476ae104c453b66",
+      "source_git_commit": "2b67e3c42f0b79aa3a5b92184f923674fc2ae46c",
+      "source_tree_clean": true,
+      "base_image_repo_digest": "docker.io/library/python@sha256:6771159cd4fa5d9bba1258caf0b82e6b73458c694d178ad97c5e925c2d0e1a91",
+      "base_image_platform_manifest_digest": "sha256:afe189875f1d2f9b45e287834fb9f2c273a5d59d354ae4050ab9affbf0a6ba06",
       "repo_digest": "unresolved",
-      "oci_index_digest": "unresolved",
-      "platform_manifest_digest": "unresolved",
-      "config_digest": "unresolved",
-      "layer_digests": [],
-      "requirements_lock_digest": "not_applicable",
+      "oci_index_digest": "sha256:9a2e6b6cc6b0192f5c03cfeed6ee021e147d7c50dcaf251e41f3e48273182b9f",
+      "platform_manifest_digest": "sha256:e87939d9e8669a03fcd1bc92876fa0ef77059a9a95fac96e35e7fef0686868b9",
+      "config_digest": "sha256:23c42a1c2e710c1ce32c503148fb365c047a2afc295e375bc6f53a57d00f2a99",
       "local_image_id": "unresolved",
-      "verification_method": "two_independent_buildx_oci_outputs",
-      "verification_status": "unresolved_daemon_unavailable",
-      "verified_at": "2026-08-01T07:55:23Z",
-      "blocker": "docker_daemon_unavailable"
+      "layer_digests": [
+        "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+        "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+        "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+        "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+        "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+        "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+        "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+        "sha256:4c9194b04d5dde4ea66cc21fbf3c17f56289ab65bc4959471a5a2fa45e24bcc9"
+      ],
+      "requirements_lock_digest": "not_applicable",
+      "reproducibility_build_count": 2,
+      "runtime_config": {
+        "architecture": "amd64",
+        "os": "linux",
+        "entrypoint": [
+          "python",
+          "-m",
+          "lab.network_validation.targets.target_b"
+        ],
+        "command": null,
+        "environment": [
+          "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+          "PYTHON_VERSION=3.13.14",
+          "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+          "SOURCE_DATE_EPOCH=1785584532",
+          "PYTHONDONTWRITEBYTECODE=1"
+        ],
+        "labels": {}
+      },
+      "reproducibility_evidence": [
+        {
+          "oci_index_digest": "sha256:9a2e6b6cc6b0192f5c03cfeed6ee021e147d7c50dcaf251e41f3e48273182b9f",
+          "platform_manifest_digest": "sha256:e87939d9e8669a03fcd1bc92876fa0ef77059a9a95fac96e35e7fef0686868b9",
+          "config_digest": "sha256:23c42a1c2e710c1ce32c503148fb365c047a2afc295e375bc6f53a57d00f2a99",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+            "sha256:4c9194b04d5dde4ea66cc21fbf3c17f56289ab65bc4959471a5a2fa45e24bcc9"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.targets.target_b"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        },
+        {
+          "oci_index_digest": "sha256:9a2e6b6cc6b0192f5c03cfeed6ee021e147d7c50dcaf251e41f3e48273182b9f",
+          "platform_manifest_digest": "sha256:e87939d9e8669a03fcd1bc92876fa0ef77059a9a95fac96e35e7fef0686868b9",
+          "config_digest": "sha256:23c42a1c2e710c1ce32c503148fb365c047a2afc295e375bc6f53a57d00f2a99",
+          "layer_digests": [
+            "sha256:062e450697faa5f02a3a74eba9864ee4d79bc9cfbd65769fc6cdff2c05c6a053",
+            "sha256:cd384decb92718ac6ca0ea7ee45412390d4550c2d90cb5ae66c1f5568c72256f",
+            "sha256:463aa101532a7abeef6c2a0f4bc54076803889e951e68c0ab73f8ce3c998e08e",
+            "sha256:4a633c382b0646fccf87ab8d848c41265bd33dffb57fc16216ad04da8ca69b0a",
+            "sha256:8847c12377e1011132aec8a64a27e2b41b8d07c86d1f07743c12c7b935a6ec02",
+            "sha256:72b13b25bc4973ff4c3e4f1494e78dddcb0c76bad6ad2881a48d1fbefefd110d",
+            "sha256:876ebb8b0ec0e7858f23a71432aab92a0caa1017628fc6b0e5c69b98f3a0ab78",
+            "sha256:4c9194b04d5dde4ea66cc21fbf3c17f56289ab65bc4959471a5a2fa45e24bcc9"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "python",
+              "-m",
+              "lab.network_validation.targets.target_b"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "GPG_KEY=7169605F62C751356D054A26A821E680E5FA6305",
+              "PYTHON_VERSION=3.13.14",
+              "PYTHON_SHA256=639e43243c620a308f968213df9e00f2f8f62332f7adbaa7a7eeb9783057c690",
+              "SOURCE_DATE_EPOCH=1785584532",
+              "PYTHONDONTWRITEBYTECODE=1"
+            ],
+            "labels": {}
+          }
+        }
+      ],
+      "verification_method": "two independent no-cache buildx OCI exports with SOURCE_DATE_EPOCH and rewrite-timestamp=true",
+      "verification_status": "resolved_reproducible",
+      "verified_at": "2026-08-01T12:10:00Z",
+      "blocker": null
     },
     {
       "logical_name": "sensor_capture",
@@ -132,21 +482,112 @@
       "tag": null,
       "platform": "linux/amd64",
       "dockerfile_path": "lab/docker/Dockerfile.sensor-capture",
-      "build_inputs": ["lab/docker/Dockerfile.sensor-capture"],
-      "build_inputs_digest": "9ee59cba6234c8392087cee348bd7935f35b4f54b6e2e4c3f66947b1e97f8330",
-      "source_git_commit": "592f99d79582cab5e642484d95a9a0cedd9cae7c",
+      "build_context": "lab/docker",
+      "build_inputs": [
+        "lab/docker/.dockerignore",
+        "lab/docker/Dockerfile.sensor-capture"
+      ],
+      "build_inputs_digest": "5de455ad059548c64c0e24ac06c6b3eae1acbe05ed64df6cc69f2363284ffe53",
+      "source_git_commit": "2b67e3c42f0b79aa3a5b92184f923674fc2ae46c",
+      "source_tree_clean": true,
+      "base_image_repo_digest": "docker.io/zeek/zeek@sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3",
+      "base_image_platform_manifest_digest": "sha256:3d66069dc80d7bd933ead3e4aa0f001f8461448b439f06291175f6ebf27f3aa9",
       "repo_digest": "unresolved",
-      "oci_index_digest": "unresolved",
-      "platform_manifest_digest": "unresolved",
-      "config_digest": "unresolved",
-      "layer_digests": [],
-      "requirements_lock_digest": "not_applicable",
+      "oci_index_digest": "sha256:f6a3e4f95584bb56e2655eae5527a038151a7239e6cc49026b39f94cd72ccde6",
+      "platform_manifest_digest": "sha256:9a267317c43198744911020d7600bd1efc24d869b1e75858687e2eca918faa27",
+      "config_digest": "sha256:5dac6a0ab92bbf5df2acb5cf24ab54e2e4078ffcb9b3de0de1ca65efbc509958",
       "local_image_id": "unresolved",
-      "verification_method": "two_independent_buildx_oci_outputs",
-      "verification_status": "unresolved_daemon_unavailable",
-      "verified_at": "2026-08-01T07:55:23Z",
-      "blocker": "docker_daemon_unavailable"
+      "layer_digests": [
+        "sha256:8cf9fb7a0b56cf93bf2502aff8087344f2dd06e29fb027b0c06aa2726ab3eda8",
+        "sha256:8b76d0a39e4ff7c4f8a89c893acd676e6d63302e19f4c7de6ba0046342cffbe7",
+        "sha256:d068ea12029dfaea5ee7b4c4ca17ad5b26d9d56054ddddca5b1e888034612b01",
+        "sha256:900f700438561e9915b929a6e7d63fd978fce9b9a673715d3f84df8821ad0d04",
+        "sha256:0633b547c9442256ed526ac27f459863144dea0b1c57eb5477d33769aa67724b",
+        "sha256:36811fa0564f78f522a3f046602a10345d4c06a882d8ea8cd77ed7bbb123e27b",
+        "sha256:8ffde0e2a6987bd18451f7f85bf262908147e613f4ba5f4d438c4edc1ef04f05",
+        "sha256:cf805391a3aa79f78495fdd30522bfcad5b57596f5d7a24c50dae0abb05950b7"
+      ],
+      "requirements_lock_digest": "not_applicable",
+      "reproducibility_build_count": 2,
+      "runtime_config": {
+        "architecture": "amd64",
+        "os": "linux",
+        "entrypoint": [
+          "tcpdump"
+        ],
+        "command": null,
+        "environment": [
+          "PATH=/usr/local/zeek/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+          "PYTHONPATH=/usr/local/zeek/lib/zeek/python:",
+          "SOURCE_DATE_EPOCH=1785584532"
+        ],
+        "labels": {}
+      },
+      "reproducibility_evidence": [
+        {
+          "oci_index_digest": "sha256:f6a3e4f95584bb56e2655eae5527a038151a7239e6cc49026b39f94cd72ccde6",
+          "platform_manifest_digest": "sha256:9a267317c43198744911020d7600bd1efc24d869b1e75858687e2eca918faa27",
+          "config_digest": "sha256:5dac6a0ab92bbf5df2acb5cf24ab54e2e4078ffcb9b3de0de1ca65efbc509958",
+          "layer_digests": [
+            "sha256:8cf9fb7a0b56cf93bf2502aff8087344f2dd06e29fb027b0c06aa2726ab3eda8",
+            "sha256:8b76d0a39e4ff7c4f8a89c893acd676e6d63302e19f4c7de6ba0046342cffbe7",
+            "sha256:d068ea12029dfaea5ee7b4c4ca17ad5b26d9d56054ddddca5b1e888034612b01",
+            "sha256:900f700438561e9915b929a6e7d63fd978fce9b9a673715d3f84df8821ad0d04",
+            "sha256:0633b547c9442256ed526ac27f459863144dea0b1c57eb5477d33769aa67724b",
+            "sha256:36811fa0564f78f522a3f046602a10345d4c06a882d8ea8cd77ed7bbb123e27b",
+            "sha256:8ffde0e2a6987bd18451f7f85bf262908147e613f4ba5f4d438c4edc1ef04f05",
+            "sha256:cf805391a3aa79f78495fdd30522bfcad5b57596f5d7a24c50dae0abb05950b7"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "tcpdump"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/zeek/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "PYTHONPATH=/usr/local/zeek/lib/zeek/python:",
+              "SOURCE_DATE_EPOCH=1785584532"
+            ],
+            "labels": {}
+          }
+        },
+        {
+          "oci_index_digest": "sha256:f6a3e4f95584bb56e2655eae5527a038151a7239e6cc49026b39f94cd72ccde6",
+          "platform_manifest_digest": "sha256:9a267317c43198744911020d7600bd1efc24d869b1e75858687e2eca918faa27",
+          "config_digest": "sha256:5dac6a0ab92bbf5df2acb5cf24ab54e2e4078ffcb9b3de0de1ca65efbc509958",
+          "layer_digests": [
+            "sha256:8cf9fb7a0b56cf93bf2502aff8087344f2dd06e29fb027b0c06aa2726ab3eda8",
+            "sha256:8b76d0a39e4ff7c4f8a89c893acd676e6d63302e19f4c7de6ba0046342cffbe7",
+            "sha256:d068ea12029dfaea5ee7b4c4ca17ad5b26d9d56054ddddca5b1e888034612b01",
+            "sha256:900f700438561e9915b929a6e7d63fd978fce9b9a673715d3f84df8821ad0d04",
+            "sha256:0633b547c9442256ed526ac27f459863144dea0b1c57eb5477d33769aa67724b",
+            "sha256:36811fa0564f78f522a3f046602a10345d4c06a882d8ea8cd77ed7bbb123e27b",
+            "sha256:8ffde0e2a6987bd18451f7f85bf262908147e613f4ba5f4d438c4edc1ef04f05",
+            "sha256:cf805391a3aa79f78495fdd30522bfcad5b57596f5d7a24c50dae0abb05950b7"
+          ],
+          "runtime_config": {
+            "architecture": "amd64",
+            "os": "linux",
+            "entrypoint": [
+              "tcpdump"
+            ],
+            "command": null,
+            "environment": [
+              "PATH=/usr/local/zeek/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+              "PYTHONPATH=/usr/local/zeek/lib/zeek/python:",
+              "SOURCE_DATE_EPOCH=1785584532"
+            ],
+            "labels": {}
+          }
+        }
+      ],
+      "verification_method": "two independent no-cache buildx OCI exports with SOURCE_DATE_EPOCH and rewrite-timestamp=true",
+      "verification_status": "resolved_reproducible",
+      "verified_at": "2026-08-01T12:10:00Z",
+      "blocker": null
     }
   ],
-  "canonical_digest": "dec975fbb4e7773d957db908d2f29f50f73e6784ea8da7603911590e6d9e6956"
+  "canonical_digest": "425fbb7ec0ebedffead965d2fb5b8c17bbeb74d5a0cc43e5e9c9640a73b92981"
 }

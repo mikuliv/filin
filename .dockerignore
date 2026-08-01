@@ -1,0 +1,13 @@
+.git
+.pytest_cache
+**/__pycache__
+**/*.pyc
+**/*.pcap
+**/*.oci
+coverage
+runtime
+staging
+rehearsal
+ml/artifacts
+ml/reports
+lab/output

@@ -10,7 +10,7 @@ from typing import Any
 
 from .contracts import ContractError, digest
 
-IMAGE_LOCK_SCHEMA = "network_validation_portable_image_lock_v1"
+IMAGE_LOCK_SCHEMA = "network_validation_portable_image_lock_v2"
 DIGEST_PREFIX = "sha256:"
 LOCAL_IMAGES = {"common_client", "target_a", "target_b", "sensor_capture"}
 
@@ -53,11 +53,20 @@ def _valid_repo_digest(value: Any, *, unresolved: bool = True) -> bool:
     return bool(repository) and _valid_digest(value_digest, unresolved=False)
 
 
+def image_lock_identity(value: dict[str, Any]) -> dict[str, Any]:
+    identity = json.loads(json.dumps(value))
+    identity.pop("canonical_digest", None)
+    identity.pop("checked_at", None)
+    for image in identity.get("images", []):
+        image.pop("verified_at", None)
+    return identity
+
+
 def validate_image_lock(value: dict[str, Any], root: Path | None = None) -> dict[str, Any]:
-    required = {"schema_version", "checked_at", "source_git_commit", "dirty_working_tree", "platform", "build_tool_version", "images", "canonical_digest"}
+    required = {"schema_version", "checked_at", "source_git_commit", "source_tree_clean", "dirty_working_tree", "platform", "build_tool_version", "images", "canonical_digest"}
     if set(value) != required or value["schema_version"] != IMAGE_LOCK_SCHEMA or value["platform"] != "linux/amd64":
         raise ContractError("image lock fields mismatch")
-    if not isinstance(value["dirty_working_tree"], bool) or not isinstance(value["images"], list):
+    if not isinstance(value["dirty_working_tree"], bool) or not isinstance(value["source_tree_clean"], bool) or not isinstance(value["images"], list):
         raise ContractError("image lock types mismatch")
     try:
         datetime.fromisoformat(value["checked_at"].replace("Z", "+00:00"))
@@ -68,8 +77,10 @@ def validate_image_lock(value: dict[str, Any], root: Path | None = None) -> dict
     image_fields = {
         "logical_name", "source_type", "source", "repository", "tag", "platform",
         "dockerfile_path", "build_inputs", "build_inputs_digest", "source_git_commit",
+        "build_context", "source_tree_clean", "base_image_repo_digest", "base_image_platform_manifest_digest",
         "repo_digest", "oci_index_digest", "platform_manifest_digest", "config_digest",
         "local_image_id", "layer_digests", "requirements_lock_digest",
+        "reproducibility_build_count", "runtime_config", "reproducibility_evidence",
         "verification_method", "verification_status", "verified_at", "blocker",
     }
     names = set()
@@ -91,6 +102,10 @@ def validate_image_lock(value: dict[str, Any], root: Path | None = None) -> dict
                 raise ContractError("image Dockerfile path must be repository-relative")
         if any(Path(item).is_absolute() or ".." in Path(item).parts for item in image["build_inputs"]):
             raise ContractError("image build input path must be repository-relative")
+        if image["build_context"] is not None and (Path(image["build_context"]).is_absolute() or ".." in Path(image["build_context"]).parts):
+            raise ContractError("image build context must be repository-relative")
+        if not isinstance(image["source_tree_clean"], bool) or not isinstance(image["reproducibility_build_count"], int):
+            raise ContractError("invalid image reproducibility provenance")
         if not _valid_repo_digest(image["repo_digest"]):
             raise ContractError("invalid repository digest")
         for field in ("oci_index_digest", "platform_manifest_digest", "config_digest", "local_image_id"):
@@ -107,7 +122,7 @@ def validate_image_lock(value: dict[str, Any], root: Path | None = None) -> dict
         if image["verification_status"].startswith("resolved_") and image["blocker"] is not None:
             raise ContractError("resolved image must not carry a blocker")
         if image["source_type"] == "registry":
-            if image["repository"] is None or image["tag"] is None or image["build_inputs_digest"] != "not_applicable" or image["source_git_commit"] is not None:
+            if image["repository"] is None or image["tag"] is None or image["build_inputs_digest"] != "not_applicable" or image["source_git_commit"] is not None or image["build_context"] is not None:
                 raise ContractError("registry image provenance is invalid")
             if image["verification_status"] == "resolved_registry" and (not _valid_repo_digest(image["repo_digest"], unresolved=False) or not _valid_digest(image["platform_manifest_digest"], unresolved=False) or not _valid_digest(image["config_digest"], unresolved=False)):
                 raise ContractError("resolved registry image lacks portable identity")
@@ -115,14 +130,25 @@ def validate_image_lock(value: dict[str, Any], root: Path | None = None) -> dict
                 raise ContractError("registry repository, tag, and index identity disagree")
             if image["local_image_id"] != "unresolved":
                 raise ContractError("registry identity must not be inferred from a local image ID")
+            if image["reproducibility_build_count"] != 0 or image["reproducibility_evidence"] or image["base_image_repo_digest"] != "not_applicable" or image["base_image_platform_manifest_digest"] != "not_applicable":
+                raise ContractError("registry image reproducibility fields are invalid")
         elif image["repository"] is not None or image["tag"] is not None or image["verification_status"] == "resolved_registry" or not re.fullmatch(r"[a-f0-9]{40}", str(image["source_git_commit"])):
             raise ContractError("local image source identity is invalid")
+        elif image["verification_status"] == "resolved_reproducible":
+            if image["reproducibility_build_count"] < 2 or not image["source_tree_clean"] or not _valid_repo_digest(image["base_image_repo_digest"], unresolved=False) or not _valid_digest(image["base_image_platform_manifest_digest"], unresolved=False):
+                raise ContractError("resolved image lacks reproducible source provenance")
+            if len(image["reproducibility_evidence"]) != image["reproducibility_build_count"]:
+                raise ContractError("resolved image build evidence count mismatch")
+            expected = {key: image[key] for key in ("oci_index_digest", "platform_manifest_digest", "config_digest", "layer_digests")}
+            expected["runtime_config"] = image["runtime_config"]
+            if any(evidence != expected for evidence in image["reproducibility_evidence"]):
+                raise ContractError("resolved image builds do not have identical portable identities")
         if root is not None and image["source_type"] == "oci_build":
             if build_inputs_digest(root, image["build_inputs"]) != image["build_inputs_digest"]:
                 raise ContractError(f"stale build-inputs digest: {image['logical_name']}")
     if names != LOCAL_IMAGES | {"zeek"}:
         raise ContractError("image lock set is incomplete")
-    if value["canonical_digest"] != digest({key: item for key, item in value.items() if key != "canonical_digest"}):
+    if value["canonical_digest"] != digest(image_lock_identity(value)):
         raise ContractError("image lock canonical digest mismatch")
     return value
 
@@ -159,15 +185,32 @@ def parse_oci_archive(archive: Path, platform: str = "linux/amd64") -> dict[str,
     manifest_bytes, manifest = _read_tar_json(archive, f"blobs/sha256/{manifest_digest.split(':', 1)[1]}")
     if f"sha256:{_sha(manifest_bytes)}" != manifest_digest:
         raise ContractError("OCI manifest digest mismatch")
+    config_digest = manifest["config"]["digest"]
+    config_bytes, config = _read_tar_json(archive, f"blobs/sha256/{config_digest.split(':', 1)[1]}")
+    if f"sha256:{_sha(config_bytes)}" != config_digest:
+        raise ContractError("OCI config digest mismatch")
+    if config.get("os") != os_name or config.get("architecture") != architecture:
+        raise ContractError("OCI config platform mismatch")
+    runtime = config.get("config", {})
     return {
         "oci_index_digest": f"sha256:{_sha(index_bytes)}",
         "platform_manifest_digest": manifest_digest,
-        "config_digest": manifest["config"]["digest"],
+        "config_digest": config_digest,
         "layer_digests": [item["digest"] for item in manifest["layers"]],
+        "architecture": config["architecture"],
+        "os": config["os"],
+        "entrypoint": runtime.get("Entrypoint"),
+        "command": runtime.get("Cmd"),
+        "environment": runtime.get("Env", []),
+        "labels": runtime.get("Labels") or {},
     }
 
 
 def compare_oci_archives(left: Path, right: Path, platform: str = "linux/amd64") -> dict[str, Any]:
     first, second = parse_oci_archive(left, platform), parse_oci_archive(right, platform)
-    matched = all(first[field] == second[field] for field in ("platform_manifest_digest", "config_digest", "layer_digests"))
+    compared_fields = (
+        "oci_index_digest", "platform_manifest_digest", "config_digest", "layer_digests",
+        "architecture", "os", "entrypoint", "command", "environment", "labels",
+    )
+    matched = all(first[field] == second[field] for field in compared_fields)
     return {"status": "resolved_reproducible" if matched else "unresolved_non_reproducible", "matched": matched, "first": first, "second": second}
