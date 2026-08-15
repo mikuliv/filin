@@ -48,7 +48,7 @@
 | `docs/architecture/storage-and-artifacts.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `ad149485cfc2` | `2f5a4bee340e` |
 | `docs/architecture/trust-boundaries.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `1f133afa2697` | `f53b7a994ab7` |
 | `docs/audit/documentation_inventory.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `c23a3c126926` | `840eb00e9075` |
-| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `65ce1ea1b0f0` |
+| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `47394d1acdf9` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `1839146eb403` | `8674307c984f` |
 | `docs/audit/documentation_path_migration_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `cb437745bba4` | `4f4f1743a49f` |
 | `docs/audit/documentation_refactor_plan_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8ca9d2c1f48b` | `559cd867b8e3` |
@@ -87,7 +87,7 @@
 | `docs/experiments.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `93fdd697b8a4` | `1af0fe4fc601` |
 | `docs/experiments/independent_network_validation_execution_package.md` | Историческое описание | `current` | current | нет | `created` | `—` | `f526da551728` |
 | `docs/experiments/independent_network_validation_freeze_review.md` | Историческое описание | `current` | current | нет | `created` | `—` | `00ce8a91e4f1` |
-| `docs/experiments/independent_network_validation_superseding_freeze.md` | Историческое описание | `current` | current | нет | `created` | `—` | `5633586d446c` |
+| `docs/experiments/independent_network_validation_superseding_freeze.md` | Историческое описание | `current` | current | нет | `created` | `—` | `c656a2195a83` |
 | `docs/experiments/next_independent_network_validation_protocol.md` | Frozen evidence | `frozen` | historical | да | `created` | `—` | `3772dee6c268` |
 | `docs/experiments/v0_3_11.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `b221582a5002` | `b221582a5002` |
 | `docs/experiments/v0_3_12.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `22d19e14b43d` | `22d19e14b43d` |

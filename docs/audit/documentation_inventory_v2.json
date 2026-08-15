@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "65ce1ea1b0f0aabbcdcc1f1cfa9125f99e4e2650c245673d3dfa997120a56595"
+      "sha256_after": "47394d1acdf9b43e8f530a2a125342afedbd77b4a3b99455180a804bfc031f94"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2822,7 +2822,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5633586d446c0d3658c2ea04de5a81a41b90a3de2cee01cf4744475e1c210851"
+      "sha256_after": "c656a2195a83de9c11894d8d5dedc189561096ceba6cce25e5b52949747a49b5"
     },
     {
       "path": "docs/experiments/next_independent_network_validation_protocol.md",

@@ -2,7 +2,9 @@
 
 ## Статус
 
-`SUPERSEDING_INPUTS_TECHNICALLY_VALIDATED`.
+`OFFICIAL_SUPERSEDING_FREEZE_CREATED`.
+
+Official superseding freeze `network-validation-superseding-249104f7e7536356` создан из чистого commit `2377ab2cd12ead340d4f377aede9105635dbfe28`. Его canonical payload digest равен `249104f7e7536356621433f1b635c46967729164c58d53479770768372629d86`.
 
 Predecessor `network-validation-d6e946188d870a7f` и его canonical digest `870946390f9ca8a5fe0ac2c53e7855e979ef242d9486815ef67d6d47ca9cbe41` не изменены. Superseding inputs прошли обязательную техническую проверку до создания official superseding freeze.
 
@@ -59,4 +61,4 @@ Disposable PCAP, Zeek logs и session outputs после проверки уда
 
 ## Следующее действие
 
-После фиксации superseding inputs отдельным чистым commit допустимо создать official superseding freeze, сохранив `scientific_pass_allowed=false` и `production_approval=false`.
+После отдельной фиксации official superseding freeze допустима только подготовка к научной кампании. Сам freeze сохраняет `scientific_pass_allowed=false` и `production_approval=false`; сбор корпуса, создание меток, обучение, predictions и расчёт научных metrics требуют отдельного решения.
