@@ -1,0 +1,31 @@
+{
+  "schema_version": "network_validation_campaign_ledger_contract_v1",
+  "append_only": true,
+  "required_record_fields": [
+    "attempt_id",
+    "event_type",
+    "previous_record_digest",
+    "record_digest",
+    "scenario_token",
+    "session_token",
+    "status"
+  ],
+  "permitted_event_types": [
+    "preflight_blocked",
+    "session_started",
+    "session_completed",
+    "session_failed",
+    "retry_requested",
+    "exclusion_requested",
+    "campaign_closed"
+  ],
+  "retry_reason_allowlist": [],
+  "exclusion_reason_allowlist": [],
+  "reason_policy_status": "requires_superseding_freeze",
+  "prohibited_automatic_actions": [
+    "retry_without_allowlisted_reason",
+    "session_replacement",
+    "row_exclusion",
+    "scenario_substitution"
+  ]
+}

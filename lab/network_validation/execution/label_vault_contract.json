@@ -1,0 +1,48 @@
+{
+  "schema_version": "network_validation_label_vault_contract_v1",
+  "initial_state": "absent_locked",
+  "labels_created": false,
+  "labels_unlocked": false,
+  "unlock_prerequisites": [
+    "frozen_predictions",
+    "frozen_prediction_row_digest",
+    "frozen_exclusion_ledger",
+    "authorized_unlock_record"
+  ],
+  "runner_boundary": {
+    "visible_fields": [
+      "behavior_type",
+      "generator_family",
+      "infrastructure_profile",
+      "parameter_vector",
+      "scenario_token",
+      "seed",
+      "session_token",
+      "target_implementation"
+    ]
+  },
+  "evaluator_boundary": {
+    "visible_fields_before_unlock": [
+      "feature_contract_digest",
+      "feature_order_digest",
+      "feature_row_id",
+      "feature_values",
+      "session_integrity_digest"
+    ],
+    "forbidden_fields": [
+      "behavior_type",
+      "campaign_token",
+      "file_name",
+      "file_path",
+      "generator_family",
+      "infrastructure_profile",
+      "marker_nonce",
+      "pair_id",
+      "scenario_token",
+      "seed",
+      "session_token",
+      "split_assignment",
+      "target_implementation"
+    ]
+  }
+}

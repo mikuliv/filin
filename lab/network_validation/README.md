@@ -61,6 +61,11 @@ python -m lab.network_validation.cli inspect-image-lock
 python -m lab.network_validation.cli verify-image-reproducibility --help
 python -m lab.network_validation.cli build-freeze-preview
 python -m lab.network_validation.cli validate-official-freeze
+python -m lab.network_validation.cli audit-execution-readiness
+python -m lab.network_validation.cli build-execution-package-preview
+python -m lab.network_validation.cli validate-execution-package
+python -m lab.network_validation.cli inspect-run-plan
+python -m lab.network_validation.cli inspect-label-boundary
 ```
 
 Эти команды не запускают эксперимент. `run-technical-smoke` требует явного

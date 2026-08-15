@@ -1,0 +1,30 @@
+{
+  "schema_version": "network_validation_data_collection_output_contract_v1",
+  "scope": "future_data_collection",
+  "required_session_outputs": [
+    {"name": "pcap", "content_digest_required": true, "minimum_count": 1},
+    {"name": "zeek_logs", "content_digest_required": true, "minimum_count": 1},
+    {"name": "marker_events", "content_digest_required": true, "minimum_count": 2},
+    {"name": "client_observations", "content_digest_required": true, "minimum_count": 1},
+    {"name": "parameter_verification", "content_digest_required": true, "minimum_count": 1},
+    {"name": "feature_rows", "content_digest_required": true, "minimum_count": 1},
+    {"name": "capture_manifest", "content_digest_required": true, "minimum_count": 1},
+    {"name": "session_integrity_manifest", "content_digest_required": true, "minimum_count": 1}
+  ],
+  "session_integrity_required_fields": [
+    "execution_package_digest",
+    "official_freeze_digest",
+    "scenario_token",
+    "session_token",
+    "locked_image_digests",
+    "output_digests",
+    "completion_status"
+  ],
+  "forbidden_outputs": [
+    "labels",
+    "predictions",
+    "scientific_metrics",
+    "trained_model"
+  ],
+  "path_identity_excluded": true
+}

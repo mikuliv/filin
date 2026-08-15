@@ -9,6 +9,13 @@ from typing import Any
 
 from .capture import validate_capture_set
 from .contracts import CAMPAIGN_SCHEMA, digest, load_json, validate_campaign, validate_scenario
+from .execution_package import (
+    audit_execution_readiness,
+    build_execution_package_preview,
+    inspect_label_boundary,
+    inspect_run_plan,
+    validate_execution_package_preview,
+)
 from .freeze import environment_lock, freeze_candidate_preview, freeze_preview, official_freeze_payload, validate_official_freeze, write_official_freeze
 from .freeze_candidate import FREEZE_CANDIDATE_SCHEMA, candidate_summary, freeze_candidate_proxy_risks, validate_freeze_candidate
 from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
@@ -81,6 +88,19 @@ def parser() -> argparse.ArgumentParser:
     official.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
     official.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
     official.add_argument("--freeze", default=str(DEFAULT_OFFICIAL_FREEZE))
+    for name in ("audit-execution-readiness", "build-execution-package-preview", "inspect-run-plan"):
+        item = commands.add_parser(name)
+        item.add_argument("--campaign", default=str(DEFAULT_FREEZE_CANDIDATE))
+        item.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
+        item.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
+        item.add_argument("--freeze", default=str(DEFAULT_OFFICIAL_FREEZE))
+    package = commands.add_parser("validate-execution-package")
+    package.add_argument("--package")
+    package.add_argument("--campaign", default=str(DEFAULT_FREEZE_CANDIDATE))
+    package.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
+    package.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
+    package.add_argument("--freeze", default=str(DEFAULT_OFFICIAL_FREEZE))
+    commands.add_parser("inspect-label-boundary")
     commands.add_parser("render-compose")
     commands.add_parser("inspect-environment")
     parameter = commands.add_parser("validate-parameter-contract")
@@ -105,6 +125,24 @@ def main(argv: list[str] | None = None) -> int:
         scenario = load_json(Path(args.scenario)); validate_scenario(scenario); _emit(verify_parameters(scenario, observations_from_zeek(Path(args.zeek_dir))), args.json_output); return 0
     if args.command == "validate-capture-manifest":
         manifests = load_json(Path(args.manifest)); executions = load_json(Path(args.executions)); markers = load_json(Path(args.markers)) if args.markers else None; validate_capture_set(manifests, Path(args.dataset_root), executions, markers); _emit({"valid": True, "capture_count": len(manifests)}, args.json_output); return 0
+    if args.command == "inspect-label-boundary":
+        _emit(inspect_label_boundary(), args.json_output); return 0
+    if args.command in {"audit-execution-readiness", "build-execution-package-preview", "validate-execution-package", "inspect-run-plan"}:
+        campaign = load_json(Path(args.campaign)); criteria = load_json(Path(args.acceptance_criteria)); image_lock = load_json(Path(args.image_lock)); official_freeze = load_json(Path(args.freeze))
+        source = official_freeze.get("source_git_sha", "")
+        result = subprocess.run(["git", "cat-file", "-e", f"{source}^{{commit}}"], cwd=ROOT, capture_output=True, check=False)
+        if result.returncode:
+            raise ValueError("official freeze source Git SHA does not exist")
+        environment = _resolved_environment(image_lock, source)
+        validate_official_freeze(official_freeze, campaign, criteria, image_lock, environment, source, ROOT)
+        if args.command == "audit-execution-readiness":
+            value = audit_execution_readiness(campaign, official_freeze)
+        elif args.command == "inspect-run-plan":
+            value = inspect_run_plan(campaign, official_freeze)
+        else:
+            value = load_json(Path(args.package)) if args.command == "validate-execution-package" and args.package else build_execution_package_preview(campaign, official_freeze)
+            validate_execution_package_preview(value)
+        _emit(value, args.json_output); return 0
     if args.command == "validate-freeze-candidate":
         campaign = load_json(Path(args.campaign)); _emit(candidate_summary(campaign), args.json_output); return 0
     if args.command == "inspect-proxy-risks":

@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 370,
+    "document_count": 371,
     "protected_count": 82,
-    "current_count": 264,
+    "current_count": 265,
     "historical_count": 106,
     "generated_count": 6,
-    "created_count": 109,
+    "created_count": 110,
     "rewritten_count": 142,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "f563d0fc61d9bdb24277348e5e4caa6e68fd1ec933fa72fc01830050ec786e3f"
+      "sha256_after": "46b60756b07c9a0d0556d05b65c9741aa37c309e11047831a0ce63f264b485e8"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2712,6 +2712,43 @@
       "actual_action": "rewritten",
       "sha256_before": "93fdd697b8a41f01cd2a91c0399ff36641c96b37005c1eceb70d1a72480c2a16",
       "sha256_after": "1af0fe4fc601504e2cd98b88a717ffffbf4293aed091fae6b8f3b03b9cbaa367"
+    },
+    {
+      "path": "docs/experiments/independent_network_validation_execution_package.md",
+      "title": "Готовность execution package независимой сетевой валидации",
+      "category": "Историческое описание",
+      "doc_schema": "filin_document_v2",
+      "document_type": "history",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 0,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "f526da5517283fce977395f57e16e21582ad7915473636b948e6f91d1464acbd"
     },
     {
       "path": "docs/experiments/independent_network_validation_freeze_review.md",
@@ -11089,7 +11126,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "c9903c5bf698d938a6b8f0651864f49266ba82fd5a3caffaeee6a6fb2bffcd12"
+      "sha256_after": "d3954c78411a5e7b14fb4a6f40d000e4776cc6a6c02935e17fb26cae63d2b7c8"
     },
     {
       "path": "lab/robustness/README.md",

@@ -1,0 +1,31 @@
+{
+  "schema_version": "network_validation_execution_preflight_contract_v1",
+  "required_checks": [
+    "official_freeze_integrity",
+    "freeze_source_commit_exists",
+    "freeze_containing_commit_exists",
+    "campaign_matrix_integrity",
+    "counterfactual_integrity",
+    "acceptance_criteria_integrity",
+    "feature_contract_integrity",
+    "feature_order_integrity",
+    "image_lock_integrity",
+    "execution_policy_completeness",
+    "runner_evaluator_boundary",
+    "label_vault_locked",
+    "output_root_empty_or_new",
+    "working_tree_clean",
+    "execution_package_commit_resolved"
+  ],
+  "blocking_checks": [
+    "execution_policy_completeness",
+    "label_vault_locked",
+    "official_freeze_integrity",
+    "working_tree_clean",
+    "execution_package_commit_resolved"
+  ],
+  "current_expected_result": {
+    "execution_allowed": false,
+    "status": "EXECUTION_PACKAGE_BLOCKED_BY_FREEZE_GAP"
+  }
+}
