@@ -94,5 +94,8 @@ docker compose -f lab/network_validation/compose.yaml config
 Официальный pre-experiment freeze сохранён в `freeze/official_freeze.json` и связан с
 коммитом image lock. Он фиксирует план, критерии, порядок признаков, окружение и
 воспроизводимые OCI-идентичности, но не подтверждает качество модели.
+Официальный Phase 1 execution package сохранён в
+`execution/official_execution_package.json`. Он содержит план 864 будущих сессий,
+но сохраняет `execution_allowed=false` до отдельного runtime preflight.
 `requirements.lock` фиксирует зависимости host-side Zeek/feature validation;
 client и target images используют только стандартную библиотеку Python.

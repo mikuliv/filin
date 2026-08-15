@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "8a3ef7b36f9705b0a86131fb7fac7e59cabea09e37e301559370f40d0965458e"
+      "sha256_after": "d20738d2eeca554269941ef2d18194a9992304c3804aa580d670a0b0838a38aa"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2748,7 +2748,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "1378eb123c9c80a3c590c0175730958aabb1c7446ca359617741bccb4a5478ef"
+      "sha256_after": "d8adfabe0879326fdb5d4e88e40f77dad75858ee6886791b73e4b5181ecee6ab"
     },
     {
       "path": "docs/experiments/independent_network_validation_freeze_review.md",
@@ -11163,7 +11163,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "ad10de06598200086c84b8e6fbfd01a37f6de93ce4b09b8bc93ec4b53bd2141a"
+      "sha256_after": "973c2dd728ed0d33a4734f24e40c759d5a0adcebed394a0e8e24cea88a62a4ec"
     },
     {
       "path": "lab/robustness/README.md",

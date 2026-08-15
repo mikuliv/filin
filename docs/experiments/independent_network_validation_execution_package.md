@@ -2,11 +2,13 @@
 
 ## Статус
 
-`EXECUTION_PACKAGE_CANDIDATE_VALID`.
+`OFFICIAL_EXECUTION_PACKAGE_CREATED`.
 
 Superseding freeze `network-validation-superseding-249104f7e7536356` валиден и execution-complete. Его canonical digest равен `249104f7e7536356621433f1b635c46967729164c58d53479770768372629d86`, source Git SHA — `2377ab2cd12ead340d4f377aede9105635dbfe28`, содержащий freeze commit — `26222536d71aca898d382b46f6b1c59f1102bbd2`.
 
-Exact Phase 1 run plan материализован только из frozen superseding inputs. Candidate валиден, но official package ещё не создан и исполнение запрещено до отдельного clean-tree commit, создания official package и будущего runtime preflight.
+Exact Phase 1 run plan материализован только из frozen superseding inputs. Official package `network-validation-execution-2ae1f6567e7eb4f8` создан из чистого execution-inputs commit `903cb3db7e0303892c2436e32f44b1c4a64e1034`; его canonical digest равен `2ae1f6567e7eb4f8d4829e1ae1210e478763863271b323b16d34095105522492`.
+
+Package валиден и execution plan complete, но исполнение остаётся запрещено до отдельно разрешённого runtime preflight. Runtime preflight не выполнен.
 
 Научная кампания не запускалась. Scientific sessions, corpus, labels, model, predictions и metrics отсутствуют.
 
@@ -59,4 +61,4 @@ python -m lab.network_validation.cli create-official-execution-package --help
 
 ## Следующее действие
 
-Зафиксировать tooling и inputs отдельным чистым commit, затем из него создать immutable official Phase 1 execution package. Scientific campaign при этом не запускается.
+Read-only runtime preflight официального execution package и подготовка пустого внешнего output root без запуска scientific sessions.
