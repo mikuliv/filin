@@ -892,7 +892,7 @@ def test_compose_declares_common_client_sensor_and_two_real_targets():
     assert {"target-a", "target-b", "common-client", "sensor-capture"} <= value["services"].keys()
     assert value["services"]["sensor-capture"]["network_mode"] == "service:common-client"
     assert value["services"]["common-client"]["cap_drop"] == ["ALL"]
-    assert value["services"]["sensor-capture"]["cap_add"] == ["NET_RAW", "NET_ADMIN"]
+    assert value["services"]["sensor-capture"]["cap_add"] == ["NET_RAW", "NET_ADMIN", "SETUID", "SETGID"]
     assert "privileged" not in json.dumps(value).lower()
     assert value["services"]["target-a"]["build"]["dockerfile"] != value["services"]["target-b"]["build"]["dockerfile"]
     assert value["services"]["common-client"]["networks"] == ["validation_a", "validation_b"]
@@ -908,6 +908,20 @@ def test_compose_run_output_extracts_only_the_capture_container_id():
         pipeline._container_id_from_compose_output("#1 build output only\n")
     source = (PACKAGE / "pipeline.py").read_text(encoding="utf-8")
     assert '"zeek/zeek:7.0.5", "sh", "-c"' in source
+
+
+def test_capture_runtime_waits_for_readiness_and_rejects_incomplete_evidence():
+    source = (PACKAGE / "pipeline.py").read_text(encoding="utf-8")
+    runner = source[source.index("def run_factor_orthogonality_smoke"):]
+    assert runner.index("_wait_for_capture_ready") < runner.index("lab.network_validation.common_client")
+    assert all(capability in runner for capability in ('"SETUID"', '"SETGID"', '"NET_RAW"', '"NET_ADMIN"'))
+    assert "_stop_capture_gracefully" in runner and '"--signal=SIGINT"' in source
+    assert 'capture_summary["byte_count"] > 24' in runner
+    assert 'capture_summary["packet_count"] > 0' in runner
+    assert '"zeek_conn_log": bool(conn_rows)' in runner
+    assert 'features = feature_envelope["features"]' in runner
+    assert 'len(features) == 51' in runner
+    assert 'client_netns == sensor_netns' in runner
     assert '"zeek/zeek:7.0.5", "sh", "-lc"' not in source
 
 

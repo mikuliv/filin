@@ -19,9 +19,23 @@
     "exclusion_requested",
     "campaign_closed"
   ],
-  "retry_reason_allowlist": [],
-  "exclusion_reason_allowlist": [],
-  "reason_policy_status": "requires_superseding_freeze",
+  "retry_reason_allowlist": [
+    "docker_daemon_transient_failure",
+    "container_start_failure",
+    "target_healthcheck_failure",
+    "capture_start_failure",
+    "capture_integrity_failure",
+    "host_io_failure",
+    "processing_integrity_failure"
+  ],
+  "exclusion_reason_allowlist": [
+    "capture_integrity_failure",
+    "session_boundary_integrity_failure",
+    "processing_integrity_failure",
+    "output_integrity_failure",
+    "clock_integrity_failure"
+  ],
+  "reason_policy_status": "frozen_by_superseding_execution_policy",
   "prohibited_automatic_actions": [
     "retry_without_allowlisted_reason",
     "session_replacement",

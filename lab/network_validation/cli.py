@@ -20,8 +20,15 @@ from .freeze import environment_lock, freeze_candidate_preview, freeze_preview, 
 from .freeze_candidate import FREEZE_CANDIDATE_SCHEMA, candidate_summary, freeze_candidate_proxy_risks, validate_freeze_candidate
 from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
 from .parameter_verification import observations_from_zeek, verify_parameters
-from .pipeline import COMPOSE, compose_config, run_technical_smoke
+from .pipeline import COMPOSE, compose_config, run_factor_orthogonality_smoke, run_technical_smoke
 from .planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
+from .superseding_freeze import (
+    OFFICIAL_PATH as DEFAULT_SUPERSEDING_FREEZE,
+    materialize_inputs,
+    validate_inputs as validate_superseding_inputs,
+    validate_official as validate_official_superseding_freeze,
+    write_official as write_official_superseding_freeze,
+)
 
 ROOT = Path(__file__).resolve().parents[2]
 DEFAULT_CAMPAIGN = Path(__file__).with_name("config") / "technical_campaign.json"
@@ -110,6 +117,16 @@ def parser() -> argparse.ArgumentParser:
     capture.add_argument("--markers")
     smoke = commands.add_parser("run-technical-smoke")
     smoke.add_argument("--confirm-disposable", action="store_true"); smoke.add_argument("--output-dir", required=True)
+    orthogonality = commands.add_parser("run-factor-orthogonality-smoke")
+    orthogonality.add_argument("--confirm-disposable", action="store_true"); orthogonality.add_argument("--output-dir", required=True)
+    orthogonality.add_argument("--diagnostic-first-only", action="store_true")
+    commands.add_parser("materialize-superseding-inputs")
+    commands.add_parser("validate-superseding-inputs")
+    create_superseding = commands.add_parser("create-official-superseding-freeze")
+    create_superseding.add_argument("--output", default=str(DEFAULT_SUPERSEDING_FREEZE))
+    create_superseding.add_argument("--confirm-official-freeze", action="store_true")
+    validate_superseding = commands.add_parser("validate-official-superseding-freeze")
+    validate_superseding.add_argument("--freeze", default=str(DEFAULT_SUPERSEDING_FREEZE))
     return root
 
 
@@ -121,6 +138,23 @@ def main(argv: list[str] | None = None) -> int:
         _emit(environment_lock(ROOT, {}), args.json_output); return 0
     if args.command == "run-technical-smoke":
         _emit(run_technical_smoke(args.confirm_disposable, Path(args.output_dir)), args.json_output); return 0
+    if args.command == "run-factor-orthogonality-smoke":
+        _emit(run_factor_orthogonality_smoke(args.confirm_disposable, Path(args.output_dir), args.diagnostic_first_only), args.json_output); return 0
+    if args.command == "materialize-superseding-inputs":
+        _emit(materialize_inputs(), args.json_output); return 0
+    if args.command == "validate-superseding-inputs":
+        _emit(validate_superseding_inputs(), args.json_output); return 0
+    if args.command == "create-official-superseding-freeze":
+        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            raise ValueError("official superseding freeze requires a clean working tree")
+        source = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        created_at = subprocess.run(["git", "show", "-s", "--format=%cI", source], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        value = write_official_superseding_freeze(Path(args.output), source, created_at, args.confirm_official_freeze)
+        _emit({"official_superseding_freeze_created": True, "official_superseding_freeze": value}, args.json_output); return 0
+    if args.command == "validate-official-superseding-freeze":
+        value = validate_official_superseding_freeze(load_json(Path(args.freeze)))
+        _emit({"superseding_freeze_valid": True, "execution_protocol_complete": True, "scientific_campaign_started": False, "scientific_pass_allowed": False, "production_approval": False, "official_superseding_freeze": value}, args.json_output); return 0
     if args.command == "validate-parameter-contract":
         scenario = load_json(Path(args.scenario)); validate_scenario(scenario); _emit(verify_parameters(scenario, observations_from_zeek(Path(args.zeek_dir))), args.json_output); return 0
     if args.command == "validate-capture-manifest":

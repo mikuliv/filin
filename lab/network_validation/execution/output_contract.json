@@ -2,14 +2,16 @@
   "schema_version": "network_validation_data_collection_output_contract_v1",
   "scope": "future_data_collection",
   "required_session_outputs": [
-    {"name": "pcap", "content_digest_required": true, "minimum_count": 1},
-    {"name": "zeek_logs", "content_digest_required": true, "minimum_count": 1},
-    {"name": "marker_events", "content_digest_required": true, "minimum_count": 2},
-    {"name": "client_observations", "content_digest_required": true, "minimum_count": 1},
-    {"name": "parameter_verification", "content_digest_required": true, "minimum_count": 1},
-    {"name": "feature_rows", "content_digest_required": true, "minimum_count": 1},
-    {"name": "capture_manifest", "content_digest_required": true, "minimum_count": 1},
-    {"name": "session_integrity_manifest", "content_digest_required": true, "minimum_count": 1}
+    {"name": "execution_event.json", "content_digest_required": true},
+    {"name": "marker_events.jsonl", "content_digest_required": true},
+    {"name": "capture/traffic.pcap", "content_digest_required": true},
+    {"name": "capture/capture_manifest.json", "content_digest_required": true},
+    {"name": "zeek/conn.log", "content_digest_required": true},
+    {"name": "zeek/http.log", "content_digest_required": true},
+    {"name": "zeek/dns.log", "content_digest_required": true},
+    {"name": "parameter_realization.json", "content_digest_required": true},
+    {"name": "feature_rows.jsonl", "content_digest_required": true},
+    {"name": "session_integrity_manifest.json", "content_digest_required": true}
   ],
   "session_integrity_required_fields": [
     "execution_package_digest",
@@ -18,8 +20,19 @@
     "session_token",
     "locked_image_digests",
     "output_digests",
-    "completion_status"
+    "completion_status",
+    "execution_event_sha256",
+    "marker_events_sha256",
+    "pcap_sha256",
+    "capture_manifest_sha256",
+    "conn_log_sha256",
+    "http_log_sha256",
+    "dns_log_sha256",
+    "parameter_realization_sha256",
+    "feature_rows_sha256",
+    "session_manifest_canonical_sha256"
   ],
+  "sealed_session_outputs_immutable": true,
   "forbidden_outputs": [
     "labels",
     "predictions",

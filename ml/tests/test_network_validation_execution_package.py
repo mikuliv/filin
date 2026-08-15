@@ -113,9 +113,13 @@ def test_output_ledger_and_preflight_contracts_are_fail_closed() -> None:
     ledger = load_json(CONTRACT_DIR / "campaign_ledger_contract.json")
     preflight = load_json(CONTRACT_DIR / "preflight_contract.json")
     assert {"labels", "predictions", "scientific_metrics", "trained_model"} == set(output["forbidden_outputs"])
-    assert ledger["retry_reason_allowlist"] == [] and ledger["exclusion_reason_allowlist"] == []
-    assert ledger["reason_policy_status"] == "requires_superseding_freeze"
-    assert preflight["current_expected_result"] == {"execution_allowed": False, "status": BLOCKED_STATUS}
+    assert "docker_daemon_transient_failure" in ledger["retry_reason_allowlist"]
+    assert "capture_integrity_failure" in ledger["exclusion_reason_allowlist"]
+    assert ledger["reason_policy_status"] == "frozen_by_superseding_execution_policy"
+    assert preflight["current_expected_result"] == {
+        "execution_allowed": False,
+        "status": "SUPERSEDING_INPUTS_REQUIRE_CLEAN_COMMIT_AND_OFFICIAL_FREEZE",
+    }
 
 
 def test_preview_module_has_no_execution_or_scientific_artifact_path() -> None:

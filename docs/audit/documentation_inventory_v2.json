@@ -1,12 +1,12 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 371,
+    "document_count": 372,
     "protected_count": 82,
-    "current_count": 265,
+    "current_count": 266,
     "historical_count": 106,
     "generated_count": 6,
-    "created_count": 110,
+    "created_count": 111,
     "rewritten_count": 142,
     "redirect_count": 15,
     "broken_link_count": 0,
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "46b60756b07c9a0d0556d05b65c9741aa37c309e11047831a0ce63f264b485e8"
+      "sha256_after": "65ce1ea1b0f0aabbcdcc1f1cfa9125f99e4e2650c245673d3dfa997120a56595"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2786,6 +2786,43 @@
       "actual_action": "created",
       "sha256_before": null,
       "sha256_after": "00ce8a91e4f1f6000f87a793b3d76c691b9fd9bed5ae43518fbcf453c5fa158d"
+    },
+    {
+      "path": "docs/experiments/independent_network_validation_superseding_freeze.md",
+      "title": "Superseding-freeze review независимой сетевой валидации",
+      "category": "Историческое описание",
+      "doc_schema": "filin_document_v2",
+      "document_type": "history",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 0,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "5633586d446c0d3658c2ea04de5a81a41b90a3de2cee01cf4744475e1c210851"
     },
     {
       "path": "docs/experiments/next_independent_network_validation_protocol.md",
@@ -11126,7 +11163,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "d3954c78411a5e7b14fb4a6f40d000e4776cc6a6c02935e17fb26cae63d2b7c8"
+      "sha256_after": "da3b55d5885cc8801319636cc3c37e2d6424f3a87ea75350843e54849c8a808f"
     },
     {
       "path": "lab/robustness/README.md",

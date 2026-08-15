@@ -26,6 +26,6 @@
   ],
   "current_expected_result": {
     "execution_allowed": false,
-    "status": "EXECUTION_PACKAGE_BLOCKED_BY_FREEZE_GAP"
+    "status": "SUPERSEDING_INPUTS_REQUIRE_CLEAN_COMMIT_AND_OFFICIAL_FREEZE"
   }
 }

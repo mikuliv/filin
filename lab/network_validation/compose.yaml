@@ -61,7 +61,7 @@ services:
     volumes:
       - validation_capture:/capture
     cap_drop: ["ALL"]
-    cap_add: ["NET_RAW", "NET_ADMIN"]
+    cap_add: ["NET_RAW", "NET_ADMIN", "SETUID", "SETGID"]
     security_opt: ["no-new-privileges:true"]
 
 networks:

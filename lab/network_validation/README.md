@@ -66,7 +66,14 @@ python -m lab.network_validation.cli build-execution-package-preview
 python -m lab.network_validation.cli validate-execution-package
 python -m lab.network_validation.cli inspect-run-plan
 python -m lab.network_validation.cli inspect-label-boundary
+python -m lab.network_validation.cli materialize-superseding-inputs
+python -m lab.network_validation.cli validate-superseding-inputs
+python -m lab.network_validation.cli run-factor-orthogonality-smoke --help
+python -m lab.network_validation.cli create-official-superseding-freeze --help
+python -m lab.network_validation.cli validate-official-superseding-freeze --help
 ```
+
+Для проверки capture path только на первой комбинации используется флаг `--diagnostic-first-only`; такой запуск не устанавливает общий статус полного orthogonality smoke.
 
 Эти команды не запускают эксперимент. `run-technical-smoke` требует явного
 `--confirm-disposable` и каталога вне репозитория; он предназначен только для
