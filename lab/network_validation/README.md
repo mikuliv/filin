@@ -71,6 +71,9 @@ python -m lab.network_validation.cli validate-superseding-inputs
 python -m lab.network_validation.cli run-factor-orthogonality-smoke --help
 python -m lab.network_validation.cli create-official-superseding-freeze --help
 python -m lab.network_validation.cli validate-official-superseding-freeze --help
+python -m lab.network_validation.cli materialize-execution-package-inputs
+python -m lab.network_validation.cli audit-execution-preflight --help
+python -m lab.network_validation.cli create-official-execution-package --help
 ```
 
 Для проверки capture path только на первой комбинации используется флаг `--diagnostic-first-only`; такой запуск не устанавливает общий статус полного orthogonality smoke.

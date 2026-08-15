@@ -61,4 +61,4 @@ Disposable PCAP, Zeek logs и session outputs после проверки уда
 
 ## Следующее действие
 
-После отдельной фиксации official superseding freeze допустима только подготовка к научной кампании. Сам freeze сохраняет `scientific_pass_allowed=false` и `production_approval=false`; сбор корпуса, создание меток, обучение, predictions и расчёт научных metrics требуют отдельного решения.
+Superseding freeze используется как единственный источник exact Phase 1 execution package. Подготовка package не запускает кампанию; сам freeze сохраняет `scientific_pass_allowed=false` и `production_approval=false`.

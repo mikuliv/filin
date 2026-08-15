@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "47394d1acdf9b43e8f530a2a125342afedbd77b4a3b99455180a804bfc031f94"
+      "sha256_after": "8a3ef7b36f9705b0a86131fb7fac7e59cabea09e37e301559370f40d0965458e"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2715,7 +2715,7 @@
     },
     {
       "path": "docs/experiments/independent_network_validation_execution_package.md",
-      "title": "Готовность execution package независимой сетевой валидации",
+      "title": "Execution package независимой сетевой валидации",
       "category": "Историческое описание",
       "doc_schema": "filin_document_v2",
       "document_type": "history",
@@ -2748,7 +2748,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "f526da5517283fce977395f57e16e21582ad7915473636b948e6f91d1464acbd"
+      "sha256_after": "1378eb123c9c80a3c590c0175730958aabb1c7446ca359617741bccb4a5478ef"
     },
     {
       "path": "docs/experiments/independent_network_validation_freeze_review.md",
@@ -2822,7 +2822,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "c656a2195a83de9c11894d8d5dedc189561096ceba6cce25e5b52949747a49b5"
+      "sha256_after": "edd161ee49955ffd546e78e7d725ccad98004f1a2461e7c4ed71dcb8162f4b42"
     },
     {
       "path": "docs/experiments/next_independent_network_validation_protocol.md",
@@ -11163,7 +11163,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "da3b55d5885cc8801319636cc3c37e2d6424f3a87ea75350843e54849c8a808f"
+      "sha256_after": "ad10de06598200086c84b8e6fbfd01a37f6de93ce4b09b8bc93ec4b53bd2141a"
     },
     {
       "path": "lab/robustness/README.md",

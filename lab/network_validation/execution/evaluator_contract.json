@@ -1,0 +1,47 @@
+{
+  "schema_version": "network_validation_phase1_evaluator_contract_v1",
+  "phase": "phase1_data_collection",
+  "visible_fields_before_label_unlock": [
+    "evaluation_token",
+    "feature_contract_digest",
+    "feature_order_digest",
+    "feature_row",
+    "session_integrity_digest",
+    "model_artifact_digest_after_future_model_freeze"
+  ],
+  "forbidden_fields_before_label_unlock": [
+    "behavior",
+    "behavior_type",
+    "label",
+    "class",
+    "class_name",
+    "generator_family",
+    "infrastructure_profile",
+    "target_implementation",
+    "port",
+    "target_port",
+    "scenario_token",
+    "session_token",
+    "execution_token",
+    "scientific_seed",
+    "execution_seed",
+    "background_policy",
+    "background_traffic_policy",
+    "counterfactual_pair_semantics",
+    "primary_split",
+    "split_assignment",
+    "path",
+    "filename",
+    "file_path",
+    "marker_metadata"
+  ],
+  "blind_internal_holdout_policy": {
+    "campaign_controller_knows_assignment": true,
+    "training_receives_feature_rows": false,
+    "model_selection_receives_feature_rows": false,
+    "calibration_uses_rows": false,
+    "analyst_tuning_allowed": false
+  },
+  "counterfactual_metadata_visible": false,
+  "labels_available": false
+}

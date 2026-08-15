@@ -1,0 +1,49 @@
+{
+  "schema_version": "network_validation_phase1_runner_contract_v1",
+  "phase": "phase1_data_collection",
+  "visible_fields": [
+    "execution_token",
+    "scenario_token",
+    "behavior_type",
+    "generator_family",
+    "infrastructure_profile",
+    "target_implementation",
+    "target_port",
+    "intensity_band",
+    "background_traffic_policy",
+    "parameter_vector",
+    "execution_seed",
+    "repetition_index",
+    "primary_split",
+    "warmup_seconds",
+    "capture_start_lead_seconds",
+    "capture_stop_lag_seconds",
+    "post_capture_cooldown_seconds",
+    "retry_policy",
+    "image_identities"
+  ],
+  "forbidden_fields": [
+    "expected_prediction",
+    "model_confidence",
+    "scientific_metric_outcome",
+    "post_hoc_exclusion"
+  ],
+  "sensor_runtime": {
+    "capture_command_identity": "tcpdump_-Z_root",
+    "required_capabilities": ["NET_RAW", "NET_ADMIN", "SETUID", "SETGID"],
+    "privileged_allowed": false,
+    "docker_socket_mount_allowed": false,
+    "host_network_allowed": false
+  },
+  "capture_readiness_order": [
+    "capture_process_started",
+    "capture_interface_open",
+    "capture_ready_confirmed",
+    "capture_process_alive",
+    "start_marker",
+    "scientific_traffic"
+  ],
+  "session_isolation_required": true,
+  "model_dependency": false,
+  "labels_available": false
+}

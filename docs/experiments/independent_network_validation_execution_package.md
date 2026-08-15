@@ -1,86 +1,62 @@
-# Готовность execution package независимой сетевой валидации
+# Execution package независимой сетевой валидации
 
 ## Статус
 
-`EXECUTION_PACKAGE_BLOCKED_BY_FREEZE_GAP`.
+`EXECUTION_PACKAGE_CANDIDATE_VALID`.
 
-Официальный pre-experiment freeze `network-validation-d6e946188d870a7f` валиден и неизменён. Его canonical digest — `870946390f9ca8a5fe0ac2c53e7855e979ef242d9486815ef67d6d47ca9cbe41`, source Git SHA — `a6a979aef803ba776933b39dbd7607bd0833cc63`, содержащий freeze commit — `a955ce3fdb1387266a9f1eb21a6e4db6b0a3eed8`.
+Superseding freeze `network-validation-superseding-249104f7e7536356` валиден и execution-complete. Его canonical digest равен `249104f7e7536356621433f1b635c46967729164c58d53479770768372629d86`, source Git SHA — `2377ab2cd12ead340d4f377aede9105635dbfe28`, содержащий freeze commit — `26222536d71aca898d382b46f6b1c59f1102bbd2`.
 
-Freeze достаточен для фиксации факторной матрицы, но недостаточен для однозначного исполнения кампании. Исполняемый candidate и run plan не созданы. Научная кампания не запускалась, корпус и метки не создавались, модель не обучалась, predictions и научные метрики не рассчитывались. Следующее допустимое действие — superseding-freeze review без запуска кампании.
+Exact Phase 1 run plan материализован только из frozen superseding inputs. Candidate валиден, но official package ещё не создан и исполнение запрещено до отдельного clean-tree commit, создания official package и будущего runtime preflight.
 
-## Аудит полноты
+Научная кампания не запускалась. Scientific sessions, corpus, labels, model, predictions и metrics отсутствуют.
 
-| Execution-affecting field | Frozen | Source | Scientific significance | Required before execution |
-| --- | --- | --- | --- | --- |
-| Scenario definitions | да | `campaign_matrix_digest` | семантика трафика | нет |
-| Scenario template count | да | `seal_preconditions.scenario_count` | покрытие матрицы | нет |
-| Generator family | да | `campaign_matrix_digest` | разнообразие генераторов | нет |
-| Infrastructure profile | да | `campaign_matrix_digest` | разнообразие инфраструктуры | нет |
-| Target implementation | да | `campaign_matrix_digest` | разнообразие целей | нет |
-| Intensity | да | `campaign_matrix_digest` | распределение нагрузки | нет |
-| Background policy | да | `campaign_matrix_digest` | фоновой трафик | нет |
-| Scenario parameter vectors | да | `campaign_matrix_digest` | реализация сценария | нет |
-| Scientific seed values | да | `campaign_matrix_digest` | воспроизводимость действий | нет |
-| Session tokens | да | `campaign_matrix_digest` | группировка сессий | нет |
-| Counterfactual pairs | да | `counterfactual_plan_digest` | контроль proxy-факторов | нет |
-| Feature contract and order | да | `feature_contract_digest`, `feature_order_digest` | вход модели | нет |
-| Acceptance criteria | да | `acceptance_criteria_digest` | правила решения | нет |
-| Image identities | да | `image_lock_digest` | воспроизводимость среды | нет |
-| Scenario action retry | да | `campaign_matrix_digest` | сетевое поведение | нет |
-| Scenario timeouts | да | `campaign_matrix_digest` | сетевое поведение | нет |
-| Scientific repetition policy | нет | отсутствует | размер выборки и дисперсия | да |
-| Execution order policy | нет | отсутствует | carry-over и временное смещение | да |
-| Execution concurrency policy | нет | отсутствует | contention и перекрёстный трафик | да |
-| Session isolation/reset policy | нет | отсутствует | перенос состояния между сессиями | да |
-| Warmup/cooldown policy | нет | отсутствует | загрязнение границ | да |
-| Capture start lead/stop lag | нет | отсутствует | полнота захвата | да |
-| Clock offset tolerance | нет | отсутствует | совмещение событий и меток | да |
-| Campaign retry/replacement policy | нет | отсутствует | selection bias | да |
-| Exclusion reason allowlist | нет | задана только максимальная доля | selection bias | да |
-| Exact split assignments | нет | есть policy без assignments | blind evaluation и leakage | да |
-| Output/session integrity schema | нет | есть только частичные runtime-структуры | полнота и проверяемость корпуса | да |
+## Run plan
 
-Порядок строк в замороженной матрице не считается порядком исполнения: freeze не объявляет такую семантику, а длительно живущие client/target процессы не имеют зафиксированного межсессионного reset-контракта. Значения seeds 1000–1071 зафиксированы digest матрицы, но количество применений каждой строки не задано.
+- 288 scenario templates;
+- три repetitions на template;
+- 864 execution units;
+- repetition 0/1/2 соответствует development train/calibration/blind internal holdout;
+- каждый split содержит 288 units;
+- execution seed вычисляется как frozen base seed плюс `repetition_index × 100000`;
+- execution tokens и полный identity digest уникальны;
+- порядок соответствует ascending frozen order key;
+- run-plan digest: `7f8109ed1b4d0216beae71c5999359bc67710629f66eedb977cb48d0142426df`;
+- exact-order digest: `be63a536b89eadad7d97ff63a40a314c37052452a8ce460b5ef1ac5e067588c2`.
 
-## Контракты и архитектура
+Матрица сохраняет шесть behaviors, две generator families, две infrastructure profiles, две target implementations, два service ports и три intensity bands. Все nuisance locks равны `false`. Background policies распределены по 72 templates, 24 frozen counterfactual pairs сохранены.
 
-Readiness-код находится в `lab/network_validation/execution_package.py`. Структурные контракты находятся в `lab/network_validation/execution/`:
+## Границы Phase 1
 
-- `label_vault_contract.json` задаёт исходное состояние `absent_locked`, условия будущего unlock и границу runner/evaluator;
-- `output_contract.json` перечисляет будущие session outputs, обязательные digests и запрещает результаты обучения и оценки на фазе сбора;
-- `campaign_ledger_contract.json` задаёт append-only audit trail; allowlist причин retry и exclusion намеренно пусты до superseding freeze;
-- `preflight_contract.json` задаёт fail-closed проверки и текущий `execution_allowed: false`.
+Runner получает frozen scenario metadata, timing, retry, image identities и exact execution identity. Sensor имеет только `NET_RAW`, `NET_ADMIN`, `SETUID`, `SETGID`; privileged mode, Docker socket и host network запрещены. Capture readiness должна предшествовать marker и scientific traffic. PCAP размером 24 bytes или с нулём пакетов является failure.
 
-Технические идентификаторы, локальные пути и timestamps не входят в scientific identity preview. Preview детерминированно связывает официальный freeze и digests контрактов, но не является execution-package candidate, не содержит run plan и не разрешает исполнение.
+Evaluator до label unlock получает только opaque evaluation token, feature contract/order digests, feature row и session-integrity digest. Scenario, generator, infrastructure, target, port, seed, split, paths, markers и counterfactual metadata запрещены. Opaque mapping требует внешний secret, который не создаётся и не хранится в Git.
 
-Будущая последовательность разделена на три фазы:
+Label vault остаётся `absent_locked`: labels не созданы и не разблокированы. Blind internal holdout известен controller, но недоступен training, calibration, model selection и analyst tuning.
 
-1. Data Collection: runner видит сценарную семантику; PCAP, Zeek logs и features создаются без labels.
-2. Training / Calibration: используются только заранее назначенные train/calibration splits; final holdout остаётся закрыт.
-3. Blinded Evaluation: frozen model создаёт predictions до разрешённого label unlock и расчёта metrics.
+## Контракты
 
-Evaluator до unlock получает только feature row, значения 51 признака, digests feature contract/order и session integrity. Ему запрещены behavior, generator family, infrastructure, target, scenario/session tokens, seed, split assignment, marker и path metadata.
+- `phase1_run_plan.json` — exact ordered list 864 execution units;
+- `runner_contract.json` — runner visibility, isolation, capabilities и capture readiness;
+- `evaluator_contract.json` — evaluator visibility и blind-holdout guard;
+- `sealed_mapping_contract.json` — внешний key для opaque evaluation tokens;
+- `session_integrity_contract.json` — обязательные SHA и session sealing;
+- frozen `label_vault_contract.json`, `output_contract.json`, `campaign_ledger_contract.json` и `preflight_contract.json` используются без изменения;
+- `phase1_preflight_contract.json` отделяет static package validation от будущего runtime preflight.
 
-## Run plan, retry и exclusion
-
-Матрица сохраняет 72 уникальных scenario templates, 72 уникальных текущих session tokens, шесть behaviors, две generator families, две infrastructure profiles, две target implementations, два порта, три intensity bands и 24 counterfactual pairs. Число execution sessions равно нулю, потому что repetition policy отсутствует. Split не материализован.
-
-Per-action retry и timeout входят в строки сценариев и описывают наблюдаемое сетевое поведение. Они не заменяют отсутствующие правила повтора или замены неуспешной сессии. До superseding freeze запрещены автоматические retry, replacement, row exclusion и scenario substitution. Любая будущая операция должна иметь заранее разрешённый reason code и append-only запись.
-
-## Preflight
-
-До исполнения должны пройти integrity-проверки official freeze, source/containing commits, матрицы, counterfactual plan, acceptance criteria, feature contract/order и image lock. Дополнительно требуются полный execution policy, закрытый label vault, новый или пустой output root, чистое дерево и SHA коммита execution tooling.
-
-Текущий preflight всегда возвращает `execution_allowed: false`. Устранение gaps требует отдельного superseding freeze; исправлять существующий immutable artifact на месте нельзя.
+Package tooling выполняет только чтение, каноническую материализацию и валидацию. В нём отсутствуют команды запуска scientific sessions, создания labels, обучения и оценки.
 
 ## Безопасные команды
 
 ```powershell
-python -m lab.network_validation.cli audit-execution-readiness
+python -m lab.network_validation.cli materialize-execution-package-inputs
 python -m lab.network_validation.cli build-execution-package-preview
-python -m lab.network_validation.cli validate-execution-package
 python -m lab.network_validation.cli inspect-run-plan
 python -m lab.network_validation.cli inspect-label-boundary
+python -m lab.network_validation.cli validate-execution-package
+python -m lab.network_validation.cli audit-execution-preflight --help
+python -m lab.network_validation.cli create-official-execution-package --help
 ```
 
-Команды выполняют только чтение и валидацию. Они не запускают контейнеры, capture, Zeek, модель или научную кампанию и не создают runtime-артефакты.
+## Следующее действие
+
+Зафиксировать tooling и inputs отдельным чистым commit, затем из него создать immutable official Phase 1 execution package. Scientific campaign при этом не запускается.

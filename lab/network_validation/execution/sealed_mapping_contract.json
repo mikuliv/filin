@@ -1,0 +1,10 @@
+{
+  "schema_version": "network_validation_phase1_sealed_mapping_contract_v1",
+  "mapping_algorithm": "hmac_sha256_execution_token",
+  "mapping_key_required_at_execution": true,
+  "mapping_key_storage": "external_secret",
+  "mapping_key_digest": "unresolved_until_secure_initialization",
+  "tracked_secret_allowed": false,
+  "mapping_created": false,
+  "evaluation_token_exposes_runner_metadata": false
+}

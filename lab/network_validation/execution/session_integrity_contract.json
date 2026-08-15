@@ -1,0 +1,21 @@
+{
+  "schema_version": "network_validation_phase1_session_integrity_contract_v1",
+  "required_sha256_fields": [
+    "execution_event_sha256",
+    "marker_events_sha256",
+    "pcap_sha256",
+    "capture_manifest_sha256",
+    "conn_log_sha256",
+    "http_log_sha256",
+    "dns_log_sha256",
+    "parameter_realization_sha256",
+    "feature_rows_sha256",
+    "session_manifest_canonical_sha256"
+  ],
+  "sealed_outputs_immutable": true,
+  "pcap_minimum_payload_requirement": "byte_count_greater_than_24_and_packet_count_greater_than_0",
+  "pcap_header_only_failure_code": "PCAP_HEADER_ONLY",
+  "zeek_conn_log_required": true,
+  "feature_count_required": 51,
+  "all_features_finite_numeric_required": true
+}

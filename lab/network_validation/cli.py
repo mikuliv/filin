@@ -20,6 +20,17 @@ from .freeze import environment_lock, freeze_candidate_preview, freeze_preview, 
 from .freeze_candidate import FREEZE_CANDIDATE_SCHEMA, candidate_summary, freeze_candidate_proxy_risks, validate_freeze_candidate
 from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
 from .parameter_verification import observations_from_zeek, verify_parameters
+from .phase1_execution_package import (
+    OFFICIAL_PACKAGE_PATH as DEFAULT_OFFICIAL_EXECUTION_PACKAGE,
+    audit_preflight as audit_phase1_preflight,
+    build_candidate_preview as build_phase1_candidate_preview,
+    inspect_label_boundary as inspect_phase1_label_boundary,
+    inspect_run_plan as inspect_phase1_run_plan,
+    materialize_execution_inputs,
+    validate_candidate_preview as validate_phase1_candidate_preview,
+    validate_official_package,
+    write_official_package,
+)
 from .pipeline import COMPOSE, compose_config, run_factor_orthogonality_smoke, run_technical_smoke
 from .planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
 from .superseding_freeze import (
@@ -107,6 +118,12 @@ def parser() -> argparse.ArgumentParser:
     package.add_argument("--acceptance-criteria", default=str(DEFAULT_ACCEPTANCE_CRITERIA))
     package.add_argument("--image-lock", default=str(DEFAULT_IMAGE_LOCK))
     package.add_argument("--freeze", default=str(DEFAULT_OFFICIAL_FREEZE))
+    commands.add_parser("materialize-execution-package-inputs")
+    preflight = commands.add_parser("audit-execution-preflight")
+    preflight.add_argument("--package", default=str(DEFAULT_OFFICIAL_EXECUTION_PACKAGE))
+    create_package = commands.add_parser("create-official-execution-package")
+    create_package.add_argument("--output", default=str(DEFAULT_OFFICIAL_EXECUTION_PACKAGE))
+    create_package.add_argument("--confirm-official-package", action="store_true")
     commands.add_parser("inspect-label-boundary")
     commands.add_parser("render-compose")
     commands.add_parser("inspect-environment")
@@ -155,13 +172,53 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "validate-official-superseding-freeze":
         value = validate_official_superseding_freeze(load_json(Path(args.freeze)))
         _emit({"superseding_freeze_valid": True, "execution_protocol_complete": True, "scientific_campaign_started": False, "scientific_pass_allowed": False, "production_approval": False, "official_superseding_freeze": value}, args.json_output); return 0
+    if args.command == "materialize-execution-package-inputs":
+        _emit(materialize_execution_inputs(), args.json_output); return 0
+    if args.command == "build-execution-package-preview":
+        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        source = "unresolved_until_commit" if dirty else subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        value = build_phase1_candidate_preview(source)
+        validate_phase1_candidate_preview(value)
+        _emit(value, args.json_output); return 0
+    if args.command == "inspect-run-plan":
+        _emit(inspect_phase1_run_plan(), args.json_output); return 0
+    if args.command == "inspect-label-boundary":
+        _emit(inspect_phase1_label_boundary(), args.json_output); return 0
+    if args.command == "validate-execution-package":
+        if args.package:
+            value = validate_official_package(load_json(Path(args.package)))
+            _emit({
+                "official_execution_package_valid": True,
+                "phase": "data_collection",
+                "execution_plan_complete": True,
+                "scientific_campaign_started": False,
+                "labels_created": False,
+                "model_required": False,
+                "runtime_preflight_required": True,
+                "official_execution_package": value,
+            }, args.json_output)
+        else:
+            value = build_phase1_candidate_preview("unresolved_until_commit")
+            validate_phase1_candidate_preview(value)
+            _emit(value, args.json_output)
+        return 0
+    if args.command == "audit-execution-preflight":
+        _emit(audit_phase1_preflight(load_json(Path(args.package))), args.json_output); return 0
+    if args.command == "create-official-execution-package":
+        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            raise ValueError("official execution package requires a clean working tree")
+        source = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        created_at = subprocess.run(["git", "show", "-s", "--format=%cI", source], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        value = write_official_package(Path(args.output), source, created_at, args.confirm_official_package)
+        _emit({"official_execution_package_created": True, "official_execution_package": value}, args.json_output); return 0
     if args.command == "validate-parameter-contract":
         scenario = load_json(Path(args.scenario)); validate_scenario(scenario); _emit(verify_parameters(scenario, observations_from_zeek(Path(args.zeek_dir))), args.json_output); return 0
     if args.command == "validate-capture-manifest":
         manifests = load_json(Path(args.manifest)); executions = load_json(Path(args.executions)); markers = load_json(Path(args.markers)) if args.markers else None; validate_capture_set(manifests, Path(args.dataset_root), executions, markers); _emit({"valid": True, "capture_count": len(manifests)}, args.json_output); return 0
-    if args.command == "inspect-label-boundary":
-        _emit(inspect_label_boundary(), args.json_output); return 0
-    if args.command in {"audit-execution-readiness", "build-execution-package-preview", "validate-execution-package", "inspect-run-plan"}:
+    if args.command in {"audit-execution-readiness"}:
         campaign = load_json(Path(args.campaign)); criteria = load_json(Path(args.acceptance_criteria)); image_lock = load_json(Path(args.image_lock)); official_freeze = load_json(Path(args.freeze))
         source = official_freeze.get("source_git_sha", "")
         result = subprocess.run(["git", "cat-file", "-e", f"{source}^{{commit}}"], cwd=ROOT, capture_output=True, check=False)
@@ -171,10 +228,8 @@ def main(argv: list[str] | None = None) -> int:
         validate_official_freeze(official_freeze, campaign, criteria, image_lock, environment, source, ROOT)
         if args.command == "audit-execution-readiness":
             value = audit_execution_readiness(campaign, official_freeze)
-        elif args.command == "inspect-run-plan":
-            value = inspect_run_plan(campaign, official_freeze)
         else:
-            value = load_json(Path(args.package)) if args.command == "validate-execution-package" and args.package else build_execution_package_preview(campaign, official_freeze)
+            value = build_execution_package_preview(campaign, official_freeze)
             validate_execution_package_preview(value)
         _emit(value, args.json_output); return 0
     if args.command == "validate-freeze-candidate":
