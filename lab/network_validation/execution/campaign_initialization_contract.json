@@ -1,0 +1,112 @@
+{
+  "schema_version": "network_validation_campaign_initialization_contract_v1",
+  "scope": "operational_initialization_only",
+  "scientific_protocol_changed": false,
+  "secret_root": {
+    "storage_class": "external_secret_root",
+    "runtime_parameter_required": true,
+    "repository_storage": "forbidden",
+    "scientific_output_root_storage": "forbidden"
+  },
+  "secret_files": {
+    "secret": "mapping-secret.bin",
+    "metadata": "mapping-secret.metadata.json"
+  },
+  "output_control_files": {
+    "initialization_manifest": "control/campaign-initialization.json",
+    "campaign_ledger": "control/campaign-ledger.jsonl"
+  },
+  "initialization_manifest": {
+    "schema_version": "network_validation_campaign_initialization_manifest_v1",
+    "initialization_state": "initialized_not_started",
+    "required_fields": [
+      "schema_version",
+      "initialization_state",
+      "package_id",
+      "package_canonical_digest",
+      "superseding_freeze_id",
+      "superseding_freeze_canonical_digest",
+      "run_plan_digest",
+      "exact_execution_order_digest",
+      "campaign_ledger_contract_digest",
+      "sealed_mapping_contract_digest",
+      "campaign_initialization_contract_digest",
+      "output_contract_digest",
+      "mapping_secret_fingerprint",
+      "mapping_algorithm",
+      "campaign_initialized",
+      "scientific_campaign_started",
+      "attempt_count",
+      "scientific_sessions_executed",
+      "mapping_entries",
+      "labels_created",
+      "labels_unlocked",
+      "initialized_at",
+      "canonical_payload_sha256"
+    ],
+    "canonicalization": "repository_canonical_json",
+    "self_digest_algorithm": "SHA-256",
+    "self_digest_encoding": "lowercase_hexadecimal",
+    "self_digest_excluded_fields": ["canonical_payload_sha256"],
+    "initialized_at": "UTC_RFC3339_operational_audit_metadata",
+    "initial_values": {
+      "campaign_initialized": true,
+      "scientific_campaign_started": false,
+      "attempt_count": 0,
+      "scientific_sessions_executed": 0,
+      "mapping_entries": 0,
+      "labels_created": false,
+      "labels_unlocked": false
+    }
+  },
+  "atomic_installation": {
+    "fail_closed": true,
+    "temporary_files_same_filesystem_as_destination": true,
+    "ordered_stages": [
+      "validate_package_and_contracts",
+      "validate_empty_package_output_root",
+      "validate_secret_root",
+      "write_and_flush_secret_temp",
+      "apply_and_verify_secret_acl",
+      "calculate_secret_fingerprint",
+      "write_secret_metadata_temp",
+      "write_initialization_manifest_temp",
+      "write_zero_byte_ledger_temp",
+      "validate_all_temporary_artifacts",
+      "atomic_install_secret",
+      "atomic_install_secret_metadata",
+      "atomic_install_initialization_manifest",
+      "atomic_install_zero_byte_ledger",
+      "post_validate_complete_state"
+    ]
+  },
+  "rollback": {
+    "allowed_before_success": true,
+    "scope": "files_created_by_current_initialization_attempt_only",
+    "preexisting_files_must_not_be_deleted": true,
+    "forbidden_after_success": true
+  },
+  "overwrite_policy": {
+    "secret": false,
+    "secret_metadata": false,
+    "initialization_manifest": false,
+    "campaign_ledger": false
+  },
+  "idempotence": {
+    "status": "CAMPAIGN_ALREADY_INITIALIZED",
+    "validate_existing": [
+      "secret_fingerprint_matches_metadata",
+      "secret_acl_valid",
+      "initialization_manifest_valid",
+      "package_binding_matches",
+      "ledger_valid"
+    ],
+    "regenerate_secret": false,
+    "truncate_ledger": false,
+    "change_initialized_at": false
+  },
+  "scientific_campaign_start": {
+    "ledger_event_type": "session_started",
+    "transition": "only_after_per_session_preflight_when_first_actual_execution_is_being_launched"
+  }
+}

@@ -33,6 +33,17 @@ from .phase1_execution_package import (
 )
 from .pipeline import COMPOSE, compose_config, run_factor_orthogonality_smoke, run_technical_smoke
 from .planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
+from .operational_initialization import (
+    audit_initialization_contracts,
+    validate_ledger_contract,
+    validate_mapping_contract,
+)
+from .superseding_execution_package import (
+    OFFICIAL_PACKAGE_V2_PATH,
+    build_preview as build_superseding_package_preview,
+    validate_official_package as validate_superseding_execution_package,
+    write_official_package as write_superseding_execution_package,
+)
 from .superseding_freeze import (
     OFFICIAL_PATH as DEFAULT_SUPERSEDING_FREEZE,
     materialize_inputs,
@@ -144,6 +155,17 @@ def parser() -> argparse.ArgumentParser:
     create_superseding.add_argument("--confirm-official-freeze", action="store_true")
     validate_superseding = commands.add_parser("validate-official-superseding-freeze")
     validate_superseding.add_argument("--freeze", default=str(DEFAULT_SUPERSEDING_FREEZE))
+    commands.add_parser("audit-initialization-contract")
+    commands.add_parser("inspect-ledger-contract")
+    commands.add_parser("inspect-mapping-contract")
+    superseding_preview = commands.add_parser("build-superseding-execution-package-preview")
+    superseding_preview.add_argument("--operational-contracts-commit")
+    validate_package_v2 = commands.add_parser("validate-superseding-execution-package")
+    validate_package_v2.add_argument("--package", default=str(OFFICIAL_PACKAGE_V2_PATH))
+    create_package_v2 = commands.add_parser("create-official-superseding-execution-package")
+    create_package_v2.add_argument("--output", default=str(OFFICIAL_PACKAGE_V2_PATH))
+    create_package_v2.add_argument("--operational-contracts-commit")
+    create_package_v2.add_argument("--confirm-official-package", action="store_true")
     return root
 
 
@@ -172,6 +194,32 @@ def main(argv: list[str] | None = None) -> int:
     if args.command == "validate-official-superseding-freeze":
         value = validate_official_superseding_freeze(load_json(Path(args.freeze)))
         _emit({"superseding_freeze_valid": True, "execution_protocol_complete": True, "scientific_campaign_started": False, "scientific_pass_allowed": False, "production_approval": False, "official_superseding_freeze": value}, args.json_output); return 0
+    if args.command == "audit-initialization-contract":
+        _emit(audit_initialization_contracts(), args.json_output); return 0
+    if args.command == "inspect-ledger-contract":
+        _emit(validate_ledger_contract(), args.json_output); return 0
+    if args.command == "inspect-mapping-contract":
+        _emit(validate_mapping_contract(), args.json_output); return 0
+    if args.command == "build-superseding-execution-package-preview":
+        source = args.operational_contracts_commit or subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        _emit(build_superseding_package_preview(source), args.json_output); return 0
+    if args.command == "validate-superseding-execution-package":
+        value = validate_superseding_execution_package(Path(args.package))
+        _emit({"official_superseding_execution_package_valid": True, "official_superseding_execution_package": value}, args.json_output); return 0
+    if args.command == "create-official-superseding-execution-package":
+        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            raise ValueError("official superseding execution package requires a clean working tree")
+        source = args.operational_contracts_commit or subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        created_at = subprocess.run(
+            ["git", "show", "-s", "--format=%cI", source], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        value = write_superseding_execution_package(Path(args.output), source, created_at, args.confirm_official_package)
+        _emit({"official_superseding_execution_package_created": True, "official_superseding_execution_package": value}, args.json_output); return 0
     if args.command == "materialize-execution-package-inputs":
         _emit(materialize_execution_inputs(), args.json_output); return 0
     if args.command == "build-execution-package-preview":

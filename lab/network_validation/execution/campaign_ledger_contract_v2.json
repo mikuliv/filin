@@ -1,0 +1,99 @@
+{
+  "schema_version": "network_validation_campaign_ledger_contract_v2",
+  "supersedes_contract_digest": "237aa3302771ff97da6fef075983f4440360bf63c3040fd0ada74e55efd7d3e9",
+  "relative_path": "control/campaign-ledger.jsonl",
+  "physical_format": {
+    "format": "JSON Lines",
+    "encoding": "UTF-8",
+    "bom": "forbidden",
+    "line_ending": "LF",
+    "append_only": true
+  },
+  "initial_state": {
+    "file_exists": true,
+    "file_size_bytes": 0,
+    "record_count": 0,
+    "attempt_record_count": 0,
+    "scientific_session_record_count": 0,
+    "retry_record_count": 0,
+    "exclusion_record_count": 0,
+    "initialization_is_ledger_event": false
+  },
+  "genesis_previous_record_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+  "record_digest": {
+    "canonicalization": "repository_canonical_json",
+    "excluded_fields": ["record_digest"],
+    "algorithm": "SHA-256",
+    "encoding": "lowercase_hexadecimal"
+  },
+  "chain": {
+    "first_record_previous_digest": "genesis_previous_record_digest",
+    "subsequent_record_previous_digest": "previous_record_record_digest",
+    "reject_chain_break": true,
+    "reject_reorder": true,
+    "reject_tamper": true,
+    "reject_invalid_final_line": true
+  },
+  "sequence": {
+    "field": "record_sequence",
+    "first": 1,
+    "increment": 1,
+    "reject_gaps": true,
+    "reject_duplicates": true
+  },
+  "required_record_fields": [
+    "record_sequence",
+    "attempt_id",
+    "event_type",
+    "previous_record_digest",
+    "record_digest",
+    "package_id",
+    "package_canonical_digest",
+    "scenario_token",
+    "session_token",
+    "status"
+  ],
+  "package_binding_fields": [
+    "package_id",
+    "package_canonical_digest"
+  ],
+  "permitted_event_types": [
+    "preflight_blocked",
+    "session_started",
+    "session_completed",
+    "session_failed",
+    "retry_requested",
+    "exclusion_requested",
+    "campaign_closed"
+  ],
+  "scientific_campaign_start": {
+    "event_type": "session_started",
+    "semantics": "first_actual_execution_process_passed_per_session_preflight_and_is_being_launched",
+    "planned_is_start": false,
+    "initialization_is_start": false,
+    "preflight_is_start": false
+  },
+  "retry_reason_allowlist": [
+    "docker_daemon_transient_failure",
+    "container_start_failure",
+    "target_healthcheck_failure",
+    "capture_start_failure",
+    "capture_integrity_failure",
+    "host_io_failure",
+    "processing_integrity_failure"
+  ],
+  "exclusion_reason_allowlist": [
+    "capture_integrity_failure",
+    "session_boundary_integrity_failure",
+    "processing_integrity_failure",
+    "output_integrity_failure",
+    "clock_integrity_failure"
+  ],
+  "reason_policy_status": "frozen_by_superseding_execution_policy",
+  "prohibited_automatic_actions": [
+    "retry_without_allowlisted_reason",
+    "session_replacement",
+    "row_exclusion",
+    "scenario_substitution"
+  ]
+}

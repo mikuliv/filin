@@ -74,6 +74,12 @@ python -m lab.network_validation.cli validate-official-superseding-freeze --help
 python -m lab.network_validation.cli materialize-execution-package-inputs
 python -m lab.network_validation.cli audit-execution-preflight --help
 python -m lab.network_validation.cli create-official-execution-package --help
+python -m lab.network_validation.cli audit-initialization-contract
+python -m lab.network_validation.cli inspect-ledger-contract
+python -m lab.network_validation.cli inspect-mapping-contract
+python -m lab.network_validation.cli build-superseding-execution-package-preview --help
+python -m lab.network_validation.cli validate-superseding-execution-package --help
+python -m lab.network_validation.cli create-official-superseding-execution-package --help
 ```
 
 Для проверки capture path только на первой комбинации используется флаг `--diagnostic-first-only`; такой запуск не устанавливает общий статус полного orthogonality smoke.

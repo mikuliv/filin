@@ -5,11 +5,11 @@
 <!-- generated:start -->
 ## Сводка
 
-- Документов: **372**.
+- Документов: **373**.
 - Защищённых: **82**.
-- Текущих: **266**.
+- Текущих: **267**.
 - Исторических и frozen: **106**.
-- Созданных: **111**; переписанных: **142**; redirects: **15**.
+- Созданных: **112**; переписанных: **142**; redirects: **15**.
 - Сломанных ссылок: **0**; anchors: **0**.
 
 ## Документы
@@ -48,7 +48,7 @@
 | `docs/architecture/storage-and-artifacts.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `ad149485cfc2` | `2f5a4bee340e` |
 | `docs/architecture/trust-boundaries.md` | Авторитетный текущий документ | `current` | current | нет | `rewritten` | `1f133afa2697` | `f53b7a994ab7` |
 | `docs/audit/documentation_inventory.md` | Redirect-документ | `redirect` | current | нет | `redirected` | `c23a3c126926` | `840eb00e9075` |
-| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `d20738d2eeca` |
+| `docs/audit/documentation_inventory_v2.md` | Генерируемый индекс или представление | `generated` | current | нет | `rewritten` | `13bf181e4b15` | `a96e8d9af40e` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `1839146eb403` | `8674307c984f` |
 | `docs/audit/documentation_path_migration_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `cb437745bba4` | `4f4f1743a49f` |
 | `docs/audit/documentation_refactor_plan_v2.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8ca9d2c1f48b` | `559cd867b8e3` |
@@ -88,6 +88,7 @@
 | `docs/experiments/independent_network_validation_execution_package.md` | Историческое описание | `current` | current | нет | `created` | `—` | `d8adfabe0879` |
 | `docs/experiments/independent_network_validation_freeze_review.md` | Историческое описание | `current` | current | нет | `created` | `—` | `00ce8a91e4f1` |
 | `docs/experiments/independent_network_validation_superseding_freeze.md` | Историческое описание | `current` | current | нет | `created` | `—` | `edd161ee4995` |
+| `docs/experiments/network_validation_operational_contract_completion.md` | Историческое описание | `current` | current | нет | `created` | `—` | `3d7021afdbc3` |
 | `docs/experiments/next_independent_network_validation_protocol.md` | Frozen evidence | `frozen` | historical | да | `created` | `—` | `3772dee6c268` |
 | `docs/experiments/v0_3_11.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `b221582a5002` | `b221582a5002` |
 | `docs/experiments/v0_3_12.md` | Историческое описание | `historical` | historical | нет | `unchanged` | `22d19e14b43d` | `22d19e14b43d` |
@@ -304,7 +305,7 @@
 | `lab/environment/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `78d2defef709` | `2e4ad0007470` |
 | `lab/holdout/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `d54a3f1d126f` | `1c014ab5a04e` |
 | `lab/isolation-rules.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `8f52a729527a` | `a1e455638a6f` |
-| `lab/network_validation/README.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `973c2dd728ed` |
+| `lab/network_validation/README.md` | Текущий справочный документ | `current` | current | нет | `created` | `—` | `128ab60c6461` |
 | `lab/robustness/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `82d6f933f2c6` | `3e8bcc0f0441` |
 | `lab/scenario-schedule.md` | Неопределённый документ | `current` | current | нет | `rewritten` | `fe3fb0e4aad8` | `46ac914a6b1c` |
 | `lab/sensor/README.md` | Текущий справочный документ | `current` | current | нет | `rewritten` | `8cada83e855f` | `99b273b39131` |

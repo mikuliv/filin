@@ -1,0 +1,94 @@
+{
+  "schema_version": "network_validation_sealed_mapping_contract_v2",
+  "supersedes_contract_digest": "4a4c4b35a1356848e8c60425b70def4631dbd31ac7a492e8dfe40fd7bb3d9a5e",
+  "mapping_algorithm": "HMAC-SHA256",
+  "mapping_input": {
+    "field": "execution_token",
+    "source": "phase1_run_plan.json",
+    "encoding": "UTF-8",
+    "bom": false,
+    "trailing_newline": false,
+    "unicode_transformation": "none"
+  },
+  "mapping_key": {
+    "generation": "cryptographically_secure_random",
+    "randomness_source": "OS_CSPRNG",
+    "key_size_bytes": 32,
+    "key_size_bits": 256,
+    "serialization": "raw_binary",
+    "serialized_length_bytes": 32,
+    "newline": "none",
+    "text_encoding": "not_applicable",
+    "logical_filename": "mapping-secret.bin"
+  },
+  "secret_storage": {
+    "storage_class": "external_secret_root",
+    "runtime_parameter_required": true,
+    "absolute_path_is_canonical_input": false,
+    "repository_storage": "forbidden",
+    "scientific_output_root_storage": "forbidden"
+  },
+  "fingerprint": {
+    "algorithm": "SHA-256",
+    "input": "raw_32_secret_bytes",
+    "encoding": "lowercase_hexadecimal",
+    "length_characters": 64,
+    "secret": false
+  },
+  "evaluation_token": {
+    "algorithm": "HMAC-SHA256",
+    "key": "raw_secret_bytes",
+    "message": "UTF8_exact_execution_token",
+    "encoding": "lowercase_hexadecimal",
+    "length_characters": 64,
+    "truncated": false,
+    "salt": "none",
+    "package_digest_in_message": false
+  },
+  "metadata": {
+    "logical_filename": "mapping-secret.metadata.json",
+    "contains_secret": false,
+    "schema_version": "network_validation_mapping_secret_metadata_v1",
+    "required_fields": [
+      "schema_version",
+      "package_id",
+      "package_canonical_digest",
+      "mapping_algorithm",
+      "key_size_bytes",
+      "secret_filename",
+      "secret_fingerprint",
+      "fingerprint_algorithm",
+      "created_at"
+    ],
+    "created_at_semantics": "operational_audit_only"
+  },
+  "acl_policy": {
+    "windows_filesystem": "NTFS",
+    "inheritance": "disabled",
+    "allowed_principal_roles": [
+      "initializing_campaign_operator",
+      "SYSTEM",
+      "BUILTIN\\Administrators"
+    ],
+    "rights": "FullControl",
+    "forbidden_broad_principals": [
+      "Everyone",
+      "Users",
+      "Authenticated Users"
+    ],
+    "non_windows_equivalent": "owner_only"
+  },
+  "overwrite_policy": {
+    "overwrite_existing_secret": false,
+    "regenerate_existing_secret": false,
+    "existing_secret_validation": [
+      "fingerprint",
+      "metadata_package_binding",
+      "acl"
+    ],
+    "unknown_secret_status": "CAMPAIGN_INITIALIZATION_BLOCKED_EXISTING_UNKNOWN_SECRET"
+  },
+  "mapping_created_at_initialization": false,
+  "mapping_entries_at_initialization": 0,
+  "tracked_secret_allowed": false
+}
