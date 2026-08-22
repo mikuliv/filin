@@ -1531,6 +1531,19 @@
       "mutable": false
     },
     {
+      "path": "lab/network_validation/execution/campaign_ledger_contract_v2.json",
+      "protecting_stage": "unknown",
+      "protecting_manifest": "lab/network_validation/execution/campaign_ledger_contract_v2.json",
+      "protecting_manifests": [
+        "lab/network_validation/execution/campaign_ledger_contract_v2.json"
+      ],
+      "expected_sha256": "16ec2beaac0c0fa7ae70135cf662a9e008e8eb1065e7b3089f62e3fe2be31657",
+      "actual_sha256": "16ec2beaac0c0fa7ae70135cf662a9e008e8eb1065e7b3089f62e3fe2be31657",
+      "current_sha256": "16ec2beaac0c0fa7ae70135cf662a9e008e8eb1065e7b3089f62e3fe2be31657",
+      "manifest_sha_matches": true,
+      "mutable": false
+    },
+    {
       "path": "lab_console/__init__.py",
       "protecting_stage": "v0.4.3",
       "protecting_manifest": "ml/reports/v0_4_3/v0_4_3_bundle_manifest.json",
