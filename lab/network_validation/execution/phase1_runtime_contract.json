@@ -1,0 +1,351 @@
+{
+  "schema_version": "network_validation_phase1_runtime_contract_v1",
+  "scope": "operational_phase1_execution",
+  "scientific_protocol_changed": false,
+  "extends_contracts": {
+    "sealed_mapping_contract_digest": "10c7bcfb755795431e0df0a0466e53011dbd854cee64c067899afe7e396049c3",
+    "campaign_ledger_contract_digest": "e8582b1e6a3983577bb50a06b7a3c868f5cd09ef1a8fecb4c53a57697965d251",
+    "runner_contract_digest": "c7a9e32657a41f8595de71121564979d3823bbfde8449fc5301b28bfa3d2e281",
+    "output_contract_digest": "d3b7a40ac6cdf948ed2e83326ae4f1c747697b7a1847719c8fe5779ba26c8867",
+    "session_integrity_contract_digest": "e8b9adc5cdb309ffa12a02d6a386d48b6046afd9c573aad0d04297b751607f7d",
+    "preflight_contract_digest": "8595e7236cd78b13598dd22f50bcbaf786ca86b2b25395039d7f93027d66c52d"
+  },
+  "contract_precedence": {
+    "operational_runtime_lifecycle": "this_contract",
+    "scientific_inputs": "official_execution_package_and_phase1_run_plan",
+    "ledger_chain_and_event_allowlists": "campaign_ledger_contract_v2",
+    "predecessor_execution_policy_ledger_reference": "historical_only"
+  },
+  "identity_derivation": {
+    "session_token": {
+      "algorithm": "SHA-256",
+      "message": "network-validation-session-v1\\0{package_id}\\0{execution_token}",
+      "encoding": "UTF-8",
+      "representation": "first_24_lowercase_hex"
+    },
+    "attempt_id": {
+      "algorithm": "SHA-256",
+      "message": "network-validation-attempt-v1\\0{package_id}\\0{execution_token}\\0{attempt_number}",
+      "encoding": "UTF-8",
+      "representation": "first_24_lowercase_hex"
+    },
+    "runtime_namespace": {
+      "format": "filin-nv-{package_digest_prefix_12}-{attempt_id}",
+      "maximum_length": 63
+    },
+    "attempt_number": {
+      "first": 1,
+      "maximum": 2,
+      "derive_from": "count_session_started_records_for_execution_token_plus_one"
+    }
+  },
+  "next_unit_policy": {
+    "source": "phase1_run_plan.json.ordered_execution_units",
+    "selection": "first_execution_token_without_session_completed_record",
+    "reordering_allowed": false,
+    "skip_allowed": false,
+    "maximum_concurrent_units": 1
+  },
+  "campaign_roots": {
+    "repository_storage_forbidden": true,
+    "output_root_leaf": "{package_id}",
+    "secret_root_leaf": "{package_id}",
+    "roots_must_be_distinct_and_non_nested": true,
+    "predecessor_package_roots_reuse_forbidden": true
+  },
+  "ledger_record_profile": {
+    "exact_fields": [
+      "record_sequence",
+      "attempt_id",
+      "attempt_number",
+      "event_type",
+      "previous_record_digest",
+      "record_digest",
+      "package_id",
+      "package_canonical_digest",
+      "execution_token",
+      "scenario_token",
+      "session_token",
+      "status",
+      "reason_code",
+      "occurred_at"
+    ],
+    "timestamp": "UTC_RFC3339",
+    "event_status": {
+      "session_started": "started",
+      "session_completed": "sealed_success",
+      "session_failed": "failed",
+      "retry_requested": "requested"
+    },
+    "reason_code": {
+      "session_started": null,
+      "session_completed": null,
+      "session_failed": "required_non_empty",
+      "retry_requested": "campaign_ledger_contract_v2.retry_reason_allowlist"
+    },
+    "append": {
+      "open_mode": "exclusive_append_binary",
+      "encoding": "UTF-8",
+      "line_ending": "LF",
+      "flush": true,
+      "fsync": true,
+      "validate_complete_chain_after_append": true
+    }
+  },
+  "ledger_state_machine": {
+    "initial": "not_started",
+    "transitions": {
+      "not_started:session_started:1": "attempt_1_active",
+      "attempt_1_active:session_completed:1": "completed",
+      "attempt_1_active:session_failed:1": "attempt_1_failed",
+      "attempt_1_failed:retry_requested:1": "retry_authorized",
+      "retry_authorized:session_started:2": "attempt_2_active",
+      "attempt_2_active:session_completed:2": "completed",
+      "attempt_2_active:session_failed:2": "terminal_failed"
+    },
+    "terminal_states": ["completed", "terminal_failed"],
+    "cross_execution_rule": "only_one_nonterminal_execution_token_and_run_plan_order"
+  },
+  "mapping_lifecycle": {
+    "storage_class": "external_secret_root",
+    "relative_path": "sealed-mapping.jsonl",
+    "format": "canonical_JSONL_UTF-8_LF",
+    "acl": "same_as_mapping_secret",
+    "entry_exact_fields": [
+      "schema_version",
+      "package_id",
+      "package_canonical_digest",
+      "execution_token",
+      "evaluation_token",
+      "created_at"
+    ],
+    "entry_schema_version": "network_validation_sealed_mapping_entry_v1",
+    "create_after": "session_started_ledger_record_committed",
+    "create_before": "scientific_behavior_launch",
+    "entries_per_execution_token": 1,
+    "retry_reuses_entry": true,
+    "precompute_future_entries": false,
+    "overwrite": false,
+    "duplicate_exact_entry": "idempotent",
+    "conflicting_entry": "SESSION_MAPPING_CONFLICT"
+  },
+  "session_output_layout": {
+    "session_root": "sessions/{session_token}",
+    "attempt_staging": "sessions/{session_token}/.attempt-{attempt_number:02d}.staging",
+    "attempt_sealed": "sessions/{session_token}/attempt-{attempt_number:02d}",
+    "failed_attempt": "sessions/{session_token}/attempt-{attempt_number:02d}.failed",
+    "atomic_seal": "same_filesystem_directory_rename",
+    "overwrite": false,
+    "path_identity_excluded_from_features": true
+  },
+  "runtime_sequence": [
+    "validate_package_initialization_ledger_secret",
+    "resolve_exact_next_unit",
+    "validate_unused_attempt_paths_and_namespace",
+    "start_target_and_common_client",
+    "target_healthcheck",
+    "warmup_2_seconds",
+    "start_capture_sensor",
+    "capture_ready",
+    "clock_preflight_all_runtime_processes",
+    "capture_lead_0_5_seconds",
+    "append_session_started",
+    "create_or_validate_single_mapping_entry",
+    "launch_exact_scientific_behavior",
+    "capture_lag_0_5_seconds",
+    "graceful_capture_stop_and_flush",
+    "cooldown_1_second",
+    "process_pcap_with_frozen_zeek",
+    "verify_parameter_realization",
+    "construct_one_51_feature_row",
+    "build_and_validate_session_integrity_manifest",
+    "atomic_seal_attempt_directory",
+    "append_session_completed",
+    "teardown_attempt_runtime",
+    "stop_before_next_unit"
+  ],
+  "runtime_images": {
+    "common_client": {
+      "reference": "filin-frozen/common-client:2ae1f6567e7eb4f8",
+      "platform_manifest_digest": "sha256:47fc6fdfbcf7b642f90bb3cef2f6409feea1521a0444ce4ddcf7f5fec3465b6d",
+      "config_digest": "sha256:73183d91a69b9000d0742b9ee1d3cf9974f74c46d95469c9158be0882c563b33"
+    },
+    "target_a": {
+      "reference": "filin-frozen/target-a:2ae1f6567e7eb4f8",
+      "platform_manifest_digest": "sha256:118ddf1b6533bae1e2b572971ab2516094367b78f242aeea5bb17df966c1ac20",
+      "config_digest": "sha256:e2f24d65d636e97299a8630a79f7c4106ef85fa2c783f95c87102acc2eb0a918"
+    },
+    "target_b": {
+      "reference": "filin-frozen/target-b:2ae1f6567e7eb4f8",
+      "platform_manifest_digest": "sha256:e87939d9e8669a03fcd1bc92876fa0ef77059a9a95fac96e35e7fef0686868b9",
+      "config_digest": "sha256:23c42a1c2e710c1ce32c503148fb365c047a2afc295e375bc6f53a57d00f2a99"
+    },
+    "sensor_capture": {
+      "reference": "filin-frozen/sensor-capture:2ae1f6567e7eb4f8",
+      "platform_manifest_digest": "sha256:9a267317c43198744911020d7600bd1efc24d869b1e75858687e2eca918faa27",
+      "config_digest": "sha256:5dac6a0ab92bbf5df2acb5cf24ab54e2e4078ffcb9b3de0de1ca65efbc509958"
+    },
+    "zeek": {
+      "reference": "filin-frozen/zeek:2ae1f6567e7eb4f8",
+      "index_manifest_digest": "sha256:e91c03763aaa9f6ca5c9baaa1a868373c3e06422df8cd50977019c59b23905c3",
+      "platform_manifest_digest": "sha256:3d66069dc80d7bd933ead3e4aa0f001f8461448b439f06291175f6ebf27f3aa9",
+      "config_digest": "sha256:7670f8a6bf3529522fff4628de48d836104bff33aeaae16a0c700fce3eff6c4c"
+    },
+    "build_allowed": false,
+    "pull_allowed_when_present": false,
+    "retag_required": false
+  },
+  "clock_preflight": {
+    "maximum_wall_clock_offset_ms": 500,
+    "normative_rule": "container_timestamp_between_host_before_minus_tolerance_and_host_after_plus_tolerance",
+    "participants": ["docker_vm_reference", "common_client", "target", "sensor_capture"],
+    "midpoint_offset": "diagnostic_only"
+  },
+  "parameter_realization": {
+    "tolerances": {
+      "episode_duration_seconds": 0.25,
+      "inter_request_spacing_ms": 25.0
+    },
+    "failure_retryable": false,
+    "failure_blocks_integrity": false
+  },
+  "model_input_filter": {
+    "raw_zeek_outputs_immutable": true,
+    "temporary_filtered_logs_retained": false,
+    "marker_http_uri_prefix": "/sensor-marker/",
+    "excluded_http_rows": "uri_starts_with_marker_http_uri_prefix",
+    "excluded_conn_rows": "uid_referenced_by_excluded_http_rows",
+    "mixed_marker_and_scenario_http_uid": "processing_integrity_failure",
+    "dns_rows": "unchanged",
+    "feature_extractor_input": "temporary_filtered_zeek_logs",
+    "marker_metadata_in_feature_row": false
+  },
+  "evaluator_boundary": {
+    "session_output_root_access": "runner_only_before_label_unlock",
+    "session_manifest_visible_to_evaluator": false,
+    "raw_pcap_visible_to_evaluator": false,
+    "raw_zeek_visible_to_evaluator": false,
+    "evaluator_input": "detached_feature_rows_keyed_only_by_evaluation_token",
+    "path_and_filename_metadata_visible_to_evaluator": false,
+    "projection_stage": "after_all_phase1_sessions_are_sealed",
+    "projection_not_performed_by_phase1_runner": true
+  },
+  "artifact_schemas": {
+    "execution_event.json": {
+      "format": "canonical_JSON_object",
+      "validator": "repository_execution_event_validator"
+    },
+    "marker_events.jsonl": {
+      "format": "canonical_JSONL_UTF-8_LF",
+      "row_validator": "repository_marker_event_validator",
+      "required_marker_types": ["start", "end"]
+    },
+    "capture/traffic.pcap": {
+      "format": "PCAP",
+      "minimum_byte_count_exclusive": 24,
+      "minimum_packet_count": 1
+    },
+    "capture/capture_manifest.json": {
+      "format": "canonical_JSON_object",
+      "validator": "repository_capture_manifest_validator"
+    },
+    "zeek/conn.log": {
+      "format": "Zeek_JSONL",
+      "required": true,
+      "minimum_rows": 1
+    },
+    "zeek/http.log": {
+      "format": "Zeek_JSONL",
+      "required": true,
+      "minimum_rows": 0
+    },
+    "zeek/dns.log": {
+      "format": "Zeek_JSONL",
+      "required": true,
+      "minimum_rows": 0
+    },
+    "parameter_realization.json": {
+      "format": "canonical_JSON_object",
+      "validator": "repository_parameter_realization_validator"
+    },
+    "feature_rows.jsonl": {
+      "format": "canonical_JSONL_UTF-8_LF",
+      "row_schema_version": "network_validation_phase1_feature_row_v1",
+      "exact_fields": [
+        "schema_version",
+        "evaluation_token",
+        "feature_contract_digest",
+        "feature_order_digest",
+        "feature_row"
+      ],
+      "row_count": 1,
+      "feature_count": 51,
+      "finite_numeric": true,
+      "forbidden_runner_metadata": true
+    },
+    "session_integrity_manifest.json": {
+      "format": "canonical_JSON_object",
+      "schema_version": "network_validation_phase1_session_integrity_manifest_v1",
+      "self_digest_field": "session_manifest_canonical_sha256",
+      "self_digest_excluded_fields": ["session_manifest_canonical_sha256"]
+    }
+  },
+  "session_integrity_manifest": {
+    "exact_fields": [
+      "schema_version",
+      "execution_package_digest",
+      "official_freeze_digest",
+      "scenario_token",
+      "session_token",
+      "attempt_id",
+      "attempt_number",
+      "locked_image_digests",
+      "output_digests",
+      "completion_status",
+      "execution_event_sha256",
+      "marker_events_sha256",
+      "pcap_sha256",
+      "capture_manifest_sha256",
+      "conn_log_sha256",
+      "http_log_sha256",
+      "dns_log_sha256",
+      "parameter_realization_sha256",
+      "feature_rows_sha256",
+      "session_manifest_canonical_sha256"
+    ],
+    "completion_status": "sealed_success",
+    "output_digest_paths": [
+      "execution_event.json",
+      "marker_events.jsonl",
+      "capture/traffic.pcap",
+      "capture/capture_manifest.json",
+      "zeek/conn.log",
+      "zeek/http.log",
+      "zeek/dns.log",
+      "parameter_realization.json",
+      "feature_rows.jsonl"
+    ]
+  },
+  "failure_and_retry": {
+    "maximum_attempts_total": 2,
+    "maximum_retries": 1,
+    "retry_reason_source": "campaign_ledger_contract_v2.retry_reason_allowlist",
+    "failed_attempts_retained": true,
+    "parameter_realization_failure_retryable": false,
+    "feature_value_based_retry_forbidden": true
+  },
+  "completion_recovery": {
+    "condition": "sealed_attempt_exists_and_session_started_is_active_and_session_completed_is_absent",
+    "requires_exact_attempt_id_confirmation": true,
+    "requires_full_output_digest_and_schema_validation": true,
+    "scientific_behavior_rerun": false,
+    "runtime_containers_started": false,
+    "permitted_ledger_append": "session_completed",
+    "failed_or_staging_attempt_recovery_forbidden": true
+  },
+  "stop_gate": {
+    "maximum_completed_units_per_invocation": 1,
+    "next_unit_runtime_creation_forbidden": true,
+    "next_unit_ledger_append_forbidden": true
+  }
+}

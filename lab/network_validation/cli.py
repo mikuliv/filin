@@ -8,47 +8,113 @@ from pathlib import Path
 from typing import Any
 
 from .capture import validate_capture_set
-from .contracts import CAMPAIGN_SCHEMA, digest, load_json, validate_campaign, validate_scenario
+from .contracts import (
+    CAMPAIGN_SCHEMA,
+    digest,
+    load_json,
+    validate_campaign,
+    validate_scenario,
+)
 from .execution_package import (
     audit_execution_readiness,
     build_execution_package_preview,
-    inspect_label_boundary,
-    inspect_run_plan,
     validate_execution_package_preview,
 )
-from .freeze import environment_lock, freeze_candidate_preview, freeze_preview, official_freeze_payload, validate_official_freeze, write_official_freeze
-from .freeze_candidate import FREEZE_CANDIDATE_SCHEMA, candidate_summary, freeze_candidate_proxy_risks, validate_freeze_candidate
-from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
-from .parameter_verification import observations_from_zeek, verify_parameters
-from .phase1_execution_package import (
-    OFFICIAL_PACKAGE_PATH as DEFAULT_OFFICIAL_EXECUTION_PACKAGE,
-    audit_preflight as audit_phase1_preflight,
-    build_candidate_preview as build_phase1_candidate_preview,
-    inspect_label_boundary as inspect_phase1_label_boundary,
-    inspect_run_plan as inspect_phase1_run_plan,
-    materialize_execution_inputs,
-    validate_candidate_preview as validate_phase1_candidate_preview,
-    validate_official_package,
-    write_official_package,
+from .freeze import (
+    environment_lock,
+    freeze_candidate_preview,
+    freeze_preview,
+    official_freeze_payload,
+    validate_official_freeze,
+    write_official_freeze,
 )
-from .pipeline import COMPOSE, compose_config, run_factor_orthogonality_smoke, run_technical_smoke
-from .planning import plan_campaign, proxy_risks, validate_counterfactuals, validate_infrastructure_profiles, validate_split
+from .freeze_candidate import (
+    FREEZE_CANDIDATE_SCHEMA,
+    candidate_summary,
+    freeze_candidate_proxy_risks,
+)
+from .image_lock import compare_oci_archives, image_lock_blockers, validate_image_lock
 from .operational_initialization import (
     audit_initialization_contracts,
     validate_ledger_contract,
     validate_mapping_contract,
 )
+from .parameter_verification import observations_from_zeek, verify_parameters
+from .phase1_docker_runner import Phase1DockerRunner
+from .phase1_execution_package import (
+    OFFICIAL_PACKAGE_PATH as DEFAULT_OFFICIAL_EXECUTION_PACKAGE,
+)
+from .phase1_execution_package import (
+    audit_preflight as audit_phase1_preflight,
+)
+from .phase1_execution_package import (
+    build_candidate_preview as build_phase1_candidate_preview,
+)
+from .phase1_execution_package import (
+    inspect_label_boundary as inspect_phase1_label_boundary,
+)
+from .phase1_execution_package import (
+    inspect_run_plan as inspect_phase1_run_plan,
+)
+from .phase1_execution_package import (
+    materialize_execution_inputs,
+    validate_official_package,
+    write_official_package,
+)
+from .phase1_execution_package import (
+    validate_candidate_preview as validate_phase1_candidate_preview,
+)
+from .phase1_runtime import runtime_contract_digest, validate_runtime_contract
+from .pipeline import (
+    COMPOSE,
+    compose_config,
+    run_factor_orthogonality_smoke,
+    run_technical_smoke,
+)
+from .planning import (
+    plan_campaign,
+    proxy_risks,
+    validate_counterfactuals,
+    validate_infrastructure_profiles,
+    validate_split,
+)
+from .runtime_execution_package import (
+    OFFICIAL_RUNTIME_PACKAGE_PATH,
+)
+from .runtime_execution_package import (
+    build_preview as build_runtime_package_preview,
+)
+from .runtime_execution_package import (
+    validate_official_package as validate_runtime_execution_package,
+)
+from .runtime_execution_package import (
+    write_official_package as write_runtime_execution_package,
+)
 from .superseding_execution_package import (
     OFFICIAL_PACKAGE_V2_PATH,
+)
+from .superseding_execution_package import (
     build_preview as build_superseding_package_preview,
+)
+from .superseding_execution_package import (
     validate_official_package as validate_superseding_execution_package,
+)
+from .superseding_execution_package import (
     write_official_package as write_superseding_execution_package,
 )
 from .superseding_freeze import (
     OFFICIAL_PATH as DEFAULT_SUPERSEDING_FREEZE,
+)
+from .superseding_freeze import (
     materialize_inputs,
+)
+from .superseding_freeze import (
     validate_inputs as validate_superseding_inputs,
+)
+from .superseding_freeze import (
     validate_official as validate_official_superseding_freeze,
+)
+from .superseding_freeze import (
     write_official as write_official_superseding_freeze,
 )
 
@@ -166,6 +232,33 @@ def parser() -> argparse.ArgumentParser:
     create_package_v2.add_argument("--output", default=str(OFFICIAL_PACKAGE_V2_PATH))
     create_package_v2.add_argument("--operational-contracts-commit")
     create_package_v2.add_argument("--confirm-official-package", action="store_true")
+    commands.add_parser("inspect-phase1-runtime-contract")
+    runtime_preview = commands.add_parser("build-runtime-execution-package-preview")
+    runtime_preview.add_argument("--runtime-sources-commit")
+    validate_runtime_package = commands.add_parser("validate-runtime-execution-package")
+    validate_runtime_package.add_argument("--package", default=str(OFFICIAL_RUNTIME_PACKAGE_PATH))
+    create_runtime_package = commands.add_parser("create-official-runtime-execution-package")
+    create_runtime_package.add_argument("--output", default=str(OFFICIAL_RUNTIME_PACKAGE_PATH))
+    create_runtime_package.add_argument("--runtime-sources-commit")
+    create_runtime_package.add_argument("--confirm-official-package", action="store_true")
+    session_preflight = commands.add_parser("preflight-phase1-session")
+    session_preflight.add_argument("--package", default=str(OFFICIAL_RUNTIME_PACKAGE_PATH))
+    session_preflight.add_argument("--output-root", required=True)
+    session_preflight.add_argument("--secret-root", required=True)
+    session_preflight.add_argument("--expected-secret-fingerprint", required=True)
+    run_session = commands.add_parser("run-one-phase1-session")
+    run_session.add_argument("--package", default=str(OFFICIAL_RUNTIME_PACKAGE_PATH))
+    run_session.add_argument("--output-root", required=True)
+    run_session.add_argument("--secret-root", required=True)
+    run_session.add_argument("--expected-secret-fingerprint", required=True)
+    run_session.add_argument("--confirm-execution-token", required=True)
+    run_session.add_argument("--confirm-one-unit", action="store_true")
+    recover_session = commands.add_parser("recover-phase1-sealed-completion")
+    recover_session.add_argument("--package", default=str(OFFICIAL_RUNTIME_PACKAGE_PATH))
+    recover_session.add_argument("--output-root", required=True)
+    recover_session.add_argument("--secret-root", required=True)
+    recover_session.add_argument("--expected-secret-fingerprint", required=True)
+    recover_session.add_argument("--confirm-attempt-id", required=True)
     return root
 
 
@@ -220,6 +313,41 @@ def main(argv: list[str] | None = None) -> int:
         ).stdout.strip()
         value = write_superseding_execution_package(Path(args.output), source, created_at, args.confirm_official_package)
         _emit({"official_superseding_execution_package_created": True, "official_superseding_execution_package": value}, args.json_output); return 0
+    if args.command == "inspect-phase1-runtime-contract":
+        value = validate_runtime_contract()
+        _emit({"phase1_runtime_contract_valid": True, "phase1_runtime_contract_digest": runtime_contract_digest(), "contract": value}, args.json_output); return 0
+    if args.command == "build-runtime-execution-package-preview":
+        _emit(build_runtime_package_preview(args.runtime_sources_commit), args.json_output); return 0
+    if args.command == "validate-runtime-execution-package":
+        value = validate_runtime_execution_package(Path(args.package))
+        _emit({"official_runtime_execution_package_valid": True, "official_runtime_execution_package": value}, args.json_output); return 0
+    if args.command == "create-official-runtime-execution-package":
+        dirty = subprocess.run(["git", "status", "--porcelain"], cwd=ROOT, capture_output=True, text=True, check=True).stdout.strip()
+        if dirty:
+            raise ValueError("official runtime execution package requires a clean working tree")
+        source = args.runtime_sources_commit or subprocess.run(
+            ["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        created_at = subprocess.run(
+            ["git", "show", "-s", "--format=%cI", source], cwd=ROOT, capture_output=True, text=True, check=True
+        ).stdout.strip()
+        value = write_runtime_execution_package(Path(args.output), source, created_at, args.confirm_official_package)
+        _emit({"official_runtime_execution_package_created": True, "official_runtime_execution_package": value}, args.json_output); return 0
+    if args.command in {"preflight-phase1-session", "run-one-phase1-session", "recover-phase1-sealed-completion"}:
+        package = validate_runtime_execution_package(Path(args.package))
+        runner = Phase1DockerRunner(
+            package,
+            Path(args.output_root),
+            Path(args.secret_root),
+            expected_secret_fingerprint=args.expected_secret_fingerprint,
+        )
+        if args.command == "preflight-phase1-session":
+            _emit(runner.preflight_one(), args.json_output); return 0
+        if args.command == "recover-phase1-sealed-completion":
+            _emit(runner.recover_sealed_completion(args.confirm_attempt_id), args.json_output); return 0
+        if not args.confirm_one_unit:
+            raise ValueError("one Phase 1 unit requires --confirm-one-unit")
+        _emit(runner.run_one(args.confirm_execution_token), args.json_output); return 0
     if args.command == "materialize-execution-package-inputs":
         _emit(materialize_execution_inputs(), args.json_output); return 0
     if args.command == "build-execution-package-preview":
