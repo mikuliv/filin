@@ -78,16 +78,16 @@ from .planning import (
     validate_infrastructure_profiles,
     validate_split,
 )
-from .runtime_execution_package import (
-    OFFICIAL_RUNTIME_PACKAGE_PATH,
+from .runtime_execution_package_v4 import (
+    OFFICIAL_RUNTIME_PACKAGE_V4_PATH as OFFICIAL_RUNTIME_PACKAGE_PATH,
 )
-from .runtime_execution_package import (
+from .runtime_execution_package_v4 import (
     build_preview as build_runtime_package_preview,
 )
-from .runtime_execution_package import (
+from .runtime_execution_package_v4 import (
     validate_official_package as validate_runtime_execution_package,
 )
-from .runtime_execution_package import (
+from .runtime_execution_package_v4 import (
     write_official_package as write_runtime_execution_package,
 )
 from .superseding_execution_package import (

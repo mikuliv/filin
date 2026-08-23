@@ -357,10 +357,47 @@ def _restrict_windows_acl(path: Path) -> None:
         return
     whoami = subprocess.run(["whoami.exe", "/user", "/fo", "csv", "/nh"], check=True, capture_output=True, text=True).stdout
     operator_sid = next(__import__("csv").reader([whoami.strip()]))[1]
+    allowed_sids = {operator_sid, "S-1-5-18", "S-1-5-32-544"}
     subprocess.run([
         "icacls.exe", str(path), "/inheritance:r", "/grant:r",
         f"*{operator_sid}:F", "*S-1-5-18:F", "*S-1-5-32-544:F",
     ], check=True, capture_output=True)
+    inspection_script = (
+        "$acl=Get-Acl -LiteralPath $env:FILIN_ACL_PATH;"
+        "$rows=@($acl.Access|ForEach-Object{"
+        "$sid=$_.IdentityReference.Translate([System.Security.Principal.SecurityIdentifier]).Value;"
+        "[pscustomobject]@{sid=$sid;rights=[int]$_.FileSystemRights;type=$_.AccessControlType.ToString();inherited=$_.IsInherited}});"
+        "[pscustomobject]@{protected=$acl.AreAccessRulesProtected;rows=$rows}|ConvertTo-Json -Compress -Depth 4"
+    )
+
+    def inspect() -> dict[str, Any]:
+        result = subprocess.run(
+            ["powershell.exe", "-NoProfile", "-NonInteractive", "-Command", inspection_script],
+            check=True,
+            capture_output=True,
+            text=True,
+            env={**os.environ, "FILIN_ACL_PATH": str(path)},
+        )
+        return json.loads(result.stdout)
+
+    acl = inspect()
+    rows = acl.get("rows", [])
+    if isinstance(rows, dict):
+        rows = [rows]
+    unexpected = {str(row["sid"]) for row in rows} - allowed_sids
+    for sid in sorted(unexpected):
+        subprocess.run(["icacls.exe", str(path), "/remove:g", f"*{sid}"], check=True, capture_output=True)
+        subprocess.run(["icacls.exe", str(path), "/remove:d", f"*{sid}"], check=True, capture_output=True)
+    acl = inspect()
+    rows = acl.get("rows", [])
+    if isinstance(rows, dict):
+        rows = [rows]
+    _require(acl.get("protected") is True, "secret ACL inheritance is not protected")
+    _require({str(row["sid"]) for row in rows} == allowed_sids, "secret ACL principal set mismatch")
+    _require(
+        all(row.get("type") == "Allow" and int(row.get("rights", 0)) == 2032127 and row.get("inherited") is False for row in rows),
+        "secret ACL rights mismatch",
+    )
 
 
 class MappingStore:

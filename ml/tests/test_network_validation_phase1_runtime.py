@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 
 import pytest
@@ -17,6 +18,7 @@ from lab.network_validation.phase1_runtime import (
     LedgerStore,
     MappingStore,
     SessionPaths,
+    _restrict_windows_acl,
     derive_attempt_id,
     derive_runtime_namespace,
     derive_session_token,
@@ -29,6 +31,18 @@ from lab.network_validation.runtime_execution_package import (
     build_preview,
     validate_package,
     write_official_package,
+)
+from lab.network_validation.runtime_execution_package_v4 import (
+    PREDECESSOR_PACKAGE_DIGEST as V4_PREDECESSOR_DIGEST,
+)
+from lab.network_validation.runtime_execution_package_v4 import (
+    PREDECESSOR_PACKAGE_ID as V4_PREDECESSOR_ID,
+)
+from lab.network_validation.runtime_execution_package_v4 import (
+    build_payload as build_v4_payload,
+)
+from lab.network_validation.runtime_execution_package_v4 import (
+    validate_package as validate_v4_package,
 )
 from lab.network_validation.superseding_execution_package import (
     OFFICIAL_PACKAGE_V2_PATH,
@@ -130,6 +144,21 @@ def test_mapping_acl_failure_leaves_no_mapping_file(tmp_path: Path, monkeypatch:
     assert not list(tmp_path.glob("*.tmp"))
 
 
+def test_secret_acl_enforcer_applies_exact_allowlist(tmp_path: Path) -> None:
+    target = tmp_path / "mapping-control.bin"
+    target.write_bytes(b"control")
+    _restrict_windows_acl(target)
+    if os.name == "nt":
+        acl = __import__("subprocess").run(
+            ["powershell.exe", "-NoProfile", "-Command", "(Get-Acl -LiteralPath $env:ACL_TEST_PATH).AreAccessRulesProtected"],
+            check=True,
+            capture_output=True,
+            text=True,
+            env={**os.environ, "ACL_TEST_PATH": str(target)},
+        )
+        assert acl.stdout.strip() == "True"
+
+
 def test_marker_flows_are_excluded_only_from_temporary_model_input(tmp_path: Path) -> None:
     staging = tmp_path / "attempt.staging"
     zeek = staging / "zeek"
@@ -196,6 +225,18 @@ def test_runtime_package_preview_and_official_write_guards(tmp_path: Path, monke
     write_official_package(target, "a" * 40, "2026-01-01T00:00:00Z", True)
     with pytest.raises(ContractError):
         write_official_package(target, "a" * 40, "2026-01-01T00:00:00Z", True)
+
+
+def test_runtime_v4_package_supersedes_v3_and_preserves_scientific_inputs(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr("lab.network_validation.runtime_execution_package_v4.validate_runtime_sources_commit", lambda _: None)
+    value = build_v4_payload("a" * 40, "2026-01-01T00:00:00Z")
+    assert validate_v4_package(value) == value
+    assert value["supersedes_package_id"] == V4_PREDECESSOR_ID
+    assert value["supersedes_package_digest"] == V4_PREDECESSOR_DIGEST
+    assert value["secret_acl_allowlist_enforced"] is True
+    assert value["scientific_protocol_changed"] is False
+    predecessor = load_json(OFFICIAL_PACKAGE_V2_PATH)
+    assert all(value[field] == predecessor[field] for field in SCIENTIFIC_DIGEST_FIELDS)
 
 
 def test_run_command_requires_exact_token_and_explicit_one_unit_confirmation() -> None:
