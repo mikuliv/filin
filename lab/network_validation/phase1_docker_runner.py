@@ -601,14 +601,15 @@ class Phase1DockerRunner:
     def _run_zeek(self, paths: SessionPaths) -> None:
         lock = self.contract["runtime_images"]["zeek"]
         command = (
-            "set -eu; cd /zeek; zeek -C -r /capture/traffic.pcap LogAscii::use_json=T; "
-            "test -f conn.log; test -f http.log || : > http.log; test -f dns.log || : > dns.log"
+            "set -eu; cd /zeek; /usr/local/zeek/bin/zeek -C -r /capture/traffic.pcap LogAscii::use_json=T; "
+            "test -f conn.log; test -f http.log || : > http.log; test -f dns.log || : > dns.log; "
+            "find . -maxdepth 1 -type f ! -name conn.log ! -name http.log ! -name dns.log -delete"
         )
         result = _run([
             "docker", "run", "--rm", "--network", "none", "--cap-drop", "ALL",
             "--security-opt", "no-new-privileges", "-v", self._docker_mount(paths.staging / "capture", "/capture", True),
             "-v", self._docker_mount(paths.staging / "zeek", "/zeek"), "--entrypoint", "bash",
-            lock["reference"], "-lc", command,
+            lock["reference"], "-c", command,
         ], check=False)
         if result.returncode:
             raise TechnicalFailure("processing_integrity_failure", "Zeek processing failed")

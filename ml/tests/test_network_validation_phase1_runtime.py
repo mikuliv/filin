@@ -199,6 +199,22 @@ def test_marker_filter_rejects_shared_marker_and_scenario_uid(tmp_path: Path) ->
         runner._prepare_model_input_zeek(paths)
 
 
+def test_zeek_runner_uses_frozen_absolute_binary_path(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    observed: list[list[str]] = []
+
+    def fake_run(command: list[str], **_: object) -> object:
+        observed.append(command)
+        return type("Result", (), {"returncode": 0})()
+
+    monkeypatch.setattr("lab.network_validation.phase1_docker_runner._run", fake_run)
+    runner = object.__new__(Phase1DockerRunner)
+    runner.contract = validate_runtime_contract()
+    runner._run_zeek(SessionPaths(tmp_path, tmp_path / "staging", tmp_path / "sealed", tmp_path / "failed"))
+    command = observed[0]
+    assert "-c" in command and "-lc" not in command
+    assert "/usr/local/zeek/bin/zeek" in command[-1]
+
+
 def test_runtime_package_preserves_scientific_inputs_and_binds_runner(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr("lab.network_validation.runtime_execution_package.validate_runtime_sources_commit", lambda _: None)
     value = build_payload("a" * 40, "2026-01-01T00:00:00Z")
