@@ -1,13 +1,13 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
   "summary": {
-    "document_count": 373,
+    "document_count": 379,
     "protected_count": 82,
-    "current_count": 267,
-    "historical_count": 106,
+    "current_count": 260,
+    "historical_count": 119,
     "generated_count": 6,
-    "created_count": 112,
-    "rewritten_count": 142,
+    "created_count": 118,
+    "rewritten_count": 143,
     "redirect_count": 15,
     "broken_link_count": 0,
     "broken_anchor_count": 0
@@ -163,11 +163,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 39,
+      "outgoing_link_count": 31,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "9817e2435a6f7e15f1e47114dbf3ab861c97b0e3f891c007832abec55f1ce116"
+      "sha256_after": "1a99194ea9131951328e6e8e04e64c79527c4ca0d975c50940228b96eff8e8f0"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -245,7 +245,7 @@
     },
     {
       "path": "backend/README.md",
-      "title": "Backend status",
+      "title": "Статус backend",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "overview",
@@ -276,9 +276,9 @@
       "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
-      "actual_action": "unchanged",
+      "actual_action": "rewritten",
       "sha256_before": "587348d47eed06382ea0e7f7e1740fc10328d22a5984cec72dffccaa54ac1aa4",
-      "sha256_after": "587348d47eed06382ea0e7f7e1740fc10328d22a5984cec72dffccaa54ac1aa4"
+      "sha256_after": "d3f94fefcc194ac70f4dc3bc6126be2e2c2285e5f232e50279bd25e0e80bfd1e"
     },
     {
       "path": "collectors/README.md",
@@ -315,7 +315,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "d5f6fa75eb7f4c0399037e7407632a321408ab01c8b74f3fb2c346626964b06e",
-      "sha256_after": "b153ad77703f3a4349e5f9e5fe0a934eb7f306a96f52758d7c1696313c8532a9"
+      "sha256_after": "6ebe26af8fdf4e8e46b46139491031398ed6fbacfab169b63044240f0a098e1f"
     },
     {
       "path": "collectors/csv_collector/README.md",
@@ -463,7 +463,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "75b0e7648a0c98108b669dc2c2c66ce9fa3695b3057523d972f505a686c3d420",
-      "sha256_after": "30dafdfebeac3365aefe1d713a217a9357bcd67cbe085b9393ae1655445ca44c"
+      "sha256_after": "9889ae3b3320af6c0db8a437b7edbb63ebf0281ce8621c77a449871413c9666e"
     },
     {
       "path": "docs/architecture.md",
@@ -544,7 +544,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "a4eff523521805653fd8b2b55423a383ddd09082e1d01c10780714d8c0def14f",
-      "sha256_after": "9d0d49a818681b8f0e72748acd62713d6e76a33a9a3acca065f77e4b1e16d9f0"
+      "sha256_after": "b753de74340c4e7f6651f222edcec357f95ce30323f6d46258c61e0b33b99f6c"
     },
     {
       "path": "docs/architecture/controlled_local_rehearsal_v0_3_17.md",
@@ -620,12 +620,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 3,
+      "incoming_link_count": 4,
       "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "247bf1d1ab484e9a37786e2e321504ab605c8d293adbd629a5df08c11f722a56",
-      "sha256_after": "af610ef8e192eec907833be6da6bf18cf59a743cb4102f42906b9b40b48e9a55"
+      "sha256_after": "1bd2ad012b7739a76ba9dfb4069eca97ab9b5a45629e1f26c976b23c5e3546f7"
     },
     {
       "path": "docs/architecture/data-flow.md",
@@ -662,11 +662,11 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "8d723bfca93413ffc995aebfec715a7ed0db3426d9673641a9b1c5dc9c81a9f2",
-      "sha256_after": "9cfeb79abb19262466aebd823150d423326a72baaf24b9806d8a46226eedfc43"
+      "sha256_after": "48a5dbea709a4e50b023b4b271a2aa4ea9199a4108038249504d12dd9c480cab"
     },
     {
       "path": "docs/architecture/delivery-runtime.md",
-      "title": "среда выполнения доставки",
+      "title": "Среда доставки событий",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -699,7 +699,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "74817c93b05897539d71a0263b4c5a564275e4fac85de98b182c93725a265be9",
-      "sha256_after": "dc671355d069b6fc5ed7fa6ef7186f3006002e26da48615d2684d8128ad57eb6"
+      "sha256_after": "741bc76c8923c89ea603c4a57aeae9f45ab38d0faafb86b6163824fd2ee1eb1d"
     },
     {
       "path": "docs/architecture/detection-and-runtime-track.md",
@@ -779,7 +779,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "ceb4f5ee4f36aec727faa80709eb6f0e9a2c9ece3757fe928919456a818b9620",
-      "sha256_after": "9f60e4adadb40f73c767868c4aec728a53adc4cfabee2e970e8ec7cdc54f6165"
+      "sha256_after": "1d522ba1bc49e6b0595750178a384a2c46ffaf3e290f2d355d3c01649c0c2cc5"
     },
     {
       "path": "docs/architecture/end-to-end-data-flow.md",
@@ -818,12 +818,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 4,
+      "incoming_link_count": 3,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f67a85cf8804248e814fbfb0222888859311ab6adea002e8c9385635504f19f5",
-      "sha256_after": "71940244599e4bcbeec79bca59263dc3a3f74cf1038be04219ef2fa471a89de4"
+      "sha256_after": "3495952ef144b870a7c639c567cb85f6bdb82f4b1c24562f35ab3d75f9ee8c00"
     },
     {
       "path": "docs/architecture/index.md",
@@ -909,7 +909,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "d9941307a14b0a4f02a5be0d079bb44a60fd7c265eb535225e1b5c69b10e0556",
-      "sha256_after": "105f5dbe29020b2f34b88cc6ed7d79de683f0678d3b16f8c770c191a21a84c34"
+      "sha256_after": "77e6d554db43819c4a68429da8335051ae1a0f8f244a2e205f1aa7874e563080"
     },
     {
       "path": "docs/architecture/limitations.md",
@@ -950,7 +950,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 8,
+      "incoming_link_count": 7,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -959,7 +959,7 @@
     },
     {
       "path": "docs/architecture/overview.md",
-      "title": "Архитектура после v0.4.4",
+      "title": "Архитектурный обзор",
       "category": "Авторитетный текущий документ",
       "doc_schema": "filin_document_v2",
       "document_type": "architecture",
@@ -988,7 +988,7 @@
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.4",
       "last_relevant_stage": "unknown",
-      "current_stage_mentioned": "v0.3.19",
+      "current_stage_mentioned": "",
       "stale_status": false,
       "stale_architecture": false,
       "stale_command": false,
@@ -996,11 +996,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 7,
-      "outgoing_link_count": 3,
+      "outgoing_link_count": 6,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "eb28d0cae077e465ad1b327493d5fd957e8434ed92a7e2996d6bb264bf8eaaab",
-      "sha256_after": "643f08a788afd25b0dd3721e70566b51e4e15a20a0485e919adfaf00e757e2e3"
+      "sha256_after": "4c4b5741ce5b5e70718005dabdaa08534b2836eaf1709153ca56a5e5f08d5f1a"
     },
     {
       "path": "docs/architecture/passive-events.md",
@@ -1037,7 +1037,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6447c0c8a8e9305b030a03cdd832d6d05ad92de4884b2db28fa964e655b986e0",
-      "sha256_after": "f3982bc387c81a678e4c2ecfe48d54d51d6e380a8de1e98e830a1eb7f7ee8e5d"
+      "sha256_after": "f8ff348831251bd4ebe2d211e29486d895e6521e8f6f5460ae96f8d4cf0e7e75"
     },
     {
       "path": "docs/architecture/reconstruction-and-analysis-track.md",
@@ -1082,7 +1082,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "71a6abafa7ec0d6430c3e7e65e37534e4d8b7a53ef06be4be914fb30db5813b5",
-      "sha256_after": "972563a591a7684c18fcfe22726d8e1daf834f392c1e9b40cc20d27c947d8efb"
+      "sha256_after": "1ecb8d3ebd8a562b6b48a994d5817c5365772a6640a5ca1dbed5a04024744443"
     },
     {
       "path": "docs/architecture/staging_connector_v0_3_16.md",
@@ -1156,7 +1156,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "7df138cf8a1af1a5e76de93aeb8125f12b1225d492d60151eea233e8946bdf23",
-      "sha256_after": "8140568cd0d70b294d76ba9f64afd392370d10050facd9ecccecbf0deaf802b2"
+      "sha256_after": "45f1a47a79709aaf5dd7369386908e63efc86da41bed7f7d14845459b63a7fc0"
     },
     {
       "path": "docs/architecture/storage-and-artifacts.md",
@@ -1199,7 +1199,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "ad149485cfc29949eec05374bf21e94cef54a0ac6225c891fb740f1c507e1496",
-      "sha256_after": "2f5a4bee340e6f7a4e2900f40612cd00f6dd2114a800c35c9f6404d374c99724"
+      "sha256_after": "e42fef6e24b4c816b4fee444e1a7a832ac9c768284302b7c34b36375b3fd3470"
     },
     {
       "path": "docs/architecture/trust-boundaries.md",
@@ -1237,12 +1237,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 3,
+      "incoming_link_count": 4,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "1f133afa2697e245c6b841bf85d45d08d25831d7c74c9360b7143d6b6ec68962",
-      "sha256_after": "f53b7a994ab7b60d4cb66faa292b3745d39461eccab5ff787b4f98094e4648fc"
+      "sha256_after": "cc4697408416decaf4469cfe133b5cc58d1a3c28ea0ffa392483b58d9fcf5041"
     },
     {
       "path": "docs/audit/documentation_inventory.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "a96e8d9af40e6bdf470e408e50373e9bf489fd26712382ccab2b8074a52f5542"
+      "sha256_after": "623222d37ff35b9b4ade7d60107171888d4bbf46a522a3af10fac7291864d7f3"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1636,7 +1636,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "2e01c7768fe7c362d0ee6689bc0b297ef005a90792af182934a888839a1d48ad"
+      "sha256_after": "143385d22e60e23b22b51c1224d7e1d3829c07004d60f3d80395349d12d1de59"
     },
     {
       "path": "docs/audits/post-v0.3.7-research-integrity-audit.md",
@@ -1858,7 +1858,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 7,
+      "incoming_link_count": 8,
       "outgoing_link_count": 324,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -2395,7 +2395,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3e718d6980eae6ce147d1a8a09a62d9606a3144764d8c44670f37e6dec1721c8",
-      "sha256_after": "b3cc725d8e412053bec1504ef416943b956e4c9e2d3796eac944b45627c36dd5"
+      "sha256_after": "fb3ae23dd388333d1b06b2ab881113de37f28afd57d260b99c81db152c62bc44"
     },
     {
       "path": "docs/contributing/documentation-style.md",
@@ -2436,7 +2436,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3a16051145ea9360d8d2fb60a7a397fcb8e0d138c2335c0a3aba58bbd4648d08",
-      "sha256_after": "9ef6309530223360a290cc438b4e92b8a1764b248f8c53bdc2ad3c4ae1cae340"
+      "sha256_after": "1780846721a53bc7728a9bc0b481b02b635cfc6faaed713246129e60ab2d41ba"
     },
     {
       "path": "docs/contributing/testing-and-validation.md",
@@ -2477,7 +2477,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "7ac07868969d94e4a7ab7f8c8695360bafd34d41486246d1960c1a1721590259",
-      "sha256_after": "8d12d54ae1a80d7f20fdbcdd4100ce8f07c1ccce2950f852ba890f703679d047"
+      "sha256_after": "49434503492b3d2ec418c0cabeca2f4bc52a7e4300998baef6d3f607d748b6c2"
     },
     {
       "path": "docs/current-capabilities.md",
@@ -2553,7 +2553,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "926f7151195c17e7573d992c11138279de1a830bd9ddeb07f8256071f1be116c",
-      "sha256_after": "e180aefc413167caf294ceaad88911e7f1ed130b732b3484ae1d7d63e359f927"
+      "sha256_after": "e91c36229851837c60080a4de2ab2ca9ee556b8baa23d01942a4889c6e7d33ec"
     },
     {
       "path": "docs/dependency-licenses.md",
@@ -2585,7 +2585,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -2711,19 +2711,19 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "93fdd697b8a41f01cd2a91c0399ff36641c96b37005c1eceb70d1a72480c2a16",
-      "sha256_after": "1af0fe4fc601504e2cd98b88a717ffffbf4293aed091fae6b8f3b03b9cbaa367"
+      "sha256_after": "bf9af0ff833451ccb3199d7d4f883204486a3bd99ae57ce68bfd23d8e0f5e52d"
     },
     {
       "path": "docs/experiments/independent_network_validation_execution_package.md",
-      "title": "Execution package независимой сетевой валидации",
+      "title": "Исторический execution package независимой сетевой проверки",
       "category": "Историческое описание",
       "doc_schema": "filin_document_v2",
       "document_type": "history",
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -2744,23 +2744,23 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 0,
+      "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "d8adfabe0879326fdb5d4e88e40f77dad75858ee6886791b73e4b5181ecee6ab"
+      "sha256_after": "522f0da452518d007f810495cc4431480e425ba950dbe4aa678bec080feea757"
     },
     {
       "path": "docs/experiments/independent_network_validation_freeze_review.md",
-      "title": "Freeze-review независимой сетевой проверки",
+      "title": "Исторический freeze-review независимой сетевой проверки",
       "category": "Историческое описание",
       "doc_schema": "filin_document_v2",
       "document_type": "history",
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -2780,12 +2780,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
-      "outgoing_link_count": 0,
+      "incoming_link_count": 0,
+      "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "00ce8a91e4f1f6000f87a793b3d76c691b9fd9bed5ae43518fbcf453c5fa158d"
+      "sha256_after": "7905a4f21e72f588fc2ac04061a9da2d5c0542d015840664e939559d4e86d072"
     },
     {
       "path": "docs/experiments/independent_network_validation_superseding_freeze.md",
@@ -2796,8 +2796,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -2833,8 +2833,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3392,8 +3392,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3413,7 +3413,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 9,
+      "incoming_link_count": 7,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
@@ -3850,8 +3850,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3887,8 +3887,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3924,8 +3924,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3961,8 +3961,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -3998,8 +3998,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -4035,8 +4035,8 @@
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -4802,7 +4802,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "039cc45834c964bc57fb2a86af590585a55df07b46112a6bc1f850bd21ffdd1c",
-      "sha256_after": "cd8c1882e1dd67000bc0f5d160c6fa6e3bcdb0b5b0386dfb44208ef4a3e5e49f"
+      "sha256_after": "aff4dcb2d44e6ff058eb2633a3f44e21517c195c9529d2ca653c63d3bbb5aff2"
     },
     {
       "path": "docs/getting-started/comparing-laboratory-runs.md",
@@ -4834,12 +4834,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "0da9d2851ef5f588250d2084404e17b7f34d618e0a0886256babeef8b59e4976"
+      "sha256_after": "a2b791f1a2842da47587a7770ba8937f1b1c4904a9b30f00b7aca5097a08c97d"
     },
     {
       "path": "docs/getting-started/developer-entrypoint.md",
@@ -4878,7 +4878,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "30aaadc45d33147b20233f5d3b43f839078e5776f55630ac4aa67e901eeb9d10",
-      "sha256_after": "ffc51bac96fbcb7865251d2985bdd433cfaa5f2ba907dc6474afa49729961d75"
+      "sha256_after": "de4d3bce3faf6e8032175e9a255c546b195e3bc87eb53d57d4fdf484c6521e9c"
     },
     {
       "path": "docs/getting-started/external-review-entrypoint.md",
@@ -4915,12 +4915,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 4,
+      "incoming_link_count": 3,
       "outgoing_link_count": 5,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "a1a3ddc40412c666415144f3e39dd5957b670cba443711a5688a9d692143c462",
-      "sha256_after": "43330ea205f688a7049d2d949a36309a973b6e96faad33543e87189c76639989"
+      "sha256_after": "78cdecbfdd2a7b7402bd85de4d87940cec54a1cfbe2709606163e61558bf2650"
     },
     {
       "path": "docs/getting-started/laboratory-console.md",
@@ -4958,7 +4958,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 5,
+      "incoming_link_count": 4,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -4998,12 +4998,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 3,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "14ef0667f4cea2ab84bee2e6bfcfe8309b92df97f71c527ed8293bc1f971ddf7",
-      "sha256_after": "f620a63b0fb448e69f1c0c7fa0ff6a215695dc427bd58699849b3563d84c5594"
+      "sha256_after": "e481b7cef8d7dbd90fd51dc79057dc3b19f6bf98dff678aa1b460997a9d44257"
     },
     {
       "path": "docs/getting-started/overview.md",
@@ -5043,7 +5043,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "45997f9fcf827f47a430e43f423a11f5e6538e5c409af3fb8e1864d6f695cf8d",
-      "sha256_after": "caa9cfb841266a532aa01979a344334b27e329f3489a9984b448781478ffcfc8"
+      "sha256_after": "c7e8f9cfdbeeb01992edb909fffb1d2e49637555d7ad3e4d496ae81d2cc3155f"
     },
     {
       "path": "docs/getting-started/preparing-candidate-proposals.md",
@@ -5075,12 +5075,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "998c364d9960828a6ecaf82786627e505be1c4e576e24209bf00703e11bacf0d"
+      "sha256_after": "1a26abbac4725769742fec4ac055db9ebd551ba7041b1e564d0001e2536a1e1f"
     },
     {
       "path": "docs/getting-started/preparing-corrective-candidate-proposal.md",
@@ -5160,7 +5160,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "308d87c07b879dcec0869ed8a52ffb991d29ae2161aa162798d839d6be9bbc17",
-      "sha256_after": "49ab7b835297cae17b333d6f07cfac7c49a0a00aec1a6eaf17192836987b6fc4"
+      "sha256_after": "3a983f2da497beaf0e553dc5c0604ae829ba2925a89126d7be1f56a5b1d31041"
     },
     {
       "path": "docs/getting-started/reviewing-blind-validation-results.md",
@@ -5197,7 +5197,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "45f3091d618f330a413f5f14a9fe9fa8b0c922f9cefaf6362eb33281b16733a1"
+      "sha256_after": "b3f61175178d02031a921875e6b6a59bfe22a25d410121aaf9e20b64436f59bf"
     },
     {
       "path": "docs/getting-started/reviewing-candidate-proposals.md",
@@ -5229,12 +5229,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "165dcaf6a115842c9097e05c0fb9619511089e7dda1be6e8c68a9999afec1a0c"
+      "sha256_after": "38e9c1b1100c9945bec297e9c3e0012fbc108d517d78225c5e9218f76d650994"
     },
     {
       "path": "docs/getting-started/reviewing-failed-validation.md",
@@ -5271,7 +5271,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "d139f6d399fa78887e7025aee37180f04be54e56bf8a2d60e22ee507cf0c8cc0"
+      "sha256_after": "02890c664b16667447f8d5a4295069c14363cb3825c4d0834500dff6c2f15455"
     },
     {
       "path": "docs/getting-started/reviewing-laboratory-cards.md",
@@ -5308,7 +5308,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 13,
+      "incoming_link_count": 12,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -5387,7 +5387,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "dbf25a9524ce2e5f8492f19b64a92dbbc615dfa48bf2118f9d2534a07a4d0431"
+      "sha256_after": "b7a41582544aec4e32b01e185155a5a20e95e7fb742f9d0d9b238d5062e5ea1a"
     },
     {
       "path": "docs/getting-started/running-laboratory-replays.md",
@@ -5419,12 +5419,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "82d5410d7f129d2c9769b940219e0af2e6dff4802c98396bea7e118ed1292d4e"
+      "sha256_after": "bdbdcb23d51b43a57766444b184ff9cb5d33a52944bc556404368993ff5a2bee"
     },
     {
       "path": "docs/getting-started/running-v0-4-7-3-validation.md",
@@ -5500,12 +5500,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
-      "outgoing_link_count": 1,
+      "incoming_link_count": 4,
+      "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c6f8558576d260a8768c8c042fea6bf77c2fc3b7f1e71f7beafd059fe1cf15d8",
-      "sha256_after": "5355b5bd9849b119f3c659c1f628fbdff227c74aa510a9c2699f343e96dc3eae"
+      "sha256_after": "9a7ba960826939fe27b8b5a97e6659eb674817ecdd1bdc07120fd3ae73cb370a"
     },
     {
       "path": "docs/getting-started/troubleshooting.md",
@@ -5546,7 +5546,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "a25d8e0de03e996f698a4cab1ca80fe972a599df74ef73d7015ec0cf4911b72a",
-      "sha256_after": "978f378cbd72fcd3428493b4423a86749a1ffd7421dcc62b8257e3c94f13ee39"
+      "sha256_after": "001d68e29bfc1bf7cbc4bb1c05eb997d0f73dfd46a1781f4a572f71a453d0c8d"
     },
     {
       "path": "docs/glossary.md",
@@ -5617,12 +5617,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 8,
+      "incoming_link_count": 7,
       "outgoing_link_count": 30,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "f0bb8f1d779ddb13f84d5a44866ff33a02b5cba8fbd9563534cec0653f1706b6"
+      "sha256_after": "5f75cf85e9ba009149098a8bda08e9d6b9ce2fd2bba28454f3053e5db559de4a"
     },
     {
       "path": "docs/guides/external-review/architecture.md",
@@ -5659,7 +5659,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "9c8c7676fc356a1f68c5273458d615b1b6f9271ed57a4632a6706858d504bffd"
+      "sha256_after": "e86924c506c7b43150c56afaff2f032b787bdecb420233911e9479db3708e655"
     },
     {
       "path": "docs/guides/external-review/confirmed_scope.md",
@@ -5696,7 +5696,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "a2cc1b0eed6f149cc4df2436eacbfa89099be5ed87a0e52a07b552b6219123f0"
+      "sha256_after": "4efc5c4df4b40661684c5acfbbb34371384739131f77539750f8ecb72e351ad7"
     },
     {
       "path": "docs/guides/external-review/data_acceptance_policy.md",
@@ -5733,7 +5733,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "ec339099a87abbe0b9ca939ab0f5ea06370fb93fe1f3e6242f621f2669e73b1f"
+      "sha256_after": "64afec0fa48d320b3dd7027f0fe8e15c52ceb03208d0e274a45379a64d3e8933"
     },
     {
       "path": "docs/guides/external-review/data_provider_guide.md",
@@ -5770,7 +5770,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5d11d0af550d9f412a3a8babae843a7c48e5fb8895a5d4cb0e8995dd8f229d10"
+      "sha256_after": "c190f2b85d00c80966dbc3f23aaa800287a846165e5880e56d9baefc5068dd14"
     },
     {
       "path": "docs/guides/external-review/data_transfer_requirements.md",
@@ -5807,7 +5807,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "a72d0e415d15c58590630829ade6ae3f72ee4f91260dccbf32293ca1d89fb365"
+      "sha256_after": "af9e0ae3c147b90a7fdc5d5479cf44a8cf771901c6620b62d2ef3ff593016aae"
     },
     {
       "path": "docs/guides/external-review/evaluator_guide.md",
@@ -5844,7 +5844,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "1f73edc5c86856328e456cac246111873ba478e94f09cad80ace58ac9de12f29"
+      "sha256_after": "759c3ed2709b6ec0fd9bf210212c90a1c8813e00b40a1fd4f2e582e98a510814"
     },
     {
       "path": "docs/guides/external-review/known_limitations.md",
@@ -5881,7 +5881,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "1f52255683559f3b4c578bd4a119c318eaeb439331f92bac9613cce5f806fd32"
+      "sha256_after": "c13153f918e87e4d340f80bd807ae8de33a28eb2d116514dc464116644d2b0ee"
     },
     {
       "path": "docs/guides/external-review/label_custodian_guide.md",
@@ -5918,7 +5918,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "18e189feeba6b85ac2e78b7a80dc53d68552ffe7b00eef1b0a9b5a5b6183dc82"
+      "sha256_after": "3092e8f8631f73b70dc1ebe86eeba38befb8f9bbb31cd8846eefb3a16ed205be"
     },
     {
       "path": "docs/guides/external-review/legal_requirements_checklist.md",
@@ -5955,7 +5955,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "41ab2bc745d66e5e1b3e7b33128685f81f3b353f6bc03fc91c255191aa28d739"
+      "sha256_after": "423666c1c9513f8a548882dd534c742e2308b2485ea0b4f26f9c9d6d2705fd3e"
     },
     {
       "path": "docs/guides/external-review/metric_policy.md",
@@ -5992,7 +5992,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "44b4ce93563efc4a175c657f66f7c95ddad03fb13628b1300a46a743d79a2dd4"
+      "sha256_after": "351853156188ca664e6415d4980b81a6afb91d7761662e2a13f3a1c6b696451b"
     },
     {
       "path": "docs/guides/external-review/publication_requirements.md",
@@ -6029,7 +6029,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "ff2889387e9700f91b2d3a311f0c15d3e4ac0a7f345ec55def51be9cc22db68e"
+      "sha256_after": "4c85b9271fc50c622f512af3a5fd71f19e567aff022baf970208d1aa68266567"
     },
     {
       "path": "docs/guides/external-review/reproducibility_guide.md",
@@ -6066,7 +6066,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5c1ce1206dd4c83fcc45ede56c65d18b2ccb75749155890ee8c125910d25de46"
+      "sha256_after": "cce5dca36f7ecf54307cb8a791d238f2575903122b94fb9fdfe43918421f227d"
     },
     {
       "path": "docs/guides/external-review/result_approver_guide.md",
@@ -6103,7 +6103,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "ac3e4a13f61440d0564a5ebdf3d169f3238296b4c6554beae6db5ac9cc7ae8b4"
+      "sha256_after": "0d9136655de8fee364e5d87a0af5ecd92f91905827883faabae1130003a15be1"
     },
     {
       "path": "docs/guides/external-review/retention_and_deletion_requirements.md",
@@ -6140,7 +6140,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "369467bd7dab1cca251c748d322fd953f2944a1bda3c4d816e8d6df6cf833285"
+      "sha256_after": "1823734525ec6ddeec58ad624b6644e73e751f1607089397ec9557326457c322"
     },
     {
       "path": "docs/guides/external-review/reviewer_guide.md",
@@ -6177,7 +6177,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "865357948509cf9151fee7e17a93de5a2c834a8899fccc7cc87a61f7bd96bdf6"
+      "sha256_after": "ced682393f6e3bae0c1ed1b15c97b9e108bf2ad57f0a61599afe31b2ed3841cd"
     },
     {
       "path": "docs/guides/external-review/stop_conditions.md",
@@ -6214,7 +6214,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "b55bbb737ca1291bbe25717f86a867ebe0758d90ba16bae665bb4d136fef83bf"
+      "sha256_after": "2d28814eefa7153fd6850c21eb19059a86d13d4c38ac04ecc71863d8dd6a90ef"
     },
     {
       "path": "docs/guides/external-review/trial_operator_guide.md",
@@ -6251,7 +6251,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "913f3cde0b31d2927e763561f87da05864df2f61ad4138a2b69f8baafae1eca5"
+      "sha256_after": "9e585cc377686d907dc5aee7597cab60bf31f635a6f6d253a96211928029d8ea"
     },
     {
       "path": "docs/history/archived-documentation.md",
@@ -6330,7 +6330,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c01ed84633fc23d45d7abb026be9d12a4ce2c187b671c98eb102ddb828f6f989",
-      "sha256_after": "b61ae1495a3eb801a197f6fcf9653f33fcc682d1564661056e7bc50ff8bb0726"
+      "sha256_after": "413714ffc0e99bb0eadaa60d9b11dea6937b13209f229cc3fb99f0fc4785f3e1"
     },
     {
       "path": "docs/history/frozen-evidence-reading-guide.md",
@@ -6605,7 +6605,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 2,
+      "incoming_link_count": 1,
       "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -6691,11 +6691,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 2,
-      "outgoing_link_count": 107,
+      "outgoing_link_count": 112,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "0b1ee4647b46bb54b028bb1dab814fb07eb3a315a40a62fe36f8e31c001b37d9",
-      "sha256_after": "2906cc7a1b7d4d866fbe7251f7cbfce33776d40e675349204d3e6a574c14443f"
+      "sha256_after": "2e54ab4ca3d060182b5ccd9079493d640420ade11053a951b603a29211f1c4b2"
     },
     {
       "path": "docs/lab-stand.md",
@@ -7287,7 +7287,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "de9def3fb32cdf88899f4afc86cb67cc8f04fb841bbfd7a685ad1fa9af1d834c"
+      "sha256_after": "c1fe1b57605177104af41846f2c2f482e7a7a3d95812ceebe11d86f17daab677"
     },
     {
       "path": "docs/licensing/known-limitations.md",
@@ -7926,7 +7926,7 @@
     },
     {
       "path": "docs/operations/reference_receiver_runbook.md",
-      "title": "Runbook эталонного приёмника",
+      "title": "Руководство по эталонному приёмнику",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -7954,12 +7954,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
-      "outgoing_link_count": 0,
+      "incoming_link_count": 2,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "cf5fd2b5df353cf9626c456827d28b6a4194bf49f99dadf5d77ae9cdf6a3c8e2",
-      "sha256_after": "aaaf0dfbe8ee8d79da2b82c5331ea9a74255ead9212d758b5f5d6011748a9c9c"
+      "sha256_after": "b857d3e5df18a468551770e59163793be80c4a72a2414289706544b902aa4359"
     },
     {
       "path": "docs/performance.md",
@@ -8071,7 +8071,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 6,
+      "incoming_link_count": 5,
       "outgoing_link_count": 30,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -8156,11 +8156,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 7,
-      "outgoing_link_count": 0,
+      "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "62e414747098388672ac68d8d406796c42661fa2710da09934d9605c34ff6130",
-      "sha256_after": "6ea04afb5b659b151a3716e6ea35b239eff27bb4fd9cfce0b41376cc37d01c6e"
+      "sha256_after": "fee5e1ba765564c7bed0a18dd4e2394de023e76b7d7bddbf91b2025f988d1a39"
     },
     {
       "path": "docs/reference/component-directory.md",
@@ -8197,12 +8197,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 5,
-      "outgoing_link_count": 13,
+      "incoming_link_count": 6,
+      "outgoing_link_count": 14,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "9efe0bba46e119330e856b7ffe0f08ff076149c5bd428fae114b496bb6c427fd",
-      "sha256_after": "5e6c593068b92192ba5ae13132fc480de2b7c61bd46006861a80768d6ec30e1e"
+      "sha256_after": "1d5a879c95c1b8c200ff388bb7e91c98696f75b0ce3078d7088fc2b08468d7c6"
     },
     {
       "path": "docs/reference/document-lifecycle.md",
@@ -8367,12 +8367,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 5,
+      "incoming_link_count": 4,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "648da8c02c46a5b3b49ef80feac8320ad46954807ad757a78453dcb4b73b9eb0",
-      "sha256_after": "df4361d724d00ebd3cc207c1702bb10447a29be8380c96f9fc5887f00416893b"
+      "sha256_after": "dc534fd7978f7ff16508b6fae51eeae90b72e06b78548657f2797dff5dcd02a0"
     },
     {
       "path": "docs/reference/status-values.md",
@@ -8413,7 +8413,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "5c9445daa0af61d2fa399edc30f946e5e8de14a9e97978f4ea540b21357304e4",
-      "sha256_after": "cf9b5a42e6ee556a80563466983312e4b82082e3d4c7d9dd6155b52db1bd581f"
+      "sha256_after": "3061d6c15393b2746ae308916b95969946a030df2c8e37a0e7d8113adc000304"
     },
     {
       "path": "docs/reference/terminology.md",
@@ -8454,7 +8454,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "420c70d80b52f22b14ff577c2146c5491150fcfeca376e8db57debd739e6dcd6",
-      "sha256_after": "40213dbfb34f14f4cb605fd1bf8f98de3ad17107964d1b7e28cb6f59bf06b745"
+      "sha256_after": "42800a7da05b2bbe66cb2fb3b84f34aa2f68fb0dcf9e080d3ecd002b82248fc7"
     },
     {
       "path": "docs/regression-artifact-retention.md",
@@ -8724,7 +8724,7 @@
     },
     {
       "path": "docs/research/blind-data-governance.md",
-      "title": "Управление слепыми контрольными данными",
+      "title": "Управление ослеплёнными данными",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -8753,11 +8753,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 0,
-      "outgoing_link_count": 0,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "d56bf04ade73a7bc4f10cc2a9b6b15ea6aab1b7a04af260bc8450118d8ef1642"
+      "sha256_after": "9a0e39d35a9edbddae939de9544478422f407098878828cee7c9cae309cd0e96"
     },
     {
       "path": "docs/research/blind-laboratory-validation.md",
@@ -8832,12 +8832,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 6,
+      "incoming_link_count": 4,
       "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "330c0afd423f7ef7431599a325b8acdd336bc01864a5303be9a70b89ef74fc94",
-      "sha256_after": "50c4bc154b1c73f3a3d4df2cc424650222d7360f31038bb9ffff1d917874a7e0"
+      "sha256_after": "db02ba964d8715eece051b9af2cb75ef6b0602e115f4875863f547ddede7545a"
     },
     {
       "path": "docs/research/candidate-proposal-governance.md",
@@ -8874,7 +8874,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "fb9ab762439fbe5cc5d4a3f286eeb3c1aa2753f2e7f4cac6657c51f2614d4c32"
+      "sha256_after": "6675390e69254501d64c4882eb265f2d94ec3c2265bd87f3f09d6a9b77eb8053"
     },
     {
       "path": "docs/research/candidate-version-governance.md",
@@ -8911,11 +8911,11 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "6320ca85927dd274b806efc50b7bebc0b2b3fe06e01b9c1e55e1d61100208152"
+      "sha256_after": "c25668162d17282ce1679065388959eaad37c2913b10ed88d437dabfa88c2019"
     },
     {
       "path": "docs/research/causal-features.md",
-      "title": "Причинные признаки",
+      "title": "Причинно упорядоченные признаки",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -8952,7 +8952,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "de97ff8907f9b73ed098c9486b5708c03f92840a36d058e23865275ce3e5f5cf",
-      "sha256_after": "c7c67a1cf663e514a7adc02a125ee31bfb0f422278b96a35b1bab6a0852471c3"
+      "sha256_after": "3a1e8949fbd6a6bcc85f79ad0b8e9ac53534e6e76f771519ff27a86d87cf6ffb"
     },
     {
       "path": "docs/research/competing-hypotheses.md",
@@ -9068,7 +9068,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c7d76ac336c1d4d0b263a924d23c3ebd44b47c364b1ea91d91986953af8e2182",
-      "sha256_after": "cd0fdeb9526e520a69c84183c292e804676182871cba04968ac04705a82739dc"
+      "sha256_after": "15707ad7c4c26c18bdd1406417ec310de13825b729b5331173922b2553e3e86e"
     },
     {
       "path": "docs/research/failed-validation-root-cause-analysis.md",
@@ -9147,6 +9147,43 @@
       "sha256_after": "04b4a054d724e00f114c10a7d6465ac74dc522e774750463b4778d46bda88cbd"
     },
     {
+      "path": "docs/research/independent-network-validation.md",
+      "title": "Актуальная независимая сетевая проверка Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 9,
+      "outgoing_link_count": 8,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "4aa6f86e8911b16812ceec2d205d326d7d214429a71f1326252dbac91d42766d"
+    },
+    {
       "path": "docs/research/internal-screening-policy.md",
       "title": "Политика предварительная внутренняя проверка v0.4.6",
       "category": "Текущий справочный документ",
@@ -9185,7 +9222,7 @@
     },
     {
       "path": "docs/research/label-commitment-and-unlock.md",
-      "title": "предварительная фиксация эталонной разметки и unlock",
+      "title": "Фиксация и раскрытие разметки",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -9213,12 +9250,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 0,
-      "outgoing_link_count": 0,
+      "incoming_link_count": 1,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "3b0e887b26c9da1bbb7d3cebabed44f4a33b40205e23f0d0cba40970316fdbe2"
+      "sha256_after": "9721e55da7433deb02c80ee32b4a68997def75ad6884fb356f5ed6729395c2a9"
     },
     {
       "path": "docs/research/laboratory-case-catalog.md",
@@ -9415,7 +9452,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "70fd06534308f639723ce6925ec9be74d80567466afae9e93243a1a90bd59c31"
+      "sha256_after": "1298994628473d9db8580ec93090e45307a115e26c8d0144856a6d8934dd1865"
     },
     {
       "path": "docs/research/laboratory-track-autonomy.md",
@@ -9534,11 +9571,11 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "36a7694bfc9d39e1f9172be82b591d5eeb8b0ee4d2d268dfc9b3928db9134d8f",
-      "sha256_after": "5088b4453f881baa5e08ba5c9900998a3874fa5e57d91bf300686f7b784f4423"
+      "sha256_after": "2403cae4a1e613c03dcec70c3f60b7ffca61bbb9526b3a7322549dbaad41bc4f"
     },
     {
       "path": "docs/research/model-training-reproducibility.md",
-      "title": "Воспроизводимость обучения v0.4.6",
+      "title": "Воспроизводимость обучения модели",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -9567,11 +9604,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 0,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "0c817f9b065282b68ef40aafb9b6ee5c6109109131e90d62df6c414a157a7992"
+      "sha256_after": "07f60ee3c05796151585e379a6aba384d514792b0e6840845f40a66918f65598"
     },
     {
       "path": "docs/research/operator-incident-workflow.md",
@@ -9616,6 +9653,191 @@
       "actual_action": "rewritten",
       "sha256_before": "a86ca161448da6decada1843e940afd132740b367323e1681391543ab8a201d2",
       "sha256_after": "f716018725c88c276b595675974355836fb4170ed0be9e21e4dd34f3b1c7547d"
+    },
+    {
+      "path": "docs/research/phase1-acceptance-criteria.md",
+      "title": "Критерии приёмки Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 8,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "c229c5a0e92fa6e7a36f83bf7150e4ff3bc017e7f7be93d2a9074c31508637ed"
+    },
+    {
+      "path": "docs/research/phase1-blinding-and-mapping.md",
+      "title": "Ослепление и mapping Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 6,
+      "outgoing_link_count": 3,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "0041e916a9f85ae38d8fa5a86ebd3eb41c397e42b3115ba460302f19b1c161e9"
+    },
+    {
+      "path": "docs/research/phase1-campaign-journal.md",
+      "title": "Журнал кампании Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 6,
+      "outgoing_link_count": 1,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "cd23a02a17dd84039aefb986eef1cea3032ff86e84ab8120634ceaa37e4e7bde"
+    },
+    {
+      "path": "docs/research/phase1-execution-package-history.md",
+      "title": "История официальных пакетов Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 6,
+      "outgoing_link_count": 2,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "57da636df5150ed3b3591d2f9d17ae0e4890f9a09b8de4c5f0a1b6758c6f676f"
+    },
+    {
+      "path": "docs/research/phase1-feature-construction.md",
+      "title": "Построение 51 признака Phase 1",
+      "category": "Текущий справочный документ",
+      "doc_schema": "filin_document_v2",
+      "document_type": "reference",
+      "audience": [
+        "developer"
+      ],
+      "lifecycle_status": "current",
+      "current_or_historical": "current",
+      "authoritative": false,
+      "authoritative_for": [],
+      "generated": false,
+      "evidence_immutable": false,
+      "protected_by_manifest": false,
+      "source_of_truth": [],
+      "duplicate_of": "",
+      "supersedes": [],
+      "superseded_by": "",
+      "redirect_target": "",
+      "last_reviewed_stage": "unknown",
+      "last_relevant_stage": "unknown",
+      "current_stage_mentioned": "",
+      "stale_status": false,
+      "stale_architecture": false,
+      "stale_command": false,
+      "terminology_findings": [],
+      "broken_links": [],
+      "broken_anchors": [],
+      "incoming_link_count": 6,
+      "outgoing_link_count": 0,
+      "recommended_action": "maintain",
+      "actual_action": "created",
+      "sha256_before": null,
+      "sha256_after": "3e5df45f9c12c1b7b14b868505159d5ec188795749abdb4b88319edb7ba79bf1"
     },
     {
       "path": "docs/research/post-blind-data-governance.md",
@@ -9740,7 +9962,7 @@
     },
     {
       "path": "docs/research/training-data-lineage.md",
-      "title": "Происхождение обучающих данных v0.4.6",
+      "title": "Происхождение данных обучения",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -9768,12 +9990,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 1,
-      "outgoing_link_count": 0,
+      "incoming_link_count": 2,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "ee713fd9d51a8bbadb8809b70fce7e50eba870142550cc7fa8afd51d149bf7b9"
+      "sha256_after": "6c0718b1127e648f50918f0650c53c09ee5d37cc93701c2286177cae89d0a24e"
     },
     {
       "path": "docs/research/uncertainty-and-abstention.md",
@@ -9814,7 +10036,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "87d1e28d0835c034910d693219313cac6b55ab449054fad83c66b45a0d194e8f",
-      "sha256_after": "d4363c99ad65dded51c7da6a453b7272f6f0a8b8fd66a18f4a4d17ae8546bf8d"
+      "sha256_after": "139075b95b50959fe37691df8f7508e8397c405ba463d91f5dccc600cc59a286"
     },
     {
       "path": "docs/research/v0-4-7-3-control-data-governance.md",
@@ -9925,7 +10147,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "aecef49acd5c58e5d0e928a56568907af350b098badee17b7764ccd6246f3e12"
+      "sha256_after": "b22301a9a4de63605b51b5a4bf1208747755104aa1829542fe8d88017b98a630"
     },
     {
       "path": "docs/roadmap.md",
@@ -9967,7 +10189,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6316b247fd5f2676f97bf7c924742a511cbd20d432b250b4b3ed83db2a7bcbd6",
-      "sha256_after": "cab0e35c959a6d5e4f92bc0682b605b39f97316677bcb344524ac7d4a3342de4"
+      "sha256_after": "a83104d3fd7aaeb8185607112169dbc01236c4e7289a175de2baa6aeeccb23a9"
     },
     {
       "path": "docs/safety-model.md",
@@ -10045,7 +10267,7 @@
     },
     {
       "path": "docs/security/staging_transport_security_v1.md",
-      "title": "`staging_transport_security_v1`",
+      "title": "Безопасность локального staging transport",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -10074,11 +10296,11 @@
       "broken_links": [],
       "broken_anchors": [],
       "incoming_link_count": 1,
-      "outgoing_link_count": 0,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "8fee3f85af212ec30ccb6e804ff58512158c1ef1101001bc9a26d552dba42778",
-      "sha256_after": "b5bab4257b6d2822eb48c1f5cdabffed93e1573844e7ad2e570eb44ec0491a8b"
+      "sha256_after": "dbb6a59ec7385bb346398b9f1d1108977c9cdb8290242070be7898378414e38c"
     },
     {
       "path": "docs/sigma-generation.md",
@@ -10196,16 +10418,16 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 7,
+      "incoming_link_count": 6,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "4598defaa5df271df89247abdd91f34c636b1491a9ddf12d62fdbbf26e57d9d5",
-      "sha256_after": "8f04768dd054a504d11c52394ec17d97d13bc75336d62990856a7cd9a1c0016a"
+      "sha256_after": "7f0b7199c3c64b2755bebe9c4483c233f10e14a47efafdc0c6fac8f34f1313ad"
     },
     {
       "path": "docs/status/current-status.md",
-      "title": "Текущее состояние проекта",
+      "title": "Текущий статус проекта",
       "category": "Авторитетный текущий документ",
       "doc_schema": "filin_document_v2",
       "document_type": "status",
@@ -10240,24 +10462,24 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 25,
-      "outgoing_link_count": 1,
+      "incoming_link_count": 29,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "431e9e3005b602919c185c62a81cf91544505270d843d87b2b7cac3940f2bb11"
+      "sha256_after": "10b23f531780e01d8562727a428fdf626e0f45b8154f22b2312e662a9160f72a"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
       "title": "Handoff переработки документации",
-      "category": "Текущий справочный документ",
+      "category": "Историческое описание",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -10363,7 +10585,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e640e4dc97a31e554e0efd50899afe71a8bc46d2214e8cbab6edb747c6080bca",
-      "sha256_after": "abe4e6a5be9199e986716cea459c0de9834f061cfa0f37ea6dec4ce835f15f73"
+      "sha256_after": "22dde589126f9ed8f24b6b49f00b635df0fd30866670c79d1ef30192ae4a90c6"
     },
     {
       "path": "docs/status/next-stage.md",
@@ -10407,7 +10629,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f1f7b2ef60b4d1150b35916811db6b55ecf9259185ed0e3920732e1cdc2141c9",
-      "sha256_after": "6b035d8a5107ec5c46ace8aaa1c23d58769e03a441f918fd768af2c352970ca8"
+      "sha256_after": "5faacd5fe66721a9f3e66e6d8658409021d89380ad57302e8e9442f32d610a15"
     },
     {
       "path": "docs/status/prohibited-capabilities.md",
@@ -10447,7 +10669,7 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 3,
+      "incoming_link_count": 2,
       "outgoing_link_count": 0,
       "recommended_action": "maintain",
       "actual_action": "rewritten",
@@ -10457,14 +10679,14 @@
     {
       "path": "docs/status/v0_3_18_working_handoff.md",
       "title": "Финальный handoff v0.3.18",
-      "category": "Текущий справочный документ",
+      "category": "Историческое описание",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
       "audience": [
         "developer"
       ],
-      "lifecycle_status": "current",
-      "current_or_historical": "current",
+      "lifecycle_status": "historical",
+      "current_or_historical": "historical",
       "authoritative": false,
       "authoritative_for": [],
       "generated": false,
@@ -10532,7 +10754,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6a9a8559eef4bda6af66439f3cdc84d3fbc386737c345fbc797e33a85f11c378",
-      "sha256_after": "9c6506193788603a6e9d9151154776fbebc677e8d62c40eaec44e2268492b5dc"
+      "sha256_after": "5600db9955950014116b3fd677d8ec1eea1289af5298141d4f49c81fb7d1f00d"
     },
     {
       "path": "docs/third-party-components.md",
@@ -10793,7 +11015,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "4872824e419ec0346686cf778ee2710f1be78a2a40263273d9eab87205507ecc",
-      "sha256_after": "b6f5bb1a46743fb6af9b0d028a669b38c2bf64fc15064d54d575a03aeb336a99"
+      "sha256_after": "a930cb8d9ae9f5a76c79c9540959f9d5a08d3e0904bfea0c4a9302b863365c10"
     },
     {
       "path": "lab/attack-scenarios.md",
@@ -10904,7 +11126,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "9207a2693a0995c5c4b12751cd4d73e53bf71332061400ef20b1b0e51fd24556",
-      "sha256_after": "d262db7768e7bde715b701edccc28529c24def917848e8513685820605400abf"
+      "sha256_after": "a80ccd7fbdc3afd507720a24262e470f2162daa9d29869f1df2e1f6e7feed89f"
     },
     {
       "path": "lab/campaigns/v0_3_13/README.md",
@@ -11093,7 +11315,7 @@
     },
     {
       "path": "lab/holdout/README.md",
-      "title": "отложенная контрольная выборка v0.3.6",
+      "title": "Отложенная контрольная выборка v0.3.6",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "overview",
@@ -11126,7 +11348,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "d54a3f1d126f9e9dcee0495136baf73e9545266f5cbf2f5cd96efced45c4389a",
-      "sha256_after": "1c014ab5a04e1f2d7d514bc4bbce06f36ef0c3fe2bc9dd447d4af808de345ea6"
+      "sha256_after": "235674c92dc7d83464002a70ee4da13742636e42ba5d6a650638f007e3ccdb87"
     },
     {
       "path": "lab/isolation-rules.md",
@@ -11195,12 +11417,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 3,
-      "outgoing_link_count": 0,
+      "incoming_link_count": 4,
+      "outgoing_link_count": 1,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "128ab60c64614eb5fcc087291c7d058b69806a9bd3e75b71f010d88627830ea4"
+      "sha256_after": "79049d476ecfe1579cdb8839b7e4fb4ac79801592dec40c160a491b5027079ac"
     },
     {
       "path": "lab/robustness/README.md",
@@ -11311,7 +11533,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "8cada83e855f25dac14dc8c9bf2a51a044eed50281865415bc9721a13887e75e",
-      "sha256_after": "99b273b391312f4bfebb7072db907ba61e612021daba1d97e8448c6ff7d9d960"
+      "sha256_after": "0fd7f4304e32780893855088bc158cc27bfd73619f3268c4885c67c4615ed680"
     },
     {
       "path": "lab/training/README.md",
@@ -11348,7 +11570,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "276aee34aca64dadcd77b435d53ec1712be83b205ebc57232c891d09c5c9cf3d",
-      "sha256_after": "b87221cf6d9498821379bd78a4f91acb47f5bb68d471a3f68dcd37dbf4e03126"
+      "sha256_after": "ee16f31784fde72d641fac046d0f131b5f4558a9979ee1c1a5e21d14abed186f"
     },
     {
       "path": "lab_console/README.md",
@@ -11422,7 +11644,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "5eb74e22fc7ae6e65602abd5fcd8480349f11ab201c9ce28101e968b2febdc2d",
-      "sha256_after": "cff5f15128890c2fded26623fbd557a90b9a0e1cd3d33ed77126a69855ce4cd6"
+      "sha256_after": "e761364aeaa6b01a15af8280797e14f5224ad3c1acb2ad9590d1e1ea75b92015"
     },
     {
       "path": "ml/analysis/README.md",
@@ -11459,7 +11681,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "07d5e4db50d19195e33e34aae43c4ee15604de83c7a15225fa7a50c0abe46483",
-      "sha256_after": "388f4dbc837ebf2ab80fca45d637553bb749981bd14bfad4008b4c88b7cc449d"
+      "sha256_after": "9e72d828f1f6f707bc33ad61595883e926ab07b5fcf3eb3c029e4d97d3714022"
     },
     {
       "path": "ml/audits/v0_3_12_1/README.md",
@@ -11533,7 +11755,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "705e285470167cdaf4a91ae01b43f32dec8f5a4cdd89af7a9015e99ec60661a5",
-      "sha256_after": "d6ff2c086ea2655f7b5e0ea65ade02cc5e0753a1cfbfc70c95422c860471dc55"
+      "sha256_after": "a72fdc58683925497948f0860757ffc12393c3f3957d0c387d16cb5faeca251b"
     },
     {
       "path": "ml/experiments/v0_2_4/README.md",
@@ -12236,7 +12458,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "39941b07c9f5468f72048197c8649f5b41198a292fa97760e9f4784b155b736b",
-      "sha256_after": "860308e7579dbe4996005bb26d2c1fdf75b71e58dc05997c76867720e9880ccf"
+      "sha256_after": "7768aa547ade5d7b201b0007ed78ff35bc7bc236303b6d49a473af1c3a85cefd"
     },
     {
       "path": "ml/protocols/index.md",
@@ -14262,7 +14484,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "a76fb5ae1e1db4027f55b0ab159053082110618e53d22b3cc82a3040d48a88b8",
-      "sha256_after": "057f5c6a7b76f1c6687b946270594f109e87cfc82cf78108c600de6cffd8a5c9"
+      "sha256_after": "0c2134d9c9ed99d4f14367b446766c4724da8b8a25ac10db90e70a3b8e168e6b"
     },
     {
       "path": "staging/README.md",
@@ -14299,7 +14521,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "d72cdf6547a9bce6d25e1896ca20c1aebec7c555829430905f05dd273b3afded",
-      "sha256_after": "2a1be11245a12c13ab31a792e13f1ef0c1366d47be8f200615a0af2f07f366b2"
+      "sha256_after": "3a4b0f14b24fd570ca7f94bdb37a461aa7dcf9978187694dd542720c17839a7e"
     },
     {
       "path": "tools/README.md",
@@ -14336,7 +14558,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "935fc4e3a13e290b17c87bf31bd1f107532fa512088046d80ebfee63b889ce5d",
-      "sha256_after": "28489cf93f5d2af5de75daf9c359d4da27cf1ef9b45dd0a37b966c5efd673cf0"
+      "sha256_after": "5a98318810c30be3b1e123dd9da8dca60377c796eb1409369efa587d9bb6c4ab"
     }
   ]
 }
