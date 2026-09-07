@@ -4,6 +4,7 @@ from pathlib import Path
 import yaml
 
 from tools.docs.validate_documentation import validate
+from tools.docs.documentation_v2 import phase1_facts
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -12,18 +13,21 @@ class TestResearchState(unittest.TestCase):
     def test_authoritative_state_is_safe_and_current(self):
         state = yaml.safe_load((ROOT / "docs/status/project-status.yaml").read_text(encoding="utf-8"))
         legacy = yaml.safe_load((ROOT / "docs/research-state.yaml").read_text(encoding="utf-8"))
-        self.assertEqual(state["current_completed_stage"], "v0.3.18")
+        self.assertEqual(state["current_completed_stage"], state["mainline"]["latest_completed_stage"])
         self.assertEqual(state["latest_runtime_trial"], "v0.3.15.5.1")
         self.assertEqual(state["latest_corrective_audit"], "v0.3.17.1")
         self.assertEqual(state["latest_regression_analysis"], "v0.3.15.3")
         self.assertEqual(state["latest_staging_transport_trial"], "v0.3.16")
-        self.assertEqual(state["next_allowed_stage"], "v0.3.19")
+        self.assertEqual(state["next_allowed_stage"], state["mainline"]["next_allowed_stage"])
         self.assertTrue(state["candidate_ready_for_v0_3_17_controlled_local_shadow_rehearsal"])
         self.assertEqual(state["current_candidate"], "v03154:65a3dd912d845bc1")
         self.assertIsNone(state["blocked_stage"])
         self.assertTrue(state["candidate_ready_for_v0_3_18_external_review_and_trial_design"])
         self.assertTrue(state["candidate_ready_for_v0_3_19_external_package_review"])
         self.assertFalse(state["backend_integration_ready"]); self.assertFalse(state["shadow_mode_ready"]); self.assertFalse(state["production_ready"])
+        facts = phase1_facts(ROOT)
+        self.assertEqual(state["independent_network_validation"]["latest_official_package_id"], facts["package_id"])
+        self.assertEqual(state["independent_network_validation"]["scenario_template_count"], facts["scenario_template_count"])
         self.assertTrue(legacy["deprecated"]); self.assertEqual(legacy["authoritative_source"], "status/project-status.yaml")
 
     def test_documentation_validator_passes(self):

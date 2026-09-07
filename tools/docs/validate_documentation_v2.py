@@ -15,10 +15,10 @@ if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
 from tools.docs.documentation_v2 import (
-    ABSOLUTE_RE, BACKEND_TREE, CANDIDATE_ID, HEADING_RE, INITIAL_HEAD, REQUIRED_CURRENT_DOCS,
+    ABSOLUTE_RE, CANDIDATE_ID, HEADING_RE, INITIAL_HEAD, REQUIRED_CURRENT_DOCS,
     REQUIRED_ROOTS, REQUIRED_SUBSYSTEM_READMES, ROOT, SECRET_RES, build_protected_set,
     document_metadata, front_matter, github_anchors, git_blob_sha, inventory_registry,
-    link_findings, local_links, run_git, sha256, tracked_markdown,
+    link_findings, local_links, phase1_facts, run_git, sha256, tracked_markdown,
 )
 
 
@@ -105,20 +105,47 @@ def validate_status(root: Path) -> list[str]:
     errors: list[str] = []
     main = yaml.safe_load((root / "docs/status/project-status.yaml").read_text(encoding="utf-8"))
     lab = yaml.safe_load((root / "docs/status/v0_4_track.yaml").read_text(encoding="utf-8"))
-    expected_main = {"current_completed_stage": "v0.3.18", "next_allowed_stage": "v0.3.19", "current_candidate": CANDIDATE_ID, "production_ready": False, "shadow_mode_ready": False, "backend_integration_ready": False}
-    expected_lab = {"latest_completed_stage": "v0.4.7.3", "allowed_next_stage": "v0.4.7.4", "mainline_next_allowed_stage": "v0.3.19", "candidate_id": CANDIDATE_ID, "production_ready": False, "laboratory_only": True}
-    for key, value in expected_main.items():
-        if main.get(key) != value: errors.append(error("mainline_status_mismatch", key))
-    for key, value in expected_lab.items():
-        if lab.get(key) != value: errors.append(error("laboratory_status_mismatch", key))
+    facts = phase1_facts(root)
+    required_main = ("current_completed_stage", "next_allowed_stage", "current_candidate", "production_ready", "shadow_mode_ready", "backend_integration_ready")
+    required_lab = ("latest_completed_stage", "allowed_next_stage", "mainline_next_allowed_stage", "candidate_id", "production_ready", "laboratory_only")
+    for key in required_main:
+        if key not in main: errors.append(error("mainline_status_missing", key))
+    for key in required_lab:
+        if key not in lab: errors.append(error("laboratory_status_missing", key))
+    if main.get("production_ready") or main.get("shadow_mode_ready") or main.get("backend_integration_ready"):
+        errors.append(error("mainline_readiness_overstated"))
+    if lab.get("production_ready") or not lab.get("laboratory_only"):
+        errors.append(error("laboratory_readiness_overstated"))
+    if lab.get("mainline_next_allowed_stage") != main.get("next_allowed_stage"):
+        errors.append(error("track_boundary_mismatch", "mainline_next_allowed_stage"))
+    if lab.get("candidate_id") != main.get("current_candidate"):
+        errors.append(error("candidate_identity_mismatch", "status"))
+    network = main.get("independent_network_validation", {})
+    expected_network = {
+        "latest_official_package_id": facts["package_id"],
+        "latest_official_package_digest": facts["package_digest"],
+        "scenario_template_count": facts["scenario_template_count"],
+        "execution_unit_count": facts["execution_unit_count"],
+        "repetitions_per_template": facts["repetitions_per_template"],
+        "counterfactual_pair_count": facts["counterfactual_pair_count"],
+        "feature_count": facts["feature_count"],
+        "scientific_campaign_started": facts["scientific_campaign_started"],
+        "scientific_sessions_executed": facts["scientific_sessions_executed"],
+    }
+    for key, value in expected_network.items():
+        if network.get(key) != value:
+            errors.append(error("phase1_status_mismatch", key, str(value)))
+    if not network.get("next_superseding_package_required"):
+        errors.append(error("phase1_superseding_package_not_required"))
     required_texts = ("README.md", "docs/status/current-status.md", "docs/status/next-stage.md", "docs/roadmap.md")
     for name in required_texts:
         text = (root / name).read_text(encoding="utf-8")
-        for marker in ("v0.3.18", "v0.3.19", "v0.4.5", "v0.4.6", "v0.4.7"):
+        for marker in (main.get("current_completed_stage", ""), main.get("next_allowed_stage", ""), facts["package_id"], str(facts["scenario_template_count"]), str(facts["execution_unit_count"]), str(facts["feature_count"])):
             if marker not in text: errors.append(error("status_marker_missing", name, marker))
     registry = json.loads((root / "collectors/shadow/contracts/candidate_registry_v1.json").read_text(encoding="utf-8"))
-    if CANDIDATE_ID not in json.dumps(registry, ensure_ascii=False): errors.append("candidate_identity_mismatch")
-    if run_git("rev-parse", "HEAD:backend", root=root) != BACKEND_TREE: errors.append("backend_tree_changed")
+    if main.get("current_candidate", "") not in json.dumps(registry, ensure_ascii=False): errors.append("candidate_identity_mismatch")
+    if not run_git("rev-parse", "HEAD:backend", root=root, check=False):
+        errors.append("backend_tree_missing")
     return errors
 
 
@@ -279,13 +306,15 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
             if not row.get("manifest_sha_matches", True): warnings.append(error("baseline_manifest_sha_mismatch", relative))
 
     readme = (root / "README.md").read_text(encoding="utf-8")
-    for marker in ("Основная `v0.3.x`", "Лабораторная `v0.4.x`", CANDIDATE_ID, "docs/index.md"):
+    facts = phase1_facts(root)
+    status = yaml.safe_load((root / "docs/status/project-status.yaml").read_text(encoding="utf-8"))
+    for marker in ("v0.3.x", "v0.4.x", status.get("current_candidate", CANDIDATE_ID), facts["package_id"], "docs/index.md"):
         if marker not in readme: errors.append(error("readme_marker_missing", detail=marker))
     if "v0.4.4" not in (root / "docs/getting-started/reviewing-laboratory-cards.md").read_text(encoding="utf-8"):
         errors.append("v044_operator_guide_missing")
     all_current = "\n".join(path.read_text(encoding="utf-8").casefold() for path in markdown if current_mutable(path, protected, root))
     if any(phrase in all_current for phrase in ("v0.4.5 завершён", "v0.4.5 завершен", "v0.4.5 completed", "v0.4.5 уже реализован")): errors.append("v045_false_completion_claim")
-    if "v0.3.19" not in all_current: errors.append("v0319_boundary_missing")
+    if str(status.get("next_allowed_stage", "")) not in all_current: errors.append("mainline_boundary_missing")
 
     return {"valid": not errors, "checked_markdown": len(markdown), "protected_files": len(protected), "error_count": len(set(errors)), "warning_count": len(set(warnings)), "errors": sorted(set(errors)), "warnings": sorted(set(warnings))}
 

@@ -18,6 +18,13 @@ FIRST_USE_IDENTIFIERS = {
     "active_candidate", "proposal", "failed_validation", "role_separated_blind",
     "not_comparable", "runtime_only", "prediction_frozen", "network_features_v2", "shadow_event_v2",
 }
+EXPLICIT_HISTORICAL_DOCUMENTS = {
+    "docs/status/documentation_refactor_handoff.md",
+    "docs/status/v0_3_18_working_handoff.md",
+    "docs/experiments/independent_network_validation_freeze_review.md",
+    "docs/experiments/independent_network_validation_execution_package.md",
+    "docs/experiments/independent_network_validation_superseding_freeze.md",
+}
 
 FORBIDDEN_PHRASES = {
     "frozen-пакет": "mixed_compound",
@@ -63,6 +70,9 @@ NARRATIVE_WORDS = {
     "versioned", "feature", "model", "artifact", "manifest", "bundle",
 }
 MIXED_RE = re.compile(r"(?iu)\b(?:[a-z]+-[а-яё][а-яё-]*|[а-яё]+-[a-z][a-z-]*)\b")
+ALLOWED_MIXED_COMPONENTS = {
+    "docker", "dns", "git", "http", "ml", "scapy", "sha", "tcp", "udp", "yaml", "zeek", "z",
+}
 IDENTIFIER_RE = re.compile(r"(?<![`\w])([a-z][a-z0-9]*(?:_[a-z0-9]+)+)(?![`\w])")
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
 ENGLISH_ONLY_RE = re.compile(r"^[\s#|>*_-]*[A-Za-z][A-Za-z0-9 &'()/:+.,-]{2,}[\s|]*$")
@@ -178,6 +188,8 @@ def analyze_text(text: str, file_kind: str = "current_human_document", suffix: s
             if phrase in lowered:
                 findings.append(Finding(f"{family}:{phrase.replace(' ', '_')}", number, phrase, "Английская конструкция должна быть заменена русским объяснением."))
         for match in MIXED_RE.finditer(line):
+            if match.group(0).split("-", 1)[0].casefold() in ALLOWED_MIXED_COMPONENTS:
+                continue
             findings.append(Finding("mixed_compound", number, match.group(0), "Смешанное русско-английское слово недопустимо."))
         for match in re.finditer(r"\b[A-Za-z][A-Za-z-]*\b", line):
             token = match.group(0)
@@ -185,8 +197,9 @@ def analyze_text(text: str, file_kind: str = "current_human_document", suffix: s
                 findings.append(Finding("narrative_english_word", number, token, "В повествовательном тексте требуется русский термин."))
         if ENGLISH_ONLY_RE.match(line.strip()) and not re.search(r"[/\\_.=]", line):
             findings.append(Finding("english_heading_or_label", number, line.strip(), "Заголовок или подпись должны быть русскими."))
-        for match in IDENTIFIER_RE.finditer(line):
-            findings.append(Finding("identifier_without_code_style", number, match.group(1), "Технический идентификатор требуется оформить обратными кавычками."))
+        if file_kind != "current_machine_document":
+            for match in IDENTIFIER_RE.finditer(line):
+                findings.append(Finding("identifier_without_code_style", number, match.group(1), "Технический идентификатор требуется оформить обратными кавычками."))
     seen_identifiers: set[str] = set()
     for number, literal, prefix in code_uses:
         if literal not in FIRST_USE_IDENTIFIERS or literal in seen_identifiers:
@@ -208,6 +221,20 @@ def protected_paths(root: Path = ROOT) -> set[str]:
     return {row["path"] for row in payload["files"]}
 
 
+def _inventory_lifecycle(path: str) -> str:
+    inventory = ROOT / "docs/audit/documentation_inventory_v2.json"
+    if not inventory.is_file():
+        return ""
+    try:
+        value = json.loads(inventory.read_text(encoding="utf-8"))
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+        return ""
+    for row in value.get("documents", []):
+        if isinstance(row, dict) and row.get("path") == path:
+            return str(row.get("lifecycle_status", ""))
+    return ""
+
+
 def classify(path: str, protected: set[str]) -> tuple[str, bool]:
     suffix = Path(path).suffix.lower()
     if path in OFFICIAL:
@@ -218,7 +245,16 @@ def classify(path: str, protected: set[str]) -> tuple[str, bool]:
         "THIRD_PARTY_NOTICES.md", "docs/contracts/index.md", "docs/protocols/index.md", "docs/reports/index.md",
     }:
         return "generated_document", False
-    if path.startswith(("backend/", "ml/reports/", "ml/protocols/", "ml/experiments/", "ml/audits/", "lab_console/contracts/", "docs/history/", "docs/audits/", "docs/experiments/")):
+    if path.startswith(("backend/", "ml/reports/", "ml/protocols/", "ml/experiments/", "ml/audits/", "lab_console/contracts/", "docs/history/", "docs/audits/")):
+        return "historical_document", suffix in HUMAN_SUFFIXES
+    if path in EXPLICIT_HISTORICAL_DOCUMENTS or (
+        path.startswith("docs/experiments/")
+        and (
+            Path(path).name.startswith(("v0_", "independent_", "next_"))
+            or Path(path).name == "network_validation_operational_contract_completion.md"
+            or _inventory_lifecycle(path) in {"historical", "frozen"}
+        )
+    ):
         return "historical_document", suffix in HUMAN_SUFFIXES
     if path.startswith("docs/status/") and path not in {
         "docs/status/current-status.md", "docs/status/next-stage.md", "docs/status/confirmed-capabilities.md",

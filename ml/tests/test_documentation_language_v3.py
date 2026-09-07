@@ -58,7 +58,10 @@ def test_external_review_has_complete_russian_projection_without_source_changes(
     assert projected.keys() == sources.keys()
     for name, row in sources.items():
         source = Path(row["path"])
-        assert hashlib.sha256(source.read_bytes()).hexdigest() == row["current_sha256"]
+        source_bytes = source.read_bytes()
+        if source.suffix.casefold() in {".md", ".json", ".yaml", ".yml", ".txt"}:
+            source_bytes = source_bytes.replace(b"\r\n", b"\n")
+        assert hashlib.sha256(source_bytes).hexdigest() == row["current_sha256"]
         text = projected[name].read_text(encoding="utf-8")
         assert "Русское изложение" in text or name == "README.md"
         assert analyze_text(text, "current_human_document", ".md") == []

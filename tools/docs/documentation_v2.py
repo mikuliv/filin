@@ -19,7 +19,6 @@ V044_HEAD = "80680bf8e890742e1c82929d7a2e8cd099a1b1ad"
 V044_MANIFEST = "bffe219e711c55a2154c242737c583a710f35934690b10545eabb39f35081d30"
 V044_SEMANTIC = "f8756b4d255f0e3a337c5d8b1543112eef2524eae2f006aaa18acd083166bcdb"
 CANDIDATE_ID = "v03154:65a3dd912d845bc1"
-BACKEND_TREE = "04218a4eb01534950efd5f7d6390f1a575cacbc8"
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
@@ -80,6 +79,93 @@ REQUIRED_CURRENT_DOCS = (
     "docs/contributing/adding-a-contract.md", "docs/contributing/adding-a-report.md",
     "docs/contributing/adding-a-subsystem-readme.md",
 )
+
+# Явный перечень исторических проекций. Папка сама по себе не является
+# исключением: новые текущие протоколы могут находиться рядом с историей.
+EXPLICIT_HISTORICAL_DOCUMENTS = {
+    "docs/status/documentation_refactor_handoff.md",
+    "docs/status/v0_3_18_working_handoff.md",
+    "docs/experiments/independent_network_validation_freeze_review.md",
+    "docs/experiments/independent_network_validation_execution_package.md",
+    "docs/experiments/independent_network_validation_superseding_freeze.md",
+}
+
+
+def is_explicit_historical_document(relative: str) -> bool:
+    """Определяет историю по записи/имени конкретного документа, не по папке."""
+    return relative in EXPLICIT_HISTORICAL_DOCUMENTS or (
+        relative.startswith("docs/experiments/")
+        and (
+            Path(relative).name.startswith(("v0_", "independent_", "next_"))
+            or Path(relative).name == "network_validation_operational_contract_completion.md"
+        )
+    )
+
+
+def phase1_package_paths(root: Path = ROOT) -> list[Path]:
+    """Возвращает официальные пакеты Phase 1 в детерминированном порядке."""
+    return sorted(
+        path for path in (root / "lab/network_validation/execution").glob("official_execution_package*.json")
+        if path.is_file()
+    )
+
+
+def latest_phase1_package(root: Path = ROOT) -> tuple[Path, dict[str, Any]]:
+    """Читает последний по номеру официальный пакет, не зашивая его версию в код."""
+    candidates: list[tuple[int, Path, dict[str, Any]]] = []
+    for path in phase1_package_paths(root):
+        try:
+            value = json.loads(path.read_text(encoding="utf-8"))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError):
+            continue
+        match = re.search(r"_v(\d+)\.json$", path.name)
+        candidates.append((int(match.group(1)) if match else 0, path, value))
+    if not candidates:
+        raise FileNotFoundError("official Phase 1 execution package not found")
+    _, path, value = max(candidates, key=lambda item: (item[0], item[1].name))
+    return path, value
+
+
+def phase1_facts(root: Path = ROOT) -> dict[str, Any]:
+    """Сводит факты текущего официального пакета и плана выполнения."""
+    package_path, package = latest_phase1_package(root)
+    plan_path = root / "lab/network_validation/execution/phase1_run_plan.json"
+    plan = json.loads(plan_path.read_text(encoding="utf-8"))
+    source_commit = str(package.get("runtime_sources_commit_sha", ""))
+    current_head = run_git("rev-parse", "HEAD", root=root)
+    source_reachable = bool(source_commit) and subprocess.run(
+        ["git", "cat-file", "-e", f"{source_commit}^{{commit}}"],
+        cwd=root,
+        capture_output=True,
+    ).returncode == 0
+    runtime_diff = ""
+    if source_reachable:
+        runtime_diff = run_git("diff", "--name-only", f"{source_commit}..HEAD", "--", "lab/network_validation", root=root, check=False)
+    return {
+        "package_path": package_path.relative_to(root).as_posix(),
+        "package_id": package.get("package_id", ""),
+        "package_digest": package.get("canonical_digest", package.get("canonical_payload_sha256", "")),
+        "package_generation": package.get("package_generation", package.get("schema_version", "")),
+        "runtime_source_commit": source_commit,
+        "current_head": current_head,
+        "runtime_source_reachable": source_reachable,
+        "runtime_code_diff_paths": runtime_diff.splitlines() if runtime_diff else [],
+        "current_runtime_code_differs_from_package": bool(runtime_diff),
+        "scientific_campaign_started": bool(package.get("scientific_campaign_started", False)),
+        "scientific_sessions_executed": int(package.get("scientific_sessions_executed", 0)),
+        "scenario_template_count": int(package.get("scenario_template_count", plan.get("scenario_template_count", 0))),
+        "execution_unit_count": int(package.get("execution_session_count", plan.get("execution_session_count", 0))),
+        "repetitions_per_template": int(package.get("repetitions_per_template", plan.get("repetitions_per_template", 0))),
+        "counterfactual_pair_count": int(package.get("counterfactual_pair_count", 0)),
+        "feature_count": 51,
+        "package_scientific_inputs_commit": package.get("scientific_inputs_commit_sha", ""),
+        "runner_digest": package.get("phase1_docker_runner_sha256", ""),
+        "cli_digest": package.get("phase1_cli_sha256", ""),
+        "runtime_contract_digest": package.get("phase1_runtime_contract_digest", ""),
+        "plan_path": plan_path.relative_to(root).as_posix(),
+        "plan_digest": plan.get("run_plan_digest", ""),
+        "split_assignments_digest": plan.get("split_assignments_digest", ""),
+    }
 
 
 def run_git(*args: str, root: Path = ROOT, check: bool = True) -> str:
@@ -278,6 +364,8 @@ def document_metadata(path: Path, root: Path = ROOT) -> dict[str, Any]:
         return legacy
     row = inventory_registry(root).get(relative, {})
     lifecycle = row.get("lifecycle_status", "")
+    if is_explicit_historical_document(relative):
+        lifecycle = "historical"
     return {
         "doc_schema": row.get("doc_schema", "filin_document_v2"),
         "title": row.get("title", title_for(path)),

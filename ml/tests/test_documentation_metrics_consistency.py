@@ -16,7 +16,9 @@ class DocumentationMetricsConsistencyTests(unittest.TestCase):
     def test_evergreen_testing_guide_has_no_stale_passed_counter(self):
         text = (ROOT / "docs/getting-started/testing.md").read_text(encoding="utf-8")
         self.assertIsNone(re.search(r"\b\d{3,5}\s+passed\b", text))
-        self.assertIn("0 failed", text)
+        self.assertIn("full_regression_passed=false", text)
+        self.assertIn("allowed_baseline_failures=1", text)
+        self.assertNotIn("Ожидается `0 failed`", text)
 
 
 if __name__ == "__main__":

@@ -7,7 +7,16 @@ import shutil
 from pathlib import Path
 from typing import Callable
 
-from tools.docs.documentation_v2 import CANDIDATE_ID, REQUIRED_CURRENT_DOCS, REQUIRED_ROOTS, REQUIRED_SUBSYSTEM_READMES, ROOT
+import yaml
+
+from tools.docs.documentation_v2 import (
+    CANDIDATE_ID,
+    REQUIRED_CURRENT_DOCS,
+    REQUIRED_ROOTS,
+    REQUIRED_SUBSYSTEM_READMES,
+    ROOT,
+    phase1_facts,
+)
 
 
 NEGATIVE_KINDS = {
@@ -193,19 +202,32 @@ def positive_checks(root: Path = ROOT) -> list[dict]:
         checks.append((f"subsystem_readme:{path}", (root/path).is_file()))
     for directory in REQUIRED_ROOTS:
         checks.append((f"repository_root:{directory}", (root/directory).is_dir()))
+    project_status = yaml.safe_load((root/"docs/status/project-status.yaml").read_text(encoding="utf-8"))
+    mainline = project_status.get("mainline", {})
+    laboratory = project_status.get("laboratory", {})
+    main_completed = str(mainline.get("latest_completed_stage", project_status.get("current_completed_stage", "")))
+    main_next = str(mainline.get("next_allowed_stage", project_status.get("next_allowed_stage", "")))
+    lab_completed = str(laboratory.get("latest_completed_stage", ""))
+    lab_next = str(laboratory.get("next_allowed_stage", ""))
+    facts = phase1_facts(root)
+    readme_text = (root/"README.md").read_text(encoding="utf-8")
+    current_status_text = (root/"docs/status/current-status.md").read_text(encoding="utf-8")
+    testing_text = (root/"docs/getting-started/testing.md").read_text(encoding="utf-8")
+    backend_text = (root/"backend/README.md").read_text(encoding="utf-8").casefold()
     marker_checks = {
-        "readme_two_tracks": all(x in (root/"README.md").read_text(encoding="utf-8") for x in ("v0.3.18","v0.4.4")),
-        "current_status_two_tracks": all(x in (root/"docs/status/current-status.md").read_text(encoding="utf-8") for x in ("v0.3.19","v0.4.5")),
+        "readme_two_tracks": all(x in readme_text for x in (main_completed, main_next, lab_completed, lab_next)),
+        "current_status_two_tracks": all(x in current_status_text for x in (main_completed, main_next, lab_completed, lab_next)),
         "architecture_two_tracks": all(x in (root/"docs/architecture/overview.md").read_text(encoding="utf-8") for x in ("v0.3.x","v0.4.x")),
         "repository_layout_new_components": all(x in (root/"docs/getting-started/repository-layout.md").read_text(encoding="utf-8") for x in ("incident_reconstruction/","lab_console/","external_review/","rehearsal/")),
-        "testing_console_v044": all(x in (root/"docs/getting-started/testing.md").read_text(encoding="utf-8") for x in ("verify_v044","test_v044_operator_cycle")),
-        "backend_historical": "HISTORICAL / DEMONSTRATION PROTOTYPE" in (root/"backend/README.md").read_text(encoding="utf-8"),
+        "testing_console_v044": all(x in testing_text for x in ("verify_v044", "python -m tools.lab_console.verify_v044")),
+        "backend_historical": all(x in backend_text for x in ("исторический", "демонстрационный", "не кандидат")),
         "operator_guide_available": (root/"docs/getting-started/reviewing-laboratory-cards.md").is_file(),
         "v045_not_completed": "v0.4.5 завершён" not in (root/"docs/status/current-status.md").read_text(encoding="utf-8").casefold(),
         "source_truth_declared": (root/"docs/reference/sources-of-truth.md").is_file(),
         "protected_registry_exists": (root/"docs/audit/protected_documentation_v2.json").is_file(),
         "readme_starts_with_h1": (root/"README.md").read_text(encoding="utf-8").startswith("# Платформа «Филин»"),
         "current_metadata_from_inventory": "README.md" in json.dumps(json.loads((root/"docs/audit/documentation_inventory_v2.json").read_text(encoding="utf-8")), ensure_ascii=False),
+        "phase1_package_is_current": all(x in readme_text for x in (facts["package_id"], str(facts["scenario_template_count"]), str(facts["execution_unit_count"]), str(facts["feature_count"]))),
         "no_visible_front_matter": all(not p.read_text(encoding="utf-8").startswith("---\n") for p in (root/"README.md", root/"docs/index.md", root/"docs/status/current-status.md")),
         "inventory_covers_current_docs": all(path in {row["path"] for row in json.loads((root/"docs/audit/documentation_inventory_v2.json").read_text(encoding="utf-8")).get("documents", [])} for path in REQUIRED_CURRENT_DOCS),
         "protected_evidence_immutable": all(row.get("mutable") is False for row in json.loads((root/"docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8")).get("files", [])),
