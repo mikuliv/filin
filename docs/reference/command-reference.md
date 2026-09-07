@@ -1,66 +1,69 @@
 # Справочник команд
 
-Все команды выполняются из корня репозитория. Поле «изменения» описывает ожидаемую запись на диск; ни одна команда ниже не должна обращаться к сети или менять действующего кандидата.
+Все команды выполняются из корня репозитория. Команды ниже разделены по риску: чтение и проверка не создают научный корпус; операции Phase 1 требуют отдельного допуска.
 
-## Основные проверки
-
-| Команда | Назначение | Изменения | Ожидаемый результат | Ограничение |
-|---|---|---|---|---|
-| `python -m pytest -q` | полная регрессия | временные файлы pytest | `0 failed` | число пройденных тестов не фиксировано |
-| `python -m compileall backend collectors incident_reconstruction lab_console ml rehearsal staging tools` | проверка синтаксиса и импорта | `__pycache__` | код `0` | не заменяет функциональные тесты |
-| `python -m tools.lab_console.verify_console` | базовые контракты консоли | временные файлы | проверка пройдена | только локальный режим |
-| `python -m tools.lab_console.verify_v044` | операторский цикл карточек | временные файлы | проверка пройдена | не создаёт научного решения |
-| `python -m tools.lab_console.verify_v045` | каталог и сравнение запусков | временные файлы | проверка пройдена | без выбора кандидата |
-| `python -m tools.lab_console.verify_v046` | предложения кандидатов | временные файлы | проверка пройдена | без регистрации и продвижения |
-| `python -m tools.lab_console.verify_v047` | слепая лабораторная проверка | временные файлы | проверка пройдена | без раскрытия строк и повторного вывода |
-
-## Документация
-
-| Команда | Назначение | Изменения | Ожидаемый результат | Ограничение |
-|---|---|---|---|---|
-| `python -m tools.docs.build_documentation_inventory` | пересобрать навигацию и защищённый перечень | `docs/audit/` | детерминированные индексы | запускать после редакции |
-| `python -m tools.docs.validate_documentation_v2 --strict` | проверить структуру Documentation v2 | нет | `valid: true` | не исправляет файлы |
-| `python -m tools.docs.validate_documentation_authority` | проверить источники истины | нет | код `0` | YAML статуса имеет приоритет |
-| `python -m tools.docs.validate_documentation_freshness` | найти устаревшие ссылки и сведения | нет | код `0` | исторические документы не становятся текущими |
-| `python -m tools.docs.validate_documentation_immutability` | проверить защищённые байты | нет | код `0` | несовпадение хеша блокирует этап |
-| `python -m tools.docs.validate_documentation_terminology` | проверить научные замены терминов | нет | код `0` | не заменяет языковой сканер |
-| `python -m tools.docs.validate_russian_narrative --strict` | проверить человекочитаемый русский текст | нет | `finding_count: 0` | код и разрешённые идентификаторы исключаются контекстно |
-| `python -m tools.docs.run_russian_narrative_campaign` | проверить положительные и отрицательные примеры | временный каталог | все сценарии пройдены | примеры не входят в продуктовые данные |
-
-## Целостность кандидата и этапов
+## Проверки документации и кода
 
 ```powershell
-python -m tools.audit.validate_v03154_bundle
-python -m tools.audit.validate_v0318_bundle
-python -m tools.audit.validate_v040_bundle
-python -m tools.audit.validate_v041_bundle
-python -m tools.audit.validate_v042_bundle
+python -m tools.docs.validate_documentation_v2 --strict
+python -m tools.docs.validate_documentation_freshness --strict
+python -m tools.docs.validate_documentation_authority
+python -m tools.docs.validate_documentation_links
+python -m tools.docs.validate_documentation_immutability
+python -m tools.docs.validate_documentation_terminology
+python -m tools.docs.validate_russian_narrative --strict
+python -m compileall backend collectors incident_reconstruction lab lab_console ml rehearsal staging tools
 ```
 
-Эти команды читают зафиксированные пакеты и сверяют контрольные суммы. Они не обучают модель, не пересобирают исторические артефакты и не меняют реестр кандидатов.
-
-## Лицензирование
+Инвентаризация выполняется после правок:
 
 ```powershell
-python -m tools.licensing.validate_manifest
-python -m tools.licensing.validate_frozen_license_mapping
-python -m tools.licensing.validate_upstream_standard_texts
-python -m tools.licensing.validate_license_files
-python -m tools.licensing.validate_distribution_profiles
-python -m tools.licensing.validate_third_party_notices
+python -m tools.docs.build_documentation_inventory
 ```
 
-Ожидаемый результат — отсутствие файлов без назначения, конфликтов и неизвестных лицензий. Официальные тексты лицензий и зафиксированные материалы не редактируются языковой кампанией.
+Перед коммитом проверьте `git diff --check`. Инвентаризация и защищённый список являются производными представлениями; содержимое защищённых источников не переписывается.
 
-## Запуск консоли
+## Безопасный CLI сетевой проверки
+
+```powershell
+python -m lab.network_validation.cli --help
+python -m lab.network_validation.cli validate-config
+python -m lab.network_validation.cli plan-campaign
+python -m lab.network_validation.cli validate-counterfactuals
+python -m lab.network_validation.cli validate-split
+python -m lab.network_validation.cli inspect-phase1-runtime-contract
+python -m lab.network_validation.cli inspect-run-plan
+python -m lab.network_validation.cli inspect-label-boundary
+python -m lab.network_validation.cli inspect-ledger-contract
+python -m lab.network_validation.cli inspect-mapping-contract
+python -m lab.network_validation.cli audit-initialization-contract
+python -m lab.network_validation.cli validate-runtime-execution-package
+python -m lab.network_validation.cli audit-execution-preflight --help
+```
+
+Эти команды читают конфигурацию или показывают контракт. Они не создают scientific session, PCAP, labels, predictions или метрики. Команды предпросмотра, materialize и создания официального пакета могут изменять операционные артефакты и запускаются только владельцем процесса.
+
+## Лабораторная консоль
 
 ```powershell
 $env:FILIN_CONSOLE_TOKEN = "локальный-одноразовый-токен"
 python -m lab_console --host 127.0.0.1 --port 8043
 ```
 
-Команда пишет только изменяемое состояние в `runtime/lab_console/`. Запрещены внешний адрес, публикация токена, произвольные аргументы выполнения, сетевой доступ и промышленное использование.
+Консоль слушает только localhost, записывает изменяемый слой в `runtime/lab_console/` и не является серверной интеграцией. Проверки цикла:
 
-## Полномочия результата
+```powershell
+python -m tools.lab_console.verify_console
+python -m tools.lab_console.verify_v044
+python -m tools.lab_console.verify_v045
+python -m tools.lab_console.verify_v046
+python -m tools.lab_console.verify_v047
+```
 
-Код завершения `0` подтверждает только контракт конкретной команды. Он не означает внешнюю валидацию, готовность к промышленной эксплуатации, истинность гипотезы или право автоматически выбрать либо продвинуть модель.
+## Запрещённый без отдельного допуска запуск
+
+`run-one-phase1-session` запускает научную единицу и создаёт PCAP, журналы Zeek, mapping и записи журнала. `preflight-phase1-session` требует защищённое секретное хранилище. `recover-phase1-sealed-completion` изменяет состояние завершения. `run-technical-smoke` и `run-factor-orthogonality-smoke` создают сетевые временные данные. Не копируйте эти операции в обычную проверку и не направляйте результаты в tracked repository.
+
+## Как читать результат
+
+Успешная команда подтверждает только свой контракт. Она не означает внешнюю валидность, истинность гипотезы, научный pass, промышленную эксплуатацию readiness, право регистрации кандидата или разрешение автоматического ответа. Фактические числа регрессии фиксируются в отчёте конкретного окружения; baseline описан в [тестировании](../getting-started/testing.md).

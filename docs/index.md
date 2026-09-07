@@ -73,14 +73,20 @@
 
 ## Исследовательская методология
 
-- [Протокол будущей независимой сетевой проверки](experiments/next_independent_network_validation_protocol.md).
+- Официальный пакет Phase 1 `network-validation-execution-8e1e32b127893bdf`: 288 шаблонов, 864 единицы выполнения и 51 признак.
+- [Актуальная независимая сетевая проверка Phase 1](research/independent-network-validation.md).
+- [История официальных пакетов Phase 1](research/phase1-execution-package-history.md).
+- [Журнал кампании Phase 1](research/phase1-campaign-journal.md).
+- [Критерии приёмки Phase 1](research/phase1-acceptance-criteria.md).
+- [Построение 51 признака](research/phase1-feature-construction.md).
+- [Ослепление и mapping](research/phase1-blinding-and-mapping.md).
+- [Старая защищённая версия протокола (историческая)](experiments/next_independent_network_validation_protocol.md).
 - [Техническая инфраструктура проверки](../lab/network_validation/README.md).
 
 - [Методология](research/methodology.md).
 - [Причинные признаки](research/causal-features.md).
 - [Линия кандидата](research/candidate-lineage.md).
 - [Переоценка методологии v0.3.15.4–v0.3.15.5](experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md).
-- [Протокол следующей независимой сетевой проверки](experiments/next_independent_network_validation_protocol.md).
 - [Принципы оценки](research/evaluation-principles.md).
 - [Неопределённость и отказ от решения](research/uncertainty-and-abstention.md).
 - [Реконструкция инцидента](research/incident-reconstruction.md).

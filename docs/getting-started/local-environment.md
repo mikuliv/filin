@@ -1,42 +1,49 @@
 # Локальное окружение
 
-Инструкция предназначена для безопасной локальной разработки и чтения проекта.
-Она не подготавливает промышленное развёртывание и не разрешает подключение к
-реальным сетевым источникам.
+Инструкция предназначена для чтения, разработки и безопасных контрактных проверок. Она не разрешает промышленное развёртывание, подключение к реальным сетям или научную кампанию Phase 1.
 
-## Требования
+## Что действительно есть в репозитории
 
-- Git;
-- поддерживаемая версия Python, указанная в `pyproject.toml`;
-- Docker Engine и Compose plugin для специально обозначенных локальных сценариев;
-- Linux на Fedora 44 как основная среда разработки. Команды PowerShell в старых
-  документах относятся к исторической Windows-среде.
+В корне нет `requirements.txt`, `pyproject.toml` или единого файла фиксации зависимостей. Зависимости разделены по подсистемам: `backend/requirements.txt`, `ml/requirements.txt`, `lab_console/requirements.txt`, файлы сервисов в `lab/docker/services/` и `lab/network_validation/requirements.lock`. Устанавливайте только тот набор, который нужен выбранной проверке.
 
-## Подготовка
+Общие требования: Git, Python 3.12 или совместимый интерпретатор, а для проверок Docker — Docker Engine и Compose plugin. Зависимости сетевого контура закреплены версиями в `lab/network_validation/requirements.lock`.
+
+## Windows и PowerShell
 
 ```powershell
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
+python -m pip install -r lab/network_validation/requirements.lock
+python -m tools.docs.validate_documentation_v2 --strict
 ```
 
-Не устанавливайте зависимости из неизвестных источников и не добавляйте secrets
-в repository files. Сетевой доступ требуется только если пакеты отсутствуют в cache.
+Если политика PowerShell запрещает активацию, используйте `\.venv\Scripts\python.exe` явно. Для документационных тестов нужны как минимум `PyYAML` и `pytest`; сетевой пакет добавляет `numpy`, `pandas`, `joblib` и `scikit-learn`.
 
-## Каталог среды выполнения
+## Fedora/Linux, bash
 
-Тесты и консоль создают файлы под `runtime/`. Они не являются зафиксированными
-подтверждающими материалами и
-не должны попадать в коммит без отдельной документированной процедуры.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r lab/network_validation/requirements.lock
+python -m tools.docs.validate_documentation_v2 --strict
+```
 
-## Проверка
+Docker и Compose устанавливаются системным способом Fedora/Linux. Проверка принадлежности пользователя к группе Docker и настройка capability контейнеров — отдельная операционная процедура; не добавляйте Docker socket в контейнер клиента или цели.
+
+## Каталоги результатов
+
+Обычные тесты и консоль могут создавать файлы в `runtime/`; это изменяемый локальный слой, не подтверждающие материалы. Научный сетевой запуск имеет отдельные output-root и secret-root и не должен направляться в tracked repository.
+
+## Проверка среды без выполнения науки
 
 ```powershell
-python -m compileall collectors incident_reconstruction lab_console ml staging tools
-python -m pytest -q
+python -m compileall backend collectors incident_reconstruction lab lab_console ml rehearsal staging tools
+python -m tools.docs.validate_documentation_freshness --strict
+python -m tools.docs.validate_documentation_links
 ```
 
-Ожидается `0 failed`; точное число успешных тестов относится к конкретному запуску.
+Команда `python -m lab.network_validation.cli --help` безопасна после установки зависимостей. Команды чтения контрактов и dry-run перечислены в [справочнике команд](../reference/command-reference.md). Команды, запускающие единицу Phase 1, создание PCAP, mapping, меток, прогнозов или метрик, намеренно не приводятся как инструкция установки.
 
-См. [справочник команд](../reference/command-reference.md) и
-[устранение неполадок](troubleshooting.md).
+## Если установка не удалась
+
+Зафиксируйте ОС, версию Python, точную команду и первое сообщение об ошибке. Не заменяйте версии на произвольные и не редактируйте файл фиксации зависимостей ради прохождения теста. См. [устранение неполадок](troubleshooting.md).

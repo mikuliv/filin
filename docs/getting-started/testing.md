@@ -1,52 +1,28 @@
 # Руководство по тестированию
 
-## Назначение
+Тесты подтверждают отдельные контракты, целостность и воспроизводимость. Код завершения `0` относится только к конкретной команде и не расширяет научные утверждения.
 
-Проверки подтверждают контракты, воспроизводимость и целостность проекта. Успешный тест не расширяет научные утверждения, не отменяет ограничения этапа и не разрешает промышленное применение.
-
-## Предварительные условия
-
-Запускайте команды из корня репозитория в автономной среде с установленными
-зависимостями. Не изменяйте зафиксированные наборы ради прохождения проверки.
-Временные результаты должны попадать в `runtime/` или во временный каталог pytest.
-
-## Быстрая проверка
+## Быстрый безопасный проход
 
 ```powershell
-python -m pytest ml/tests/test_research_state.py ml/tests/test_documentation_status_consistency.py -q
-python -m tools.docs.validate_russian_narrative --strict
-```
-
-Ожидаемый результат — код завершения `0` и отсутствие ошибок.
-
-## Полная регрессия
-
-```powershell
-python -m pytest -q
-python -m compileall backend collectors incident_reconstruction lab_console ml rehearsal staging tools
-```
-
-Число успешно пройденных тестов меняется по мере развития проекта; нормативным является `0 failed`. Предупреждение допустимо только тогда, когда оно перечислено и объяснено в отчёте конкретного запуска.
-
-## Документация и русскоязычная редактура
-
-```powershell
-python -m tools.docs.build_documentation_inventory
 python -m tools.docs.validate_documentation_v2 --strict
-python -m tools.docs.validate_documentation_authority
-python -m tools.docs.validate_documentation_freshness
-python -m tools.docs.validate_documentation_immutability
-python -m tools.docs.validate_documentation_terminology
+python -m tools.docs.validate_documentation_freshness --strict
 python -m tools.docs.validate_russian_narrative --strict
-python -m tools.docs.run_russian_narrative_campaign
+python -m tools.docs.validate_documentation_links
+python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_documentation_links.py ml/tests/test_documentation_structure.py ml/tests/test_documentation_status_consistency.py ml/tests/test_documentation_metrics_consistency.py -q
 ```
 
-Инвентаризацию пересобирают после содержательной редакции. Сканер обязан
-принимать положительные примеры и отклонять отрицательные; перечень разрешённых
-технических идентификаторов не должен превращаться в общее исключение для любого
-английского текста.
+Эти проверки не запускают научную кампанию. Для сетевого контура дополнительно безопасны статические контрактные тесты `test_network_validation_infrastructure.py` и `test_network_validation_phase1_runtime.py`; перед запуском проверьте, что тест не вызывает Docker исполнитель или создание научных выходов.
 
-## Проверки лабораторной консоли
+## Инвентаризация
+
+После содержательной редакции сначала пересоберите документационный inventory штатным генератором, затем выполните validators. Проверка защищённых байтов обязательна. Исторические и защищённые файлы не исправляются ради языкового сканера.
+
+## Baseline полной регрессии
+
+Не используется обещание «0 failed» без привязки к конкретному окружению. Авторитетный baseline хранит четыре поля: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, `known_baseline_change=historical_v03155_result_changed`. Перед новым запуском фиксируются точные `passed`, `failed`, `skipped`, предупреждения и версии зависимостей. Один разрешённый baseline не скрывает новых ошибок.
+
+## Лабораторная консоль
 
 ```powershell
 python -m tools.lab_console.verify_console
@@ -54,22 +30,10 @@ python -m tools.lab_console.verify_v044
 python -m tools.lab_console.verify_v045
 python -m tools.lab_console.verify_v046
 python -m tools.lab_console.verify_v047
-python -m pytest ml/tests/test_v044_operator_cycle.py -q
 ```
 
-Ручная приёмка в браузере проводится отдельно на поддерживаемых размерах окна. Проверяются отсутствие переполнения, понятность статусов, клавиатурный фокус, восстановление состояния и отсутствие раскрытия слепых данных.
+Это локальные проверки лабораторной линии. Они не регистрируют кандидата и не заменяют внешнюю сетевую проверку.
 
-## Разбор ошибок
+## Запреты
 
-1. Сохраните точную команду, код завершения и первое содержательное сообщение.
-2. Определите, относится ли ошибка к коду, среде, данным или устаревшему индексу.
-3. Исправляйте источник проблемы, а не ожидаемый результат и не зафиксированное доказательство.
-4. Повторите узкую проверку, затем полный набор.
-
-Если проверка неизменности сообщает только `protected_set_stale` после добавления новых документов, пересоберите инвентаризацию и повторите проверку. Несовпадение хеша уже защищённого файла является блокирующей ошибкой.
-
-## Ограничения и запреты
-
-Тесты не используют сеть, не запускают произвольные команды через интерфейс, не регистрируют и не продвигают кандидата. Нельзя скрывать ошибки, ослаблять контракты, переписывать исторические результаты или выдавать лабораторную проверку за внешнюю валидацию.
-
-Точные свойства команд приведены в [справочнике команд](../reference/command-reference.md).
+Не изменяйте защищённые протоколы, ledgers, manifests, PCAP, журналы Zeek, mapping и исторические результаты. Не запускайте `run-one-phase1-session`, инициализацию кампании, раскрытие меток, обучение, прогнозы или метрики в рамках обычной проверки. Научное выполнение требует нового официального пакета и отдельного явного разрешения.

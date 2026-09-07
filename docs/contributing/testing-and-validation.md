@@ -22,4 +22,4 @@ terminology, secrets, absolute paths, protected bytes и inventory freshness.
 
 ## Итог
 
-Ожидается `0 failed`. Exact count записывается в audit report конкретного прохода.
+Не используется безусловное требование `0 failed`: отчёт фиксирует `full_regression_passed`, `new_regressions_detected`, допустимый baseline и фактические числа конкретного прохода. Известное изменение baseline — `historical_v03155_result_changed`.

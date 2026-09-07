@@ -14,19 +14,19 @@ PCAP -> Zeek logs -> Zeek parser -> normalized sensor events -> marker-based cor
 
 ## Markers и интервалы
 
-Каждое execution получает реальные start/end HTTP markers внутри лабораторной сети. Они создают half-open sensor interval `[start, end)`. Execution markers используются только для корреляции и исключаются из модель features. Корреляция не использует label, ожидаемые признаки или готовые client features.
+Каждое execution получает реальные start/end HTTP markers внутри лабораторной сети. Они создают half-open sensor interval `[start, end)`. Execution markers используются только для корреляции и исключаются из модель признакs. Корреляция не использует label, ожидаемые признаки или готовые client признакs.
 
 ## Контроль происхождения
 
-Campaign roles разделяют train, test и robustness runs. Для PCAP, Zeek logs, normalized events и Наборы данных сохраняются SHA-256. происхождение, разбиение и duplicate audits проверяют отсутствие пересечений и leakage fields. Raw IP, hostname, URI, Zeek UID, marker metadata, label и execution identifiers не являются модель features.
+Campaign roles разделяют train, test и robustness runs. Для PCAP, Zeek logs, normalized events и Наборы данных сохраняются SHA-256. происхождение, разбиение и duplicate audits проверяют отсутствие пересечений и leakage fields. Raw IP, hostname, URI, Zeek UID, marker metadata, label и execution identifiers не являются модель признакs.
 
 ## Будущий независимый корпус
 
 Новый технический путь предусматривает отдельные execution events, marker events,
-capture manifests, PCAP SHA-256, Zeek status и отчёт реализации параметров. Поля
+capture манифестs, PCAP SHA-256, Zeek status и отчёт реализации параметров. Поля
 `requested` сравниваются с наблюдаемыми значениями из Zeek; недоступное измерение
-фиксируется как `not_observable`, а не копируется из конфигурации. Capture manifest
+фиксируется как `not_observable`, а не копируется из конфигурации. Capture манифест
 связывается с execution и проверяет непустой PCAP, packet count, размер и SHA.
 
 Корпус по этому пути ещё не собран. В репозитории нет новых PCAP, Zeek logs,
-feature tables, labels, predictions или metric outputs этой проверки.
+признак tables, labels, predictions или metric outputs этой проверки.
