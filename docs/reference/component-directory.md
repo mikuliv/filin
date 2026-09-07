@@ -2,17 +2,17 @@
 
 | Компонент | README | Контракты | Тестирование |
 |---|---|---|---|
-| серверная часть prototype | [серверная часть](../../backend/README.md) | исторический серверная часть schemas | исторический tests |
-| Сборщики | [Сборщики](../../collectors/README.md) | `collectors/**/contracts` | collector pytest |
+| Серверная часть (прототип) | [серверная часть](../../backend/README.md) | исторические схемы серверной части | исторические тесты |
+| Сборщики | [Сборщики](../../collectors/README.md) | `collectors/**/contracts` | pytest сборщиков |
 | Наборы данных | [Наборы данных](../../datasets/README.md) | происхождение metadata | documentation/data tests |
-| Lab | [lab](../../lab/README.md) | scenario/environment specs | lab pytest |
-| ML | [ml](../../ml/README.md) | features, protocols, artifacts | full ML pytest |
+| Лаборатория | [lab](../../lab/README.md) | спецификации сценариев и среды | pytest лаборатории |
+| ML | [ml](../../ml/README.md) | признаки, протоколы, артефакты | полный pytest ML |
 | Staging | [staging](../../staging/README.md) | `staging/contracts` | staging tests |
 | Rehearsal | [rehearsal](../../rehearsal/README.md) | `rehearsal/contracts` | rehearsal tests |
 | Reconstruction | [`incident_reconstruction`](../../incident_reconstruction/README.md) | `incident_reconstruction/contracts` | v0.4.0–v0.4.2 tests |
 | Console | [`lab_console`](../../lab_console/README.md) | `lab_console/contracts` | v0.4.3–v0.4.4 tests |
-| External рассмотрение | [`external_review`](../../external_review/README.md) | `external_review/contracts` | v0.3.18 validators |
-| Tools | [tools](../../tools/README.md) | tool-specific CLI | documentation/комплект validators |
+| Внешняя проверка | [`external_review`](../../external_review/README.md) | `external_review/contracts` | проверки v0.3.18 |
+| Инструменты | [tools](../../tools/README.md) | профильный CLI | проверки документации и пакета |
 
 Архитектурные связи приведены в [component map](../architecture/component-map.md).
 

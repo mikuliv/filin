@@ -6,7 +6,7 @@
 2. **Статус лабораторной линии:** `docs/status/v0_4_track.yaml`.
 3. **Идентичность кандидата:** `collectors/shadow/contracts/candidate_registry_v1.json`
    и `ml/artifacts/v0_3_15_4/candidate_manifest.json`.
-4. **Результат этапа:** Зафиксировано protocol, policy result, комплект манифест, detached SHA,
+4. **Результат этапа:** зафиксированный протокол, результат политики, комплект манифестов, detached SHA,
    утверждение-подтверждающие материалы ledger и итоговый report.
 5. **Форма данных:** Файлы JSON Schema, YAML contract, Pydantic contract или версионированный API contract.
 6. **Реализованное поведение:** code, tests, contracts и policy соответствующего этапа.

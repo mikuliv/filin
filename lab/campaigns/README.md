@@ -7,11 +7,13 @@
 
 ## Назначение
 
-Campaign манифест задаёт независимые laboratory runs, seeds, роли train/test/robustness и безопасные параметры сценариев.
+Манифест кампании задаёт независимые лабораторные запуски, seeds, роли обучения,
+проверки и устойчивости, а также безопасные параметры сценариев.
 
 ## Что реализовано
 
-Campaign runners сохраняют status и checksums; `--resume` предназначен для продолжения незавершённых attempts без повторения успешных фаз.
+Исполнители кампаний сохраняют состояния и контрольные суммы; `--resume` предназначен
+для продолжения незавершённых попыток без повторения успешных фаз.
 
 ## Основные файлы
 
@@ -24,11 +26,11 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 
 ## Входные данные и выходные данные
 
-Вход — манифест; выход — run statuses и среда выполнения artifacts в `lab/output/`.
+Вход — манифест; выход — состояния запусков и артефакты среды выполнения в `lab/output/`.
 
 ## Запуск
 
-Параметры модуль запуска: `python lab/campaigns/run_sensor_campaign.py --help`.
+Справка модуля запуска: `python lab/campaigns/run_sensor_campaign.py --help`.
 
 ## Проверки
 
@@ -36,7 +38,7 @@ Campaign runners сохраняют status и checksums; `--resume` предна
 
 ## Ограничения
 
-Campaign roles разделяют данные, но не подтверждают промышленная эксплуатация applicability.
+Роли кампании разделяют данные, но не подтверждают применимость для промышленной эксплуатации.
 `v0.3.3` не является входом v0.3.4; его среда выполнения набор данных не допускается в
 training или модель selection.
 
@@ -62,14 +64,15 @@ training или модель selection.
 - `v0_3_8_preflight.py`: fail-closed проверка изоляции, capability и integrity.
 - `v038_runner.py`: per-run Docker capture, нормализация вывода subprocess и безопасное возобновление без повторения успешных запусков.
 
-проверка модуль запуска требует Зафиксировано candidate, а оценка — дополнительно Зафиксировано проверка lock. Ни один проверка row не доступен nested selection.
+Модуль запуска проверки требует зафиксированного кандидата, а оценка — дополнительно
+зафиксированной блокировки проверки. Ни одна строка проверки не доступна для nested selection.
 
 ## v0.3.9
 
 - `v0_3_9_training.yaml`: 12 runs, 72 warm-up, 504 scored windows, 168 episodes.
 - `v0_3_9_internal_validation.yaml`: 6 runs, 36 warm-up, 252 scored windows, 84 episodes.
 - `v039_runner.py`: strict/resumable per-execution capture без повторения success.
-- проверка collection требует Зафиксировано candidate; prediction требует immutable lock.
+- Сбор данных требует зафиксированного кандидата; прогнозирование требует неизменяемой блокировки.
 
 Background и routes не зависят от labels. Rate limits, internal DNS Перечень разрешённых значений и target responsiveness проверяются до принятия run.
 ## v0.3.10
