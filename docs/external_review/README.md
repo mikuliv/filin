@@ -2,8 +2,8 @@
 
 ## Статус и назначение
 
-Каталог объясняет зафиксированный пакет внешней проверки v0.3.18. Этап завершён как
-`completed / passed`, но только для репетиции синтетического протокола:
+Каталог объясняет frozen external review package v0.3.18. Этап завершён как
+`completed / passed`, но только для synthetic protocol rehearsal:
 `scientific_evidence=false`. Реальные данные, организация и модель в
 репетиции не использовались.
 
@@ -14,13 +14,13 @@ notifications, automatic enforcement и network blocking запрещены.
 
 ## Кому предназначен пакет
 
-- проверяющий контролирует целостность, роли, хронологию и ограничения;
-- планировщик испытания использует политики и контрольные списки, не запуская испытание;
-- поставщик данных планирует идентификацию, происхождение и безопасную передачу;
-- хранитель меток планирует процедуру сокрытия разметки;
-- оператор изучает зафиксированную оценку и фиксацию прогнозов;
-- оцениватель изучает детерминированные метрики;
-- утверждающий изучает допустимые исходы и окончательную фиксацию;
+- reviewer проверяет integrity, roles, chronology и limitations;
+- trial planner использует policies и checklists, не запуская trial;
+- data provider планирует identity, provenance и безопасную передачу;
+- label custodian планирует blind label workflow;
+- operator изучает frozen inference и prediction freeze;
+- evaluator изучает deterministic metrics;
+- approver изучает допустимые outcomes и finalization;
 - юрист проверяет применимость требований вне этого технического пакета.
 
 ## Рекомендуемый порядок чтения
@@ -31,7 +31,7 @@ notifications, automatic enforcement и network blocking запрещены.
 4. [Руководство reviewer](reviewer_guide.md).
 5. [Ролевое руководство конкретного участника](#ролевые-руководства).
 6. [Приём данных](data_acceptance_policy.md),
-   [метрики](metric_policy.md) и [условия остановки](stop_conditions.md).
+   [метрики](metric_policy.md) и [stop conditions](stop_conditions.md).
 7. [Воспроизводимость](reproducibility_guide.md).
 8. [Правовые, transfer, retention и publication checklists](#policies-и-checklists).
 
