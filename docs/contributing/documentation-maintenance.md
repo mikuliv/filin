@@ -2,14 +2,14 @@
 
 ## Порядок
 
-1. Проверить branch, HEAD и clean tree.
+1. Проверить ветку, HEAD и чистое рабочее дерево.
 2. Построить protected set из manifests/ledgers/protocols/detached SHA.
 3. Снять inventory и SHA baseline.
-4. Классифицировать текущий, исторический, перенаправление, generated и Зафиксировано documents.
+4. Классифицировать текущие, исторические, перенаправляющие, сгенерированные и зафиксированные документы.
 5. Изменять только mutable files.
 6. Обновить links, indexes и status views.
 7. Перестроить inventory.
-8. Выполнить validators, Кампании и full pytest.
+8. Выполнить валидаторы, кампании и полный набор pytest.
 9. Проверить protected bytes и clean diff.
 
 ## Зафиксировано conflict
