@@ -3,7 +3,7 @@
 Лабораторный этап v0.4.7.3 завершён с отрицательным научным результатом: [описание эксперимента](experiments/v0_4_7_3.md), [проверка материалов](getting-started/running-v0-4-7-3-validation.md), [рассмотрение результата](getting-started/reviewing-v0-4-7-3-results.md) и [методология](research/autonomous-blind-laboratory-validation.md). Следующий разрешённый лабораторный этап — только v0.4.7.4; v0.4.8 запрещён.
 
 Эта страница — каноническая навигация по текущему устройству проекта. Исторические
-отчёты и Зафиксировано подтверждающие материалы доступны через отдельные индексы и не подменяют текущий статус.
+отчёты и зафиксированные подтверждающие материалы доступны через отдельные индексы и не подменяют текущий статус.
 
 ## Новый технический читатель
 
@@ -141,5 +141,5 @@
 - [Происхождение данных](research/training-data-lineage.md).
 - [Воспроизводимость обучения](research/model-training-reproducibility.md).
 - [предварительная внутренняя проверка](research/internal-screening-policy.md).
-- [Подготовка предложение кандидата](getting-started/preparing-candidate-proposals.md).
+- [Подготовка предложения кандидата](getting-started/preparing-candidate-proposals.md).
 - [Ручное рассмотрение](getting-started/reviewing-candidate-proposals.md).
