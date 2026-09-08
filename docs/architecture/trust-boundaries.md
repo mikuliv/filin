@@ -4,7 +4,7 @@
 
 ```mermaid
 flowchart LR
-    A["Контролируемая capture-среда"] -->|"PCAP/Zeek"| B["Feature boundary"]
+    A["Контролируемая среда захвата"] -->|"PCAP/Zeek"| B["Граница признаков"]
     B -->|"versioned vector"| C["Frozen candidate"]
     C -->|"shadow_event_v2"| D["Staging boundary"]
     D -->|"validated event"| E["Reconstruction boundary"]

@@ -29,6 +29,20 @@ CURRENT_PAGES = (
 )
 
 
+def stale_findings(text: str, facts: dict) -> list[str]:
+    """Ищет устаревшее состояние относительно фактического плана."""
+    expected_count = int(facts["scenario_template_count"])
+    findings: list[str] = []
+    for match in re.finditer(r"(?<!по )\b(\d+)\s+(?:сценар(?:иев|ия|иям|ий)|шаблон(?:ов|а)?|(?:scenario\s+)?templates?)\b", text, flags=re.IGNORECASE):
+        if int(match.group(1)) != expected_count:
+            findings.append("stale_phase1_scenario_count")
+    if re.search(r"\bfuture\s+independent\s+network\s+validation\b", text, flags=re.IGNORECASE):
+        findings.append("stale_future_protocol_claim")
+    if re.search(r"\bscientific_campaign_started\s*[:=]\s*true\b", text, flags=re.IGNORECASE):
+        findings.append("unqualified_started_claim")
+    return sorted(set(findings))
+
+
 def validate(root: Path = ROOT) -> list[str]:
     inventory_path = root / "docs/audit/documentation_inventory_v2.json"
     if not inventory_path.is_file():
@@ -60,11 +74,6 @@ def validate(root: Path = ROOT) -> list[str]:
             if marker not in text:
                 errors.append(f"current_marker_missing:{relative}:{marker}")
 
-    stale_patterns = (
-        (r"\b72\s+(?:сценар(?:ий|ия|иям|иев)|шаблон(?:ов|а)?)\b", "stale_72_scenario_claim"),
-        (r"\bfuture\s+independent\s+network\s+validation\b", "stale_future_protocol_claim"),
-        (r"\bscientific_campaign_started\s*[:=]\s*true\b", "unqualified_started_claim"),
-    )
     for path in markdown:
         relative = path.relative_to(root).as_posix()
         if relative in protected:
@@ -73,9 +82,7 @@ def validate(root: Path = ROOT) -> list[str]:
         if metadata.get("lifecycle") not in {"current", "generated", "redirect"} and not relative.endswith("README.md"):
             continue
         text = path.read_text(encoding="utf-8")
-        for pattern, code in stale_patterns:
-            if re.search(pattern, text, flags=re.IGNORECASE):
-                errors.append(f"{code}:{relative}")
+        errors.extend(f"{code}:{relative}" for code in stale_findings(text, facts))
     return sorted(set(errors))
 
 

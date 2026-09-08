@@ -4,9 +4,9 @@
 
 ## Сводка
 
-- Проверено текстовых файлов: **3259**.
+- Проверено текстовых файлов: **3263**.
 - Человекочитаемых файлов: **496**.
-- Переписано файлов: **249**.
+- Переписано файлов: **252**.
 - Английских повествовательных вхождений: **1249 → 0**.
 - Смешанных конструкций: **168 → 0**.
 - Непояснённых идентификаторов: **38 → 0**.
@@ -2477,11 +2477,13 @@
 | `ml/tests/test_campaign_schema.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `ml/tests/test_campaign_split_audit.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `ml/tests/test_client_feature_aggregation.py` | `source_code_with_human_text` | нет | нет | unchanged |
+| `ml/tests/test_documentation_cli.py` | `source_code_with_human_text` | нет | нет | created |
+| `ml/tests/test_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | created |
 | `ml/tests/test_documentation_language_v3.py` | `source_code_with_human_text` | нет | нет | created |
-| `ml/tests/test_documentation_links.py` | `source_code_with_human_text` | нет | нет | unchanged |
+| `ml/tests/test_documentation_links.py` | `source_code_with_human_text` | нет | нет | rewritten |
 | `ml/tests/test_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | rewritten |
 | `ml/tests/test_documentation_metrics_consistency.py` | `source_code_with_human_text` | нет | нет | rewritten |
-| `ml/tests/test_documentation_status_consistency.py` | `source_code_with_human_text` | нет | нет | unchanged |
+| `ml/tests/test_documentation_status_consistency.py` | `source_code_with_human_text` | нет | нет | rewritten |
 | `ml/tests/test_documentation_structure.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `ml/tests/test_documentation_v2.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `ml/tests/test_feature_drift.py` | `source_code_with_human_text` | нет | нет | unchanged |
@@ -3165,7 +3167,7 @@
 | `tools/audit/verify_secure_artifacts.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `tools/audit/verify_v03155_resume.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `tools/check_release_images.py` | `source_code_with_human_text` | нет | нет | unchanged |
-| `tools/docs/build_documentation_indexes.py` | `source_code_with_human_text` | нет | нет | unchanged |
+| `tools/docs/build_documentation_indexes.py` | `source_code_with_human_text` | нет | нет | rewritten |
 | `tools/docs/build_documentation_inventory.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `tools/docs/build_russian_language_inventory.py` | `source_code_with_human_text` | нет | нет | created |
 | `tools/docs/correct_markdown_rendering.py` | `source_code_with_human_text` | нет | нет | unchanged |
@@ -3182,7 +3184,9 @@
 | `tools/docs/run_russian_narrative_campaign.py` | `source_code_with_human_text` | нет | нет | created |
 | `tools/docs/validate_documentation.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `tools/docs/validate_documentation_authority.py` | `source_code_with_human_text` | нет | нет | unchanged |
+| `tools/docs/validate_documentation_cli.py` | `source_code_with_human_text` | нет | нет | created |
 | `tools/docs/validate_documentation_freshness.py` | `source_code_with_human_text` | нет | нет | rewritten |
+| `tools/docs/validate_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | created |
 | `tools/docs/validate_documentation_immutability.py` | `source_code_with_human_text` | нет | нет | unchanged |
 | `tools/docs/validate_documentation_links.py` | `source_code_with_human_text` | нет | нет | created |
 | `tools/docs/validate_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | unchanged |

@@ -1,4 +1,4 @@
-# Индекс ML и reconstruction protocols
+# Индекс протоколов ML и реконструкции
 
 > Генератор: `tools/docs/build_documentation_indexes.py` v2. Команда:
 > `python -m tools.docs.build_documentation_indexes`. Генерируемую область вручную не редактировать.

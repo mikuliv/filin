@@ -60,7 +60,11 @@ independent_network_validation_seal_blockers: []
 independent_network_validation_expected_pre_experiment_absences: [scientific_corpus_not_collected, external_corpus_result_missing, model_not_trained, evaluation_not_performed, labels_not_unlocked]
 independent_network_validation_scientific_pass_allowed: false
 independent_network_validation_external_corpus_required_for_scientific_pass: true
-independent_network_validation_experiment_started: false
+# Это состояние научных сессий последнего tracked-пакета; оно не описывает
+# историческое сообщение о попытках v4.
+latest_tracked_official_package_campaign_started: false
+historical_v4_campaign_started: true
+current_superseding_campaign_started: false
 independent_network_validation_train_corpus_collected: false
 independent_network_validation_calibration_corpus_collected: false
 independent_network_validation_final_corpus_collected: false
@@ -89,6 +93,7 @@ independent_network_validation:
   feature_count: 51
   scientific_campaign_started: false
   scientific_sessions_executed: 0
+  state_semantics: "Это точное состояние последнего tracked official package; исторический отчёт о v4 хранится отдельно ниже."
   package_execution_allowed_after_per_session_preflight: true
   historical_operational_report:
     source: "Внешний аудит; operational records отсутствуют в tracked repository"

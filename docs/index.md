@@ -63,7 +63,7 @@
 
 - [Индекс архитектуры](architecture/index.md).
 - [Сквозной поток данных](architecture/end-to-end-data-flow.md).
-- [Основная линия detection/среда выполнения](architecture/detection-and-runtime-track.md).
+- [Основная линия обнаружения и выполнения](architecture/detection-and-runtime-track.md).
 - [Лабораторная реконструкция и анализ](architecture/reconstruction-and-analysis-track.md).
 - [Лабораторная консоль](architecture/laboratory-console.md).
 - [Компонентная карта](architecture/component-map.md).

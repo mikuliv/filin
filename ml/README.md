@@ -23,7 +23,7 @@
 
 ## Основные каталоги
 
-`features/`, `training/`, `decision/`, `analysis/`, `артефактs/`, `experiments/`,
+`features/`, `training/`, `decision/`, `analysis/`, `artifacts/`, `experiments/`,
 `protocols/`, `reports/`, `tests/`.
 
 ## Разрешённые входы

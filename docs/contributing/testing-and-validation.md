@@ -6,7 +6,7 @@
 python -m tools.docs.build_documentation_inventory
 python -m tools.docs.validate_documentation_v2 --strict
 python -m tools.docs.run_documentation_campaign
-python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_documentation_links.py ml/tests/test_documentation_structure.py ml/tests/test_documentation_status_consistency.py -q
+python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_documentation_links.py ml/tests/test_documentation_structure.py ml/tests/test_documentation_status_consistency.py ml/tests/test_documentation_language_v3.py ml/tests/test_documentation_identifiers.py ml/tests/test_documentation_cli.py -q
 ```
 
 ## Что проверяется

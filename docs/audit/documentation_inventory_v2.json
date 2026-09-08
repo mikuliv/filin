@@ -167,7 +167,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "1a99194ea9131951328e6e8e04e64c79527c4ca0d975c50940228b96eff8e8f0"
+      "sha256_after": "1f670ef56fde9324dda744d14d98f16a9a8ac68b6cf3181516871cd8df110727"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -866,7 +866,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "870f81fa90b622291c55a56dc15ec2468a1ebf9d99ac540d357362bcfa4cb727",
-      "sha256_after": "cd1cfed9c31bec14d6570f52a10e8f0f0cdc4cca1cd6be54ef8b2e1f9ca1f673"
+      "sha256_after": "b24154429a828781dff86f41dc897581ce0c082f8eec8d265f4aed41bfb2bd6c"
     },
     {
       "path": "docs/architecture/laboratory-console.md",
@@ -1000,7 +1000,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "eb28d0cae077e465ad1b327493d5fd957e8434ed92a7e2996d6bb264bf8eaaab",
-      "sha256_after": "4c4b5741ce5b5e70718005dabdaa08534b2836eaf1709153ca56a5e5f08d5f1a"
+      "sha256_after": "fc574a460e2f7dabdcb6d18b74623739d2aabe2d7b48130f7002865d4dc50f86"
     },
     {
       "path": "docs/architecture/passive-events.md",
@@ -1242,7 +1242,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "1f133afa2697e245c6b841bf85d45d08d25831d7c74c9360b7143d6b6ec68962",
-      "sha256_after": "cc4697408416decaf4469cfe133b5cc58d1a3c28ea0ffa392483b58d9fcf5041"
+      "sha256_after": "e33bd83749d6ee633d04b3312e28a7ef6f48f061d9a9d019d9ae8935ab7adbfa"
     },
     {
       "path": "docs/audit/documentation_inventory.md",
@@ -1321,7 +1321,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "623222d37ff35b9b4ade7d60107171888d4bbf46a522a3af10fac7291864d7f3"
+      "sha256_after": "4e4614dd6417261b9d4a2f4698f7d6526862c7580b139669eac640ffba257bb6"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1636,7 +1636,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "143385d22e60e23b22b51c1224d7e1d3829c07004d60f3d80395349d12d1de59"
+      "sha256_after": "e4b7a87f182099702ba0b48ed2751ab496ff0c55f73609bf67a51db8d97c377b"
     },
     {
       "path": "docs/audits/post-v0.3.7-research-integrity-audit.md",
@@ -1747,7 +1747,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "556db04919966050dbb2f10393572a2038a8b5a19bf311be24e1d5b0553ac41d",
-      "sha256_after": "5592f7134c839f123b60f51622e782d919092a98b91865ef4156a5d89f7ec37d"
+      "sha256_after": "7a03a65058c0abcd018acb7a32d1d559a1b77d354e91bd5c9c594ef2db7093cb"
     },
     {
       "path": "docs/contracts/connector_ingress_ack_v1.md",
@@ -1863,7 +1863,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3baa92ef57bde83caffd8e77888ae4bfd1a3239d6af043f3cf055b8969effc48",
-      "sha256_after": "5a7b559a8cc77b01e9bf66a67c4bf7d7c472f639a3474893795f8686b8de03f8"
+      "sha256_after": "2c0b72e35752510646a0b48d3fb4fd02d2bd613ba759192fced58c3c28771981"
     },
     {
       "path": "docs/contracts/operator_projection_v1.md",
@@ -2436,7 +2436,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3a16051145ea9360d8d2fb60a7a397fcb8e0d138c2335c0a3aba58bbd4648d08",
-      "sha256_after": "1780846721a53bc7728a9bc0b481b02b635cfc6faaed713246129e60ab2d41ba"
+      "sha256_after": "da68c11a8297516700b5c666de29ceb838fe613e24ce0c55c7db48123e9f7df4"
     },
     {
       "path": "docs/contributing/testing-and-validation.md",
@@ -2477,7 +2477,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "7ac07868969d94e4a7ab7f8c8695360bafd34d41486246d1960c1a1721590259",
-      "sha256_after": "49434503492b3d2ec418c0cabeca2f4bc52a7e4300998baef6d3f607d748b6c2"
+      "sha256_after": "9774b0df7937e96307cba6b43e5afe2592e1bb360a84405e42c41833440299a8"
     },
     {
       "path": "docs/current-capabilities.md",
@@ -5003,7 +5003,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "14ef0667f4cea2ab84bee2e6bfcfe8309b92df97f71c527ed8293bc1f971ddf7",
-      "sha256_after": "e481b7cef8d7dbd90fd51dc79057dc3b19f6bf98dff678aa1b460997a9d44257"
+      "sha256_after": "18dcc5783b9f8884c9f1b3999b6835393f2f372d1349a6690933e470597d5dc3"
     },
     {
       "path": "docs/getting-started/overview.md",
@@ -5505,7 +5505,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c6f8558576d260a8768c8c042fea6bf77c2fc3b7f1e71f7beafd059fe1cf15d8",
-      "sha256_after": "9a7ba960826939fe27b8b5a97e6659eb674817ecdd1bdc07120fd3ae73cb370a"
+      "sha256_after": "9c35e0832b6a9673440c4bf5506ca9bca40c0c13d3c39787958eaee52f103a2a"
     },
     {
       "path": "docs/getting-started/troubleshooting.md",
@@ -6695,7 +6695,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "0b1ee4647b46bb54b028bb1dab814fb07eb3a315a40a62fe36f8e31c001b37d9",
-      "sha256_after": "2e54ab4ca3d060182b5ccd9079493d640420ade11053a951b603a29211f1c4b2"
+      "sha256_after": "7798a079cbb202b8c8c50f47dee19cec7a0be3ab9cb3f88be4a837ed95450bca"
     },
     {
       "path": "docs/lab-stand.md",
@@ -6880,7 +6880,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5caa15162783594a9e5d5d46f7b99511dcb043e1a32c012d80bbbd450f93a520"
+      "sha256_after": "815f1ecbb41a2a24f2281ad616599e50482ddcec05b58af7ab744150df3879f7"
     },
     {
       "path": "docs/licensing/container-images.md",
@@ -7959,7 +7959,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "cf5fd2b5df353cf9626c456827d28b6a4194bf49f99dadf5d77ae9cdf6a3c8e2",
-      "sha256_after": "b857d3e5df18a468551770e59163793be80c4a72a2414289706544b902aa4359"
+      "sha256_after": "64404e9b7cb80a5db423915e539b1ff0ad33f18f4e5624827cfb383a38009ed1"
     },
     {
       "path": "docs/performance.md",
@@ -8160,7 +8160,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "62e414747098388672ac68d8d406796c42661fa2710da09934d9605c34ff6130",
-      "sha256_after": "fee5e1ba765564c7bed0a18dd4e2394de023e76b7d7bddbf91b2025f988d1a39"
+      "sha256_after": "40562c332acd6ac87eae19213d76f2b018849f198f51c94d5853053d10281f50"
     },
     {
       "path": "docs/reference/component-directory.md",
@@ -8372,7 +8372,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "648da8c02c46a5b3b49ef80feac8320ad46954807ad757a78453dcb4b73b9eb0",
-      "sha256_after": "dc534fd7978f7ff16508b6fae51eeae90b72e06b78548657f2797dff5dcd02a0"
+      "sha256_after": "f6a7ba5482ff68f4919a26aae0d4f9d4d046d91559c40fd3c5ef2badb25a908b"
     },
     {
       "path": "docs/reference/status-values.md",
@@ -8952,7 +8952,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "de97ff8907f9b73ed098c9486b5708c03f92840a36d058e23865275ce3e5f5cf",
-      "sha256_after": "3a1e8949fbd6a6bcc85f79ad0b8e9ac53534e6e76f771519ff27a86d87cf6ffb"
+      "sha256_after": "4dad088cdd2f9b49fe69a95259d3909daace622ade59f581bad50da26807f148"
     },
     {
       "path": "docs/research/competing-hypotheses.md",
@@ -9181,7 +9181,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "4aa6f86e8911b16812ceec2d205d326d7d214429a71f1326252dbac91d42766d"
+      "sha256_after": "9258079656f27287398132b5119ebf94b5a0592e75abf6fdbf68274162f313bc"
     },
     {
       "path": "docs/research/internal-screening-policy.md",
@@ -9255,7 +9255,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "9721e55da7433deb02c80ee32b4a68997def75ad6884fb356f5ed6729395c2a9"
+      "sha256_after": "6a92709c241ca7b282eb09ad49fe537ae80f5452b8e0d56b97dc0b72dbaea6f4"
     },
     {
       "path": "docs/research/laboratory-case-catalog.md",
@@ -9571,7 +9571,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "36a7694bfc9d39e1f9172be82b591d5eeb8b0ee4d2d268dfc9b3928db9134d8f",
-      "sha256_after": "2403cae4a1e613c03dcec70c3f60b7ffca61bbb9526b3a7322549dbaad41bc4f"
+      "sha256_after": "7e384bad6145c563c8b011b854ef7aa23cc902aaa877e8af54b4b633028fcdde"
     },
     {
       "path": "docs/research/model-training-reproducibility.md",
@@ -9608,7 +9608,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "07f60ee3c05796151585e379a6aba384d514792b0e6840845f40a66918f65598"
+      "sha256_after": "e10c281ff61b1b9b848d792b23ff133006b03ad0cc67f73580522401161e19eb"
     },
     {
       "path": "docs/research/operator-incident-workflow.md",
@@ -9693,7 +9693,7 @@
     },
     {
       "path": "docs/research/phase1-blinding-and-mapping.md",
-      "title": "Ослепление и mapping Phase 1",
+      "title": "Ослепление и сопоставление Phase 1",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -9721,12 +9721,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 6,
+      "incoming_link_count": 7,
       "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "0041e916a9f85ae38d8fa5a86ebd3eb41c397e42b3115ba460302f19b1c161e9"
+      "sha256_after": "63431aa2fbcd3929b1c68926f4f06a39fedffba9e42b83463b836336f4715de6"
     },
     {
       "path": "docs/research/phase1-campaign-journal.md",
@@ -9758,12 +9758,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 6,
-      "outgoing_link_count": 1,
+      "incoming_link_count": 7,
+      "outgoing_link_count": 4,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "cd23a02a17dd84039aefb986eef1cea3032ff86e84ab8120634ceaa37e4e7bde"
+      "sha256_after": "d4b9fb0b35f34254004ea860cb0f65e9e2fff7191afdff14496f37abec89a3ef"
     },
     {
       "path": "docs/research/phase1-execution-package-history.md",
@@ -9795,12 +9795,12 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "incoming_link_count": 6,
-      "outgoing_link_count": 2,
+      "incoming_link_count": 7,
+      "outgoing_link_count": 3,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "57da636df5150ed3b3591d2f9d17ae0e4890f9a09b8de4c5f0a1b6758c6f676f"
+      "sha256_after": "1273b2696871b8533b570b175edc3da91548cb77164801e7fab7948e807471ef"
     },
     {
       "path": "docs/research/phase1-feature-construction.md",
@@ -9995,7 +9995,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "6c0718b1127e648f50918f0650c53c09ee5d37cc93701c2286177cae89d0a24e"
+      "sha256_after": "a7baa52818e02ba6f211df590439773ecd4a3c8698770192e740f27fbcbc3027"
     },
     {
       "path": "docs/research/uncertainty-and-abstention.md",
@@ -10467,7 +10467,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "10b23f531780e01d8562727a428fdf626e0f45b8154f22b2312e662a9160f72a"
+      "sha256_after": "94313973680d6a3975ba0f7178e81f19f21994773399d755f5c8fa5b617c3a5f"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -10629,7 +10629,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f1f7b2ef60b4d1150b35916811db6b55ecf9259185ed0e3920732e1cdc2141c9",
-      "sha256_after": "5faacd5fe66721a9f3e66e6d8658409021d89380ad57302e8e9442f32d610a15"
+      "sha256_after": "3c76ed2da71cd110b00baef8c5fdcdfd742e2f32c9b66efbd433f325b14a4482"
     },
     {
       "path": "docs/status/prohibited-capabilities.md",
@@ -10754,7 +10754,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6a9a8559eef4bda6af66439f3cdc84d3fbc386737c345fbc797e33a85f11c378",
-      "sha256_after": "5600db9955950014116b3fd677d8ec1eea1289af5298141d4f49c81fb7d1f00d"
+      "sha256_after": "380a0e6828ae01b95db2083857e706c895baa23feadd0014417fd9a8972236e4"
     },
     {
       "path": "docs/third-party-components.md",
@@ -10791,7 +10791,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c4707c2bfc23aefa8ed13057d22199809275c3f93efa3608533a192880504707",
-      "sha256_after": "41b2f8e49ffe790e74d3666d64c4e6e1e21b519f6059d709688bc86b96b8e2d7"
+      "sha256_after": "cbc3226d4d7fc2a00cf00725fa211ec405b41d19f51d33794978f588e8e90730"
     },
     {
       "path": "docs/third-party-notices.md",
@@ -11422,7 +11422,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "79049d476ecfe1579cdb8839b7e4fb4ac79801592dec40c160a491b5027079ac"
+      "sha256_after": "18f0ba45fd13bcb5f12f30a9b83aa643376cc5a9ca097e502b79d50b2608561b"
     },
     {
       "path": "lab/robustness/README.md",
@@ -11644,7 +11644,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "5eb74e22fc7ae6e65602abd5fcd8480349f11ab201c9ce28101e968b2febdc2d",
-      "sha256_after": "e761364aeaa6b01a15af8280797e14f5224ad3c1acb2ad9590d1e1ea75b92015"
+      "sha256_after": "ec253fab1dfa3a607aa81143169af2799aa26affa2ce71e0e9f9e5a4b5051805"
     },
     {
       "path": "ml/analysis/README.md",
@@ -12462,7 +12462,7 @@
     },
     {
       "path": "ml/protocols/index.md",
-      "title": "Индекс ML и reconstruction protocols",
+      "title": "Индекс протоколов ML и реконструкции",
       "category": "Генерируемый индекс или представление",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -12501,7 +12501,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "3a7ba294e87a6f0d84d8d0a4264ff6becd985a05a003de776c9aaadfae7fe095",
-      "sha256_after": "2d8bb2eb6a4d85f93371f37781f32470b110642c2abbb557e18ad77c6036c859"
+      "sha256_after": "1d38401263fecbec5e20a0917c915464f808a44457022fbaf1748dd9f1deb340"
     },
     {
       "path": "ml/reports/index.md",

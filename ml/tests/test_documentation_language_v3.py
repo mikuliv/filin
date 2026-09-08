@@ -40,6 +40,20 @@ def test_allowed_identifiers_are_explicit_not_global():
     assert all(row["literal"] not in {"*", ".*", "[A-Za-z]+"} for row in data["entries"])
 
 
+@pytest.mark.parametrize(
+    ("text", "rejected"),
+    [
+        ("The current runtime contract defines the execution state.", True),
+        ("Для выполнения используется current runtime state.", True),
+        ("Путь `phase1_runtime_contract.json` сохранён.", False),
+        ("Терминология объяснена рядом с `execution_token`.", False),
+    ],
+)
+def test_narrative_english_boundary(text, rejected):
+    findings = analyze_text(text, "current_human_document", ".md")
+    assert bool(findings) is rejected
+
+
 def test_protected_evidence_is_not_edited():
     data = json.loads(Path("docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8"))
     assert data["files"]

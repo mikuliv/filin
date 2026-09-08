@@ -38,18 +38,18 @@ def build_contracts(root: Path) -> str:
     patterns = ("*.schema.json", "*.schema.yaml", "*.schema.yml")
     paths = sorted({p for pattern in patterns for p in root.rglob(pattern) if "runtime" not in p.parts})
     lines = [HEADER.format(title="Индекс контрактов", authority="contract_index", sources="  - repository schemas"),
-             "## Все versioned schemas", "",
+             "## Все версионированные схемы", "",
              "| Schema ID | Version/этап | Подсистема | Статус | Путь | Consumer/замена |",
              "|---|---|---|---|---|---|"]
     for path in paths:
         rel = path.relative_to(root).as_posix()
         subsystem = rel.split("/", 1)[0]
         stage = stage_from_path(rel)
-        status = "текущий" if any(v in rel for v in ("v0_4_5", "v03154", "shadow_event_v2")) else "versioned/исторический"
-        consumer = {"lab_console": "console/API", "incident_reconstruction": "reconstruction", "collectors": "collector/runtime", "staging": "receiver", "rehearsal": "rehearsal", "external_review": "external procedure"}.get(subsystem, "tests/tools")
+        status = "текущий" if any(v in rel for v in ("v0_4_5", "v03154", "shadow_event_v2")) else "версионированный/исторический"
+        consumer = {"lab_console": "консоль/API", "incident_reconstruction": "реконструкция", "collectors": "сборщик/выполнение", "staging": "приёмник", "rehearsal": "репетиция", "external_review": "внешняя процедура"}.get(subsystem, "тесты/инструменты")
         link = relative_link(root / "docs/contracts", path)
         lines.append(f"| `{schema_id(path)}` | `{stage}` | `{subsystem}` | {status} | [`{rel}`]({link}) | {consumer} |")
-    lines += ["", "Индекс включает incident reconstruction, temporal reconstruction, hypothesis analysis, lab console, operator workflow, laboratory cases, reproducible runs и comparison review.", "", "<!-- generated:end -->", ""]
+    lines += ["", "Индекс включает реконструкцию инцидентов и времени, анализ гипотез, лабораторную консоль, порядок работы оператора, лабораторные случаи, воспроизводимые запуски и сравнительный обзор.", "", "<!-- generated:end -->", ""]
     return "\n".join(lines)
 
 
@@ -74,7 +74,7 @@ def protocol_rows(root: Path, from_dir: Path) -> list[str]:
 
 def build_protocols(root: Path, ml: bool = False) -> str:
     out_dir = root / ("ml/protocols" if ml else "docs/protocols")
-    title = "Протоколы проекта" if not ml else "Индекс ML и reconstruction protocols"
+    title = "Протоколы проекта" if not ml else "Индекс протоколов ML и реконструкции"
     sources = "  - ml/protocols\n  - incident_reconstruction/protocols"
     lines = [HEADER.format(title=title, authority="ml_protocol_index" if ml else "protocol_index", sources=sources),
              "## Frozen protocols и revisions", "",

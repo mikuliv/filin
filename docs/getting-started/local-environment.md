@@ -17,7 +17,7 @@ python -m pip install -r lab/network_validation/requirements.lock
 python -m tools.docs.validate_documentation_v2 --strict
 ```
 
-Если политика PowerShell запрещает активацию, используйте `\.venv\Scripts\python.exe` явно. Для документационных тестов нужны как минимум `PyYAML` и `pytest`; сетевой пакет добавляет `numpy`, `pandas`, `joblib` и `scikit-learn`.
+Если политика PowerShell запрещает активацию, используйте `.\.venv\Scripts\python.exe` явно. Для документационных тестов нужны как минимум `PyYAML`, `pytest` и `markdown-it-py`; сетевой пакет добавляет `numpy`, `pandas`, `joblib` и `scikit-learn`.
 
 ## Fedora/Linux, bash
 

@@ -9,11 +9,11 @@
 ## Сетевой путь
 
 ```text
-поведение → общий клиент → изолированная Docker-сеть → цель
+поведение → общий клиент → изолированная сеть Docker → цель
 → захват → PCAP → Zeek → временные журналы → 51 призна́к
 ```
 
-Семейства `family_a` и `family_b`, профили `profile_a` и `profile_b`, цели `target_a` и `target_b`, порты `8080` и `9080` проверяются независимо. Поведения: `navigation`, `credential_rejection`, `periodic_callback`, `throttled_pressure`, `service_discovery`, `path_inspection`. HTTP, DNS, keepalive и сбалансированный фон включены в шаблон и не являются дополнительным фактором.
+Семейства `family_a` и `family_b`, профили `profile_a` и `profile_b`, цели `target_a` и `target_b`, порты `8080` и `9080` проверяются независимо. Поведения: `navigation`, `credential_rejection`, `periodic_callback`, `throttled_pressure`, `service_discovery`, `path_inspection`. Каждому шаблону назначается один режим фоновой активности — `http`, `dns`, `keepalive` или `combined`; каждый режим распределён по 72 шаблона. Фон не является дополнительным фактором.
 
 ## Контракты и предохранители
 
@@ -22,7 +22,7 @@
 - `feature_adapter.py` изолирует состояние по сессии и сохраняет порядок признаков;
 - `causal_guard.py` допускает только точный конечный числовой вектор из 51 полей;
 - `planning.py` проверяет пары, разбиение целыми сессиями и риски proxy;
-- среда выполнения-контракт задаёт preflight, mapping, повторы, журнал, запечатывание и восстановление;
+- контракт среды выполнения задаёт preflight, mapping, повторы, журнал, запечатывание и восстановление;
 - `candidate_identity.py` связывает внутренний и внешний идентификатор по SHA-256.
 
 Сырые PCAP и журналы Zeek не редактируются. Marker исключается только во временной копии входа модели; DNS не меняется. Смешанный marker/scenario UID даёт `processing_integrity_failure`. Полное описание: [актуальная методика](../../docs/research/independent-network-validation.md).
@@ -37,13 +37,13 @@ python -m lab.network_validation.cli validate-config
 python -m lab.network_validation.cli plan-campaign
 python -m lab.network_validation.cli validate-counterfactuals
 python -m lab.network_validation.cli validate-split
-python -m lab.network_validation.cli inspect-phase1-среда выполнения-contract
+python -m lab.network_validation.cli inspect-phase1-runtime-contract
 python -m lab.network_validation.cli audit-initialization-contract
 python -m lab.network_validation.cli inspect-ledger-contract
 python -m lab.network_validation.cli inspect-mapping-contract
 python -m lab.network_validation.cli inspect-label-boundary
 python -m lab.network_validation.cli inspect-run-plan
-python -m lab.network_validation.cli validate-среда выполнения-execution-package
+python -m lab.network_validation.cli validate-runtime-execution-package
 python -m lab.network_validation.cli audit-execution-preflight --help
 ```
 
@@ -51,7 +51,7 @@ python -m lab.network_validation.cli audit-execution-preflight --help
 
 ## Опасные команды
 
-`run-one-phase1-session` запускает научное поведение, создаёт PCAP, журналы, mapping и запись журнала. `preflight-phase1-session` проверяет среду, но требует внешний secret-root. `recover-phase1-sealed-completion` изменяет журнал завершения. `run-technical-smoke` и `run-factor-orthogonality-smoke` создают сетевые временные данные. Они не являются безопасными примерами и требуют отдельного явного разрешения, согласованных каталогов и проверки актуального заменяющий пакета.
+`run-one-phase1-session` запускает научное поведение, создаёт PCAP, журналы, mapping и запись журнала. `preflight-phase1-session` проверяет среду, но требует внешний secret-root. `recover-phase1-sealed-completion` изменяет журнал завершения. `run-technical-smoke` и `run-factor-orthogonality-smoke` создают сетевые временные данные. Они не являются безопасными примерами и требуют отдельного явного разрешения, согласованных каталогов и проверки актуального заменяющего пакета.
 
 Команды создания официального пакета или freeze также изменяют зафиксированные операционные материалы и выполняются только владельцем процесса. Научный запуск, создание меток, раскрытие mapping, обучение модели, прогнозы и метрики в документации намеренно не выдаются как готовый сценарий.
 
@@ -59,8 +59,8 @@ python -m lab.network_validation.cli audit-execution-preflight --help
 
 ```powershell
 python -m pytest ml/tests/test_network_validation_infrastructure.py -q
-python -m pytest ml/tests/test_network_validation_phase1_среда выполнения.py -q
+python -m pytest ml/tests/test_network_validation_phase1_runtime.py -q
 docker compose -f lab/network_validation/compose.yaml config
 ```
 
-Контракт признаков — `ml/experiments/v0_3_15_4/feature_contract_v2.yaml`, критерии — `config/acceptance_criteria.json`, образа — `config/image_lock.json`, план — `execution/phase1_run_plan.json`, среда выполнения — `execution/phase1_среда выполнения_contract.json`. Host-side зависимости сетевой проверки перечислены в `requirements.lock`; клиент и цели используют стандартную библиотеку Python внутри образов.
+Контракт признаков — `ml/experiments/v0_3_15_4/feature_contract_v2.yaml`, критерии — `config/acceptance_criteria.json`, образ — `config/image_lock.json`, план — `execution/phase1_run_plan.json`, контракт среды выполнения — `execution/phase1_runtime_contract.json`. Зависимости сетевой проверки перечислены в `requirements.lock`; клиент и цели используют стандартную библиотеку Python внутри образов.
