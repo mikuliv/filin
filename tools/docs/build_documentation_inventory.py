@@ -17,18 +17,20 @@ def render_inventory(rows: list[dict], summary: dict[str, int]) -> str:
         f"- Документов: **{summary['document_count']}**.",
         f"- Защищённых: **{summary['protected_count']}**.",
         f"- Текущих: **{summary['current_count']}**.",
-        f"- Исторических и frozen: **{summary['historical_count']}**.",
-        f"- Созданных: **{summary['created_count']}**; переписанных: **{summary['rewritten_count']}**; redirects: **{summary['redirect_count']}**.",
+        f"- Исторических и замороженных: **{summary['historical_count']}**.",
+        f"- Заменённых: **{summary['superseded_count']}**; замороженных подтверждающих материалов: **{summary['frozen_evidence_count']}**.",
+        f"- Устаревших отметок содержательной проверки среди пересмотренных документов: **{summary['stale_last_reviewed_stage_count']}**.",
+        f"- Созданных: **{summary['created_count']}**; переписанных: **{summary['rewritten_count']}**; перенаправлений: **{summary['redirect_count']}**.",
         f"- Переносимых ссылок на отслеживаемые файлы: **{summary['tracked_link_count']}**; на воспроизводимо создаваемые файлы: **{summary['generated_link_count']}**.",
         f"- Только локальных целей: **{summary['local_only_link_count']}**; сломанных ссылок: **{summary['broken_link_count']}**; отсутствующих якорей: **{summary['broken_anchor_count']}**.", "",
         "## Документы", "",
-        "| Путь | Категория | Жизненный цикл | Текущий/исторический | Protected | Действие | SHA до | SHA после |",
+        "| Путь | Категория | Жизненный цикл | Текущий/исторический | Защищён | Действие | SHA до | SHA после |",
         "|---|---|---|---|---:|---|---|---|",
     ]
     for row in rows:
         lines.append(
-            f"| `{row['path']}` | {row['category']} | `{row['lifecycle_status']}` | "
-            f"{row['current_or_historical']} | {'да' if row['evidence_immutable'] else 'нет'} | "
+            f"| `{row['path']}` | `{row['category']}` | `{row['lifecycle_status']}` | "
+            f"`{row['current_or_historical']}` | {'да' if row['evidence_immutable'] else 'нет'} | "
             f"`{row['actual_action']}` | `{(row['sha256_before'] or '—')[:12]}` | `{row['sha256_after'][:12]}` |"
         )
     lines += ["", "<!-- generated:end -->", ""]

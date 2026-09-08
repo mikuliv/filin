@@ -5,6 +5,7 @@ from tools.docs.documentation_v2 import phase1_facts
 from tools.docs.validate_documentation_freshness import (
     counterfactual_findings,
     stale_findings,
+    lifecycle_v04_findings,
     status_semantic_findings,
     v04_facts,
     v04_stale_findings,
@@ -40,6 +41,12 @@ class DocumentationStatusConsistencyTests(unittest.TestCase):
         findings = v04_stale_findings(text, v04_facts(ROOT))
         self.assertIn("stale_v04_latest_completed", findings)
         self.assertIn("stale_v04_next_allowed", findings)
+
+    def test_old_stage_is_accepted_only_for_historical_document(self):
+        text = "Последний завершённый этап v0.4.4; следующий допустимый — v0.4.5."
+        facts = v04_facts(ROOT)
+        self.assertTrue(lifecycle_v04_findings(text, "current", facts))
+        self.assertEqual(lifecycle_v04_findings(text, "historical", facts), [])
 
     def test_wrong_counterfactual_source_and_count_are_rejected(self):
         artifact = json.loads((ROOT / "lab/network_validation/config/superseding_freeze_campaign.json").read_text(encoding="utf-8"))

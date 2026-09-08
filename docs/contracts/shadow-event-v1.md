@@ -2,8 +2,8 @@
 
 Контракт описывает только локальную passive telemetry. Каждое событие имеет `action_authority="none"` и `enforcement_allowed=false`; оно не разрешает блокировку, remediation или изменение доступа.
 
-Поддерживаются `sensor_health`, `decision_observation`, `alert_emitted`, `review_required`, `alert_continuation`, `delivery_status` и `drop_summary`. Идентификаторы детерминированы, delivery имеет семантику at-least-once, а sink обеспечивает idempotent dedup. Exactly-once не заявляется.
+Поддерживаются `sensor_health`, `decision_observation`, `alert_emitted`, `review_required`, `alert_continuation`, `delivery_status` и `drop_summary`. Идентификаторы детерминированы, доставка выполняется не менее одного раза, а получатель обеспечивает идемпотентное устранение дубликатов. Доставка строго один раз не заявляется.
 
-Идентификаторы run и activity являются SHA-256 pseudonyms. Это псевдонимизация, а не доказательство анонимности. Raw PCAP, payload, features, labels, credentials, IP/MAC, hostname и filesystem paths запрещены.
+Идентификаторы запуска и активности являются псевдонимами на основе SHA-256. Это псевдонимизация, а не доказательство анонимности. Исходные PCAP, полезная нагрузка, признаки, метки, учётные данные, IP- и MAC-адреса, имя узла и пути файловой системы запрещены.
 
 Hash chain предоставляет tamper подтверждающие материалы внутри одного activity key, но не является аутентификацией отправителя. Будущий transport обязан отдельно обеспечить authentication и encryption.

@@ -12,16 +12,16 @@
 | FastAPI | `>=0.111,<1.0` | HTTP services/серверная часть | MIT | Сохранить copyright/license при redistributing | Да / Да / Да / Да |
 | Uvicorn | `>=0.30,<1.0` | ASGI server | BSD-3-Clause | Сохранить BSD notice | Да / Да / Да / Да |
 | Pydantic | `>=2.7,<3.0` | Schemas/configuration | MIT | Сохранить notice | Да / Да / Да / Да |
-| PyYAML | `>=6.0,<7.0` | Campaign/scenario YAML | MIT | Сохранить notice | Да / Да / Да / Да |
+| PyYAML | `>=6.0,<7.0` | YAML кампаний и сценариев | MIT | Сохранить уведомление | Да / Да / Да / Да |
 | requests | `>=2.32,<3.0` | traffic-client | Apache-2.0 | LICENSE/NOTICE при distribution | Да / Да / Да / Да |
 | pandas | Не зафиксирована | признак/data processing | BSD-3-Clause | Сохранить BSD notice | Да / Да / Да / Да |
 | scikit-learn | Не зафиксирована | ML pipelines | BSD-3-Clause | Сохранить BSD notice | Да / Да / Да / Да |
 | joblib | Не зафиксирована | модель serialization | BSD-3-Clause | Сохранить BSD notice | Да / Да / Да / Да |
-| httpx | `<0.24` в исторический requirements; не объявлен Filin requirements | Исторический область применимости | BSD-3-Clause | Если переносится, inventory обязателен | Условно; не является Filin dependency по текущим declarations |
-| NumPy | исторический requirements | Исторический ML область применимости | BSD-3-Clause | При переносе — notice | Условно; не является declared Filin dependency |
+| httpx | `<0.24` в исторических требованиях; не объявлен в требованиях Filin | Историческая область применимости | BSD-3-Clause | При переносе обязательна опись | Условно; не является зависимостью Filin по текущим объявлениям |
+| NumPy | исторические требования | Историческая область ML | BSD-3-Clause | При переносе — уведомление | Условно; не является объявленной зависимостью Filin |
 | ONNX / ONNX среда выполнения | Config/предполагаемый среда выполнения | модель interchange/inference prototype | MIT | При включении packages — notices | Да / Да / Да / Да |
-| Zeek | `zeek/zeek:7.0.5` | Offline PCAP processing и sensor capture base | BSD-3-Clause | Проверить конкретный image notice/digest | Обычно да; фиксировать digest |
-| tcpdump / libpcap | Устанавливается в sensor image | Passive capture | BSD-3-Clause family; проверить package metadata конкретного образа | Package notices/SBOM | Обычно да; отдельные OS packages проверить |
+| Zeek | `zeek/zeek:7.0.5` | Автономная обработка PCAP и основа захвата датчика | BSD-3-Clause | Проверить уведомление и контрольную сумму конкретного образа | Обычно да; фиксировать контрольную сумму |
+| tcpdump / libpcap | Устанавливается в образ датчика | Пассивный захват | Семейство BSD-3-Clause; проверить метаданные пакета конкретного образа | Уведомления пакетов и SBOM | Обычно да; отдельные пакеты ОС проверить |
 | Nginx | `1.27-alpine` | target-web laboratory service | BSD-2-Clause | Сохранить notice при image distribution | Обычно да; Alpine packages проверить |
 | Suricata | `jasonish/suricata:7.0.8` | Optional sensor container | GPL-2.0-only (проверить конкретный image) | Source/notice obligations при redistributing image | Не считать безусловно совместимым с proprietary distribution; отдельный container boundary рассмотрение |
 | Elasticsearch | `8.15.0` | Optional laboratory stack | ELv2 для default distribution | Не скрывать notices; проверить image terms | Условно: ELv2 ограничивает managed service; не эквивалент Apache/MPL/GPL |
@@ -34,7 +34,7 @@
 
 Zeek и Suricata закреплены version tags для CI guard, но ещё не image digest. Перед external distribution следует закрепить digest, собрать SBOM и сохранить license notices для каждого образа и его базовых OS packages.
 
-Compose также объявляет `elastic/filebeat:8.15.0`, `elasticsearch:8.15.0` и `kibana:8.15.0`. Эти сервисы не образуют доказанной кодовой связи с исторический Anomalyzer, но их лицензирование нельзя описывать как Apache-2.0 без проверки конкретной distribution. Elastic указывает ELv2 для default Elasticsearch/Kibana distribution и ограничения на предоставление продукта как managed service. См. [Elastic FAQ](https://www.elastic.co/licensing/elastic-license/faq/).
+Compose также объявляет `elastic/filebeat:8.15.0`, `elasticsearch:8.15.0` и `kibana:8.15.0`. Эти сервисы не образуют доказанной кодовой связи с историческим Anomalyzer, но их лицензирование нельзя описывать как Apache-2.0 без проверки конкретного дистрибутива. Elastic указывает ELv2 для стандартного дистрибутива Elasticsearch/Kibana и ограничения на предоставление продукта как управляемой службы. См. [частые вопросы Elastic](https://www.elastic.co/licensing/elastic-license/faq/).
 
 ## Исторические зависимости
 
@@ -43,7 +43,7 @@ Compose также объявляет `elastic/filebeat:8.15.0`, `elasticsearch:
 ## Практические действия перед лицензированием/распространением
 
 1. Зафиксировать Python versions через lock file и Docker image digests.
-2. Сгенерировать SBOM для Filin images и среда выполнения distribution.
+2. Сформировать SBOM для образов Filin и дистрибутива среды выполнения.
 3. Сохранить third-party notices, licenses и source-offer obligations там, где они применимы.
 4. Решить, будет ли распространяться Compose stack с Suricata/Elastic images или они останутся development-only references.
 5. Проверить условия Docker Desktop для организации: [официальные условия](https://docs.docker.com/subscription/desktop-license/).

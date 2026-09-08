@@ -7,7 +7,7 @@
 
 ## Назначение и статус
 
-Текущая laboratory subsystem преобразует passive event и подтверждающие материалы references в
+Текущая лабораторная подсистема преобразует пассивное событие и ссылки на подтверждающие материалы в
 facts, temporal/structural relations, разрывы, correlation groups, competing гипотезы
 и incident card v2. Этапы `v0.4.0–v0.4.4` завершены; external applicability не подтверждена.
 
@@ -36,5 +36,5 @@ python -m pytest ml/tests/test_v040_incident_reconstruction.py ml/tests/test_v04
 
 ## Источники истины
 
-версионированный schemas, Зафиксировано protocols, v0.4 policy results и
+версионированные схемы, зафиксированные протоколы, результаты политик v0.4 и
 [архитектурный обзор](../docs/architecture/reconstruction-and-analysis-track.md).

@@ -6,6 +6,6 @@
 - `model-package` — `separate_license_required`.
 - `dataset-package` — `separate_license_required`.
 
-Профили являются allow/deny policy, а не готовыми архивами. Строгий validator запрещает требующий рассмотрение и исключённые типы в профилях одобренный.
+Профили задают правила разрешения и запрета, а не готовые архивы. Строгое средство проверки запрещает типы, требующие рассмотрения или исключённые из одобренных профилей.
 
 Машинная область результата: `release_ready_scope=approved_source_profiles_only`. Одобрены ровно два профиля — `source-core` и `laboratory-source`; остальные три не готовы. `all_distribution_profiles_ready=false`.

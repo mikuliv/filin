@@ -516,7 +516,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -578,7 +579,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -773,7 +775,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -899,7 +902,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -961,7 +965,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1156,7 +1161,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1282,7 +1288,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1344,7 +1351,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1539,7 +1547,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1665,7 +1674,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {

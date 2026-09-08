@@ -55,7 +55,7 @@ VIOLATION_CODES = {
 
 
 def validate_policy_payload(payload: dict[str, Any]) -> dict[str, Any]:
-    """Validate a temporary adversarial payload without executing its requested action."""
+    """Проверяет временную состязательную нагрузку без выполнения запрошенного действия."""
     violation = payload.get("violation")
     if violation in VIOLATION_CODES:
         return {"accepted": False, "error_code": VIOLATION_CODES[violation], "executed": True}

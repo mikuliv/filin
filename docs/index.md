@@ -79,7 +79,7 @@
 - [Журнал кампании Phase 1](research/phase1-campaign-journal.md).
 - [Критерии приёмки Phase 1](research/phase1-acceptance-criteria.md).
 - [Построение 51 признака](research/phase1-feature-construction.md).
-- [Ослепление и mapping](research/phase1-blinding-and-mapping.md).
+- [Ослепление и сопоставление](research/phase1-blinding-and-mapping.md).
 - [Старая защищённая версия протокола (историческая)](experiments/next_independent_network_validation_protocol.md).
 - [Техническая инфраструктура проверки](../lab/network_validation/README.md).
 

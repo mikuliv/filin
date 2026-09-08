@@ -63,6 +63,27 @@ def test_operational_records_language_boundary(text, rejected):
     assert bool(analyze_text(text, "current_human_document", ".md")) is rejected
 
 
+@pytest.mark.parametrize("text", [
+    "Не допускаются произвольные personal Наборы данных, silent column mapping и промышленная эксплуатация ingest.",
+    "Operator notes не возвращаются в модель input.",
+    "Candidate зафиксирован до расчёта metric outputs.",
+    "Для каждого scored window coordinator фиксирует immutable row ID и prediction.",
+    "Historical operational records находятся в tracked repository.",
+])
+def test_real_mixed_language_examples_are_rejected(text):
+    assert analyze_text(text, "current_human_document", ".md")
+
+
+@pytest.mark.parametrize("text", [
+    "В журнале хранится поле `execution_token`.",
+    "Для анализа используется Zeek.",
+    "Результат сохраняется в формате JSON.",
+    "Файл `phase1_runtime_contract.json` определяет контракт среды выполнения.",
+])
+def test_exact_identifiers_and_technology_names_are_accepted(text):
+    assert analyze_text(text, "current_human_document", ".md") == []
+
+
 def test_generated_current_english_is_scanned():
     findings = analyze_text("Current operational records are stored separately.", "generated_document", ".md")
     assert findings

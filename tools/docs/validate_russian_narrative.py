@@ -24,6 +24,23 @@ EXPLICIT_HISTORICAL_DOCUMENTS = {
     "docs/experiments/independent_network_validation_freeze_review.md",
     "docs/experiments/independent_network_validation_execution_package.md",
     "docs/experiments/independent_network_validation_superseding_freeze.md",
+    "docs/audit/documentation_navigation_acceptance_v2.md",
+    "docs/audit/documentation_path_migration_v2.md",
+    "docs/audit/documentation_refactor_plan_v2.md",
+    "docs/audit/documentation_refactor_report.md",
+    "docs/audit/documentation_refactor_report_v2.md",
+    "docs/audit/documentation_rendering_correction_v2_1.md",
+}
+GENERATED_USER_FACING = {
+    "docs/audit/documentation_inventory.md",
+    "docs/audit/documentation_inventory_v2.md",
+    "docs/audit/russian-language-inventory-v3.md",
+    "docs/contracts/index.md",
+    "docs/protocols/index.md",
+    "docs/reports/documentation-language-maintenance-v3.md",
+    "docs/reports/index.md",
+    "ml/protocols/index.md",
+    "ml/reports/index.md",
 }
 
 FORBIDDEN_PHRASES = {
@@ -70,10 +87,15 @@ NARRATIVE_WORDS = {
     "validation", "evaluation", "metrics", "gaps", "hypotheses", "timeline",
     "dataset", "split", "recipe", "claim", "scope", "ranking", "consumer",
     "versioned", "feature", "model", "artifact", "manifest", "bundle",
+    "personal", "silent", "schema", "synthetic", "candidate", "campaign",
+    "capture", "metric", "causal", "decision", "operator", "policy", "tracked",
+    "historical", "payload", "prediction", "checkpoint", "mapping", "input",
+    "output", "manual", "quick", "records", "scored", "window", "coordinator",
+    "immutable", "row", "delivery", "acknowledgement", "owner", "subsystem",
 }
 MIXED_RE = re.compile(r"(?iu)\b(?:[a-z]+-[а-яё][а-яё-]*|[а-яё]+-[a-z][a-z-]*)\b")
 ALLOWED_MIXED_COMPONENTS = {
-    "docker", "dns", "git", "http", "ml", "scapy", "sha", "tcp", "udp", "yaml", "zeek", "z",
+    "docker", "dns", "git", "http", "mac", "ml", "scapy", "sha", "tcp", "udp", "yaml", "zeek", "z",
 }
 IDENTIFIER_RE = re.compile(r"(?<![`\w])([a-z][a-z0-9]*(?:_[a-z0-9]+)+)(?![`\w])")
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
@@ -243,6 +265,8 @@ def classify(path: str, protected: set[str]) -> tuple[str, bool]:
         return "official_standard_text", False
     if path in protected:
         return "frozen_evidence", False
+    if path in GENERATED_USER_FACING:
+        return "generated_document", True
     if path.startswith(("docs/audit/documentation_inventory", "docs/audit/protected_documentation", "docs/audit/russian-language-inventory", "docs/audit/documentation-semantic-preservation", "docs/reports/documentation-language-maintenance-v3", "sbom/", "licensing/")) or path in {
         "THIRD_PARTY_NOTICES.md", "docs/contracts/index.md", "docs/protocols/index.md", "docs/reports/index.md",
     }:
@@ -298,6 +322,7 @@ def scan_repository(root: Path = ROOT) -> dict:
     return {"schema_version": "filin_russian_narrative_validation_v3", "passed": not findings,
             "files_scanned_count": scanned, "current_documents_scanned": scanned - generated_scanned,
             "generated_current_documents_scanned": generated_scanned,
+            "user_facing_generated_documents_scanned": generated_scanned,
             "generated_current_documents_excluded": generated_excluded,
             "historical_documents_excluded": historical_excluded,
             "narrative_english_findings": sum(x["code"].startswith(("narrative_english", "english_heading")) for x in findings),

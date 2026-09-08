@@ -63,12 +63,12 @@ def protocol_rows(root: Path, from_dir: Path) -> list[str]:
         rel = path.relative_to(root).as_posix()
         stage = stage_from_path(rel)
         revision_match = re.search(r"(?:_r|revision[_-]?)(\d+)", path.stem)
-        revision = revision_match.group(1) if revision_match else "1/legacy"
-        status = "official" if "candidate" not in path.stem and not path.stem.endswith("_r1") else "official/revision"
+        revision = revision_match.group(1) if revision_match else "1/наследуемая"
+        status = "официальный" if "candidate" not in path.stem and not path.stem.endswith("_r1") else "официальная редакция"
         if "candidate" in path.stem:
-            status = "superseded candidate"
+            status = "заменённый кандидат"
         link = relative_link(from_dir, path)
-        rows.append(f"| `{stage}` | `{revision}` | {status} | [`{rel}`]({link}) | SHA в manifest/detached registry при наличии |")
+        rows.append(f"| `{stage}` | `{revision}` | {status} | [`{rel}`]({link}) | SHA в манифесте или отделённом реестре при наличии |")
     return rows
 
 

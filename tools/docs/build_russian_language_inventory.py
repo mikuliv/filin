@@ -10,9 +10,9 @@ import zipfile
 from pathlib import Path
 
 from tools.docs.run_russian_narrative_campaign import run as run_campaign
-from tools.docs.validate_russian_narrative import ROOT, OFFICIAL, analyze_text, classify, protected_paths, tracked_paths
+from tools.docs.validate_russian_narrative import GENERATED_USER_FACING, ROOT, OFFICIAL, analyze_text, classify, protected_paths, tracked_paths
 
-START = "c43aa593ace445df0c9d66a99ee4bfec84bb8450"
+START = "ac8fc55c18b45f7772b9431c26fa4e48c18b7695"
 TEXT_SUFFIXES = {".md", ".rst", ".adoc", ".txt", ".html", ".jinja", ".j2", ".json", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".py", ".js", ".ts", ".ps1", ".sh", ".css", ".csv"}
 
 
@@ -83,8 +83,12 @@ def build_rows() -> list[dict]:
         before_sha = canonical_text_digest(before_data) if before_data is not None else None
         after_sha = canonical_text_digest(after_data)
         stale_before = bool(kind == "current_human_document" and path in {"README.md", "docs/status/current-status.md", "lab_console/README.md"} and "v0.4.7" not in before_text)
+        generated = kind == "generated_document"
+        generated_user_facing = path in GENERATED_USER_FACING
         rows.append({"path": path, "file_kind": kind, "lifecycle_status": "frozen" if kind == "frozen_evidence" else "historical" if kind == "historical_document" else "current",
-                     "protected": path in protected, "generated": kind == "generated_document", "human_facing": human,
+                     "protected": path in protected, "generated": generated, "generated_user_facing": generated_user_facing, "human_facing": human,
+                     "language_scan": "included" if human and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "non_text_or_non_human"} else "excluded",
+                     "language_scan_reason": "пользовательский создаваемый документ" if generated_user_facing else "служебный машиночитаемый или юридический файл" if generated else "исторический или защищённый материал" if kind in {"frozen_evidence", "official_standard_text", "historical_document"} else "не предназначен для чтения",
                      "encoding": encoding, "line_ending": line_ending(after_data), **after_counts, "stale_metadata": False,
                      "recommended_action": "preserve" if kind in {"frozen_evidence", "official_standard_text"} else "rebuild" if kind == "generated_document" else "review",
                      "actual_action": "created" if before_sha is None else "unchanged" if before_sha == after_sha else "rewritten",
@@ -99,7 +103,7 @@ def summary(rows: list[dict]) -> dict:
         "historical_document_count": sum(x["lifecycle_status"] == "historical" for x in rows),
         "protected_document_count": sum(x["protected"] for x in rows), "generated_document_count": sum(x["generated"] for x in rows),
         "current_documents_scanned_for_language": sum(x["human_facing"] and x["file_kind"] not in {"frozen_evidence", "official_standard_text", "historical_document", "generated_document", "non_text_or_non_human"} for x in rows),
-        "generated_current_documents_scanned_for_language": sum(x["human_facing"] and x["file_kind"] == "generated_document" for x in rows),
+        "generated_current_documents_scanned_for_language": sum(x["language_scan"] == "included" and x["file_kind"] == "generated_document" for x in rows),
         "generated_documents_excluded": sum(x["generated"] and not x["human_facing"] for x in rows),
         "historical_documents_excluded": sum(x["file_kind"] == "historical_document" for x in rows),
         "files_with_narrative_english_before": sum(x["before"]["narrative_english_count"] > 0 for x in rows),
@@ -127,8 +131,8 @@ def render(data: dict) -> str:
            f"- Смешанных конструкций: **{s['mixed_compounds_before']} → {s['mixed_compounds_after']}**.",
            f"- Непояснённых идентификаторов: **{s['unexplained_identifiers_before']} → {s['unexplained_identifiers_after']}**.",
            f"- Изменено защищённых файлов: **{s['protected_files_changed']}**; официальных текстов: **{s['official_standard_texts_changed']}**.", "", "## Классификация", "",
-           "| Путь | Вид | Защищён | Для человека | Действие |", "|---|---|---:|---:|---|"]
-    for row in data["files"]: lines.append(f"| `{row['path']}` | `{row['file_kind']}` | {'да' if row['protected'] else 'нет'} | {'да' if row['human_facing'] else 'нет'} | {row['actual_action']} |")
+           "| Путь | Вид | Защищён | Для человека | Языковой контроль | Причина | Действие |", "|---|---|---:|---:|---|---|---|"]
+    for row in data["files"]: lines.append(f"| `{row['path']}` | `{row['file_kind']}` | {'да' if row['protected'] else 'нет'} | {'да' if row['human_facing'] else 'нет'} | `{row['language_scan']}` | {row['language_scan_reason']} | `{row['actual_action']}` |")
     return "\n".join(lines)+"\n"
 
 

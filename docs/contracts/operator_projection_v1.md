@@ -1,10 +1,10 @@
 # Контракт `operator_projection_v1`
 
-Контракт определяет минимальную санитарную только для чтения проекцию durable receiver event для локальной репетиции v0.3.17. Авторитетная Файлы JSON Schema находится в `rehearsal/contracts/operator_projection_v1.schema.json`.
+Контракт определяет минимальную очищенную проекцию долговечно сохранённого события приёмника только для чтения в локальной репетиции v0.3.17. Авторитетная схема JSON находится в `rehearsal/contracts/operator_projection_v1.schema.json`.
 
 Разрешены ровно поля `projection_contract_version`, `projection_id`, `generated_at`, `candidate_id`, `event_contract_version`, `source_event_id`, `event_type`, `event_timestamp`, `session_pseudonym`, `activity_pseudonym`, `state`, `confidence_band`, `conformal_disposition`, `continuity`, `receiver_commit_ref`, `delivery_status`, `evidence_refs`. Session и activity представлены односторонними domain-separated pseudonyms.
 
-Запрещены raw IP/MAC/hostname/user/email, credentials, payload, признак vector, label, scenario/class metadata, private keys, absolute paths, traces и environment values. Проекция не содержит attack intent, MITRE mapping, свободный модельный текст, рекомендации блокировки или элементы управления действием.
+Запрещены необработанные IP- и MAC-адреса, имена узлов и пользователей, адреса электронной почты, учётные данные, полезная нагрузка, вектор признаков, метка, метаданные сценария и класса, закрытые ключи, абсолютные пути, трассировки и значения среды. Проекция не содержит предполагаемого намерения атаки, привязки к MITRE, свободного модельного текста, рекомендаций блокировки или элементов управления действием.
 
-Источник — только durable `receiver_events` через SQLite `mode=ro`. Операции `POST`, `PUT`, `DELETE` и `PATCH` всегда отклоняются с `405`; допустимы только `GET` и `HEAD`. Operator view не владеет writable volume и не получает receiver write credentials.
+Источник — только долговечно сохранённые `receiver_events` через SQLite в режиме `mode=ro`. Операции `POST`, `PUT`, `DELETE` и `PATCH` всегда отклоняются с `405`; допустимы только `GET` и `HEAD`. Представление оператора не владеет томом для записи и не получает учётные данные приёмника для записи.
 

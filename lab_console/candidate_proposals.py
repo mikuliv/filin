@@ -155,7 +155,7 @@ class CandidateProposalService:
                    "class_contract": "network_classes_v2", "threshold_contract": "argmax_multiclass_v046_r1",
                    "environment_snapshot": self._environment_snapshot(), "dependency_snapshot": self._dependency_snapshot(),
                    "license_status": "separate_license_required", "distribution_allowed": False, "screening_status": "locked",
-                   "comparison_status": "not_started", "admission_status": "not_assessed", "limitations": ["Только synthetic laboratory data.", "Не является зарегистрированным кандидатом."],
+                   "comparison_status": "not_started", "admission_status": "not_assessed", "limitations": ["Только синтетические лабораторные данные.", "Не является зарегистрированным кандидатом."],
                    "created_at": now(), "frozen_at": None, "proposal_semantic_sha256": digest(semantic_seed), "proposal_frozen": False,
                    "screening_unlocked": False, "no_candidate_registration": True, "no_active_candidate_change": True, "laboratory_only": True}
         with self.db.connect() as con:

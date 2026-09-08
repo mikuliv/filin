@@ -88,12 +88,18 @@ EXPLICIT_HISTORICAL_DOCUMENTS = {
     "docs/experiments/independent_network_validation_freeze_review.md",
     "docs/experiments/independent_network_validation_execution_package.md",
     "docs/experiments/independent_network_validation_superseding_freeze.md",
+    "docs/audit/documentation_navigation_acceptance_v2.md",
+    "docs/audit/documentation_path_migration_v2.md",
+    "docs/audit/documentation_refactor_plan_v2.md",
+    "docs/audit/documentation_refactor_report.md",
+    "docs/audit/documentation_refactor_report_v2.md",
+    "docs/audit/documentation_rendering_correction_v2_1.md",
 }
 
 
 def is_explicit_historical_document(relative: str) -> bool:
     """Определяет историю по записи/имени конкретного документа, не по папке."""
-    return relative in EXPLICIT_HISTORICAL_DOCUMENTS or (
+    return relative in EXPLICIT_HISTORICAL_DOCUMENTS or relative.startswith(("ml/experiments/", "ml/audits/", "docs/audits/")) or (
         relative.startswith("docs/experiments/")
         and (
             Path(relative).name.startswith(("v0_", "independent_", "next_"))
@@ -342,6 +348,17 @@ def inventory_registry(root: Path = ROOT) -> dict[str, dict[str, Any]]:
     }
 
 
+def metadata_overrides(root: Path = ROOT) -> dict[str, dict[str, Any]]:
+    path = root / "docs/audit/documentation_metadata_overrides_v2.json"
+    if not path.is_file():
+        return {}
+    value = json.loads(path.read_text(encoding="utf-8"))
+    result = {row["path"]: row for row in value.get("documents", []) if isinstance(row, dict) and isinstance(row.get("path"), str)}
+    for relative in value.get("reviewed_current_paths", []):
+        result[relative] = {**result.get(relative, {}), "last_reviewed_stage": "v0.4.7.3", "reviewed_in_current_language_pass": True}
+    return result
+
+
 def _inferred_document_type(relative: str) -> str:
     if relative.startswith("docs/audit/"):
         return "audit"
@@ -363,6 +380,8 @@ def document_metadata(path: Path, root: Path = ROOT) -> dict[str, Any]:
     if legacy:
         return legacy
     row = inventory_registry(root).get(relative, {})
+    override = metadata_overrides(root).get(relative, {})
+    row = {**row, **override}
     lifecycle = row.get("lifecycle_status", "")
     if is_explicit_historical_document(relative):
         lifecycle = "historical"
@@ -545,6 +564,7 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
             "duplicate_of": metadata.get("duplicate_of", ""), "supersedes": metadata.get("supersedes", []),
             "superseded_by": metadata.get("superseded_by", ""), "redirect_target": redirect_target,
             "last_reviewed_stage": metadata.get("last_reviewed_stage", "v0.4.7" if lifecycle == "current" else stage_from_path(relative)),
+            "reviewed_in_current_language_pass": bool(metadata.get("reviewed_in_current_language_pass")),
             "last_relevant_stage": metadata.get("last_relevant_stage", stage_from_path(relative) or ("v0.4.7" if lifecycle == "current" else "unknown")),
             "current_stage_mentioned": "v0.4.7" if "v0.4.7" in text else "v0.3.19" if "v0.3.19" in text else "v0.3.18" if "v0.3.18" in text else "",
             "stale_status": stale_status, "stale_architecture": stale_architecture, "stale_command": stale_command,
@@ -561,6 +581,9 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
         "current_count": sum(row["current_or_historical"] == "current" for row in rows),
         "historical_count": sum(row["current_or_historical"] == "historical" for row in rows),
         "generated_count": sum(row["generated"] for row in rows),
+        "superseded_count": sum(bool(row["superseded_by"]) for row in rows),
+        "frozen_evidence_count": sum(row["lifecycle_status"] == "frozen" for row in rows),
+        "stale_last_reviewed_stage_count": sum(row["reviewed_in_current_language_pass"] and row["last_reviewed_stage"] != "v0.4.7.3" for row in rows),
         "created_count": sum(row["actual_action"] == "created" for row in rows),
         "rewritten_count": sum(row["actual_action"] == "rewritten" for row in rows),
         "redirect_count": sum(row["lifecycle_status"] == "redirect" for row in rows),

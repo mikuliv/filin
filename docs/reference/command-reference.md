@@ -42,7 +42,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 | `validate-superseding-execution-package` | Проверка заменяющего пакета; `--package` | Только чтение |
 | `audit-initialization-contract` | Проверка контракта инициализации | Только чтение |
 | `inspect-ledger-contract` | Просмотр общего контракта журнала кампании | Только чтение |
-| `inspect-mapping-contract` | Просмотр контракта mapping | Только чтение |
+| `inspect-mapping-contract` | Просмотр контракта сопоставления | Только чтение |
 | `inspect-phase1-runtime-contract` | Просмотр профиля событий Phase 1, полей и переходов | Только чтение |
 | `inspect-run-plan` | Просмотр плана выполнения; парсер принимает `--campaign`, `--acceptance-criteria`, `--image-lock`, `--freeze`, но обработчик читает закреплённый план | Только чтение |
 | `inspect-label-boundary` | Проверка границы между оценщиком и скрытой разметкой | Только чтение |
@@ -70,7 +70,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 | `validate-runtime-execution-package` | Проверка пакета среды выполнения; `--package` | Только чтение |
 | `create-official-runtime-execution-package` | Создание пакета среды выполнения; `--output`, `--runtime-sources-commit`, `--confirm-official-package` | Запись официального пакета |
 
-Пакет, freeze, исходный commit, mapping и состояние инициализации должны быть проверены как единое целое. В рамках обычной документационной работы эти команды не запускаются.
+Пакет, фиксация, исходный коммит, сопоставление и состояние инициализации должны быть проверены как единое целое. В рамках обычной документационной работы эти команды не запускаются.
 
 ## Научная сессия и диагностические тесты
 
@@ -81,7 +81,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 | Команда | Обязательные аргументы | Что меняет или запускает |
 |---|---|---|
 | `preflight-phase1-session` | `--output-root`, `--secret-root`, `--expected-secret-fingerprint`; необязательный `--package` | Запускает контейнеры и подготовку захвата, создаёт временные каталоги; не является проверкой только для чтения |
-| `run-one-phase1-session` | Те же аргументы плюс `--confirm-execution-token`, `--confirm-one-unit` | Запускает одну научную единицу, создаёт PCAP, журналы Zeek, mapping и записи журнала |
+| `run-one-phase1-session` | Те же аргументы плюс `--confirm-execution-token`, `--confirm-one-unit` | Запускает одну научную единицу, создаёт PCAP, журналы Zeek, запись сопоставления и записи журнала |
 | `recover-phase1-sealed-completion` | `--output-root`, `--secret-root`, `--expected-secret-fingerprint`, `--confirm-attempt-id`; необязательный `--package` | Восстанавливает только разрешённое запечатанное завершение и меняет состояние журнала |
 | `run-technical-smoke` | `--confirm-disposable`, `--output-dir` | Создаёт временные сетевые данные |
 | `run-factor-orthogonality-smoke` | `--confirm-disposable`, `--output-dir`, необязательный `--diagnostic-first-only` | Создаёт временные диагностические данные |

@@ -60,6 +60,13 @@ def v04_stale_findings(text: str, facts: dict) -> list[str]:
     return sorted(set(findings))
 
 
+def lifecycle_v04_findings(text: str, lifecycle: str, facts: dict) -> list[str]:
+    """Проверяет актуальность этапа только у текущей документации."""
+    if lifecycle == "historical":
+        return []
+    return v04_stale_findings(text, facts)
+
+
 def counterfactual_findings(text: str, pair_count: int) -> list[str]:
     findings = []
     if re.search(r"24\s+(?:контрфактуальн\w*\s+)?пар[^.\n]{0,160}technical_campaign\.json", text, re.IGNORECASE):

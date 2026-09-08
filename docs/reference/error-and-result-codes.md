@@ -2,7 +2,7 @@
 
 ## Документация
 
-Validator использует стабильные префиксы: `broken_link`, `broken_anchor`,
+Средство проверки использует стабильные префиксы: `broken_link`, `broken_anchor`,
 `h1_count`, `heading_jump`, `missing_front_matter`, `status_mismatch`,
 `protected_file_changed`, `absolute_local_path`, `possible_secret`,
 `orphan_current_document` и `redirect_cycle`.
@@ -10,8 +10,8 @@ Validator использует стабильные префиксы: `broken_li
 ## Матрица гипотез
 
 - `equally_supported` — равная опора;
-- `better_supported` — row hypothesis поддержана лучше column hypothesis;
-- `less_supported` — row hypothesis поддержана слабее;
+- `better_supported` — гипотеза строки поддержана лучше гипотезы столбца;
+- `less_supported` — гипотеза строки поддержана слабее гипотезы столбца;
 - `incomparable` — безопасное сравнение невозможно;
 - `insufficient_data` — недостаточно сведений.
 
@@ -21,6 +21,6 @@ Validator использует стабильные префиксы: `broken_li
 - `reviewed` — рассмотрено без изменения подтверждающие материалы;
 - `additional_evidence_required` — нужен новый материал;
 - `unresolved` — остаётся открытым;
-- `completed` — operator session завершена, не означает окончательного определения.
+- `completed` — сессия оператора завершена, но это не означает окончательного определения.
 
-Точные enum и HTTP responses определяются соответствующей версионированный schema/API.
+Точные перечисления и ответы HTTP определяются соответствующей версионированной схемой или API.

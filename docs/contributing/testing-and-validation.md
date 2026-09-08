@@ -11,8 +11,8 @@ python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_docume
 
 ## Что проверяется
 
-Headings, links, anchors, repository escape, Служебный заголовок, текущий orphans, redirects,
-authority, status/candidate identity, indexes, commands/routes, prohibited claims,
+Заголовки, ссылки, якоря, выход за пределы репозитория, служебный заголовок, текущие документы без входящих ссылок, перенаправления,
+источники истины, статус и идентичность кандидата, указатели, команды и маршруты, запрещённые утверждения,
 terminology, secrets, absolute paths, protected bytes и inventory freshness.
 
 ## Отрицательная кампания

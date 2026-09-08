@@ -24,7 +24,7 @@
 ## Каркас будущей независимой проверки
 
 `lab/network_validation` связывает единый клиент Docker, две реализации target,
-capture sidecar, Zeek и существующий extractor 51 признака. `SessionFeatureAdapter`
+сопроводительный файл захвата, Zeek и существующий модуль извлечения 51 признака. `SessionFeatureAdapter`
 разделяет history по session и принимает окна только в возрастающем причинном
 порядке. Строгий model-input guard исключает labels, scenario identity, generator,
 infrastructure и прочие служебные поля.
@@ -35,5 +35,5 @@ experiment не выполнялся, поэтому новая доказате
 заявляется.
 
 Freeze-review ведётся отдельным декларативным планом: техническая fixture не
-используется как scientific campaign. Матрица, критерии и image lock проверяются
+используется как научная кампания. Матрица, критерии и фиксация образа проверяются
 до сбора корпуса; незакрытый digest или нечистое дерево блокируют seal.

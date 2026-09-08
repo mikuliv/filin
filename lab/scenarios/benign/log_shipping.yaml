@@ -1,7 +1,7 @@
 scenario_id: benign_log_shipping
 type: benign
 name: Log shipping
-description: Safe internal API posts representing benign log delivery.
+description: Безопасные внутренние запросы API, представляющие штатную доставку журналов.
 source_role: benign-client
 target_role: target-api
 expected_label: benign

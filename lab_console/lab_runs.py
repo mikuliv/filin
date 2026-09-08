@@ -366,7 +366,7 @@ class LaboratoryRunService:
             self.db.audit("laboratory_run_orphan_detected", token, "success", {"automatic_restart": False})
 
     def _import_official_catalog(self) -> None:
-        """Index committed representative records in an empty local database."""
+        """Индексирует зафиксированные представительные записи в пустой локальной базе данных."""
         with self.db.connect() as con:
             if con.execute("SELECT count(*) FROM laboratory_runs").fetchone()[0]: return
         run_path = ROOT / "ml/reports/v0_4_5/official_run_catalog.json"
