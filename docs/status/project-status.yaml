@@ -1,6 +1,6 @@
 schema_version: filin_project_status_v2
 project_name: Филин
-current_project_state: "Официальный пакет Phase 1 v4 подготовлен; научный запуск в tracked repository не зафиксирован"
+current_project_state: "Официальный пакет Phase 1 v4 подготовлен; научный запуск среди отслеживаемых Git-файлов не зафиксирован"
 status_scope_note: "Статусы основной линии, лабораторной линии, исторической сетевой проверки и текущего runtime не сводятся к одному next_allowed_stage"
 regression_baseline:
   full_regression_passed: false
@@ -60,8 +60,8 @@ independent_network_validation_seal_blockers: []
 independent_network_validation_expected_pre_experiment_absences: [scientific_corpus_not_collected, external_corpus_result_missing, model_not_trained, evaluation_not_performed, labels_not_unlocked]
 independent_network_validation_scientific_pass_allowed: false
 independent_network_validation_external_corpus_required_for_scientific_pass: true
-# Это состояние научных сессий последнего tracked-пакета; оно не описывает
-# историческое сообщение о попытках v4.
+# Совместимые поля ниже сохранены для потребителей. Первое значение — снимок,
+# встроенный в JSON пакета до исполнения, а не фактическая история v4.
 latest_tracked_official_package_campaign_started: false
 historical_v4_campaign_started: true
 current_superseding_campaign_started: false
@@ -85,7 +85,7 @@ independent_network_validation:
   current_runtime_code_correction: "Исправление запуска Zeek: абсолютный путь и bash -c"
   current_runtime_code_correction_commit: 0027bb2
   next_superseding_package_required: true
-  next_superseding_package_reason: "После выпуска v4 изменён runtime-код; официальный пакет v5 ещё не создан"
+  next_superseding_package_reason: "После выпуска v4 изменён код среды выполнения; будущий заменяющий пакет ещё не создан"
   scenario_template_count: 288
   execution_unit_count: 864
   repetitions_per_template: 3
@@ -93,19 +93,46 @@ independent_network_validation:
   feature_count: 51
   scientific_campaign_started: false
   scientific_sessions_executed: 0
-  state_semantics: "Это точное состояние последнего tracked official package; исторический отчёт о v4 хранится отдельно ниже."
-  package_execution_allowed_after_per_session_preflight: true
+  state_semantics: "Поля scientific_campaign_started и scientific_sessions_executed — снимок, встроенный в официальный пакет до исполнения; они не описывают исторически сообщённые попытки v4."
+  package_execution_allowed_after_per_session_preflight: false
+  package_declared_snapshot:
+    campaign_started: false
+    completed_sessions: 0
+    interpretation: "Встроенное состояние JSON до исполнения, не операционная история"
   historical_operational_report:
-    source: "Внешний аудит; operational records отсутствуют в tracked repository"
+    source: "Внешний аудит; операционные записи отсутствуют среди отслеживаемых Git-файлов"
     campaign_started: true
     attempt_count: 2
     completed_sessions: 0
+    retry_limit: 2
+    retry_limit_exhausted: true
     unit_2_started: false
     failure_code: processing_integrity_failure
     zeek_exit_code: 127
     independently_verified: false
-    interpretation: "Исторически сообщённое состояние, не текущее состояние пакета v4 и не самостоятельно проверенный результат"
-  next_allowed_action: "Только безопасная проверка и per-session preflight; научный запуск требует отдельного явного разрешения"
+    interpretation: "Исторически сообщённое операционное состояние; оно не подтверждено локальными журналами, но означает терминальное исчерпание повторов v4"
+  v4_allowed_actions:
+  - read_only_audit
+  - static_validation
+  - artifact_inspection
+  - hash_verification
+  - contract_inspection
+  future_superseding_package_prerequisites_before_session_preflight:
+  - new_output_root
+  - new_secret_root
+  - fresh_campaign_initialization
+  - zero_byte_new_ledger
+  - exact_unit_1_selected
+  next_allowed_action: "Сначала выпустить будущий заменяющий пакет; для v4 разрешены только проверки без записи"
+  label_unlock_sequence:
+    contract_prerequisites:
+    - frozen_predictions
+    - frozen_prediction_row_digest
+    - frozen_exclusion_ledger
+    - authorized_unlock_record
+    then:
+    - labels_unlocked
+    - scientific_metrics_calculated
 stages:
 - version: v0.3.1
   title: Базовая оценка

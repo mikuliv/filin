@@ -429,6 +429,36 @@ def link_findings(path: Path, root: Path = ROOT) -> tuple[list[str], list[str], 
     return broken, anchors, escapes
 
 
+def portable_link_audit(
+    path: Path,
+    root: Path = ROOT,
+    tracked_targets: set[str] | None = None,
+    generated_targets: dict[str, str] | None = None,
+) -> list[dict[str, str]]:
+    """Классифицирует локальные цели с точки зрения чистого Git checkout."""
+    tracked = tracked_targets if tracked_targets is not None else set(tracked_files(root, include_untracked=False))
+    generated = generated_targets or {}
+    rows: list[dict[str, str]] = []
+    for raw, destination, anchor in local_links(path, root):
+        if destination is None:
+            rows.append({"link": raw, "kind": "repository_escape", "target": ""})
+            continue
+        relative = destination.relative_to(root.resolve()).as_posix()
+        is_tracked = relative in tracked or any(name.startswith(relative.rstrip("/") + "/") for name in tracked)
+        if not destination.exists():
+            kind = "broken"
+        elif is_tracked:
+            kind = "tracked"
+        elif relative in generated and generated[relative]:
+            kind = "generated"
+        else:
+            kind = "local_only"
+        rows.append({"link": raw, "kind": kind, "target": relative, "producer": generated.get(relative, "")})
+        if kind in {"tracked", "generated"} and anchor and destination.suffix.casefold() == ".md" and anchor not in github_anchors(destination.read_text(encoding="utf-8")):
+            rows.append({"link": raw, "kind": "missing_anchor", "target": relative})
+    return rows
+
+
 def category_for(relative: str, metadata: dict[str, Any], protected: bool) -> str:
     if protected:
         return "Frozen evidence"
@@ -461,9 +491,11 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
     outgoing: dict[str, list[str]] = defaultdict(list)
     incoming: Counter[str] = Counter()
     link_cache: dict[str, tuple[list[str], list[str], list[str]]] = {}
+    portable_cache: dict[str, list[dict[str, str]]] = {}
     for path in documents:
         relative = path.relative_to(root).as_posix()
         link_cache[relative] = link_findings(path, root)
+        portable_cache[relative] = portable_link_audit(path, root)
         for _, destination, _ in local_links(path, root):
             if destination and destination.exists():
                 try:
@@ -494,6 +526,7 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
         stale_architecture = relative in {"docs/modeling.md", "docs/incident-workflow.md", "docs/mitre-mapping.md", "docs/sigma-generation.md"} and lifecycle != "redirect"
         stale_command = "1309 passed" in lower or bool(ABSOLUTE_RE.search(text))
         broken, broken_anchors, escapes = link_cache[relative]
+        portable = portable_cache[relative]
         actual_action = "created" if before is None else "unchanged" if before == after else "rewritten"
         if lifecycle == "redirect" and actual_action != "unchanged":
             actual_action = "redirected"
@@ -516,6 +549,9 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
             "current_stage_mentioned": "v0.4.7" if "v0.4.7" in text else "v0.3.19" if "v0.3.19" in text else "v0.3.18" if "v0.3.18" in text else "",
             "stale_status": stale_status, "stale_architecture": stale_architecture, "stale_command": stale_command,
             "terminology_findings": [], "broken_links": broken + escapes, "broken_anchors": broken_anchors,
+            "tracked_link_count": sum(x["kind"] == "tracked" for x in portable),
+            "generated_link_count": sum(x["kind"] == "generated" for x in portable),
+            "local_only_link_count": sum(x["kind"] == "local_only" for x in portable),
             "incoming_link_count": incoming[relative], "outgoing_link_count": len(outgoing[relative]),
             "recommended_action": "preserve" if is_protected else "redirect" if stale_architecture else "maintain",
             "actual_action": actual_action, "sha256_before": before, "sha256_after": after,
@@ -530,5 +566,8 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
         "redirect_count": sum(row["lifecycle_status"] == "redirect" for row in rows),
         "broken_link_count": sum(len(row["broken_links"]) for row in rows),
         "broken_anchor_count": sum(len(row["broken_anchors"]) for row in rows),
+        "tracked_link_count": sum(row["tracked_link_count"] for row in rows),
+        "generated_link_count": sum(row["generated_link_count"] for row in rows),
+        "local_only_link_count": sum(row["local_only_link_count"] for row in rows),
     }
     return rows, summary

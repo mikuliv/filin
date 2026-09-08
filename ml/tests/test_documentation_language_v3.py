@@ -54,6 +54,20 @@ def test_narrative_english_boundary(text, rejected):
     assert bool(findings) is rejected
 
 
+@pytest.mark.parametrize(("text", "rejected"), [
+    ("Current operational records are stored separately.", True),
+    ("Исторические operational records хранятся отдельно.", True),
+    ("Исторические операционные записи хранятся отдельно.", False),
+])
+def test_operational_records_language_boundary(text, rejected):
+    assert bool(analyze_text(text, "current_human_document", ".md")) is rejected
+
+
+def test_generated_current_english_is_scanned():
+    findings = analyze_text("Current operational records are stored separately.", "generated_document", ".md")
+    assert findings
+
+
 def test_protected_evidence_is_not_edited():
     data = json.loads(Path("docs/audit/protected_documentation_v2.json").read_text(encoding="utf-8"))
     assert data["files"]

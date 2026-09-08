@@ -86,7 +86,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 | `run-technical-smoke` | `--confirm-disposable`, `--output-dir` | Создаёт временные сетевые данные |
 | `run-factor-orthogonality-smoke` | `--confirm-disposable`, `--output-dir`, необязательный `--diagnostic-first-only` | Создаёт временные диагностические данные |
 
-`run-one-phase1-session` нельзя копировать в обычную проверку и нельзя направлять его результат в tracked repository. Восстановление не запускает поведение второй раз. Ни одна из этих команд не была запущена в рамках исправления документации.
+`run-one-phase1-session` нельзя копировать в обычную проверку и нельзя направлять его результат в отслеживаемую область репозитория. Восстановление не запускает поведение второй раз. Ни одна из этих команд не была запущена в рамках исправления документации.
 
 ## Лабораторная консоль
 

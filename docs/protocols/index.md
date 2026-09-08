@@ -5,9 +5,9 @@
 
 <!-- generated:start -->
 
-## Frozen protocols и revisions
+## Зафиксированные протоколы и редакции
 
-| Этап | Revision | Статус | Путь | Контрольная сумма |
+| Этап | Редакция | Статус | Путь | Контрольная сумма |
 |---|---|---|---|---|
 | `v0.4.0` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_0_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_0_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.4.1` | `1` | official/revision | [`incident_reconstruction/protocols/v0_4_1_protocol_r1.yaml`](../../incident_reconstruction/protocols/v0_4_1_protocol_r1.yaml) | SHA в manifest/detached registry при наличии |
@@ -40,6 +40,6 @@
 | `v0.3.17` | `8` | official | [`ml/protocols/v0_3_17_protocol_r8.yaml`](../../ml/protocols/v0_3_17_protocol_r8.yaml) | SHA в manifest/detached registry при наличии |
 | `v0.3.18` | `1/legacy` | official | [`ml/protocols/v0_3_18_external_review_protocol.yaml`](../../ml/protocols/v0_3_18_external_review_protocol.yaml) | SHA в manifest/detached registry при наличии |
 
-Protocol определяет stage до запуска; поздний report не изменяет его bytes.
+Протокол определяет этап до запуска; более поздний отчёт не изменяет его байты.
 
 <!-- generated:end -->

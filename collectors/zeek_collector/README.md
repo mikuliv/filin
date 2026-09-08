@@ -10,7 +10,7 @@
 
 ## Основные файлы, входы и выходы
 
-Parser и normalization code принимают controlled Zeek fixtures и возвращают typed records.
+Синтаксический анализатор и код нормализации принимают контролируемые примеры Zeek и возвращают типизированные записи.
 
 ## Границы и запреты
 
@@ -24,4 +24,4 @@ python -m pytest collectors/zeek_collector -q
 
 ## Источники истины
 
-Code, tests и [Сборщики overview](../README.md).
+Код, тесты и [обзор сборщиков](../README.md).

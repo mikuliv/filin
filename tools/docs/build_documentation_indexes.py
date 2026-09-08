@@ -7,7 +7,7 @@ from pathlib import Path
 
 import yaml
 
-from tools.docs.documentation_v2 import ROOT, stage_from_path
+from tools.docs.documentation_v2 import ROOT, stage_from_path, tracked_files
 
 
 HEADER = """# {title}
@@ -39,7 +39,7 @@ def build_contracts(root: Path) -> str:
     paths = sorted({p for pattern in patterns for p in root.rglob(pattern) if "runtime" not in p.parts})
     lines = [HEADER.format(title="Индекс контрактов", authority="contract_index", sources="  - repository schemas"),
              "## Все версионированные схемы", "",
-             "| Schema ID | Version/этап | Подсистема | Статус | Путь | Consumer/замена |",
+             "| Идентификатор схемы | Версия/этап | Подсистема | Статус | Путь | Потребитель/замена |",
              "|---|---|---|---|---|---|"]
     for path in paths:
         rel = path.relative_to(root).as_posix()
@@ -77,10 +77,10 @@ def build_protocols(root: Path, ml: bool = False) -> str:
     title = "Протоколы проекта" if not ml else "Индекс протоколов ML и реконструкции"
     sources = "  - ml/protocols\n  - incident_reconstruction/protocols"
     lines = [HEADER.format(title=title, authority="ml_protocol_index" if ml else "protocol_index", sources=sources),
-             "## Frozen protocols и revisions", "",
-             "| Этап | Revision | Статус | Путь | Контрольная сумма |", "|---|---|---|---|---|",
+             "## Зафиксированные протоколы и редакции", "",
+             "| Этап | Редакция | Статус | Путь | Контрольная сумма |", "|---|---|---|---|---|",
              *protocol_rows(root, out_dir), "",
-             "Protocol определяет stage до запуска; поздний report не изменяет его bytes.", "",
+             "Протокол определяет этап до запуска; более поздний отчёт не изменяет его байты.", "",
              "<!-- generated:end -->", ""]
     return "\n".join(lines)
 
@@ -95,8 +95,9 @@ def report_stages(root: Path) -> list[tuple[str, Path]]:
 
 def report_rows(root: Path, from_dir: Path) -> list[str]:
     rows = []
+    tracked = set(tracked_files(root, include_untracked=False))
     for stage, directory in report_stages(root):
-        files = list(directory.iterdir())
+        files = [p for p in directory.iterdir() if p.is_file() and p.relative_to(root).as_posix() in tracked]
         summary = next((p for p in files if p.is_file() and ("summary" in p.name or p.name == "summary.md")), None)
         policy = next((p for p in files if p.is_file() and "policy_result" in p.name), None)
         manifest = next((p for p in files if p.is_file() and "bundle_manifest" in p.name and p.suffix != ".sha256"), None)
@@ -104,18 +105,18 @@ def report_rows(root: Path, from_dir: Path) -> list[str]:
         limitations = next((p for p in files if p.is_file() and "limitation" in p.name), None)
         def link(path: Path | None, label: str) -> str:
             return f"[{label}]({relative_link(from_dir, path)})" if path else "—"
-        rows.append(f"| `{stage}` | {link(summary, 'summary')} | {link(policy, 'policy')} | {link(manifest, 'manifest')} | {link(semantic, 'semantic SHA')} | {link(limitations, 'limitations')} | frozen stage result |")
+        rows.append(f"| `{stage}` | {link(summary, 'итог')} | {link(policy, 'решение')} | {link(manifest, 'манифест')} | {link(semantic, 'семантическая SHA')} | {link(limitations, 'ограничения')} | зафиксированный результат этапа |")
     return rows
 
 
 def build_reports(root: Path, ml: bool = False) -> str:
     out_dir = root / ("ml/reports" if ml else "docs/reports")
-    title = "Отчёты и evidence bundles" if not ml else "Индекс ML и laboratory reports"
+    title = "Отчёты и комплекты подтверждающих материалов" if not ml else "Индекс отчётов ML и лабораторной линии"
     lines = [HEADER.format(title=title, authority="ml_report_index" if ml else "report_index", sources="  - ml/reports"),
              "## Этапы v0.3.x и v0.4.x", "",
-             "| Этап | Итог | Policy | Manifest | Semantic SHA | Ограничения | Статус |",
+             "| Этап | Итог | Решение | Манифест | Семантическая SHA | Ограничения | Статус |",
              "|---|---|---|---|---|---|---|", *report_rows(root, out_dir), "",
-             "Точный result определяется policy. Отсутствие отдельного summary не меняет machine-readable evidence.", "",
+             "Точный результат определяется файлом решения. Отсутствие отдельного итога не меняет машиночитаемые подтверждающие материалы.", "",
              "<!-- generated:end -->", ""]
     return "\n".join(lines)
 

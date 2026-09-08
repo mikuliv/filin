@@ -12,7 +12,7 @@ from pathlib import Path
 from tools.docs.run_russian_narrative_campaign import run as run_campaign
 from tools.docs.validate_russian_narrative import ROOT, OFFICIAL, analyze_text, classify, protected_paths, tracked_paths
 
-START = "50b97243df84d9f924f40eb16a145a1e1f7c5a2a"
+START = "c43aa593ace445df0c9d66a99ee4bfec84bb8450"
 TEXT_SUFFIXES = {".md", ".rst", ".adoc", ".txt", ".html", ".jinja", ".j2", ".json", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".py", ".js", ".ts", ".ps1", ".sh", ".css", ".csv"}
 
 
@@ -55,7 +55,7 @@ def line_ending(data: bytes) -> str:
 
 
 def counts(text: str, kind: str, suffix: str, human_facing: bool) -> dict[str, int]:
-    findings = analyze_text(text, kind, suffix) if human_facing and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "generated_document", "non_text_or_non_human"} else []
+    findings = analyze_text(text, kind, suffix) if human_facing and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "non_text_or_non_human"} else []
     return {
         "latin_token_count": len(re.findall(r"\b[A-Za-z][A-Za-z0-9_-]*\b", text)),
         "narrative_english_count": sum(item.code.startswith(("narrative_english", "english_heading")) for item in findings),
@@ -98,6 +98,10 @@ def summary(rows: list[dict]) -> dict:
         "current_document_count": sum(x["lifecycle_status"] == "current" for x in rows),
         "historical_document_count": sum(x["lifecycle_status"] == "historical" for x in rows),
         "protected_document_count": sum(x["protected"] for x in rows), "generated_document_count": sum(x["generated"] for x in rows),
+        "current_documents_scanned_for_language": sum(x["human_facing"] and x["file_kind"] not in {"frozen_evidence", "official_standard_text", "historical_document", "generated_document", "non_text_or_non_human"} for x in rows),
+        "generated_current_documents_scanned_for_language": sum(x["human_facing"] and x["file_kind"] == "generated_document" for x in rows),
+        "generated_documents_excluded": sum(x["generated"] and not x["human_facing"] for x in rows),
+        "historical_documents_excluded": sum(x["file_kind"] == "historical_document" for x in rows),
         "files_with_narrative_english_before": sum(x["before"]["narrative_english_count"] > 0 for x in rows),
         "files_with_narrative_english_after": sum(x["narrative_english_count"] > 0 for x in rows),
         "narrative_english_occurrences_before": sum(x["before"]["narrative_english_count"] for x in rows),
@@ -117,6 +121,8 @@ def render(data: dict) -> str:
     s=data["summary"]
     lines=["# Инвентарь русскоязычной документации v3", "", "Инвентарь создан командой `python -m tools.docs.build_russian_language_inventory`.", "", "## Сводка", "",
            f"- Проверено текстовых файлов: **{s['total_text_file_count']}**.", f"- Человекочитаемых файлов: **{s['total_human_facing_file_count']}**.",
+           f"- Текущих документов проверено языковым анализом: **{s['current_documents_scanned_for_language']}**; создаваемых текущих документов: **{s['generated_current_documents_scanned_for_language']}**.",
+           f"- Исторических документов исключено: **{s['historical_documents_excluded']}**; создаваемых нечеловекочитаемых файлов исключено: **{s['generated_documents_excluded']}**.",
            f"- Переписано файлов: **{s['files_rewritten_count']}**.", f"- Английских повествовательных вхождений: **{s['narrative_english_occurrences_before']} → {s['narrative_english_occurrences_after']}**.",
            f"- Смешанных конструкций: **{s['mixed_compounds_before']} → {s['mixed_compounds_after']}**.",
            f"- Непояснённых идентификаторов: **{s['unexplained_identifiers_before']} → {s['unexplained_identifiers_after']}**.",

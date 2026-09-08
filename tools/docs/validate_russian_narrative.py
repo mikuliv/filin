@@ -60,6 +60,8 @@ FORBIDDEN_PHRASES = {
     "shadow mode": "narrative_english",
     "forced winner": "narrative_english",
     "test oracle": "narrative_english",
+    "operational records": "narrative_english",
+    "are stored separately": "narrative_english",
 }
 NARRATIVE_WORDS = {
     "workflow", "runner", "holdout", "screening", "backend", "production", "proposal",
@@ -275,8 +277,14 @@ def scan_repository(root: Path = ROOT) -> dict:
     protected = protected_paths(root)
     findings = []
     scanned = 0
+    generated_scanned = 0
+    generated_excluded = 0
+    historical_excluded = 0
     for path in tracked_paths(root):
         kind, human = classify(path, protected)
+        generated_excluded += int(kind == "generated_document" and not human)
+        if kind == "historical_document":
+            historical_excluded += 1
         if not human or kind in {"frozen_evidence", "official_standard_text", "historical_document"}:
             continue
         try:
@@ -284,10 +292,17 @@ def scan_repository(root: Path = ROOT) -> dict:
         except (UnicodeDecodeError, OSError):
             continue
         scanned += 1
+        generated_scanned += int(kind == "generated_document")
         for finding in analyze_text(text, kind, Path(path).suffix.lower()):
             findings.append({"path": path, **asdict(finding)})
     return {"schema_version": "filin_russian_narrative_validation_v3", "passed": not findings,
-            "files_scanned_count": scanned, "finding_count": len(findings), "findings": findings}
+            "files_scanned_count": scanned, "current_documents_scanned": scanned - generated_scanned,
+            "generated_current_documents_scanned": generated_scanned,
+            "generated_current_documents_excluded": generated_excluded,
+            "historical_documents_excluded": historical_excluded,
+            "narrative_english_findings": sum(x["code"].startswith(("narrative_english", "english_heading")) for x in findings),
+            "mixed_language_findings": sum(x["code"].startswith("mixed_compound") for x in findings),
+            "finding_count": len(findings), "findings": findings}
 
 
 def main() -> int:

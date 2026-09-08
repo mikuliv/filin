@@ -11,5 +11,5 @@
 
 Во время выполнения проверяются commentary/status file, container health, capture receipts, receiver progress, backlog и resource cadence. Raw среда выполнения не добавляется в Git. Planned maintenance выполняется только по Зафиксировано offsets. Нештатная ошибка не исправляется на работающей кампании: campaign сохраняется и инвалидируется согласно protocol.
 
-После completion запускаются finalizer, strict комплект validator, behavioral tests, semantic documentation validator, артефакт exclusion и Проверка компиляции. Только санитарные `ml/reports/v0_3_17` добавляются принудительно, поскольку общий reports namespace игнорируется.
+После завершения запускаются финализатор, строгий комплект валидаторов, поведенческие тесты, семантическая проверка документации, проверка исключений и компиляция. Только очищенные `ml/reports/v0_3_17` добавляются принудительно, поскольку общее пространство отчётов игнорируется.
 

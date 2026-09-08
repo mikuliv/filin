@@ -9,21 +9,30 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.docs.documentation_v2 import ROOT, link_findings, tracked_markdown  # noqa: E402
+from tools.docs.documentation_v2 import ROOT, portable_link_audit, tracked_markdown  # noqa: E402
 
 
 def validate(root: Path = ROOT) -> dict:
     findings = []
-    for path in tracked_markdown(root):
-        broken, anchors, escapes = link_findings(path, root)
+    counts = {"tracked": 0, "generated": 0, "local_only": 0, "broken": 0, "missing_anchor": 0, "repository_escape": 0}
+    markdown = tracked_markdown(root, include_untracked=False)
+    for path in markdown:
         relative = path.relative_to(root).as_posix()
-        findings.extend({"path": relative, "kind": kind, "link": link} for kind, links in (
-            ("broken", broken), ("missing_anchor", anchors), ("repository_escape", escapes)
-        ) for link in links)
+        for row in portable_link_audit(path, root):
+            counts[row["kind"]] += 1
+            if row["kind"] not in {"tracked", "generated"}:
+                findings.append({"path": relative, **row})
     return {
-        "schema_version": "filin_documentation_link_validation_v1",
+        "schema_version": "filin_documentation_link_validation_v2",
         "valid": not findings,
-        "checked_markdown": len(tracked_markdown(root)),
+        "repository_portable": not findings,
+        "checked_markdown": len(markdown),
+        "tracked_link_count": counts["tracked"],
+        "generated_link_count": counts["generated"],
+        "local_only_link_count": counts["local_only"],
+        "broken_link_count": counts["broken"],
+        "broken_anchor_count": counts["missing_anchor"],
+        "repository_escape_count": counts["repository_escape"],
         "finding_count": len(findings),
         "findings": findings,
     }

@@ -7,7 +7,7 @@
 
 ## Все версионированные схемы
 
-| Schema ID | Version/этап | Подсистема | Статус | Путь | Consumer/замена |
+| Идентификатор схемы | Версия/этап | Подсистема | Статус | Путь | Потребитель/замена |
 |---|---|---|---|---|---|
 | `filin://contracts/shadow_event_v1` | `unknown` | `collectors` | версионированный/исторический | [`collectors/shadow/contracts/shadow_event_v1.schema.json`](../../collectors/shadow/contracts/shadow_event_v1.schema.json) | сборщик/выполнение |
 | `filin://contracts/shadow_event_v2` | `unknown` | `collectors` | текущий | [`collectors/shadow/contracts/shadow_event_v2.schema.json`](../../collectors/shadow/contracts/shadow_event_v2.schema.json) | сборщик/выполнение |
