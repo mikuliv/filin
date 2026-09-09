@@ -18,7 +18,7 @@
 
 ## Среда выполнения, передача и длительная кампания
 
-`v0.3.16–v0.3.17.1`: isolated staging transport, long local rehearsal и corrective
+`v0.3.16–v0.3.17.1`: изолированный промежуточный транспорт, длительная локальная репетиция и корректирующий
 audit. [v0.3.16](experiments/v0_3_16.md), [v0.3.17](experiments/v0_3_17.md),
 [v0.3.17.1](experiments/v0_3_17_1.md).
 
@@ -32,12 +32,12 @@ audit. [v0.3.16](experiments/v0_3_16.md), [v0.3.17](experiments/v0_3_17.md),
 
 - [v0.4.0](experiments/v0_4_0.md) — incident reconstruction;
 - [v0.4.1](experiments/v0_4_1.md) — temporal reconstruction;
-- [v0.4.2](experiments/v0_4_2.md) — structural relations и гипотезы.
+- [v0.4.2](experiments/v0_4_2.md) — структурные отношения и гипотезы.
 
 ## Консоль и операторский цикл
 
 - [v0.4.3](experiments/v0_4_3.md) — localhost console;
 - [v0.4.3.1](experiments/v0_4_3_1.md) — UI revision;
-- [v0.4.4 summary](../ml/reports/v0_4_4/summary.md) — 12 cases и persistent рассмотрение.
+- [сводка v0.4.4](../ml/reports/v0_4_4/summary.md) — 12 случаев и сохраняемое рассмотрение.
 
-Полные навигационные таблицы: [protocols](protocols/index.md) и [reports](reports/index.md).
+Полные навигационные таблицы: [протоколы](protocols/index.md) и [отчёты](reports/index.md).

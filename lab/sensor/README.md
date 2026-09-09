@@ -10,14 +10,14 @@
 
 ## Что реализовано
 
-Capture-sidecar пассивно наблюдает namespace `traffic-client`; PCAP хранится в Docker named volume. Offline Zeek создаёт logs, parser и normalizer формируют sensor events, а markers задают интервалы корреляции.
+Вспомогательный контейнер захвата пассивно наблюдает пространство имён `traffic-client`; PCAP хранится в именованном томе Docker. Автономный Zeek создаёт журналы, синтаксический анализатор и нормализатор формируют события датчика, а маркеры задают интервалы корреляции.
 
 ## Основные файлы
 
 - `capture_preflight.py` — проверка захвата и протокола маркера;
-- `zeek_log_parser.py`, `normalize_zeek_events.py` — обработка Zeek logs;
-- `correlate_sensor_events.py` — marker-aware correlation;
-- `run_v0_3_sensor_stage.py` — stage модуль запуска.
+- `zeek_log_parser.py`, `normalize_zeek_events.py` — обработка журналов Zeek;
+- `correlate_sensor_events.py` — корреляция с учётом маркеров;
+- `run_v0_3_sensor_stage.py` — модуль запуска этапа.
 
 ## Входные данные и выходные данные
 
@@ -29,11 +29,11 @@ Capture-sidecar пассивно наблюдает namespace `traffic-client`; 
 
 ## Проверки
 
-Markers реально проходят сеть, но исключаются из aggregation. Correlation не использует labels и не расширяет tolerance до минут.
+Маркеры действительно проходят через сеть, но исключаются из агрегирования. Корреляция не использует метки и не расширяет допуск до минут.
 
 ## Ограничения
 
-Наблюдаемость определяется топологией и видимостью Zeek logs.
+Наблюдаемость определяется топологией и видимостью журналов Zeek.
 
 ## Связанные документы
 

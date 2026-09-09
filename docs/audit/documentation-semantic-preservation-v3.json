@@ -1,6 +1,6 @@
 {
   "schema_version": "filin_documentation_semantic_preservation_v3",
-  "starting_head": "50b97243df84d9f924f40eb16a145a1e1f7c5a2a",
+  "starting_head": "731e00f50e2261b9a73672d693d55eb61697eb3a",
   "scientific_claim_changes": 0,
   "stage_status_changes": 0,
   "permission_or_prohibition_changes": 0,
@@ -15,7 +15,7 @@
     "active_candidate": "v03154:65a3dd912d845bc1",
     "candidate_artifact_sha256": "65a3dd912d845bc1d6e44247bb8b98fe228a7a4e0496d56a73857febbaa4df87",
     "candidate_registry_sha256_after": "31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d",
-    "backend_tree_after": "04218a4eb01534950efd5f7d6390f1a575cacbc8"
+    "backend_tree_after": "168422b7e9edbca3075081859cf16d28ad2decba"
   },
   "passed": true
 }

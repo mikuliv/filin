@@ -1,3 +1,3 @@
 # `staging_event_batch_v1`
 
-HTTPS/mTLS `POST /reference-receiver/v1/event-batches`, до 50 неизменённых событий одного кандидата. Контракт связывает attempt, connector instance, реестр commitment, body hash и предыдущий batch commitment.
+HTTPS/mTLS `POST /reference-receiver/v1/event-batches`, до 50 неизменённых событий одного кандидата. Контракт связывает попытку, экземпляр соединительного модуля, предварительную фиксацию реестра, контрольную сумму тела и предварительную фиксацию предыдущего пакета.

@@ -12,6 +12,6 @@
 
 ## Предыдущий проход
 
-[Старая inventory](documentation_inventory.md) и
-[refactor report](documentation_refactor_report.md) относятся к состоянию после
-`v0.3.18` и являются исторический inputs, а не текущими реестрами.
+[Старая опись](documentation_inventory.md) и
+[отчёт о переработке](documentation_refactor_report.md) относятся к состоянию после
+`v0.3.18` и являются историческими входными материалами, а не текущими реестрами.

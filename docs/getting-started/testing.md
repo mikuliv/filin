@@ -22,7 +22,7 @@ python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_docume
 
 ## Baseline полной регрессии
 
-Не используется обещание «0 failed» без привязки к конкретному окружению. Авторитетный baseline хранит четыре поля: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, `known_baseline_change=historical_v03155_result_changed`. Перед новым запуском фиксируются точные `passed`, `failed`, `skipped`, предупреждения и версии зависимостей. Один разрешённый baseline не скрывает новых ошибок.
+Не используется обещание «0 сбоев» без привязки к конкретному окружению. Авторитетное исходное состояние хранит четыре поля: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, `known_baseline_change=historical_v03155_result_changed`. Перед новым запуском фиксируются точные количества пройденных, непройденных и пропущенных тестов, предупреждения и версии зависимостей. Одно разрешённое исходное отклонение не скрывает новых ошибок.
 
 ## Лабораторная консоль
 

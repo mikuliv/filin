@@ -92,7 +92,30 @@ NARRATIVE_WORDS = {
     "historical", "payload", "prediction", "checkpoint", "mapping", "input",
     "output", "manual", "quick", "records", "scored", "window", "coordinator",
     "immutable", "row", "delivery", "acknowledgement", "owner", "subsystem",
+    "version", "tags", "guard", "image", "digest", "external", "distribution",
+    "license", "notices", "artifacts", "history", "records", "datasets", "column",
 }
+ALLOWED_TECHNOLOGIES = {
+    "Docker", "Zeek", "Suricata", "Python", "Git", "GitHub", "Windows", "Linux",
+    "Fedora", "FastAPI", "Uvicorn", "Pydantic", "PyYAML", "NumPy", "pandas",
+    "requests", "httpx", "scikit-learn", "joblib", "ONNX", "Nginx", "Elasticsearch",
+    "Kibana", "Filebeat", "tcpdump", "libpcap", "Jinja", "Scapy", "Elastic", "Filin",
+    "Anomalyzer", "CPython", "Debian", "Alpine", "Compose", "Sigma", "Apache", "MIT",
+    "SQLite", "PowerShell", "VMware", "Logstash", "CICIDS", "imbalanced-learn",
+    "matplotlib", "seaborn", "torch", "Engine", "Desktop",
+    "JavaScript", "XML", "Mozilla", "Public", "License", "Creative", "Commons",
+    "Attribution", "International", "Foundation", "Linux", "HistGradientBoosting", "OpenMP", "CUDA", "Ryzen", "Ti", "pytest", "apt",
+}
+ALLOWED_ABBREVIATIONS = {
+    "JSON", "YAML", "PCAP", "CLI", "API", "HTTP", "HTTPS", "DNS", "TCP", "UDP",
+    "HMAC", "SHA", "CSV", "TSV", "HTML", "CSS", "JS", "ML", "SIEM", "MITRE",
+    "ATT", "SPDX", "SBOM", "REUSE", "ASGI", "FPR", "GPL", "MPL", "CC", "BSD",
+    "DCO", "ELv", "UI", "ID", "IP", "RAM", "CPU", "GPU", "OS", "PSF", "JSONL",
+    "CI", "ACL", "HEAD", "TLS", "mTLS", "WAL", "RSS", "VMS", "UTC", "UID", "URI", "SSH",
+    "ACK", "MiB", "UTF", "BOM", "GET", "POST", "MAD", "HGB", "RTX", "CC-BY",
+}
+ALLOWED_CONTEXT_TERMS = {"Phase", "macro", "fail-closed"}
+ALLOWED_NARRATIVE_LATIN = {value.casefold() for value in ALLOWED_TECHNOLOGIES | ALLOWED_ABBREVIATIONS | ALLOWED_CONTEXT_TERMS}
 MIXED_RE = re.compile(r"(?iu)\b(?:[a-z]+-[а-яё][а-яё-]*|[а-яё]+-[a-z][a-z-]*)\b")
 ALLOWED_MIXED_COMPONENTS = {
     "docker", "dns", "git", "http", "mac", "ml", "scapy", "sha", "tcp", "udp", "yaml", "zeek", "z",
@@ -100,6 +123,7 @@ ALLOWED_MIXED_COMPONENTS = {
 IDENTIFIER_RE = re.compile(r"(?<![`\w])([a-z][a-z0-9]*(?:_[a-z0-9]+)+)(?![`\w])")
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
 ENGLISH_ONLY_RE = re.compile(r"^[\s#|>*_-]*[A-Za-z][A-Za-z0-9 &'()/:+.,-]{2,}[\s|]*$")
+LATIN_WORD_RE = re.compile(r"(?<![\w./\\])([A-Za-z]+(?:-[A-Za-z]+)*)(?![\w./\\])")
 
 
 @dataclass(frozen=True)
@@ -215,10 +239,22 @@ def analyze_text(text: str, file_kind: str = "current_human_document", suffix: s
             if match.group(0).split("-", 1)[0].casefold() in ALLOWED_MIXED_COMPONENTS:
                 continue
             findings.append(Finding("mixed_compound", number, match.group(0), "Смешанное русско-английское слово недопустимо."))
-        for match in re.finditer(r"\b[A-Za-z][A-Za-z-]*\b", line):
+        latin_matches = list(LATIN_WORD_RE.finditer(line))
+        unallowed = [match for match in latin_matches if len(match.group(0)) > 1 and match.group(0).casefold() not in ALLOWED_NARRATIVE_LATIN]
+        for match in unallowed:
             token = match.group(0)
-            if token.lower() in NARRATIVE_WORDS:
-                findings.append(Finding("narrative_english_word", number, token, "В повествовательном тексте требуется русский термин."))
+            if token.casefold() in NARRATIVE_WORDS or (
+                file_kind != "current_machine_document"
+                and CYRILLIC_RE.search(line)
+                and token[0].islower()
+                and len(token) >= 3
+            ):
+                findings.append(Finding("narrative_english_word", number, token, "В повествовательном тексте требуется русский термин или оформление как точного идентификатора."))
+        # Общее правило не зависит от заранее перечисленных слов: два и более
+        # неразрешённых латинских слова в русской строке считаются смешанной прозой.
+        if file_kind != "current_machine_document" and CYRILLIC_RE.search(line) and len(unallowed) >= 2:
+            literal = " ".join(match.group(0) for match in unallowed)
+            findings.append(Finding("narrative_english_sequence", number, literal, "В русском предложении обнаружена неразрешённая английская последовательность."))
         if ENGLISH_ONLY_RE.match(line.strip()) and not re.search(r"[/\\_.=]", line):
             findings.append(Finding("english_heading_or_label", number, line.strip(), "Заголовок или подпись должны быть русскими."))
         if file_kind != "current_machine_document":
@@ -245,56 +281,77 @@ def protected_paths(root: Path = ROOT) -> set[str]:
     return {row["path"] for row in payload["files"]}
 
 
-def _inventory_lifecycle(path: str) -> str:
-    inventory = ROOT / "docs/audit/documentation_inventory_v2.json"
+def _inventory_row(path: str, root: Path = ROOT) -> dict:
+    inventory = root / "docs/audit/documentation_inventory_v2.json"
     if not inventory.is_file():
-        return ""
+        return {}
     try:
         value = json.loads(inventory.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, json.JSONDecodeError):
-        return ""
+        return {}
     for row in value.get("documents", []):
         if isinstance(row, dict) and row.get("path") == path:
-            return str(row.get("lifecycle_status", ""))
-    return ""
+            return row
+    return {}
 
 
-def classify(path: str, protected: set[str]) -> tuple[str, bool]:
+def _inventory_lifecycle(path: str, root: Path = ROOT) -> str:
+    return str(_inventory_row(path, root).get("lifecycle_status", ""))
+
+
+def classification_details(path: str, protected: set[str], root: Path = ROOT) -> dict:
+    """Классифицирует файл; опись имеет приоритет над эвристикой пути."""
     suffix = Path(path).suffix.lower()
     if path in OFFICIAL:
-        return "official_standard_text", False
+        return {"kind": "official_standard_text", "human": False, "source": "official_allowlist", "lifecycle": "frozen"}
     if path in protected:
-        return "frozen_evidence", False
+        return {"kind": "frozen_evidence", "human": False, "source": "protected_inventory", "lifecycle": "frozen"}
+
+    if path.startswith(("docs/audit/documentation_inventory", "docs/audit/protected_documentation", "docs/audit/russian-language-inventory", "docs/audit/documentation-semantic-preservation", "docs/reports/documentation-language-maintenance-v3", "sbom/", "licensing/")) or path == "THIRD_PARTY_NOTICES.md":
+        return {"kind": "generated_document", "human": path in GENERATED_USER_FACING, "source": "generated_registry", "lifecycle": "generated"}
+
+    row = _inventory_row(path, root)
+    if row:
+        lifecycle = str(row.get("lifecycle_status", "current"))
+        generated = bool(row.get("generated")) or lifecycle == "generated"
+        if generated:
+            return {"kind": "generated_document", "human": path in GENERATED_USER_FACING, "source": "documentation_inventory", "lifecycle": "generated"}
+        if lifecycle in {"historical", "frozen", "superseded"}:
+            return {"kind": "historical_document", "human": suffix in HUMAN_SUFFIXES, "source": "documentation_inventory", "lifecycle": lifecycle}
+        if suffix in MACHINE_SUFFIXES:
+            kind, human = "current_machine_document", True
+        elif suffix in SOURCE_SUFFIXES or path.startswith("lab_console/templates/"):
+            kind, human = "source_code_with_human_text", path.startswith("lab_console/")
+        elif suffix in HUMAN_SUFFIXES or Path(path).name.lower().startswith("readme"):
+            kind, human = "current_human_document", True
+        else:
+            kind, human = "non_text_or_non_human", False
+        return {"kind": kind, "human": human, "source": "documentation_inventory", "lifecycle": lifecycle}
+
     if path in GENERATED_USER_FACING:
-        return "generated_document", True
+        return {"kind": "generated_document", "human": True, "source": "path_fallback", "lifecycle": "generated"}
     if path.startswith(("docs/audit/documentation_inventory", "docs/audit/protected_documentation", "docs/audit/russian-language-inventory", "docs/audit/documentation-semantic-preservation", "docs/reports/documentation-language-maintenance-v3", "sbom/", "licensing/")) or path in {
         "THIRD_PARTY_NOTICES.md", "docs/contracts/index.md", "docs/protocols/index.md", "docs/reports/index.md",
     }:
-        return "generated_document", False
+        return {"kind": "generated_document", "human": False, "source": "path_fallback", "lifecycle": "generated"}
     if path.startswith(("backend/", "ml/reports/", "ml/protocols/", "ml/experiments/", "ml/audits/", "lab_console/contracts/", "docs/history/", "docs/audits/")):
-        return "historical_document", suffix in HUMAN_SUFFIXES
-    if path in EXPLICIT_HISTORICAL_DOCUMENTS or (
-        path.startswith("docs/experiments/")
-        and (
-            Path(path).name.startswith(("v0_", "independent_", "next_"))
-            or Path(path).name == "network_validation_operational_contract_completion.md"
-            or _inventory_lifecycle(path) in {"historical", "frozen"}
-        )
-    ):
-        return "historical_document", suffix in HUMAN_SUFFIXES
-    if path.startswith("docs/status/") and path not in {
-        "docs/status/current-status.md", "docs/status/next-stage.md", "docs/status/confirmed-capabilities.md",
-        "docs/status/prohibited-capabilities.md", "docs/status/version-history.md",
-        "docs/status/laboratory-track-history.md", "docs/status/v0_4_track.yaml",
-    }:
-        return "historical_document", suffix in HUMAN_SUFFIXES
+        return {"kind": "historical_document", "human": suffix in HUMAN_SUFFIXES, "source": "path_fallback", "lifecycle": "historical"}
+    if path in EXPLICIT_HISTORICAL_DOCUMENTS or path.startswith("docs/experiments/"):
+        return {"kind": "historical_document", "human": suffix in HUMAN_SUFFIXES, "source": "path_fallback", "lifecycle": "historical"}
     if suffix in MACHINE_SUFFIXES:
-        return "current_machine_document", True
-    if suffix in SOURCE_SUFFIXES or path.startswith("lab_console/templates/"):
-        return "source_code_with_human_text", path.startswith("lab_console/")
-    if suffix in HUMAN_SUFFIXES or Path(path).name.lower().startswith("readme"):
-        return "current_human_document", True
-    return "non_text_or_non_human", False
+        kind, human = "current_machine_document", False
+    elif suffix in SOURCE_SUFFIXES or path.startswith("lab_console/templates/"):
+        kind, human = "source_code_with_human_text", False
+    elif suffix in HUMAN_SUFFIXES or Path(path).name.lower().startswith("readme"):
+        kind, human = "current_human_document", True
+    else:
+        kind, human = "non_text_or_non_human", False
+    return {"kind": kind, "human": human, "source": "path_fallback", "lifecycle": "current"}
+
+
+def classify(path: str, protected: set[str]) -> tuple[str, bool]:
+    details = classification_details(path, protected)
+    return details["kind"], details["human"]
 
 
 def scan_repository(root: Path = ROOT) -> dict:
@@ -304,12 +361,28 @@ def scan_repository(root: Path = ROOT) -> dict:
     generated_scanned = 0
     generated_excluded = 0
     historical_excluded = 0
+    historical_human = 0
+    historical_machine = 0
+    historical_markdown = 0
+    path_fallback = 0
+    current_inventory_excluded_as_historical = 0
+    excluded = 0
     for path in tracked_paths(root):
-        kind, human = classify(path, protected)
+        details = classification_details(path, protected, root)
+        kind, human = details["kind"], details["human"]
+        path_fallback += int(details["source"] == "path_fallback")
         generated_excluded += int(kind == "generated_document" and not human)
         if kind == "historical_document":
             historical_excluded += 1
+            historical_human += int(Path(path).suffix.lower() in HUMAN_SUFFIXES)
+            historical_machine += int(Path(path).suffix.lower() not in HUMAN_SUFFIXES)
+            historical_markdown += int(Path(path).suffix.lower() == ".md")
+        row = _inventory_row(path, root)
+        current_inventory_excluded_as_historical += int(
+            bool(row) and row.get("lifecycle_status") in {"current", "generated", "redirect"} and kind == "historical_document"
+        )
         if not human or kind in {"frozen_evidence", "official_standard_text", "historical_document"}:
+            excluded += 1
             continue
         try:
             text = (root / path).read_text(encoding="utf-8")
@@ -325,6 +398,14 @@ def scan_repository(root: Path = ROOT) -> dict:
             "user_facing_generated_documents_scanned": generated_scanned,
             "generated_current_documents_excluded": generated_excluded,
             "historical_documents_excluded": historical_excluded,
+            "historical_classified_files": historical_excluded,
+            "historical_human_readable_files": historical_human,
+            "historical_machine_readable_files": historical_machine,
+            "historical_markdown_documents": historical_markdown,
+            "generated_service_files": generated_excluded,
+            "excluded_files": excluded,
+            "path_fallback_classifications": path_fallback,
+            "current_inventory_entries_excluded_as_historical": current_inventory_excluded_as_historical,
             "narrative_english_findings": sum(x["code"].startswith(("narrative_english", "english_heading")) for x in findings),
             "mixed_language_findings": sum(x["code"].startswith("mixed_compound") for x in findings),
             "finding_count": len(findings), "findings": findings}

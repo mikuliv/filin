@@ -7,7 +7,7 @@ from pathlib import Path
 import pytest
 
 from tools.docs.run_russian_narrative_campaign import negative_scenarios, positive_scenarios
-from tools.docs.validate_russian_narrative import analyze_text
+from tools.docs.validate_russian_narrative import analyze_text, classification_details
 
 
 @pytest.mark.parametrize("row", positive_scenarios(), ids=lambda row: row["id"])
@@ -75,6 +75,18 @@ def test_real_mixed_language_examples_are_rejected(text):
 
 
 @pytest.mark.parametrize("text", [
+    "Zeek и Suricata закреплены version tags для CI guard, но ещё не image digest.",
+    "Historical operational records находятся в tracked repository.",
+    "Для каждого scored window coordinator фиксирует immutable row ID и prediction.",
+    "Не допускаются произвольные personal datasets и silent column mapping.",
+    "Перед external distribution следует сохранить license notices и model artifacts.",
+    "Git history должна быть воспроизводимой.",
+])
+def test_final_audit_negative_examples_are_rejected(text):
+    assert analyze_text(text, "current_human_document", ".md")
+
+
+@pytest.mark.parametrize("text", [
     "В журнале хранится поле `execution_token`.",
     "Для анализа используется Zeek.",
     "Результат сохраняется в формате JSON.",
@@ -87,6 +99,30 @@ def test_exact_identifiers_and_technology_names_are_accepted(text):
 def test_generated_current_english_is_scanned():
     findings = analyze_text("Current operational records are stored separately.", "generated_document", ".md")
     assert findings
+
+
+def test_inventory_lifecycle_has_priority_over_path(tmp_path):
+    audit = tmp_path / "docs/audit"
+    audit.mkdir(parents=True)
+    (audit / "documentation_inventory_v2.json").write_text(json.dumps({
+        "documents": [{"path": "docs/status/mainline-history.md", "lifecycle_status": "current", "generated": False}]
+    }), encoding="utf-8")
+    details = classification_details("docs/status/mainline-history.md", set(), tmp_path)
+    assert details == {
+        "kind": "current_human_document", "human": True,
+        "source": "documentation_inventory", "lifecycle": "current",
+    }
+
+
+def test_historical_inventory_entry_remains_excluded(tmp_path):
+    audit = tmp_path / "docs/audit"
+    audit.mkdir(parents=True)
+    (audit / "documentation_inventory_v2.json").write_text(json.dumps({
+        "documents": [{"path": "docs/status/old-report.md", "lifecycle_status": "historical", "generated": False}]
+    }), encoding="utf-8")
+    details = classification_details("docs/status/old-report.md", set(), tmp_path)
+    assert details["kind"] == "historical_document"
+    assert details["source"] == "documentation_inventory"
 
 
 def test_protected_evidence_is_not_edited():

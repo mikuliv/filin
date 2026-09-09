@@ -1,3 +1,3 @@
 # `connector_ingress_ack_v1`
 
-ACK содержит linkage к request, connector instance и durable journal Коммит, а также accepted/duplicate/rejected множества. `durable=true` выдаётся только после успешного journal Коммит.
+ACK содержит связь с запросом, экземпляром соединительного модуля и долговечной фиксацией журнала, а также множества принятых, повторных и отклонённых событий. `durable=true` выдаётся только после успешной фиксации журнала.

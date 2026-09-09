@@ -117,7 +117,7 @@ python -m tools.docs.validate_documentation_cli --strict
 python -m compileall backend collectors incident_reconstruction lab lab_console ml rehearsal staging tools
 ```
 
-Полный регрессионный запуск может зависеть от локальных пакетов и фиксирует фактический baseline; требование «абсолютно ноль ошибок» не используется. Текущая политика: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, известное изменение `historical_v03155_result_changed`. Список безопасных тестов и интерпретация результатов: [тестирование](docs/getting-started/testing.md).
+Полный регрессионный запуск может зависеть от локальных пакетов и фиксирует фактическое исходное состояние; требование «абсолютно ноль ошибок» не используется. Текущая политика: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, известное изменение `historical_v03155_result_changed`. Список безопасных тестов и интерпретация результатов: [тестирование](docs/getting-started/testing.md).
 
 Команды запуска одной научной единицы, инициализации кампании, раскрытия сопоставления, записи журнала, создания PCAP или обучения модели намеренно не приведены как готовый пример. `run-one-phase1-session` опасна: она создаёт научные данные и требует отдельного явного разрешения.
 
@@ -129,7 +129,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 - аудитор: [источники истины](docs/reference/sources-of-truth.md) → [статусы](docs/status/project-status.yaml) → [контракты](docs/contracts/index.md) → [отчёты](docs/reports/index.md);
 - участник сетевой процедуры: [актуальная методика Phase 1](docs/research/independent-network-validation.md) → [пакеты](docs/research/phase1-execution-package-history.md) → [критерии](docs/research/phase1-acceptance-criteria.md).
 
-Полный вход в документацию: [docs/index.md](docs/index.md). Защищённые протоколы, журналы, ledgers, manifests и исторический подтверждения не переписываются документационной редактурой; новые русские страницы являются объяснительными проекциями и ссылаются на защищённые источники.
+Полный вход в документацию: [docs/index.md](docs/index.md). Защищённые протоколы, журналы, реестры, манифесты и исторические подтверждающие материалы не переписываются при редактуре документации; новые русские страницы служат пояснениями и ссылаются на защищённые источники.
 
 ## Ограничения и лицензии
 

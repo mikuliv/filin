@@ -39,5 +39,5 @@ python -m pytest collectors -q
 
 ## Источники истины
 
-`collectors/shadow/contracts/candidate_registry_v1.json`, collector schemas и
+`collectors/shadow/contracts/candidate_registry_v1.json`, схемы сборщиков и
 [архитектура обнаружения и среды выполнения](../docs/architecture/detection-and-runtime-track.md).

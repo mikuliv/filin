@@ -7,10 +7,10 @@
 - атакующий узел: Kali Linux;
 - целевой узел: Ubuntu или Windows;
 - сенсор: Zeek или Suricata;
-- collector: Logstash или Filebeat;
+- сборщик: Logstash или Filebeat;
 - хранилище: Elasticsearch;
 - серверная часть: FastAPI;
-- dashboard: Kibana или будущий web-ui.
+- панель: Kibana или будущий веб-интерфейс.
 
 ## Назначение
 

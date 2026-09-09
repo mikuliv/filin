@@ -28,7 +28,7 @@ python -m pip install -r lab/network_validation/requirements.lock
 python -m tools.docs.validate_documentation_v2 --strict
 ```
 
-Docker и Compose устанавливаются системным способом Fedora/Linux. Проверка принадлежности пользователя к группе Docker и настройка capability контейнеров — отдельная операционная процедура; не добавляйте Docker socket в контейнер клиента или цели.
+Docker и Compose устанавливаются системным способом Fedora/Linux. Проверка принадлежности пользователя к группе Docker и настройка возможностей контейнеров — отдельная операционная процедура; не добавляйте сокет Docker в контейнер клиента или цели.
 
 ## Каталоги результатов
 

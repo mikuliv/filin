@@ -23,6 +23,9 @@ POSITIVE_BASE = [
     "Гипотеза не считается установленным фактом.",
     "Ссылка [на статус](docs/status/current-status.md) сохранена.",
     "Заголовок и подпись таблицы написаны по-русски.",
+    "Поле `execution_token` используется только внутри среды исполнения.",
+    "Для анализа сетевых журналов используется Zeek.",
+    "Результат сохраняется в формате JSON.",
 ]
 
 NEGATIVE_BASE = [
@@ -36,6 +39,12 @@ NEGATIVE_BASE = [
     "![English alternative text](image.png)", "description: English description", "Идентификатор active_candidate без оформления",
     "source artifact", "prediction package", "blindness gate", "acceptance gate", "shadow mode",
     "forced winner", "production backend", "frozen inference", "proposal package",
+    "Zeek и Suricata закреплены version tags для CI guard, но ещё не image digest.",
+    "Historical operational records находятся в tracked repository.",
+    "Для каждого scored window coordinator фиксирует immutable row ID и prediction.",
+    "Не допускаются произвольные personal datasets и silent column mapping.",
+    "Перед external distribution сохраняются license notices и model artifacts.",
+    "Git history должна быть воспроизводимой.",
 ]
 
 

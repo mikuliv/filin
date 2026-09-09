@@ -1,4 +1,4 @@
-# Staging transport и эталонный приёмник
+# Промежуточный транспорт и эталонный приёмник
 
 ## Назначение
 
@@ -11,11 +11,11 @@
 
 ## Место в архитектуре
 
-Завершает проверенный transport основной линии перед laboratory reconstruction.
+Завершает проверенный транспорт основной линии перед лабораторной реконструкцией.
 
 ## Основные каталоги и файлы
 
-Contracts, reference receiver, connector и tests находятся внутри `staging/`.
+Контракты, эталонный приёмник, соединительный модуль и тесты находятся внутри `staging/`.
 
 ## Разрешённые входы и выходы
 
@@ -34,4 +34,4 @@ python -m pytest ml/tests/test_v0316_staging_transport.py -q
 
 ## Источники истины
 
-Contracts каталога и [staging architecture](../docs/architecture/detection-and-runtime-track.md).
+Контракты каталога и [архитектура промежуточного слоя](../docs/architecture/detection-and-runtime-track.md).

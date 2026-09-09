@@ -83,377 +83,377 @@
     },
     {
       "id": "positive-016",
-      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 16.",
+      "text": "Поле `execution_token` используется только внутри среды исполнения. Контрольный пример 16.",
       "passed": true
     },
     {
       "id": "positive-017",
-      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 17.",
+      "text": "Для анализа сетевых журналов используется Zeek. Контрольный пример 17.",
       "passed": true
     },
     {
       "id": "positive-018",
-      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 18.",
+      "text": "Результат сохраняется в формате JSON. Контрольный пример 18.",
       "passed": true
     },
     {
       "id": "positive-019",
-      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 19.",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 19.",
       "passed": true
     },
     {
       "id": "positive-020",
-      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 20.",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 20.",
       "passed": true
     },
     {
       "id": "positive-021",
-      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 21.",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 21.",
       "passed": true
     },
     {
       "id": "positive-022",
-      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 22.",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 22.",
       "passed": true
     },
     {
       "id": "positive-023",
-      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 23.",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 23.",
       "passed": true
     },
     {
       "id": "positive-024",
-      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 24.",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 24.",
       "passed": true
     },
     {
       "id": "positive-025",
-      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 25.",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 25.",
       "passed": true
     },
     {
       "id": "positive-026",
-      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 26.",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 26.",
       "passed": true
     },
     {
       "id": "positive-027",
-      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 27.",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 27.",
       "passed": true
     },
     {
       "id": "positive-028",
-      "text": "Гипотеза не считается установленным фактом. Контрольный пример 28.",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 28.",
       "passed": true
     },
     {
       "id": "positive-029",
-      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 29.",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 29.",
       "passed": true
     },
     {
       "id": "positive-030",
-      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 30.",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 30.",
       "passed": true
     },
     {
       "id": "positive-031",
-      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 31.",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 31.",
       "passed": true
     },
     {
       "id": "positive-032",
-      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 32.",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 32.",
       "passed": true
     },
     {
       "id": "positive-033",
-      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 33.",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 33.",
       "passed": true
     },
     {
       "id": "positive-034",
-      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 34.",
+      "text": "Поле `execution_token` используется только внутри среды исполнения. Контрольный пример 34.",
       "passed": true
     },
     {
       "id": "positive-035",
-      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 35.",
+      "text": "Для анализа сетевых журналов используется Zeek. Контрольный пример 35.",
       "passed": true
     },
     {
       "id": "positive-036",
-      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 36.",
+      "text": "Результат сохраняется в формате JSON. Контрольный пример 36.",
       "passed": true
     },
     {
       "id": "positive-037",
-      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 37.",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 37.",
       "passed": true
     },
     {
       "id": "positive-038",
-      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 38.",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 38.",
       "passed": true
     },
     {
       "id": "positive-039",
-      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 39.",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 39.",
       "passed": true
     },
     {
       "id": "positive-040",
-      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 40.",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 40.",
       "passed": true
     },
     {
       "id": "positive-041",
-      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 41.",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 41.",
       "passed": true
     },
     {
       "id": "positive-042",
-      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 42.",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 42.",
       "passed": true
     },
     {
       "id": "positive-043",
-      "text": "Гипотеза не считается установленным фактом. Контрольный пример 43.",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 43.",
       "passed": true
     },
     {
       "id": "positive-044",
-      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 44.",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 44.",
       "passed": true
     },
     {
       "id": "positive-045",
-      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 45.",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 45.",
       "passed": true
     },
     {
       "id": "positive-046",
-      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 46.",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 46.",
       "passed": true
     },
     {
       "id": "positive-047",
-      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 47.",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 47.",
       "passed": true
     },
     {
       "id": "positive-048",
-      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 48.",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 48.",
       "passed": true
     },
     {
       "id": "positive-049",
-      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 49.",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 49.",
       "passed": true
     },
     {
       "id": "positive-050",
-      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 50.",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 50.",
       "passed": true
     },
     {
       "id": "positive-051",
-      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 51.",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 51.",
       "passed": true
     },
     {
       "id": "positive-052",
-      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 52.",
+      "text": "Поле `execution_token` используется только внутри среды исполнения. Контрольный пример 52.",
       "passed": true
     },
     {
       "id": "positive-053",
-      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 53.",
+      "text": "Для анализа сетевых журналов используется Zeek. Контрольный пример 53.",
       "passed": true
     },
     {
       "id": "positive-054",
-      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 54.",
+      "text": "Результат сохраняется в формате JSON. Контрольный пример 54.",
       "passed": true
     },
     {
       "id": "positive-055",
-      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 55.",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 55.",
       "passed": true
     },
     {
       "id": "positive-056",
-      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 56.",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 56.",
       "passed": true
     },
     {
       "id": "positive-057",
-      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 57.",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 57.",
       "passed": true
     },
     {
       "id": "positive-058",
-      "text": "Гипотеза не считается установленным фактом. Контрольный пример 58.",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 58.",
       "passed": true
     },
     {
       "id": "positive-059",
-      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 59.",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 59.",
       "passed": true
     },
     {
       "id": "positive-060",
-      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 60.",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 60.",
       "passed": true
     },
     {
       "id": "positive-061",
-      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 61.",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 61.",
       "passed": true
     },
     {
       "id": "positive-062",
-      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 62.",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 62.",
       "passed": true
     },
     {
       "id": "positive-063",
-      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 63.",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 63.",
       "passed": true
     },
     {
       "id": "positive-064",
-      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 64.",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 64.",
       "passed": true
     },
     {
       "id": "positive-065",
-      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 65.",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 65.",
       "passed": true
     },
     {
       "id": "positive-066",
-      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 66.",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 66.",
       "passed": true
     },
     {
       "id": "positive-067",
-      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 67.",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 67.",
       "passed": true
     },
     {
       "id": "positive-068",
-      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 68.",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 68.",
       "passed": true
     },
     {
       "id": "positive-069",
-      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 69.",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 69.",
       "passed": true
     },
     {
       "id": "positive-070",
-      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 70.",
+      "text": "Поле `execution_token` используется только внутри среды исполнения. Контрольный пример 70.",
       "passed": true
     },
     {
       "id": "positive-071",
-      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 71.",
+      "text": "Для анализа сетевых журналов используется Zeek. Контрольный пример 71.",
       "passed": true
     },
     {
       "id": "positive-072",
-      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 72.",
+      "text": "Результат сохраняется в формате JSON. Контрольный пример 72.",
       "passed": true
     },
     {
       "id": "positive-073",
-      "text": "Гипотеза не считается установленным фактом. Контрольный пример 73.",
+      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 73.",
       "passed": true
     },
     {
       "id": "positive-074",
-      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 74.",
+      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 74.",
       "passed": true
     },
     {
       "id": "positive-075",
-      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 75.",
+      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 75.",
       "passed": true
     },
     {
       "id": "positive-076",
-      "text": "Обычный русский текст описывает проверяемый результат. Контрольный пример 76.",
+      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 76.",
       "passed": true
     },
     {
       "id": "positive-077",
-      "text": "Действующий кандидат (`active_candidate`) остаётся неизменным. Контрольный пример 77.",
+      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 77.",
       "passed": true
     },
     {
       "id": "positive-078",
-      "text": "Программный интерфейс приложения (API) доступен только локально. Контрольный пример 78.",
+      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 78.",
       "passed": true
     },
     {
       "id": "positive-079",
-      "text": "Файл записи сетевых пакетов (PCAP) не входит в выпуск. Контрольный пример 79.",
+      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 79.",
       "passed": true
     },
     {
       "id": "positive-080",
-      "text": "Путь `docs/status/current-status.md` сохранён. Контрольный пример 80.",
+      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 80.",
       "passed": true
     },
     {
       "id": "positive-081",
-      "text": "Решение «проверка не пройдена» (`failed_validation`) показано по-русски. Контрольный пример 81.",
+      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 81.",
       "passed": true
     },
     {
       "id": "positive-082",
-      "text": "Ключ JSON `schema_version` не переводится. Контрольный пример 82.",
+      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 82.",
       "passed": true
     },
     {
       "id": "positive-083",
-      "text": "Контракт пассивного события (`shadow_event_v2`) объяснён. Контрольный пример 83.",
+      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 83.",
       "passed": true
     },
     {
       "id": "positive-084",
-      "text": "Команда находится в отдельном блоке:\n```powershell\npython -m pytest -q\n``` Контрольный пример 84.",
+      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 84.",
       "passed": true
     },
     {
       "id": "positive-085",
-      "text": "Официальный текст лицензии исключён из редакционной проверки. Контрольный пример 85.",
+      "text": "Гипотеза не считается установленным фактом. Контрольный пример 85.",
       "passed": true
     },
     {
       "id": "positive-086",
-      "text": "Неизменяемые подтверждающие материалы исключены из записи. Контрольный пример 86.",
+      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 86.",
       "passed": true
     },
     {
       "id": "positive-087",
-      "text": "Слепая проверка не разрешает автоматическое действие. Контрольный пример 87.",
+      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 87.",
       "passed": true
     },
     {
       "id": "positive-088",
-      "text": "Гипотеза не считается установленным фактом. Контрольный пример 88.",
+      "text": "Поле `execution_token` используется только внутри среды исполнения. Контрольный пример 88.",
       "passed": true
     },
     {
       "id": "positive-089",
-      "text": "Ссылка [на статус](docs/status/current-status.md) сохранена. Контрольный пример 89.",
+      "text": "Для анализа сетевых журналов используется Zeek. Контрольный пример 89.",
       "passed": true
     },
     {
       "id": "positive-090",
-      "text": "Заголовок и подпись таблицы написаны по-русски. Контрольный пример 90.",
+      "text": "Результат сохраняется в формате JSON. Контрольный пример 90.",
       "passed": true
     }
   ],
@@ -463,7 +463,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "mixed_compound",
+        "narrative_english_word"
       ]
     },
     {
@@ -480,7 +481,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "mixed_compound",
+        "narrative_english_word"
       ]
     },
     {
@@ -488,7 +490,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "mixed_compound",
+        "narrative_english_word"
       ]
     },
     {
@@ -543,7 +546,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -551,7 +555,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -700,7 +705,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english_word"
       ]
     },
     {
@@ -849,7 +855,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -857,8 +864,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -866,7 +874,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -874,7 +883,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -882,8 +892,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
+        "narrative_english_sequence",
         "narrative_english_word"
       ]
     },
@@ -892,8 +901,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english_word"
       ]
     },
     {
@@ -901,8 +909,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
+        "mixed_compound",
         "narrative_english_word"
       ]
     },
@@ -920,8 +927,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "mixed_compound",
+        "narrative_english_word"
       ]
     },
     {
@@ -929,19 +936,12 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "mixed_compound",
+        "narrative_english_word"
       ]
     },
     {
       "id": "negative-054",
-      "input_sha256_changed": false,
-      "rejected": true,
-      "codes": [
-        "narrative_english"
-      ]
-    },
-    {
-      "id": "negative-055",
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
@@ -951,11 +951,21 @@
       ]
     },
     {
+      "id": "negative-055",
+      "input_sha256_changed": false,
+      "rejected": true,
+      "codes": [
+        "english_heading_or_label",
+        "narrative_english"
+      ]
+    },
+    {
       "id": "negative-056",
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
         "english_heading_or_label",
+        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -965,8 +975,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -975,8 +984,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -984,7 +992,6 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
         "narrative_english",
         "narrative_english_word"
       ]
@@ -994,8 +1001,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1014,7 +1021,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english_word"
       ]
     },
     {
@@ -1043,7 +1050,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1052,7 +1060,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1061,6 +1069,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
+        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1070,7 +1079,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1078,7 +1087,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1086,7 +1097,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1094,7 +1107,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1102,7 +1116,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english_word"
       ]
     },
     {
@@ -1110,7 +1125,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english_word"
       ]
     },
     {
@@ -1118,7 +1134,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english_word"
       ]
     },
     {
@@ -1134,7 +1151,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english_word"
       ]
     },
     {
@@ -1142,7 +1160,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "identifier_without_code_style"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1150,9 +1168,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1160,9 +1176,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1170,8 +1184,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1179,8 +1192,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1188,8 +1200,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1197,8 +1208,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "identifier_without_code_style"
       ]
     },
     {
@@ -1217,7 +1227,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1226,8 +1237,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1235,7 +1245,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1252,7 +1263,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1260,7 +1272,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1269,8 +1283,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1279,7 +1292,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1287,8 +1301,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
+        "narrative_english_sequence",
         "narrative_english_word"
       ]
     },
@@ -1297,8 +1310,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -1306,8 +1320,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -1315,7 +1329,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -1323,7 +1338,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "narrative_english_sequence",
+        "narrative_english_word"
       ]
     },
     {
@@ -1331,8 +1347,6 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1341,7 +1355,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
+        "mixed_compound",
         "narrative_english_word"
       ]
     },
@@ -1351,8 +1365,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1360,8 +1373,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
+        "mixed_compound",
         "narrative_english_word"
       ]
     },
@@ -1370,8 +1382,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
+        "mixed_compound",
         "narrative_english_word"
       ]
     },
@@ -1381,7 +1392,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1390,8 +1402,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1400,7 +1411,8 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1409,8 +1421,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1419,8 +1430,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1428,8 +1438,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1437,7 +1447,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
+        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1447,6 +1457,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
+        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1464,7 +1475,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1472,7 +1485,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1480,7 +1495,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1488,7 +1505,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1496,7 +1514,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1504,7 +1524,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1512,7 +1533,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1520,7 +1543,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1528,7 +1553,8 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "identifier_without_code_style"
+        "english_heading_or_label",
+        "narrative_english"
       ]
     },
     {
@@ -1537,7 +1563,6 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1547,7 +1572,6 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
         "narrative_english_word"
       ]
     },
@@ -1557,7 +1581,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english_word"
       ]
     },
     {
@@ -1565,8 +1589,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1575,7 +1598,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english"
+        "narrative_english_word"
       ]
     },
     {
@@ -1583,8 +1606,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1592,9 +1614,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1602,8 +1622,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1611,9 +1630,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1621,7 +1638,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1629,8 +1646,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "english_heading_or_label",
-        "narrative_english"
+        "english_heading_or_label"
       ]
     },
     {
@@ -1638,7 +1654,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "identifier_without_code_style"
       ]
     },
     {
@@ -1646,7 +1662,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "mixed_compound"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1674,8 +1692,7 @@
       "rejected": true,
       "codes": [
         "english_heading_or_label",
-        "narrative_english",
-        "narrative_english_word"
+        "narrative_english"
       ]
     },
     {
@@ -1701,7 +1718,9 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
-        "narrative_english"
+        "english_heading_or_label",
+        "narrative_english",
+        "narrative_english_word"
       ]
     },
     {
@@ -1709,6 +1728,7 @@
       "input_sha256_changed": false,
       "rejected": true,
       "codes": [
+        "english_heading_or_label",
         "narrative_english"
       ]
     }

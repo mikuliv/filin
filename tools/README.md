@@ -33,4 +33,4 @@ Documentation v2 проверяется `python -m tools.docs.validate_documenta
 
 ## Источники истины
 
-CLI source, tests и Зафиксировано protocol соответствующего stage.
+Исходный код CLI, тесты и зафиксированный протокол соответствующего этапа.

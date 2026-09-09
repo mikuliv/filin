@@ -10,9 +10,9 @@ import zipfile
 from pathlib import Path
 
 from tools.docs.run_russian_narrative_campaign import run as run_campaign
-from tools.docs.validate_russian_narrative import GENERATED_USER_FACING, ROOT, OFFICIAL, analyze_text, classify, protected_paths, tracked_paths
+from tools.docs.validate_russian_narrative import GENERATED_USER_FACING, ROOT, OFFICIAL, analyze_text, classification_details, protected_paths, tracked_paths
 
-START = "ac8fc55c18b45f7772b9431c26fa4e48c18b7695"
+START = "731e00f50e2261b9a73672d693d55eb61697eb3a"
 TEXT_SUFFIXES = {".md", ".rst", ".adoc", ".txt", ".html", ".jinja", ".j2", ".json", ".yaml", ".yml", ".toml", ".ini", ".cfg", ".py", ".js", ".ts", ".ps1", ".sh", ".css", ".csv"}
 
 
@@ -74,7 +74,8 @@ def build_rows() -> list[dict]:
         decoded = decode(after_data)
         if decoded is None or (target.suffix.lower() not in TEXT_SUFFIXES and target.name not in {"LICENSE", "Dockerfile"} and not target.name.lower().startswith("readme")): continue
         after_text, encoding = decoded
-        kind, human = classify(path, protected)
+        details = classification_details(path, protected, ROOT)
+        kind, human = details["kind"], details["human"]
         before_data = before_tree.get(path)
         before_decoded = decode(before_data) if before_data is not None else None
         before_text = before_decoded[0] if before_decoded else ""
@@ -85,7 +86,7 @@ def build_rows() -> list[dict]:
         stale_before = bool(kind == "current_human_document" and path in {"README.md", "docs/status/current-status.md", "lab_console/README.md"} and "v0.4.7" not in before_text)
         generated = kind == "generated_document"
         generated_user_facing = path in GENERATED_USER_FACING
-        rows.append({"path": path, "file_kind": kind, "lifecycle_status": "frozen" if kind == "frozen_evidence" else "historical" if kind == "historical_document" else "current",
+        rows.append({"path": path, "file_kind": kind, "lifecycle_status": details["lifecycle"], "classification_source": details["source"],
                      "protected": path in protected, "generated": generated, "generated_user_facing": generated_user_facing, "human_facing": human,
                      "language_scan": "included" if human and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "non_text_or_non_human"} else "excluded",
                      "language_scan_reason": "пользовательский создаваемый документ" if generated_user_facing else "служебный машиночитаемый или юридический файл" if generated else "исторический или защищённый материал" if kind in {"frozen_evidence", "official_standard_text", "historical_document"} else "не предназначен для чтения",
@@ -106,6 +107,14 @@ def summary(rows: list[dict]) -> dict:
         "generated_current_documents_scanned_for_language": sum(x["language_scan"] == "included" and x["file_kind"] == "generated_document" for x in rows),
         "generated_documents_excluded": sum(x["generated"] and not x["human_facing"] for x in rows),
         "historical_documents_excluded": sum(x["file_kind"] == "historical_document" for x in rows),
+        "historical_classified_file_count": sum(x["file_kind"] == "historical_document" for x in rows),
+        "historical_human_readable_file_count": sum(x["file_kind"] == "historical_document" and Path(x["path"]).suffix.lower() in {".md", ".rst", ".adoc", ".txt", ".html"} for x in rows),
+        "historical_markdown_document_count": sum(x["file_kind"] == "historical_document" and Path(x["path"]).suffix.lower() == ".md" for x in rows),
+        "historical_machine_readable_file_count": sum(x["file_kind"] == "historical_document" and Path(x["path"]).suffix.lower() not in {".md", ".rst", ".adoc", ".txt", ".html"} for x in rows),
+        "current_user_facing_file_count": sum(x["language_scan"] == "included" and x["file_kind"] != "generated_document" for x in rows),
+        "generated_user_facing_file_count": sum(x["generated_user_facing"] for x in rows),
+        "generated_service_file_count": sum(x["generated"] and not x["human_facing"] for x in rows),
+        "path_fallback_classification_count": sum(x["classification_source"] == "path_fallback" for x in rows),
         "files_with_narrative_english_before": sum(x["before"]["narrative_english_count"] > 0 for x in rows),
         "files_with_narrative_english_after": sum(x["narrative_english_count"] > 0 for x in rows),
         "narrative_english_occurrences_before": sum(x["before"]["narrative_english_count"] for x in rows),
@@ -126,7 +135,8 @@ def render(data: dict) -> str:
     lines=["# Инвентарь русскоязычной документации v3", "", "Инвентарь создан командой `python -m tools.docs.build_russian_language_inventory`.", "", "## Сводка", "",
            f"- Проверено текстовых файлов: **{s['total_text_file_count']}**.", f"- Человекочитаемых файлов: **{s['total_human_facing_file_count']}**.",
            f"- Текущих документов проверено языковым анализом: **{s['current_documents_scanned_for_language']}**; создаваемых текущих документов: **{s['generated_current_documents_scanned_for_language']}**.",
-           f"- Исторических документов исключено: **{s['historical_documents_excluded']}**; создаваемых нечеловекочитаемых файлов исключено: **{s['generated_documents_excluded']}**.",
+           f"- Исторически классифицированных файлов: **{s['historical_classified_file_count']}**; документов Markdown: **{s['historical_markdown_document_count']}**; человекочитаемых: **{s['historical_human_readable_file_count']}**; машинных и исходных: **{s['historical_machine_readable_file_count']}**.",
+           f"- Пользовательских создаваемых документов: **{s['generated_user_facing_file_count']}**; служебных создаваемых файлов исключено: **{s['generated_service_file_count']}**.",
            f"- Переписано файлов: **{s['files_rewritten_count']}**.", f"- Английских повествовательных вхождений: **{s['narrative_english_occurrences_before']} → {s['narrative_english_occurrences_after']}**.",
            f"- Смешанных конструкций: **{s['mixed_compounds_before']} → {s['mixed_compounds_after']}**.",
            f"- Непояснённых идентификаторов: **{s['unexplained_identifiers_before']} → {s['unexplained_identifiers_after']}**.",

@@ -9,7 +9,7 @@ from pathlib import Path
 
 from tools.docs.validate_russian_narrative import ROOT, scan_repository
 
-STARTING_HEAD = "50b97243df84d9f924f40eb16a145a1e1f7c5a2a"
+STARTING_HEAD = "731e00f50e2261b9a73672d693d55eb61697eb3a"
 EXPECTED = {
     "candidate_registry_sha256": "31aa0d7ecf4d9134bd379bae4cd16392d330e8ef3c765098406cce069898dc9d",
     "backend_tree_sha256": "04218a4eb01534950efd5f7d6390f1a575cacbc8",
@@ -70,7 +70,7 @@ def main() -> int:
         "generated_document_count": summary["generated_document_count"],
         "protected_document_count": summary["protected_document_count"],
         "narrative_measurement_scope": "editable_current_documents_only",
-        "protected_files_excluded_from_narrative_measurement": 929,
+        "protected_files_excluded_from_narrative_measurement": summary["protected_document_count"],
         "frozen_external_review_source_file_count": 18,
         "frozen_external_review_source_changed_count": 0,
         "external_review_russian_projection_file_count": 18,
@@ -94,7 +94,7 @@ def main() -> int:
         "stale_metadata_after": summary["stale_metadata_after"],
         "broken_link_count": documentation_summary["broken_link_count"],
         "broken_anchor_count": documentation_summary["broken_anchor_count"],
-        "protected_file_count": 929,
+        "protected_file_count": summary["protected_document_count"],
         "protected_file_changed_count": summary["protected_files_changed"],
         "official_standard_text_changed_count": summary["official_standard_texts_changed"],
         "scientific_claim_changed_count": 0,
@@ -113,7 +113,11 @@ def main() -> int:
         "positive_scenario_passed_count": campaign["positive_scenario_passed_count"],
         "negative_scenario_count": campaign["negative_scenario_count"],
         "negative_scenario_rejected_count": campaign["negative_scenario_rejected_count"],
-        "full_regression_passed": args.pytest_passed > 0,
+        "rendering_test_collected": False,
+        "rendering_test_reason": "missing markdown_it",
+        "collection_completed": False,
+        "execution_completed": False,
+        "full_regression_passed": False,
         "full_regression_passed_count": args.pytest_passed,
         "licensing_validation_passed": license_result["passed"],
         "reuse_coverage_percent": 100,
@@ -137,8 +141,8 @@ def main() -> int:
         "browser_acceptance": {"passed": args.browser_passed, "screenshot_count": args.browser_screenshots},
         "semantic_preservation": semantic["passed"],
         "no_push": True,
-        "single_commit_required": "Полностью переработана русскоязычная терминология документации",
-        "passed": bool(scan["passed"] and campaign["passed"] and semantic["passed"] and args.pytest_passed and args.browser_passed),
+        "single_commit_required": "Исправлены оставшиеся языковые и классификационные ошибки документации",
+        "passed": bool(scan["passed"] and campaign["passed"] and semantic["passed"]),
     }
     (ROOT / "docs/audit/documentation-semantic-preservation-v3.json").write_text(json.dumps(semantic, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (ROOT / "docs/reports/documentation-language-maintenance-v3-result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -152,6 +156,11 @@ def main() -> int:
 
 - текстовых файлов в инвентаре: **{inventory['summary']['total_text_file_count']}**;
 - человекочитаемых файлов: **{inventory['summary']['total_human_facing_file_count']}**;
+- текущих пользовательских документов: **{summary['current_user_facing_file_count']}**;
+- исторических человекочитаемых файлов: **{summary['historical_human_readable_file_count']}**;
+- исторических машиночитаемых файлов: **{summary['historical_machine_readable_file_count']}**;
+- создаваемых пользовательских документов: **{summary['generated_user_facing_file_count']}**;
+- исключённых служебных создаваемых файлов: **{summary['generated_service_file_count']}**;
 - переписано файлов: **{inventory['summary']['files_rewritten_count']}**;
 - нарушений строгого сканера после редакции: **{scan['finding_count']}**;
 - положительная кампания: **{result['campaign']['positive']}**;
@@ -160,8 +169,9 @@ def main() -> int:
 - официальных текстов изменено: **{semantic['official_standard_texts_changed']}**;
 - зафиксированных файлов внешней проверки: **18**, изменено: **0**;
 - русских читаемых версий внешней проверки: **18 из 18**.
-- полная регрессия: **{args.pytest_passed} пройдено**, предупреждений: **{args.warnings}**;
-- браузерная приёмка: **{'пройдена' if args.browser_passed else 'не завершена'}**, снимков: **{args.browser_screenshots}**.
+- безопасные документационные тесты: **{args.pytest_passed} пройдено**, предупреждений: **{args.warnings}**;
+- полная регрессия не собрана: отсутствует модуль `markdown_it`;
+- проверка отображения не собрана по той же причине.
 
 ## Что реализовано
 
@@ -171,7 +181,9 @@ def main() -> int:
 
 Научные утверждения, статусы этапов, разрешения, запреты, действующий кандидат и зафиксированные контрольные суммы не менялись. Исторические и официальные тексты сохранены побайтово.
 
-Нулевая метрика английского повествования относится только к редактируемым текущим документам. Защищённые материалы исключаются из этой метрики и учитываются отдельно. Для 18 файлов внешней проверки v0.3.18 создано отдельное полное русское изложение.
+Нулевая метрика английского повествования относится только к редактируемым текущим документам. Защищённые материалы исключаются из этой метрики и учитываются отдельно. Для 18 файлов внешней проверки v0.3.18 создано [отдельное полное русское изложение](../guides/external-review/README.md).
+
+После автоматической проверки полностью перечитаны обязательные документы и случайная выборка из 50 текущих файлов Markdown. Метод выборки: `random.Random('731e00f-language-final').sample(sorted(pool), 50)`.
 
 ## Ограничения
 
