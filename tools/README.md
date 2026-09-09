@@ -29,7 +29,7 @@
 ## Безопасный запуск и тестирование
 
 Используйте только команды из [справочника](../docs/reference/command-reference.md).
-Documentation v2 проверяется `python -m tools.docs.validate_documentation_v2 --strict`.
+Документация версии 2 проверяется командой `python -m tools.docs.validate_documentation_v2 --strict`.
 
 ## Источники истины
 

@@ -1,3 +1,3 @@
 # Индекс эксплуатации
 
-- [Runbook эталонного приёмника](reference_receiver_runbook.md)
+- [Руководство по работе с эталонным приёмником](reference_receiver_runbook.md)

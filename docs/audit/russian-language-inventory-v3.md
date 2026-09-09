@@ -9,8 +9,8 @@
 - Текущих документов проверено языковым анализом: **232**; создаваемых текущих документов: **9**.
 - Исторически классифицированных файлов: **689**; документов Markdown: **64**; человекочитаемых: **66**; машинных и исходных: **623**.
 - Пользовательских создаваемых документов: **9**; служебных создаваемых файлов исключено: **12**.
-- Переписано файлов: **147**.
-- Английских повествовательных вхождений: **1068 → 0**.
+- Переписано файлов: **152**.
+- Английских повествовательных вхождений: **1146 → 0**.
 - Смешанных конструкций: **2 → 0**.
 - Непояснённых идентификаторов: **0 → 0**.
 - Изменено защищённых файлов: **0**; официальных текстов: **0**.
@@ -19,22 +19,22 @@
 
 | Путь | Вид | Защищён | Для человека | Языковой контроль | Причина | Действие |
 |---|---|---:|---:|---|---|---|
-| `.github/workflows/ci.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `.github/workflows/codacy.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `.github/workflows/crda.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `AUTHORS.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `CONTRIBUTING.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `COPYRIGHT.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `.github/workflows/ci.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `.github/workflows/codacy.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `.github/workflows/crda.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `AUTHORS.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `CONTRIBUTING.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `COPYRIGHT.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `DCO.txt` | `official_standard_text` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `LICENSE` | `official_standard_text` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `LICENSES/CC-BY-4.0.txt` | `official_standard_text` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `LICENSES/MPL-2.0.txt` | `official_standard_text` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `REUSE.toml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `THIRD_PARTY_NOTICES.md` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `TRADEMARKS.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `REUSE.toml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `THIRD_PARTY_NOTICES.md` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `TRADEMARKS.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `backend/Dockerfile` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `backend/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `backend/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `backend/app/__init__.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `backend/app/core/__init__.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `backend/app/core/config.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -60,231 +60,231 @@
 | `backend/requirements-v0_3_4.txt` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `backend/requirements.txt` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `backend/tests/test_prototype_mode.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `collectors/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `collectors/csv_collector/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `collectors/shadow/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/acknowledgement.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/candidate_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/canonical.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/checkpoint.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `collectors/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `collectors/csv_collector/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `collectors/shadow/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/acknowledgement.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/candidate_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/canonical.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/checkpoint.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `collectors/shadow/contracts/candidate_registry_v1.commitment.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `collectors/shadow/contracts/candidate_registry_v1.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `collectors/shadow/contracts/candidate_runtime_v031551.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `collectors/shadow/contracts/candidate_runtime_v031551.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `collectors/shadow/contracts/shadow_event_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `collectors/shadow/contracts/shadow_event_v2.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `collectors/shadow/contracts/synthetic_ack_evidence_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `collectors/shadow/diagnostic_evidence.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `collectors/shadow/durable_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/event_model.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/event_model_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/fault_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/in_memory_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/integrated_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/integrated_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/jsonl_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/mock_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/observability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/passive_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/performance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/queue.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/rate_limit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/retry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/schema_validator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/spool.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/behavioral_helpers.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_backpressure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_checkpoint.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_connection_reset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_duplicate_delivery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_canonicalization.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_forbidden_fields.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_required_fields.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_event_size.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_graceful_shutdown.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_mock_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_queue.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_queue_priority.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_rate_limit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_required_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_retry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_schema_reject.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_sink_idempotency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_spool.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_spool_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_timeout.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_shadow_unknown_ack.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_ack_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_drop_accounting.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_fault_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_integrated_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_no_hardcoded_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_performance_topology.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_privacy_targets.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow/tests/test_v03151_strict_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/session_controller.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/state_store.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_attack_class_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_benign_variant_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_blind_access.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_blind_label_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_bundle_completion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `collectors/shadow/durable_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/event_model.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/event_model_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/fault_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/in_memory_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/integrated_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/integrated_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/jsonl_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/mock_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/observability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/passive_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/performance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/queue.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/rate_limit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/retry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/schema_validator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/spool.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/behavioral_helpers.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_backpressure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_checkpoint.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_connection_reset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_duplicate_delivery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_canonicalization.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_forbidden_fields.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_required_fields.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_event_size.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_graceful_shutdown.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_mock_sink.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_queue.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_queue_priority.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_rate_limit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_required_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_retry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_schema_reject.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_sink_idempotency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_spool.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_spool_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_timeout.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_shadow_unknown_ack.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_ack_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_drop_accounting.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_fault_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_integrated_exporter.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_no_hardcoded_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_performance_topology.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_privacy_targets.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow/tests/test_v03151_strict_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/session_controller.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/state_store.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_attack_class_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_benign_variant_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_blind_access.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_blind_label_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_bundle_completion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `collectors/shadow_trial/tests/test_v0315_bundle_pre_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_campaign_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_capture_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_capture_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_continuous_availability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_episode_length_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_event_contract_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_exporter_restart.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_fail_safe.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_first_alert_not_lost.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_idempotency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_no_backend_write.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_no_external_connection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_no_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_no_fit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_online_window_processing.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_per_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_per_length_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_per_session_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_per_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_prediction_before_label_unlock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_processing_lag.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_processing_latency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_campaign_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_capture_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_capture_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_continuous_availability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_episode_length_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_event_contract_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_exporter_restart.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_fail_safe.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_first_alert_not_lost.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_hash_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_idempotency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_no_backend_write.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_no_external_connection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_no_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_no_fit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_online_window_processing.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_per_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_per_length_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_per_session_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_per_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_prediction_before_label_unlock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_privacy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_processing_lag.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_processing_latency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `collectors/shadow_trial/tests/test_v0315_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_resource_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_restart_boundary_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_review_not_lost.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_safety_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_schedule_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_seed_uniqueness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_sensor_restart.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_sink_event_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_sink_fault_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_source_event_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_spool_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_state_persistence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_state_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_unique_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/tests/test_v0315_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/shadow_trial/window_processor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/suricata_collector/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `collectors/suricata_collector/parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `collectors/zeek_collector/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `collectors/zeek_collector/parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `datasets/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `datasets/examples/flows_v0_1.example.csv` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `datasets/examples/windows_v0_1.example.csv` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `distribution/profiles/dataset-package.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `distribution/profiles/laboratory-source.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `distribution/profiles/model-package.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `distribution/profiles/offline-third-party-bundle.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `distribution/profiles/source-core.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/architecture.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/component-map.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/controlled_local_rehearsal_v0_3_17.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/current-vs-historical.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/data-flow.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/delivery-runtime.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/detection-and-runtime-track.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/detection-pipeline.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/end-to-end-data-flow.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/laboratory-console.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/limitations.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/overview.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/passive-events.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/reconstruction-and-analysis-track.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/staging_connector_v0_3_16.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/stateful-processing.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/architecture/storage-and-artifacts.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/architecture/trust-boundaries.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/audit/documentation-semantic-preservation-v3.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `rewritten` |
+| `collectors/shadow_trial/tests/test_v0315_resource_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_restart_boundary_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_review_not_lost.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_safety_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_schedule_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_seed_uniqueness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_sensor_restart.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_sink_event_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_sink_fault_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_source_event_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_spool_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_state_persistence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_state_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_unique_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/tests/test_v0315_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/shadow_trial/window_processor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/suricata_collector/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `collectors/suricata_collector/parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `collectors/zeek_collector/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `collectors/zeek_collector/parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `datasets/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `datasets/examples/flows_v0_1.example.csv` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `datasets/examples/windows_v0_1.example.csv` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `distribution/profiles/dataset-package.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `distribution/profiles/laboratory-source.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `distribution/profiles/model-package.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `distribution/profiles/offline-third-party-bundle.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `distribution/profiles/source-core.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/architecture.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/component-map.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/controlled_local_rehearsal_v0_3_17.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/current-vs-historical.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/data-flow.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/delivery-runtime.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/detection-and-runtime-track.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/detection-pipeline.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/end-to-end-data-flow.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/laboratory-console.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/limitations.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/overview.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/passive-events.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/reconstruction-and-analysis-track.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/staging_connector_v0_3_16.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/stateful-processing.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/architecture/storage-and-artifacts.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/architecture/trust-boundaries.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/audit/documentation-semantic-preservation-v3.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `rewritten` |
 | `docs/audit/documentation_inventory.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `rewritten` |
-| `docs/audit/documentation_inventory_v2.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `rewritten` |
+| `docs/audit/documentation_inventory_v2.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `rewritten` |
 | `docs/audit/documentation_inventory_v2.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `rewritten` |
-| `docs/audit/documentation_metadata_overrides_v2.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
+| `docs/audit/documentation_metadata_overrides_v2.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audit/documentation_path_migration_v2.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audit/documentation_refactor_plan_v2.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audit/documentation_refactor_report.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audit/documentation_refactor_report_v2.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audit/documentation_rendering_correction_v2_1.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/audit/documentation_validation_result_v2.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/audit/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/audit/protected_documentation_v2.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `docs/audit/russian-language-inventory-v3.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `rewritten` |
+| `docs/audit/documentation_validation_result_v2.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/audit/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/audit/protected_documentation_v2.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/audit/russian-language-inventory-v3.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `rewritten` |
 | `docs/audit/russian-language-inventory-v3.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `rewritten` |
 | `docs/audits/post-v0.3.7-research-integrity-audit.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/audits/pre-v0.3.8-runtime-integrity-acceptance.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/code-origin-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/connector_ingress_ack_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/connector_ingress_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/code-origin-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/connector_ingress_ack_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/connector_ingress_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/contracts/index.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `unchanged` |
-| `docs/contracts/operator_projection_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/receiver_batch_ack_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/rehearsal_observability_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/contracts/operator_projection_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/receiver_batch_ack_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/rehearsal_observability_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/contracts/runtime_timing_trace_v2.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/contracts/shadow-backend-gap-analysis.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/shadow-event-v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contracts/shadow-event-v2.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/contracts/shadow-trial-runtime.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/contracts/staging_event_batch_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contributing/adding-a-contract.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/contributing/adding-a-report.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contributing/adding-a-stage.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contributing/adding-a-subsystem-readme.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/contributing/documentation-maintenance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/contributing/documentation-style.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/contributing/testing-and-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/current-capabilities.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/data-provenance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/dependency-licenses.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/development-history.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/documentation-policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/experiments.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/contracts/shadow-backend-gap-analysis.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/shadow-event-v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contracts/shadow-event-v2.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/contracts/shadow-trial-runtime.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/contracts/staging_event_batch_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contributing/adding-a-contract.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/contributing/adding-a-report.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contributing/adding-a-stage.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contributing/adding-a-subsystem-readme.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/contributing/documentation-maintenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/contributing/documentation-style.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/contributing/testing-and-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/current-capabilities.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/data-provenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/dependency-licenses.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/development-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/documentation-policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/experiments.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/experiments/independent_network_validation_execution_package.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/experiments/independent_network_validation_freeze_review.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/experiments/independent_network_validation_superseding_freeze.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -339,188 +339,188 @@
 | `docs/external_review/reviewer_guide.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/external_review/stop_conditions.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/external_review/trial_operator_guide.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/getting-started/auditor-entrypoint.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/comparing-laboratory-runs.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/developer-entrypoint.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/external-review-entrypoint.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/laboratory-console.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/local-environment.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/overview.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/preparing-candidate-proposals.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/preparing-corrective-candidate-proposal.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/repository-layout.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/reviewing-blind-validation-results.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/reviewing-candidate-proposals.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/reviewing-failed-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/reviewing-laboratory-cards.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/reviewing-v0-4-7-3-results.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/running-blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/running-laboratory-replays.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/running-v0-4-7-3-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/getting-started/testing.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/getting-started/troubleshooting.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/glossary.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/architecture.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/confirmed_scope.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/data_acceptance_policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/data_provider_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/data_transfer_requirements.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/evaluator_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/known_limitations.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/label_custodian_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/legal_requirements_checklist.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/metric_policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/publication_requirements.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/reproducibility_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/result_approver_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/retention_and_deletion_requirements.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/reviewer_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/stop_conditions.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/guides/external-review/trial_operator_guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/getting-started/auditor-entrypoint.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/comparing-laboratory-runs.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/developer-entrypoint.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/external-review-entrypoint.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/laboratory-console.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/local-environment.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/overview.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/preparing-candidate-proposals.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/preparing-corrective-candidate-proposal.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/repository-layout.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/reviewing-blind-validation-results.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/reviewing-candidate-proposals.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/reviewing-failed-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/reviewing-laboratory-cards.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/reviewing-v0-4-7-3-results.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/running-blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/running-laboratory-replays.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/running-v0-4-7-3-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/getting-started/testing.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/getting-started/troubleshooting.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/glossary.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/architecture.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/confirmed_scope.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/data_acceptance_policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/data_provider_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/data_transfer_requirements.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/evaluator_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/known_limitations.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/label_custodian_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/legal_requirements_checklist.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/metric_policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/publication_requirements.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/reproducibility_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/result_approver_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/retention_and_deletion_requirements.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/reviewer_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/stop_conditions.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/guides/external-review/trial_operator_guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/history/archived-documentation.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/history/corrections-and-negative-results.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/history/frozen-evidence-reading-guide.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/history/frozen-evidence-reading-guide.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/history/historical-backend.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/history/historical-limitations.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/history/historical-mitre-and-sigma.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `docs/history/historical-modeling.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/history/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/history/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/history/stage-timeline.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/incident-workflow.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/lab-stand.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/audit-plan.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/audit-summary.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/container-distribution-policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/container-images.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/container-images.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/container-policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/contribution-provenance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/copyright-provenance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/distribution-profiles.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/file-provenance-audit.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/file-provenance-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/frozen-evidence.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/frozen-spdx-mapping.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/frozen-spdx-mapping.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/git-authorship-audit.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/git-authorship-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/git-authorship.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/historical-backend-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/known-limitations.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/license-policy.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/license-scope.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/license-validation-result.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/licensing-campaign-results-v1-1.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/licensing-campaign-results.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/licensing-maintenance-v1-1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/models-and-data.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/python-dependencies-declared.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/python-dependencies-resolved.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/python-dependencies.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/release-checklist.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/reuse-compliance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/static-assets-audit.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/static-assets-audit.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/third-party-components.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/licensing/upstream-standard-texts.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/licensing/upstream-standard-texts.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/limitations.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/methodology/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/mitre-mapping.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/modeling.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/operations/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/operations/local_rehearsal_recovery_runbook.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/operations/local_rehearsal_runbook.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/operations/reference_receiver_runbook.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/performance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/post-migration-technical-status.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/incident-workflow.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/lab-stand.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/audit-plan.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/audit-summary.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/container-distribution-policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/container-images.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/container-images.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/container-policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/contribution-provenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/copyright-provenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/distribution-profiles.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/file-provenance-audit.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/file-provenance-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/licensing/frozen-evidence.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/frozen-spdx-mapping.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/frozen-spdx-mapping.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/git-authorship-audit.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/git-authorship-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/git-authorship.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/historical-backend-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/known-limitations.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/license-policy.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/license-scope.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/license-validation-result.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/licensing-campaign-results-v1-1.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/licensing-campaign-results.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/licensing-maintenance-v1-1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/models-and-data.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/python-dependencies-declared.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/python-dependencies-resolved.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/python-dependencies.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/release-checklist.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/reuse-compliance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/static-assets-audit.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/static-assets-audit.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/third-party-components.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/licensing/upstream-standard-texts.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/licensing/upstream-standard-texts.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/limitations.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/methodology/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/mitre-mapping.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/modeling.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/operations/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/operations/local_rehearsal_recovery_runbook.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/operations/local_rehearsal_runbook.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/operations/reference_receiver_runbook.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/performance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/post-migration-technical-status.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/protocols/index.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `unchanged` |
-| `docs/reference/allowed-technical-identifiers.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/reference/artifact-types.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/reference/command-reference.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reference/component-directory.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reference/document-lifecycle.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reference/error-and-result-codes.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/reference/glossary.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/reference/russian-technical-terms.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/reference/sources-of-truth.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reference/status-values.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reference/terminology.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/regression-artifact-retention.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/reports/documentation-language-maintenance-v3-result.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `rewritten` |
-| `docs/reports/documentation-language-maintenance-v3-tests.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `rewritten` |
+| `docs/reference/allowed-technical-identifiers.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/reference/artifact-types.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/reference/command-reference.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reference/component-directory.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reference/document-lifecycle.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reference/error-and-result-codes.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/reference/glossary.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/reference/russian-technical-terms.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/reference/sources-of-truth.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reference/status-values.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reference/terminology.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/regression-artifact-retention.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/reports/documentation-language-maintenance-v3-result.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `rewritten` |
+| `docs/reports/documentation-language-maintenance-v3-tests.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `rewritten` |
 | `docs/reports/documentation-language-maintenance-v3.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `rewritten` |
 | `docs/reports/index.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `unchanged` |
-| `docs/repository-migration.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/repository-separation-plan.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/reproducibility.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research-state.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/research/autonomous-blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/blind-data-governance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/candidate-lineage.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/candidate-proposal-governance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/candidate-version-governance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/causal-features.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/repository-migration.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/repository-separation-plan.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/reproducibility.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research-state.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/research/autonomous-blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/blind-data-governance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/blind-laboratory-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/candidate-lineage.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/candidate-proposal-governance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/candidate-version-governance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/causal-features.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/research/competing-hypotheses.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/research/corrective-candidate-development.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/evaluation-principles.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/failed-validation-root-cause-analysis.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/research/corrective-candidate-development.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/evaluation-principles.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/failed-validation-root-cause-analysis.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/research/incident-reconstruction.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/research/independent-network-validation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/internal-screening-policy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/label-commitment-and-unlock.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/laboratory-case-catalog.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/laboratory-console-ui.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/research/independent-network-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/internal-screening-policy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/label-commitment-and-unlock.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/laboratory-case-catalog.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/laboratory-console-ui.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/research/laboratory-console.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/research/laboratory-run-comparison.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/laboratory-run-reproducibility.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/laboratory-track-autonomy.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/research/laboratory-run-comparison.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/laboratory-run-reproducibility.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/laboratory-track-autonomy.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/research/manual-incident-review.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/research/methodology.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/model-training-reproducibility.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/operator-incident-workflow.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/phase1-acceptance-criteria.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/phase1-blinding-and-mapping.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/phase1-campaign-journal.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/phase1-execution-package-history.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/phase1-feature-construction.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/post-blind-data-governance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/reproducibility.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/research/methodology.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/model-training-reproducibility.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/operator-incident-workflow.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/phase1-acceptance-criteria.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/phase1-blinding-and-mapping.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/phase1-campaign-journal.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/phase1-execution-package-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/phase1-feature-construction.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/post-blind-data-governance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/reproducibility.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/research/temporal-reconstruction.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/research/training-data-lineage.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/uncertainty-and-abstention.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/v0-4-7-3-control-data-governance.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/research/v0-4-7-3-criterion-lineage.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/research/validation-role-separation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/roadmap.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/safety-model.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/security/index.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/security/staging_transport_security_v1.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/sigma-generation.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/status.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/status/confirmed-capabilities.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/status/current-status.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `docs/research/training-data-lineage.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/uncertainty-and-abstention.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/v0-4-7-3-control-data-governance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/research/v0-4-7-3-criterion-lineage.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/research/validation-role-separation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/roadmap.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/safety-model.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/security/index.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/security/staging_transport_security_v1.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/sigma-generation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/status.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/status/confirmed-capabilities.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/status/current-status.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/status/documentation_refactor_handoff.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/status/laboratory-track-history.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/status/mainline-history.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/status/next-stage.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/status/prohibited-capabilities.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/status/project-status.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `docs/status/laboratory-track-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/status/mainline-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/status/next-stage.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/status/prohibited-capabilities.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/status/project-status.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `docs/status/v0_3_18_working_handoff.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
-| `docs/status/v0_4_track.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `docs/status/version-history.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `docs/third-party-components.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/third-party-notices.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `docs/v0_3_4-design.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `examples/sample_event.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `examples/sample_incident.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `examples/sample_sigma_rule.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `external_review/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `docs/status/v0_4_track.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `docs/status/version-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `docs/third-party-components.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/third-party-notices.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/v0_3_4-design.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `examples/sample_event.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `examples/sample_incident.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `examples/sample_sigma_rule.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `external_review/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `external_review/contracts/blind_holdout_commitment_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `external_review/contracts/blind_holdout_manifest_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `external_review/contracts/candidate_commitment_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -534,7 +534,7 @@
 | `external_review/contracts/label_reveal_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `external_review/contracts/prediction_commitment_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `external_review/contracts/prediction_submission_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `incident_reconstruction/CURRENT.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `incident_reconstruction/CURRENT.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `incident_reconstruction/README.md` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `incident_reconstruction/__init__.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `incident_reconstruction/builder.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -593,251 +593,251 @@
 | `incident_reconstruction/temporal_scenarios.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `incident_reconstruction/temporal_validation.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `incident_reconstruction/validation.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/attack-scenarios.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/background/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/background/background_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/background/background_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/background/v037_background_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/generate_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_pre_v038_runtime_smoke.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_robustness_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_sensor_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v034_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_10_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_10_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_11.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_13.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_6_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_7_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_7_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_8_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_8_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_9_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/run_v0_3_9_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0310_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0310_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0310_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0311_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0311_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0313_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0313_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v034_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v037_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v037_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v037_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v038_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v038_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v038_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v039_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v039_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v039_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_2_3_independent_executions.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_10_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_10_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_10_training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_11/training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_11/validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_13/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_15/controlled_shadow_trial.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_2_zeek_robustness.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_3_environment.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_4_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_4_schema.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_4_training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_6_blind_holdout.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_7_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_7_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_7_training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_8_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_8_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_8_training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_9_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_9_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_9_training.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/campaigns/v0_3_zeek_sensor.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/dataset-methodology.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/docker/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/docker/docker-compose.lab.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/control-api/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/control-api/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/docker/services/control-api/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/control-api/requirements.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/internal-dns/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/internal-dns/server.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-api/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-api/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-api/requirements.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-ssh-sim/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-ssh-sim/server.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/html/about.html` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/html/docs.html` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/html/files/sample-config.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/html/files/sample-small.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/target-web/html/index.html` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/traffic-client/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/traffic-client/client.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/traffic-client/future_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/docker/services/traffic-client/requirements.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/environment/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/environment/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/environment/application_controller.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/environment/condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/run_v0_3_6_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/v036_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/v036_environment_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/v036_safety_policy.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/holdout/v0_3_6_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/isolation-rules.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/labeling/label_schema.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/attack-scenarios.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/background/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/background/background_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/background/background_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/background/v037_background_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/campaigns/campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/generate_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_pre_v038_runtime_smoke.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_robustness_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_sensor_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v034_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_10_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_10_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_11.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_13.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_6_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_7_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_7_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_8_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_8_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_9_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/run_v0_3_9_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0310_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0310_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0310_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0311_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0311_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0313_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0313_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v034_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v037_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v037_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v037_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v038_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v038_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v038_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v039_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v039_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v039_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_2_3_independent_executions.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_10_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_10_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_10_training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_11/training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_11/validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_13/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/campaigns/v0_3_15/controlled_shadow_trial.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_2_zeek_robustness.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_3_environment.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_4_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_4_schema.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_4_training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_6_blind_holdout.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_7_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_7_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_7_training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_8_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_8_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_8_training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_9_internal_validation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_9_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_9_training.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/campaigns/v0_3_zeek_sensor.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/dataset-methodology.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/docker/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/docker/docker-compose.lab.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/control-api/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/control-api/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/docker/services/control-api/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/control-api/requirements.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/docker/services/internal-dns/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/internal-dns/server.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-api/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-api/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-api/requirements.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/docker/services/target-ssh-sim/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-ssh-sim/server.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-web/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-web/html/about.html` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/docker/services/target-web/html/docs.html` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/docker/services/target-web/html/files/sample-config.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/target-web/html/files/sample-small.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/docker/services/target-web/html/index.html` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/docker/services/traffic-client/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/traffic-client/client.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/traffic-client/future_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/docker/services/traffic-client/requirements.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/environment/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/environment/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/environment/application_controller.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/environment/condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/holdout/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/holdout/run_v0_3_6_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/holdout/v036_condition_independence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/holdout/v036_environment_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/holdout/v036_safety_policy.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/holdout/v0_3_6_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/isolation-rules.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/labeling/label_schema.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab/labeling/scenario_manifest.example.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab/network_validation/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/network_validation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/candidate_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/capture.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/causal_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/common_client.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/compose.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/acceptance_criteria.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/freeze_candidate_campaign.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/image_lock.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/smoke_navigation_a.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/smoke_path_inspection_b.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/superseding_execution_policy.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/superseding_freeze_campaign.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/superseding_image_lock.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/superseding_split_assignments.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/config/technical_campaign.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/campaign_initialization_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab/network_validation/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/network_validation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/candidate_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/capture.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/causal_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/common_client.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/compose.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/acceptance_criteria.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/freeze_candidate_campaign.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/image_lock.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/smoke_navigation_a.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/smoke_path_inspection_b.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/superseding_execution_policy.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/superseding_freeze_campaign.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/superseding_image_lock.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/superseding_split_assignments.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/config/technical_campaign.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/campaign_initialization_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab/network_validation/execution/campaign_ledger_contract.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab/network_validation/execution/campaign_ledger_contract_v2.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab/network_validation/execution/evaluator_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/label_vault_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/official_execution_package.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/official_execution_package_v2.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/official_execution_package_v3.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/official_execution_package_v4.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/output_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/phase1_preflight_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/phase1_run_plan.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/phase1_runtime_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/preflight_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/runner_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/sealed_mapping_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/sealed_mapping_contract_v2.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution/session_integrity_contract.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/feature_adapter.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/freeze/official_freeze.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/freeze/official_superseding_freeze.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/freeze_candidate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/generators/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/generators/base.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/generators/family_a.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/generators/family_b.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/image_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/operational_initialization.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/parameter_verification.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/phase1_docker_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/phase1_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/phase1_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/planning.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/runtime_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/runtime_execution_package_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/superseding_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/superseding_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/targets/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/targets/target_a.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/network_validation/targets/target_b.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/robustness/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/robustness/run_v0_3_2_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenario-schedule.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/scenarios/attacks/auth_failures.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/attacks/beacon_simulation.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/attacks/low_rate_dos.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/attacks/port_scan.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/attacks/web_probe.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/audit_future_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/api_usage.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/api_workflow.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/auth_retry_recovery.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/backup_sync.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/broken_link_check.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/database_pool_recovery.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/dns_activity.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/dns_discovery.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/file_download.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/file_downloads.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/log_shipping.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/long_poll_keepalive.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/mirror_sync_burst.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/monitoring_heartbeat.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/multi_service_health.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/parallel_transfer.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/service_inventory.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/ssh_admin.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/update_check.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/v036_holdout_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/benign/web_browsing.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_10_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_10_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_11/training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_11/validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_13/benign_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_15/safety.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_7_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_7_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_8_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_8_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_9_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/scenarios/v0_3_9_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `lab/sensor/artifact_storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/capture_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/correlate_sensor_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/marker_intervals.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/normalize_zeek_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/run_v0_3_sensor_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/run_zeek.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/sensor/zeek_log_parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/benign_traffic_generator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/check_lab_services.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/collect_service_logs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/dataset_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/future_scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/label_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/normalize_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/run_lab_pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/scenario_executor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/tools/scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/training/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `lab/training/run_v0_3_4_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab/training/v0_3_4_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
+| `lab/network_validation/execution/evaluator_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/label_vault_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/official_execution_package.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/official_execution_package_v2.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/official_execution_package_v3.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/official_execution_package_v4.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/output_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/phase1_preflight_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/phase1_run_plan.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/phase1_runtime_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/preflight_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/runner_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/sealed_mapping_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/sealed_mapping_contract_v2.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution/session_integrity_contract.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/feature_adapter.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/freeze/official_freeze.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/freeze/official_superseding_freeze.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/freeze_candidate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/generators/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/generators/base.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/generators/family_a.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/generators/family_b.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/image_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/operational_initialization.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/parameter_verification.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/phase1_docker_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/phase1_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/phase1_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/planning.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/runtime_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/runtime_execution_package_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/superseding_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/superseding_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/targets/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/targets/target_a.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/network_validation/targets/target_b.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/robustness/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/robustness/run_v0_3_2_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenario-schedule.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/scenarios/attacks/auth_failures.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/attacks/beacon_simulation.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/attacks/low_rate_dos.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/attacks/port_scan.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/attacks/web_probe.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/audit_future_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/api_usage.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/api_workflow.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/auth_retry_recovery.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/backup_sync.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/broken_link_check.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/database_pool_recovery.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/dns_activity.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/dns_discovery.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/file_download.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/file_downloads.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/log_shipping.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/long_poll_keepalive.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/mirror_sync_burst.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/monitoring_heartbeat.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/multi_service_health.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/parallel_transfer.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/service_inventory.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/ssh_admin.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/update_check.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/v036_holdout_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/benign/web_browsing.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_10_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_10_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_11/training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_11/validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_13/benign_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_15/safety.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_7_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_7_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_8_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_8_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_9_training_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/scenarios/v0_3_9_validation_benign.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `lab/sensor/artifact_storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/capture_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/correlate_sensor_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/marker_intervals.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/normalize_zeek_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/run_v0_3_sensor_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/run_zeek.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/sensor/zeek_log_parser.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/benign_traffic_generator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/check_lab_services.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/collect_service_logs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/dataset_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/future_scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/label_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/normalize_events.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/run_lab_pipeline.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/scenario_executor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/tools/scenario_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/training/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `lab/training/run_v0_3_4_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab/training/v0_3_4_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `lab_console/__init__.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/__main__.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/adapters.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/blind_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/blind_validations.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/candidate_proposals.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/blind_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/blind_validations.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/candidate_proposals.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/cards.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/cases/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/cases/catalog.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/cases/laboratory_case_catalog_v1.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/cases/oracles/laboratory_case_oracles_v1.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/cases/validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/cases/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/cases/catalog.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/cases/laboratory_case_catalog_v1.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/cases/oracles/laboratory_case_oracles_v1.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/cases/validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/config.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/contracts/v0_4_3/allowed_task_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/contracts/v0_4_3/console_audit_event_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -1107,152 +1107,152 @@
 | `lab_console/contracts/v0_4_7_3/previous_failure_resolution_assessment_v1.schema.json` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/contracts/v0_4_7_3/v0_4_7_3_console_state_v1.schema.json` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/contracts/v0_4_7_3/v0_4_7_3_policy_result_v1.schema.json` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/corrective_cycles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/database.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/corrective_cycles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/database.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/files.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/integrity.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/jobs/__init__.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/jobs/allowed_tasks_v1.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/jobs/allowed_tasks_v2.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/jobs/allowed_tasks_v2.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/jobs/catalog.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `lab_console/jobs/runner.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/lab_runs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/models.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/presentation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/presentation/case_views.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/presentation/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/presentation/statuses.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/presentation/views.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/lab_runs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/models.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/presentation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/presentation/case_views.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/presentation/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/presentation/statuses.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/presentation/views.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/requirements.txt` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/review.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/review.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/security.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/static/console.css` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/static/console.js` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/base.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/login.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/static/console.css` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/static/console.js` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/base.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/login.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `lab_console/templates/page.html` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `lab_console/templates/pages/blind_validation_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/blind_validation_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/blind_validations.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/bundles.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/candidate_proposal_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/candidate_proposal_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/candidate_proposals.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/candidate_versions.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/case_catalog.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/case_section.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/comparison_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/comparisons.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/corrective_proposal.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/dashboard.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/documentation.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/failure_analysis.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/graph.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/hypotheses.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/incident_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/incidents.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/lab_run_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/lab_runs.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/logs.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/metrics.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/models.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/questions.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/reviews.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/run_comparison_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/run_comparisons.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/stages.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/system.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/tasks.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/tests.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/timeline.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/pages/v0473_validation.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/templates/partials/raw.html` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `lab_console/v0473_validations.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `licensing/repository-license-manifest.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `licensing/repository-license-manifest.schema.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `ml/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `ml/analysis/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/aggregation_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/build_campaign_dataset_index.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/build_campaign_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/build_experiment_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/build_window_audit_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_common.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_dataset_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_error_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_execution_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/campaign_split_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/class_separability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/environment_dataset_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/feature_availability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/feature_drift.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/feature_importance_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/frozen_sensor_model_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/network_sensor_v4_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/report_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/run_feature_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/run_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/scenario_variant_generalization.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/sensor_aggregation_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/sensor_capture_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/sensor_correlation_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/sensor_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `lab_console/templates/pages/blind_validation_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/blind_validation_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/blind_validations.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/bundles.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/candidate_proposal_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/candidate_proposal_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/candidate_proposals.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/candidate_versions.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/case_catalog.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/case_section.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/comparison_review.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/comparisons.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/corrective_proposal.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/dashboard.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/documentation.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/failure_analysis.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/graph.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/hypotheses.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/incident_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/incidents.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/lab_run_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/lab_runs.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/logs.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/metrics.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/models.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/questions.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/reviews.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/run_comparison_detail.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/run_comparisons.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/stages.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/system.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/tasks.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/tests.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/timeline.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/pages/v0473_validation.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/templates/partials/raw.html` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `lab_console/v0473_validations.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `licensing/repository-license-manifest.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `licensing/repository-license-manifest.schema.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `ml/analysis/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `ml/analysis/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/aggregation_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/build_campaign_dataset_index.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/build_campaign_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/build_experiment_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/build_window_audit_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_common.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_dataset_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_error_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_execution_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/campaign_split_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/class_separability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/environment_dataset_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/feature_availability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/feature_drift.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/feature_importance_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/frozen_sensor_model_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/network_sensor_v4_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/report_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/run_feature_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/run_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/scenario_variant_generalization.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/sensor_aggregation_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/sensor_capture_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/sensor_correlation_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/sensor_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/analysis/v0310_capture_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/analysis/v0310_causal_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_contamination_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_model_interpretation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_promotion_funnel.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v0310_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_additional_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_bridge_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_decision_contributions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_feature_semantics_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_forensic_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v033_forensic_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v035_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v035_posthoc.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_diversity_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_false_negative_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_false_positive_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_historical_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_holdout.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_holdout_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_observation_quality.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_overlap_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_provenance_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v036_random_forest_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v037_causal_feature_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v037_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v037_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v037_ood_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v037_temporal_evidence_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_causal_feature_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_episode_evidence_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v038_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_causal_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_contamination_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_model_interpretation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/v039_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/window_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/analysis/window_size_simulation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/analysis/v0310_causal_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_contamination_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_model_interpretation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_promotion_funnel.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v0310_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_additional_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_bridge_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_decision_contributions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_feature_semantics_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_forensic_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v033_forensic_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v035_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v035_posthoc.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_diversity_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_false_negative_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_false_positive_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_historical_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_holdout.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_holdout_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_observation_quality.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_overlap_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_provenance_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v036_random_forest_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v037_causal_feature_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v037_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v037_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v037_ood_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v037_temporal_evidence_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_causal_feature_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_episode_evidence_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v038_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_causal_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_contamination_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_decision_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_feature_distribution.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_model_interpretation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/v039_validation_lock_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/window_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/analysis/window_size_simulation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/artifacts/v0_3_15_4/candidate_manifest.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/audits/v0_3_10_1/audit_protocol.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/audits/v0_3_10_1/frozen_integrity_audit.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -1286,20 +1286,20 @@
 | `ml/audits/v0_3_14/idempotency_audit.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/audits/v0_3_14/privacy_audit.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/audits/v0_3_14/v0313_checkpoint_consistency_audit.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/configs/inference.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/configs/train.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `ml/decision/v0310_activity_key_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v0310_alert_deduplication.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v0310_minimal_promotion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v0310_pending_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v037_temporal_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v038_episode_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v039_alert_lifecycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v039_evidence_record.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/decision/v039_signed_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/evaluation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/evaluation/predict_only.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/configs/inference.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/configs/train.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `ml/decision/v0310_activity_key_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v0310_alert_deduplication.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v0310_minimal_promotion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v0310_pending_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v037_temporal_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v038_episode_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v039_alert_lifecycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v039_evidence_record.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/decision/v039_signed_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/evaluation/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/evaluation/predict_only.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/experiments/post_v037_audit/secure_artifact_reference.yaml` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/experiments/v0_2_4/README.md` | `historical_document` | нет | да | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/experiments/v0_2_4/evaluation_config.yaml` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -1647,44 +1647,44 @@
 | `ml/experiments/v0_3_9/safety_policy.yaml` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/experiments/v0_3_9/select_decision_policy.py` | `historical_document` | нет | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/experiments/v0_3_9/validation_lock_manifest.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/features/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `ml/features/build_flows_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/build_future_integrity_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/build_network_sensor_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/build_network_sensor_v4_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/build_windows_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/feature_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/feature_dictionary.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/future_integrity_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/network_sensor_v0_4.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/features/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `ml/features/build_flows_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/build_future_integrity_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/build_network_sensor_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/build_network_sensor_v4_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/build_windows_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/feature_catalog.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/feature_dictionary.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/future_integrity_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/network_sensor_v0_4.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/features/network_sensor_v0_4_manifest.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/features/network_sensor_v0_4_schema.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/network_sensor_v0_5.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/network_sensor_v0_6.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/network_sensor_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/profile_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v034_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v0_5_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v0_6_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v0_7_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v0_7_schema_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/v0_8_schema_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/features/validators.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/benign_ood_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/class_conditional_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/continuous_class_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/group_aware_sigmoid_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/hierarchical_sensor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/models/mondrian_conformal_classifier.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/performance/equivalence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/performance/parallel_policy_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/performance/resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/performance/resource_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/performance/resource_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/policy/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/policy/future_research_policy.example.yaml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/policy/policy_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/features/network_sensor_v0_4_schema.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/network_sensor_v0_5.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/network_sensor_v0_6.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/network_sensor_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/profile_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v034_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v0_5_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v0_6_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v0_7_feature_capability_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v0_7_schema_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/v0_8_schema_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/features/validators.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/benign_ood_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/class_conditional_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/continuous_class_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/group_aware_sigmoid_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/hierarchical_sensor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/models/mondrian_conformal_classifier.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/performance/equivalence_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/performance/parallel_policy_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/performance/resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/performance/resource_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/performance/resource_profiles.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/policy/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/policy/future_research_policy.example.yaml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/policy/policy_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/protocols/index.md` | `generated_document` | нет | да | `included` | пользовательский создаваемый документ | `unchanged` |
 | `ml/protocols/v0_3_15_2_protocol.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/protocols/v0_3_15_3_protocol.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -2462,756 +2462,756 @@
 | `ml/reports/v0_4_7_3/test_report.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/reports/v0_4_7_3/v0_4_7_3_bundle_manifest.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/reports/v0_4_7_3/v0_4_7_3_policy_result.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/requirements-v0_3_4.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `ml/requirements.txt` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
+| `ml/requirements-v0_3_4.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `ml/requirements.txt` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `ml/templates/regression_bundle_manifest.template.yaml` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/_v03101_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/_v03121_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/_v03122_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_baseline_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_dataset_index.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_execution_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_generation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_parameter_variation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_safety_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_campaign_split_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_client_feature_aggregation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_language_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
-| `ml/tests/test_documentation_links.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_metrics_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_status_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_structure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_feature_drift.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_benign_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_dns_capture_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_duration_semantics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_environment_application.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_feature_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_integrity_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_policy_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_future_predict_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_grouped_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_multirun_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_sensor_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_infrastructure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_official_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_operational_initialization.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_phase1_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_superseding_execution_package_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_network_validation_superseding_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_pre_v038_runtime_smoke.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_repository_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_repository_root_layout.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_reproducibility_guards.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_research_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_robustness_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_run_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_sensor_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_useful_model_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/_v03101_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/_v03121_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/_v03122_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_baseline_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_dataset_index.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_execution_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_generation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_ml_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_parameter_variation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_safety_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_campaign_split_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_client_feature_aggregation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_language_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `ml/tests/test_documentation_links.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `ml/tests/test_documentation_metrics_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_status_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_structure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_feature_drift.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_benign_workflows.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_dns_capture_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_duration_semantics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_environment_application.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_feature_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_integrity_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_policy_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_future_predict_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_grouped_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_multirun_training.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_sensor_v4.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_infrastructure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_official_execution_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_operational_initialization.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_phase1_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_superseding_execution_package_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_network_validation_superseding_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_pre_v038_runtime_smoke.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_repository_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_repository_root_layout.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_reproducibility_guards.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_research_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_robustness_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_run_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_sensor_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_useful_model_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03101_audit_protocol.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v03101_audit_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_burden_pending_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_data_usage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_frozen_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_no_refit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_parallel_policy_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_pending_review_flag.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_pending_semantics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_policy_evaluator_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_policy_reachability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_post_alert_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_pre_alert_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_progress_reporting.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_resource_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_training_selection_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03101_unresolved_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_alert_emission.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_ambiguity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v03101_audit_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_burden_pending_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_data_usage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_frozen_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_no_refit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_parallel_policy_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_pending_review_flag.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_pending_semantics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_policy_evaluator_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_policy_reachability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_post_alert_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_pre_alert_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_progress_reporting.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_resource_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_training_selection_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03101_unresolved_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_alert_emission.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_ambiguity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0310_capture_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0310_causal_decisions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_dedup_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_deduplication.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_diagnostic_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_latency_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_nested_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_novelty.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_pending_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_pending_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_promotion_funnel.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0310_causal_decisions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_control_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_dedup_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_deduplication.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_diagnostic_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_latency_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_nested_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_novelty.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_pending_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_pending_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_promotion_funnel.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0310_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0310_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_strong_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_strong_path.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_summary_completeness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_unclassified_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_weak_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0310_weak_path.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_burden_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_class_conflict.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_class_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_closed_set_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_dedup_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_episode_lengths.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_episode_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_fallback_candidate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_false_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_frozen_ranking.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_group_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_grouped_folds.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_hgb_profile_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_immutable_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_no_fit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_pending_confirmation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_pending_expiration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_pending_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_pending_reset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_policy_grid.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_policy_parallel_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_policy_reachability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_post_alert_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_progress.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0310_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_strong_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_strong_path.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_summary_completeness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_unclassified_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_weak_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0310_weak_path.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_burden_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_class_conflict.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_class_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_closed_set_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_dedup_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_episode_lengths.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_episode_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_fallback_candidate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_false_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_frozen_ranking.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_group_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_grouped_folds.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_hgb_profile_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_immutable_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_no_fit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_pending_confirmation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_pending_expiration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_pending_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_pending_reset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_policy_grid.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_policy_parallel_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_policy_reachability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_post_alert_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_progress.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0311_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0311_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_review_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_review_states.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_scenario_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_staged_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_state_exclusivity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_strong_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_thread_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_unresolved_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_variant_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_weak_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0311_worker_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_activity_key_continuity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_alert_window_reconstruction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_artifact_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_audit_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_bundle_hash_mismatch.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_bundle_label_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_bundle_missing_file.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_bundle_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_cross_benchmark_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_data_usage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_dedup_after_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_delay_reason_taxonomy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_earliest_strong_eligibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_earliest_weak_eligibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_episode_length_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_episode_ordering.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_first_alert_not_suppressed.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_frozen_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_gate_granularity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_historical_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_identical_rate_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_no_fit_no_predict_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_parallel_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_pending_continuity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_per_class_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_per_run_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_primary_reason_precedence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0311_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_review_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_review_states.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_scenario_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_staged_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_state_exclusivity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_strong_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_thread_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_unresolved_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_variant_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_weak_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0311_worker_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_activity_key_continuity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_alert_window_reconstruction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_artifact_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_audit_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_bundle_hash_mismatch.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_bundle_label_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_bundle_missing_file.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_bundle_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_cross_benchmark_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_data_usage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_dedup_after_alert.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_delay_reason_taxonomy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_earliest_strong_eligibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_earliest_weak_eligibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_episode_length_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_episode_ordering.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_first_alert_not_suppressed.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_frozen_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_gate_granularity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_historical_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_identical_rate_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_no_fit_no_predict_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_parallel_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_pending_continuity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_per_class_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_per_run_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_primary_reason_precedence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03121_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v03121_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_recoverability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_regression_bundle_template.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_regression_bundle_validator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_scientific_status.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_state_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_state_machine_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_state_machine_extra_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_threshold_distances.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_v038_count_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_v038_first_divergence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03121_weak_confirmation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_absolute_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_activity_key_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_aggregate_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_alert_window.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_catastrophic_regression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_causal_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v03121_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_recoverability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_regression_bundle_template.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_regression_bundle_validator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_scientific_status.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_state_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_state_machine_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_state_machine_extra_delay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_threshold_distances.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_v038_count_chain.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_v038_first_divergence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03121_weak_confirmation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_absolute_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_activity_key_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_aggregate_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_alert_window.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_catastrophic_regression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_causal_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03122_combined_prediction_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v03122_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_coverage_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_coverage_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_detection_by_second.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_duplicate_causal_order_blocks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_episode_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_feature_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_latency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_legacy_physical_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_non_inferiority.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_prediction_reference.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v03122_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_continuation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_coverage_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_coverage_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_detection_by_second.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_duplicate_causal_order_blocks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_duplicate_suppression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_episode_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_feature_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_latency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_legacy_physical_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_non_inferiority.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_pending.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_prediction_reference.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03122_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v03122_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_registry_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_reverse_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_row_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_state_machine_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v0310_no_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v0310_positive_causal_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v038_expected_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v038_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v038_prediction_once.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v039_no_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_v039_positive_causal_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_warmup_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03122_worker_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_absolute_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_activity_key_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_aggregate_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_benchmark_locator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_benchmark_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_catastrophic_regression.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_class_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_combined_prediction_hash.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_comparability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_core_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_deterministic_merge.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_episode_applicability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_evaluation_coverage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_expected_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_feature_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_frozen_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_historical_reference_extraction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_historical_result_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_label_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_legacy_pending_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_missing_feature_blocks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_no_imputation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_non_inferiority.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_paired_alignment.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_parallel_prediction_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_positive_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_prediction_hash.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v03122_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_registry_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_reverse_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_row_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_state_machine_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v0310_no_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v0310_positive_causal_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v038_expected_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v038_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v038_prediction_once.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v039_no_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_v039_positive_causal_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_warmup_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03122_worker_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_absolute_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_activity_key_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_aggregate_gates.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_benchmark_locator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_benchmark_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_catastrophic_regression.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_class_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_combined_prediction_hash.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_comparability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_core_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_deterministic_merge.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_episode_applicability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_evaluation_coverage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_expected_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_feature_compatibility.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_frozen_prediction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_historical_reference_extraction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_historical_result_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_label_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_legacy_pending_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_missing_feature_blocks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_no_imputation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_non_inferiority.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_paired_alignment.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_parallel_prediction_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_positive_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_prediction_hash.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0312_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0312_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_regression_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_row_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_thread_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0312_worker_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_attack_class_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_benign_variant_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_blind_access_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_blind_label_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_bundle_completion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0312_read_only_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_regression_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_row_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_thread_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0312_worker_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_activity_key.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_attack_class_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_benign_variant_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_blind_access_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_blind_label_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_bundle_completion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0313_bundle_pre_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0313_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_campaign_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_capture_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_capture_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_catastrophic_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_controls.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_environment_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_episode_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_episode_lengths.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_episode_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_episode_structure.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_negative_guards.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_no_sensor_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_per_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_per_length_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_per_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_prediction_once.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0313_bundle_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_campaign_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_capture_counts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_capture_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_capture_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_catastrophic_failure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_causal_sort.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_controls.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_environment_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_episode_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_episode_lengths.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_episode_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_episode_structure.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_input_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_negative_guards.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_no_physical_order_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_no_sensor_fallback.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_per_class_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_per_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_per_length_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_per_run_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_per_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_performance_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_prediction_once.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_prediction_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_previous_stage_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0313_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0313_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_reverse_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_row_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_safety_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_scenario_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_seed_uniqueness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_stateful_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_variant_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_window_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0313_worker_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_automatic_action_absent.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_backend_contract_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_backend_write_absent.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_causal_event_order.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_checkpoint_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_crash_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_fail_safe.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_fault_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_load_test.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_logging_redaction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_no_model_intervention.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_no_production_connection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_observability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_performance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0313_readiness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_resource_monitor.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_reverse_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_row_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_row_permutation_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_safety_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_scenario_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_seed_uniqueness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_stateful_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_stateful_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_variant_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_window_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0313_worker_order_invariance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_automatic_action_absent.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_backend_contract_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_backend_write_absent.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_causal_event_order.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_checkpoint_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_checkpoint_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_crash_consistency.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_fail_safe.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_fault_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_load_test.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_logging_redaction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_no_model_intervention.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_no_production_connection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_observability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_performance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v0314_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0314_replay_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_resource_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_restart_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_reverse_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_shuffle_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_source_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_v0313_positive_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0314_worker_order_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03152_prospective_trial.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0314_replay_equivalence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_resource_limits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_restart_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_reverse_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_shuffle_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_source_reconciliation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_v0313_positive_control.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0314_worker_order_replay.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03152_prospective_trial.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03153_regression_analysis.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/tests/test_v03154_controlled_redevelopment.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v031551_runtime_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v031551_runtime_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v03155_independent_holdout.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0316_staging_transport.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_corruption.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_finalizer.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_forensic.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v03171_timing.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0317_rehearsal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0318_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0318_design_policies.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0318_package_and_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0318_rehearsal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0318_validators.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v032_evaluation_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_background_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_environment_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_forensic_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_forensic_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_frozen_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_marker_correlation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v033_normalized_event_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_attempt_archive.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_capture_barrier.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v034_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_baseline_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_baseline_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_benchmark_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0316_staging_transport.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_corruption.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_finalizer.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_forensic.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v03171_timing.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0317_rehearsal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0318_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0318_design_policies.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0318_package_and_evaluator.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0318_rehearsal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0318_validators.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v032_evaluation_separation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_background_safety.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_environment_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_environment_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_forensic_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_forensic_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_frozen_recovery.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_marker_correlation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v033_normalized_event_identity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_attempt_archive.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_capture_barrier.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v034_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_audits.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_baseline_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_baseline_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_benchmark_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v035_benchmark_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v035_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_feature_projection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_internal_validation_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_paired_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_prediction_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_regression_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v035_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_attack_variants.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_benign_scenarios.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_campaign_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_campaign_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_diversity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_holdout_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_leakage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_overlap.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_prediction_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v035_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_feature_projection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_internal_validation_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_paired_comparison.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_prediction_transitions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_regression_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v035_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_attack_variants.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_benign_scenarios.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_bootstrap.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_campaign_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_campaign_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_campaign_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_diversity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_evaluation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_holdout_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_leakage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_overlap.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_prediction_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_preflight.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v036_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v036_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v036_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_abstention.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_asset_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_campaign_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_feature_capability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_hierarchical_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_nested_cv.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_ood_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_ood_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_subtype_classifier.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_temporal_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v037_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_class_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_episode_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_feature_capability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_nested_cv.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_operational_decision.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_operational_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v036_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v036_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_abstention.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_asset_state.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_calibration_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_campaign_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_data_access_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_feature_capability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_hierarchical_gate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_nested_cv.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_ood_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_ood_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_subtype_classifier.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_temporal_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v037_window_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_class_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_conformal_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_episode_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_feature_capability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_feature_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_nested_cv.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_operational_decision.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_operational_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v038_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v038_raw_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_support_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v038_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_alert_lifecycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_causal_decisions.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_continuous_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_decision_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_evidence_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_evidence_record.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_grouped_oof.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_hysteresis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_latency_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_lifecycle_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v038_raw_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_support_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v038_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_alert_lifecycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_candidate_integrity.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_causal_decisions.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_causal_features.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_closed_set_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_condition_independence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_continuous_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_data_access_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_decision_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_episode_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_episode_schedule.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_evidence_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_evidence_record.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_feature_schema.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_group_calibration.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_group_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_grouped_oof.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_hysteresis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_joint_probabilities.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_latency_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_leakage_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_lifecycle_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_mondrian_conformal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_no_fit_guard.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_policy_result.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v039_protocol_freeze.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v039_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_signed_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_state_contamination.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_strong_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_summary_completeness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v039_weak_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v040_incident_reconstruction.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v039_scenario_balance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_signed_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_stage_runner.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_state_contamination.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_strong_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_summary_completeness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_training_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_validation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_validation_lock.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_variant_metrics.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_warmup_isolation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v039_weak_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v040_incident_reconstruction.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v041_temporal_reconstruction.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `ml/tests/test_v042_hypothesis_analysis.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v0431_console_ui.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v0431_console_ui.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `ml/tests/test_v043_lab_console.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `ml/tests/test_v044_operator_cycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v045_laboratory_runs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v046_candidate_proposals.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0471_failure_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0472_corrective_proposal.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v0473_blind_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/test_v047_blind_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v0310_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v0311_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v0312_test_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v0313_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v0314_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v036_test_utils.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v037_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v038_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/tests/v039_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `ml/training/campaign_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/dataset_utils.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/evaluate.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/evaluate_model.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/export_onnx.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/model_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/preprocess.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/report_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/run_external_experiment.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/run_v0_3_4_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/split_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/train.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/train_baselines.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/v034_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/v034_data_access.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/v034_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `ml/training/v034_feature_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `unchanged` |
-| `rehearsal/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/connector_app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `ml/tests/test_v044_operator_cycle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v045_laboratory_runs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v046_candidate_proposals.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0471_failure_analysis.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0472_corrective_proposal.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v0473_blind_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/test_v047_blind_validation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v0310_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v0311_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v0312_test_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v0313_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v0314_checks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v036_test_utils.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v037_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v038_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/tests/v039_support.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `ml/training/campaign_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/dataset_utils.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/evaluate.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/evaluate_model.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/export_onnx.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/model_registry.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/preprocess.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/report_writer.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/run_external_experiment.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/run_v0_3_4_model_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/split_dataset.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/train.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/train_baselines.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/v034_candidate_freeze.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/v034_data_access.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/v034_dataset_loader.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `ml/training/v034_feature_contract.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `rehearsal/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/connector_app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `rehearsal/contracts/operator_projection_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `rehearsal/contracts/rehearsal_observability_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `rehearsal/contracts/runtime_timing_trace_v2.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `rehearsal/docker-compose.v0_3_17.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/docker-compose.v0_3_17_1.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/operator_view.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/persistent_https.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/reference_receiver_app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/sensor_daemon.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `rehearsal/traffic_source.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `runtime/docker-compose.demo.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `sbom/container-declarations.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `sbom/python-environment.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `sbom/repository.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный машиночитаемый или юридический файл | `unchanged` |
-| `staging/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `staging/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/connector/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/connector/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/contracts/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/contracts/connector_ingress_ack_v1.schema.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `rehearsal/docker-compose.v0_3_17.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/docker-compose.v0_3_17_1.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/operator_view.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/persistent_https.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/reference_receiver_app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/sensor_daemon.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `rehearsal/traffic_source.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `runtime/docker-compose.demo.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `sbom/container-declarations.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `sbom/python-environment.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `sbom/repository.spdx.json` | `generated_document` | нет | нет | `excluded` | служебный создаваемый файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/Dockerfile` | `non_text_or_non_human` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `staging/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/connector/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/connector/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/contracts/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/contracts/connector_ingress_ack_v1.schema.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `staging/contracts/connector_ingress_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `staging/contracts/models.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/contracts/receiver_batch_ack_v1.schema.json` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `staging/contracts/models.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/contracts/receiver_batch_ack_v1.schema.json` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `staging/contracts/staging_event_batch_v1.schema.json` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `staging/docker-compose.v0_3_16.yml` | `current_machine_document` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/http_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/reference_receiver/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/reference_receiver/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/sensor_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `staging/storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/README.md` | `current_human_document` | нет | да | `included` | не предназначен для чтения | `rewritten` |
-| `tools/audit/apply_environment_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/artifact_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `staging/docker-compose.v0_3_16.yml` | `current_machine_document` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/http_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/reference_receiver/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/reference_receiver/app.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/sensor_runtime.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `staging/storage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/README.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
+| `tools/audit/apply_environment_profile.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/artifact_hashes.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/audit/build_v040_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/build_v041_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/build_v042_manifest.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/audit/check_repository_artifacts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/evaluate_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/integrity_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/reproduction_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/strict_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_regression_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_shadow_trial_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v03151_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v03152_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/audit/check_repository_artifacts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/evaluate_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/integrity_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/reproduction_audit.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/strict_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_regression_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_shadow_trial_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v03151_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v03152_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/audit/validate_v03153_artifacts.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v03153_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v03154_artifacts.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v03154_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/audit/validate_v031551_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/audit/validate_v031551_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/audit/validate_v03155_artifacts.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v03155_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/audit/validate_v0316_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v03171_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v03171_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v03171_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0317_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0317_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0317_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0318_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0318_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/validate_v0318_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/audit/validate_v0316_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v03171_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v03171_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v03171_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0317_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0317_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0317_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0318_artifact_exclusion.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0318_bundle.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/validate_v0318_docs.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/audit/validate_v040_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v041_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/audit/validate_v042_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/audit/verify_secure_artifacts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/audit/verify_v03155_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/check_release_images.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/build_documentation_indexes.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/build_documentation_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/build_russian_language_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
-| `tools/docs/correct_markdown_rendering.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/finalize_language_maintenance_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
-| `tools/docs/inventory_documentation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/maintain_russian_narrative.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/render_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/render_version_history.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/repair_language_links_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/restore_frozen_line_endings_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/restore_protected_language_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/run_documentation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/run_russian_narrative_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
-| `tools/docs/validate_documentation.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_authority.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_freshness.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_immutability.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_links.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_rendering.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_terminology.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_project_status.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_russian_narrative.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `rewritten` |
-| `tools/docs/validate_v03101_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0310_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v03121_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v03122_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0312_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0313_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0314_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v031551_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v0315_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/docs/validate_v039_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/external_review/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/external_review/build_external_review_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/audit/verify_secure_artifacts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/audit/verify_v03155_resume.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/check_release_images.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/build_documentation_indexes.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/build_documentation_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/build_russian_language_inventory.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `tools/docs/correct_markdown_rendering.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `tools/docs/finalize_language_maintenance_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `tools/docs/inventory_documentation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/maintain_russian_narrative.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/render_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/render_version_history.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/repair_language_links_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/restore_frozen_line_endings_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/restore_protected_language_v3.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/run_documentation_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/run_russian_narrative_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `tools/docs/validate_documentation.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_authority.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_cli.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_freshness.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_identifiers.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_immutability.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_links.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_maintenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_rendering.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_terminology.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_documentation_v2.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_project_status.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_russian_narrative.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `rewritten` |
+| `tools/docs/validate_v03101_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0310_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0311_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v03121_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v03122_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0312_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0313_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0314_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v031551_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v0315_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/docs/validate_v039_summary.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/external_review/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/external_review/build_external_review_package.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/external_review/canonical_commitment.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/external_review/frozen_evaluator.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/external_review/verify_external_review_package.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
@@ -3223,63 +3223,63 @@
 | `tools/incident_reconstruction/verify_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/incident_reconstruction/verify_hypothesis_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/incident_reconstruction/verify_temporal_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/lab_console/build_v044_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/finalize_v044_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/finalize_v047.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/finalize_v0471.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/finalize_v0472.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/finalize_v0473.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/lab_console/build_v044_cases.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/finalize_v044_evidence.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/finalize_v047.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/finalize_v0471.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/finalize_v0472.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/finalize_v0473.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/lab_console/generate_v043_contracts.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/lab_console/generate_v044_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/generate_v046_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/generate_v0471_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/generate_v0472_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/generate_v0473_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/generate_v047_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/lab_console/generate_v044_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/generate_v046_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/generate_v0471_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/generate_v0472_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/generate_v0473_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/generate_v047_contracts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/lab_console/run_console.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/lab_console/run_v0431_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/lab_console/run_v0431_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/lab_console/run_v043_campaign.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/lab_console/run_v044_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v044_tasks.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v045_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v046_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v0471_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v0472_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v0473_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/v047_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/lab_console/run_v044_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v044_tasks.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v045_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v046_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v0471_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v0472_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v0473_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/v047_stage.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
 | `tools/lab_console/validate_v043_bundle.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
 | `tools/lab_console/verify_console.py` | `frozen_evidence` | да | нет | `excluded` | исторический или защищённый материал | `unchanged` |
-| `tools/lab_console/verify_v044.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v045.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v046.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v047.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v0471.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v0472.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/lab_console/verify_v0473.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/audit_file_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/audit_git_authors.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/audit_static_assets.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/build_license_manifest.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/build_third_party_notices.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/inventory_container_images.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/inventory_python_dependencies.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/run_licensing_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/run_licensing_campaign_v1_1.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/tests/test_licensing.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_all.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_container_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_contribution_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_dependency_licenses.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_distribution_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_frozen_license_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_license_files.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_manifest.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_reuse_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_third_party_notices.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/licensing/validate_upstream_standard_texts.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/performance/benchmark_v0310_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/performance/show_stage_progress.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
-| `tools/runtime_environment_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | не предназначен для чтения | `unchanged` |
+| `tools/lab_console/verify_v044.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v045.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v046.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v047.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v0471.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v0472.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/lab_console/verify_v0473.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/audit_file_provenance.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/audit_git_authors.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/audit_static_assets.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/build_license_manifest.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/build_third_party_notices.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/common.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/inventory_container_images.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/inventory_python_dependencies.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/run_licensing_campaign.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/run_licensing_campaign_v1_1.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/tests/__init__.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/tests/test_licensing.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_all.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_container_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_contribution_policy.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_dependency_licenses.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_distribution_profiles.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_frozen_license_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_license_files.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_manifest.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_reuse_mapping.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_third_party_notices.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/licensing/validate_upstream_standard_texts.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/performance/benchmark_v0310_selection.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/performance/show_stage_progress.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |
+| `tools/runtime_environment_report.py` | `source_code_with_human_text` | нет | нет | `excluded` | служебный файл, не предназначенный для чтения пользователем | `unchanged` |

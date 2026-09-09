@@ -394,6 +394,7 @@ def document_metadata(path: Path, root: Path = ROOT) -> dict[str, Any]:
         "authoritative_for": row.get("authoritative_for", []),
         "source_of_truth": row.get("source_of_truth", []),
         "last_reviewed_stage": row.get("last_reviewed_stage", row.get("last_relevant_stage", stage_from_path(relative))),
+        "reviewed_in_current_language_pass": bool(row.get("reviewed_in_current_language_pass")),
         "generated": bool(row.get("generated", False)),
         "evidence_immutable": bool(row.get("evidence_immutable", False)),
         "duplicate_of": row.get("duplicate_of", ""),

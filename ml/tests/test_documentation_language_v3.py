@@ -8,6 +8,7 @@ import pytest
 
 from tools.docs.run_russian_narrative_campaign import negative_scenarios, positive_scenarios
 from tools.docs.validate_russian_narrative import analyze_text, classification_details
+from tools.docs.build_russian_language_inventory import metadata_consistency_findings
 
 
 @pytest.mark.parametrize("row", positive_scenarios(), ids=lambda row: row["id"])
@@ -94,6 +95,59 @@ def test_final_audit_negative_examples_are_rejected(text):
 ])
 def test_exact_identifiers_and_technology_names_are_accepted(text):
     assert analyze_text(text, "current_human_document", ".md") == []
+
+
+@pytest.mark.parametrize("text", [
+    "Incident порядок работы.",
+    "Runbook эталонного приёмника.",
+    "Label интерфейса не влияет на модель.",
+    "Baseline полной регрессии сохранён.",
+    "Push выполняется после проверки.",
+    "Public данные сохраняются отдельно.",
+    "License проверка обязательна.",
+    "Desktop интерфейс используется оператором.",
+    "Engine запускается локально.",
+    "Creative документы проверяются отдельно.",
+])
+def test_titlecase_narrative_words_are_rejected(text):
+    assert analyze_text(text, "current_human_document", ".md")
+
+
+@pytest.mark.parametrize("text", [
+    "Для анализа используется Zeek.",
+    "Контейнеры запускаются через Docker Engine.",
+    "Приложение разработано для Docker Desktop.",
+    "Материал распространяется по лицензии Creative Commons.",
+    "Поле `execution_token` не передаётся модели.",
+])
+def test_official_compound_names_and_identifiers_are_accepted(text):
+    assert analyze_text(text, "current_human_document", ".md") == []
+
+
+def test_language_inventory_metadata_consistency_rules():
+    valid = [{
+        "path": "README.md", "file_kind": "current_human_document",
+        "human_facing": True, "language_scan": "included",
+        "language_scan_reason": "текущий пользовательский документ",
+    }, {
+        "path": "old.md", "file_kind": "historical_document",
+        "human_facing": True, "language_scan": "excluded",
+        "language_scan_reason": "исторический или защищённый материал",
+    }]
+    assert metadata_consistency_findings(valid) == []
+    invalid = [{
+        "path": "bad.md", "file_kind": "generated_document",
+        "human_facing": True, "language_scan": "included",
+        "language_scan_reason": "не предназначен для чтения пользователем",
+    }, {
+        "path": "excluded.md", "file_kind": "generated_document",
+        "human_facing": True, "language_scan": "excluded",
+        "language_scan_reason": "служебный создаваемый файл",
+    }]
+    assert metadata_consistency_findings(invalid) == [
+        "included_not_for_reading:bad.md",
+        "human_facing_excluded:excluded.md",
+    ]
 
 
 def test_generated_current_english_is_scanned():

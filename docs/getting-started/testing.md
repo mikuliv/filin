@@ -14,13 +14,13 @@ python -m tools.docs.validate_documentation_cli --strict
 python -m pytest ml/tests/test_documentation_maintenance.py ml/tests/test_documentation_links.py ml/tests/test_documentation_structure.py ml/tests/test_documentation_status_consistency.py ml/tests/test_documentation_metrics_consistency.py ml/tests/test_documentation_language_v3.py ml/tests/test_documentation_identifiers.py ml/tests/test_documentation_cli.py -q
 ```
 
-Эти проверки не запускают научную кампанию. Для сетевого контура дополнительно безопасны статические контрактные тесты `test_network_validation_infrastructure.py` и `test_network_validation_phase1_runtime.py`; перед запуском проверьте, что тест не вызывает Docker исполнитель или создание научных выходов.
+Эти проверки не запускают научную кампанию. Для сетевого контура дополнительно безопасны статические контрактные тесты `test_network_validation_infrastructure.py` и `test_network_validation_phase1_runtime.py`; перед запуском проверьте, что тест не вызывает исполнитель Docker и не создаёт научные результаты.
 
 ## Инвентаризация
 
 После содержательной редакции сначала пересоберите индексы, затем языковую опись и последней общую документационную опись. После этого выполните валидаторы. Проверка защищённых байтов обязательна. Исторические и защищённые файлы не исправляются ради языкового сканера.
 
-## Baseline полной регрессии
+## Базовое состояние полной регрессии
 
 Не используется обещание «0 сбоев» без привязки к конкретному окружению. Авторитетное исходное состояние хранит четыре поля: `full_regression_passed=false`, `new_regressions_detected=false`, `allowed_baseline_failures=1`, `known_baseline_change=historical_v03155_result_changed`. Перед новым запуском фиксируются точные количества пройденных, непройденных и пропущенных тестов, предупреждения и версии зависимостей. Одно разрешённое исходное отклонение не скрывает новых ошибок.
 

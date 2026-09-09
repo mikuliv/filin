@@ -7,10 +7,10 @@
 | Наборы данных | [Наборы данных](../../datasets/README.md) | происхождение метаданных | тесты документации и данных |
 | Лаборатория | [лаборатория](../../lab/README.md) | спецификации сценариев и среды | лабораторные тесты в pytest |
 | ML | [машинное обучение](../../ml/README.md) | признаки, протоколы, артефакты | полный набор тестов ML в pytest |
-| Staging | [staging](../../staging/README.md) | `staging/contracts` | staging tests |
-| Rehearsal | [rehearsal](../../rehearsal/README.md) | `rehearsal/contracts` | rehearsal tests |
-| Reconstruction | [`incident_reconstruction`](../../incident_reconstruction/README.md) | `incident_reconstruction/contracts` | v0.4.0–v0.4.2 tests |
-| Console | [`lab_console`](../../lab_console/README.md) | `lab_console/contracts` | v0.4.3–v0.4.4 tests |
+| Предпромышленный контур | [предпромышленный контур](../../staging/README.md) | `staging/contracts` | тесты предпромышленного контура |
+| Репетиционный контур | [репетиционный контур](../../rehearsal/README.md) | `rehearsal/contracts` | тесты репетиционного контура |
+| Реконструкция | [`incident_reconstruction`](../../incident_reconstruction/README.md) | `incident_reconstruction/contracts` | тесты версий v0.4.0–v0.4.2 |
+| Консоль | [`lab_console`](../../lab_console/README.md) | `lab_console/contracts` | тесты версий v0.4.3–v0.4.4 |
 | Внешняя проверка | [`external_review`](../../external_review/README.md) | `external_review/contracts` | проверки v0.3.18 |
 | Независимая сетевая проверка | [`lab/network_validation`](../../lab/network_validation/README.md) | `lab/network_validation/execution`, `config`, контракты среды выполнения | статические проверки, пробная проверка и контрактные тесты; научный запуск отдельно разрешается |
 | Инструменты | [инструменты](../../tools/README.md) | профильный CLI | проверки документации и пакета |

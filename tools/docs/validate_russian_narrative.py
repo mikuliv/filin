@@ -102,9 +102,15 @@ ALLOWED_TECHNOLOGIES = {
     "Kibana", "Filebeat", "tcpdump", "libpcap", "Jinja", "Scapy", "Elastic", "Filin",
     "Anomalyzer", "CPython", "Debian", "Alpine", "Compose", "Sigma", "Apache", "MIT",
     "SQLite", "PowerShell", "VMware", "Logstash", "CICIDS", "imbalanced-learn",
-    "matplotlib", "seaborn", "torch", "Engine", "Desktop",
-    "JavaScript", "XML", "Mozilla", "Public", "License", "Creative", "Commons",
-    "Attribution", "International", "Foundation", "Linux", "HistGradientBoosting", "OpenMP", "CUDA", "Ryzen", "Ti", "pytest", "apt",
+    "matplotlib", "seaborn", "torch", "Markdown",
+    "JavaScript", "XML", "Mozilla", "Linux", "HistGradientBoosting", "OpenMP",
+    "CUDA", "Ryzen", "Ti", "pytest", "apt", "Mermaid", "Kali", "Ubuntu",
+}
+ALLOWED_TECHNOLOGY_PHRASES = {
+    "Docker Engine", "Docker Desktop", "Creative Commons",
+    "Mozilla Public License", "Python Software Foundation License",
+    "Mozilla Foundation", "Linux Foundation",
+    "Creative Commons Attribution 4.0 International",
 }
 ALLOWED_ABBREVIATIONS = {
     "JSON", "YAML", "PCAP", "CLI", "API", "HTTP", "HTTPS", "DNS", "TCP", "UDP",
@@ -123,7 +129,15 @@ ALLOWED_MIXED_COMPONENTS = {
 IDENTIFIER_RE = re.compile(r"(?<![`\w])([a-z][a-z0-9]*(?:_[a-z0-9]+)+)(?![`\w])")
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
 ENGLISH_ONLY_RE = re.compile(r"^[\s#|>*_-]*[A-Za-z][A-Za-z0-9 &'()/:+.,-]{2,}[\s|]*$")
-LATIN_WORD_RE = re.compile(r"(?<![\w./\\])([A-Za-z]+(?:-[A-Za-z]+)*)(?![\w./\\])")
+LATIN_WORD_RE = re.compile(r"(?<![\w./\\-])([A-Za-z]+(?:-[A-Za-z]+)*)(?![\w./\\-])")
+
+
+def _mask_allowed_phrases(line: str) -> str:
+    masked = line
+    for phrase in sorted(ALLOWED_TECHNOLOGY_PHRASES, key=len, reverse=True):
+        pattern = rf"(?<![\w-]){re.escape(phrase)}(?![\w-])"
+        masked = re.sub(pattern, lambda match: " " * len(match.group(0)), masked)
+    return masked
 
 
 @dataclass(frozen=True)
@@ -239,15 +253,15 @@ def analyze_text(text: str, file_kind: str = "current_human_document", suffix: s
             if match.group(0).split("-", 1)[0].casefold() in ALLOWED_MIXED_COMPONENTS:
                 continue
             findings.append(Finding("mixed_compound", number, match.group(0), "Смешанное русско-английское слово недопустимо."))
-        latin_matches = list(LATIN_WORD_RE.finditer(line))
+        latin_matches = list(LATIN_WORD_RE.finditer(_mask_allowed_phrases(line)))
         unallowed = [match for match in latin_matches if len(match.group(0)) > 1 and match.group(0).casefold() not in ALLOWED_NARRATIVE_LATIN]
         for match in unallowed:
             token = match.group(0)
             if token.casefold() in NARRATIVE_WORDS or (
                 file_kind != "current_machine_document"
                 and CYRILLIC_RE.search(line)
-                and token[0].islower()
                 and len(token) >= 3
+                and (token[0].islower() or (token[0].isupper() and token[1:].islower()))
             ):
                 findings.append(Finding("narrative_english_word", number, token, "В повествовательном тексте требуется русский термин или оформление как точного идентификатора."))
         # Общее правило не зависит от заранее перечисленных слов: два и более

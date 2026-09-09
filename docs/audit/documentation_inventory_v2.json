@@ -10,7 +10,7 @@
     "frozen_evidence_count": 82,
     "stale_last_reviewed_stage_count": 0,
     "created_count": 118,
-    "rewritten_count": 146,
+    "rewritten_count": 147,
     "redirect_count": 14,
     "broken_link_count": 0,
     "broken_anchor_count": 0,
@@ -172,7 +172,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -189,7 +189,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "f0c8d2929547581adc34bf6bfd67a3c12fc27c06623466282a9202cc6a0aad6e"
+      "sha256_after": "c9efe305dbfbd987e05cbe11fe859702d68904c4c89a286d1193f8d0d290090f"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -295,7 +295,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -377,7 +377,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -589,7 +589,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -630,7 +630,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "v0.3.17",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -678,7 +678,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -760,7 +760,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -896,7 +896,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -1040,7 +1040,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.3.19",
       "stale_status": false,
@@ -1089,7 +1089,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -1179,7 +1179,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -1372,7 +1372,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "1f133afa2697e245c6b841bf85d45d08d25831d7c74c9360b7143d6b6ec68962",
-      "sha256_after": "a7b3bf9d2c750a08758806b80f7f4e30e78ca9b023506b4da9c5883602a05c15"
+      "sha256_after": "5a0ad4d04e37e97fa94a265bab050fe9b2b792918d16bcd5692b7d277a60b308"
     },
     {
       "path": "docs/audit/documentation_inventory.md",
@@ -1459,7 +1459,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "a1e6b42f34591b2fc6716bfb98d421a4976dff45688e9c626bdbc4939fc8d8ff"
+      "sha256_after": "aeca005e1fd554c85cfc910368b1e03768b0a79ddbc64722fb30551bcc18311b"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -1765,7 +1765,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "226085a3a2b6248225f40e2e76fba860861e938493c9c9760c538d5a2851d759",
-      "sha256_after": "5c2e5339a70b6b8be83ac06693b4d9d868cde3eb4ecc1aba7d9593c51420c8d0"
+      "sha256_after": "6d5257196a9f190a92ed0b588d2a9a7cd3f87d5983e0b9932332be16636c6f7c"
     },
     {
       "path": "docs/audit/russian-language-inventory-v3.md",
@@ -1806,7 +1806,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "87cdc3f4a7f683bdd14aeb6e1d2fafb3b729ab92eb652007682f2f5e2e1aaaf7"
+      "sha256_after": "2dad8a28823489231e052f2d39f3b21c1b0b5347e85d68047a5f734133fd9b89"
     },
     {
       "path": "docs/audits/post-v0.3.7-research-integrity-audit.md",
@@ -1929,7 +1929,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "556db04919966050dbb2f10393572a2038a8b5a19bf311be24e1d5b0553ac41d",
-      "sha256_after": "020120382cfb4e3038015b0a70b00705380839c744a2e664bbd769327ad30f0f"
+      "sha256_after": "9951ca1065982cc6192a7bea76ba96a929abf295943c7764c75e5fb7f699baa9"
     },
     {
       "path": "docs/contracts/connector_ingress_ack_v1.md",
@@ -2268,7 +2268,7 @@
     },
     {
       "path": "docs/contracts/shadow-event-v1.md",
-      "title": "Passive Контракт события `shadow_event_v1`",
+      "title": "Контракт пассивного события `shadow_event_v1`",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -2305,7 +2305,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "2420791e11b713ba00114b168d054a0b50419ffcba7588ab3051053186459b7c",
-      "sha256_after": "e3f7bd711474776275cc30be16b1b361289517b73af4e7cc1916db945eb265a3"
+      "sha256_after": "96482ead2e5888de212027112018847d963b11a2a133817a5178e7891ea5742a"
     },
     {
       "path": "docs/contracts/shadow-event-v2.md",
@@ -2370,7 +2370,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -2802,7 +2802,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -2843,7 +2843,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -5552,7 +5552,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -6079,7 +6079,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "c6f8558576d260a8768c8c042fea6bf77c2fc3b7f1e71f7beafd059fe1cf15d8",
-      "sha256_after": "0e7720ef27d0d9d07c3cb1f7b66ed7ac8daeca1ac1d995cfd74e5437bf918ba8"
+      "sha256_after": "423ec60ab067b6206d6b8fa927b1e566a7e9a9d46c2c7930efcdc8c268057dfd"
     },
     {
       "path": "docs/getting-started/troubleshooting.md",
@@ -7016,7 +7016,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.3.18",
       "stale_status": false,
@@ -7238,7 +7238,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -7304,7 +7304,7 @@
     },
     {
       "path": "docs/incident-workflow.md",
-      "title": "Incident порядок работы — исторический путь",
+      "title": "Порядок работы с инцидентами — исторический путь",
       "category": "Redirect-документ",
       "doc_schema": "filin_document_v2",
       "document_type": "redirect",
@@ -7343,7 +7343,7 @@
       "recommended_action": "maintain",
       "actual_action": "redirected",
       "sha256_before": "a3b0759c9e5563ceac3c0ab69be8dd2e600a93f20fc855dbdb36f85e1d09ce2f",
-      "sha256_after": "19ebc8de55d830b0b2cfbd69df0fb48b11a4974e23a34cbb84ff5d73d89710e7"
+      "sha256_after": "413f997d3371cb58c7d402007fd6d641070fda272d91d47cdc653aadcf18aadd"
     },
     {
       "path": "docs/index.md",
@@ -7376,7 +7376,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -7475,7 +7475,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6864b690a43711bb97ef891e8b6e05f53d572ad972ae8cb6c2e0143c973c2b66",
-      "sha256_after": "18ec5cb8b776a909d0180304a73f7ef1879b08e9cd8426e7d319332ed81d15b2"
+      "sha256_after": "dfbba424b0ffcc63499ad77115e2cfde9ecb09c664995a86a70a531ad4581549"
     },
     {
       "path": "docs/licensing/audit-plan.md",
@@ -7499,7 +7499,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -7540,7 +7540,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -8135,7 +8135,7 @@
     },
     {
       "path": "docs/licensing/licensing-maintenance-v1-1.md",
-      "title": "Licensing Maintenance v1.1",
+      "title": "Обслуживание лицензирования v1.1",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -8172,7 +8172,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "47d37ee7a8ce2d7768a8ca9de14af025514cda0cb1e1cf66fed66e3d4caa03ac"
+      "sha256_after": "38fafd920f1570a7645fdcb7ab3b83fab93fce152297bf59c70d80544c0223e7"
     },
     {
       "path": "docs/licensing/models-and-data.md",
@@ -8295,7 +8295,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "34974fa2683c3ba857ee3aad04708785f4e9deee9ec998540b7e46356a8465da"
+      "sha256_after": "02986bc3b1043082ada1e5c26bf25b180bb130fff30b8589c3643e435511cea4"
     },
     {
       "path": "docs/licensing/reuse-compliance.md",
@@ -8459,7 +8459,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "40dd09a5e17bbc323bece7b96e90748afd916a18ae6bf1b17919057a13c85b7a"
+      "sha256_after": "80a513b5038acbce6a874f9c424f042f1f2af014895e16210ac3913f975bb000"
     },
     {
       "path": "docs/limitations.md",
@@ -8668,9 +8668,9 @@
       "incoming_link_count": 0,
       "outgoing_link_count": 1,
       "recommended_action": "maintain",
-      "actual_action": "unchanged",
+      "actual_action": "rewritten",
       "sha256_before": "a183278b8726de2ce351b86b14722f024f8697b4ce8ec6dfe85ccf67b43a60a0",
-      "sha256_after": "a183278b8726de2ce351b86b14722f024f8697b4ce8ec6dfe85ccf67b43a60a0"
+      "sha256_after": "9e26ade4428fd508c2c71fb4f0da277813eaef3645fb2d97b0d776fa29364f5d"
     },
     {
       "path": "docs/operations/local_rehearsal_recovery_runbook.md",
@@ -8735,7 +8735,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -8817,7 +8817,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -8949,7 +8949,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -9060,7 +9060,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "9efe0bba46e119330e856b7ffe0f08ff076149c5bd428fae114b496bb6c427fd",
-      "sha256_after": "6655ef8e5464c13c5376f105b1cac089317a827d621b69dac8e34394bf5f9eb7"
+      "sha256_after": "1a1f4715831fb5fa5e385de9fd7da35421a932133e75baf1bf0f449efd0e67f9"
     },
     {
       "path": "docs/reference/document-lifecycle.md",
@@ -9229,7 +9229,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -9529,7 +9529,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -10163,7 +10163,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -10593,7 +10593,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -11357,7 +11357,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -11540,7 +11540,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -11626,7 +11626,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -11670,7 +11670,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.3.19",
       "stale_status": false,
@@ -11718,7 +11718,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -12571,7 +12571,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "8f52a729527aadc02eecfcd50c8bcf785809cdeaa140ffc94d4f1737ba8b387b",
-      "sha256_after": "03b2585faa557ca90b3554a33168e668b7511fbf3ab3a9eaaef1db50182073a7"
+      "sha256_after": "2d8d5b862fcf51de304a632c3285bc0051a10cb7423adcd84e4214164e174578"
     },
     {
       "path": "lab/network_validation/README.md",
@@ -12694,7 +12694,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "fe3fb0e4aad8d4a1791a25fec10725eb70f8bfe6cfd62b1ab121b05e8cc1f406",
-      "sha256_after": "653aee31af256890b6aa9916bb72a5f11574cec4474a74d80aa6911a07dc8dee"
+      "sha256_after": "f8f56d4e9bebf914f42b4d8122369700f933b4c9992af8021f3129f3dbcac812"
     },
     {
       "path": "lab/sensor/README.md",
@@ -12841,7 +12841,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "v0.4.7",
       "stale_status": false,
@@ -15981,7 +15981,7 @@
       "superseded_by": "",
       "redirect_target": "",
       "last_reviewed_stage": "v0.4.7.3",
-      "reviewed_in_current_language_pass": false,
+      "reviewed_in_current_language_pass": true,
       "last_relevant_stage": "unknown",
       "current_stage_mentioned": "",
       "stale_status": false,
@@ -16080,7 +16080,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "935fc4e3a13e290b17c87bf31bd1f107532fa512088046d80ebfee63b889ce5d",
-      "sha256_after": "6dc750c904f2574a67e7e9ffdf217ab3db17a9c2ac4ceaf3f3cd857a4f8d36ed"
+      "sha256_after": "46986c8e93d58611c4de3d2d6193e9efd92281eed86aba32064bd8c840a771a7"
     }
   ]
 }

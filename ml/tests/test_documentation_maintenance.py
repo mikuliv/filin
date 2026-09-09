@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import json
 import sys
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -36,6 +38,29 @@ class DocumentationMaintenanceTests(unittest.TestCase):
     def test_documentation_gate_passes(self) -> None:
         result = validate(ROOT)
         self.assertTrue(result["valid"], "\n".join(result["errors"]))
+
+    def test_reviewed_language_metadata_is_propagated_only_for_listed_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            audit = root / "docs/audit"
+            audit.mkdir(parents=True)
+            (root / "README.md").write_text("# Проект\n", encoding="utf-8")
+            (root / "OTHER.md").write_text("# Другой документ\n", encoding="utf-8")
+            (audit / "documentation_inventory_v2.json").write_text(json.dumps({
+                "documents": [
+                    {"path": "README.md", "lifecycle_status": "current"},
+                    {"path": "OTHER.md", "lifecycle_status": "current"},
+                ]
+            }), encoding="utf-8")
+            (audit / "documentation_metadata_overrides_v2.json").write_text(json.dumps({
+                "reviewed_current_paths": ["README.md"]
+            }), encoding="utf-8")
+
+            reviewed = document_metadata(root / "README.md", root)
+            not_reviewed = document_metadata(root / "OTHER.md", root)
+            self.assertTrue(reviewed["reviewed_in_current_language_pass"])
+            self.assertEqual(reviewed["last_reviewed_stage"], "v0.4.7.3")
+            self.assertFalse(not_reviewed["reviewed_in_current_language_pass"])
 
 
 if __name__ == "__main__":

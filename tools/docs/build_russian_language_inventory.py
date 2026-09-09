@@ -65,6 +65,20 @@ def counts(text: str, kind: str, suffix: str, human_facing: bool) -> dict[str, i
     }
 
 
+def metadata_consistency_findings(rows: list[dict]) -> list[str]:
+    findings: list[str] = []
+    explicit_exclusions = {"frozen_evidence", "official_standard_text", "historical_document"}
+    for row in rows:
+        included = row["language_scan"] == "included"
+        if row["human_facing"] and not included and row["file_kind"] not in explicit_exclusions:
+            findings.append(f"human_facing_excluded:{row['path']}")
+        if not row["human_facing"] and included:
+            findings.append(f"non_human_included:{row['path']}")
+        if included and "не предназначен для чтения" in row["language_scan_reason"]:
+            findings.append(f"included_not_for_reading:{row['path']}")
+    return findings
+
+
 def build_rows() -> list[dict]:
     protected = protected_paths(ROOT); before_tree = load_before_tree(); rows = []
     for path in tracked_paths(ROOT):
@@ -86,10 +100,18 @@ def build_rows() -> list[dict]:
         stale_before = bool(kind == "current_human_document" and path in {"README.md", "docs/status/current-status.md", "lab_console/README.md"} and "v0.4.7" not in before_text)
         generated = kind == "generated_document"
         generated_user_facing = path in GENERATED_USER_FACING
+        included = human and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "non_text_or_non_human"}
+        reason = (
+            "пользовательский создаваемый документ" if generated_user_facing
+            else "текущий пользовательский документ" if included
+            else "служебный создаваемый файл, не предназначенный для чтения пользователем" if generated
+            else "исторический или защищённый материал" if kind in {"frozen_evidence", "official_standard_text", "historical_document"}
+            else "служебный файл, не предназначенный для чтения пользователем"
+        )
         rows.append({"path": path, "file_kind": kind, "lifecycle_status": details["lifecycle"], "classification_source": details["source"],
                      "protected": path in protected, "generated": generated, "generated_user_facing": generated_user_facing, "human_facing": human,
-                     "language_scan": "included" if human and kind not in {"frozen_evidence", "official_standard_text", "historical_document", "non_text_or_non_human"} else "excluded",
-                     "language_scan_reason": "пользовательский создаваемый документ" if generated_user_facing else "служебный машиночитаемый или юридический файл" if generated else "исторический или защищённый материал" if kind in {"frozen_evidence", "official_standard_text", "historical_document"} else "не предназначен для чтения",
+                     "language_scan": "included" if included else "excluded",
+                     "language_scan_reason": reason,
                      "encoding": encoding, "line_ending": line_ending(after_data), **after_counts, "stale_metadata": False,
                      "recommended_action": "preserve" if kind in {"frozen_evidence", "official_standard_text"} else "rebuild" if kind == "generated_document" else "review",
                      "actual_action": "created" if before_sha is None else "unchanged" if before_sha == after_sha else "rewritten",
@@ -114,6 +136,7 @@ def summary(rows: list[dict]) -> dict:
         "current_user_facing_file_count": sum(x["language_scan"] == "included" and x["file_kind"] != "generated_document" for x in rows),
         "generated_user_facing_file_count": sum(x["generated_user_facing"] for x in rows),
         "generated_service_file_count": sum(x["generated"] and not x["human_facing"] for x in rows),
+        "generated_metadata_contradiction_count": len(metadata_consistency_findings(rows)),
         "path_fallback_classification_count": sum(x["classification_source"] == "path_fallback" for x in rows),
         "files_with_narrative_english_before": sum(x["before"]["narrative_english_count"] > 0 for x in rows),
         "files_with_narrative_english_after": sum(x["narrative_english_count"] > 0 for x in rows),
@@ -147,7 +170,11 @@ def render(data: dict) -> str:
 
 
 def main() -> int:
-    rows=build_rows(); data={"schema_version":"filin_russian_language_inventory_v3","starting_head":START,"summary":summary(rows),"files":rows}
+    rows = build_rows()
+    contradictions = metadata_consistency_findings(rows)
+    if contradictions:
+        raise ValueError("Противоречивые метаданные языковой описи: " + ", ".join(contradictions))
+    data={"schema_version":"filin_russian_language_inventory_v3","starting_head":START,"summary":summary(rows),"files":rows}
     audit=ROOT/"docs/audit"; audit.mkdir(parents=True,exist_ok=True)
     (audit/"russian-language-inventory-v3.json").write_text(json.dumps(data,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
     (audit/"russian-language-inventory-v3.md").write_text(render(data),encoding="utf-8")
