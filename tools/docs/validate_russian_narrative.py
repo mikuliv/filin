@@ -104,13 +104,13 @@ ALLOWED_TECHNOLOGIES = {
     "SQLite", "PowerShell", "VMware", "Logstash", "CICIDS", "imbalanced-learn",
     "matplotlib", "seaborn", "torch", "Markdown",
     "JavaScript", "XML", "Mozilla", "Linux", "HistGradientBoosting", "OpenMP",
-    "CUDA", "Ryzen", "Ti", "pytest", "apt", "Mermaid", "Kali", "Ubuntu",
+    "CUDA", "Ryzen", "Ti", "pytest", "apt", "bash", "Mermaid", "Kali", "Ubuntu", "tmpfs",
 }
 ALLOWED_TECHNOLOGY_PHRASES = {
     "Docker Engine", "Docker Desktop", "Creative Commons",
     "Mozilla Public License", "Python Software Foundation License",
     "Mozilla Foundation", "Linux Foundation",
-    "Creative Commons Attribution 4.0 International",
+    "Creative Commons Attribution 4.0 International", "GitHub Actions",
 }
 ALLOWED_ABBREVIATIONS = {
     "JSON", "YAML", "PCAP", "CLI", "API", "HTTP", "HTTPS", "DNS", "TCP", "UDP",
@@ -118,7 +118,7 @@ ALLOWED_ABBREVIATIONS = {
     "ATT", "SPDX", "SBOM", "REUSE", "ASGI", "FPR", "GPL", "MPL", "CC", "BSD",
     "DCO", "ELv", "UI", "ID", "IP", "RAM", "CPU", "GPU", "OS", "PSF", "JSONL",
     "CI", "ACL", "HEAD", "TLS", "mTLS", "WAL", "RSS", "VMS", "UTC", "UID", "URI", "SSH",
-    "ACK", "MiB", "UTF", "BOM", "GET", "POST", "MAD", "HGB", "RTX", "CC-BY",
+    "ACK", "MiB", "UTF", "BOM", "GET", "POST", "MAD", "HGB", "RTX", "CC-BY", "GID",
 }
 ALLOWED_CONTEXT_TERMS = {"Phase", "macro", "fail-closed"}
 ALLOWED_NARRATIVE_LATIN = {value.casefold() for value in ALLOWED_TECHNOLOGIES | ALLOWED_ABBREVIATIONS | ALLOWED_CONTEXT_TERMS}
@@ -129,7 +129,16 @@ ALLOWED_MIXED_COMPONENTS = {
 IDENTIFIER_RE = re.compile(r"(?<![`\w])([a-z][a-z0-9]*(?:_[a-z0-9]+)+)(?![`\w])")
 CYRILLIC_RE = re.compile(r"[А-Яа-яЁё]")
 ENGLISH_ONLY_RE = re.compile(r"^[\s#|>*_-]*[A-Za-z][A-Za-z0-9 &'()/:+.,-]{2,}[\s|]*$")
-LATIN_WORD_RE = re.compile(r"(?<![\w./\\-])([A-Za-z]+(?:-[A-Za-z]+)*)(?![\w./\\-])")
+LATIN_WORD_RE = re.compile(r"(?<![A-Za-z0-9_])([A-Za-z]+(?:-[A-Za-z]+)*)(?![A-Za-z0-9_])")
+SPDX_IDENTIFIER_RE = re.compile(
+    r"(?<![\w])(?:LicenseRef-[A-Za-z0-9.-]+|(?=[A-Za-z0-9.-]*\d)[A-Z][A-Za-z0-9]*(?:-[A-Za-z0-9.]+)+)(?![\w])"
+)
+GRAMMAR_PATTERNS = {
+    re.compile(r"(?iu)\bожидаемый\s+среда\b"): "ожидаемый среда",
+    re.compile(r"(?iu)\bна\s+временная\b"): "на временная",
+    re.compile(r"(?iu)\bпо\s+манифест\b"): "по манифест",
+    re.compile(r"(?iu)\bвредоносных\s+ов\b"): "вредоносных ов",
+}
 
 
 def _mask_allowed_phrases(line: str) -> str:
@@ -137,7 +146,7 @@ def _mask_allowed_phrases(line: str) -> str:
     for phrase in sorted(ALLOWED_TECHNOLOGY_PHRASES, key=len, reverse=True):
         pattern = rf"(?<![\w-]){re.escape(phrase)}(?![\w-])"
         masked = re.sub(pattern, lambda match: " " * len(match.group(0)), masked)
-    return masked
+    return SPDX_IDENTIFIER_RE.sub(lambda match: " " * len(match.group(0)), masked)
 
 
 @dataclass(frozen=True)
@@ -246,6 +255,9 @@ def analyze_text(text: str, file_kind: str = "current_human_document", suffix: s
     lines = narrative.splitlines()
     for number, line in enumerate(lines, 1):
         lowered = line.lower()
+        for pattern, literal in GRAMMAR_PATTERNS.items():
+            if pattern.search(line):
+                findings.append(Finding("grammar_damage", number, literal, "Обнаружена известная механически повреждённая русская конструкция."))
         for phrase, family in FORBIDDEN_PHRASES.items():
             if phrase in lowered:
                 findings.append(Finding(f"{family}:{phrase.replace(' ', '_')}", number, phrase, "Английская конструкция должна быть заменена русским объяснением."))

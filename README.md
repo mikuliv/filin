@@ -129,7 +129,7 @@ python -m compileall backend collectors incident_reconstruction lab lab_console 
 - аудитор: [источники истины](docs/reference/sources-of-truth.md) → [статусы](docs/status/project-status.yaml) → [контракты](docs/contracts/index.md) → [отчёты](docs/reports/index.md);
 - участник сетевой процедуры: [актуальная методика Phase 1](docs/research/independent-network-validation.md) → [пакеты](docs/research/phase1-execution-package-history.md) → [критерии](docs/research/phase1-acceptance-criteria.md).
 
-Полный вход в документацию: [docs/index.md](docs/index.md). Защищённые протоколы, журналы, реестры, манифесты и исторические подтверждающие материалы не переписываются при редактуре документации; новые русские страницы служат пояснениями и ссылаются на защищённые источники.
+Полный вход в документацию: [центр документации](docs/index.md). Защищённые протоколы, журналы, реестры, манифесты и исторические подтверждающие материалы не переписываются при редактуре документации; новые русские страницы служат пояснениями и ссылаются на защищённые источники.
 
 ## Ограничения и лицензии
 

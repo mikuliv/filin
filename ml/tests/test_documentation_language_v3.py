@@ -124,6 +124,45 @@ def test_official_compound_names_and_identifiers_are_accepted(text):
     assert analyze_text(text, "current_human_document", ".md") == []
 
 
+@pytest.mark.parametrize("text", [
+    "Необходимы notices для стороннего кода.",
+    "Перестроить inventory.",
+    "Этот путь не расширяет capability.",
+    "Используется Compose plugin.",
+    "Не использовать публичный bind.",
+    "Добавить запись в issue.",
+    "Используется исторический backend.",
+    "Git не показывает rename/copy.",
+    "Копия обеспечивает REUSE layout.",
+    "В конце выполнить teardown.",
+])
+def test_lowercase_narrative_words_are_rejected(text):
+    assert analyze_text(text, "current_human_document", ".md")
+
+
+@pytest.mark.parametrize("text", [
+    "Обнаружен ожидаемый среда выполнения артефакт.",
+    "Позиция находится на временная последовательность.",
+    "Выполнение по манифест.",
+    "Проверка без вредоносных ов полезной нагрузки.",
+])
+def test_known_grammar_damage_is_rejected(text):
+    findings = analyze_text(text, "current_human_document", ".md")
+    assert any(finding.code == "grammar_damage" for finding in findings)
+
+
+@pytest.mark.parametrize("text", [
+    "Для контейнеров используется Docker Engine.",
+    "Файл хранится в формате JSON.",
+    "Проверка выполняется командой `python -m tools.docs.validate_russian_narrative`.",
+    "Поле `execution_token` не передаётся модели.",
+    "Структура соответствует спецификации REUSE.",
+    "Проект использует Git для контроля версий.",
+])
+def test_lowercase_boundary_positive_examples_are_accepted(text):
+    assert analyze_text(text, "current_human_document", ".md") == []
+
+
 def test_language_inventory_metadata_consistency_rules():
     valid = [{
         "path": "README.md", "file_kind": "current_human_document",

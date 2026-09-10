@@ -2,7 +2,7 @@
 
 - [Хронология этапов](stage-timeline.md).
 - [Коррекции и отрицательные результаты](corrections-and-negative-results.md).
-- [Исторический backend](historical-backend.md).
+- [Историческая серверная часть](historical-backend.md).
 - [Историческое моделирование](historical-modeling.md).
 - [Исторические прототипы MITRE и Sigma](historical-mitre-and-sigma.md).
 - [Исторические ограничения](historical-limitations.md).

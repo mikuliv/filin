@@ -21,9 +21,9 @@
     "generated_service_file_count": 12,
     "generated_metadata_contradiction_count": 0,
     "path_fallback_classification_count": 1962,
-    "files_with_narrative_english_before": 130,
+    "files_with_narrative_english_before": 132,
     "files_with_narrative_english_after": 0,
-    "narrative_english_occurrences_before": 1146,
+    "narrative_english_occurrences_before": 1448,
     "narrative_english_occurrences_after": 0,
     "mixed_compounds_before": 2,
     "mixed_compounds_after": 0,
@@ -33,7 +33,7 @@
     "inconsistent_translations_after": 0,
     "stale_metadata_before": 0,
     "stale_metadata_after": 0,
-    "files_rewritten_count": 152,
+    "files_rewritten_count": 153,
     "generated_files_rebuilt_count": 9,
     "protected_files_changed": 0,
     "official_standard_texts_changed": 0
@@ -180,7 +180,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 13,
+      "latin_token_count": 12,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -189,10 +189,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "56d36ea83c694d713d93044a8281695874104c90c3f51c13060e24d912cca4bd",
-      "sha256_after": "ef84b5ca45c5ace6f8a9a10ba1ad5752bf3a33354e6affe731be2829a5fa6685",
+      "sha256_after": "570f7da031d4c44c2a671e1bd751d8bc052bfe8be28afe78ab0062bf3d6df618",
       "before": {
         "latin_token_count": 16,
-        "narrative_english_count": 4,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -372,7 +372,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "LF",
-      "latin_token_count": 313,
+      "latin_token_count": 310,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -381,10 +381,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "c7c99e3338a8ac673c778f012a99d266682a0f89217f4044061514e4c03736b0",
-      "sha256_after": "c9efe305dbfbd987e05cbe11fe859702d68904c4c89a286d1193f8d0d290090f",
+      "sha256_after": "310c3cd5e062589583d2bfad6ec71690a9e75a3b3fa4f1cfd15baacaf9103348",
       "before": {
         "latin_token_count": 316,
-        "narrative_english_count": 4,
+        "narrative_english_count": 6,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -544,7 +544,7 @@
       "sha256_after": "93e38c703287965613cd4b1b990b8c2c57125920cd14311e49c8f9dbc63de9fe",
       "before": {
         "latin_token_count": 15,
-        "narrative_english_count": 2,
+        "narrative_english_count": 3,
         "mixed_compound_count": 1,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -1364,7 +1364,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "LF",
-      "latin_token_count": 27,
+      "latin_token_count": 26,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -1373,7 +1373,7 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "992245237812fbd63f6d6cc87bac9c499230951bdf8ec1337086eb241f8d01c5",
-      "sha256_after": "59fb23e0723f74057f3b1e261cba4c192ea5b369dbf9fbe04ea01d9f4ffe486c",
+      "sha256_after": "689e5d06381e9acf2d4c99399b0b8d7e9422a9e569c0f66cd6a8c4ce746c8ffc",
       "before": {
         "latin_token_count": 29,
         "narrative_english_count": 3,
@@ -1408,7 +1408,7 @@
       "sha256_after": "acf040171f38f04d4be3f396d3e3c729ff9a5f4b6d167c473e588d24f7652cd8",
       "before": {
         "latin_token_count": 17,
-        "narrative_english_count": 4,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6176,7 +6176,7 @@
       "sha256_after": "ee2f1ffb774855803a630805078e1b431f7186bbed1907fb706fdffdc5d7208e",
       "before": {
         "latin_token_count": 20,
-        "narrative_english_count": 4,
+        "narrative_english_count": 9,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6240,7 +6240,7 @@
       "sha256_after": "c2575675a65a493e5ae8f4dcd656692663ce8e6d9e633b55604a96df9ac82e01",
       "before": {
         "latin_token_count": 16,
-        "narrative_english_count": 2,
+        "narrative_english_count": 4,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6624,7 +6624,7 @@
       "sha256_after": "d3f71daeb358a07bef10b583edd5e4ba963c5140abbbfaeff0ebf5108a50ee35",
       "before": {
         "latin_token_count": 138,
-        "narrative_english_count": 58,
+        "narrative_english_count": 69,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6752,7 +6752,7 @@
       "sha256_after": "5915f3e8daceac77bfe3fafa0443d52926806a7b9742a55a8e3e16e7d0ac95de",
       "before": {
         "latin_token_count": 21,
-        "narrative_english_count": 5,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6784,7 +6784,7 @@
       "sha256_after": "010b23ae7ac63238208fecab567baf302b656c5d28be756066515ac8743d0234",
       "before": {
         "latin_token_count": 30,
-        "narrative_english_count": 19,
+        "narrative_english_count": 21,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6816,7 +6816,7 @@
       "sha256_after": "66ce7db485d810744b90d57223fa9655e5fb4ca4219ec142698974b34f8bca3b",
       "before": {
         "latin_token_count": 20,
-        "narrative_english_count": 5,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -6976,7 +6976,7 @@
       "sha256_after": "0b6a3dd9a1f2130ef0a6c06d7198a02f63fcea9d5fb3dc910613d77831af642b",
       "before": {
         "latin_token_count": 5,
-        "narrative_english_count": 4,
+        "narrative_english_count": 6,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7104,7 +7104,7 @@
       "sha256_after": "65c0fdd2afa788c2628dafc3c3264e82ee7730a2ac22e052d4c09e54a37f3f7a",
       "before": {
         "latin_token_count": 22,
-        "narrative_english_count": 7,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7136,7 +7136,7 @@
       "sha256_after": "5a0ad4d04e37e97fa94a265bab050fe9b2b792918d16bcd5692b7d277a60b308",
       "before": {
         "latin_token_count": 44,
-        "narrative_english_count": 7,
+        "narrative_english_count": 9,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7220,7 +7220,7 @@
       "language_scan_reason": "служебный создаваемый файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "LF",
-      "latin_token_count": 23818,
+      "latin_token_count": 23815,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -7229,7 +7229,7 @@
       "recommended_action": "rebuild",
       "actual_action": "rewritten",
       "sha256_before": "5357536d47f2ae3a9fc4763998bf62133571f9d7829b5a7c2564ae1146e0ec8b",
-      "sha256_after": "771251bbd7a0902d28157944b7ddec97b842b73866e96331093eb998f405c449",
+      "sha256_after": "6473c7e6d73b004965f2d038dd3be4aac3c74b27d281584e0d8ac9c23d9867d2",
       "before": {
         "latin_token_count": 23853,
         "narrative_english_count": 0,
@@ -7252,7 +7252,7 @@
       "language_scan_reason": "пользовательский создаваемый документ",
       "encoding": "utf-8-sig",
       "line_ending": "LF",
-      "latin_token_count": 3115,
+      "latin_token_count": 3112,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -7261,7 +7261,7 @@
       "recommended_action": "rebuild",
       "actual_action": "rewritten",
       "sha256_before": "f6bd3658ee239142c1286c9094a20d5e86f49fe99e1713300010f38ceef935d0",
-      "sha256_after": "aeca005e1fd554c85cfc910368b1e03768b0a79ddbc64722fb30551bcc18311b",
+      "sha256_after": "2f7fe90ad07ffcdec4928d5283cfb0e63e02b657ba6e25e48917ab387c1e554f",
       "before": {
         "latin_token_count": 3128,
         "narrative_english_count": 0,
@@ -7604,7 +7604,7 @@
       "language_scan_reason": "служебный создаваемый файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 157848,
+      "latin_token_count": 157845,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -7613,7 +7613,7 @@
       "recommended_action": "rebuild",
       "actual_action": "rewritten",
       "sha256_before": "cd78ca7a080733a039c0f313f63bf55d7424ecaa013a740a7f548d6e47993f11",
-      "sha256_after": "69301f0e48479f1f35ff5a4fd7c21650c18113c12c3c95a32a5b9d0c1e3b66fa",
+      "sha256_after": "e1df029ef7b8c62edb6460e90d67b6bd08bfb8d9ad96e9176cdc4cd96a536043",
       "before": {
         "latin_token_count": 151319,
         "narrative_english_count": 0,
@@ -7645,7 +7645,7 @@
       "recommended_action": "rebuild",
       "actual_action": "rewritten",
       "sha256_before": "33b5c165a560ef08c71c831e8795763ae18f9463469957095d747e38000488e7",
-      "sha256_after": "2dad8a28823489231e052f2d39f3b21c1b0b5347e85d68047a5f734133fd9b89",
+      "sha256_after": "eaab77ee0cf8df9b93bdd130c1c0ae5515aaf7d6b3f98c47685261306a9fd77d",
       "before": {
         "latin_token_count": 24812,
         "narrative_english_count": 0,
@@ -7744,7 +7744,7 @@
       "sha256_after": "9951ca1065982cc6192a7bea76ba96a929abf295943c7764c75e5fb7f699baa9",
       "before": {
         "latin_token_count": 102,
-        "narrative_english_count": 25,
+        "narrative_english_count": 34,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7776,7 +7776,7 @@
       "sha256_after": "26fc213d0ce6e6dfdc900d70ef2730aa39d0b648d0292f46c2a9691098c65f11",
       "before": {
         "latin_token_count": 14,
-        "narrative_english_count": 7,
+        "narrative_english_count": 10,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7808,7 +7808,7 @@
       "sha256_after": "0b4d79b003a40d9901735c011c841d536eb1b6c8c24fb4860df0035f6037b529",
       "before": {
         "latin_token_count": 14,
-        "narrative_english_count": 3,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7872,7 +7872,7 @@
       "sha256_after": "6dfb3d6f69095bc20663b600d6573a10e6db779f0da6ff3890ba7cccf67714ea",
       "before": {
         "latin_token_count": 42,
-        "narrative_english_count": 4,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7904,7 +7904,7 @@
       "sha256_after": "b6ef66268f041b3baa7ce9ec055ca6774aae0e43b63f492fd65fff229e7bbfbb",
       "before": {
         "latin_token_count": 12,
-        "narrative_english_count": 5,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -7936,7 +7936,7 @@
       "sha256_after": "2af436cebaea15b5c0223bcfc616b0068496750dc623ac3dc414c30469c4e813",
       "before": {
         "latin_token_count": 46,
-        "narrative_english_count": 14,
+        "narrative_english_count": 27,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8032,7 +8032,7 @@
       "sha256_after": "96482ead2e5888de212027112018847d963b11a2a133817a5178e7891ea5742a",
       "before": {
         "latin_token_count": 28,
-        "narrative_english_count": 12,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8192,7 +8192,7 @@
       "sha256_after": "182d7eed132f3173c172f3419b24ee1ed263bcbbd8901d6d72b6f89f9302624a",
       "before": {
         "latin_token_count": 17,
-        "narrative_english_count": 14,
+        "narrative_english_count": 15,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8212,7 +8212,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 7,
+      "latin_token_count": 4,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -8221,10 +8221,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "aef5f02bbdba1a9c6a48a3c46b930ea38f884457adeb0af345ccd3471790d8c0",
-      "sha256_after": "2d1c9a428212a233944d31e82aa7604951ce6819ed360d8de9cae1055de2b2fa",
+      "sha256_after": "b0a75402642c8e1a2b4c629f4cfc7248461f00c3f13d2c91e26c992f75c69dd5",
       "before": {
         "latin_token_count": 19,
-        "narrative_english_count": 11,
+        "narrative_english_count": 19,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8276,7 +8276,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 6,
+      "latin_token_count": 4,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -8285,10 +8285,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "5c7be86678c9b00df13c2fb926065043aba2e907b672ec3e55bce58f5e5a77dc",
-      "sha256_after": "d18551bb093da5a45847e2c30eee04ef2f23840f8fb8d9772ac992490dfcf2a2",
+      "sha256_after": "7b789289823b87304820af5e87be6f14e953fbe6b03e3f784d7c4551766b095a",
       "before": {
         "latin_token_count": 30,
-        "narrative_english_count": 19,
+        "narrative_english_count": 33,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8352,7 +8352,7 @@
       "sha256_after": "6d2847ff7d490d1ea96a1355c2afc788268fc7768d513dee4bc5b8e75a04b5ed",
       "before": {
         "latin_token_count": 72,
-        "narrative_english_count": 19,
+        "narrative_english_count": 22,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8372,19 +8372,19 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 4,
+      "latin_token_count": 3,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
       "inconsistent_translation_count": 0,
       "stale_metadata": false,
       "recommended_action": "review",
-      "actual_action": "unchanged",
+      "actual_action": "rewritten",
       "sha256_before": "ca3848105244c830340b9b863a8a63b77ff5f4d0902caf28048b877d93cf5093",
-      "sha256_after": "ca3848105244c830340b9b863a8a63b77ff5f4d0902caf28048b877d93cf5093",
+      "sha256_after": "cdf924be7c7c9d29efa41f1dba70f90840c877b91dbf9f59a79e9265c1b877cc",
       "before": {
         "latin_token_count": 4,
-        "narrative_english_count": 0,
+        "narrative_english_count": 1,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8448,7 +8448,7 @@
       "sha256_after": "350b5453bef2f7702bd8e0ad4a0117c3e116991e4b50254f69c2311c06027f6f",
       "before": {
         "latin_token_count": 294,
-        "narrative_english_count": 135,
+        "narrative_english_count": 162,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8480,7 +8480,7 @@
       "sha256_after": "ab0923b4eb8af253cd0bf3dff3cacf40ae20538a468565886142be39cac910cb",
       "before": {
         "latin_token_count": 5,
-        "narrative_english_count": 1,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8512,7 +8512,7 @@
       "sha256_after": "520b876c4f6b4be191f6e6f29ecb3171d1e92b540f825c0b12ca85b9209cf92b",
       "before": {
         "latin_token_count": 5,
-        "narrative_english_count": 1,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -8532,7 +8532,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 70,
+      "latin_token_count": 55,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -8541,10 +8541,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "3588316e7b747c41772a0d8fca5ff86cfe7785a2c47e09b9c3e8013c85effb95",
-      "sha256_after": "67ddc17ea55a1fc1b99194016af430a97205921daca2eb2fe01de61b4363b3fe",
+      "sha256_after": "8351d0f8dd26b0216085a49422f6c5e71e40ad1c063ce083ab1d375a737ff2f0",
       "before": {
         "latin_token_count": 84,
-        "narrative_english_count": 16,
+        "narrative_english_count": 18,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -10304,7 +10304,7 @@
       "sha256_after": "6c77affaef2e59c0df69fdac248b79162dad85093ccbe75a64d960b29640d079",
       "before": {
         "latin_token_count": 23,
-        "narrative_english_count": 9,
+        "narrative_english_count": 12,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -10368,7 +10368,7 @@
       "sha256_after": "ba34fda98b88923a6f26ae85f3fc841f8557da8bb91f7efd7cd004f8cb74a300",
       "before": {
         "latin_token_count": 22,
-        "narrative_english_count": 4,
+        "narrative_english_count": 6,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -10461,10 +10461,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "25d20a9582824d34ff71b7aa6d97e52203fc98803858322e1a8e32e507974825",
-      "sha256_after": "252d67cfc9ede49b9b52d11189224dbedb9696066f39a24dba04bd84f8447b25",
+      "sha256_after": "2fb424ad68b94f765071c8a804ee809202f8433a01df7eb46c0a1dfbaba1f0d5",
       "before": {
         "latin_token_count": 144,
-        "narrative_english_count": 3,
+        "narrative_english_count": 4,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -10592,7 +10592,7 @@
       "sha256_after": "1a1af15e8f31da9b239f2bf1758816dc13fdfcada9ee7938a1159d19810edc1a",
       "before": {
         "latin_token_count": 46,
-        "narrative_english_count": 1,
+        "narrative_english_count": 2,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -10900,7 +10900,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 18,
+      "latin_token_count": 16,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -10909,10 +10909,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "8fbfeebc4ea59f6109d9734a4f1ee915bffa521c480a8b38d5e4e108876fb486",
-      "sha256_after": "0a9b5dddfd23e641f7eb317f58b52980facf5c0e59e996992aa00837a4fe0ca8",
+      "sha256_after": "254315d79840f3ab6f451c988fb887c985d99b68f1e1634e4c9bca24fe0e0e0a",
       "before": {
         "latin_token_count": 28,
-        "narrative_english_count": 12,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -11764,7 +11764,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 25,
+      "latin_token_count": 24,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -11773,10 +11773,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "17b1938eb3b8e2b64b05555f475380d606fc0cdb854a0589afe53760822b0c46",
-      "sha256_after": "c12bd4c61515d074b5e2d546da986f8729825bbb72233d08e43101387c411e7f",
+      "sha256_after": "ff2c5e574bb50263fda2b968e97ca4362e68bcaded6438f1f4003512785475e1",
       "before": {
         "latin_token_count": 30,
-        "narrative_english_count": 2,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -11892,7 +11892,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 15,
+      "latin_token_count": 14,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -11901,10 +11901,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "3e89d9cc319e9c1cf5687e4d584304d81f067e21c8d46f6b9e2285a5af09e860",
-      "sha256_after": "348500f2542958ac04f9e0badee6e8c9b6f495f14394c355935c88c1813d4a95",
+      "sha256_after": "45f0481e825239641de19dd6ab4aa3628da0693e91f738d94fd115f1d58415b1",
       "before": {
         "latin_token_count": 18,
-        "narrative_english_count": 2,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -11924,7 +11924,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 119,
+      "latin_token_count": 115,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -11933,10 +11933,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "a036481fced989ec7c512c1312713ab517e86bc4b15d21f8a2f686bdfd86a323",
-      "sha256_after": "dfbba424b0ffcc63499ad77115e2cfde9ecb09c664995a86a70a531ad4581549",
+      "sha256_after": "59ff258107f2ed1f6bc38f17bebe621d238c2d6d5e7635e76fce310190d8638a",
       "before": {
         "latin_token_count": 163,
-        "narrative_english_count": 43,
+        "narrative_english_count": 59,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -11968,7 +11968,7 @@
       "sha256_after": "e5c59885c7b8d761aac8d694a41934486793b270ff1065606f4b59cd810fd7eb",
       "before": {
         "latin_token_count": 25,
-        "narrative_english_count": 13,
+        "narrative_english_count": 19,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12000,7 +12000,7 @@
       "sha256_after": "0adf5aba343a1c2c58d399765c45378e58548d1c08359645d05b2b14e93b5c20",
       "before": {
         "latin_token_count": 43,
-        "narrative_english_count": 12,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12096,7 +12096,7 @@
       "sha256_after": "47d4c3c5236709d52e7fb8549b57a7e4d2e2a339d574882ee58bc28a597401fd",
       "before": {
         "latin_token_count": 20,
-        "narrative_english_count": 6,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12128,7 +12128,7 @@
       "sha256_after": "b0140d12710458b41bcf79a1d161d66b91eb0c169b47ad7afaad2712ad628765",
       "before": {
         "latin_token_count": 9,
-        "narrative_english_count": 6,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12160,7 +12160,7 @@
       "sha256_after": "24de7a4535179a910a96528c468162ac594feb902c6e861052cf6b5d471fd67a",
       "before": {
         "latin_token_count": 12,
-        "narrative_english_count": 4,
+        "narrative_english_count": 9,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12320,7 +12320,7 @@
       "sha256_after": "bd995c7dd139272d064aee03593116315b566a006e845c78ebca81bf2dfbb1d0",
       "before": {
         "latin_token_count": 12,
-        "narrative_english_count": 1,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12384,7 +12384,7 @@
       "sha256_after": "7792c2199e7b8554ea7e694fc5b5b07b85b8e73b44103732e598e6d288f379d8",
       "before": {
         "latin_token_count": 11,
-        "narrative_english_count": 6,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12448,7 +12448,7 @@
       "sha256_after": "fe3d5ed5941615bcba05b041cfb8dac5a93bef9c2a7a82a1124baa7dcf558b18",
       "before": {
         "latin_token_count": 19,
-        "narrative_english_count": 6,
+        "narrative_english_count": 8,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12768,7 +12768,7 @@
       "sha256_after": "38fafd920f1570a7645fdcb7ab3b83fab93fce152297bf59c70d80544c0223e7",
       "before": {
         "latin_token_count": 33,
-        "narrative_english_count": 6,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -12960,7 +12960,7 @@
       "sha256_after": "722f521672105e29116e39f398590ba9f8b4bf1dedea51c253487c03add8ff92",
       "before": {
         "latin_token_count": 27,
-        "narrative_english_count": 12,
+        "narrative_english_count": 13,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13024,7 +13024,7 @@
       "sha256_after": "4eb861f904cda971166f0329af6b83abba12a8b6cc2e897c2a878dd0e80beb00",
       "before": {
         "latin_token_count": 14,
-        "narrative_english_count": 4,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13056,7 +13056,7 @@
       "sha256_after": "f64ada1b470667831adc09e949f3d1bf094087bd2fbe5ef2cfef3bbd57388309",
       "before": {
         "latin_token_count": 16,
-        "narrative_english_count": 9,
+        "narrative_english_count": 10,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13108,7 +13108,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 42,
+      "latin_token_count": 41,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -13117,10 +13117,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "7bec00e4203ded917317e7a08d760fb6b9d3fdd63a99f865e1d4979b30dc45d9",
-      "sha256_after": "80a513b5038acbce6a874f9c424f042f1f2af014895e16210ac3913f975bb000",
+      "sha256_after": "c8cc068356a497c233ce2c1a0491bcc08f04e5be23ec7219bfdffff50bfc87a7",
       "before": {
         "latin_token_count": 52,
-        "narrative_english_count": 12,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13344,7 +13344,7 @@
       "sha256_after": "b465fc73fd35ca6fdf3130c1542233cce450b14407ad3440fb0c3b323734e5f6",
       "before": {
         "latin_token_count": 42,
-        "narrative_english_count": 17,
+        "narrative_english_count": 23,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13376,7 +13376,7 @@
       "sha256_after": "8695bed06e0f3b941f3bb8556c0ca5d586ec203e39a73dd28b61f58d63df10b4",
       "before": {
         "latin_token_count": 51,
-        "narrative_english_count": 1,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13600,7 +13600,7 @@
       "sha256_after": "1a1f4715831fb5fa5e385de9fd7da35421a932133e75baf1bf0f449efd0e67f9",
       "before": {
         "latin_token_count": 111,
-        "narrative_english_count": 7,
+        "narrative_english_count": 15,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13620,7 +13620,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 13,
+      "latin_token_count": 12,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -13629,10 +13629,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "e9683a556a4192fe38aa3d8e084643695de3eda9d024a229798415375830b3d6",
-      "sha256_after": "f36965d1c95a4fb704216bee61a278e50a1cd38bc6b1d9188464b815f0d15153",
+      "sha256_after": "4f944f34bd0ab6f388beb11aeec2aca12c35d0fe38852b1b942bec403b868649",
       "before": {
         "latin_token_count": 26,
-        "narrative_english_count": 14,
+        "narrative_english_count": 18,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13760,7 +13760,7 @@
       "sha256_after": "c024642055018dc7c622501c6bdcfc102bc9c5b4ffa8b63fc51eb5d7d90bd35d",
       "before": {
         "latin_token_count": 55,
-        "narrative_english_count": 2,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13824,7 +13824,7 @@
       "sha256_after": "2d116b8215319fec9932c29eae5b73418439b015d853bcfb0ec0674fa3d9a01a",
       "before": {
         "latin_token_count": 66,
-        "narrative_english_count": 1,
+        "narrative_english_count": 2,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -13908,7 +13908,7 @@
       "language_scan_reason": "служебный создаваемый файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 1842,
+      "latin_token_count": 1822,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -13917,7 +13917,7 @@
       "recommended_action": "rebuild",
       "actual_action": "rewritten",
       "sha256_before": "5bc18aeb6cbbb8b0966ef5b16c90ab05be8b731b58ee443256a6f58e1a291688",
-      "sha256_after": "6bef926e2a26ce8d4a83bbf6832130016a301ce290aa28b6df8478895d258734",
+      "sha256_after": "598d668d8e01944175c5c5f678328df5af46462b352c719e181c387541d2b884",
       "before": {
         "latin_token_count": 1846,
         "narrative_english_count": 0,
@@ -14048,7 +14048,7 @@
       "sha256_after": "53c5a2b92a4e6335176181880b7e7b1d76e29451878d2b8e9e8946019681b3a8",
       "before": {
         "latin_token_count": 82,
-        "narrative_english_count": 43,
+        "narrative_english_count": 66,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14176,7 +14176,7 @@
       "sha256_after": "62ad02d8367dc7934157ff4a6122aba6e0a3d901425d3fde60b3ac1545ba1a35",
       "before": {
         "latin_token_count": 10,
-        "narrative_english_count": 0,
+        "narrative_english_count": 1,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14240,7 +14240,7 @@
       "sha256_after": "fd260781185c5a4b764e25b9f687d9e52b281a8c6b3b0615fe2d4661fd423cd2",
       "before": {
         "latin_token_count": 36,
-        "narrative_english_count": 12,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14432,7 +14432,7 @@
       "sha256_after": "cf2db8a48f8b9991bf1f3218ae5461a84f931fdd8f40be265af73a68809f0793",
       "before": {
         "latin_token_count": 10,
-        "narrative_english_count": 8,
+        "narrative_english_count": 9,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14516,7 +14516,7 @@
       "language_scan_reason": "текущий пользовательский документ",
       "encoding": "utf-8-sig",
       "line_ending": "LF",
-      "latin_token_count": 140,
+      "latin_token_count": 139,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -14525,10 +14525,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "efc24aea2efefdd921d717848c7bc83607c80520c0a1dac55a001c40068071df",
-      "sha256_after": "bdd5679e6984ac3eeea506b6b2e631111bcc8e2c6821691b73a5b8e382287b7d",
+      "sha256_after": "b4a54d7752c4a4cda1f004a2d1d11beb5a0ef6a22bc33fa0ae2057ff9ce6036b",
       "before": {
         "latin_token_count": 146,
-        "narrative_english_count": 6,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14560,7 +14560,7 @@
       "sha256_after": "8fa8451f196e7ae39c314504dc2a3ef56b9c1530f7dafdfa62dcdc3fcfe982fc",
       "before": {
         "latin_token_count": 8,
-        "narrative_english_count": 3,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -14880,7 +14880,7 @@
       "sha256_after": "9d56a84291d7cd518c879cbadc6a7641f2b0ec9d76f5f31dabd4a2adf4fa72b9",
       "before": {
         "latin_token_count": 22,
-        "narrative_english_count": 13,
+        "narrative_english_count": 14,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15264,7 +15264,7 @@
       "sha256_after": "511c239f5918b799963f62efe6b39fd0f91fa3794eea347010c50fb9d8ca9ed0",
       "before": {
         "latin_token_count": 11,
-        "narrative_english_count": 2,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15392,7 +15392,7 @@
       "sha256_after": "f62703ab84c4d82b2c83738567e3447ec45f3f45b547f57b8f3d146940aa4ded",
       "before": {
         "latin_token_count": 7,
-        "narrative_english_count": 3,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15456,7 +15456,7 @@
       "sha256_after": "f0f0c577a2bc401b171ede1dfe294e3806123428a76f98b175ee422dadcc9804",
       "before": {
         "latin_token_count": 30,
-        "narrative_english_count": 19,
+        "narrative_english_count": 21,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15584,7 +15584,7 @@
       "sha256_after": "47e34b6eaa8325df4ee5bdc63a6ecf64f077182c58db7e5a7ccde1272b8b23a9",
       "before": {
         "latin_token_count": 71,
-        "narrative_english_count": 3,
+        "narrative_english_count": 4,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15680,7 +15680,7 @@
       "sha256_after": "4ba26826086005e4a60eb38580bd4e567251d273b57f5cb1c485f7afa6420035",
       "before": {
         "latin_token_count": 77,
-        "narrative_english_count": 54,
+        "narrative_english_count": 60,
         "mixed_compound_count": 1,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -15872,7 +15872,7 @@
       "sha256_after": "211ae26b196a620ee28d7130f34cb06f20c1083b0a41d20f2e1d52620cd6f540",
       "before": {
         "latin_token_count": 28,
-        "narrative_english_count": 6,
+        "narrative_english_count": 7,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -16544,7 +16544,7 @@
       "sha256_after": "4734f1afb2b0825094f538729cb99bd7c24ecfb173baa34ac92d2c53162159f0",
       "before": {
         "latin_token_count": 65,
-        "narrative_english_count": 31,
+        "narrative_english_count": 38,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -18464,7 +18464,7 @@
       "sha256_after": "9dac581bcd70fa028f6bb49324fa1f97f3e43ea24aafce5074bc913c0e5ee9be",
       "before": {
         "latin_token_count": 2,
-        "narrative_english_count": 1,
+        "narrative_english_count": 2,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -18496,7 +18496,7 @@
       "sha256_after": "9f7cb8775b6a17847b67521653051958315dd8ae55e13a677f9b0d8f8f0cb7a4",
       "before": {
         "latin_token_count": 11,
-        "narrative_english_count": 8,
+        "narrative_english_count": 10,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -20608,7 +20608,7 @@
       "sha256_after": "7ae69e8e087ba6ce7740553673c00a290d8592e88b5ed26f7df17731cc62ebe2",
       "before": {
         "latin_token_count": 70,
-        "narrative_english_count": 19,
+        "narrative_english_count": 22,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -20640,7 +20640,7 @@
       "sha256_after": "d83e7819b005cf06dcfaf36fcbaaceb22dbf62f175d7cf00e15cb8d2854b1295",
       "before": {
         "latin_token_count": 267,
-        "narrative_english_count": 16,
+        "narrative_english_count": 24,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -20736,7 +20736,7 @@
       "sha256_after": "a73fd50fdfd4fb9874c7397e722f45e4bd8dcb16e2467359aa9fbf9bedb14def",
       "before": {
         "latin_token_count": 7,
-        "narrative_english_count": 2,
+        "narrative_english_count": 5,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -21373,10 +21373,10 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "b069b5862f3e14f2d65121906157693281a4911dc63978f70e2b3ec5c21bf590",
-      "sha256_after": "4ed94af551a1788af0c8a83e4381ec00462d05bcba2ccd5dc5caa44cb39ed396",
+      "sha256_after": "4d678e13f1df945e4462ccdec74be2216373293189da565488b28b32e4640dee",
       "before": {
         "latin_token_count": 18,
-        "narrative_english_count": 11,
+        "narrative_english_count": 16,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -21696,7 +21696,7 @@
       "sha256_after": "2d8d5b862fcf51de304a632c3285bc0051a10cb7423adcd84e4214164e174578",
       "before": {
         "latin_token_count": 44,
-        "narrative_english_count": 2,
+        "narrative_english_count": 3,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -21792,7 +21792,7 @@
       "sha256_after": "d4ca85439f807dea71a83b4b7665863db22cf80768cf5b9533e614528165fd39",
       "before": {
         "latin_token_count": 202,
-        "narrative_english_count": 3,
+        "narrative_english_count": 6,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -23776,7 +23776,7 @@
       "sha256_after": "3903995c432594bf7da5b5dd831aac1381b70f177b31e4cc7bf30216d3ae0f82",
       "before": {
         "latin_token_count": 27,
-        "narrative_english_count": 8,
+        "narrative_english_count": 11,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -25120,7 +25120,7 @@
       "sha256_after": "fd158cb6ca5fc2d6878fc93a724e1d7ce0280729a044f4950729a85c659e269a",
       "before": {
         "latin_token_count": 63,
-        "narrative_english_count": 18,
+        "narrative_english_count": 21,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -25821,7 +25821,7 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "a290d6a12d3671f57e3d8f1bc00f7f2e753f25d16fbfa433ca8d6b96afb0d127",
-      "sha256_after": "d9524901d3cafe20ef647e53dbfa0571a43ccfb657a9ba1272f29cf458949581",
+      "sha256_after": "1b13beb82a99a8342990ae249d15d152a3448727cdb862aa59d1a9281b2dd8af",
       "before": {
         "latin_token_count": 81,
         "narrative_english_count": 1,
@@ -78900,7 +78900,7 @@
       "language_scan_reason": "служебный файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 648,
+      "latin_token_count": 718,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -78909,7 +78909,7 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "61395caa786b036f17a2ef4e55f6138035aef1eb9b5714c56ccbe7807643dcb0",
-      "sha256_after": "55952bd41ad38aacda92e1763c0a57d10cc85d7bc9948061314be78117027131",
+      "sha256_after": "dae680c3b188e7d51b420198f6fa99c5590c3ea424c2f7bd5882bc299f698430",
       "before": {
         "latin_token_count": 406,
         "narrative_english_count": 0,
@@ -99200,7 +99200,7 @@
       "sha256_after": "93013b12886d6368ee776d98758c4f3b1e6c3212b446b5a972ee83ef064f0b50",
       "before": {
         "latin_token_count": 30,
-        "narrative_english_count": 15,
+        "narrative_english_count": 17,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -99712,7 +99712,7 @@
       "sha256_after": "46986c8e93d58611c4de3d2d6193e9efd92281eed86aba32064bd8c840a771a7",
       "before": {
         "latin_token_count": 21,
-        "narrative_english_count": 5,
+        "narrative_english_count": 6,
         "mixed_compound_count": 0,
         "unexplained_identifier_count": 0,
         "inconsistent_translation_count": 0
@@ -101364,7 +101364,7 @@
       "language_scan_reason": "служебный файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 345,
+      "latin_token_count": 359,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -101373,7 +101373,7 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "20c6c193a6d1abe5b422b227c2278ee15e365ed8fb6eee4041620543ad42c2e4",
-      "sha256_after": "86eb87ac4c6b1129c87f63734df33c5b2cff1ca77401d86b5390f0943d119af2",
+      "sha256_after": "0528ba52efc28a1fde554f65010a801f8251d379bdfe04b817c5f71d234c61d9",
       "before": {
         "latin_token_count": 293,
         "narrative_english_count": 0,
@@ -101780,7 +101780,7 @@
       "language_scan_reason": "служебный файл, не предназначенный для чтения пользователем",
       "encoding": "utf-8-sig",
       "line_ending": "CRLF",
-      "latin_token_count": 1994,
+      "latin_token_count": 2060,
       "narrative_english_count": 0,
       "mixed_compound_count": 0,
       "unexplained_identifier_count": 0,
@@ -101789,7 +101789,7 @@
       "recommended_action": "review",
       "actual_action": "rewritten",
       "sha256_before": "332d423d3cffd732bca365fee5e36dcd57100f0eb74cb52d499b6bc285b7c169",
-      "sha256_after": "5c7b0e731e21cf9acb285d2128044d4f81562e2dcbdfc870ecf1fa6144b422e6",
+      "sha256_after": "0a7664176ddb0b999854b4c7325cf0572d012f7ae7cf844e2ea8d88e52ad2540",
       "before": {
         "latin_token_count": 1486,
         "narrative_english_count": 0,

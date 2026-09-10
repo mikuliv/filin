@@ -9,8 +9,8 @@
 - Текущих документов проверено языковым анализом: **232**; создаваемых текущих документов: **9**.
 - Исторически классифицированных файлов: **689**; документов Markdown: **64**; человекочитаемых: **66**; машинных и исходных: **623**.
 - Пользовательских создаваемых документов: **9**; служебных создаваемых файлов исключено: **12**.
-- Переписано файлов: **152**.
-- Английских повествовательных вхождений: **1146 → 0**.
+- Переписано файлов: **153**.
+- Английских повествовательных вхождений: **1448 → 0**.
 - Смешанных конструкций: **2 → 0**.
 - Непояснённых идентификаторов: **0 → 0**.
 - Изменено защищённых файлов: **0**; официальных текстов: **0**.
@@ -279,7 +279,7 @@
 | `docs/contributing/documentation-maintenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/contributing/documentation-style.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/contributing/testing-and-validation.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
-| `docs/current-capabilities.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
+| `docs/current-capabilities.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/data-provenance.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `unchanged` |
 | `docs/dependency-licenses.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |
 | `docs/development-history.md` | `current_human_document` | нет | да | `included` | текущий пользовательский документ | `rewritten` |

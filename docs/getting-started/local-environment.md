@@ -6,7 +6,7 @@
 
 В корне нет `requirements.txt`, `pyproject.toml` или единого файла фиксации зависимостей. Зависимости разделены по подсистемам: `backend/requirements.txt`, `ml/requirements.txt`, `lab_console/requirements.txt`, файлы сервисов в `lab/docker/services/` и `lab/network_validation/requirements.lock`. Устанавливайте только тот набор, который нужен выбранной проверке.
 
-Общие требования: Git, Python 3.12 или совместимый интерпретатор, а для проверок Docker — Docker Engine и Compose plugin. Зависимости сетевого контура закреплены версиями в `lab/network_validation/requirements.lock`.
+Общие требования: Git, Python 3.12 или совместимый интерпретатор, а для проверок Docker — Docker Engine и плагин Docker Compose. Зависимости сетевого контура закреплены версиями в `lab/network_validation/requirements.lock`.
 
 ## Windows и PowerShell
 
