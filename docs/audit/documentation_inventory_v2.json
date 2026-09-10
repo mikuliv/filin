@@ -189,7 +189,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "310c3cd5e062589583d2bfad6ec71690a9e75a3b3fa4f1cfd15baacaf9103348"
+      "sha256_after": "0b39cda5f39be78042a2bbfabaf6f690e193409e069183b2a14284cb48eda7bf"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1459,7 +1459,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "2f7fe90ad07ffcdec4928d5283cfb0e63e02b657ba6e25e48917ab387c1e554f"
+      "sha256_after": "fcb22b3da1da98af78cfcefa118f889a56c8f4779a3177c6401716ae07dc83a5"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -11251,7 +11251,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6316b247fd5f2676f97bf7c924742a511cbd20d432b250b4b3ed83db2a7bcbd6",
-      "sha256_after": "c9883fe93fcf969aa5137575ccfb07bb4b721062ffe8a363dfaf1405c3c19eb5"
+      "sha256_after": "ef3abd21d1d25a82879c827216ba4fd3afec7c44d39bfefc022b74c8d02dfb14"
     },
     {
       "path": "docs/safety-model.md",
@@ -11557,7 +11557,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "6496f275100e25820029b37c44be89cea2ed44b4f4870699110eca211218c934",
-      "sha256_after": "47e34b6eaa8325df4ee5bdc63a6ecf64f077182c58db7e5a7ccde1272b8b23a9"
+      "sha256_after": "a5822fcc6c3c8ed0909aa8b425e395ca639ab011897ee9b2c8545b60fa13a820"
     },
     {
       "path": "docs/status/documentation_refactor_handoff.md",
@@ -11735,7 +11735,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "f1f7b2ef60b4d1150b35916811db6b55ecf9259185ed0e3920732e1cdc2141c9",
-      "sha256_after": "b8b4b8cf756b81b7bb9791c99425be8af28444c17046e730b805627f52732ccf"
+      "sha256_after": "51a90c1b7033e54ab202e9e5ad17ba1a6854acf4b42387535251971a538b6e94"
     },
     {
       "path": "docs/status/prohibited-capabilities.md",

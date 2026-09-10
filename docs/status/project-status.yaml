@@ -1,6 +1,6 @@
 schema_version: filin_project_status_v2
 project_name: Филин
-current_project_state: "Официальный пакет Phase 1 v4 подготовлен; научный запуск среди отслеживаемых Git-файлов не зафиксирован"
+current_project_state: "Новый официальный заменяющий пакет Phase 1 создан; кампания не инициализирована и научный запуск не выполнялся"
 status_scope_note: "Статусы основной линии, лабораторной линии, исторической сетевой проверки и текущего runtime не сводятся к одному next_allowed_stage"
 regression_baseline:
   full_regression_passed: false
@@ -61,7 +61,7 @@ independent_network_validation_expected_pre_experiment_absences: [scientific_cor
 independent_network_validation_scientific_pass_allowed: false
 independent_network_validation_external_corpus_required_for_scientific_pass: true
 # Совместимые поля ниже сохранены для потребителей. Первое значение — снимок,
-# встроенный в JSON пакета до исполнения, а не фактическая история v4.
+# встроенный в JSON последнего пакета до исполнения, а не фактическая история v4.
 latest_tracked_official_package_campaign_started: false
 historical_v4_campaign_started: true
 current_superseding_campaign_started: false
@@ -76,16 +76,16 @@ independent_network_validation_images_built: true
 independent_network_validation_docker_smoke_completed: true
 independent_network_validation_real_capture_smoke_validated: true
 independent_network_validation:
-  latest_official_package_id: network-validation-execution-8e1e32b127893bdf
-  latest_official_package_digest: 8e1e32b127893bdf2e32114b7fb2db19e0e06b2b3de1df5ce2308d2e5571e6cf
-  latest_official_package_path: lab/network_validation/execution/official_execution_package_v4.json
-  latest_official_package_generation: superseding_operational_runtime_v4
-  runtime_source_commit: b397034263ea0784e35e87c443752fdf3965a6ec
-  current_runtime_code_differs_from_package: true
+  latest_official_package_id: network-validation-execution-617f7bc34e59c3f8
+  latest_official_package_digest: 617f7bc34e59c3f8197e29f2ab9dd0394202c17e63a0cf558cb942bd1b2b1066
+  latest_official_package_path: lab/network_validation/execution/official_execution_package_v5.json
+  latest_official_package_generation: superseding_operational_runtime_v5
+  runtime_source_commit: a4f447d1ff3b482ea5417a6585a069cc4805343c
+  current_runtime_code_differs_from_package: false
   current_runtime_code_correction: "Исправление запуска Zeek: абсолютный путь и bash -c"
   current_runtime_code_correction_commit: 0027bb2
-  next_superseding_package_required: true
-  next_superseding_package_reason: "После выпуска v4 изменён код среды выполнения; будущий заменяющий пакет ещё не создан"
+  next_superseding_package_required: false
+  next_superseding_package_reason: "Новый пакет уже фиксирует исправленный запуск Zeek; следующая граница — отдельные предварительная проверка уровня кампании и свежая инициализация"
   scenario_template_count: 288
   execution_unit_count: 864
   repetitions_per_template: 3
@@ -94,7 +94,7 @@ independent_network_validation:
   scientific_campaign_started: false
   scientific_sessions_executed: 0
   state_semantics: "Поля scientific_campaign_started и scientific_sessions_executed — снимок, встроенный в официальный пакет до исполнения; они не описывают исторически сообщённые попытки v4."
-  package_execution_allowed_after_per_session_preflight: false
+  package_execution_allowed_after_per_session_preflight: true
   package_declared_snapshot:
     campaign_started: false
     completed_sessions: 0
@@ -117,13 +117,13 @@ independent_network_validation:
   - artifact_inspection
   - hash_verification
   - contract_inspection
-  future_superseding_package_prerequisites_before_session_preflight:
+  new_package_prerequisites_before_session_preflight:
   - new_output_root
   - new_secret_root
   - fresh_campaign_initialization
   - zero_byte_new_ledger
   - exact_unit_1_selected
-  next_allowed_action: "Сначала выпустить будущий заменяющий пакет; для v4 разрешены только проверки без записи"
+  next_allowed_action: "В отдельной задаче выполнить предварительную проверку уровня кампании и свежую инициализацию нового пакета; научный запуск пока запрещён"
   label_unlock_sequence:
     contract_prerequisites:
     - frozen_predictions

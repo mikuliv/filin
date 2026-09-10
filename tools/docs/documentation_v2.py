@@ -144,9 +144,17 @@ def phase1_facts(root: Path = ROOT) -> dict[str, Any]:
         cwd=root,
         capture_output=True,
     ).returncode == 0
-    runtime_diff = ""
+    runtime_diff_paths: list[str] = []
     if source_reachable:
         runtime_diff = run_git("diff", "--name-only", f"{source_commit}..HEAD", "--", "lab/network_validation", root=root, check=False)
+        runtime_diff_paths = [
+            path
+            for path in runtime_diff.splitlines()
+            if not re.fullmatch(
+                r"lab/network_validation/execution/official_execution_package(?:_v\d+)?\.json",
+                path,
+            )
+        ]
     return {
         "package_path": package_path.relative_to(root).as_posix(),
         "package_id": package.get("package_id", ""),
@@ -155,8 +163,8 @@ def phase1_facts(root: Path = ROOT) -> dict[str, Any]:
         "runtime_source_commit": source_commit,
         "current_head": current_head,
         "runtime_source_reachable": source_reachable,
-        "runtime_code_diff_paths": runtime_diff.splitlines() if runtime_diff else [],
-        "current_runtime_code_differs_from_package": bool(runtime_diff),
+        "runtime_code_diff_paths": runtime_diff_paths,
+        "current_runtime_code_differs_from_package": bool(runtime_diff_paths),
         "scientific_campaign_started": bool(package.get("scientific_campaign_started", False)),
         "scientific_sessions_executed": int(package.get("scientific_sessions_executed", 0)),
         "scenario_template_count": int(package.get("scenario_template_count", plan.get("scenario_template_count", 0))),

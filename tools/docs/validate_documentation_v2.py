@@ -135,8 +135,8 @@ def validate_status(root: Path) -> list[str]:
     for key, value in expected_network.items():
         if network.get(key) != value:
             errors.append(error("phase1_status_mismatch", key, str(value)))
-    if not network.get("next_superseding_package_required"):
-        errors.append(error("phase1_superseding_package_not_required"))
+    if bool(network.get("next_superseding_package_required")) != facts["current_runtime_code_differs_from_package"]:
+        errors.append(error("phase1_superseding_package_requirement_mismatch"))
     required_texts = ("README.md", "docs/status/current-status.md", "docs/status/next-stage.md", "docs/roadmap.md")
     for name in required_texts:
         text = (root / name).read_text(encoding="utf-8")
