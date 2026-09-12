@@ -1,0 +1,19 @@
+{
+  "schema_version": "feature_compatibility_v1",
+  "provider_id": "legacy_network_features_v2_provider",
+  "status": "frozen",
+  "input_event_types": ["network.flow", "dns.query", "http.request"],
+  "observation_requirement": {"causal_order_required": true, "minimum_events": 1, "missing_input_policy": "explicit_missing"},
+  "feature_contract": {
+    "contract_id": "network_features_v2",
+    "contract_path": "ml/experiments/v0_3_15_4/feature_contract_v2.yaml",
+    "contract_sha256": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+    "feature_count": 51,
+    "ordered_feature_names": [
+      "failed_connection_rate", "udp_flow_share", "tcp_flow_share", "http_requests_per_flow", "dns_requests_per_flow", "events_per_second", "flows_per_second", "bytes_per_flow", "packets_per_flow", "orig_bytes_per_flow", "resp_bytes_per_flow", "failed_connections_per_second", "unique_destinations_per_flow", "unique_services_per_flow", "response_bytes_share", "orig_packet_share", "delta_flows_per_second", "flows_per_second_to_rolling_median", "robust_z_flows_per_second", "delta_events_per_second", "events_per_second_to_rolling_median", "robust_z_events_per_second", "delta_failed_connections_per_second", "failed_connections_to_rolling_median", "robust_z_failed_connections", "delta_bytes_per_flow", "bytes_per_flow_to_rolling_median", "delta_packets_per_flow", "packets_per_flow_to_rolling_median", "delta_unique_destinations_per_flow", "destination_set_jaccard_change", "protocol_mix_l1_change", "response_bytes_share_change", "udp_flow_share_change", "consecutive_high_failure_windows", "consecutive_high_flow_windows", "rolling_activity_slope", "rolling_failure_slope", "request_spacing_cv", "periodicity_stability", "long_lived_flow_persistence", "success_response_share", "failed_then_successful_connection_rate", "retry_recovery_rate", "target_responsiveness_ratio", "connection_completion_rate", "long_lived_flow_share", "http_method_diversity", "http_response_status_entropy", "response_direction_balance", "service_availability_recovery_evidence"
+    ],
+    "order_immutable": true
+  },
+  "detector_requirements": [{"detector_id": "legacy_frozen_network_candidate", "required_feature_groups": ["network_features_v2"]}],
+  "canonical_digest": "c8596fb0ab5b4a3ef182fad9b4121f8f1116ee09023c2ec5502e3b0cc9dfcc50"
+}

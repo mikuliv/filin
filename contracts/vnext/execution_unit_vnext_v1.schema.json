@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/execution_unit_vnext_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "execution_unit_id", "realization_ref", "execution_order", "split_assignment", "telemetry_capture_plan", "observation_ref", "ground_truth_ref", "state", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "execution_unit_vnext_v1"}, "execution_unit_id": {"type": "string", "pattern": "^exec_[a-f0-9]{64}$"},
+    "realization_ref": {"type": "object", "additionalProperties": false, "required": ["realization_id", "canonical_digest"], "properties": {"realization_id": {"type": "string", "pattern": "^real_[a-f0-9]{64}$"}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "execution_order": {"type": "integer", "minimum": 0}, "split_assignment": {"enum": ["development_train", "development_calibration", "blind_internal_holdout", "external_holdout"]},
+    "telemetry_capture_plan": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "observation_ref": {"type": ["string", "null"], "pattern": "^obs_[a-f0-9]{64}$"},
+    "ground_truth_ref": {"type": "object", "additionalProperties": false, "required": ["vault_id", "label_id"], "properties": {"vault_id": {"type": "string"}, "label_id": {"type": "string"}}},
+    "state": {"enum": ["planned", "initialized", "executing", "observed", "failed"]}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

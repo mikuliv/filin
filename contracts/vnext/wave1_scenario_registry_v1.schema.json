@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/wave1_scenario_registry_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "registry_id", "status", "scenarios", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "wave1_scenario_registry_v1"},
+    "registry_id": {"type": "string"},
+    "status": {"enum": ["planned", "implemented", "experimentally_validated"]},
+    "scenarios": {"type": "array", "minItems": 1, "items": {"type": "object"}},
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

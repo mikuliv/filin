@@ -1,0 +1,56 @@
+{
+  "schema_version": "detector_capability_v1",
+  "registry_id": "filin_vnext_detectors_v1",
+  "status": "implemented",
+  "detectors": [
+    {
+      "detector_id": "vnext_heuristic_baseline_v1",
+      "detector_type": "deterministic_rule",
+      "implementation_ref": "tools.vnext.detection.HeuristicDetector",
+      "required_feature_groups": [
+        "temporal_v1"
+      ],
+      "optional_feature_groups": [
+        "authentication_v1",
+        "http_behavior_v1",
+        "dns_v1",
+        "legacy_network_v2"
+      ],
+      "supported_taxonomy_nodes": [
+        "benign.authentication",
+        "benign.operations.monitoring",
+        "malicious.command_and_control.beaconing",
+        "malicious.credential_abuse.brute_force",
+        "malicious.credential_abuse.password_spraying",
+        "malicious.reconnaissance.web_path_enumeration"
+      ],
+      "open_set_capability": true,
+      "explanation_capability": true,
+      "maturity": "implemented"
+    },
+    {
+      "detector_id": "vnext_prototype_distance_baseline_v1",
+      "detector_type": "prototype_distance",
+      "implementation_ref": "tools.vnext.detection.PrototypeDistanceDetector",
+      "required_feature_groups": [
+        "temporal_v1"
+      ],
+      "optional_feature_groups": [
+        "authentication_v1",
+        "http_behavior_v1"
+      ],
+      "supported_taxonomy_nodes": [
+        "benign.authentication",
+        "benign.operations.monitoring",
+        "malicious.command_and_control.beaconing",
+        "malicious.credential_abuse.brute_force",
+        "malicious.credential_abuse.password_spraying",
+        "malicious.reconnaissance.web_path_enumeration"
+      ],
+      "open_set_capability": true,
+      "explanation_capability": true,
+      "maturity": "implemented"
+    }
+  ],
+  "canonical_digest": "51bccce763fef867ed14479eab5481d95f3fa1b8af825785d3a53b0f79e0926c"
+}

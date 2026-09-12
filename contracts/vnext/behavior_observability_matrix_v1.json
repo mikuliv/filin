@@ -1,0 +1,156 @@
+{
+  "schema_version": "behavior_observability_matrix_v1",
+  "matrix_id": "filin_vnext_observability_wave1",
+  "status": "implemented",
+  "rows": [
+    {
+      "taxonomy_node_id": "malicious.reconnaissance.port_scanning",
+      "telemetry": {
+        "network.flow": "required"
+      },
+      "feature_groups": {
+        "legacy_network_v2": "partial",
+        "temporal_v1": "useful",
+        "http_behavior_v1": "unsupported"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 baseline \u043d\u0435 \u0438\u043c\u0435\u0435\u0442 \u043e\u0442\u0434\u0435\u043b\u044c\u043d\u043e\u0439 flow fan-out \u0433\u0440\u0443\u043f\u043f\u044b."
+      ]
+    },
+    {
+      "taxonomy_node_id": "malicious.reconnaissance.web_path_enumeration",
+      "telemetry": {
+        "network.flow": "required",
+        "http.request": "useful"
+      },
+      "feature_groups": {
+        "legacy_network_v2": "partial",
+        "temporal_v1": "useful",
+        "http_behavior_v1": "required"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u041c\u0435\u0442\u0430\u0434\u0430\u043d\u043d\u044b\u0435 \u043d\u0435 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u044e\u0442 exploit semantics."
+      ]
+    },
+    {
+      "taxonomy_node_id": "malicious.credential_abuse.brute_force",
+      "telemetry": {
+        "auth.attempt": "required"
+      },
+      "feature_groups": {
+        "authentication_v1": "required",
+        "temporal_v1": "useful",
+        "legacy_network_v2": "partial"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u0418\u0441\u0442\u0438\u043d\u043d\u043e\u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438\u0435 \u043d\u0435 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u0442\u0441\u044f."
+      ]
+    },
+    {
+      "taxonomy_node_id": "malicious.credential_abuse.password_spraying",
+      "telemetry": {
+        "auth.attempt": "required"
+      },
+      "feature_groups": {
+        "authentication_v1": "required",
+        "temporal_v1": "useful",
+        "legacy_network_v2": "unsupported"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u041d\u0443\u0436\u043d\u0430 \u0434\u043e\u0441\u0442\u043e\u0432\u0435\u0440\u043d\u0430\u044f \u0438\u0434\u0435\u043d\u0442\u0438\u0447\u043d\u043e\u0441\u0442\u044c \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u0432."
+      ]
+    },
+    {
+      "taxonomy_node_id": "malicious.command_and_control.beaconing",
+      "telemetry": {
+        "network.flow": "required",
+        "http.request": "useful"
+      },
+      "feature_groups": {
+        "temporal_v1": "required",
+        "http_behavior_v1": "useful",
+        "legacy_network_v2": "partial"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u041f\u0435\u0440\u0438\u043e\u0434\u0438\u0447\u043d\u043e\u0441\u0442\u044c \u0442\u0430\u043a\u0436\u0435 \u0445\u0430\u0440\u0430\u043a\u0442\u0435\u0440\u043d\u0430 \u0434\u043b\u044f \u043c\u043e\u043d\u0438\u0442\u043e\u0440\u0438\u043d\u0433\u0430."
+      ]
+    },
+    {
+      "taxonomy_node_id": "malicious.command_and_control.dns_c2",
+      "telemetry": {
+        "dns.query": "required",
+        "network.flow": "useful"
+      },
+      "feature_groups": {
+        "dns_v1": "required",
+        "temporal_v1": "required",
+        "legacy_network_v2": "partial"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u0413\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 DNS \u043e\u0441\u0442\u0430\u0451\u0442\u0441\u044f planned."
+      ]
+    },
+    {
+      "taxonomy_node_id": "benign.operations.monitoring",
+      "telemetry": {
+        "network.flow": "required",
+        "http.request": "useful"
+      },
+      "feature_groups": {
+        "temporal_v1": "required",
+        "http_behavior_v1": "useful",
+        "legacy_network_v2": "partial"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u041c\u043e\u0436\u0435\u0442 \u0431\u044b\u0442\u044c \u043d\u0435\u043e\u0442\u043b\u0438\u0447\u0438\u043c \u043e\u0442 \u043e\u0431\u0440\u0430\u0442\u043d\u043e\u0433\u043e \u0432\u044b\u0437\u043e\u0432\u0430 \u0431\u0435\u0437 \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u0430."
+      ]
+    },
+    {
+      "taxonomy_node_id": "benign.authentication",
+      "telemetry": {
+        "auth.attempt": "required"
+      },
+      "feature_groups": {
+        "authentication_v1": "required",
+        "temporal_v1": "useful",
+        "legacy_network_v2": "unsupported"
+      },
+      "detectors": [
+        "vnext_heuristic_baseline_v1",
+        "vnext_prototype_distance_baseline_v1"
+      ],
+      "limitations": [
+        "\u041f\u0440\u0438\u0447\u0438\u043d\u0430 \u043e\u0448\u0438\u0431\u043a\u0438 \u0442\u0440\u0435\u0431\u0443\u0435\u0442 \u0432\u043d\u0435\u0448\u043d\u0435\u0433\u043e \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u043e\u0433\u043e \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u0430."
+      ]
+    }
+  ],
+  "canonical_digest": "4823741b0d34ab8fdfe124e0b3667ea5c45fc0eae43d2c26fc2ee2b2207f8afc"
+}

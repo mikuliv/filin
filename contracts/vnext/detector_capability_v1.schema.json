@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "filin://vnext/detector_capability_v1", "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "registry_id", "status", "detectors", "canonical_digest"],
+  "properties": {"schema_version": {"const": "detector_capability_v1"}, "registry_id": {"type": "string"}, "status": {"enum": ["planned", "implemented", "experimentally_validated"]},
+    "detectors": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["detector_id", "detector_type", "implementation_ref", "required_feature_groups", "optional_feature_groups", "supported_taxonomy_nodes", "open_set_capability", "explanation_capability", "maturity"], "properties": {
+      "detector_id": {"type": "string"}, "detector_type": {"enum": ["deterministic_rule", "prototype_distance"]}, "implementation_ref": {"type": "string"}, "required_feature_groups": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "optional_feature_groups": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "supported_taxonomy_nodes": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "open_set_capability": {"const": true}, "explanation_capability": {"const": true}, "maturity": {"enum": ["planned", "implemented", "experimentally_validated"]}
+    }}}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

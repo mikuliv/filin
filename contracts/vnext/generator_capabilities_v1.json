@@ -1,0 +1,408 @@
+{
+  "schema_version": "generator_capability_v1",
+  "registry_id": "generators_filin_vnext_v1",
+  "status": "implemented",
+  "generators": [
+    {
+      "generator_id": "wave1_recon_family_a",
+      "implementation_ref": "tools.vnext.scenarios.runtime.ReconFamilyA",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.reconnaissance.host_discovery",
+        "malicious.reconnaissance.port_scanning"
+      ],
+      "required_environment_capabilities": [
+        "generic_tcp_services"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "scan_ordering",
+        "spacing_ms"
+      ],
+      "limitations": [
+        "\u0422\u043e\u043b\u044c\u043a\u043e loopback disposable target."
+      ]
+    },
+    {
+      "generator_id": "wave1_recon_family_b",
+      "implementation_ref": "tools.vnext.scenarios.runtime.ReconFamilyB",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.reconnaissance.host_discovery",
+        "malicious.reconnaissance.port_scanning"
+      ],
+      "required_environment_capabilities": [
+        "generic_tcp_services"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "scan_ordering",
+        "spacing_ms"
+      ],
+      "limitations": [
+        "\u041d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u0430\u044f interleaved-\u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u0430 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u043c \u0441\u0442\u0435\u043d\u0434\u043e\u043c."
+      ]
+    },
+    {
+      "generator_id": "wave1_web_enumerator",
+      "implementation_ref": "tools.vnext.scenarios.runtime.WebEnumerationGenerator",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.reconnaissance.web_path_enumeration"
+      ],
+      "required_environment_capabilities": [
+        "http_service"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "spacing_ms"
+      ],
+      "limitations": [
+        "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442 \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u043e\u0439 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u044b\u0439 \u0441\u043b\u043e\u0432\u0430\u0440\u044c \u043e\u0431\u044b\u0447\u043d\u044b\u0445 \u043f\u0443\u0442\u0435\u0439."
+      ]
+    },
+    {
+      "generator_id": "wave1_credential_family_a",
+      "implementation_ref": "tools.vnext.scenarios.runtime.CredentialFamilyA",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.credential_abuse",
+        "malicious.credential_abuse.brute_force",
+        "malicious.credential_abuse.password_spraying"
+      ],
+      "required_environment_capabilities": [
+        "http_service",
+        "authentication_service"
+      ],
+      "required_telemetry": [
+        "auth.attempt"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "http.request",
+        "auth.attempt"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "account_count",
+        "attempts_per_account",
+        "source_count",
+        "delay_model"
+      ],
+      "limitations": [
+        "\u0422\u043e\u043b\u044c\u043a\u043e \u0432\u044b\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u044b\u0435 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0443\u0447\u0451\u0442\u043d\u044b\u0435 \u0437\u0430\u043f\u0438\u0441\u0438."
+      ]
+    },
+    {
+      "generator_id": "wave1_credential_family_b",
+      "implementation_ref": "tools.vnext.scenarios.runtime.CredentialFamilyB",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.credential_abuse",
+        "malicious.credential_abuse.brute_force",
+        "malicious.credential_abuse.password_spraying"
+      ],
+      "required_environment_capabilities": [
+        "http_service",
+        "authentication_service"
+      ],
+      "required_telemetry": [
+        "auth.attempt"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "http.request",
+        "auth.attempt"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "account_count",
+        "attempts_per_account",
+        "source_count",
+        "delay_model"
+      ],
+      "limitations": [
+        "Round-robin \u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u043d\u0435 \u0441\u043e\u0437\u0434\u0430\u0451\u0442 \u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u044b\u0435 \u0441\u0435\u0442\u0435\u0432\u044b\u0435 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u0438."
+      ]
+    },
+    {
+      "generator_id": "wave1_beacon_family_a",
+      "implementation_ref": "tools.vnext.scenarios.runtime.BeaconFamilyA",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.command_and_control.beaconing"
+      ],
+      "required_environment_capabilities": [
+        "http_service",
+        "http_callback"
+      ],
+      "required_telemetry": [
+        "network.flow",
+        "http.request"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "interval_ms",
+        "jitter_ratio",
+        "callback_protocol",
+        "session_persistence"
+      ],
+      "limitations": [
+        "\u0418\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u044b \u0441\u043e\u043a\u0440\u0430\u0449\u0435\u043d\u044b \u0434\u043b\u044f smoke-\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438."
+      ]
+    },
+    {
+      "generator_id": "wave1_beacon_family_b",
+      "implementation_ref": "tools.vnext.scenarios.runtime.BeaconFamilyB",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "malicious.command_and_control.beaconing"
+      ],
+      "required_environment_capabilities": [
+        "http_service",
+        "http_callback"
+      ],
+      "required_telemetry": [
+        "network.flow",
+        "http.request"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "interval_ms",
+        "jitter_ratio",
+        "callback_protocol",
+        "session_persistence"
+      ],
+      "limitations": [
+        "\u041e\u0442\u0434\u0435\u043b\u044c\u043d\u0430\u044f persistent-session \u0440\u0435\u0430\u043b\u0438\u0437\u0430\u0446\u0438\u044f \u0440\u0430\u0431\u043e\u0442\u0430\u0435\u0442 \u0442\u043e\u043b\u044c\u043a\u043e \u043f\u043e HTTP."
+      ]
+    },
+    {
+      "generator_id": "wave1_dns_callback_planned",
+      "implementation_ref": "tools.vnext.scenarios.future.DnsCallbackGenerator",
+      "adapter_status": "planned",
+      "supported_taxonomy_nodes": [
+        "malicious.command_and_control.dns_c2"
+      ],
+      "required_environment_capabilities": [
+        "dns_resolver"
+      ],
+      "required_telemetry": [
+        "network.flow",
+        "dns.query"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "dns.query"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "callback_protocol",
+        "interval_ms"
+      ],
+      "limitations": [
+        "\u041d\u0435\u0442 \u0447\u0435\u0441\u0442\u043d\u043e\u0433\u043e \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e DNS telemetry path."
+      ]
+    },
+    {
+      "generator_id": "wave1_benign_operations",
+      "implementation_ref": "tools.vnext.scenarios.runtime.BenignOperationsGenerator",
+      "adapter_status": "implemented",
+      "supported_taxonomy_nodes": [
+        "benign.interactive.normal_navigation",
+        "benign.operations.monitoring",
+        "benign.security_testing",
+        "benign.automation.api_polling",
+        "benign.authentication",
+        "benign.automation.synchronization"
+      ],
+      "required_environment_capabilities": [
+        "http_service"
+      ],
+      "required_telemetry": [
+        "network.flow",
+        "http.request",
+        "auth.attempt"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request",
+        "auth.attempt"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "scan_ordering",
+        "spacing_ms",
+        "interval_ms",
+        "account_count",
+        "attempts_per_account"
+      ],
+      "limitations": [
+        "\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u043e\u043d\u043d\u0430\u044f \u043b\u043e\u0433\u0438\u043a\u0430 \u043e\u0442\u0434\u0435\u043b\u0435\u043d\u0430 \u043e\u0442 malicious generators."
+      ]
+    },
+    {
+      "generator_id": "legacy_network_family_a_adapter",
+      "implementation_ref": "lab.network_validation.generators.family_a.FamilyA",
+      "adapter_status": "planned",
+      "supported_taxonomy_nodes": [
+        "benign.interactive.normal_navigation",
+        "malicious.reconnaissance.port_scanning",
+        "malicious.reconnaissance.web_path_enumeration",
+        "malicious.credential_abuse.brute_force",
+        "malicious.command_and_control.beaconing",
+        "malicious.impact_availability.application_pressure"
+      ],
+      "required_environment_capabilities": [
+        "http_target",
+        "tcp_target"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "spacing_ms",
+        "interval_ms",
+        "jitter_ratio",
+        "payload_size",
+        "target_profile",
+        "protocol_implementation"
+      ],
+      "limitations": [
+        "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u043d\u0435 \u0438\u0437\u043c\u0435\u043d\u0451\u043d; \u044d\u0442\u043e \u0442\u043e\u043b\u044c\u043a\u043e planned-\u0430\u0434\u0430\u043f\u0442\u0435\u0440."
+      ]
+    },
+    {
+      "generator_id": "legacy_network_family_b_adapter",
+      "implementation_ref": "lab.network_validation.generators.family_b.FamilyB",
+      "adapter_status": "planned",
+      "supported_taxonomy_nodes": [
+        "benign.interactive.normal_navigation",
+        "malicious.reconnaissance.port_scanning",
+        "malicious.reconnaissance.web_path_enumeration",
+        "malicious.credential_abuse.brute_force",
+        "malicious.command_and_control.beaconing",
+        "malicious.impact_availability.application_pressure"
+      ],
+      "required_environment_capabilities": [
+        "http_target",
+        "tcp_target"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "parameter_schema_ref": "filin://vnext/experimental_dimension_v1",
+      "seed_policy": {
+        "deterministic": true,
+        "algorithm": "sha256_seeded_python_v1",
+        "same_seed_same_realization": true
+      },
+      "emitted_observable_activity": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_dimensions": [
+        "request_count",
+        "spacing_ms",
+        "interval_ms",
+        "jitter_ratio",
+        "payload_size",
+        "target_profile",
+        "protocol_implementation"
+      ],
+      "limitations": [
+        "\u0418\u0441\u0442\u043e\u0440\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u0433\u0435\u043d\u0435\u0440\u0430\u0442\u043e\u0440 \u043d\u0435 \u0438\u0437\u043c\u0435\u043d\u0451\u043d; \u044d\u0442\u043e \u0442\u043e\u043b\u044c\u043a\u043e planned-\u0430\u0434\u0430\u043f\u0442\u0435\u0440."
+      ]
+    }
+  ],
+  "canonical_digest": "25a7a522f59834418ebe4ede42784d873b8df4d7c06773eede3e8390600853c3"
+}

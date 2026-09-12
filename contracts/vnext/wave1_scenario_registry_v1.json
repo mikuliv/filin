@@ -1,0 +1,2230 @@
+{
+  "schema_version": "wave1_scenario_registry_v1",
+  "registry_id": "filin_vnext_wave1",
+  "status": "implemented",
+  "scenarios": [
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_host_discovery",
+      "purpose_ru": "\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u043e\u0431\u043d\u0430\u0440\u0443\u0436\u0435\u043d\u0438\u0435 \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u0438 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0443\u0437\u043b\u0430 \u0447\u0435\u0440\u0435\u0437 \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0435 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u044f.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.host_discovery",
+      "scenario_variant": "host_discovery",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_recon_family_a",
+          "wave1_recon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "scan_ordering": [
+          "ascending",
+          "seeded",
+          "interleaved"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "scan_ordering"
+        ],
+        "default_profile": {
+          "request_count": 3,
+          "scan_ordering": "seeded"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_service_monitoring"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_service_monitoring"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041e\u0434\u0438\u043d loopback-\u0443\u0437\u0435\u043b \u043d\u0435 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u0443\u0435\u0442 \u0441\u0435\u0442\u0435\u0432\u0443\u044e \u0442\u043e\u043f\u043e\u043b\u043e\u0433\u0438\u044e."
+      ],
+      "canonical_digest": "a7120b0032d02cdf66ec298d8b9e0f50ffde6ca3cb2a9c622fd6317d905845c8"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_service_discovery",
+      "purpose_ru": "\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u043c\u0443\u044e \u043a\u0430\u0440\u0442\u0438\u043d\u0443 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u043d\u0430\u0431\u043e\u0440\u0430 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.port_scanning",
+      "scenario_variant": "service_discovery",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_recon_family_a",
+          "wave1_recon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "scan_ordering": [
+          "ascending",
+          "seeded",
+          "interleaved"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "scan_ordering"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "scan_ordering": "seeded"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_approved_scanner"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_approved_scanner"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0422\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u043d\u0435 \u0443\u0441\u0442\u0430\u043d\u0430\u0432\u043b\u0438\u0432\u0430\u0435\u0442 \u0437\u043b\u043e\u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e\u0435 \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u0438\u0435."
+      ],
+      "canonical_digest": "4adfacafb049a8ea9aab09b154a7bd4a827d054d40dfa9cd0ee083aaf9c1f4f1"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_sequential_port_scan",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u043f\u043e\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u0443\u044e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u043e\u0440\u0442\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.port_scanning",
+      "scenario_variant": "sequential_port_scan",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_recon_family_a"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "scan_ordering": [
+          "ascending",
+          "seeded",
+          "interleaved"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "scan_ordering"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "scan_ordering": "ascending"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_approved_scanner"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_approved_scanner"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041c\u0430\u043b\u044b\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 \u0434\u0438\u0430\u043f\u0430\u0437\u043e\u043d \u0441\u043b\u0443\u0436\u0438\u0442 \u0442\u043e\u043b\u044c\u043a\u043e smoke-\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0435."
+      ],
+      "canonical_digest": "9743ce127534fcc5edd9f7121b561c4baa0af3de6d4d9f8988c11f0c73ae11ea"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_randomized_port_scan",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0434\u0435\u0442\u0435\u0440\u043c\u0438\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e \u043f\u0435\u0440\u0435\u043c\u0435\u0448\u0430\u043d\u043d\u0443\u044e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u043f\u043e\u0440\u0442\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.port_scanning",
+      "scenario_variant": "randomized_port_scan",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_recon_family_b"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "scan_ordering": [
+          "ascending",
+          "seeded",
+          "interleaved"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "scan_ordering"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "scan_ordering": "seeded"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_approved_scanner"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_approved_scanner"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041f\u043e\u0440\u044f\u0434\u043e\u043a \u0434\u0435\u0442\u0435\u0440\u043c\u0438\u043d\u0438\u0440\u043e\u0432\u0430\u043d seed \u0438 \u043d\u0435 \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u044d\u043a\u0441\u043f\u0435\u0440\u0438\u043c\u0435\u043d\u0442\u0430\u043b\u044c\u043d\u043e\u0439 \u0432\u044b\u0431\u043e\u0440\u043a\u043e\u0439."
+      ],
+      "canonical_digest": "44bb192dd8eef260e92d4cb55a10ad349e9e4fa3966f21988ef67e67fba57be1"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_sparse_port_scan",
+      "purpose_ru": "\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0440\u0430\u0437\u0440\u0435\u0436\u0435\u043d\u043d\u044b\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u0432 \u0431\u0435\u0437\u043e\u043f\u0430\u0441\u043d\u043e\u043c \u0441\u043e\u043a\u0440\u0430\u0449\u0451\u043d\u043d\u043e\u043c \u0432\u0440\u0435\u043c\u0435\u043d\u0438.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.port_scanning",
+      "scenario_variant": "sparse_port_scan",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_recon_family_b"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "spacing_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "spacing_ms"
+        ],
+        "default_profile": {
+          "request_count": 3,
+          "spacing_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_service_monitoring"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_service_monitoring"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "Smoke-\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0441 \u043c\u0438\u043b\u043b\u0438\u0441\u0435\u043a\u0443\u043d\u0434\u043d\u044b\u043c\u0438 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u0430\u043c\u0438 \u043d\u0435 \u043f\u043e\u0434\u0442\u0432\u0435\u0440\u0436\u0434\u0430\u0435\u0442 low-rate detection."
+      ],
+      "canonical_digest": "2a1ad36efcb9daa4c34e7001b540f81b4338c29b2775a2c4fe01dc8e0342a822"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_web_path_enumeration",
+      "purpose_ru": "\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u0440\u0435\u0430\u043b\u044c\u043d\u044b\u0435 \u043e\u0442\u0432\u0435\u0442\u044b \u043d\u0430 \u043d\u0430\u0431\u043e\u0440 \u043e\u0431\u044b\u0447\u043d\u044b\u0445 \u0432\u0435\u0431-\u043f\u0443\u0442\u0435\u0439.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.reconnaissance.web_path_enumeration",
+      "scenario_variant": "web_path_enumeration",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_web_enumerator"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service"
+        ],
+        "target_capabilities": [
+          "http_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "spacing_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "spacing_ms"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "spacing_ms": 0
+        }
+      },
+      "expected_observable_behavior": [
+        "\u0421\u0435\u0440\u0438\u044f HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043a \u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u0438 \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u044e\u0449\u0438\u043c \u043f\u0443\u0442\u044f\u043c."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_legitimate_bulk_requests"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_legitimate_bulk_requests"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041d\u0435\u0431\u043e\u043b\u044c\u0448\u043e\u0439 \u0441\u043b\u043e\u0432\u0430\u0440\u044c \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043f\u043e\u043b\u043d\u043e\u0440\u0430\u0437\u043c\u0435\u0440\u043d\u043e\u0435 \u043f\u0435\u0440\u0435\u0447\u0438\u0441\u043b\u0435\u043d\u0438\u0435."
+      ],
+      "canonical_digest": "7309c909bd18cfbe962c95c3be829774033e8a7d7847724c05bad9a8843c9733"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_credential_brute_force",
+      "purpose_ru": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043a\u043e\u043d\u0446\u0435\u043d\u0442\u0440\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u0443\u044e \u0441\u0435\u0440\u0438\u044e \u043d\u0435\u0443\u0441\u043f\u0435\u0448\u043d\u044b\u0445 \u0432\u0445\u043e\u0434\u043e\u0432 \u043d\u0430 \u043c\u0430\u043b\u043e\u043c \u043d\u0430\u0431\u043e\u0440\u0435 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.credential_abuse.brute_force",
+      "scenario_variant": "brute_force",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_credential_family_a",
+          "wave1_credential_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "http.request",
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "account_count": [
+          1,
+          48
+        ],
+        "attempts_per_account": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "account_count",
+          "attempts_per_account"
+        ],
+        "default_profile": {
+          "request_count": 8,
+          "account_count": 1,
+          "attempts_per_account": 4
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_auth_misconfiguration"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_auth_misconfiguration"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041f\u0430\u0440\u043e\u043b\u0438 \u043d\u0435 \u0441\u043e\u0445\u0440\u0430\u043d\u044f\u044e\u0442\u0441\u044f \u0432 \u0441\u044b\u0440\u043e\u0439 \u0442\u0435\u043b\u0435\u043c\u0435\u0442\u0440\u0438\u0438."
+      ],
+      "canonical_digest": "ed51c66f2b006fc912bcabe35f722f425f9489644d94f9260a269b16f6741b90"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_password_spraying",
+      "purpose_ru": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043c\u0430\u043b\u043e\u0435 \u0447\u0438\u0441\u043b\u043e \u043d\u0435\u0443\u0441\u043f\u0435\u0448\u043d\u044b\u0445 \u0432\u0445\u043e\u0434\u043e\u0432 \u043f\u043e \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u0443\u0447\u0451\u0442\u043d\u044b\u043c \u0437\u0430\u043f\u0438\u0441\u044f\u043c.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.credential_abuse.password_spraying",
+      "scenario_variant": "password_spraying",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_credential_family_a",
+          "wave1_credential_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "http.request",
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "account_count": [
+          1,
+          48
+        ],
+        "attempts_per_account": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "account_count",
+          "attempts_per_account"
+        ],
+        "default_profile": {
+          "request_count": 8,
+          "account_count": 4,
+          "attempts_per_account": 1
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041c\u0430\u043b\u044b\u0439 \u0441\u0442\u0435\u043d\u0434 \u043d\u0435 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u0443\u0435\u0442 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u0443\u044e \u0438\u0434\u0435\u043d\u0442\u0438\u0447\u043d\u043e\u0441\u0442\u044c \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439."
+      ],
+      "canonical_digest": "50be585e172f4b8ba3806d81d61028f3b6d21b8f9bc832c2b6077b50b3b06859"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_credential_stuffing",
+      "purpose_ru": "\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u0440\u0430\u0441\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0439 \u043f\u043e \u0443\u0447\u0451\u0442\u043d\u044b\u043c \u0437\u0430\u043f\u0438\u0441\u044f\u043c \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u043e\u043a \u0440\u0430\u0437\u043d\u044b\u0445 \u043f\u0430\u0440 \u0440\u0435\u043a\u0432\u0438\u0437\u0438\u0442\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.credential_abuse",
+      "scenario_variant": "credential_stuffing",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_credential_family_a",
+          "wave1_credential_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "http.request",
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "account_count": [
+          1,
+          48
+        ],
+        "attempts_per_account": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "account_count",
+          "attempts_per_account"
+        ],
+        "default_profile": {
+          "request_count": 8,
+          "account_count": 4,
+          "attempts_per_account": 1
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0418\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044e\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0432\u044b\u043c\u044b\u0448\u043b\u0435\u043d\u043d\u044b\u0435 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0435 \u0440\u0435\u043a\u0432\u0438\u0437\u0438\u0442\u044b."
+      ],
+      "canonical_digest": "032b518429c3926225d8c86f1e4587852f79174bd99ee847e591733871869160"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_distributed_credential_guessing",
+      "purpose_ru": "\u0417\u0430\u0440\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u0443\u044e \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0443 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u044b\u0445 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u0432.",
+      "status": "planned",
+      "taxonomy_node_id": "malicious.credential_abuse",
+      "scenario_variant": "distributed_credential_guessing",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_credential_family_b"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service",
+          "multiple_source_identities"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service",
+          "multiple_source_identities"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "source_count": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "source_count"
+        ],
+        "default_profile": {
+          "request_count": 8,
+          "source_count": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_user_password_mistakes"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0422\u0435\u043a\u0443\u0449\u0438\u0439 loopback-\u0441\u0442\u0435\u043d\u0434 \u043d\u0435 \u0434\u0430\u0451\u0442 \u0447\u0435\u0441\u0442\u043d\u044b\u0445 \u043d\u0435\u0437\u0430\u0432\u0438\u0441\u0438\u043c\u044b\u0445 \u0438\u0441\u0442\u043e\u0447\u043d\u0438\u043a\u043e\u0432."
+      ],
+      "canonical_digest": "bdb1422bb7701a162c438342866ee4f0bde4792b8f294bdd7880a52ce7e13e1c"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_periodic_beacon",
+      "purpose_ru": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u043f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0435 HTTP-\u043e\u0431\u0440\u0430\u0449\u0435\u043d\u0438\u044f \u0441 \u043f\u043e\u0441\u0442\u043e\u044f\u043d\u043d\u043e\u0439 \u0441\u0442\u0440\u0443\u043a\u0442\u0443\u0440\u043e\u0439.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.command_and_control.beaconing",
+      "scenario_variant": "periodic_beacon",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_beacon_family_a",
+          "wave1_beacon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow",
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "http_callback"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "http_callback"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "interval_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_legitimate_periodic_callback"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_legitimate_periodic_callback",
+        "scenario_health_checks"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0421\u043e\u043a\u0440\u0430\u0449\u0451\u043d\u043d\u044b\u0435 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u044b \u043f\u0440\u0435\u0434\u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u044b \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f smoke-\u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438."
+      ],
+      "canonical_digest": "69043e65364287b1ffb3ce8a00d3f75c82c562b993a18a960e75fbc5837a0a78"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_jittered_beacon",
+      "purpose_ru": "\u0421\u043e\u0437\u0434\u0430\u0442\u044c \u0434\u0435\u0442\u0435\u0440\u043c\u0438\u043d\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0439 callback-\u043f\u0440\u043e\u0444\u0438\u043b\u044c \u0441 \u0438\u0437\u043c\u0435\u043d\u044f\u0435\u043c\u044b\u043c \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u043e\u043c.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.command_and_control.beaconing",
+      "scenario_variant": "jittered_beacon",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_beacon_family_a",
+          "wave1_beacon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow",
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "http_callback"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "http_callback"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ],
+        "jitter_ratio": [
+          0,
+          0.5
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms",
+          "jitter_ratio"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "interval_ms": 2,
+          "jitter_ratio": 0.25
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_api_polling"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_api_polling"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "Runtime \u043d\u0435 \u0432\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u043e\u0434\u0438\u0442 \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u044b \u0432 \u0438\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u043e\u043c \u0442\u0435\u0441\u0442\u0435."
+      ],
+      "canonical_digest": "e2fc6b6596572a1910fca37eb4f0754af9352f5b2d3e89e42cd54f45707108e1"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_low_frequency_callback",
+      "purpose_ru": "\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c \u043f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043e\u0431\u0440\u0430\u0449\u0435\u043d\u0438\u044f, \u043a\u043e\u043d\u0446\u0435\u043f\u0442\u0443\u0430\u043b\u044c\u043d\u043e \u0440\u0430\u0437\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0435 \u0443\u0432\u0435\u043b\u0438\u0447\u0435\u043d\u043d\u044b\u043c \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u043e\u043c.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.command_and_control.beaconing",
+      "scenario_variant": "low_frequency_callback",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_beacon_family_a",
+          "wave1_beacon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow",
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "http_callback"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "http_callback"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms"
+        ],
+        "default_profile": {
+          "request_count": 3,
+          "interval_ms": 5
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_service_monitoring"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_service_monitoring"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "Smoke-\u0442\u0435\u0441\u0442 \u043d\u0435 \u0432\u0430\u043b\u0438\u0434\u0438\u0440\u0443\u0435\u0442 \u043d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u043c\u043e\u0441\u0442\u044c \u043d\u0430\u0441\u0442\u043e\u044f\u0449\u0438\u0445 \u043c\u043d\u043e\u0433\u043e\u0447\u0430\u0441\u043e\u0432\u044b\u0445 \u0438\u043d\u0442\u0435\u0440\u0432\u0430\u043b\u043e\u0432."
+      ],
+      "canonical_digest": "54f2aff10c31a2e28ebf6b9c03ea771fc5f38d8c197378ee7c588912cc9b58e6"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_http_callback",
+      "purpose_ru": "\u041f\u0440\u043e\u0432\u0435\u0440\u0438\u0442\u044c callback-\u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0447\u0435\u0440\u0435\u0437 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 HTTP-\u0441\u0435\u0440\u0432\u0438\u0441.",
+      "status": "implemented",
+      "taxonomy_node_id": "malicious.command_and_control.beaconing",
+      "scenario_variant": "http_callback",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_beacon_family_a",
+          "wave1_beacon_family_b"
+        ],
+        "implementation_separation_required": true
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow",
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "http_callback"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "http_callback"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "callback_protocol": [
+          "http",
+          "dns"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "callback_protocol"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "callback_protocol": "http"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_api_polling"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_api_polling"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "HTTP \u0431\u0435\u0437 TLS \u0432\u044b\u0431\u0440\u0430\u043d \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f \u0438\u0437\u043e\u043b\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u043e\u0433\u043e \u0441\u0442\u0435\u043d\u0434\u0430."
+      ],
+      "canonical_digest": "64cae0b2c074f57c953caa0e19c69500153ddbf075d94a7ea2f25723eaa2c7d8"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_dns_callback",
+      "purpose_ru": "\u0417\u0430\u0440\u0435\u0437\u0435\u0440\u0432\u0438\u0440\u043e\u0432\u0430\u0442\u044c DNS-callback \u043f\u043e\u0441\u043b\u0435 \u043f\u043e\u044f\u0432\u043b\u0435\u043d\u0438\u044f \u0447\u0435\u0441\u0442\u043d\u043e\u0433\u043e DNS telemetry path.",
+      "status": "planned",
+      "taxonomy_node_id": "malicious.command_and_control.dns_c2",
+      "scenario_variant": "dns_callback",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_dns_callback_planned"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow",
+          "dns.query"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "dns.query"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "dns_resolver"
+        ],
+        "target_capabilities": [
+          "dns_resolver"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "callback_protocol": [
+          "http",
+          "dns"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "callback_protocol"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "callback_protocol": "dns"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f DNS-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u043c\u0443 \u0438\u043c\u0435\u043d\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_legitimate_periodic_callback"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_legitimate_periodic_callback"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0439 DNS-\u0441\u0431\u043e\u0440\u0449\u0438\u043a \u043e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442; \u0438\u0441\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u0435 \u0437\u0430\u043a\u0440\u044b\u0442\u043e."
+      ],
+      "canonical_digest": "e2b6df079e916d59f5b66aa108856fea6f46304a8d9daf260e7e86a30d811987"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_normal_navigation",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u043e\u0431\u044b\u0447\u043d\u0443\u044e \u043f\u043e\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u043f\u0435\u0440\u0435\u0445\u043e\u0434\u043e\u0432 \u043f\u043e \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u043c \u0432\u0435\u0431-\u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.interactive.normal_navigation",
+      "scenario_variant": "normal_navigation",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service"
+        ],
+        "target_capabilities": [
+          "http_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "spacing_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "spacing_ms"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "spacing_ms": 1
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0441\u043b\u0435\u0434\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u043d\u044b\u0435 \u0443\u0441\u043f\u0435\u0448\u043d\u044b\u0435 \u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u043e\u043c\u0443 \u043d\u0430\u0431\u043e\u0440\u0443 \u043e\u0431\u044b\u0447\u043d\u044b\u0445 \u0432\u0435\u0431-\u043f\u0443\u0442\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_web_path_enumeration"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_web_path_enumeration"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0439 \u0442\u0435\u0445\u043d\u0438\u0447\u0435\u0441\u043a\u0438\u0439 \u043c\u0430\u0440\u0448\u0440\u0443\u0442 \u043d\u0435 \u043f\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043b\u044f\u0435\u0442 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c\u0441\u043a\u0443\u044e \u0441\u0435\u0441\u0441\u0438\u044e."
+      ],
+      "canonical_digest": "f0f653ba79a2773472c8a1c6f021931b1113a0bca9357a3e0ed888a346848e98"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_service_monitoring",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u044b\u0439 \u043a\u043e\u043d\u0442\u0440\u043e\u043b\u044c \u0434\u043e\u0441\u0442\u0443\u043f\u043d\u043e\u0441\u0442\u0438 \u0438\u0437\u0432\u0435\u0441\u0442\u043d\u044b\u0445 \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.operations.monitoring",
+      "scenario_variant": "service_monitoring",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "spacing_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "spacing_ms"
+        ],
+        "default_profile": {
+          "request_count": 3,
+          "spacing_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_sparse_port_scan"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_host_discovery",
+        "scenario_sparse_port_scan"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041d\u0430\u043c\u0435\u0440\u0435\u043d\u0438\u0435 \u0445\u0440\u0430\u043d\u0438\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0432\u043e \u0432\u043d\u0435\u0448\u043d\u0435\u0439 \u0440\u0430\u0437\u043c\u0435\u0442\u043a\u0435."
+      ],
+      "canonical_digest": "95930d7ffeb377997f5e1a22ac3e92d8795a93a4ab6d91b79340ade94b14b512"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_approved_scanner",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u0443\u044e \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u0443\u044e \u0438\u043d\u0432\u0435\u043d\u0442\u0430\u0440\u0438\u0437\u0430\u0446\u0438\u044e \u0441\u0435\u0440\u0432\u0438\u0441\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.security_testing",
+      "scenario_variant": "approved_scanner",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "network.flow"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "generic_tcp_services"
+        ],
+        "target_capabilities": [
+          "generic_tcp_services"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "scan_ordering": [
+          "ascending",
+          "seeded",
+          "interleaved"
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "scan_ordering"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "scan_ordering": "ascending"
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0438\u0435 \u043f\u043e\u043f\u044b\u0442\u043a\u0438 TCP-\u0441\u043e\u0435\u0434\u0438\u043d\u0435\u043d\u0438\u0439 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043f\u043e\u0440\u0442\u0430\u043c \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u0446\u0435\u043b\u0438."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_service_discovery"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_service_discovery"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0421\u0435\u0442\u0435\u0432\u043e\u0439 \u043f\u0440\u043e\u0444\u0438\u043b\u044c \u043d\u0430\u043c\u0435\u0440\u0435\u043d\u043d\u043e \u043f\u043e\u0445\u043e\u0436 \u043d\u0430 scan-like traffic."
+      ],
+      "canonical_digest": "f798a66d0e68dcf5c61fff47fe139a96e3572fb3d239caf83f2b1b7ee073aa2c"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_api_polling",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0448\u0442\u0430\u0442\u043d\u044b\u0439 \u043e\u043f\u0440\u043e\u0441 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e API.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.automation.api_polling",
+      "scenario_variant": "api_polling",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service"
+        ],
+        "target_capabilities": [
+          "http_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "interval_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_http_callback"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_http_callback",
+        "scenario_jittered_beacon"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u0418\u043d\u0436\u0435\u043d\u0435\u0440\u043d\u044b\u0439 \u043f\u0440\u043e\u0433\u043e\u043d \u043d\u0435 \u043c\u043e\u0434\u0435\u043b\u0438\u0440\u0443\u0435\u0442 \u0431\u0438\u0437\u043d\u0435\u0441-\u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442 API."
+      ],
+      "canonical_digest": "9cd878ddb6f31a72c3a00b0fdc6fced48a6ec202ed9a927428c92a9f7532b6e5"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_health_checks",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0448\u0442\u0430\u0442\u043d\u044b\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u0440\u0430\u0431\u043e\u0442\u043e\u0441\u043f\u043e\u0441\u043e\u0431\u043d\u043e\u0441\u0442\u0438 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u0441\u0435\u0440\u0432\u0438\u0441\u0430.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.operations.monitoring",
+      "scenario_variant": "health_checks",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service"
+        ],
+        "target_capabilities": [
+          "http_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "interval_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_periodic_beacon"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_periodic_beacon"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041a\u043e\u0440\u043e\u0442\u043a\u0430\u044f \u0434\u043b\u0438\u0442\u0435\u043b\u044c\u043d\u043e\u0441\u0442\u044c \u0434\u043e\u0441\u0442\u0430\u0442\u043e\u0447\u043d\u0430 \u0442\u043e\u043b\u044c\u043a\u043e \u0434\u043b\u044f pipeline smoke-\u0442\u0435\u0441\u0442\u0430."
+      ],
+      "canonical_digest": "9b0c02f6dfd1c9a42db8da668949af2b2d1dd241346c67d2a3259e921521966c"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_legitimate_periodic_callback",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u044b\u0439 \u043f\u0435\u0440\u0438\u043e\u0434\u0438\u0447\u0435\u0441\u043a\u0438\u0439 callback \u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u044f.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.automation.api_polling",
+      "scenario_variant": "legitimate_periodic_callback",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "http_callback"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "http_callback"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "interval_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "interval_ms"
+        ],
+        "default_profile": {
+          "request_count": 4,
+          "interval_ms": 2
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u043d\u0435\u0431\u043e\u043b\u044c\u0448\u0438\u0435 HTTP-\u0437\u0430\u043f\u0440\u043e\u0441\u044b \u043a \u0441\u0442\u0430\u0431\u0438\u043b\u044c\u043d\u043e\u0439 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u043e\u0439 \u043a\u043e\u043d\u0435\u0447\u043d\u043e\u0439 \u0442\u043e\u0447\u043a\u0435."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_periodic_beacon"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_periodic_beacon"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041d\u0430\u0431\u043b\u044e\u0434\u0430\u0435\u043c\u044b\u0435 \u043f\u0440\u0438\u0437\u043d\u0430\u043a\u0438 \u0447\u0430\u0441\u0442\u0438\u0447\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0430\u044e\u0442 \u0441 beaconing."
+      ],
+      "canonical_digest": "5d890aba36aebfc6cfe787099495c8f9c63e8870d7cbf15f1bffa4a02eff9db2"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_auth_misconfiguration",
+      "purpose_ru": "\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u043f\u043e\u0432\u0442\u043e\u0440\u043d\u044b\u0435 \u043e\u0442\u043a\u0430\u0437\u044b \u0438\u0437-\u0437\u0430 \u043d\u0435\u0432\u0435\u0440\u043d\u043e\u0439 \u043d\u0430\u0441\u0442\u0440\u043e\u0439\u043a\u0438 \u0448\u0442\u0430\u0442\u043d\u043e\u0433\u043e \u043a\u043b\u0438\u0435\u043d\u0442\u0430.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.authentication",
+      "scenario_variant": "auth_misconfiguration",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "http.request",
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "attempts_per_account": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "attempts_per_account"
+        ],
+        "default_profile": {
+          "request_count": 3,
+          "attempts_per_account": 3
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_credential_brute_force"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_credential_brute_force"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041f\u0440\u0438\u0447\u0438\u043d\u0430 \u043e\u0442\u043a\u0430\u0437\u0430 \u0437\u0430\u0434\u0430\u043d\u0430 \u0432\u043d\u0435\u0448\u043d\u0438\u043c \u043a\u043e\u043d\u0442\u0435\u043a\u0441\u0442\u043e\u043c, \u043d\u0435 observable label."
+      ],
+      "canonical_digest": "de14ff960f869d1aa824ee8201b6f050e0dd9e622589f40a8fc00d2e921544a0"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_user_password_mistakes",
+      "purpose_ru": "\u0412\u043e\u0441\u043f\u0440\u043e\u0438\u0437\u0432\u0435\u0441\u0442\u0438 \u0435\u0434\u0438\u043d\u0438\u0447\u043d\u044b\u0435 \u043e\u0448\u0438\u0431\u043a\u0438 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f \u043f\u0440\u0438 \u0432\u0432\u043e\u0434\u0435 \u043f\u0430\u0440\u043e\u043b\u044f.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.authentication",
+      "scenario_variant": "password_mistakes",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "auth.attempt"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "http.request",
+          "auth.attempt"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service",
+          "authentication_service"
+        ],
+        "target_capabilities": [
+          "http_service",
+          "authentication_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "attempts_per_account": [
+          1,
+          48
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "attempts_per_account"
+        ],
+        "default_profile": {
+          "request_count": 2,
+          "attempts_per_account": 1
+        }
+      },
+      "expected_observable_behavior": [
+        "\u041f\u043e\u0432\u0442\u043e\u0440\u044f\u044e\u0449\u0438\u0435\u0441\u044f \u0440\u0435\u0437\u0443\u043b\u044c\u0442\u0430\u0442\u044b \u0430\u0443\u0442\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0446\u0438\u0438 \u0434\u043b\u044f \u043e\u0434\u043d\u043e\u0439 \u0438\u043b\u0438 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u0443\u0447\u0451\u0442\u043d\u044b\u0445 \u0437\u0430\u043f\u0438\u0441\u0435\u0439."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_password_spraying"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_password_spraying",
+        "scenario_credential_stuffing"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041c\u0430\u043b\u044b\u0439 \u0441\u0442\u0435\u043d\u0434 \u043d\u0435 \u0441\u043e\u0434\u0435\u0440\u0436\u0438\u0442 \u043f\u043e\u0432\u0435\u0434\u0435\u043d\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u043f\u0440\u043e\u0444\u0438\u043b\u044f \u0440\u0435\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f."
+      ],
+      "canonical_digest": "fc597aa6dbe59e8695fe37b409a7da67c00627731132b47423f521abdf84aeb0"
+    },
+    {
+      "schema_version": "scenario_definition_v2",
+      "scenario_id": "scenario_legitimate_bulk_requests",
+      "purpose_ru": "\u0412\u044b\u043f\u043e\u043b\u043d\u0438\u0442\u044c \u0440\u0430\u0437\u0440\u0435\u0448\u0451\u043d\u043d\u0443\u044e \u043f\u0430\u043a\u0435\u0442\u043d\u0443\u044e \u0432\u044b\u0431\u043e\u0440\u043a\u0443 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u0445 \u043b\u043e\u043a\u0430\u043b\u044c\u043d\u044b\u0445 \u0440\u0435\u0441\u0443\u0440\u0441\u043e\u0432.",
+      "status": "implemented",
+      "taxonomy_node_id": "benign.automation.synchronization",
+      "scenario_variant": "bulk_multi_request",
+      "generator_requirements": {
+        "allowed_generator_ids": [
+          "wave1_benign_operations"
+        ],
+        "implementation_separation_required": false
+      },
+      "telemetry_expectations": {
+        "required": [
+          "http.request"
+        ],
+        "useful": [],
+        "expected_event_types": [
+          "network.flow",
+          "http.request"
+        ]
+      },
+      "environment_requirements": {
+        "services": [
+          "http_service"
+        ],
+        "target_capabilities": [
+          "http_service"
+        ]
+      },
+      "parameter_constraints": {
+        "request_count": [
+          1,
+          48
+        ],
+        "spacing_ms": [
+          0,
+          1000
+        ]
+      },
+      "intensity_model": {
+        "dimension_ids": [
+          "request_count",
+          "spacing_ms"
+        ],
+        "default_profile": {
+          "request_count": 6,
+          "spacing_ms": 0
+        }
+      },
+      "expected_observable_behavior": [
+        "\u0421\u0435\u0440\u0438\u044f \u0437\u0430\u043f\u0440\u043e\u0441\u043e\u0432 \u043a \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u0438\u043c \u043e\u0431\u044b\u0447\u043d\u044b\u043c \u0440\u0435\u0441\u0443\u0440\u0441\u0430\u043c."
+      ],
+      "forbidden_observable_fields": [
+        "attack_label",
+        "expected_attack_family",
+        "generator_id",
+        "ground_truth",
+        "ground_truth_ref",
+        "label",
+        "label_id",
+        "realization_id",
+        "scenario_id",
+        "scenario_variant",
+        "taxonomy_node_id"
+      ],
+      "forbidden_marker_patterns": [
+        "filin",
+        "scenario_",
+        "generator_",
+        "taxonomy_node_id",
+        "attack_label"
+      ],
+      "counterfactual_refs": [
+        "scenario_web_path_enumeration"
+      ],
+      "hard_benign_analogue_refs": [
+        "scenario_web_path_enumeration"
+      ],
+      "ground_truth_policy": {
+        "storage_class": "external_sealed_ground_truth",
+        "observable_access": "forbidden",
+        "prediction_access": "forbidden"
+      },
+      "limitations": [
+        "\u041d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u043e\u043f\u0435\u0440\u0430\u0446\u0438\u0438 \u043d\u0435 \u0432\u044b\u0432\u043e\u0434\u0438\u0442\u0441\u044f \u0442\u043e\u043b\u044c\u043a\u043e \u0438\u0437 \u0441\u0435\u0442\u0435\u0432\u043e\u0433\u043e fan-out."
+      ],
+      "canonical_digest": "92d806022619591b88dda0a9589821e8a039f854f410c3ff49e8fb952f9fd7f6"
+    }
+  ],
+  "canonical_digest": "a819a49d327c53f6488fcb9a0ff044c43498791cff83c64c4b696f9e7e8726c6"
+}

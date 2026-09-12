@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/ground_truth_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "label_id", "execution_unit_id", "taxonomy_node_id", "scenario_id", "scenario_variant", "generator_id", "realization_id", "expected_attack_family", "access_policy", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "ground_truth_v1"}, "label_id": {"type": "string", "pattern": "^label_[a-f0-9]{64}$"}, "execution_unit_id": {"type": "string", "pattern": "^exec_[a-f0-9]{64}$"},
+    "taxonomy_node_id": {"type": "string"}, "scenario_id": {"type": "string"}, "scenario_variant": {"type": "string"}, "generator_id": {"type": "string"}, "realization_id": {"type": "string", "pattern": "^real_[a-f0-9]{64}$"}, "expected_attack_family": {"type": ["string", "null"]},
+    "access_policy": {"type": "object", "additionalProperties": false, "required": ["storage_class", "observable_pipeline", "feature_pipeline", "prediction_pipeline", "unlock_stage"], "properties": {"storage_class": {"const": "external_sealed_ground_truth"}, "observable_pipeline": {"const": "forbidden"}, "feature_pipeline": {"const": "forbidden"}, "prediction_pipeline": {"const": "forbidden"}, "unlock_stage": {"enum": ["post_prediction_evaluation", "external_evaluation_only"]}}},
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

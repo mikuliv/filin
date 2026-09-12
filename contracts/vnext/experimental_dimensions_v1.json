@@ -1,0 +1,35 @@
+{
+  "schema_version": "experimental_dimension_v1",
+  "registry_id": "dimensions_filin_vnext_v1",
+  "status": "planned",
+  "dimensions": [
+    {"dimension_id": "scan_ordering", "value_type": "string", "domain": {"enum": ["sequential", "randomized", "interleaved"]}, "description_ru": "Порядок обхода целей или портов."},
+    {"dimension_id": "destination_count", "value_type": "integer", "domain": {"minimum": 1, "maximum": 4096}, "description_ru": "Число различных назначений."},
+    {"dimension_id": "port_count", "value_type": "integer", "domain": {"minimum": 1, "maximum": 65536}, "description_ru": "Число проверяемых портов."},
+    {"dimension_id": "rate_per_second", "value_type": "number", "domain": {"minimum": 0.001, "maximum": 100000}, "description_ru": "Интенсивность действий в секунду."},
+    {"dimension_id": "target_profile", "value_type": "string", "domain": {"enum": ["single_service", "multi_service", "heterogeneous"]}, "description_ru": "Профиль цели."},
+    {"dimension_id": "interval_ms", "value_type": "integer", "domain": {"minimum": 1, "maximum": 86400000}, "description_ru": "Основной интервал периодической активности."},
+    {"dimension_id": "jitter_ratio", "value_type": "number", "domain": {"minimum": 0, "maximum": 1}, "description_ru": "Доля случайного отклонения интервала."},
+    {"dimension_id": "payload_size", "value_type": "integer", "domain": {"minimum": 0, "maximum": 10485760}, "description_ru": "Размер полезной нагрузки без раскрытия её содержания."},
+    {"dimension_id": "callback_protocol", "value_type": "string", "domain": {"enum": ["http", "https", "dns", "tcp"]}, "description_ru": "Протокол обратного соединения."},
+    {"dimension_id": "session_persistence", "value_type": "boolean", "domain": {}, "description_ru": "Сохранение логической сессии между действиями."},
+    {"dimension_id": "account_count", "value_type": "integer", "domain": {"minimum": 1, "maximum": 100000}, "description_ru": "Число затронутых учётных записей."},
+    {"dimension_id": "attempts_per_account", "value_type": "integer", "domain": {"minimum": 1, "maximum": 100000}, "description_ru": "Число попыток на учётную запись."},
+    {"dimension_id": "source_count", "value_type": "integer", "domain": {"minimum": 1, "maximum": 100000}, "description_ru": "Число источников активности."},
+    {"dimension_id": "delay_model", "value_type": "string", "domain": {"enum": ["fixed", "jittered", "bursty", "backoff"]}, "description_ru": "Модель задержки между действиями."},
+    {"dimension_id": "transfer_bytes", "value_type": "integer", "domain": {"minimum": 1, "maximum": 1099511627776}, "description_ru": "Общий объём передачи."},
+    {"dimension_id": "transfer_pattern", "value_type": "string", "domain": {"enum": ["single", "periodic", "bursty", "staged"]}, "description_ru": "Временная форма передачи."},
+    {"dimension_id": "request_count", "value_type": "integer", "domain": {"minimum": 1, "maximum": 1000000}, "description_ru": "Число действий прежнего сетевого генератора."},
+    {"dimension_id": "spacing_ms", "value_type": "integer", "domain": {"minimum": 0, "maximum": 86400000}, "description_ru": "Задержка между действиями прежнего генератора."},
+    {"dimension_id": "protocol_implementation", "value_type": "string", "domain": {"enum": ["family_a", "family_b", "future_family"]}, "description_ru": "Независимая реализация протокольного поведения."}
+  ],
+  "behavior_designs": [
+    {"taxonomy_node_id": "malicious.reconnaissance.port_scanning", "required_dimensions": ["scan_ordering", "destination_count", "port_count", "rate_per_second", "target_profile"], "optional_dimensions": ["protocol_implementation"], "forbidden_dimensions": ["account_count", "attempts_per_account", "transfer_bytes"]},
+    {"taxonomy_node_id": "malicious.command_and_control.beaconing", "required_dimensions": ["interval_ms", "jitter_ratio", "payload_size", "callback_protocol", "session_persistence"], "optional_dimensions": ["target_profile", "protocol_implementation"], "forbidden_dimensions": ["account_count", "port_count"]},
+    {"taxonomy_node_id": "malicious.credential_abuse.brute_force", "required_dimensions": ["account_count", "attempts_per_account", "source_count", "delay_model"], "optional_dimensions": ["target_profile", "protocol_implementation"], "forbidden_dimensions": ["transfer_bytes", "port_count"]},
+    {"taxonomy_node_id": "malicious.collection_exfiltration.outbound_transfer", "required_dimensions": ["transfer_bytes", "transfer_pattern", "rate_per_second"], "optional_dimensions": ["callback_protocol", "target_profile"], "forbidden_dimensions": ["account_count", "port_count"]},
+    {"taxonomy_node_id": "malicious.impact_availability.application_pressure", "required_dimensions": ["request_count", "rate_per_second", "session_persistence"], "optional_dimensions": ["payload_size", "target_profile"], "forbidden_dimensions": ["account_count", "transfer_pattern"]},
+    {"taxonomy_node_id": "malicious.collection_exfiltration.dns_tunneling", "required_dimensions": ["rate_per_second", "payload_size", "transfer_pattern"], "optional_dimensions": ["jitter_ratio", "session_persistence"], "forbidden_dimensions": ["port_count", "account_count"]}
+  ],
+  "canonical_digest": "9c6695a2b404fb4707ac05feca9ebfee033305ec11fe9c04110a65fac3326f88"
+}

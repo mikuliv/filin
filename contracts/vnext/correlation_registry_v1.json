@@ -1,0 +1,118 @@
+{
+  "canonical_digest": "a7813d629315c3029d32c18f701f800b4a7a11cbddb9f9e806f3b938b44a511c",
+  "capabilities": [
+    {
+      "capability_id": "reconnaissance_progression_v1",
+      "explanation_capability": true,
+      "maturity": "implemented",
+      "optional_context": [
+        "approved_scanner_role",
+        "maintenance_window"
+      ],
+      "required_features": [
+        "network_context_v1"
+      ],
+      "required_graph_edges": [
+        "CONNECTED_TO",
+        "ACCESSED_SERVICE"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "supported_behavior_families": [
+        "reconnaissance_progression"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "capability_id": "credential_abuse_recurrence_v1",
+      "explanation_capability": true,
+      "maturity": "implemented",
+      "optional_context": [],
+      "required_features": [
+        "authentication_v1",
+        "interaction_graph_v1"
+      ],
+      "required_graph_edges": [
+        "AUTHENTICATED_TO"
+      ],
+      "required_telemetry": [
+        "auth.attempt"
+      ],
+      "supported_behavior_families": [
+        "credential_abuse_recurrence"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "capability_id": "c2_like_persistence_v1",
+      "explanation_capability": true,
+      "maturity": "implemented",
+      "optional_context": [
+        "expected_communication_relationship"
+      ],
+      "required_features": [
+        "temporal_v1",
+        "network_context_v1"
+      ],
+      "required_graph_edges": [
+        "CONNECTED_TO",
+        "REQUESTED"
+      ],
+      "required_telemetry": [
+        "network.flow",
+        "http.request"
+      ],
+      "supported_behavior_families": [
+        "c2_like_persistence"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "capability_id": "benign_monitoring_context_v1",
+      "explanation_capability": true,
+      "maturity": "implemented",
+      "optional_context": [
+        "monitoring_system_role"
+      ],
+      "required_features": [
+        "network_context_v1",
+        "temporal_v1"
+      ],
+      "required_graph_edges": [
+        "CONNECTED_TO"
+      ],
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "supported_behavior_families": [
+        "benign_monitoring_context"
+      ],
+      "version": "1.0.0"
+    },
+    {
+      "capability_id": "possible_lateral_activity_v1",
+      "explanation_capability": true,
+      "maturity": "implemented",
+      "optional_context": [],
+      "required_features": [
+        "authentication_v1",
+        "interaction_graph_v1"
+      ],
+      "required_graph_edges": [
+        "AUTHENTICATED_TO",
+        "ACCESSED_SERVICE"
+      ],
+      "required_telemetry": [
+        "auth.attempt",
+        "network.flow"
+      ],
+      "supported_behavior_families": [
+        "possible_lateral_activity"
+      ],
+      "version": "1.0.0"
+    }
+  ],
+  "registry_id": "filin_vnext_correlation_wave1",
+  "schema_version": "correlation_registry_v1"
+}

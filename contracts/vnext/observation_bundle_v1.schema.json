@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/observation_bundle_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "bundle_id", "window", "event_refs", "entity_refs", "aggregation", "telemetry_capability_refs", "raw_evidence_refs", "feature_generation_refs", "correlation_context", "ground_truth_included", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "observation_bundle_v1"},
+    "bundle_id": {"type": "string", "pattern": "^obs_[a-f0-9]{64}$"},
+    "window": {"type": "object", "additionalProperties": false, "required": ["start", "end", "ordering_domain"], "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}, "ordering_domain": {"type": "string"}}},
+    "event_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["event_id", "canonical_digest"], "properties": {"event_id": {"type": "string", "pattern": "^evt_[a-f0-9]{64}$"}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
+    "entity_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^ent_[a-f0-9]{64}$"}},
+    "aggregation": {"type": "object", "additionalProperties": false, "required": ["method", "builder", "builder_version", "causal", "event_count"], "properties": {"method": {"type": "string"}, "builder": {"type": "string"}, "builder_version": {"type": "string"}, "causal": {"type": "boolean"}, "event_count": {"type": "integer", "minimum": 1}}},
+    "telemetry_capability_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "raw_evidence_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["evidence_id", "sha256"], "properties": {"evidence_id": {"type": "string", "pattern": "^raw_[a-f0-9]{64}$"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
+    "feature_generation_refs": {"type": "array", "uniqueItems": true, "items": {"type": "object", "additionalProperties": false, "required": ["generation_id", "generation_digest"], "properties": {"generation_id": {"type": "string"}, "generation_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}},
+    "correlation_context": {"type": "object", "additionalProperties": false, "required": ["correlation_keys", "parent_bundle_refs"], "properties": {"correlation_keys": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "parent_bundle_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^obs_[a-f0-9]{64}$"}}}},
+    "ground_truth_included": {"const": false},
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

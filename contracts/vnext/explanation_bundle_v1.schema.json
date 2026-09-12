@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "filin://vnext/explanation_bundle_v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "explanation_id", "detection_result_ref", "evidence_points", "detector_contributions", "temporal_patterns", "graph_patterns", "alternative_hypotheses", "attack_mappings", "ground_truth_used", "limitations", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "explanation_bundle_v1"}, "explanation_id": {"type": "string", "pattern": "^explanation_[a-f0-9]{64}$"}, "detection_result_ref": {"type": "string"},
+    "evidence_points": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["evidence_ref", "direction", "observation", "provenance"], "properties": {"evidence_ref": {"type": "string"}, "direction": {"enum": ["supports", "contradicts", "context_only"]}, "observation": {"type": "string"}, "provenance": {"type": "string"}}}},
+    "detector_contributions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["detector_id", "contribution", "basis_refs"], "properties": {"detector_id": {"type": "string"}, "contribution": {"type": "string"}, "basis_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}}},
+    "temporal_patterns": {"type": "array", "items": {"type": "string"}}, "graph_patterns": {"type": "array", "items": {"type": "string"}},
+    "alternative_hypotheses": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["node_id", "supporting_refs", "contradicting_refs"], "properties": {"node_id": {"type": "string"}, "supporting_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}, "contradicting_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}}},
+    "attack_mappings": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["technique_id", "status", "evidence_refs"], "properties": {"technique_id": {"type": "string", "pattern": "^T[0-9]{4}(?:\\.[0-9]{3})?$"}, "status": {"enum": ["analytical_correspondence", "insufficient_basis", "contradicted"]}, "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}}}},
+    "ground_truth_used": {"const": false}, "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

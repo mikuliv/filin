@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema", "$id": "filin://vnext/sigma_validation_result_v1",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "validation_id", "rule_id", "rule_digest", "status", "syntax_valid", "field_compatibility_valid", "corpus_binding", "metrics", "counterfactual_passed", "regression_passed", "automatic_acceptance", "limitations", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "sigma_validation_result_v1"}, "validation_id": {"type": "string", "pattern": "^sigma_validation_[a-f0-9]{64}$"}, "rule_id": {"type": "string"}, "rule_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "status": {"enum": ["DRAFT", "SYNTAX_VALID", "DATASET_VALIDATED", "NEEDS_REFINEMENT", "ACCEPTED", "REJECTED", "REGRESSION_FAILED"]}, "syntax_valid": {"type": "boolean"}, "field_compatibility_valid": {"type": "boolean"},
+    "corpus_binding": {"type": ["object", "null"], "additionalProperties": false, "required": ["corpus_id", "corpus_digest", "split_digest"], "properties": {"corpus_id": {"type": "string"}, "corpus_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "split_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "metrics": {"type": ["object", "null"], "additionalProperties": false, "required": ["tp", "fp", "fn", "tn"], "properties": {"tp": {"type": "integer", "minimum": 0}, "fp": {"type": "integer", "minimum": 0}, "fn": {"type": "integer", "minimum": 0}, "tn": {"type": "integer", "minimum": 0}}},
+    "counterfactual_passed": {"type": ["boolean", "null"]}, "regression_passed": {"type": ["boolean", "null"]}, "automatic_acceptance": {"const": false},
+    "limitations": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

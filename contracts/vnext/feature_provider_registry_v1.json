@@ -1,0 +1,324 @@
+{
+  "canonical_digest": "c4ce698eb5f6c37d93838b2054f7dedc08ae9a8f96ab1d5b2504190453beba79",
+  "providers": [
+    {
+      "deterministic": true,
+      "group_id": "temporal_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "inter_arrival_count",
+        "mean_interval_ms",
+        "median_interval_ms",
+        "interval_stddev_ms",
+        "interval_cv",
+        "min_interval_ms",
+        "max_interval_ms",
+        "burstiness",
+        "event_rate",
+        "connection_rate",
+        "active_window_duration_ms",
+        "periodicity_score",
+        "jitter_estimate"
+      ],
+      "provider_id": "temporal_v1_provider",
+      "required_telemetry": [
+        "network.flow",
+        "http.request",
+        "auth.attempt",
+        "dns.query"
+      ],
+      "schema_digest": "b876ca3c5186261bdebfcce7ab606fe5c0053b6dd6d173808a6e442167272557",
+      "schema_id": "filin://vnext/temporal_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.command_and_control",
+        "benign.operations.monitoring",
+        "benign.automation"
+      ],
+      "supported_event_types": [
+        "network.flow",
+        "http.request",
+        "auth.attempt",
+        "dns.query"
+      ],
+      "telemetry_requirement_mode": "any",
+      "version": "1.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "authentication_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "attempt_count",
+        "success_count",
+        "failure_count",
+        "failure_ratio",
+        "unique_accounts",
+        "mean_attempts_per_account",
+        "max_account_concentration",
+        "unique_sources",
+        "source_concentration",
+        "unique_targets",
+        "temporal_spread_ms",
+        "retry_interval_mean_ms",
+        "account_fanout",
+        "source_fanout"
+      ],
+      "provider_id": "authentication_v1_provider",
+      "required_telemetry": [
+        "auth.attempt"
+      ],
+      "schema_digest": "19ffbb045ab9e3e934f7420dec54a0d59c8bde1b397ebf025221f78ba448b782",
+      "schema_id": "filin://vnext/authentication_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.credential_abuse",
+        "benign.authentication"
+      ],
+      "supported_event_types": [
+        "auth.attempt"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "1.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "http_behavior_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "request_count",
+        "get_share",
+        "post_share",
+        "unique_paths",
+        "path_fanout",
+        "status_2xx_share",
+        "status_4xx_share",
+        "status_5xx_share",
+        "mean_request_bytes",
+        "mean_response_bytes",
+        "repeated_path_ratio",
+        "mean_path_depth",
+        "request_rate",
+        "error_ratio",
+        "unique_hosts",
+        "user_agent_diversity",
+        "session_concentration"
+      ],
+      "provider_id": "http_behavior_v1_provider",
+      "required_telemetry": [
+        "http.request"
+      ],
+      "schema_digest": "db512616bda9c6d4e42f83071ece8ec98b05e8c69691e4cbe2eb224b46501e6c",
+      "schema_id": "filin://vnext/http_behavior_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.reconnaissance",
+        "malicious.command_and_control",
+        "benign.automation"
+      ],
+      "supported_event_types": [
+        "http.request"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "1.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "dns_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "query_count",
+        "unique_domains",
+        "mean_subdomain_depth",
+        "mean_query_length",
+        "mean_label_entropy",
+        "query_type_diversity",
+        "nxdomain_ratio",
+        "unique_labels",
+        "repetition_ratio",
+        "query_rate",
+        "resolver_diversity",
+        "mean_answer_count"
+      ],
+      "provider_id": "dns_v1_provider",
+      "required_telemetry": [
+        "dns.query"
+      ],
+      "schema_digest": "5e15296e3b3c78e3200b7388934a802b6825abffbbb708289004760b7e728e2c",
+      "schema_id": "filin://vnext/dns_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.command_and_control",
+        "malicious.protocol_abuse",
+        "benign.dns"
+      ],
+      "supported_event_types": [
+        "dns.query"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "1.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "legacy_network_v2",
+      "maturity": "frozen",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "failed_connection_rate",
+        "udp_flow_share",
+        "tcp_flow_share",
+        "http_requests_per_flow",
+        "dns_requests_per_flow",
+        "events_per_second",
+        "flows_per_second",
+        "bytes_per_flow",
+        "packets_per_flow",
+        "orig_bytes_per_flow",
+        "resp_bytes_per_flow",
+        "failed_connections_per_second",
+        "unique_destinations_per_flow",
+        "unique_services_per_flow",
+        "response_bytes_share",
+        "orig_packet_share",
+        "delta_flows_per_second",
+        "flows_per_second_to_rolling_median",
+        "robust_z_flows_per_second",
+        "delta_events_per_second",
+        "events_per_second_to_rolling_median",
+        "robust_z_events_per_second",
+        "delta_failed_connections_per_second",
+        "failed_connections_to_rolling_median",
+        "robust_z_failed_connections",
+        "delta_bytes_per_flow",
+        "bytes_per_flow_to_rolling_median",
+        "delta_packets_per_flow",
+        "packets_per_flow_to_rolling_median",
+        "delta_unique_destinations_per_flow",
+        "destination_set_jaccard_change",
+        "protocol_mix_l1_change",
+        "response_bytes_share_change",
+        "udp_flow_share_change",
+        "consecutive_high_failure_windows",
+        "consecutive_high_flow_windows",
+        "rolling_activity_slope",
+        "rolling_failure_slope",
+        "request_spacing_cv",
+        "periodicity_stability",
+        "long_lived_flow_persistence",
+        "success_response_share",
+        "failed_then_successful_connection_rate",
+        "retry_recovery_rate",
+        "target_responsiveness_ratio",
+        "connection_completion_rate",
+        "long_lived_flow_share",
+        "http_method_diversity",
+        "http_response_status_entropy",
+        "response_direction_balance",
+        "service_availability_recovery_evidence"
+      ],
+      "provider_id": "legacy_network_features_v2_provider",
+      "required_telemetry": [
+        "network.flow",
+        "dns.query",
+        "http.request"
+      ],
+      "schema_digest": "960726fce11ba55fcdbd6a93e4f588afc13fe4c3874b4b8c6f8322dcb94d8bf9",
+      "schema_id": "filin://vnext/legacy_network_v2",
+      "supported_behavior_families": [
+        "malicious",
+        "benign"
+      ],
+      "supported_event_types": [
+        "network.flow",
+        "dns.query",
+        "http.request"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "2.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "network_context_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "unique_destination_hosts",
+        "unique_destination_ports",
+        "unique_destination_services",
+        "source_fan_out",
+        "destination_fan_in",
+        "host_fan_out",
+        "port_fan_out",
+        "service_fan_out",
+        "connection_success_ratio",
+        "failed_connection_ratio",
+        "repeated_target_ratio",
+        "new_target_ratio",
+        "one_to_many_ratio",
+        "many_to_one_ratio",
+        "endpoint_stability",
+        "target_diversity",
+        "source_diversity",
+        "cross_window_recurrence",
+        "historical_target_overlap"
+      ],
+      "provider_id": "network_context_v1_provider",
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "schema_digest": "6e3a9d5cf319dbd37907fd40d1f714d58bb58b53a83fee13eada979dbc849486",
+      "schema_id": "filin://vnext/network_context_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.reconnaissance",
+        "malicious.command_and_control",
+        "benign.operations.monitoring"
+      ],
+      "supported_event_types": [
+        "network.flow"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "1.0.0"
+    },
+    {
+      "deterministic": true,
+      "group_id": "interaction_graph_v1",
+      "maturity": "implemented",
+      "missing_data_policy": "explicit_typed_status",
+      "ordered_feature_names": [
+        "out_degree",
+        "in_degree",
+        "weighted_degree",
+        "unique_neighbor_count",
+        "edge_type_distribution",
+        "repeated_edge_ratio",
+        "new_neighbor_ratio",
+        "degree_change",
+        "local_density",
+        "temporal_edge_recurrence",
+        "service_concentration",
+        "account_host_fan_out",
+        "host_account_fan_in"
+      ],
+      "provider_id": "interaction_graph_v1_provider",
+      "required_telemetry": [
+        "network.flow"
+      ],
+      "schema_digest": "acef14818d3d010c3af3b54a7c8e8603cd6120402d6fd5d6254459a89281ea80",
+      "schema_id": "filin://vnext/interaction_graph_feature_group_v1",
+      "supported_behavior_families": [
+        "malicious.reconnaissance",
+        "malicious.credential_abuse",
+        "malicious.command_and_control",
+        "benign.operations.monitoring"
+      ],
+      "supported_event_types": [
+        "network.flow"
+      ],
+      "telemetry_requirement_mode": "all",
+      "version": "1.0.0"
+    }
+  ],
+  "registry_id": "filin_vnext_feature_providers_v1",
+  "schema_version": "feature_provider_registry_v1",
+  "status": "implemented"
+}

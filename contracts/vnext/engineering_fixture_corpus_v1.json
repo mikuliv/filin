@@ -1,0 +1,25 @@
+{
+  "schema_version": "engineering_fixture_corpus_v1",
+  "corpus_id": "filin_vnext_wave1_engineering_fixtures",
+  "purpose": "regression_api_open_set_and_explanation_tests_only",
+  "scientific_evidence": false,
+  "persistence": "generated_in_disposable_temporary_directories",
+  "known_cases": [
+    "scenario_periodic_beacon",
+    "scenario_sequential_port_scan",
+    "scenario_credential_brute_force",
+    "scenario_health_checks",
+    "scenario_auth_misconfiguration"
+  ],
+  "held_out_cases": [
+    "scenario_jittered_beacon",
+    "scenario_sparse_port_scan",
+    "scenario_randomized_port_scan"
+  ],
+  "prohibited_uses": [
+    "scientific_metrics",
+    "model_training_claims",
+    "publication_evidence"
+  ],
+  "canonical_digest": "a22be7b48c1a2f37aefde32d42bce90f86f21c573c92b030802cd1c23ab95290"
+}

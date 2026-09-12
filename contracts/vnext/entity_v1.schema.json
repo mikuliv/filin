@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/entity_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "entity_id", "entity_type", "attributes", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "entity_v1"},
+    "entity_id": {"type": "string", "pattern": "^ent_[a-f0-9]{64}$"},
+    "entity_type": {"enum": ["host", "ip", "account", "process", "service", "file", "domain", "url", "certificate", "cloud_resource", "container"]},
+    "attributes": {
+      "oneOf": [
+        {"$ref": "#/$defs/host"}, {"$ref": "#/$defs/ip"}, {"$ref": "#/$defs/account"},
+        {"$ref": "#/$defs/process"}, {"$ref": "#/$defs/service"}, {"$ref": "#/$defs/file"},
+        {"$ref": "#/$defs/domain"}, {"$ref": "#/$defs/url"}, {"$ref": "#/$defs/certificate"},
+        {"$ref": "#/$defs/cloud_resource"}, {"$ref": "#/$defs/container"}
+      ]
+    },
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  },
+  "$defs": {
+    "host": {"type": "object", "additionalProperties": false, "required": ["kind"], "properties": {"kind": {"const": "host"}, "hostname": {"type": "string"}, "asset_id": {"type": "string"}, "os_family": {"type": "string"}}},
+    "ip": {"type": "object", "additionalProperties": false, "required": ["kind", "address"], "properties": {"kind": {"const": "ip"}, "address": {"type": "string"}, "version": {"enum": [4, 6]}}},
+    "account": {"type": "object", "additionalProperties": false, "required": ["kind", "name"], "properties": {"kind": {"const": "account"}, "name": {"type": "string"}, "domain": {"type": "string"}, "account_type": {"type": "string"}}},
+    "process": {"type": "object", "additionalProperties": false, "required": ["kind", "pid"], "properties": {"kind": {"const": "process"}, "pid": {"type": "integer", "minimum": 0}, "parent_pid": {"type": "integer", "minimum": 0}, "executable": {"type": "string"}, "command_line": {"type": "string"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "service": {"type": "object", "additionalProperties": false, "required": ["kind", "name"], "properties": {"kind": {"const": "service"}, "name": {"type": "string"}, "port": {"type": "integer", "minimum": 0, "maximum": 65535}, "protocol": {"type": "string"}}},
+    "file": {"type": "object", "additionalProperties": false, "required": ["kind", "path"], "properties": {"kind": {"const": "file"}, "path": {"type": "string"}, "name": {"type": "string"}, "size": {"type": "integer", "minimum": 0}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "domain": {"type": "object", "additionalProperties": false, "required": ["kind", "name"], "properties": {"kind": {"const": "domain"}, "name": {"type": "string"}}},
+    "url": {"type": "object", "additionalProperties": false, "required": ["kind", "value"], "properties": {"kind": {"const": "url"}, "value": {"type": "string"}}},
+    "certificate": {"type": "object", "additionalProperties": false, "required": ["kind", "fingerprint_sha256"], "properties": {"kind": {"const": "certificate"}, "fingerprint_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "subject": {"type": "string"}, "issuer": {"type": "string"}}},
+    "cloud_resource": {"type": "object", "additionalProperties": false, "required": ["kind", "provider", "resource_id"], "properties": {"kind": {"const": "cloud_resource"}, "provider": {"type": "string"}, "resource_id": {"type": "string"}, "resource_type": {"type": "string"}, "region": {"type": "string"}}},
+    "container": {"type": "object", "additionalProperties": false, "required": ["kind", "container_id"], "properties": {"kind": {"const": "container"}, "container_id": {"type": "string"}, "image": {"type": "string"}, "orchestrator": {"type": "string"}}}
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/feature_compatibility_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "provider_id", "status", "input_event_types", "observation_requirement", "feature_contract", "detector_requirements", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "feature_compatibility_v1"}, "provider_id": {"type": "string"}, "status": {"enum": ["planned", "implemented", "experimentally_validated", "frozen"]},
+    "input_event_types": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "observation_requirement": {"type": "object", "additionalProperties": false, "required": ["causal_order_required", "minimum_events", "missing_input_policy"], "properties": {"causal_order_required": {"type": "boolean"}, "minimum_events": {"type": "integer", "minimum": 1}, "missing_input_policy": {"enum": ["reject", "explicit_missing", "unsupported"]}}},
+    "feature_contract": {"type": "object", "additionalProperties": false, "required": ["contract_id", "contract_path", "contract_sha256", "feature_count", "ordered_feature_names", "order_immutable"], "properties": {"contract_id": {"type": "string"}, "contract_path": {"type": "string"}, "contract_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}, "feature_count": {"type": "integer", "minimum": 1}, "ordered_feature_names": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}, "order_immutable": {"const": true}}},
+    "detector_requirements": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["detector_id", "required_feature_groups"], "properties": {"detector_id": {"type": "string"}, "required_feature_groups": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}}}},
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

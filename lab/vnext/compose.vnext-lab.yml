@@ -1,0 +1,93 @@
+name: filin-vnext-lab
+services:
+  target-http:
+    image: filin-vnext-dev/target:latest
+    container_name: filin-vnext-target-http
+    build:
+      context: .
+      dockerfile: Dockerfile.target
+      args: &provenance
+        SOURCE_COMMIT: ${FILIN_SOURCE_COMMIT:-unknown}
+        BUILD_TIMESTAMP: ${FILIN_BUILD_TIMESTAMP:-unknown}
+        DOCKERFILE_SHA256: ${FILIN_TARGET_DOCKERFILE_SHA256:-unknown}
+        BUILD_CONTEXT_SHA256: ${FILIN_BUILD_CONTEXT_SHA256:-unknown}
+    environment:
+      FILIN_TARGET_MODE: http
+    volumes: ["${FILIN_VNEXT_ARTIFACT_ROOT}:/artifacts"]
+    networks: [lab]
+    mem_limit: 128m
+    cpus: 0.50
+    pids_limit: 64
+    restart: "no"
+
+  target-auth:
+    image: filin-vnext-dev/target:latest
+    container_name: filin-vnext-target-auth
+    environment:
+      FILIN_TARGET_MODE: auth
+    volumes: ["${FILIN_VNEXT_ARTIFACT_ROOT}:/artifacts"]
+    networks: [lab]
+    mem_limit: 128m
+    cpus: 0.50
+    pids_limit: 64
+    restart: "no"
+    depends_on: [target-http]
+
+  generator:
+    image: filin-vnext-dev/generator:latest
+    container_name: filin-vnext-generator
+    build:
+      context: ../..
+      dockerfile: lab/vnext/Dockerfile.generator
+      args:
+        <<: *provenance
+        DOCKERFILE_SHA256: ${FILIN_GENERATOR_DOCKERFILE_SHA256:-unknown}
+    volumes: ["${FILIN_VNEXT_ARTIFACT_ROOT}:/artifacts"]
+    networks: [lab]
+    mem_limit: 256m
+    cpus: 1.00
+    pids_limit: 96
+    restart: "no"
+    depends_on: [target-http, target-auth]
+
+  sensor:
+    image: filin-vnext-dev/sensor:latest
+    container_name: filin-vnext-sensor
+    build:
+      context: .
+      dockerfile: Dockerfile.sensor
+      args:
+        <<: *provenance
+        DOCKERFILE_SHA256: ${FILIN_SENSOR_DOCKERFILE_SHA256:-unknown}
+    network_mode: "service:generator"
+    cap_drop: [ALL]
+    cap_add: [NET_ADMIN, NET_RAW]
+    volumes: ["${FILIN_VNEXT_ARTIFACT_ROOT}:/artifacts"]
+    mem_limit: 128m
+    cpus: 0.50
+    pids_limit: 64
+    restart: "no"
+    depends_on: [generator]
+
+  zeek:
+    image: filin-vnext-dev/zeek:latest
+    container_name: filin-vnext-zeek
+    build:
+      context: .
+      dockerfile: Dockerfile.zeek
+      args:
+        <<: *provenance
+        DOCKERFILE_SHA256: ${FILIN_ZEEK_DOCKERFILE_SHA256:-unknown}
+    volumes: ["${FILIN_VNEXT_ARTIFACT_ROOT}:/artifacts"]
+    networks: [lab]
+    user: "0:0"
+    mem_limit: 512m
+    cpus: 1.00
+    pids_limit: 128
+    restart: "no"
+
+networks:
+  lab:
+    name: filin-vnext-lab
+    internal: true
+    driver: bridge

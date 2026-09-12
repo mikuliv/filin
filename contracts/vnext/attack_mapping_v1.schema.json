@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "filin://vnext/attack_mapping_v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "mapping_id", "mapping_version", "status", "behavior_taxonomy_ref", "knowledge_base", "entries", "canonical_digest"],
+  "properties": {
+    "schema_version": {"const": "attack_mapping_v1"},
+    "mapping_id": {"type": "string"},
+    "mapping_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "status": {"enum": ["planned", "implemented", "experimentally_validated"]},
+    "behavior_taxonomy_ref": {"type": "object", "additionalProperties": false, "required": ["taxonomy_id", "taxonomy_version", "canonical_digest"], "properties": {"taxonomy_id": {"type": "string"}, "taxonomy_version": {"type": "string"}, "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "knowledge_base": {"type": "object", "additionalProperties": false, "required": ["name", "version", "source_digest"], "properties": {"name": {"const": "MITRE ATT&CK"}, "version": {"type": "string"}, "source_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "entries": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["taxonomy_node_id", "technique_ids", "mapping_status", "evidence_refs", "limitations"], "properties": {
+      "taxonomy_node_id": {"type": "string"},
+      "technique_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^T[0-9]{4}(?:\\.[0-9]{3})?$"}},
+      "mapping_status": {"enum": ["analytical_correspondence", "insufficient_basis", "contradicted"]},
+      "evidence_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+      "limitations": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+    }}},
+    "canonical_digest": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}
