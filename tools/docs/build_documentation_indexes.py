@@ -45,8 +45,8 @@ def build_contracts(root: Path) -> str:
         rel = path.relative_to(root).as_posix()
         subsystem = rel.split("/", 1)[0]
         stage = stage_from_path(rel)
-        status = "текущий" if any(v in rel for v in ("v0_4_5", "v03154", "shadow_event_v2")) else "версионированный/исторический"
-        consumer = {"lab_console": "консоль/API", "incident_reconstruction": "реконструкция", "collectors": "сборщик/выполнение", "staging": "приёмник", "rehearsal": "репетиция", "external_review": "внешняя процедура"}.get(subsystem, "тесты/инструменты")
+        status = "проектируемый для следующего поколения" if rel.startswith("contracts/vnext/") else ("текущий" if any(v in rel for v in ("v0_4_5", "v03154", "shadow_event_v2")) else "версионированный/исторический")
+        consumer = {"contracts": "будущие адаптеры следующего поколения", "lab_console": "консоль/API", "incident_reconstruction": "реконструкция", "collectors": "сборщик/выполнение", "staging": "приёмник", "rehearsal": "репетиция", "external_review": "внешняя процедура"}.get(subsystem, "тесты/инструменты")
         link = relative_link(root / "docs/contracts", path)
         lines.append(f"| `{schema_id(path)}` | `{stage}` | `{subsystem}` | {status} | [`{rel}`]({link}) | {consumer} |")
     lines += ["", "Индекс включает реконструкцию инцидентов и времени, анализ гипотез, лабораторную консоль, порядок работы оператора, лабораторные случаи, воспроизводимые запуски и сравнительный обзор.", "", "<!-- generated:end -->", ""]

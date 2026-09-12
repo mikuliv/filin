@@ -61,6 +61,12 @@
 
 ## Архитектура
 
+- [Архитектурный и исследовательский план Filin следующего поколения](architecture/filin-vnext-engineering-research-plan.md).
+- [Архитектура телеметрии и сценариев Filin следующего поколения](architecture/filin-vnext-telemetry-and-scenario-architecture.md).
+- [Архитектура генераторов сценариев Filin `vNext`: первая волна](architecture/filin-vnext-wave1-scenario-generator-architecture.md).
+- [Покрытие поведения Filin `vNext`: первая волна](research/filin-vnext-behavior-coverage-wave1.md).
+- [Архитектура признаков и обнаружения Filin `vNext`](architecture/filin-vnext-feature-and-detection-architecture.md).
+- [Базовое обнаружение Filin `vNext`: первая волна](research/filin-vnext-detection-baseline-wave1.md).
 - [Индекс архитектуры](architecture/index.md).
 - [Сквозной поток данных](architecture/end-to-end-data-flow.md).
 - [Основная линия обнаружения и выполнения](architecture/detection-and-runtime-track.md).
