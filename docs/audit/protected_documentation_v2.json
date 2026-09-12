@@ -108,6 +108,19 @@
       "mutable": false
     },
     {
+      "path": "contracts/vnext/execution_recovery_manifest_v1.schema.json",
+      "protecting_stage": "unknown",
+      "protecting_manifest": "contracts/vnext/execution_recovery_manifest_v1.schema.json",
+      "protecting_manifests": [
+        "contracts/vnext/execution_recovery_manifest_v1.schema.json"
+      ],
+      "expected_sha256": "083754f51781040cb25a895228de7cc7d1a3b0dea070bbf043ad25da9c97a062",
+      "actual_sha256": "083754f51781040cb25a895228de7cc7d1a3b0dea070bbf043ad25da9c97a062",
+      "current_sha256": "083754f51781040cb25a895228de7cc7d1a3b0dea070bbf043ad25da9c97a062",
+      "manifest_sha_matches": true,
+      "mutable": false
+    },
+    {
       "path": "docs/contracts/runtime_timing_trace_v2.md",
       "protecting_stage": "v0.3.17.1",
       "protecting_manifest": "ml/reports/v0_3_17_1/v0_3_17_1_bundle_manifest.yaml",

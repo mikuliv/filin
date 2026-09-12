@@ -5,14 +5,14 @@
 <!-- generated:start -->
 ## Сводка
 
-- Документов: **379**.
+- Документов: **389**.
 - Защищённых: **82**.
-- Текущих: **233**.
+- Текущих: **243**.
 - Исторических и замороженных: **146**.
 - Заменённых: **0**; замороженных подтверждающих материалов: **82**.
 - Устаревших отметок содержательной проверки среди пересмотренных документов: **0**.
-- Созданных: **118**; переписанных: **147**; перенаправлений: **14**.
-- Переносимых ссылок на отслеживаемые файлы: **1204**; на воспроизводимо создаваемые файлы: **0**.
+- Созданных: **128**; переписанных: **147**; перенаправлений: **14**.
+- Переносимых ссылок на отслеживаемые файлы: **1252**; на воспроизводимо создаваемые файлы: **0**.
 - Только локальных целей: **0**; сломанных ссылок: **0**; отсутствующих якорей: **0**.
 
 ## Документы
@@ -22,7 +22,7 @@
 | `AUTHORS.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `719e1d096775` |
 | `CONTRIBUTING.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `570f7da031d4` |
 | `COPYRIGHT.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `04233c1a4c82` |
-| `README.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `e4ad7c0326b8` | `0b39cda5f39b` |
+| `README.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `e4ad7c0326b8` | `5cd326b4842a` |
 | `THIRD_PARTY_NOTICES.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `25d20374ef65` |
 | `TRADEMARKS.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `32caa71098a6` |
 | `backend/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `587348d47eed` | `93e38c703287` |
@@ -30,6 +30,7 @@
 | `collectors/csv_collector/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `5b5767c662db` | `acf040171f38` |
 | `collectors/suricata_collector/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `e916dea343e2` | `ee2f1ffb7748` |
 | `collectors/zeek_collector/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `f2d023f84636` | `c2575675a65a` |
+| `contracts/vnext/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `185a305c484b` |
 | `datasets/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `75b0e7648a0c` | `2c8762fea01c` |
 | `docs/architecture.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `99b7814f3165` | `faf101e37ac4` |
 | `docs/architecture/component-map.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `a4eff5235218` | `18c885be6302` |
@@ -40,7 +41,13 @@
 | `docs/architecture/detection-and-runtime-track.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `02271c838d4f` | `5915f3e8dace` |
 | `docs/architecture/detection-pipeline.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `ceb4f5ee4f36` | `010b23ae7ac6` |
 | `docs/architecture/end-to-end-data-flow.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `f67a85cf8804` | `66ce7db485d8` |
-| `docs/architecture/index.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `870f81fa90b6` | `b24154429a82` |
+| `docs/architecture/filin-vnext-correlation-and-incident-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `5709cb61f6ec` |
+| `docs/architecture/filin-vnext-docker-integration-lab.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `cebaf5aa5725` |
+| `docs/architecture/filin-vnext-engineering-research-plan.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `c342078a108b` |
+| `docs/architecture/filin-vnext-feature-and-detection-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `2606aef4655d` |
+| `docs/architecture/filin-vnext-telemetry-and-scenario-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `67d21d792ca2` |
+| `docs/architecture/filin-vnext-wave1-scenario-generator-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `ef64ee42a0dd` |
+| `docs/architecture/index.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `870f81fa90b6` | `d17188195e1f` |
 | `docs/architecture/laboratory-console.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `d9941307a14b` | `a84acf7e32d7` |
 | `docs/architecture/limitations.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `cdc9087c10e5` | `2a18b86db35f` |
 | `docs/architecture/overview.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `eb28d0cae077` | `765e7e95059b` |
@@ -51,7 +58,7 @@
 | `docs/architecture/storage-and-artifacts.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `ad149485cfc2` | `65c0fdd2afa7` |
 | `docs/architecture/trust-boundaries.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `1f133afa2697` | `5a0ad4d04e37` |
 | `docs/audit/documentation_inventory.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `c23a3c126926` | `5dd51395480d` |
-| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `fcb22b3da1da` |
+| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `2da3e1147e22` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `1839146eb403` | `0a2128eb392b` |
 | `docs/audit/documentation_path_migration_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `cb437745bba4` | `800dda44df9e` |
 | `docs/audit/documentation_refactor_plan_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `8ca9d2c1f48b` | `acca03b47388` |
@@ -65,7 +72,7 @@
 | `docs/code-origin-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `556db0491996` | `9951ca106598` |
 | `docs/contracts/connector_ingress_ack_v1.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `ac3174d6e452` | `26fc213d0ce6` |
 | `docs/contracts/connector_ingress_v1.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `d47c2c1c4ace` | `0b4d79b003a4` |
-| `docs/contracts/index.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `3baa92ef57bd` | `00d9f5f0e003` |
+| `docs/contracts/index.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `3baa92ef57bd` | `3f52e7fd1fa7` |
 | `docs/contracts/operator_projection_v1.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `f986ab48a46f` | `6dfb3d6f6909` |
 | `docs/contracts/receiver_batch_ack_v1.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `d5df61679a88` | `b6ef66268f04` |
 | `docs/contracts/rehearsal_observability_v1.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `c8ca814fb2b0` | `2af436cebaea` |
@@ -191,7 +198,7 @@
 | `docs/history/index.md` | `Историческое описание` | `current` | `current` | нет | `rewritten` | `2fa443d0ca0f` | `ff2c5e574bb5` |
 | `docs/history/stage-timeline.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `6f1f9b74b1ed` | `51c0a571fdf8` |
 | `docs/incident-workflow.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `a3b0759c9e55` | `413f997d3371` |
-| `docs/index.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `0b1ee4647b46` | `30eb7a5656f2` |
+| `docs/index.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `0b1ee4647b46` | `35e98e731feb` |
 | `docs/lab-stand.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `120d0c073442` | `45f0481e8252` |
 | `docs/licensing-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `6864b690a437` | `59ff258107f2` |
 | `docs/licensing/audit-plan.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `e5c59885c7b8` |
@@ -255,6 +262,9 @@
 | `docs/research/corrective-candidate-development.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `8a24f8606399` |
 | `docs/research/evaluation-principles.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `c7d76ac336c1` | `cf2db8a48f8b` |
 | `docs/research/failed-validation-root-cause-analysis.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `a8a7669f03f0` |
+| `docs/research/filin-vnext-behavior-coverage-wave1.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `e8c583cd40b6` |
+| `docs/research/filin-vnext-correlation-baseline-wave1.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `61106432c5cd` |
+| `docs/research/filin-vnext-detection-baseline-wave1.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `f99c635e3a05` |
 | `docs/research/incident-reconstruction.md` | `Frozen evidence` | `frozen` | `historical` | да | `unchanged` | `04b4a054d724` | `04b4a054d724` |
 | `docs/research/independent-network-validation.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `b4a54d7752c4` |
 | `docs/research/internal-screening-policy.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `8fa8451f196e` |
