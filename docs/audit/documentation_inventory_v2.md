@@ -43,7 +43,7 @@
 | `docs/architecture/end-to-end-data-flow.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `f67a85cf8804` | `66ce7db485d8` |
 | `docs/architecture/filin-vnext-correlation-and-incident-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `b6cc97745fe8` |
 | `docs/architecture/filin-vnext-docker-integration-lab.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `cebaf5aa5725` |
-| `docs/architecture/filin-vnext-engineering-research-plan.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `ff2f4fbb4ceb` |
+| `docs/architecture/filin-vnext-engineering-research-plan.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `1f9948d05609` |
 | `docs/architecture/filin-vnext-feature-and-detection-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `2606aef4655d` |
 | `docs/architecture/filin-vnext-telemetry-and-scenario-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `67d21d792ca2` |
 | `docs/architecture/filin-vnext-wave1-scenario-generator-architecture.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `ef64ee42a0dd` |
@@ -58,7 +58,7 @@
 | `docs/architecture/storage-and-artifacts.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `ad149485cfc2` | `65c0fdd2afa7` |
 | `docs/architecture/trust-boundaries.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `1f133afa2697` | `5a0ad4d04e37` |
 | `docs/audit/documentation_inventory.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `c23a3c126926` | `5dd51395480d` |
-| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `fb040fdadd66` |
+| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `9ce55bcc1100` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `1839146eb403` | `0a2128eb392b` |
 | `docs/audit/documentation_path_migration_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `cb437745bba4` | `800dda44df9e` |
 | `docs/audit/documentation_refactor_plan_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `8ca9d2c1f48b` | `acca03b47388` |
