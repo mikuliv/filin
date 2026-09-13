@@ -1,5 +1,7 @@
 {
   "schema_version": "filin_documentation_inventory_v2",
+  "digest_basis": "git_blob",
+  "digest_revision": "HEAD",
   "summary": {
     "document_count": 389,
     "protected_count": 82,
@@ -189,7 +191,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "e4ad7c0326b8fd5870cbc1ee58f48c6bf17237e9d6f5c1f95899e47c199cbded",
-      "sha256_after": "5cd326b4842ab88a7767694d3f921b030841ecc6b42bfb08b8cc72e54ccfc138"
+      "sha256_after": "b23cc9fef5fa11d6966a603993799ab31c31fe8f0075aa12059501bec4b72c64"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -1746,7 +1748,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "9ce55bcc110021337591564c89a2e65ea106e06dfe9385da7dfb13bcf6b5c2f3"
+      "sha256_after": "2bf0d821bbd56cd5ff5bc3d4899742b21d58e2acaa0aa472c194d9242bfda91c"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -8135,7 +8137,7 @@
     },
     {
       "path": "docs/licensing/frozen-evidence.md",
-      "title": "Зафиксировано подтверждающие материалы и лицензирование без изменения байтов",
+      "title": "Зафиксированные подтверждающие материалы и лицензирование без изменения байтов",
       "category": "Текущий справочный документ",
       "doc_schema": "filin_document_v2",
       "document_type": "reference",
@@ -8172,7 +8174,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "bd995c7dd139272d064aee03593116315b566a006e845c78ebca81bf2dfbb1d0"
+      "sha256_after": "dd389e654938ae807d229224f5de3e336dd0b7b2405750824be0c5a984dbf3d3"
     },
     {
       "path": "docs/licensing/frozen-spdx-mapping.md",
@@ -8213,7 +8215,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "7792c2199e7b8554ea7e694fc5b5b07b85b8e73b44103732e598e6d288f379d8"
+      "sha256_after": "6963d16c083e229aeb42a70cb4d7a9da6ce2611401ccbd340649220dd4b7cf0d"
     },
     {
       "path": "docs/licensing/git-authorship-audit.md",

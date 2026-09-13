@@ -37,18 +37,18 @@ def render_inventory(rows: list[dict], summary: dict[str, int]) -> str:
     return "\n".join(lines)
 
 
-def build(root: Path = ROOT) -> dict[str, int]:
-    rows, summary = inventory_rows(root)
+def build(root: Path = ROOT, revision: str = "INDEX") -> dict[str, int]:
+    rows, summary = inventory_rows(root, revision)
     audit = root / "docs/audit"
     audit.mkdir(parents=True, exist_ok=True)
     (audit / "documentation_inventory_v2.json").write_text(
-        json.dumps({"schema_version": "filin_documentation_inventory_v2", "summary": summary, "documents": rows}, ensure_ascii=False, indent=2) + "\n",
+        json.dumps({"schema_version": "filin_documentation_inventory_v2", "digest_basis": "git_blob", "digest_revision": "HEAD", "summary": summary, "documents": rows}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8", newline="\n",
     )
     (audit / "documentation_inventory_v2.md").write_text(render_inventory(rows, summary), encoding="utf-8", newline="\n")
     protected = build_protected_set(root)
     (audit / "protected_documentation_v2.json").write_text(
-        json.dumps({"schema_version": "filin_protected_documentation_v2", "source_strategy": "manifests_ledgers_protocols_and_detached_sha", "files": protected}, ensure_ascii=False, indent=2) + "\n",
+        json.dumps({"schema_version": "filin_protected_documentation_v2", "digest_basis": "git_blob", "digest_revision": "HEAD", "source_strategy": "manifests_ledgers_protocols_and_detached_sha", "files": protected}, ensure_ascii=False, indent=2) + "\n",
         encoding="utf-8", newline="\n",
     )
     return summary
@@ -57,8 +57,9 @@ def build(root: Path = ROOT) -> dict[str, int]:
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--root", type=Path, default=ROOT)
+    parser.add_argument("--revision", choices=("HEAD", "INDEX"), default="INDEX")
     args = parser.parse_args()
-    print(json.dumps(build(args.root.resolve()), ensure_ascii=False, sort_keys=True))
+    print(json.dumps(build(args.root.resolve(), args.revision), ensure_ascii=False, sort_keys=True))
     return 0
 
 

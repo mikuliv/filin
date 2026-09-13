@@ -1,0 +1,25 @@
+{
+  "schema_version": "filin_frozen_spdx_mapping_correction_v2",
+  "status": "accepted",
+  "correction_date": "2026-09-13",
+  "source_mapping_commit": "801ff7bdc1868a58dab8bcc56fd584de516be493",
+  "source_mapping_sha256": "946fd44175a72f1f5ce10e96692578a8bf60c03aea3c2e3672561d09a9cfba49",
+  "superseding_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
+  "digest_basis": "git_blob",
+  "reason": "Явная замена валидатора для канонической Git-blob проверки без изменения научных результатов.",
+  "entry_count": 1,
+  "entries": [
+    {
+      "path": "tools/audit/validate_v03154_bundle.py",
+      "correction_kind": "protected_validator_superseded",
+      "old_stored_sha256": "ff8b7b72b62e85077b8df2dbc0d244d72f4d849ce68f66fd7e81bd177cee58dd",
+      "old_digest_basis": "git_blob",
+      "canonical_git_blob_sha256": "1ab228ef2e41cffe8477965e152c8be43376a2b650581b662ba4869cd025e8b8",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "status": "accepted"
+    }
+  ]
+}

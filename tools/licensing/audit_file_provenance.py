@@ -3,7 +3,7 @@ from __future__ import annotations
 
 from collections import defaultdict
 
-from .common import HOLDER, classify, dump, finish, git, parser, sha256, tracked, ROOT
+from .common import HOLDER, classify, dump, finish, git, index_sha256_many, parser, tracked, ROOT
 
 
 def first_seen() -> dict[str, dict]:
@@ -28,15 +28,16 @@ def first_seen() -> dict[str, dict]:
 
 
 def audit() -> tuple[list[dict], dict]:
-    seen = first_seen(); rows=[]; errors=[]
-    for path in tracked(include_untracked=True):
+    seen = first_seen(); rows=[]; errors=[]; paths=tracked(include_untracked=True)
+    digests=index_sha256_many(ROOT,paths)
+    for path in paths:
         info = seen.get(path)
         if not info:
             # A commit cannot contain its own SHA (changing the file changes the commit).
             # New files therefore use an explicit self-reference resolved by the final commit.
             info={"first_commit":"FINAL_LICENSING_COMMIT_SELF_REFERENCE","first_date":None,"first_author":HOLDER,"first_author_email":None,"introduction":"current_maintenance_worktree"}
         assignment=classify(path)
-        rows.append({"path":path,"sha256":sha256(ROOT/path),**info,"current_holder":assignment["copyright_holder"],"third_party_markers":[],"review_required":not bool(info)})
+        rows.append({"path":path,"sha256":digests[path],**info,"current_holder":assignment["copyright_holder"],"third_party_markers":[],"review_required":not bool(info)})
     details={"history_scope":"all refs","tracked_file_count":len(rows),"provenance_record_count":len(rows),"review_required_count":len(errors),"files":rows}
     return errors,details
 

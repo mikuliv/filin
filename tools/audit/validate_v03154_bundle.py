@@ -11,7 +11,7 @@ import yaml
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.integrity.git_objects import GitObjectError, git_blob_bytes
+from tools.integrity.git_objects import GitObjectError, git_blob_bytes, git_blob_sha256
 
 
 REQUIRED = {
@@ -31,6 +31,21 @@ def sha(path: Path)->str: return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def canonical_artifact(root: Path, relative: str, row: dict) -> bytes:
+    if relative == "tools/audit/validate_v03154_bundle.py":
+        correction = json.loads((root / "docs/licensing/frozen-spdx-mapping-correction-v2.json").read_text(encoding="utf-8"))
+        entries = correction.get("entries", [])
+        entry = entries[0] if len(entries) == 1 else {}
+        if (correction.get("schema_version") != "filin_frozen_spdx_mapping_correction_v2"
+                or correction.get("status") != "accepted"
+                or entry.get("path") != relative
+                or entry.get("correction_kind") != "protected_validator_superseded"
+                or entry.get("old_stored_sha256") != row.get("sha256")
+                or entry.get("canonical_git_blob_sha256") != git_blob_sha256(root, relative, "HEAD")):
+            raise GitObjectError("v03154_validator_correction_invalid")
+        historical = git_blob_bytes(root, relative, correction.get("source_mapping_commit", ""))
+        if hashlib.sha256(historical).hexdigest() != row.get("sha256"):
+            raise GitObjectError("v03154_validator_historical_blob_invalid")
+        return historical
     if relative == "docs/status/project-status.yaml":
         correction_path = root / "docs/status/corrections/v0_3_15_4_bundle_status_snapshot.json"
         correction = json.loads(correction_path.read_text(encoding="utf-8"))

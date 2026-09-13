@@ -7,7 +7,7 @@ import tempfile
 from pathlib import Path
 
 from .build_license_manifest import self_digest
-from .common import BACKEND_TREE, CANDIDATE, ROOT, UPSTREAM_STANDARD_TEXTS, dump, load, sha256, tracked
+from .common import BACKEND_TREE, CANDIDATE, ROOT, UPSTREAM_STANDARD_TEXTS, canonical_bytes, canonical_sha256, dump, load, tracked
 
 PROFILE_NAMES = ["source-core", "laboratory-source", "offline-third-party-bundle", "model-package", "dataset-package"]
 
@@ -25,10 +25,10 @@ def positive_scenarios() -> list[dict]:
         ("no_upstream_project_owned", all(rows[p]["ownership"] != "project_owned" for p in UPSTREAM_STANDARD_TEXTS)),
         ("upstream_third_party", all(rows[p]["third_party"] is True for p in UPSTREAM_STANDARD_TEXTS)),
         ("upstream_assignment_source", all(rows[p]["assignment_source"] == "upstream_license" for p in UPSTREAM_STANDARD_TEXTS)),
-        ("mpl_text_unchanged", sha256(ROOT / "LICENSE") == UPSTREAM_STANDARD_TEXTS["LICENSE"]["sha256"]),
-        ("cc_text_unchanged", sha256(ROOT / "LICENSES/CC-BY-4.0.txt") == UPSTREAM_STANDARD_TEXTS["LICENSES/CC-BY-4.0.txt"]["sha256"]),
-        ("dco_text_unchanged", sha256(ROOT / "DCO.txt") == UPSTREAM_STANDARD_TEXTS["DCO.txt"]["sha256"]),
-        ("mpl_copies_identical", (ROOT / "LICENSE").read_bytes() == (ROOT / "LICENSES/MPL-2.0.txt").read_bytes()),
+        ("mpl_text_unchanged", canonical_sha256(ROOT, "LICENSE") == UPSTREAM_STANDARD_TEXTS["LICENSE"]["sha256"]),
+        ("cc_text_unchanged", canonical_sha256(ROOT, "LICENSES/CC-BY-4.0.txt") == UPSTREAM_STANDARD_TEXTS["LICENSES/CC-BY-4.0.txt"]["sha256"]),
+        ("dco_text_unchanged", canonical_sha256(ROOT, "DCO.txt") == UPSTREAM_STANDARD_TEXTS["DCO.txt"]["sha256"]),
+        ("mpl_copies_identical", canonical_bytes(ROOT, "LICENSE") == canonical_bytes(ROOT, "LICENSES/MPL-2.0.txt")),
         ("reuse_mpl_unambiguous", "Mozilla Foundation and contributors" in (ROOT / "REUSE.toml").read_text(encoding="utf-8")),
         ("reuse_cc_unambiguous", "Creative Commons" in (ROOT / "REUSE.toml").read_text(encoding="utf-8")),
         ("reuse_dco_unambiguous", "The Linux Foundation and contributors" in (ROOT / "REUSE.toml").read_text(encoding="utf-8")),
@@ -42,7 +42,7 @@ def positive_scenarios() -> list[dict]:
         ("dataset_separate_license", profiles["dataset-package"]["release_status"] == "separate_license_required"),
         ("not_all_profiles_ready", validation.get("all_distribution_profiles_ready") is False),
         ("readiness_scope", validation.get("release_ready_scope") == "approved_source_profiles_only"),
-        ("readme_scope", "source-core" in (ROOT / "README.md").read_text(encoding="utf-8") and "laboratory-source" in (ROOT / "README.md").read_text(encoding="utf-8")),
+        ("distribution_scope_documented", "source-core" in (ROOT / "docs/licensing/distribution-profiles.md").read_text(encoding="utf-8") and "laboratory-source" in (ROOT / "docs/licensing/distribution-profiles.md").read_text(encoding="utf-8")),
         ("protected_count_not_decreased", len(protected_before) >= 833),
         ("candidate_unchanged", CANDIDATE in (ROOT / "ml/artifacts/v0_3_15_4/candidate_manifest.json").read_text(encoding="utf-8")),
         ("backend_baseline", BACKEND_TREE == "04218a4eb01534950efd5f7d6390f1a575cacbc8"),

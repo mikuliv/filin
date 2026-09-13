@@ -22,7 +22,7 @@
 | `AUTHORS.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `719e1d096775` |
 | `CONTRIBUTING.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `570f7da031d4` |
 | `COPYRIGHT.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `04233c1a4c82` |
-| `README.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `e4ad7c0326b8` | `5cd326b4842a` |
+| `README.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `e4ad7c0326b8` | `b23cc9fef5fa` |
 | `THIRD_PARTY_NOTICES.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `25d20374ef65` |
 | `TRADEMARKS.md` | `Неопределённый документ` | `current` | `current` | нет | `created` | `—` | `32caa71098a6` |
 | `backend/README.md` | `Текущий справочный документ` | `current` | `current` | нет | `rewritten` | `587348d47eed` | `93e38c703287` |
@@ -58,7 +58,7 @@
 | `docs/architecture/storage-and-artifacts.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `ad149485cfc2` | `65c0fdd2afa7` |
 | `docs/architecture/trust-boundaries.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `1f133afa2697` | `5a0ad4d04e37` |
 | `docs/audit/documentation_inventory.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `c23a3c126926` | `5dd51395480d` |
-| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `9ce55bcc1100` |
+| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `2bf0d821bbd5` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `1839146eb403` | `0a2128eb392b` |
 | `docs/audit/documentation_path_migration_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `cb437745bba4` | `800dda44df9e` |
 | `docs/audit/documentation_refactor_plan_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `8ca9d2c1f48b` | `acca03b47388` |
@@ -210,8 +210,8 @@
 | `docs/licensing/copyright-provenance.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `52f2887c183b` |
 | `docs/licensing/distribution-profiles.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `dfbca853f253` |
 | `docs/licensing/file-provenance-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `95c3b5224a3f` |
-| `docs/licensing/frozen-evidence.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `bd995c7dd139` |
-| `docs/licensing/frozen-spdx-mapping.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `7792c2199e7b` |
+| `docs/licensing/frozen-evidence.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `dd389e654938` |
+| `docs/licensing/frozen-spdx-mapping.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `6963d16c083e` |
 | `docs/licensing/git-authorship-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `fe3d5ed59416` |
 | `docs/licensing/historical-backend-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `d35ef88f78d9` |
 | `docs/licensing/index.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `5e34cfc89cf5` |

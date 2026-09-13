@@ -17,8 +17,9 @@ if __package__ in {None, ""}:
 from tools.docs.documentation_v2 import (
     ABSOLUTE_RE, CANDIDATE_ID, HEADING_RE, INITIAL_HEAD, REQUIRED_CURRENT_DOCS,
     REQUIRED_ROOTS, REQUIRED_SUBSYSTEM_READMES, ROOT, SECRET_RES, build_protected_set,
-    document_metadata, front_matter, github_anchors, git_blob_sha, inventory_registry,
-    link_findings, local_links, phase1_facts, run_git, sha256, tracked_markdown,
+    document_metadata, front_matter, github_anchors, git_blob_sha, git_blob_sha256_many,
+    inventory_registry, link_findings, local_links, phase1_facts,
+    protected_digest_corrections, run_git, tracked_markdown,
 )
 
 
@@ -200,6 +201,8 @@ def validate_inventory(root: Path, markdown: list[Path]) -> list[str]:
     required = {"path", "title", "category", "audience", "lifecycle_status", "current_or_historical", "authoritative", "generated", "evidence_immutable", "protected_by_manifest", "source_of_truth", "duplicate_of", "supersedes", "superseded_by", "redirect_target", "last_relevant_stage", "current_stage_mentioned", "stale_status", "stale_architecture", "stale_command", "terminology_findings", "broken_links", "broken_anchors", "incoming_link_count", "outgoing_link_count", "recommended_action", "actual_action", "sha256_before", "sha256_after"} | REQUIRED_INVENTORY_METADATA
     protected = {row["path"] for row in build_protected_set(root)}
     allowed_lifecycle = {"current", "historical", "redirect", "generated", "frozen"}
+    head_revision = run_git("rev-parse", "HEAD", root=root)
+    current_digests = git_blob_sha256_many(root, sorted(actual), head_revision)
     for row in rows:
         missing = required - set(row)
         if missing: errors.append(error("inventory_fields_missing", row.get("path", "?"), ",".join(sorted(missing))))
@@ -212,9 +215,9 @@ def validate_inventory(root: Path, markdown: list[Path]) -> list[str]:
         if bool(row.get("authoritative")) != bool(row.get("authoritative_for")): errors.append(error("inventory_authority_mismatch", relative))
         if target.is_file() and row.get("title") != next((title.strip() for level, title in HEADING_RE.findall(target.read_text(encoding="utf-8")) if len(level) == 1), target.stem):
             errors.append(error("inventory_title_mismatch", relative))
-        if target.is_file() and relative != "docs/audit/documentation_inventory_v2.md" and row.get("sha256_after") != sha256(target): errors.append(error("inventory_sha_stale", relative))
+        if target.is_file() and relative != "docs/audit/documentation_inventory_v2.md" and row.get("sha256_after") != current_digests.get(relative): errors.append(error("inventory_sha_stale", relative))
         before = git_blob_sha(relative, root=root)
-        after = sha256(target) if target.is_file() else None
+        after = current_digests.get(relative) if target.is_file() else None
         expected_action = "created" if before is None else "unchanged" if before == after else "rewritten"
         if row.get("lifecycle_status") == "redirect" and expected_action != "unchanged": expected_action = "redirected"
         if relative != "docs/audit/documentation_inventory_v2.md" and row.get("actual_action") != expected_action:
@@ -293,16 +296,19 @@ def validate(root: Path = ROOT) -> dict[str, Any]:
     errors.extend(validate_commands_and_routes(root))
     errors.extend(validate_inventory(root, markdown))
 
+    _, correction_errors = protected_digest_corrections(root)
+    errors.extend(correction_errors)
     registry_path = root / "docs/audit/protected_documentation_v2.json"
     if not registry_path.is_file(): errors.append("protected_registry_missing")
     else:
         registry = json.loads(registry_path.read_text(encoding="utf-8"))
+        head_revision = run_git("rev-parse", "HEAD", root=root)
         recorded = {row["path"]: row for row in registry.get("files", [])}
         if set(recorded) != protected: errors.append("protected_set_stale")
         for relative, row in recorded.items():
             target = root / relative
             if not target.is_file(): errors.append(error("protected_file_missing", relative))
-            elif sha256(target) != row.get("actual_sha256"): errors.append(error("protected_file_changed", relative))
+            elif git_blob_sha(relative, head_revision, root) != row.get("actual_sha256"): errors.append(error("protected_file_changed", relative))
             if not row.get("manifest_sha_matches", True): warnings.append(error("baseline_manifest_sha_mismatch", relative))
 
     readme = (root / "README.md").read_text(encoding="utf-8")

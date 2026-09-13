@@ -9,7 +9,7 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.docs.documentation_v2 import ROOT, build_protected_set, git_blob_sha
+from tools.docs.documentation_v2 import ROOT, build_protected_set, git_blob_sha, protected_digest_corrections, run_git
 
 
 def validate(root: Path = ROOT) -> list[str]:
@@ -17,7 +17,8 @@ def validate(root: Path = ROOT) -> list[str]:
     if not registry_path.is_file():
         return ["protected_registry_missing"]
     registry = json.loads(registry_path.read_text(encoding="utf-8"))
-    errors: list[str] = []
+    head_revision = run_git("rev-parse", "HEAD", root=root)
+    _, errors = protected_digest_corrections(root)
     current = {row["path"]: row for row in build_protected_set(root)}
     recorded = {row["path"]: row for row in registry.get("files", [])}
     if set(current) != set(recorded):
@@ -26,7 +27,7 @@ def validate(root: Path = ROOT) -> list[str]:
         target = root / path
         if not target.is_file():
             errors.append(f"protected_file_missing:{path}")
-        elif git_blob_sha(path, "HEAD", root) != row.get("actual_sha256"):
+        elif git_blob_sha(path, head_revision, root) != row.get("actual_sha256"):
             errors.append(f"protected_file_changed:{path}")
         if row.get("mutable") is not False:
             errors.append(f"protected_file_mutable:{path}")

@@ -12,7 +12,7 @@ from urllib.parse import unquote
 
 import yaml
 
-from tools.integrity.git_objects import GitObjectError, git_blob_sha256, git_blob_sha256_many
+from tools.integrity.git_objects import GitObjectError, git_blob_sha256, git_blob_sha256_many, git_index_tree
 
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -21,6 +21,9 @@ V044_HEAD = "80680bf8e890742e1c82929d7a2e8cd099a1b1ad"
 V044_MANIFEST = "bffe219e711c55a2154c242737c583a710f35934690b10545eabb39f35081d30"
 V044_SEMANTIC = "f8756b4d255f0e3a337c5d8b1543112eef2524eae2f006aaa18acd083166bcdb"
 CANDIDATE_ID = "v03154:65a3dd912d845bc1"
+PROTECTED_CORRECTION = "docs/audit/protected-documentation-digest-correction-v1.json"
+PROTECTED_CORRECTION_SOURCE = "bb5f5d94ce7543d0a0b271e4deded2f16c487dd7"
+PROTECTED_REGISTRY = "docs/audit/protected_documentation_v2.json"
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
@@ -239,7 +242,7 @@ def _walk_records(value: Any) -> Iterable[dict[str, Any]]:
             yield from _walk_records(nested)
 
 
-def _resolve_manifest_path(root: Path, source: Path, raw: str, expected: str) -> Path | None:
+def _resolve_manifest_path(root: Path, source: Path, raw: str, expected: str, revision: str = "HEAD") -> Path | None:
     candidates = (root / raw, source.parent / raw)
     existing: Path | None = None
     for candidate in candidates:
@@ -250,14 +253,50 @@ def _resolve_manifest_path(root: Path, source: Path, raw: str, expected: str) ->
         if candidate.is_file():
             existing = existing or candidate
             relative = candidate.resolve().relative_to(root.resolve()).as_posix()
-            if not expected or git_blob_sha(relative, "HEAD", root) == expected.casefold():
+            if not expected or git_blob_sha(relative, revision, root) == expected.casefold():
                 return candidate
     return existing
+
+
+def protected_digest_corrections(root: Path = ROOT) -> tuple[dict[str, dict[str, Any]], list[str]]:
+    path = root / PROTECTED_CORRECTION
+    if not path.is_file():
+        return {}, ["protected_digest_correction_missing"]
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+        source_registry = json.loads(run_git("show", f"{PROTECTED_CORRECTION_SOURCE}:{PROTECTED_REGISTRY}", root=root))
+        source_sha = git_blob_sha256(root, PROTECTED_REGISTRY, PROTECTED_CORRECTION_SOURCE)
+        source_rows = {row["path"]: row for row in source_registry["files"]}
+        entries = data["entries"]
+        rows = {row["path"]: row for row in entries}
+        historical_paths = [relative for relative in rows if relative != "tools/audit/validate_v03154_bundle.py"]
+        canonical = git_blob_sha256_many(root, historical_paths, PROTECTED_CORRECTION_SOURCE)
+        canonical["tools/audit/validate_v03154_bundle.py"] = git_blob_sha256(
+            root, "tools/audit/validate_v03154_bundle.py", "HEAD"
+        )
+    except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError, GitObjectError, RuntimeError):
+        return {}, ["protected_digest_correction_invalid"]
+    errors: list[str] = []
+    if data.get("schema_version") != "filin_protected_documentation_digest_correction_v1": errors.append("protected_digest_correction_schema")
+    if data.get("status") != "accepted" or data.get("digest_basis") != "git_blob": errors.append("protected_digest_correction_status")
+    if data.get("source_registry_commit") != PROTECTED_CORRECTION_SOURCE or data.get("source_registry_sha256") != source_sha: errors.append("protected_digest_correction_provenance")
+    if data.get("entry_count") != 24 or len(entries) != 24 or len(rows) != 24: errors.append("protected_digest_correction_count")
+    for relative, row in rows.items():
+        source = source_rows.get(relative, {})
+        expected_kind = "digest_basis_corrected" if relative.endswith(".sha256") else "protected_validator_superseded"
+        if (row.get("status") != "accepted" or row.get("correction_kind") != expected_kind
+                or row.get("old_stored_sha256") != source.get("actual_sha256")
+                or row.get("canonical_git_blob_sha256") != canonical.get(relative)):
+            errors.append(f"protected_digest_correction_entry:{relative}")
+        if not relative.endswith(".sha256") and relative != "tools/audit/validate_v03154_bundle.py":
+            errors.append(f"protected_digest_correction_scope:{relative}")
+    return (rows if not errors else {}), sorted(set(errors))
 
 
 def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
     """Строит множество из manifests, ledgers, protocols и detached SHA."""
     names = tracked_files(root, include_untracked=False)
+    head_revision = run_git("rev-parse", "HEAD", root=root)
     source_names = [
         name for name in names
         if not name.startswith(("licensing/", "docs/licensing/", "tools/licensing/", "sbom/"))
@@ -267,14 +306,18 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
         )
     ]
     recorded_paths: list[str] = []
+    recorded_rows: dict[str, dict[str, Any]] = {}
     registry_path = root / "docs/audit/protected_documentation_v2.json"
     if registry_path.is_file():
         try:
-            recorded_paths = [row["path"] for row in json.loads(registry_path.read_text(encoding="utf-8")).get("files", [])]
+            recorded_rows = {row["path"]: row for row in json.loads(registry_path.read_text(encoding="utf-8")).get("files", [])}
+            recorded_paths = list(recorded_rows)
         except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError):
             recorded_paths = []
+            recorded_rows = {}
+    correction_rows, _ = protected_digest_corrections(root)
     preload_names = sorted((set(source_names) | set(recorded_paths)) & set(names))
-    git_blob_sha256_many(root, preload_names, "HEAD")
+    git_blob_sha256_many(root, preload_names, head_revision)
     protected: dict[str, dict[str, Any]] = {}
     changed_paths = set(run_git("diff", "--name-only", INITIAL_HEAD, root=root).splitlines())
     initial_names = set(run_git("ls-tree", "-r", "--name-only", INITIAL_HEAD, root=root).splitlines())
@@ -284,6 +327,13 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
     baseline_cache: dict[str, str] = {}
 
     def baseline_sha(relative: str, fallback: str) -> str:
+        recorded = recorded_rows.get(relative)
+        correction = correction_rows.get(relative)
+        if recorded and correction:
+            if correction.get("old_stored_sha256") == recorded.get("actual_sha256"):
+                return str(correction.get("canonical_git_blob_sha256", recorded.get("actual_sha256")))
+        if recorded and recorded.get("actual_sha256"):
+            return str(recorded["actual_sha256"])
         if relative not in changed_paths:
             return fallback
         if relative not in baseline_cache:
@@ -297,11 +347,12 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
             return
         if not path.is_file() or relative not in names:
             return
-        actual = git_blob_sha(relative, "HEAD", root)
+        actual = git_blob_sha(relative, head_revision, root)
         if actual is None:
             return
         baseline = baseline_sha(relative, actual)
-        if expected and expected.casefold() != baseline and not force:
+        sanctioned = relative in correction_rows
+        if expected and expected.casefold() != baseline and not force and not sanctioned:
             return
         current = protected.get(relative)
         manifest_list = sorted(set((current or {}).get("protecting_manifests", []) + [source]))
@@ -313,14 +364,14 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
             "expected_sha256": expected.casefold() if expected else baseline,
             "actual_sha256": baseline,
             "current_sha256": actual,
-            "manifest_sha_matches": not expected or expected.casefold() == baseline,
+            "manifest_sha_matches": not expected or expected.casefold() == baseline or sanctioned,
             "mutable": False,
         }
 
     for name in source_names:
         source = root / name
         stage = stage_from_path(name)
-        source_current = git_blob_sha(name, "HEAD", root)
+        source_current = git_blob_sha(name, head_revision, root)
         if source_current is None:
             continue
         source_baseline = baseline_sha(name, source_current)
@@ -331,7 +382,7 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
                 if not match:
                     continue
                 target_name = (match.group(2) or source.stem).strip()
-                target = _resolve_manifest_path(root, source, target_name, match.group(1))
+                target = _resolve_manifest_path(root, source, target_name, match.group(1), head_revision)
                 if target:
                     relative_target = target.relative_to(root).as_posix()
                     force = relative_target.startswith(("docs/external_review/", "ml/reports/", "ml/protocols/", "incident_reconstruction/protocols/"))
@@ -343,7 +394,7 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
             expected = next((record.get(key) for key in SHA_KEYS if isinstance(record.get(key), str)), None)
             if not raw or not expected or not re.fullmatch(r"[0-9a-fA-F]{64}", expected):
                 continue
-            target = _resolve_manifest_path(root, source, raw, expected)
+            target = _resolve_manifest_path(root, source, raw, expected, head_revision)
             if target:
                 relative_target = target.relative_to(root).as_posix()
                 force = relative_target.startswith(("docs/external_review/", "ml/reports/", "ml/protocols/", "incident_reconstruction/protocols/"))
@@ -532,10 +583,14 @@ def git_blob_sha(relative: str, revision: str = INITIAL_HEAD, root: Path = ROOT)
         return None
 
 
-def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, int]]:
+def inventory_rows(root: Path = ROOT, revision: str = "HEAD") -> tuple[list[dict[str, Any]], dict[str, int]]:
     protected_rows = build_protected_set(root)
     protected = {row["path"]: row for row in protected_rows}
     documents = tracked_markdown(root)
+    digest_revision = git_index_tree(root) if revision == "INDEX" else revision
+    current_digests = git_blob_sha256_many(
+        root, [path.relative_to(root).as_posix() for path in documents], digest_revision
+    )
     outgoing: dict[str, list[str]] = defaultdict(list)
     incoming: Counter[str] = Counter()
     link_cache: dict[str, tuple[list[str], list[str], list[str]]] = {}
@@ -563,7 +618,7 @@ def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, i
         category = category_for(relative, metadata, is_protected)
         lifecycle = "frozen" if is_protected else metadata.get("lifecycle", "historical" if category == "Историческое описание" else "current")
         before = git_blob_sha(relative, root=root)
-        after = sha256(path)
+        after = current_digests[relative]
         redirect_target = ""
         if lifecycle == "redirect":
             for _, destination, _ in local_links(path, root):

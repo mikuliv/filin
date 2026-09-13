@@ -11,7 +11,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Iterable
 
-from tools.integrity.git_objects import git_blob_bytes, git_blob_sha256, git_blob_sha256_many
+from tools.integrity.git_objects import git_blob_bytes, git_blob_sha256, git_blob_sha256_many, git_index_blob_sha256_many, git_index_tree
 
 ROOT = Path(__file__).resolve().parents[2]
 HOLDER = "Руслан Покатилов"
@@ -87,6 +87,10 @@ def canonical_sha256_many(root: Path, paths: list[str], revision: str = "HEAD") 
     return git_blob_sha256_many(root, paths, revision)
 
 
+def index_sha256_many(root: Path, paths: list[str]) -> dict[str, str]:
+    return git_index_blob_sha256_many(root, paths)
+
+
 def sha256(path: Path) -> str:
     digest = hashlib.sha256()
     with path.open("rb") as stream:
@@ -123,8 +127,7 @@ def classification_protected_paths() -> set[str]:
     paths: set[str] = set()
     if registry.is_file():
         paths.update(row["path"] for row in json.loads(registry.read_text(encoding="utf-8")).get("files", []))
-    correction = ROOT / "docs/licensing/frozen-spdx-mapping-correction-v1.json"
-    if correction.is_file():
+    for correction in sorted((ROOT / "docs/licensing").glob("frozen-spdx-mapping-correction-v*.json")):
         paths.update(row["path"] for row in json.loads(correction.read_text(encoding="utf-8")).get("entries", []) if row.get("status") == "accepted")
     return paths
 

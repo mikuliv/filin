@@ -6,7 +6,8 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .common import ROOT, canonical_sha256, canonical_sha256_many, classify, dump, forbidden_text, load, parser, protected_rows, tracked
+from .common import ROOT, canonical_sha256, canonical_sha256_many, classify, dump, forbidden_text, index_sha256_many, load, parser, protected_rows, tracked
+from tools.integrity.git_objects import git_index_tree
 
 MANIFEST="licensing/repository-license-manifest.json"
 
@@ -31,8 +32,8 @@ def self_digest(payload:dict)->str:
     return hashlib.sha256((json.dumps(clone,ensure_ascii=False,sort_keys=True,separators=(",",":"))+"\n").encode()).hexdigest()
 
 
-def build_manifest()->dict:
-    rows=[]; paths=files_for_build(); digests=canonical_sha256_many(ROOT,paths)
+def build_manifest(revision: str = "HEAD")->dict:
+    rows=[]; paths=files_for_build(); digests=index_sha256_many(ROOT,paths) if revision=="INDEX" else canonical_sha256_many(ROOT,paths,revision)
     for path in paths: rows.append({"path":path,"sha256":digests[path],**classify(path)})
     rows.append({"path":MANIFEST,"sha256":"SELF",**classify(MANIFEST)})
     rows.sort(key=lambda x:x["path"])
@@ -41,7 +42,7 @@ def build_manifest()->dict:
              "unknown_license_file_count":sum(x["license_expression"] in {"","NOASSERTION"} for x in rows),
              "review_required_file_count":sum(bool(x["review_required"]) for x in rows),
              "classification_conflict_count":conflicts,"upstream_standard_text_count":sum(bool(x.get("upstream_standard_text")) for x in rows)}
-    payload={"schema_version":"filin_repository_license_manifest_v1_1","manifest_schema":"licensing/repository-license-manifest.schema.json","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","digest_basis":"git_blob","digest_revision":"HEAD","self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
+    payload={"schema_version":"filin_repository_license_manifest_v1_1","manifest_schema":"licensing/repository-license-manifest.schema.json","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","digest_basis":"git_blob","digest_revision":"HEAD","source_tree":git_index_tree(ROOT) if revision=="INDEX" else None,"self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
     digest=self_digest(payload)
     next(x for x in rows if x["path"]==MANIFEST)["sha256"]=digest
     dump(MANIFEST,payload); return payload
