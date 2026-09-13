@@ -1,0 +1,11 @@
+-r backend/requirements.txt
+-r ml/requirements.txt
+-r lab_console/requirements.txt
+-r lab/docker/services/traffic-client/requirements.txt
+
+beautifulsoup4>=4.12,<5
+httpx2>=2,<3
+jsonschema>=4.21,<5
+markdown-it-py>=3,<5
+psutil>=5.9,<8
+pytest>=8,<9

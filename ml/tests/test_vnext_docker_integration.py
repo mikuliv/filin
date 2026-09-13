@@ -10,11 +10,9 @@ from lab.vnext.labctl import MATRIX, SEQUENCES, docker_available, down, run_matr
 
 pytestmark = pytest.mark.docker_integration
 
-if os.environ.get("FILIN_RUN_DOCKER_INTEGRATION") != "1":
-    pytest.skip("Docker integration отключён; задайте FILIN_RUN_DOCKER_INTEGRATION=1", allow_module_level=True)
-
-
 def test_real_docker_pcap_zeek_pipeline() -> None:
+    if os.environ.get("FILIN_RUN_DOCKER_INTEGRATION") != "1":
+        pytest.skip("Docker integration отключён; задайте FILIN_RUN_DOCKER_INTEGRATION=1")
     available, reason = docker_available()
     if not available:
         pytest.skip(f"Docker недоступен: {reason}")
