@@ -1,0 +1,50 @@
+{
+  "schema_version": "filin_scientific_status_correction_v1",
+  "correction_id": "v0.3.15.5-scientific-reassessment-2026-07-30",
+  "stage": "v0.3.15.5",
+  "status": "accepted",
+  "historical_state": {
+    "commit": "6dee794cfbf2cde089ce976eb2c421ed180598d1",
+    "path": "docs/status/project-status.yaml",
+    "result": "scientific_passed_runtime_contract_failed_not_promoted"
+  },
+  "corrected_state": {
+    "commit": "083cc18e0d532c27dcdccbf61be99601302ff792",
+    "path": "docs/status/project-status.yaml",
+    "result": "synthetic_generator_holdout_passed_external_validity_not_confirmed"
+  },
+  "correction_date": "2026-07-30",
+  "basis": "Повторная методологическая проверка установила общее семейство синтетического генератора, общие шаблоны целей и отсутствие независимой инфраструктуры между v0.3.15.4 и v0.3.15.5.",
+  "reassessment_document": "docs/experiments/v0_3_15_4_v0_3_15_5_methodology_reassessment.md",
+  "withdrawn_claims": [
+    "independent scientific holdout",
+    "generalization beyond the synthetic generator family"
+  ],
+  "frozen_outputs_rewritten": false,
+  "unchanged_historical_artifacts": [
+    {
+      "path": "docs/experiments/v0_3_15_5.md",
+      "sha256": "b55046151e6c1abb6aef1758d13905b4632818039d66ebdbbceb6343a609b1ae"
+    },
+    {
+      "path": "ml/reports/v0_3_15_5/v0_3_15_5_bundle_manifest.yaml",
+      "sha256": "cd8ebcb97da61cfc7d5660937f3b3b7d523ed85ad2ae51a7844ab3aea6d66aff"
+    },
+    {
+      "path": "ml/reports/v0_3_15_5/v0_3_15_5_bundle_manifest.sha256",
+      "sha256": "c13aeb07018b021a908924eff52ed043a4bfe54dc9b7f0f0412a05d532f9c4af"
+    },
+    {
+      "path": "ml/reports/v0_3_15_5/v0_3_15_5_policy_result.json",
+      "sha256": "4b57c4a4b37bc23c8f635723cbd80761f751e6dc0cfb6dbe03f04f9ce4fa7f05"
+    },
+    {
+      "path": "ml/reports/v0_3_15_5/v0_3_15_5_summary.md",
+      "sha256": "6c78ab4e24a0910223b506d2e5ed5520138727f236c610f8515af42ab8c1cb3f"
+    },
+    {
+      "path": "ml/reports/v0_3_15_5/candidate_window_metrics.json",
+      "sha256": "0a44a1f6ff8eddf5590e5e9f060f0ad02eec26aaf7195f3723a60bd1951e68e8"
+    }
+  ]
+}

@@ -12,7 +12,7 @@ import collectors.shadow.candidate_registry as registry_module
 from collectors.shadow.candidate_registry import ContractValidationError, ERROR_CODES, VALIDATION_ORDER, validate_registry_artifacts, validate_v2
 from collectors.shadow.event_model_v2 import generate_event
 from tools.audit.validate_v031551_bundle import validate as validate_bundle
-from tools.docs.validate_v031551_summary import validate as validate_docs
+from tools.docs.validate_v031551_summary import validate as validate_docs, validate_scientific_correction
 
 ROOT = Path(__file__).resolve().parents[2]
 REPORT = ROOT / "ml/reports/v0_3_15_5_1"
@@ -125,6 +125,17 @@ def test_bundle_validation():
 
 
 def test_documentation_consistency(): assert validate_docs(ROOT) == []
+
+
+def test_scientific_reassessment_provenance():
+    assert validate_scientific_correction(ROOT) == []
+
+
+def test_scientific_reassessment_rejects_substitution():
+    record = json.loads((ROOT / "docs/status/corrections/v0_3_15_5_scientific_reassessment.json").read_text(encoding="utf-8"))
+    changed = copy.deepcopy(record)
+    changed["corrected_state"]["result"] = "scientific_passed_runtime_contract_failed_not_promoted"
+    assert "v03155_correction_commit_mismatch" in validate_scientific_correction(ROOT, changed)
 
 
 def test_raw_artifacts_excluded():
