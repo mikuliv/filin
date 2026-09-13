@@ -14,7 +14,7 @@
     "redirect_count": 14,
     "broken_link_count": 0,
     "broken_anchor_count": 0,
-    "tracked_link_count": 1252,
+    "tracked_link_count": 1253,
     "generated_link_count": 0,
     "local_only_link_count": 0
   },
@@ -995,7 +995,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "5709cb61f6ecfa8f72ecabad4b8f1a1a3d86f877d42c3088b961c5336aa9844b"
+      "sha256_after": "b6cc97745fe8ca4ea518ce6dab658d7d54ae64e2bd7ee70e8fb12d117056d600"
     },
     {
       "path": "docs/architecture/filin-vnext-docker-integration-lab.md",
@@ -1069,15 +1069,15 @@
       "terminology_findings": [],
       "broken_links": [],
       "broken_anchors": [],
-      "tracked_link_count": 1,
+      "tracked_link_count": 2,
       "generated_link_count": 0,
       "local_only_link_count": 0,
       "incoming_link_count": 2,
-      "outgoing_link_count": 1,
+      "outgoing_link_count": 2,
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "c342078a108b02d84819fc46296f756a890e08c9a7d4bb918ee6f024a17ebce0"
+      "sha256_after": "ff2f4fbb4cebfbb8597ac6a254318a9f149908e24633a6a94cb6fa6f1dd71d66"
     },
     {
       "path": "docs/architecture/filin-vnext-feature-and-detection-architecture.md",
@@ -1746,7 +1746,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "2da3e1147e22c85bfbc6eae1cf92f36b7a897a0fd7134b2d41f467bc1206fcdc"
+      "sha256_after": "fb040fdadd660220ffeb05774e6735a50976ed0244d5433bb2f71fa380539f28"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -2339,7 +2339,7 @@
       "tracked_link_count": 368,
       "generated_link_count": 0,
       "local_only_link_count": 0,
-      "incoming_link_count": 8,
+      "incoming_link_count": 9,
       "outgoing_link_count": 368,
       "recommended_action": "maintain",
       "actual_action": "rewritten",

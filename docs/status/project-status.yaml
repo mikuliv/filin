@@ -1,7 +1,7 @@
 schema_version: filin_project_status_v2
 project_name: Филин
-current_project_state: "Новый официальный заменяющий пакет Phase 1 создан; кампания не инициализирована и научный запуск не выполнялся"
-status_scope_note: "Статусы основной линии, лабораторной линии, исторической сетевой проверки и текущего runtime не сводятся к одному next_allowed_stage"
+current_project_state: "Исторический пакет Phase 1 не инициализирован; инженерная основа vNext реализована и проверена локально без научной кампании"
+status_scope_note: "Статусы основной линии, лабораторной линии, исторической сетевой проверки, текущего runtime и разработки vNext не сводятся к одному next_allowed_stage"
 regression_baseline:
   full_regression_passed: false
   new_regressions_detected: false
@@ -17,6 +17,19 @@ laboratory:
   next_allowed_stage: v0.4.7.4
   scientific_result: failed_validation
   production_approval: false
+vnext:
+  architecture_status: implemented
+  contracts_status: implemented
+  telemetry_and_scenarios_status: implemented
+  feature_and_detection_status: implemented
+  docker_laboratory_status: implemented
+  context_graph_correlation_status: implemented
+  engineering_tests_passed: true
+  experimentally_validated: false
+  scientific_campaign_started: false
+  scientific_sessions_executed: 0
+  production_ready: false
+  next_stage: stabilization_and_independent_protocol_review
 current_completed_stage: v0.3.18
 current_corrective_stage: v0.3.17.1
 current_candidate: v03154:65a3dd912d845bc1
