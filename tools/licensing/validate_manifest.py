@@ -1,13 +1,14 @@
 """Validate repository manifest completeness, hashes, SBOM hygiene and release summary."""
 from __future__ import annotations
 import hashlib,json
-from .common import ROOT, forbidden_text, finish, parser, sha256, tracked
+from .common import ROOT, canonical_sha256_many, forbidden_text, finish, parser, tracked
 MANIFEST="licensing/repository-license-manifest.json"
 def validate(root=ROOT):
  errors=[];path=root/MANIFEST
  if not path.is_file():return [{"code":"repository_manifest_missing"}]
  data=json.loads(path.read_text(encoding="utf-8"));rows=data.get("files",[]); names=[x.get("path") for x in rows]
- candidates=sorted(p for p in tracked(include_untracked=True) if "__pycache__" not in p and not p.endswith((".pyc",".pyo")))
+ candidates=sorted(p for p in tracked(root=root) if "__pycache__" not in p and not p.endswith((".pyc",".pyo")))
+ digests=canonical_sha256_many(root,[p for p in candidates if p!=MANIFEST])
  if set(names)!=set(candidates):
   for p in sorted(set(candidates)-set(names)):errors.append({"code":"repository_manifest_file_missing","path":p})
   for p in sorted(set(names)-set(candidates)):errors.append({"code":"repository_manifest_extra_file","path":p})
@@ -18,7 +19,7 @@ def validate(root=ROOT):
   p=row.get("path"); target=root/p if p else None
   missing=sorted(required_fields-set(row))
   if missing:errors.append({"code":"repository_manifest_schema_fields_missing","path":p,"fields":missing})
-  if target and target.is_file() and p!=MANIFEST and sha256(target)!=row.get("sha256"):errors.append({"code":"repository_manifest_sha_mismatch","path":p})
+  if target and target.is_file() and p!=MANIFEST and digests.get(p)!=row.get("sha256"):errors.append({"code":"repository_manifest_sha_mismatch","path":p})
   if not row.get("license_expression"):errors.append({"code":"repository_manifest_license_missing","path":p})
   if row.get("ownership") not in allowed_ownership:errors.append({"code":"repository_manifest_ownership_invalid","path":p})
   if row.get("upstream_standard_text") and (row.get("ownership")!="upstream_standard_text" or row.get("project_authored") or row.get("third_party") is not True):errors.append({"code":"upstream_standard_text_classification_conflict","path":p})

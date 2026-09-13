@@ -6,20 +6,20 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .common import ROOT, classify, dump, forbidden_text, load, parser, protected_rows, sha256, tracked
+from .common import ROOT, canonical_sha256, canonical_sha256_many, classify, dump, forbidden_text, load, parser, protected_rows, tracked
 
 MANIFEST="licensing/repository-license-manifest.json"
 
 
 def files_for_build()->list[str]:
-    return [p for p in tracked(include_untracked=True) if not p.endswith((".pyc",".pyo")) and "__pycache__" not in p and p != MANIFEST]
+    return [p for p in tracked() if not p.endswith((".pyc",".pyo")) and "__pycache__" not in p and p != MANIFEST]
 
 
 def build_frozen()->dict:
     rows=[]
     for item in protected_rows():
         path=item["path"].replace("\\","/"); assignment=classify(path)
-        rows.append({"path":path,"sha256":sha256(ROOT/path),"license_expression":assignment["license_expression"],"copyright_holder":assignment["copyright_holder"],"file_type":assignment["file_type"],"assignment_source":"reuse_toml","distribution_profile":assignment["distribution_profiles"],"protecting_manifests":item.get("protecting_manifests",[])})
+        rows.append({"path":path,"sha256":canonical_sha256(ROOT,path),"license_expression":assignment["license_expression"],"copyright_holder":assignment["copyright_holder"],"file_type":assignment["file_type"],"assignment_source":"reuse_toml","distribution_profile":assignment["distribution_profiles"],"protecting_manifests":item.get("protecting_manifests",[])})
     payload={"schema_version":"filin_frozen_spdx_mapping_v1","protected_count":len(rows),"files":rows}
     dump("docs/licensing/frozen-spdx-mapping.json",payload); return payload
 
@@ -32,8 +32,8 @@ def self_digest(payload:dict)->str:
 
 
 def build_manifest()->dict:
-    rows=[]
-    for path in files_for_build(): rows.append({"path":path,"sha256":sha256(ROOT/path),**classify(path)})
+    rows=[]; paths=files_for_build(); digests=canonical_sha256_many(ROOT,paths)
+    for path in paths: rows.append({"path":path,"sha256":digests[path],**classify(path)})
     rows.append({"path":MANIFEST,"sha256":"SELF",**classify(MANIFEST)})
     rows.sort(key=lambda x:x["path"])
     conflicts=sum(bool(x.get("upstream_standard_text")) and (x.get("ownership")!="upstream_standard_text" or not x.get("third_party") or x.get("project_authored")) for x in rows)
@@ -41,7 +41,7 @@ def build_manifest()->dict:
              "unknown_license_file_count":sum(x["license_expression"] in {"","NOASSERTION"} for x in rows),
              "review_required_file_count":sum(bool(x["review_required"]) for x in rows),
              "classification_conflict_count":conflicts,"upstream_standard_text_count":sum(bool(x.get("upstream_standard_text")) for x in rows)}
-    payload={"schema_version":"filin_repository_license_manifest_v1_1","manifest_schema":"licensing/repository-license-manifest.schema.json","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
+    payload={"schema_version":"filin_repository_license_manifest_v1_1","manifest_schema":"licensing/repository-license-manifest.schema.json","baseline_commit":"4948af7434c8e7b38731d8df8aae0b3360f2badf","digest_basis":"git_blob","digest_revision":"HEAD","self_hash_mode":"canonical_json_with_self_sha_set_to_SELF","summary":summary,"files":rows}
     digest=self_digest(payload)
     next(x for x in rows if x["path"]==MANIFEST)["sha256"]=digest
     dump(MANIFEST,payload); return payload
@@ -80,7 +80,7 @@ def build_notices()->None:
 
 
 def main()->int:
-    parser(__doc__).parse_args(); build_frozen(); build_notices(); manifest=build_manifest()
+    parser(__doc__).parse_args(); build_notices(); manifest=build_manifest()
     from .validate_upstream_standard_texts import write_registry
     write_registry(ROOT, manifest); manifest=build_manifest(); build_sbom(manifest)
     # Rebuild after generated SBOM/notices exist so the manifest covers final worktree.

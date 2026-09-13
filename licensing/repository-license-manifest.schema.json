@@ -3,10 +3,12 @@
   "$id": "https://filin.local/schemas/repository-license-manifest-v1-1.json",
   "title": "Filin repository license manifest v1.1",
   "type": "object",
-  "required": ["schema_version", "manifest_schema", "self_hash_mode", "summary", "files"],
+  "required": ["schema_version", "manifest_schema", "digest_basis", "digest_revision", "self_hash_mode", "summary", "files"],
   "properties": {
     "schema_version": {"const": "filin_repository_license_manifest_v1_1"},
     "manifest_schema": {"const": "licensing/repository-license-manifest.schema.json"},
+    "digest_basis": {"const": "git_blob"},
+    "digest_revision": {"type": "string", "minLength": 1},
     "self_hash_mode": {"const": "canonical_json_with_self_sha_set_to_SELF"},
     "summary": {
       "type": "object",

@@ -7,6 +7,8 @@ import tempfile
 from pathlib import Path, PurePosixPath
 from typing import Any, Iterable
 
+from tools.integrity.git_objects import GitObjectError, git_blob_bytes, git_blob_sha256
+
 import yaml
 
 
@@ -114,9 +116,14 @@ def validate_manifest(value: dict[str, Any], root: Path) -> list[str]:
         if not path.is_file():
             errors.append(f"missing:{relative}")
             continue
-        if path.stat().st_size != item.get("size"):
+        try:
+            content = git_blob_bytes(root, relative, "HEAD")
+        except GitObjectError:
+            errors.append(f"canonical_blob:{relative}")
+            continue
+        if len(content) != item.get("size"):
             errors.append(f"size:{relative}")
-        if sha256(path) != item.get("sha256"):
+        if hashlib.sha256(content).hexdigest() != item.get("sha256"):
             errors.append(f"hash:{relative}")
         if item.get("contains_sensitive_data") is not False:
             errors.append(f"sensitive:{relative}")
@@ -161,7 +168,12 @@ def validate_bundle(report: Path = REPORT, root: Path = ROOT) -> dict[str, Any]:
     except ValueError:
         errors.append("detached_format")
         detached_hash, detached_file = "", ""
-    if detached_file != MANIFEST_NAME or detached_hash != sha256(manifest):
+    manifest_relative = manifest.resolve().relative_to(root.resolve()).as_posix()
+    try:
+        manifest_hash = git_blob_sha256(root, manifest_relative, "HEAD")
+    except GitObjectError:
+        manifest_hash = None
+    if detached_file != MANIFEST_NAME or detached_hash != manifest_hash:
         errors.append("detached_manifest_hash")
     value = yaml.safe_load(manifest.read_text(encoding="utf-8"))
     errors.extend(validate_manifest(value, root))

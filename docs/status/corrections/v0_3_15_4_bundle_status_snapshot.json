@@ -1,0 +1,11 @@
+{
+  "schema_version": "filin_historical_mutable_path_resolution_v1",
+  "status": "accepted",
+  "stage": "v0.3.15.4",
+  "manifest_path": "ml/reports/v0_3_15_4/v0_3_15_4_bundle_manifest.yaml",
+  "artifact_path": "docs/status/project-status.yaml",
+  "snapshot_commit": "6ddba2c835a53679285b6afddcef3b74cb28d430",
+  "expected_sha256": "78156dc8ca09c538ab9611b990159e003e4ec8637fd2861967ba2a91e40782af",
+  "expected_size": 8916,
+  "reason": "Исторический bundle зафиксировал снимок изменяемого сводного статуса. Проверка разрешает этот снимок через неизменяемый Git commit, а не через текущий путь."
+}

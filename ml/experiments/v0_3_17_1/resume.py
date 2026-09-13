@@ -7,6 +7,8 @@ import sqlite3
 from pathlib import Path
 from typing import Any
 
+from tools.integrity.git_objects import GitObjectError, git_blob_sha256, git_commit
+
 
 ROOT = Path(__file__).resolve().parents[3]
 REPORT = ROOT / "ml/reports/v0_3_17_1"
@@ -21,24 +23,55 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def verify_code_lock(lock_path: Path = LOCK_PATH) -> dict[str, Any]:
+def verify_code_lock(
+    lock_path: Path = LOCK_PATH,
+    root: Path = ROOT,
+    current_revision: str = "HEAD",
+) -> dict[str, Any]:
     lock = json.loads(lock_path.read_text(encoding="utf-8"))
+    source_head = lock.get("source_head")
+    errors: list[str] = []
+    try:
+        source_commit = git_commit(root, source_head)
+        current_commit = git_commit(root, current_revision)
+    except GitObjectError as error:
+        source_commit = None
+        current_commit = None
+        errors.append(str(error))
     rows = []
     for item in lock["locked_artifacts"]:
-        path = ROOT / item["path"]
-        actual = sha256(path) if path.is_file() else None
+        relative = item.get("path", "")
+        expected = item.get("sha256")
+        source_actual = None
+        current_actual = None
+        if source_commit and current_commit:
+            try:
+                source_actual = git_blob_sha256(root, relative, source_commit)
+                current_actual = git_blob_sha256(root, relative, current_commit)
+            except GitObjectError as error:
+                errors.append(str(error))
+        working_path = root / relative
+        working_actual = sha256(working_path) if working_path.is_file() else None
         rows.append(
             {
-                "path": item["path"],
-                "expected_sha256": item["sha256"],
-                "actual_sha256": actual,
-                "unchanged": actual == item["sha256"],
+                "path": relative,
+                "expected_sha256": expected,
+                "source_blob_sha256": source_actual,
+                "current_blob_sha256": current_actual,
+                "working_tree_sha256": working_actual,
+                "working_tree_matches_blob": working_actual == current_actual,
+                "unchanged": source_actual == expected == current_actual,
             }
         )
     return {
         "lock_revision": lock.get("lock_revision", 1),
+        "source_head": source_head,
+        "source_commit": source_commit,
+        "current_commit": current_commit,
         "locked_artifact_count": len(rows),
-        "locked_artifacts_unchanged": all(row["unchanged"] for row in rows),
+        "provenance_valid": not errors,
+        "locked_artifacts_unchanged": not errors and all(row["unchanged"] for row in rows),
+        "errors": errors,
         "artifacts": rows,
     }
 

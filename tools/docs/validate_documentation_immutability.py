@@ -9,7 +9,7 @@ from pathlib import Path
 if __package__ in {None, ""}:
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from tools.docs.documentation_v2 import ROOT, build_protected_set, sha256
+from tools.docs.documentation_v2 import ROOT, build_protected_set, git_blob_sha
 
 
 def validate(root: Path = ROOT) -> list[str]:
@@ -26,7 +26,7 @@ def validate(root: Path = ROOT) -> list[str]:
         target = root / path
         if not target.is_file():
             errors.append(f"protected_file_missing:{path}")
-        elif sha256(target) != row.get("actual_sha256"):
+        elif git_blob_sha(path, "HEAD", root) != row.get("actual_sha256"):
             errors.append(f"protected_file_changed:{path}")
         if row.get("mutable") is not False:
             errors.append(f"protected_file_mutable:{path}")

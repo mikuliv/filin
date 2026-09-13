@@ -3,9 +3,15 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import sys
 from pathlib import Path
 
 import yaml
+
+if __package__ in {None, ""}:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
+
+from tools.integrity.git_objects import GitObjectError, git_blob_bytes
 
 
 REQUIRED = {
@@ -24,6 +30,20 @@ FORBIDDEN_SUFFIXES={".pcap",".pcapng",".joblib",".pkl",".pickle",".onnx"}
 def sha(path: Path)->str: return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def canonical_artifact(root: Path, relative: str, row: dict) -> bytes:
+    if relative == "docs/status/project-status.yaml":
+        correction_path = root / "docs/status/corrections/v0_3_15_4_bundle_status_snapshot.json"
+        correction = json.loads(correction_path.read_text(encoding="utf-8"))
+        if correction.get("schema_version") != "filin_historical_mutable_path_resolution_v1" or correction.get("status") != "accepted":
+            raise GitObjectError("v03154_status_correction_invalid")
+        if correction.get("manifest_path") != "ml/reports/v0_3_15_4/v0_3_15_4_bundle_manifest.yaml" or correction.get("artifact_path") != relative:
+            raise GitObjectError("v03154_status_correction_scope")
+        if correction.get("expected_sha256") != row.get("sha256") or correction.get("expected_size") != row.get("size"):
+            raise GitObjectError("v03154_status_correction_digest")
+        return git_blob_bytes(root, relative, correction.get("snapshot_commit", ""))
+    return git_blob_bytes(root, relative, "HEAD")
+
+
 def validate(manifest_path: str|Path, detached_path: str|Path, root: str|Path) -> dict:
     root=Path(root).resolve(); manifest_path=Path(manifest_path).resolve(); detached_path=Path(detached_path).resolve(); errors=[]
     manifest=yaml.safe_load(manifest_path.read_text(encoding="utf-8")); detached=detached_path.read_text(encoding="utf-8").split()[0]
@@ -36,8 +56,10 @@ def validate(manifest_path: str|Path, detached_path: str|Path, root: str|Path) -
         try: path=(root/row["path"]).resolve(); path.relative_to(root)
         except ValueError: errors.append("path_confinement:"+row["path"]); continue
         if not path.is_file(): errors.append("missing:"+row["path"]); continue
-        if path.stat().st_size!=row["size"]: errors.append("size:"+row["path"])
-        if sha(path)!=row["sha256"]: errors.append("hash:"+row["path"])
+        try: content=canonical_artifact(root,row["path"],row)
+        except (GitObjectError,OSError,json.JSONDecodeError): errors.append("canonical_blob:"+row["path"]);continue
+        if len(content)!=row["size"]: errors.append("size:"+row["path"])
+        if hashlib.sha256(content).hexdigest()!=row["sha256"]: errors.append("hash:"+row["path"])
         if path.suffix.lower() in FORBIDDEN_SUFFIXES or row["path"].startswith("runtime/"): errors.append("raw_artifact:"+row["path"])
     policy=json.loads((root/"ml/reports/v0_3_15_4/v0_3_15_4_policy_result.json").read_text(encoding="utf-8"))
     if not policy.get("v03154_redevelopment_passed") or not policy.get("candidate_ready_for_v0_3_15_5_prospective_evaluation"): errors.append("stage_result")

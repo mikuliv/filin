@@ -12,6 +12,8 @@ from urllib.parse import unquote
 
 import yaml
 
+from tools.integrity.git_objects import GitObjectError, git_blob_sha256, git_blob_sha256_many
+
 
 ROOT = Path(__file__).resolve().parents[2]
 INITIAL_HEAD = "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63"
@@ -207,11 +209,8 @@ TEXT_SUFFIXES = {".md", ".json", ".yaml", ".yml", ".py", ".toml", ".ini", ".cfg"
 
 
 def sha256(path: Path) -> str:
-    """SHA содержимого Git: для текстовых файлов учитывает clean EOL normalisation."""
-    content = path.read_bytes()
-    if path.suffix.casefold() in TEXT_SUFFIXES:
-        content = content.replace(b"\r\n", b"\n")
-    return hashlib.sha256(content).hexdigest()
+    """SHA фактических байтов файла; Git-объекты проверяются отдельной функцией."""
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
 def stage_from_path(path: str) -> str:
@@ -250,7 +249,8 @@ def _resolve_manifest_path(root: Path, source: Path, raw: str, expected: str) ->
             continue
         if candidate.is_file():
             existing = existing or candidate
-            if not expected or sha256(candidate) == expected.casefold():
+            relative = candidate.resolve().relative_to(root.resolve()).as_posix()
+            if not expected or git_blob_sha(relative, "HEAD", root) == expected.casefold():
                 return candidate
     return existing
 
@@ -266,8 +266,21 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
             or Path(name).suffix.casefold() == ".sha256"
         )
     ]
+    recorded_paths: list[str] = []
+    registry_path = root / "docs/audit/protected_documentation_v2.json"
+    if registry_path.is_file():
+        try:
+            recorded_paths = [row["path"] for row in json.loads(registry_path.read_text(encoding="utf-8")).get("files", [])]
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError):
+            recorded_paths = []
+    preload_names = sorted((set(source_names) | set(recorded_paths)) & set(names))
+    git_blob_sha256_many(root, preload_names, "HEAD")
     protected: dict[str, dict[str, Any]] = {}
     changed_paths = set(run_git("diff", "--name-only", INITIAL_HEAD, root=root).splitlines())
+    initial_names = set(run_git("ls-tree", "-r", "--name-only", INITIAL_HEAD, root=root).splitlines())
+    baseline_names = sorted(set(preload_names) & changed_paths & initial_names)
+    if baseline_names:
+        git_blob_sha256_many(root, baseline_names, INITIAL_HEAD)
     baseline_cache: dict[str, str] = {}
 
     def baseline_sha(relative: str, fallback: str) -> str:
@@ -284,7 +297,9 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
             return
         if not path.is_file() or relative not in names:
             return
-        actual = sha256(path)
+        actual = git_blob_sha(relative, "HEAD", root)
+        if actual is None:
+            return
         baseline = baseline_sha(relative, actual)
         if expected and expected.casefold() != baseline and not force:
             return
@@ -305,7 +320,10 @@ def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:
     for name in source_names:
         source = root / name
         stage = stage_from_path(name)
-        source_baseline = baseline_sha(name, sha256(source))
+        source_current = git_blob_sha(name, "HEAD", root)
+        if source_current is None:
+            continue
+        source_baseline = baseline_sha(name, source_current)
         add(source, source_baseline, name, stage, force=True)
         if source.suffix.casefold() == ".sha256":
             for line in source.read_text(encoding="utf-8", errors="replace").splitlines():
@@ -508,8 +526,10 @@ def category_for(relative: str, metadata: dict[str, Any], protected: bool) -> st
 
 
 def git_blob_sha(relative: str, revision: str = INITIAL_HEAD, root: Path = ROOT) -> str | None:
-    result = subprocess.run(["git", "show", f"{revision}:{relative}"], cwd=root, capture_output=True)
-    return hashlib.sha256(result.stdout).hexdigest() if result.returncode == 0 else None
+    try:
+        return git_blob_sha256(root, relative, revision)
+    except GitObjectError:
+        return None
 
 
 def inventory_rows(root: Path = ROOT) -> tuple[list[dict[str, Any]], dict[str, int]]:

@@ -11,6 +11,8 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Any, Iterable
 
+from tools.integrity.git_objects import git_blob_bytes, git_blob_sha256, git_blob_sha256_many
+
 ROOT = Path(__file__).resolve().parents[2]
 HOLDER = "Руслан Покатилов"
 BASELINE = "4948af7434c8e7b38731d8df8aae0b3360f2badf"
@@ -63,11 +65,26 @@ def git(*args: str, check: bool = True) -> str:
     return run("git", *args, check=check)
 
 
-def tracked(include_untracked: bool = False) -> list[str]:
+def tracked(include_untracked: bool = False, root: Path = ROOT) -> list[str]:
     args = ["ls-files", "-z"]
     if include_untracked:
         args += ["--cached", "--others", "--exclude-standard"]
-    return sorted(x for x in git(*args).split("\0") if x)
+    process = subprocess.run(["git", *args], cwd=root, capture_output=True)
+    if process.returncode:
+        raise RuntimeError("git_ls_files_failed")
+    return sorted(x.decode("utf-8") for x in process.stdout.split(b"\0") if x)
+
+
+def canonical_bytes(root: Path, path: str, revision: str = "HEAD") -> bytes:
+    return git_blob_bytes(root, path, revision)
+
+
+def canonical_sha256(root: Path, path: str, revision: str = "HEAD") -> str:
+    return git_blob_sha256(root, path, revision)
+
+
+def canonical_sha256_many(root: Path, paths: list[str], revision: str = "HEAD") -> dict[str, str]:
+    return git_blob_sha256_many(root, paths, revision)
 
 
 def sha256(path: Path) -> str:
@@ -100,6 +117,18 @@ def protected_paths() -> set[str]:
     return {row["path"].replace("\\", "/") for row in protected_rows()}
 
 
+@lru_cache(maxsize=1)
+def classification_protected_paths() -> set[str]:
+    registry = ROOT / "docs/audit/protected_documentation_v2.json"
+    paths: set[str] = set()
+    if registry.is_file():
+        paths.update(row["path"] for row in json.loads(registry.read_text(encoding="utf-8")).get("files", []))
+    correction = ROOT / "docs/licensing/frozen-spdx-mapping-correction-v1.json"
+    if correction.is_file():
+        paths.update(row["path"] for row in json.loads(correction.read_text(encoding="utf-8")).get("entries", []) if row.get("status") == "accepted")
+    return paths
+
+
 def is_generated(path: str) -> bool:
     return path.startswith(("docs/audit/", "docs/licensing/", "licensing/", "sbom/")) and path.endswith((".json", ".md"))
 
@@ -108,7 +137,7 @@ def classify(path: str) -> dict[str, Any]:
     p = path.replace("\\", "/")
     suffix = Path(p).suffix.lower()
     name = Path(p).name
-    frozen = p in protected_paths()
+    frozen = p in classification_protected_paths()
     generated = is_generated(p)
     if p in UPSTREAM_STANDARD_TEXTS:
         meta = UPSTREAM_STANDARD_TEXTS[p]

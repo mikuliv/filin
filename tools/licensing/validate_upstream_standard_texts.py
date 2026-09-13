@@ -6,7 +6,7 @@ import json
 from pathlib import Path
 from typing import Any
 
-from .common import HOLDER, ROOT, UPSTREAM_STANDARD_TEXTS, dump, finish, parser
+from .common import HOLDER, ROOT, UPSTREAM_STANDARD_TEXTS, canonical_bytes, canonical_sha256, dump, finish, parser
 
 
 def digest(path: Path) -> str:
@@ -20,7 +20,7 @@ def registry_payload(root: Path = ROOT, manifest: dict[str, Any] | None = None) 
     rows = []
     for path, expected in UPSTREAM_STANDARD_TEXTS.items():
         row = indexed.get(path, {})
-        actual = digest(root / path) if (root / path).is_file() else None
+        actual = canonical_sha256(root, path) if (root / path).is_file() else None
         rows.append({
             "path": path, "sha256": actual, "expected_sha256": expected["sha256"],
             "document_kind": expected["document_kind"], "upstream_name": expected["upstream_name"],
@@ -51,7 +51,7 @@ def validate(root: Path = ROOT) -> list[dict[str, Any]]:
         target = root / path
         if not target.is_file():
             errors.append({"code": "upstream_standard_text_missing", "path": path}); continue
-        actual = digest(target)
+        actual = canonical_sha256(root, path)
         if actual != expected["sha256"]:
             errors.append({"code": "official_standard_text_modified", "path": path, "actual": actual})
         head = target.read_bytes()[:512].decode("utf-8", errors="ignore")
@@ -82,7 +82,7 @@ def validate(root: Path = ROOT) -> list[dict[str, Any]]:
     discovered = {row.get("path") for row in manifest.get("files", []) if row.get("assignment_source") == "upstream_license" or row.get("file_type") in {"license_text", "policy_text"}}
     for path in sorted(discovered - set(UPSTREAM_STANDARD_TEXTS)):
         errors.append({"code": "unknown_upstream_standard_text", "path": path})
-    if (root / "LICENSE").is_file() and (root / "LICENSES/MPL-2.0.txt").is_file() and (root / "LICENSE").read_bytes() != (root / "LICENSES/MPL-2.0.txt").read_bytes():
+    if (root / "LICENSE").is_file() and (root / "LICENSES/MPL-2.0.txt").is_file() and canonical_bytes(root, "LICENSE") != canonical_bytes(root, "LICENSES/MPL-2.0.txt"):
         errors.append({"code": "root_mpl_copy_mismatch"})
     return errors
 
