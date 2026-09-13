@@ -215,8 +215,10 @@ def normalize(case_dir: Path, generator_ip: str, target_ip: str, auth_case: bool
             payload = {"namespace": "auth.attempt", "account_entity_id": _entity_id("account", account), "authentication_type": "password", "success": success, "failure_reason": str(row.get("failure_reason", "none")), "target_service_entity_id": service}
             events.append(_event("auth.attempt", row, auth_raw, len(events), payload, str(row.get("remote_ip") or generator_ip), target_ip, "authenticate", "success" if success else "failure", str(row.get("status_code", "unknown"))))
     times = [row["temporal"]["event_timestamp"] for row in events]
+    ingest_times = [row["temporal"]["ingest_timestamp"] for row in events]
     observation_base = {
         "schema_version": "observation_bundle_v1", "window": {"start": min(times), "end": max(times), "ordering_domain": NETWORK},
+        "temporal_summary": {"event_time": max(times), "ingest_time": max(ingest_times)},
         "event_refs": [{"event_id": row["event_id"], "canonical_digest": row["canonical_digest"]} for row in events], "entity_refs": [],
         "aggregation": {"method": "docker_execution_window", "builder": "vnext_docker_observation_builder", "builder_version": "1.0.0", "causal": True, "event_count": len(events)},
         "telemetry_capability_refs": sorted({row["event_type"] for row in events}), "raw_evidence_refs": [{"evidence_id": row["evidence_id"], "sha256": row["sha256"]} for row in raw_refs], "feature_generation_refs": [],

@@ -109,8 +109,9 @@ def test_invalid_event_payload_provenance_and_leakage_are_rejected(mutation: str
 def test_observation_bundle_resolves_events_and_is_not_an_incident() -> None:
     event = sample_event()
     bundle = with_digest({
-        "schema_version": "observation_bundle_v1", "bundle_id": "obs_" + HEX_A,
-        "window": {"start": "2026-01-01T00:00:00Z", "end": "2026-01-01T00:01:00Z", "ordering_domain": "sensor-a"},
+            "schema_version": "observation_bundle_v1", "bundle_id": "obs_" + HEX_A,
+            "window": {"start": "2026-01-01T00:00:00Z", "end": "2026-01-01T00:01:00Z", "ordering_domain": "sensor-a"},
+            "temporal_summary": {"event_time": "2026-01-01T00:00:00Z", "ingest_time": "2026-01-01T00:00:01Z"},
         "event_refs": [{"event_id": event["event_id"], "canonical_digest": event["canonical_digest"]}],
         "entity_refs": [], "aggregation": {"method": "fixed_window", "builder": "test", "builder_version": "v1", "causal": True, "event_count": 1},
         "telemetry_capability_refs": ["network.flow"], "raw_evidence_refs": [{"evidence_id": "raw_" + HEX_A, "sha256": HEX_A}],

@@ -148,7 +148,7 @@ def validate_normalized_event(value: dict[str, Any]) -> dict[str, Any]:
 
 def validate_observation_bundle(value: dict[str, Any], *, events: Iterable[dict[str, Any]] = ()) -> dict[str, Any]:
     validate_json_schema_instance("observation_bundle_v1.schema.json", value)
-    required = {"schema_version", "bundle_id", "window", "event_refs", "entity_refs", "aggregation", "telemetry_capability_refs", "raw_evidence_refs", "feature_generation_refs", "correlation_context", "ground_truth_included", DIGEST_FIELD}
+    required = {"schema_version", "bundle_id", "window", "temporal_summary", "event_refs", "entity_refs", "aggregation", "telemetry_capability_refs", "raw_evidence_refs", "feature_generation_refs", "correlation_context", "ground_truth_included", DIGEST_FIELD}
     _require_closed(value, required, required, "observation_bundle_v1")
     if value["schema_version"] != "observation_bundle_v1" or value["ground_truth_included"] is not False:
         raise ContractError("observation identity or ground-truth boundary mismatch")
@@ -160,6 +160,12 @@ def validate_observation_bundle(value: dict[str, Any], *, events: Iterable[dict[
         raise ContractError("observation event references mismatch")
     supplied = {event["event_id"]: event for event in events}
     if supplied:
+        event_times = [event["temporal"]["event_timestamp"] for event in supplied.values()]
+        ingest_times = [event["temporal"]["ingest_timestamp"] for event in supplied.values()]
+        if _parse_time(value["window"]["start"]) > _parse_time(min(event_times)) or _parse_time(value["window"]["end"]) < _parse_time(max(event_times)):
+            raise ContractError("observation event-time window mismatch")
+        if value["temporal_summary"] != {"event_time": max(event_times), "ingest_time": max(ingest_times)}:
+            raise ContractError("observation temporal summary mismatch")
         for ref in refs:
             event = supplied.get(ref["event_id"])
             if event is None or ref[DIGEST_FIELD] != event[DIGEST_FIELD]:

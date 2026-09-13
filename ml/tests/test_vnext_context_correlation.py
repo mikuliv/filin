@@ -18,7 +18,7 @@ from tools.vnext.correlation import (
 from tools.vnext.detection import detect
 from tools.vnext.features import build_feature_bundle
 from tools.vnext.graph import EDGE_TYPES, GRAPH_FEATURES, attach_reasoning_nodes, build_interaction_graph, graph_feature_values, validate_interaction_graph
-from tools.vnext.telemetry import verify_digest
+from tools.vnext.telemetry import verify_digest, with_digest
 from tools.vnext.scenarios.registry import load_wave1_registry
 from tools.vnext.scenarios.runtime import run_smoke
 
@@ -48,6 +48,12 @@ def _set_group(bundle, group_id: str, values: dict[str, float]):
 def _context(entity_id: str, at: str, *fact_types: str):
     facts = [build_context_fact(entity_id, kind, True, source="engineering_asset_registry", provenance={"record_ref":f"asset/{index}"}, trust="DECLARED_HIGH_TRUST", first_seen=at, last_seen=at) for index, kind in enumerate(fact_types)]
     return build_context_profile(facts, at)
+
+
+def _retime_observation(observation, event_time, ingest_time):
+    base = {key: deepcopy(value) for key, value in observation.items() if key not in {"bundle_id", "canonical_digest"}}
+    base["temporal_summary"] = {"event_time": event_time, "ingest_time": ingest_time}
+    return with_digest(base, id_field="bundle_id", id_prefix="obs")
 
 
 def test_entity_identity_is_deterministic_namespace_and_provenance_aware():
@@ -102,6 +108,16 @@ def test_graph_canonicalization_digest_and_typed_edges():
     with pytest.raises(ContractError): validate_interaction_graph(broken)
 
 
+def test_graph_ephemeral_entities_never_claim_canonical_identity():
+    _, _, _, graph, *_ = _pipeline("scenario_web_path_enumeration")
+    entities = [row for row in graph["nodes"] if row["node_type"] == "entity"]
+    ephemeral = [row for row in entities if row["identity_scope"] == "ephemeral_graph_projection"]
+    assert ephemeral and all(row["node_id"].startswith("eph_") and row["canonical_ref"] is None for row in ephemeral)
+    assert all(row["canonical_ref"] is None for row in entities)
+    broken = deepcopy(graph); broken["nodes"][next(index for index, row in enumerate(broken["nodes"]) if row["node_type"] == "entity")]["canonical_ref"] = "claimed-canonical-id"
+    with pytest.raises(ContractError): validate_interaction_graph(broken)
+
+
 def test_temporal_edges_accumulate_across_windows():
     _, _, _, graph, *_ = _pipeline("scenario_health_checks")
     assert any(row["edge_type"] == "PRECEDES" for row in graph["edges"])
@@ -121,6 +137,19 @@ def test_correlation_is_deterministic_and_preserves_unknown():
     first = correlate(observations, features, detections, graph, None)
     second = correlate(observations, features, detections, graph, None)
     assert first == second and first["abstention"]["final_state"] == "UNKNOWN"
+
+
+@pytest.mark.parametrize(("event_time", "ingest_time", "watermark", "expected"), [
+    ("2026-01-01T00:00:10Z", "2026-01-01T00:00:11Z", "2026-01-01T00:00:10Z", "ON_TIME"),
+    ("2026-01-01T00:00:08Z", "2026-01-01T00:00:11Z", "2026-01-01T00:00:10Z", "LATE_ACCEPTED"),
+    ("2026-01-01T00:00:01Z", "2026-01-01T00:00:11Z", "2026-01-01T00:00:10Z", "TOO_LATE"),
+    ("2026-01-01T00:00:08Z", None, "2026-01-01T00:00:10Z", "UNKNOWN_ORDER"),
+])
+def test_correlate_distinguishes_event_ingest_and_watermark(event_time, ingest_time, watermark, expected):
+    _, observations, _, graph, features, detections = _pipeline("scenario_health_checks")
+    observations = [_retime_observation(row, event_time, ingest_time) for row in observations]
+    result = correlate(observations, features, detections, graph, None, allowed_lateness_seconds=5, watermark=watermark)
+    assert result["ordering_statuses"] == [expected]
 
 
 def test_local_unknown_can_be_improved_by_multi_window_evidence():

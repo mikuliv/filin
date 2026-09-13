@@ -5,8 +5,9 @@ from copy import deepcopy
 
 import pytest
 
+import tools.vnext.detection as detection_module
 from tools.vnext.contracts import CONTRACT_ROOT, ContractError, canonical_digest, load_json
-from tools.vnext.detection import detect, validate_detector_registry, validate_observability_matrix
+from tools.vnext.detection import HeuristicDetector, detect, validate_detector_registry, validate_observability_matrix
 from tools.vnext.features import (
     AUTH_FEATURES, DNS_FEATURES, HTTP_FEATURES, TEMPORAL_FEATURES, authentication_features,
     build_feature_bundle, dns_features, http_features, legacy_network_group,
@@ -39,6 +40,15 @@ def _dns_event(template, index, timestamp, name, response="NOERROR"):
     base["action"] = {"name": "resolve", "outcome": "failure" if response == "NXDOMAIN" else "success", "status": response}
     base["payload"] = {"namespace": "dns.query", "question_name": name, "question_type": "A", "response_code": response, "answers": [] if response == "NXDOMAIN" else ["192.0.2.10"]}
     value = with_digest(base, id_field="event_id", id_prefix="evt"); return validate_normalized_event(value)
+
+
+class _FixedDetector:
+    def __init__(self, detector_id, scores):
+        self.detector_id = detector_id
+        self.scores = scores
+
+    def evaluate(self, feature_bundle, configuration=None):
+        return {"detector_id": self.detector_id, "scores": self.scores, "evidence": [], "distance": None, "artifact_digest": canonical_digest(self.scores)}
 
 
 def test_provider_registries_and_observability_matrix_are_machine_valid():
@@ -143,6 +153,45 @@ def test_counterfactual_explanations_do_not_reduce_to_request_rate(samples):
 def test_unknown_detector_and_invalid_legacy_vector_are_rejected(samples):
     with pytest.raises(ContractError): detect(_bundle(samples["scenario_periodic_beacon"]), {"detector_ids":["missing_detector"]})
     with pytest.raises(ContractError): legacy_network_group(samples["scenario_periodic_beacon"]["observation_bundle"], samples["scenario_periodic_beacon"]["events"], [0.0]*50)
+
+
+@pytest.mark.parametrize(("scores", "expected"), [
+    ({"malicious.reconnaissance.web_path_enumeration": .9}, "suspicious"),
+    ({"benign.operations.monitoring": .9}, "benign_like"),
+    ({}, "insufficient_evidence"),
+    ({"malicious.reconnaissance.web_path_enumeration": .80, "benign.operations.monitoring": .75}, "insufficient_evidence"),
+])
+def test_suspiciousness_uses_taxonomy_disposition_and_abstains_on_ambiguity(samples, monkeypatch, scores, expected):
+    monkeypatch.setattr(detection_module, "DETECTORS", (_FixedDetector("fixed_detector", scores),))
+    result, _ = detect(_bundle(samples["scenario_health_checks"]))
+    assert result["stages"]["suspiciousness"] == expected
+    if expected == "insufficient_evidence":
+        assert result["abstention"]["abstained"]
+
+
+def test_authentication_evidence_direction_matches_reference_and_score_input(samples):
+    bundle = _bundle(samples["scenario_credential_brute_force"])
+    auth = next(group for group in bundle["groups"] if group["group_id"] == "authentication_v1")
+    auth["values"].update({"failure_ratio": .2, "unique_accounts": 1, "max_account_concentration": 1, "attempt_count": 4})
+    output = HeuristicDetector().evaluate(bundle)
+    evidence = next(row for row in output["evidence"] if row["template_key"] == "auth_failure_ratio_high")
+    assert evidence["observed_value"] == .2 and evidence["reference"] == ">=0.75" and evidence["direction"] == "contradicts"
+    assert output["scores"]["malicious.credential_abuse.brute_force"] == pytest.approx(.2)
+
+
+def test_detector_selection_is_identifier_based_and_preserves_requested_order(samples):
+    bundle = _bundle(samples["scenario_periodic_beacon"])
+    heuristic = "vnext_heuristic_baseline_v1"; prototype = "vnext_prototype_distance_baseline_v1"
+    heuristic_only, _ = detect(bundle, {"detector_ids": [heuristic]})
+    prototype_only, _ = detect(bundle, {"detector_ids": [prototype]})
+    combined, _ = detect(bundle, {"detector_ids": [heuristic, prototype]})
+    reversed_result, _ = detect(bundle, {"detector_ids": [prototype, heuristic]})
+    assert [row["detector_id"] for row in heuristic_only["detector_outputs"]] == [heuristic]
+    assert "excessive_prototype_distance" not in heuristic_only["abstention"]["reasons"]
+    assert prototype_only["abstention"]["signals"]["nearest_distance"] == prototype_only["detector_outputs"][0]["distance"]
+    assert [row["detector_id"] for row in combined["detector_outputs"]] == [heuristic, prototype]
+    assert [row["detector_id"] for row in reversed_result["detector_outputs"]] == [prototype, heuristic]
+    with pytest.raises(ContractError): detect(bundle, {"detector_ids": [heuristic, "missing_detector"]})
 
 
 def test_engineering_corpus_is_explicitly_non_scientific_and_held_out():

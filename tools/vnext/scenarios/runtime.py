@@ -367,7 +367,9 @@ def _normalize(records: tuple[dict[str, Any], ...], raw: dict[str, Any]) -> list
 
 def _bundle(events: list[dict[str, Any]], raw: dict[str, Any]) -> dict[str, Any]:
     times = [event["temporal"]["event_timestamp"] for event in events]
+    ingest_times = [event["temporal"]["ingest_timestamp"] for event in events]
     base = {"schema_version": "observation_bundle_v1", "window": {"start": min(times), "end": max(times), "ordering_domain": "wave1-loopback"},
+            "temporal_summary": {"event_time": max(times), "ingest_time": max(ingest_times)},
             "event_refs": [{"event_id": row["event_id"], "canonical_digest": row["canonical_digest"]} for row in events], "entity_refs": [],
             "aggregation": {"method": "execution_window", "builder": "wave1_observation_builder", "builder_version": "v1", "causal": True, "event_count": len(events)},
             "telemetry_capability_refs": sorted({row["event_type"] for row in events}), "raw_evidence_refs": [{"evidence_id": raw["evidence_id"], "sha256": raw["sha256"]}],

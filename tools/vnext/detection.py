@@ -5,7 +5,7 @@ import math
 from collections import defaultdict
 from typing import Any, Protocol
 
-from .contracts import CONTRACT_ROOT, ContractError, canonical_digest, load_json, validate_json_schema_instance
+from .contracts import CONTRACT_ROOT, ContractError, canonical_digest, load_json, validate_json_schema_instance, validate_taxonomy
 from .features import validate_feature_bundle
 from .telemetry import GROUND_TRUTH_KEYS, verify_digest, with_digest
 
@@ -24,6 +24,11 @@ def _evidence(feature: str, value: float | str | bool | None, reference: str, di
     digest = canonical_digest(base); return {"evidence_id": "evidence_" + digest, **base}
 
 
+def _taxonomy_dispositions() -> dict[str, str]:
+    taxonomy = validate_taxonomy(load_json(CONTRACT_ROOT / "behavior_taxonomy_v1.json"))
+    return {row["node_id"]: row["disposition"] for row in taxonomy["nodes"]}
+
+
 class HeuristicDetector:
     detector_id = "vnext_heuristic_baseline_v1"
     def evaluate(self, feature_bundle, configuration=None):
@@ -34,7 +39,7 @@ class HeuristicDetector:
             scores["malicious.credential_abuse.brute_force"] = failure * concentration * min(1.0, attempts/4)
             scores["malicious.credential_abuse.password_spraying"] = failure * min(1.0, accounts/4) * (1-concentration)
             scores["benign.authentication"] = failure * (0.65 if attempts <= 3 else 0.3)
-            evidence += [_evidence("authentication_v1.failure_ratio", failure, ">=0.75", "supports", "malicious.credential_abuse.brute_force", "auth_failure_ratio_high"), _evidence("authentication_v1.unique_accounts", accounts, ">=3", "supports" if accounts >= 3 else "contradicts", "malicious.credential_abuse.password_spraying", "auth_account_fanout"), _evidence("authentication_v1.attempt_count", attempts, "<=3", "supports" if attempts <= 3 else "contradicts", "benign.authentication", "auth_small_retry_set")]
+            evidence += [_evidence("authentication_v1.failure_ratio", failure, ">=0.75", "supports" if failure >= .75 else "contradicts", "malicious.credential_abuse.brute_force", "auth_failure_ratio_high"), _evidence("authentication_v1.unique_accounts", accounts, ">=3", "supports" if accounts >= 3 else "contradicts", "malicious.credential_abuse.password_spraying", "auth_account_fanout"), _evidence("authentication_v1.attempt_count", attempts, "<=3", "supports" if attempts <= 3 else "contradicts", "benign.authentication", "auth_small_retry_set")]
         http = groups.get("http_behavior_v1")
         temporal = groups.get("temporal_v1")
         if http:
@@ -96,8 +101,10 @@ def detect(feature_bundle: dict[str, Any], configuration: dict[str, Any] | None 
     _assert_prediction_input(feature_bundle); validate_feature_bundle(feature_bundle)
     configuration = configuration or {}
     requested = configuration.get("detector_ids", [detector.detector_id for detector in DETECTORS])
-    selected = [detector for detector in DETECTORS if detector.detector_id in requested]
-    if not selected or {detector.detector_id for detector in selected} != set(requested): raise ContractError("detector capability mismatch")
+    registry = {detector.detector_id: detector for detector in DETECTORS}
+    if not requested or len(requested) != len(set(requested)) or any(detector_id not in registry for detector_id in requested):
+        raise ContractError("detector capability mismatch")
+    selected = [registry[detector_id] for detector_id in requested]
     outputs = [detector.evaluate(feature_bundle, configuration) for detector in selected]
     combined: dict[str, list[float]] = defaultdict(list)
     evidence_by_id = {}
@@ -107,16 +114,25 @@ def detect(feature_bundle: dict[str, Any], configuration: dict[str, Any] | None 
     ranked = sorted(((node, sum(scores)/len(scores)) for node,scores in combined.items()), key=lambda item: (-item[1], item[0]))
     available = {group["group_id"] for group in feature_bundle["groups"] if group["status"] == "AVAILABLE"}
     top = ranked[0][1] if ranked else 0.0; second = ranked[1][1] if len(ranked)>1 else 0.0; margin = top-second
-    nearest_distance = outputs[1]["distance"] if len(outputs)>1 else None
+    prototype_output = next((output for output in outputs if output["detector_id"] == PrototypeDistanceDetector.detector_id), None)
+    nearest_distance = prototype_output["distance"] if prototype_output else None
     top_by_detector = [max(output["scores"], key=output["scores"].get) for output in outputs if output["scores"]]
     disagreement = len(set(top_by_detector)) > 1
     reasons=[]
     if not available.intersection({"authentication_v1","http_behavior_v1"}): reasons.append("insufficient_telemetry")
     if margin < .12: reasons.append("low_hypothesis_margin")
-    if nearest_distance is None or nearest_distance > .42: reasons.append("excessive_prototype_distance")
+    if prototype_output and (nearest_distance is None or nearest_distance > .42): reasons.append("excessive_prototype_distance")
     if disagreement: reasons.append("detector_disagreement")
     abstained = bool(reasons); known = not abstained and bool(ranked)
-    suspicious = "insufficient_evidence" if not ranked else ("suspicious" if top >= .45 else "benign_like")
+    disposition = _taxonomy_dispositions().get(ranked[0][0]) if ranked else None
+    if not ranked or top < .45 or (len(ranked) > 1 and margin < .12):
+        suspicious = "insufficient_evidence"
+    elif disposition == "malicious":
+        suspicious = "suspicious"
+    elif disposition in {"benign", "dual_use"}:
+        suspicious = "benign_like"
+    else:
+        suspicious = "insufficient_evidence"
     hypotheses=[]
     for rank,(node,score) in enumerate(ranked[:5],1):
         refs=[item["evidence_id"] for item in evidence_by_id.values() if item["linked_hypothesis"] == node]

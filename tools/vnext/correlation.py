@@ -8,7 +8,7 @@ from typing import Any
 from .context import context_fact_state, ordering_status
 from .contracts import ContractError, canonical_digest, validate_json_schema_instance
 from .graph import validate_interaction_graph
-from .telemetry import verify_digest, with_digest
+from .telemetry import validate_observation_bundle, verify_digest, with_digest
 
 
 FORBIDDEN_CORRELATION_KEYS = {"scenario_id", "scenario_variant", "generator_id", "generator_family", "expected_taxonomy_node", "sealed_ground_truth", "ground_truth", "ground_truth_ref", "realization_id", "realization_metadata", "attack_label", "label_id"}
@@ -39,10 +39,11 @@ def _active_context(context: dict[str, Any] | None, fact_type: str, as_of: str) 
     return [fact for fact in context["facts"] if fact["fact_type"] == fact_type and context_fact_state(fact, as_of, stale_after_seconds=86400) == "ACTIVE"]
 
 
-def correlate(observations: list[dict[str, Any]], features: list[dict[str, Any]], detections: list[dict[str, Any]], graph: dict[str, Any], context: dict[str, Any] | None, *, allowed_lateness_seconds: float = 10) -> dict[str, Any]:
+def correlate(observations: list[dict[str, Any]], features: list[dict[str, Any]], detections: list[dict[str, Any]], graph: dict[str, Any], context: dict[str, Any] | None, *, allowed_lateness_seconds: float = 10, watermark: str | None = None) -> dict[str, Any]:
     if not (len(observations) == len(features) == len(detections)) or len(observations) < 2:
         raise ContractError("correlation requires aligned multiple windows")
     assert_correlation_leakage_free([observations, features, detections, graph, context]); validate_interaction_graph(graph)
+    for observation in observations: validate_observation_bundle(observation)
     network = _groups(features, "network_context_v1"); temporal = _groups(features, "temporal_v1"); auth = _groups(features, "authentication_v1"); http = _groups(features, "http_behavior_v1"); graph_groups = _groups(features, "interaction_graph_v1")
     evidence: list[dict[str, Any]] = []; contradictions: list[dict[str, Any]] = []; scored: dict[str, float] = defaultdict(float)
     recurrence = _mean(network, "cross_window_recurrence"); port_fanout = max((row.get("port_fan_out", 0) for row in network), default=0); endpoint_stability = _mean(network, "endpoint_stability")
@@ -86,8 +87,9 @@ def correlate(observations: list[dict[str, Any]], features: list[dict[str, Any]]
     if len(ranked)>1 and margin < 0.12: reasons.append("ambiguous_hypotheses")
     if contradictions and ranked and ranked[0][0] == "benign_monitoring": reasons.append("context_drift")
     hypotheses = [{"hypothesis_id": name, "support_score": score, "evidence_refs": [row["evidence_id"] for row in evidence if (name.startswith("reconnaissance") and row["evidence_id"].startswith("corr_recon")) or (name.startswith("credential") and row["evidence_id"]=="corr_auth_failures") or (name.startswith("c2") and row["evidence_id"]=="corr_endpoint_persistence") or (name=="benign_monitoring" and row["evidence_id"]=="corr_context_role") or (name=="possible_lateral_activity" and row["evidence_id"]=="corr_auth_then_service")], "alternative": index>0} for index,(name,score) in enumerate(ranked)]
-    watermark = max(row["window"]["end"] for row in observations)
-    statuses = sorted({ordering_status(row["window"]["end"], row["window"]["end"], watermark, allowed_lateness_seconds) for row in observations})
+    event_times = [row["temporal_summary"]["event_time"] for row in observations if row["temporal_summary"]["event_time"]]
+    effective_watermark = watermark or (max(event_times) if event_times else None)
+    statuses = sorted({ordering_status(row["temporal_summary"]["event_time"], row["temporal_summary"]["ingest_time"], effective_watermark, allowed_lateness_seconds) for row in observations})
     temporal_relations = [{"relation":"PRECEDES","left":a["bundle_id"],"right":b["bundle_id"]} for a,b in zip(observations, observations[1:])]
     entities = sorted({node["node_id"] for node in graph["nodes"] if node["node_type"] == "entity"})
     base = {"schema_version":"correlation_result_v1","linked_observations":[{"bundle_id":row["bundle_id"],"canonical_digest":row["canonical_digest"]} for row in observations],"linked_feature_bundles":[{"feature_bundle_id":row["feature_bundle_id"],"canonical_digest":row["canonical_digest"]} for row in features],"linked_detection_results":[{"result_id":row["result_id"],"canonical_digest":row["canonical_digest"]} for row in detections],"graph_ref":{"graph_id":graph["graph_id"],"canonical_digest":graph["canonical_digest"]},"context_ref":{"profile_id":context["profile_id"],"canonical_digest":context["canonical_digest"]} if context else None,"involved_entities":entities,"time_range":{"start":min(row["window"]["start"] for row in observations),"end":end},"hypotheses":hypotheses,"supporting_evidence":evidence,"contradictory_evidence":contradictions,"temporal_relations":temporal_relations,"support_score":top,"abstention":{"abstained":bool(reasons),"reasons":reasons,"final_state":"UNKNOWN" if reasons else "CONTEXTUAL_HYPOTHESIS"},"maturity":"implemented","ordering_statuses":statuses}
