@@ -3351,11 +3351,10 @@
     {
       "path": "docs/audit/protected-documentation-digest-correction-v2.json",
       "sha256": "5e65b1635c54de9d38f48b26d6be78e15fa13bee66562eb0f9352b7d263cd920",
-      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
-      "first_date": null,
-      "first_author": "Руслан Покатилов",
-      "first_author_email": null,
-      "introduction": "current_maintenance_worktree",
+      "first_commit": "2e1fad73c753a46c0af0071ded3b5e48c2262fb2",
+      "first_date": "2026-09-21T23:16:02+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
@@ -3396,11 +3395,10 @@
     {
       "path": "docs/audit/v0_3_15_3-digest-correction-v1.json",
       "sha256": "e84dbf4a895ed0c5734c62d4ab02d65cb16eb0006a3ee747c4ff80272834c7a2",
-      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
-      "first_date": null,
-      "first_author": "Руслан Покатилов",
-      "first_author_email": null,
-      "introduction": "current_maintenance_worktree",
+      "first_commit": "2e1fad73c753a46c0af0071ded3b5e48c2262fb2",
+      "first_date": "2026-09-21T23:16:02+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
@@ -4980,7 +4978,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "1608e45c0d80c222801b61caf329ed14f25b34d79c96466e7a257c44d689c434",
+      "sha256": "4b09f69651b084c48cff878994af2468dff6f927075218c2356e08c6614ba4e2",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -5036,11 +5034,10 @@
     {
       "path": "docs/licensing/frozen-spdx-mapping-correction-v3.json",
       "sha256": "91e864074560cd2e74ee49b8e9a3118fd8ebe1e1fb3d4774e85410484d12325c",
-      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
-      "first_date": null,
-      "first_author": "Руслан Покатилов",
-      "first_author_email": null,
-      "introduction": "current_maintenance_worktree",
+      "first_commit": "2e1fad73c753a46c0af0071ded3b5e48c2262fb2",
+      "first_date": "2026-09-21T23:16:02+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
@@ -13737,7 +13734,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "174b9c210abb6d2071da7c586f56490d371e1685734e71c373154c1334d39f93",
+      "sha256": "59232d1b4dc092757927c3676636134e5d447181a29c052ed4aca37ebe044534",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -33812,7 +33809,7 @@
     },
     {
       "path": "ml/tests/test_v037_data_access_guard.py",
-      "sha256": "e64b7d8b13c5c1a4899e9f221e5fe278ebe655b7bf03b94f178b2dd3e6abbf89",
+      "sha256": "2ad12b6161d014b2cb2a2d486b1ecb74146c9157085371caef74427551ac3702",
       "first_commit": "53773a991fd84d66cbe056979fe6182317a1ed03",
       "first_date": "2026-07-14T01:41:35+07:00",
       "first_author": "mikuliv",
@@ -34153,7 +34150,7 @@
     },
     {
       "path": "ml/tests/test_v038_data_access_guard.py",
-      "sha256": "cab7f8772f3a79c039721838a43a1255d63ee499dca9787542820559703420a9",
+      "sha256": "788ea274be08cc63a37e0a69059be4b57cabda2c1c4ed1bc3be909b06d1489d5",
       "first_commit": "bd8778f372c37f011838fd7659f42ce02c7f1c1c",
       "first_date": "2026-07-14T23:03:30+07:00",
       "first_author": "mikuliv",
@@ -35826,11 +35823,10 @@
     {
       "path": "tools/audit/build_v03153_digest_correction.py",
       "sha256": "bc8b60e2dc5a78ac5bb0ff7e6c4c7f6c09d329e20a16ae1520b481d805968120",
-      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
-      "first_date": null,
-      "first_author": "Руслан Покатилов",
-      "first_author_email": null,
-      "introduction": "current_maintenance_worktree",
+      "first_commit": "2e1fad73c753a46c0af0071ded3b5e48c2262fb2",
+      "first_date": "2026-09-21T23:16:02+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
