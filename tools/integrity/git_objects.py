@@ -123,6 +123,20 @@ def git_blob_bytes(root: Path, path: str, revision: str = "HEAD") -> bytes:
     return result.stdout
 
 
+def git_tree_blob_bytes(root: Path, path: str, revision: str) -> bytes:
+    """Читает blob из явно проверенного Git tree или commit tree."""
+    relative = _relative_path(path)
+    tree = git_tree(root, revision)
+    result = subprocess.run(
+        ["git", "cat-file", "blob", f"{tree}:{relative}"],
+        cwd=root,
+        capture_output=True,
+    )
+    if result.returncode:
+        raise GitObjectError(f"git_blob_unavailable:{tree}:{relative}")
+    return result.stdout
+
+
 def git_blob_sha256(root: Path, path: str, revision: str = "HEAD") -> str:
     relative = _relative_path(path)
     return git_blob_sha256_many(root, [relative], revision)[relative]

@@ -1748,7 +1748,7 @@
       "recommended_action": "maintain",
       "actual_action": "rewritten",
       "sha256_before": "13bf181e4b15e3f44b39087eaf626dfe52d0eda29050a77d44dff99220fb4cc6",
-      "sha256_after": "2bf0d821bbd56cd5ff5bc3d4899742b21d58e2acaa0aa472c194d9242bfda91c"
+      "sha256_after": "ede837b1c2d96041f555b72309db7eb286e3f71b97439146b74be40a0ca7c695"
     },
     {
       "path": "docs/audit/documentation_navigation_acceptance_v2.md",
@@ -8174,7 +8174,7 @@
       "recommended_action": "maintain",
       "actual_action": "created",
       "sha256_before": null,
-      "sha256_after": "dd389e654938ae807d229224f5de3e336dd0b7b2405750824be0c5a984dbf3d3"
+      "sha256_after": "62b3c2eab7e48e4f87c876fe71483ca79e00814619f0cdaf8d42258f7e6d7d2a"
     },
     {
       "path": "docs/licensing/frozen-spdx-mapping.md",

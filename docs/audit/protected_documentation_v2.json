@@ -1,5 +1,7 @@
 {
   "schema_version": "filin_protected_documentation_v2",
+  "digest_basis": "git_blob",
+  "digest_revision": "HEAD",
   "source_strategy": "manifests_ledgers_protocols_and_detached_sha",
   "files": [
     {
@@ -12917,7 +12919,7 @@
         "ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.yaml"
       ],
       "expected_sha256": "9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8",
-      "actual_sha256": "9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8",
+      "actual_sha256": "8ff7306bb439ab38573dce02c20c7743f28af3773a5b1acd8ce2d37eebe60578",
       "current_sha256": "9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8",
       "manifest_sha_matches": true,
       "mutable": false
@@ -13167,7 +13169,7 @@
         "ml/reports/v0_3_15_3/v0_3_15_3_bundle_manifest.yaml"
       ],
       "expected_sha256": "c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c",
-      "actual_sha256": "c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c",
+      "actual_sha256": "6ef1a5baba243703080f4da495b4b88dd0076a4c4d8eb34aa761699418174b21",
       "current_sha256": "c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c",
       "manifest_sha_matches": true,
       "mutable": false

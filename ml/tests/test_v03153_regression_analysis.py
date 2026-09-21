@@ -8,7 +8,12 @@ import yaml
 
 from collectors.shadow.diagnostic_evidence import LATENCY_STAGES, LatencyTrace, capture_synthetic_ack, instrumentation_equivalent, normalized_cpu_sample, privacy_findings
 from tools.audit.validate_v03153_artifacts import validate as validate_artifacts
-from tools.audit.validate_v03153_bundle import validate as validate_bundle
+from tools.audit.validate_v03153_bundle import (
+    CRLF_TRANSFORMATION,
+    CorrectionError,
+    validate as validate_bundle,
+    validate_declared_correction,
+)
 
 ROOT=Path(__file__).resolve().parents[2]; REPORT=ROOT/"ml/reports/v0_3_15_3"
 
@@ -105,3 +110,71 @@ def test_22_documentation_consistency(): assert load("documentation_consistency_
 
 
 def test_23_artifact_exclusion(): assert validate_artifacts(ROOT)["artifact_exclusion_validator_passed"]
+
+
+def correction_entry(canonical: bytes, *, scope: str = "artifact") -> dict:
+    import hashlib
+    historical = canonical.replace(b"\n", b"\r\n")
+    return {
+        "package_version": "v0.3.15.3",
+        "path": "fixture.txt",
+        "scope": scope,
+        "historical_sha256": hashlib.sha256(historical).hexdigest(),
+        "canonical_git_blob_sha256": hashlib.sha256(canonical).hexdigest(),
+        "historical_size": len(historical),
+        "canonical_size": len(canonical),
+        "transformation": CRLF_TRANSFORMATION,
+        "status": "accepted",
+    }
+
+
+def test_24_explicit_historical_mapping():
+    canonical = b"first\nsecond\n"
+    entry = correction_entry(canonical)
+    validate_declared_correction(entry, path="fixture.txt", scope="artifact", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)
+
+
+def test_25_unknown_correction_rejected():
+    canonical = b"first\nsecond\n"
+    entry = correction_entry(canonical)
+    with pytest.raises(CorrectionError, match="correction_missing"):
+        validate_declared_correction(None, path="fixture.txt", scope="artifact", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)
+
+
+def test_26_wrong_historical_digest_rejected():
+    canonical = b"first\nsecond\n"
+    entry = correction_entry(canonical)
+    with pytest.raises(CorrectionError, match="historical_sha256"):
+        validate_declared_correction(entry, path="fixture.txt", scope="artifact", historical_sha256="0" * 64, historical_size=entry["historical_size"], canonical=canonical)
+
+
+def test_27_wrong_canonical_digest_rejected():
+    canonical = b"first\nsecond\n"
+    entry = correction_entry(canonical)
+    entry["canonical_git_blob_sha256"] = "0" * 64
+    with pytest.raises(CorrectionError, match="canonical_git_blob_sha256"):
+        validate_declared_correction(entry, path="fixture.txt", scope="artifact", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)
+
+
+def test_28_wrong_size_rejected():
+    canonical = b"first\nsecond\n"
+    entry = correction_entry(canonical)
+    entry["canonical_size"] += 1
+    with pytest.raises(CorrectionError, match="canonical_size"):
+        validate_declared_correction(entry, path="fixture.txt", scope="artifact", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)
+
+
+def test_29_arbitrary_newline_normalization_forbidden():
+    import hashlib
+    canonical = b"first\nsecond\n"
+    historical = canonical.replace(b"\n", b"\r\n")
+    with pytest.raises(CorrectionError, match="correction_missing"):
+        validate_declared_correction(None, path="fixture.txt", scope="artifact", historical_sha256=hashlib.sha256(historical).hexdigest(), historical_size=len(historical), canonical=canonical)
+
+
+def test_30_detached_manifest_uses_same_correction_contract():
+    canonical = b"schema_version: fixture\n"
+    entry = correction_entry(canonical, scope="detached_manifest")
+    validate_declared_correction(entry, path="fixture.txt", scope="detached_manifest", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)
+    with pytest.raises(CorrectionError, match="scope"):
+        validate_declared_correction(entry, path="fixture.txt", scope="artifact", historical_sha256=entry["historical_sha256"], historical_size=entry["historical_size"], canonical=canonical)

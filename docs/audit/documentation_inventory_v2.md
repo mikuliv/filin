@@ -58,7 +58,7 @@
 | `docs/architecture/storage-and-artifacts.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `ad149485cfc2` | `65c0fdd2afa7` |
 | `docs/architecture/trust-boundaries.md` | `Авторитетный текущий документ` | `current` | `current` | нет | `rewritten` | `1f133afa2697` | `5a0ad4d04e37` |
 | `docs/audit/documentation_inventory.md` | `Redirect-документ` | `redirect` | `current` | нет | `redirected` | `c23a3c126926` | `5dd51395480d` |
-| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `2bf0d821bbd5` |
+| `docs/audit/documentation_inventory_v2.md` | `Генерируемый индекс или представление` | `generated` | `current` | нет | `rewritten` | `13bf181e4b15` | `ede837b1c2d9` |
 | `docs/audit/documentation_navigation_acceptance_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `1839146eb403` | `0a2128eb392b` |
 | `docs/audit/documentation_path_migration_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `cb437745bba4` | `800dda44df9e` |
 | `docs/audit/documentation_refactor_plan_v2.md` | `Историческое описание` | `historical` | `historical` | нет | `rewritten` | `8ca9d2c1f48b` | `acca03b47388` |
@@ -210,7 +210,7 @@
 | `docs/licensing/copyright-provenance.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `52f2887c183b` |
 | `docs/licensing/distribution-profiles.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `dfbca853f253` |
 | `docs/licensing/file-provenance-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `95c3b5224a3f` |
-| `docs/licensing/frozen-evidence.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `dd389e654938` |
+| `docs/licensing/frozen-evidence.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `62b3c2eab7e4` |
 | `docs/licensing/frozen-spdx-mapping.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `6963d16c083e` |
 | `docs/licensing/git-authorship-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `fe3d5ed59416` |
 | `docs/licensing/historical-backend-audit.md` | `Текущий справочный документ` | `current` | `current` | нет | `created` | `—` | `d35ef88f78d9` |

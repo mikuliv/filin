@@ -1,7 +1,7 @@
 {
   "history_scope": "all refs",
-  "tracked_file_count": 3418,
-  "provenance_record_count": 3418,
+  "tracked_file_count": 3422,
+  "provenance_record_count": 3422,
   "review_required_count": 0,
   "files": [
     {
@@ -28,7 +28,7 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "sha256": "650401f62b110d6d545e8df8c0d395b88fcea1470567b53182ee838ef92dab98",
+      "sha256": "752f39f34d2a43763359ceeb10846219179d8221e9c92d35638f693537a4ff48",
       "first_commit": "efe86029dca2e732765464a833173f3ab48a9e15",
       "first_date": "2026-07-12T18:24:10+07:00",
       "first_author": "mikuliv",
@@ -3218,7 +3218,7 @@
     },
     {
       "path": "docs/audit/documentation_inventory_v2.json",
-      "sha256": "8391a959d484a44af1e592d2ca4cc2037fb7e1173b447b8df773c056137a793f",
+      "sha256": "921156f86a79a435b01e6f43855ae01b8399a7d57d7efa94a30fc32253798ba9",
       "first_commit": "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63",
       "first_date": "2026-07-27T13:47:55+07:00",
       "first_author": "mikuliv",
@@ -3229,7 +3229,7 @@
     },
     {
       "path": "docs/audit/documentation_inventory_v2.md",
-      "sha256": "ede837b1c2d96041f555b72309db7eb286e3f71b97439146b74be40a0ca7c695",
+      "sha256": "98b65a1f26e2afcdafb7b88ed0f03719df0432b9a78ea9b52d6c95d3dfd523ae",
       "first_commit": "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63",
       "first_date": "2026-07-27T13:47:55+07:00",
       "first_author": "mikuliv",
@@ -3339,8 +3339,8 @@
     },
     {
       "path": "docs/audit/protected-documentation-digest-correction-v1.json",
-      "sha256": "9f18ef9b78860e0db79b2bfa4ba9fa19ed0747d4458eb26a3e4f40379c83d11f",
-      "first_commit": "8e294f06e62452c9216c61e6cb8eb8a89523b37c",
+      "sha256": "d7a2dfd8dbe3994ea349bf69462c2102535021be2a572777d678669d9e40ec98",
+      "first_commit": "7024242e06b25870d72b38fe7703abd7ac6597af",
       "first_date": "2026-09-13T16:26:36+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
@@ -3349,8 +3349,20 @@
       "review_required": false
     },
     {
+      "path": "docs/audit/protected-documentation-digest-correction-v2.json",
+      "sha256": "5e65b1635c54de9d38f48b26d6be78e15fa13bee66562eb0f9352b7d263cd920",
+      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
+      "first_date": null,
+      "first_author": "Руслан Покатилов",
+      "first_author_email": null,
+      "introduction": "current_maintenance_worktree",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
       "path": "docs/audit/protected_documentation_v2.json",
-      "sha256": "b81ba0c45efc012acdcbd295c30de3f38bda89b1d7abb81cc0b07b22450124fc",
+      "sha256": "901c03154197383379a20748f94446fd53e1fe0bd4958528750ff3466f0e7776",
       "first_commit": "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63",
       "first_date": "2026-07-27T13:47:55+07:00",
       "first_author": "mikuliv",
@@ -3377,6 +3389,18 @@
       "first_date": "2026-07-29T21:18:48+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
+      "path": "docs/audit/v0_3_15_3-digest-correction-v1.json",
+      "sha256": "e84dbf4a895ed0c5734c62d4ab02d65cb16eb0006a3ee747c4ff80272834c7a2",
+      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
+      "first_date": null,
+      "first_author": "Руслан Покатилов",
+      "first_author_email": null,
+      "introduction": "current_maintenance_worktree",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
@@ -4956,7 +4980,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "d67c729789758ebe5f9279bd8662a8a0e6d3995dbf2eb478762165123afad1bc",
+      "sha256": "1608e45c0d80c222801b61caf329ed14f25b34d79c96466e7a257c44d689c434",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -4978,7 +5002,7 @@
     },
     {
       "path": "docs/licensing/frozen-evidence.md",
-      "sha256": "dd389e654938ae807d229224f5de3e336dd0b7b2405750824be0c5a984dbf3d3",
+      "sha256": "62b3c2eab7e48e4f87c876fe71483ca79e00814619f0cdaf8d42258f7e6d7d2a",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -5000,11 +5024,23 @@
     },
     {
       "path": "docs/licensing/frozen-spdx-mapping-correction-v2.json",
-      "sha256": "bcdd80989c74608d2d57328b426494ecfd3777340c206f5f332e94c24b4343f6",
-      "first_commit": "8e294f06e62452c9216c61e6cb8eb8a89523b37c",
+      "sha256": "52bfc672d940da835f20f49dffdb4073670ccf80646eabef39d30669c9dfed0c",
+      "first_commit": "7024242e06b25870d72b38fe7703abd7ac6597af",
       "first_date": "2026-09-13T16:26:36+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
+      "path": "docs/licensing/frozen-spdx-mapping-correction-v3.json",
+      "sha256": "91e864074560cd2e74ee49b8e9a3118fd8ebe1e1fb3d4774e85410484d12325c",
+      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
+      "first_date": null,
+      "first_author": "Руслан Покатилов",
+      "first_author_email": null,
+      "introduction": "current_maintenance_worktree",
       "current_holder": "Руслан Покатилов",
       "third_party_markers": [],
       "review_required": false
@@ -5132,7 +5168,7 @@
     },
     {
       "path": "docs/licensing/licensing-campaign-results-v1-1.json",
-      "sha256": "22742c0b042fc1cd82d5d49579a72abca4922932c22d80fe6aafebc9824735c3",
+      "sha256": "830189f2c5d05258ade3974ebad7b2023f4c9f18d27ce099a0fb6c72c346a8eb",
       "first_commit": "07428d063da146147068655a98bc380ae737de01",
       "first_date": "2026-07-27T19:51:08+07:00",
       "first_author": "mikuliv",
@@ -13701,7 +13737,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "73bda69fc2d7d6e5fd9ae5b5d0ee97d5bd0c8c884b27d4a4d926bf0187bfb1b0",
+      "sha256": "174b9c210abb6d2071da7c586f56490d371e1685734e71c373154c1334d39f93",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -32841,7 +32877,7 @@
     },
     {
       "path": "ml/tests/test_v03153_regression_analysis.py",
-      "sha256": "9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8",
+      "sha256": "8ff7306bb439ab38573dce02c20c7743f28af3773a5b1acd8ce2d37eebe60578",
       "first_commit": "7d86bf9b7fd9a49699ce12b0f89965779c018401",
       "first_date": "2026-07-22T15:30:06+07:00",
       "first_author": "mikuliv",
@@ -35788,6 +35824,18 @@
       "review_required": false
     },
     {
+      "path": "tools/audit/build_v03153_digest_correction.py",
+      "sha256": "bc8b60e2dc5a78ac5bb0ff7e6c4c7f6c09d329e20a16ae1520b481d805968120",
+      "first_commit": "FINAL_LICENSING_COMMIT_SELF_REFERENCE",
+      "first_date": null,
+      "first_author": "Руслан Покатилов",
+      "first_author_email": null,
+      "introduction": "current_maintenance_worktree",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
       "path": "tools/audit/build_v040_manifest.py",
       "sha256": "ecb2cc15d4b8148756471f71c56e1b689ece669d5dbd67f63cbce8eaab62053c",
       "first_commit": "8313fa1f6046178d93a1b0a74cc2bd77fa45fbc2",
@@ -35932,7 +35980,7 @@
     },
     {
       "path": "tools/audit/validate_v03153_bundle.py",
-      "sha256": "c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c",
+      "sha256": "6ef1a5baba243703080f4da495b4b88dd0076a4c4d8eb34aa761699418174b21",
       "first_commit": "7d86bf9b7fd9a49699ce12b0f89965779c018401",
       "first_date": "2026-07-22T15:30:06+07:00",
       "first_author": "mikuliv",
@@ -35954,7 +36002,7 @@
     },
     {
       "path": "tools/audit/validate_v03154_bundle.py",
-      "sha256": "bbf62fb4f1982d7f11ef6870b74ed64b2031765bd53d69d467e188e9238e8fc8",
+      "sha256": "1ab228ef2e41cffe8477965e152c8be43376a2b650581b662ba4869cd025e8b8",
       "first_commit": "6ddba2c835a53679285b6afddcef3b74cb28d430",
       "first_date": "2026-07-22T16:35:30+07:00",
       "first_author": "mikuliv",
@@ -36196,8 +36244,8 @@
     },
     {
       "path": "tools/docs/build_protected_digest_correction.py",
-      "sha256": "b2996f28ae48b860605b73b814468f27d4adab15afd56a53d7c1ab81b70fef49",
-      "first_commit": "8e294f06e62452c9216c61e6cb8eb8a89523b37c",
+      "sha256": "3e3155f37ceb8fd2e4603b2cca932ca5c1d2fcfe50d4ca9cd0f9d1f49022bc19",
+      "first_commit": "7024242e06b25870d72b38fe7703abd7ac6597af",
       "first_date": "2026-09-13T16:26:36+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
@@ -36229,7 +36277,7 @@
     },
     {
       "path": "tools/docs/documentation_v2.py",
-      "sha256": "ebc358d4e001592ec9bab8952e1e98189ce2b334a2c7133fd97bff9bfae04bb8",
+      "sha256": "88ead29ef7380ea66e71aadc7522f240c224e703dabd8f2e009d888a7b39233c",
       "first_commit": "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63",
       "first_date": "2026-07-27T13:47:55+07:00",
       "first_author": "mikuliv",
@@ -36768,7 +36816,7 @@
     },
     {
       "path": "tools/integrity/git_objects.py",
-      "sha256": "69169ff207d70d16fc085bf7ae049b2ad5631f98b32110cd17fc60dcb54c17a2",
+      "sha256": "8b8fb4a4519c69d0f3bc18d8180b251291ed6030c1bc86b516ef68adea134e5c",
       "first_commit": "bb5f5d94ce7543d0a0b271e4deded2f16c487dd7",
       "first_date": "2026-09-13T16:19:17+07:00",
       "first_author": "mikuliv",
@@ -37197,8 +37245,8 @@
     },
     {
       "path": "tools/licensing/build_frozen_spdx_correction_v2.py",
-      "sha256": "05fd4fec643238aeee2ad11167725531f0e830c4cc4734df310cc40aa81c36cb",
-      "first_commit": "8e294f06e62452c9216c61e6cb8eb8a89523b37c",
+      "sha256": "25466e83da79d496596aa29a5f8b31df13ca1251025e6bf3d13eddbc32d7a669",
+      "first_commit": "7024242e06b25870d72b38fe7703abd7ac6597af",
       "first_date": "2026-09-13T16:26:36+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
@@ -37362,7 +37410,7 @@
     },
     {
       "path": "tools/licensing/validate_frozen_license_mapping.py",
-      "sha256": "613538c49d34e50a2bfe6f586cb69ae8d74c6b19069d1e768878bad568362342",
+      "sha256": "2817fb79a16e61cdad8bd525cd0c844a842896ecebc0f605aefa14f19ba957e3",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",

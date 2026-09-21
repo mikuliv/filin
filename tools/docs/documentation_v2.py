@@ -21,9 +21,26 @@ V044_HEAD = "80680bf8e890742e1c82929d7a2e8cd099a1b1ad"
 V044_MANIFEST = "bffe219e711c55a2154c242737c583a710f35934690b10545eabb39f35081d30"
 V044_SEMANTIC = "f8756b4d255f0e3a337c5d8b1543112eef2524eae2f006aaa18acd083166bcdb"
 CANDIDATE_ID = "v03154:65a3dd912d845bc1"
-PROTECTED_CORRECTION = "docs/audit/protected-documentation-digest-correction-v1.json"
-PROTECTED_CORRECTION_SOURCE = "bb5f5d94ce7543d0a0b271e4deded2f16c487dd7"
 PROTECTED_REGISTRY = "docs/audit/protected_documentation_v2.json"
+PROTECTED_CORRECTIONS = (
+    {
+        "path": "docs/audit/protected-documentation-digest-correction-v1.json",
+        "schema": "filin_protected_documentation_digest_correction_v1",
+        "source": "bb5f5d94ce7543d0a0b271e4deded2f16c487dd7",
+        "count": 24,
+        "superseded": {"tools/audit/validate_v03154_bundle.py"},
+    },
+    {
+        "path": "docs/audit/protected-documentation-digest-correction-v2.json",
+        "schema": "filin_protected_documentation_digest_correction_v2",
+        "source": "7024242e06b25870d72b38fe7703abd7ac6597af",
+        "count": 2,
+        "superseded": {
+            "ml/tests/test_v03153_regression_analysis.py",
+            "tools/audit/validate_v03153_bundle.py",
+        },
+    },
+)
 
 LINK_RE = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
 HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$", re.MULTILINE)
@@ -259,38 +276,51 @@ def _resolve_manifest_path(root: Path, source: Path, raw: str, expected: str, re
 
 
 def protected_digest_corrections(root: Path = ROOT) -> tuple[dict[str, dict[str, Any]], list[str]]:
-    path = root / PROTECTED_CORRECTION
-    if not path.is_file():
-        return {}, ["protected_digest_correction_missing"]
-    try:
-        data = json.loads(path.read_text(encoding="utf-8"))
-        source_registry = json.loads(run_git("show", f"{PROTECTED_CORRECTION_SOURCE}:{PROTECTED_REGISTRY}", root=root))
-        source_sha = git_blob_sha256(root, PROTECTED_REGISTRY, PROTECTED_CORRECTION_SOURCE)
-        source_rows = {row["path"]: row for row in source_registry["files"]}
-        entries = data["entries"]
-        rows = {row["path"]: row for row in entries}
-        historical_paths = [relative for relative in rows if relative != "tools/audit/validate_v03154_bundle.py"]
-        canonical = git_blob_sha256_many(root, historical_paths, PROTECTED_CORRECTION_SOURCE)
-        canonical["tools/audit/validate_v03154_bundle.py"] = git_blob_sha256(
-            root, "tools/audit/validate_v03154_bundle.py", "HEAD"
-        )
-    except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError, GitObjectError, RuntimeError):
-        return {}, ["protected_digest_correction_invalid"]
     errors: list[str] = []
-    if data.get("schema_version") != "filin_protected_documentation_digest_correction_v1": errors.append("protected_digest_correction_schema")
-    if data.get("status") != "accepted" or data.get("digest_basis") != "git_blob": errors.append("protected_digest_correction_status")
-    if data.get("source_registry_commit") != PROTECTED_CORRECTION_SOURCE or data.get("source_registry_sha256") != source_sha: errors.append("protected_digest_correction_provenance")
-    if data.get("entry_count") != 24 or len(entries) != 24 or len(rows) != 24: errors.append("protected_digest_correction_count")
-    for relative, row in rows.items():
-        source = source_rows.get(relative, {})
-        expected_kind = "digest_basis_corrected" if relative.endswith(".sha256") else "protected_validator_superseded"
-        if (row.get("status") != "accepted" or row.get("correction_kind") != expected_kind
-                or row.get("old_stored_sha256") != source.get("actual_sha256")
-                or row.get("canonical_git_blob_sha256") != canonical.get(relative)):
-            errors.append(f"protected_digest_correction_entry:{relative}")
-        if not relative.endswith(".sha256") and relative != "tools/audit/validate_v03154_bundle.py":
-            errors.append(f"protected_digest_correction_scope:{relative}")
-    return (rows if not errors else {}), sorted(set(errors))
+    combined: dict[str, dict[str, Any]] = {}
+    current_tree = git_index_tree(root)
+    for specification in PROTECTED_CORRECTIONS:
+        path = root / specification["path"]
+        if not path.is_file():
+            errors.append(f"protected_digest_correction_missing:{specification['path']}")
+            continue
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+            source_commit = str(specification["source"])
+            source_registry = json.loads(run_git("show", f"{source_commit}:{PROTECTED_REGISTRY}", root=root))
+            source_sha = git_blob_sha256(root, PROTECTED_REGISTRY, source_commit)
+            source_rows = {row["path"]: row for row in source_registry["files"]}
+            entries = data["entries"]
+            rows = {row["path"]: row for row in entries}
+            superseded = set(specification["superseded"])
+            historical_paths = [relative for relative in rows if relative not in superseded]
+            canonical = git_blob_sha256_many(root, historical_paths, source_commit)
+            canonical.update(git_blob_sha256_many(root, sorted(superseded), current_tree))
+        except (OSError, UnicodeDecodeError, json.JSONDecodeError, KeyError, GitObjectError, RuntimeError):
+            errors.append(f"protected_digest_correction_invalid:{specification['path']}")
+            continue
+        if data.get("schema_version") != specification["schema"]:
+            errors.append(f"protected_digest_correction_schema:{specification['path']}")
+        if data.get("status") != "accepted" or data.get("digest_basis") != "git_blob":
+            errors.append(f"protected_digest_correction_status:{specification['path']}")
+        if data.get("source_registry_commit") != source_commit or data.get("source_registry_sha256") != source_sha:
+            errors.append(f"protected_digest_correction_provenance:{specification['path']}")
+        expected_count = int(specification["count"])
+        if data.get("entry_count") != expected_count or len(entries) != expected_count or len(rows) != expected_count:
+            errors.append(f"protected_digest_correction_count:{specification['path']}")
+        if set(rows) & set(combined):
+            errors.append(f"protected_digest_correction_duplicate:{specification['path']}")
+        for relative, row in rows.items():
+            source = source_rows.get(relative, {})
+            expected_kind = "protected_validator_superseded" if relative in superseded else "digest_basis_corrected"
+            if (row.get("status") != "accepted" or row.get("correction_kind") != expected_kind
+                    or row.get("old_stored_sha256") != source.get("actual_sha256")
+                    or row.get("canonical_git_blob_sha256") != canonical.get(relative)):
+                errors.append(f"protected_digest_correction_entry:{relative}")
+            if relative not in superseded and not relative.endswith(".sha256"):
+                errors.append(f"protected_digest_correction_scope:{relative}")
+        combined.update(rows)
+    return (combined if not errors else {}), sorted(set(errors))
 
 
 def build_protected_set(root: Path = ROOT) -> list[dict[str, Any]]:

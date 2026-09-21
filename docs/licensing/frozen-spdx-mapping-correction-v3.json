@@ -1,0 +1,37 @@
+{
+  "schema_version": "filin_frozen_spdx_mapping_correction_v3",
+  "status": "accepted",
+  "correction_date": "2026-09-13",
+  "source_mapping_commit": "801ff7bdc1868a58dab8bcc56fd584de516be493",
+  "source_mapping_sha256": "946fd44175a72f1f5ce10e96692578a8bf60c03aea3c2e3672561d09a9cfba49",
+  "superseding_commit": "FINAL_CI_PORTABILITY_COMMIT_SELF_REFERENCE",
+  "digest_basis": "git_blob",
+  "reason": "Явная замена валидатора и его regression-тестов для переносимой проверки v0.3.15.3 без изменения научных артефактов.",
+  "entry_count": 2,
+  "entries": [
+    {
+      "path": "ml/tests/test_v03153_regression_analysis.py",
+      "correction_kind": "protected_validator_superseded",
+      "old_stored_sha256": "9df52ad06049d60ddeae1e8d0918741f02df56b3320eb9428212d4b276ea39e8",
+      "old_digest_basis": "git_blob",
+      "canonical_git_blob_sha256": "8ff7306bb439ab38573dce02c20c7743f28af3773a5b1acd8ce2d37eebe60578",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "status": "accepted"
+    },
+    {
+      "path": "tools/audit/validate_v03153_bundle.py",
+      "correction_kind": "protected_validator_superseded",
+      "old_stored_sha256": "c189f36f958640e5383106966d99aa8cf758023c52ca4876efcd47c436cd593c",
+      "old_digest_basis": "git_blob",
+      "canonical_git_blob_sha256": "6ef1a5baba243703080f4da495b4b88dd0076a4c4d8eb34aa761699418174b21",
+      "license_expression": "MPL-2.0",
+      "copyright_holder": "Руслан Покатилов",
+      "file_type": "source_or_configuration",
+      "assignment_source": "reuse_toml",
+      "status": "accepted"
+    }
+  ]
+}

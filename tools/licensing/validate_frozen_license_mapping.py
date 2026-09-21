@@ -6,6 +6,7 @@ from .common import BACKEND_TREE, BASELINE, CANDIDATE, ROOT, canonical_sha256, c
 CORRECTIONS = (
  "docs/licensing/frozen-spdx-mapping-correction-v1.json",
  "docs/licensing/frozen-spdx-mapping-correction-v2.json",
+ "docs/licensing/frozen-spdx-mapping-correction-v3.json",
 )
 
 
