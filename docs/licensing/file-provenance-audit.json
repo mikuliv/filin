@@ -4978,7 +4978,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "4b09f69651b084c48cff878994af2468dff6f927075218c2356e08c6614ba4e2",
+      "sha256": "f560f3b8577dfca98bb76b50bfc7206609e8869f9d88b73540935174a6edd2e6",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -13734,7 +13734,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "59232d1b4dc092757927c3676636134e5d447181a29c052ed4aca37ebe044534",
+      "sha256": "966612da2beb1dcb83f01ae5285b64305378742caeda8001aa421efb720f3f92",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -34513,7 +34513,7 @@
     },
     {
       "path": "ml/tests/test_v039_data_access_guard.py",
-      "sha256": "46d2609fd8fac50d88e67c32179235a7799a71b584f89466373e5723113deddc",
+      "sha256": "7b8bc38cf3fd8edb2f29c46efb94186a8e5f046d4a068bce94ec2dd75443baf8",
       "first_commit": "e8739799299e957195bc3741330e3d4af669e405",
       "first_date": "2026-07-15T09:33:18+07:00",
       "first_author": "mikuliv",

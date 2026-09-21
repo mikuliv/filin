@@ -11,7 +11,8 @@ class TestGuard(unittest.TestCase):
   g=DataAccessGuard(ROOT,ROOT/'ml/experiments/v0_3_9/data_access_policy.yaml')
   # Digest rejection happens after canonical path resolution and before allowlist.
   g.forbidden_hashes.add('e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855')
-  with tempfile.TemporaryDirectory(dir=ROOT/'lab/output/datasets') as d:
+  datasets=ROOT/'lab/output/datasets';datasets.mkdir(parents=True,exist_ok=True)
+  with tempfile.TemporaryDirectory(dir=datasets) as d:
    p=Path(d)/'windows_network_sensor_v0_4_run_v039_train_copy.csv';p.write_bytes(b'')
    self.assertRaises(DataAccessError,g.open_dataset,p,purpose='training_rows')
  def test_validation_before_freeze_blocked(self):

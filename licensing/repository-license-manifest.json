@@ -4,7 +4,7 @@
   "baseline_commit": "4948af7434c8e7b38731d8df8aae0b3360f2badf",
   "digest_basis": "git_blob",
   "digest_revision": "HEAD",
-  "source_tree": "56b64fdd3b1daaa02b89ad19b98c49bf431f9a67",
+  "source_tree": "72c43bac21e18baefecccfa2042c294eec74d8e2",
   "self_hash_mode": "canonical_json_with_self_sha_set_to_SELF",
   "summary": {
     "tracked_file_count": 3422,
@@ -9516,7 +9516,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "f560f3b8577dfca98bb76b50bfc7206609e8869f9d88b73540935174a6edd2e6",
+      "sha256": "bc476fd63a17d5542766cbe4a5dd747ff9bba84becc60ffb29670e4cdc4ab946",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -26232,7 +26232,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "9196b851c60223d42fc7d92f9a9b97991d7dea7cda6670c5133f9795d1512b43",
+      "sha256": "d6412a396e39985d61089c0b72e6156254c9a922daf56bf7d436feaed846d622",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -65901,7 +65901,7 @@
     },
     {
       "path": "ml/tests/test_v039_data_access_guard.py",
-      "sha256": "46d2609fd8fac50d88e67c32179235a7799a71b584f89466373e5723113deddc",
+      "sha256": "7b8bc38cf3fd8edb2f29c46efb94186a8e5f046d4a068bce94ec2dd75443baf8",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
