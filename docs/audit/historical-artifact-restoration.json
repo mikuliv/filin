@@ -1,0 +1,25 @@
+{
+  "schema_version": "filin_historical_artifact_restoration_v1",
+  "scope": "Только проверенные исторические файлы, добавленные в текущую поставку; это не дата создания научного результата.",
+  "restored_artifacts": [
+    {
+      "stage": "v0.3.14",
+      "path": "ml/reports/v0_3_14/v0_3_14_policy_result.json",
+      "historical_sha256": "540ef6a0a4fec0dca608d2fceda0404fbcff5fa094defa5fb39a32fea7dd7054",
+      "size_bytes": 2866,
+      "digest_basis": "exact Git blob bytes, LF",
+      "provenance_level": "P2",
+      "historical_digest_anchors": [
+        "ml/experiments/v0_3_15/run_v0_3_15.py:v14_expected.policy",
+        "ml/reports/v0_3_15/previous_stage_integrity.json:v0314.policy_result_sha256"
+      ],
+      "restoration_commit": "2a14e278f2ad4ede8b419fb6790e366801237cb7",
+      "restored_to_distribution_date": "2026-09-22",
+      "original_scientific_result_date": null,
+      "source_of_bytes": "Ранее игнорируемая локальная копия; точные байты сверены с двумя отслеживаемыми историческими SHA-якорями.",
+      "bytes_regenerated": false,
+      "content_review": "JSON содержит только 52 логических и 25 целочисленных поля; строковых значений, адресов, имён пользователей и секретов нет.",
+      "licensing_review": "Создан собственным генератором ml/experiments/v0_3_14/run_v0_3_14.py; заимствованного текста или данных в опубликованном файле нет."
+    }
+  ]
+}
