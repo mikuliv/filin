@@ -1,7 +1,7 @@
 {
   "history_scope": "all refs",
-  "tracked_file_count": 3422,
-  "provenance_record_count": 3422,
+  "tracked_file_count": 3424,
+  "provenance_record_count": 3424,
   "review_required_count": 0,
   "files": [
     {
@@ -3327,6 +3327,17 @@
       "review_required": false
     },
     {
+      "path": "docs/audit/historical-artifact-restoration.json",
+      "sha256": "639c4d4b34c0c6033d674074ba9682faeac8f53460f49fc91559944630f29cf5",
+      "first_commit": "e17a348b20d16773cbe309bf4d142803f1e10b55",
+      "first_date": "2026-09-22T19:19:15+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
       "path": "docs/audit/index.md",
       "sha256": "6d5257196a9f190a92ed0b588d2a9a7cd3f87d5983e0b9932332be16636c6f7c",
       "first_commit": "4fec1ac2bf9cb8cc76a320fee636b32fbcae5b63",
@@ -4978,7 +4989,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "bc476fd63a17d5542766cbe4a5dd747ff9bba84becc60ffb29670e4cdc4ab946",
+      "sha256": "c4ff99ab0dffa233d89b131a5a51e44c68186d71e26082b2e7e7761027fada6b",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -13734,7 +13745,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "a52c9b42954bb4124a839ea0b6539e0794116c2181e13153c85f83cc7dcbfa0f",
+      "sha256": "e45adcc5a0e63b47f5fd2073cf1be9a9941e822c017b565217e95f2cf472b75a",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -19644,6 +19655,17 @@
       "sha256": "0c4268b5f2de21e7d384066abdad7b34d5d46f45eb6a4252eba2555ce303eae2",
       "first_commit": "77168fb6ac194ff2db4da5d81dc2f7a694cf504e",
       "first_date": "2026-07-24T20:27:29+07:00",
+      "first_author": "mikuliv",
+      "first_author_email": "ruslan.pockatilov@gmail.com",
+      "current_holder": "Руслан Покатилов",
+      "third_party_markers": [],
+      "review_required": false
+    },
+    {
+      "path": "ml/reports/v0_3_14/v0_3_14_policy_result.json",
+      "sha256": "540ef6a0a4fec0dca608d2fceda0404fbcff5fa094defa5fb39a32fea7dd7054",
+      "first_commit": "2a14e278f2ad4ede8b419fb6790e366801237cb7",
+      "first_date": "2026-09-22T19:18:17+07:00",
       "first_author": "mikuliv",
       "first_author_email": "ruslan.pockatilov@gmail.com",
       "current_holder": "Руслан Покатилов",

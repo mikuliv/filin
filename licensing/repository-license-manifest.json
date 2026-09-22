@@ -4,11 +4,11 @@
   "baseline_commit": "4948af7434c8e7b38731d8df8aae0b3360f2badf",
   "digest_basis": "git_blob",
   "digest_revision": "HEAD",
-  "source_tree": "31b2d561a3031577668fa662b1ff08fe625cb34d",
+  "source_tree": "e0f011a0b6c15eca5eeaff8c13b6af2aa9fa0cb8",
   "self_hash_mode": "canonical_json_with_self_sha_set_to_SELF",
   "summary": {
-    "tracked_file_count": 3422,
-    "assigned_file_count": 3422,
+    "tracked_file_count": 3424,
+    "assigned_file_count": 3424,
     "unassigned_file_count": 0,
     "unknown_license_file_count": 0,
     "review_required_file_count": 0,
@@ -6365,6 +6365,27 @@
       "review_required": false
     },
     {
+      "path": "docs/audit/historical-artifact-restoration.json",
+      "sha256": "639c4d4b34c0c6033d674074ba9682faeac8f53460f49fc91559944630f29cf5",
+      "file_type": "source_or_configuration",
+      "ownership": "project_owned",
+      "copyright_holder": "Руслан Покатилов",
+      "license_expression": "MPL-2.0",
+      "assignment_source": "reuse_toml",
+      "frozen": false,
+      "third_party": false,
+      "generated": true,
+      "project_authored": true,
+      "upstream_standard_text": false,
+      "included_for_compliance": false,
+      "text_modification_allowed": true,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "review_required": false
+    },
+    {
       "path": "docs/audit/index.md",
       "sha256": "6d5257196a9f190a92ed0b588d2a9a7cd3f87d5983e0b9932332be16636c6f7c",
       "file_type": "documentation",
@@ -9516,7 +9537,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "bc476fd63a17d5542766cbe4a5dd747ff9bba84becc60ffb29670e4cdc4ab946",
+      "sha256": "c4ff99ab0dffa233d89b131a5a51e44c68186d71e26082b2e7e7761027fada6b",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -26232,7 +26253,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "f6bcbbf3abf42684e0a9890a5ee60ae7f5e25951c43abd9f01f87f788ca3dcb1",
+      "sha256": "eec798e26e19005147142601b4b355874031a254ebc016380e3823b36933b196",
       "file_type": "source_or_configuration",
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
@@ -37514,6 +37535,27 @@
       "ownership": "project_owned",
       "copyright_holder": "Руслан Покатилов",
       "license_expression": "CC-BY-4.0",
+      "assignment_source": "reuse_toml",
+      "frozen": false,
+      "third_party": false,
+      "generated": false,
+      "project_authored": true,
+      "upstream_standard_text": false,
+      "included_for_compliance": false,
+      "text_modification_allowed": true,
+      "distribution_profiles": [
+        "source-core",
+        "laboratory-source"
+      ],
+      "review_required": false
+    },
+    {
+      "path": "ml/reports/v0_3_14/v0_3_14_policy_result.json",
+      "sha256": "540ef6a0a4fec0dca608d2fceda0404fbcff5fa094defa5fb39a32fea7dd7054",
+      "file_type": "source_or_configuration",
+      "ownership": "project_owned",
+      "copyright_holder": "Руслан Покатилов",
+      "license_expression": "MPL-2.0",
       "assignment_source": "reuse_toml",
       "frozen": false,
       "third_party": false,
