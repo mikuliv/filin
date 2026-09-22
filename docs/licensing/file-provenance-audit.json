@@ -4978,7 +4978,7 @@
     },
     {
       "path": "docs/licensing/file-provenance-audit.json",
-      "sha256": "f560f3b8577dfca98bb76b50bfc7206609e8869f9d88b73540935174a6edd2e6",
+      "sha256": "bc476fd63a17d5542766cbe4a5dd747ff9bba84becc60ffb29670e4cdc4ab946",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -13734,7 +13734,7 @@
     },
     {
       "path": "licensing/repository-license-manifest.json",
-      "sha256": "966612da2beb1dcb83f01ae5285b64305378742caeda8001aa421efb720f3f92",
+      "sha256": "a52c9b42954bb4124a839ea0b6539e0794116c2181e13153c85f83cc7dcbfa0f",
       "first_commit": "037b8b223f0ae95953f150a6d601c46fabe4b778",
       "first_date": "2026-07-27T18:48:08+07:00",
       "first_author": "mikuliv",
@@ -34458,7 +34458,7 @@
     },
     {
       "path": "ml/tests/test_v039_causal_decisions.py",
-      "sha256": "b9ed04a14ab455efc3f60ace459f6ebfc6d2b0f050e2b9370540c87918acc800",
+      "sha256": "f17c92213fc37f78554c5b8595fb6eb25aaf8c20049d8c51ecb557a92ff9440b",
       "first_commit": "e8739799299e957195bc3741330e3d4af669e405",
       "first_date": "2026-07-15T09:33:18+07:00",
       "first_author": "mikuliv",
